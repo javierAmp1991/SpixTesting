@@ -3,23 +3,27 @@ import utilities from "../../../styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 
-export default function EventOnlyImageView({item, darkMode}){
+export default function EventOnlyImageView({item, darkMode}) {
     let cssStyle = getCssStyles()
-    return(
-        <a>
-            <div className={`${cssStyle.borderCard} relative`}>
-                <Image className="w-full h-auto z-30" src={item.CoverImage} alt=""/>
+    return (
+        <div>
+            <div className={`${cssStyle.borderCard}`}>
+                <div className={styles.imageProps}>
+                    <Image layout={"fill"} objectFit={"cover"} src={item.CoverImage} alt=""/>
+                </div>
                 {
                     item.SoldTickets >= item.TotalTickets * 0.90 ?
-                        <Image className={`${styles.positionLastTickets} absolute  z-40`}
-                             src={GlobalConst.sourceImages.lastTicket} alt=""/>
-                        :
-                        ""
+                        <div className={styles.positionLastTickets}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        </div>
+                    :
+                    ""
                 }
             </div>
-        </a>
+        </div>
     )
-    function getCssStyles(){
+
+    function getCssStyles() {
         return {
             borderCard: darkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
         }

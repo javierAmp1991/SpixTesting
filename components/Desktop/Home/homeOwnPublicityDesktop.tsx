@@ -9,10 +9,12 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
             {
                 listItem.map((info, index) =>
                     <div key={index}
-                        className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
+                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
                         <div className="grid content-center">
-                            <Image className={style.heightImageOwnPublicity} src={info.LinkImage}
-                                 alt=""/>
+                            <div className={style.heightImageOwnPublicity}>
+                                <Image layout={"fill"} src={info.LinkImage}
+                                       alt=""/>
+                            </div>
                         </div>
                         <div className={`${style.containerInfoProperties}`}>
                             <div className={cssStyles.fontTitle}>
@@ -34,13 +36,13 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
         </div>
     )
 
-    function getCssStyles(){
+    function getCssStyles() {
         return {
             borderCard: darkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
-            bgInfo: darkMode? utilities.bgDarkModeInfo: utilities.bgNormalInfo,
-            fontTitle: darkMode? utilities.fontTitleDarkMode : utilities.fontTitle,
-            fontPrimaryText: darkMode? utilities.fontPrimaryTextDarkMode: utilities.fontPrimaryText,
-            buttonSeeMore: darkMode? style.buttonSeeMoreDarkMode: style.buttonSeeMore
+            bgInfo: darkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
+            fontTitle: darkMode ? utilities.fontTitleDarkMode : utilities.fontTitle,
+            fontPrimaryText: darkMode ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
+            buttonSeeMore: darkMode ? style.buttonSeeMoreDarkMode : style.buttonSeeMore
         }
     }
 }

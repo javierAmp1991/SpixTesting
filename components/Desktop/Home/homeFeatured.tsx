@@ -7,8 +7,13 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
     return (
         <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
             <div className="relative">
-                <Image loading="lazy" className={style.bannerFeatureProperties} src={featuredItem.CoverImage} alt=""/>
-                <Image loading="lazy" className={style.logoFeatureProperties} src={featuredItem.LogoPath} alt=""/>
+                <div className={style.bannerFeatureProperties}>
+                    <Image layout={"fill"} src={featuredItem.CoverImage}
+                           alt=""/>
+                </div>
+                <div className={style.logoFeatureProperties}>
+                    <Image layout={"fill"} src={featuredItem.LogoPath} alt=""/>
+                </div>
             </div>
             <div className="px-2 pb-2 pt-8">
                 <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
@@ -19,8 +24,10 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                     {
                         featuredItem.Rating != null ?
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNew.png" alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src="/images/ratingNew.png" alt=""/>
+                                </div>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     ({featuredItem.Rating})
                                 </div>
@@ -28,7 +35,7 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                             :
                             <>
                                 <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNull.png" alt=""/>
+                                       src="/images/ratingNull.png" alt=""/>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>
@@ -71,7 +78,7 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
         return {
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontName: darkModeState? utilities.fontNameDarkMode: utilities.fontName,
+            fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,
             fontSubTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
             fontPrimaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
             fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,

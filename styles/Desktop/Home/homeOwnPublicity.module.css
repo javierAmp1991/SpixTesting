@@ -19,6 +19,7 @@
     width: var(--sizeImageOwnPublicityDesk);
     object-position: center;
     object-fit: cover;
+    position: relative;
 }
 
 .containerInfoProperties {

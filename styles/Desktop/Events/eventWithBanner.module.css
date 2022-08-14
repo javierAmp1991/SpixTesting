@@ -10,6 +10,7 @@
     width: var(--sizeLogoEWB);
     position: absolute;
     border-radius: 50%;
+    overflow: hidden;
     box-shadow: var(--boxShadowCard);
     left: calc(50% - (var(--sizeLogoEWB) / 2));
     top: calc(100% - (var(--sizeLogoEWB) / 2));
@@ -18,6 +19,7 @@
 .styleArrowEWBProducts {
     height: var(--sizeArrowEWBProduct);
     width: var(--sizeArrowEWBProduct);
+    position: relative;
 }
 
 .sizeProductEWB {
@@ -25,6 +27,7 @@
     height: var(--sizeProductEWBDesk);
     object-fit: cover;
     object-position: center;
+    position: relative;
 }
 
 .gridCarrouselProductsEWB {

@@ -4,9 +4,6 @@ import {GlobalConst} from "../../../public/globalConst"
 import React, {ReactNode, useState} from "react"
 import Image from "next/image";
 
-let sourceLeftArrow = GlobalConst.sourceImages.leftArrow
-let sourceRighttArrow = GlobalConst.sourceImages.rightArrow
-
 export class LayoutCarrouselDeskProp {
     Display: string
     Grid: string
@@ -43,7 +40,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
                 onPointerOver={showArrow} onPointerOut={hiddeArrow}
                 className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
-                <Image className={styles.styleArrow} src={sourceLeftArrow} alt=""/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
             </button>
 
             <div style={cssStyle.paddingCarr}>
@@ -62,7 +59,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
-                <Image className={styles.styleArrow} src={sourceRighttArrow} alt=""/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
             </button>
         </div>
     )

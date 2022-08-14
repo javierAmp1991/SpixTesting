@@ -4,8 +4,8 @@ const idCarrouselBanner: string = "idCarrouselBanner"
 
 export default function FullBanner({item}) {
     return (
-        <a>
-            <Image id={idCarrouselBanner} className={style.sizeImageBanner} src={item} alt=""/>
+        <a className={style.sizeImageBanner}>
+            <Image layout={"fill"} objectFit={"cover"} id={idCarrouselBanner} src={item} alt=""/>
         </a>
     )
 }

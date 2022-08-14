@@ -3,4 +3,5 @@
     aspect-ratio: 4/2;
     object-fit: cover;
     object-position: top;
+    position: relative;
 }

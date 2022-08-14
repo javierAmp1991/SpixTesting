@@ -10,6 +10,7 @@
     width: var(--sizeLogoFeaturedHome) ;
     box-shadow: var(--boxShadowCard);
     border-radius: 50%;
+    overflow: hidden;
     position: absolute;
     top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
     left: calc(50% - (var(--sizeLogoFeaturedHome)/2));

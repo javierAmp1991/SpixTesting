@@ -46,7 +46,7 @@ import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarro
 //endregion
 
 //region importData
-import {Menu} from "../dataDemo/data";
+import {AtributesDataFilter, Menu} from "../dataDemo/data";
 import {HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
 import {DailyOfferData} from "../dataDemo/data";
@@ -62,6 +62,7 @@ import {AtributesFooter} from "../dataDemo/data";
 import {MostPopularData} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
 import {InformationHomeData} from "../dataDemo/data";
+import atributes = AtributesDataFilter.atributes;
 //endregion
 
 const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "Link"]
@@ -534,8 +535,8 @@ export default function Index() {
             </div>
             :
             <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
-                <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+                {/*<HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
+                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>*/}
                 <div className={utilities.maxWidthBodyContentSpix}>
                     <DefaultPage listItem={listDefaultPage}/>
                 </div>

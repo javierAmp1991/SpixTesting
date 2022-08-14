@@ -1,6 +1,6 @@
 // region data
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
-import {CommentSectionData} from "../dataDemo/data";
+import {CommentSectionData, PublicityData} from "../dataDemo/data";
 import {ReviewsSectionData} from "../dataDemo/data";
 import {QuestionSectionData} from "../dataDemo/data";
 import {ResumeReviews} from "../dataDemo/data";
@@ -56,6 +56,7 @@ import NewView from "../components/Desktop/CRM/newView";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import Image from "next/image";
+import PublicityView from "../components/Desktop/CRM/publicityView";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -146,7 +147,8 @@ export default function EventPage() {
             </LayoutCommRevQue>
         </QuestionSectionMobile>
     </TitleSection>
-    let eventInformation = <EventInformationMobile form={FormList.listForm} eventInformation={EventPageEvent.eventPage}/>
+    let eventInformation = <EventInformationMobile form={FormList.listForm}
+                                                   eventInformation={EventPageEvent.eventPage}/>
 
     let newsMobile = <TitleSection titleLink={newsTitle}
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
@@ -161,7 +163,7 @@ export default function EventPage() {
 
     let moreOffert = <TitleSection titleLink={discountTitle}
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-                <EventWithBannerMobile displayLogoRating={false} darkModeState={false} item={ListOffertData.listOffert[0]}/>
+        <EventWithBannerMobile displayLogoRating={false} darkModeState={false} item={ListOffertData.listOffert[0]}/>
     </TitleSection>
 
     let products = <TitleSection titleLink={productstTitle}
@@ -218,7 +220,8 @@ export default function EventPage() {
     ]
     //endregion
     //region componentsDesktop
-    let eventInformationDesk = <EventInformationDesk formList={FormList.listForm} eventInformation={EventPageEvent.eventPage}/>
+    let eventInformationDesk = <EventInformationDesk formList={FormList.listForm}
+                                                     eventInformation={EventPageEvent.eventPage}/>
     let commentSectionDesk = <TitleSection titleLink={commentTitle}
                                            paddingTitle={spaceComponentsDeskY} darkModeState={false}>
         <CommentSectionDesk>
@@ -262,8 +265,8 @@ export default function EventPage() {
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index <= 2?
-                    <NewView homeNew={item} darkModeState={false} key={index}/> : <></>
+                    index <= 2 ?
+                        <NewView homeNew={item} darkModeState={false} key={index}/> : <></>
                 )
             }
         </LayoutCarrousel>
@@ -289,10 +292,10 @@ export default function EventPage() {
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropCarrousel}>
             {
                 InOffer.listInOffer.map((item, index) =>
-                    index <= 3?
+                    index <= 3 ?
                         <EventVerticalView info={item} darkModeState={false}
                                            dropDown={false} isHideName={true}
-                                             key={index}/> : <></>
+                                           key={index}/> : <></>
                 )
             }
         </LayoutCarrousel>
@@ -341,32 +344,37 @@ export default function EventPage() {
     const menuList = Menu.listMenu
     return (
         isLardeDown ?
-            <div>
-                <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
-                <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
-                <Image style={{width:500, height:300}} className={styleMobile.bannerProperties} src={bannerPath} alt=""/>
-                <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
-                    <DefaultPageMobile listItem={defaultList}/>
-                    <FooterMobile/>
-                </div>
-                {
-                    isSmallDown ?
-                        <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
-                                 isLogged={false}/>
-                        :
-                        <></>
-                }
-            </div>
+            <></>
+            /* <div>
+                 <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
+                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
+                 <div className={styleMobile.bannerProperties}>
+                     <Image  src={bannerPath}
+                            alt=""/>
+                 </div>
+                 <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
+                     <DefaultPageMobile listItem={defaultList}/>
+                     <FooterMobile/>
+                 </div>
+                 {
+                     isSmallDown ?
+                         <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
+                                  isLogged={false}/>
+                         :
+                         <></>
+                 }
+             </div>*/
             :
             <div>
-                <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
-                <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>
-                <Image className={styleDesk.sizeBaner} src={bannerPath} alt=""/>
-                <div className={`${utilities.maxWidthBodyContentSpix}`}>
+                {/*<HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
+                <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>*/}
+                <div className={styleDesk.sizeBaner}>
+                    <Image layout={"fill"} src={bannerPath} alt=""/>
+                </div>
+                {/*<div className={`${utilities.maxWidthBodyContentSpix}`}>
                     <LayoutSideCard childrens={childrens}/>
                     <FooterDesk/>
-                </div>
-
+                </div>*/}
             </div>
     )
 

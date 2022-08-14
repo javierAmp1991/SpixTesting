@@ -4,8 +4,10 @@ import Image from "next/image";
 
 
 export default function PublicityView({linkImage}) {
-    const altImage:string = "publicidad"
+    const altImage: string = "publicidad"
     return (
-        <Image src={linkImage} className={style.publicityProperties} alt={altImage}/>
+        <div className={style.publicityProperties}>
+            <Image layout={"fill"} objectFit={"cover"} src={linkImage} alt={altImage}/>
+        </div>
     )
 }

@@ -226,12 +226,12 @@ export namespace HomeBannerData {
 
 export namespace CarrouselAutoHome {
     export const listImage: string[] = [
-        "images/minions.jpg",
-        "images/jurassic.jpg",
-        "images/lightYear.jpg",
-        "images/topgun.jpg",
-        "images/jujutsu.jpeg",
-        "images/thorlov.jpg"
+        "/images/minions.jpg",
+        "/images/jurassic.jpg",
+        "/images/lightYear.jpg",
+        "/images/topgun.jpg",
+        "/images/jujutsu.jpeg",
+        "/images/thorlov.jpg"
     ];
 }
 
@@ -279,28 +279,28 @@ export namespace DailyOfferData {
                 Price: 18990,
                 DiscountPercent: 10,
                 Include: "Lleve 2 pague 1",
-                ImagePath: "images/product1.jpg"
+                ImagePath: "/images/product1.jpg"
             },
             {
                 Name: "Producto 2.1", Price: 4990,
                 DiscountPercent: 25,
                 Include: "Dcto 2 Un.",
-                ImagePath: "images/product2.jpg"
+                ImagePath: "/images/product2.jpg"
             },
-            {Name: "Producto 3.1", Price: 1990, DiscountPercent: 30, Include: null, ImagePath: "images/product3.jpg"},
-            {Name: "Producto 4.1", Price: 2990, DiscountPercent: 25, Include: null, ImagePath: "images/product4.jpg"},
-            {Name: "Producto 5.1", Price: 990, DiscountPercent: 30, Include: null, ImagePath: "images/product5.jpg"},
+            {Name: "Producto 3.1", Price: 1990, DiscountPercent: 30, Include: null, ImagePath: "/images/product3.jpg"},
+            {Name: "Producto 4.1", Price: 2990, DiscountPercent: 25, Include: null, ImagePath: "/mages/product4.jpg"},
+            {Name: "Producto 5.1", Price: 990, DiscountPercent: 30, Include: null, ImagePath: "/images/product5.jpg"},
             {
                 Name: "Producto 6.1",
                 Price: 9990,
                 DiscountPercent: 20,
                 Include: "Dcto 2 Un.",
-                ImagePath: "images/product6.jpg"
+                ImagePath: "/images/product6.jpg"
             },
-            {Name: "Producto 7.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "images/product7.jpg"},
-            {Name: "Producto 8.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "images/product8.jpg"},
-            {Name: "Producto 9.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "images/product9.jpg"},
-            {Name: "Producto 10.1", Price: 6990, DiscountPercent: 30, Include: null, ImagePath: "images/product10.jpg"},
+            {Name: "Producto 7.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product7.jpg"},
+            {Name: "Producto 8.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product8.jpg"},
+            {Name: "Producto 9.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product9.jpg"},
+            {Name: "Producto 10.1", Price: 6990, DiscountPercent: 30, Include: null, ImagePath: "/images/product10.jpg"},
         ]
     }
 }
@@ -912,27 +912,27 @@ export namespace EventPageEvent {
 export namespace MostPopularData {
     export const listMostPopular: EventLookUp[] = [
         {
-            CoverImage: "images/El Huevo.jpg",
+            CoverImage: "/images/El Huevo.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
         },
         {
-            CoverImage: "images/cinzano.jpg",
+            CoverImage: "/images/cinzano.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
         },
         {
-            CoverImage: "images/woo.jpg",
+            CoverImage: "/images/woo.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
         },
         {
-            CoverImage: "images/mascotas.jpg",
+            CoverImage: "/images/mascotas.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
         },
         {
-            CoverImage: "images/terraza.jpg",
+            CoverImage: "/images/terraza.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
         }
@@ -944,7 +944,7 @@ export namespace DropDownData {
     export const listDropDown: EventLookUp[] = [
         {
             EventName: "Metallica WorldWired",
-            CoverImage: "images/cartel0.jpg",
+            CoverImage: "/images/cartel0.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -956,7 +956,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Asesino sin memoria",
-            CoverImage: "images/cartel1.jpg",
+            CoverImage: "/images/cartel1.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -968,7 +968,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Classic Music Festival",
-            CoverImage: "images/cartel2.jpg",
+            CoverImage: "/images/cartel2.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
@@ -980,7 +980,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Daddy Yankee World tour",
-            CoverImage: "images/cartel3.jpg",
+            CoverImage: "/images/cartel3.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -992,7 +992,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Light Year",
-            CoverImage: "images/cartel4.jpg",
+            CoverImage: "/images/cartel4.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
             MinDate: new Date(2022, 8, 5),
@@ -1003,7 +1003,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Singer Concert",
-            CoverImage: "images/cartel5.jpg",
+            CoverImage: "/images/cartel5.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1015,7 +1015,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Metallica WorldWired",
-            CoverImage: "images/cartel0.jpg",
+            CoverImage: "/images/cartel0.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1027,7 +1027,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Asesino sin memoria",
-            CoverImage: "images/cartel1.jpg",
+            CoverImage: "/images/cartel1.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1039,7 +1039,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Classic Music Festival",
-            CoverImage: "images/cartel2.jpg",
+            CoverImage: "/images/cartel2.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
@@ -1051,7 +1051,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Daddy Yankee World tour",
-            CoverImage: "images/cartel3.jpg",
+            CoverImage: "/images/cartel3.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1063,7 +1063,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Light Year",
-            CoverImage: "images/cartel4.jpg",
+            CoverImage: "/images/cartel4.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
             MinDate: new Date(2022, 8, 5),
@@ -1074,7 +1074,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Singer Concert",
-            CoverImage: "images/cartel5.jpg",
+            CoverImage: "/images/cartel5.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1086,7 +1086,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Metallica WorldWired",
-            CoverImage: "images/cartel0.jpg",
+            CoverImage: "/images/cartel0.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1098,7 +1098,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Asesino sin memoria",
-            CoverImage: "images/cartel1.jpg",
+            CoverImage: "/images/cartel1.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
@@ -1110,7 +1110,7 @@ export namespace DropDownData {
         },
         {
             EventName: "Classic Music Festival",
-            CoverImage: "images/cartel2.jpg",
+            CoverImage: "/images/cartel2.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
@@ -1127,23 +1127,23 @@ export namespace Cines {
     export const listCines: EventLookUp[] = [
         {
             EventId: "123",
-            CoverImage: "images/cineplanet.png",
+            CoverImage: "/images/cineplanet.png",
         },
         {
             EventId: "1234",
-            CoverImage: "images/cinehoyts.png",
+            CoverImage: "/images/cinehoyts.png",
         },
         {
             EventId: "12345",
-            CoverImage: "images/cinemark.png",
+            CoverImage: "/images/cinemark.png",
         },
         {
             EventId: "123456",
-            CoverImage: "images/cinesol.png",
+            CoverImage: "/images/cinesol.png",
         },
         {
             EventId: "1234567",
-            CoverImage: "images/condel.png",
+            CoverImage: "/images/condel.png",
         },
         {
             EventId: "12345678",
@@ -1183,7 +1183,7 @@ export namespace TodayInValpo {
             PeriodicDays: null,
             InVenues: "Plaza Anibal Pinto 1182, Valparaiso",
             HasPromotableOffers: true,
-            CoverImage: "images/cinzano.jpg",
+            CoverImage: "/images/cinzano.jpg",
         },
         {
             EventId: "1234567",
@@ -1211,7 +1211,7 @@ export namespace TodayInValpo {
             PeriodicDays: null,
             InVenues: "Cine Hoyts",
             HasPromotableOffers: false,
-            CoverImage: "images/blackphone.png",
+            CoverImage: "/images/blackphone.png",
         },
         {
             EventId: "123456789",

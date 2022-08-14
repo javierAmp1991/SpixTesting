@@ -13,21 +13,26 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
     return (
         <div onPointerOver={handleHiddeName}
              onPointerOut={handleShowName}
-            className={`${styles.principalGridVertical} ${cssStyles.borderCard}`}>
+             className={`${styles.principalGridVertical} ${cssStyles.borderCard}`}>
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
-                        <Image loading="lazy" className="absolute z-20" src={GlobalConst.sourceImages.lastTicket}/>
+                        <div className="absolute z-20">
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket}/>
+                        </div>
                         :
                         ""
                 }
-                <Image loading="lazy" className={`${styles.sizeImage} z-10`} src={info.CoverImage} alt=""/>
+                <div className={`${styles.sizeImage} z-10`}>
+                    <Image layout={"fill"} src={info.CoverImage} alt=""/>
+                </div>
             </a>
 
             <div className={`${cssStyles.bgInfo} grid p-2 content-start`}>
                 {
                     isHideName ?
-                        <div className={`${cssStyles.fontName} ${utilities.clamp1} ${cssStyles.displayName} text-center`}>
+                        <div
+                            className={`${cssStyles.fontName} ${utilities.clamp1} ${cssStyles.displayName} text-center`}>
                             {info.EventName}
                         </div>
                         :
@@ -41,16 +46,18 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                     {
                         info.Rating != null ?
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                </div>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     ({info.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                </div>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>

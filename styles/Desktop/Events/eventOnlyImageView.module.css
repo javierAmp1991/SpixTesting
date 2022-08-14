@@ -1,4 +1,13 @@
 .positionLastTickets {
+    position: absolute;
     top: 0;
     left: 0;
+    z-index: 60;
+}
+
+.imageProps{
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    z-index:50
 }

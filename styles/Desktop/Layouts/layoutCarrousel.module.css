@@ -2,14 +2,10 @@
     display: grid;
     align-items: center;
     position: absolute;
-}
-
-.styleArrow {
     height: var(--sizeArrowLayoutHome);
     width: var(--sizeArrowLayoutHome);
     box-shadow: var(--boxShadowCard);
     border-radius: 50%;
-    z-index: 100;
 }
 
 .mainDivCarrouselProperties {
@@ -38,6 +34,7 @@
     grid-auto-columns: 100%;
     padding-left: 2px;
     padding-right: 2px;
+    margin: auto;
 }
 
 .propertiesArrowCarrousel{
