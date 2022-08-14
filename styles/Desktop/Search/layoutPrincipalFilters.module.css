@@ -60,6 +60,7 @@
     width: 21px;
     box-shadow: var(--boxShadowCard);
     border-radius: 50%;
+    position: relative;
 }
 
 .gridSelectedTags {

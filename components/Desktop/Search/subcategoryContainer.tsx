@@ -46,14 +46,16 @@ export default function SubcategoryContainer({item, click, isDarkMode}: { item: 
                                 <li className={`${utilities.gridMaxContent2} justify-between`}>
                                     <div className="grid gap-5">
                                         <div className="relative">
-                                            <span className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
+                                            <span
+                                                className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
                                             <input id="inputNumberMin"
                                                    className={`${cssStyle.styleRangePrice} ${cssStyle.bgInfo}`}
                                                    placeholder="Precio Minimo"
                                                    type="number"/>
                                         </div>
                                         <div className="relative">
-                                            <span className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
+                                            <span
+                                                className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
                                             <input id="inputNumberMax"
                                                    className={`${cssStyle.styleRangePrice} ${cssStyle.bgInfo}`}
                                                    placeholder="Precio Maximo"
@@ -61,7 +63,7 @@ export default function SubcategoryContainer({item, click, isDarkMode}: { item: 
                                         </div>
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
-                                        <label htmlFor={`${subcategory.Name}CheckBox`} />
+                                        <label htmlFor={`${subcategory.Name}CheckBox`}/>
                                         <input className="checkboxDarkMode"
                                                id={`${subcategory.Name}CheckBox`} type='radio'
                                                name={item.FilterName}/>
@@ -72,22 +74,26 @@ export default function SubcategoryContainer({item, click, isDarkMode}: { item: 
                                     <div className="grid gap-5">
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                             <div className={style.positionCalendar}>
-                                                <Image className="h-3 w-auto "
-                                                     src={cssStyle.calendarIcon} alt=""/>
+                                                <div className="h-3 w-3">
+                                                    <Image layout={"fill"}
+                                                           src={cssStyle.calendarIcon} alt=""/>
+                                                </div>
                                             </div>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                             <div className={style.positionCalendar}>
-                                                <Image className="h-3 w-auto"
-                                                     src={cssStyle.calendarIcon} alt=""/>
+                                                <div className="h-3 w-3">
+                                                    <Image layout={"fill"}
+                                                           src={cssStyle.calendarIcon} alt=""/>
+                                                </div>
                                             </div>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>
                                     </div>
 
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
-                                        <label htmlFor={`${subcategory.Name}CheckBox`} />
+                                        <label htmlFor={`${subcategory.Name}CheckBox`}/>
                                         <input onChange={() => click(subcategory)} className="checkboxDarkMode"
                                                id={`${subcategory.Name}CheckBox`} type='radio'
                                                name={item.FilterName}/>
@@ -99,15 +105,15 @@ export default function SubcategoryContainer({item, click, isDarkMode}: { item: 
         </div>
     )
 
-    function getCssStyle(){
+    function getCssStyle() {
         return {
-            fontSecundaryText: isDarkMode? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
-            fontName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
-            borderBottom: isDarkMode? style.borderBottomDarkMode : style.borderBottom,
-            bgInfo: isDarkMode? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            styleRangePrice: isDarkMode? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,
-            styleRangeDate: isDarkMode? style.styleContainerDareInputDarkMode : style.styleContainerDareInput,
-            calendarIcon: isDarkMode? GlobalConst.sourceImages.calendarIconWhite : GlobalConst.sourceImages.calendarIcon
+            fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
+            borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
+            bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
+            styleRangePrice: isDarkMode ? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,
+            styleRangeDate: isDarkMode ? style.styleContainerDareInputDarkMode : style.styleContainerDareInput,
+            calendarIcon: isDarkMode ? GlobalConst.sourceImages.calendarIconWhite : GlobalConst.sourceImages.calendarIcon
         }
     }
 }

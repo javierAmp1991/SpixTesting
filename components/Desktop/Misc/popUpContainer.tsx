@@ -8,9 +8,13 @@ export default function PopUpContainer({children, closePopUp, isBackground}) {
         <div className={style.mainDiv}>
             <div onClick={closePopUp} className={style.blackScreen}/>
             <div className={cssStyle.modalBackground}>
-                <Image onClick={closePopUp}
-                     className={style.sizeDeleteIcon}
-                     src={GlobalConst.sourceImages.closeX} alt=""/>
+                <div onClick={closePopUp}
+                     className={style.positionDeleteIcon}>
+                    <div className={style.sizeDeleteIcon}>
+                        <Image layout={"fill"} objectFit={"cover"}
+                               src={GlobalConst.sourceImages.closeX} alt=""/>
+                    </div>
+                </div>
                 {children}
             </div>
         </div>

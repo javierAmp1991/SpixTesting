@@ -60,7 +60,7 @@ export default function Search() {
     return (
         isSmallDown ?
             <div className="pb-10">
-                <HeaderSpixMobile displaySug={null}  isDarkMode={isDarkMode}/>
+                <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
                 <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                 <div className={cssStyle.bg}>
 
@@ -99,7 +99,9 @@ export default function Search() {
                             }
                         </div>
                         <div>
-                            <Image className={style.styleBanner} src="images/atr2.jpg" alt=""/>
+                            <div className={style.styleBanner}>
+                                <Image layout={"fill"} objectFit={"cover"} src="/images/atr2.jpg" alt=""/>
+                            </div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Resultados de {"conciertos"}
@@ -118,12 +120,12 @@ export default function Search() {
     function getCssStyle() {
         return {
             bg: isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal,
-            bgInfo: isDarkMode?
+            bgInfo: isDarkMode ?
                 isOpenFilters ? utilities.bgDarkModeInfo : ""
-            :
+                :
                 utilities.bgNormalInfo,
             gridFilterDesktop: isOpenFilters ? style.gridPrincipal : style.gridPrincipalClose,
-            mainContainer: isDarkMode? style.mainContainerPropertiesDarkMode : style.mainContainerProperties,
+            mainContainer: isDarkMode ? style.mainContainerPropertiesDarkMode : style.mainContainerProperties,
             gridSearch: isOpenFilters ? style.gridSearchOpen : style.gridSearchClose,
             fontTitle: isDarkMode ? utilities.fontTitleDarkMode : utilities.fontTitle,
             fontSubTitle: isDarkMode ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,

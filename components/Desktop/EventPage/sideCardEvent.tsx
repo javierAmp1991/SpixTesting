@@ -155,7 +155,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                         {
                             <div className={style.ContainerCoverImage}>
                                 <div className={style.sizeImage}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
+                                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
+                                           alt=""/>
                                 </div>
                             </div>
                         }
@@ -209,7 +210,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 </div>
                                 <div className={style.contMap}>
                                     <div className={style.imgMap}>
-                                    <Image layout={"fill"} src="/images/googleMapHuevo.jpg" alt=""/>
+                                        <Image layout={"fill"} src="/images/googleMapHuevo.jpg" alt=""/>
                                     </div>
                                 </div>
                                 <div>
@@ -217,8 +218,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         Blanco 1386, Valparaíso
                                     </div>
                                     <div className={style.gridLinkMap}>
-                                        <Image className={style.sizeLogoMap}
-                                               src={GlobalConst.sourceImages.googleMap} alt=""/>
+                                        <div className={style.sizeLogoMap}>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
+                                        </div>
                                         <a href="https://goo.gl/maps/skWcW2X6YkEyhL7S6" className={utilities.styleLink}>
                                             https://goo.gl/maps/skWcW2X6YkEyhL7S6
                                         </a>

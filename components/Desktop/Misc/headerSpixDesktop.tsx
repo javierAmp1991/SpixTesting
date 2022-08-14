@@ -20,16 +20,17 @@ export class ResultInfo {
     BussinesResult: BussinesResult[];
     Sugresult: string[]
 }
+
 export class EventResult {
     Name: string;
     Rating: number;
     InVenue: string[]
 }
+
 export class BussinesResult {
     Name: string
     AmountEvents: number
 }
-
 
 let listEventResult: EventResult[] = [
     {
@@ -79,7 +80,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
     const hiddeIsDisplaySug = () => setIsDisplaySug(isdisplaySug = false)
 
     let [textSearch, setTextSearch] = useState("")
-    const handleTextSearch = (e) => setTextSearch( textSearch = e)
+    const handleTextSearch = (e) => setTextSearch(textSearch = e)
     const cssStyles = getCssStyles()
     const darkModeIconInfo = getDarkModeIconInfo()
 
@@ -87,12 +88,16 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
         <div className={cssStyles.backgroundColor}>
             <div className={style.gridHeader}>
                 <a className={paddingImage}>
-                    <Image className={style.sizeIcons} src={GlobalConst.sourceImages.logoSpixHeaderDesk} alt=""/>
+                    <div className={style.sizeIcons}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk} alt=""/>
+                    </div>
                 </a>
 
                 <a className={styleGrid}>
                     <div className={paddingImage}>
-                        <Image className={style.sizeIcons} src={GlobalConst.sourceImages.locationHeaderDesktop} alt=""/>
+                        <div className={style.sizeIcons}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.locationHeaderDesktop} alt=""/>
+                        </div>
                     </div>
                     <div className={styleSideText}>
                         <div className={fontFirstText}>Ingresa tu</div>
@@ -133,7 +138,11 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
                         :
                         <a className={styleGrid}>
                             <div className={paddingImage}>
-                                <Image className={style.sizeIcons} src={GlobalConst.sourceImages.logginHeaderDesktop} alt=""/>
+                                <div className={style.sizeIcons}>
+                                    <Image layout={"fill"}
+                                        src={GlobalConst.sourceImages.logginHeaderDesktop}
+                                        alt=""/>
+                                </div>
                             </div>
                             <div className={style.colorTextHeader}>
                                 <div className={fontFirstText}>Iniciar</div>
@@ -157,7 +166,9 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
 
                 <button onClick={toggleDarkMode} className={styleGrid}>
                     <div className={paddingImage}>
-                        <Image className={style.sizeIcons} src={darkModeIconInfo.icon} alt=""/>
+                        <div className={style.sizeIcons}>
+                        <Image layout={"fill"} src={darkModeIconInfo.icon} alt=""/>
+                        </div>
                     </div>
                     <div className={styleSideText}>
                         <div className={fontFirstText}>{mode}</div>

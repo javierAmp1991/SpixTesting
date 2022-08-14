@@ -10,7 +10,9 @@ export default function ResultBussinesSugDesk({item}: { item: BussinesResult[] }
     return (
         <div className={style.mainCont}>
             <div className={style.gridTitleImage}>
-                <Image className={style.sizeImage} src={GlobalConst.sourceImages.bussinesIcon} alt=""/>
+                <div className={style.sizeImage}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.bussinesIcon} alt=""/>
+                </div>
                 <div className={utilities.fontSubTitle}>{title}</div>
             </div>
             <div className={style.contResult}>

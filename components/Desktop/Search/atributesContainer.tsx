@@ -6,12 +6,14 @@ import {useState} from "react";
 import Image from "next/image";
 
 export default function AtributesContainer({item, click, isDarkMode, isOpenFilter}:
-{ item: Filters, click, isDarkMode: boolean, isOpenFilter : boolean }) {
+                                               { item: Filters, click, isDarkMode: boolean, isOpenFilter: boolean }) {
     let [displaySub, setDisplaySub] = useState(style.displayIn)
-    function handleClick(){
+
+    function handleClick() {
         setDisplaySub(
-            displaySub == style.displayIn? displaySub = style.displayOut : displaySub = style.displayIn)
+            displaySub == style.displayIn ? displaySub = style.displayOut : displaySub = style.displayIn)
     }
+
     let cssStyle = getCssStyle()
     return (
         <div className={`${displaySub} ${cssStyle.borderBottom}`}>
@@ -20,7 +22,9 @@ export default function AtributesContainer({item, click, isDarkMode, isOpenFilte
                     {item.FilterName}
                 </div>
                 <div className="grid items-center">
-                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    <div className="h-4 w-4 relative">
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    </div>
                 </div>
             </div>
             <div className={style.gridAtributes}>
@@ -47,12 +51,12 @@ export default function AtributesContainer({item, click, isDarkMode, isOpenFilte
         </div>
     )
 
-    function getCssStyle(){
+    function getCssStyle() {
         return {
-            filterName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
+            filterName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
             borderBottom:
-                isOpenFilter?
-                    isDarkMode? style.borderBottomDarkMode : style.borderBottom
+                isOpenFilter ?
+                    isDarkMode ? style.borderBottomDarkMode : style.borderBottom
                     :
                     ""
         }

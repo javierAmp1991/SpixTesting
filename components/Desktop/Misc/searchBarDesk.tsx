@@ -30,7 +30,9 @@ export default function SearchBarDesk({isSug, showSug, hiddeSug, getInputValue}:
                    placeholder={placeHolder}/>
             <div className={cssStyle.styleButton}>
                 <button>
-                    <Image className={style.styleLupa} src={cssStyle.sourceMagGlass} alt=""/>
+                    <div className={style.styleLupa}>
+                    <Image layout={"fill"} src={cssStyle.sourceMagGlass} alt=""/>
+                    </div>
                 </button>
             </div>
         </div>

@@ -33,7 +33,8 @@
 
 .sizeIcons {
     height: var(--sizeIconsHeaderDesktop);
-    width: auto;
+    width: inherit;
+    position: relative;
 }
 
 .sizeAccountImage {

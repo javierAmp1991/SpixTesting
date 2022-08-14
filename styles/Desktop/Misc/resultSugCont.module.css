@@ -14,5 +14,6 @@
 
 .sizeImage{
     height: 16px;
-    width: auto;
+    width: 20px;
+    position: relative;
 }
