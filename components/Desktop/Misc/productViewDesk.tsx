@@ -10,8 +10,13 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
     return (
         <div style={getSizeProduct.widthContainer}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
-                <Image className={style.aspectImage} loading="lazy" src={item.ImagePath} alt=""/>
-                <Image className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                <div className={style.aspectImage}>
+                    <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                </div>
+                <div className={utilities.positionLastTicket}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                           alt=""/>
+                </div>
             </div>
 
             <div className={style.gridInfoProduct}>
@@ -52,8 +57,8 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
 
     function getProductSize() {
         return {
-            widthContainer: size != null? {width: size} : {},
-            sizeImage: size != null? {height: size, width: size} : {}
+            widthContainer: size != null ? {width: size} : {},
+            sizeImage: size != null ? {height: size, width: size} : {}
         }
     }
 }

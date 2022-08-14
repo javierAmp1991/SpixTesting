@@ -3,6 +3,7 @@
     width: 100%;
     object-fit: cover;
     object-position: center;
+    position: relative;
 }
 
 .propertiesLogoEWB {
@@ -22,6 +23,7 @@
     height: var(--sizeProduct);
     object-fit: cover;
     object-position: center;
+    position: relative;
 }
 
 .gridCarrouselProductsEWB {

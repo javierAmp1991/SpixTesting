@@ -322,69 +322,69 @@ export namespace ListOffertData {
                     Price: 18990,
                     DiscountPercent: 10,
                     Include: "Lleve 2 pague 1",
-                    ImagePath: "images/product1.jpg"
+                    ImagePath: "/images/product1.jpg"
                 },
                 {
                     Name: "Producto 2.1", Price: 4990,
                     DiscountPercent: 25,
                     Include: "Dcto 2 Un.",
-                    ImagePath: "images/product2.jpg"
+                    ImagePath: "/images/product2.jpg"
                 },
                 {
                     Name: "Producto 3.1",
                     Price: 1990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product3.jpg"
+                    ImagePath: "/images/product3.jpg"
                 },
                 {
                     Name: "Producto 4.1",
                     Price: 2990,
                     DiscountPercent: 25,
                     Include: null,
-                    ImagePath: "images/product4.jpg"
+                    ImagePath: "/images/product4.jpg"
                 },
                 {
                     Name: "Producto 5.1",
                     Price: 990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product5.jpg"
+                    ImagePath: "/images/product5.jpg"
                 },
                 {
                     Name: "Producto 6.1",
                     Price: 9990,
                     DiscountPercent: 20,
                     Include: "Dcto 2 Un.",
-                    ImagePath: "images/product6.jpg"
+                    ImagePath: "/images/product6.jpg"
                 },
                 {
                     Name: "Producto 7.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product7.jpg"
+                    ImagePath: "/images/product7.jpg"
                 },
                 {
                     Name: "Producto 8.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product8.jpg"
+                    ImagePath: "/images/product8.jpg"
                 },
                 {
                     Name: "Producto 9.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product9.jpg"
+                    ImagePath: "/images/product9.jpg"
                 },
                 {
                     Name: "Producto 10.1",
                     Price: 6990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product10.jpg"
+                    ImagePath: "/images/product10.jpg"
                 },
             ]
         },
@@ -403,69 +403,69 @@ export namespace ListOffertData {
                     Price: 18990,
                     DiscountPercent: 10,
                     Include: "Lleve 2 pague 1",
-                    ImagePath: "images/product1.jpg"
+                    ImagePath: "/images/product1.jpg"
                 },
                 {
                     Name: "Producto 2.1", Price: 4990,
                     DiscountPercent: 25,
                     Include: "Dcto 2 Un.",
-                    ImagePath: "images/product2.jpg"
+                    ImagePath: "/images/product2.jpg"
                 },
                 {
                     Name: "Producto 3.1",
                     Price: 1990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product3.jpg"
+                    ImagePath: "/images/product3.jpg"
                 },
                 {
                     Name: "Producto 4.1",
                     Price: 2990,
                     DiscountPercent: 25,
                     Include: null,
-                    ImagePath: "images/product4.jpg"
+                    ImagePath: "/images/product4.jpg"
                 },
                 {
                     Name: "Producto 5.1",
                     Price: 990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product5.jpg"
+                    ImagePath: "/images/product5.jpg"
                 },
                 {
                     Name: "Producto 6.1",
                     Price: 9990,
                     DiscountPercent: 20,
                     Include: "Dcto 2 Un.",
-                    ImagePath: "images/product6.jpg"
+                    ImagePath: "/images/product6.jpg"
                 },
                 {
                     Name: "Producto 7.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product7.jpg"
+                    ImagePath: "/images/product7.jpg"
                 },
                 {
                     Name: "Producto 8.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product8.jpg"
+                    ImagePath: "/images/product8.jpg"
                 },
                 {
                     Name: "Producto 9.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product9.jpg"
+                    ImagePath: "/images/product9.jpg"
                 },
                 {
                     Name: "Producto 10.1",
                     Price: 6990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product10.jpg"
+                    ImagePath: "/images/product10.jpg"
                 },
             ]
         },
@@ -484,69 +484,69 @@ export namespace ListOffertData {
                     Price: 18990,
                     DiscountPercent: 10,
                     Include: "Lleve 2 pague 1",
-                    ImagePath: "images/product1.jpg"
+                    ImagePath: "/images/product1.jpg"
                 },
                 {
                     Name: "Producto 2.1", Price: 4990,
                     DiscountPercent: 25,
                     Include: "Dcto 2 Un.",
-                    ImagePath: "images/product2.jpg"
+                    ImagePath: "/images/product2.jpg"
                 },
                 {
                     Name: "Producto 3.1",
                     Price: 1990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product3.jpg"
+                    ImagePath: "/images/product3.jpg"
                 },
                 {
                     Name: "Producto 4.1",
                     Price: 2990,
                     DiscountPercent: 25,
                     Include: null,
-                    ImagePath: "images/product4.jpg"
+                    ImagePath: "/images/product4.jpg"
                 },
                 {
                     Name: "Producto 5.1",
                     Price: 990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product5.jpg"
+                    ImagePath: "/images/product5.jpg"
                 },
                 {
                     Name: "Producto 6.1",
                     Price: 9990,
                     DiscountPercent: 20,
                     Include: "Dcto 2 Un.",
-                    ImagePath: "images/product6.jpg"
+                    ImagePath: "/images/product6.jpg"
                 },
                 {
                     Name: "Producto 7.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product7.jpg"
+                    ImagePath: "/images/product7.jpg"
                 },
                 {
                     Name: "Producto 8.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product8.jpg"
+                    ImagePath: "/images/product8.jpg"
                 },
                 {
                     Name: "Producto 9.1",
                     Price: 10990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product9.jpg"
+                    ImagePath: "/images/product9.jpg"
                 },
                 {
                     Name: "Producto 10.1",
                     Price: 6990,
                     DiscountPercent: 30,
                     Include: null,
-                    ImagePath: "images/product10.jpg"
+                    ImagePath: "/images/product10.jpg"
                 },
             ]
         }
@@ -560,7 +560,7 @@ export namespace ListProducts {
             Price: 18990,
             DiscountPercent: 10,
             Include: "Lleve 2 pague 1",
-            ImagePath: "images/product1.jpg",
+            ImagePath: "/images/product1.jpg",
             Tag: "Cerveza"
         },
         {
@@ -568,7 +568,7 @@ export namespace ListProducts {
             Price: 2990,
             DiscountPercent: 25,
             Include: null,
-            ImagePath: "images/product4.jpg",
+            ImagePath: "/images/product4.jpg",
             Tag: "Energetica"
         },
         {
@@ -576,7 +576,7 @@ export namespace ListProducts {
             Price: 990,
             DiscountPercent: 30,
             Include: null,
-            ImagePath: "images/product5.jpg",
+            ImagePath: "/images/product5.jpg",
             Tag: "Snack"
         },
         {
@@ -584,7 +584,7 @@ export namespace ListProducts {
             Price: 9990,
             DiscountPercent: 20,
             Include: "Dcto 2 Un.",
-            ImagePath: "images/product6.jpg",
+            ImagePath: "/images/product6.jpg",
             Tag: "Energetica"
         },
         {
@@ -592,7 +592,7 @@ export namespace ListProducts {
             Price: 10990,
             DiscountPercent: 30,
             Include: null,
-            ImagePath: "images/product7.jpg",
+            ImagePath: "/images/product7.jpg",
             Tag: "Bebida"
         },
         {
@@ -600,7 +600,7 @@ export namespace ListProducts {
             Price: 10990,
             DiscountPercent: 30,
             Include: null,
-            ImagePath: "images/product8.jpg",
+            ImagePath: "/images/product8.jpg",
             Tag: "Energeticas"
         },
     ]
@@ -805,79 +805,79 @@ export namespace EventPageEvent {
         BannerPath: "/images/banner.png",
         CoverImage: "images/coverImage.jpg",
         LogoPath: "/images/logo el Huevo.jpg",
-        ListRestriction: ["images/hoody.png", "images/cap.png", "images/semiformal.png"],
+        ListRestriction: ["/images/hoody.png", "/images/cap.png", "/images/semiformal.png"],
         ListProducts: [
             {
                 Name: "Producto 1.1",
                 Price: 18990,
                 DiscountPercent: 10,
                 Include: "Lleve 2 pague 1",
-                ImagePath: "images/product1.jpg"
+                ImagePath: "/images/product1.jpg"
             },
             {
                 Name: "Producto 2.1", Price: 4990,
                 DiscountPercent: 25,
                 Include: "Dcto 2 Un.",
-                ImagePath: "images/product2.jpg"
+                ImagePath: "/images/product2.jpg"
             },
             {
                 Name: "Producto 3.1",
                 Price: 1990,
                 DiscountPercent: 30,
                 Include: null,
-                ImagePath: "images/product3.jpg"
+                ImagePath: "/images/product3.jpg"
             },
             {
                 Name: "Producto 4.1",
                 Price: 2990,
                 DiscountPercent: 25,
                 Include: null,
-                ImagePath: "images/product4.jpg"
+                ImagePath: "/images/product4.jpg"
             },
             {
                 Name: "Producto 5.1",
                 Price: 990,
                 DiscountPercent: 30,
                 Include: null,
-                ImagePath: "images/product5.jpg"
+                ImagePath: "/images/product5.jpg"
             },
             {
                 Name: "Producto 6.1",
                 Price: 9990,
                 DiscountPercent: 20,
                 Include: "Dcto 2 Un.",
-                ImagePath: "images/product6.jpg"
+                ImagePath: "/images/product6.jpg"
             },
             {
                 Name: "Producto 7.1",
                 Price: 10990,
                 DiscountPercent: 30,
                 Include: null,
-                ImagePath: "images/product7.jpg"
+                ImagePath: "/images/product7.jpg"
             },
             {
                 Name: "Producto 8.1",
                 Price: 10990,
                 DiscountPercent: 30,
                 Include: null,
-                ImagePath: "images/product8.jpg"
+                ImagePath: "/images/product8.jpg"
             },
             {
                 Name: "Producto 9.1",
                 Price: 10990,
                 DiscountPercent: 30,
                 Include: null,
-                ImagePath: "images/product9.jpg"
+                ImagePath: "/images/product9.jpg"
             },
             {
                 Name: "Producto 10.1",
                 Price: 6990,
                 DiscountPercent: 30,
                 Include: null,
-                ImagePath: "images/product10.jpg"
+                ImagePath: "/images/product10.jpg"
             },
         ],
-        ListImages: ["images/thedoor1.jpg", "images/thedoor2.jpg", "images/thedoor3.jpg", "images/thedoor4.jpg", "images/thedoor5.jpg"],
+        ListImages: ["/images/thedoor1.jpg", "/images/thedoor2.jpg", "/images/thedoor3.jpg", "/images/thedoor4.jpg", "/images/thedoor5.jpg"],
         Video: "images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
         VenueDate: [
             {

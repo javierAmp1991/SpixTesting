@@ -371,10 +371,14 @@ export default function EventPage() {
                 <div className={styleDesk.sizeBaner}>
                     <Image layout={"fill"} src={bannerPath} alt=""/>
                 </div>
-                {/*<div className={`${utilities.maxWidthBodyContentSpix}`}>
-                    <LayoutSideCard childrens={childrens}/>
-                    <FooterDesk/>
-                </div>*/}
+                <div className={`${utilities.maxWidthBodyContentSpix}`}>
+                    {/*<LayoutSideCard childrens={childrens}/>
+                    <FooterDesk/>*/}
+                    {eventInformationDesk}
+                    {moreOffertDesk}
+                    {productsDesk}
+                    {eventExtraDesk}
+                </div>
             </div>
     )
 

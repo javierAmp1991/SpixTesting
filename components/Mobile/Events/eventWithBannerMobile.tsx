@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Mobile/Events/eventWithBannerMobile.module.css"
 import React, {useState} from "react";
 import Image from "next/image";
+
 const alignmentTextProduct: string = "text-center"
 
 
@@ -17,18 +18,22 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
         <div className={cssStyles.borderCard}>
             <div className="grid">
                 <div className="relative">
-                    <Image className={styles.sizeBannerEWB} src={item.BannerPath} alt=""/>
+                    <div className={styles.sizeBannerEWB}>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.BannerPath} alt=""/>
+                    </div>
                     {
                         displayLogoRating ?
-                            <Image className={styles.propertiesLogoEWB}
-                                 src={item.LogoPath} alt=""/>
+                            <div className={styles.propertiesLogoEWB}>
+                                <Image layout={"fill"} src={item.LogoPath} alt=""/>
+                            </div>
                             :
                             ""
                     }
 
                 </div>
 
-                <div className={`${cssStyles.bgInfo} ${cssStyles.paddingUnderLogo} pb-3 grid justify-center justify-items-center`}>
+                <div
+                    className={`${cssStyles.bgInfo} ${cssStyles.paddingUnderLogo} pb-3 grid justify-center justify-items-center`}>
                     <div className={`${cssStyles.fontSubTitle} ${alignmentTextProduct} mb-2`}>
                         {item.EventName}
                     </div>
@@ -66,8 +71,10 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                                 item.ListProducts.map(product =>
                                     <div key={product.Name}>
                                         <div className="mb-2">
-                                            <Image className={`${styles.sizeProductEWB} m-auto`}
-                                                 src={product.ImagePath} alt=""/>
+                                            <div className={`${styles.sizeProductEWB} m-auto`}>
+                                                <Image layout={"fill"}
+                                                       src={product.ImagePath} alt=""/>
+                                            </div>
                                         </div>
                                         <div
                                             className={`${utilities.fontPriceInclude} mb-1 ${alignmentTextProduct} `}>
@@ -106,7 +113,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontSubTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
             fontPrimaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
-            paddingUnderLogo: displayLogoRating? "pt-9" : "pt-3"
+            paddingUnderLogo: displayLogoRating ? "pt-9" : "pt-3"
         }
     }
 

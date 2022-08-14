@@ -12,7 +12,7 @@ export default function HomeCategorysFooter({item, darkModeState}) {
             </div>
 
             <div className={style.heightImageAtribute}>
-                <Image layout={"fill"}  src={item.LinkImage} alt=""/>
+                <Image layout={"fill"} objectFit={"cover"}  src={item.LinkImage} alt=""/>
             </div>
         </div>
     )
