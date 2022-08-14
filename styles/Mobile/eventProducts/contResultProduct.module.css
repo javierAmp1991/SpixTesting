@@ -1,0 +1,188 @@
+.contVar {
+    --spaceYContResPro: 12px;
+    --spaceXContResPro: 12px;
+}
+
+.principalGrid {
+    display: grid;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, .1);
+    padding: 16px var(--spaceXContResPro);
+}
+
+.paddingContResult {
+    padding-bottom: 80px;
+}
+
+.styleGridVar {
+    padding-right: var(--spaceXContResPro);
+    border-right: 1px solid var(--separationLineColor);
+    position: relative;
+}
+
+.numItemSelected {
+    --fontSize: 16px;
+    position: absolute;
+    top: -6px;
+    left: 11px;
+    font-size: var(--fontSize);
+    line-height: var(--fontSize);
+}
+
+.bannerSize {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.gridTagsCont {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 12px;
+    overflow: scroll;
+}
+
+.sizeBuyCAr {
+    height: 20px;
+    width: auto;
+}
+
+.separationiLineSection {
+    border-bottom: 2px solid var(--separationLineColor);
+}
+
+.tagStyle {
+    color: white;
+    background: var(--purpleGradientTag);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.addIconStyle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.contAddItem {
+    background: white;
+    display: grid;
+    align-items: center;
+    padding: 0px 12px;
+    border-left: 1px solid #c7c7c7;
+}
+
+.gridTabs {
+    border-radius: 8px 8px 0px 0px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    border-bottom: 1px solid #e3e3e3;
+    border-top: 1px solid #e3e3e3;
+    background: #eaeaea;
+}
+
+.gridTabsNoCar {
+    border-radius: 8px 8px 0px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(0, 0, 0, .05);
+    align-items: center;
+    gap: 4px;
+}
+
+.TabIcon {
+    margin-top: 1px;
+    padding: 10px;
+    color: var(--colorPrimaryText);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 4px;
+    align-items: center;
+    background: #eaeaea;
+    position: relative;
+}
+
+.TabIcon::after {
+    content: " ";
+    width: 1px;
+    height: 24px;
+    right: 0;
+    background: #bebebe;
+    position: absolute;
+}
+
+.TabIconSelected {
+    padding: 10px;
+    border-radius: 8px 8px 0px 0px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    background: white;
+    color: var(--colorPrimaryText);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 2px;
+    align-items: center;
+}
+
+.nameElipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.containerClients {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    overflow: scroll;
+    align-items: center;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+    transition: .4s;
+}
+
+.mainContPop {
+    padding: 32px 24px;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    gap: 12px;
+    height: 100%;
+}
+
+.contTitleClose {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--separationLineColor);
+}
+
+.sizeCloseimg {
+    height: 14px;
+    width: auto;
+    border-radius: 50%;
+    display: inline;
+    opacity: .5;
+}
+
+.styleInput {
+    border: 2px solid var(--separationLineColor);
+    width: 100%;
+    padding: 12px;
+}
+
+.gridInfoInput {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    gap: 8px;
+}
+
+.gridInputs {
+    grid-template-rows: max-content max-content;
+    display: grid;
+    gap: 16px;
+    padding: 12px 0px;
+    overflow: scroll;
+}

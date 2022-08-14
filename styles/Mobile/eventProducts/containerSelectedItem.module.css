@@ -1,0 +1,25 @@
+.containerSelectedItem{
+    position: relative;
+    transition: .4s;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadowUnderProducts);
+}
+
+.containerSelectedItemClicked{
+    position: relative;
+    box-shadow: var(--boxShadowBlue);
+    transition: .4s;
+    border-radius: 4px;
+    transform: scale(1.02);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sizeChecked{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 8px;
+    right: 6px;
+}

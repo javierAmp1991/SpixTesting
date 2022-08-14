@@ -1,0 +1,17 @@
+.bannerFeatureProperties{
+    height: var(--heightBannerFeaturedDesk);
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.logoFeatureProperties{
+    height: var(--sizeLogoFeaturedHome) ;
+    width: var(--sizeLogoFeaturedHome) ;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
+    left: calc(50% - (var(--sizeLogoFeaturedHome)/2));
+}
+

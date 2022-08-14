@@ -1,0 +1,219 @@
+.grid {
+    --paddingXEventProduc: 12px;
+    --paddingYEventProduct: 14px;
+    display: grid;
+    gap: 16px;
+    padding: 0px var(--paddingXEventProduc);
+}
+
+.gridSelected {
+    display: grid;
+    grid-template-rows: max-content;
+    gap: 32px;
+    overflow: scroll;
+    padding: 0px 0px 3px 0px;
+    margin: var(--paddingYEventProduct) var(--paddingXEventProduc);
+}
+
+.sideCard {
+    position: sticky;
+    top: 40px;
+    margin-top: 40px;
+    height: 580px;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, .2);
+    border-radius: 8px 8px 8px 8px;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+.shadowCont {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    height: 540px;
+    border-radius: 0px 0px 8px 8px;
+}
+
+.borderBottomSection {
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+}
+
+.containerButton {
+    display: grid;
+    padding: 0px 16px 16px 16px;
+}
+
+.styleButton {
+    padding: 6px 12px;
+    background: var(--yellowButtonColor);
+    border-radius: 4px;
+    width: max-content;
+    color: var(--colorTitlesDesktop);
+    margin: auto;
+}
+
+.containerClients {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    overflow: scroll;
+    align-items: center;
+    position: relative;
+    gap: 1px;
+    transition: .4s;
+}
+
+.mainContPop {
+    padding: 48px;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    gap: 12px;
+    height: 100%;
+}
+
+.contTitleClose {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--separationLineColor);
+}
+
+.sizeCloseimg {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    display: inline;
+    opacity: .5;
+}
+
+.styleInput {
+    border: 2px solid var(--separationLineColor);
+    width: 100%;
+    padding: 12px;
+}
+
+.gridInfoInput {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    gap: 8px;
+}
+
+.gridInputs {
+    grid-template-rows: max-content max-content;
+    display: grid;
+    gap: 16px;
+    padding: 24px 0px;
+    overflow: scroll;
+}
+
+.containerButton {
+    width: 300px;
+    margin: auto;
+}
+
+.contTitle {
+    padding: var(--paddingYEventProduct) var(--paddingXEventProduc);
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+}
+
+.TabIcon {
+    padding: 10px;
+    border-radius: 8px 8px 0px 0px;
+    color: var(--colorPrimaryText);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    position: relative;
+    border: 1px solid #dadada;
+}
+
+.TabIconSelected {
+    padding: 10px;
+    border-radius: 8px 8px 0px 0px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    background: white;
+    color: var(--colorPrimaryText);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+}
+
+.Arrow {
+    height: 16px;
+    width: auto;
+    position: absolute;
+    right: 8px;
+    animation: moveArrow 1.5s infinite linear;
+}
+
+.addIconStyle {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+}
+
+.gridTabs {
+    border-radius: 8px 8px 0px 0px;
+    background: rgba(0, 0, 0, .05);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 4px;
+}
+
+.gridTotalButton {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px var(--paddingXEventProduc);
+    border-top: 2px solid var(--separationLineColor);
+    background: var(--gradientBuy);
+}
+
+.gridCarrouselAdd {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    padding-right: 8px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.transition {
+    transition: 1s;
+}
+
+.gridArrows {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+}
+
+.arrow {
+    height: 12px;
+    width: auto;
+}
+
+@keyframes moveArrow {
+    0% {
+        right: 8px;
+    }
+    50% {
+        right: 24px;
+    }
+    100% {
+        right: 8px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .styleButton:Hover {
+        background: var(--yellowButtonColorHover);
+    }
+}

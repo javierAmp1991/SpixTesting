@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*Mobile Section*/
+:root {
+    --maxWidthBodyContent: 1200px;
+    --maxWidthBanner: 1600px;
+    --colorBodyDarkMode: #121212;
+    --colorBodyNormal: white;
+    --colorTitlesMobile: #0f1111;
+    --colorTitlesDesktop: #0f1111;
+    --colorPriceInclude: #1a1d1d;
+    --colorSubTitles: #303435;
+    --colorPrimaryText: #55595a;
+    --colorName: #303435;
+    --colorSecundaryText: #AAACAD;
+    --linkColor: #2d7dff;
+    --linkColorDarkMode: #15dae6;
+    --buttonLinkColor: #2d7dff;
+    --buttonlinkColorDarkMode: #15dae6;
+    --tagColorNormal: #2d7dff;
+    --tagColorDarkMode: #ff7f23;
+    --colorTagDiscount: #f81d2e;
+    --darkModetextColor: white;
+    --paddingContentHomeXMob: 8px;
+    --paddingContentHomeYMob: 24px;
+    --paddingContentHomeXMed: 24px;
+    --paddingContentHomeYMed: 32px;
+    --paddingContentHomeXDesk: 0px;
+    --paddingContentHomeYDesk: 40px;
+    --transitionTimeDarkMode: .4s;
+    --bgNormalInfo: white;
+    --colorShadow: #dedede;
+    --colorShadowBlue: #2d7dff;
+    --boxShadowCard: 1px 1px 2px var(--colorShadow), -1px -1px 2px var(--colorShadow), 1px -1px 2px var(--colorShadow), -1px 1px 2px var(--colorShadow);
+    --boxShadowBlue: 1px 1px 5px var(--colorShadowBlue), -1px -1px 5px var(--colorShadowBlue), 1px -1px 5px var(--colorShadowBlue), -1px 1px 5px var(--colorShadowBlue);
+    --gapHomeCarrousels: 16px;
+    --heightBannerDailyOffer: 128px;
+    --fontSizeMini: 12px;
+    --sizeProductDailyOfferMob: 66px;
+    --arrowHomeLayoutPositionY: calc(50% - (var(--sizeArrowLayoutHome)/2));
+    --arrowHomeLayoutPositionX: -48px;
+    --arrowHomeLayoutZIndex: 6000;
+    --transitionCarrouselHome: .4s;
+    --sizeImageRoundedCarrouselMob: 160px;
+    --sizeImageRoundedCarrouselDesk: 180px;
+    --sizeArrowLayoutHome: 32px;
+    --heightImageNewHomeMob: 140px;
+    --heightImageNewHomeDesk: 224px;
+    --transitionHover: .4s;
+    --scaleHover: 1.01;
+    --colorShadowHover: #adadad;
+    --colorShadowHoverDarkMode: #ff7f23;
+    --difShadowHover: 16px;
+    --desplNegShadowHover: 6px;
+    --desplPosShadowHover: -2px;
+    --boxShadowHover: 0px var(--desplNegShadowHover) var(--difShadowHover) var(--colorShadowHover),
+                        0px var(--desplPosShadowHover) var(--difShadowHover) var(--colorShadowHover);
+    --boxShadowHoverDarkMode: 0px var(--desplNegShadowHover) var(--difShadowHover) var(--colorShadowHoverDarkMode),
+                                0px var(--desplPosShadowHover) var(--difShadowHover) var(--colorShadowHoverDarkMode)  ;
+    --borderCardRadious: 6px;
+    --heightBannerFeaturedMob: 96px;
+    --heightBannerFeaturedDesk: 144px;
+    --sizeLogoFeaturedHome: 56px;
+    --gradientSpix: linear-gradient(180deg, rgba(7,99,185,1) 0%, rgba(6,91,172,1) 100%);
+    --purpleGradientTag: rgba(232,46,138,1);
+    --gradientBlueButton: linear-gradient(177deg, rgba(42,120,247,1) 0%, rgba(52,128,251,1) 100%);
+    --separationLineColor: #f5f5f5;
+    --separationLineColorDarkMode: black;
+    --spaceXMainContainerMobile: 12px;
+    --heightRightCard: 630px;
+    --yellowButtonColor: #FFD814;
+    --yellowButtonColorHover: #ffc800;
+    --gradientBuy: linear-gradient(45deg, #54e2f3 0%, #66eeb7 100%);
+    --shadowUnderProducts: 0px 3px 12px rgba(0,0,0,.2)
+}
+/*Desktop Section*/
+:root{
+    --sizeIconsHeaderDesktop: 28px;
+    --sizeAccountImageHeaderDesktop: 32px;
+    --colorNumberBuyCarDesktop: #45D2C4;
+    --colorTextHeaderDesktop: white;
+    --colorTagMenuDesktop: white;
+    --heightBannerEWBDesk: 192px; /*EWB eventWithBanner*/
+    --sizeLogoEWB: 64px;
+    --sizeArrowEWBProduct: 24px;
+    --sizeProductEWBDesk: 112px;
+    --arrowEWBPositionY: calc(50% - (var(--sizeArrowEWBProduct)/2));
+    --arrowEWBPositionX: 0px;
+    --widthCircleAnimationHeart: 2px;
+    --initialPositionCircle: -8px;
+    --finalPositionCircle: -14px;
+    --transitionCircleLow: 1.2s .3s;
+    --transitionCirclefast: 1.2s .3s;
+    --group1Circle: #d7390e;
+    --group2Circle: #F48EA7;
+    --group3Circle: #91D2FA;
+    --group4Circle: #CC8EF5;
+    --group5Circle: #0ed7c4;
+    --group6Circle: #8CE8C3;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input{
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+    width: 0px;
+    background: transparent;
+}
+
+::-webkit-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+}
+input[type="number"] {
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

@@ -1,0 +1,11 @@
+.gridSearch {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+@media (min-width: 1281px) {
+    .gridSearch {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

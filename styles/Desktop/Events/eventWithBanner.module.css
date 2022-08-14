@@ -1,0 +1,64 @@
+.sizeBannerEWB {
+    height: var(--heightBannerEWBDesk);
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.propertiesLogoEWB {
+    height: var(--sizeLogoEWB);
+    width: var(--sizeLogoEWB);
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: var(--boxShadowCard);
+    left: calc(50% - (var(--sizeLogoEWB) / 2));
+    top: calc(100% - (var(--sizeLogoEWB) / 2));
+}
+
+.styleArrowEWBProducts {
+    height: var(--sizeArrowEWBProduct);
+    width: var(--sizeArrowEWBProduct);
+}
+
+.sizeProductEWB {
+    width: var(--sizeProductEWBDesk);
+    height: var(--sizeProductEWBDesk);
+    object-fit: cover;
+    object-position: center;
+}
+
+.gridCarrouselProductsEWB {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 16px;
+}
+
+.overflowCarrouselProductsEWB {
+    overflow: scroll;
+}
+
+.containerCarrouselEWB {
+    display: grid;
+    padding: 12px;
+    background: white;
+    position: relative;
+}
+
+.positionArrowEWBLeft {
+    position: absolute;
+    top: var(--arrowEWBPositionY);
+    left: var(--arrowEWBPositionX);
+
+}
+
+.positionArrowEWBRight {
+    position: absolute;
+    top: var(--arrowEWBPositionY);
+    right: var(--arrowEWBPositionX);
+}
+
+.widthContainer {
+    width: 100%;
+}

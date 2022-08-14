@@ -1,0 +1,73 @@
+.mainContainer {
+    --spaceY: 16px;
+    --spaceX: 0px;
+    --spaceXGlobal: 16px;
+    --spaceYMini: 12px;
+    padding: var(--spaceY) var(--spaceXGlobal);
+    position: relative;
+    height: var(--heightRightCard);
+
+}
+
+.gridFull {
+    height: calc(var(--heightRightCard) - 29px - (var(--spaceY) * 2));
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(4, max-content) 1fr;
+}
+
+.paddingTitle {
+    padding: 0px var(--spaceX) var(--spaceY) var(--spaceX);
+}
+
+.gridItems {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+}
+
+.totalConainer {
+    padding: var(--spaceY) var(--spaceX) 0px var(--spaceX);
+    border-top: 2px solid var(--separationLineColor);
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap:12px;
+    justify-content: right;
+}
+
+.gridCupons {
+    display: grid;
+    gap: 24px;
+}
+
+.paddingSection {
+    padding: 0px var(--spaceX);
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    position: absolute;
+    bottom: var(--spaceY);
+    left: 0;
+    width: 100%;
+    padding: 0px var(--spaceXGlobal);
+}
+
+.timerContainer {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 6px;
+    justify-content: left;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    padding: var(--spaceY) 0px;
+    color: #da1818;
+    font-weight: 400;
+    width: 100%;
+}
+
+

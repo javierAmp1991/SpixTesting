@@ -1,0 +1,14 @@
+.sizeImageComment{
+    --sizeImageComment: 42px;
+    width: var(--sizeImageComment);
+    height: var(--sizeImageComment);
+    border-radius: 50%;
+}
+.maxWidthCommentText{
+    max-width: 500px;
+}
+.gridImageComment{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px
+}

@@ -1,0 +1,11 @@
+.paddingTitle{
+ padding: 24px 0px;
+}
+
+.gridResult{
+    display: grid;
+    gap: 32px;
+}
+.paddingContainer{
+    padding: 0px 12px;
+}

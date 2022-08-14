@@ -1,0 +1,11 @@
+.sizeImageRoundedCarrousel {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+}
+
+.paddingGradient{
+    padding: 3px;
+}

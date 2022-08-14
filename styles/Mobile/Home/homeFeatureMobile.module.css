@@ -1,0 +1,20 @@
+.bannerFeatureProperties{
+    width: 100%;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    object-position: center;
+}
+.logoFeatureProperties{
+    --sizeLogoFeatureMobile: 56px;
+    height: var(--sizeLogoFeatureMobile) ;
+    width: var(--sizeLogoFeatureMobile) ;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+    position: absolute;
+    top: calc(100% - (var(--sizeLogoFeatureMobile)/2));
+    left: calc(50% - (var(--sizeLogoFeatureMobile)/2));
+}
+
+.sizeFeaturedDiv{
+    width: 300px;
+}

@@ -1,0 +1,54 @@
+.mainCont{
+    --sizeSerchBar: 40px;
+    position: relative;
+}
+
+.styleInput{
+    text-indent: var(--sizeSerchBar);
+    height: var(--sizeSerchBar);
+    width: 100%;
+    border-radius: 4px;
+}
+.spixLogoCont{
+    position: absolute;
+    height: var(--sizeSerchBar);
+    top: 0;
+    left: 10px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+.spixLogoPro{
+    height: 20px;
+    width: auto;
+}
+
+.styleButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--sizeSerchBar);
+    width: var(--sizeSerchBar);
+    border-radius: 2px;
+    background: #0ed7c4;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.StyleButtonSug{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: var(--sizeSerchBar);
+    width: var(--sizeSerchBar);
+    border-radius: 2px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.styleLupa{
+    width: auto;
+    height: 20px;
+}

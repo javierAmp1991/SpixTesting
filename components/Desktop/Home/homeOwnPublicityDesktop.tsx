@@ -1,0 +1,48 @@
+import style from "/styles/Desktop/Home/homeOwnPublicity.module.css"
+import utilities from "/styles/utilities.module.css";
+import {OwnPublicityData} from "../../../dataDemo/data";
+
+const ownPublicityInfo = OwnPublicityData.listOwnPublicity;
+
+export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
+    let cssStyles = getCssStyles()
+    return (
+        <div className={style.PrincipalGrid}>
+            {
+                listItem.map((info, index) =>
+                    <div key={index}
+                        className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
+                        <div className="grid content-center">
+                            <img loading="lazy" className={style.heightImageOwnPublicity} src={info.LinkImage}
+                                 alt=""/>
+                        </div>
+                        <div className={`${style.containerInfoProperties}`}>
+                            <div className={cssStyles.fontTitle}>
+                                {info.Title}
+                            </div>
+                            <div className={`${cssStyles.fontPrimaryText} ${style.fontMainText}`}>
+                                <div className="mb-1">{info.FirstText}</div>
+                                <div>{info.SecondText}</div>
+                            </div>
+                            <div>
+                                <div className={cssStyles.buttonSeeMore}>
+                                    Ver mas
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+        </div>
+    )
+
+    function getCssStyles(){
+        return {
+            borderCard: darkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
+            bgInfo: darkMode? utilities.bgDarkModeInfo: utilities.bgNormalInfo,
+            fontTitle: darkMode? utilities.fontTitleDarkMode : utilities.fontTitle,
+            fontPrimaryText: darkMode? utilities.fontPrimaryTextDarkMode: utilities.fontPrimaryText,
+            buttonSeeMore: darkMode? style.buttonSeeMoreDarkMode: style.buttonSeeMore
+        }
+    }
+}

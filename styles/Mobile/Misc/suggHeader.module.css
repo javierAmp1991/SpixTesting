@@ -1,0 +1,31 @@
+.mainCont{
+    box-shadow: 0px 4px 12px rgba(0,0,0, .1);
+    border-radius: 8px;
+
+}
+.returnButton{
+    height: 16px;
+    width: auto;
+}
+
+.gridReturnSearchBar{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 2px solid var(--separationLineColor);
+    padding: 8px;
+    background: rgb(7, 99, 185);
+    background: linear-gradient(180deg, rgba(7, 99, 185, 1) 0%, rgba(6, 91, 172, 1) 100%);
+}
+
+.gridSugText{
+    display: grid;
+    gap: 8px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding: 12px 16px;
+}
+
+.seeAllResult{
+    padding: 16px 12px;
+}

@@ -1,0 +1,44 @@
+.sizeBannerEWB {
+    height: 128px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.propertiesLogoEWB {
+    --sizeLogo: 56px;
+    height: var(--sizeLogo);
+    width: var(--sizeLogo);
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: var(--boxShadowCard);
+    left: calc(50% - (var(--sizeLogo) / 2));
+    top: calc(100% - (var(--sizeLogo) / 2));
+}
+
+.sizeProductEWB {
+    --sizeProduct: 64px;
+    width: var(--sizeProduct);
+    height: var(--sizeProduct);
+    object-fit: cover;
+    object-position: center;
+}
+
+.gridCarrouselProductsEWB {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 16px;
+}
+
+.overflowCarrouselProductsEWB {
+    overflow: scroll;
+}
+
+.containerCarrouselEWB {
+    display: grid;
+    padding: 12px;
+    background: white;
+    position: relative;
+}

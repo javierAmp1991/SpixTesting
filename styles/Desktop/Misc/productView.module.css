@@ -1,0 +1,35 @@
+.containerProductProp {
+    position: relative;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background: white;
+    object-fit: cover;
+}
+
+.gridPriceWithDiscount {
+    display: grid;
+    align-content: center;
+}
+
+.gridInfoProduct {
+    display: grid;
+    gap: 4px;
+    padding: 8px 16px 0px 8px;
+}
+
+.aspectRatio {
+    position: relative;
+    aspect-ratio: 1/1;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.image {
+    object-fit: cover;
+}

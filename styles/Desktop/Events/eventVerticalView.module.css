@@ -1,0 +1,18 @@
+.principalGridVertical {
+    display: grid;
+}
+
+.displayIn {
+    height: 0px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.displayOut {
+    height: 24px;
+    transition: .2s;
+}
+
+.sizeImage{
+    aspect-ratio: 3/4;
+}

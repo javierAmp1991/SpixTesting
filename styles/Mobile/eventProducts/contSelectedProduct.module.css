@@ -1,0 +1,252 @@
+.contVar {
+    position: absolute;
+    width: 100%;
+    height: 81px;
+    overflow: hidden;
+    top: calc(100% - 121px);
+    background: white;
+    --spaceYContSelPro: 20px;
+    --sizeLeftArrow: 20px;
+    --borderRadious: 10px;
+    transition: 1s;
+    border-radius: 16px 16px 0px 0px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, .2);
+    z-index: 5000;
+
+}
+
+.contVarNormal {
+    position: absolute;
+    width: 100%;
+    top: 88px;
+    background: white;
+    --spaceYContSelPro: 20px;
+    --sizeLeftArrow: 20px;
+    --borderRadious: 10px;
+    transition: 1s;
+    height: 100%;
+    z-index: 5000;
+}
+
+.sizeArrowExit {
+    height: var(--sizeLeftArrow);
+    width: var(--sizeLeftArrow);
+}
+
+.totalButtonContainer {
+    border-bottom: 1px solid var(--separationLineColor);
+    border-radius: 16px 16px 0px 0px;
+    padding-bottom: 40px;
+    background: white;
+}
+
+.totalButtonContainerOpen{
+    position: fixed;
+    bottom: 0px;
+    z-index: 5000;
+    width: 100%;
+    box-shadow: 0px -1px 10px rgba(0, 0, 0, .2);
+    padding-bottom: 40px;
+    transition: .4s;
+    background: white;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.totalConainer {
+    text-align: left;
+}
+
+.contTitle {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+    padding: var(--spaceYContSelPro) var(--spaceXMainContainerMobile);
+}
+
+.sizeExitArrow {
+    height: 14px;
+    width: auto;
+}
+
+.gridSelectedProduct {
+    display: grid;
+    gap: 40px;
+    padding: 0px var(--spaceXMainContainerMobile) 150px var(--spaceXMainContainerMobile);
+}
+
+.styleGridVar {
+    padding-right: var(--spaceXContResPro);
+    position: relative;
+}
+
+.GridButtons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    gap: 16px;
+    padding: 0px 16px 16px 16px;
+}
+
+.buttonStyle{
+    padding: 6px 48px;
+    background: var(--yellowButtonColor);
+    color: var(--colorTitlesMobile);
+    border-radius: 4px;
+}
+
+.sizeBuyCAr {
+    height: 20px;
+    width: auto;
+}
+
+.numItemSelected {
+    --fontSize: 16px;
+    position: absolute;
+    color: var(--colorPrimaryText);
+    top: -6px;
+    left: 11px;
+    font-size: var(--fontSize);
+    line-height: var(--fontSize);
+}
+
+.gridCarTitleClose{
+    padding: 24px 16px;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 12px;
+    align-items: center;
+    background: var(--gradientBuy);
+
+}
+
+.gridCarTitle {
+    /*padding: 24px 16px;
+    display: grid;
+    grid-template-columns: max-content 1fr;*/
+    border-radius:16px 16px 0px 0px ;
+    padding: 24px 16px;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 12px;
+    align-items: center;
+    background: var(--gradientBuy);
+}
+
+.addIconStyle {
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+}
+
+.gridTabs {
+    border-radius: 8px 8px 0px 0px;
+    background: rgba(0, 0, 0, .05);
+    display: grid;
+    align-items: center;
+    gap: 4px;
+    padding: 0px 2px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.gridTabsNoCar {
+    border-radius: 8px 8px 0px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: rgba(0, 0, 0, .05);
+    align-items: center;
+    gap: 4px;
+}
+
+.TabIcon {
+    margin-top: 1px;
+    padding: 10px;
+    color: var(--colorPrimaryText);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    background: #eaeaea;
+    position: relative;
+}
+
+.TabIcon::after{
+    content: " ";
+    width: 1px;
+    height: 20px;
+    right: 0;
+    background: #bebebe;
+    position: absolute;
+}
+
+.TabIconSelected {
+    padding: 10px;
+    border-radius: 8px 8px 0px 0px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-left: 1px solid rgba(0, 0, 0, .1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    background: white;
+    color: var(--colorPrimaryText);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+}
+
+.nameElipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.containerClients {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    overflow: scroll;
+    align-items: center;
+    border-radius: 8px 8px 0px 0px;
+    position: relative;
+    transition: .4s;
+}
+
+.mainContPop {
+    padding: 32px 24px;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    gap: 12px;
+    height: 100%;
+}
+
+.contTitleClose {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--separationLineColor);
+}
+
+.sizeCloseimg {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    display: inline;
+    background: gray;
+}
+
+.styleInput {
+    border: 2px solid var(--separationLineColor);
+    width: 100%;
+    padding: 12px;
+}
+
+.gridInfoInput {
+    display: grid;
+    grid-template-rows: max-content max-content;
+    gap: 8px;
+}
+
+.gridInputs {
+    grid-template-rows: max-content max-content;
+    display: grid;
+    gap: 16px;
+    padding: 12px 0px;
+    overflow: scroll;
+}

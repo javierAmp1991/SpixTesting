@@ -1,0 +1,44 @@
+.navBarMenuContainer {
+    --paddingYNavBarMenu: 10px;
+    --paddingXNavBarMenu: 32px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    z-index: 1000000;
+    box-shadow: 0px -1px 6px rgba(0,0,0,.1);
+}
+
+.heightIcon {
+    height: 20px;
+    width: auto;
+}
+
+.gridNavBarMenuNoDarkMode {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    padding: var(--paddingYNavBarMenu) var(--paddingXNavBarMenu);
+    justify-content: space-between;
+}
+
+.gridNavBarMenu {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    padding: var(--paddingYNavBarMenu) var(--paddingXNavBarMenu);
+    justify-content: space-between;
+}
+
+.numberCarProperties {
+    position: absolute;
+    font-size: 16px;
+    font-weight: 600;
+    top: -8px;
+    left: 11.5px;
+}
+
+.colorNumberCar {
+    color: #0f1111;
+}
+
+.colorNumberCarDarkMode {
+    color: white;
+}

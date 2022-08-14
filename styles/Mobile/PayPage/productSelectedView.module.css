@@ -1,0 +1,20 @@
+.grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+}
+
+.sizeImage {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.containerProduct{
+    border-radius: 8px;
+}
+
+.contInfo{
+    --padding: 8px;
+    padding: var(--padding) var(--padding) var(--padding) 0px;
+}

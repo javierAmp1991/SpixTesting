@@ -1,0 +1,15 @@
+.styleImage {
+    --sizeImage: 240px;
+    width: var(--sizeImage);
+    height: calc(var(--sizeImage)* 1.5);
+    margin: auto;
+}
+.styleLogo{
+    --sizeLogoOI: 48px;
+    position: absolute;
+    height: var(--sizeLogoOI);
+    width: var(--sizeLogoOI);
+    border-radius: 50%;
+    bottom: 0px;
+    right: 0px;
+}

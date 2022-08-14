@@ -1,0 +1,11 @@
+.tagsProperties{
+    color: white;
+    font-size: 11px;
+    line-height: 11px;
+    padding: 1px 4px;
+    border-radius: 2px;
+    width: max-content;
+    height: max-content;
+    background: rgb(248,29,46);
+    background: linear-gradient(90deg, rgba(248,29,46,1) 0%, rgba(241,27,43,1) 50%, rgba(248,29,46,1) 100%);
+}

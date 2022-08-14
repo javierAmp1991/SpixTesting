@@ -1,0 +1,6 @@
+.sizeImageCarrrouselBanners {
+    width: 250px;
+    height: 112px;
+    object-fit: cover;
+    object-position: top;
+}

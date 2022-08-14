@@ -1,0 +1,19 @@
+.bgMenuMobile {
+    background: rgb(8,95,178);
+    background: linear-gradient(180deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);
+}
+.bgMenuDarkMode{
+    background: rgb(34,37,40);
+    background: linear-gradient(90deg, rgba(34,37,40,1) 0%, rgba(35,47,62,1) 100%);
+}
+.gridTagsMenu {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 12px;
+    overflow: scroll;
+}
+.styleTagsMenu{
+    color: white;
+}

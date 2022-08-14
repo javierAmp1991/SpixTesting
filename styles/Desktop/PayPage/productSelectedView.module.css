@@ -1,0 +1,22 @@
+.grid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    border-radius: 6px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,.1) , 3px 3px 10px rgba(0,0,0,.1);
+}
+
+.sizeImage {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.containerProduct{
+    border-radius: 8px;
+}
+
+.contInfo{
+    --padding: 8px;
+    padding: var(--padding) var(--padding) var(--padding) 0px;
+}

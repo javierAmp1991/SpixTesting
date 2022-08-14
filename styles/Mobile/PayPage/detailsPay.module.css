@@ -1,0 +1,137 @@
+.mainContainer {
+    --spaceY: 16px;
+    --spaceX: 0px;
+    --spaceXGlobal: 16px;
+    --spaceYMini: 12px;
+    padding: var(--spaceY) var(--spaceXGlobal);
+    position: relative;
+    display: grid;
+    width: 100%;
+}
+
+.gridTitleCar {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 2px;
+    padding-bottom: 24px;
+}
+
+.sizeBuyCar {
+    height: 20px;
+    width: auto;
+}
+
+.positionNumberCar {
+    position: absolute;
+    top: -6px;
+    left: 11.5px;
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    padding: 0px var(--spaceX) var(--spaceY) var(--spaceX);
+}
+
+.gridItems {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+}
+
+.totalConainer {
+    padding: 24px var(--spaceX) 0px var(--spaceX);
+    border-top: 2px solid var(--separationLineColor);
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+    justify-content: right;
+}
+
+.gridCupons {
+    display: grid;
+    gap: 24px;
+}
+
+.applyContainer {
+    display: grid;
+    border: 2px solid var(--separationLineColor);
+    align-content: center;
+    border-radius: 4px;
+    padding: 0px var(--spaceXGlobal);
+}
+
+.borderCupon {
+    box-shadow: var(--boxShadowCard);
+    padding: 6px;
+}
+
+.containerCupon {
+    border: 2px solid var(--separationLineColor);
+    padding: var(--spaceYMini) var(--spaceXGlobal);
+    border-radius: 8px;
+}
+
+.containerCuponIn {
+    height: 22px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.containerCuponOut {
+    height: 70px;
+    transition: .2s;
+}
+
+.rotateArrow {
+    transform: rotate(180deg);
+    transition: .4s;
+}
+
+.normalArrow {
+    transition: .4s;
+}
+
+.sizeArrow {
+    height: 6px;
+    width: auto;
+}
+
+.gridInCupon {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0px 0px var(--spaceYMini) 0px;
+}
+
+.paddingSection {
+    padding: 0px var(--spaceX);
+}
+
+.maxWidthButton{
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+}
+
+.buttonContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    bottom: var(--spaceY);
+    gap:24px;
+}
+
+.timerContainer {
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+    gap:6px;
+    justify-content: left;
+    align-items: center;
+    justify-items: left;
+    padding: 24px 0px;
+    color: #da1818;
+}
+
+

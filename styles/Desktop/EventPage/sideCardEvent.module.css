@@ -1,0 +1,36 @@
+.cardStyle{
+    --spaceCard: 40px;
+    box-shadow: var(--boxShadowCard);
+    padding: 0px 12px;
+    border-radius: 8px;
+    margin-top: var(--spaceCard);
+    margin-bottom: var(--spaceCard);
+    position: sticky;
+    top: var(--spaceCard);
+}
+
+.coverImageProperties{
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
+}
+
+.selectDateContainer{
+    padding: 16px 0px;
+    display: grid;
+    gap: 12px;
+}
+
+.gridIconText{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px;
+    align-items: center;
+    justify-items: left;
+}
+
+.sizeIcon{
+    height: 12px;
+    width: auto;
+}

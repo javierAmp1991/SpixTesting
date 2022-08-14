@@ -1,0 +1,32 @@
+.containerSelectedItem {
+    position: relative;
+    transition: .4s;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadowUnderProducts);
+}
+
+.containerSelectedItemClicked {
+    position: relative;
+    box-shadow: var(--boxShadowBlue);
+    transition: .4s;
+    transform: scale(1.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sizeChecked {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
+@media (min-width: 1500px) {
+
+    .containerSelectedItem:hover {
+        transform: scale(1.02);
+        transition: .4s;
+    }
+}

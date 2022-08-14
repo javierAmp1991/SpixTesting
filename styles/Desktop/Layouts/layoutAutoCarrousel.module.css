@@ -1,0 +1,6 @@
+.gridCarrouselAuto {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+}

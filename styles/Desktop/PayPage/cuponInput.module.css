@@ -1,0 +1,60 @@
+.containerCupon {
+    border: 2px solid var(--separationLineColor);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.containerCuponIn {
+    height: 22px;
+    overflow: hidden;
+    transition: .4s;
+    width: 100%;
+}
+
+.containerCuponOut {
+    height: 70px;
+    transition: .2s;
+    width: 100%;
+}
+
+.gridCupon {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 6px;
+}
+
+.gridTitleCupon {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+}
+
+.inputCupon{
+    border: 2px solid var(--separationLineColor);
+    padding: 6px 0px 6px 6px;
+    border-radius: 4px;
+}
+
+.applyContainer {
+    display: grid;
+    border: 2px solid var(--separationLineColor);
+    align-content: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.rotateArrow {
+    transform: rotate(180deg);
+    transition: .4s;
+}
+
+.normalArrow {
+    transition: .4s;
+}
+
+.sizeArrow {
+    height: 6px;
+    width: auto;
+}

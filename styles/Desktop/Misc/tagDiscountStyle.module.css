@@ -1,0 +1,10 @@
+.tagsProperties {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    background: var(--colorTagDiscount);
+    width: max-content;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 2px;
+}

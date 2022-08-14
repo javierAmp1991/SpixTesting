@@ -1,0 +1,53 @@
+.PrincipalGrid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+.gridOwnPublicity {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    border-radius: 4px;
+}
+
+.paddingContainerOwnPublicity {
+    padding: 24px 0px;
+}
+
+.heightImageOwnPublicity {
+    --sizeImageOwnPublicityMobile: 130px;
+    height: var(--sizeImageOwnPublicityMobile);
+    width: var(--sizeImageOwnPublicityMobile);
+    object-position: center;
+    object-fit: cover;
+}
+
+.containerInfoProperties {
+    display: grid;
+    gap: 16px;
+    align-content: center;
+    padding: 0px 0px 0px 8px;
+}
+
+.fontMainText {
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.buttonSeeMore{
+    background: var(--buttonLinkColor);
+    width: max-content;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 1px;
+    font-weight: 400;
+}
+
+.buttonSeeMoreDarkMode{
+    background: var(--buttonlinkColorDarkMode);
+    width: max-content;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 1px;
+    font-weight: 400;
+}

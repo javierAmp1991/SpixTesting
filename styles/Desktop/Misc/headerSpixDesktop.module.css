@@ -1,0 +1,66 @@
+.gridHeader {
+    display: grid;
+    grid-template-columns: repeat(2, max-content) 1fr repeat(2, max-content);
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 24px;
+    padding: 10px 24px;
+}
+
+.bgHeaderSpix {
+    background: rgb(7, 99, 185);
+    background: linear-gradient(180deg, rgba(7, 99, 185, 1) 0%, rgba(6, 91, 172, 1) 100%);
+}
+
+.bgHeaderSpixDarkMode {
+    background: rgb(19,21,23);
+    background: linear-gradient(90deg, rgba(19,21,23,1) 0%, rgba(34,37,40,1) 100%);
+}
+
+.positionNumberCar {
+    position: absolute;
+    top: 2px;
+    left: 18px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: var(--colorNumberBuyCarDesktop);
+}
+
+.colorTextHeader {
+    color: var(--colorTextHeaderDesktop);
+}
+
+.sizeIcons {
+    height: var(--sizeIconsHeaderDesktop);
+    width: auto;
+}
+
+.sizeAccountImage {
+    height: var(--sizeAccountImageHeaderDesktop);
+    width: var(--sizeAccountImageHeaderDesktop);
+    border-radius: 50%;
+}
+
+.containerAccountImage {
+    height: max-content;
+    width: max-content;
+    padding: 2px;
+    border-radius: 50%;
+    background: rgb(4,93,233);
+    background: linear-gradient(90deg, rgba(4,93,233,1) 0%, rgba(4,163,233,1) 19%, rgba(4,155,233,1) 39%, rgba(4,59,233,1) 61%, rgba(4,205,233,1) 80%, rgba(4,74,233,1) 100%);
+}
+
+.contSug{
+    top: 40px;
+    width: 100%;
+    z-index: 6000;
+    position: absolute;
+    background: white;
+    box-shadow: 0px 10px 12px rgba(0,0,0,.1);
+    border-radius: 0px 0px 8px 8px;
+}
+
+.seeAll{
+    padding: 16px 12px;
+}

@@ -1,0 +1,36 @@
+.borderNormal{
+    border: 1px solid #2d7dff;
+}
+.borderDarkMode{
+    border: 1px solid #15dae6;
+}
+
+.styleNavCircle{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--linkColor);
+}
+
+.styleNavCircleNoSelected{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.gridNavItems{
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 16px;
+    justify-content: center;
+    padding: 12px 0px;
+}
+.gridImageSection {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+}

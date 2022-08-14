@@ -1,0 +1,86 @@
+.paddingTitle {
+    padding: 16px 13px 16px 12px;
+}
+
+.gridTitleIn{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+}
+
+.paddingCleanFilters {
+    padding: 16px 18px 16px 8px;
+}
+
+.styleTags {
+    justify-content: space-between;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--gradientSpix);
+    color: white;
+}
+
+.styleTagsDarkMode {
+    justify-content: space-between;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background-color: #ee9617;
+    background-image: linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+    color: white;
+}
+
+.styleContainerSelected {
+    display: grid;
+    gap: 8px;
+    padding: 16px 8px;
+}
+
+.styleContainerSelectedMobile {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 8px;
+    overflow: scroll;
+    width: calc(100vw - 32px);
+}
+
+.styleContainerAtr {
+    display: grid;
+    gap: 8px;
+    padding: 0px 7px 16px 7px;
+}
+
+.borderBottom {
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.styleArrowClose {
+    height: 21px;
+    width: 21px;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+}
+
+.gridSelectedTags {
+    display: grid;
+    gap: 8px;
+    padding: 16px 12px;
+}
+
+.paddingTitleAtr {
+    padding: 12px;
+}
+
+.gridAtributes {
+    display: grid;
+    gap: 12px;
+    padding: 0px 16px 16px 16px;
+}
+
+.displayIn {
+}
+
+.displayOut {
+    display: none;
+}

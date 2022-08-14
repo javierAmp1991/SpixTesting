@@ -1,0 +1,6 @@
+.mainCont{
+    display: grid;
+    gap: 8px;
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--separationLineColor);
+}

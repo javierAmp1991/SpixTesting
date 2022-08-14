@@ -1,0 +1,33 @@
+.gridHomeInformationDesk {
+    display: grid;
+    grid-template-columns: 200px repeat(3, 1fr);
+    padding: 0px 16px;
+}
+
+.gridInternalMinHeader {
+    display: grid;
+    padding: 32px 0px;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+}
+
+.bgLineDown {
+    background: #e82e8a;
+}
+
+.paddingFirstInfo{
+    padding: 32px 0px;
+}
+
+.gridHomeInformationMob {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+    padding: 24px 0px;
+    max-width: 300px;
+    margin: auto;
+}
+
+.borderCardInformation{
+    box-shadow: var(--boxShadowCard);
+}

@@ -1,0 +1,38 @@
+.mainCont {
+    --margins: 24px;
+    padding: 16px;
+}
+
+.grid {
+    display: grid;
+    gap: 24px;
+}
+
+.marginBottom {
+}
+
+.returnContainer{
+    display: grid;
+    padding: 16px 0px;
+    width: 200px;
+    margin: auto;
+}
+
+.buyCarSize{
+    height: 20px;
+    width: auto;
+}
+
+.positionNumber{
+    position: absolute;
+    top: -6px;
+    left: 11.5px;
+    font-weight: 600;
+}
+
+.gridTitleCar{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    margin-bottom: var(--margins);
+}

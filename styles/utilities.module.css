@@ -1,0 +1,399 @@
+.bgBodyNormal {
+    background: var(--colorBodyNormal);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.bgBodyDarkMode {
+    background: var(--colorBodyDarkMode);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.maxWidthBodyContentSpix{
+    width: 100%;
+    max-width: var(--maxWidthBodyContent);
+    margin: auto;
+}
+
+.paddingMainContent{
+    padding: 0px 8px;
+}
+
+.opacity5 {
+    opacity: .5;
+}
+
+.opacity0{
+    opacity: 0;
+}
+
+.borderCards{
+    box-shadow: var(--boxShadowCard);
+    border-radius: var(--borderCardRadious);
+    overflow: hidden;
+}
+
+.borderCardsNoHover{
+    box-shadow: var(--boxShadowCard);
+    border-radius: var(--borderCardRadious);
+    overflow: hidden;
+}
+
+.borderCardsDarkMode{
+    border-radius: var(--borderCardRadious);
+    overflow: hidden;
+}
+
+.borderCardsNoHoverDarkMode{
+    border-radius: var(--borderCardRadious);
+    overflow: hidden;
+}
+
+.fontTitle {
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: 300;
+    color: var(--colorTitlesMobile);
+    font-family: Helvetica, sans-serif, Arial;
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontTitleDarkMode {
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: 300;
+    color: var(--darkModetextColor);
+    font-family: Helvetica, sans-serif, Arial;
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontSubTitle {
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: 400;
+    color: var(--colorSubTitles);
+    font-family: Helvetica, sans-serif, Arial;
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontSubTitleDarkMode {
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: 400;
+    color: var(--darkModetextColor);
+    font-family: Helvetica, sans-serif, Arial;
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontPriceInclude{
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--colorPriceInclude);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontPriceIncludeDarkMode{
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--darkModetextColor);
+    transition: var(--transitionTimeDarkMode);
+}
+.fontName{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--colorName);
+    transition: var(--transitionTimeDarkMode);
+}
+.fontNameDarkMode{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--darkModetextColor);
+    transition: var(--transitionTimeDarkMode);
+}
+.fontPrimaryText {
+    color: var(--colorPrimaryText);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontPrimaryTextDarkMode {
+    color: var(--darkModetextColor);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontSecundaryText {
+    color: var(--colorSecundaryText);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.fontSecundaryTextDarkMode {
+    color: var(--darkModetextColor);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.styleLink {
+    font-weight: 400;
+    color: var(--linkColor);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.styleLinkDarkMode {
+    font-weight: 400;
+    color: var(--linkColorDarkMode);
+    transition: var(--transitionTimeDarkMode);
+}
+
+.hypensText {
+    text-align: left;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.bgDarkModeInfo {
+    background: rgb(25, 26, 27);
+    background: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
+}
+
+.bgNormalInfo {
+    background: var(--bgNormalInfo);
+}
+
+.gridMaxContent2 {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.gridMaxContent3 {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+}
+
+.font12 {
+    font-size: 12px;
+}
+
+.styleSpixDiscountTag{
+    font-size: var(--fontSizeMini);
+    background: var(--colorTagDiscount);
+    padding: 1px 8px;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.styleSpixTag{
+    font-size: var(--fontSizeMini);
+    background: var(--tagColorNormal);
+    padding: 1px 8px;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.styleSpixTagDarkMode{
+    font-size: var(--fontSizeMini);
+    background: var(--tagColorDarkMode);
+    padding: 1px 8px;
+    color: white;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+.ratingStarsProperties{
+    height: 15px;
+    width: auto;
+}
+
+.bgFirstGradient{
+    background-color: #045de9;
+    background-image: linear-gradient(60deg, #045de9 0%, #048fe9 74%);
+    background: rgb(4,93,233);
+    background: linear-gradient(90deg, rgba(4,93,233,1) 0%, rgba(4,163,233,1) 19%, rgba(4,155,233,1) 39%, rgba(4,59,233,1) 61%, rgba(4,205,233,1) 80%, rgba(4,74,233,1) 100%);
+    background: rgb(131,164,212);
+    background: linear-gradient(90deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 50%, rgba(148,187,233,1) 100%);
+    border-radius: 50%;
+}
+
+.bgFirstGradientDarkMode{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+
+.bgSecondGradient {
+    background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
+    border-radius: 50%;
+}
+
+.bgSecondGradientDarkMode{
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(74,74,74,1) 100%);
+}
+
+.clamp5 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    overflow: hidden;
+}
+
+.clamp4 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
+}
+
+.clamp3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+.clamp2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.clamp1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
+}
+.positionLastTicket{
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+.borderRadious50{
+    border-radius: 50%;
+}
+
+.gridContentCenter{
+    display: grid;
+    align-content: center;
+    align-items: center;
+}
+
+.checkbox {
+    cursor: pointer;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.checkbox {
+    border-radius: 12px;
+}
+
+.checkbox:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #2d7dff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    position: absolute;
+}
+
+.checkbox:before {
+    border-radius: 0;
+    border: 4px solid #2d7dff;
+    border-left: 0;
+    border-top: 0;
+    width: 7px;
+    height: 12px;
+    transform: rotate(45deg);
+    top: 2px;
+}
+
+.checkbox:checked {
+    border: 2px solid #2d7dff;
+}
+
+.checkbox:checked:before {
+    opacity: 1;
+}
+
+.checkboxDarkMode {
+    cursor: pointer;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+.checkboxDarkMode {
+    border-radius: 12px;
+}
+
+.checkboxDarkMode:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: #ee9617;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    position: absolute;
+}
+
+.checkboxDarkMode:before {
+    border-radius: 0;
+    border: 4px solid #ee9617;
+    border-left: 0;
+    border-top: 0;
+    width: 7px;
+    height: 12px;
+    transform: rotate(45deg);
+    top: 2px;
+}
+
+.checkboxDarkMode:checked {
+    border: 2px solid #ee9617;
+}
+
+.checkboxDarkMode:checked:before {
+    opacity: 1;
+}
+
+@media(min-width: 1281px){
+    .borderCards:hover {
+        transform: scale(var(--scaleHover));
+        box-shadow: var(--boxShadowHover);
+        transition: var(--transitionHover);
+    }
+    .borderCardsDarkMode:hover{
+        transform: scale(var(--scaleHover));
+        box-shadow: var(--boxShadowHoverDarkMode);
+        transition: var(--transitionHover);
+    }
+}
+
+
+
+

@@ -1,0 +1,10 @@
+.blueButtonProperties{
+    color: white;
+    background: var(--gradientBlueButton);
+    padding: 4px 12px;
+    text-align: center;
+    border-radius: 4px;
+    width: max-content;
+    max-width: 250px;
+    margin: auto;
+}

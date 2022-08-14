@@ -1,0 +1,322 @@
+.gridSocialBar{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 16px;
+}
+
+.sizeIcon{
+    height: 20px;
+    width: auto;
+}
+
+.gridIcon{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+    align-content: center;
+    align-items: center;
+}
+
+.animatedCircle {
+    width: 8px;
+    height: 8px;
+    top: calc(50% - 4px);
+    left: calc(50% - 4px);
+    border-radius: 4px;
+    position: absolute;
+    background: red;
+    opacity: 0;
+    animation: animatedCircle .5s linear;
+}
+
+.mainContainerCircle {
+    opacity: 0;
+}
+
+.mainContainerCircleBefore {
+    opacity: 1;
+    transition: .1s .3s;
+}
+
+.circleClass {
+    width: var(--widthCircleAnimationHeart);
+    height: var(--widthCircleAnimationHeart);
+    border-radius: 1px;
+}
+
+.circleClass1 {
+    background: var(--group1Circle);
+    top: var(--initialPositionCircle);
+    left: calc(50% - 6px);
+    z-index: 500;
+    transition: var(--transitionCircleLow);
+}
+
+.circleClass1Before {
+    background: var(--group1Circle);
+    top: var(--finalPositionCircle);
+    left: calc(50% - 6px);
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass2 {
+    background: var(--group1Circle);
+    top: var(--initialPositionCircle);
+    left: calc(50% + 2px);
+}
+
+.circleClass2Before {
+    background: var(--group1Circle);
+    top: var(--finalPositionCircle);
+    left: calc(50% + 2px);
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass3 {
+    background: var(--group2Circle);
+    bottom: var(--initialPositionCircle);
+    left: calc(50% + 2px);
+}
+
+.circleClass3Before {
+    background: var(--group2Circle);
+    bottom: var(--finalPositionCircle);
+    left: calc(50% + 2px);
+    transition: var(--transitionCirclefast);
+    opacity: 0;
+}
+
+.circleClass4 {
+    background: var(--group2Circle);
+    bottom: var(--initialPositionCircle);
+    left: calc(50% - 6px);
+}
+
+.circleClass4Before {
+    background: var(--group2Circle);
+    bottom: var(--finalPositionCircle);
+    left: calc(50% - 6px);
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass5 {
+    background: var(--group3Circle);
+    left: var(--initialPositionCircle);
+    bottom: calc(50% + 2px);
+}
+
+.circleClass5Before {
+    background: var(--group3Circle);
+    left: var(--finalPositionCircle);
+    bottom: calc(50% + 2px);
+    transition: var(--transitionCirclefast);
+    opacity: 0;
+}
+
+.circleClass6 {
+    background: var(--group3Circle);
+    left: var(--initialPositionCircle);
+    bottom: calc(50% - 6px);
+}
+
+.circleClass6Before {
+    background: var(--group3Circle);
+    left: var(--finalPositionCircle);
+    bottom: calc(50% - 6px);
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass7 {
+    background: var(--group4Circle);
+    right: var(--initialPositionCircle);
+    bottom: calc(50% + 2px);
+}
+
+.circleClass7Before {
+    background: var(--group4Circle);
+    right: var(--finalPositionCircle);
+    bottom: calc(50% + 2px);
+    transition: var(--transitionCirclefast);
+    opacity: 0;
+}
+
+.circleClass8 {
+    background: var(--group4Circle);
+    right: var(--initialPositionCircle);
+    bottom: calc(50% - 6px);
+}
+
+.circleClass8Before {
+    background: var(--group4Circle);
+    right: var(--finalPositionCircle);
+    bottom: calc(50% - 6px);
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass9 {
+    background: var(--group5Circle);
+    right: 100%;
+    bottom: 100%;
+}
+
+.circleClass9Before {
+    background: var(--group5Circle);
+    right: 150%;
+    bottom: 150%;
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass10 {
+    background: var(--group5Circle);
+    left: 100%;
+    bottom: 100%;
+}
+
+.circleClass10Before {
+    background: var(--group5Circle);
+    left: 150%;
+    bottom: 150%;
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass11 {
+    background: var(--group6Circle);
+    left: 100%;
+    top: 100%;
+}
+
+.circleClass11Before {
+    background: var(--group6Circle);
+    left: 150%;
+    top: 150%;
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.circleClass12 {
+    background: var(--group6Circle);
+    right: 100%;
+    top: 100%;
+}
+
+.circleClass12Before {
+    background: var(--group6Circle);
+    right: 150%;
+    top: 150%;
+    transition: var(--transitionCircleLow);
+    opacity: 0;
+}
+
+.animationBell {
+    transform-origin: top center;
+    animation: moveBell .3s 4 linear .1s;
+    /*animation: moveBell;
+    animation-duration: .3s;
+    animation-iteration-count: 4;
+    animation-timing-function: linear;
+    animation-delay: 3s;*/
+}
+
+.animationLike {
+    animation: scaleLike .3s 1 linear;
+}
+
+.animationDislike {
+    animation: scaleDislike .2s 1 linear;
+}
+
+@keyframes moveBell {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(10deg);
+    }
+
+    20% {
+        transform: rotate(20deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    70% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(-20deg);
+    }
+
+    90% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes scaleLike {
+    0% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(2);
+    }
+
+    75% {
+        transform: scale(.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleDislike {
+    0% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes animatedCircle {
+    0% {
+        transform: scale(.5);
+    }
+
+    80% {
+        transform: scale(4);
+        opacity: .2;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

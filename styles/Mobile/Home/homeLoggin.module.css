@@ -1,0 +1,8 @@
+.gridLog {
+    display: grid;
+    padding: 32px 0px;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+    max-width: 300px;
+    margin:auto;
+}

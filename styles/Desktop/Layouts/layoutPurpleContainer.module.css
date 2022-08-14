@@ -1,0 +1,6 @@
+.borderCardInformation{
+    box-shadow: var(--boxShadowCard);
+}
+.bgLineDown {
+    background: #e82e8a;
+}

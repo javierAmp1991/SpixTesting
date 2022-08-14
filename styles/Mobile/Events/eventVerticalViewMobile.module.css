@@ -1,0 +1,20 @@
+.principalGridVertical {
+    display: grid;
+}
+.sizeImage{
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+.displayIn {
+    height: 0px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.displayOut {
+    height: 24px;
+    transition: .2s;
+}
+.widthDropDownVertical{
+    width: 180px;
+}

@@ -1,0 +1,21 @@
+.sizeReviewImage{
+    --sizeReviewImage: 42px;
+    height: var(--sizeReviewImage);
+    width: var(--sizeReviewImage);
+    border-radius: 50%;
+}
+.maxWidthtextReview{
+    max-width: 500px;
+}
+
+.sizeCheckIcon{
+    --sizeCheckIcon: 12px;
+    height: var(--sizeCheckIcon);
+    width: var(--sizeCheckIcon);
+}
+
+.sizeReviewStar{
+    --sizeReviewStar: 16px;
+    height: var(--sizeReviewStar);
+    width: auto;
+}

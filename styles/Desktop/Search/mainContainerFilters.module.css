@@ -1,0 +1,10 @@
+.mainContainerProperties{
+    height: 100%;
+    border-left: 1px solid var(--separationLineColor);
+    border-right: 1px solid var(--separationLineColor);
+}
+
+.mainContainerPropertiesDarkMode{
+    width: 100%;
+}
+

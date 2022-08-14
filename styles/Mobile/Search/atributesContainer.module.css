@@ -1,0 +1,54 @@
+.displayIn {
+    height: 45px;
+    overflow: hidden;
+}
+
+.displayOut {
+    height: 100%;
+}
+
+.styleTagsCategoriesNoSelected {
+    padding: 0px 8px;
+    border-radius: 12px;
+    background: rgb(218, 218, 218);
+    background: linear-gradient(90deg, rgba(218, 218, 218, 1) 0%, rgba(224, 224, 224, 1) 100%);
+    color: white;
+}
+
+.styleTagsCategories {
+    padding: 0px 8px;
+    border-radius: 12px;
+    background: linear-gradient(0deg, rgba(250, 32, 140, 1) 0%, rgba(224, 40, 132, 1) 100%);
+    background: rgb(250, 32, 140);
+    color: white;
+
+}
+
+.paddingTitle {
+    padding: 12px 0px;
+}
+
+.borderBottom {
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.borderBottomDarkMode {
+    border-bottom: 1px solid var(--separationLineColorDarkMode);
+}
+
+.gridA {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 0px 32px 16px 32px;
+}
+
+.paddingTitleContainer {
+    padding: 0px 32px 0px 16px;
+}
+
+.gridTagAtri {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+

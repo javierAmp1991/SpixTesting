@@ -1,0 +1,11 @@
+.dropDownGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+@media (min-width: 1281px) {
+    .dropDownGrid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

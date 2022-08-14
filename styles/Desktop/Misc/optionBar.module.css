@@ -1,0 +1,14 @@
+.sizeIcon{
+    height: 11px;
+    width: auto;
+}
+.gridOptionBar{
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    gap: 16px;
+}
+.fontOptionBar{
+    font-size: 12px;
+    line-height: 12px;
+    color: #8e8e8e;
+}

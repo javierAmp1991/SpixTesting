@@ -1,0 +1,8 @@
+.sizeImageBanner {
+    height: 340px;
+    width: 100vw;
+    max-width: var(--maxWidthBanner);
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+}
