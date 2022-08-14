@@ -344,7 +344,7 @@ export default function EventPage() {
             <div>
                 <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
-                <Image className={styleMobile.bannerProperties} src={bannerPath} alt=""/>
+                <Image style={{width:500, height:300}} className={styleMobile.bannerProperties} src={bannerPath} alt=""/>
                 <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
                     <DefaultPageMobile listItem={defaultList}/>
                     <FooterMobile/>
