@@ -7,7 +7,7 @@ export default function NewView({homeNew, darkModeState}){
     let cssStyles = getCssStyles()
     return(
         <div className={`${style.widthContainerNew} ${cssStyles.borderCard}`}>
-            <Image className={style.heightImageNews} src={homeNew.PathImage} alt=""/>
+            <Image layout={"intrinsic"} className={style.heightImageNews} src={homeNew.PathImage} alt=""/>
                 <div className={`${cssStyles.bgInfo} grid content-start gap-1 p-3`}>
                     <h3 className={`${cssStyles.fontSubTitle} ${utilities.clamp2}`}>
                         {homeNew.Title}
