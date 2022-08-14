@@ -1,6 +1,7 @@
 .sizeIcon{
     height: 11px;
     width: auto;
+    position: relative;
 }
 .gridOptionBar{
     display: grid;

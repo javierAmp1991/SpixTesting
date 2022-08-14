@@ -8,14 +8,16 @@ export default function OptionBar() {
         <div className={`${style.gridOptionBar} ${style.fontOptionBar}`}>
             <div>2d</div>
             <button className={`${utilities.gridMaxContent2} gap-1`}>
-                <div>
-                    <Image className={style.sizeIcon} src={GlobalConst.sourceImages.noactivateLikeIcon} alt=""/>
+                <div className={style.sizeIcon}>
+                    <Image layout={"fill"}  src={GlobalConst.sourceImages.noactivateLikeIcon} alt=""/>
                 </div>
                 <div>29</div>
             </button>
             <a className={`${utilities.gridMaxContent2} gap-1`}>
                 <div className={utilities.gridContentCenter}>
-                    <Image className={style.sizeIcon} src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>
+                    <div className={style.sizeIcon}>
+                    <Image layout={"fill"}  src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>
+                    </div>
                 </div>
                 <div>58</div>
             </a>

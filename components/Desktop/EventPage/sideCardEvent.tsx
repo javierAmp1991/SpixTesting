@@ -55,7 +55,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             <div className={style.paddingMainConatiner}>
                 <div className={style.gridMainContainer}>
                     <div className={`${style.gridImageTitle} mb-1`}>
-                        <Image className={`${style.sizeLogo}`} src={eventInformation.LogoPath} alt=""/>
+                        <div className={`${style.sizeLogo}`}>
+                            <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                        </div>
                         <div>
                             <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
@@ -65,8 +67,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 {
                                     eventInformation.Rating != null ?
                                         <>
-                                            <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                                 src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                            <div className={utilities.ratingStarsProperties}>
+                                                <Image layout={"fill"} objectFit={"cover"}
+                                                       src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                            </div>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                                 ({eventInformation.Rating})
@@ -74,8 +78,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         </>
                                         :
                                         <>
-                                            <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                                 src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                            <div className={utilities.ratingStarsProperties}>
+                                                <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull}
+                                                       alt=""/>
+                                            </div>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                                 (0)
@@ -94,8 +100,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                         </div>
                         {
                             eventInformation.ListRestriction.map((item, index) =>
-                                <a key={index}>
-                                    <Image src={item} alt="" className={style.sizeRestrictionIcon}/>
+                                <a className={style.sizeRestrictionIcon} key={index}>
+                                    <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                 </a>
                             )
                         }
@@ -108,8 +114,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
 
                 <div className={styleCard.selectDateContainer}>
                     <button className={styleCard.gridIconText}>
-                        <div>
-                            <Image className={styleCard.sizeIcon} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
+                        <div className={styleCard.sizeIcon}>
+                            <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.calendarIcon}
+                                   alt=""/>
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Proxima fecha: </span>
@@ -119,8 +126,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                         </div>
                     </button>
                     <button className={styleCard.gridIconText}>
-                        <div>
-                            <Image className={styleCard.sizeIcon} src={GlobalConst.sourceImages.googleMap} alt=""/>
+                        <div className={styleCard.sizeIcon}>
+                            <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.googleMap} alt=""/>
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Direccion: </span>
@@ -131,8 +138,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     </button>
                 </div>
 
-                <div onClick={handleOpen}>
-                    <Image className={styleCard.coverImageProperties} src={eventInformation.CoverImage} alt=""/>
+                <div onClick={handleOpen}
+                     className={styleCard.coverImageProperties}>
+                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
                 </div>
 
 
@@ -146,7 +154,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     <PopUpContainer closePopUp={handleClose} isBackground={false}>
                         {
                             <div className={style.ContainerCoverImage}>
-                                <Image className={style.sizeImage} src={eventInformation.CoverImage} alt=""/>
+                                <div className={style.sizeImage}>
+                                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
+                                </div>
                             </div>
                         }
                     </PopUpContainer> : <></>
@@ -198,7 +208,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                     </div>
                                 </div>
                                 <div className={style.contMap}>
-                                    <Image className={style.imgMap} src="/images/googleMapHuevo.jpg" alt=""/>
+                                    <div className={style.imgMap}>
+                                    <Image layout={"fill"} src="/images/googleMapHuevo.jpg" alt=""/>
+                                    </div>
                                 </div>
                                 <div>
                                     <div className={utilities.fontPrimaryText}>

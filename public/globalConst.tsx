@@ -30,7 +30,7 @@ export namespace GlobalConst{
         calendarIcon: "/images/calendarIcon.png",
         calendarIconWhite: "/images/calendarIconWhite.png",
         checkIcon: "/images/check Icon.png",
-        reviewStars: "images/estrellasReview.png",
+        reviewStars: "/images/estrellasReview.png",
         totalCommentsIcon: "/images/totalComment.png",
         noactivateLikeIcon: "/images/noActivateLikeIcon.png",
         activateLikeIcon: "/images/activateLikeIcon.png",

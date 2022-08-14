@@ -14,7 +14,7 @@
 
 .sizeStarResume{
     height: 20px;
-    width: auto;
+    position: relative;
 }
 .styleBarReview{
     height: 12px;

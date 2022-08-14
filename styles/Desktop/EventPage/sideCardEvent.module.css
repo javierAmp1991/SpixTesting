@@ -14,6 +14,7 @@
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: center;
+    position: relative;
 }
 
 .selectDateContainer{
@@ -33,4 +34,5 @@
 .sizeIcon{
     height: 12px;
     width: auto;
+    position: relative;
 }

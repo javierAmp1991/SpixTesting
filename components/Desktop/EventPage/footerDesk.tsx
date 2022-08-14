@@ -7,8 +7,8 @@ export default function FooterDesk() {
             <div className={style.styleContainerText}>
                 Agradecimientos a nuestros auspiciadores
             </div>
-            <div>
-                <Image className={style.sizeBanner} src={GlobalConst.sourceImages.sponsor} alt=""/>
+            <div className={style.sizeBanner}>
+                <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.sponsor} alt=""/>
             </div>
         </div>
     )

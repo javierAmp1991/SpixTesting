@@ -13,7 +13,9 @@ export default function ReviewSectionDesk({children, resumeReview}) {
                         {resumeReview.rating} de 5
                     </div>
                     <div className={`${utilities.gridContentCenter} justify-start mb-2`}>
-                        <Image className={style.sizeStarResume} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                        <div className={style.sizeStarResume}>
+                        <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                        </div>
                     </div>
                     <div className={`${utilities.fontPrimaryText} text-left`}>
                         {resumeReview.totalReview} <span>Reseñas</span>

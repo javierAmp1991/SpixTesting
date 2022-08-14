@@ -30,20 +30,20 @@ export default function EventInformationDesk({
                         {
                             eventInformation.ListImages.map((item, index) =>
                                 index == 0 ?
-                                    <div onClick={handleVideo}
-                                         className={`${style.containerImageSelection} relative`}>
+                                    <div onClick={handleVideo} className={`${style.containerImageSelection}`}>
                                         <div className={style.sizeImageSelection}>
-                                            <Image layout={"fill"} src={item} alt=""/>
+                                            <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </div>
                                         <div className={style.playIconProperties}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon} alt=""/>
+                                            <Image layout={"fill"} objectFit={"cover"}
+                                                   src={GlobalConst.sourceImages.playIcon} alt=""/>
                                         </div>
                                     </div>
                                     :
                                     <div onClick={() => handleTargetImage(item)}
                                          className={`${style.containerImageSelection} relative`}>
                                         <div className={style.sizeImageSelection}>
-                                            <Image layout={"fill"} src={item} alt=""/>
+                                            <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </div>
                                     </div>
                             )
@@ -58,7 +58,7 @@ export default function EventInformationDesk({
                                 :
                                 <div className={style.containerShowProp}>
                                     <div className={style.imageShowProperties}>
-                                        <Image layout={"fill"} src={targetImage} alt=""/>
+                                        <Image layout={"fill"} objectFit={"cover"} src={targetImage} alt=""/>
                                     </div>
                                 </div>
                         }

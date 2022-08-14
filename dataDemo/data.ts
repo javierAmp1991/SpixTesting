@@ -803,7 +803,7 @@ export namespace EventPageEvent {
         Rating: 30,
         Tags: ["Rock", "Conciertos", "Festivales"],
         BannerPath: "/images/banner.png",
-        CoverImage: "images/coverImage.jpg",
+        CoverImage: "/images/coverImage.jpg",
         LogoPath: "/images/logo el Huevo.jpg",
         ListRestriction: ["/images/hoody.png", "/images/cap.png", "/images/semiformal.png"],
         ListProducts: [

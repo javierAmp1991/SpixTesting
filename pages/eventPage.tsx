@@ -372,12 +372,8 @@ export default function EventPage() {
                     <Image layout={"fill"} src={bannerPath} alt=""/>
                 </div>
                 <div className={`${utilities.maxWidthBodyContentSpix}`}>
-                    {/*<LayoutSideCard childrens={childrens}/>
-                    <FooterDesk/>*/}
-                    {eventInformationDesk}
-                    {moreOffertDesk}
-                    {productsDesk}
-                    {eventExtraDesk}
+                    <LayoutSideCard childrens={childrens}/>
+                    <FooterDesk/>
                 </div>
             </div>
     )
