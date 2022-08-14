@@ -7,9 +7,9 @@ import SocialBar from "../Misc/socialBar";
 import ButtonBlue from "../Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
 import React, {useState} from "react";
-import {inputRadioProp} from "../Misc/inputRadioDesk";
+import Image from "next/image";
 
-let inputRadio: inputRadioProp[] = [
+/*let inputRadio: inputRadioProp[] = [
     {
         NameLabel: new Date(2022, 7, 5),
         NameInput: "datePicker",
@@ -35,7 +35,7 @@ let inputRadio: inputRadioProp[] = [
         NameInput: "datePicker",
         Id: "12345abcde"
     }
-]
+]*/
 const textButton: string = "Ver entradas"
 
 export default function SideCardEvent({eventInformation}: { eventInformation: EventLookUp }) {
@@ -55,7 +55,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             <div className={style.paddingMainConatiner}>
                 <div className={style.gridMainContainer}>
                     <div className={`${style.gridImageTitle} mb-1`}>
-                        <img className={`${style.sizeLogo}`} src={eventInformation.LogoPath}/>
+                        <Image className={`${style.sizeLogo}`} src={eventInformation.LogoPath} alt=""/>
                         <div>
                             <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
@@ -65,8 +65,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 {
                                     eventInformation.Rating != null ?
                                         <>
-                                            <img loading="lazy" className={utilities.ratingStarsProperties}
-                                                 src={GlobalConst.sourceImages.ratingNew}/>
+                                            <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                                 src={GlobalConst.sourceImages.ratingNew} alt=""/>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                                 ({eventInformation.Rating})
@@ -74,8 +74,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         </>
                                         :
                                         <>
-                                            <img loading="lazy" className={utilities.ratingStarsProperties}
-                                                 src={GlobalConst.sourceImages.ratingNull}/>
+                                            <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                                 src={GlobalConst.sourceImages.ratingNull} alt=""/>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                                 (0)
@@ -95,7 +95,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                         {
                             eventInformation.ListRestriction.map((item, index) =>
                                 <a key={index}>
-                                    <img src={item} alt="" className={style.sizeRestrictionIcon}/>
+                                    <Image src={item} alt="" className={style.sizeRestrictionIcon}/>
                                 </a>
                             )
                         }
@@ -109,7 +109,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                 <div className={styleCard.selectDateContainer}>
                     <button className={styleCard.gridIconText}>
                         <div>
-                            <img className={styleCard.sizeIcon} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
+                            <Image className={styleCard.sizeIcon} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Proxima fecha: </span>
@@ -120,7 +120,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     </button>
                     <button className={styleCard.gridIconText}>
                         <div>
-                            <img className={styleCard.sizeIcon} src={GlobalConst.sourceImages.googleMap} alt=""/>
+                            <Image className={styleCard.sizeIcon} src={GlobalConst.sourceImages.googleMap} alt=""/>
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Direccion: </span>
@@ -132,7 +132,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                 </div>
 
                 <div onClick={handleOpen}>
-                    <img className={styleCard.coverImageProperties} src={eventInformation.CoverImage} alt=""/>
+                    <Image className={styleCard.coverImageProperties} src={eventInformation.CoverImage} alt=""/>
                 </div>
 
 
@@ -146,7 +146,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     <PopUpContainer closePopUp={handleClose} isBackground={false}>
                         {
                             <div className={style.ContainerCoverImage}>
-                                <img className={style.sizeImage} src={eventInformation.CoverImage} alt=""/>
+                                <Image className={style.sizeImage} src={eventInformation.CoverImage} alt=""/>
                             </div>
                         }
                     </PopUpContainer> : <></>
@@ -198,14 +198,15 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                     </div>
                                 </div>
                                 <div className={style.contMap}>
-                                    <img className={style.imgMap} src="/images/googleMapHuevo.jpg" alt=""/>
+                                    <Image className={style.imgMap} src="/images/googleMapHuevo.jpg" alt=""/>
                                 </div>
                                 <div>
                                     <div className={utilities.fontPrimaryText}>
                                         Blanco 1386, Valparaíso
                                     </div>
                                     <div className={style.gridLinkMap}>
-                                        <img className={style.sizeLogoMap} src={GlobalConst.sourceImages.googleMap}/>
+                                        <Image className={style.sizeLogoMap}
+                                               src={GlobalConst.sourceImages.googleMap} alt=""/>
                                         <a href="https://goo.gl/maps/skWcW2X6YkEyhL7S6" className={utilities.styleLink}>
                                             https://goo.gl/maps/skWcW2X6YkEyhL7S6
                                         </a>

@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/PayPage/cuponInput.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
+import Image from "next/image";
 
 export class inputCuponValues {
     placeHolder: string;
@@ -12,7 +13,8 @@ const titleButton: string = "Aplicar"
 
 export default function CuponInputMobile({cuponProp}: { cuponProp: inputCuponValues }) {
     let [isDisplayCupon, setDisplayCupon] = useState(false)
-    const handleDisplayCupon = () => setDisplayCupon(isDisplayCupon = !isDisplayCupon)
+    const handleDisplayCupon = () =>
+        setDisplayCupon(isDisplayCupon = !isDisplayCupon)
     const cssStyle = getCssStyle()
 
     return (
@@ -22,7 +24,7 @@ export default function CuponInputMobile({cuponProp}: { cuponProp: inputCuponVal
                     <div className={utilities.fontPrimaryText}>
                         {cuponProp.titleCupon}
                     </div>
-                    <img className={`${style.sizeArrow} ${cssStyle.rotateArrow}`}
+                    <Image className={`${style.sizeArrow} ${cssStyle.rotateArrow}`}
                          src={GlobalConst.sourceImages.upArrow} alt=""/>
                 </div>
                 <div className={style.gridCupon}>

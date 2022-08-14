@@ -4,6 +4,7 @@ import ButtonBlueDesk from "../Misc/buttonBlue";
 import {GlobalConst} from "../../../public/globalConst";
 import CuponInputMobile from "./cuponInputMobile";
 import {inputCuponValues} from "../../Desktop/PayPage/cuponInput";
+import Image from "next/image";
 
 const goToPay: string = "Ir a pagar"
 const cancel: string = "Cancelar"
@@ -25,7 +26,7 @@ export default function DetailsPayMobile({displaySelectedItem}) {
                     Resumen Compra
                 </div>
                 <button onClick={displaySelectedItem} className="relative">
-                    <img className={style.sizeBuyCar} src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                    <Image className={style.sizeBuyCar} src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                     <span className={style.positionNumberCar}>6</span>
                 </button>
             </div>

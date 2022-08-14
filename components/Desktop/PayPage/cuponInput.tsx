@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/PayPage/cuponInput.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
+import Image from "next/image";
 
 export class inputCuponValues {
     placeHolder: string;
@@ -22,7 +23,7 @@ export default function CuponInput({cuponProp}: { cuponProp: inputCuponValues })
                     <div className={utilities.fontPrimaryText}>
                         {cuponProp.titleCupon}
                     </div>
-                    <img className={`${style.sizeArrow} ${cssStyle.rotateArrow}`}
+                    <Image className={`${style.sizeArrow} ${cssStyle.rotateArrow}`}
                          src={GlobalConst.sourceImages.upArrow} alt=""/>
                 </div>
                 <div className={style.gridCupon}>

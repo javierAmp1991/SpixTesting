@@ -15,12 +15,13 @@ import style from "/styles/Desktop/Search/subcategoryContainer.module.css"
 import utilities from "/styles/utilities.module.css"
 import React, {useState} from "react";
 import {dateFilters, priceFilters} from "../../../dataDemo/data";
+import Image from "next/image";
 
 export default function SubcategoryContainer({item, click, isDarkMode}: { item: Filters, click, isDarkMode: boolean }) {
-    const [minPrice, setMinPrice] = useState(0)
-    const [maxPrice, setMaxPrice] = useState(0)
-    const [minDate, setMinDate] = useState(0)
-    const [maxDate, setMaxDate] = useState(0)
+    let [minPrice, setMinPrice] = useState(0)
+    let [maxPrice, setMaxPrice] = useState(0)
+    let [minDate, setMinDate] = useState(0)
+    let [maxDate, setMaxDate] = useState(0)
 
     const cssStyle = getCssStyle()
     return (
@@ -71,15 +72,15 @@ export default function SubcategoryContainer({item, click, isDarkMode}: { item: 
                                     <div className="grid gap-5">
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                             <div className={style.positionCalendar}>
-                                                <img className="h-3 w-auto "
-                                                     src={cssStyle.calendarIcon}/>
+                                                <Image className="h-3 w-auto "
+                                                     src={cssStyle.calendarIcon} alt=""/>
                                             </div>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                             <div className={style.positionCalendar}>
-                                                <img className="h-3 w-auto"
-                                                     src={cssStyle.calendarIcon}/>
+                                                <Image className="h-3 w-auto"
+                                                     src={cssStyle.calendarIcon} alt=""/>
                                             </div>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>
@@ -100,8 +101,8 @@ export default function SubcategoryContainer({item, click, isDarkMode}: { item: 
 
     function getCssStyle(){
         return {
-            fontName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
             fontSecundaryText: isDarkMode? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            fontName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
             borderBottom: isDarkMode? style.borderBottomDarkMode : style.borderBottom,
             bgInfo: isDarkMode? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             styleRangePrice: isDarkMode? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,

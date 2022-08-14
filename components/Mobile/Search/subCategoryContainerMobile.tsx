@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export class SubcategoryFilter {
     public Name: string;
 }
@@ -15,7 +17,7 @@ import {dateFilters} from "../../../dataDemo/data";
 import React, {useState} from "react";
 
 export default function SubCategoryContainerMobile({item, click, isDarkMode}: { item: Filters, click, isDarkMode : boolean }) {
-    let [displaySub, setDisplaySub] = React.useState(style.displayIn)
+    let [displaySub, setDisplaySub] = useState(style.displayIn)
     const cssStyle = getCssStyle()
     function handleClick() {
         setDisplaySub(
@@ -30,7 +32,7 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                     {item.FilterName}
                 </div>
                 <div className="grid items-center">
-                    <img className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                 </div>
             </div>
             <ul className={`${style.gridContainerSubcategory} px-8`}>
@@ -74,15 +76,15 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                     <div className="grid gap-5">
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                                 <span className={style.positionCalendar}>
-                                                    <img className="h-3 w-auto "
-                                                         src={cssStyle.calendarIcon}/>
+                                                    <Image className="h-3 w-auto "
+                                                         src={cssStyle.calendarIcon} alt=""/>
                                                 </span>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                                 <span className={style.positionCalendar}>
-                                                    <img className="h-3 w-auto"
-                                                         src={cssStyle.calendarIcon}/>
+                                                    <Image className="h-3 w-auto"
+                                                         src={cssStyle.calendarIcon} alt=""/>
                                                 </span>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>

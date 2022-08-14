@@ -2,23 +2,26 @@ import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Desktop/Events/eventVerticalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useState} from "react";
+import Image from "next/image";
 
 export default function EventVerticalView({info, darkModeState, dropDown, isHideName}) {
-    const [displayName, setDisplayName] = React.useState(true)
+    let [displayName, setDisplayName] = useState(true)
+    const handleShowName = () => setDisplayName(displayName = true)
+    const handleHiddeName = () => setDisplayName(displayName = false)
     let cssStyles = getCssStyles()
 
     return (
-        <div onPointerOver={()=> setDisplayName(displayName => false)}
-             onPointerOut={()=> setDisplayName(displayName => true)}
+        <div onPointerOver={handleHiddeName}
+             onPointerOut={handleShowName}
             className={`${styles.principalGridVertical} ${cssStyles.borderCard}`}>
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
-                        <img loading="lazy" className="absolute z-20" src={GlobalConst.sourceImages.lastTicket}/>
+                        <Image loading="lazy" className="absolute z-20" src={GlobalConst.sourceImages.lastTicket}/>
                         :
                         ""
                 }
-                <img loading="lazy" className={`${styles.sizeImage} z-10`} src={info.CoverImage} alt=""/>
+                <Image loading="lazy" className={`${styles.sizeImage} z-10`} src={info.CoverImage} alt=""/>
             </a>
 
             <div className={`${cssStyles.bgInfo} grid p-2 content-start`}>
@@ -38,16 +41,16 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                     {
                         info.Rating != null ?
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNew}/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src={GlobalConst.sourceImages.ratingNew} alt=""/>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     ({info.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNull}/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src={GlobalConst.sourceImages.ratingNull} alt=""/>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>

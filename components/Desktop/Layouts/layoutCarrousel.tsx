@@ -2,6 +2,7 @@ import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst"
 import React, {ReactNode, useState} from "react"
+import Image from "next/image";
 
 let sourceLeftArrow = GlobalConst.sourceImages.leftArrow
 let sourceRighttArrow = GlobalConst.sourceImages.rightArrow
@@ -21,8 +22,8 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
                                                 layoutProp: LayoutCarrouselDeskProp,
                                                 handleFeatured: any,
                                             }) {
-    const [visibility, setVisibility] = React.useState(true);
-    let [counter, setCounter] = React.useState(0)
+    let [visibility, setVisibility] = useState(true);
+    let [counter, setCounter] = useState(0)
     const counterUp = () => setCounter(counter = counter + 2)
     const counterDown = () => setCounter(counter = counter - 2)
     const handleRight = () => {
@@ -42,7 +43,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
                 onPointerOver={showArrow} onPointerOut={hiddeArrow}
                 className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
-                <img className={styles.styleArrow} src={sourceLeftArrow}/>
+                <Image className={styles.styleArrow} src={sourceLeftArrow} alt=""/>
             </button>
 
             <div style={cssStyle.paddingCarr}>
@@ -61,7 +62,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
-                <img className={styles.styleArrow} src={sourceRighttArrow}/>
+                <Image className={styles.styleArrow} src={sourceRighttArrow} alt=""/>
             </button>
         </div>
     )
@@ -74,10 +75,10 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
     }
 
     function showArrow() {
-        setVisibility(visibility => false);
+        setVisibility(visibility = false);
     }
 
     function hiddeArrow() {
-        setVisibility(visibility => true)
+        setVisibility(visibility = true)
     }
 }

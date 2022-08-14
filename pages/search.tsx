@@ -8,7 +8,7 @@ import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import MainContainerFilters from "../components/Desktop/Search/mainContainerFilters";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {useMediaQuery} from "./index";
 import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
 import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
@@ -16,6 +16,7 @@ import NavMenu from "../components/Mobile/Misc/navMenu";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
 import LayoutPrincipalFilterMobile from "../components/Mobile/Search/layoutPrincipalFilterMobile";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
+import Image from "next/image";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -63,7 +64,7 @@ export default function Search() {
                 <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                 <div className={cssStyle.bg}>
 
-                    <img className={style.styleBanner} src="images/atr2.jpg" alt=""/>
+                    <Image className={style.styleBanner} src="images/atr2.jpg" alt=""/>
                     <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} hiddeResult={handleClick}/>
                     {
                         isDisplayResult ?
@@ -98,7 +99,7 @@ export default function Search() {
                             }
                         </div>
                         <div>
-                            <img className={style.styleBanner} src="images/atr2.jpg" alt=""/>
+                            <Image className={style.styleBanner} src="images/atr2.jpg" alt=""/>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Resultados de {"conciertos"}

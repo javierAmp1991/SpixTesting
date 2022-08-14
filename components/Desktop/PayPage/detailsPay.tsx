@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css"
 import ButtonBlueDesk from "../Misc/buttonBlue";
 import CuponInput, {inputCuponValues} from "./cuponInput";
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 const goToPay: string = "Ir a pagar"
 const cancel: string = "Canceslar"
@@ -52,7 +53,7 @@ export default function DetailsPay() {
                 </div>
 
                 <div className={style.timerContainer}>
-                    <img className="h-4 w-auto" src={GlobalConst.sourceImages.timerRed} alt=""/>
+                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.timerRed} alt=""/>
                     <span>09:08:23 para finalizar su compra</span>
                 </div>
             </div>

@@ -1,13 +1,13 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Search/layoutPrincipalFilters.module.css"
 import {FiltersData} from "../../../dataDemo/data"
-import {AtributesData} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import {AtributesDataFilter} from "../../../dataDemo/data";
 import SubcategoryContainer from "./subcategoryContainer";
 import AtributesContainer from "./atributesContainer";
 import React, {useState} from "react";
 import {SubcategoryFilter} from "./subcategoryContainer";
+import Image from "next/image";
 
 export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode}) {
     const cssStyle = getCssStyle()
@@ -22,7 +22,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                     Filtros
                 </div>
                 <div onClick={()=> closeFilters()} className="grid content-center">
-                    <img className={style.styleArrowClose}
+                    <Image className={style.styleArrowClose}
                          src={isOpenFilter? GlobalConst.sourceImages.leftArrow : GlobalConst.sourceImages.rightArrow} alt=""/>
                 </div>
             </div>
@@ -37,8 +37,9 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                                             <div className={utilities.clamp1}>
                                                 {item.Name}
                                             </div>
-                                            <button onClick={(item) => setSelectedItemShow([])}>
-                                                <img className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon}/>
+                                            <button onClick={() => setSelectedItemShow([])}>
+                                                <Image className="h-4 w-full"
+                                                       src={GlobalConst.sourceImages.deleteIcon} alt=""/>
                                             </button>
                                         </div>
                                     )
@@ -65,7 +66,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                         Limpiar Filtros
                     </div>
                     <button onClick={() => setSelectedItemShow([])}>
-                        <img className="h-4 w-auto" src={cssStyle.cleanIcon} alt=""/>
+                        <Image className="h-4 w-auto" src={cssStyle.cleanIcon} alt=""/>
                     </button>
                 </div>
             </div>

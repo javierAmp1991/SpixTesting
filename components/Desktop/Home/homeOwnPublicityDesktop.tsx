@@ -1,8 +1,6 @@
 import style from "/styles/Desktop/Home/homeOwnPublicity.module.css"
 import utilities from "/styles/utilities.module.css";
-import {OwnPublicityData} from "../../../dataDemo/data";
-
-const ownPublicityInfo = OwnPublicityData.listOwnPublicity;
+import Image from "next/image";
 
 export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
     let cssStyles = getCssStyles()
@@ -13,7 +11,7 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
                     <div key={index}
                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
                         <div className="grid content-center">
-                            <img loading="lazy" className={style.heightImageOwnPublicity} src={info.LinkImage}
+                            <Image className={style.heightImageOwnPublicity} src={info.LinkImage}
                                  alt=""/>
                         </div>
                         <div className={`${style.containerInfoProperties}`}>

@@ -7,8 +7,9 @@ import SubCategoryContainerMobile from "./subCategoryContainerMobile";
 import AtributesContainerMobile from "./atributesContainerMobile";
 import {SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
 import {AtributesDataFilter} from "../../../dataDemo/data";
+import Image from "next/image";
 
-let imageIcon = <img className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon}/>
+let imageIcon = <Image className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon} alt=""/>
 
 export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
     let [displayFilter, setDisplayFilter] = React.useState(style.displayInFilters)
@@ -33,8 +34,8 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                                 <div className={utilities.clamp1}>
                                     {item.Name}
                                 </div>
-                                <button onClick={(item) => setSelectedItemShow([])}>
-                                    <img className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon}/>
+                                <button onClick={() => setSelectedItemShow([])}>
+                                    <Image className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon} alt=""/>
                                 </button>
                             </div>
                         )
@@ -60,7 +61,7 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                     Limpiar Filtros
                 </div>
                 <button onClick={() => setSelectedItemShow([])}>
-                    <img className="h-4 w-auto" src={cssStyle.cleanIcon} alt=""/>
+                    <Image className="h-4 w-auto" src={cssStyle.cleanIcon} alt=""/>
                 </button>
             </div>
         </div>

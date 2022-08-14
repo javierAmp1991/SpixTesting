@@ -1,13 +1,14 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Home/homeFeatured.module.css"
+import Image from "next/image";
 
 export default function HomeFeatured({featuredItem, darkModeState}) {
     let cssStyle = getCssStyles()
     return (
         <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
             <div className="relative">
-                <img loading="lazy" className={style.bannerFeatureProperties} src={featuredItem.CoverImage} alt=""/>
-                <img loading="lazy" className={style.logoFeatureProperties} src={featuredItem.LogoPath} alt=""/>
+                <Image loading="lazy" className={style.bannerFeatureProperties} src={featuredItem.CoverImage} alt=""/>
+                <Image loading="lazy" className={style.logoFeatureProperties} src={featuredItem.LogoPath} alt=""/>
             </div>
             <div className="px-2 pb-2 pt-8">
                 <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
@@ -18,16 +19,16 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                     {
                         featuredItem.Rating != null ?
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNew.png"/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src="/images/ratingNew.png" alt=""/>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     ({featuredItem.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNull.png"/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src="/images/ratingNull.png" alt=""/>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>

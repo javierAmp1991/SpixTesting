@@ -2,6 +2,7 @@ import style from "/styles/Desktop/eventProducts/containerSelectedItem.module.cs
 import {GlobalConst} from "../../../public/globalConst";
 import {productSelected} from "../../../dataDemo/data";
 import ProductViewDesk from "../Misc/productViewDesk";
+import Image from "next/image";
 
 export default function ContainerSelectedItem({item, addItem}:
                                                   { item: productSelected, addItem: any }) {
@@ -12,7 +13,7 @@ export default function ContainerSelectedItem({item, addItem}:
             <ProductViewDesk size={null} item={item.Product}/>
             {
                 item.IsSelected?
-                    <img className={style.sizeChecked}
+                    <Image className={style.sizeChecked}
                          src={GlobalConst.sourceImages.checkIcon} alt=""/>
                     :
                     <></>

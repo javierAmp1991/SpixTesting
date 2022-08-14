@@ -3,9 +3,10 @@ import React, {useState} from "react";
 import style from "/styles/Mobile/Search/atributesContainer.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import {Filters} from "./subCategoryContainerMobile";
+import Image from "next/image";
 
 export default function AtributesContainerMobile({item, click, isDarkMode}: {item: Filters, click, isDarkMode: boolean}) {
-    let [displaySub, setDisplaySub] = React.useState(style.displayIn)
+    let [displaySub, setDisplaySub] = useState(style.displayIn)
     function handleClick(){
         setDisplaySub(
             displaySub == style.displayIn? displaySub = style.displayOut : displaySub = style.displayIn)
@@ -18,7 +19,7 @@ export default function AtributesContainerMobile({item, click, isDarkMode}: {ite
                     {item.FilterName}
                 </div>
                 <div className="grid items-center">
-                    <img className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                 </div>
             </div>
             <ul className={`${style.gridA}`}>

@@ -10,7 +10,6 @@ import NavMenu from "../components/Mobile/Misc/navMenu";
 import {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import {Menu} from "../dataDemo/data";
 import {ListProducts} from "../dataDemo/data";
-import {ListProducts2} from "../dataDemo/data";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 const isDarkMode = false
 const toggleDarkMode = null
@@ -25,7 +24,6 @@ import GridSelectedItemsMobile from "../components/Mobile/PayPage/gridSelectedIt
 import PayPageProductSelectedViewMobile from "../components/Mobile/PayPage/productSelectedViewMobile";
 import DetailsPayMobile from "../components/Mobile/PayPage/detailsPayMobile";
 import {useState} from "react";
-import SearchBarMobile from "../components/Mobile/Misc/searchBarMobile";
 
 export default function PayPage() {
     const isSmallDown = useMediaQuery(mediaQuery);

@@ -2,6 +2,7 @@ import style from "/styles/Mobile/Misc/productView.module.css"
 import utilities from "/styles/utilities.module.css"
 import {Product} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 export default function ProductViewMobile({item, size}: { item: Product, size: number }) {
     let isOffer: boolean = true
@@ -9,8 +10,8 @@ export default function ProductViewMobile({item, size}: { item: Product, size: n
     return (
         <div style={getSizeProduct.widthContainer}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
-                <img style={style.aspectImage} loading="lazy" src={item.ImagePath}/>
-                <img className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                <Image className={style.aspectImage} loading="lazy" src={item.ImagePath} alt=""/>
+                <Image className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
             </div>
 
             <div className={style.gridInfoProduct}>

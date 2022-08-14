@@ -3,13 +3,14 @@ import style from "/styles/Desktop/Misc/resultSugCont.module.css"
 import utilities from "/styles/utilities.module.css"
 
 const title: string = "Negocios"
-import {BussinesResult} from "../../old/suggHeaderDesk";
+import {BussinesResult} from "./headerSpixDesktop";
+import Image from "next/image";
 
 export default function ResultBussinesSugDesk({item}: { item: BussinesResult[] }) {
     return (
         <div className={style.mainCont}>
             <div className={style.gridTitleImage}>
-                <img className={style.sizeImage} src={GlobalConst.sourceImages.bussinesIcon} alt=""/>
+                <Image className={style.sizeImage} src={GlobalConst.sourceImages.bussinesIcon} alt=""/>
                 <div className={utilities.fontSubTitle}>{title}</div>
             </div>
             <div className={style.contResult}>

@@ -1,6 +1,7 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Misc/navMenu.module.css"
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, toggleDarkMode}) {
     let cssStyle = getCssStyle()
@@ -11,22 +12,22 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                 {
                     isLogged ?
                         <div className="heightContainerImageNavBar gradientImage rounded50">
-                            <img className="heightImageNavBar m-px rounded50" src="/Image/foto perfil.jpg"/>
+                            <Image className="heightImageNavBar m-px rounded50" src="/Image/foto perfil.jpg" alt=""/>
                         </div>
                         :
                         <div>
-                            <img className={style.heightIcon} src={imageStyle.logginIcon}/>
+                            <Image className={style.heightIcon} src={imageStyle.logginIcon} alt=""/>
                         </div>
                 }
 
                 <a>
                     <div>
-                        <img className={style.heightIcon} src={imageStyle.home}/>
+                        <Image className={style.heightIcon} src={imageStyle.home} alt=""/>
                     </div>
                 </a>
 
                 <div>
-                    <img className={style.heightIcon} src={imageStyle.star}/>
+                    <Image className={style.heightIcon} src={imageStyle.star} alt=""/>
                 </div>
 
                 {/*<div className="relative">
@@ -38,7 +39,7 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                 {
                     isActiveDarkModeButton?
                         <button onClick={toggleDarkMode}>
-                            <img className={style.heightIcon} src={imageStyle.darkModeIcon}/>
+                            <Image className={style.heightIcon} src={imageStyle.darkModeIcon} alt=""/>
                         </button>
                         :
                         ""

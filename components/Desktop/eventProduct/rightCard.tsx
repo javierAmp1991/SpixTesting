@@ -7,6 +7,7 @@ import {Guest} from "../../../pages/eventProducts";
 import PayPageProductSelectedView from "./payPageProductSelectedView";
 import ButtonBlueDesk from "../../Mobile/Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
+import Image from "next/image";
 
 const referenceDiv = "referenceDiv"
 const textButton: string = "Continuar comprar"
@@ -79,7 +80,7 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
                                                 <span className={`${utilities.clamp1} `}
                                                     onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                                <img onClick={() => methodProps.removeGuest(item)}
+                                                <Image onClick={() => methodProps.removeGuest(item)}
                                                      className={style.sizeCloseimg}
                                                      src={GlobalConst.sourceImages.closeLoggin} alt=""/>
                                             </div>
@@ -95,7 +96,7 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
                                 <div onClick={handleDisplayAdd}
                                      className={`${utilities.gridMaxContent2} ml-3`}>
                                     <span className={utilities.fontPrimaryText}>{newGuestText}</span>
-                                    <img src={GlobalConst.sourceImages.addIcon}
+                                    <Image src={GlobalConst.sourceImages.addIcon}
                                          className={style.addIconStyle}
                                          alt=""/>
                                 </div>
@@ -105,10 +106,10 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
                     {
                         isCarrousel ?
                             <div className={style.gridArrows}>
-                                <img onClick={translateLeft}
+                                <Image onClick={translateLeft}
                                      className={style.arrow}
                                      src={GlobalConst.sourceImages.leftArrowClean} alt=""/>
-                                <img onClick={translateRight}
+                                <Image onClick={translateRight}
                                      className={style.arrow}
                                      src={GlobalConst.sourceImages.rightArrowClean} alt=""/>
                             </div> : <></>

@@ -1,5 +1,6 @@
 import style from "/styles/Mobile/Home/homeOwnPublicityMobile.module.css"
 import utilities from "/styles/utilities.module.css";
+import Image from "next/image";
 
 export default function HomeOwnPublicityMobile({listItem, darkMode}) {
     let cssStyles = getCssStyles()
@@ -10,7 +11,7 @@ export default function HomeOwnPublicityMobile({listItem, darkMode}) {
                     <div key={index}
                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
                         <div className="grid content-center">
-                            <img loading="lazy" className={style.heightImageOwnPublicity} src={info.LinkImage}
+                            <Image loading="lazy" className={style.heightImageOwnPublicity} src={info.LinkImage}
                                  alt=""/>
                         </div>
                         <div className={`${style.containerInfoProperties}`}>

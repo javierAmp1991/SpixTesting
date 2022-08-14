@@ -5,6 +5,7 @@ import SearchBarMobile from "./searchBarMobile";
 import ResultEventSug from "./ResultEventSug";
 import ResultBussinesSug from "./ResultBussinesSug";
 import {useState} from "react";
+import Image from "next/image";
 export class EventResult {
     Name: string;
     Rating: number;
@@ -73,7 +74,7 @@ export default function SuggHeaderMobile({returnMet}) {
         <div className={style.mainCont}>
             <div className={`${style.gridReturnSearchBar} ${utilities.bgBodyDarkMode}`}>
                 <button onClick={returnMet}>
-                    <img className={style.returnButton} src={GlobalConst.sourceImages.leftArrowExitWhite} alt=""/>
+                    <Image className={style.returnButton} src={GlobalConst.sourceImages.leftArrowExitWhite} alt=""/>
                 </button>
                 <div className={style.styleSearchBar}>
                     <SearchBarMobile isDisplaySug={null}

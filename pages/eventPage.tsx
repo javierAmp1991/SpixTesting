@@ -55,6 +55,7 @@ import EventVerticalView from "../components/Desktop/EventsView/eventVerticalVie
 import NewView from "../components/Desktop/CRM/newView";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage";
+import Image from "next/image";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -343,7 +344,7 @@ export default function EventPage() {
             <div>
                 <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
-                <img className={styleMobile.bannerProperties} src={bannerPath} alt=""/>
+                <Image className={styleMobile.bannerProperties} src={bannerPath} alt=""/>
                 <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
                     <DefaultPageMobile listItem={defaultList}/>
                     <FooterMobile/>
@@ -360,7 +361,7 @@ export default function EventPage() {
             <div>
                 <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
                 <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>
-                <img className={styleDesk.sizeBaner} src={bannerPath} alt=""/>
+                <Image className={styleDesk.sizeBaner} src={bannerPath} alt=""/>
                 <div className={`${utilities.maxWidthBodyContentSpix}`}>
                     <LayoutSideCard childrens={childrens}/>
                     <FooterDesk/>

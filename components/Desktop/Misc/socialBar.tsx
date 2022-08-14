@@ -2,6 +2,7 @@ import {useState} from "react";
 import style from "/styles/Mobile/Misc/socialBar.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css"
+import Image from "next/image";
 
 export default function SocialBar() {
     let [likeAnimation, setLikeAnimation] = useState(
@@ -58,7 +59,7 @@ export default function SocialBar() {
             <button onClick={handleClick} className={`${utilities.gridMaxContent2} ${style.gridIcon}`}>
                 <div className="relative">
                     <div className={`${likeAnimation.animationClassLike} ${utilities.gridContentCenter} z-40`}>
-                        <img className={`${style.sizeIcon} z-50`} src={likeAnimation.heartIcon} alt=""/>
+                        <Image className={`${style.sizeIcon} z-50`} src={likeAnimation.heartIcon} alt=""/>
                     </div>
                     <div className={likeAnimation.mainContainerCircle}>
                         <span className={`${likeAnimation.circleClass1} ${style.circleClass} absolute`}/>
@@ -99,7 +100,7 @@ export default function SocialBar() {
 
             <button onClick={handleBell} className={`${utilities.gridMaxContent2} ${style.gridIcon}`}>
                 <div className={`${bellIcon.animationBell} ${utilities.gridContentCenter}`}>
-                    <img className={`${style.sizeIcon}`} src={bellIcon.bellIcon} alt=""/>
+                    <Image className={`${style.sizeIcon}`} src={bellIcon.bellIcon} alt=""/>
                 </div>
                 <div className={`${utilities.fontPrimaryText} pt-0.5`}>
                     1.1M

@@ -2,6 +2,7 @@ import LayoutCommRevQue from "../Layouts/layoutCommRevQue";
 import style from "/styles/Mobile/EventPage/reviewSection.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 export default function ReviewSectionMobile({children, resumeReview}) {
     return (
@@ -11,8 +12,8 @@ export default function ReviewSectionMobile({children, resumeReview}) {
                     <div className={style.fontReviewResume}>
                         {resumeReview.rating} de 5
                     </div>
-                    <div className={`${utilities.gridContentCenter} justify-start mb-2`}>
-                        <img className={style.sizeStarResume} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                    <div className={`${utilities.gridContentCenter} mb-2 justify-start `}>
+                        <Image className={style.sizeStarResume} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                     </div>
                     <div className={`${utilities.fontPrimaryText} text-left`}>
                         {resumeReview.totalReview} <span>Reseñas</span>

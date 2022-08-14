@@ -1,8 +1,9 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Search/atributesContainer.module.css"
-import {Filters, SubcategoryFilter} from "./subcategoryContainer";
+import {Filters} from "./subcategoryContainer";
 import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
+import Image from "next/image";
 
 export default function AtributesContainer({item, click, isDarkMode, isOpenFilter}:
 { item: Filters, click, isDarkMode: boolean, isOpenFilter : boolean }) {
@@ -19,7 +20,7 @@ export default function AtributesContainer({item, click, isDarkMode, isOpenFilte
                     {item.FilterName}
                 </div>
                 <div className="grid items-center">
-                    <img className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                 </div>
             </div>
             <div className={style.gridAtributes}>

@@ -2,24 +2,25 @@ import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Desktop/Events/eventWithBanner.module.css"
 import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 const alignmentTextProduct: string = "text-center"
 
 
 export default function EventWithBannerView({item, darkModeState}) {
     let cssStyles = getCssStyles();
-    const [isActive, setIsActive] = useState(false);
-    const handleClick = event => {
-        setIsActive(current => !current);
-    };
-    const [visibility, setVisibility] = React.useState(true);
+    /*let [isActive, setIsActive] = useState(false);
+    const handleClick = () => {
+        setIsActive(isActive = !isActive);
+    };*/
+    let [visibility, setVisibility] = useState(true);
 
     return (
         <div className={`${cssStyles.borderCard} ${styles.widthContainer}`}>
             <div className="grid">
                 <div className="relative">
-                    <img className={styles.sizeBannerEWB} src={item.BannerPath} alt=""/>
+                    <Image className={styles.sizeBannerEWB} src={item.BannerPath} alt=""/>
 
-                    <img className={styles.propertiesLogoEWB}
+                    <Image className={styles.propertiesLogoEWB}
                          src={item.LogoPath} alt=""/>
                 </div>
 
@@ -29,7 +30,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                     </div>
 
                     <div className={`${utilities.gridMaxContent2} grid justify-center mb-3`}>
-                        <img className={utilities.ratingStarsProperties} src="images/ratingNew.png"/>
+                        <Image className={utilities.ratingStarsProperties} src="images/ratingNew.png" alt=""/>
                     </div>
 
                     <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
@@ -52,7 +53,8 @@ export default function EventWithBannerView({item, darkModeState}) {
                             className={`${styles.styleArrowEWBProducts} 
                                         ${styles.positionArrowEWBLeft}
                                         ${visibility ? utilities.opacity0 : ""}`}>
-                        <img className={styles.styleArrowDailyOfferProducts} src={GlobalConst.sourceImages.leftArrow}/>
+                        <Image className={styles.styleArrowDailyOfferProducts}
+                               src={GlobalConst.sourceImages.leftArrow} alt=""/>
                     </button>
 
                     <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
@@ -62,7 +64,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                                 item.ListProducts.map(product =>
                                     <div key={product.Name}>
                                         <div className="mb-2">
-                                            <img className={`${styles.sizeProductEWB} m-auto`}
+                                            <Image className={`${styles.sizeProductEWB} m-auto`}
                                                  src={product.ImagePath} alt=""/>
                                         </div>
                                         <div
@@ -87,7 +89,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                             className={`${styles.styleArrowEWBProducts}
                                         ${styles.positionArrowEWBRight}
                                         ${visibility ? utilities.opacity0 : ""}`}>
-                        <img className={styles.styleArrowDailyOfferProducts} src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                        <Image className={styles.styleArrowDailyOfferProducts} src={GlobalConst.sourceImages.rightArrow} alt=""/>
                     </button>
                 </div>
 
@@ -96,11 +98,11 @@ export default function EventWithBannerView({item, darkModeState}) {
     )
 
     function showArrow() {
-        setVisibility(visibility => false);
+        setVisibility(visibility = false);
     }
 
     function hiddeArrow() {
-        setVisibility(visibility => true)
+        setVisibility(visibility = true)
     }
 
     function getCssStyles() {

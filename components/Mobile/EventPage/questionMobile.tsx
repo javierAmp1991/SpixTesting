@@ -1,5 +1,4 @@
 import utilities from "/styles/utilities.module.css"
-import style from "/styles/Mobile/EventPage/questionMobile.module.css"
 import {question} from "../../../dataDemo/data";
 import OptionBar from "../Misc/optionBar";
 

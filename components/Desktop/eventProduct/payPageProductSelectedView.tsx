@@ -1,8 +1,8 @@
 import style from "/styles/Desktop/eventProducts/productSelectedView.module.css"
 import {Product} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
-import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
+import Image from "next/image";
 const deleteButton = "Eliminar"
 
 export default function PayPageProductSelectedView({item, deleteItem}:
@@ -11,7 +11,7 @@ export default function PayPageProductSelectedView({item, deleteItem}:
     return (
         <div>
             <div className={style.grid}>
-                <img className={style.sizeImage} src={item.ImagePath} alt=""/>
+                <Image className={style.sizeImage} src={item.ImagePath} alt=""/>
                 <div>
                     <div className={`${utilities.fontPrimaryText} mb-1`}>
                         {item.Name}

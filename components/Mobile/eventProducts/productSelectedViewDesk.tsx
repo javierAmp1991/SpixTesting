@@ -3,6 +3,7 @@ import {Product} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 const deleteTextButton: string = "Eliminar"
 import {useState} from "react";
+import Image from "next/image";
 
 export default function ProductSelectedViewMobile({item}: { item: Product }) {
     let [amountSelected, setAmountSelected] = useState(1)
@@ -15,7 +16,7 @@ export default function ProductSelectedViewMobile({item}: { item: Product }) {
     return (
         <div>
             <div className={style.grid}>
-                <img className={style.sizeImage} src={item.ImagePath} alt=""/>
+                <Image className={style.sizeImage} src={item.ImagePath} alt=""/>
                 <div className={style.divInfo}>
                     <div className={`${utilities.fontPrimaryText} mb-1`}>
                         {item.Name}

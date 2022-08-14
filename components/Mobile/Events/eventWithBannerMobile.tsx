@@ -1,27 +1,26 @@
 import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Mobile/Events/eventWithBannerMobile.module.css"
 import React, {useState} from "react";
-import {GlobalConst} from "../../../public/globalConst";
-
+import Image from "next/image";
 const alignmentTextProduct: string = "text-center"
 
 
 export default function EventWithBannerMobile({item, darkModeState, displayLogoRating}) {
     let cssStyles = getCssStyles();
-    const [isActive, setIsActive] = useState(false);
-    const handleClick = event => {
-        setIsActive(current => !current);
+    let [isActive, setIsActive] = useState(false);
+    const handleClick = () => {
+        setIsActive(isActive = !isActive);
     };
-    const [visibility, setVisibility] = React.useState(true);
+    let [visibility, setVisibility] = React.useState(true);
 
     return (
         <div className={cssStyles.borderCard}>
             <div className="grid">
                 <div className="relative">
-                    <img className={styles.sizeBannerEWB} src={item.BannerPath} alt=""/>
+                    <Image className={styles.sizeBannerEWB} src={item.BannerPath} alt=""/>
                     {
                         displayLogoRating ?
-                            <img className={styles.propertiesLogoEWB}
+                            <Image className={styles.propertiesLogoEWB}
                                  src={item.LogoPath} alt=""/>
                             :
                             ""
@@ -36,7 +35,8 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                     {
                         displayLogoRating ?
                             <div className={`${utilities.gridMaxContent2} grid justify-center mb-3`}>
-                                <img className={utilities.ratingStarsProperties} src="images/ratingNew.png"/>
+                                <Image className={utilities.ratingStarsProperties}
+                                       src="images/ratingNew.png" alt=""/>
                             </div>
                             :
                             ""
@@ -66,11 +66,11 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                                 item.ListProducts.map(product =>
                                     <div key={product.Name}>
                                         <div className="mb-2">
-                                            <img className={`${styles.sizeProductEWB} m-auto`}
+                                            <Image className={`${styles.sizeProductEWB} m-auto`}
                                                  src={product.ImagePath} alt=""/>
                                         </div>
                                         <div
-                                            className={`${utilities.fontPriceInclude} ${alignmentTextProduct} mb-1`}>
+                                            className={`${utilities.fontPriceInclude} mb-1 ${alignmentTextProduct} `}>
                                             ${product.Price}
                                         </div>
                                         <div
@@ -93,11 +93,11 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
     )
 
     function showArrow() {
-        setVisibility(visibility => false);
+        setVisibility(visibility = false);
     }
 
     function hiddeArrow() {
-        setVisibility(visibility => true)
+        setVisibility(visibility = true)
     }
 
     function getCssStyles() {

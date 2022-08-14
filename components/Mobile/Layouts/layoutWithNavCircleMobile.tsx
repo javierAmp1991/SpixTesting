@@ -1,5 +1,4 @@
 import style from "../../../styles/Mobile/Layouts/layoutWithNavcircle.module.css";
-import EventOnlyImageLogo from "../Events/eventOnlyImageLogo";
 
 export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                                                       {children: JSX.Element[], isDarkMode: boolean}) {

@@ -1,6 +1,7 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Events/eventHorizontalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 export default function EventHorizontalView({info, darkModeState}) {
     let cssStyles = getCssStyles()
     return (
@@ -8,11 +9,12 @@ export default function EventHorizontalView({info, darkModeState}) {
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
-                        <img loading="lazy" className="absolute z-20" src={GlobalConst.sourceImages.lastTicket}/>
+                        <Image loading="lazy" className="absolute z-20"
+                               src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         :
                         ""
                 }
-                <img loading="lazy" className={style.sizeImage} src={info.CoverImage} alt=""/>
+                <Image loading="lazy" className={style.sizeImage} src={info.CoverImage} alt=""/>
             </a>
 
             <div className={`${cssStyles.bgInfo} grid content-start p-2`}>
@@ -24,16 +26,16 @@ export default function EventHorizontalView({info, darkModeState}) {
                     {
                         info.Rating != null ?
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNew}/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src={GlobalConst.sourceImages.ratingNew} alt=""/>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     ({info.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNull}/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src={GlobalConst.sourceImages.ratingNull} alt=""/>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>

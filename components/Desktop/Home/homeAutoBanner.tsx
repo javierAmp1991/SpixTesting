@@ -1,9 +1,10 @@
 import style from "/styles/Desktop/Home/homeAutoBanner.module.css"
+import Image from "next/image";
 
 export default function HomeAutoBanner({linkImage}){
     return(
             <div>
-                <img className={style.sizeImageCarrrouselBanners} src={linkImage} alt=""/>
+                <Image className={style.sizeImageCarrrouselBanners} src={linkImage} alt=""/>
             </div>
     )
 }

@@ -2,14 +2,15 @@ import style from "/styles/Mobile/PayPage/productSelectedView.module.css"
 import {Product} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 export default function PayPageProductSelectedViewMobile({item}: { item: Product }) {
     return (
         <div className={style.containerProduct}>
             <div className={style.grid}>
                 <div className="relative">
-                    <img className={style.sizeImage} src={item.ImagePath} alt=""/>
-                    <img className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                    <Image className={style.sizeImage} src={item.ImagePath} alt=""/>
+                    <Image className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
                 <div className={style.contInfo}>
                     <div className={`${utilities.fontPrimaryText} mb-1`}>

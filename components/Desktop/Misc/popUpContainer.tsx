@@ -1,5 +1,6 @@
 import style from "/styles/Desktop/Misc/popUp.module.css"
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 export default function PopUpContainer({children, closePopUp, isBackground}) {
     const cssStyle = getCssStyle()
@@ -7,7 +8,7 @@ export default function PopUpContainer({children, closePopUp, isBackground}) {
         <div className={style.mainDiv}>
             <div onClick={closePopUp} className={style.blackScreen}/>
             <div className={cssStyle.modalBackground}>
-                <img onClick={closePopUp}
+                <Image onClick={closePopUp}
                      className={style.sizeDeleteIcon}
                      src={GlobalConst.sourceImages.closeX} alt=""/>
                 {children}

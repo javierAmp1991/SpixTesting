@@ -9,11 +9,13 @@ export class inputRadioProp {
 
 export default function InputRadioDesk({item}: { item: inputRadioProp }) {
     let [inputRadioValue, setInputRadioValue] = useState()
+    const handleInputRadioValue = (e) =>
+        setInputRadioValue( inputRadioValue = e.target.value)
     return (
         <div className={`${utilities.gridMaxContent2} justify-between`}>
             <label htmlFor={item.Id}
                    className={utilities.fontPrimaryText}>{item.NameLabel.toString()}</label>
-            <input
+            <input onChange={() => handleInputRadioValue}
                 className="checkbox"
                 id={item.Id} type='radio'
                 name={item.NameInput}/>

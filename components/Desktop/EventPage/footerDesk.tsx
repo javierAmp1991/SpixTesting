@@ -1,5 +1,6 @@
 import style from "/styles/Desktop/EventPage/footer.module.css"
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 export default function FooterDesk() {
     return (
         <div>
@@ -7,7 +8,7 @@ export default function FooterDesk() {
                 Agradecimientos a nuestros auspiciadores
             </div>
             <div>
-                <img loading="lazy" className={style.sizeBanner} src={GlobalConst.sourceImages.sponsor} alt=""/>
+                <Image className={style.sizeBanner} src={GlobalConst.sourceImages.sponsor} alt=""/>
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ import FormView from "../Misc/formView";
 import {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import LayoutPurpleContainer from "../Layouts/layoutPurpleContainer";
+import Image from "next/image";
 
 export default function EventInformationDesk({
                                                  eventInformation,
@@ -20,7 +21,6 @@ export default function EventInformationDesk({
         setTargetImage(targetImage = linkImage)
     }
 
-    const handleSelectedShow = () => setSelectedShow(selectedShow = true)
     const cssStyle = getCssStyle()
     return (
         <div>
@@ -32,14 +32,14 @@ export default function EventInformationDesk({
                                 index == 0 ?
                                     <div onClick={handleVideo}
                                          className={`${style.containerImageSelection} relative`}>
-                                        <img className={style.sizeImageSelection} src={item} alt=""/>
-                                        <img className={style.playIconProperties}
+                                        <Image className={style.sizeImageSelection} src={item} alt=""/>
+                                        <Image className={style.playIconProperties}
                                              src={GlobalConst.sourceImages.playIcon} alt=""/>
                                     </div>
                                     :
                                     <div onClick={() => handleTargetImage(item)}
                                          className={`${style.containerImageSelection} relative`}>
-                                        <img className={style.sizeImageSelection} src={item} alt=""/>
+                                        <Image className={style.sizeImageSelection} src={item} alt=""/>
                                     </div>
                             )
                         }
@@ -52,7 +52,7 @@ export default function EventInformationDesk({
                                 </div>
                                 :
                                 <div className={style.containerShowProp}>
-                                    <img className={style.imageShowProperties} src={targetImage} alt=""/>
+                                    <Image className={style.imageShowProperties} src={targetImage} alt=""/>
                                 </div>
                         }
                     </div>

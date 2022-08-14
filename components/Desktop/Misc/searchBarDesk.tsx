@@ -1,8 +1,8 @@
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Misc/searchBarDesk.module.css"
-import {func} from "prop-types";
 import {useState} from "react";
+import Image from "next/image";
 
 const placeHolder: string = "Buscar evento, categoria o ciudad"
 const nameInput: string = "searchBarMobile"
@@ -11,10 +11,10 @@ export default function SearchBarDesk({isSug, showSug, hiddeSug, getInputValue}:
                                           { isSug: boolean, showSug: any, hiddeSug: any, getInputValue: any }) {
     let [valueInput, setValueInput] = useState("")
     const handleValueInput = (e) => {
-        let valueInput = e.target.value
-        if (valueInput.length >= 3) {
+        let newValueInput = e.target.value
+        if (newValueInput.length >= 3) {
             showSug()
-            getInputValue(valueInput)
+            getInputValue(newValueInput)
         } else hiddeSug()
         setValueInput(valueInput = e.target.value)
     }
@@ -30,7 +30,7 @@ export default function SearchBarDesk({isSug, showSug, hiddeSug, getInputValue}:
                    placeholder={placeHolder}/>
             <div className={cssStyle.styleButton}>
                 <button>
-                    <img className={style.styleLupa} src={cssStyle.sourceMagGlass} alt=""/>
+                    <Image className={style.styleLupa} src={cssStyle.sourceMagGlass} alt=""/>
                 </button>
             </div>
         </div>

@@ -7,8 +7,11 @@ import React, {useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ButtonBlueDesk from "../Misc/buttonBlue";
 import {Guest} from "../../../pages/eventProducts";
+import Image from "next/image";
 
 const newGuest: string = "Nuevo Invitado"
+const placeHolderName: string = "nombre invitado"
+const placeHolderEmail: string = "correo invitado"
 
 export default function ContResultProduct({listSectionProduct, addItem, methodProps, listGuests}:
                                               {
@@ -20,14 +23,14 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
     let [isDisplayAdd, setIsDisplayAdd] = useState(false)
     const handleDisplayAdd = () => setIsDisplayAdd(isDisplayAdd = !isDisplayAdd)
 
+    let [emailGuest, setEmailGuest] = useState("")
+    const handleEmailGuest = e => {
+        setEmailGuest(emailGuest = e.target.value)
+    }
 
     let [nameGuest, setNameGuest] = useState("")
     const handleNameGuest = e => {
         setNameGuest(nameGuest = e.target.value)
-    }
-    let [emailGuest, setEmailGuest] = useState("")
-    const handleEmailGuest = e => {
-        setEmailGuest(emailGuest = e.target.value)
     }
 
     const acceptGuest = () => {
@@ -38,7 +41,7 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
     }
     return (
         <div className={style.contVar}>
-            <img className={style.bannerSize} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+            <Image className={style.bannerSize} src={GlobalConst.sourceImages.bannerCom} alt=""/>
             <div className={style.principalGrid}>
                 <div className={style.gridTagsCont}>
                     {
@@ -60,7 +63,7 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                                                 <span className={`${style.nameElipsis} ${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                    <img onClick={() => methodProps.removeGuest(item)}
+                                    <Image onClick={() => methodProps.removeGuest(item)}
                                          className={style.sizeCloseimg}
                                          src={GlobalConst.sourceImages.closeLoggin} alt=""/>
                                 </div>
@@ -78,7 +81,7 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                     <div onClick={handleDisplayAdd}
                          className={`${utilities.gridMaxContent2} gap-2 ml-2`}>
                         <span className={utilities.fontPrimaryText}>{newGuest}</span>
-                        <img src={GlobalConst.sourceImages.addIcon}
+                        <Image src={GlobalConst.sourceImages.addIcon}
                              className={style.addIconStyle}
                              alt=""/>
                     </div>
@@ -108,13 +111,13 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                                         <input onChange={handleNameGuest}
                                                maxLength={15}
                                                className={style.styleInput} type="text"
-                                               placeholder={"nombre invitado"}/>
+                                               placeholder={placeHolderName}/>
                                     </div>
                                     <div className={`${style.gridInfoInput} ${utilities.fontSecundaryText}`}>
                                         <div className={utilities.fontPrimaryText}>Ingrese correo invitado</div>
                                         <input onChange={handleEmailGuest}
                                                className={style.styleInput} type="email"
-                                               placeholder={"correo invitado"}/>
+                                               placeholder={placeHolderEmail}/>
                                     </div>
                                     <div className={utilities.fontSecundaryText}>
                                         * Infomracion descriptiva

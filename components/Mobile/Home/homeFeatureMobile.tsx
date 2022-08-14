@@ -1,6 +1,7 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Home/homeFeatureMobile.module.css"
 import {EventLookUp} from "../../../dataDemo/data";
+import Image from "next/image";
 
 export default function HomeFeaturedMobile({item, isDarkMode}:
                                                { item: EventLookUp, isDarkMode: boolean }) {
@@ -8,8 +9,8 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
     return (
         <div className={`${cssStyle.borderCard} ${style.sizeFeaturedDiv} ${cssStyle.bgInfo}`}>
             <div className="relative">
-                <img loading="lazy" className={style.bannerFeatureProperties} src={item.CoverImage}/>
-                <img loading="lazy" className={style.logoFeatureProperties} src={item.LogoPath} alt=""/>
+                <Image loading="lazy" className={style.bannerFeatureProperties} src={item.CoverImage} alt=""/>
+                <Image loading="lazy" className={style.logoFeatureProperties} src={item.LogoPath} alt=""/>
             </div>
             <div className="px-2 pb-2 pt-8">
                 <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
@@ -20,16 +21,16 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                     {
                         item.Rating != null ?
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNew.png"/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src="/images/ratingNew.png" alt=""/>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     ({item.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <img loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNull.png"/>
+                                <Image loading="lazy" className={utilities.ratingStarsProperties}
+                                     src="/images/ratingNull.png" alt=""/>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>

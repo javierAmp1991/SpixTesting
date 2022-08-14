@@ -3,12 +3,13 @@ import style from "/styles/Mobile/Misc/resultSugCont.module.css"
 import utilities from "/styles/utilities.module.css"
 const title:string = "Eventos"
 import {EventResult} from "./suggHeaderMobile";
+import Image from "next/image";
 
 export default function ResultEventSug({item} : {item: EventResult[]}){
     return(
         <div className={style.mainCont}>
             <div className={style.gridTitleImage}>
-                <img className={style.sizeImage} src={GlobalConst.sourceImages.stadiumIcon} alt=""/>
+                <Image className={style.sizeImage} src={GlobalConst.sourceImages.stadiumIcon} alt=""/>
                 <div className={utilities.fontSubTitle}>{title}</div>
             </div>
             <div className={style.contResult}>
@@ -19,7 +20,7 @@ export default function ResultEventSug({item} : {item: EventResult[]}){
                                 {item1.Name}
                             </div>
                             <div>
-                                <img className="h-4 mb-1.5" src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                                <Image className="h-4 mb-1.5" src={GlobalConst.sourceImages.reviewStars} alt=""/>
                             </div>
                             <div className={utilities.fontSecundaryText}>
                                 En:

@@ -3,13 +3,14 @@ import style from "/styles/Desktop/EventPage/reviewMobile.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import {review} from "../../../dataDemo/data";
 import OptionBar from "../Misc/optionBar";
+import Image from "next/image";
 
 export default function ReviewDesk({item} : {item : review}) {
     return (
         <div className="grid gap-3">
             <div className={`${utilities.gridMaxContent2} gap-3`}>
                 <div className={utilities.gridContentCenter}>
-                    <img loading="lazy" src={item.ProfileImage} className={style.sizeReviewImage}/>
+                    <Image src={item.ProfileImage} className={style.sizeReviewImage} alt=""/>
                 </div>
 
                 <div>
@@ -19,7 +20,7 @@ export default function ReviewDesk({item} : {item : review}) {
                             Compra verificada
                         </div>
                         <div className={utilities.gridContentCenter}>
-                            <img loading="lazy" className={style.sizeCheckIcon} src={GlobalConst.sourceImages.checkIcon}/>
+                            <Image className={style.sizeCheckIcon} src={GlobalConst.sourceImages.checkIcon} alt=""/>
                         </div>
                     </div>
                 </div>
@@ -30,7 +31,7 @@ export default function ReviewDesk({item} : {item : review}) {
                     {item.Title}
                 </div>
                 <div className="grid pb-0.5">
-                    <img className={style.sizeReviewStar} src={GlobalConst.sourceImages.reviewStars}/>
+                    <Image className={style.sizeReviewStar} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                 </div>
             </div>
 

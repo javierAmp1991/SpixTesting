@@ -1,12 +1,13 @@
 import style from "/styles/Desktop/CRM/newView.module.css"
 import utilities from "/styles/utilities.module.css"
 const readNew: string = "Leer notica"
+import Image from "next/image";
 
 export default function NewView({homeNew, darkModeState}){
     let cssStyles = getCssStyles()
     return(
         <div className={`${style.widthContainerNew} ${cssStyles.borderCard}`}>
-            <img loading="lazy" className={style.heightImageNews} src={homeNew.PathImage} alt=""/>
+            <Image className={style.heightImageNews} src={homeNew.PathImage} alt=""/>
                 <div className={`${cssStyles.bgInfo} grid content-start gap-1 p-3`}>
                     <h3 className={`${cssStyles.fontSubTitle} ${utilities.clamp2}`}>
                         {homeNew.Title}

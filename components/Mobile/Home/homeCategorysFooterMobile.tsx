@@ -1,5 +1,6 @@
 import style from "/styles/Mobile/Home/homeCategorysFooterMobile.module.css"
 import utilities from "/styles/utilities.module.css"
+import Image from "next/image";
 
 export default function HomeCategorysFooterMobile({item, isDarkMode}) {
     let cssStyles = getCssStyles()
@@ -10,7 +11,7 @@ export default function HomeCategorysFooterMobile({item, isDarkMode}) {
             </div>
 
             <div>
-                <img className={style.heightImageAtribute} src={item.LinkImage}/>
+                <Image className={style.heightImageAtribute} src={item.LinkImage} alt=""/>
             </div>
         </div>
     )

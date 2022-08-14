@@ -5,10 +5,10 @@ import {GlobalConst} from "../../../public/globalConst";
 import React, {useState} from "react";
 import {Guest} from "../../../pages/eventProducts";
 import ProductSelectedViewDesk from "./productSelectedViewDesk";
+import Image from "next/image";
 
 const productTitle = "Productos"
 const buttonText = "Comprar"
-const buttonText1 = "Agregar Más"
 
 export default function ContSelectedProduct({listProducts, methodProps, listGuest}:
                                                 { listProducts: Product[], methodProps: any, listGuest: Guest[], guestSelected: Guest }) {
@@ -23,7 +23,7 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
                         <div onClick={handleDisplay}
                              className={style.gridCarTitleClose}>
                             <div className={style.styleGridVar}>
-                                <img className={style.sizeBuyCAr}
+                                <Image className={style.sizeBuyCAr}
                                      src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                                 <span className={style.numItemSelected}>0</span>
                             </div>
@@ -78,7 +78,7 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
                                      src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                                 <span className={style.numItemSelected}>0</span>
                             </div>*/}
-                            <img onClick={handleDisplay}
+                            <Image onClick={handleDisplay}
                                 className="h-4 w-auto" src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
                                 Total: $ 99.999

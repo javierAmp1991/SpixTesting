@@ -1,5 +1,6 @@
 import style from "/styles/Desktop/Home/homeInformation.module.css"
 import utilities from "/styles/utilities.module.css"
+import Image from "next/image";
 
 export default function HomeInformation({listItem, darkModeState}) {
     let cssStyles = getCssStyles()
@@ -23,7 +24,7 @@ export default function HomeInformation({listItem, darkModeState}) {
                                 :
                                 <a key={info.Title} className={style.gridInternalMinHeader}>
                                     <div className="pl-4 grid content-center items-center">
-                                        <img className="h-6 w-auto" src={info.LinkImage} alt=""/>
+                                        <Image className="h-6 w-auto" src={info.LinkImage} alt=""/>
                                     </div>
                                     <div className="grid gap-1 pr-3">
                                         <div

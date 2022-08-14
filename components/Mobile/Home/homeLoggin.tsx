@@ -1,6 +1,7 @@
 import style from "/styles/Mobile/Home/homeLoggin.module.css"
 import utilities from "../../../styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 const firstText: string = "Inicia sesion en Spix"
 const secondText: string = "Y ten accesos a todos los beneficios de nuestra plataforma"
@@ -11,7 +12,7 @@ export default function HomeLoggin({isDarkMode}) {
         <div className={`$ ${cssStyles.bgInfo}`}>
             <div className={style.gridLog}>
                 <div className="grid content-center">
-                    <img className="h-6 w-auto" src={GlobalConst.sourceImages.homeLoggin} alt=""/>
+                    <Image className="h-6 w-auto" src={GlobalConst.sourceImages.homeLoggin} alt=""/>
                 </div>
                 <div className="grid gap-1 text-left">
                     <div className={cssStyles.fontSubTitle}>{firstText}</div>

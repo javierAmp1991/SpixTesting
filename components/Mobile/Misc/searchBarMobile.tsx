@@ -1,8 +1,8 @@
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Misc/searchBarMobile.module.css"
-import {func} from "prop-types";
 import {useState} from "react";
+import Image from "next/image";
 
 const placeHolder: string = "Buscar evento, categoria o ciudad"
 const nameInput: string = "searchBarMobile"
@@ -28,7 +28,7 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
             <div className={style.spixLogoCont}>
-                <img className={style.spixLogoPro} src={GlobalConst.sourceImages.spixAlone} alt=""/>
+                <Image className={style.spixLogoPro} src={GlobalConst.sourceImages.spixAlone} alt=""/>
             </div>
             <input onChange={getValueInput}
                    onFocus={isDisplaySug}
@@ -38,7 +38,7 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
                    placeholder={placeHolder}/>
             <div className={style.styleButton}>
                 <button>
-                    <img className={style.styleLupa} src={GlobalConst.sourceImages.magGlass} alt=""/>
+                    <Image className={style.styleLupa} src={GlobalConst.sourceImages.magGlass} alt=""/>
                 </button>
             </div>
         </div>

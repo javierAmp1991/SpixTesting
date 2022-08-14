@@ -3,7 +3,6 @@ import style from "/styles/Mobile/PayPage/gridSelectedItems.module.css"
 import ButtonBlueDesk from "../../Desktop/Misc/buttonBlue";
 
 const returntext: string = "Volver"
-import {GlobalConst} from "../../../public/globalConst";
 
 const titleSection = "Productos seleccionados"
 export default function GridSelectedItemsMobile({children, returndisplay}) {

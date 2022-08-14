@@ -1,5 +1,6 @@
 import style from "/styles/Desktop/Home/homeRoundedView.module.css"
 import utilities from "/styles/utilities.module.css"
+import Image from "next/image";
 
 export default function HomeRoundedView({info, darkModeState}) {
     let cssStyles = getCssStyles()
@@ -7,7 +8,7 @@ export default function HomeRoundedView({info, darkModeState}) {
             <div className={`${cssStyles.borderCard} ${utilities.borderRadious50}`}>
                 <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${cssStyles.bgFirstGradient}`}>
                     <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${cssStyles.bgSecondGradient}`}>
-                        <img className={style.sizeImageRoundedCarrousel} src={info.CoverImage} alt=""/>
+                        <Image className={style.sizeImageRoundedCarrousel} src={info.CoverImage} alt=""/>
                     </div>
                 </div>
             </div>

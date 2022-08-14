@@ -1,17 +1,18 @@
 import styles from "/styles/Desktop/Events/eventOnlyImageView.module.css"
 import utilities from "../../../styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
 
 export default function EventOnlyImageView({item, darkMode}){
     let cssStyle = getCssStyles()
     return(
         <a>
             <div className={`${cssStyle.borderCard} relative`}>
-                <img className="w-full h-auto z-30" src={item.CoverImage} alt=""/>
+                <Image className="w-full h-auto z-30" src={item.CoverImage} alt=""/>
                 {
                     item.SoldTickets >= item.TotalTickets * 0.90 ?
-                        <img className={`${styles.positionLastTickets} absolute  z-40`}
-                             src={GlobalConst.sourceImages.lastTicket}/>
+                        <Image className={`${styles.positionLastTickets} absolute  z-40`}
+                             src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         :
                         ""
                 }
