@@ -3,6 +3,7 @@ import styles from "/styles/Desktop/Events/eventWithBanner.module.css"
 import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import Link from "next/link";
 
 const alignmentTextProduct: string = "text-center"
 
@@ -16,46 +17,47 @@ export default function EventWithBannerView({item, darkModeState}) {
     let [visibility, setVisibility] = useState(true);
 
     return (
-        <div className={`${cssStyles.borderCard} ${styles.widthContainer}`}>
-            <div className="grid">
-                <div className="relative">
-                    <div className={styles.sizeBannerEWB}>
-                        <Image layout={"fill"} src={item.BannerPath} alt=""/>
-                    </div>
+        <Link href={"/eventPage"}>
+            <div className={`${cssStyles.borderCard} ${styles.widthContainer}`}>
+                <div className="grid">
+                    <div className="relative">
+                        <div className={styles.sizeBannerEWB}>
+                            <Image layout={"fill"} src={item.BannerPath} alt=""/>
+                        </div>
 
-                    <div className={styles.propertiesLogoEWB}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
-                    </div>
-                </div>
-
-                <div className={`${cssStyles.bgInfo} pt-10 pb-3 grid justify-center justify-items-center`}>
-                    <div className={`${cssStyles.fontSubTitle} ${alignmentTextProduct} mb-2`}>
-                        {item.EventName}
-                    </div>
-
-                    <div className={`${utilities.gridMaxContent2} relative grid justify-center mb-3`}>
-                        <div className={utilities.ratingStarsProperties}>
-                        <Image layout={"fill"} objectFit={"cover"} src="/images/ratingNew.png" alt=""/>
+                        <div className={styles.propertiesLogoEWB}>
+                            <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
                         </div>
                     </div>
 
-                    <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
-                        Expira en 00:05:23
+                    <div className={`${cssStyles.bgInfo} pt-10 pb-3 grid justify-center justify-items-center`}>
+                        <div className={`${cssStyles.fontSubTitle} ${alignmentTextProduct} mb-2`}>
+                            {item.EventName}
+                        </div>
+
+                        <div className={`${utilities.gridMaxContent2} relative grid justify-center mb-3`}>
+                            <div className={utilities.ratingStarsProperties}>
+                                <Image layout={"fill"} objectFit={"cover"} src="/images/ratingNew.png" alt=""/>
+                            </div>
+                        </div>
+
+                        <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
+                            Expira en 00:05:23
+                        </div>
+
+                        <div className={`${utilities.gridMaxContent3} gap-1`}>
+                            {
+                                item.Tags.map(offer =>
+                                    <div key={offer} className={utilities.styleSpixDiscountTag}>
+                                        {offer}
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
 
-                    <div className={`${utilities.gridMaxContent3} gap-1`}>
-                        {
-                            item.Tags.map(offer =>
-                                <div key={offer} className={utilities.styleSpixDiscountTag}>
-                                    {offer}
-                                </div>
-                            )
-                        }
-                    </div>
-                </div>
-
-                <div className={styles.containerCarrouselEWB}>
-                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                    <div className={styles.containerCarrouselEWB}>
+                        {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${styles.styleArrowEWBProducts} 
                                         ${styles.positionArrowEWBLeft}
                                         ${visibility ? utilities.opacity0 : ""}`}>
@@ -64,34 +66,35 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </span>
                     </button>*/}
 
-                    <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                         className={styles.overflowCarrouselProductsEWB}>
-                        <div className={styles.gridCarrouselProductsEWB}>
-                            {
-                                item.ListProducts.map(product =>
-                                    <div key={product.Name}>
-                                        <div className={`${styles.sizeProductEWB}`}>
-                                            <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath} alt=""/>
-                                        </div>
-                                        <div
-                                            className={`${utilities.fontPriceInclude} ${alignmentTextProduct} mb-1`}>
-                                            ${product.Price}
-                                        </div>
-                                        <div
-                                            className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
+                        <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                             className={styles.overflowCarrouselProductsEWB}>
+                            <div className={styles.gridCarrouselProductsEWB}>
+                                {
+                                    item.ListProducts.map(product =>
+                                        <div key={product.Name}>
+                                            <div className={`${styles.sizeProductEWB}`}>
+                                                <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath}
+                                                       alt=""/>
+                                            </div>
+                                            <div
+                                                className={`${utilities.fontPriceInclude} ${alignmentTextProduct} mb-1`}>
+                                                ${product.Price}
+                                            </div>
+                                            <div
+                                                className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
                                                         ${utilities.font12}`}>
-                                            <span>Antes: </span>
-                                            <span className="line-through">
+                                                <span>Antes: </span>
+                                                <span className="line-through">
                                                 ${(product.Price * product.DiscountPercent / 100) + product.Price}
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
-                                )
-                            }
+                                    )
+                                }
+                            </div>
                         </div>
-                    </div>
 
-                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                        {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${styles.styleArrowEWBProducts}
                                         ${styles.positionArrowEWBRight}
                                         ${visibility ? utilities.opacity0 : ""}`}>
@@ -100,10 +103,11 @@ export default function EventWithBannerView({item, darkModeState}) {
                                alt=""/>
                         </span>
                     </button>*/}
-                </div>
+                    </div>
 
+                </div>
             </div>
-        </div>
+        </Link>
     )
 
     function showArrow() {

@@ -35,7 +35,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
 
     return (
         <div className={styles.mainDivCarrouselProperties}>
-            <button onClick={handleLeft}
+            <button
                 style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
                 onPointerOver={showArrow} onPointerOut={hiddeArrow}
                 className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
@@ -54,7 +54,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
                 </div>
             </div>
 
-            <button onClick={handleRight}
+            <button
                     style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}

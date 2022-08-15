@@ -63,6 +63,7 @@ import {MostPopularData} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
 import {InformationHomeData} from "../dataDemo/data";
 import atributes = AtributesDataFilter.atributes;
+import Link from "next/link";
 //endregion
 
 const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "Link"]
@@ -173,7 +174,10 @@ export default function Index() {
     let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>
     let dailyOfferMobile = <TitleSection titleLink={dailyOfferHeaderTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
-        <EventWithBannerMobile displayLogoRating={true} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        <Link href={"/eventPage"}>
+            <EventWithBannerMobile displayLogoRating={true}
+                                   darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        </Link>
     </TitleSection>
     let mostPopularMobile = <TitleSection darkModeState={isDarkMode} paddingTitle={titleLinkPadding}
                                           titleLink={mostPopularTleLink}>
@@ -359,14 +363,14 @@ export default function Index() {
         }
     </TitleSection>
 
-    let[getFeaturedItems, setFeaturedItems] = useState(0)
+    let [getFeaturedItems, setFeaturedItems] = useState(0)
     const handleFeatured = (e) => setFeaturedItems(getFeaturedItems = e)
     let featured = <TitleSection paddingTitle={null}
                                  titleLink={featuredHomeTitleLink} darkModeState={isDarkMode}>{
         <LayoutCarrousel handleFeatured={handleFeatured}
-            layoutProp={layoutPropFeatured}>{
+                         layoutProp={layoutPropFeatured}>{
             FeaturedHome.listFeaturedHome.map((item, index) =>
-                index >= getFeaturedItems && index <= getFeaturedItems + 1?
+                index >= getFeaturedItems && index <= getFeaturedItems + 1 ?
                     <HomeFeatured darkModeState={isDarkMode} featuredItem={item} key={index}/> : <></>
             )
         }
@@ -374,13 +378,13 @@ export default function Index() {
     }
     </TitleSection>
 
-    let[getCarrousel1Items, setCarrousel1Items] = useState(0)
+    let [getCarrousel1Items, setCarrousel1Items] = useState(0)
     let carrousel1 = <TitleSection paddingTitle={null} titleLink={todayInValpoTitleLink} darkModeState={isDarkMode}>
         {
             <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropCarrousel}>
                 {
                     TodayInValpo.listEventLookUp.map((item, index) =>
-                        index >= getCarrousel1Items && index <= getCarrousel1Items + 4?
+                        index >= getCarrousel1Items && index <= getCarrousel1Items + 4 ?
                             <EventVerticalView darkModeState={isDarkMode}
                                                isHideName={true}
                                                dropDown={false}
@@ -392,7 +396,7 @@ export default function Index() {
         }
     </TitleSection>
     let publicity1 = <PublicityView linkImage={PublicityData.publicityList[0]}/>
-    let[getCarrouselRounded1, setGetCArrouselRounded1] = useState(0)
+    let [getCarrouselRounded1, setGetCArrouselRounded1] = useState(0)
     let carrouselRounded1 = <TitleSection paddingTitle={null} titleLink={cinemasTitleLink} darkModeState={isDarkMode}>
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropCarrouselRounded}>
             {
@@ -403,12 +407,12 @@ export default function Index() {
             }
         </LayoutCarrousel>
     </TitleSection>
-    let[getCarrousel2Items, setCarrousel2Items] = useState(0)
+    let [getCarrousel2Items, setCarrousel2Items] = useState(0)
     let carrousel2 = <TitleSection paddingTitle={null} titleLink={inOfferTitleLink} darkModeState={isDarkMode}>
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropCarrousel}>
             {
                 InOffer.listInOffer.map((item, index) =>
-                    index >= getCarrousel2Items && index <= getCarrousel2Items + 4?
+                    index >= getCarrousel2Items && index <= getCarrousel2Items + 4 ?
                         <EventVerticalView isHideName={true}
                                            dropDown={false}
                                            info={item}
@@ -423,13 +427,13 @@ export default function Index() {
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNewsItem && index <= getCarrousel1Items + 2?
+                    index >= getNewsItem && index <= getCarrousel1Items + 2 ?
                         <NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/> : <></>
                 )
             }
         </LayoutCarrousel>
     </TitleSection>
-    let[getCarrouselRounded2, setGetCArrouselRounded2] = useState(0)
+    let [getCarrouselRounded2, setGetCArrouselRounded2] = useState(0)
     let carrouselRounded2 = <TitleSection paddingTitle={null} titleLink={restaurantsHomeTitleLink}
                                           darkModeState={isDarkMode}>
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropCarrouselRounded}>
