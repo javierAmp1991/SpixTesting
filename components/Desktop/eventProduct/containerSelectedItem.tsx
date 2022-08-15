@@ -4,11 +4,13 @@ import {productSelected} from "../../../dataDemo/data";
 import ProductViewDesk from "../Misc/productViewDesk";
 import Image from "next/image";
 
-export default function ContainerSelectedItem({item, addItem}:
-                                                  { item: productSelected, addItem: any }) {
+export default function ContainerSelectedItem({item, addItem, addItemGuest}:
+                                                  { item: productSelected,
+                                                      addItem: any,
+                                                  addItemGuest: any}) {
     const cssStyle = getCssStyle()
     return (
-        <div onClick={() => addItem(item.Product, !item.IsSelected)}
+        <div onClick={() => addItemGuest(item.Product)}
              className={cssStyle.boxShadow}>
             <ProductViewDesk size={null} item={item.Product}/>
             {

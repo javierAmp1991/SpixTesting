@@ -9,10 +9,10 @@ import Image from "next/image";
 const idMainDiv: string = "mainDivLeftCard"
 const idCarrousel: string = "idCarrouselLeftCard"
 
-export default function LeftCard({listSectionPro, handleAddProduct}:
+export default function LeftCard({listSectionPro, handleAddProduct, addItemGuest}:
                                      {
                                          listSectionPro: sectionProduct[],
-                                         handleAddProduct: any,
+                                         handleAddProduct: any, addItemGuest: any
                                      }) {
     let [isArrowVisible, setIsArrowVisible] = useState(false)
     const handleShowArro = () => {
@@ -28,7 +28,8 @@ export default function LeftCard({listSectionPro, handleAddProduct}:
     return (
         <div className={style.stylerightContainer}>
             <div className={style.imgBanner}>
-                <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+                <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"}
+                       src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
             <div className={style.borderSection}>
                 <div className={style.innerDiv}>
@@ -63,6 +64,7 @@ export default function LeftCard({listSectionPro, handleAddProduct}:
                                          className={index != (listSectionPro.length - 1) ?
                                              style.borderBottomSection : ""}>
                                         <SectionProduct addItem={handleAddProduct}
+                                                        addItemGuest={addItemGuest}
                                                         item={item}/>
                                     </div>
                                 )

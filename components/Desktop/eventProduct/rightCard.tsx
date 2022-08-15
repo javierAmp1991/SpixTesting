@@ -14,12 +14,13 @@ const textButton: string = "Comprar"
 const translateNum = 100
 const newGuestText: string = "Nuevo invitado"
 
-export default function RightCard({methodProps, listGuest, guestSelected, listProduct, listSelectedProducts, addItem}:
+export default function RightCard({methodProps, listGuest, guestSelected,
+                                      listSelectedProducts, addItem, removetemGuest}:
                                       {
                                           methodProps: any, listGuest: Guest[], guestSelected: Guest,
                                           listProduct: Product[], listSelectedProducts: Product[], addItem: any
+                                          removetemGuest: any
                                       }) {
-
     //region hooks
     const totalPrice = getTotal()
 

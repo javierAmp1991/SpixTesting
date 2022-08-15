@@ -1,6 +1,6 @@
 //region data
 import {ListProducts, Menu, Product, productSelected} from "../dataDemo/data";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {ListProducts2} from "../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import styleDesk from "/styles/Desktop/eventProducts/eventProducts.module.css"
@@ -84,6 +84,10 @@ export default function EventProducts() {
     }
 
     let [guestSelected, setGuestSelected] = useState(firstGuest)
+    const addItemGuestSelected = (product: Product) => {
+        const newList: Product[] = [...guestSelected.listProductSelected, product];
+        setGuestSelected({...guestSelected, listProductSelected: newList})
+    }
     const handleGuestSelected = (guest: Guest) => {
         const newListGuest = listGuests.map((oldGuest: Guest) => {
             if (oldGuest != guest) {
@@ -100,6 +104,22 @@ export default function EventProducts() {
     }
 
     let [listProductShow, setListProductShow] = useState(listProductsPass)
+    const handleListProductShow1 = () => {
+        guestSelected.listProductSelected.forEach(productSelected => {
+                const listSupe: sectionProduct[] = listProductShow.map((item) => {
+                        const newListProductSelected: productSelected[] = item.listItems.map((prod) => {
+                                if (prod.Product == productSelected) {
+                                    return {...prod, IsSelected: true}
+                                }
+                                return {...prod}
+                            }
+                        )
+                        return {...item, listItems: newListProductSelected}
+                    }
+                )
+            }
+        )
+    }
     const handListProductShow = (getItem: Product, selected: boolean) => {
         const listSupe: sectionProduct[] = listProductShow.map((item) => {
                 const newListProductSelected: productSelected[] = item.listItems.map((prod) => {
@@ -122,6 +142,19 @@ export default function EventProducts() {
         /*handleOpenFilter()*/
     }
 
+    let[heightDiv, setHeightDiv] = useState(0)
+    const handleSetH = (number: number) => {
+        setHeightDiv(heightDiv = number)
+    }
+
+    useEffect(() => {
+        function resiveDiv(){
+            const sizeDiv = window.innerHeight
+            handleSetH(sizeDiv)
+        }
+        window.addEventListener('resize', resiveDiv)
+    }, [heightDiv]);
+
     let methodProps = {
         addGuest: handleGuestAdd,
         removeGuest: handleGuestRemove,
@@ -134,7 +167,8 @@ export default function EventProducts() {
             <div className={styleMob.mainContainerMobile}>
                 <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                <div className={styleMob.heightCont}>
+                <div className={styleMob.heightCont}
+                    style={{height:heightDiv}}>
                     {
                         isOpenSelectedProduct ?
                             <ContSelectedProduct guestSelected={firstGuest}
@@ -163,14 +197,17 @@ export default function EventProducts() {
                     <div className={styleDesk.grid}>
                         <LeftCard
                             handleAddProduct={handListProductShow}
-                            listSectionPro={listProductShow}/>
+                            listSectionPro={listProductShow}
+                            addItemGuest={addItemGuestSelected}/>
 
                         <RightCard guestSelected={guestSelected}
                                    listGuest={listGuests}
                                    listSelectedProducts={listProductSelected}
                                    methodProps={methodProps}
                                    listProduct={ListProducts.listProducts}
-                                   addItem={handListProductShow}/>
+                                   addItem={handListProductShow}
+                                   removetemGuest={addItemGuestSelected}
+                        />
                     </div>
                 </div>
             </div>

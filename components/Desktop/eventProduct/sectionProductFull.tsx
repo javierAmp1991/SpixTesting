@@ -15,6 +15,7 @@ export default function SectionProductFull({item, addItem}:
                 {
                     item.listItems.map((productSelected, index) =>
                         <ContainerSelectedItemFull addItem={addItem}
+
                                                item={productSelected}
                                                key={index}/>
                     )

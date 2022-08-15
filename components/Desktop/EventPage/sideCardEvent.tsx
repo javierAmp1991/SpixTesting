@@ -143,7 +143,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                             <span>Proxima fecha: </span>
                             <span onClick={handleOpenDate}
                                   className={utilities.styleLink}>
-                                {venueDateSelected.Date.toDateString()}</span>
+                                {venueDateSelected.Date.getDate()} de {venueDateSelected.Date.toLocaleString("es-US", {month: "long"})} del {venueDateSelected.Date.getFullYear()}
+                            </span>
                         </div>
                     </button>
                     <button className={styleCard.gridIconText}>

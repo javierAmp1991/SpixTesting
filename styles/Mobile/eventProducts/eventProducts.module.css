@@ -3,6 +3,5 @@
 }
 
 .heightCont{
-    height: calc(100vh - 40px - 89px);
     overflow: scroll;
 }
