@@ -9,11 +9,11 @@
 }
 
 .paddingMainConatiner {
-    padding: 0px 8px;
+    padding: 0 8px;
 }
 
 .paddingDescription {
-    padding: 16px 0px;
+    padding: 16px 0;
 }
 
 .gridrestrictions {
@@ -41,7 +41,7 @@
 .gridMainContainer {
     display: grid;
     gap: 8px;
-    padding: 0px 0px 16px 0px;
+    padding: 0 0 16px 0;
     border-bottom: 2px solid var(--separationLineColor);
 }
 
@@ -80,7 +80,7 @@
     grid-template-columns: repeat(5, max-content);
     gap: 12px;
     justify-content: space-between;
-    padding: 16px 0px;
+    padding: 16px 0;
 }
 
 .gridButtons {
@@ -161,7 +161,7 @@
 }
 
 .selectDateContainer{
-    padding: 16px 0px;
+    padding: 16px 0;
     display: grid;
     gap: 12px;
 }
@@ -178,7 +178,7 @@
 }
 
 .mainContMap {
-    padding: 32px 48px;
+    padding: 32px 32px;
     position: relative;
     height: 100%;
     display: grid;
@@ -186,7 +186,7 @@
 }
 
 .mainContSelecDate {
-    padding: 32px 48px;
+    padding: 32px 32px;
     position: relative;
     height: 100%;
     display: grid;
@@ -195,7 +195,10 @@
 
 .paddingContInpu {
     display: grid;
-    margin: 16px 0px;
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+    grid-auto-flow: row;
+    margin: 16px 0;
     padding: 6px 6px 12px 6px;
     gap: 24px;
     overflow: scroll;
@@ -204,7 +207,7 @@
 .contMap {
     display: grid;
     gap: 16px;
-    padding: 16px 0px;
+    padding: 24px 0;
 }
 
 .imgMap {
@@ -214,7 +217,7 @@
 }
 
 .styleDate {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, .2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
     border-radius: 8px;
     padding: 12px 8px;
     transition: .4s;
@@ -228,7 +231,7 @@
 }
 
 .styleDate:hover {
-    box-shadow: 0px 7px 12px rgba(0, 0, 0, .3);
+    box-shadow: 0 7px 12px rgba(0, 0, 0, .3);
 }
 
 .buttonCont {
@@ -237,7 +240,7 @@
 }
 
 .contCenter {
-    padding-top: 16px
+    padding-top: 0;
 }
 
 .gridLinkMap {
@@ -252,4 +255,10 @@
     height: 16px;
     width: 16px;
     position: relative;
+}
+
+.elipsisDirection{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
 }

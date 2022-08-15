@@ -19,6 +19,6 @@
 .sizeReviewStar{
     --sizeReviewStar: 16px;
     height: var(--sizeReviewStar);
-    width: 140px;
+    width: 90px;
     position: relative;
 }
