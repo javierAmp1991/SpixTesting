@@ -685,7 +685,7 @@ export namespace ListProducts2 {
                         Price: 18990,
                         DiscountPercent: 10,
                         Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product1.jpg",
+                        ImagePath: "/images/hamb1.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
 
@@ -696,7 +696,7 @@ export namespace ListProducts2 {
                         Price: 18990,
                         DiscountPercent: 10,
                         Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product2.jpg",
+                        ImagePath: "/images/hamb2.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
                 },
@@ -706,7 +706,7 @@ export namespace ListProducts2 {
                         Price: 2990,
                         DiscountPercent: 25,
                         Include: null,
-                        ImagePath: "/images/product4.jpg",
+                        ImagePath: "/images/hamb3.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
                 }
@@ -717,7 +717,7 @@ export namespace ListProducts2 {
                         Price: 990,
                         DiscountPercent: 30,
                         Include: null,
-                        ImagePath: "/images/product5.jpg",
+                        ImagePath: "/images/hamb4.jpg",
                         Tag: "Snack"
                     }, IsSelected: false
 
@@ -728,7 +728,7 @@ export namespace ListProducts2 {
                         Price: 9990,
                         DiscountPercent: 20,
                         Include: "Dcto 2 Un.",
-                        ImagePath: "/images/product6.jpg",
+                        ImagePath: "/images/hamb5.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
                 }
@@ -790,6 +790,64 @@ export namespace ListProducts2 {
                         Tag: "Energetica"
                     }, IsSelected: false
                 }
+            ]
+        },
+        {
+            Title: "Snacks",
+            listItems: [
+                {
+                    Product: {
+                        Name: "Snack 1.1",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/product3.jpg",
+                        Tag: "Cerveza"
+                    }, IsSelected: false
+
+                },
+                {
+                    Product: {
+                        Name: "Snack 2.2",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/product5.jpg",
+                        Tag: "Cerveza"
+                    }, IsSelected: false
+                },
+                {
+                    Product: {
+                        Name: "Snack 3.3",
+                        Price: 2990,
+                        DiscountPercent: 25,
+                        Include: null,
+                        ImagePath: "/images/snack1.jpg",
+                        Tag: "Energetica"
+                    }, IsSelected: false
+                }
+                ,
+                {
+                    Product: {
+                        Name: "Snack 4.4",
+                        Price: 990,
+                        DiscountPercent: 30,
+                        Include: null,
+                        ImagePath: "/images/snack2.jpg",
+                        Tag: "Snack"
+                    }, IsSelected: false
+
+                },
+                {
+                    Product: {
+                        Name: "Snack 5.5",
+                        Price: 9990,
+                        DiscountPercent: 20,
+                        Include: "Dcto 2 Un.",
+                        ImagePath: "/images/snack3.jpg",
+                        Tag: "Energetica"
+                    }, IsSelected: false
+                },
             ]
         }
     ]

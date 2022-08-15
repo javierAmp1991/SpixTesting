@@ -28,7 +28,7 @@ export default function LeftCard({listSectionPro, handleAddProduct}:
     return (
         <div className={style.stylerightContainer}>
             <div className={style.imgBanner}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+                <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
             <div className={style.borderSection}>
                 <div className={style.innerDiv}>
