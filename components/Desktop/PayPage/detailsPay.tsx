@@ -5,7 +5,7 @@ import CuponInput, {inputCuponValues} from "./cuponInput";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 
-const goToPay: string = "Ir a pagar"
+const goToPay: string = "Pagar"
 const cancel: string = "Canceslar"
 const propCupon: inputCuponValues = {
     titleCupon: "Ingresa tu cupon",
@@ -61,8 +61,8 @@ export default function DetailsPay() {
             </div>
 
             <div className={style.buttonContainer}>
-                <ButtonBlueDesk text={cancel}/>
-                <ButtonBlueDesk text={goToPay}/>
+                <button className={style.styleButton}>{cancel} </button>
+                <button className={style.styleButton}>{goToPay} </button>
             </div>
         </div>
     )

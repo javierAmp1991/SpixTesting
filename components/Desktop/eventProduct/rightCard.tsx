@@ -10,7 +10,7 @@ import PopUpContainer from "../Misc/popUpContainer";
 import Image from "next/image";
 
 const referenceDiv = "referenceDiv"
-const textButton: string = "Continuar comprar"
+const textButton: string = "Comprar"
 const translateNum = 100
 const newGuestText: string = "Nuevo invitado"
 

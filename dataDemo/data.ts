@@ -288,7 +288,7 @@ export namespace DailyOfferData {
                 ImagePath: "/images/product2.jpg"
             },
             {Name: "Producto 3.1", Price: 1990, DiscountPercent: 30, Include: null, ImagePath: "/images/product3.jpg"},
-            {Name: "Producto 4.1", Price: 2990, DiscountPercent: 25, Include: null, ImagePath: "/mages/product4.jpg"},
+            {Name: "Producto 4.1", Price: 2990, DiscountPercent: 25, Include: null, ImagePath: "/images/product4.jpg"},
             {Name: "Producto 5.1", Price: 990, DiscountPercent: 30, Include: null, ImagePath: "/images/product5.jpg"},
             {
                 Name: "Producto 6.1",

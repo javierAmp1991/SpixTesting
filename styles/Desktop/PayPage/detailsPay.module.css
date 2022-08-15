@@ -5,7 +5,7 @@
     --spaceYMini: 12px;
     padding: var(--spaceY) var(--spaceXGlobal);
     position: relative;
-    height: var(--heightRightCard);
+    height: 100%;
 
 }
 
@@ -16,7 +16,7 @@
 }
 
 .gridFull {
-    height: calc(var(--heightRightCard) - 29px - (var(--spaceY) * 2));
+    height: 100%;
     width: 100%;
     display: grid;
     grid-template-rows: repeat(4, max-content) 1fr;
@@ -51,12 +51,20 @@
     padding: 0px var(--spaceX);
 }
 
+.styleButton{
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 4px 32px;
+    border-radius: 3px;
+
+}
+
 .buttonContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     position: absolute;
-    bottom: var(--spaceY);
+    bottom: var(--spaceYMini);
     left: 0;
     width: 100%;
     padding: 0px var(--spaceXGlobal);

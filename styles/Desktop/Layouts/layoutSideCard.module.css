@@ -15,7 +15,8 @@
     margin: var(--margen) 0px;
     top: var(--margen);
     position: sticky;
-    height: var(--heightRightCard);
+    height: calc(100vh - 95px - 80px);
+    min-height: 530px;
     border-radius: 8px;
 }
 

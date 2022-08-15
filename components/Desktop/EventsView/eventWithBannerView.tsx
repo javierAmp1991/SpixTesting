@@ -55,14 +55,14 @@ export default function EventWithBannerView({item, darkModeState}) {
                 </div>
 
                 <div className={styles.containerCarrouselEWB}>
-                    <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${styles.styleArrowEWBProducts} 
                                         ${styles.positionArrowEWBLeft}
                                         ${visibility ? utilities.opacity0 : ""}`}>
                         <span className={styles.styleArrowDailyOfferProducts}>
                         <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
                         </span>
-                    </button>
+                    </button>*/}
 
                     <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
                          className={styles.overflowCarrouselProductsEWB}>
@@ -91,7 +91,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </div>
                     </div>
 
-                    <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${styles.styleArrowEWBProducts}
                                         ${styles.positionArrowEWBRight}
                                         ${visibility ? utilities.opacity0 : ""}`}>
@@ -99,7 +99,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.rightArrow}
                                alt=""/>
                         </span>
-                    </button>
+                    </button>*/}
                 </div>
 
             </div>
