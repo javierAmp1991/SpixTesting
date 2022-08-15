@@ -44,7 +44,6 @@ let firstGuest: Guest = {
     listProductSelected: []
 }
 
-const AppContext = React.createContext(undefined)
 
 export default function EventProducts() {
     //region basic
@@ -56,14 +55,14 @@ export default function EventProducts() {
         setListProductSelected(newListSelected)
     }
     let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(true)
-    const handleOpenFilter = () => {
+    /*const handleOpenFilter = () => {
         if (listProductSelected.length > 0) {
             setIsOpenSelectedProduct(isOpenSelectedProduct = true)
         }
         else {
             setIsOpenSelectedProduct(isOpenSelectedProduct = false)
         }
-    }
+    }*/
     const isSmallDown = useMediaQuery(mediaQuery);
     //endregion
 

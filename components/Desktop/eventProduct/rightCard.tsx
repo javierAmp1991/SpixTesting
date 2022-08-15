@@ -56,11 +56,11 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
     }
 
     const acceptGuest = () => {
-        if (emailGuest != "" && nameGuest != "") {
+        /*if (emailGuest != "" && nameGuest != "") {
             methodProps.addGuest(nameGuest, emailGuest)
             handleDisplayAdd()
             translateRight()
-        }
+        }*/
     }
     //endregion
 

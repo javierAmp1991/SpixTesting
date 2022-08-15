@@ -35,10 +35,10 @@ export default function LeftCardFull({listSectionPro, handleAddProduct}:
                 <div className={style.innerDiv}>
                     <div onPointerOver={handleShowArro} onPointerOut={handleHiddeArrow}
                          className={style.gridTagsArrow}>
-                        <div className={`${style.arrowTags} ${cssStyle.opacity}`}>
+                        {/*<div className={`${style.arrowTags} ${cssStyle.opacity}`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.leftArrow} alt=""/>
-                        </div>
+                        </div>*/}
                         <div id={idMainDiv} className="overflow-scroll">
                             <div id={idCarrousel} className={style.styletagContainer}>
                                 {
@@ -50,10 +50,10 @@ export default function LeftCardFull({listSectionPro, handleAddProduct}:
                                 }
                             </div>
                         </div>
-                        <div className={`${style.arrowTags} ${cssStyle.opacity}`}>
+                        {/*<div className={`${style.arrowTags} ${cssStyle.opacity}`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.rightArrow} alt=""/>
-                        </div>
+                        </div>*/}
 
                     </div>
                     <div className={style.styleProductContainer}>

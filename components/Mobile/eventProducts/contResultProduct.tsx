@@ -35,10 +35,10 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
     }
 
     const acceptGuest = () => {
-        if (emailGuest != "" && nameGuest != "") {
+        /*if (emailGuest != "" && nameGuest != "") {
             methodProps.addGuest(nameGuest, emailGuest)
             handleDisplayAdd()
-        }
+        }*/
     }
 
     const cssStyle = getCssStyle()

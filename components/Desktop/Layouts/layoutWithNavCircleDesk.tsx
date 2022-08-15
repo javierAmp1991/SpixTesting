@@ -8,7 +8,7 @@ export default function LayoutWithNavCircleDesk({children, isDarkMode}) {
             <div className={`${style2.gridImageSection}`}>
                 {children}
             </div>
-            <div className={style.gridNavItems}>
+            {/*<div className={style.gridNavItems}>
                 {
                     children.map((item, index) =>
                         index == 0?
@@ -17,7 +17,7 @@ export default function LayoutWithNavCircleDesk({children, isDarkMode}) {
                             <div className={style.styleNavCircleNoSelected}/>
                     )
                 }
-            </div>
+            </div>*/}
         </div>
     )
 
