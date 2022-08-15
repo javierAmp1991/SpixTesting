@@ -48,7 +48,7 @@ export namespace GlobalConst{
         downArrow: "/images/downArrow.png",
         inOfferBanner: "/images/inOfferBanner.png",
         timerRed: "/images/timerREd.png",
-        magGlass: "/images/lupawhite.png",
+        magGlass: "/images/lupaWhite.png",
         magGlassGray: "/images/lupaGray.png",
         bussinesIcon: "/images/negocios.png",
         stadiumIcon: "/images/stadiumGray.png",
