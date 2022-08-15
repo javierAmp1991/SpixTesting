@@ -970,7 +970,7 @@ export namespace EventPageEvent {
 export namespace MostPopularData {
     export const listMostPopular: EventLookUp[] = [
         {
-            CoverImage: "/images/El Huevo.jpg",
+            CoverImage: "/images/elHuevo.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
         },
