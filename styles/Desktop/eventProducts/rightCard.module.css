@@ -3,7 +3,7 @@
     --paddingYEventProduct: 14px;
     display: grid;
     gap: 16px;
-    padding: 0px var(--paddingXEventProduc);
+    padding: 0 var(--paddingXEventProduc);
 }
 
 .gridSelected {
@@ -11,7 +11,7 @@
     grid-template-rows: max-content;
     gap: 32px;
     overflow: scroll;
-    padding: 0px 0px 3px 0px;
+    padding: 0 0 3px 0;
     margin: var(--paddingYEventProduct) var(--paddingXEventProduc);
 }
 
@@ -20,7 +20,7 @@
     top: 40px;
     margin-top: 40px;
     height: 580px;
-    box-shadow: 0px 2px 12px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
     border-radius: 8px 8px 8px 8px;
     overflow: hidden;
     display: grid;
@@ -34,7 +34,7 @@
     display: grid;
     grid-template-rows: 1fr max-content;
     height: 540px;
-    border-radius: 0px 0px 8px 8px;
+    border-radius: 0 0 8px 8px;
 }
 
 .borderBottomSection {
@@ -43,7 +43,7 @@
 
 .containerButton {
     display: grid;
-    padding: 0px 16px 16px 16px;
+    padding: 0 16px 16px 16px;
 }
 
 .styleButton {
@@ -88,6 +88,7 @@
     border-radius: 50%;
     display: inline;
     opacity: .5;
+    position: relative;
 }
 
 .styleInput {
@@ -106,7 +107,7 @@
     grid-template-rows: max-content max-content;
     display: grid;
     gap: 16px;
-    padding: 24px 0px;
+    padding: 24px 0;
     overflow: scroll;
 }
 
@@ -122,7 +123,7 @@
 
 .TabIcon {
     padding: 10px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0 0;
     color: var(--colorPrimaryText);
     display: grid;
     grid-template-columns: 1fr max-content;
@@ -133,7 +134,7 @@
 
 .TabIconSelected {
     padding: 10px;
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0 0;
     border-top: 1px solid rgba(0, 0, 0, .1);
     border-left: 1px solid rgba(0, 0, 0, .1);
     border-right: 1px solid rgba(0, 0, 0, .1);
@@ -146,7 +147,7 @@
 
 .Arrow {
     height: 16px;
-    width: auto;
+    width: 16px;
     position: absolute;
     right: 8px;
     animation: moveArrow 1.5s infinite linear;
@@ -156,10 +157,11 @@
     height: 20px;
     width: 20px;
     margin-left: 10px;
+    position: relative;
 }
 
 .gridTabs {
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 0 0;
     background: rgba(0, 0, 0, .05);
     display: grid;
     grid-template-columns: 1fr max-content;
@@ -197,7 +199,8 @@
 
 .arrow {
     height: 12px;
-    width: auto;
+    width: 12px;
+    position: relative;
 }
 
 @keyframes moveArrow {

@@ -53,14 +53,16 @@ export default function DetailsPay() {
                 </div>
 
                 <div className={style.timerContainer}>
-                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.timerRed} alt=""/>
+                    <div className="h-4 w-3 relative">
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.timerRed} alt=""/>
+                    </div>
                     <span>09:08:23 para finalizar su compra</span>
                 </div>
             </div>
 
             <div className={style.buttonContainer}>
-                    <ButtonBlueDesk text={cancel}/>
-                    <ButtonBlueDesk text={goToPay}/>
+                <ButtonBlueDesk text={cancel}/>
+                <ButtonBlueDesk text={goToPay}/>
             </div>
         </div>
     )

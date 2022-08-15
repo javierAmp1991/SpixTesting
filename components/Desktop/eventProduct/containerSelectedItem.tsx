@@ -8,13 +8,15 @@ export default function ContainerSelectedItem({item, addItem}:
                                                   { item: productSelected, addItem: any }) {
     const cssStyle = getCssStyle()
     return (
-        <div onClick={() => addItem(item, item.IsSelected ? false : true)}
+        <div onClick={() => addItem(item, !item.IsSelected)}
              className={cssStyle.boxShadow}>
             <ProductViewDesk size={null} item={item.Product}/>
             {
-                item.IsSelected?
-                    <Image className={style.sizeChecked}
-                         src={GlobalConst.sourceImages.checkIcon} alt=""/>
+                item.IsSelected ?
+                    <div className={style.sizeChecked}>
+                        <Image layout={"fill"}
+                               src={GlobalConst.sourceImages.checkIcon} alt=""/>
+                    </div>
                     :
                     <></>
             }

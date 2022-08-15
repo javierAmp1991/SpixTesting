@@ -366,8 +366,8 @@ export default function EventPage() {
              </div>*/
             :
             <div>
-                {/*<HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
-                <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>*/}
+                <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
+                <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>
                 <div className={styleDesk.sizeBaner}>
                     <Image layout={"fill"} src={bannerPath} alt=""/>
                 </div>

@@ -1,6 +1,6 @@
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
-import style from "/styles/Mobile/Misc/formView.module.css"
+import style from "/styles/Desktop/Misc/formView.module.css"
 import {fomrLink} from "../../../dataDemo/data";
 import Image from "next/image";
 

@@ -16,10 +16,10 @@ export default function LeftCard({listSectionPro, handleAddProduct}:
                                      }) {
     let [isArrowVisible, setIsArrowVisible] = useState(false)
     const handleShowArro = () => {
-        const mainDivWidth:number = document.getElementById(idMainDiv).offsetWidth
+        const mainDivWidth: number = document.getElementById(idMainDiv).offsetWidth
         const carrouselDiv: number = document.getElementById(idCarrousel).scrollWidth
-        if (carrouselDiv > mainDivWidth){
-         setIsArrowVisible(isArrowVisible = true)
+        if (carrouselDiv > mainDivWidth) {
+            setIsArrowVisible(isArrowVisible = true)
         }
     }
 
@@ -27,15 +27,17 @@ export default function LeftCard({listSectionPro, handleAddProduct}:
     const cssStyle = getCssStyle()
     return (
         <div className={style.stylerightContainer}>
-            <div>
-                <Image className={style.imgBanner} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+            <div className={style.imgBanner}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
             <div className={style.borderSection}>
                 <div className={style.innerDiv}>
                     <div onPointerOver={handleShowArro} onPointerOut={handleHiddeArrow}
                          className={style.gridTagsArrow}>
-                        <Image className={`${style.arrowTags} ${cssStyle.opacity}`}
-                             src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                        <div className={`${style.arrowTags} ${cssStyle.opacity}`}>
+                            <Image layout={"fill"}
+                                   src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                        </div>
                         <div id={idMainDiv} className="overflow-scroll">
                             <div id={idCarrousel} className={style.styletagContainer}>
                                 {
@@ -47,8 +49,11 @@ export default function LeftCard({listSectionPro, handleAddProduct}:
                                 }
                             </div>
                         </div>
-                        <Image className={`${style.arrowTags} ${cssStyle.opacity}`}
-                             src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                        <div className={`${style.arrowTags} ${cssStyle.opacity}`}>
+                            <Image layout={"fill"}
+                                   src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                        </div>
+
                     </div>
                     <div className={style.styleProductContainer}>
                         <div className={style.styleSectionProdContainer}>

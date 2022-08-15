@@ -522,7 +522,6 @@ export default function Index() {
     ]
 //endregion
 
-
     return (
         isSmallDown ?
             <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
@@ -535,8 +534,8 @@ export default function Index() {
             </div>
             :
             <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
-                {/*<HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>*/}
+                <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
+                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
                 <div className={utilities.maxWidthBodyContentSpix}>
                     <DefaultPage listItem={listDefaultPage}/>
                 </div>

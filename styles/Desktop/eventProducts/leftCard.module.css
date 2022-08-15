@@ -80,6 +80,7 @@
     overflow: hidden;
     height: 172px;
     width: 100%;
+    position: relative;
     object-fit: cover;
     object-position: top;
 }

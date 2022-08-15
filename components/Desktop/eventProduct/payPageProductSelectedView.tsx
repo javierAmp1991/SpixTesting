@@ -3,15 +3,18 @@ import {Product} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import {useState} from "react";
 import Image from "next/image";
+
 const deleteButton = "Eliminar"
 
 export default function PayPageProductSelectedView({item, deleteItem}:
-                                                { item: Product, deleteItem: any }) {
+                                                       { item: Product, deleteItem: any }) {
     let [amountSelected, setAmountSelected] = useState(0)
     return (
         <div>
             <div className={style.grid}>
-                <Image className={style.sizeImage} src={item.ImagePath} alt=""/>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                </div>
                 <div>
                     <div className={`${utilities.fontPrimaryText} mb-1`}>
                         {item.Name}

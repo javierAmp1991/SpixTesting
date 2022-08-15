@@ -1,0 +1,20 @@
+.gridForm {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+    padding: 0px 24px;
+    border-radius: 5px;
+}
+
+.sizeIcon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.gridInfoForm {
+    display: grid;
+    gap: 8px;
+    padding: 24px 0px;
+}

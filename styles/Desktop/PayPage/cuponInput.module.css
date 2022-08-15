@@ -56,5 +56,6 @@
 
 .sizeArrow {
     height: 6px;
-    width: auto;
+    width: 12px;
+    position: relative;
 }

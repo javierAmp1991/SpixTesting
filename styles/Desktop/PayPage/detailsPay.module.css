@@ -9,6 +9,12 @@
 
 }
 
+.grid{
+    display: grid;
+    gap: 16px;
+    padding-bottom: 16px;
+}
+
 .gridFull {
     height: calc(var(--heightRightCard) - 29px - (var(--spaceY) * 2));
     width: 100%;

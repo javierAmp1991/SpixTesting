@@ -71,18 +71,20 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
                     <div>
                         <div className={style.transition}>
                             <div style={{transform: translateCarrousel}}
-                                className={` ${style.containerClients}`}>
+                                 className={` ${style.containerClients}`}>
                                 {
                                     listGuest.map((item, index) =>
                                         index != 0 ?
                                             <div className={item.isSelected ? style.TabIconSelected : style.TabIcon}
                                                  key={index}>
                                                 <span className={`${utilities.clamp1} `}
-                                                    onClick={() => methodProps.guestSelected(item)}>
+                                                      onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                                <Image onClick={() => methodProps.removeGuest(item)}
-                                                     className={style.sizeCloseimg}
-                                                     src={GlobalConst.sourceImages.closeLoggin} alt=""/>
+                                                <div onClick={() => methodProps.removeGuest(item)}
+                                                     className={style.sizeCloseimg}>
+                                                    <Image layout={"fill"}
+                                                           src={GlobalConst.sourceImages.closeLoggin} alt=""/>
+                                                </div>
                                             </div>
                                             :
                                             <div id={referenceDiv}
@@ -96,9 +98,10 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
                                 <div onClick={handleDisplayAdd}
                                      className={`${utilities.gridMaxContent2} ml-3`}>
                                     <span className={utilities.fontPrimaryText}>{newGuestText}</span>
-                                    <Image src={GlobalConst.sourceImages.addIcon}
-                                         className={style.addIconStyle}
-                                         alt=""/>
+                                    <div className={style.addIconStyle}>
+                                        <Image layout={"fill"}
+                                               src={GlobalConst.sourceImages.addIcon} alt=""/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -106,12 +109,16 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
                     {
                         isCarrousel ?
                             <div className={style.gridArrows}>
-                                <Image onClick={translateLeft}
-                                     className={style.arrow}
-                                     src={GlobalConst.sourceImages.leftArrowClean} alt=""/>
-                                <Image onClick={translateRight}
-                                     className={style.arrow}
-                                     src={GlobalConst.sourceImages.rightArrowClean} alt=""/>
+                                <div onClick={translateLeft}
+                                     className={style.arrow}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.leftArrowClean} alt=""/>
+                                </div>
+                                <div onClick={translateRight}
+                                     className={style.arrow}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.rightArrowClean} alt=""/>
+                                </div>
                             </div> : <></>
                     }
                 </div>
