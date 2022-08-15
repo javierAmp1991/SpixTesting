@@ -8,7 +8,8 @@ export default function ProductViewMobile({item, size}: { item: Product, size: n
     let isOffer: boolean = true
     let getSizeProduct = getProductSize()
     return (
-        <div style={getSizeProduct.widthContainer}>
+        <div className={style.boxShadowPro}
+            style={getSizeProduct.widthContainer}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
                 <div className={style.aspectImage}>
                 <Image layout={"fill"} objectFit={"cover"} loading="lazy" src={item.ImagePath} alt=""/>

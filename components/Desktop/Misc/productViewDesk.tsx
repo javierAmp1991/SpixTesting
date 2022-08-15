@@ -8,7 +8,8 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
     let isOffer: boolean = true
     let getSizeProduct = getProductSize()
     return (
-        <div style={getSizeProduct.widthContainer}>
+        <div className={style.boxShadowPro}
+            style={getSizeProduct.widthContainer}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
                 <div className={style.aspectImage}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>

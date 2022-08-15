@@ -9,6 +9,10 @@
     object-fit: cover;
 }
 
+.boxShadowPro {
+    box-shadow: var(--shadowUnderProducts)
+}
+
 .gridPriceWithDiscount {
     display: grid;
     align-content: center;
