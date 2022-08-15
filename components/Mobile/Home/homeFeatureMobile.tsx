@@ -16,7 +16,7 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                     <Image layout={"fill"} src={item.LogoPath} alt=""/>
                 </div>
             </div>
-            <div className="px-2 pb-2 pt-8">
+            <div className="px-2 pb-2 pt-10">
                 <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
                     {item.EventName}
                 </div>

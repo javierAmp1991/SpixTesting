@@ -8,6 +8,7 @@ import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ButtonBlueDesk from "../Misc/buttonBlue";
 import {Guest} from "../../../pages/eventProducts";
 import Image from "next/image";
+import SectionProductMobileFull from "./sectionProductMobileFull";
 
 const newGuest: string = "Nuevo Invitado"
 const placeHolderName: string = "nombre invitado"
@@ -99,7 +100,7 @@ export default function ContResultProductFull({listSectionProduct, addItem, meth
                 {
                     listSectionProduct.map((item, index) =>
                         <div key={index} className={style.separationiLineSection}>
-                            <SectionProductMobile addItem={addItem} item={item}/>
+                            <SectionProductMobileFull addItem={addItem} item={item}/>
                         </div>
                     )
                 }

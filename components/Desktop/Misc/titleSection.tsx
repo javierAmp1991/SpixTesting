@@ -1,5 +1,6 @@
 import style from "/styles/Desktop/Misc/titleSection.module.css"
 import utilities from "/styles/utilities.module.css"
+import Link from "next/link";
 
 export default function TitleSection({children, darkModeState, titleLink, paddingTitle}) {
     let cssStyles = getCssStyles()
@@ -9,9 +10,11 @@ export default function TitleSection({children, darkModeState, titleLink, paddin
                 <div className={cssStyles.fontTitle}>
                     {titleLink[0]}
                 </div>
-                <a className={`${cssStyles.styleLink} pt-0.5`}>
-                    Ver mas
-                </a>
+                <Link href={titleLink[1]}>
+                    <div className={`${cssStyles.styleLink} pt-0.5`}>
+                        Ver mas
+                    </div>
+                </Link>
             </div>
             {children}
         </>

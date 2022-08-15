@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Misc/searchBarMobile.module.css"
 import {useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const placeHolder: string = "Buscar evento, categoria o ciudad"
 const nameInput: string = "searchBarMobile"
@@ -17,32 +18,34 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
     let [getValue, setGetValue] = useState("")
     const getValueInput = (e) => {
         const valueInput = e.target.value
-        if(valueInput.length > 3) {
+        if (valueInput.length > 3) {
             showSug()
             getTextInput(valueInput)
-        }
-        else hiddeSug()
+        } else hiddeSug()
         getValue = valueInput
     }
 
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
-            <div className={style.spixLogoCont}>
-                <div className={style.spixLogoPro}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.spixAlone} alt=""/>
+            <Link href={"/"}>
+                <div className={style.spixLogoCont}>
+                    <div className={style.spixLogoPro}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.spixAlone} alt=""/>
+                    </div>
                 </div>
-            </div>
+            </Link>
             <input onChange={getValueInput}
-                   onFocus={isDisplaySug}
                    autoComplete="off"
                    className={style.styleInput}
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
-            <div className={style.styleButton}>
-                <button className={style.styleLupa}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.magGlass} alt=""/>
-                </button>
-            </div>
+            <Link href={"/search"}>
+                <div className={style.styleButton}>
+                    <button className={style.styleLupa}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.magGlass} alt=""/>
+                    </button>
+                </div>
+            </Link>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import ResultBussinesSugDesk from "./ResultBussinesSugDesk";
 import ResultEventSugDesk from "./ResultEventSugDesk";
 import {useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const styleGrid: string = `${utilities.gridMaxContent2} gap-2`
 const paddingImage: string = "pt-1.5"
@@ -87,11 +88,13 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
     return (
         <div className={cssStyles.backgroundColor}>
             <div className={style.gridHeader}>
-                <a className={paddingImage}>
-                    <div className={style.sizeIconLogo}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk} alt=""/>
+                <Link href={"/"}>
+                    <div className={paddingImage}>
+                        <div className={style.sizeIconLogo}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk} alt=""/>
+                        </div>
                     </div>
-                </a>
+                </Link>
 
                 <a className={styleGrid}>
                     <div className={paddingImage}>
@@ -140,8 +143,8 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
                             <div className={paddingImage}>
                                 <div className={style.sizeIconLoggin}>
                                     <Image layout={"fill"}
-                                        src={GlobalConst.sourceImages.logginHeaderDesktop}
-                                        alt=""/>
+                                           src={GlobalConst.sourceImages.logginHeaderDesktop}
+                                           alt=""/>
                                 </div>
                             </div>
                             <div className={style.colorTextHeader}>
@@ -167,7 +170,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
                 <button onClick={toggleDarkMode} className={styleGrid}>
                     <div className={paddingImage}>
                         <div className={style.sizeIconDarkMode}>
-                        <Image layout={"fill"} src={darkModeIconInfo.icon} alt=""/>
+                            <Image layout={"fill"} src={darkModeIconInfo.icon} alt=""/>
                         </div>
                     </div>
                     <div className={styleSideText}>

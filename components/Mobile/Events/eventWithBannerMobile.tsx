@@ -118,7 +118,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontSubTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
             fontPrimaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
-            paddingUnderLogo: displayLogoRating ? "pt-9" : "pt-3"
+            paddingUnderLogo: displayLogoRating ? "pt-10" : "pt-4"
         }
     }
 

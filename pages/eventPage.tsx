@@ -57,6 +57,7 @@ import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layout
 import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import Image from "next/image";
 import PublicityView from "../components/Desktop/CRM/publicityView";
+import Link from "next/link";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -64,7 +65,7 @@ const spaceComponentsDeskY = 40
 const spaceComponents = 40
 const noSpaceComponentsDesk = 0
 const noSpaceComponents = 0
-const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 8, pr: 8}
+const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12}
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 0, pr: 0}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 0, pr: 0}
 const paddingDefaultSectionDeskCarrousel: paddingAsignation = {pt: 40, pb: 0, pl: 0, pr: 0}
@@ -73,7 +74,7 @@ const reviewtTitle: [string, string] = ["Reseñas", "Link"]
 const questionTitle: [string, string] = ["Preguntas", "Link"]
 const newsTitle: [string, string] = ["Noticias", "Link"]
 const discountTitle: [string, string] = ["Ofertas", "Link"]
-const productstTitle: [string, string] = ["Productos", "Link"]
+const productstTitle: [string, string] = ["Productos", "/eventProductsFull"]
 const otherEventTitle: [string, string] = ["Otros eventos", "Link"]
 const gapLayout: number = 20
 const displayCarrousel = "grid"
@@ -171,7 +172,7 @@ export default function EventPage() {
         <LayoutCarrouselMobile gapLayout={24}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                    <ProductViewMobile size={160} key={index} item={item}/>
+                        <ProductViewMobile size={160} key={index} item={item}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -345,23 +346,23 @@ export default function EventPage() {
     return (
         isLardeDown ?
             <div>
-                 <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
-                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
-                 <div className={styleMobile.bannerProperties}>
-                     <Image layout={"fill"}  src={bannerPath} alt=""/>
-                 </div>
-                 <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
-                     <DefaultPageMobile listItem={defaultList}/>
-                     <FooterMobile/>
-                 </div>
-                 {
-                     isSmallDown ?
-                         <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
-                                  isLogged={false}/>
-                         :
-                         <></>
-                 }
-             </div>
+                <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
+                <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
+                <div className={styleMobile.bannerProperties}>
+                    <Image layout={"fill"} src={bannerPath} alt=""/>
+                </div>
+                <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
+                    <DefaultPageMobile listItem={defaultList}/>
+                    <FooterMobile/>
+                </div>
+                {
+                    isSmallDown ?
+                        <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
+                                 isLogged={false}/>
+                        :
+                        <></>
+                }
+            </div>
             :
             <div>
                 <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>

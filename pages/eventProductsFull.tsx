@@ -136,15 +136,6 @@ export default function EventProducts() {
                 <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                 <div className={styleMob.heightCont}>
-                    {/*{
-                        isOpenSelectedProduct ?
-                            <ContSelectedProduct guestSelected={firstGuest}
-                                                 methodProps={methodProps}
-                                                 listGuest={listGuests}
-                                                 addItem={handListProductShow}
-                                                 listSelectedProducts={listProductSelected}/>
-                            : <></>
-                    }*/}
                     <ContResultProductFull isOpen={false}
                                        methodProps={methodProps}
                                        listGuests={listGuests}

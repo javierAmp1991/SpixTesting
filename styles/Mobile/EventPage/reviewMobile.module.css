@@ -4,6 +4,7 @@
     width: var(--sizeReviewImage);
     border-radius: 50%;
     position: relative;
+    overflow: hidden;
 }
 .maxWidthtextReview{
     max-width: 500px;
