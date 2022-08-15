@@ -63,8 +63,9 @@ export default function Search() {
                 <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
                 <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                 <div className={cssStyle.bg}>
-
-                    <Image className={style.styleBanner} src="images/atr2.jpg" alt=""/>
+                    <div className={style.styleBanner}>
+                    <Image layout={"fill"} src="/images/atr2.jpg" alt=""/>
+                    </div>
                     <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} hiddeResult={handleClick}/>
                     {
                         isDisplayResult ?

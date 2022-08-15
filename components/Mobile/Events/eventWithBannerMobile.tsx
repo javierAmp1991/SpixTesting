@@ -40,8 +40,10 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                     {
                         displayLogoRating ?
                             <div className={`${utilities.gridMaxContent2} grid justify-center mb-3`}>
-                                <Image className={utilities.ratingStarsProperties}
-                                       src="images/ratingNew.png" alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src="/images/ratingNew.png" alt=""/>
+                                </div>
                             </div>
                             :
                             ""

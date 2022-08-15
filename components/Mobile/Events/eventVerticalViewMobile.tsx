@@ -11,12 +11,16 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
             <a className="relative">
                 {
                     item.SoldTickets >= item.TotalTickets * 0.90 ?
-                        <Image loading="lazy" className="absolute z-20"
-                               src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        <div className="absolute z-20">
+                            <Image layout={"fill"}
+                                   src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        </div>
                         :
                         ""
                 }
-                <Image loading="lazy" className={`${styles.sizeImage}`} src={item.CoverImage} alt=""/>
+                <div className={`${styles.sizeImage}`}>
+                    <Image layout={"fill"} objectFit={"cover"} src={item.CoverImage} alt=""/>
+                </div>
             </a>
 
             <div className={`${cssStyles.bgInfo} grid p-2`}>
@@ -28,16 +32,20 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
                     {
                         item.Rating != null ?
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNew.png" alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src="/images/ratingNew.png" alt=""/>
+                                </div>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     ({item.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNull.png" alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src="/images/ratingNull.png" alt=""/>
+                                </div>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>
@@ -65,9 +73,9 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
         return {
             borderCard: isDarkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
+            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
             fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
-            fontPriceInclude: isDarkMode ? utilities.fontPriceIncludeDarkMode: utilities.fontPriceInclude,
+            fontPriceInclude: isDarkMode ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude,
         }
     }
 }

@@ -5,13 +5,14 @@ import {review} from "../../../dataDemo/data";
 import OptionBar from "../Misc/optionBar";
 import Image from "next/image";
 
-export default function ReviewMobile({item} : {item : review}) {
+export default function ReviewMobile({item}: { item: review }) {
     return (
         <div className="grid gap-3">
             <div className={`${utilities.gridMaxContent2} gap-3`}>
                 <div className={utilities.gridContentCenter}>
-                    <Image loading="lazy" src={item.ProfileImage}
-                           className={style.sizeReviewImage} alt=""/>
+                    <div className={style.sizeReviewImage}>
+                        <Image layout={"fill"} src={item.ProfileImage} alt=""/>
+                    </div>
                 </div>
 
                 <div>
@@ -21,8 +22,10 @@ export default function ReviewMobile({item} : {item : review}) {
                             Compra verificada
                         </div>
                         <div className={utilities.gridContentCenter}>
-                            <Image loading="lazy" className={style.sizeCheckIcon}
-                                   src={GlobalConst.sourceImages.checkIcon} alt=""/>
+                            <div className={style.sizeCheckIcon}>
+                                <Image layout={"fill"}
+                                       src={GlobalConst.sourceImages.checkIcon} alt=""/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -33,7 +36,9 @@ export default function ReviewMobile({item} : {item : review}) {
                     {item.Title}
                 </div>
                 <div className="grid pb-0.5">
-                    <Image className={style.sizeReviewStar} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                    <div className={style.sizeReviewStar}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                    </div>
                 </div>
             </div>
 

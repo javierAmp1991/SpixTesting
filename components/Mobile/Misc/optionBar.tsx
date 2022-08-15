@@ -9,13 +9,17 @@ export default function OptionBar() {
             <div>2d</div>
             <button className={`${utilities.gridMaxContent2} gap-1`}>
                 <div className="pt-0.5">
-                    <Image className={style.sizeIcon} src={GlobalConst.sourceImages.noactivateLikeIcon} alt=""/>
+                    <div className={style.sizeIcon}>
+                    <Image layout={"fill"}  src={GlobalConst.sourceImages.noactivateLikeIcon} alt=""/>
+                    </div>
                 </div>
                 <div>29</div>
             </button>
             <a className={`${utilities.gridMaxContent2} gap-1 content-center`}>
                 <div className={utilities.gridContentCenter}>
-                    <Image className={style.sizeIcon} src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>
+                    <div className={style.sizeIcon}>
+                    <Image layout={"fill"}  src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>
+                    </div>
                 </div>
                 <span>58</span>
             </a>

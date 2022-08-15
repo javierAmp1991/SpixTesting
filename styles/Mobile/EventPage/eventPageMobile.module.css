@@ -2,6 +2,7 @@
     width: 100%;
     height: 175px;
     object-fit: cover;
+    position: relative;
 }
 
 .maxWidthMainContentMobile{

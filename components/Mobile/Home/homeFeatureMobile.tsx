@@ -9,8 +9,12 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
     return (
         <div className={`${cssStyle.borderCard} ${style.sizeFeaturedDiv} ${cssStyle.bgInfo}`}>
             <div className="relative">
-                <Image loading="lazy" className={style.bannerFeatureProperties} src={item.CoverImage} alt=""/>
-                <Image loading="lazy" className={style.logoFeatureProperties} src={item.LogoPath} alt=""/>
+                <div className={style.bannerFeatureProperties}>
+                    <Image layout={"fill"} src={item.CoverImage} alt=""/>
+                </div>
+                <div className={style.logoFeatureProperties}>
+                    <Image layout={"fill"} src={item.LogoPath} alt=""/>
+                </div>
             </div>
             <div className="px-2 pb-2 pt-8">
                 <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
@@ -21,16 +25,20 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                     {
                         item.Rating != null ?
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNew.png" alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src="/images/ratingNew.png" alt=""/>
+                                </div>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     ({item.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src="/images/ratingNull.png" alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src="/images/ratingNull.png" alt=""/>
+                                </div>
                                 <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>

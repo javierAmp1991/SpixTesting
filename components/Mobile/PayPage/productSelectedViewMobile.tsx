@@ -9,8 +9,12 @@ export default function PayPageProductSelectedViewMobile({item}: { item: Product
         <div className={style.containerProduct}>
             <div className={style.grid}>
                 <div className="relative">
-                    <Image className={style.sizeImage} src={item.ImagePath} alt=""/>
-                    <Image className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.ImagePath} alt=""/>
+                    </div>
+                    <div className={utilities.positionLastTicket}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                    </div>
                 </div>
                 <div className={style.contInfo}>
                     <div className={`${utilities.fontPrimaryText} mb-1`}>

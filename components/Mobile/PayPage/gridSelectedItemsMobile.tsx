@@ -1,6 +1,5 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/PayPage/gridSelectedItems.module.css"
-import ButtonBlueDesk from "../../Desktop/Misc/buttonBlue";
 
 const returntext: string = "Volver"
 
@@ -17,7 +16,7 @@ export default function GridSelectedItemsMobile({children, returndisplay}) {
                 {children}
             </div>
             <button onClick={returndisplay} className={style.returnContainer}>
-                    <ButtonBlueDesk text={returntext}/>
+                    {returntext}
             </button>
         </div>
     )

@@ -3,6 +3,8 @@
     aspect-ratio: 2/1;
     object-fit: cover;
     object-position: center;
+    position: relative;
+
 }
 .logoFeatureProperties{
     --sizeLogoFeatureMobile: 56px;
@@ -13,6 +15,9 @@
     position: absolute;
     top: calc(100% - (var(--sizeLogoFeatureMobile)/2));
     left: calc(50% - (var(--sizeLogoFeatureMobile)/2));
+    position: relative;
+    overflow: hidden;
+
 }
 
 .sizeFeaturedDiv{

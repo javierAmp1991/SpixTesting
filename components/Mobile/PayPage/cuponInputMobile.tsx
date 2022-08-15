@@ -24,8 +24,10 @@ export default function CuponInputMobile({cuponProp}: { cuponProp: inputCuponVal
                     <div className={utilities.fontPrimaryText}>
                         {cuponProp.titleCupon}
                     </div>
-                    <Image className={`${style.sizeArrow} ${cssStyle.rotateArrow}`}
+                    <div className={`${style.sizeArrow} ${cssStyle.rotateArrow}`}>
+                    <Image layout={"fill"}
                          src={GlobalConst.sourceImages.upArrow} alt=""/>
+                    </div>
                 </div>
                 <div className={style.gridCupon}>
                     <input className={style.inputCupon} type="text" placeholder={cuponProp.titleCupon}/>

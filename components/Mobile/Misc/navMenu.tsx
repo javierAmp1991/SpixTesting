@@ -15,19 +15,19 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                             <Image className="heightImageNavBar m-px rounded50" src="/Image/foto perfil.jpg" alt=""/>
                         </div>
                         :
-                        <div>
-                            <Image className={style.heightIcon} src={imageStyle.logginIcon} alt=""/>
+                        <div className={style.heightIcon}>
+                            <Image layout={"fill"} src={imageStyle.logginIcon} alt=""/>
                         </div>
                 }
 
                 <a>
-                    <div>
-                        <Image className={style.heightIcon} src={imageStyle.home} alt=""/>
+                    <div className={style.heightIcon}>
+                        <Image layout={"fill"} src={imageStyle.home} alt=""/>
                     </div>
                 </a>
 
-                <div>
-                    <Image className={style.heightIcon} src={imageStyle.star} alt=""/>
+                <div className={style.heightIcon}>
+                    <Image layout={"fill"} src={imageStyle.star} alt=""/>
                 </div>
 
                 {/*<div className="relative">
@@ -39,7 +39,9 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                 {
                     isActiveDarkModeButton?
                         <button onClick={toggleDarkMode}>
-                            <Image className={style.heightIcon} src={imageStyle.darkModeIcon} alt=""/>
+                            <div className={style.heightIcon}>
+                            <Image layout={"fill"} src={imageStyle.darkModeIcon} alt=""/>
+                            </div>
                         </button>
                         :
                         ""

@@ -3,6 +3,7 @@
     height: var(--sizeReviewImage);
     width: var(--sizeReviewImage);
     border-radius: 50%;
+    position: relative;
 }
 .maxWidthtextReview{
     max-width: 500px;
@@ -12,10 +13,12 @@
     --sizeCheckIcon: 12px;
     height: var(--sizeCheckIcon);
     width: var(--sizeCheckIcon);
+    position: relative;
 }
 
 .sizeReviewStar{
     --sizeReviewStar: 16px;
     height: var(--sizeReviewStar);
-    width: auto;
+    width: 140px;
+    position: relative;
 }

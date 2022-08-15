@@ -8,8 +8,8 @@ export default function CommentMobile({item}: { item: comment }) {
     return (
         <div className="grid gap-2">
             <div className={style.gridImageComment}>
-                <div>
-                    <Image loading="lazy" className={style.sizeImageComment} src={item.ProfileImage} alt=""/>
+                <div className={style.sizeImageComment}>
+                    <Image layout={"fill"}  src={item.ProfileImage} alt=""/>
                 </div>
                 <div className={`${style.maxWidthCommentText} text-left grid gap-3`}>
                     <p>

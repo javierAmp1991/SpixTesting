@@ -10,7 +10,8 @@
 
 .heightIcon {
     height: 20px;
-    width: auto;
+    width: 20px;
+    position: relative;
 }
 
 .gridNavBarMenuNoDarkMode {

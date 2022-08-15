@@ -8,7 +8,9 @@ export default function HomeRoundedViewMobile({item, isDarkMode}) {
         <div className={`${cssStyles.borderCard} ${utilities.borderRadious50}`}>
             <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${cssStyles.bgFirstGradient}`}>
                 <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${cssStyles.bgSecondGradient}`}>
-                    <Image className={style.sizeImageRoundedCarrousel} src={item.CoverImage} alt=""/>
+                    <div className={style.sizeImageRoundedCarrousel}>
+                    <Image layout={"fill"} src={item.CoverImage} alt=""/>
+                    </div>
                 </div>
             </div>
         </div>

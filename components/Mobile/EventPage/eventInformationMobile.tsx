@@ -45,14 +45,16 @@ export default function EventInformationMobile({eventInformation, form}:
     let [displayVenue, setDisplayVenue] = useState(false)
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
-    let[venueDateSelected, setvenueDateSelected] = useState(eventInformation.VenueDate[0])
+    let [venueDateSelected, setvenueDateSelected] = useState(eventInformation.VenueDate[0])
     const handleDateSelected = (e) => setvenueDateSelected(e)
     return (
         <div>
             <div className={style.paddingMainConatiner}>
                 <div className={style.gridMainContainer}>
                     <div className={style.gridImageTitle}>
-                        <Image className={`${style.sizeLogo}`} src={eventInformation.LogoPath} alt=""/>
+                        <div className={`${style.sizeLogo}`}>
+                            <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                        </div>
                         <div>
                             <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
@@ -62,8 +64,10 @@ export default function EventInformationMobile({eventInformation, form}:
                                 {
                                     eventInformation.Rating != null ?
                                         <>
-                                            <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                                 src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                            <div className={utilities.ratingStarsProperties}>
+                                                <Image layout={"fill"}
+                                                       src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                            </div>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                                 ({eventInformation.Rating})
@@ -71,8 +75,10 @@ export default function EventInformationMobile({eventInformation, form}:
                                         </>
                                         :
                                         <>
-                                            <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                                 src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                            <div className={utilities.ratingStarsProperties}>
+                                                <Image layout={"fill"}
+                                                       src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                            </div>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                                 (0)
@@ -91,8 +97,8 @@ export default function EventInformationMobile({eventInformation, form}:
                         </div>
                         {
                             eventInformation.ListRestriction.map((item, index) =>
-                                <a key={index}>
-                                    <Image src={item} alt="" className={style.sizeRestrictionIcon}/>
+                                <a className={style.sizeRestrictionIcon} key={index}>
+                                    <Image layout={"fill"} src={item} alt=""/>
                                 </a>
                             )
                         }
@@ -105,9 +111,9 @@ export default function EventInformationMobile({eventInformation, form}:
 
                 <div className={style.selectDateContainer}>
                     <div onClick={handleOpenDate}
-                        className={style.gridIconText}>
-                        <div>
-                            <Image className={style.sizeIcon} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
+                         className={style.gridIconText}>
+                        <div className={style.sizeIcon}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Proxima fecha: </span>
@@ -117,8 +123,8 @@ export default function EventInformationMobile({eventInformation, form}:
 
                     <div onClick={handleOpenVenue}
                          className={style.gridIconText}>
-                        <div>
-                            <Image className={style.sizeIcon} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
+                        <div className={style.sizeIcon}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Direccion: </span>
@@ -131,7 +137,9 @@ export default function EventInformationMobile({eventInformation, form}:
                     {
                         eventInformation.ListImages.map((item, index) =>
                             <div className={style.containerShowProp} key={index}>
-                                <Image className={style.imageShowProperties} src={item} alt=""/>
+                                <div className={style.imageShowProperties}>
+                                    <Image layout={"fill"} src={item} alt=""/>
+                                </div>
                             </div>
                         )
                     }
@@ -179,7 +187,7 @@ export default function EventInformationMobile({eventInformation, form}:
                                 {
                                     eventInformation.VenueDate.map((item, index) =>
                                         <div onClick={() => handleDateSelected(item)}
-                                            className={style.styleDate} key={index}>
+                                             className={style.styleDate} key={index}>
                                             <div className={utilities.fontPrimaryText}>
                                                 <div>
                                                     Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
@@ -193,7 +201,7 @@ export default function EventInformationMobile({eventInformation, form}:
                                 }
                             </div>
                             <div onClick={handleCloseDate}
-                                className={style.buttonCont}>
+                                 className={style.buttonCont}>
                                 <ButtonBlue text={"aceptar"}/>
                             </div>
                         </div>
@@ -218,12 +226,16 @@ export default function EventInformationMobile({eventInformation, form}:
                                         Blanco 1386, Valparaíso
                                     </div>
                                     <div className={style.contMap}>
-                                        <Image className={style.imgMap} src="/images/googleMap.jpg" alt=""/>
+                                        <div className={style.imgMap}>
+                                        <Image layout={"fill"} src="/images/googleMap.jpg" alt=""/>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={style.gridLinkMap}>
-                                    <Image className={style.sizeLogoMap}
+                                    <div className={style.sizeLogoMap}>
+                                    <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.googleMap} alt=""/>
+                                    </div>
                                     <div className={utilities.styleLink}>
                                         Link google map
                                     </div>

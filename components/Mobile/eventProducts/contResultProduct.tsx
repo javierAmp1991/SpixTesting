@@ -41,7 +41,9 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
     }
     return (
         <div className={style.contVar}>
-            <Image className={style.bannerSize} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+            <div className={style.bannerSize}>
+                <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+            </div>
             <div className={style.principalGrid}>
                 <div className={style.gridTagsCont}>
                     {
@@ -63,9 +65,11 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                                                 <span className={`${style.nameElipsis} ${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                    <Image onClick={() => methodProps.removeGuest(item)}
-                                         className={style.sizeCloseimg}
-                                         src={GlobalConst.sourceImages.closeLoggin} alt=""/>
+                                    <span onClick={() => methodProps.removeGuest(item)}
+                                          className={style.sizeCloseimg}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.closeLoggin} alt=""/>
+                                    </span>
                                 </div>
                                 :
                                 <div
@@ -81,9 +85,9 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                     <div onClick={handleDisplayAdd}
                          className={`${utilities.gridMaxContent2} gap-2 ml-2`}>
                         <span className={utilities.fontPrimaryText}>{newGuest}</span>
-                        <Image src={GlobalConst.sourceImages.addIcon}
-                             className={style.addIconStyle}
-                             alt=""/>
+                        <span className={style.addIconStyle}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>
+                        </span>
                     </div>
                 </div>
 

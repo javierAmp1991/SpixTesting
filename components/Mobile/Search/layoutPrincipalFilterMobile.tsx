@@ -35,7 +35,9 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                                     {item.Name}
                                 </div>
                                 <button onClick={() => setSelectedItemShow([])}>
-                                    <Image className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+                                    <div className="h-4 w-4 relative">
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+                                    </div>
                                 </button>
                             </div>
                         )
@@ -61,7 +63,9 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                     Limpiar Filtros
                 </div>
                 <button onClick={() => setSelectedItemShow([])}>
-                    <Image className="h-4 w-auto" src={cssStyle.cleanIcon} alt=""/>
+                    <div className="h-4 w-3 relative">
+                    <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+                    </div>
                 </button>
             </div>
         </div>

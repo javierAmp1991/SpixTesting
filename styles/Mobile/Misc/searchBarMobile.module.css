@@ -20,7 +20,8 @@
 }
 .spixLogoPro{
     height: 20px;
-    width: auto;
+    width: 20px;
+    position: relative;
 }
 
 .styleButton{
@@ -49,6 +50,7 @@
 }
 
 .styleLupa{
-    width: auto;
+    width: 20px;
     height: 20px;
+    position: relative;
 }

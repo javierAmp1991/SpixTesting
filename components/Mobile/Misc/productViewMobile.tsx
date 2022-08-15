@@ -10,8 +10,12 @@ export default function ProductViewMobile({item, size}: { item: Product, size: n
     return (
         <div style={getSizeProduct.widthContainer}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
-                <Image className={style.aspectImage} loading="lazy" src={item.ImagePath} alt=""/>
-                <Image className={utilities.positionLastTicket} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                <div className={style.aspectImage}>
+                <Image layout={"fill"} objectFit={"cover"} loading="lazy" src={item.ImagePath} alt=""/>
+                </div>
+                <div className={utilities.positionLastTicket}>
+                <Image layout={"fill"}  src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                </div>
             </div>
 
             <div className={style.gridInfoProduct}>

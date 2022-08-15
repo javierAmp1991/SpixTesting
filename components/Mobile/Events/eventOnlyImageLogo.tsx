@@ -3,25 +3,31 @@ import style from "/styles/Mobile/Events/eventOnlyImageLogo.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 
-export default function EventOnlyImageLogo({item, darkMode}){
+export default function EventOnlyImageLogo({item, darkMode}) {
     let cssStyle = getCssStyles()
-    return(
+    return (
         <a>
             <div className={`${cssStyle.borderCard} ${style.styleImage} relative`}>
-                <Image className={style.styleImage} src={item.CoverImage} alt=""/>
+                <div className={style.styleImage}>
+                    <Image layout={"fill"} objectFit={"cover"}  src={item.CoverImage} alt=""/>
+                </div>
                 {
                     item.SoldTickets >= item.TotalTickets * 0.90 ?
-                        <Image className={`${style.positionLastTickets} absolute  z-40`}
-                             src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        <div className={`${style.positionLastTickets} absolute  z-40`}>
+                            <Image layout={"fill"}
+                                   src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        </div>
                         :
                         ""
                 }
-
-                <Image className={style.styleLogo}  src="/images/logo el Huevo.jpg" alt=""/>
+                <div className={style.styleLogo}>
+                    <Image layout={"fill"}  src="/images/logo el Huevo.jpg" alt=""/>
+                </div>
             </div>
         </a>
     )
-    function getCssStyles(){
+
+    function getCssStyles() {
         return {
             borderCard: darkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
         }

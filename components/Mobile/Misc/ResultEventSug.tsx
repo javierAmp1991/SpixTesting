@@ -1,15 +1,18 @@
 import {GlobalConst} from "../../../public/globalConst";
 import style from "/styles/Mobile/Misc/resultSugCont.module.css"
 import utilities from "/styles/utilities.module.css"
-const title:string = "Eventos"
+
+const title: string = "Eventos"
 import {EventResult} from "./suggHeaderMobile";
 import Image from "next/image";
 
-export default function ResultEventSug({item} : {item: EventResult[]}){
-    return(
+export default function ResultEventSug({item}: { item: EventResult[] }) {
+    return (
         <div className={style.mainCont}>
             <div className={style.gridTitleImage}>
-                <Image className={style.sizeImage} src={GlobalConst.sourceImages.stadiumIcon} alt=""/>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.stadiumIcon} alt=""/>
+                </div>
                 <div className={utilities.fontSubTitle}>{title}</div>
             </div>
             <div className={style.contResult}>
@@ -19,8 +22,8 @@ export default function ResultEventSug({item} : {item: EventResult[]}){
                             <div className={`${utilities.fontPrimaryText} mb-1`}>
                                 {item1.Name}
                             </div>
-                            <div>
-                                <Image className="h-4 mb-1.5" src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                            <div className={utilities.ratingStarProperties}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                             </div>
                             <div className={utilities.fontSecundaryText}>
                                 En:

@@ -16,7 +16,9 @@ export default function ContainerSelectedItemMobile({item, addItem}:
             <ProductViewMobile size={sizeProductFragment} item={item.Product}/>
             {
                 item.IsSelected ?
-                    <Image className={style.sizeChecked} src={GlobalConst.sourceImages.checkIcon} alt=""/>
+                    <div className={style.sizeChecked}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.checkIcon} alt=""/>
+                    </div>
                     :
                     <></>
             }

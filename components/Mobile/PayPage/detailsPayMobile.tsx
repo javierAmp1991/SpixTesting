@@ -26,7 +26,9 @@ export default function DetailsPayMobile({displaySelectedItem}) {
                     Resumen Compra
                 </div>
                 <button onClick={displaySelectedItem} className="relative">
-                    <Image className={style.sizeBuyCar} src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                    <div className={style.sizeBuyCar}>
+                    <Image layout={"fill"}  src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                    </div>
                     <span className={style.positionNumberCar}>6</span>
                 </button>
             </div>
@@ -53,18 +55,20 @@ export default function DetailsPayMobile({displaySelectedItem}) {
                 <div> $199.999</div>
             </div>
             <div className={style.timerContainer}>
-                <img className="h-4 w-auto" src={GlobalConst.sourceImages.timerRed} alt=""/>
+                <div className="h-4 w-3 relative">
+                <Image layout={"fill"}  src={GlobalConst.sourceImages.timerRed} alt=""/>
+                </div>
                 <span>
                 09:08:23 para finalizar su compra
                 </span>
             </div>
             <div className={style.buttonContainer}>
-                <div className={style.maxWidthButton}>
-                    <ButtonBlueDesk text={cancel}/>
-                </div>
-                <div className={style.maxWidthButton}>
-                    <ButtonBlueDesk text={goToPay}/>
-                </div>
+                <button className={style.maxWidthButton}>
+                    {cancel}
+                </button>
+                <button className={style.maxWidthButton}>
+                    {goToPay}
+                </button>
             </div>
         </div>
     )

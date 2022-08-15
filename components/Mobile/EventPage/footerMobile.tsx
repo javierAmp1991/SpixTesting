@@ -7,8 +7,8 @@ export default function FooterMobile() {
             <div className={style.styleContainerText}>
                 Agradecimientos a nuestros auspiciadores
             </div>
-            <a>
-                <Image loading="lazy" className={style.sizeBanner} src={GlobalConst.sourceImages.sponsor} alt=""/>
+            <a className={style.sizeBanner}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.sponsor} alt=""/>
             </a>
         </>
     )

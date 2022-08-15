@@ -11,8 +11,10 @@ export default function HomeOwnPublicityMobile({listItem, darkMode}) {
                     <div key={index}
                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
                         <div className="grid content-center">
-                            <Image loading="lazy" className={style.heightImageOwnPublicity} src={info.LinkImage}
+                            <div className={style.heightImageOwnPublicity}>
+                            <Image layout={"fill"}  src={info.LinkImage}
                                  alt=""/>
+                            </div>
                         </div>
                         <div className={`${style.containerInfoProperties}`}>
                             <div className={cssStyles.fontTitle}>

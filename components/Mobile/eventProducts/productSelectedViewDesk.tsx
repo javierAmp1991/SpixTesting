@@ -16,7 +16,9 @@ export default function ProductSelectedViewMobile({item}: { item: Product }) {
     return (
         <div>
             <div className={style.grid}>
-                <Image className={style.sizeImage} src={item.ImagePath} alt=""/>
+                <div className={style.sizeImage}>
+                <Image layout={"fill"} objectFit={"cover"} src={item.ImagePath} alt=""/>
+                </div>
                 <div className={style.divInfo}>
                     <div className={`${utilities.fontPrimaryText} mb-1`}>
                         {item.Name}

@@ -1,12 +1,16 @@
 import style from "/styles/Mobile/CRM/newViewMobile.module.css"
 import utilities from "/styles/utilities.module.css"
+import Image from "next/image";
+
 const readNew: string = "Leer notica"
 
-export default function NewViewMobile({item, isDarkMode}){
+export default function NewViewMobile({item, isDarkMode}) {
     let cssStyles = getCssStyles()
-    return(
+    return (
         <div className={`${style.widthContainerNew} ${cssStyles.borderCard}`}>
-            <img loading="lazy" className={style.heightImageNews} src={item.PathImage} alt=""/>
+            <div className={style.heightImageNews}>
+                <Image layout={"fill"} src={item.PathImage} alt=""/>
+            </div>
             <div className={`${cssStyles.bgInfo} grid content-start gap-1 p-3`}>
                 <h3 className={`${cssStyles.fontSubTitle} ${utilities.clamp2}`}>
                     {item.Title}
@@ -20,13 +24,14 @@ export default function NewViewMobile({item, isDarkMode}){
             </div>
         </div>
     )
-    function getCssStyles(){
+
+    function getCssStyles() {
         return {
             borderCard: isDarkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
-            bgInfo: isDarkMode? utilities.bgDarkModeInfo: utilities.bgNormalInfo,
-            fontSubTitle: isDarkMode? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
-            fontPrimaryText: isDarkMode? utilities.fontPrimaryTextDarkMode: utilities.fontPrimaryText,
-            styleLink: isDarkMode? utilities.styleLinkDarkMode: utilities.styleLink
+            bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
+            fontSubTitle: isDarkMode ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
+            fontPrimaryText: isDarkMode ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
+            styleLink: isDarkMode ? utilities.styleLinkDarkMode : utilities.styleLink
         }
     }
 }

@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Events/eventHorizontalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+
 export default function EventHorizontalView({info, darkModeState}) {
     let cssStyles = getCssStyles()
     return (
@@ -9,12 +10,16 @@ export default function EventHorizontalView({info, darkModeState}) {
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
-                        <Image loading="lazy" className="absolute z-20"
-                               src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        <div className="absolute z-20">
+                            <Image layout={"fill"}
+                                   src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        </div>
                         :
                         ""
                 }
-                <Image loading="lazy" className={style.sizeImage} src={info.CoverImage} alt=""/>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={info.CoverImage} alt=""/>
+                </div>
             </a>
 
             <div className={`${cssStyles.bgInfo} grid content-start p-2`}>
@@ -26,16 +31,20 @@ export default function EventHorizontalView({info, darkModeState}) {
                     {
                         info.Rating != null ?
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                </div>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     ({info.Rating})
                                 </div>
                             </>
                             :
                             <>
-                                <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                     src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                </div>
                                 <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
                                     (0)
                                 </div>
@@ -92,9 +101,9 @@ export default function EventHorizontalView({info, darkModeState}) {
         return {
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontName: darkModeState? utilities.fontNameDarkMode: utilities.fontName,
+            fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,
             fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
-            fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode: utilities.fontPriceInclude
+            fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude
         }
     }
 }

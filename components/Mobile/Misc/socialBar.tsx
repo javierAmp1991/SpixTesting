@@ -59,7 +59,9 @@ export default function SocialBar() {
             <button onClick={handleClick} className={`${utilities.gridMaxContent2} ${style.gridIcon}`}>
                 <div className="relative">
                     <div className={`${likeAnimation.animationClassLike} ${utilities.gridContentCenter} z-40`}>
-                        <Image className={`${style.sizeIcon} z-50`} src={likeAnimation.heartIcon} alt=""/>
+                        <div className={`${style.sizeIcon} z-50`}>
+                        <Image layout={"fill"} src={likeAnimation.heartIcon} alt=""/>
+                        </div>
                     </div>
                     <div className={likeAnimation.mainContainerCircle}>
                         <span className={`${likeAnimation.circleClass1} ${style.circleClass} absolute`}/>
@@ -100,7 +102,9 @@ export default function SocialBar() {
 
             <button onClick={handleBell} className={`${utilities.gridMaxContent2} ${style.gridIcon}`}>
                 <div className={`${bellIcon.animationBell} ${utilities.gridContentCenter}`}>
-                    <Image className={`${style.sizeIcon}`} src={bellIcon.bellIcon} alt=""/>
+                    <div className={`${style.sizeIcon}`}>
+                    <Image layout={"fill"}  src={bellIcon.bellIcon} alt=""/>
+                    </div>
                 </div>
                 <div className={`${utilities.fontPrimaryText} pt-0.5`}>
                     1.1M

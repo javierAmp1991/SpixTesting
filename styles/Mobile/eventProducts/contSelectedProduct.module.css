@@ -31,6 +31,7 @@
 .sizeArrowExit {
     height: var(--sizeLeftArrow);
     width: var(--sizeLeftArrow);
+    position: relative;
 }
 
 .totalButtonContainer {
@@ -66,7 +67,8 @@
 
 .sizeExitArrow {
     height: 14px;
-    width: auto;
+    width: 30px;
+    position: relative;
 }
 
 .gridSelectedProduct {
@@ -97,7 +99,8 @@
 
 .sizeBuyCAr {
     height: 20px;
-    width: auto;
+    width: 25px;
+    position: relative;
 }
 
 .numItemSelected {
@@ -137,6 +140,7 @@
     height: 20px;
     width: 20px;
     margin-left: 10px;
+    position: relative;
 }
 
 .gridTabs {
@@ -229,6 +233,7 @@
     border-radius: 50%;
     display: inline;
     background: gray;
+    position: relative;
 }
 
 .styleInput {

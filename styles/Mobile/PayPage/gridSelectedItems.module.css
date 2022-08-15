@@ -13,14 +13,17 @@
 
 .returnContainer{
     display: grid;
-    padding: 16px 0px;
-    width: 200px;
+    padding: 4px 48px;
+    border-radius: 3px;
     margin: auto;
+    background: var(--gradientBlueButton);
+    color: white;
 }
 
 .buyCarSize{
     height: 20px;
-    width: auto;
+    width: 25px;
+    position: relative;
 }
 
 .positionNumber{

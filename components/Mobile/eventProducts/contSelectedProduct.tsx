@@ -23,8 +23,10 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
                         <div onClick={handleDisplay}
                              className={style.gridCarTitleClose}>
                             <div className={style.styleGridVar}>
-                                <Image className={style.sizeBuyCAr}
-                                     src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                                <div className={style.sizeBuyCAr}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                                </div>
                                 <span className={style.numItemSelected}>0</span>
                             </div>
 
@@ -78,8 +80,11 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
                                      src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                                 <span className={style.numItemSelected}>0</span>
                             </div>*/}
-                            <Image onClick={handleDisplay}
-                                className="h-4 w-auto" src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
+                            <div className="h-4 w-4 relative">
+                            <Image layout={"fill"}
+                                onClick={handleDisplay}
+                                    src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
+                            </div>
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
                                 Total: $ 99.999
                             </div>

@@ -15,6 +15,7 @@
     box-shadow: var(--boxShadowCard);
     left: calc(50% - (var(--sizeLogo) / 2));
     top: calc(100% - (var(--sizeLogo) / 2));
+    overflow: hidden;
 }
 
 .sizeProductEWB {

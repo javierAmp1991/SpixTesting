@@ -4,11 +4,13 @@ import style from "/styles/Mobile/Misc/formView.module.css"
 import {fomrLink} from "../../../dataDemo/data";
 import Image from "next/image";
 
-export default function FormView({item}: { item: fomrLink }){
-    return(
+export default function FormView({item}: { item: fomrLink }) {
+    return (
         <div className={style.gridForm}>
             <div className={utilities.gridContentCenter}>
-                <Image className={style.sizeIcon} src={GlobalConst.sourceImages.formIcon} alt=""/>
+                <div className={style.sizeIcon}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.formIcon} alt=""/>
+                </div>
             </div>
             <div className={style.gridInfoForm}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>

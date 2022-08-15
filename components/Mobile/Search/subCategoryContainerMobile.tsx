@@ -32,7 +32,9 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                     {item.FilterName}
                 </div>
                 <div className="grid items-center">
-                    <Image className="h-4 w-auto" src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    <div className="h-4 w-5 relative">
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    </div>
                 </div>
             </div>
             <ul className={`${style.gridContainerSubcategory} px-8`}>
@@ -76,15 +78,19 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                     <div className="grid gap-5">
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                                 <span className={style.positionCalendar}>
-                                                    <Image className="h-3 w-auto "
+                                                    <div className="h-3 w-3 relative">
+                                                    <Image layout={"fill"}
                                                          src={cssStyle.calendarIcon} alt=""/>
+                                                    </div>
                                                 </span>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>
                                         <div className={`${cssStyle.styleRangeDate} ${cssStyle.bgInfo}`}>
                                                 <span className={style.positionCalendar}>
-                                                    <Image className="h-3 w-auto"
+                                                    <div className="h-3 w-3 relative">
+                                                    <Image layout={"fill"}
                                                          src={cssStyle.calendarIcon} alt=""/>
+                                                    </div>
                                                 </span>
                                             <input className={style.styleRangeDateInput} type="date"/>
                                         </div>

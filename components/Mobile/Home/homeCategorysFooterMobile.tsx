@@ -10,8 +10,8 @@ export default function HomeCategorysFooterMobile({item, isDarkMode}) {
                 {item.Title}
             </div>
 
-            <div>
-                <Image className={style.heightImageAtribute} src={item.LinkImage} alt=""/>
+            <div className={style.heightImageAtribute}>
+                <Image layout={"fill"} src={item.LinkImage} alt=""/>
             </div>
         </div>
     )

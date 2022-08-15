@@ -627,7 +627,7 @@ export namespace ListProducts2 {
                         Price: 18990,
                         DiscountPercent: 10,
                         Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product1.jpg",
+                        ImagePath: "/images/cerveza1.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
 
@@ -638,7 +638,7 @@ export namespace ListProducts2 {
                         Price: 18990,
                         DiscountPercent: 10,
                         Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product2.jpg",
+                        ImagePath: "/images/cerveza2.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
                 },
@@ -648,7 +648,7 @@ export namespace ListProducts2 {
                         Price: 2990,
                         DiscountPercent: 25,
                         Include: null,
-                        ImagePath: "/images/product4.jpg",
+                        ImagePath: "/images/cerveza3.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
                 }
@@ -659,7 +659,7 @@ export namespace ListProducts2 {
                         Price: 990,
                         DiscountPercent: 30,
                         Include: null,
-                        ImagePath: "/images/product5.jpg",
+                        ImagePath: "/images/product2.jpg",
                         Tag: "Snack"
                     }, IsSelected: false
 
@@ -670,7 +670,7 @@ export namespace ListProducts2 {
                         Price: 9990,
                         DiscountPercent: 20,
                         Include: "Dcto 2 Un.",
-                        ImagePath: "/images/product6.jpg",
+                        ImagePath: "/images/cerveza5.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
                 }
@@ -743,7 +743,7 @@ export namespace ListProducts2 {
                         Price: 18990,
                         DiscountPercent: 10,
                         Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product1.jpg",
+                        ImagePath: "/images/product6.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
 
@@ -754,7 +754,7 @@ export namespace ListProducts2 {
                         Price: 18990,
                         DiscountPercent: 10,
                         Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product2.jpg",
+                        ImagePath: "/images/product8.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
                 },
@@ -764,7 +764,7 @@ export namespace ListProducts2 {
                         Price: 2990,
                         DiscountPercent: 25,
                         Include: null,
-                        ImagePath: "/images/product4.jpg",
+                        ImagePath: "/images/product9.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
                 }
@@ -775,7 +775,7 @@ export namespace ListProducts2 {
                         Price: 990,
                         DiscountPercent: 30,
                         Include: null,
-                        ImagePath: "/images/product5.jpg",
+                        ImagePath: "/images/bebidas.jpg",
                         Tag: "Snack"
                     }, IsSelected: false
 
@@ -786,7 +786,7 @@ export namespace ListProducts2 {
                         Price: 9990,
                         DiscountPercent: 20,
                         Include: "Dcto 2 Un.",
-                        ImagePath: "/images/product6.jpg",
+                        ImagePath: "/images/beb2.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
                 }

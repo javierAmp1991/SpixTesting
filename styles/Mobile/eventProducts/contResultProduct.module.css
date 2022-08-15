@@ -33,6 +33,7 @@
     height: 80px;
     object-fit: cover;
     object-position: top;
+    position: relative;
 }
 
 .gridTagsCont {
@@ -46,7 +47,8 @@
 
 .sizeBuyCAr {
     height: 20px;
-    width: auto;
+    width: 25px;
+    position: relative;
 }
 
 .separationiLineSection {
@@ -64,6 +66,7 @@
     height: 20px;
     width: 20px;
     border-radius: 50%;
+    position: relative;
 }
 
 .contAddItem {
@@ -161,7 +164,8 @@
 
 .sizeCloseimg {
     height: 14px;
-    width: auto;
+    width: 14px;
+    position: relative;
     border-radius: 50%;
     display: inline;
     opacity: .5;

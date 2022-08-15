@@ -344,13 +344,11 @@ export default function EventPage() {
     const menuList = Menu.listMenu
     return (
         isLardeDown ?
-            <></>
-            /* <div>
+            <div>
                  <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
                  <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
                  <div className={styleMobile.bannerProperties}>
-                     <Image  src={bannerPath}
-                            alt=""/>
+                     <Image layout={"fill"}  src={bannerPath} alt=""/>
                  </div>
                  <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
                      <DefaultPageMobile listItem={defaultList}/>
@@ -363,7 +361,7 @@ export default function EventPage() {
                          :
                          <></>
                  }
-             </div>*/
+             </div>
             :
             <div>
                 <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>

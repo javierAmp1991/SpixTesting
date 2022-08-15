@@ -18,7 +18,8 @@
 
 .sizeBuyCar {
     height: 20px;
-    width: auto;
+    width: 25px;
+    position: relative;
 }
 
 .positionNumberCar {
@@ -111,9 +112,11 @@
 }
 
 .maxWidthButton{
-    width: 100%;
-    max-width: 200px;
-    margin: auto;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 4px 0;
+    border-radius: 3px;
+    max-width: 250px;
 }
 
 .buttonContainer {
@@ -121,6 +124,7 @@
     grid-template-columns: repeat(2, 1fr);
     bottom: var(--spaceY);
     gap:24px;
+    margin: 2px 0 0 0;
 }
 
 .timerContainer {

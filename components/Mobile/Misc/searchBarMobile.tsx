@@ -28,7 +28,9 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
             <div className={style.spixLogoCont}>
-                <Image className={style.spixLogoPro} src={GlobalConst.sourceImages.spixAlone} alt=""/>
+                <div className={style.spixLogoPro}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.spixAlone} alt=""/>
+                </div>
             </div>
             <input onChange={getValueInput}
                    onFocus={isDisplaySug}
@@ -37,8 +39,8 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
             <div className={style.styleButton}>
-                <button>
-                    <Image className={style.styleLupa} src={GlobalConst.sourceImages.magGlass} alt=""/>
+                <button className={style.styleLupa}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.magGlass} alt=""/>
                 </button>
             </div>
         </div>

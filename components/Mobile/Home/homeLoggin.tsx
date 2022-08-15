@@ -12,7 +12,9 @@ export default function HomeLoggin({isDarkMode}) {
         <div className={`$ ${cssStyles.bgInfo}`}>
             <div className={style.gridLog}>
                 <div className="grid content-center">
-                    <Image className="h-6 w-auto" src={GlobalConst.sourceImages.homeLoggin} alt=""/>
+                    <div className="h-6 w-6 relative">
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.homeLoggin} alt=""/>
+                    </div>
                 </div>
                 <div className="grid gap-1 text-left">
                     <div className={cssStyles.fontSubTitle}>{firstText}</div>
