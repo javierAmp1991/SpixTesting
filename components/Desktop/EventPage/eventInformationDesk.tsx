@@ -21,6 +21,7 @@ export default function EventInformationDesk({
         setTargetImage(targetImage = linkImage)
     }
 
+
     const cssStyle = getCssStyle()
     return (
         <div>

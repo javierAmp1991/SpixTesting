@@ -8,6 +8,7 @@ import ButtonBlue from "../Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
 import React, {useState} from "react";
 import Image from "next/image";
+import {DateVenue} from "../../../dataDemo/data";
 
 /*let inputRadio: inputRadioProp[] = [
     {
@@ -48,8 +49,28 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     let [displayVenue, setDisplayVenue] = useState(false)
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
-    let [venueDateSelected, setvenueDateSelected] = useState(eventInformation.VenueDate[0])
-    const handleDateSelected = (e) => setvenueDateSelected(e)
+
+    let [venueDateList, setVenueDateList] = useState(eventInformation.VenueDate)
+    const handleVenueList = (itemNew: DateVenue) => {
+        const newVenueDateList: DateVenue[] = venueDateList.map((item) => {
+            if (item.NameVenue == itemNew.NameVenue) {
+                return {...item, isSelected: true}
+            }
+            return {...item, isSelected: false}
+        })
+        setVenueDateList(venueDateList = newVenueDateList)
+    }
+
+    let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[1])
+    const handleSetVenueDateSelected = () => {
+        venueDateList.forEach(item => {
+            if (item.IsSelected) {
+                setvenueDateSelected(venueDateSelected = item)
+            }
+        })
+        handleCloseDate()
+    }
+
     return (
         <div>
             <div className={style.paddingMainConatiner}>
@@ -151,7 +172,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
 
             {
                 displayImage ?
-                    <PopUpContainer closePopUp={handleClose} isBackground={false}>
+                    <PopUpContainer closePopUp={handleClose}
+                                    isBackground={false}
+                                    isButtonVisible={false}>
                         {
                             <div className={style.ContainerCoverImage}>
                                 <div className={style.sizeImage}>
@@ -164,7 +187,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             }
             {
                 displayDateSelector ?
-                    <PopUpContainer closePopUp={handleCloseDate} isBackground={true}>
+                    <PopUpContainer closePopUp={handleCloseDate}
+                                    isBackground={true}
+                                    isButtonVisible={true}>
                         {
                             <div className={style.mainContSelecDate}>
                                 <div className={`${utilities.fontTitle} ${style.titleCont}`}>
@@ -172,9 +197,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 </div>
                                 <div className={style.paddingContInpu}>
                                     {
-                                        eventInformation.VenueDate.map((item, index) =>
-                                            <div onClick={() => handleDateSelected(item)}
-                                                 className={style.styleDate} key={index}>
+                                        venueDateList.map((item, index) =>
+                                            <div onClick={() => handleVenueList(item)}
+                                                 className={item.IsSelected ? style.styleDateSelected : style.styleDate}
+                                                 key={index}>
                                                 <div className={utilities.fontPrimaryText}>
                                                     <div>
                                                         Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
@@ -187,7 +213,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         )
                                     }
                                 </div>
-                                <div onClick={handleCloseDate}
+                                <div onClick={handleSetVenueDateSelected}
                                      className={style.buttonCont}>
                                     <ButtonBlue text={"Aceptar"}/>
                                 </div>
@@ -197,32 +223,34 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             }
             {
                 displayVenue ?
-                    <PopUpContainer closePopUp={handleCloseVenue} isBackground={true}>
+                    <PopUpContainer closePopUp={handleCloseVenue}
+                                    isBackground={true}
+                                    isButtonVisible={true}>
                         {
                             <div className={style.mainContMap}>
                                 <div className={` ${style.titleCont}`}>
                                     <div className={`${utilities.fontTitle} mb-2`}>
-                                        El Huevo
+                                        {venueDateSelected.Venue}
                                     </div>
                                     <div className={utilities.fontSecundaryText}>
-                                        Capacidad: 50 personas
+                                        Capacidad: {venueDateSelected.Capacity} personas
                                     </div>
                                 </div>
                                 <div className={style.contMap}>
                                     <div className={style.imgMap}>
-                                        <Image layout={"fill"} src="/images/googleMapHuevo.jpg" alt=""/>
+                                        <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
                                     </div>
                                 </div>
                                 <div>
                                     <div className={utilities.fontPrimaryText}>
-                                        Blanco 1386, Valparaíso
+                                        {venueDateSelected.Venue}
                                     </div>
                                     <div className={style.gridLinkMap}>
                                         <div className={style.sizeLogoMap}>
                                             <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
                                         </div>
-                                        <a href="https://goo.gl/maps/skWcW2X6YkEyhL7S6" className={utilities.styleLink}>
-                                            https://goo.gl/maps/skWcW2X6YkEyhL7S6
+                                        <a href={venueDateSelected.LinkGoogleMap} className={utilities.styleLink}>
+                                            {venueDateSelected.LinkGoogleMap}
                                         </a>
                                     </div>
                                 </div>

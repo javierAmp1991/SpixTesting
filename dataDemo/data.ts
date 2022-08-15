@@ -939,30 +939,33 @@ export namespace EventPageEvent {
         Video: "images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
         VenueDate: [
             {
-                Date: new Date(2022, 6, 18),
-                Venue: "Blanco 1386, Valparaíso"
-            },
-            {
-                Date: new Date(2022, 7, 19),
-                Venue: "Blanco 1386, Valparaíso"
-            },
-            {
-                Date: new Date(2022, 8, 20),
-                Venue: "Blanco 1386, Valparaíso"
-            },
-            {
-                Date: new Date(2022, 9, 21),
-                Venue: "Blanco 1386, Valparaíso"
-            },
-            {
-                Date: new Date(2022, 10, 22),
-                Venue: "Blanco 1386, Valparaíso"
-            },
-            {
-                Date: new Date(2022, 11, 23),
-                Venue: "Blanco 1386, Valparaíso"
-            },
+                Date: new Date(2022, 8, 18),
+                Venue: "Blanco 1386, Valparaíso",
+                IsSelected: false,
+                Capacity: 200,
+                NameVenue: "El Huevo",
+                ImageMap: "/images/googleMapHuevo.jpg",
+                LinkGoogleMap: "https://goo.gl/maps/skWcW2X6YkEyhL7S6"
 
+            },
+            {
+                Date: new Date(2022, 9, 19),
+                Venue: "Plaza Anibal Pinto 1182, Valparaíso",
+                IsSelected: false,
+                Capacity: 50,
+                NameVenue: "Cinzano",
+                ImageMap: "/images/googleMapCinzano.jpg",
+                LinkGoogleMap: "https://goo.gl/maps/BHF532ZZNGPXL8Sn6"
+            },
+            {
+                Date: new Date(2022, 10, 20),
+                Venue: "Blanco 889, Valparaíso",
+                IsSelected: false,
+                Capacity: 150,
+                NameVenue: "Woo Club",
+                ImageMap: "/images/googleMapWooClub.jpg",
+                LinkGoogleMap: "https://goo.gl/maps/mPvXV5ZbCja19kQo7"
+            },
         ]
     }
 }
@@ -1651,9 +1654,14 @@ export class EventLookUp {
     public VenueDate?: DateVenue[]
 }
 
-class DateVenue {
+export class DateVenue {
     Date: Date
     Venue: string
+    IsSelected: boolean
+    Capacity: number
+    NameVenue: string
+    ImageMap: string
+    LinkGoogleMap: string
 }
 
 export class Product {

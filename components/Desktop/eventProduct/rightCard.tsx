@@ -143,7 +143,9 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
 
             {
                 isDisplayAdd ?
-                    <PopUpContainer closePopUp={handleDisplayAdd} isBackground={true}>
+                    <PopUpContainer closePopUp={handleDisplayAdd}
+                                    isBackground={true}
+                                    isButtonVisible={true}>
                         {
                             <div className={style.mainContPop}>
                                 <div className={`${utilities.fontTitle} ${style.contTitleClose}`}>
@@ -179,12 +181,11 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
 
     function getTotal() {
         let total = 0
-        if(listSelectedProducts.length > 0) {
+        if (listSelectedProducts.length > 0) {
             listSelectedProducts.forEach((product: Product) => {
                 total = total + product.Price
             })
-        }
-        else total = 0
+        } else total = 0
         return total
     }
 }

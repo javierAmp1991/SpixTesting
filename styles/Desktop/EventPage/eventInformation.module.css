@@ -192,7 +192,6 @@
 .sizeImage {
     aspect-ratio: 3/4;
     width: 100%;
-    position: relative;
 }
 
 .titleCont {
@@ -218,6 +217,9 @@
 
 .paddingContInpu {
     display: grid;
+    grid-template-rows: max-content;
+    grid-auto-flow: row;
+    grid-auto-rows: max-content;
     margin: 16px 0;
     padding: 6px 6px 12px 6px;
     gap: 24px;
@@ -258,6 +260,17 @@
     margin-right: 16px;
 }
 
+.styleDateSelected {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+    background: #55595a;
+    border-radius: 8px;
+    padding: 12px 8px;
+    transition: .4s;
+    display: grid;
+    gap: 4px;
+    margin-right: 16px;
+}
+
 .marginAuto {
     margin: auto;
     width: 200px;
@@ -285,6 +298,6 @@
 
 .sizeLogoMap {
     height: 16px;
-    width: auto;
+    width: 16px;
     position: relative;
 }
