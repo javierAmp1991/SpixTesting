@@ -1725,15 +1725,15 @@ export class fomrLink {
 export namespace FormList {
     export const listForm: fomrLink[] = [
         {
-            text: "1.1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, odit.",
+            text: "Se necesita camarero o camarera por el fin de semana.",
             link: ""
         },
         {
-            text: "2.2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, odit.",
+            text: "Se necesita barman, guardia de seguridad y camareros modalidad part-time ",
             link: ""
         },
         {
-            text: "3.3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, odit.",
+            text: "Se busca banda de rock, metal y cumbia para reemplazo ",
             link: ""
         }
     ]
