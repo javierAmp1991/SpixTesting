@@ -10,9 +10,8 @@
 }
 
 .sizeCheckIcon{
-    --sizeCheckIcon: 12px;
-    height: var(--sizeCheckIcon);
-    width: var(--sizeCheckIcon);
+    height: 12px;
+    width: 12px;
     position: relative;
 }
 

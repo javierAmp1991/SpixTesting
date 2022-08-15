@@ -29,7 +29,7 @@ export namespace GlobalConst{
         leftArrowExit: "/images/leftArrowExit.png",
         calendarIcon: "/images/calendarIcon.png",
         calendarIconWhite: "/images/calendarIconWhite.png",
-        checkIcon: "/images/check Icon.png",
+        checkIcon: "/images/checkIcon.png",
         reviewStars: "/images/estrellasReview.png",
         totalCommentsIcon: "/images/totalComment.png",
         noactivateLikeIcon: "/images/noActivateLikeIcon.png",

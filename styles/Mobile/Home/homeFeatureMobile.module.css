@@ -15,7 +15,6 @@
     position: absolute;
     top: calc(100% - (var(--sizeLogoFeatureMobile)/2));
     left: calc(50% - (var(--sizeLogoFeatureMobile)/2));
-    position: relative;
     overflow: hidden;
 
 }
