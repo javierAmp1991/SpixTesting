@@ -6,7 +6,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 
 const goToPay: string = "Pagar"
-const cancel: string = "Canceslar"
+const cancel: string = "Cancelar"
 const propCupon: inputCuponValues = {
     titleCupon: "Ingresa tu cupon",
     placeHolder: "Ingresa tu cupón"

@@ -11,7 +11,7 @@ export default function ContainerSelectedItemMobile({item, addItem}:
                                                         { item: productSelected, addItem: any }) {
     const cssStyle = getCssStyle()
     return (
-        <div onClick={() => addItem(item, !item.IsSelected)}
+        <div onClick={() => addItem(item.Product, !item.IsSelected)}
              className={cssStyle.boxShadow}>
             <ProductViewMobile size={sizeProductFragment} item={item.Product}/>
             {

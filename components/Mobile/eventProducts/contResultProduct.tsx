@@ -13,12 +13,13 @@ const newGuest: string = "Nuevo Invitado"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
 
-export default function ContResultProduct({listSectionProduct, addItem, methodProps, listGuests}:
+export default function ContResultProduct({listSectionProduct, addItem, methodProps, listGuests, isOpen}:
                                               {
                                                   listSectionProduct: sectionProduct[],
                                                   addItem: any,
                                                   methodProps: any,
-                                                  listGuests: Guest[]
+                                                  listGuests: Guest[],
+                                                  isOpen: boolean
                                               }) {
     let [isDisplayAdd, setIsDisplayAdd] = useState(false)
     const handleDisplayAdd = () => setIsDisplayAdd(isDisplayAdd = !isDisplayAdd)
@@ -39,6 +40,8 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
             handleDisplayAdd()
         }
     }
+
+    const cssStyle = getCssStyle()
     return (
         <div className={style.contVar}>
             <div className={style.bannerSize}>
@@ -92,7 +95,7 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                 </div>
 
             </div>
-            <div className={style.paddingContResult}>
+            <div className={cssStyle.paddingContResult}>
                 {
                     listSectionProduct.map((item, index) =>
                         <div key={index} className={style.separationiLineSection}>
@@ -136,4 +139,9 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
             }
         </div>
     )
+    function getCssStyle(){
+        return{
+            paddingContResult: isOpen? style.paddingContResult : style.paddingContResult0
+        }
+    }
 }

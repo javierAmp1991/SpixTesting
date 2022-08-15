@@ -9,11 +9,11 @@
 }
 
 .paddingMainConatiner {
-    padding: 0px 8px;
+    padding: 0 8px;
 }
 
 .paddingDescription {
-    padding: 16px 0px;
+    padding: 16px 0;
 }
 
 .gridrestrictions {
@@ -44,13 +44,13 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 8px;
-    padding: 2px 0px;
+    padding: 2px 0;
 }
 
 .gridMainContainer {
     display: grid;
     gap: 8px;
-    padding: 16px 0px;
+    padding: 16px 0;
     border-bottom: 2px solid var(--separationLineColor);
 }
 
@@ -94,7 +94,7 @@
     display: grid;
     grid-template-columns: repeat(1, max-content);
     justify-content: center;
-    padding: 12px 0px;
+    padding: 12px 0;
 }
 
 .containerShowProp {
@@ -135,6 +135,7 @@
     height: 50px;
     border-radius: 50%;
     box-shadow: var(--boxShadowCard);
+    overflow: hidden;
     position: relative;
 }
 
@@ -217,7 +218,7 @@
 
 .paddingContInpu {
     display: grid;
-    margin: 16px 0px;
+    margin: 16px 0;
     padding: 6px 6px 12px 6px;
     gap: 24px;
     overflow-y: scroll;
@@ -237,7 +238,7 @@
 .contMap {
     display: grid;
     gap: 16px;
-    padding: 16px 0px;
+    padding: 16px 0;
     overflow-y: hidden;
 }
 
@@ -248,7 +249,7 @@
 }
 
 .styleDate {
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, .2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
     border-radius: 8px;
     padding: 12px 8px;
     transition: .4s;
@@ -263,7 +264,7 @@
 }
 
 .styleDate:hover {
-    box-shadow: 0px 7px 12px rgba(0, 0, 0, .3);
+    box-shadow: 0 7px 12px rgba(0, 0, 0, .3);
 }
 
 .buttonCont {

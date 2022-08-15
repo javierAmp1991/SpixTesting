@@ -88,14 +88,14 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
         <div className={cssStyles.backgroundColor}>
             <div className={style.gridHeader}>
                 <a className={paddingImage}>
-                    <div className={style.sizeIcons}>
+                    <div className={style.sizeIconLogo}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk} alt=""/>
                     </div>
                 </a>
 
                 <a className={styleGrid}>
                     <div className={paddingImage}>
-                        <div className={style.sizeIcons}>
+                        <div className={style.sizeIconLocation}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.locationHeaderDesktop} alt=""/>
                         </div>
                     </div>
@@ -138,7 +138,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
                         :
                         <a className={styleGrid}>
                             <div className={paddingImage}>
-                                <div className={style.sizeIcons}>
+                                <div className={style.sizeIconLoggin}>
                                     <Image layout={"fill"}
                                         src={GlobalConst.sourceImages.logginHeaderDesktop}
                                         alt=""/>
@@ -166,7 +166,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
 
                 <button onClick={toggleDarkMode} className={styleGrid}>
                     <div className={paddingImage}>
-                        <div className={style.sizeIcons}>
+                        <div className={style.sizeIconDarkMode}>
                         <Image layout={"fill"} src={darkModeIconInfo.icon} alt=""/>
                         </div>
                     </div>

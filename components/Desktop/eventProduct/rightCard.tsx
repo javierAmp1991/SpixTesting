@@ -14,10 +14,10 @@ const textButton: string = "Comprar"
 const translateNum = 100
 const newGuestText: string = "Nuevo invitado"
 
-export default function RightCard({methodProps, listGuest, guestSelected, listProduct}:
+export default function RightCard({methodProps, listGuest, guestSelected, listProduct, listSelectedProducts, addItem}:
                                       {
                                           methodProps: any, listGuest: Guest[], guestSelected: Guest,
-                                          listProduct: Product[]
+                                          listProduct: Product[], listSelectedProducts: Product[], addItem: any
                                       }) {
 
     //region hooks
@@ -126,8 +126,8 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
 
             <div className={`${style.gridSelected}`}>
                 {
-                    listProduct.map((item, index) =>
-                        <PayPageProductSelectedView deleteItem={null} item={item} key={index}/>
+                    listSelectedProducts.map((item, index) =>
+                        <PayPageProductSelectedView deleteItem={addItem} item={item} key={index}/>
                     )
                 }
             </div>
@@ -179,11 +179,12 @@ export default function RightCard({methodProps, listGuest, guestSelected, listPr
 
     function getTotal() {
         let total = 0
-        listGuest.map((guest: Guest) =>
-            guest.listProductSelected.map((product: Product) =>
+        if(listSelectedProducts.length > 0) {
+            listSelectedProducts.forEach((product: Product) => {
                 total = total + product.Price
-            )
-        )
+            })
+        }
+        else total = 0
         return total
     }
 }

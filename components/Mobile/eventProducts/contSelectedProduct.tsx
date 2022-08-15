@@ -10,11 +10,18 @@ import Image from "next/image";
 const productTitle = "Productos"
 const buttonText = "Comprar"
 
-export default function ContSelectedProduct({listProducts, methodProps, listGuest}:
-                                                { listProducts: Product[], methodProps: any, listGuest: Guest[], guestSelected: Guest }) {
+export default function ContSelectedProduct({methodProps, listGuest, listSelectedProducts, addItem}:
+                                                {
+                                                    methodProps: any,
+                                                    listGuest: Guest[], guestSelected: Guest,
+                                                    listSelectedProducts: Product[], addItem: any
+                                                }) {
 
     let [dispay, setDisplay] = useState(false)
     const handleDisplay = () => setDisplay(dispay = !dispay)
+    const totalPrice = getTotal()
+    let totalProducts: number = listSelectedProducts.length
+
     return (
         <div className={dispay ? style.contVarNormal : style.contVar}>
             {
@@ -27,11 +34,11 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                                 </div>
-                                <span className={style.numItemSelected}>0</span>
+                                <span className={style.numItemSelected}>{listSelectedProducts.length}</span>
                             </div>
 
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: $ 99.999
+                                Total: $ {totalPrice}
                             </div>
 
                             <button onClick={handleDisplay}
@@ -58,14 +65,16 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
 
             <div>
                 <div className={`${utilities.fontSubTitle} ${style.contTitle}`}>
-                    {/*<img onClick={handleDisplay} className={style.sizeExitArrow}
-                         src={GlobalConst.sourceImages.leftArrowExit} alt=""/>*/}
-                    <span>{productTitle} (6)</span>
+                    {
+                        totalProducts > 0 ?
+                            <span>{productTitle} ({listSelectedProducts.length})</span> :
+                            <span>No hay productos</span>
+                    }
                 </div>
                 <div className={style.gridSelectedProduct}>
                     {
-                        listProducts.map((item, index) =>
-                            <ProductSelectedViewDesk item={item} key={index}/>
+                        listSelectedProducts.map((item, index) =>
+                            <ProductSelectedViewDesk key={index} deleteItem={addItem} item={item}/>
                         )
                     }
                 </div>
@@ -81,12 +90,12 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
                                 <span className={style.numItemSelected}>0</span>
                             </div>*/}
                             <div className="h-4 w-4 relative">
-                            <Image layout={"fill"}
-                                onClick={handleDisplay}
-                                    src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
+                                <Image layout={"fill"}
+                                       onClick={handleDisplay}
+                                       src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
                             </div>
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: $ 99.999
+                                Total: $ {totalPrice}
                             </div>
                             <button className={style.buttonStyle}>{buttonText}</button>
 
@@ -102,4 +111,15 @@ export default function ContSelectedProduct({listProducts, methodProps, listGues
         </div>
 
     )
+
+    function getTotal() {
+        let total = 0
+        if (listSelectedProducts.length > 0) {
+            listSelectedProducts.forEach(product => {
+                total = total + product.Price
+            })
+        } else total = 0
+        return total
+    }
+
 }

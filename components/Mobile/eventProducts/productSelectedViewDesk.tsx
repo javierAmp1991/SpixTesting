@@ -5,7 +5,7 @@ const deleteTextButton: string = "Eliminar"
 import {useState} from "react";
 import Image from "next/image";
 
-export default function ProductSelectedViewMobile({item}: { item: Product }) {
+export default function ProductSelectedViewMobile({item, deleteItem}: { item: Product, deleteItem:any }) {
     let [amountSelected, setAmountSelected] = useState(1)
     const amountUp = () => setAmountSelected(
         amountSelected = amountSelected + 1)
@@ -60,7 +60,8 @@ export default function ProductSelectedViewMobile({item}: { item: Product }) {
                          ${style.borderLeft}`}> +
                     </div>
                 </div>
-                <div className={`${utilities.fontSecundaryText} ${style.styleDelete}`}>
+                <div onClick={() => deleteItem(item, false)}
+                    className={`${utilities.fontSecundaryText} ${style.styleDelete}`}>
                     {deleteTextButton}
                 </div>
             </div>

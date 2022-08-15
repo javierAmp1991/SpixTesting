@@ -44,9 +44,10 @@ let firstGuest: Guest = {
     listProductSelected: []
 }
 
+const AppContext = React.createContext(undefined)
+
 export default function EventProducts() {
     //region basic
-    let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(true)
     let [listProductSelected, setListProductSelected] = useState([])
     const handleSelectedProduct = (product: Product) =>
         setListProductSelected([...listProductSelected, product])
@@ -54,8 +55,15 @@ export default function EventProducts() {
         const newListSelected = listProductSelected.filter((productF) => productF != product)
         setListProductSelected(newListSelected)
     }
-    const handleOpenFilter = () => setIsOpenSelectedProduct(
-        isOpenSelectedProduct = !isOpenSelectedProduct)
+    let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(true)
+    const handleOpenFilter = () => {
+        if (listProductSelected.length > 0) {
+            setIsOpenSelectedProduct(isOpenSelectedProduct = true)
+        }
+        else {
+            setIsOpenSelectedProduct(isOpenSelectedProduct = false)
+        }
+    }
     const isSmallDown = useMediaQuery(mediaQuery);
     //endregion
 
@@ -93,10 +101,10 @@ export default function EventProducts() {
     }
 
     let [listProductShow, setListProductShow] = useState(listProductsPass)
-    const handListProductShow = (getItem: productSelected, selected: boolean) => {
+    const handListProductShow = (getItem: Product, selected: boolean) => {
         const listSupe: sectionProduct[] = listProductShow.map((item) => {
                 const newListProductSelected: productSelected[] = item.listItems.map((prod) => {
-                        if (prod == getItem) {
+                        if (prod.Product == getItem) {
                             return {...prod, IsSelected: selected}
                         }
                         return {...prod}
@@ -106,6 +114,13 @@ export default function EventProducts() {
             }
         )
         setListProductShow(listProductShow = listSupe)
+
+        if (selected) {
+            handleSelectedProduct(getItem)
+        } else {
+            handleDeleteProduct(getItem)
+        }
+        /*handleOpenFilter()*/
     }
 
     let methodProps = {
@@ -126,17 +141,16 @@ export default function EventProducts() {
                             <ContSelectedProduct guestSelected={firstGuest}
                                                  methodProps={methodProps}
                                                  listGuest={listGuests}
-                                                 listProducts={ListProducts.listProducts}/>
+                                                 addItem={handListProductShow}
+                                                 listSelectedProducts={listProductSelected}/>
                             : <></>
                     }
-                    {
-                        isOpenSelectedProduct ?
-                            <ContResultProduct methodProps={methodProps}
-                                               listGuests={listGuests}
-                                               addItem={handListProductShow}
-                                               listSectionProduct={listProductShow}/>
-                            : <></>
-                    }
+                    <ContResultProduct isOpen={isOpenSelectedProduct}
+                                       methodProps={methodProps}
+                                       listGuests={listGuests}
+                                       addItem={handListProductShow}
+                                       listSectionProduct={listProductShow}/>
+
 
                 </div>
                 <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
@@ -154,8 +168,10 @@ export default function EventProducts() {
 
                         <RightCard guestSelected={guestSelected}
                                    listGuest={listGuests}
+                                   listSelectedProducts={listProductSelected}
                                    methodProps={methodProps}
-                        listProduct={ListProducts.listProducts}/>
+                                   listProduct={ListProducts.listProducts}
+                                   addItem={handListProductShow}/>
                     </div>
                 </div>
             </div>

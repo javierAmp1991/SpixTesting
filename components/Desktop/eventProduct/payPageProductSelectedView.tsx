@@ -61,7 +61,7 @@ export default function PayPageProductSelectedView({item, deleteItem}:
                          ${style.borderLeft}`}> +
                     </div>
                 </div>
-                <div onClick={() => deleteItem(item)}
+                <div onClick={() => deleteItem(item, false)}
                      className={`${utilities.fontSecundaryText} ${style.styleDelete}`}>
                     {deleteButton}
                 </div>
