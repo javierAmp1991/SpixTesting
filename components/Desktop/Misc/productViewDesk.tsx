@@ -39,7 +39,7 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
                                             </div>
                                             :
                                             <>
-                                                <span>Antes </span>
+                                                <span>Antes: </span>
                                                 <span className="line-through">
                                                     ${(((item.DiscountPercent * item.Price) / 100) + item.Price)}</span>
                                             </>

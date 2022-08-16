@@ -276,7 +276,7 @@ export default function EventPage() {
 
     let moreOffertDesk = <TitleSection titleLink={discountTitle}
                                        paddingTitle={spaceComponentsDeskY} darkModeState={false}>
-        <EventWithBannerMobile displayLogoRating={false} item={ListOffertData.listOffert[0]} darkModeState={false}/>
+        <EventWithBannerMobile displayLogoRating={false} item={ListOffertData.listOffert[3]} darkModeState={false}/>
     </TitleSection>
 
     let productsDesk = <TitleSection titleLink={productstTitle}

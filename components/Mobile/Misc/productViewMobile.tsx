@@ -38,7 +38,7 @@ export default function ProductViewMobile({item, size}: { item: Product, size: n
                                             </div>
                                             :
                                             <>
-                                                <span>Antes </span>
+                                                <span>Antes: </span>
                                                 <span className="line-through">
                                                     ${(((item.DiscountPercent * item.Price) / 100) + item.Price)}</span>
                                             </>

@@ -4,9 +4,15 @@
     gap: 16px;
 }
 
-.sizeIcon{
+.sizeIconH{
     height: 20px;
-    width: 20px;
+    width: 25px;
+    position: relative;
+}
+
+.sizeIconB{
+    height: 20px;
+    width: 18px;
     position: relative;
 }
 

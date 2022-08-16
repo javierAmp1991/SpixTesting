@@ -18,7 +18,7 @@ export default function FormView({item}: { item: fomrLink }) {
                         item.text
                     }
                 </div>
-                <a className={utilities.styleLink}>Rellenar al formulario</a>
+                <a className={utilities.styleLink}>Rellenar el formulario</a>
             </div>
         </div>
     )

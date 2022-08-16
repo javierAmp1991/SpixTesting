@@ -59,7 +59,7 @@ export default function SocialBar() {
             <button onClick={handleClick} className={`${utilities.gridMaxContent2} ${style.gridIcon}`}>
                 <div className="relative">
                     <div className={`${likeAnimation.animationClassLike} ${utilities.gridContentCenter} z-40`}>
-                        <div className={`${style.sizeIcon} z-50`}>
+                        <div className={`${style.sizeIconH} z-50`}>
                         <Image layout={"fill"} src={likeAnimation.heartIcon} alt=""/>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ export default function SocialBar() {
 
             <button onClick={handleBell} className={`${utilities.gridMaxContent2} ${style.gridIcon}`}>
                 <div className={`${bellIcon.animationBell} ${utilities.gridContentCenter}`}>
-                    <div className={`${style.sizeIcon}`}>
+                    <div className={`${style.sizeIconB}`}>
                     <Image layout={"fill"} src={bellIcon.bellIcon} alt=""/>
                     </div>
                 </div>
