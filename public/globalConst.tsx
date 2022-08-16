@@ -19,7 +19,7 @@ export namespace GlobalConst{
         buyCarDarkMode: "/images/carroCompra.png",
         buyCarNormal: "/images/carroCompraBlack.png",
         darkModeNavMenu: "/images/moonIconWhite.png",
-        lightModeNavMenu: "/images/sunIconBlack.png",
+        lightModeNavMenu: "/images/sunIconBlack1.png",
         logginIconDarkMode: "/images/logginIconWhite.png",
         logginIconNormal: "/images/logginIconBlack.png",
         deleteIcon: "/images/deleteIcon.png",
