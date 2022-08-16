@@ -82,7 +82,7 @@
     --colorTextHeaderDesktop: white;
     --colorTagMenuDesktop: white;
     --heightBannerEWBDesk: 192px; /*EWB eventWithBanner*/
-    --sizeLogoEWB: 64px;
+    --sizeLogoEWB: 54px;
     --sizeArrowEWBProduct: 24px;
     --sizeProductEWBDesk: 112px;
     --arrowEWBPositionY: calc(50% - (var(--sizeArrowEWBProduct)/2));

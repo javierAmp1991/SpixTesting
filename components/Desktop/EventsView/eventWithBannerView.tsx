@@ -30,7 +30,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </div>
                     </div>
 
-                    <div className={`${cssStyles.bgInfo} pt-12 pb-3 grid justify-center justify-items-center`}>
+                    <div className={`${cssStyles.bgInfo} pt-11 pb-3 grid justify-center justify-items-center`}>
                         <div className={`${cssStyles.fontSubTitle} ${alignmentTextProduct} mb-2`}>
                             {item.EventName}
                         </div>

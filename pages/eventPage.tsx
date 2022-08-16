@@ -86,7 +86,7 @@ const positionArrowIn: string = "5px"
 const positionArrowY: string = "calc(50% - 16px)"
 let layoutPropProducts: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum5,
+    Grid: gridTemplateColum4,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowIn,
@@ -284,7 +284,7 @@ export default function EventPage() {
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropProducts}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                index <= 4?
+                index <= 3?
                     <ProductViewDesk size={null} key={index} item={item}/> :<></>
 
                 )
@@ -298,7 +298,7 @@ export default function EventPage() {
                 InOffer.listInOffer.map((item, index) =>
                     index <= 3 ?
                         <EventVerticalView info={item} darkModeState={false}
-                                           dropDown={false} isHideName={true}
+                                           dropDown={false} isHideName={false}
                                            key={index}/> : <></>
                 )
             }

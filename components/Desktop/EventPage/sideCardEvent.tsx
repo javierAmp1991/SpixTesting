@@ -218,10 +218,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         )
                                     }
                                 </div>
-                                <div
+                                {/*<div
                                      className={style.buttonCont}>
                                     <ButtonBlue text={"Aceptar"}/>
-                                </div>
+                                </div>*/}
                             </div>
                         }
                     </PopUpContainer> : <></>
