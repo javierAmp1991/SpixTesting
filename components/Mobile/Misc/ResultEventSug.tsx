@@ -22,7 +22,7 @@ export default function ResultEventSug({item}: { item: EventResult[] }) {
                             <div className={`${utilities.fontPrimaryText} mb-1`}>
                                 {item1.Name}
                             </div>
-                            <div className={utilities.ratingStarsProperties}>
+                            <div className={`${utilities.ratingStarsProperties} mb-1`}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                             </div>
                             <div className={utilities.fontSecundaryText}>
