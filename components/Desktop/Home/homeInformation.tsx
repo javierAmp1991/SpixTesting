@@ -25,7 +25,7 @@ export default function HomeInformation({listItem, darkModeState}) {
                             <a key={info.Title} className={style.gridInternalMinHeader}>
                                 <div className="pl-4 grid content-center items-center">
                                     <div className="h-6 w-6 relative">
-                                        <Image layout={"fill"} src={info.LinkImage} alt=""/>
+                                        <img src={info.LinkImage} alt=""/>
                                     </div>
                                 </div>
                                 <div className="grid gap-1 pr-3">
