@@ -108,7 +108,7 @@
     grid-template-columns: max-content 1fr max-content;
     gap:12px;
     align-items: center;
-    padding: 32px 0;
+    padding: 24px 0;
     border-bottom: 2px solid var(--separationLineColor);
 }
 

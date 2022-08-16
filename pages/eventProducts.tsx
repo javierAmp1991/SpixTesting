@@ -57,8 +57,8 @@ export default function EventProducts() {
         setListProductSelected(newListSelected)
     }
     let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(false)
-    const handleOpenFilter = (number: number) => {
-        if (number > 0) {
+    const handleOpenFilter = () => {
+        if (listProductSelected.length >= 1) {
             setIsOpenSelectedProduct(isOpenSelectedProduct = true)
         } else setIsOpenSelectedProduct(isOpenSelectedProduct = false)
     }
@@ -119,7 +119,8 @@ export default function EventProducts() {
             }
         )
     }
-    const handListProductShow = (getItem: Product, selected: boolean) => {
+    const handListProductShow = (getItem: Product, selected: boolean) =>
+    {
         const listSupe: sectionProduct[] = listProductShow.map((item) => {
                 const newListProductSelected: productSelected[] = item.listItems.map((prod) => {
                         if (prod.Product == getItem) {
@@ -139,6 +140,7 @@ export default function EventProducts() {
             handleDeleteProduct(getItem)
         }
 
+        handleOpenFilter()
     }
 
     let [heightDiv, setHeightDiv] = useState(0)
