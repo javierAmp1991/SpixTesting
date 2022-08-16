@@ -14,7 +14,7 @@ export default function ReviewSectionDesk({children, resumeReview}) {
                     </div>
                     <div className={`${utilities.gridContentCenter} justify-start mb-2`}>
                         <div className={style.sizeStarResume}>
-                        <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                         </div>
                     </div>
                     <div className={`${utilities.fontPrimaryText} text-left`}>

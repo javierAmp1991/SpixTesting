@@ -56,14 +56,19 @@ export default function EventInformationMobile({eventInformation, form}:
         setVenueDateList(venueDateList = newVenueDateList)
     }
     let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[1])
-    const handleSetVenueDateSelected = () => {
+    /*const handleSetVenueDateSelected = () => {
         venueDateList.forEach(item => {
             if (item.IsSelected) {
                 setvenueDateSelected(venueDateSelected = item)
             }
         })
         handleCloseDate()
+    }*/
+    const handleSetVenueDateSelected = (item: DateVenue) => {
+        setvenueDateSelected( venueDateSelected = item)
+        handleCloseDate()
     }
+
     return (
         <div>
             <div className={style.paddingMainConatiner}>
@@ -134,7 +139,9 @@ export default function EventInformationMobile({eventInformation, form}:
                         </div>
                         <div className={utilities.fontPrimaryText}>
                             <span>Proxima fecha: </span>
-                            <span className={utilities.styleLink}>{venueDateSelected.Date.toDateString()}</span>
+                            <span className={utilities.styleLink}>
+                                {venueDateSelected.Date.getDate()} de {venueDateSelected.Date.toLocaleString("es-US", {month: "long"})} del {venueDateSelected.Date.getFullYear()}
+                            </span>
                         </div>
                     </div>
 
@@ -203,7 +210,7 @@ export default function EventInformationMobile({eventInformation, form}:
                             <div className={style.paddingContInpu}>
                                 {
                                     eventInformation.VenueDate.map((item, index) =>
-                                        <div
+                                        <div onClick={()=>handleSetVenueDateSelected(item)}
                                             className={style.styleDate} key={index}>
                                             <div className={utilities.fontPrimaryText}>
                                                 <div>
@@ -217,10 +224,10 @@ export default function EventInformationMobile({eventInformation, form}:
                                     )
                                 }
                             </div>
-                            <div onClick={handleCloseDate}
+                            {/*<div onClick={handleCloseDate}
                                  className={style.buttonCont}>
                                 <ButtonBlue text={"aceptar"}/>
-                            </div>
+                            </div>*/}
                         </div>
                     </PopUpContainerMob> : <></>
             }

@@ -59,7 +59,8 @@
     --borderRadiousImageSelection: 6px;
     height: var(--sizeImageSelection);
     aspect-ratio: 1/1;
-    border-radius: var(--borderRadiousImageSelection);
+    border-radius: 6px;
+    overflow: hidden;
     position: relative;
 }
 
