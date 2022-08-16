@@ -1,5 +1,5 @@
 .mainDiv {
-    --heightModal: 80vh;
+    --heightModal: max-content;
     --widthModal: 90vw;
     --boxShadowModal: 0px 6px 12px rgba(0, 0, 0, .4);
     width: 100vw;

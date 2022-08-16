@@ -71,7 +71,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
         handleCloseDate()
     }*/
     const handleSetVenueDateSelected = (item: DateVenue) => {
-        setvenueDateSelected( venueDateSelected = item)
+        setvenueDateSelected(venueDateSelected = item)
         handleCloseDate()
     }
 
@@ -181,11 +181,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                     isBackground={false}
                                     isButtonVisible={false}>
                         {
-                            <div className={style.ContainerCoverImage}>
-                                <div className={style.sizeImage}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
-                                           alt=""/>
-                                </div>
+                            <div className={style.sizeImage}>
+                                <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
+                                       alt=""/>
                             </div>
                         }
                     </PopUpContainer> : <></>
