@@ -66,14 +66,14 @@ import atributes = AtributesDataFilter.atributes;
 import Link from "next/link";
 //endregion
 
-const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "Link"]
-const mostPopularTleLink: [string, string] = ["Mas Populares", "Link"]
-const featuredHomeTitleLink: [string, string] = ["Destacados", "Link"]
-const todayInValpoTitleLink: [string, string] = ["Hoy en Valparaiso", "Link"]
-const cinemasTitleLink: [string, string] = ["Cines", "Link"]
-const inOfferTitleLink: [string, string] = ["En Oferta", "Link"]
-const newsHomeTitleLink: [string, string] = ["Noticias", "Link"]
-const restaurantsHomeTitleLink: [string, string] = ["Restaurantes", "Link"]
+const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "#"]
+const mostPopularTleLink: [string, string] = ["Mas Populares", "#"]
+const featuredHomeTitleLink: [string, string] = ["Destacados", "#"]
+const todayInValpoTitleLink: [string, string] = ["Hoy en Valparaiso", "#"]
+const cinemasTitleLink: [string, string] = ["Cines", "#"]
+const inOfferTitleLink: [string, string] = ["En Oferta", "#"]
+const newsHomeTitleLink: [string, string] = ["Noticias", "#"]
+const restaurantsHomeTitleLink: [string, string] = ["Restaurantes", "#"]
 const spaceComponents = 40
 const noSpaceComponents = 0
 const spaceComponentsMobileY = 24
