@@ -9,7 +9,7 @@ const secondText: string = "Y ten accesos a todos los beneficios de nuestra plat
 export default function HomeLoggin({isDarkMode}) {
     let cssStyles = getCssStyles()
     return (
-        <div className={`$ ${cssStyles.bgInfo}`}>
+        <div className={`$ ${cssStyles.bgInfo} ${cssStyles.borderCard}`}>
             <div className={style.gridLog}>
                 <div className="grid content-center">
                     <div className="h-6 w-6 relative">
@@ -29,7 +29,7 @@ export default function HomeLoggin({isDarkMode}) {
 
     function getCssStyles() {
         return {
-            borderCard: isDarkMode ? "" : style.borderCardInformation,
+            borderCard: isDarkMode ? "" : style.borderLoggin,
             bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             styleLink: isDarkMode ? utilities.styleLinkDarkMode : utilities.styleLink,
             fontPrimaryText: isDarkMode ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,

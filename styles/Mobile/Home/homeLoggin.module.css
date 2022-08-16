@@ -6,3 +6,8 @@
     max-width: 300px;
     margin:auto;
 }
+
+.borderLoggin{
+  border-bottom: 2px solid var(--separationLineColor);
+  border-top: 2px solid var(--separationLineColor);
+}
