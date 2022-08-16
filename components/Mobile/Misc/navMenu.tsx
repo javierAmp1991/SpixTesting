@@ -44,8 +44,7 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                             </div>
                         </button>
                         :
-                        ""
-
+                        <></>
                 }
             </div>
         </div>
