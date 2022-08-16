@@ -87,7 +87,7 @@ const positionArrowY: string = "calc(50% - 16px)"
 let layoutPropProducts: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum4,
-    Gap: gapLayout,
+    Gap: 32,
     Padding: spaceComponents,
     PositionArrowX: positionArrowIn,
     PositionArrowY: positionArrowY
