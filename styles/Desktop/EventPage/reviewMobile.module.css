@@ -11,15 +11,15 @@
 }
 
 .sizeCheckIcon{
-    --sizeCheckIcon: 12px;
+    --sizeCheckIcon: 10px;
     height: var(--sizeCheckIcon);
     width: var(--sizeCheckIcon);
     position: relative;
 }
 
 .sizeReviewStar{
-    --sizeReviewStar: 16px;
+    --sizeReviewStar: 15px;
     height: var(--sizeReviewStar);
-    width: 100px;
+    width: 85px;
     position: relative;
 }

@@ -1,6 +1,6 @@
 .sizeIcon{
-    height: 11px;
-    width: auto;
+    height: 12px;
+    width: 12px;
     position: relative;
 }
 .gridOptionBar{
@@ -9,7 +9,11 @@
     gap: 16px;
 }
 .fontOptionBar{
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 13px;
+    line-height: 13px;
     color: #8e8e8e;
+}
+
+.gridItems{
+    gap: 4px;
 }

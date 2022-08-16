@@ -21,7 +21,7 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
             </div>
 
             <div className={style.gridInfoProduct}>
-                <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
+                <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}
                 </div>
                 <div>

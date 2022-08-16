@@ -8,8 +8,16 @@
     grid-template-columns: repeat(4, max-content);
     gap: 16px;
 }
+
+.marginTop1{
+    margin-bottom:1px;
+}
 .fontOptionBar{
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 13px;
+    line-height: 13px;
     color: #8e8e8e;
+}
+
+.gridItems{
+    gap: 4px;
 }

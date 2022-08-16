@@ -7,13 +7,13 @@ export default function OptionBar() {
     return (
         <div className={`${style.gridOptionBar} ${style.fontOptionBar}`}>
             <div>2d</div>
-            <button className={`${utilities.gridMaxContent2} gap-1`}>
+            <button className={`${utilities.gridMaxContent2} ${style.gridItems}`}>
                 <div className={style.sizeIcon}>
                     <Image layout={"fill"}  src={GlobalConst.sourceImages.noactivateLikeIcon} alt=""/>
                 </div>
                 <div>29</div>
             </button>
-            <a className={`${utilities.gridMaxContent2} gap-1`}>
+            <a className={`${utilities.gridMaxContent2} ${style.gridItems}`}>
                 <div className={utilities.gridContentCenter}>
                     <div className={style.sizeIcon}>
                     <Image layout={"fill"}  src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>

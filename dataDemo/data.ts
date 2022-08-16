@@ -556,7 +556,7 @@ export namespace ListOffertData {
 export namespace ListProducts {
     export const listProducts: Product[] = [
         {
-            Name: "Producto seleccionado 1.1",
+            Name: "Producto 1.1",
             Price: 18990,
             DiscountPercent: 10,
             Include: "Lleve 2 pague 1",
@@ -564,7 +564,7 @@ export namespace ListProducts {
             Tag: "Cerveza"
         },
         {
-            Name: "Producto seleccionado 2.2",
+            Name: "Producto 2.2",
             Price: 2990,
             DiscountPercent: 25,
             Include: null,
@@ -572,7 +572,7 @@ export namespace ListProducts {
             Tag: "Energetica"
         },
         {
-            Name: "Producto seleccionado 3.3",
+            Name: "Producto 3.3",
             Price: 990,
             DiscountPercent: 30,
             Include: null,
@@ -580,7 +580,7 @@ export namespace ListProducts {
             Tag: "Snack"
         },
         {
-            Name: "Producto seleccionado 4.4",
+            Name: "Producto 4.4",
             Price: 9990,
             DiscountPercent: 20,
             Include: "Dcto 2 Un.",
@@ -588,7 +588,7 @@ export namespace ListProducts {
             Tag: "Energetica"
         },
         {
-            Name: "Producto seleccionado 5.5",
+            Name: "Producto 5.5",
             Price: 10990,
             DiscountPercent: 30,
             Include: null,
@@ -596,7 +596,7 @@ export namespace ListProducts {
             Tag: "Bebida"
         },
         {
-            Name: "Producto seleccionado 6.6",
+            Name: "Producto 6.6",
             Price: 10990,
             DiscountPercent: 30,
             Include: null,

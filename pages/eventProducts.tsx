@@ -44,6 +44,8 @@ let firstGuest: Guest = {
     listProductSelected: []
 }
 
+const numberMenos: number = 129
+
 
 export default function EventProducts() {
     //region basic
@@ -150,9 +152,9 @@ export default function EventProducts() {
     useEffect(() => {
         function resiveDiv(){
             const sizeDiv = window.innerHeight
-            handleSetH(sizeDiv)
+            handleSetH(sizeDiv - numberMenos)
         }
-        handleSetH(window.innerHeight)
+        handleSetH(window.innerHeight - numberMenos)
         window.addEventListener('resize', resiveDiv)
     }, [heightDiv]);
 
