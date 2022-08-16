@@ -10,7 +10,9 @@
 }
 
 .boxShadowPro {
-    box-shadow: var(--shadowUnderProducts)
+    box-shadow: var(--shadowUnderProducts);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .gridPriceWithDiscount {

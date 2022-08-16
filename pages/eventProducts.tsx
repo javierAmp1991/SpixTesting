@@ -56,15 +56,12 @@ export default function EventProducts() {
         const newListSelected = listProductSelected.filter((productF) => productF != product)
         setListProductSelected(newListSelected)
     }
-    let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(true)
-    /*const handleOpenFilter = () => {
-        if (listProductSelected.length > 0) {
+    let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(false)
+    const handleOpenFilter = (number: number) => {
+        if (number > 0) {
             setIsOpenSelectedProduct(isOpenSelectedProduct = true)
-        }
-        else {
-            setIsOpenSelectedProduct(isOpenSelectedProduct = false)
-        }
-    }*/
+        } else setIsOpenSelectedProduct(isOpenSelectedProduct = false)
+    }
     const isSmallDown = useMediaQuery(mediaQuery);
     //endregion
 
@@ -141,19 +138,20 @@ export default function EventProducts() {
         } else {
             handleDeleteProduct(getItem)
         }
-        /*handleOpenFilter()*/
+
     }
 
-    let[heightDiv, setHeightDiv] = useState(0)
+    let [heightDiv, setHeightDiv] = useState(0)
     const handleSetH = (number: number) => {
         setHeightDiv(heightDiv = number)
     }
 
     useEffect(() => {
-        function resiveDiv(){
+        function resiveDiv() {
             const sizeDiv = window.innerHeight
             handleSetH(sizeDiv - numberMenos)
         }
+
         handleSetH(window.innerHeight - numberMenos)
         window.addEventListener('resize', resiveDiv)
     }, [heightDiv]);
@@ -171,7 +169,7 @@ export default function EventProducts() {
                 <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
                 <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                 <div className={styleMob.heightCont}
-                    style={{height:heightDiv}}>
+                     style={{height: heightDiv}}>
                     {
                         isOpenSelectedProduct ?
                             <ContSelectedProduct guestSelected={firstGuest}
@@ -186,8 +184,6 @@ export default function EventProducts() {
                                        listGuests={listGuests}
                                        addItem={handListProductShow}
                                        listSectionProduct={listProductShow}/>
-
-
                 </div>
                 <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
                          isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
