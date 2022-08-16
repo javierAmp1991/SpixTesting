@@ -119,7 +119,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
                                 <ResultBussinesSugDesk item={resultInfo.BussinesResult}/>
                                 <ResultEventSugDesk item={resultInfo.EventResult}/>
                                 <div className={`${utilities.styleLink} ${style.seeAll}`}>
-                                    Ver mas resultadosd
+                                    Ver mas resultados
                                 </div>
                             </div>
                             :

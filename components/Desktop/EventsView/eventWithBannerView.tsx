@@ -30,12 +30,12 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </div>
                     </div>
 
-                    <div className={`${cssStyles.bgInfo} pt-10 pb-3 grid justify-center justify-items-center`}>
+                    <div className={`${cssStyles.bgInfo} pt-12 pb-3 grid justify-center justify-items-center`}>
                         <div className={`${cssStyles.fontSubTitle} ${alignmentTextProduct} mb-2`}>
                             {item.EventName}
                         </div>
 
-                        <div className={`${utilities.gridMaxContent2} relative grid justify-center mb-3`}>
+                        <div className={`${utilities.gridMaxContent2} relative grid justify-center mb-2`}>
                             <div className={utilities.ratingStarsProperties}>
                                 <Image layout={"fill"} objectFit={"cover"} src="/images/ratingNew.png" alt=""/>
                             </div>

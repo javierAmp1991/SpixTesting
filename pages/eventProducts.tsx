@@ -152,6 +152,7 @@ export default function EventProducts() {
             const sizeDiv = window.innerHeight
             handleSetH(sizeDiv)
         }
+        handleSetH(window.innerHeight)
         window.addEventListener('resize', resiveDiv)
     }, [heightDiv]);
 

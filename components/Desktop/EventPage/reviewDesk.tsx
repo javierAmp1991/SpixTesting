@@ -36,7 +36,7 @@ export default function ReviewDesk({item}: { item: review }) {
                 </div>
                 <div className="grid pb-0.5">
                     <div className={style.sizeReviewStar}>
-                        <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                     </div>
                 </div>
             </div>

@@ -84,7 +84,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 {eventInformation.EventName}
                             </div>
 
-                            <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1.5`}>
+                            <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1`}>
                                 {
                                     eventInformation.Rating != null ?
                                         <>

@@ -80,12 +80,13 @@ const gapLayout: number = 20
 const displayCarrousel = "grid"
 const gridTemplateColum3: string = "repeat(3,1fr)"
 const gridTemplateColum4: string = "repeat(4,1fr)"
+const gridTemplateColum5: string = "repeat(5,1fr)"
 const gridTemplateColum6: string = "repeat(6,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowY: string = "calc(50% - 16px)"
 let layoutPropProducts: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum6,
+    Grid: gridTemplateColum5,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowIn,
@@ -172,7 +173,7 @@ export default function EventPage() {
         <LayoutCarrouselMobile gapLayout={24}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                        <ProductViewMobile size={160} key={index} item={item}/>
+                        <ProductViewMobile size={180} key={index} item={item}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -283,7 +284,9 @@ export default function EventPage() {
         <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropProducts}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                    <ProductViewDesk size={null} key={index} item={item}/>
+                index <= 4?
+                    <ProductViewDesk size={null} key={index} item={item}/> :<></>
+
                 )
             }
         </LayoutCarrousel>
