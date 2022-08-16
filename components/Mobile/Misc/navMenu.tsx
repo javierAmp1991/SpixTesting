@@ -19,7 +19,6 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                             <Image layout={"fill"} src={imageStyle.logginIcon} alt=""/>
                         </div>
                 }
-
                 <a>
                     <div className={style.heightIcon}>
                         <Image layout={"fill"} src={imageStyle.home} alt=""/>
