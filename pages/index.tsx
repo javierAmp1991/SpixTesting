@@ -43,6 +43,7 @@ import {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
 import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarrousel";
+import {MetaHTMLAttributes} from "react";
 //endregion
 
 //region importData
@@ -67,6 +68,7 @@ import Link from "next/link";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 //endregion
 
+//region constantes
 const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "#"]
 const mostPopularTleLink: [string, string] = ["Mas Populares", "#"]
 const featuredHomeTitleLink: [string, string] = ["Destacados", "#"]
@@ -93,7 +95,7 @@ const gridTemplateColum6: string = "repeat(6,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowOut: string = "-40px"
 const positionArrowY: string = "calc(50% - 16px)"
-let layoutPropBanner: LayoutCarrouselDeskProp = {
+const layoutPropBanner: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridFullSpace,
     Gap: noGapLayout,
@@ -101,7 +103,7 @@ let layoutPropBanner: LayoutCarrouselDeskProp = {
     PositionArrowX: positionArrowIn,
     PositionArrowY: positionArrowY
 }
-let layoutPropFeatured: LayoutCarrouselDeskProp = {
+const layoutPropFeatured: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum2,
     Gap: gapLayout,
@@ -109,7 +111,7 @@ let layoutPropFeatured: LayoutCarrouselDeskProp = {
     PositionArrowX: positionArrowOut,
     PositionArrowY: positionArrowY
 }
-let layoutPropCarrousel: LayoutCarrouselDeskProp = {
+const layoutPropCarrousel: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum5,
     Gap: gapLayout,
@@ -117,7 +119,7 @@ let layoutPropCarrousel: LayoutCarrouselDeskProp = {
     PositionArrowX: positionArrowOut,
     PositionArrowY: positionArrowY
 }
-let layoutPropCarrouselRounded: LayoutCarrouselDeskProp = {
+const layoutPropCarrouselRounded: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum5,
     Gap: gapLayout,
@@ -125,7 +127,7 @@ let layoutPropCarrouselRounded: LayoutCarrouselDeskProp = {
     PositionArrowX: positionArrowOut,
     PositionArrowY: positionArrowY
 }
-let layoutPropNews: LayoutCarrouselDeskProp = {
+const layoutPropNews: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum3,
     Gap: gapLayout,
@@ -133,7 +135,8 @@ let layoutPropNews: LayoutCarrouselDeskProp = {
     PositionArrowX: positionArrowOut,
     PositionArrowY: positionArrowY
 }
-let isLogged: boolean = false
+const isLogged: boolean = false
+//endregion
 
 type useMediaQuery = (query: string) => boolean;
 
@@ -529,30 +532,50 @@ export default function Index() {
     let [isDiplaySug, setIsDisplaySug] = useState(false)
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
+
         isSmallDown ?
-            <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
-                {
-                    isDiplaySug ?
-                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
-                        :
-                        <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
-                            <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
-                            {carrouselBannerMobile}
-                            <DefaultPageMobile listItem={listDefaultPageMobile}/>
-                            <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
-                                     isDarkMode={isDarkMode}
-                                     isLogged={isLogged}/>
-                        </>
-                }
-            </div>
-            :
-            <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
-                <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <DefaultPage listItem={listDefaultPage}/>
+            <>
+                <html lang="en" className="notranslate" translate="no"></html>
+                <head>
+                    <meta name="google" content="notranslate"/>
+                </head>
+                <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
+                    {
+                        isDiplaySug ?
+                            <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                            :
+                            <>
+                                <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                                <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
+                                {carrouselBannerMobile}
+                                <DefaultPageMobile listItem={listDefaultPageMobile}/>
+                                <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
+                                         isDarkMode={isDarkMode}
+                                         isLogged={isLogged}/>
+                            </>
+                    }
                 </div>
-            </div>
+            </>
+
+            :
+            <>
+                <html lang="en" className="notranslate" translate="no"></html>
+                <head>
+                    <meta name="google" content="notranslate"/>
+                </head>
+                <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
+                    <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
+                    <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+                    <div className={utilities.maxWidthBodyContentSpix}>
+                        <DefaultPage listItem={listDefaultPage}/>
+                    </div>
+                </div>
+            </>
+
+
     )
 }
+
+
+
+
