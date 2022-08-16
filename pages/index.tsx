@@ -64,6 +64,7 @@ import {OwnPublicityData} from "../dataDemo/data";
 import {InformationHomeData} from "../dataDemo/data";
 import atributes = AtributesDataFilter.atributes;
 import Link from "next/link";
+import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 //endregion
 
 const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "#"]
@@ -153,7 +154,7 @@ export function useMediaQuery(query) {
 }
 
 export default function Index() {
-    let [isDarkMode, setIsDarkModeP] = React.useState(true);
+    let [isDarkMode, setIsDarkModeP] = React.useState(false);
     const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
 
@@ -525,16 +526,25 @@ export default function Index() {
         },
     ]
 //endregion
-
+    let [isDiplaySug, setIsDisplaySug] = useState(false)
+    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
         isSmallDown ?
             <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
-                <HeaderSpixMobile displaySug={false} isDarkMode={isDarkMode}/>
-                <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
-                {carrouselBannerMobile}
-                <DefaultPageMobile listItem={listDefaultPageMobile}/>
-                <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true} isDarkMode={isDarkMode}
-                         isLogged={isLogged}/>
+                {
+                    isDiplaySug ?
+                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                        :
+                        <>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
+                            {carrouselBannerMobile}
+                            <DefaultPageMobile listItem={listDefaultPageMobile}/>
+                            <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
+                                     isDarkMode={isDarkMode}
+                                     isLogged={isLogged}/>
+                        </>
+                }
             </div>
             :
             <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>

@@ -18,6 +18,7 @@ import ContResultProduct from "../components/Mobile/eventProducts/contResultProd
 import LeftCard from "../components/Desktop/eventProduct/leftCard";
 import RightCard from "../components/Desktop/eventProduct/rightCard";
 import {sectionProduct} from "../dataDemo/data";
+import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 //endregion
 
 const isDarkMode = false
@@ -119,8 +120,7 @@ export default function EventProducts() {
             }
         )
     }
-    const handListProductShow = (getItem: Product, selected: boolean) =>
-    {
+    const handListProductShow = (getItem: Product, selected: boolean) => {
         const listSupe: sectionProduct[] = listProductShow.map((item) => {
                 const newListProductSelected: productSelected[] = item.listItems.map((prod) => {
                         if (prod.Product == getItem) {
@@ -165,30 +165,40 @@ export default function EventProducts() {
     }
     //endregion
 
+    let [isDiplaySug, setIsDisplaySug] = useState(false)
+    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
+
     return (
         isSmallDown ?
             <div className={styleMob.mainContainerMobile}>
-                <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
-                <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                <div className={styleMob.heightCont}
-                     style={{height: heightDiv}}>
-                    {
-                        isOpenSelectedProduct ?
-                            <ContSelectedProduct guestSelected={firstGuest}
-                                                 methodProps={methodProps}
-                                                 listGuest={listGuests}
-                                                 addItem={handListProductShow}
-                                                 listSelectedProducts={listProductSelected}/>
-                            : <></>
-                    }
-                    <ContResultProduct isOpen={isOpenSelectedProduct}
-                                       methodProps={methodProps}
-                                       listGuests={listGuests}
-                                       addItem={handListProductShow}
-                                       listSectionProduct={listProductShow}/>
-                </div>
-                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+                {
+                    isDiplaySug ?
+                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                        :
+                        <>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
+                            <div className={styleMob.heightCont}
+                                 style={{height: heightDiv}}>
+                                {
+                                    isOpenSelectedProduct ?
+                                        <ContSelectedProduct guestSelected={firstGuest}
+                                                             methodProps={methodProps}
+                                                             listGuest={listGuests}
+                                                             addItem={handListProductShow}
+                                                             listSelectedProducts={listProductSelected}/>
+                                        : <></>
+                                }
+                                <ContResultProduct isOpen={isOpenSelectedProduct}
+                                                   methodProps={methodProps}
+                                                   listGuests={listGuests}
+                                                   addItem={handListProductShow}
+                                                   listSectionProduct={listProductShow}/>
+                            </div>
+                            <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                                     isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+                        </>
+                }
             </div>
             :
             <div>

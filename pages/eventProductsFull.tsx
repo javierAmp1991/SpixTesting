@@ -1,5 +1,5 @@
 //region data
-import { Menu, Product, productSelected} from "../dataDemo/data";
+import {Menu, Product, productSelected} from "../dataDemo/data";
 import React, {useState} from "react";
 import {ListProducts2} from "../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
@@ -19,6 +19,7 @@ import RightCard from "../components/Desktop/eventProduct/rightCard";
 import {sectionProduct} from "../dataDemo/data";
 import LeftCardFull from "../components/Desktop/eventProduct/leftCardFull";
 import ContResultProductFull from "../components/Mobile/eventProducts/contResultProductFull";
+import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 //endregion
 
 const isDarkMode = false
@@ -130,22 +131,33 @@ export default function EventProducts() {
     }
     //endregion
 
+    let [isDiplaySug, setIsDisplaySug] = useState(false)
+    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
+
     return (
         isSmallDown ?
             <div className={styleMob.mainContainerMobile}>
-                <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
-                <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                <div className={styleMob.heightCont}>
-                    <ContResultProductFull isOpen={false}
-                                       methodProps={methodProps}
-                                       listGuests={listGuests}
-                                       addItem={handListProductShow}
-                                       listSectionProduct={listProductShow}/>
+                {
+                    isDiplaySug ?
+                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                        :
+                        <>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
+                            <div className={styleMob.heightCont}>
+                                <ContResultProductFull isOpen={false}
+                                                       methodProps={methodProps}
+                                                       listGuests={listGuests}
+                                                       addItem={handListProductShow}
+                                                       listSectionProduct={listProductShow}/>
 
 
-                </div>
-                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+                            </div>
+                            <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                                     isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+                        </>
+                }
+
             </div>
             :
             <div>

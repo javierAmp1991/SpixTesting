@@ -58,6 +58,8 @@ import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage"
 import Image from "next/image";
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import Link from "next/link";
+import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
+import React, {useState} from "react";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -340,6 +342,8 @@ export default function EventPage() {
         childrenRight: <SideCardEvent eventInformation={EventPageEvent.eventPage}/>
     }
     //endregion
+    let [isDiplaySug, setIsDisplaySug] = useState(false)
+    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
 
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     const isLardeDown = useMediaQuery('(max-width: 1280px)');
@@ -349,21 +353,28 @@ export default function EventPage() {
     return (
         isLardeDown ?
             <div>
-                <HeaderSpixMobile displaySug={null} isDarkMode={false}/>
-                <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
-                <div className={styleMobile.bannerProperties}>
-                    <Image layout={"fill"} src={bannerPath} alt=""/>
-                </div>
-                <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
-                    <DefaultPageMobile listItem={defaultList}/>
-                    <FooterMobile/>
-                </div>
                 {
-                    isSmallDown ?
-                        <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
-                                 isLogged={false}/>
+                    isDiplaySug ?
+                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                        <></>
+                    <>
+                        <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={false}/>
+                        <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
+                        <div className={styleMobile.bannerProperties}>
+                            <Image layout={"fill"} src={bannerPath} alt=""/>
+                        </div>
+                        <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
+                            <DefaultPageMobile listItem={defaultList}/>
+                            <FooterMobile/>
+                        </div>
+                        {
+                            isSmallDown ?
+                                <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
+                                         isLogged={false}/>
+                                :
+                                <></>
+                        }
+                    </>
                 }
             </div>
             :

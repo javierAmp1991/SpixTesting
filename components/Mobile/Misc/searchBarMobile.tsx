@@ -34,7 +34,8 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
                     </div>
                 </div>
             </Link>
-            <input onChange={getValueInput}
+            <input onFocus={isDisplaySug}
+                onChange={getValueInput}
                    autoComplete="off"
                    className={style.styleInput}
                    type="text" name={nameInput}

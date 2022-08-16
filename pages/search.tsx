@@ -17,6 +17,7 @@ import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView
 import LayoutPrincipalFilterMobile from "../components/Mobile/Search/layoutPrincipalFilterMobile";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
 import Image from "next/image";
+import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -57,35 +58,44 @@ export default function Search() {
             }
         </LayoutButtonNavegation>
     //endregion
+    let [isDiplaySug, setIsDisplaySug] = useState(false)
+    const handleIsDisplaySug = ()=> setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
         isSmallDown ?
             <div className="pb-10">
-                <HeaderSpixMobile displaySug={null} isDarkMode={isDarkMode}/>
-                <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
-                <div className={cssStyle.bg}>
-                    <div className={style.styleBanner}>
-                    <Image layout={"fill"} src="/images/atr2.jpg" alt=""/>
-                    </div>
-                    <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} hiddeResult={handleClick}/>
-                    {
-                        isDisplayResult ?
-                            <>
-                                <div className={style.paddingContainer}>
-                                    <div className={`${cssStyle.fontSubTitle} ${style.paddingTitle}`}>
-                                        Resultados de {"Conciertos"}
-                                    </div>
-                                    <div className={style.gridResult}>
-                                        {dropDownMobile}
-                                    </div>
+                {
+                    isDiplaySug ?
+                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                        :
+                        <>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
+                            <div className={cssStyle.bg}>
+                                <div className={style.styleBanner}>
+                                    <Image layout={"fill"} src="/images/atr2.jpg" alt=""/>
                                 </div>
-                                {buttonsNavegationMobile}
-                            </>
-                            :
-                            <></>
-                    }
-                    <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
-                             isActiveDarkModeButton={true}/>
-                </div>
+                                <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} hiddeResult={handleClick}/>
+                                {
+                                    isDisplayResult ?
+                                        <>
+                                            <div className={style.paddingContainer}>
+                                                <div className={`${cssStyle.fontSubTitle} ${style.paddingTitle}`}>
+                                                    Resultados de {"Conciertos"}
+                                                </div>
+                                                <div className={style.gridResult}>
+                                                    {dropDownMobile}
+                                                </div>
+                                            </div>
+                                            {buttonsNavegationMobile}
+                                        </>
+                                        :
+                                        <></>
+                                }
+                                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
+                                         isActiveDarkModeButton={true}/>
+                            </div>
+                        </>
+                }
             </div>
             :
             <div>

@@ -71,10 +71,12 @@ export default function SuggHeaderMobile({returnMet}) {
     let [textSearch, setTextSearch] = useState("")
     const handleTextSearch = (e) => setTextSearch(textSearch = e)
     return (
-        <div className={style.mainCont}>
+        <div className={`${style.mainCont} bg-white`}>
             <div className={`${style.gridReturnSearchBar} ${utilities.bgBodyDarkMode}`}>
                 <button onClick={returnMet}>
-                    <Image className={style.returnButton} src={GlobalConst.sourceImages.leftArrowExitWhite} alt=""/>
+                    <div className={style.returnButton}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExitWhite} alt=""/>
+                    </div>
                 </button>
                 <div className={style.styleSearchBar}>
                     <SearchBarMobile isDisplaySug={null}
