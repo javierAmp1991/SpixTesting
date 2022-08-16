@@ -62,12 +62,16 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     }
 
     let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[1])
-    const handleSetVenueDateSelected = () => {
+    /*const handleSetVenueDateSelected = () => {
         venueDateList.forEach(item => {
             if (item.IsSelected) {
                 setvenueDateSelected(venueDateSelected = item)
             }
         })
+        handleCloseDate()
+    }*/
+    const handleSetVenueDateSelected = (item: DateVenue) => {
+        setvenueDateSelected( venueDateSelected = item)
         handleCloseDate()
     }
 
@@ -199,7 +203,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 <div className={style.paddingContInpu}>
                                     {
                                         venueDateList.map((item, index) =>
-                                            <div onClick={() => handleVenueList(item)}
+                                            <div onClick={() => handleSetVenueDateSelected(item)}
                                                  className={item.IsSelected ? style.styleDateSelected : style.styleDate}
                                                  key={index}>
                                                 <div className={utilities.fontPrimaryText}>
@@ -214,7 +218,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         )
                                     }
                                 </div>
-                                <div onClick={handleSetVenueDateSelected}
+                                <div
                                      className={style.buttonCont}>
                                     <ButtonBlue text={"Aceptar"}/>
                                 </div>

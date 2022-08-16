@@ -240,7 +240,7 @@
 .contMap {
     display: grid;
     gap: 16px;
-    padding: 16px 0;
+    padding: 24px 0;
     overflow-y: hidden;
 }
 

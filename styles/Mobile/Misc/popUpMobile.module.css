@@ -30,6 +30,7 @@
     margin: auto;
     position: relative;
     width: var(--widthModal);
+    max-width: 500px;
     height: var(--heightModal);
     background: white;
     overflow: hidden;
