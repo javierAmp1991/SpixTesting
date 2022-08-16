@@ -26,7 +26,7 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                 </a>
 
                 <div className={style.heightIcon}>
-                    <img src={imageStyle.star} alt=""/>
+                    <Image layout={"fill"} src={imageStyle.star} alt=""/>
                 </div>
 
                 {/*<div className="relative">

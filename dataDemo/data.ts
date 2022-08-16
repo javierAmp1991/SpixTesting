@@ -255,7 +255,7 @@ export namespace InformationHomeData {
         {
             Title: "Reventa entradas",
             SubTitle: "Vende las entradas que no puedas usar a traves de Spix",
-            LinkImage: "/images/dolarRoundMor.png"
+            LinkImage: "/images/stadiumRounMor.png"
         },
         {
             Title: "Eventos en tu ciudad",
