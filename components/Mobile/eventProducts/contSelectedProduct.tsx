@@ -10,17 +10,24 @@ import Image from "next/image";
 const productTitle = "Productos"
 const buttonText = "Comprar"
 
-export default function ContSelectedProduct({methodProps, listGuest, listSelectedProducts, addItem}:
+export default function ContSelectedProduct({
+                                                methodProps, listGuest,
+                                                guestSelected,
+                                                removeItem,
+                                                amountPerItem
+                                            }:
                                                 {
                                                     methodProps: any,
-                                                    listGuest: Guest[], guestSelected: Guest,
-                                                    listSelectedProducts: Product[], addItem: any
+                                                    listGuest: Guest[],
+                                                    guestSelected: Guest,
+                                                    removeItem: any,
+                                                    amountPerItem: any
                                                 }) {
 
     let [dispay, setDisplay] = useState(false)
     const handleDisplay = () => setDisplay(dispay = !dispay)
-    const totalPrice = getTotal()
-    let totalProducts: number = listSelectedProducts.length
+    const totalPrice = getTotalPrice()
+    let totalProducts: number = getTotalProducts()
 
     return (
         <div className={dispay ? style.contVarNormal : style.contVar}>
@@ -34,7 +41,7 @@ export default function ContSelectedProduct({methodProps, listGuest, listSelecte
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                                 </div>
-                                <span className={style.numItemSelected}>{listSelectedProducts.length}</span>
+                                <span className={style.numItemSelected}>{totalProducts}</span>
                             </div>
 
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
@@ -67,14 +74,17 @@ export default function ContSelectedProduct({methodProps, listGuest, listSelecte
                 <div className={`${utilities.fontSubTitle} ${style.contTitle}`}>
                     {
                         totalProducts > 0 ?
-                            <span>{productTitle} ({listSelectedProducts.length})</span> :
+                            <span>{productTitle} ({totalProducts})</span> :
                             <span>No hay productos</span>
                     }
                 </div>
                 <div className={style.gridSelectedProduct}>
                     {
-                        listSelectedProducts.map((item, index) =>
-                            <ProductSelectedViewDesk key={index} deleteItem={addItem} item={item}/>
+                        guestSelected.listProductAmount.map((item, index) =>
+                            <ProductSelectedViewDesk key={index}
+                                                     deleteItem={removeItem}
+                                                     item={item}
+                                                     amountPerItem={amountPerItem}/>
                         )
                     }
                 </div>
@@ -84,11 +94,6 @@ export default function ContSelectedProduct({methodProps, listGuest, listSelecte
                 dispay ?
                     <div className={style.totalButtonContainerOpen}>
                         <div className={style.gridCarTitle}>
-                            {/*<div className={style.styleGridVar}>
-                                <img className={style.sizeBuyCAr}
-                                     src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
-                                <span className={style.numItemSelected}>0</span>
-                            </div>*/}
                             <div className="h-4 w-4 relative">
                                 <Image layout={"fill"}
                                        onClick={handleDisplay}
@@ -98,28 +103,33 @@ export default function ContSelectedProduct({methodProps, listGuest, listSelecte
                                 Total: $ {totalPrice}
                             </div>
                             <button className={style.buttonStyle}>{buttonText}</button>
-
-
                         </div>
-                        {/*<div className={style.GridButtons}>
-                            <button onClick={handleDisplay}
-                                className={style.buttonStyle}>{buttonText1}</button>
-                            <button className={style.buttonStyle}>{buttonText}</button>
-                        </div>*/}
                     </div> : <></>
             }
         </div>
 
     )
 
-    function getTotal() {
-        let total = 0
-        if (listSelectedProducts.length > 0) {
-            listSelectedProducts.forEach(product => {
-                total = total + product.Price
+    function getTotalProducts(): number {
+        let total = 0;
+        if (listGuest.length > 0) {
+            listGuest.forEach(Guest => {
+                total = total + Guest.listProductAmount.length
             })
-        } else total = 0
-        return total
+        } else total = 0;
+        return total;
+    }
+
+    function getTotalPrice(): number {
+        let total = 0;
+        if (listGuest.length > 0) {
+            listGuest.forEach((Guest) => {
+                Guest.listProductAmount.forEach(item => {
+                    total = total + (item.Amount * item.Product.Price);
+                })
+            })
+        } else total = 0;
+        return total;
     }
 
 }

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import {Product} from "../../../dataDemo/data";
 import style from "../../../styles/Desktop/eventProducts/rightCard.module.css"
@@ -8,41 +8,48 @@ import PayPageProductSelectedView from "./payPageProductSelectedView";
 import ButtonBlueDesk from "../../Mobile/Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
 import Image from "next/image";
+import {func} from "prop-types";
 
 const referenceDiv = "referenceDiv"
 const textButton: string = "Comprar"
-const translateNum = 100
 const newGuestText: string = "Nuevo invitado"
+const idTranslateMobile: string = "idTranslateDiv007asb"
+const initialValue: number = -99999999
 
-export default function RightCard({methodProps, listGuest, guestSelected,
-                                      listSelectedProducts, addItem, removetemGuest}:
+export default function RightCard({
+                                      methodProps, listGuest, guestSelected,
+                                      removeItemGuestSelected, amountPerItem, upDateGuestSelected
+                                  }:
                                       {
                                           methodProps: any, listGuest: Guest[], guestSelected: Guest,
-                                          listProduct: Product[], listSelectedProducts: Product[], addItem: any
-                                          removetemGuest: any
+                                          listProduct: Product[], removeItemGuestSelected: any,
+                                          amountPerItem: any, upDateGuestSelected: any
                                       }) {
     //region hooks
     const totalPrice = getTotal()
-
     let [counter, setCounter] = useState(0)
     let [translateCarrousel, setTranslateDiv] = useState("")
     const translateRight = () => {
-        setCounter(counter = counter - 1)
-        if (counter < listGuest.length * -1) {
-            setCounter(counter = listGuest.length * -1)
-        } else {
-            setTranslateDiv(translateCarrousel = `translate(${translateNum * counter}px)`)
-        }
+        const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth
+        counter = counter - 1
+        setCounter(counter = counter < listGuest.length * -1 ? listGuest.length * -1 : counter)
+        setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`);
     }
     const translateLeft = () => {
-        setCounter(counter = counter + 1)
-        if (counter > 0) {
-            setCounter(counter = 0)
+        const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth
+        counter = counter + 1
+        setCounter(counter = counter > 0 ? 0 : counter)
+        setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`)
+    }
+
+    let [isCarrousel, setIsCarrousel] = useState(listGuest.length > 1)
+    const handleIsCarrousel = () => {
+        if (listGuest.length > 1) {
+            setIsCarrousel(isCarrousel = true);
         } else {
-            setTranslateDiv(translateCarrousel = `translate(${translateNum * counter}px)`)
+            setIsCarrousel(isCarrousel = false);
         }
     }
-    let [isCarrousel, setIsCarrousel] = useState(false)
 
     let [isDisplayAdd, setIsDisplayAdd] = useState(false)
     const handleDisplayAdd = () => setIsDisplayAdd(isDisplayAdd = !isDisplayAdd)
@@ -56,81 +63,124 @@ export default function RightCard({methodProps, listGuest, guestSelected,
         setEmailGuest(emailGuest = e.target.value)
     }
 
-    const acceptGuest = () => {
-        /*if (emailGuest != "" && nameGuest != "") {
-            methodProps.addGuest(nameGuest, emailGuest)
-            handleDisplayAdd()
-            translateRight()
-        }*/
+    let [indexAsi, setIndexAsi] = useState(initialValue)
+    const handleIndexAsi = (num: number) => {
+        setIndexAsi(indexAsi = num)
     }
+    let [idCounter, setIdCounter] = useState(0)
+
+    const handleAddGuest = () => {
+        if (emailGuest != "" && nameGuest != "") {
+            const newGuest: Guest = {
+                id: "1234abc",
+                isSelected: true,
+                name: nameGuest,
+                email: emailGuest,
+                listProductAmount: []
+            }
+            methodProps.addGuest(newGuest);
+            const num: number = listGuest.length
+            translateRight();
+            handleIndexAsi(num)
+            handleDisplayAdd();
+        }
+    }
+
+    const handleRemoveGuest = (item: Guest) => {
+        const num: number = (listGuest.indexOf(item) - 1)
+        methodProps.removeGuest(item);
+        handleGuestSelected(num)
+        translateLeft();
+        handleIndexAsi(num)
+    }
+
+    const handleGuestSelected = (index: number) => {
+        methodProps.guestSelected(listGuest[index])
+    }
+
+    useEffect(() => {
+        if (indexAsi != initialValue) {
+            methodProps.guestSelected(listGuest[indexAsi])
+        }
+    }, [indexAsi])
+
+    useEffect(() => {
+        handleIsCarrousel()
+    })
     //endregion
 
     return (
         <div className={style.sideCard}>
-            <div className={style.gridTabs}>
-                <div className={style.gridCarrouselAdd}>
-                    <div>
-                        <div className={style.transition}>
-                            <div style={{transform: translateCarrousel}}
-                                 className={` ${style.containerClients}`}>
-                                {
-                                    listGuest.map((item, index) =>
-                                        index != 0 ?
-                                            <div className={item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                                 key={index}>
-                                                <span className={`${utilities.clamp1} `}
+            <div className="w-full overflow-scroll">
+                <div style={{transform: translateCarrousel}}
+                     className={` ${style.containerClients}`}>
+                    {
+                        listGuest.map((item, index) =>
+                            index != 0 ?
+                                <div className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                     key={index}>
+                                                <span className={`${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                                <div onClick={() => methodProps.removeGuest(item)}
-                                                     className={style.sizeCloseimg}>
-                                                    <Image layout={"fill"}
-                                                           src={GlobalConst.sourceImages.closeLoggin} alt=""/>
-                                                </div>
-                                            </div>
-                                            :
-                                            <div id={referenceDiv}
-                                                 onClick={() => methodProps.guestSelected(item)}
-                                                 className={item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                                 key={index}>
-                                                {item.name}
-                                            </div>
-                                    )
-                                }
-                                <div onClick={handleDisplayAdd}
-                                     className={`${utilities.gridMaxContent2} ml-3`}>
-                                    <span className={utilities.fontPrimaryText}>{newGuestText}</span>
-                                    <div className={style.addIconStyle}>
+                                    <div onClick={() => handleRemoveGuest(item)}
+                                         className={style.sizeCloseimg}>
                                         <Image layout={"fill"}
-                                               src={GlobalConst.sourceImages.addIcon} alt=""/>
+                                               src={GlobalConst.sourceImages.closeLoggin} alt=""/>
                                     </div>
                                 </div>
-                            </div>
+                                :
+                                <div id={referenceDiv}
+                                     onClick={() => methodProps.guestSelected(item)}
+                                     className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                     key={index}>
+                                    {item.name}
+                                </div>
+                        )
+                    }
+                    <div onClick={handleDisplayAdd}
+                         className={`${style.gridNewGuestIcon}`}>
+                        <span className={utilities.fontPrimaryText}>{newGuestText}</span>
+                        <div className={style.addIconStyle}>
+                            <Image layout={"fill"}
+                                   src={GlobalConst.sourceImages.addIcon} alt=""/>
                         </div>
                     </div>
-                    {
-                        isCarrousel ?
-                            <div className={style.gridArrows}>
-                                <div onClick={translateLeft}
-                                     className={style.arrow}>
-                                    <Image layout={"fill"}
-                                           src={GlobalConst.sourceImages.leftArrowClean} alt=""/>
-                                </div>
-                                <div onClick={translateRight}
-                                     className={style.arrow}>
-                                    <Image layout={"fill"}
-                                           src={GlobalConst.sourceImages.rightArrowClean} alt=""/>
-                                </div>
-                            </div> : <></>
-                    }
                 </div>
+                {/*{
+                    isCarrousel ?
+                        <div className={style.gridArrows}>
+                            <div onClick={translateLeft}
+                                 className={style.arrow}>
+                                <Image layout={"fill"}
+                                       src={GlobalConst.sourceImages.leftArrowClean} alt=""/>
+                            </div>
+                            <div onClick={translateRight}
+                                 className={style.arrow}>
+                                <Image layout={"fill"}
+                                       src={GlobalConst.sourceImages.rightArrowClean} alt=""/>
+                            </div>
+                        </div>
+                        :
+                        <div className={style.Arrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExit} alt=""/>
+                        </div>
+                }*/}
             </div>
 
-            <div className={`${style.gridSelected}`}>
-                {
-                    listSelectedProducts.map((item, index) =>
-                        <PayPageProductSelectedView deleteItem={addItem} item={item} key={index}/>
-                    )
-                }
+            <div className="overflow-y-scroll">
+                <div className={`${utilities.fontSubTitle} ${style.paddingTotalGuest}`}>
+                    <span>Total Invitados ({listGuest.length - 1})</span>
+                </div>
+
+                <div className={`${style.gridSelected}`}>
+                    {
+                        guestSelected.listProductAmount.map((item, index) =>
+                            <PayPageProductSelectedView deleteItem={removeItemGuestSelected}
+                                                        item={item} key={index}
+                                                        amountPerItem={amountPerItem}/>
+                        )
+                    }
+                </div>
             </div>
 
             <div className={style.gridTotalButton}>
@@ -170,7 +220,7 @@ export default function RightCard({methodProps, listGuest, guestSelected,
                                         * Infomracion descriptiva
                                     </div>
                                 </div>
-                                <div onClick={acceptGuest}>
+                                <div onClick={handleAddGuest}>
                                     <ButtonBlueDesk text={"Agregar"}/>
                                 </div>
                             </div>
@@ -180,13 +230,15 @@ export default function RightCard({methodProps, listGuest, guestSelected,
         </div>
     )
 
-    function getTotal() {
-        let total = 0
-        if (listSelectedProducts.length > 0) {
-            listSelectedProducts.forEach((product: Product) => {
-                total = total + product.Price
+    function getTotal(): number {
+        let total = 0;
+        if (listGuest.length > 0) {
+            listGuest.forEach((Guest) => {
+                Guest.listProductAmount.forEach(item => {
+                    total = total + (item.Amount * item.Product.Price);
+                })
             })
-        } else total = 0
-        return total
+        } else total = 0;
+        return total;
     }
 }

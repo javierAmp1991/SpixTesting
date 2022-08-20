@@ -3,7 +3,7 @@ import {sectionProduct} from "../../../dataDemo/data";
 import SectionProductMobile from "./sectionProductMobile";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ButtonBlueDesk from "../Misc/buttonBlue";
 import {Guest} from "../../../pages/eventProducts";
@@ -13,14 +13,36 @@ const newGuest: string = "Nuevo Invitado"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
 
-export default function ContResultProduct({listSectionProduct, addItem, methodProps, listGuests, isOpen}:
+const numDiv: number = 137
+const initialValue: number = -99999999
+
+export default function ContResultProduct({
+                                              listSectionProduct,
+                                              methodProps, listGuests,
+                                              isOpen, addItem, removeItem
+                                          }:
                                               {
                                                   listSectionProduct: sectionProduct[],
-                                                  addItem: any,
                                                   methodProps: any,
                                                   listGuests: Guest[],
-                                                  isOpen: boolean
+                                                  isOpen: boolean,
+                                                  addItem: any, removeItem: any
                                               }) {
+    const cssStyle = getCssStyle()
+
+    let [counter, setCounter] = useState(0)
+    let [translateCarrousel, setTranslateDiv] = useState("")
+    const translateRight = () => {
+        counter = counter - 1
+        setCounter(counter = counter < listGuests.length * -1 ? listGuests.length * -1 : counter)
+        setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`);
+    }
+    const translateLeft = () => {
+        counter = counter + 1
+        setCounter(counter = counter > 0 ? 0 : counter)
+        setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`)
+    }
+
     let [isDisplayAdd, setIsDisplayAdd] = useState(false)
     const handleDisplayAdd = () => setIsDisplayAdd(isDisplayAdd = !isDisplayAdd)
 
@@ -34,14 +56,45 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
         setNameGuest(nameGuest = e.target.value)
     }
 
-    const acceptGuest = () => {
-        /*if (emailGuest != "" && nameGuest != "") {
-            methodProps.addGuest(nameGuest, emailGuest)
-            handleDisplayAdd()
-        }*/
+    let [indexAsi, setIndexAsi] = useState(initialValue)
+    const handleIndexAsi = (num: number) => {
+        setIndexAsi(indexAsi = num)
     }
 
-    const cssStyle = getCssStyle()
+    const handleAddGuest = () => {
+        if (emailGuest != "" && nameGuest != "") {
+            const newGuest: Guest = {
+                id: "1234abc",
+                isSelected: true,
+                name: nameGuest,
+                email: emailGuest,
+                listProductAmount: []
+            }
+            methodProps.addGuest(newGuest)
+            const num: number = listGuests.length
+            handleIndexAsi(num)
+            handleDisplayAdd()
+        }
+    }
+
+    const handleRemoveGuest = (item: Guest) => {
+        const num: number = (listGuests.indexOf(item) - 1)
+        methodProps.removeGuest(item);
+        handleGuestSelected(num)
+        translateLeft();
+        handleIndexAsi(num)
+    }
+
+    const handleGuestSelected = (index: number) => {
+        methodProps.guestSelected(listGuests[index])
+    }
+
+    useEffect(() => {
+        if (indexAsi != initialValue) {
+            methodProps.guestSelected(listGuests[indexAsi])
+        }
+    }, [indexAsi])
+
     return (
         <div className={style.contVar}>
             <div className={style.bannerSize}>
@@ -58,7 +111,7 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                     }
                 </div>
             </div>
-            <div className={style.gridTabs}>
+            <div className={style.styleSnapScroll}>
                 <div className={` ${style.containerClients}`}>
                     {
                         listGuests.map((item, index) =>
@@ -93,13 +146,12 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                         </span>
                     </div>
                 </div>
-
             </div>
             <div className={cssStyle.paddingContResult}>
                 {
                     listSectionProduct.map((item, index) =>
                         <div key={index} className={style.separationiLineSection}>
-                            <SectionProductMobile addItem={addItem} item={item}/>
+                            <SectionProductMobile addItem={addItem} removeItem={removeItem} item={item}/>
                         </div>
                     )
                 }
@@ -130,7 +182,7 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
                                         * Infomracion descriptiva
                                     </div>
                                 </div>
-                                <div onClick={acceptGuest}>
+                                <div onClick={handleAddGuest}>
                                     <ButtonBlueDesk text={"Agregar"}/>
                                 </div>
                             </div>
@@ -139,9 +191,10 @@ export default function ContResultProduct({listSectionProduct, addItem, methodPr
             }
         </div>
     )
-    function getCssStyle(){
-        return{
-            paddingContResult: isOpen? style.paddingContResult : style.paddingContResult0
+
+    function getCssStyle() {
+        return {
+            paddingContResult: isOpen ? style.paddingContResult : style.paddingContResult0
         }
     }
 }

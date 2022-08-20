@@ -10,7 +10,33 @@ import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 import styleModal from "/styles/Desktop/Misc/popUp.module.css"
-
+/*let inputRadio: inputRadioProp[] = [
+    {
+        NameLabel: new Date(2022, 7, 5),
+        NameInput: "datePicker",
+        Id: "1234abcd"
+    },
+    {
+        NameLabel: new Date(2022, 8, 6),
+        NameInput: "datePicker",
+        Id: "12345abcd"
+    },
+    {
+        NameLabel: new Date(2022, 9, 7),
+        NameInput: "datePicker",
+        Id: "12345abcde"
+    },
+    {
+        NameLabel: new Date(2022, 10, 8),
+        NameInput: "datePicker",
+        Id: "12345abcde"
+    },
+    {
+        NameLabel: new Date(2022, 11, 9,),
+        NameInput: "datePicker",
+        Id: "12345abcde"
+    }
+]*/
 const textButton: string = "Ver entradas"
 
 export default function SideCardEvent({eventInformation}: { eventInformation: EventLookUp }) {
@@ -27,10 +53,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     let [venueDateList, setVenueDateList] = useState(eventInformation.VenueDate)
     const handleVenueList = (itemNew: DateVenue) => {
         const newVenueDateList: DateVenue[] = venueDateList.map((item) => {
-            if (item.Id == itemNew.Id) {
-                return {...item, IsSelected: true};
+            if (item == itemNew) {
+                return {...item, isSelected: true};
             } else {
-                return {...item, IsSelected: false};
+                return {...item, isSelected: false};
             }
         })
         setVenueDateList(venueDateList = newVenueDateList)
@@ -39,10 +65,18 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     const handleSetVenueDateSelected = (item: DateVenue) => {
         setvenueDateSelected(venueDateSelected = item)
     }
+    const handleSetVenueDateSelected1 = () => {
+        venueDateList.forEach(item => {
+            if (item.IsSelected) {
+                setvenueDateSelected(venueDateSelected = item)
+            }
+        })
+        handleCloseDate()
+    }
 
     const handleClick = (item: DateVenue) => {
-        handleSetVenueDateSelected(item)
         handleVenueList(item)
+        handleSetVenueDateSelected(item)
     }
 
     return (
@@ -134,10 +168,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     </button>
                 </div>
 
-                <div onClick={handleOpen}
+                {/*<div onClick={handleOpen}
                      className={styleCard.coverImageProperties}>
                     <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
-                </div>
+                </div>*/}
 
 
                 <div className={style.gridButtons}>
@@ -160,17 +194,22 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             }
             {
                 displayDateSelector ?
-                    <PopUpContainer isButtonVisible={true}
-                                    isBackground={true}
-                                    closePopUp={handleCloseDate}>
-                        <div className={style.mainContSelecDate}>
-                            <div className={`${utilities.fontTitle} ${style.titleCont}`}>
-                                Seleccionar Fecha
+                    <div className={styleModal.mainDiv}>
+                        <div onClick={handleCloseDate} className={style.blackScreen}/>
+                        <div className={styleModal.renderDiv}>
+                            <div onClick={handleCloseDate} className={style.positionDeleteIcon}>
+                                <div className={styleModal.sizeDeleteIcon}>
+                                    <Image layout={"fill"} objectFit={"cover"}
+                                           src={GlobalConst.sourceImages.closeX} alt=""/>
+                                </div>
                             </div>
-                            <div className={style.paddingContInpu}>
+                            <div className={style.mainContSelecDate}>
+                                <div className={`${utilities.fontTitle} ${style.titleCont}`}>
+                                    Seleccionar Fecha
+                                </div>
                                 <div className={style.paddingContInpu}>
                                     {
-                                        venueDateList.map((item: DateVenue, index) =>
+                                        venueDateList.map((item, index) =>
                                             <div onClick={() => handleClick(item)}
                                                  className={item.IsSelected ? style.styleDateSelected : style.styleDate}
                                                  key={index}>
@@ -186,15 +225,47 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                         )
                                     }
                                 </div>
-                            </div>
-                            <div onClick={handleCloseDate}
-                                className={style.buttonCont}>
-                                <ButtonBlue text={"Aceptar"}/>
+                                {/*<div
+                                     className={style.buttonCont}>
+                                    <ButtonBlue text={"Aceptar"}/>
+                                </div>*/}
                             </div>
                         </div>
-                    </PopUpContainer> : <></>
+                    </div>
+                    /*<PopUpContainer closePopUp={handleCloseDate}
+                                    isBackground={true}
+                                    isButtonVisible={true}>
+                        {
+                            <div className={style.mainContSelecDate}>
+                                <div className={`${utilities.fontTitle} ${style.titleCont}`}>
+                                    Seleccionar Fecha
+                                </div>
+                                <div className={style.paddingContInpu}>
+                                    {
+                                        venueDateList.map((item, index) =>
+                                            <div onClick={() => handleVenueList(item)}
+                                                 className={item.IsSelected ? style.styleDateSelected : style.styleDate}
+                                                 key={index}>
+                                                <div className={utilities.fontPrimaryText}>
+                                                    <div>
+                                                        Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
+                                                    </div>
+                                                </div>
+                                                <div className={utilities.fontSecundaryText}>
+                                                    {item.Venue}
+                                                </div>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                {/!*<div
+                                     className={style.buttonCont}>
+                                    <ButtonBlue text={"Aceptar"}/>
+                                </div>*!/}
+                            </div>
+                        }
+                    </PopUpContainer> */ : <></>
             }
-
             {
                 displayVenue ?
                     <PopUpContainer closePopUp={handleCloseVenue}

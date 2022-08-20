@@ -90,6 +90,12 @@
     background: #eaeaea;
 }
 
+.styleSnapScroll{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    background: #eaeaea;
+}
+
 .gridTabsNoCar {
     border-radius: 8px 8px 0 0;
     display: grid;
@@ -111,14 +117,14 @@
     position: relative;
 }
 
-.TabIcon::after {
+/*.TabIcon::after {
     content: " ";
     width: 1px;
     height: 24px;
     right: 0;
     background: #bebebe;
     position: absolute;
-}
+}*/
 
 .TabIconSelected {
     padding: 10px;
@@ -141,14 +147,15 @@
 
 .containerClients {
     display: grid;
-    grid-template-columns: 100px;
-    grid-auto-columns: 100px;
+    grid-template-columns: 50%;
+    grid-auto-columns: 50%;
     grid-auto-flow: column;
-    overflow: scroll;
     align-items: center;
     border-radius: 8px 8px 0 0;
     position: relative;
     transition: .4s;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .mainContPop {
@@ -167,8 +174,8 @@
 }
 
 .sizeCloseimg {
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     position: relative;
     border-radius: 50%;
     display: inline;

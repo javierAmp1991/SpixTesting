@@ -10,7 +10,6 @@
     display: grid;
     grid-template-rows: max-content;
     gap: 32px;
-    overflow: scroll;
     padding: 0 0 3px 0;
     margin: var(--paddingYEventProduct) var(--paddingXEventProduc);
 }
@@ -19,10 +18,9 @@
     position: sticky;
     top: 40px;
     margin-top: 40px;
-    height: 580px;
+    height: 590px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, .2);
     border-radius: 8px 8px 8px 8px;
-    overflow: hidden;
     display: grid;
     grid-template-rows: max-content 1fr max-content;
 }
@@ -33,7 +31,7 @@
     border-right: 1px solid rgba(0, 0, 0, .1);
     display: grid;
     grid-template-rows: 1fr max-content;
-    height: 540px;
+    height: 590px;
     border-radius: 0 0 8px 8px;
 }
 
@@ -57,13 +55,10 @@
 
 .containerClients {
     display: grid;
-    grid-template-columns: 100px;
-    grid-auto-columns: 100px;
+    grid-template-columns: 50%;
+    grid-auto-columns: 50%;
     grid-auto-flow: column;
-    overflow: scroll;
     align-items: center;
-    position: relative;
-    gap: 1px;
     transition: .4s;
 }
 
@@ -83,8 +78,8 @@
 }
 
 .sizeCloseimg {
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     border-radius: 50%;
     display: inline;
     opacity: .5;
@@ -153,10 +148,17 @@
     animation: moveArrow 1.5s infinite linear;
 }
 
+.gridNewGuestIcon{
+  display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+    margin-left: 4px;
+}
+
 .addIconStyle {
-    height: 20px;
-    width: 20px;
-    margin-left: 10px;
+    height: 16px;
+    width: 16px;
     position: relative;
 }
 
@@ -181,7 +183,7 @@
 
 .gridCarrouselAdd {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: 1fr 24px;
     align-items: center;
     padding-right: 8px;
     border-bottom: 1px solid #e3e3e3;
@@ -194,13 +196,18 @@
 .gridArrows {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 12px;
+    gap: 8px;
+    padding: 0 8px;
 }
 
 .arrow {
     height: 12px;
-    width: 12px;
+    width: 8px;
     position: relative;
+}
+
+.paddingTotalGuest{
+    padding: 16px;
 }
 
 @keyframes moveArrow {

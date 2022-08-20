@@ -3,8 +3,11 @@ import utilities from "/styles/utilities.module.css"
 import {sectionProduct} from "../../../dataDemo/data";
 import ContainerSelectedItem from "./containerSelectedItem";
 
-export default function SectionProduct({item, addItem, addItemGuest}:
-                                           {item: sectionProduct, addItem: any, addItemGuest:any}) {
+export default function SectionProduct({item, addItemGuest, deleteItemGuest}:
+                                           {
+                                               item: sectionProduct, addItemGuest: any,
+                                               deleteItemGuest: any
+                                           }) {
     return (
         <div className={style.paddingContainer}>
             <div id={`${item.Title}`} className={`${utilities.fontTitle} ${style.marginBottomTitle} `}>
@@ -13,10 +16,11 @@ export default function SectionProduct({item, addItem, addItemGuest}:
             <div className={style.grid}>
                 {
                     item.listItems.map((productSelected, index) =>
-                        <ContainerSelectedItem addItem={addItem}
+                        <ContainerSelectedItem
                                                addItemGuest={addItemGuest}
                                                item={productSelected}
-                                               key={index}/>
+                                               key={index}
+                                               deleteItemGuest={deleteItemGuest}/>
                     )
                 }
             </div>

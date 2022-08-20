@@ -226,7 +226,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
-.paddingContInpu::-webkit-scrollbar{
+/*.paddingContInpu::-webkit-scrollbar{
     background: #d7d7d7;
     display: inherit;
     width: 4px;
@@ -235,7 +235,7 @@
 .paddingContInpu::-webkit-scrollbar-thumb{
     background: #bebebe;
     border-radius: 8px;
-}
+}*/
 
 .contMap {
     display: grid;
@@ -262,7 +262,7 @@
 
 .styleDateSelected {
     box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
-    background: #55595a;
+    background: #eeeeee;
     border-radius: 8px;
     padding: 12px 8px;
     transition: .4s;
@@ -278,6 +278,7 @@
 
 .styleDate:hover {
     box-shadow: 0 7px 12px rgba(0, 0, 0, .3);
+    transform: scale(1.01);
 }
 
 .buttonCont {

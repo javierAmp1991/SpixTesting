@@ -4,8 +4,11 @@ import {sectionProduct} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import ContainerSelectedItemMobile from "./containerSelectedItemMobile";
 
-export default function SectionProductMobile({item, addItem}:
-                                                 { item: sectionProduct, addItem: any }) {
+export default function SectionProductMobile({item, addItem, removeItem}:
+                                                 {
+                                                     item: sectionProduct,
+                                                     addItem: any, removeItem: any
+                                                 }) {
     return (
         <div className={style.paddingContainer}>
             <div id={item.Title} className={`${utilities.fontTitle} ${style.marginBottomTitle}`}>
@@ -14,7 +17,7 @@ export default function SectionProductMobile({item, addItem}:
             <div className={style.grid}>
                 {
                     item.listItems.map((productSelected, index) =>
-                        <ContainerSelectedItemMobile addItem={addItem}
+                        <ContainerSelectedItemMobile addItem={addItem} removeItem={removeItem}
                                                      item={productSelected}
                                                      key={index}/>
                     )

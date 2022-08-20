@@ -683,6 +683,11 @@ export class productSelected {
     IsSelected: boolean
 }
 
+export class productAmount{
+    Product: Product;
+    Amount: number;
+}
+
 export namespace ListProducts2 {
     export const listProducts: sectionProduct[] = [
         {
@@ -999,6 +1004,7 @@ export namespace EventPageEvent {
         Video: "images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
         VenueDate: [
             {
+                Id: "12345",
                 Date: new Date(2022, 8, 18),
                 Venue: "Blanco 1386, Valparaíso",
                 IsSelected: false,
@@ -1009,6 +1015,7 @@ export namespace EventPageEvent {
 
             },
             {
+                Id: "12345abc",
                 Date: new Date(2022, 9, 19),
                 Venue: "Plaza Anibal Pinto 1182, Valparaíso",
                 IsSelected: false,
@@ -1018,6 +1025,7 @@ export namespace EventPageEvent {
                 LinkGoogleMap: "https://goo.gl/maps/BHF532ZZNGPXL8Sn6"
             },
             {
+                Id: "12345abcde12",
                 Date: new Date(2022, 10, 20),
                 Venue: "Blanco 889, Valparaíso",
                 IsSelected: false,
@@ -1715,6 +1723,7 @@ export class EventLookUp {
 }
 
 export class DateVenue {
+    Id: string
     Date: Date
     Venue: string
     IsSelected: boolean

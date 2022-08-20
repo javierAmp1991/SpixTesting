@@ -169,12 +169,8 @@ export default function Index() {
             )
         }
     </LayoutCarrouselMobile>
-    let carrouselAutoMobile = <LayoutAutoCarrousel gapLayout={gapLayout}>
-        {
-            CarrouselAutoHome.listImage.map(item =>
-                <HomeAutoBanner key={item} linkImage={item}/>)
-        }
-    </LayoutAutoCarrousel>
+    let carrouselAutoMobile = <LayoutAutoCarrousel
+        listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
     let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>
     let dailyOfferMobile = <TitleSection titleLink={dailyOfferHeaderTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
@@ -342,12 +338,9 @@ export default function Index() {
             )
         }
     </LayoutCarrousel>
-    let carrouselAuto = <LayoutAutoCarrousel gapLayout={gapLayout}>
-        {
-            CarrouselAutoHome.listImage.map(item =>
-                <HomeAutoBanner key={item} linkImage={item}/>)
-        }
-    </LayoutAutoCarrousel>
+    let carrouselAuto = <LayoutAutoCarrousel
+        listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
+
     let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
@@ -534,45 +527,30 @@ export default function Index() {
     return (
 
         isSmallDown ?
-            <>
-                <html lang="en" className="notranslate" translate="no"></html>
-                <head>
-                    <meta name="google" content="notranslate"/>
-                </head>
-                <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
-                    {
-                        isDiplaySug ?
-                            <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
-                            :
-                            <>
-                                <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
-                                <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
-                                {carrouselBannerMobile}
-                                <DefaultPageMobile listItem={listDefaultPageMobile}/>
-                                <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
-                                         isDarkMode={isDarkMode}
-                                         isLogged={isLogged}/>
-                            </>
-                    }
-                </div>
-            </>
-
+            <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
+                {
+                    isDiplaySug ?
+                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                        :
+                        <>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
+                            {carrouselBannerMobile}
+                            <DefaultPageMobile listItem={listDefaultPageMobile}/>
+                            <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
+                                     isDarkMode={isDarkMode}
+                                     isLogged={isLogged}/>
+                        </>
+                }
+            </div>
             :
-            <>
-                <html lang="en" className="notranslate" translate="no"></html>
-                <head>
-                    <meta name="google" content="notranslate"/>
-                </head>
-                <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
-                    <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
-                    <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
-                    <div className={utilities.maxWidthBodyContentSpix}>
-                        <DefaultPage listItem={listDefaultPage}/>
-                    </div>
+            <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
+                <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
+                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+                <div className={utilities.maxWidthBodyContentSpix}>
+                    <DefaultPage listItem={listDefaultPage}/>
                 </div>
-            </>
-
-
+            </div>
     )
 }
 

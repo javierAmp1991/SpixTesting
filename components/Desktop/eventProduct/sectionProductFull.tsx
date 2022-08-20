@@ -4,8 +4,8 @@ import {sectionProduct} from "../../../dataDemo/data";
 import ContainerSelectedItem from "./containerSelectedItem";
 import ContainerSelectedItemFull from "./containerSelectedItemFull";
 
-export default function SectionProductFull({item, addItem}:
-                                           {item: sectionProduct, addItem: any}) {
+export default function SectionProductFull({item, addItem, deleteItemGuest}:
+                                           {item: sectionProduct, addItem: any, deleteItemGuest:any}) {
     return (
         <div className={style.paddingContainer}>
             <div id={`${item.Title}`} className={`${utilities.fontTitle} ${style.marginBottomTitle} `}>

@@ -3,14 +3,25 @@ import {GlobalConst} from "../../../public/globalConst";
 import {productSelected} from "../../../dataDemo/data";
 import ProductViewDesk from "../Misc/productViewDesk";
 import Image from "next/image";
+import {useState} from "react";
 
-export default function ContainerSelectedItem({item, addItem, addItemGuest}:
-                                                  { item: productSelected,
-                                                      addItem: any,
-                                                  addItemGuest: any}) {
+export default function ContainerSelectedItem({item, addItemGuest, deleteItemGuest}:
+                                                  {
+                                                      item: productSelected,
+                                                      addItemGuest: any,
+                                                      deleteItemGuest: any
+                                                  }) {
+    const handleItem = (isSelected: boolean) => {
+        if (isSelected) {
+            deleteItemGuest(item.Product);
+
+        } else {
+            addItemGuest(item.Product);
+        }
+    }
     const cssStyle = getCssStyle()
     return (
-        <div onClick={() => addItem(item.Product, !item.IsSelected)}
+        <div onClick={() => handleItem(item.IsSelected)}
              className={cssStyle.boxShadow}>
             <ProductViewDesk size={null} item={item.Product}/>
             {

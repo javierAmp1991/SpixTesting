@@ -3,4 +3,12 @@
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
+    transition: 1s linear;
+}
+.testImage{
+    width: 250px;
+    aspect-ratio: 2/1;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
 }

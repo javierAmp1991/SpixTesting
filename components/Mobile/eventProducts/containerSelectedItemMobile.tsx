@@ -1,17 +1,29 @@
 import style from "/styles/Mobile/eventProducts/containerSelectedItem.module.css"
 import {GlobalConst} from "../../../public/globalConst";
-import {productSelected} from "../../../dataDemo/data";
+import {productAmount, productSelected} from "../../../dataDemo/data";
 import ProductViewMobile from "../Misc/productViewMobile";
 import Image from "next/image";
 
 const sizeProductFragment = null
 
 
-export default function ContainerSelectedItemMobile({item, addItem}:
-                                                        { item: productSelected, addItem: any }) {
+export default function ContainerSelectedItemMobile({item, addItem, removeItem}:
+                                                        {
+                                                            item: productSelected,
+                                                            addItem: any,
+                                                            removeItem: any
+                                                        }) {
+    const handleItem = (isSelected: boolean) => {
+        if (isSelected) {
+            removeItem(item.Product);
+        } else {
+            addItem(item.Product);
+        }
+    }
+
     const cssStyle = getCssStyle()
     return (
-        <div onClick={() => addItem(item.Product, !item.IsSelected)}
+        <div onClick={() => handleItem(item.IsSelected)}
              className={cssStyle.boxShadow}>
             <ProductViewMobile size={sizeProductFragment} item={item.Product}/>
             {
