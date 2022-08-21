@@ -1,7 +1,6 @@
 import style from "/styles/Mobile/Layouts/layoutWithNavcircle.module.css"
 import EventOnlyImageLogo from "../Events/eventOnlyImageLogo";
 import {useState} from "react";
-
 const idCont: string = "idCarrouselCircle"
 
 export default function LayoutWithNavCircle({listItem, isDarkMode}) {
@@ -21,7 +20,7 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
     }
     const handleScroll = (e) => {
         const num: number = document.getElementById(idCont).offsetWidth
-        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth > 0 && e.target.scrollLeft % e.target.offsetWidth < 1 ;
+        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth >= 0 && e.target.scrollLeft % e.target.offsetWidth < 1 ;
         if (atSnappingPoint) {
             if (e.target.scrollLeft > controlScroll) {
                 setControlScroll(controlScroll = e.target.scrollLeft)
@@ -47,7 +46,7 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
     return (
         <div>
             <div onScroll={handleScroll} id={idCont} className={style.overFlowSnap}>
-                <div style={{transform: initialTranslate}} className={style.gridImageSection}>
+                <div className={style.gridImageSection}>
                     {
                         listItem.map((item, index) =>
                             <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>

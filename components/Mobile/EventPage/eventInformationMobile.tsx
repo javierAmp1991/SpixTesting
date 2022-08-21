@@ -161,7 +161,7 @@ export default function EventInformationMobile({eventInformation, form}:
                 <LayoutWithNavCircleMobile isDarkMode={false}>
                     {
                         eventInformation.ListImages.map((item, index) =>
-                            <div className={style.containerShowProp} key={index}>
+                            <div className={`${style.containerShowProp} ${utilities.snapScroll}`} key={index}>
                                 <div className={style.imageShowProperties}>
                                     <Image layout={"fill"} src={item} alt=""/>
                                 </div>
@@ -188,7 +188,7 @@ export default function EventInformationMobile({eventInformation, form}:
                 <LayoutWithNavCircleMobile isDarkMode={false}>
                     {
                         form.map((item, index) =>
-                            <div key={index}>
+                            <div className={utilities.snapScroll} key={index}>
                                 <div className={style.maxWidthForm}>
                                     <FormView item={item}/>
                                 </div>

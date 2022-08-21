@@ -4,45 +4,63 @@ import {useState} from "react";
 
 export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                                                       { children: JSX.Element[], isDarkMode: boolean }) {
-    let cssStyle = getCssStyle()
+        const cssStyle = getCssStyle()
     let [initialTranslate, setInitialTranslate] = useState("translate(0px)")
     let [circleSelected, setCircleSelected] = useState(0)
-    let [numTranslate, setNumTranslate] = useState(0)
-    const handleRight = () => {
-        const num: number = document.getElementById(idCont).offsetWidth
-        setCircleSelected(circleSelected += 1)
-        setNumTranslate(numTranslate -= 1)
-        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)
+    let [controlScroll, setControlScroll] = useState(0)
+    let [scrol, setScroll] = useState(0)
+    let [offsetwidth, setOffSetWidth] = useState(0)
+    let [rem, setRem] = useState(0)
+
+    const seescroll = (e) => {
+        setOffSetWidth(e.target.offsetWidth)
+        setScroll(scrol = e.target.scrollLeft)
+        setRem(rem = e.target.scrollLeft % e.target.offsetWidth)
 
     }
-    const handleLeft = () => {
+    const handleScroll = (e) => {
         const num: number = document.getElementById(idCont).offsetWidth
+        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth >= 0 && e.target.scrollLeft % e.target.offsetWidth < 1 ;
+        if (atSnappingPoint) {
+            if (e.target.scrollLeft > controlScroll) {
+                setControlScroll(controlScroll = e.target.scrollLeft)
+                handleRight()
+            } else {
+                setControlScroll(controlScroll = e.target.scrollLeft)
+                handleLeft()
+            }
+        }
+
+    }
+    const handleRight = () => {
+        setCircleSelected(circleSelected += 1)
+        /*setNumTranslate(numTranslate -= 1)
+        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)*/
+    }
+    const handleLeft = () => {
         setCircleSelected(circleSelected -= 1)
-        setNumTranslate(numTranslate += 1)
-        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)
+        /*setNumTranslate(numTranslate += 1)
+        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)*/
     }
 
     return (
         <div>
-            <div id={idCont} className="overflow-scroll">
-                <div style={{transform:initialTranslate}} className={`${style.gridImageSection}`}>
+            <div onScroll={seescroll} id={idCont} className={style.overFlowSnap}>
+                <div className={`${style.gridImageSection}`}>
                     {children}
                 </div>
             </div>
             <div className={style.gridNavItems}>
                 {
                     children.map((item, index) =>
-                        index == circleSelected ?
-                            <div className={style.styleNavCircle}/>
-                            :
-                            <div className={style.styleNavCircleNoSelected}/>
-                    )
+                        <span key={index} className={`${style.styleNavCircle}
+                             ${cssStyle.borderNavCircle}
+                             ${index == circleSelected ? style.styleNavCircle : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
-            <div>
-                <button onClick={handleLeft}>derecha</button>
-                <button onClick={handleRight}>izquierda</button>
-            </div>
+            <div>{scrol}</div>
+            <div>{offsetwidth}</div>
+            <div>{rem}</div>
         </div>
     )
 

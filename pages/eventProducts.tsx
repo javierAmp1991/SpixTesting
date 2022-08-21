@@ -134,18 +134,21 @@ export default function EventProducts() {
     }
 
     const handleGuestSelected = (guest: Guest) => {
+        setGuestSelected(guestSelected = guest)
+    }
+
+    const updateGuestSelected = () =>{
         const newListGuest = listGuests.map((oldGuest: Guest) => {
-            if (oldGuest.id != guest.id) {
+            if (oldGuest.id != guestSelected.id) {
                 return {
                     ...oldGuest, isSelected: false
                 }
             }
             return {
-                ...oldGuest, isSelected: true
+                ...guestSelected, isSelected: true
             }
         })
         setListGuests(listGuests = newListGuest)
-        setGuestSelected(guestSelected = guest)
     }
 
     let [listProductShow, setListProductShow] = useState(listProductsPass)
@@ -180,6 +183,7 @@ export default function EventProducts() {
 
     useEffect(() => {
         updateList()
+        updateGuestSelected()
         handleListProductShow1()
     }, [guestSelected])
 

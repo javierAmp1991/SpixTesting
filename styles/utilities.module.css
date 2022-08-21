@@ -8,13 +8,13 @@
     transition: var(--transitionTimeDarkMode);
 }
 
-.maxWidthBodyContentSpix{
+.maxWidthBodyContentSpix {
     width: 100%;
     max-width: var(--maxWidthBodyContent);
     margin: auto;
 }
 
-.paddingMainContent{
+.paddingMainContent {
     padding: 0px 8px;
 }
 
@@ -22,28 +22,28 @@
     opacity: .5;
 }
 
-.opacity0{
+.opacity0 {
     opacity: 0;
 }
 
-.borderCards{
+.borderCards {
     box-shadow: var(--boxShadowCard);
     border-radius: var(--borderCardRadious);
     overflow: hidden;
 }
 
-.borderCardsNoHover{
+.borderCardsNoHover {
     box-shadow: var(--boxShadowCard);
     border-radius: var(--borderCardRadious);
     overflow: hidden;
 }
 
-.borderCardsDarkMode{
+.borderCardsDarkMode {
     border-radius: var(--borderCardRadious);
     overflow: hidden;
 }
 
-.borderCardsNoHoverDarkMode{
+.borderCardsNoHoverDarkMode {
     border-radius: var(--borderCardRadious);
     overflow: hidden;
 }
@@ -84,7 +84,7 @@
     transition: var(--transitionTimeDarkMode);
 }
 
-.fontPriceInclude{
+.fontPriceInclude {
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
@@ -92,25 +92,28 @@
     transition: var(--transitionTimeDarkMode);
 }
 
-.fontPriceIncludeDarkMode{
+.fontPriceIncludeDarkMode {
     font-size: 16px;
     line-height: 16px;
     font-weight: 500;
     color: var(--darkModetextColor);
     transition: var(--transitionTimeDarkMode);
 }
-.fontName{
+
+.fontName {
     font-size: 16px;
     font-weight: 400;
     color: var(--colorName);
     transition: var(--transitionTimeDarkMode);
 }
-.fontNameDarkMode{
+
+.fontNameDarkMode {
     font-size: 16px;
     font-weight: 400;
     color: var(--darkModetextColor);
     transition: var(--transitionTimeDarkMode);
 }
+
 .fontPrimaryText {
     color: var(--colorPrimaryText);
     transition: var(--transitionTimeDarkMode);
@@ -172,7 +175,7 @@
     font-size: 12px;
 }
 
-.styleSpixDiscountTag{
+.styleSpixDiscountTag {
     font-size: var(--fontSizeMini);
     background: var(--colorTagDiscount);
     padding: 1px 8px;
@@ -181,7 +184,7 @@
     border-radius: 8px;
 }
 
-.styleSpixTag{
+.styleSpixTag {
     font-size: var(--fontSizeMini);
     background: var(--tagColorNormal);
     padding: 1px 8px;
@@ -190,7 +193,7 @@
     border-radius: 8px;
 }
 
-.styleSpixTagDarkMode{
+.styleSpixTagDarkMode {
     font-size: var(--fontSizeMini);
     background: var(--tagColorDarkMode);
     padding: 1px 8px;
@@ -199,25 +202,25 @@
     border-radius: 8px;
 }
 
-.ratingStarsProperties{
+.ratingStarsProperties {
     height: 15px;
     width: 80px;
     position: relative;
 }
 
-.bgFirstGradient{
+.bgFirstGradient {
     background-color: #045de9;
     background-image: linear-gradient(60deg, #045de9 0%, #048fe9 74%);
-    background: rgb(4,93,233);
-    background: linear-gradient(90deg, rgba(4,93,233,1) 0%, rgba(4,163,233,1) 19%, rgba(4,155,233,1) 39%, rgba(4,59,233,1) 61%, rgba(4,205,233,1) 80%, rgba(4,74,233,1) 100%);
-    background: rgb(131,164,212);
-    background: linear-gradient(90deg, rgba(131,164,212,1) 0%, rgba(182,251,255,1) 50%, rgba(148,187,233,1) 100%);
+    background: rgb(4, 93, 233);
+    background: linear-gradient(90deg, rgba(4, 93, 233, 1) 0%, rgba(4, 163, 233, 1) 19%, rgba(4, 155, 233, 1) 39%, rgba(4, 59, 233, 1) 61%, rgba(4, 205, 233, 1) 80%, rgba(4, 74, 233, 1) 100%);
+    background: rgb(131, 164, 212);
+    background: linear-gradient(90deg, rgba(131, 164, 212, 1) 0%, rgba(182, 251, 255, 1) 50%, rgba(148, 187, 233, 1) 100%);
     border-radius: 50%;
 }
 
-.bgFirstGradientDarkMode{
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+.bgFirstGradientDarkMode {
+    background: rgb(131, 58, 180);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
 }
 
 .bgSecondGradient {
@@ -225,8 +228,8 @@
     border-radius: 50%;
 }
 
-.bgSecondGradientDarkMode{
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(74,74,74,1) 100%);
+.bgSecondGradientDarkMode {
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(74, 74, 74, 1) 100%);
 }
 
 .clamp5 {
@@ -268,19 +271,20 @@
     line-clamp: 1;
     overflow: hidden;
 }
-.positionLastTicket{
+
+.positionLastTicket {
     position: absolute;
-    top:0px;
+    top: 0px;
     left: 0px;
     width: 100%;
     aspect-ratio: 1/1;
 }
 
-.borderRadious50{
+.borderRadious50 {
     border-radius: 50%;
 }
 
-.gridContentCenter{
+.gridContentCenter {
     display: grid;
     align-content: center;
     align-items: center;
@@ -291,7 +295,7 @@
     appearance: none;
     width: 16px;
     height: 16px;
-    border: 1px solid rgba(0,0,0,.05);
+    border: 1px solid rgba(0, 0, 0, .05);
     border-radius: 50%;
     position: relative;
     display: flex;
@@ -340,7 +344,7 @@
     appearance: none;
     width: 16px;
     height: 16px;
-    border: 1px solid rgba(0,0,0,.05);
+    border: 1px solid rgba(0, 0, 0, .05);
     border-radius: 50%;
     position: relative;
     display: flex;
@@ -384,13 +388,18 @@
     opacity: 1;
 }
 
-@media(min-width: 1281px){
+.snapScroll {
+    scroll-snap-align: start;
+}
+
+@media (min-width: 1281px) {
     .borderCards:hover {
         transform: scale(var(--scaleHover));
         box-shadow: var(--boxShadowHover);
         transition: var(--transitionHover);
     }
-    .borderCardsDarkMode:hover{
+
+    .borderCardsDarkMode:hover {
         transform: scale(var(--scaleHover));
         box-shadow: var(--boxShadowHoverDarkMode);
         transition: var(--transitionHover);
