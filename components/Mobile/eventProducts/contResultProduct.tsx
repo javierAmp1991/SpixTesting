@@ -3,7 +3,7 @@ import {sectionProduct} from "../../../dataDemo/data";
 import SectionProductMobile from "./sectionProductMobile";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ButtonBlueDesk from "../Misc/buttonBlue";
 import {Guest} from "../../../pages/eventProducts";
@@ -13,7 +13,6 @@ const newGuest: string = "Nuevo Invitado"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
 
-const numDiv: number = 137
 const initialValue: number = -99999999
 
 export default function ContResultProduct({
@@ -28,6 +27,7 @@ export default function ContResultProduct({
                                                   isOpen: boolean,
                                                   addItem: any, removeItem: any
                                               }) {
+    const difRef = useRef(null)
     const cssStyle = getCssStyle()
     let [styleButton, setStylebutton] = useState(style.buttonInvalid)
     let [isCarrousel, setIsCarrousel] = useState(listGuests.length > 1)
@@ -44,11 +44,13 @@ export default function ContResultProduct({
     const translateRight = () => {
         counter = counter - 1
         setCounter(counter = counter < listGuests.length * -1 ? listGuests.length * -1 : counter)
+        const numDiv: number = difRef.current.offSetWidth
         setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`);
     }
     const translateLeft = () => {
         counter = counter + 1
         setCounter(counter = counter > 0 ? 0 : counter)
+        const numDiv: number = difRef.current.offSetWidth
         setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`)
     }
 
@@ -82,6 +84,7 @@ export default function ContResultProduct({
             methodProps.addGuest(newGuest)
             const num: number = listGuests.length
             handleIndexAsi(num)
+            translateRight()
             handleDisplayAdd()
         }
     }
@@ -132,7 +135,7 @@ export default function ContResultProduct({
                 </div>
             </div>
             <div className={style.styleSnapScroll}>
-                <div className={` ${style.containerClients}`}>
+                <div ref={difRef} style={{transform:translateCarrousel}} className={` ${style.containerClients}`}>
                     {
                         listGuests.map((item, index) =>
                             index != 0 ?
