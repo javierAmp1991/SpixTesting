@@ -44,7 +44,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages}:
             <div ref={renderContainer} style={{gap: gapLayout, transform: start}} className={style.gridCarrouselAuto}>
                 {listImagesCar.map((image: string, index) =>
                     <div key={index} className={style.testImage}>
-                        <Image layout={"fill"} src={image} alt=""/>
+                        <Image priority={true} layout={"fill"} src={image} alt=""/>
                     </div>
                 )}
             </div>

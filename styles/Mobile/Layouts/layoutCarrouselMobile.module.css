@@ -4,5 +4,6 @@
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     overflow: scroll;
+    scroll-snap-type: x mandatory;
     transition: .4s;
 }

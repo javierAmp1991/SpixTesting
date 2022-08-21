@@ -44,8 +44,11 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
             </button>
 
             <div style={cssStyle.paddingCarr}>
-                <div style={{
-                    display: layoutProp.Display, gridTemplateColumns: layoutProp.Grid, gap: layoutProp.Gap
+                <div
+                    style={{
+                    display: layoutProp.Display,
+                    gridTemplateColumns: layoutProp.Grid,
+                    gap: layoutProp.Gap
                 }}
                      onPointerOver={showArrow}
                      onPointerOut={hiddeArrow}
