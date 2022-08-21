@@ -39,7 +39,7 @@ import {EventPageEvent} from "../../../dataDemo/data";
 ]*/
 
 export default function EventInformationMobile({eventInformation, form}:
-                                                   { eventInformation: EventLookUp, form: fomrLink[]}) {
+                                                   { eventInformation: EventLookUp, form: fomrLink[] }) {
     let [venueDateList, setVenueDateList] = useState(EventPageEvent.eventPage.VenueDate)
     const handleVenueList = (itemNew: DateVenue) => {
         const newVenueDateList: DateVenue[] = venueDateList.map((item) => {
@@ -59,13 +59,22 @@ export default function EventInformationMobile({eventInformation, form}:
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
 
     let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[0])
-    const handleSetVenueDateSelected = (item: DateVenue) => {
-        setvenueDateSelected(venueDateSelected = item)
+    const handleSetVenueDateSelected = () => {
+        /*setvenueDateSelected(venueDateSelected = item)*/
+        venueDateList.forEach((item) => {
+            if (item.IsSelected) {
+                setvenueDateSelected(venueDateSelected = item)
+            }
+        })
     }
 
     const handleClick = (item: DateVenue) => {
         handleVenueList(item)
-        handleSetVenueDateSelected(item)
+    }
+
+    const handleCloseSelected = () => {
+        handleSetVenueDateSelected()
+        handleCloseDate()
     }
 
     return (
@@ -132,12 +141,12 @@ export default function EventInformationMobile({eventInformation, form}:
 
                 <div className={style.selectDateContainer}>
                     <div
-                         className={style.gridIconText}>
+                        className={style.gridIconText}>
                         <div className={style.sizeIcon}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
                         </div>
                         <div onClick={handleOpenDate}
-                            className={utilities.fontPrimaryText}>
+                             className={utilities.fontPrimaryText}>
                             <span>Proxima fecha: </span>
                             <span className={utilities.styleLink}>
                                 {venueDateSelected.Date.getDate()} de {venueDateSelected.Date.toLocaleString("es-US", {month: "long"})} del {venueDateSelected.Date.getFullYear()}
@@ -243,19 +252,22 @@ export default function EventInformationMobile({eventInformation, form}:
                                              className={item.IsSelected ? style.styleDateSelected : style.styleDate}
                                              key={index}>
                                             <div className={utilities.fontPrimaryText}>
-                                                <div>
+                                                <div className={utilities.clamp1}>
                                                     Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
                                                 </div>
                                             </div>
-                                            <div className={item.IsSelected? utilities.fontPrimaryText : utilities.fontSecundaryText}>
+                                            <div
+                                                className={`${item.IsSelected ? utilities.fontPrimaryText : utilities.fontSecundaryText}
+                                                ${utilities.clamp1}`}>
                                                 {item.Venue}
                                             </div>
                                             {
-                                                item.IsSelected?
+                                                item.IsSelected ?
                                                     <div className={style.positionChekcICon}>
                                                         <div className={style.checkIconProp}>
                                                             <Image layout={"fill"}
-                                                                   src={GlobalConst.sourceImages.checkIconYellow} alt=""/>
+                                                                   src={GlobalConst.sourceImages.checkIconYellow}
+                                                                   alt=""/>
                                                         </div>
                                                     </div> : <></>
                                             }
@@ -263,7 +275,7 @@ export default function EventInformationMobile({eventInformation, form}:
                                     )
                                 }
                             </div>
-                            <div onClick={handleCloseDate}
+                            <div onClick={handleCloseSelected}
                                  className={style.buttonCont}>
                                 <ButtonBlue text={"aceptar"}/>
                             </div>

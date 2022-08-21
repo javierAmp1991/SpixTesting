@@ -4,7 +4,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
-
+import SectionProductFull from "./sectionProductFull";
 const idMainDiv: string = "mainDivLeftCard"
 const idCarrousel: string = "idCarrouselLeftCard"
 
@@ -62,8 +62,8 @@ export default function LeftCardFull({listSectionPro, handleAddProduct}:
                                     <div key={index}
                                          className={index != (listSectionPro.length - 1) ?
                                              style.borderBottomSection : ""}>
-                                        {/*<SectionProductFull addItem={handleAddProduct}
-                                                        item={item}/>*/}
+                                        <SectionProductFull addItem={handleAddProduct}
+                                                        item={item}/>
                                     </div>
                                 )
                             }

@@ -35,13 +35,22 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
         setVenueDateList(venueDateList = newVenueDateList)
     }
     let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[0])
-    const handleSetVenueDateSelected = (item: DateVenue) => {
-        setvenueDateSelected(venueDateSelected = item)
+    const handleSetVenueDateSelected = () => {
+        /* setvenueDateSelected(venueDateSelected = item)*/
+        venueDateList.forEach((item) => {
+            if (item.IsSelected) {
+                setvenueDateSelected(venueDateSelected = item)
+            }
+        })
     }
 
     const handleClick = (item: DateVenue) => {
         handleVenueList(item)
-        handleSetVenueDateSelected(item)
+    }
+
+    const handleCloseSelected = () => {
+        handleSetVenueDateSelected()
+        handleCloseDate()
     }
 
     return (
@@ -178,24 +187,26 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                                         Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
                                                     </div>
                                                 </div>
-                                                <div className={item.IsSelected? utilities.fontPrimaryText : utilities.fontSecundaryText}>
+                                                <div
+                                                    className={item.IsSelected ? utilities.fontPrimaryText : utilities.fontSecundaryText}>
                                                     {item.Venue}
                                                 </div>
                                                 {
-                                                 item.IsSelected?
-                                                <div className={style.positionChekcICon}>
-                                                    <div className={style.checkIconProp}>
-                                                        <Image layout={"fill"}
-                                                               src={GlobalConst.sourceImages.checkIconYellow} alt=""/>
-                                                    </div>
-                                                </div> : <></>
+                                                    item.IsSelected ?
+                                                        <div className={style.positionChekcICon}>
+                                                            <div className={style.checkIconProp}>
+                                                                <Image layout={"fill"}
+                                                                       src={GlobalConst.sourceImages.checkIconYellow}
+                                                                       alt=""/>
+                                                            </div>
+                                                        </div> : <></>
                                                 }
                                             </div>
                                         )
                                     }
                                 </div>
                             </div>
-                            <div onClick={handleCloseDate}
+                            <div onClick={handleCloseSelected}
                                  className={style.buttonCont}>
                                 <ButtonBlue text={"Aceptar"}/>
                             </div>
