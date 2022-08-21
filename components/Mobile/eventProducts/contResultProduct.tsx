@@ -80,8 +80,8 @@ export default function ContResultProduct({
                 listProductAmount: []
             }
             methodProps.addGuest(newGuest)
-            /*const num: number = listGuests.length
-            handleIndexAsi(num)*/
+            const num: number = listGuests.length
+            handleIndexAsi(num)
             handleDisplayAdd()
         }
     }
@@ -89,9 +89,9 @@ export default function ContResultProduct({
     const handleRemoveGuest = (item: Guest) => {
         const num: number = (listGuests.indexOf(item) - 1)
         methodProps.removeGuest(item);
+        handleIndexAsi(num)
         handleGuestSelected(num)
         translateLeft();
-        handleIndexAsi(num)
     }
 
     const handleGuestSelected = (index: number) => {
@@ -102,7 +102,7 @@ export default function ContResultProduct({
         if (indexAsi != initialValue) {
             methodProps.guestSelected(listGuests[indexAsi])
         }
-    },[indexAsi, listGuests, methodProps])
+    },[indexAsi])
 
     useEffect(() => {
         handleIsCarrousel()
