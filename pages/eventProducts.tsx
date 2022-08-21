@@ -63,7 +63,7 @@ export default function EventProducts() {
     }
 
     let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(false)
-    const handleOpenFilter = () => {
+    /*const handleOpenFilter = () => {
         let totalProducts: number = 0
         listGuests.forEach(guest => {
             totalProducts = totalProducts + guest.listProductAmount.length;
@@ -73,13 +73,13 @@ export default function EventProducts() {
         } else {
             setIsOpenSelectedProduct(isOpenSelectedProduct = false);
         }
-    }
+    }*/
     const isSmallDown = useMediaQuery(mediaQuery);
     //endregion
 
     //region product method
     let [listGuests, setListGuests] = useState([firstGuest])
-    const updateList = () => {
+    /*const updateList = () => {
         const newGuest: Guest[] = listGuests.map(item => {
             if (item.id == guestSelected.id) {
                 return guestSelected
@@ -88,7 +88,7 @@ export default function EventProducts() {
             }
         })
         setListGuests(listGuests = newGuest)
-    }
+    }*/
 
     let [guestSelected, setGuestSelected] = useState(listGuests[0])
     const addItemGuestSelected = (product: Product) => {
@@ -174,20 +174,39 @@ export default function EventProducts() {
     }
 
     let [heightDiv, setHeightDiv] = useState(0)
-    const handleSetH = (number: number) => {
+    /*const handleSetH = (number: number) => {
         setHeightDiv(heightDiv = number)
-    }
+    }*/
 
     useEffect(() => {
-        updateList()
+        const newGuest: Guest[] = listGuests.map(item => {
+            if (item.id == guestSelected.id) {
+                return guestSelected
+            } else {
+                return item
+            }
+        })
+        setListGuests(listGuests = newGuest)
         handleListProductShow1()
     }, [guestSelected])
 
     useEffect(() => {
-        handleOpenFilter()
+        let totalProducts: number = 0
+        listGuests.forEach(guest => {
+            totalProducts = totalProducts + guest.listProductAmount.length;
+        })
+        if (totalProducts > 0) {
+            setIsOpenSelectedProduct(isOpenSelectedProduct = true);
+        } else {
+            setIsOpenSelectedProduct(isOpenSelectedProduct = false);
+        }
     }, [guestSelected])
 
     useEffect(() => {
+        const handleSetH = (number: number) => {
+            setHeightDiv(heightDiv = number)
+        }
+
         function resiveDiv() {
             const sizeDiv = window.innerHeight
             handleSetH(sizeDiv - numberMenos)

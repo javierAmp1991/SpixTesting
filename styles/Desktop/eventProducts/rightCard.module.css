@@ -183,10 +183,10 @@
 
 .gridCarrouselAdd {
     display: grid;
-    grid-template-columns: 1fr 24px;
+    grid-template-columns: 1fr 40px;
     align-items: center;
-    padding-right: 8px;
     border-bottom: 1px solid #e3e3e3;
+    background: #ececec;
 }
 
 .transition {

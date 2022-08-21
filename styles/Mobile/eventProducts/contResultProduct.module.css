@@ -13,7 +13,7 @@
     padding-bottom: 80px;
 }
 
-.paddingContResult0{
+.paddingContResult0 {
     padding-bottom: 0;
 }
 
@@ -90,13 +90,13 @@
     background: #eaeaea;
 }
 
-.styleSnapScroll{
+.styleSnapScroll {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     background: #eaeaea;
 }
 
-.snapScroll{
+.snapScroll {
     scroll-snap-align: start;
 }
 
@@ -204,4 +204,24 @@
     gap: 16px;
     padding: 12px 0;
     overflow: scroll;
+}
+
+.Arrow {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    right: 8px;
+    animation: moveArrow 1.5s infinite linear;
+}
+
+@keyframes moveArrow {
+    0% {
+        right: 8px;
+    }
+    50% {
+        right: 24px;
+    }
+    100% {
+        right: 8px;
+    }
 }

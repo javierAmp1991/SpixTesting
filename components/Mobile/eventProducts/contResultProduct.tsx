@@ -30,6 +30,15 @@ export default function ContResultProduct({
                                               }) {
     const cssStyle = getCssStyle()
 
+    let [isCarrousel, setIsCarrousel] = useState(listGuests.length > 1)
+    const handleIsCarrousel = () => {
+        if (listGuests.length > 1) {
+            setIsCarrousel(isCarrousel = true);
+        } else {
+            setIsCarrousel(isCarrousel = false);
+        }
+    }
+
     let [counter, setCounter] = useState(0)
     let [translateCarrousel, setTranslateDiv] = useState("")
     const translateRight = () => {
@@ -93,7 +102,11 @@ export default function ContResultProduct({
         if (indexAsi != initialValue) {
             methodProps.guestSelected(listGuests[indexAsi])
         }
-    }, [indexAsi])
+    },[indexAsi, listGuests, methodProps])
+
+    useEffect(() => {
+        handleIsCarrousel()
+    })
 
     return (
         <div className={style.contVar}>
@@ -147,6 +160,13 @@ export default function ContResultProduct({
                         <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>
                         </span>
                     </div>
+                    {
+                        isCarrousel ?
+                            <></> :
+                            <div className={style.Arrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowRed} alt=""/>
+                            </div>
+                    }
                 </div>
             </div>
             <div className={cssStyle.paddingContResult}>

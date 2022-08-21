@@ -1,25 +1,21 @@
 import style from "../../../styles/Mobile/eventProducts/contResultProduct.module.css";
 import {sectionProduct} from "../../../dataDemo/data";
-import SectionProductMobile from "./sectionProductMobile";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
 import React, {useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ButtonBlueDesk from "../Misc/buttonBlue";
-import {Guest} from "../../../pages/eventProducts";
 import Image from "next/image";
 import SectionProductMobileFull from "./sectionProductMobileFull";
 
-const newGuest: string = "Nuevo Invitado"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
 
-export default function ContResultProductFull({listSectionProduct, addItem, methodProps, listGuests, isOpen}:
+export default function ContResultProductFull({listSectionProduct, addItem, methodProps, isOpen}:
                                               {
                                                   listSectionProduct: sectionProduct[],
                                                   addItem: any,
                                                   methodProps: any,
-                                                  listGuests: Guest[],
                                                   isOpen: boolean
                                               }) {
     let [isDisplayAdd, setIsDisplayAdd] = useState(false)

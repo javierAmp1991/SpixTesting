@@ -1,20 +1,18 @@
 import style from "/styles/Desktop/eventProducts/leftCard.module.css"
-import SectionProduct from "./sectionProduct";
 import {sectionProduct} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
-import SectionProductFull from "./sectionProductFull";
 
 const idMainDiv: string = "mainDivLeftCard"
 const idCarrousel: string = "idCarrouselLeftCard"
 
 export default function LeftCardFull({listSectionPro, handleAddProduct}:
-                                     {
-                                         listSectionPro: sectionProduct[],
-                                         handleAddProduct: any,
-                                     }) {
+                                         {
+                                             listSectionPro: sectionProduct[],
+                                             handleAddProduct: any,
+                                         }) {
     let [isArrowVisible, setIsArrowVisible] = useState(false)
     const handleShowArro = () => {
         const mainDivWidth: number = document.getElementById(idMainDiv).offsetWidth
@@ -29,7 +27,8 @@ export default function LeftCardFull({listSectionPro, handleAddProduct}:
     return (
         <div className={style.stylerightContainer}>
             <div className={style.imgBanner}>
-                <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
+                <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"}
+                       src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
             <div className={style.borderSection}>
                 <div className={style.innerDiv}>
@@ -63,8 +62,8 @@ export default function LeftCardFull({listSectionPro, handleAddProduct}:
                                     <div key={index}
                                          className={index != (listSectionPro.length - 1) ?
                                              style.borderBottomSection : ""}>
-                                        <SectionProductFull addItem={handleAddProduct}
-                                                        item={item}/>
+                                        {/*<SectionProductFull addItem={handleAddProduct}
+                                                        item={item}/>*/}
                                     </div>
                                 )
                             }

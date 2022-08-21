@@ -9,7 +9,6 @@ import PopUpContainer from "../Misc/popUpContainer";
 import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
-import styleModal from "/styles/Desktop/Misc/popUp.module.css"
 
 const textButton: string = "Ver entradas"
 
@@ -187,7 +186,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                                 <div className={style.positionChekcICon}>
                                                     <div className={style.checkIconProp}>
                                                         <Image layout={"fill"}
-                                                               src={GlobalConst.sourceImages.checkIconYellow}/>
+                                                               src={GlobalConst.sourceImages.checkIconYellow} alt=""/>
                                                     </div>
                                                 </div> : <></>
                                                 }

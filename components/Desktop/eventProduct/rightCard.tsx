@@ -8,7 +8,6 @@ import PayPageProductSelectedView from "./payPageProductSelectedView";
 import ButtonBlueDesk from "../../Mobile/Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
 import Image from "next/image";
-import {func} from "prop-types";
 
 const referenceDiv = "referenceDiv"
 const textButton: string = "Comprar"
@@ -63,10 +62,10 @@ export default function RightCard({
         setEmailGuest(emailGuest = e.target.value)
     }
 
-    let [indexAsi, setIndexAsi] = useState(initialValue)
+    /*let [indexAsi, setIndexAsi] = useState(initialValue)
     const handleIndexAsi = (num: number) => {
         setIndexAsi(indexAsi = num)
-    }
+    }*/
     let [idCounter, setIdCounter] = useState(0)
 
     const handleAddGuest = () => {
@@ -80,8 +79,7 @@ export default function RightCard({
             }
             methodProps.addGuest(newGuest);
             const num: number = listGuest.length
-            translateRight();
-            handleIndexAsi(num)
+            /*handleIndexAsi(num)*/
             handleDisplayAdd();
         }
     }
@@ -90,19 +88,18 @@ export default function RightCard({
         const num: number = (listGuest.indexOf(item) - 1)
         methodProps.removeGuest(item);
         handleGuestSelected(num)
-        translateLeft();
-        handleIndexAsi(num)
+        /*handleIndexAsi(num)*/
     }
 
     const handleGuestSelected = (index: number) => {
         methodProps.guestSelected(listGuest[index])
     }
 
-    useEffect(() => {
+    /*useEffect(() => {
         if (indexAsi != initialValue) {
             methodProps.guestSelected(listGuest[indexAsi])
         }
-    }, [indexAsi])
+    }, [indexAsi])*/
 
     useEffect(() => {
         handleIsCarrousel()
@@ -111,42 +108,44 @@ export default function RightCard({
 
     return (
         <div className={style.sideCard}>
-            <div className="w-full overflow-scroll">
-                <div style={{transform: translateCarrousel}}
-                     className={` ${style.containerClients}`}>
-                    {
-                        listGuest.map((item, index) =>
-                            index != 0 ?
-                                <div className={item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                     key={index}>
+            <div className={style.gridCarrouselAdd}>
+                <div id={idTranslateMobile} className="w-full overflow-scroll">
+                    <div style={{transform: translateCarrousel}}
+                         className={` ${style.containerClients}`}>
+                        {
+                            listGuest.map((item, index) =>
+                                index != 0 ?
+                                    <div className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                         key={index}>
                                                 <span className={`${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                    <div onClick={() => handleRemoveGuest(item)}
-                                         className={style.sizeCloseimg}>
-                                        <Image layout={"fill"}
-                                               src={GlobalConst.sourceImages.closeLoggin} alt=""/>
+                                        <div onClick={() => handleRemoveGuest(item)}
+                                             className={style.sizeCloseimg}>
+                                            <Image layout={"fill"}
+                                                   src={GlobalConst.sourceImages.closeLoggin} alt=""/>
+                                        </div>
                                     </div>
-                                </div>
-                                :
-                                <div id={referenceDiv}
-                                     onClick={() => methodProps.guestSelected(item)}
-                                     className={item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                     key={index}>
-                                    {item.name}
-                                </div>
-                        )
-                    }
-                    <div onClick={handleDisplayAdd}
-                         className={`${style.gridNewGuestIcon}`}>
-                        <span className={utilities.fontPrimaryText}>{newGuestText}</span>
-                        <div className={style.addIconStyle}>
-                            <Image layout={"fill"}
-                                   src={GlobalConst.sourceImages.addIcon} alt=""/>
+                                    :
+                                    <div id={referenceDiv}
+                                         onClick={() => methodProps.guestSelected(item)}
+                                         className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                         key={index}>
+                                        {item.name}
+                                    </div>
+                            )
+                        }
+                        <div onClick={handleDisplayAdd}
+                             className={`${style.gridNewGuestIcon}`}>
+                            <span className={utilities.fontPrimaryText}>{newGuestText}</span>
+                            <div className={style.addIconStyle}>
+                                <Image layout={"fill"}
+                                       src={GlobalConst.sourceImages.addIcon} alt=""/>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {/*{
+                {
                     isCarrousel ?
                         <div className={style.gridArrows}>
                             <div onClick={translateLeft}
@@ -162,9 +161,9 @@ export default function RightCard({
                         </div>
                         :
                         <div className={style.Arrow}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExit} alt=""/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowRed} alt=""/>
                         </div>
-                }*/}
+                }
             </div>
 
             <div className="overflow-y-scroll">

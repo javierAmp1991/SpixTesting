@@ -1,8 +1,8 @@
 //region data
+import utilities from "/styles/utilities.module.css";
 import {Menu, Product, productSelected} from "../dataDemo/data";
 import React, {useState} from "react";
 import {ListProducts2} from "../dataDemo/data";
-import utilities from "/styles/utilities.module.css"
 import styleMob from "/styles/Mobile/eventProducts/eventProducts.module.css"
 //endregion
 //region components
@@ -11,11 +11,7 @@ import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import {useMediaQuery} from "./index";
 import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
 import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
-import ContSelectedProduct from "../components/Mobile/eventProducts/contSelectedProduct";
 import NavMenu from "../components/Mobile/Misc/navMenu";
-import ContResultProduct from "../components/Mobile/eventProducts/contResultProduct";
-import LeftCard from "../components/Desktop/eventProduct/leftCard";
-import RightCard from "../components/Desktop/eventProduct/rightCard";
 import {sectionProduct} from "../dataDemo/data";
 import LeftCardFull from "../components/Desktop/eventProduct/leftCardFull";
 import ContResultProductFull from "../components/Mobile/eventProducts/contResultProductFull";
@@ -46,7 +42,6 @@ let firstGuest: Guest = {
     listProductSelected: []
 }
 
-const AppContext = React.createContext(undefined)
 
 export default function EventProducts() {
     //region basic
@@ -56,14 +51,6 @@ export default function EventProducts() {
     const handleDeleteProduct = (product: Product) => {
         const newListSelected = listProductSelected.filter((productF) => productF != product)
         setListProductSelected(newListSelected)
-    }
-    let [isOpenSelectedProduct, setIsOpenSelectedProduct] = useState(true)
-    const handleOpenFilter = () => {
-        if (listProductSelected.length > 0) {
-            setIsOpenSelectedProduct(isOpenSelectedProduct = true)
-        } else {
-            setIsOpenSelectedProduct(isOpenSelectedProduct = false)
-        }
     }
     const isSmallDown = useMediaQuery(mediaQuery);
     //endregion
@@ -147,7 +134,6 @@ export default function EventProducts() {
                             <div className={styleMob.heightCont}>
                                 <ContResultProductFull isOpen={false}
                                                        methodProps={methodProps}
-                                                       listGuests={listGuests}
                                                        addItem={handListProductShow}
                                                        listSectionProduct={listProductShow}/>
 
