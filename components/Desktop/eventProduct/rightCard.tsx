@@ -14,7 +14,7 @@ const textButton: string = "Comprar"
 const newGuestText: string = "Nuevo invitado"
 const idTranslateMobile: string = "idTranslateDiv007asb"
 const initialValue: number = -99999999
-
+const numDiv: number = 155
 export default function RightCard({
                                       methodProps, listGuest, guestSelected,
                                       removeItemGuestSelected, amountPerItem, upDateGuestSelected
@@ -29,13 +29,13 @@ export default function RightCard({
     let [counter, setCounter] = useState(0)
     let [translateCarrousel, setTranslateDiv] = useState("")
     const translateRight = () => {
-        const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth
+        /*const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth*/
         counter = counter - 1
         setCounter(counter = counter < listGuest.length * -1 ? listGuest.length * -1 : counter)
         setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`);
     }
     const translateLeft = () => {
-        const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth
+        /*const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth*/
         counter = counter + 1
         setCounter(counter = counter > 0 ? 0 : counter)
         setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`)
@@ -109,7 +109,7 @@ export default function RightCard({
     return (
         <div className={style.sideCard}>
             <div className={style.gridCarrouselAdd}>
-                <div id={idTranslateMobile} className="w-full overflow-scroll">
+                <div className="w-full overflow-scroll">
                     <div style={{transform: translateCarrousel}}
                          className={` ${style.containerClients}`}>
                         {

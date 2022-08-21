@@ -135,7 +135,7 @@ export default function ContResultProduct({
                                                 <span className={`${style.nameElipsis} ${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                    <span onClick={() => methodProps.removeGuest(item)}
+                                    <span onClick={() => handleRemoveGuest(item)}
                                           className={style.sizeCloseimg}>
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.closeLoggin} alt=""/>
@@ -157,7 +157,7 @@ export default function ContResultProduct({
                          className={`${utilities.gridMaxContent2} ${style.snapScroll} gap-2 ml-2`}>
                         <span className={utilities.fontPrimaryText}>{newGuest}</span>
                         <span className={style.addIconStyle}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>
                         </span>
                     </div>
                     {

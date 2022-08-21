@@ -178,7 +178,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                                         Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
                                                     </div>
                                                 </div>
-                                                <div className={utilities.fontSecundaryText}>
+                                                <div className={item.IsSelected? utilities.fontPrimaryText : utilities.fontSecundaryText}>
                                                     {item.Venue}
                                                 </div>
                                                 {

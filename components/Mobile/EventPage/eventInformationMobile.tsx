@@ -9,6 +9,7 @@ import LayoutWithNavCircleMobile from "../Layouts/layoutWithNavCircleMobile";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import React, {useState} from "react";
 import Image from "next/image";
+import {EventPageEvent} from "../../../dataDemo/data";
 /*let inputRadio: inputRadioProp[] = [
     {
         NameLabel: new Date(2022, 7, 5),
@@ -38,7 +39,18 @@ import Image from "next/image";
 ]*/
 
 export default function EventInformationMobile({eventInformation, form}:
-                                                   { eventInformation: EventLookUp, form: fomrLink[] }) {
+                                                   { eventInformation: EventLookUp, form: fomrLink[]}) {
+    let [venueDateList, setVenueDateList] = useState(EventPageEvent.eventPage.VenueDate)
+    const handleVenueList = (itemNew: DateVenue) => {
+        const newVenueDateList: DateVenue[] = venueDateList.map((item) => {
+            if (item.Id == itemNew.Id) {
+                return {...item, IsSelected: true}
+            }
+            return {...item, IsSelected: false}
+        })
+        setVenueDateList(venueDateList = newVenueDateList)
+    }
+
     let [displayDateSelector, setDisplayDateSelector] = useState(false)
     const handleCloseDate = () => setDisplayDateSelector(displayDateSelector = false)
     const handleOpenDate = () => setDisplayDateSelector(displayDateSelector = true)
@@ -46,23 +58,9 @@ export default function EventInformationMobile({eventInformation, form}:
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
 
-    let [venueDateList, setVenueDateList] = useState(eventInformation.VenueDate)
-    const handleVenueList = (itemNew: DateVenue) => {
-        const newVenueDateList: DateVenue[] = venueDateList.map((item) => {
-            if (item.Id == itemNew.Id) {
-                return {...itemNew, isSelected: true}
-            }
-            return {...item, isSelected: false}
-        })
-        setVenueDateList(venueDateList = newVenueDateList)
-    }
     let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[0])
     const handleSetVenueDateSelected = (item: DateVenue) => {
-        venueDateList.forEach(item => {
-            if (item.IsSelected) {
-                setvenueDateSelected(venueDateSelected = item)
-            }
-        })
+        setvenueDateSelected(venueDateSelected = item)
     }
 
     const handleClick = (item: DateVenue) => {
@@ -133,12 +131,13 @@ export default function EventInformationMobile({eventInformation, form}:
                 </div>
 
                 <div className={style.selectDateContainer}>
-                    <div onClick={handleOpenDate}
+                    <div
                          className={style.gridIconText}>
                         <div className={style.sizeIcon}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt=""/>
                         </div>
-                        <div className={utilities.fontPrimaryText}>
+                        <div onClick={handleOpenDate}
+                            className={utilities.fontPrimaryText}>
                             <span>Proxima fecha: </span>
                             <span className={utilities.styleLink}>
                                 {venueDateSelected.Date.getDate()} de {venueDateSelected.Date.toLocaleString("es-US", {month: "long"})} del {venueDateSelected.Date.getFullYear()}
@@ -201,6 +200,35 @@ export default function EventInformationMobile({eventInformation, form}:
             <div className={style.gridButtons}>
                 <ButtonBlue text={"Ver entradas"}/>
             </div>
+
+            {/*<div className={style.paddingContInpu}>
+                {
+                    venueDateList.map((item: DateVenue, index) =>
+                        <div onClick={() => handleClick(item)}
+                             className={item.IsSelected ? style.styleDateSelected : style.styleDate}
+                             key={index}>
+                            <div className={utilities.fontPrimaryText}>
+                                <div>
+                                    Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
+                                </div>
+                            </div>
+                            <div className={item.IsSelected? utilities.fontPrimaryText : utilities.fontSecundaryText}>
+                                {item.Venue}
+                            </div>
+                            {
+                                item.IsSelected?
+                                    <div className={style.positionChekcICon}>
+                                        <div className={style.checkIconProp}>
+                                            <Image layout={"fill"}
+                                                   src={GlobalConst.sourceImages.checkIconYellow} alt=""/>
+                                        </div>
+                                    </div> : <></>
+                            }
+                        </div>
+                    )
+                }
+            </div>*/}
+
             {
                 displayDateSelector ?
                     <PopUpContainerMob isBackground={true} closePopUp={handleCloseDate}>
@@ -219,9 +247,18 @@ export default function EventInformationMobile({eventInformation, form}:
                                                     Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
                                                 </div>
                                             </div>
-                                            <div className={utilities.fontSecundaryText}>
+                                            <div className={item.IsSelected? utilities.fontPrimaryText : utilities.fontSecundaryText}>
                                                 {item.Venue}
                                             </div>
+                                            {
+                                                item.IsSelected?
+                                                    <div className={style.positionChekcICon}>
+                                                        <div className={style.checkIconProp}>
+                                                            <Image layout={"fill"}
+                                                                   src={GlobalConst.sourceImages.checkIconYellow} alt=""/>
+                                                        </div>
+                                                    </div> : <></>
+                                            }
                                         </div>
                                     )
                                 }

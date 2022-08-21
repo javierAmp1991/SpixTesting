@@ -231,11 +231,10 @@
     border-radius: 8px;
     border: 2px solid rgba(84,226,243,1);
     box-shadow: 0 1px 12px rgba(102,238,183,1);
-    padding: 12px;
+    padding: 12px 8px;
     transition: .4s;
     display: grid;
     gap: 4px;
-    margin-right: 16px;
     position: relative;
 }
 
@@ -270,4 +269,16 @@
 .elipsisDirection{
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.positionChekcICon{
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 12px;
+}
+
+.checkIconProp{
+    position: relative;
+    width: 24px;
+    height: 24px;
 }
