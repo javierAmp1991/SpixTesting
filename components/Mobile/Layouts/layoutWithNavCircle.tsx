@@ -20,7 +20,7 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
     }
     const handleScroll = (e) => {
         const num: number = document.getElementById(idCont).offsetWidth
-        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth >= 0 && e.target.scrollLeft % e.target.offsetWidth < 1 ;
+        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth > 0 && e.target.scrollLeft % e.target.offsetWidth < 1 ;
         if (atSnappingPoint) {
             if (e.target.scrollLeft > controlScroll) {
                 setControlScroll(controlScroll = e.target.scrollLeft)
@@ -33,14 +33,12 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
 
     }
     const handleRight = () => {
-        setCircleSelected(circleSelected += 1)
-        /*setNumTranslate(numTranslate -= 1)
-        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)*/
+        const newNumber: number = circleSelected + 1
+        setCircleSelected(newNumber > listItem.length? circleSelected = listItem.length : circleSelected += 1)
     }
     const handleLeft = () => {
-        setCircleSelected(circleSelected -= 1)
-        /*setNumTranslate(numTranslate += 1)
-        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)*/
+        const newNumber: number = circleSelected - 1
+        setCircleSelected(newNumber < 0? circleSelected = 0 : circleSelected -= 1)
     }
 
     return (
@@ -63,13 +61,13 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
                              ${index == circleSelected ? style.styleNavCircle : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
-            <div>
+            {/*<div>
                 <button onClick={handleLeft}>izquierda</button>
                 <button onClick={handleRight}>derecha</button>
                 <div>{scrol}</div>
                 <div>{offsetwidth}</div>
                 <div>{rem}</div>
-            </div>
+            </div>*/}
         </div>
     )
 

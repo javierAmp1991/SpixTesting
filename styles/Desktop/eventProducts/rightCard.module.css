@@ -210,6 +210,21 @@
     padding: 16px;
 }
 
+.buttonValid{
+    padding: 8px 48px;
+    background: var(--gradientBlueButton);
+    color: white;
+    margin: auto;
+    border-radius: 4px;
+}
+.buttonInvalid{
+    padding: 8px 48px;
+    background: #e5e5e5;
+    color: white;
+    margin: auto;
+    border-radius: 4px;
+}
+
 @keyframes moveArrow {
     0% {
         right: 8px;

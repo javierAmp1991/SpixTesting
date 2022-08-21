@@ -34,7 +34,6 @@
     grid-template-columns: 100%;
     grid-auto-columns: 100%;
     grid-auto-flow: column;
-    transition: .4s;
 }
 
 .snapScroll{

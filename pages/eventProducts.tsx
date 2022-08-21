@@ -26,7 +26,7 @@ const isDarkMode = false
 const toggleDarkMode = null
 const isLogged = false
 const isActiveDarkModeButton = false
-const mediaQuery = '(max-width: 768px)'
+const mediaQuery = '(max-width: 1281px)'
 const listProductsPass: sectionProduct[] = ListProducts2.listProducts
 const menuList = Menu.listMenu
 
@@ -230,7 +230,7 @@ export default function EventProducts() {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                        <>
+                        <div className={styleMob.maxWidthCont}>
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                             <div className={styleMob.heightCont}
@@ -250,7 +250,7 @@ export default function EventProducts() {
                             </div>
                             <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
                                      isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
-                        </>
+                        </div>
                 }
             </div>
             :

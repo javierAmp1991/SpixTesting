@@ -27,6 +27,7 @@ export default function RightCard({
     //region hooks
     const totalPrice = getTotal()
     let [counter, setCounter] = useState(0)
+    let [styleButton, setStylebutton] = useState(style.buttonInvalid)
     let [translateCarrousel, setTranslateDiv] = useState("")
     const translateRight = () => {
         /*const numDiv: number = document.getElementById(idTranslateMobile).offsetWidth*/
@@ -62,25 +63,26 @@ export default function RightCard({
         setEmailGuest(emailGuest = e.target.value)
     }
 
-    /*let [indexAsi, setIndexAsi] = useState(initialValue)
+    let [indexAsi, setIndexAsi] = useState(initialValue)
     const handleIndexAsi = (num: number) => {
         setIndexAsi(indexAsi = num)
-    }*/
+    }
     let [idCounter, setIdCounter] = useState(0)
 
     const handleAddGuest = () => {
         if (emailGuest != "" && nameGuest != "") {
             const newGuest: Guest = {
-                id: "1234abc",
+                id: `1234abc${counter}`,
                 isSelected: false,
                 name: nameGuest,
                 email: emailGuest,
                 listProductAmount: []
             }
             methodProps.addGuest(newGuest);
-            /*const num: number = listGuest.length*/
-            /*handleIndexAsi(num)*/
+            const num: number = listGuest.length
+            handleIndexAsi(num)
             handleDisplayAdd();
+            translateRight()
         }
     }
 
@@ -88,22 +90,31 @@ export default function RightCard({
         const num: number = (listGuest.indexOf(item) - 1)
         methodProps.removeGuest(item);
         handleGuestSelected(num)
-        /*handleIndexAsi(num)*/
+        handleIndexAsi(num)
+        translateLeft()
     }
 
     const handleGuestSelected = (index: number) => {
         methodProps.guestSelected(listGuest[index])
     }
 
-    /*useEffect(() => {
+    useEffect(() => {
         if (indexAsi != initialValue) {
             methodProps.guestSelected(listGuest[indexAsi])
         }
-    }, [indexAsi])*/
+    }, [indexAsi])
 
     useEffect(() => {
         handleIsCarrousel()
     })
+
+    useEffect(() => {
+        if (emailGuest != "" && nameGuest != "") {
+            setStylebutton(styleButton = style.buttonValid)
+        } else {
+            setStylebutton(styleButton = style.buttonInvalid)
+        }
+    }, [emailGuest, nameGuest])
     //endregion
 
     return (
@@ -219,9 +230,9 @@ export default function RightCard({
                                         * Infomracion descriptiva
                                     </div>
                                 </div>
-                                <div onClick={handleAddGuest}>
-                                    <ButtonBlueDesk text={"Agregar"}/>
-                                </div>
+                                <button onClick={handleAddGuest} className={styleButton}>
+                                    Agregar
+                                </button>
                             </div>
                         }
                     </PopUpContainer> : <></>

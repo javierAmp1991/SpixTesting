@@ -29,7 +29,7 @@ export default function ContResultProduct({
                                                   addItem: any, removeItem: any
                                               }) {
     const cssStyle = getCssStyle()
-
+    let [styleButton, setStylebutton] = useState(style.buttonInvalid)
     let [isCarrousel, setIsCarrousel] = useState(listGuests.length > 1)
     const handleIsCarrousel = () => {
         if (listGuests.length > 1) {
@@ -107,6 +107,13 @@ export default function ContResultProduct({
     useEffect(() => {
         handleIsCarrousel()
     })
+    useEffect(() => {
+        if (emailGuest != "" && nameGuest != "") {
+            setStylebutton(styleButton = style.buttonValid)
+        } else {
+            setStylebutton(styleButton = style.buttonInvalid)
+        }
+    },[emailGuest, nameGuest])
 
     return (
         <div className={style.contVar}>
@@ -204,9 +211,9 @@ export default function ContResultProduct({
                                         * Infomracion descriptiva
                                     </div>
                                 </div>
-                                <div onClick={handleAddGuest}>
-                                    <ButtonBlueDesk text={"Agregar"}/>
-                                </div>
+                                <button className={styleButton} onClick={handleAddGuest}>
+                                    Agregar
+                                </button>
                             </div>
                         }
                     </PopUpContainerMob> : <></>

@@ -1,10 +1,11 @@
 import style from "../../../styles/Mobile/Layouts/layoutWithNavcircle.module.css";
 import {useState} from "react";
-    const idCont: string = "idCarrouselCircle"
+
+const idCont: string = "idCarrouselCircle"
 
 export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                                                       { children: JSX.Element[], isDarkMode: boolean }) {
-        const cssStyle = getCssStyle()
+    const cssStyle = getCssStyle()
     let [initialTranslate, setInitialTranslate] = useState("translate(0px)")
     let [circleSelected, setCircleSelected] = useState(0)
     let [controlScroll, setControlScroll] = useState(0)
@@ -20,7 +21,7 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
     }
     const handleScroll = (e) => {
         const num: number = document.getElementById(idCont).offsetWidth
-        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth >= 0 && e.target.scrollLeft % e.target.offsetWidth < 1 ;
+        var atSnappingPoint = e.target.scrollLeft % e.target.offsetWidth > 0 && e.target.scrollLeft % e.target.offsetWidth < 1;
         if (atSnappingPoint) {
             if (e.target.scrollLeft > controlScroll) {
                 setControlScroll(controlScroll = e.target.scrollLeft)
@@ -33,19 +34,19 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
 
     }
     const handleRight = () => {
-        setCircleSelected(circleSelected += 1)
-        /*setNumTranslate(numTranslate -= 1)
-        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)*/
+        const newNumber: number = circleSelected + 1
+        setCircleSelected(newNumber > children.length ? circleSelected = children.length : circleSelected += 1)
     }
     const handleLeft = () => {
-        setCircleSelected(circleSelected -= 1)
-        /*setNumTranslate(numTranslate += 1)
-        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)*/
+        const handleLeft = () => {
+            const newNumber: number = circleSelected - 1
+            setCircleSelected(newNumber < 0 ? circleSelected = 0 : circleSelected -= 1)
+        }
     }
 
     return (
         <div>
-            <div onScroll={seescroll} id={idCont} className={style.overFlowSnap}>
+            <div onScroll={handleScroll} id={idCont} className={style.overFlowSnap}>
                 <div className={`${style.gridImageSection}`}>
                     {children}
                 </div>
@@ -58,9 +59,9 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                              ${index == circleSelected ? style.styleNavCircle : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
-            <div>{scrol}</div>
+            {/*<div>{scrol}</div>
             <div>{offsetwidth}</div>
-            <div>{rem}</div>
+            <div>{rem}</div>*/}
         </div>
     )
 
