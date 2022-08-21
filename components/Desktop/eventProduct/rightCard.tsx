@@ -72,13 +72,13 @@ export default function RightCard({
         if (emailGuest != "" && nameGuest != "") {
             const newGuest: Guest = {
                 id: "1234abc",
-                isSelected: true,
+                isSelected: false,
                 name: nameGuest,
                 email: emailGuest,
                 listProductAmount: []
             }
             methodProps.addGuest(newGuest);
-            const num: number = listGuest.length
+            /*const num: number = listGuest.length*/
             /*handleIndexAsi(num)*/
             handleDisplayAdd();
         }

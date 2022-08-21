@@ -79,7 +79,7 @@ export default function EventProducts() {
 
     //region product method
     let [listGuests, setListGuests] = useState([firstGuest])
-    /*const updateList = () => {
+    const updateList = () => {
         const newGuest: Guest[] = listGuests.map(item => {
             if (item.id == guestSelected.id) {
                 return guestSelected
@@ -88,7 +88,7 @@ export default function EventProducts() {
             }
         })
         setListGuests(listGuests = newGuest)
-    }*/
+    }
 
     let [guestSelected, setGuestSelected] = useState(listGuests[0])
     const addItemGuestSelected = (product: Product) => {
@@ -179,14 +179,7 @@ export default function EventProducts() {
     }*/
 
     useEffect(() => {
-        const newGuest: Guest[] = listGuests.map(item => {
-            if (item.id == guestSelected.id) {
-                return guestSelected
-            } else {
-                return item
-            }
-        })
-        setListGuests(listGuests = newGuest)
+        updateList()
         handleListProductShow1()
     }, [guestSelected])
 

@@ -74,14 +74,14 @@ export default function ContResultProduct({
         if (emailGuest != "" && nameGuest != "") {
             const newGuest: Guest = {
                 id: "1234abc",
-                isSelected: true,
+                isSelected: false,
                 name: nameGuest,
                 email: emailGuest,
                 listProductAmount: []
             }
             methodProps.addGuest(newGuest)
-            const num: number = listGuests.length
-            handleIndexAsi(num)
+            /*const num: number = listGuests.length
+            handleIndexAsi(num)*/
             handleDisplayAdd()
         }
     }
