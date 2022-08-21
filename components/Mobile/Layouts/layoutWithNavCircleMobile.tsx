@@ -1,20 +1,31 @@
 import style from "../../../styles/Mobile/Layouts/layoutWithNavcircle.module.css";
 import {useState} from "react";
+    const idCont: string = "idCarrouselCircle"
 
 export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                                                       { children: JSX.Element[], isDarkMode: boolean }) {
     let cssStyle = getCssStyle()
+    let [initialTranslate, setInitialTranslate] = useState("translate(0px)")
     let [circleSelected, setCircleSelected] = useState(0)
+    let [numTranslate, setNumTranslate] = useState(0)
     const handleRight = () => {
-        circleSelected += 1
+        const num: number = document.getElementById(idCont).offsetWidth
+        setCircleSelected(circleSelected += 1)
+        setNumTranslate(numTranslate -= 1)
+        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)
+
     }
     const handleLeft = () => {
-        circleSelected -= 1
+        const num: number = document.getElementById(idCont).offsetWidth
+        setCircleSelected(circleSelected -= 1)
+        setNumTranslate(numTranslate += 1)
+        setInitialTranslate(initialTranslate = `translate(${numTranslate * num}px)`)
     }
+
     return (
         <div>
-            <div className="overflow-scroll">
-                <div className={`${style.gridImageSection} gap-2 p-0.5`}>
+            <div id={idCont} className="overflow-scroll">
+                <div style={{transform:initialTranslate}} className={`${style.gridImageSection}`}>
                     {children}
                 </div>
             </div>
