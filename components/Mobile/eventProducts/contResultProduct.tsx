@@ -19,7 +19,7 @@ const initialValue: number = -99999999
 export default function ContResultProduct({
                                               listSectionProduct,
                                               methodProps, listGuests,
-                                              isOpen, addItem, removeItem
+                                              isOpen, addItem, removeItem,
                                           }:
                                               {
                                                   listSectionProduct: sectionProduct[],
@@ -116,7 +116,8 @@ export default function ContResultProduct({
                     {
                         listGuests.map((item, index) =>
                             index != 0 ?
-                                <div className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                <div className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                 ${style.snapScroll}`}
                                      key={index}>
                                                 <span className={`${style.nameElipsis} ${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
@@ -130,7 +131,8 @@ export default function ContResultProduct({
                                 :
                                 <div
                                     onClick={() => methodProps.guestSelected(item)}
-                                    className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                    className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                 ${style.snapScroll}`}
                                     key={index}>
                                     <span className={`${style.nameElipsis} ${utilities.clamp1}`}>
                                     {item.name}
@@ -139,7 +141,7 @@ export default function ContResultProduct({
                         )
                     }
                     <div onClick={handleDisplayAdd}
-                         className={`${utilities.gridMaxContent2} gap-2 ml-2`}>
+                         className={`${utilities.gridMaxContent2} ${style.snapScroll} gap-2 ml-2`}>
                         <span className={utilities.fontPrimaryText}>{newGuest}</span>
                         <span className={style.addIconStyle}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>

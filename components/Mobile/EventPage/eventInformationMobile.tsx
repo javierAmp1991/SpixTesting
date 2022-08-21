@@ -45,28 +45,29 @@ export default function EventInformationMobile({eventInformation, form}:
     let [displayVenue, setDisplayVenue] = useState(false)
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
+
     let [venueDateList, setVenueDateList] = useState(eventInformation.VenueDate)
     const handleVenueList = (itemNew: DateVenue) => {
         const newVenueDateList: DateVenue[] = venueDateList.map((item) => {
-            if (item.NameVenue == itemNew.NameVenue) {
-                return {...item, isSelected: true}
+            if (item.Id == itemNew.Id) {
+                return {...itemNew, isSelected: true}
             }
             return {...item, isSelected: false}
         })
         setVenueDateList(venueDateList = newVenueDateList)
     }
-    let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[1])
-    /*const handleSetVenueDateSelected = () => {
+    let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[0])
+    const handleSetVenueDateSelected = (item: DateVenue) => {
         venueDateList.forEach(item => {
             if (item.IsSelected) {
                 setvenueDateSelected(venueDateSelected = item)
             }
         })
-        handleCloseDate()
-    }*/
-    const handleSetVenueDateSelected = (item: DateVenue) => {
-        setvenueDateSelected( venueDateSelected = item)
-        handleCloseDate()
+    }
+
+    const handleClick = (item: DateVenue) => {
+        handleVenueList(item)
+        handleSetVenueDateSelected(item)
     }
 
     return (
@@ -209,9 +210,10 @@ export default function EventInformationMobile({eventInformation, form}:
                             </div>
                             <div className={style.paddingContInpu}>
                                 {
-                                    eventInformation.VenueDate.map((item, index) =>
-                                        <div onClick={()=>handleSetVenueDateSelected(item)}
-                                            className={style.styleDate} key={index}>
+                                    venueDateList.map((item: DateVenue, index) =>
+                                        <div onClick={() => handleClick(item)}
+                                             className={item.IsSelected ? style.styleDateSelected : style.styleDate}
+                                             key={index}>
                                             <div className={utilities.fontPrimaryText}>
                                                 <div>
                                                     Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
@@ -224,10 +226,10 @@ export default function EventInformationMobile({eventInformation, form}:
                                     )
                                 }
                             </div>
-                            {/*<div onClick={handleCloseDate}
+                            <div onClick={handleCloseDate}
                                  className={style.buttonCont}>
                                 <ButtonBlue text={"aceptar"}/>
-                            </div>*/}
+                            </div>
                         </div>
                     </PopUpContainerMob> : <></>
             }

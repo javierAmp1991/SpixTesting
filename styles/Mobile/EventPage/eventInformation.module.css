@@ -226,6 +226,19 @@
     gap: 4px;
 }
 
+.styleDateSelected {
+    background: linear-gradient(145deg, rgba(84,226,243,.7) 0%, rgba(102,238,183,.7) 100%);
+    border-radius: 8px;
+    border: 2px solid rgba(84,226,243,1);
+    box-shadow: 0 1px 12px rgba(102,238,183,1);
+    padding: 12px;
+    transition: .4s;
+    display: grid;
+    gap: 4px;
+    margin-right: 16px;
+    position: relative;
+}
+
 .marginAuto {
     margin: auto;
     width: 200px;

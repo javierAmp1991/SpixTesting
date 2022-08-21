@@ -41,8 +41,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     }
 
     const handleClick = (item: DateVenue) => {
-        handleSetVenueDateSelected(item)
         handleVenueList(item)
+        handleSetVenueDateSelected(item)
     }
 
     return (
@@ -182,13 +182,22 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                                 <div className={utilities.fontSecundaryText}>
                                                     {item.Venue}
                                                 </div>
+                                                {
+                                                 item.IsSelected?
+                                                <div className={style.positionChekcICon}>
+                                                    <div className={style.checkIconProp}>
+                                                        <Image layout={"fill"}
+                                                               src={GlobalConst.sourceImages.checkIconYellow}/>
+                                                    </div>
+                                                </div> : <></>
+                                                }
                                             </div>
                                         )
                                     }
                                 </div>
                             </div>
                             <div onClick={handleCloseDate}
-                                className={style.buttonCont}>
+                                 className={style.buttonCont}>
                                 <ButtonBlue text={"Aceptar"}/>
                             </div>
                         </div>

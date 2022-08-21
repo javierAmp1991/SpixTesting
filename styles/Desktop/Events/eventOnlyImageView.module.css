@@ -11,3 +11,7 @@
     position: relative;
     z-index:50
 }
+
+.snapScroll{
+    scroll-snap-align: start;
+}

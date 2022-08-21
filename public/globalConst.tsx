@@ -60,7 +60,8 @@ export namespace GlobalConst{
         leftArrowExitBlack: "/images/leftArrowExitBlack.png",
         closeLoggin: "/images/closeLoggin.png",
         rightArrowClean: "/images/rightArrowBanner.png",
-        leftArrowClean: "/images/leftArrowBanner.png"
+        leftArrowClean: "/images/leftArrowBanner.png",
+        checkIconYellow: "/images/checkIconYellow.png"
     }
 }
 

@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function EventOnlyImageLogo({item, darkMode}) {
     let cssStyle = getCssStyles()
     return (
-        <a>
+        <a className={style.snapScroll}>
             <div className={`${cssStyle.borderCard} ${style.styleImage} relative`}>
                 <div className={style.styleImage}>
                     <Image layout={"fill"} objectFit={"cover"}  src={item.CoverImage} alt=""/>

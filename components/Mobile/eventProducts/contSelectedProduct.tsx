@@ -2,7 +2,7 @@ import style from "/styles/Mobile/eventProducts/contSelectedProduct.module.css"
 import {Product} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Guest} from "../../../pages/eventProducts";
 import ProductSelectedViewDesk from "./productSelectedViewDesk";
 import Image from "next/image";
@@ -14,23 +14,30 @@ export default function ContSelectedProduct({
                                                 methodProps, listGuest,
                                                 guestSelected,
                                                 removeItem,
-                                                amountPerItem
+                                                amountPerItem, isOpen
                                             }:
                                                 {
                                                     methodProps: any,
                                                     listGuest: Guest[],
                                                     guestSelected: Guest,
                                                     removeItem: any,
-                                                    amountPerItem: any
+                                                    amountPerItem: any,
+                                                    isOpen: boolean
                                                 }) {
 
     let [dispay, setDisplay] = useState(false)
     const handleDisplay = () => setDisplay(dispay = !dispay)
     const totalPrice = getTotalPrice()
     let totalProducts: number = getTotalProducts()
-
+    const cssStyle = getCssStyle()
+    useEffect(() => {
+        if (isOpen) {
+        } else {
+            setDisplay(dispay = false)
+        }
+    }, [cssStyle])
     return (
-        <div className={dispay ? style.contVarNormal : style.contVar}>
+        <div className={cssStyle}>
             {
                 dispay ?
                     <></> : <div className={style.totalButtonContainer}>
@@ -107,8 +114,20 @@ export default function ContSelectedProduct({
                     </div> : <></>
             }
         </div>
-
     )
+
+    function getCssStyle() {
+        if (isOpen) {
+            if (dispay) {
+                return style.contVarNormal
+            } else {
+                return style.contVar
+            }
+        } else {
+            return style.contVarHidden
+        }
+        /*styleDiv: isOpen? (dispay ? style.contVarNormal : style.contVar) : style.contVarHidden*/
+    }
 
     function getTotalProducts(): number {
         let total = 0;

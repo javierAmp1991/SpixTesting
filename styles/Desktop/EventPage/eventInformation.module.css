@@ -251,24 +251,41 @@
 }
 
 .styleDate {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
     border-radius: 8px;
-    padding: 12px 8px;
+    padding: 12px;
     transition: .4s;
     display: grid;
     gap: 4px;
     margin-right: 16px;
+    position: relative;
+    border: 2px solid transparent;
+}
+.positionChekcICon{
+    position: absolute;
+    top: calc(50% - 12px);
+    right: 12px;
+}
+
+.checkIconProp{
+    position: relative;
+    width: 24px;
+    height: 24px;
 }
 
 .styleDateSelected {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .2);
-    background: #eeeeee;
+    /*border: 2px solid rgba(249,214,43,1);*/
+    /*background: linear-gradient(145deg, rgba(249,214,43,.3) 0%, rgba(255,215,16,.3) 100%);*/
+    background: linear-gradient(145deg, rgba(84,226,243,.7) 0%, rgba(102,238,183,.7) 100%);
     border-radius: 8px;
-    padding: 12px 8px;
+    border: 2px solid rgba(84,226,243,1);
+    box-shadow: 0 1px 12px rgba(102,238,183,1);
+    padding: 12px;
     transition: .4s;
     display: grid;
     gap: 4px;
     margin-right: 16px;
+    position: relative;
 }
 
 .marginAuto {
@@ -277,7 +294,7 @@
 }
 
 .styleDate:hover {
-    box-shadow: 0 7px 12px rgba(0, 0, 0, .3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
     transform: scale(1.01);
 }
 

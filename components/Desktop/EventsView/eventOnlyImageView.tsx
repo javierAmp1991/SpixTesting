@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function EventOnlyImageView({item, darkMode}) {
     let cssStyle = getCssStyles()
     return (
-        <div>
+        <div className={styles.snapScroll}>
             <div className={`${cssStyle.borderCard}`}>
                 <div className={styles.imageProps}>
                     <Image layout={"fill"} objectFit={"cover"} src={item.CoverImage} alt=""/>

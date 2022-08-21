@@ -32,6 +32,15 @@
 .gridImageSection {
     display: grid;
     grid-template-columns: 100%;
-    grid-auto-flow: column;
     grid-auto-columns: 100%;
+    grid-auto-flow: column;
+    transition: .4s;
+}
+
+.snapScroll{
+    scroll-snap-align: start;
+}
+
+.overFlowSnap{
+    overflow-x: scroll;
 }

@@ -37,6 +37,7 @@ export class Guest {
     isSelected: boolean
     listProductAmount: productAmount[]
 }
+
 const firstGuest: Guest = {
     id: "12345abcd",
     name: "Javier",
@@ -218,15 +219,12 @@ export default function EventProducts() {
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                             <div className={styleMob.heightCont}
                                  style={{height: heightDiv}}>
-                                {
-                                    isOpenSelectedProduct ?
-                                        <ContSelectedProduct guestSelected={guestSelected}
-                                                             methodProps={methodProps}
-                                                             listGuest={listGuests}
-                                                             amountPerItem={amountPerItems}
-                                                             removeItem={removeItemGuestSelected}/>
-                                        : <></>
-                                }
+                                <ContSelectedProduct isOpen={isOpenSelectedProduct}
+                                                     guestSelected={guestSelected}
+                                                     methodProps={methodProps}
+                                                     listGuest={listGuests}
+                                                     amountPerItem={amountPerItems}
+                                                     removeItem={removeItemGuestSelected}/>
                                 <ContResultProduct isOpen={isOpenSelectedProduct}
                                                    methodProps={methodProps}
                                                    listGuests={listGuests}

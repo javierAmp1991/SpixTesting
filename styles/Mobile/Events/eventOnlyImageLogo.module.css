@@ -14,3 +14,6 @@
     right: 0px;
     overflow: hidden;
 }
+.snapScroll{
+    scroll-snap-align: start;
+}
