@@ -91,11 +91,11 @@
 }
 
 .styleSnapScroll {
+    overflow: scroll;
     scroll-snap-type: x mandatory;
     transition: .4s;
     background: #eaeaea;
-    overflow: scroll;
-    width: 100%;
+    width: 100vw
 }
 
 .snapScroll {

@@ -134,7 +134,7 @@ export default function ContResultProduct({
                 </div>
             </div>
             <div ref={difRef} className={style.styleSnapScroll}>
-                <div style={{transform: translateCarrousel}} className={style.containerClients}>
+                <div  className={style.containerClients}>
                     {
                         listGuests.map((item, index) =>
                             index != 0 ?
@@ -154,7 +154,7 @@ export default function ContResultProduct({
                                 <div
                                     onClick={() => methodProps.guestSelected(item)}
                                     className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                 ${style.snapScroll}`}
+                                    ${style.snapScroll}`}
                                     key={index}>
                                     <span className={`${style.nameElipsis} ${utilities.clamp1}`}>
                                     {item.name}
