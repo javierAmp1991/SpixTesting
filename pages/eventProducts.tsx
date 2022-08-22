@@ -234,7 +234,7 @@ export default function EventProducts() {
                         <div className="h-full">
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                            <div>{heightDiv}</div>
+                            {/*<div>{heightDiv}</div>*/}
                             <div className={styleMob.maxWidthCont}>
 
                                 <div className={styleMob.heightCont}
