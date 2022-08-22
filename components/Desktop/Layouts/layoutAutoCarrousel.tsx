@@ -20,9 +20,11 @@ export default function LayoutAutoCarrousel({gapLayout, listImages}:
         setListImagesCar(listImagesCar = newList)
     }
     let [start, setStart] = useState("translate(-0px)")
-    const handleSetStart = () => setCounter(counter = counter - 1)
     let [counter, setCounter] = useState(0)
+
+    const handleSetStart = () => setCounter(counter = counter - 1)
     const handleSetCounter = () => setStart(start = `translate(${widthDiv * counter}px)`)
+
     const handleMove = () => {
         handleSetStart()
         handleSetCounter()

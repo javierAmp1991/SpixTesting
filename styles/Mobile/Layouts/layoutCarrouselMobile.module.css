@@ -5,5 +5,5 @@
     grid-auto-flow: column;
     overflow: scroll;
     scroll-snap-type: x mandatory;
-    transition: .4s;
+    transition: 1s;
 }
