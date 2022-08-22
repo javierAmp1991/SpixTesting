@@ -116,6 +116,7 @@ export default function ContResultProduct({
             <div className={style.bannerSize}>
                 <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
+
             <div className={style.principalGrid}>
                 <div className={style.gridTagsCont}>
                     {
@@ -127,6 +128,7 @@ export default function ContResultProduct({
                     }
                 </div>
             </div>
+
             <div ref={difRef} className={style.containerClients}>
                 {
                     listGuests.map((item, index) =>
