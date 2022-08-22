@@ -5,7 +5,6 @@ import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
 import React, {useEffect, useRef, useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
-import ButtonBlueDesk from "../Misc/buttonBlue";
 import {Guest} from "../../../pages/eventProducts";
 import Image from "next/image";
 
@@ -27,7 +26,6 @@ export default function ContResultProduct({
                                                   isOpen: boolean,
                                                   addItem: any, removeItem: any
                                               }) {
-    const difRef = useRef(null)
     const cssStyle = getCssStyle()
     let [styleButton, setStylebutton] = useState(style.buttonInvalid)
     let [isCarrousel, setIsCarrousel] = useState(listGuests.length > 1)
@@ -38,7 +36,7 @@ export default function ContResultProduct({
             setIsCarrousel(isCarrousel = false);
         }
     }
-
+    const difRef = useRef(null)
     let [counter, setCounter] = useState(0)
     let [translateCarrousel, setTranslateDiv] = useState("")
     const translateRight = () => {
@@ -105,7 +103,7 @@ export default function ContResultProduct({
         if (indexAsi != initialValue) {
             methodProps.guestSelected(listGuests[indexAsi])
         }
-    },[indexAsi])
+    }, [indexAsi])
 
     useEffect(() => {
         handleIsCarrousel()
@@ -116,7 +114,7 @@ export default function ContResultProduct({
         } else {
             setStylebutton(styleButton = style.buttonInvalid)
         }
-    },[emailGuest, nameGuest])
+    }, [emailGuest, nameGuest])
 
     return (
         <div className={style.contVar}>
@@ -135,7 +133,7 @@ export default function ContResultProduct({
                 </div>
             </div>
             <div className={style.styleSnapScroll}>
-                <div ref={difRef} style={{transform:translateCarrousel}} className={` ${style.containerClients}`}>
+                <div ref={difRef} style={{transform: translateCarrousel}} className={style.containerClients}>
                     {
                         listGuests.map((item, index) =>
                             index != 0 ?
