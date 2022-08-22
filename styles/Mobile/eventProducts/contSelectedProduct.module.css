@@ -1,5 +1,5 @@
 .contVar {
-    position: absolute;
+    position: fixed;
     width: 100%;
     max-width: 768px;
     height: 81px;
@@ -16,7 +16,7 @@
 }
 
 .contVarNormal {
-    position: absolute;
+    position: fixed;
     width: 100%;
     top: 88px;
     background: white;
@@ -30,7 +30,7 @@
 }
 
 .contVarHidden{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 0;
     top: calc(100%);

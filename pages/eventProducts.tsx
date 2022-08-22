@@ -234,6 +234,7 @@ export default function EventProducts() {
                         <>
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
+                            <div>prueba fixed</div>
                             <div className={styleMob.heightCont}
                                  style={{height: heightDiv}}>
                                 <ContSelectedProduct isOpen={isOpenSelectedProduct}
