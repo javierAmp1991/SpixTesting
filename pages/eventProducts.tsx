@@ -231,31 +231,28 @@ export default function EventProducts() {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                        <div className="h-full">
+                        <>
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                            {/*<div>{heightDiv}</div>*/}
-                            <div className={styleMob.maxWidthCont}>
-
-                                <div className={styleMob.heightCont}
-                                     style={{height: heightDiv}}>
-                                    <ContSelectedProduct isOpen={isOpenSelectedProduct}
-                                                         guestSelected={guestSelected}
-                                                         methodProps={methodProps}
-                                                         listGuest={listGuests}
-                                                         amountPerItem={amountPerItems}
-                                                         removeItem={removeItemGuestSelected}/>
-                                    <ContResultProduct isOpen={isOpenSelectedProduct}
-                                                       methodProps={methodProps}
-                                                       listGuests={listGuests}
-                                                       listSectionProduct={listProductShow}
-                                                       addItem={addItemGuestSelected}
-                                                       removeItem={removeItemGuestSelected}/>
-                                </div>
+                            <div className={styleMob.heightCont}
+                                 style={{height: heightDiv}}>
+                                <ContSelectedProduct isOpen={isOpenSelectedProduct}
+                                                     guestSelected={guestSelected}
+                                                     methodProps={methodProps}
+                                                     listGuest={listGuests}
+                                                     amountPerItem={amountPerItems}
+                                                     removeItem={removeItemGuestSelected}/>
+                                <ContResultProduct isOpen={isOpenSelectedProduct}
+                                                   methodProps={methodProps}
+                                                   listGuests={listGuests}
+                                                   listSectionProduct={listProductShow}
+                                                   addItem={addItemGuestSelected}
+                                                   removeItem={removeItemGuestSelected}/>
+                                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
                             </div>
-                            <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                                     isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
-                        </div>
+
+                        </>
                 }
             </div>
             :
