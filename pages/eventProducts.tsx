@@ -1,6 +1,6 @@
 //region data
 import {ListProducts, Menu, Product, productSelected} from "../dataDemo/data";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {ListProducts2} from "../dataDemo/data";
 import {productAmount} from "../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
@@ -199,6 +199,7 @@ export default function EventProducts() {
         }
     }, [guestSelected])
 
+
     useEffect(() => {
         const handleSetH = (number: number) => {
             setHeightDiv(heightDiv = number)
@@ -235,6 +236,7 @@ export default function EventProducts() {
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                             <div>{heightDiv}</div>
                             <div className={styleMob.maxWidthCont}>
+
                                 <div className={styleMob.heightCont}
                                      style={{height: heightDiv}}>
                                     <ContSelectedProduct isOpen={isOpenSelectedProduct}
