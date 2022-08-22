@@ -230,8 +230,7 @@ export default function EventProducts() {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                        <>
-
+                        <div className="h-full">
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                             <div className={styleMob.maxWidthCont}>
@@ -250,11 +249,10 @@ export default function EventProducts() {
                                                        addItem={addItemGuestSelected}
                                                        removeItem={removeItemGuestSelected}/>
                                 </div>
-                                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
                             </div>
-
-                        </>
+                            <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                                     isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+                        </div>
                 }
             </div>
             :
