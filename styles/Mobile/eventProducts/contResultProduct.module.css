@@ -95,7 +95,8 @@
     scroll-snap-type: x mandatory;
     transition: .4s;
     background: #eaeaea;
-    width: 100vw
+    width: 100vw;
+    position: relative;
 }
 
 .snapScroll {
