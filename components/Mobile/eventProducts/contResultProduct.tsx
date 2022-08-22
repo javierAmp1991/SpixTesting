@@ -136,7 +136,7 @@ export default function ContResultProduct({
                 </div>
             </div>
             <div ref={difRef} className={style.styleSnapScroll}>
-                <div  className={style.containerClients}>
+                <div className={style.containerClients}>
                     {
                         listGuests.map((item, index) =>
                             index != 0 ?
