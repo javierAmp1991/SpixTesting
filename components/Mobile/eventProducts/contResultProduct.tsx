@@ -11,6 +11,7 @@ import Image from "next/image";
 const newGuest: string = "Nuevo Invitado"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
+const idRef: string = "idRefasdasds"
 
 const initialValue: number = -99999999
 
@@ -42,13 +43,13 @@ export default function ContResultProduct({
     const translateRight = () => {
         counter = counter - 1
         setCounter(counter = counter < listGuests.length * -1 ? listGuests.length * -1 : counter)
-        const numDiv: number = difRef.current.offSetWidth
+        const numDiv: number = difRef.current.offsetWidth / 2
         setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`);
     }
     const translateLeft = () => {
         counter = counter + 1
         setCounter(counter = counter > 0 ? 0 : counter)
-        const numDiv: number = difRef.current.offSetWidth
+        const numDiv: number = difRef.current.offsetWidth / 2
         setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`)
     }
 
@@ -73,7 +74,7 @@ export default function ContResultProduct({
     const handleAddGuest = () => {
         if (emailGuest != "" && nameGuest != "") {
             const newGuest: Guest = {
-                id: "1234abc",
+                id: `1234abc${counter}`,
                 isSelected: false,
                 name: nameGuest,
                 email: emailGuest,
@@ -132,8 +133,8 @@ export default function ContResultProduct({
                     }
                 </div>
             </div>
-            <div className={style.styleSnapScroll}>
-                <div ref={difRef} style={{transform: translateCarrousel}} className={style.containerClients}>
+            <div ref={difRef} className={style.styleSnapScroll}>
+                <div style={{transform: translateCarrousel}} className={style.containerClients}>
                     {
                         listGuests.map((item, index) =>
                             index != 0 ?

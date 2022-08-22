@@ -91,8 +91,8 @@
 }
 
 .styleSnapScroll {
-    overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    transition: .4s;
     background: #eaeaea;
 }
 
@@ -110,16 +110,16 @@
 }
 
 .TabIcon {
-    margin-top: 1px;
     padding: 10px;
+    border-radius: 8px 8px 0 0;
     color: var(--colorPrimaryText);
     display: grid;
     grid-template-columns: 1fr max-content;
-    gap: 4px;
     align-items: center;
-    background: #eaeaea;
     position: relative;
+    border: 1px solid #dadada;
 }
+
 
 /*.TabIcon::after {
     content: " ";
@@ -151,15 +151,11 @@
 
 .containerClients {
     display: grid;
-    grid-template-columns: 50%;
+    grid-template-columns: 50% ;
     grid-auto-columns: 50%;
     grid-auto-flow: column;
     align-items: center;
-    border-radius: 8px 8px 0 0;
-    position: relative;
     transition: .4s;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
 }
 
 .mainContPop {
