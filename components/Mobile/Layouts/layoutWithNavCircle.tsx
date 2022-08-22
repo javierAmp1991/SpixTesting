@@ -50,7 +50,6 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
                             <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
                         )
                     }
-
                 </div>
             </div>
             <div className={style.gridNavItems}>

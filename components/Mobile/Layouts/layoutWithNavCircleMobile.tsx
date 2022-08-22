@@ -6,37 +6,37 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
     const cssStyle = getCssStyle()
     const divRef = useRef(null)
     let [circleSelected, setCircleSelected] = useState(0)
-    let [controlScroll, setControlScroll] = useState(1)
     let [pointControl, setPointControl] = useState(0)
 
     const handleRight = () => {
-        const newNumber: number = circleSelected + 1
-        setCircleSelected(newNumber > children.length ? circleSelected = children.length : circleSelected += 1)
+        setCircleSelected(circleSelected + 1 > children.length - 1?
+            circleSelected = children.length - 1 : circleSelected += 1)
     }
     const handleLeft = () => {
-        const newNumber: number = circleSelected - 1
-        setCircleSelected(newNumber < 0 ? circleSelected = 0 : circleSelected -= 1)
+        setCircleSelected(circleSelected - 1 < 0 ?
+            circleSelected = 0 : circleSelected -= 1)
     }
 
     const handleScroll = (e) => {
-        const num: number = divRef.current.offsetWidth
+        const sizeContainer: number = divRef.current.offsetWidth
         const scrollEvent: number = e.target.scrollLeft
-        const newPointControl = pointControl * num
+        const newPointControl: number= pointControl * sizeContainer
 
         if (scrollEvent > newPointControl) {
-            let atSnappingPointRight = scrollEvent > num * (controlScroll * 0.6) && scrollEvent >= num * controlScroll;
-            if (atSnappingPointRight) {
-                setControlScroll(controlScroll += 1)
-                setPointControl(pointControl += 1)
+            let test = scrollEvent > sizeContainer * ((pointControl + 1) * 0.6)
+            let test1 = scrollEvent >= sizeContainer * (pointControl + 1)
+            if (test && test1) {
+                setPointControl(pointControl + 1 > (children.length - 1) ?
+                    pointControl = (children.length - 1) : pointControl += 1)
                 handleRight()
             }
-        }
-        else {
-            let atSnappingPointLeft = scrollEvent < num * (controlScroll * 0.3) && scrollEvent > num * (controlScroll - 1) ;
-            if (atSnappingPointLeft) {
-                setControlScroll(controlScroll -= - 1)
+        } else {
+            let test2 = scrollEvent > sizeContainer * (pointControl - 1)
+            let test3 = scrollEvent <= sizeContainer * (pointControl * 0.6)
+            if (test2 && test3) {
                 handleLeft()
-                setPointControl(pointControl -= 1)
+                setPointControl(pointControl - 1 < 0 ?
+                    pointControl = 0 : pointControl -= 1)
             }
         }
 
