@@ -275,7 +275,7 @@
 
 .positionChekcICon{
     position: absolute;
-    top: calc(50% - 12px);
+    top: calc(50% - 10px);
     right: 8px;
 }
 
