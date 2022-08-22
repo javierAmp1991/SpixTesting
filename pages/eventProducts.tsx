@@ -250,9 +250,10 @@ export default function EventProducts() {
                                                        addItem={addItemGuestSelected}
                                                        removeItem={removeItemGuestSelected}/>
                                 </div>
+                                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
                             </div>
-                            <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                                     isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+
                         </>
                 }
             </div>
