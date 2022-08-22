@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
 
 const renderContainer: string = "renderContainerAutoCar"
-const widthDiv = 40;
+const widthDiv = 30;
 
 export default function LayoutAutoCarrousel({gapLayout, listImages}:
                                                 { gapLayout: number, listImages: string[] }) {
