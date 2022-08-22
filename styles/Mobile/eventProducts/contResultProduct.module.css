@@ -92,10 +92,8 @@
 
 .styleSnapScroll {
     overflow: scroll;
-    scroll-snap-type: x mandatory;
     transition: .4s;
     background: #eaeaea;
-    position: relative;
 }
 
 .snapScroll {
@@ -157,8 +155,11 @@
     grid-auto-columns: 50%;
     grid-auto-flow: column;
     align-items: center;
-    transition: .4s;
-    position: relative;
+    transition: .5s;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    background: #eaeaea;
+
 }
 
 .mainContPop {

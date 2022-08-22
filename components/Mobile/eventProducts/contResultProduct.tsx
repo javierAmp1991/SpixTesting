@@ -38,19 +38,10 @@ export default function ContResultProduct({
         }
     }
     const difRef = useRef(null)
-    let [counter, setCounter] = useState(0)
-    let [translateCarrousel, setTranslateDiv] = useState("")
-    const translateRight = () => {
-        counter = counter - 1
-        setCounter(counter = counter < listGuests.length * -1 ? listGuests.length * -1 : counter)
-        const numDiv: number = difRef.current.offsetWidth / 2
-        setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`);
-    }
-    const translateLeft = () => {
-        counter = counter + 1
-        setCounter(counter = counter > 0 ? 0 : counter)
-        const numDiv: number = difRef.current.offsetWidth / 2
-        setTranslateDiv(translateCarrousel = `translate(${numDiv * counter}px)`)
+    let [counter, setCounter] = useState(1)
+
+    const handleScrollLeft = () => {
+        difRef.current.scrollLeft = difRef.current.offsetWidth / 2 * listGuests.length
     }
 
     let [isDisplayAdd, setIsDisplayAdd] = useState(false)
@@ -83,10 +74,11 @@ export default function ContResultProduct({
             methodProps.addGuest(newGuest)
             const num: number = listGuests.length
             setEmailGuest(emailGuest = "")
-            setNameGuest(nameGuest="")
+            setNameGuest(nameGuest = "")
+            setCounter(counter += 1)
             handleIndexAsi(num)
-            translateRight()
             handleDisplayAdd()
+            handleScrollLeft()
         }
     }
 
@@ -95,7 +87,6 @@ export default function ContResultProduct({
         methodProps.removeGuest(item);
         handleIndexAsi(num)
         handleGuestSelected(num)
-        translateLeft();
     }
 
     const handleGuestSelected = (index: number) => {
@@ -106,6 +97,7 @@ export default function ContResultProduct({
         if (indexAsi != initialValue) {
             methodProps.guestSelected(listGuests[indexAsi])
         }
+        handleScrollLeft()
     }, [indexAsi])
 
     useEffect(() => {
@@ -124,6 +116,7 @@ export default function ContResultProduct({
             <div className={style.bannerSize}>
                 <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
+            <div onClick={handleScrollLeft}>clickea</div>
             <div className={style.principalGrid}>
                 <div className={style.gridTagsCont}>
                     {
@@ -135,51 +128,50 @@ export default function ContResultProduct({
                     }
                 </div>
             </div>
-            <div ref={difRef} className={style.styleSnapScroll}>
-                <div className={style.containerClients}>
-                    {
-                        listGuests.map((item, index) =>
-                            index != 0 ?
-                                <div className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                 ${style.snapScroll}`}
-                                     key={index}>
+            <div ref={difRef} className={style.containerClients}>
+                {
+                    listGuests.map((item, index) =>
+                        index != 0 ?
+                            <div
+                                className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                     ${style.snapScroll}`}
+                                key={index}>
                                                 <span className={`${style.nameElipsis} ${utilities.clamp1}`}
                                                       onClick={() => methodProps.guestSelected(item)}>
                                                     {item.name}</span>
-                                    <span onClick={() => handleRemoveGuest(item)}
-                                          className={style.sizeCloseimg}>
+                                <span onClick={() => handleRemoveGuest(item)}
+                                      className={style.sizeCloseimg}>
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.closeLoggin} alt=""/>
                                     </span>
-                                </div>
-                                :
-                                <div
-                                    onClick={() => methodProps.guestSelected(item)}
-                                    className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                    ${style.snapScroll}`}
-                                    key={index}>
+                            </div>
+                            :
+                            <div onClick={() => methodProps.guestSelected(item)}
+                                 className={`${item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                     ${style.snapScroll}`}
+                                 key={index}>
                                     <span className={`${style.nameElipsis} ${utilities.clamp1}`}>
                                     {item.name}
                                     </span>
-                                </div>
-                        )
-                    }
-                    <div onClick={handleDisplayAdd}
-                         className={`${utilities.gridMaxContent2} ${style.snapScroll} gap-2 ml-2`}>
-                        <span className={utilities.fontPrimaryText}>{newGuest}</span>
-                        <span className={style.addIconStyle}>
+                            </div>
+                    )
+                }
+                <div onClick={handleDisplayAdd}
+                     className={`${utilities.gridMaxContent2} ${style.snapScroll} gap-2 ml-2`}>
+                    <span className={utilities.fontPrimaryText}>{newGuest}</span>
+                    <span className={style.addIconStyle}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>
                         </span>
-                    </div>
-                    {
-                        isCarrousel?
-                            <></> :
-                            <div className={style.Arrow}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowRed} alt=""/>
-                            </div>
-                    }
                 </div>
+                {
+                    isCarrousel ?
+                        <></> :
+                        <div className={style.Arrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowRed} alt=""/>
+                        </div>
+                }
             </div>
+
             <div className={cssStyle.paddingContResult}>
                 {
                     listSectionProduct.map((item, index) =>
@@ -190,37 +182,37 @@ export default function ContResultProduct({
                 }
             </div>
             {
-                isDisplayAdd ?
-                    <PopUpContainerMob closePopUp={handleDisplayAdd} isBackground={true}>
-                        {
-                            <div className={style.mainContPop}>
-                                <div className={`${utilities.fontTitle} ${style.contTitleClose}`}>
-                                    Datos del invitado
-                                </div>
-                                <div className={style.gridInputs}>
-                                    <div className={`${style.gridInfoInput} ${utilities.fontSecundaryText}`}>
-                                        <div className={utilities.fontPrimaryText}>Ingrese nombre invitado</div>
-                                        <input onChange={handleNameGuest}
-                                               maxLength={15}
-                                               className={style.styleInput} type="text"
-                                               placeholder={placeHolderName}/>
-                                    </div>
-                                    <div className={`${style.gridInfoInput} ${utilities.fontSecundaryText}`}>
-                                        <div className={utilities.fontPrimaryText}>Ingrese correo invitado</div>
-                                        <input onChange={handleEmailGuest}
-                                               className={style.styleInput} type="email"
-                                               placeholder={placeHolderEmail}/>
-                                    </div>
-                                    <div className={utilities.fontSecundaryText}>
-                                        * Infomracion descriptiva
-                                    </div>
-                                </div>
-                                <button className={styleButton} onClick={handleAddGuest}>
-                                    Agregar
-                                </button>
+                isDisplayAdd &&
+                <PopUpContainerMob closePopUp={handleDisplayAdd} isBackground={true}>
+                    {
+                        <div className={style.mainContPop}>
+                            <div className={`${utilities.fontTitle} ${style.contTitleClose}`}>
+                                Datos del invitado
                             </div>
-                        }
-                    </PopUpContainerMob> : <></>
+                            <div className={style.gridInputs}>
+                                <div className={`${style.gridInfoInput} ${utilities.fontSecundaryText}`}>
+                                    <div className={utilities.fontPrimaryText}>Ingrese nombre invitado</div>
+                                    <input onChange={handleNameGuest}
+                                           maxLength={15}
+                                           className={style.styleInput} type="text"
+                                           placeholder={placeHolderName}/>
+                                </div>
+                                <div className={`${style.gridInfoInput} ${utilities.fontSecundaryText}`}>
+                                    <div className={utilities.fontPrimaryText}>Ingrese correo invitado</div>
+                                    <input onChange={handleEmailGuest}
+                                           className={style.styleInput} type="email"
+                                           placeholder={placeHolderEmail}/>
+                                </div>
+                                <div className={utilities.fontSecundaryText}>
+                                    * Infomracion descriptiva
+                                </div>
+                            </div>
+                            <button className={styleButton} onClick={handleAddGuest}>
+                                Agregar
+                            </button>
+                        </div>
+                    }
+                </PopUpContainerMob>
             }
         </div>
     )
