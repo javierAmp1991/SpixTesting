@@ -116,7 +116,6 @@ export default function ContResultProduct({
             <div className={style.bannerSize}>
                 <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.bannerCom} alt=""/>
             </div>
-            <div onClick={handleScrollLeft}>clickea</div>
             <div className={style.principalGrid}>
                 <div className={style.gridTagsCont}>
                     {

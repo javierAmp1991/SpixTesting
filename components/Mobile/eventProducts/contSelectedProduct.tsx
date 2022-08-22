@@ -48,7 +48,17 @@ export default function ContSelectedProduct({
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                                 </div>
-                                <span className={style.numItemSelected}>{totalProducts}</span>
+                                <span className={style.numItemSelected}>
+                                    {
+                                        totalProducts > 9 ?
+                                            <div className="relative">
+                                                <span className={style.positionNine}>9</span>
+                                                <span className={style.positionMore}>+</span>
+                                            </div>
+                                            :
+                                            totalProducts
+                                    }
+                                </span>
                             </div>
 
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
