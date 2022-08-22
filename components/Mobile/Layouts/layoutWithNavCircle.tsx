@@ -41,6 +41,7 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
         const newNumber: number = circleSelected - 1
         setCircleSelected(newNumber < 0? circleSelected = 0 : circleSelected -= 1)
     }*/
+
     const divRef = useRef(null)
     let [circleSelected, setCircleSelected] = useState(0)
     let [pointControl, setPointControl] = useState(0)
@@ -60,17 +61,17 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
         const newPointControl: number= pointControl * sizeContainer
 
         if (scrollEvent > newPointControl) {
-            let test1 = scrollEvent > sizeContainer * ((pointControl + 1) * 0.6)
-            let test2 = scrollEvent >= sizeContainer * (pointControl + 1)
-            if (test1 && test2) {
+            /*let test1 = scrollEvent > sizeContainer * ((pointControl))*/
+            let test2 = scrollEvent >= sizeContainer * (pointControl)
+            if (test2) {
                 setPointControl(pointControl + 1 > (listItem.length - 1) ?
                     pointControl = (listItem.length - 1) : pointControl += 1)
                 handleRight()
             }
         } else {
-            let test3 = scrollEvent > sizeContainer * (pointControl - 1)
+            /*let test3 = scrollEvent > sizeContainer * (pointControl - 1)*/
             let test4 = scrollEvent <= sizeContainer * (pointControl * 0.9)
-            if (test3 && test4) {
+            if (test4) {
                 setPointControl(pointControl - 1 < 0 ?
                     pointControl = 0 : pointControl -= 1)
                 handleLeft()
