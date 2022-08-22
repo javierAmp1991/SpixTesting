@@ -80,6 +80,8 @@ export default function RightCard({
             }
             methodProps.addGuest(newGuest);
             const num: number = listGuest.length
+            setEmailGuest(emailGuest = "")
+            setNameGuest(nameGuest="")
             handleIndexAsi(num)
             handleDisplayAdd();
             translateRight()

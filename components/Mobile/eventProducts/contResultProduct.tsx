@@ -82,6 +82,8 @@ export default function ContResultProduct({
             }
             methodProps.addGuest(newGuest)
             const num: number = listGuests.length
+            setEmailGuest(emailGuest = "")
+            setNameGuest(nameGuest="")
             handleIndexAsi(num)
             translateRight()
             handleDisplayAdd()
