@@ -1,12 +1,13 @@
 import style from "/styles/Desktop/Layouts/layoutAutoCarrousel.module.css"
 import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
-
-const renderContainer: string = "renderContainerAutoCar"
-const widthDiv = 30;
+import {useMediaQuery} from "../../../pages";
+const mediaQuery = '(max-width: 768px)'
 
 export default function LayoutAutoCarrousel({gapLayout, listImages}:
                                                 { gapLayout: number, listImages: string[] }) {
+    const isSmallDown = useMediaQuery(mediaQuery);
+    const widthDiv = isSmallDown? 20 : 30;
     let [listImagesCar, setListImagesCar] = useState(listImages)
     const renderContainer = useRef(null)
     let [control, setControl] = useState(0)
