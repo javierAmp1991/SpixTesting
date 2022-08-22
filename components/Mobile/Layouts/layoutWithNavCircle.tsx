@@ -1,10 +1,11 @@
 import style from "/styles/Mobile/Layouts/layoutWithNavcircle.module.css"
 import EventOnlyImageLogo from "../Events/eventOnlyImageLogo";
-import {useState} from "react";
+import {useRef, useState} from "react";
 const idCont: string = "idCarrouselCircle"
 
 export default function LayoutWithNavCircle({listItem, isDarkMode}) {
     let cssStyle = getCssStyle()
+/*
     let [initialTranslate, setInitialTranslate] = useState("translate(0px)")
     let [circleSelected, setCircleSelected] = useState(0)
     let [controlScroll, setControlScroll] = useState(0)
@@ -39,11 +40,49 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
     const handleLeft = () => {
         const newNumber: number = circleSelected - 1
         setCircleSelected(newNumber < 0? circleSelected = 0 : circleSelected -= 1)
+    }*/
+    const divRef = useRef(null)
+    let [circleSelected, setCircleSelected] = useState(0)
+    let [pointControl, setPointControl] = useState(0)
+
+    const handleRight = () => {
+        setCircleSelected(circleSelected + 1 > listItem.length - 1?
+            circleSelected = listItem.length - 1 : circleSelected += 1)
+    }
+    const handleLeft = () => {
+        setCircleSelected(circleSelected - 1 < 0 ?
+            circleSelected = 0 : circleSelected -= 1)
+    }
+
+    const handleScroll = (e) => {
+        const sizeContainer: number = divRef.current.offsetWidth
+        const scrollEvent: number = e.target.scrollLeft
+        const newPointControl: number= pointControl * sizeContainer
+
+        if (scrollEvent > newPointControl) {
+            let test = scrollEvent > sizeContainer * ((pointControl + 1) * 0.6)
+            let test1 = scrollEvent >= sizeContainer * (pointControl + 1)
+            if (test && test1) {
+                setPointControl(pointControl + 1 > (listItem.length - 1) ?
+                    pointControl = (listItem.length - 1) : pointControl += 1)
+                handleRight()
+            }
+        } else {
+            let test2 = scrollEvent > sizeContainer * (pointControl - 1)
+            let test3 = scrollEvent <= sizeContainer * (pointControl)
+            if (test2 && test3) {
+                setPointControl(pointControl - 1 < 0 ?
+                    pointControl = 0 : pointControl -= 1)
+                handleLeft()
+
+            }
+        }
+
     }
 
     return (
         <div>
-            <div onScroll={handleScroll} id={idCont} className={style.overFlowSnap}>
+            <div onScroll={handleScroll} ref={divRef} className={style.overFlowSnap}>
                 <div className={style.gridImageSection}>
                     {
                         listItem.map((item, index) =>
@@ -59,13 +98,6 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
                              ${cssStyle.borderNavCircle}
                              ${index == circleSelected ? style.styleNavCircle : style.styleNavCircleNoSelected}`}/>)
                 }
-            </div>
-            <div>
-                <button onClick={handleLeft}>izquierda</button>
-                <button onClick={handleRight}>derecha</button>
-                <div>{scrol}</div>
-                <div>{offsetwidth}</div>
-                <div>{rem}</div>
             </div>
         </div>
     )
