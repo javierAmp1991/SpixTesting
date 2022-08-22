@@ -159,6 +159,7 @@
     overflow: scroll;
     scroll-snap-type: x mandatory;
     background: #eaeaea;
+    position: relative;
 
 }
 
