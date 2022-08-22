@@ -137,7 +137,7 @@ export default function EventProducts() {
         setGuestSelected(guestSelected = guest)
     }
 
-    const updateGuestSelected = () =>{
+    const updateGuestSelected = () => {
         const newListGuest = listGuests.map((oldGuest: Guest) => {
             if (oldGuest.id != guestSelected.id) {
                 return {
@@ -231,28 +231,29 @@ export default function EventProducts() {
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                        <div className={styleMob.maxWidthCont}>
+
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                            <div className={styleMob.heightCont}
-                                 style={{height: heightDiv}}>
-                                <ContSelectedProduct isOpen={isOpenSelectedProduct}
-                                                     guestSelected={guestSelected}
-                                                     methodProps={methodProps}
-                                                     listGuest={listGuests}
-                                                     amountPerItem={amountPerItems}
-                                                     removeItem={removeItemGuestSelected}/>
-                                <ContResultProduct isOpen={isOpenSelectedProduct}
-                                                   methodProps={methodProps}
-                                                   listGuests={listGuests}
-                                                   listSectionProduct={listProductShow}
-                                                   addItem={addItemGuestSelected}
-                                                   removeItem={removeItemGuestSelected}/>
+                            <div className={styleMob.maxWidthCont}>
+                                <div className={styleMob.heightCont}
+                                     style={{height: heightDiv}}>
+                                    <ContSelectedProduct isOpen={isOpenSelectedProduct}
+                                                         guestSelected={guestSelected}
+                                                         methodProps={methodProps}
+                                                         listGuest={listGuests}
+                                                         amountPerItem={amountPerItems}
+                                                         removeItem={removeItemGuestSelected}/>
+                                    <ContResultProduct isOpen={isOpenSelectedProduct}
+                                                       methodProps={methodProps}
+                                                       listGuests={listGuests}
+                                                       listSectionProduct={listProductShow}
+                                                       addItem={addItemGuestSelected}
+                                                       removeItem={removeItemGuestSelected}/>
+                                </div>
                             </div>
-                        </div>
-                    <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                    isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
-                    </>
+                            <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                                     isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
+                        </>
                 }
             </div>
             :

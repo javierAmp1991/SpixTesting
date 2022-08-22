@@ -32,11 +32,12 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
             }
         } else {
             let test2 = scrollEvent > sizeContainer * (pointControl - 1)
-            let test3 = scrollEvent <= sizeContainer * (pointControl * 0.6)
+            let test3 = scrollEvent <= sizeContainer * (pointControl)
             if (test2 && test3) {
-                handleLeft()
                 setPointControl(pointControl - 1 < 0 ?
                     pointControl = 0 : pointControl -= 1)
+                handleLeft()
+
             }
         }
 

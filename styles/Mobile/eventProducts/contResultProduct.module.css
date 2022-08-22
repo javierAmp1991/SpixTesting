@@ -95,7 +95,6 @@
     scroll-snap-type: x mandatory;
     transition: .4s;
     background: #eaeaea;
-    width: 100vw;
     position: relative;
 }
 
@@ -154,11 +153,12 @@
 
 .containerClients {
     display: grid;
-    grid-template-columns: 50% ;
+    grid-template-columns: 50%;
     grid-auto-columns: 50%;
     grid-auto-flow: column;
     align-items: center;
     transition: .4s;
+    position: relative;
 }
 
 .mainContPop {

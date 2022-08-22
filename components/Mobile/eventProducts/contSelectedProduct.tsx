@@ -55,8 +55,7 @@ export default function ContSelectedProduct({
                                 Total: $ {totalPrice}
                             </div>
 
-                            <button
-                                    className={style.buttonStyle}>{buttonText}</button>
+                            <button className={style.buttonStyle}>{buttonText}</button>
                         </div>
                     </div>
             }
