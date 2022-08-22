@@ -193,14 +193,14 @@
     position: relative;
 }
 
-.TabIcon::after{
+/*.TabIcon::after{
     content: " ";
     width: 1px;
     height: 20px;
     right: 0;
     background: #bebebe;
     position: absolute;
-}
+}*/
 
 .TabIconSelected {
     padding: 10px;
