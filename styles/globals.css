@@ -38,7 +38,7 @@
     --heightBannerDailyOffer: 128px;
     --fontSizeMini: 12px;
     --sizeProductDailyOfferMob: 66px;
-    --arrowHomeLayoutPositionY: calc(50% - (var(--sizeArrowLayoutHome)/2));
+    --arrowHomeLayoutPositionY: calc(50% - (var(--sizeArrowLayoutHome) / 2));
     --arrowHomeLayoutPositionX: -48px;
     --arrowHomeLayoutZIndex: 6000;
     --transitionCarrouselHome: .4s;
@@ -55,16 +55,16 @@
     --desplNegShadowHover: 6px;
     --desplPosShadowHover: -2px;
     --boxShadowHover: 0px var(--desplNegShadowHover) var(--difShadowHover) var(--colorShadowHover),
-                        0px var(--desplPosShadowHover) var(--difShadowHover) var(--colorShadowHover);
+    0px var(--desplPosShadowHover) var(--difShadowHover) var(--colorShadowHover);
     --boxShadowHoverDarkMode: 0px var(--desplNegShadowHover) var(--difShadowHover) var(--colorShadowHoverDarkMode),
-                                0px var(--desplPosShadowHover) var(--difShadowHover) var(--colorShadowHoverDarkMode)  ;
+    0px var(--desplPosShadowHover) var(--difShadowHover) var(--colorShadowHoverDarkMode);
     --borderCardRadious: 6px;
     --heightBannerFeaturedMob: 96px;
     --heightBannerFeaturedDesk: 144px;
     --sizeLogoFeaturedHome: 56px;
-    --gradientSpix: linear-gradient(180deg, rgba(7,99,185,1) 0%, rgba(6,91,172,1) 100%);
-    --purpleGradientTag: rgba(232,46,138,1);
-    --gradientBlueButton: linear-gradient(177deg, rgba(42,120,247,1) 0%, rgba(52,128,251,1) 100%);
+    --gradientSpix: linear-gradient(180deg, rgba(7, 99, 185, 1) 0%, rgba(6, 91, 172, 1) 100%);
+    --purpleGradientTag: rgba(232, 46, 138, 1);
+    --gradientBlueButton: linear-gradient(177deg, rgba(42, 120, 247, 1) 0%, rgba(52, 128, 251, 1) 100%);
     --separationLineColor: #f5f5f5;
     --separationLineColorDarkMode: black;
     --spaceXMainContainerMobile: 12px;
@@ -72,10 +72,11 @@
     --yellowButtonColor: #FFD814;
     --yellowButtonColorHover: #ffc800;
     --gradientBuy: linear-gradient(45deg, #54e2f3 0%, #66eeb7 100%);
-    --shadowUnderProducts: 0px 3px 12px rgba(0,0,0,.2)
+    --shadowUnderProducts: 0px 3px 12px rgba(0, 0, 0, .2)
 }
+
 /*Desktop Section*/
-:root{
+:root {
     --sizeIconsHeaderDesktop: 28px;
     --sizeAccountImageHeaderDesktop: 32px;
     --colorNumberBuyCarDesktop: #45D2C4;
@@ -85,7 +86,7 @@
     --sizeLogoEWB: 54px;
     --sizeArrowEWBProduct: 24px;
     --sizeProductEWBDesk: 112px;
-    --arrowEWBPositionY: calc(50% - (var(--sizeArrowEWBProduct)/2));
+    --arrowEWBPositionY: calc(50% - (var(--sizeArrowEWBProduct) / 2));
     --arrowEWBPositionX: 0px;
     --widthCircleAnimationHeart: 2px;
     --initialPositionCircle: -8px;
@@ -110,7 +111,7 @@ body {
     font-size: 14px;
 }
 
-.noScrollBody{
+.noScrollBody {
     overflow: hidden;
 }
 
@@ -123,7 +124,7 @@ a {
     box-sizing: border-box;
 }
 
-input{
+input {
     outline: none;
 }
 
@@ -132,6 +133,10 @@ input{
     -webkit-appearance: none;
     width: 0px;
     background: transparent;
+}
+
+input::-moz-focus-inner {
+    border: 0;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -144,7 +149,21 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-input[type=text]{
+input[type="email"]::-moz-focus-inner {
+    border: 0;
+}
+
+input[type="email"] {
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+input[type="password"] {
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+input[type=text] {
     outline: none;
 }
 
@@ -154,6 +173,6 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
-div{
+div {
     scrollbar-width: none;
 }

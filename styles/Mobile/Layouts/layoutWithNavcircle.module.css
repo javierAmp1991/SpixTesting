@@ -43,4 +43,5 @@
 .overFlowSnap{
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    transition: 1s;
 }

@@ -61,13 +61,13 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
                              ${index == circleSelected ? style.styleNavCircle : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
-            {/*<div>
+            <div>
                 <button onClick={handleLeft}>izquierda</button>
                 <button onClick={handleRight}>derecha</button>
                 <div>{scrol}</div>
                 <div>{offsetwidth}</div>
                 <div>{rem}</div>
-            </div>*/}
+            </div>
         </div>
     )
 
