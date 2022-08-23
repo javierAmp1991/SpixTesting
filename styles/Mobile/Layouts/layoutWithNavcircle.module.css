@@ -47,11 +47,15 @@
 .snapScroll {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    transition: 5s;
+    transition: 10s;
 }
 
 .overFlowSnap {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
     overflow-x: scroll;
-    scroll-snap-type: x proximity;
-    transition: 5s;
+    scroll-snap-type: x mandatory;
+    transition: 10s;
 }

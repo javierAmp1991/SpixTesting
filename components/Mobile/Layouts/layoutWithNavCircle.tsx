@@ -46,18 +46,16 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
     return (
         <div>
             <div onScroll={handleScroll} ref={divRef} className={style.overFlowSnap}>
-                <div className={style.gridImageSection}>
                     {
                         listItem.map((item, index) =>
                             <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
                         )
                     }
-                </div>
             </div>
             <div className={style.gridNavItems}>
                 {
                     listItem.map((item, index) =>
-                        <span key={index} className={`${style.styleNavCircle}yo
+                        <span key={index} className={`${style.styleNavCircle}
                              ${index == circleSelected ? cssStyle.navCircleColor : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
