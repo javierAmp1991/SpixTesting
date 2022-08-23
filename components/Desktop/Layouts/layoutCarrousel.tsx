@@ -1,8 +1,9 @@
 import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst"
-import React, {ReactNode, useState} from "react"
+import React, {ReactNode, useEffect, useState} from "react"
 import Image from "next/image";
+const firstRender: boolean = false
 
 export class LayoutCarrouselDeskProp {
     Display: string
@@ -13,32 +14,39 @@ export class LayoutCarrouselDeskProp {
     PositionArrowX: string
 }
 
-export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
+export default function LayoutCarrousel({children, layoutProp, handleFeatured, sumar}:
                                             {
                                                 children: ReactNode,
                                                 layoutProp: LayoutCarrouselDeskProp,
                                                 handleFeatured: any,
+                                                sumar: number
                                             }) {
+    let [firstRender, setFirstRender] = useState(false)
     let [visibility, setVisibility] = useState(true);
     let [counter, setCounter] = useState(0)
-    const counterUp = () => setCounter(counter = counter + 2)
-    const counterDown = () => setCounter(counter = counter - 2)
     const handleRight = () => {
-        counterUp()
-        counter >= 4? counter = 4 : handleFeatured(counter)
+        setFirstRender(firstRender=true)
+        const newCounter = counter + sumar
+        setCounter(newCounter >= sumar * 2 ? counter = 0 : counter = newCounter)
     }
     const handleLeft = () => {
-        counterDown()
-        counter <= 0 ? counter = 0 : handleFeatured(counter)
+        setFirstRender(firstRender=true)
+        const newCounter = counter - sumar
+        setCounter(newCounter <= 0 ? counter = sumar : counter -= sumar)
     }
     let cssStyle = getCssStyle()
 
+    useEffect(() => {
+        if(firstRender)
+        handleFeatured(counter)
+    }, [counter])
+
     return (
         <div className={styles.mainDivCarrouselProperties}>
-            <button
-                style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
-                onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
+            <button onClick={handleLeft}
+                    style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
+                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                    className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
             </button>
@@ -46,18 +54,18 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured}:
             <div style={cssStyle.paddingCarr}>
                 <div
                     style={{
-                    display: layoutProp.Display,
-                    gridTemplateColumns: layoutProp.Grid,
-                    gap: layoutProp.Gap
-                }}
-                     onPointerOver={showArrow}
-                     onPointerOut={hiddeArrow}
-                     className={styles.gridHomeCarrouselLayout}>
+                        display: layoutProp.Display,
+                        gridTemplateColumns: layoutProp.Grid,
+                        gap: layoutProp.Gap
+                    }}
+                    onPointerOver={showArrow}
+                    onPointerOut={hiddeArrow}
+                    className={styles.gridHomeCarrouselLayout}>
                     {children}
                 </div>
             </div>
 
-            <button
+            <button onClick={handleRight}
                     style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
