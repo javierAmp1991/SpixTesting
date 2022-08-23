@@ -12,21 +12,21 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                 {
                     isLogged ?
                         <div className="heightContainerImageNavBar gradientImage rounded50">
-                            <Image className="heightImageNavBar m-px rounded50" src="/Image/foto perfil.jpg" alt=""/>
+                            <Image priority={true} className="heightImageNavBar m-px rounded50" src="/Image/foto perfil.jpg" alt=""/>
                         </div>
                         :
                         <div className={style.heightIcon}>
-                            <Image layout={"fill"} src={imageStyle.logginIcon} alt=""/>
+                            <Image priority={true} layout={"fill"} src={imageStyle.logginIcon} alt=""/>
                         </div>
                 }
                 <a>
                     <div className={style.heightIcon}>
-                        <Image layout={"fill"} src={imageStyle.home} alt=""/>
+                        <Image priority={true} layout={"fill"} src={imageStyle.home} alt=""/>
                     </div>
                 </a>
 
                 <div className={style.heightIcon}>
-                    <Image layout={"fill"} src={imageStyle.star} alt=""/>
+                    <Image priority={true} layout={"fill"} src={imageStyle.star} alt=""/>
                 </div>
 
                 {/*<div className="relative">
@@ -39,7 +39,7 @@ export default function NavMenu({isLogged, isDarkMode, isActiveDarkModeButton, t
                     isActiveDarkModeButton?
                         <button onClick={toggleDarkMode}>
                             <div className={style.heightIcon}>
-                            <Image layout={"fill"} src={imageStyle.darkModeIcon} alt=""/>
+                            <Image priority={true} layout={"fill"} src={imageStyle.darkModeIcon} alt=""/>
                             </div>
                         </button>
                         :
