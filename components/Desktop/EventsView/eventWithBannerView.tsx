@@ -1,6 +1,6 @@
 import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Desktop/Events/eventWithBanner.module.css"
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,6 +15,18 @@ export default function EventWithBannerView({item, darkModeState}) {
         setIsActive(isActive = !isActive);
     };*/
     let [visibility, setVisibility] = useState(true);
+    let[timeOut, setTimeOut] = useState(new Date(2022,8, 24))
+    let [timerCount, setTimer] = useState(
+        new Date().toLocaleTimeString())
+
+    const handleTimer= () => {
+        setTimer(timerCount = new Date().toLocaleTimeString())
+    }
+
+    useEffect(() => {
+        const timerInt = setInterval(handleTimer, 1000)
+        return () => clearInterval(timerInt)
+    }, [timerCount])
 
     return (
         <Link href={"/eventPage"}>
@@ -42,7 +54,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </div>
 
                         <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
-                            Expira en 00:05:23
+                            Expira en {timerCount}
                         </div>
 
                         <div className={`${utilities.gridMaxContent3} gap-1`}>

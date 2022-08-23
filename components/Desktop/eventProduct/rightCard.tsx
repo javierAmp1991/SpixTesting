@@ -14,7 +14,7 @@ const textButton: string = "Comprar"
 const newGuestText: string = "Nuevo invitado"
 const idTranslateMobile: string = "idTranslateDiv007asb"
 const initialValue: number = -99999999
-const numDiv: number = 155
+const numDiv: number = 124
 export default function RightCard({
                                       methodProps, listGuest, guestSelected,
                                       removeItemGuestSelected, amountPerItem, upDateGuestSelected
