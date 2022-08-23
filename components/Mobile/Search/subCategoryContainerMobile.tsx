@@ -29,6 +29,10 @@ export default function SubCategoryContainerMobile({
             displaySub == style.displayIn ? displaySub = style.displayOut : displaySub = style.displayIn)
     }
 
+    const handleClick1 = (subcategory: SubcategoryFilter) => {
+        click(subcategory)
+    }
+
     return (
         <div className={`${displaySub} ${cssStyle.borderBottom}`}>
             <div onClick={handleClick}
@@ -50,7 +54,7 @@ export default function SubCategoryContainerMobile({
                             <li key={index} className={`${utilities.gridMaxContent2} justify-between`}>
                                 <label htmlFor={`${subcategory.Name}CheckBox`}
                                        className={cssStyle.fontSecundaryText}>{subcategory.Name}</label>
-                                <input onChange={() => click(subcategory)} className="checkbox"
+                                <input onChange={() => handleClick1(subcategory)} className="checkbox"
                                        id={`${subcategory.Name}CheckBox`} type='radio'
                                        name={item.FilterName}/>
                             </li>
@@ -77,7 +81,7 @@ export default function SubCategoryContainerMobile({
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label className="" htmlFor="checkbox+@subcategory.Name"></label>
-                                        <input onChange={() => click(subcategory)}
+                                        <input onChange={() =>handleClick1(subcategory)}
                                                className="checkbox" id={`checkbox${subcategory.Name}`} type='radio'
                                                name={item.FilterName}/>
                                     </div>
@@ -108,7 +112,7 @@ export default function SubCategoryContainerMobile({
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label className="font-normal"
                                                htmlFor="checkbox+@subcategory.Name"></label>
-                                        <input onChange={() => click(subcategory)}
+                                        <input onChange={() => handleClick1(subcategory)}
                                                className="checkbox" id="checkbox+@subcategory.Name" type='radio'
                                                name={item.FilterName}/>
                                     </div>

@@ -1,6 +1,6 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Search/layoutPrincipalFilters.module.css"
-import {FiltersData} from "../../../dataDemo/data"
+import {FiltersData, Product, productAmount} from "../../../dataDemo/data"
 import {GlobalConst} from "../../../public/globalConst";
 import {AtributesDataFilter} from "../../../dataDemo/data";
 import SubcategoryContainer from "./subcategoryContainer";
@@ -12,21 +12,50 @@ import Image from "next/image";
 export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode}) {
     const cssStyle = getCssStyle()
     let [selectedTagsShow, setSelectedItemShow] = useState([])
+    let [test, setTest] = useState("")
 
     const addItem = (subCategory: SubcategoryFilter) => {
-            setSelectedItemShow([...selectedTagsShow, subCategory])
+        if(selectedTagsShow.length == 0){
+            addItemNew(subCategory)
+            setTest(test= "first try")
+        }
+        else{
+            let bool: boolean = getBool(subCategory)
+            if(bool) {
+                replaceItem(subCategory)
+                setTest(test= "nope")
+            }
+            else {
+                addItemNew(subCategory)
+                setTest(test= "nope again")
+            }
+        }
     }
 
-    const test = (subCategory: SubcategoryFilter)=>{
-        if(selectedTagsShow.length > 0){
-            const newList: SubcategoryFilter[] = selectedTagsShow.map((item: SubcategoryFilter) =>{
-                if(item.Type == subCategory.Type){
-                    return subCategory
+    function getBool(subcategory: SubcategoryFilter): boolean {
+        let newValue: boolean = selectedTagsShow.some((item: SubcategoryFilter) => {
+                if (item.Type == subcategory.Type) {
+                    return true;
+                } else {
+                    return false;
                 }
-                else return item
-            })
-            setSelectedItemShow(selectedTagsShow = newList)
-        }
+            }
+        )
+        return newValue;
+    }
+
+    const replaceItem = (subCategory)=>{
+        const newList: SubcategoryFilter[] = selectedTagsShow.map(item =>{
+            if(item.Type == subCategory.Type) {
+                return subCategory
+            }
+            else return item
+        })
+        setSelectedItemShow(selectedTagsShow = newList)
+    }
+
+    const addItemNew = (subCategory: SubcategoryFilter)=>{
+        setSelectedItemShow([...selectedTagsShow, subCategory])
     }
 
     const deleteItem = ((subCategory: SubcategoryFilter) => {
@@ -40,7 +69,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
         <>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
                 <div className={cssStyle.fontTitle}>
-                    Filtros
+                    Filtros {test}
                 </div>
                 <div onClick={() => closeFilters()} className="grid content-center">
                     <div className={style.styleArrowClose}>

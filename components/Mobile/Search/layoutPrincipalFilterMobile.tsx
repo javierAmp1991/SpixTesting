@@ -23,9 +23,45 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
 
     let [selectedTagsShow, setSelectedItemShow] = useState([])
     const addItem = (subCategory: SubcategoryFilter) => {
-        setSelectedItemShow([...selectedTagsShow, subCategory])
+        if(selectedTagsShow.length == 0){
+            addItemNew(subCategory)
+        }
+        else{
+            let bool: boolean = getBool(subCategory)
+            if(bool) {
+                replaceItem(subCategory)
+            }
+            else {
+                addItemNew(subCategory)
+            }
+        }
     }
 
+    function getBool(subcategory: SubcategoryFilter): boolean {
+        let newValue: boolean = selectedTagsShow.some((item: SubcategoryFilter) => {
+                if (item.Type == subcategory.Type) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        )
+        return newValue;
+    }
+
+    const replaceItem = (subCategory)=>{
+        const newList: SubcategoryFilter[] = selectedTagsShow.map(item =>{
+            if(item.Type == subCategory.Type) {
+                return subCategory
+            }
+            else return item
+        })
+        setSelectedItemShow(selectedTagsShow = newList)
+    }
+
+    const addItemNew = (subCategory: SubcategoryFilter)=>{
+        setSelectedItemShow([...selectedTagsShow, subCategory])
+    }
 
     const deleteItem = ((subCategory: SubcategoryFilter) => {
         const newItems: SubcategoryFilter[] = selectedTagsShow.filter(item => item != subCategory)
