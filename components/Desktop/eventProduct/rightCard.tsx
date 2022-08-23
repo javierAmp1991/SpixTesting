@@ -8,6 +8,7 @@ import PayPageProductSelectedView from "./payPageProductSelectedView";
 import ButtonBlueDesk from "../../Mobile/Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
 import Image from "next/image";
+import Link from "next/link";
 
 const referenceDiv = "referenceDiv"
 const textButton: string = "Comprar"
@@ -81,10 +82,11 @@ export default function RightCard({
             methodProps.addGuest(newGuest);
             const num: number = listGuest.length
             setEmailGuest(emailGuest = "")
-            setNameGuest(nameGuest="")
+            setNameGuest(nameGuest = "")
             handleIndexAsi(num)
             handleDisplayAdd();
             translateRight()
+
         }
     }
 
@@ -200,9 +202,11 @@ export default function RightCard({
                     <span> Total ${Intl.NumberFormat("ES-MX"
                     ).format(Math.round(totalPrice))}</span>
                 </div>
-                <button className={style.styleButton}>
-                    {textButton}
-                </button>
+                <Link href={"/payPage"}>
+                    <button className={style.styleButton}>
+                        {textButton}
+                    </button>
+                </Link>
             </div>
 
             {

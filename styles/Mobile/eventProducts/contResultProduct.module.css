@@ -155,8 +155,8 @@
 
 .containerClients {
     display: grid;
-    grid-template-columns: 50%;
-    grid-auto-columns: 50%;
+    grid-template-columns: 33%;
+    grid-auto-columns: 33%;
     grid-auto-flow: column;
     align-items: center;
     transition: .5s;

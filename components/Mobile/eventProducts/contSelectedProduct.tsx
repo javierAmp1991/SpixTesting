@@ -6,6 +6,7 @@ import React, {useEffect, useState} from "react";
 import {Guest} from "../../../pages/eventProducts";
 import ProductSelectedViewDesk from "./productSelectedViewDesk";
 import Image from "next/image";
+import Link from "next/link";
 
 const productTitle = "Productos"
 const buttonText = "Comprar"
@@ -64,8 +65,9 @@ export default function ContSelectedProduct({
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
                                 Total: $ {totalPrice}
                             </div>
-
-                            <button className={style.buttonStyle}>{buttonText}</button>
+                            <Link href={"/payPage"}>
+                                <button className={style.buttonStyle}>{buttonText}</button>
+                            </Link>
                         </div>
                     </div>
             }
@@ -119,7 +121,9 @@ export default function ContSelectedProduct({
                                 Total: ${Intl.NumberFormat("ES-MX"
                             ).format(Math.round(totalPrice))}
                             </div>
-                            <button className={style.buttonStyle}>{buttonText}</button>
+                            <Link href={"/payPage"}>
+                                <button className={style.buttonStyle}>{buttonText}</button>
+                            </Link>
                         </div>
                     </div> : <></>
             }
