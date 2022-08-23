@@ -7,7 +7,6 @@ import LayoutAutoCarrousel from "../components/Desktop/Layouts/layoutAutoCarrous
 import LayoutCarrousel from "../components/Desktop/Layouts/layoutCarrousel";
 import LayoutRow5 from "../components/Desktop/Layouts/layoutRow5";
 import TitleSection from "../components/Desktop/Misc/titleSection";
-import HomeAutoBanner from "../components/Desktop/Home/homeAutoBanner";
 import HomeInformation from "../components/Desktop/Home/homeInformation";
 import HomeFeatured from "../components/Desktop/Home/homeFeatured";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
@@ -38,7 +37,6 @@ import LayoutDropDown from "../components/Desktop/Layouts/layoutDropDown";
 import DefaultPageMobile, {paddingAsignation} from "../components/Mobile/defaultPageMobile";
 import HomeOwnPublicityMobile from "../components/Mobile/Home/homeOwnPublicityMobile";
 import NavMenu from "../components/Mobile/Misc/navMenu";
-import LayoutWithNavCircle from "../components/Mobile/Layouts/layoutWithNavCircle";
 import {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
@@ -46,7 +44,7 @@ import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarro
 //endregion
 
 //region importData
-import {AtributesDataFilter, Menu} from "../dataDemo/data";
+import {Menu} from "../dataDemo/data";
 import {HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
 import {DailyOfferData} from "../dataDemo/data";
@@ -62,10 +60,11 @@ import {AtributesFooter} from "../dataDemo/data";
 import {MostPopularData} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
 import {InformationHomeData} from "../dataDemo/data";
-import atributes = AtributesDataFilter.atributes;
 import Link from "next/link";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
+import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
+import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 //endregion
 
 //region constantes
@@ -184,7 +183,14 @@ export default function Index() {
     let mostPopularMobile = <TitleSection darkModeState={isDarkMode} paddingTitle={titleLinkPadding}
                                           titleLink={mostPopularTleLink}>
         {
-            <LayoutWithNavCircle listItem={MostPopularData.listMostPopular} isDarkMode={isDarkMode}/>
+            <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
+                {
+                    MostPopularData.listMostPopular.map((item, index) =>
+                        <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
+                    )
+                }
+            </LayoutWithNavCircleMobile>
+
 
         }
     </TitleSection>
@@ -339,7 +345,7 @@ export default function Index() {
     let carrouselBanner = <LayoutCarrouselLoop layoutProp={layoutPropBanner}>
         {
             HomeBannerData.listBanners.map((item, index) =>
-                    <FullBanner item={item} key={index}/>
+                <FullBanner item={item} key={index}/>
             )
         }
     </LayoutCarrouselLoop>
@@ -403,7 +409,9 @@ export default function Index() {
     let publicity1 = <PublicityView linkImage={PublicityData.publicityList[0]}/>
 
     let [getCarrouselRounded1, setGetCArrouselRounded1] = useState(0)
-    const handleCarrouselRound1 = (e) => { setGetCArrouselRounded1(getCarrouselRounded1 = e)}
+    const handleCarrouselRound1 = (e) => {
+        setGetCArrouselRounded1(getCarrouselRounded1 = e)
+    }
     let carrouselRounded1 = <TitleSection paddingTitle={null} titleLink={cinemasTitleLink} darkModeState={isDarkMode}>
         <LayoutCarrousel sumar={4} handleFeatured={handleCarrouselRound1} layoutProp={layoutPropCarrouselRounded}>
             {
@@ -439,7 +447,7 @@ export default function Index() {
         <LayoutCarrousel sumar={3} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNewsItem && index <= getNewsItem + 2?
+                    index >= getNewsItem && index <= getNewsItem + 2 ?
                         <NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/> : <></>
                 )
             }
@@ -447,7 +455,9 @@ export default function Index() {
     </TitleSection>
 
     let [getCarrouselRounded2, setGetCArrouselRounded2] = useState(0)
-    const handleCarrouselRound2 = (e) => { setGetCArrouselRounded2(getCarrouselRounded2 = e)}
+    const handleCarrouselRound2 = (e) => {
+        setGetCArrouselRounded2(getCarrouselRounded2 = e)
+    }
     let carrouselRounded2 = <TitleSection paddingTitle={null} titleLink={restaurantsHomeTitleLink}
                                           darkModeState={isDarkMode}>
         <LayoutCarrousel sumar={4} handleFeatured={handleCarrouselRound2} layoutProp={layoutPropCarrouselRounded}>

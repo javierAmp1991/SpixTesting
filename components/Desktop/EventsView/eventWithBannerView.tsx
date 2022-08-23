@@ -15,18 +15,21 @@ export default function EventWithBannerView({item, darkModeState}) {
         setIsActive(isActive = !isActive);
     };*/
     let [visibility, setVisibility] = useState(true);
-    let[timeOut, setTimeOut] = useState(new Date(2022,8, 24))
-    let [timerCount, setTimer] = useState(
-        new Date().toLocaleTimeString())
+    let [timeOut, setTimeOut] = useState(new Date(2022, 8, 23, 23, 59, 59))
+    let [seconds, setSeconds] = useState((timeOut.getSeconds() - new Date().getSeconds()).toLocaleString())
+    let [minutes, setMinutes] = useState((timeOut.getMinutes() - new Date().getMinutes()).toLocaleString())
+    let [hours, setHours] = useState((timeOut.getHours() - new Date().getHours()).toLocaleString())
 
-    const handleTimer= () => {
-        setTimer(timerCount = new Date().toLocaleTimeString())
+    const handleTimer = () => {
+        setSeconds((timeOut.getSeconds() - new Date().getSeconds()).toLocaleString())
+        setMinutes((timeOut.getMinutes() - new Date().getMinutes()).toLocaleString())
+        setHours((timeOut.getHours() - new Date().getHours()).toLocaleString())
     }
 
     useEffect(() => {
         const timerInt = setInterval(handleTimer, 1000)
         return () => clearInterval(timerInt)
-    }, [timerCount])
+    }, [])
 
     return (
         <Link href={"/eventPage"}>
@@ -54,7 +57,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </div>
 
                         <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
-                            Expira en {timerCount}
+                            Expira en {hours} : {minutes} : {seconds}
                         </div>
 
                         <div className={`${utilities.gridMaxContent3} gap-1`}>
