@@ -57,7 +57,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         </div>
 
                         <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
-                            Expira en {hours} : {minutes} : {seconds}
+                            Expira en {hours}:{minutes}:{seconds}
                         </div>
 
                         <div className={`${utilities.gridMaxContent3} gap-1`}>

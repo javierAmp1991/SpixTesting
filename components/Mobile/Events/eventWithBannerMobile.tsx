@@ -68,7 +68,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
 
 
                         <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
-                            Expira en {hours} : {minutes} : {seconds}
+                            Expira en {hours}:{minutes}:{seconds}
                         </div>
 
                         <div className={`${utilities.gridMaxContent3} gap-1`}>

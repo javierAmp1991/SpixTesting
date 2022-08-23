@@ -7,7 +7,9 @@ export default function QuestionDesk({item}: { item: question }) {
         <div className="">
             <div className="grid gap-3">
                 <div className={utilities.fontSubTitle}>
-                    P : {item.Question}
+                    <span>P : </span>
+                    <span>{item.Question}</span>
+
                 </div>
                 <div>
                     <span className={utilities.fontSubTitle}>R : </span>

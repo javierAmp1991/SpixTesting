@@ -8,6 +8,7 @@ import {Menu} from "../dataDemo/data";
 import {EventPageEvent} from "../dataDemo/data";
 import {HomeNewsData} from "../dataDemo/data";
 import {ListOffertData} from "../dataDemo/data";
+import {ListProductsExtra} from "../dataDemo/data";
 import {ListProducts} from "../dataDemo/data";
 import {FormList} from "../dataDemo/data";
 import {InOffer} from "../dataDemo/data";
@@ -175,7 +176,7 @@ export default function EventPage() {
         <LayoutCarrouselMobile gapLayout={24}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                        <ProductViewMobile size={180} key={index} item={item}/>
+                    <ProductViewMobile size={180} key={index} item={item}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -264,12 +265,15 @@ export default function EventPage() {
             </LayoutCommRevQueDesk>
         </QuestionSectionDesk>
     </TitleSection>
+
+    let [getNews, setGetNews] = useState(0)
+    const handlesetGetNews = (e) => setGetNews(getNews = e)
     let newsDesk = <TitleSection titleLink={newsTitle}
                                  paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel sumar={3} handleFeatured={null} layoutProp={layoutPropNews}>
+        <LayoutCarrousel sumar={2} handleFeatured={handlesetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index <= 2 ?
+                    index >= getNews && index <= getNews + 2 ?
                         <NewView homeNew={item} darkModeState={false} key={index}/> : <></>
                 )
             }
@@ -281,24 +285,27 @@ export default function EventPage() {
         <EventWithBannerMobile displayLogoRating={false} item={ListOffertData.listOffert[3]} darkModeState={false}/>
     </TitleSection>
 
+    let [getProducst, setGetProducst] = useState(0)
+    const handleGetProducts = (e) => setGetProducst(getProducst = e)
     let productsDesk = <TitleSection titleLink={productstTitle}
                                      paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel sumar={3} handleFeatured={null} layoutProp={layoutPropProducts}>
+        <LayoutCarrousel sumar={3} handleFeatured={handleGetProducts} layoutProp={layoutPropProducts}>
             {
-                ListProducts.listProducts.map((item, index) =>
-                index <= 3?
-                    <ProductViewDesk size={null} key={index} item={item}/> :<></>
-
+                ListProductsExtra.listProducts.map((item, index) =>
+                    index >= getProducst && index <= getProducst + 3 ?
+                        <ProductViewDesk size={null} key={index} item={item}/> : <></>
                 )
             }
         </LayoutCarrousel>
     </TitleSection>
+    let [getExtra, setGetExtra] = useState(0)
+    const handleGetExtra = (e) => setGetExtra(getExtra = e)
     let eventExtraDesk = <TitleSection titleLink={otherEventTitle}
                                        paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel sumar={3} handleFeatured={null} layoutProp={layoutPropCarrousel}>
+        <LayoutCarrousel sumar={3} handleFeatured={handleGetExtra} layoutProp={layoutPropCarrousel}>
             {
                 InOffer.listInOffer.map((item, index) =>
-                    index <= 3 ?
+                    index >= getExtra && index <= getExtra + 3 ?
                         <EventVerticalView info={item} darkModeState={false}
                                            dropDown={false} isHideName={false}
                                            key={index}/> : <></>
@@ -357,24 +364,24 @@ export default function EventPage() {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                    <>
-                        <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={false}/>
-                        <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
-                        <div className={styleMobile.bannerProperties}>
-                            <Image layout={"fill"} src={bannerPath} alt=""/>
-                        </div>
-                        <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
-                            <DefaultPageMobile listItem={defaultList}/>
-                            <FooterMobile/>
-                        </div>
-                        {
-                            isSmallDown ?
-                                <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
-                                         isLogged={false}/>
-                                :
-                                <></>
-                        }
-                    </>
+                        <>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={false}/>
+                            <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
+                            <div className={styleMobile.bannerProperties}>
+                                <Image layout={"fill"} src={bannerPath} alt=""/>
+                            </div>
+                            <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
+                                <DefaultPageMobile listItem={defaultList}/>
+                                <FooterMobile/>
+                            </div>
+                            {
+                                isSmallDown ?
+                                    <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
+                                             isLogged={false}/>
+                                    :
+                                    <></>
+                            }
+                        </>
                 }
             </div>
             :
