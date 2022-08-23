@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import {Product} from "../../../dataDemo/data";
 import style from "../../../styles/Desktop/eventProducts/rightCard.module.css"
@@ -12,10 +12,10 @@ import Link from "next/link";
 
 const referenceDiv = "referenceDiv"
 const textButton: string = "Comprar"
-const newGuestText: string = "Nuevo invitado"
+const newGuestText: string = "Invitados"
 const idTranslateMobile: string = "idTranslateDiv007asb"
 const initialValue: number = -99999999
-const numDiv: number = 155
+const numDiv = 103
 export default function RightCard({
                                       methodProps, listGuest, guestSelected,
                                       removeItemGuestSelected, amountPerItem, upDateGuestSelected
@@ -64,6 +64,8 @@ export default function RightCard({
         setEmailGuest(emailGuest = e.target.value)
     }
 
+    let[sku, setSku] = useState(500)
+
     let [indexAsi, setIndexAsi] = useState(initialValue)
     const handleIndexAsi = (num: number) => {
         setIndexAsi(indexAsi = num)
@@ -73,7 +75,7 @@ export default function RightCard({
     const handleAddGuest = () => {
         if (emailGuest != "" && nameGuest != "") {
             const newGuest: Guest = {
-                id: `1234abc${counter}`,
+                id: `1234abc${sku}`,
                 isSelected: false,
                 name: nameGuest,
                 email: emailGuest,
@@ -84,8 +86,11 @@ export default function RightCard({
             setEmailGuest(emailGuest = "")
             setNameGuest(nameGuest = "")
             handleIndexAsi(num)
+            setSku(sku +=100)
             handleDisplayAdd();
-            translateRight()
+            if (num >= 2) {
+                translateRight()
+            }
 
         }
     }
