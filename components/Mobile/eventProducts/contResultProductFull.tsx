@@ -38,7 +38,6 @@ export default function ContResultProductFull({listSectionProduct, addItem, meth
         }
     }
 
-    const cssStyle = getCssStyle()
     return (
         <div className={style.contVar}>
             <div className={style.bannerSize}>
@@ -92,7 +91,7 @@ export default function ContResultProductFull({listSectionProduct, addItem, meth
                 </div>
 
             </div>*/}
-            <div className={cssStyle.paddingContResult}>
+            <div className={style.paddingContResultFull}>
                 {
                     listSectionProduct.map((item, index) =>
                         <div key={index} className={style.separationiLineSection}>
@@ -136,9 +135,4 @@ export default function ContResultProductFull({listSectionProduct, addItem, meth
             }
         </div>
     )
-    function getCssStyle(){
-        return{
-            paddingContResult: isOpen? style.paddingContResult : style.paddingContResult0
-        }
-    }
 }
