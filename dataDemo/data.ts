@@ -57,27 +57,27 @@ export namespace FiltersData {
             FilterName: priceFilters.TitleSubcategory,
             SubCategorys:
                 [
-                    {Name: priceFilters.less15k, id: "123"},
-                    {Name: priceFilters.less50k, id: "1234"},
-                    {Name: priceFilters.greater50k, id: "12345"},
-                    {Name: priceFilters.priceRange, id: "123456"},
+                    {Name: priceFilters.less15k, Type: priceFilters.TitleSubcategory, id: "123"},
+                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory,id: "1234"},
+                    {Name: priceFilters.greater50k,Type: priceFilters.TitleSubcategory, id: "12345"},
+                    {Name: priceFilters.priceRange,Type: priceFilters.TitleSubcategory, id: "123456"},
                 ]
         },
         {
             FilterName: dateFilters.titleSubcategory,
             SubCategorys: [
-                {Name: dateFilters.today, id: "123a"},
-                {Name: dateFilters.thisWeek, id: "1234a"},
-                {Name: dateFilters.thisMonth, id: "1235a"},
-                {Name: dateFilters.rangeDate, id: "1236a"},
+                {Name: dateFilters.today, Type:dateFilters.titleSubcategory, id: "123a"},
+                {Name: dateFilters.thisWeek, Type:dateFilters.titleSubcategory, id: "1234a"},
+                {Name: dateFilters.thisMonth, Type:dateFilters.titleSubcategory, id: "1235a"},
+                {Name: dateFilters.rangeDate, Type:dateFilters.titleSubcategory, id: "1236a"},
             ]
         },
         {
             FilterName: discountFilters.titleSubcategory,
             SubCategorys: [
-                {Name: discountFilters.less25, id: "123ab"},
-                {Name: discountFilters.less50, id: "1234ab"},
-                {Name: discountFilters.greater50, id: "12345ab"},
+                {Name: discountFilters.less25, Type:discountFilters.titleSubcategory, id: "123ab"},
+                {Name: discountFilters.less50, Type:discountFilters.titleSubcategory, id: "1234ab"},
+                {Name: discountFilters.greater50, Type:discountFilters.titleSubcategory, id: "12345ab"},
             ]
         }
     ]

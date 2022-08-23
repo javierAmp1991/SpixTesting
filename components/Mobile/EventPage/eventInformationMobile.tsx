@@ -315,7 +315,7 @@ export default function EventInformationMobile({eventInformation, form}:
                                         </div>
                                         <a href={venueDateSelected.LinkGoogleMap}
                                            className={`${utilities.styleLink} ${utilities.clamp1} ${style.elipsisDirection}`}>
-                                            {venueDateSelected.LinkGoogleMap}
+                                            Ver en Google Maps
                                         </a>
                                     </div>
                                 </div>

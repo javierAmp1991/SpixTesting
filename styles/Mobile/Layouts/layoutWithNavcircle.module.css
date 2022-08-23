@@ -1,34 +1,42 @@
-.borderNormal{
+.borderNormal {
     border: 1px solid #2d7dff;
 }
-.borderDarkMode{
+
+.borderDarkMode {
     border: 1px solid #15dae6;
 }
 
-.styleNavCircle{
-    width: 8px;
-    height: 8px;
+.styleNavCircle {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background: var(--linkColor);
 }
-
-.styleNavCircleNoSelected{
-    width: 8px;
-    height: 8px;
+.styleNavCircleDarkMode {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: white;
-    border: 1px solid var(--linkColor);
+    background: var(--linkColorDarkMode);
 }
 
-.gridNavItems{
+.styleNavCircleNoSelected {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cbcbcb;
+    /*border: 1px solid var(--linkColor);*/
+}
+
+.gridNavItems {
     display: grid;
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    gap: 16px;
+    gap: 8px;
     justify-content: center;
-    padding: 12px 0px;
+    padding: 12px 0;
 }
+
 .gridImageSection {
     display: grid;
     grid-template-columns: 100%;
@@ -36,12 +44,14 @@
     grid-auto-flow: column;
 }
 
-.snapScroll{
+.snapScroll {
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
-.overFlowSnap{
+.overFlowSnap {
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
     transition: 1s;
 }

@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function PublicityViewMobile({linkImage}) {
     return (
-        <a className={style.publicityProperties}>
-            <Image layout={"fill"} src={linkImage} alt=""/>
-        </a>
+        <div className={style.publicityProperties}>
+            <Image objectFit={"cover"} layout={"fill"} src={linkImage} alt=""/>
+        </div>
     )
 }

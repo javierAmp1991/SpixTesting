@@ -3,6 +3,7 @@ import {GlobalConst} from "../../../public/globalConst";
 export class SubcategoryFilter {
     public Name: string;
     public id: string
+    public Type?: string
     public rangeValue?: string
 }
 
@@ -17,7 +18,8 @@ import React, {useState} from "react";
 import {dateFilters, priceFilters} from "../../../dataDemo/data";
 import Image from "next/image";
 
-export default function SubcategoryContainer({item, click, isDarkMode}: { item: Filters, click, isDarkMode: boolean }) {
+export default function SubcategoryContainer({item, click, isDarkMode}:
+                                                 { item: Filters, click, isDarkMode: boolean }) {
     let [minPrice, setMinPrice] = useState(0)
     let [maxPrice, setMaxPrice] = useState(0)
     let [minDate, setMinDate] = useState(0)

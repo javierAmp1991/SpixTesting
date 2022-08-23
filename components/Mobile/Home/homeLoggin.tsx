@@ -16,7 +16,7 @@ export default function HomeLoggin({isDarkMode}) {
                         <Image layout={"fill"} src={GlobalConst.sourceImages.homeLoggin} alt=""/>
                     </div>
                 </div>
-                <div className="grid gap-1 text-left">
+                <div className="grid gap-2 text-left">
                     <div className={cssStyles.fontSubTitle}>{firstText}</div>
                     <div className={` ${cssStyles.fontPrimaryText} hypensText clamp2`}>
                         {secondText}

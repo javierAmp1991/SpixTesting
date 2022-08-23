@@ -1,5 +1,5 @@
 .paddingTitle {
-    padding: 16px 13px 16px 12px;
+    padding: 24px 13px 24px 12px;
 }
 
 .gridTitleIn{
@@ -76,7 +76,7 @@
 .gridAtributes {
     display: grid;
     gap: 12px;
-    padding: 0px 16px 16px 16px;
+    padding: 0 16px 16px 16px;
 }
 
 .displayIn {

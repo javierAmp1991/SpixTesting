@@ -65,6 +65,7 @@ import {InformationHomeData} from "../dataDemo/data";
 import atributes = AtributesDataFilter.atributes;
 import Link from "next/link";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
+import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 //endregion
 
 //region constantes
@@ -80,6 +81,7 @@ const spaceComponents = 40
 const noSpaceComponents = 0
 const spaceComponentsMobileY = 24
 const paddingGeneralMobile: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12}
+const paddingPublcity: paddingAsignation = {pt: 24, pb: 24, pl: 0, pr: 0}
 const paddingGeneralDesk: paddingAsignation = {pt: 40, pb: 40, pl: 0, pr: 0}
 const paddingGeneralDeskCarrousel: paddingAsignation = {pt: 40, pb: 0, pl: 0, pr: 0}
 const titleLinkPadding = spaceComponents
@@ -169,7 +171,9 @@ export default function Index() {
     </LayoutCarrouselMobile>
     let carrouselAutoMobile = <LayoutAutoCarrousel
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
+
     let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>
+
     let dailyOfferMobile = <TitleSection titleLink={dailyOfferHeaderTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
         <Link href={"/eventPage"}>
@@ -206,6 +210,7 @@ export default function Index() {
         </LayoutCarrouselMobile>
     </TitleSection>
     let publicity1Mobile = <PublicityViewMobile linkImage={PublicityData.publicityList[0]}/>
+
     let carrouselRounded1Mobile = <TitleSection titleLink={cinemasTitleLink} darkModeState={isDarkMode}
                                                 paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
@@ -250,12 +255,14 @@ export default function Index() {
         </LayoutCarrouselMobile>
     </TitleSection>
     let publicity2Mobile = <PublicityViewMobile linkImage={PublicityData.publicityList[1]}/>
+
     let dropDownMobile = <LayoutDropDownMobile gapLayout={gapLayout}>{
         DropDownData.listDropDown.map(item =>
             <EventHorizontalView info={item} darkModeState={isDarkMode} key={item.EventId}/>
         )
     }
     </LayoutDropDownMobile>
+
     let categorysFooterMobile = <LayoutCategoryFooter>
         {
             AtributesFooter.listAtribute.map(item =>
@@ -263,6 +270,7 @@ export default function Index() {
             )
         }
     </LayoutCategoryFooter>
+
     let listDefaultPageMobile: ComponentWithSpaceMobile[] = [
         {
             Component: carrouselAutoMobile,
@@ -290,7 +298,7 @@ export default function Index() {
         },
         {
             Component: publicity1Mobile,
-            padding: paddingGeneralMobile
+            padding: paddingPublcity
         },
         {
             Component: carrouselRounded1Mobile,
@@ -314,7 +322,7 @@ export default function Index() {
         },
         {
             Component: publicity2Mobile,
-            padding: paddingGeneralMobile
+            padding: paddingPublcity
         },
         {
             Component: dropDownMobile,
@@ -328,13 +336,13 @@ export default function Index() {
 //endregion
 
     //region desktop components
-    let carrouselBanner = <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropBanner}>
+    let carrouselBanner = <LayoutCarrouselLoop layoutProp={layoutPropBanner}>
         {
             HomeBannerData.listBanners.map((item, index) =>
                     <FullBanner item={item} key={index}/>
             )
         }
-    </LayoutCarrousel>
+    </LayoutCarrouselLoop>
     let carrouselAuto = <LayoutAutoCarrousel
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
@@ -428,10 +436,10 @@ export default function Index() {
     let [getNewsItem, setGetNewsItem] = useState(0)
     const handleSetGetNews = (e) => setGetNewsItem(getNewsItem = e)
     let news = <TitleSection paddingTitle={null} darkModeState={isDarkMode} titleLink={newsHomeTitleLink}>
-        <LayoutCarrousel sumar={2} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
+        <LayoutCarrousel sumar={3} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNewsItem && index <= getCarrousel1Items + 2?
+                    index >= getNewsItem && index <= getNewsItem + 2?
                         <NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/> : <></>
                 )
             }

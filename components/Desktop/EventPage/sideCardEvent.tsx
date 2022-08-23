@@ -243,7 +243,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                             <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
                                         </div>
                                         <a href={venueDateSelected.LinkGoogleMap} className={utilities.styleLink}>
-                                            {venueDateSelected.LinkGoogleMap}
+                                            Ver en Google Maps
                                         </a>
                                     </div>
                                 </div>

@@ -8,7 +8,7 @@ import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const styleGrid: string = `${utilities.gridMaxContent2} gap-2`
+const styleGrid: string = `${utilities.gridMaxContent2} gap-3`
 const paddingImage: string = "pt-1.5"
 const styleSideText: string = `${style.colorTextHeader} text-left`
 const fontFirstText: string = utilities.font12

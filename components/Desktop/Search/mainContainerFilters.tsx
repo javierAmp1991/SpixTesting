@@ -11,10 +11,31 @@ import Image from "next/image";
 
 export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode}) {
     const cssStyle = getCssStyle()
-    const [selectedTagsShow, setSelectedItemShow] = useState([])
-    const handleClick = (subCategory: SubcategoryFilter) => setSelectedItemShow(
+    let [selectedTagsShow, setSelectedItemShow] = useState([])
+    const handleClick = (subCategory: SubcategoryFilter) => {
+        if (setSelectedItemShow.length == 0) {
+            addItem(subCategory)
+        } else {
+            selectedTagsShow.forEach(item => {
+                if (item.Type == subCategory.Type) {
+                    replace(subCategory)
+                } else {
+                    addItem(subCategory)
+                }
+            })
+        }
+    }
+    const addItem = (subCategory: SubcategoryFilter) => setSelectedItemShow(
         [...selectedTagsShow, subCategory]
     )
+    const replace = (subCategory: SubcategoryFilter) => {
+        const newSelectedTagShow = selectedTagsShow.filter(item => {
+            item.Type != subCategory.Type
+        })
+        setSelectedItemShow(selectedTagsShow = newSelectedTagShow)
+    }
+    const deleteAll = () => setSelectedItemShow([])
+
     return (
         <>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
@@ -41,7 +62,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                                             <div className={utilities.clamp1}>
                                                 {item.Name}
                                             </div>
-                                            <button onClick={() => setSelectedItemShow([])}>
+                                            <button onClick={() => handleClick(item)}>
                                                 <div className="h-4 w-4 relative">
                                                     <Image layout={"fill"}
                                                            src={GlobalConst.sourceImages.deleteIcon} alt=""/>
@@ -64,7 +85,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 <div>
                     {
                         FiltersData.listFilters.map(item =>
-                            <SubcategoryContainer isDarkMode={isDarkMode} click={handleClick} key={item.FilterName}
+                            <SubcategoryContainer isDarkMode={isDarkMode} click={addItem} key={item.FilterName}
                                                   item={item}/>
                         )
                     }
@@ -73,8 +94,8 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                     <div className={cssStyle.fontName}>
                         Limpiar Filtros
                     </div>
-                    <button onClick={() => setSelectedItemShow([])}>
-                        <div className="h-4 w-4 relative">
+                    <button onClick={deleteAll}>
+                        <div className="h-4 w-3 relative">
                             <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
                         </div>
                     </button>

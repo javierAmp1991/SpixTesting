@@ -3,7 +3,6 @@ import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst"
 import React, {ReactNode, useEffect, useState} from "react"
 import Image from "next/image";
-const firstRender: boolean = false
 
 export class LayoutCarrouselDeskProp {
     Display: string
@@ -32,7 +31,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured, s
     const handleLeft = () => {
         setFirstRender(firstRender=true)
         const newCounter = counter - sumar
-        setCounter(newCounter <= 0 ? counter = sumar : counter -= sumar)
+        setCounter(newCounter < 0 ? counter = sumar : counter -= sumar)
     }
     let cssStyle = getCssStyle()
 

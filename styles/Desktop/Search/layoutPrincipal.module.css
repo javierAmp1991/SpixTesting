@@ -5,11 +5,11 @@
 
 .gridPrincipalClose {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 120px 1fr;
 }
 
 .styleTitleResult {
-    padding: 24px 0px;
+    padding: 24px 0;
 }
 
 .styleBanner {
@@ -43,7 +43,7 @@
 }
 
 .paddingTitle{
-    padding: 24px 0px;
+    padding: 24px 0;
 }
 
 .gridResult{
@@ -51,7 +51,7 @@
     gap: 32px;
 }
 .paddingContainer{
-    padding: 0px 12px;
+    padding: 0 12px;
 }
 
 .paddingLeftResult{

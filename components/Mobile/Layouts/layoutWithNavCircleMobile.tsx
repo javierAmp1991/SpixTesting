@@ -9,7 +9,7 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
     let [pointControl, setPointControl] = useState(0)
 
     const handleRight = () => {
-        setCircleSelected(circleSelected + 1 > children.length - 1?
+        setCircleSelected(circleSelected + 1 > children.length - 1 ?
             circleSelected = children.length - 1 : circleSelected += 1)
     }
     const handleLeft = () => {
@@ -20,10 +20,10 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
     const handleScroll = (e) => {
         const sizeContainer: number = divRef.current.offsetWidth
         const scrollEvent: number = e.target.scrollLeft
-        const newPointControl: number= pointControl * sizeContainer
+        const newPointControl = Math.round(scrollEvent / sizeContainer);
+        setCircleSelected(circleSelected = newPointControl)
 
-        if (scrollEvent > newPointControl) {
-            /*let test = scrollEvent > sizeContainer * pointControl*/
+        /*if (scrollEvent > newPointControl) {
             let test1 = scrollEvent > sizeContainer * (pointControl + 1) * 0.7
             if (test1) {
                 setPointControl(pointControl + 1 > (children.length - 1) ?
@@ -31,14 +31,13 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                 handleRight()
             }
         } else {
-            /*let test2 = scrollEvent > sizeContainer * pointControl*/
             let test3 = scrollEvent < sizeContainer * (pointControl * 0.4)
             if (test3) {
                 setPointControl(pointControl - 1 < 0 ?
                     pointControl = 0 : pointControl -= 1)
                 handleLeft()
             }
-        }
+        }*/
 
     }
     return (
@@ -52,8 +51,7 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                 {
                     children.map((item, index) =>
                         <span key={index} className={`${style.styleNavCircle}
-                             ${cssStyle.borderNavCircle}
-                             ${index == circleSelected ? style.styleNavCircle : style.styleNavCircleNoSelected}`}/>)
+                             ${index == circleSelected ? cssStyle.navCircleColor : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
         </div>
@@ -61,7 +59,7 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
 
     function getCssStyle() {
         return {
-            borderNavCircle: isDarkMode ? style.borderDarkMode : style.borderNormal
+            navCircleColor: isDarkMode ? style.borderDarkMode : style.borderNormal
         }
     }
 }

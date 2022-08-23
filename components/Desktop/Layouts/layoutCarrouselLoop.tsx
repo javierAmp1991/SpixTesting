@@ -1,45 +1,69 @@
-import utilities from "*.module.css";
+import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
+import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css";
+import styleCarrouselLoop from "/styles/Desktop/Layouts/layoutCarrouselLoop.module.css"
+import {LayoutCarrouselDeskProp} from "./layoutCarrousel";
 
-export default function LayoutCarrouselLoop(children) {
+export default function LayoutCarrouselLoop({children, layoutProp}) {
+    const mainDivRef = useRef(null)
+    const sizeDivRef = useRef(null)
     let [visibility, setVisibility] = useState(true);
-    let [counter, setCounter] = useState(0)
-    const counterUp = () => setCounter(counter = counter + 1)
-    const counterDown = () => setCounter(counter = counter - 1)
     const handleRight = () => {
-        counterUp()
-
+        const firstElement = mainDivRef.current.children[0];
+        mainDivRef.current.style.transition = `1000ms linear`;
+        mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
+        const transition = () =>{
+            mainDivRef.current.style.transition = `none`;
+            mainDivRef.current.style.transform = `translateX(0px)`;
+            mainDivRef.current.appendChild(firstElement);
+            mainDivRef.current.removeEventListener('transitionend', transition)
+        }
+        mainDivRef.current.addEventListener('transitionend', transition);
     }
     const handleLeft = () => {
-        counterDown()
+        const indexLastElement = children.length - 1
+        const lastElement = mainDivRef.current.children[indexLastElement];
+        mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);
 
+        mainDivRef.current.style.transition = `none`;
+        mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
+
+        setTimeout(()=>{
+            mainDivRef.current.style.transition = `1000ms linear`;
+            mainDivRef.current.style.transform = `translateX(0)`;
+        }, 30)
     }
+
     return (
         <div className={styles.mainDivCarrouselProperties}>
-            <button
-                onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
+            <button onClick={handleLeft}
+                    style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
+                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                    className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
             </button>
 
-            <div>
-                <div onPointerOver={showArrow}
+            <div ref={sizeDivRef} className={styleCarrouselLoop.mainContCar}>
+                <div ref={mainDivRef} onPointerOver={showArrow}
                      onPointerOut={hiddeArrow}
-                     className={styles.gridHomeCarrousel}>
+                     className={styleCarrouselLoop.grid}>
                     {children}
                 </div>
             </div>
 
-            <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+            <button onClick={handleRight}
+                    style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
+                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility ? utilities.opacity0 : ""}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
             </button>
         </div>
     )
+
     function showArrow() {
         setVisibility(visibility = false);
     }

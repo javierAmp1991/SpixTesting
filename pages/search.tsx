@@ -101,8 +101,11 @@ export default function Search() {
             <div>
                 <HeaderSpixDesktop darkMode={isDarkMode} isLogged={false} toggleDarkMode={darkModeToggle}/>
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
-                <div className={cssStyle.bg}>
-                    <div className={`${utilities.maxWidthBodyContentSpix} ${cssStyle.gridFilterDesktop}`}>
+                <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
+                    <div className={style.styleBanner}>
+                        <Image layout={"fill"} objectFit={"cover"} src="/images/atr2.jpg" alt=""/>
+                    </div>
+                    <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
                                 <MainContainerFilters isDarkMode={isDarkMode} isOpenFilter={isOpenFilters}
@@ -110,9 +113,6 @@ export default function Search() {
                             }
                         </div>
                         <div>
-                            <div className={style.styleBanner}>
-                                <Image layout={"fill"} objectFit={"cover"} src="/images/atr2.jpg" alt=""/>
-                            </div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Resultados de {"conciertos"}
