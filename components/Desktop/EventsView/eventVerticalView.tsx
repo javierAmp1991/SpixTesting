@@ -69,11 +69,16 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                     {
                         info.TicketPriceMin == info.TicketPriceMax ?
                             <>
-                                ${info.TicketPriceMin}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(info.TicketPriceMin))}
+
                             </>
                             :
                             <>
-                                ${info.TicketPriceMin} - ${info.TicketPriceMax}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(info.TicketPriceMin))} -
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(info.TicketPriceMax))}
                             </>
                     }
                 </div>

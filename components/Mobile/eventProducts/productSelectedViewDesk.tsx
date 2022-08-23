@@ -22,7 +22,8 @@ export default function ProductSelectedViewMobile({item, deleteItem, amountPerIt
                         {item.Product.Name}
                     </div>
                     <div className={`${utilities.fontSubTitle} mb-0.5`}>
-                        ${item.Product.Price}
+                        {Intl.NumberFormat("ES-MX"
+                        ).format(Math.round(item.Product.Price))}
                     </div>
                     <div className={`${utilities.fontSecundaryText} ${utilities.font12}`}>
                         {
@@ -34,7 +35,9 @@ export default function ProductSelectedViewMobile({item, deleteItem, amountPerIt
                                 <>
                                     <span>Antes </span>
                                     <span className="line-through">
-                                                    ${(((item.Product.DiscountPercent * item.Product.Price) / 100) + item.Product.Price)}</span>
+                                                    ${Intl.NumberFormat("ES-MX"
+                                    ).format(Math.round((item.Product.Price * item.Product.DiscountPercent / 100) + item.Product.Price))}
+                                    </span>
                                 </>
                         }
                     </div>

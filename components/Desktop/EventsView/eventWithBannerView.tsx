@@ -77,15 +77,17 @@ export default function EventWithBannerView({item, darkModeState}) {
                                                        alt=""/>
                                             </div>
                                             <div
-                                                className={`${utilities.fontPriceInclude} ${alignmentTextProduct} mb-1`}>
-                                                ${product.Price}
+                                                className={`${utilities.fontPriceInclude} ${alignmentTextProduct} mb-1 mt-1`}>
+                                                ${Intl.NumberFormat("ES-MX"
+                                            ).format(Math.round(product.Price))}
                                             </div>
                                             <div
                                                 className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
                                                         ${utilities.font12}`}>
                                                 <span>Antes: </span>
                                                 <span className="line-through">
-                                                ${(product.Price * product.DiscountPercent / 100) + product.Price}
+                                                ${Intl.NumberFormat("ES-MX"
+                                                ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
                                             </span>
                                             </div>
                                         </div>

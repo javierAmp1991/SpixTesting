@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Mobile/Events/eventVerticalViewMobile.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import React from "react";
 
 export default function EventVerticalViewMobile({item, isDarkMode}) {
     let cssStyles = getCssStyles()
@@ -57,11 +58,16 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
-                                ${item.TicketPriceMin}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.TicketPriceMin))}
+
                             </>
                             :
                             <>
-                                ${item.TicketPriceMin} - ${item.TicketPriceMax}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.TicketPriceMin))} -
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.TicketPriceMax))}
                             </>
                     }
                 </div>

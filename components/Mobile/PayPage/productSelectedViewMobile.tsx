@@ -21,7 +21,8 @@ export default function PayPageProductSelectedViewMobile({item}: { item: Product
                         {item.Name}
                     </div>
                     <div className={`${utilities.fontSubTitle} mb-0.5`}>
-                        ${item.Price}
+                        ${Intl.NumberFormat("ES-MX"
+                    ).format(Math.round(item.Price))}
                     </div>
                     <div className={`${utilities.fontSecundaryText} ${utilities.font12}`}>
                         {
@@ -33,7 +34,8 @@ export default function PayPageProductSelectedViewMobile({item}: { item: Product
                                 <>
                                     <span>Antes </span>
                                     <span className="line-through">
-                                                    ${(((item.DiscountPercent * item.Price) / 100) + item.Price)}</span>
+                                                    ${Intl.NumberFormat("ES-MX"
+                                    ).format(Math.round((((item.DiscountPercent * item.Price) / 100) + item.Price)))}</span>
                                 </>
                         }
                     </div>

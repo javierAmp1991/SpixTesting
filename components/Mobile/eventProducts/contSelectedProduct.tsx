@@ -116,7 +116,8 @@ export default function ContSelectedProduct({
                                        src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
                             </div>
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: $ {totalPrice}
+                                Total: ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(totalPrice))}
                             </div>
                             <button className={style.buttonStyle}>{buttonText}</button>
                         </div>

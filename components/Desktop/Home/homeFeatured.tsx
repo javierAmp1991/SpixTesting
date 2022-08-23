@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Home/homeFeatured.module.css"
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 export default function HomeFeatured({featuredItem, darkModeState}) {
     let cssStyle = getCssStyles()
@@ -64,11 +65,16 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                         {
                             featuredItem.TicketPriceMin == featuredItem.TicketPriceMax ?
                                 <>
-                                    ${featuredItem.TicketPriceMin}
+                                    ${Intl.NumberFormat("ES-MX"
+                                ).format(Math.round(featuredItem.TicketPriceMin))}
+
                                 </>
                                 :
                                 <>
-                                    ${featuredItem.TicketPriceMin} - ${featuredItem.TicketPriceMax}
+                                    ${Intl.NumberFormat("ES-MX"
+                                ).format(Math.round(featuredItem.TicketPriceMin))} -
+                                    ${Intl.NumberFormat("ES-MX"
+                                ).format(Math.round(featuredItem.TicketPriceMax))}
                                 </>
                         }
                     </div>

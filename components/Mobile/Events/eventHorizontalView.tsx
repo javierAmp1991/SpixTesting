@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Events/eventHorizontalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import React from "react";
 
 export default function EventHorizontalView({info, darkModeState}) {
     let cssStyles = getCssStyles()
@@ -56,11 +57,16 @@ export default function EventHorizontalView({info, darkModeState}) {
                     {
                         info.TicketPriceMin == info.TicketPriceMax ?
                             <>
-                                ${info.TicketPriceMin}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(info.TicketPriceMin))}
+
                             </>
                             :
                             <>
-                                ${info.TicketPriceMin} - ${info.TicketPriceMax}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(info.TicketPriceMin))} -
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(info.TicketPriceMax))}
                             </>
                     }
                 </div>

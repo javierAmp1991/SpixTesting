@@ -9,7 +9,7 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
     let getSizeProduct = getProductSize()
     return (
         <div className={style.boxShadowPro}
-            style={getSizeProduct.widthContainer}>
+             style={getSizeProduct.widthContainer}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
                 <div className={style.aspectImage}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
@@ -29,7 +29,8 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
                         isOffer ?
                             <div>
                                 <div className={`${utilities.fontPriceInclude} mb-1`}>
-                                    $ {item.Price}
+                                    ${Intl.NumberFormat("ES-MX"
+                                ).format(Math.round(item.Price))}
                                 </div>
                                 <div className={`${utilities.fontSecundaryText} `}>
                                     {
@@ -41,14 +42,16 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
                                             <>
                                                 <span>Antes: </span>
                                                 <span className="line-through">
-                                                    ${(((item.DiscountPercent * item.Price) / 100) + item.Price)}</span>
+                                                    ${Intl.NumberFormat("ES-MX"
+                                                ).format(Math.round((item.Price * item.DiscountPercent / 100) + item.Price))}</span>
                                             </>
                                     }
                                 </div>
                             </div>
                             :
                             <div className={`${utilities.fontPriceInclude}`}>
-                                ${item.Price}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.Price))}
                             </div>
                     }
                 </div>

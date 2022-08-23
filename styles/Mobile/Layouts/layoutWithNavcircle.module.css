@@ -47,11 +47,11 @@
 .snapScroll {
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    transition: 5s;
 }
 
 .overFlowSnap {
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-snap-stop: always;
-    transition: 1s;
+    scroll-snap-type: x proximity;
+    transition: 5s;
 }

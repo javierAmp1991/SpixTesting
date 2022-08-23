@@ -57,7 +57,7 @@ export default function LayoutWithNavCircle({listItem, isDarkMode}) {
             <div className={style.gridNavItems}>
                 {
                     listItem.map((item, index) =>
-                        <span key={index} className={`${style.styleNavCircle}
+                        <span key={index} className={`${style.styleNavCircle}yo
                              ${index == circleSelected ? cssStyle.navCircleColor : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>

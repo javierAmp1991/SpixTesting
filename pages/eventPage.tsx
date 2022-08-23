@@ -266,7 +266,7 @@ export default function EventPage() {
     </TitleSection>
     let newsDesk = <TitleSection titleLink={newsTitle}
                                  paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropNews}>
+        <LayoutCarrousel sumar={3} handleFeatured={null} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
                     index <= 2 ?
@@ -283,7 +283,7 @@ export default function EventPage() {
 
     let productsDesk = <TitleSection titleLink={productstTitle}
                                      paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropProducts}>
+        <LayoutCarrousel sumar={3} handleFeatured={null} layoutProp={layoutPropProducts}>
             {
                 ListProducts.listProducts.map((item, index) =>
                 index <= 3?
@@ -295,7 +295,7 @@ export default function EventPage() {
     </TitleSection>
     let eventExtraDesk = <TitleSection titleLink={otherEventTitle}
                                        paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel handleFeatured={null} layoutProp={layoutPropCarrousel}>
+        <LayoutCarrousel sumar={3} handleFeatured={null} layoutProp={layoutPropCarrousel}>
             {
                 InOffer.listInOffer.map((item, index) =>
                     index <= 3 ?

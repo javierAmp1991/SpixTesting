@@ -197,7 +197,8 @@ export default function RightCard({
 
             <div className={style.gridTotalButton}>
                 <div className={`${utilities.fontTitle}`}>
-                    <span> Total $ {totalPrice}</span>
+                    <span> Total ${Intl.NumberFormat("ES-MX"
+                    ).format(Math.round(totalPrice))}</span>
                 </div>
                 <button className={style.styleButton}>
                     {textButton}

@@ -2,6 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Home/homeFeatureMobile.module.css"
 import {EventLookUp} from "../../../dataDemo/data";
 import Image from "next/image";
+import React from "react";
 
 export default function HomeFeaturedMobile({item, isDarkMode}:
                                                { item: EventLookUp, isDarkMode: boolean }) {
@@ -64,11 +65,16 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
-                                ${item.TicketPriceMin}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.TicketPriceMin))}
+
                             </>
                             :
                             <>
-                                ${item.TicketPriceMin} - ${item.TicketPriceMax}
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.TicketPriceMin))} -
+                                ${Intl.NumberFormat("ES-MX"
+                            ).format(Math.round(item.TicketPriceMax))}
                             </>
                     }
                 </div>

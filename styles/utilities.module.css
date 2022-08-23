@@ -390,6 +390,7 @@
 
 .snapScroll {
     scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
 
 @media (min-width: 1281px) {
