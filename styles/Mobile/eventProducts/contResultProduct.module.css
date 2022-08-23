@@ -69,10 +69,16 @@
     padding: 2px 8px;
     border-radius: 3px;
 }
-
+.gridAddItem{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap:12px;
+    align-items: center;
+    justify-content: center;
+}
 .addIconStyle {
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
     border-radius: 50%;
     position: relative;
 }
@@ -155,8 +161,8 @@
 
 .containerClients {
     display: grid;
-    grid-template-columns: 33%;
-    grid-auto-columns: 33%;
+    grid-template-columns: 33.3%;
+    grid-auto-columns: 33.3%;
     grid-auto-flow: column;
     align-items: center;
     transition: .5s;

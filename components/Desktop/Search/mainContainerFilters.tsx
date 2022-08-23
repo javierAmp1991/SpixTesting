@@ -16,13 +16,14 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
         if (setSelectedItemShow.length == 0) {
             addItem(subCategory)
         } else {
-            selectedTagsShow.forEach(item => {
+            const newItems = selectedTagsShow.map(item => {
                 if (item.Type == subCategory.Type) {
-                    replace(subCategory)
+                    return subCategory
                 } else {
-                    addItem(subCategory)
+                    return item
                 }
             })
+            setSelectedItemShow(selectedTagsShow = newItems)
         }
     }
     const addItem = (subCategory: SubcategoryFilter) => setSelectedItemShow(

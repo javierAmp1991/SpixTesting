@@ -8,7 +8,7 @@ import PopUpContainerMob from "../Misc/popUpContainerMob";
 import {Guest} from "../../../pages/eventProducts";
 import Image from "next/image";
 
-const newGuest: string = "Nuevo Invitado"
+const newGuest: string = "Invitados"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
 const idRef: string = "idRefasdasds"
@@ -158,7 +158,7 @@ export default function ContResultProduct({
                     )
                 }
                 <div onClick={handleDisplayAdd}
-                     className={`${utilities.gridMaxContent2} ${style.snapScroll} gap-2 ml-2`}>
+                     className={`${style.gridAddItem} ${style.snapScroll} `}>
                     <span className={utilities.fontPrimaryText}>{newGuest}</span>
                     <span className={style.addIconStyle}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt=""/>
