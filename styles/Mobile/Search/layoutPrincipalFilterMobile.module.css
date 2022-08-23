@@ -62,11 +62,11 @@
 }
 
 .borderBottom {
-    border-bottom: 1px solid var(--separationLineColor);
+    border-bottom: 2px solid var(--separationLineColor);
 }
 
 .borderBottomDarkMode{
-    border-bottom: 1px solid var(--separationLineColorDarkMode);
+    border-bottom: 2px solid var(--separationLineColorDarkMode);
 }
 .borderLeft {
     border-left: 1px solid var(--separationLineColor);

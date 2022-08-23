@@ -7,7 +7,7 @@ export enum priceFilters {
     less15k = 'Menor que $15.000',
     less50k = "Menor que $50.000",
     greater50k = "Mayor que $50.000",
-    priceRange = "priceRange"
+    priceRange = "priceRange",
 }
 
 export enum dateFilters {
@@ -16,8 +16,6 @@ export enum dateFilters {
     thisWeek = 'Esta semana',
     thisMonth = 'Este mes',
     rangeDate = 'rangeDate'
-
-
 }
 
 export enum discountFilters {
@@ -29,10 +27,9 @@ export enum discountFilters {
 
 export namespace AtributesData {
     export const listAtributes: SubcategoryFilter[] = [
-        {Name: "Corte ondulado", id: "abcde"},
-        {Name: "Comida al paso", id: "abcdef"},
-        {Name: "Festival callejero", id: "fg"},
-
+        {Name: "Corte ondulado", id: "abcde", },
+        {Name: "Comida al paso", id: "abcdef", Type: "atributesCat"},
+        {Name: "Festival callejero", id: "fg", Type: "atributesCat"},
     ]
 }
 
@@ -41,12 +38,12 @@ export namespace AtributesDataFilter {
         FilterName: "Atributos",
         SubCategorys:
             [
-                {Name: "Corte Ondulado", id: "123"},
-                {Name: "Comida al paso", id: "1234"},
-                {Name: "Festival Callejero", id: "12345"},
-                {Name: "Restaurantes de sushi", id: "123456"},
-                {Name: "Discos Gay", id: "1234567"},
-                {Name: "Masaje terapeutico", id: "12345678"}
+                {Name: "Corte Ondulado", id: "123", Type: "atributesCat"},
+                {Name: "Comida al paso", id: "1234", Type: "atributesCat"},
+                {Name: "Festival Callejero", id: "12345", Type: "atributesCat"},
+                {Name: "Restaurantes de sushi", id: "123456", Type: "atributesCat"},
+                {Name: "Discos", id: "1234567", Type: "atributesCat"},
+                {Name: "Masaje terapeutico", id: "12345678", Type: "atributesCat"}
             ]
     }
 }
@@ -58,26 +55,26 @@ export namespace FiltersData {
             SubCategorys:
                 [
                     {Name: priceFilters.less15k, Type: priceFilters.TitleSubcategory, id: "123"},
-                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory,id: "1234"},
-                    {Name: priceFilters.greater50k,Type: priceFilters.TitleSubcategory, id: "12345"},
-                    {Name: priceFilters.priceRange,Type: priceFilters.TitleSubcategory, id: "123456"},
+                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory, id: "1234"},
+                    {Name: priceFilters.greater50k, Type: priceFilters.TitleSubcategory, id: "12345"},
+                    {Name: priceFilters.priceRange, Type: priceFilters.TitleSubcategory, id: "123456"},
                 ]
         },
         {
             FilterName: dateFilters.titleSubcategory,
             SubCategorys: [
-                {Name: dateFilters.today, Type:dateFilters.titleSubcategory, id: "123a"},
-                {Name: dateFilters.thisWeek, Type:dateFilters.titleSubcategory, id: "1234a"},
-                {Name: dateFilters.thisMonth, Type:dateFilters.titleSubcategory, id: "1235a"},
-                {Name: dateFilters.rangeDate, Type:dateFilters.titleSubcategory, id: "1236a"},
+                {Name: dateFilters.today, Type: dateFilters.titleSubcategory, id: "123a"},
+                {Name: dateFilters.thisWeek, Type: dateFilters.titleSubcategory, id: "1234a"},
+                {Name: dateFilters.thisMonth, Type: dateFilters.titleSubcategory, id: "1235a"},
+                {Name: dateFilters.rangeDate, Type: dateFilters.titleSubcategory, id: "1236a"},
             ]
         },
         {
             FilterName: discountFilters.titleSubcategory,
             SubCategorys: [
-                {Name: discountFilters.less25, Type:discountFilters.titleSubcategory, id: "123ab"},
-                {Name: discountFilters.less50, Type:discountFilters.titleSubcategory, id: "1234ab"},
-                {Name: discountFilters.greater50, Type:discountFilters.titleSubcategory, id: "12345ab"},
+                {Name: discountFilters.less25, Type: discountFilters.titleSubcategory, id: "123ab"},
+                {Name: discountFilters.less50, Type: discountFilters.titleSubcategory, id: "1234ab"},
+                {Name: discountFilters.greater50, Type: discountFilters.titleSubcategory, id: "12345ab"},
             ]
         }
     ]
@@ -300,7 +297,13 @@ export namespace DailyOfferData {
             {Name: "Producto 7.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product7.jpg"},
             {Name: "Producto 8.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product8.jpg"},
             {Name: "Producto 9.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product9.jpg"},
-            {Name: "Producto 10.1", Price: 6990, DiscountPercent: 30, Include: null, ImagePath: "/images/product10.jpg"},
+            {
+                Name: "Producto 10.1",
+                Price: 6990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product10.jpg"
+            },
         ]
     }
 }
@@ -744,7 +747,7 @@ export class productSelected {
     IsSelected: boolean
 }
 
-export class productAmount{
+export class productAmount {
     Product: Product;
     Amount: number;
 }

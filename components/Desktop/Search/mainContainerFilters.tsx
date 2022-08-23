@@ -12,22 +12,18 @@ import Image from "next/image";
 export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode}) {
     const cssStyle = getCssStyle()
     let [selectedTagsShow, setSelectedItemShow] = useState([])
-    let [test, setTest] = useState("")
 
     const addItem = (subCategory: SubcategoryFilter) => {
         if(selectedTagsShow.length == 0){
             addItemNew(subCategory)
-            setTest(test= "first try")
         }
         else{
             let bool: boolean = getBool(subCategory)
             if(bool) {
                 replaceItem(subCategory)
-                setTest(test= "nope")
             }
             else {
                 addItemNew(subCategory)
-                setTest(test= "nope again")
             }
         }
     }
@@ -69,7 +65,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
         <>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
                 <div className={cssStyle.fontTitle}>
-                    Filtros {test}
+                    Filtros
                 </div>
                 <div onClick={() => closeFilters()} className="grid content-center">
                     <div className={style.styleArrowClose}>
