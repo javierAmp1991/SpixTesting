@@ -19,7 +19,7 @@ import {dateFilters, priceFilters} from "../../../dataDemo/data";
 import Image from "next/image";
 
 export default function SubcategoryContainer({item, click, isDarkMode}:
-                                                 { item: Filters, click, isDarkMode: boolean }) {
+                                                 { item: Filters, click: any, isDarkMode: boolean }) {
     let [minPrice, setMinPrice] = useState(0)
     let [maxPrice, setMaxPrice] = useState(0)
     let [minDate, setMinDate] = useState(0)
@@ -66,7 +66,7 @@ export default function SubcategoryContainer({item, click, isDarkMode}:
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label htmlFor={`${subcategory.Name}CheckBox`}/>
-                                        <input className="checkboxDarkMode"
+                                        <input onChange={() => click(subcategory)} className="checkboxDarkMode"
                                                id={`${subcategory.Name}CheckBox`} type='radio'
                                                name={item.FilterName}/>
                                     </div>

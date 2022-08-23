@@ -6,7 +6,7 @@ import CuponInputMobile from "./cuponInputMobile";
 import {inputCuponValues} from "../../Desktop/PayPage/cuponInput";
 import Image from "next/image";
 
-const goToPay: string = "Ir a pagar"
+const goToPay: string = "Pagar"
 const cancel: string = "Cancelar"
 const propCupon: inputCuponValues = {
     titleCupon: "Ingresa tu cupon",

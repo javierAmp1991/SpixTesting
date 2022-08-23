@@ -16,9 +16,14 @@ import {priceFilters} from "../../../dataDemo/data";
 import {dateFilters} from "../../../dataDemo/data";
 import React, {useState} from "react";
 
-export default function SubCategoryContainerMobile({item, click, isDarkMode}: { item: Filters, click, isDarkMode : boolean }) {
+export default function SubCategoryContainerMobile({
+                                                       item,
+                                                       click,
+                                                       isDarkMode
+                                                   }: { item: Filters, click, isDarkMode: boolean }) {
     let [displaySub, setDisplaySub] = useState(style.displayIn)
     const cssStyle = getCssStyle()
+
     function handleClick() {
         setDisplaySub(
             displaySub == style.displayIn ? displaySub = style.displayOut : displaySub = style.displayIn)
@@ -33,7 +38,7 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                 </div>
                 <div className="grid items-center">
                     <div className="h-4 w-5 relative">
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                     </div>
                 </div>
             </div>
@@ -45,7 +50,8 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                             <li key={index} className={`${utilities.gridMaxContent2} justify-between`}>
                                 <label htmlFor={`${subcategory.Name}CheckBox`}
                                        className={cssStyle.fontSecundaryText}>{subcategory.Name}</label>
-                                <input onClick={() => click(subcategory)} className="checkbox" id={`${subcategory.Name}CheckBox`} type='radio'
+                                <input onChange={() => click(subcategory)} className="checkbox"
+                                       id={`${subcategory.Name}CheckBox`} type='radio'
                                        name={item.FilterName}/>
                             </li>
                             :
@@ -53,14 +59,16 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                 <li className={`${utilities.gridMaxContent2} justify-between`}>
                                     <div className="grid gap-5">
                                         <div className="relative">
-                                            <span className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
+                                            <span
+                                                className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
                                             <input id="inputNumberMin"
                                                    className={`${cssStyle.styleRangePrice} ${cssStyle.bgInfo}`}
                                                    placeholder="Precio Minimo"
                                                    type="number"/>
                                         </div>
                                         <div className="relative">
-                                            <span className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
+                                            <span
+                                                className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
                                             <input id="inputNumberMax"
                                                    className={`${cssStyle.styleRangePrice} ${cssStyle.bgInfo}`}
                                                    placeholder="Precio Maximo"
@@ -69,7 +77,8 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label className="" htmlFor="checkbox+@subcategory.Name"></label>
-                                        <input className="checkbox" id={`checkbox${subcategory.Name}`} type='radio'
+                                        <input onChange={() => click(subcategory)}
+                                               className="checkbox" id={`checkbox${subcategory.Name}`} type='radio'
                                                name={item.FilterName}/>
                                     </div>
                                 </li>
@@ -80,7 +89,7 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                                 <span className={style.positionCalendar}>
                                                     <div className="h-3 w-3 relative">
                                                     <Image layout={"fill"}
-                                                         src={cssStyle.calendarIcon} alt=""/>
+                                                           src={cssStyle.calendarIcon} alt=""/>
                                                     </div>
                                                 </span>
                                             <input className={style.styleRangeDateInput} type="date"/>
@@ -89,7 +98,7 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                                 <span className={style.positionCalendar}>
                                                     <div className="h-3 w-3 relative">
                                                     <Image layout={"fill"}
-                                                         src={cssStyle.calendarIcon} alt=""/>
+                                                           src={cssStyle.calendarIcon} alt=""/>
                                                     </div>
                                                 </span>
                                             <input className={style.styleRangeDateInput} type="date"/>
@@ -99,7 +108,8 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label className="font-normal"
                                                htmlFor="checkbox+@subcategory.Name"></label>
-                                        <input className="checkbox" id="checkbox+@subcategory.Name" type='radio'
+                                        <input onChange={() => click(subcategory)}
+                                               className="checkbox" id="checkbox+@subcategory.Name" type='radio'
                                                name={item.FilterName}/>
                                     </div>
                                 </li>
@@ -109,15 +119,15 @@ export default function SubCategoryContainerMobile({item, click, isDarkMode}: { 
         </div>
     )
 
-    function getCssStyle(){
+    function getCssStyle() {
         return {
-            fontName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
-            fontSecundaryText: isDarkMode? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
-            borderBottom: isDarkMode? style.borderBottomDarkMode : style.borderBottom,
-            bgInfo: isDarkMode? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            styleRangePrice: isDarkMode? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,
-            styleRangeDate: isDarkMode? style.styleContainerDareInputDarkMode : style.styleContainerDareInput,
-            calendarIcon: isDarkMode? GlobalConst.sourceImages.calendarIconWhite : GlobalConst.sourceImages.calendarIcon
+            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
+            fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
+            bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
+            styleRangePrice: isDarkMode ? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,
+            styleRangeDate: isDarkMode ? style.styleContainerDareInputDarkMode : style.styleContainerDareInput,
+            calendarIcon: isDarkMode ? GlobalConst.sourceImages.calendarIconWhite : GlobalConst.sourceImages.calendarIcon
         }
     }
 }

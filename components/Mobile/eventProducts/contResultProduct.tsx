@@ -8,7 +8,7 @@ import PopUpContainerMob from "../Misc/popUpContainerMob";
 import {Guest} from "../../../pages/eventProducts";
 import Image from "next/image";
 
-const newGuest: string = "Invitados"
+const newGuest: string = "Invitado"
 const placeHolderName: string = "nombre invitado"
 const placeHolderEmail: string = "correo invitado"
 const idRef: string = "idRefasdasds"

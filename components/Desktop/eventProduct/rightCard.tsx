@@ -12,7 +12,7 @@ import Link from "next/link";
 
 const referenceDiv = "referenceDiv"
 const textButton: string = "Comprar"
-const newGuestText: string = "Invitados"
+const newGuestText: string = "Invitado"
 const idTranslateMobile: string = "idTranslateDiv007asb"
 const initialValue: number = -99999999
 const numDiv = 103

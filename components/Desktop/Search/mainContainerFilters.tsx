@@ -12,29 +12,28 @@ import Image from "next/image";
 export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode}) {
     const cssStyle = getCssStyle()
     let [selectedTagsShow, setSelectedItemShow] = useState([])
-    const handleClick = (subCategory: SubcategoryFilter) => {
-        if (setSelectedItemShow.length == 0) {
-            addItem(subCategory)
-        } else {
-            const newItems = selectedTagsShow.map(item => {
-                if (item.Type == subCategory.Type) {
+
+    const addItem = (subCategory: SubcategoryFilter) => {
+            setSelectedItemShow([...selectedTagsShow, subCategory])
+    }
+
+    const test = (subCategory: SubcategoryFilter)=>{
+        if(selectedTagsShow.length > 0){
+            const newList: SubcategoryFilter[] = selectedTagsShow.map((item: SubcategoryFilter) =>{
+                if(item.Type == subCategory.Type){
                     return subCategory
-                } else {
-                    return item
                 }
+                else return item
             })
-            setSelectedItemShow(selectedTagsShow = newItems)
+            setSelectedItemShow(selectedTagsShow = newList)
         }
     }
-    const addItem = (subCategory: SubcategoryFilter) => setSelectedItemShow(
-        [...selectedTagsShow, subCategory]
-    )
-    const replace = (subCategory: SubcategoryFilter) => {
-        const newSelectedTagShow = selectedTagsShow.filter(item => {
-            item.Type != subCategory.Type
-        })
-        setSelectedItemShow(selectedTagsShow = newSelectedTagShow)
-    }
+
+    const deleteItem = ((subCategory: SubcategoryFilter) => {
+        const newItems: SubcategoryFilter[] = selectedTagsShow.filter(item => item != subCategory)
+        setSelectedItemShow(selectedTagsShow = newItems)
+    })
+
     const deleteAll = () => setSelectedItemShow([])
 
     return (
@@ -63,7 +62,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                                             <div className={utilities.clamp1}>
                                                 {item.Name}
                                             </div>
-                                            <button onClick={() => handleClick(item)}>
+                                            <button onClick={() => deleteItem(item)}>
                                                 <div className="h-4 w-4 relative">
                                                     <Image layout={"fill"}
                                                            src={GlobalConst.sourceImages.deleteIcon} alt=""/>
@@ -79,7 +78,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 </div>
                 <div className={cssStyle.borderBottom}>
                     {
-                        <AtributesContainer isOpenFilter={isOpenFilter} isDarkMode={isDarkMode} click={handleClick}
+                        <AtributesContainer isOpenFilter={isOpenFilter} isDarkMode={isDarkMode} click={addItem}
                                             item={AtributesDataFilter.atributes}/>
                     }
                 </div>

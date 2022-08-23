@@ -57,8 +57,6 @@ import NewView from "../components/Desktop/CRM/newView";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import Image from "next/image";
-import PublicityView from "../components/Desktop/CRM/publicityView";
-import Link from "next/link";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import React, {useState} from "react";
 //endregion
@@ -267,10 +265,10 @@ export default function EventPage() {
     </TitleSection>
 
     let [getNews, setGetNews] = useState(0)
-    const handlesetGetNews = (e) => setGetNews(getNews = e)
+    const handleSetGetNews = (e) => setGetNews(getNews = e)
     let newsDesk = <TitleSection titleLink={newsTitle}
                                  paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel sumar={2} handleFeatured={handlesetGetNews} layoutProp={layoutPropNews}>
+        <LayoutCarrousel sumar={2} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
                     index >= getNews && index <= getNews + 2 ?

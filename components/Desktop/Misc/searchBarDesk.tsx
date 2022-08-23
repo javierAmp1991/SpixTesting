@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Misc/searchBarDesk.module.css"
 import {useState} from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const placeHolder: string = "Buscar evento, categoria o ciudad"
 const nameInput: string = "searchBarMobile"
@@ -29,11 +30,13 @@ export default function SearchBarDesk({isSug, showSug, hiddeSug, getInputValue}:
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
             <div className={cssStyle.styleButton}>
-                <button>
-                    <div className={style.styleLupa}>
-                    <Image layout={"fill"} src={cssStyle.sourceMagGlass} alt=""/>
-                    </div>
-                </button>
+                <Link href={"/search"}>
+                    <button>
+                        <div className={style.styleLupa}>
+                            <Image layout={"fill"} src={cssStyle.sourceMagGlass} alt=""/>
+                        </div>
+                    </button>
+                </Link>
             </div>
         </div>
     )

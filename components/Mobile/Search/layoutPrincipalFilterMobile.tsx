@@ -13,15 +13,27 @@ let imageIcon = <Image className="h-4 w-full" src={GlobalConst.sourceImages.dele
 
 export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
     let [displayFilter, setDisplayFilter] = React.useState(style.displayInFilters)
+
     function handleClick() {
         setDisplayFilter(
             displayFilter == style.displayInFilters ? style.displayOutFilters : style.displayInFilters
         )
         hiddeResult()
     }
-    const [selectedTagsShow, setSelectedItemShow] = useState([])
-    const handleClickSelected = (subCategory: SubcategoryFilter) => setSelectedItemShow(
-        [...selectedTagsShow, subCategory])
+
+    let [selectedTagsShow, setSelectedItemShow] = useState([])
+    const addItem = (subCategory: SubcategoryFilter) => {
+        setSelectedItemShow([...selectedTagsShow, subCategory])
+    }
+
+
+    const deleteItem = ((subCategory: SubcategoryFilter) => {
+        const newItems: SubcategoryFilter[] = selectedTagsShow.filter(item => item != subCategory)
+        setSelectedItemShow(selectedTagsShow = newItems)
+    })
+
+    const deleteAll = () => setSelectedItemShow([])
+
     const cssStyle = getCssStyle()
 
     return (
@@ -34,9 +46,9 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                                 <div className={utilities.clamp1}>
                                     {item.Name}
                                 </div>
-                                <button onClick={() => setSelectedItemShow([])}>
+                                <button onClick={() => deleteItem(item)}>
                                     <div className="h-4 w-4 relative">
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt=""/>
                                     </div>
                                 </button>
                             </div>
@@ -49,12 +61,13 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                 </div>
             </div>
             <div>
-                <AtributesContainerMobile isDarkMode={isDarkMode} click={handleClickSelected} item={AtributesDataFilter.atributes}/>
+                <AtributesContainerMobile isDarkMode={isDarkMode} click={addItem} item={AtributesDataFilter.atributes}/>
             </div>
             <div>
                 {
                     FiltersData.listFilters.map(item =>
-                        <SubCategoryContainerMobile isDarkMode={isDarkMode} click={handleClickSelected} key={item.FilterName} item={item}/>
+                        <SubCategoryContainerMobile isDarkMode={isDarkMode} click={addItem} key={item.FilterName}
+                                                    item={item}/>
                     )
                 }
             </div>
@@ -62,23 +75,24 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                 <div className={cssStyle.fontName}>
                     Limpiar Filtros
                 </div>
-                <button onClick={() => setSelectedItemShow([])}>
+                <button onClick={deleteAll}>
                     <div className="h-4 w-3 relative">
-                    <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+                        <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
                     </div>
                 </button>
             </div>
         </div>
     )
-    function getCssStyle(){
-        return{
-            fontName: isDarkMode? utilities.fontNameDarkMode: utilities.fontName,
-            cleanIcon: isDarkMode? GlobalConst.sourceImages.cleanIconWhite : GlobalConst.sourceImages.cleanIcon,
-            styleTags: isDarkMode? style.styleTagsDarkMode :style.styleTags,
-            fontSubTitle: isDarkMode? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
-            borderBottom: isDarkMode? style.borderBottomDarkMode : style.borderBottom,
-            borderLeft: isDarkMode? style.borderLeftDarkMode : style.borderLeft,
-            bg: isDarkMode? utilities.bgDarkModeInfo : utilities.bgNormalInfo
+
+    function getCssStyle() {
+        return {
+            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
+            cleanIcon: isDarkMode ? GlobalConst.sourceImages.cleanIconWhite : GlobalConst.sourceImages.cleanIcon,
+            styleTags: isDarkMode ? style.styleTagsDarkMode : style.styleTags,
+            fontSubTitle: isDarkMode ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
+            borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
+            borderLeft: isDarkMode ? style.borderLeftDarkMode : style.borderLeft,
+            bg: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo
         }
     }
 }
