@@ -58,15 +58,15 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-Cl"
                             ).format(Math.round(item.TicketPriceMin))}
 
                             </>
                             :
                             <>
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-Cl"
                             ).format(Math.round(item.TicketPriceMin))} -
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-Cl"
                             ).format(Math.round(item.TicketPriceMax))}
                             </>
                     }

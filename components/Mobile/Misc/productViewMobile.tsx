@@ -28,7 +28,7 @@ export default function ProductViewMobile({item, size}: { item: Product, size: n
                         isOffer ?
                             <div>
                                 <div className={`${utilities.fontPriceInclude} mb-1`}>
-                                    ${Intl.NumberFormat("ES-MX"
+                                    ${Intl.NumberFormat("ES-CL"
                                 ).format(Math.round(item.Price))}
                                 </div>
                                 <div className={`${utilities.fontSecundaryText} `}>
@@ -41,14 +41,14 @@ export default function ProductViewMobile({item, size}: { item: Product, size: n
                                             <>
                                                 <span>Antes: </span>
                                                 <span className="line-through">
-                                                    ${Intl.NumberFormat("ES-MX").format(Math.round((item.Price * item.DiscountPercent / 100) + item.Price))}</span>
+                                                    ${Intl.NumberFormat("ES-CL").format(Math.round((item.Price * item.DiscountPercent / 100) + item.Price))}</span>
                                             </>
                                     }
                                 </div>
                             </div>
                             :
                             <div className={`${utilities.fontPriceInclude}`}>
-                                $ ${Intl.NumberFormat("ES-MX"
+                                $ ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(item.Price))}
                             </div>
                     }

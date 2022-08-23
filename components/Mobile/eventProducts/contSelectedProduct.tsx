@@ -63,7 +63,8 @@ export default function ContSelectedProduct({
                             </div>
 
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: $ {totalPrice}
+                                Total: ${Intl.NumberFormat("ES-Cl"
+                            ).format(Math.round(totalPrice))}
                             </div>
                             <Link href={"/payPage"}>
                                 <button className={style.buttonStyle}>{buttonText}</button>
@@ -118,7 +119,7 @@ export default function ContSelectedProduct({
                                        src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
                             </div>
                             <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: ${Intl.NumberFormat("ES-MX"
+                                Total: ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(totalPrice))}
                             </div>
                             <Link href={"/payPage"}>

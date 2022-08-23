@@ -20,7 +20,7 @@ export default function PayPageProductSelectedView({item, deleteItem, amountPerI
                         {item.Product.Name}
                     </div>
                     <div className={`${utilities.fontSubTitle} mb-0.5`}>
-                        ${Intl.NumberFormat("ES-MX"
+                        ${Intl.NumberFormat("ES-CL"
                     ).format(Math.round(item.Product.Price))}
                     </div>
                     <div className={`${utilities.fontSecundaryText} ${utilities.font12}`}>
@@ -33,7 +33,7 @@ export default function PayPageProductSelectedView({item, deleteItem, amountPerI
                                 <>
                                     <span>Antes </span>
                                     <span className="line-through">
-                                                    ${Intl.NumberFormat("ES-MX"
+                                                    ${Intl.NumberFormat("ES-CL"
                                     ).format(Math.round((item.Product.Price * item.Product.DiscountPercent / 100) + item.Product.Price))}</span>
                                 </>
                         }

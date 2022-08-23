@@ -97,7 +97,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                                             </div>
                                             <div
                                                 className={`${utilities.fontPriceInclude} mb-1 ${alignmentTextProduct} `}>
-                                                ${Intl.NumberFormat("ES-MX"
+                                                ${Intl.NumberFormat("ES-CL"
                                             ).format(Math.round(product.Price))}
                                             </div>
                                             <div
@@ -105,7 +105,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                                                         ${utilities.font12}`}>
                                                 <span>Antes: </span>
                                                 <span className="line-through">
-                                                    ${Intl.NumberFormat("ES-MX"
+                                                    ${Intl.NumberFormat("ES-CL"
                                                 ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
                                             </span>
                                             </div>

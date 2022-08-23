@@ -65,15 +65,15 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(item.TicketPriceMin))}
 
                             </>
                             :
                             <>
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(item.TicketPriceMin))} -
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(item.TicketPriceMax))}
                             </>
                     }

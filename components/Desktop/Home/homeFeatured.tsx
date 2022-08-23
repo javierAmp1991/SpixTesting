@@ -65,15 +65,15 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                         {
                             featuredItem.TicketPriceMin == featuredItem.TicketPriceMax ?
                                 <>
-                                    ${Intl.NumberFormat("ES-MX"
+                                    ${Intl.NumberFormat("ES-Cl"
                                 ).format(Math.round(featuredItem.TicketPriceMin))}
 
                                 </>
                                 :
                                 <>
-                                    ${Intl.NumberFormat("ES-MX"
+                                    ${Intl.NumberFormat("ES-Cl"
                                 ).format(Math.round(featuredItem.TicketPriceMin))} -
-                                    ${Intl.NumberFormat("ES-MX"
+                                    ${Intl.NumberFormat("ES-Cl"
                                 ).format(Math.round(featuredItem.TicketPriceMax))}
                                 </>
                         }

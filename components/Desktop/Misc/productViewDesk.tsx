@@ -29,7 +29,7 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
                         isOffer ?
                             <div>
                                 <div className={`${utilities.fontPriceInclude} mb-1`}>
-                                    ${Intl.NumberFormat("ES-MX"
+                                    ${Intl.NumberFormat("ES-CL"
                                 ).format(Math.round(item.Price))}
                                 </div>
                                 <div className={`${utilities.fontSecundaryText} `}>
@@ -42,7 +42,7 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
                                             <>
                                                 <span>Antes: </span>
                                                 <span className="line-through">
-                                                    ${Intl.NumberFormat("ES-MX"
+                                                    ${Intl.NumberFormat("ES-CL"
                                                 ).format(Math.round((item.Price * item.DiscountPercent / 100) + item.Price))}</span>
                                             </>
                                     }
@@ -50,7 +50,7 @@ export default function ProductViewDesk({item, size}: { item: Product, size: num
                             </div>
                             :
                             <div className={`${utilities.fontPriceInclude}`}>
-                                ${Intl.NumberFormat("ES-MX"
+                                ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(item.Price))}
                             </div>
                     }
