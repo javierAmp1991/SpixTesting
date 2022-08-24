@@ -31,6 +31,7 @@ export default function ContSelectedProduct({
     const totalPrice = getTotalPrice()
     let totalProducts: number = getTotalProducts()
     const cssStyle = getCssStyle()
+    const cssStyleCar = getStyleBuyCar()
     useEffect(() => {
         if (isOpen) {
         } else {
@@ -39,7 +40,7 @@ export default function ContSelectedProduct({
     }, [cssStyle])
     return (
         <div className={cssStyle}>
-            <div className={dispay ? style.mainContResultTabs : style.mainContResultTabsHidden}>
+            <div className="overflow-scroll">
                 <div className={style.gridTabs}>
                     <div className={` ${style.containerClients}`}>
                         {
@@ -74,29 +75,19 @@ export default function ContSelectedProduct({
                 </div>
             </div>
 
-            {
-                dispay ?
-                    <div className={style.totalButtonContainerOpen}>
-                        <div className={style.gridCarTitle}>
-                            <div className="h-4 w-4 relative">
+            <div className={cssStyleCar}>
+                <div className={style.gridCarTitle}>
+                    {
+                        dispay ?
+                            <div onClick={handleDisplay}
+                                 className="h-4 w-4 relative">
                                 <Image layout={"fill"}
-                                       onClick={handleDisplay}
+
                                        src={GlobalConst.sourceImages.leftArrowExitBlack} alt=""/>
                             </div>
-                            <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: ${Intl.NumberFormat("ES-CL"
-                            ).format(Math.round(totalPrice))}
-                            </div>
-                            <Link href={"/payPage"}>
-                                <button className={style.buttonStyle}>{buttonText}</button>
-                            </Link>
-                        </div>
-                    </div>
-                    :
-                    <div className={style.totalButtonContainer}>
-                        <div onClick={handleDisplay}
-                             className={style.gridCarTitleClose}>
-                            <div className={style.styleGridVar}>
+                            :
+                            <div onClick={handleDisplay}
+                                 className={style.styleGridVar}>
                                 <div className={style.sizeBuyCAr}>
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
@@ -113,19 +104,27 @@ export default function ContSelectedProduct({
                                     }
                                 </span>
                             </div>
+                    }
 
-                            <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: ${Intl.NumberFormat("ES-Cl"
-                            ).format(Math.round(totalPrice))}
-                            </div>
-                            <Link href={"/payPage"}>
-                                <button className={style.buttonStyle}>{buttonText}</button>
-                            </Link>
-                        </div>
+                    <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
+                        Total: ${Intl.NumberFormat("ES-CL"
+                    ).format(Math.round(totalPrice))}
                     </div>
-            }
+                    <Link href={"/payPage"}>
+                        <button className={style.buttonStyle}>{buttonText}</button>
+                    </Link>
+                </div>
+            </div>
         </div>
     )
+
+    function getStyleBuyCar() {
+        if (isOpen) {
+            return style.totalButtonContainerOpen
+        } else {
+            return style.totalButtonContainer
+        }
+    }
 
     function getCssStyle() {
         if (isOpen) {

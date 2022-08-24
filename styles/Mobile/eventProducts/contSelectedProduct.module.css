@@ -27,12 +27,13 @@
     height: 100%;
     max-width: 768px;
     z-index: 500;
+    display: grid;
 }
 
 .contVarHidden {
     position: fixed;
     width: 100%;
-    height: 0;
+    height: 50px;
     top: calc(100%);
     max-width: 768px;
     overflow: hidden;
@@ -63,16 +64,6 @@
     z-index: 500;
 }
 
-.mainContResultTabsHidden {
-    height: 0;
-    overflow: hidden;
-}
-
-.mainContResultTabs {
-    height: 400px;
-    overflow: scroll;
-}
-
 .sizeArrowExit {
     height: var(--sizeLeftArrow);
     width: var(--sizeLeftArrow);
@@ -82,24 +73,27 @@
 .totalButtonContainer {
     border-bottom: 1px solid var(--separationLineColor);
     border-radius: 16px 16px 0 0;
-    padding-bottom: 40px;
-    background: white;
     position: fixed;
+    bottom: 40px;
     width: 100%;
+    height: 0;
+    overflow: hidden;
     max-width: 768px;
+    z-index: 5000;
+    transition: 1s;
 }
 
 .totalButtonContainerOpen {
     position: fixed;
-    bottom: 0;
+    bottom: 40px;
+    height: 81px;
     z-index: 5000;
     width: 100%;
     max-width: 768px;
     box-shadow: 0 -1px 10px rgba(0, 0, 0, .2);
-    padding-bottom: 40px;
-    transition: .4s;
     background: white;
     border-radius: 16px 16px 0 0;
+    transition: 1s;
 }
 
 .totalConainer {
@@ -201,7 +195,6 @@
     display: grid;
     align-items: center;
     gap: 4px;
-    padding: 0 2px;
     border-bottom: 1px solid #e3e3e3;
 }
 
