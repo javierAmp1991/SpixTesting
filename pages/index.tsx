@@ -282,10 +282,10 @@ export default function Index() {
             Component: carrouselAutoMobile,
             padding: paddingGeneralMobile
         },
-        {
+        /*{
             Component: informationMobile,
             padding: paddingGeneralMobile
-        },
+        },*/
         {
             Component: dailyOfferMobile,
             padding: paddingGeneralMobile
@@ -494,10 +494,10 @@ export default function Index() {
             Component: carrouselAuto,
             padding: paddingGeneralDesk
         },
-        {
+       /* {
             Component: information,
             padding: paddingGeneralDesk
-        },
+        },*/
         {
             Component: dailyOffer,
             padding: paddingGeneralDesk

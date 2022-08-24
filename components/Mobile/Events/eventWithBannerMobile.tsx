@@ -20,9 +20,16 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
     let [hours, setHours] = useState((timeOut.getHours() - new Date().getHours()).toLocaleString())
 
     const handleTimer = () => {
-        setSeconds((timeOut.getSeconds() - new Date().getSeconds()).toLocaleString())
-        setMinutes((timeOut.getMinutes() - new Date().getMinutes()).toLocaleString())
-        setHours((timeOut.getHours() - new Date().getHours()).toLocaleString())
+        setSeconds(correctNumber((timeOut.getSeconds() - new Date().getSeconds())))
+        setMinutes(correctNumber((timeOut.getMinutes() - new Date().getMinutes())))
+        setHours(correctNumber((timeOut.getHours() - new Date().getHours())))
+    }
+
+    function correctNumber(num: number): string {
+        if (num >= 0 && num <= 9) {
+            return `0${num}`
+        }
+        else return `${num}`
     }
 
     useEffect(() => {

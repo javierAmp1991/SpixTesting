@@ -45,26 +45,26 @@ export default function ProductSelectedViewMobile({item, deleteItem, amountPerIt
             </div>
             <div className={style.gridAmountDelete}>
                 <div className={style.AmountSelected}>
-                    <div onClick={() => amountPerItem(item, false)}
+                    <button onClick={() => amountPerItem(item, false)}
                          className={`${utilities.fontPrimaryText}
                           ${style.styleMoreLess}
                           ${style.borderRight}`}> -
-                    </div>
+                    </button>
 
                     <div className={style.amount}>
                         {item.Amount}
                     </div>
 
-                    <div onClick={() => amountPerItem(item, true)}
+                    <button onClick={() => amountPerItem(item, true)}
                          className={`${utilities.fontPrimaryText} 
                          ${style.styleMoreLess} 
                          ${style.borderLeft}`}> +
-                    </div>
+                    </button>
                 </div>
-                <div onClick={() => deleteItem(item.Product, false)}
+                <button onClick={() => deleteItem(item.Product, false)}
                      className={`${utilities.fontSecundaryText} ${style.styleDelete}`}>
                     {deleteTextButton}
-                </div>
+                </button>
             </div>
         </div>
     )

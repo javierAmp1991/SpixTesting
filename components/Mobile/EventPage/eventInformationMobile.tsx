@@ -9,6 +9,7 @@ import LayoutWithNavCircleMobile from "../Layouts/layoutWithNavCircleMobile";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import React, {useState} from "react";
 import Image from "next/image";
+const textButton: string = "Comprar Entradas"
 import {EventPageEvent} from "../../../dataDemo/data";
 /*let inputRadio: inputRadioProp[] = [
     {
@@ -207,7 +208,7 @@ export default function EventInformationMobile({eventInformation, form}:
             </div>
 
             <div className={style.gridButtons}>
-                <ButtonBlue text={"Ver entradas"}/>
+                <ButtonBlue text={textButton}/>
             </div>
 
             {/*<div className={style.paddingContInpu}>

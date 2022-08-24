@@ -10,7 +10,7 @@ import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 
-const textButton: string = "Ver entradas"
+const textButton: string = "Comprar Entradas"
 
 export default function SideCardEvent({eventInformation}: { eventInformation: EventLookUp }) {
     let [displayImage, setDisplayImage] = useState(false)

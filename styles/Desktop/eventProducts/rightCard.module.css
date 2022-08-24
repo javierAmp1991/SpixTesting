@@ -62,6 +62,15 @@
     transition: .4s;
 }
 
+.gridAddItem{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap:12px;
+    align-items: center;
+    padding: 10px
+}
+
+
 .mainContPop {
     padding: 48px;
     display: grid;

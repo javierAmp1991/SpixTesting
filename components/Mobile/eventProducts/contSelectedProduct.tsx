@@ -39,57 +39,22 @@ export default function ContSelectedProduct({
     }, [cssStyle])
     return (
         <div className={cssStyle}>
-            {
-                dispay ?
-                    <></> : <div className={style.totalButtonContainer}>
-                        <div onClick={handleDisplay}
-                             className={style.gridCarTitleClose}>
-                            <div className={style.styleGridVar}>
-                                <div className={style.sizeBuyCAr}>
-                                    <Image layout={"fill"}
-                                           src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
-                                </div>
-                                <span className={style.numItemSelected}>
-                                    {
-                                        totalProducts > 9 ?
-                                            <div className="relative">
-                                                <span className={style.positionNine}>9</span>
-                                                <span className={style.positionMore}>+</span>
-                                            </div>
-                                            :
-                                            totalProducts
-                                    }
-                                </span>
-                            </div>
-
-                            <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
-                                Total: ${Intl.NumberFormat("ES-Cl"
-                            ).format(Math.round(totalPrice))}
-                            </div>
-                            <Link href={"/payPage"}>
-                                <button className={style.buttonStyle}>{buttonText}</button>
-                            </Link>
-                        </div>
-                    </div>
-            }
-
-            <div className={style.gridTabs}>
-                <div className={` ${style.containerClients}`}>
-                    {
-                        listGuest.map((item, index) =>
-                            <div onClick={() => methodProps.guestSelected(item)}
-                                 className={item.isSelected ? style.TabIconSelected : style.TabIcon}
-                                 key={index}>
+            <div className={dispay ? style.mainContResultTabs : style.mainContResultTabsHidden}>
+                <div className={style.gridTabs}>
+                    <div className={` ${style.containerClients}`}>
+                        {
+                            listGuest.map((item, index) =>
+                                <div onClick={() => methodProps.guestSelected(item)}
+                                     className={item.isSelected ? style.TabIconSelected : style.TabIcon}
+                                     key={index}>
                                 <span className={`${style.nameElipsis} ${utilities.clamp1}`}>
                                 {item.name}
                                 </span>
-                            </div>
-                        )
-                    }
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
-            </div>
-
-            <div>
                 <div className={`${utilities.fontSubTitle} ${style.contTitle}`}>
                     {
                         totalProducts > 0 ?
@@ -126,7 +91,38 @@ export default function ContSelectedProduct({
                                 <button className={style.buttonStyle}>{buttonText}</button>
                             </Link>
                         </div>
-                    </div> : <></>
+                    </div>
+                    :
+                    <div className={style.totalButtonContainer}>
+                        <div onClick={handleDisplay}
+                             className={style.gridCarTitleClose}>
+                            <div className={style.styleGridVar}>
+                                <div className={style.sizeBuyCAr}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                                </div>
+                                <span className={style.numItemSelected}>
+                                    {
+                                        totalProducts > 9 ?
+                                            <div className="relative">
+                                                <span className={style.positionNine}>9</span>
+                                                <span className={style.positionMore}>+</span>
+                                            </div>
+                                            :
+                                            totalProducts
+                                    }
+                                </span>
+                            </div>
+
+                            <div className={`${utilities.fontSubTitle} ${style.totalConainer}`}>
+                                Total: ${Intl.NumberFormat("ES-Cl"
+                            ).format(Math.round(totalPrice))}
+                            </div>
+                            <Link href={"/payPage"}>
+                                <button className={style.buttonStyle}>{buttonText}</button>
+                            </Link>
+                        </div>
+                    </div>
             }
         </div>
     )

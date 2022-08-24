@@ -156,7 +156,7 @@ export default function RightCard({
                             )
                         }
                         <div onClick={handleDisplayAdd}
-                             className={`${style.gridNewGuestIcon}`}>
+                             className={`${style.gridAddItem}`}>
                             <span className={utilities.fontPrimaryText}>{newGuestText}</span>
                             <div className={style.addIconStyle}>
                                 <Image layout={"fill"}

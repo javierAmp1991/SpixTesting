@@ -1,24 +1,27 @@
-.bannerFeatureProperties{
+.bannerFeatureProperties {
     width: 100%;
-    aspect-ratio: 2/1;
+    aspect-ratio: 3/1;
     object-fit: cover;
     object-position: center;
     position: relative;
-
 }
-.logoFeatureProperties{
-    --sizeLogoFeatureMobile: 56px;
-    height: var(--sizeLogoFeatureMobile) ;
-    width: var(--sizeLogoFeatureMobile) ;
+
+.paddingMainCont {
+    padding: 26px 8px 8px 8px;
+}
+
+.logoFeatureProperties {
+    --sizeLogoFeatureMobile: 48px;
+    height: var(--sizeLogoFeatureMobile);
+    width: var(--sizeLogoFeatureMobile);
     box-shadow: var(--boxShadowCard);
     border-radius: 50%;
     position: absolute;
-    top: calc(100% - (var(--sizeLogoFeatureMobile)/2));
-    left: calc(50% - (var(--sizeLogoFeatureMobile)/2));
+    top: calc(100% - (var(--sizeLogoFeatureMobile) / 2));
+    left: calc(50% - (var(--sizeLogoFeatureMobile) / 2));
     overflow: hidden;
-
 }
 
-.sizeFeaturedDiv{
-    width: 300px;
+.sizeFeaturedDiv {
+    width: 280px;
 }

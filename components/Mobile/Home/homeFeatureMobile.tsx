@@ -17,7 +17,7 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                     <Image layout={"fill"} src={item.LogoPath} alt=""/>
                 </div>
             </div>
-            <div className="px-2 pb-2 pt-10">
+            <div className={style.paddingMainCont}>
                 <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
                     {item.EventName}
                 </div>
@@ -61,13 +61,12 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                         <></>
                 }
 
-                <div className={`${cssStyle.fontPriceInclude} mb-1 text-center`}>
+                <div className={`${cssStyle.fontPriceInclude} text-center`}>
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
                                 ${Intl.NumberFormat("ES-CL"
                             ).format(Math.round(item.TicketPriceMin))}
-
                             </>
                             :
                             <>

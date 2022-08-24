@@ -3,7 +3,7 @@ import style from "/styles/Mobile/Misc/menuSpixMobile.module.css"
 export default function MenuSpixMobile({listItemMenu, isDarkMode}) {
     let cssStyles = getCssStyle()
     return (
-        <div className={`${cssStyles.bg} px-2 py-2 w-full m-auto`}>
+        <div className={cssStyles.bg}>
             <div className={style.gridTagsMenu}>
                 {
                     listItemMenu.map(menuTag =>

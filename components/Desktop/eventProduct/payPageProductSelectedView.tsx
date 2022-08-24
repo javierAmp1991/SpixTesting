@@ -42,26 +42,26 @@ export default function PayPageProductSelectedView({item, deleteItem, amountPerI
             </div>
             <div className={style.gridAmountDelete}>
                 <div className={style.AmountSelected}>
-                    <div onClick={() => amountPerItem(item, false)}
+                    <button onClick={() => amountPerItem(item, false)}
                          className={`${utilities.fontPrimaryText}
                           ${style.styleMoreLess}
                           ${style.borderRight}`}> -
-                    </div>
+                    </button>
 
                     <div className={style.amount}>
                         {item.Amount}
                     </div>
 
-                    <div onClick={() => amountPerItem(item, true)}
+                    <button onClick={() => amountPerItem(item, true)}
                          className={`${utilities.fontPrimaryText} 
                          ${style.styleMoreLess} 
                          ${style.borderLeft}`}> +
-                    </div>
+                    </button>
                 </div>
-                <div onClick={() => deleteItem(item.Product)}
+                <button onClick={() => deleteItem(item.Product)}
                      className={`${utilities.fontSecundaryText} ${style.styleDelete}`}>
                     {deleteButton}
-                </div>
+                </button>
             </div>
         </div>
     )

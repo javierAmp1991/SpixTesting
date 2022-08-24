@@ -201,11 +201,11 @@ export default function EventPage() {
             padding: paddingDefaultSection
         },
         {
-            Component: newsMobile,
+            Component: products,
             padding: paddingDefaultSection
         },
         {
-            Component: products,
+            Component: newsMobile,
             padding: paddingDefaultSection
         },
         {
@@ -321,13 +321,14 @@ export default function EventPage() {
             padding: paddingDefaultSectionDeskCarrousel
         },
         {
-            Component: newsDesk,
-            padding: paddingDefaultSectionDeskCarrousel
-        },
-        {
             Component: productsDesk,
             padding: paddingDefaultSectionDeskCarrousel
         },
+        {
+            Component: newsDesk,
+            padding: paddingDefaultSectionDeskCarrousel
+        },
+
         {
             Component: eventExtraDesk,
             padding: paddingDefaultSectionDeskCarrousel
