@@ -243,12 +243,12 @@
 
 @keyframes moveArrow {
     0% {
-        right: 8px;
+        right: 114px;
     }
     50% {
-        right: 24px;
+        right: 144px;
     }
     100% {
-        right: 8px;
+        right: 114px;
     }
 }

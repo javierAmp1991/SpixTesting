@@ -7,8 +7,8 @@
     width: 100vw;
     max-width: 768px;
     margin: auto;
-    z-index: 10000000000;
-    border-top: 4px solid var(--separationLineColor);
+    z-index: 1000000000000000000000000000;
+    border-top: 1px solid var(--separationLineColor);
 }
 
 .heightIcon {
@@ -22,7 +22,6 @@
     grid-template-columns: repeat(4, max-content);
     padding: var(--paddingYNavBarMenu) var(--paddingXNavBarMenu);
     justify-content: space-between;
-    background: white;
 }
 
 .gridNavBarMenu {

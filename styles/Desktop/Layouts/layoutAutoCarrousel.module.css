@@ -3,7 +3,6 @@
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
-    transition: 1s linear;
 }
 .testImage{
     width: 250px;

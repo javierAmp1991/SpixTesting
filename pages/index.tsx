@@ -65,6 +65,7 @@ import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
+import Image from "next/image";
 //endregion
 
 //region constantes
@@ -342,15 +343,48 @@ export default function Index() {
 //endregion
 
     //region desktop components
-    let carrouselBanner = <LayoutCarrouselLoop layoutProp={layoutPropBanner}>
+    let carrouselBanner = <LayoutCarrouselLoop isAuto={false} layoutProp={layoutPropBanner}>
         {
             HomeBannerData.listBanners.map((item, index) =>
                 <FullBanner item={item} key={index}/>
             )
         }
     </LayoutCarrouselLoop>
-    let carrouselAuto = <LayoutAutoCarrousel
+    let carrouselAuto1 = <LayoutAutoCarrousel
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
+
+    let carrouselAuto = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
+        <div className={utilities.gridtest}>
+            {
+                CarrouselAutoHome.listImage.map((item, index) =>
+                    index >= 0 && index <= 2?
+                    <div className={utilities.divtest}>
+                        <Image priority={true} layout={"fill"} objectFit={"cover"} src={item}/>
+                    </div>:<></>
+                )
+            }
+        </div>
+        <div className={utilities.gridtest}>
+            {
+                CarrouselAutoHome.listImage.map((item, index) =>
+                    index >= 1 && index <= 3?
+                        <div className={utilities.divtest}>
+                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item}/>
+                        </div>:<></>
+                )
+            }
+        </div>
+        <div className={utilities.gridtest}>
+            {
+                CarrouselAutoHome.listImage.map((item, index) =>
+                    index >= 2 && index <= 4?
+                        <div className={utilities.divtest}>
+                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item}/>
+                        </div>:<></>
+                )
+            }
+        </div>
+    </LayoutCarrouselLoop>
 
     let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>
 
@@ -494,10 +528,10 @@ export default function Index() {
             Component: carrouselAuto,
             padding: paddingGeneralDesk
         },
-       /* {
-            Component: information,
-            padding: paddingGeneralDesk
-        },*/
+        /* {
+             Component: information,
+             padding: paddingGeneralDesk
+         },*/
         {
             Component: dailyOffer,
             padding: paddingGeneralDesk
@@ -567,11 +601,11 @@ export default function Index() {
                             <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
                             {carrouselBannerMobile}
                             <DefaultPageMobile listItem={listDefaultPageMobile}/>
-                            <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
-                                     isDarkMode={isDarkMode}
-                                     isLogged={isLogged}/>
                         </>
                 }
+                <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
+                         isDarkMode={isDarkMode}
+                         isLogged={isLogged}/>
             </div>
             :
             <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>

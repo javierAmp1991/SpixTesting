@@ -59,7 +59,7 @@ export default function Search() {
         </LayoutButtonNavegation>
     //endregion
     let [isDiplaySug, setIsDisplaySug] = useState(false)
-    const handleIsDisplaySug = ()=> setIsDisplaySug(isDiplaySug = !isDiplaySug)
+    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
         isSmallDown ?
             <div className="pb-10">
@@ -91,11 +91,11 @@ export default function Search() {
                                         :
                                         <></>
                                 }
-                                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
-                                         isActiveDarkModeButton={true}/>
                             </div>
                         </>
                 }
+                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
+                         isActiveDarkModeButton={true}/>
             </div>
             :
             <div>

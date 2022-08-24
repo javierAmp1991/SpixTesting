@@ -44,9 +44,13 @@ export default function LeftCard({listSectionPro, addItemGuest, deleteItemGuest}
                             <div id={idCarrousel} className={style.styletagContainer}>
                                 {
                                     listSectionPro.map((item, index) =>
-                                        <a className={style.styleTag} href={`#${item.Title}`} key={index}>
+                                        /*<a className={style.styleTag} href={`#${item.Title}`} key={index}>
                                             {item.Title}
-                                        </a>
+                                        </a>*/
+                                        <button key={index}
+                                            className={style.styleTag}>
+                                            {item.Title}
+                                        </button>
                                     )
                                 }
                             </div>
@@ -65,9 +69,9 @@ export default function LeftCard({listSectionPro, addItemGuest, deleteItemGuest}
                                          className={index != (listSectionPro.length - 1) ?
                                              style.borderBottomSection : ""}>
                                         <SectionProduct
-                                                        addItemGuest={addItemGuest}
-                                                        item={item}
-                                                        deleteItemGuest={deleteItemGuest}/>
+                                            addItemGuest={addItemGuest}
+                                            item={item}
+                                            deleteItemGuest={deleteItemGuest}/>
                                     </div>
                                 )
                             }

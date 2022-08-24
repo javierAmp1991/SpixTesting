@@ -394,6 +394,19 @@
     transition: 10s;
 }
 
+.divtest{
+    width: 394px;
+    aspect-ratio: 2/1;
+    position: relative;
+    object-fit: cover;
+}
+
+.gridtest{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
 @media (min-width: 1281px) {
     .borderCards:hover {
         transform: scale(var(--scaleHover));

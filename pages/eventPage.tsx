@@ -373,14 +373,12 @@ export default function EventPage() {
                                 <DefaultPageMobile listItem={defaultList}/>
                                 <FooterMobile/>
                             </div>
-                            {
-                                isSmallDown ?
-                                    <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
-                                             isLogged={false}/>
-                                    :
-                                    <></>
-                            }
                         </>
+                }
+                {
+                    isSmallDown &&
+                    <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
+                             isLogged={false}/>
                 }
             </div>
             :

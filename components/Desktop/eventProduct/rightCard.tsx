@@ -191,7 +191,7 @@ export default function RightCard({
                     <span>Total Invitados ({listGuest.length - 1})</span>
                 </div>
 
-                <div className={`${style.gridSelected}`}>
+                <div  className={`${style.gridSelected}`}>
                     {
                         guestSelected.listProductAmount.map((item, index) =>
                             <PayPageProductSelectedView deleteItem={removeItemGuestSelected}

@@ -1,18 +1,30 @@
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css";
 import styleCarrouselLoop from "/styles/Desktop/Layouts/layoutCarrouselLoop.module.css"
 import {LayoutCarrouselDeskProp} from "./layoutCarrousel";
 
-export default function LayoutCarrouselLoop({children, layoutProp}) {
+export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
     const mainDivRef = useRef(null)
     const sizeDivRef = useRef(null)
     let [visibility, setVisibility] = useState(true);
     const handleRight = () => {
         const firstElement = mainDivRef.current.children[0];
         mainDivRef.current.style.transition = `1000ms linear`;
+        mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
+        const transition = () =>{
+            mainDivRef.current.style.transition = `none`;
+            mainDivRef.current.style.transform = `translateX(0px)`;
+            mainDivRef.current.appendChild(firstElement);
+            mainDivRef.current.removeEventListener('transitionend', transition)
+        }
+        mainDivRef.current.addEventListener('transitionend', transition);
+    }
+    const handleRightAuto = () => {
+        const firstElement = mainDivRef.current.children[0];
+        mainDivRef.current.style.transition = `2000ms linear`;
         mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
         const transition = () =>{
             mainDivRef.current.style.transition = `none`;
@@ -35,6 +47,12 @@ export default function LayoutCarrouselLoop({children, layoutProp}) {
             mainDivRef.current.style.transform = `translateX(0)`;
         }, 30)
     }
+    useEffect(()=>{
+        if(isAuto){
+            const interval = setInterval(handleRightAuto, 5000)
+            return () => clearInterval(interval)
+        }
+    })
 
     return (
         <div className={styles.mainDivCarrouselProperties}>

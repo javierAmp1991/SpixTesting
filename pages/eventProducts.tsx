@@ -199,7 +199,6 @@ export default function EventProducts() {
         }
     }, [guestSelected])
 
-
     useEffect(() => {
         const handleSetH = (number: number) => {
             setHeightDiv(heightDiv = number)
@@ -248,12 +247,11 @@ export default function EventProducts() {
                                                    listSectionProduct={listProductShow}
                                                    addItem={addItemGuestSelected}
                                                    removeItem={removeItemGuestSelected}/>
-                                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
-                                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
                             </div>
-
                         </>
                 }
+                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode}
+                         isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
             </div>
             :
             <div>
