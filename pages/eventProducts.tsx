@@ -225,7 +225,7 @@ export default function EventProducts() {
 
     return (
         isSmallDown ?
-            <div className={styleMob.mainContainerMobile}>
+            <div className={`${styleMob.mainContainerMobile} relative`}>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
@@ -252,7 +252,6 @@ export default function EventProducts() {
                                      isLogged={isLogged} isActiveDarkModeButton={isActiveDarkModeButton}/>
                         </>
                 }
-
             </div>
             :
             <div>
