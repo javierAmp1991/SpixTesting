@@ -119,7 +119,6 @@
     gap: 40px;
     overflow: scroll;
     padding: 0 var(--spaceXMainContainerMobile) 150px var(--spaceXMainContainerMobile);
-    height: 100%;
 }
 
 .styleGridVar {
@@ -217,15 +216,6 @@
     background: #eaeaea;
     position: relative;
 }
-
-/*.TabIcon::after{
-    content: " ";
-    width: 1px;
-    height: 20px;
-    right: 0;
-    background: #bebebe;
-    position: absolute;
-}*/
 
 .TabIconSelected {
     padding: 10px;
