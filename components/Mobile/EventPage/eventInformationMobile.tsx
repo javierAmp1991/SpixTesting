@@ -9,6 +9,7 @@ import LayoutWithNavCircleMobile from "../Layouts/layoutWithNavCircleMobile";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import React, {useState} from "react";
 import Image from "next/image";
+
 const textButton: string = "Comprar Entradas"
 import {EventPageEvent} from "../../../dataDemo/data";
 /*let inputRadio: inputRadioProp[] = [
@@ -136,7 +137,7 @@ export default function EventInformationMobile({eventInformation, form}:
                     </div>
 
                     <div>
-                        <SocialBar></SocialBar>
+                        <SocialBar/>
                     </div>
                 </div>
 
@@ -170,13 +171,19 @@ export default function EventInformationMobile({eventInformation, form}:
                 <LayoutWithNavCircleMobile isDarkMode={false}>
                     {
                         eventInformation.ListImages.map((item, index) =>
-                            <div className={`${style.containerShowProp} ${utilities.snapScroll}`} key={index}>
-                                <div className={style.imageShowProperties}>
-                                    <Image layout={"fill"} src={item} alt=""/>
+                            index == 0 ?
+                                <div className={`${style.containerShowProp} ${utilities.snapScroll}`}>
+                                    <video controls className={style.videoShowProperties} src={eventInformation.Video}/>
                                 </div>
-                            </div>
+                                :
+                                <div className={`${style.containerShowProp} ${utilities.snapScroll}`} key={index}>
+                                    <div className={style.imageShowProperties}>
+                                        <Image layout={"fill"} src={item} alt=""/>
+                                    </div>
+                                </div>
                         )
                     }
+
                 </LayoutWithNavCircleMobile>
 
                 <div className={`${utilities.fontPrimaryText} ${style.paddingDescription}`}>
@@ -187,7 +194,10 @@ export default function EventInformationMobile({eventInformation, form}:
                     <span className={utilities.fontPrimaryText}>Atributos: </span>
                     {
                         eventInformation.Tags.map((item, index) =>
-                            <span key={index} className={utilities.fontSecundaryText}>{item}</span>
+                            index != eventInformation.Tags.length - 1 ?
+                                <a className={utilities.fontSecundaryText} key={index}>{item},</a>
+                                :
+                                <a className={utilities.fontSecundaryText} key={index}>{item}.</a>
                         )
                     }
                 </div>

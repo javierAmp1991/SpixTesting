@@ -1,7 +1,6 @@
 import style from "/styles/Desktop/eventProducts/productSelectedView.module.css"
 import {Product, productAmount} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
-import {useState} from "react";
 import Image from "next/image";
 
 const deleteButton = "Eliminar"

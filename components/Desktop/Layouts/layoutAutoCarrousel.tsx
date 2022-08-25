@@ -1,13 +1,19 @@
 import style from "/styles/Desktop/Layouts/layoutAutoCarrousel.module.css"
+import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
 import {useMediaQuery} from "../../../pages";
+import {func} from "prop-types";
+
 const mediaQuery = '(max-width: 768px)'
 
-export default function LayoutAutoCarrousel({gapLayout, listImages}:
-                                                { gapLayout: number, listImages: string[] }) {
+export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
+                                                { gapLayout: number,
+                                                    listImages: string[],
+                                                isDarkMode: boolean}) {
+    const cssStyle = getCssStyle()
     const isSmallDown = useMediaQuery(mediaQuery);
-    const widthDiv = isSmallDown? 20 : 30;
+    const widthDiv = isSmallDown ? 8 : 15;
     let [listImagesCar, setListImagesCar] = useState(listImages)
     const renderContainer = useRef(null)
     let [control, setControl] = useState(0)
@@ -46,11 +52,22 @@ export default function LayoutAutoCarrousel({gapLayout, listImages}:
         <div className="overflow-hidden w-full">
             <div ref={renderContainer} style={{gap: gapLayout, transform: start}} className={style.gridCarrouselAuto}>
                 {listImagesCar.map((image: string, index) =>
-                    <div key={index} className={style.testImage}>
-                        <Image priority={true} layout={"fill"} src={image} alt=""/>
+                    <div key={index} className={`${style.paddingGradient} ${cssStyle.firstGradient}`}>
+                        <div className={`${style.paddingGradient} ${cssStyle.secondGradient}`}>
+                            <div  className={style.testImage}>
+                                <Image priority={true} layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={image} alt=""/>
+                            </div>
+                        </div>
                     </div>
                 )}
             </div>
         </div>
     )
+
+    function getCssStyle(){
+        return{
+            firstGradient: isDarkMode? utilities.bgFirstGradientDarkMode : utilities.bgFirstGradient,
+            secondGradient: isDarkMode? utilities.bgSecondGradientDarkMode : utilities.bgSecondGradient
+        }
+    }
 }

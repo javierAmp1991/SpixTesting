@@ -215,7 +215,6 @@
     background: linear-gradient(90deg, rgba(4, 93, 233, 1) 0%, rgba(4, 163, 233, 1) 19%, rgba(4, 155, 233, 1) 39%, rgba(4, 59, 233, 1) 61%, rgba(4, 205, 233, 1) 80%, rgba(4, 74, 233, 1) 100%);
     background: rgb(131, 164, 212);
     background: linear-gradient(90deg, rgba(131, 164, 212, 1) 0%, rgba(182, 251, 255, 1) 50%, rgba(148, 187, 233, 1) 100%);
-    border-radius: 50%;
 }
 
 .bgFirstGradientDarkMode {
@@ -225,7 +224,6 @@
 
 .bgSecondGradient {
     background: radial-gradient(circle at 0% 0.5%, rgb(241, 241, 242) 0.1%, rgb(224, 226, 228) 100.2%);
-    border-radius: 50%;
 }
 
 .bgSecondGradientDarkMode {

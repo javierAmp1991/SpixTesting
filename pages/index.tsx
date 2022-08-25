@@ -169,7 +169,7 @@ export default function Index() {
             )
         }
     </LayoutCarrouselMobile>
-    let carrouselAutoMobile = <LayoutAutoCarrousel
+    let carrouselAutoMobile = <LayoutAutoCarrousel isDarkMode={isDarkMode}
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
     let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>
@@ -350,10 +350,10 @@ export default function Index() {
             )
         }
     </LayoutCarrouselLoop>
-    let carrouselAuto1 = <LayoutAutoCarrousel
+    let carrouselAuto = <LayoutAutoCarrousel isDarkMode={isDarkMode}
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
-    let carrouselAuto = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
+    let carrouselAuto1 = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
         <div className={utilities.gridtest}>
             {
                 CarrouselAutoHome.listImage.map((item, index) =>

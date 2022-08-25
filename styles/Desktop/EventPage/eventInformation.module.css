@@ -27,7 +27,7 @@
 .gridAtributes {
     display: grid;
     grid-template-columns: repeat(4, max-content);
-    gap: 8px;
+    gap: 6px;
     align-items: center;
     align-content: center;
     padding-bottom: 24px;
@@ -95,7 +95,7 @@
     display: grid;
     grid-template-columns: repeat(1, max-content);
     justify-content: center;
-    padding: 12px 0;
+    padding: 0 0 24px 0;
 }
 
 .containerShowProp {
@@ -318,4 +318,12 @@
     height: 16px;
     width: 16px;
     position: relative;
+}
+
+.styleButton{
+    padding:4px 24px;
+    background: var(--gradientBlueButton);
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
 }

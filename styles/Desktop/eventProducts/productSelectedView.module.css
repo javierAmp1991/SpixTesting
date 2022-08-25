@@ -23,7 +23,7 @@
 }
 
 .styleMoreLess {
-    padding: 2px 10px;
+    padding: 3px 10px;
     background: rgb(214, 214, 213);
     background: linear-gradient(360deg, rgba(214, 214, 213, 1) 0%, rgba(245, 245, 245, 1) 100%);
     font-weight: 300;
@@ -31,6 +31,7 @@
     line-height: 18px;
     display: grid;
     align-content: center;
+    align-items: center;
 }
 
 .borderLeft {

@@ -2,10 +2,12 @@ import {EventLookUp, fomrLink} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/EventPage/eventInformation.module.css"
 import FormView from "../Misc/formView";
-import {useState} from "react";
+import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import LayoutPurpleContainer from "../Layouts/layoutPurpleContainer";
 import Image from "next/image";
+import ButtonBlue from "../Misc/buttonBlue";
+const textButton: string = "Comprar Entradas"
 
 export default function EventInformationDesk({
                                                  eventInformation,
@@ -76,9 +78,16 @@ export default function EventInformationDesk({
                     </div>
                     {
                         eventInformation.Tags.map((item, index) =>
-                            <a className={utilities.fontSecundaryText} key={index}>{item}</a>
+                            index != eventInformation.Tags.length - 1?
+                            <a className={utilities.fontSecundaryText} key={index}>{item},</a>
+                                :
+                                <a className={utilities.fontSecundaryText} key={index}>{item}.</a>
                         )
                     }
+                </div>
+
+                <div className={style.gridButtons}>
+                    <button className={style.styleButton}>{textButton}</button>
                 </div>
             </div>
 

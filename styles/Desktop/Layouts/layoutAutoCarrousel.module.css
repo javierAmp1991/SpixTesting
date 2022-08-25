@@ -3,11 +3,25 @@
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
+    transition: 1s linear;
 }
-.testImage{
-    width: 250px;
-    aspect-ratio: 2/1;
-    object-fit: cover;
+
+.testImage {
+    width: 100px;
+    aspect-ratio: 1/1;
     object-position: center;
     position: relative;
+}
+
+.paddingGradient {
+    padding: 0;
+}
+
+@media (min-width: 1280px) {
+    .testImage {
+        width: 180px;
+        aspect-ratio: 1/1;
+        object-position: center;
+        position: relative;
+    }
 }
