@@ -129,13 +129,19 @@
 
 .timerContainer {
     display: grid;
-    grid-template-columns: repeat(2,max-content);
+    grid-template-columns: repeat(3,max-content);
     gap:6px;
     justify-content: left;
     align-items: center;
-    justify-items: left;
+    align-content: center;
     padding: 0 0 24px 0;
     color: #da1818;
+}
+
+.sizeIconTimer{
+    width: 12px;
+    height: 16px;
+    position: relative;
 }
 
 

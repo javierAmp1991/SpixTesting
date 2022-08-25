@@ -3,9 +3,11 @@ import utilities from "/styles/utilities.module.css"
 import CuponInput, {inputCuponValues} from "./cuponInput";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import Timer from "../Misc/timer";
 
 const goToPay: string = "Pagar"
 const cancel: string = "Cancelar"
+const finishText: string = "para finalizar su compra"
 const propCupon: inputCuponValues = {
     titleCupon: "Ingresa tu cupon",
     placeHolder: "Ingresa tu cupón"
@@ -52,10 +54,13 @@ export default function DetailsPay() {
                 </div>
 
                 <div className={style.timerContainer}>
-                    <div className="h-4 w-3 relative">
+                    <div className={style.sizeIconTimer}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.timerRed} alt=""/>
                     </div>
-                    <span>09:08:23 para finalizar su compra</span>
+                        <Timer isDays={false}/>
+                    <div>
+                        {finishText}
+                    </div>
                 </div>
             </div>
 

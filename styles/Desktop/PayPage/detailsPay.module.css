@@ -66,12 +66,17 @@
     width: 100%;
 }
 
+.sizeIconTimer{
+    width: 12px;
+    height: 16px;
+    position: relative;
+}
+
 .timerContainer {
     display: grid;
-    grid-template-columns: max-content max-content;
+    grid-template-columns: repeat(3, max-content);
     gap: 6px;
     justify-content: left;
-    justify-items: center;
     align-items: center;
     align-content: center;
     padding-bottom: var(--spaceY);

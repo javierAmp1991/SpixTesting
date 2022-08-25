@@ -5,9 +5,11 @@ import {GlobalConst} from "../../../public/globalConst";
 import CuponInputMobile from "./cuponInputMobile";
 import {inputCuponValues} from "../../Desktop/PayPage/cuponInput";
 import Image from "next/image";
+import Timer from "../../Desktop/Misc/timer";
 
 const goToPay: string = "Pagar"
 const cancel: string = "Cancelar"
+const finishText: string = "para finalizar su compra"
 const propCupon: inputCuponValues = {
     titleCupon: "Ingresa tu cupon",
     placeHolder: "Ingresa tu cupón"
@@ -27,7 +29,7 @@ export default function DetailsPayMobile({displaySelectedItem}) {
                 </div>
                 <button onClick={displaySelectedItem} className="relative">
                     <div className={style.sizeBuyCar}>
-                    <Image layout={"fill"}  src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                     </div>
                     <span className={style.positionNumberCar}>6</span>
                 </button>
@@ -55,12 +57,15 @@ export default function DetailsPayMobile({displaySelectedItem}) {
                 <div> $199.999</div>
             </div>
             <div className={style.timerContainer}>
-                <div className="h-4 w-3 relative">
-                <Image layout={"fill"}  src={GlobalConst.sourceImages.timerRed} alt=""/>
+                <div className={style.sizeIconTimer}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.timerRed} alt=""/>
                 </div>
-                <span>
-                09:08:23 para finalizar su compra
-                </span>
+                <div>
+                    <Timer isDays={false}/>
+                </div>
+                <div>
+                    {finishText}
+                </div>
             </div>
             <div className={style.buttonContainer}>
                 <button className={style.maxWidthButton}>

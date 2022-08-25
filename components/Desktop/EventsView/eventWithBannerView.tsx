@@ -15,7 +15,7 @@ export default function EventWithBannerView({item, darkModeState}) {
         setIsActive(isActive = !isActive);
     };*/
     let [visibility, setVisibility] = useState(true);
-    let [timeOut, setTimeOut] = useState(new Date(2022, 8, 23, 23, 59, 59))
+    let [timeOut, setTimeOut] = useState(new Date(2022, 9, 23, 23, 59, 59))
     let [seconds, setSeconds] = useState((timeOut.getSeconds() - new Date().getSeconds()).toLocaleString())
     let [minutes, setMinutes] = useState((timeOut.getMinutes() - new Date().getMinutes()).toLocaleString())
     let [hours, setHours] = useState((timeOut.getHours() - new Date().getHours()).toLocaleString())
