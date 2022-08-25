@@ -147,9 +147,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
                 </div>
 
-                {/*<div className={style.gridButtons}>
+                <div className={style.gridButtons}>
                     <ButtonBlue text={textButton}/>
-                </div>*/}
+                </div>
             </div>
 
             {

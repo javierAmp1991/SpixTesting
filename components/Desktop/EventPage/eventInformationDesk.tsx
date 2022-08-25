@@ -86,9 +86,6 @@ export default function EventInformationDesk({
                     }
                 </div>
 
-                <div className={style.gridButtons}>
-                    <button className={style.styleButton}>{textButton}</button>
-                </div>
             </div>
 
             <div className="px-0.5">

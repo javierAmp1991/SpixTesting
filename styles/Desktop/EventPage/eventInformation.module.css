@@ -27,7 +27,7 @@
 .gridAtributes {
     display: grid;
     grid-template-columns: repeat(4, max-content);
-    gap: 6px;
+    gap: 8px;
     align-items: center;
     align-content: center;
     padding-bottom: 24px;
@@ -95,7 +95,7 @@
     display: grid;
     grid-template-columns: repeat(1, max-content);
     justify-content: center;
-    padding: 0 0 24px 0;
+    padding: 14px 0;
 }
 
 .containerShowProp {

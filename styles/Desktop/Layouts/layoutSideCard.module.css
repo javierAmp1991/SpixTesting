@@ -15,7 +15,7 @@
     margin: var(--margen) 0;
     top: var(--margen);
     position: sticky;
-    max-height: 600px;
+    max-height: 630px;
     min-height: 560px;
     border-radius: 8px;
 }

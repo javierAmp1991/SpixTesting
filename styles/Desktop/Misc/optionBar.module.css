@@ -14,6 +14,45 @@
     color: #8e8e8e;
 }
 
+.colorLike{
+    color: var(--linkColor);
+}
+.colorNoLike{
+    color: #8e8e8e;
+}
+
 .gridItems{
     gap: 4px;
+}
+
+.activateLikeIcon {
+    animation: scaleLikeIcon .2s linear;
+}
+
+.desactivateLikeIcon {
+    animation: deScaleLikeICon .2s linear;
+}
+
+@keyframes scaleLikeIcon {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes deScaleLikeICon {
+    0% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
