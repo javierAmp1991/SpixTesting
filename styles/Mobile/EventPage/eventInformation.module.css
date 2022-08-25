@@ -35,7 +35,6 @@
     display: grid;
     grid-template-columns: repeat(4, max-content);
     gap: 8px;
-    padding-bottom: 16px;
 }
 
 .gridMainContainer {
@@ -87,7 +86,7 @@
     display: grid;
     grid-template-columns: repeat(1, max-content);
     justify-content: center;
-    padding-top: 48px;
+    padding: 24px 0;
 }
 
 .maxWidthForm{

@@ -7,6 +7,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import LayoutPurpleContainer from "../Layouts/layoutPurpleContainer";
 import Image from "next/image";
 import ButtonBlue from "../Misc/buttonBlue";
+
 const textButton: string = "Comprar Entradas"
 
 export default function EventInformationDesk({
@@ -78,8 +79,8 @@ export default function EventInformationDesk({
                     </div>
                     {
                         eventInformation.Tags.map((item, index) =>
-                            index != eventInformation.Tags.length - 1?
-                            <a className={utilities.fontSecundaryText} key={index}>{item},</a>
+                            index != eventInformation.Tags.length - 1 ?
+                                <a className={utilities.fontSecundaryText} key={index}>{item},</a>
                                 :
                                 <a className={utilities.fontSecundaryText} key={index}>{item}.</a>
                         )
@@ -90,21 +91,19 @@ export default function EventInformationDesk({
 
             <div className="px-0.5">
                 {
-                    formList.length > 0 ?
-                        <LayoutPurpleContainer isDarkMode={false}>
-                            <div className={`${cssStyle.gridForm} py-4`}>
-                                {
-                                    formList.map((item, index) =>
-                                        <div className={style.maxWidthFormDesk} key={index}>
-                                            <FormView item={item}/>
-                                        </div>
-                                    )
-                                }
+                    formList.length > 0 &&
+                    <LayoutPurpleContainer isDarkMode={false}>
+                        <div className={`${cssStyle.gridForm} py-4`}>
+                            {
+                                formList.map((item, index) =>
+                                    <div className={style.maxWidthFormDesk} key={index}>
+                                        <FormView item={item}/>
+                                    </div>
+                                )
+                            }
 
-                            </div>
-                        </LayoutPurpleContainer>
-                        :
-                        <></>
+                        </div>
+                    </LayoutPurpleContainer>
                 }
             </div>
         </div>

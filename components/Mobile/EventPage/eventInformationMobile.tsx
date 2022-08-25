@@ -201,6 +201,10 @@ export default function EventInformationMobile({eventInformation, form}:
                         )
                     }
                 </div>
+
+                <div className={style.gridButtons}>
+                    <ButtonBlue text={textButton}/>
+                </div>
             </div>
 
             <div className={`${style.paddingDescription} ${style.borderTopBottom}`}>
@@ -215,10 +219,6 @@ export default function EventInformationMobile({eventInformation, form}:
                         )
                     }
                 </LayoutWithNavCircleMobile>
-            </div>
-
-            <div className={style.gridButtons}>
-                <ButtonBlue text={textButton}/>
             </div>
 
             {/*<div className={style.paddingContInpu}>
@@ -250,7 +250,7 @@ export default function EventInformationMobile({eventInformation, form}:
             </div>*/}
 
             {
-                displayDateSelector ?
+                displayDateSelector &&
                     <PopUpContainerMob isBackground={true} closePopUp={handleCloseDate}>
                         <div className={style.mainContSelecDate}>
                             <div className={`${utilities.fontTitle} ${style.titleCont}`}>
@@ -273,14 +273,14 @@ export default function EventInformationMobile({eventInformation, form}:
                                                 {item.Venue}
                                             </div>
                                             {
-                                                item.IsSelected ?
+                                                item.IsSelected &&
                                                     <div className={style.positionChekcICon}>
                                                         <div className={style.checkIconProp}>
                                                             <Image layout={"fill"}
                                                                    src={GlobalConst.sourceImages.checkIconYellow}
                                                                    alt=""/>
                                                         </div>
-                                                    </div> : <></>
+                                                    </div>
                                             }
                                         </div>
                                     )
@@ -291,11 +291,11 @@ export default function EventInformationMobile({eventInformation, form}:
                                 <ButtonBlue text={"aceptar"}/>
                             </div>
                         </div>
-                    </PopUpContainerMob> : <></>
+                    </PopUpContainerMob>
             }
 
             {
-                displayVenue ?
+                displayVenue &&
                     <PopUpContainerMob isBackground={true} closePopUp={handleCloseVenue}>
                         {
                             <div className={style.mainContMap}>
@@ -333,7 +333,7 @@ export default function EventInformationMobile({eventInformation, form}:
 
                             </div>
                         }
-                    </PopUpContainerMob> : <></>
+                    </PopUpContainerMob>
             }
         </div>
     )
