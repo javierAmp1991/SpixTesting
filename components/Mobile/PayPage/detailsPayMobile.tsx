@@ -1,9 +1,8 @@
 import style from "/styles/Mobile/PayPage/detailsPay.module.css"
 import utilities from "/styles/utilities.module.css"
-import ButtonBlueDesk from "../Misc/buttonBlue";
 import {GlobalConst} from "../../../public/globalConst";
 import CuponInputMobile from "./cuponInputMobile";
-import {inputCuponValues} from "../../Desktop/PayPage/cuponInput";
+import {inputCuponValues} from "./cuponInputMobile";
 import Image from "next/image";
 import Timer from "../../Desktop/Misc/timer";
 import {useState} from "react";
@@ -44,12 +43,12 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
     const propCupon: inputCuponValues = {
         titleCupon: "Ingresa tu cupon",
         placeHolder: "Ingresa tu cupón",
-        GetInputvalue: handleFirstCupon
+        GetInputValue: handleFirstCupon
     }
     const propCuponRipley: inputCuponValues = {
         titleCupon: "Ingresa tu cupon Ripley",
         placeHolder: "Ingresa tu cupón",
-        GetInputvalue: handleSecondCupon
+        GetInputValue: handleSecondCupon
     }
     const newTotal = getTotalDiscount(resumeBuy.TotalPrice)
 
