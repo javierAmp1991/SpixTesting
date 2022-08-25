@@ -6,18 +6,17 @@ import {inputCuponValues} from "./cuponInputMobile";
 import Image from "next/image";
 import Timer from "../../Desktop/Misc/timer";
 import React, {useState} from "react";
-
 export class resumeBuy {
     TotalProducts: number
     TotalPrice: number
 }
-
 const goToPay: string = "Pagar"
 const cancel: string = "Cancelar"
 const finishText: string = "para finalizar su compra"
 
 export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
                                              { displaySelectedItem: any, resumeBuy: resumeBuy }) {
+
     let [stateFirstCupon, setStateFirstCupon] = useState(false)
     let [stateSecondtCupon, setStateSecondCupon] = useState(false)
     let [amountDiscount1, setAmountDiscount1] = useState(0)

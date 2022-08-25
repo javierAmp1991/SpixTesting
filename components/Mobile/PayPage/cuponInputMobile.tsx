@@ -40,10 +40,10 @@ export default function CuponInputMobile({cuponProp}: { cuponProp: inputCuponVal
                 <div className={`${style.gridCupon} ${utilities.fontSecundaryText}`}>
                     <input onChange={handleInputCupon}
                         className={style.inputCupon} type="text" placeholder={cuponProp.titleCupon}/>
-                    <div onClick={handleSendInputvalue}
+                    <button onClick={handleSendInputvalue}
                         className={`${style.applyContainer} ${utilities.fontSecundaryText}`}>
                         {titleButton}
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
