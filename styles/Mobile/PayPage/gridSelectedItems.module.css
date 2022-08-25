@@ -1,14 +1,14 @@
 .mainCont {
-    --margins: 24px;
-    padding: 16px;
+    padding: 0 0 24px 0;
+    border-bottom: 2px solid var(--separationLineColor);
+}
+.mainContLast{
+    padding: 0 0 24px 0;
 }
 
 .grid {
     display: grid;
     gap: 24px;
-}
-
-.marginBottom {
 }
 
 .returnContainer{
@@ -37,5 +37,5 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
-    margin-bottom: var(--margins);
+    margin-bottom: 16px;
 }

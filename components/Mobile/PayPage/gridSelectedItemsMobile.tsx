@@ -15,9 +15,9 @@ export default function GridSelectedItemsMobile({guestProducts, isLast, returnDi
                                                     }) {
     {
         return (
-            <div className={style.mainCont}>
+            <div className={isLast? style.mainContLast : style.mainCont}>
                 <div className={style.gridTitleCar}>
-                    <div className={`${utilities.fontTitle}`}>
+                    <div className={`${utilities.fontSubTitle}`}>
                         {guestProducts.NameGuest} ({guestProducts.ListProducts.length})
                     </div>
                 </div>

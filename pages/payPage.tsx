@@ -46,7 +46,7 @@ export default function PayPage() {
             {
                 ListProducts3.listProducts.map((item, index) =>
                     <GridSelectedItems isLast={
-                        index == ListProducts3.listProducts.length - 1? true : false
+                        index == ListProducts3.listProducts.length - 1 ? true : false
                     } key={index} guestProducts={item}/>
                 )
             }
@@ -60,19 +60,25 @@ export default function PayPage() {
         }
     //endregion
     //region mobileComponents
-   /* let productSelected = ListProducts.listProducts.map((item, index) =>
-        <PayPageProductSelectedViewMobile item={item} key={index}/>
-    )*/
+    /* let productSelected = ListProducts.listProducts.map((item, index) =>
+         <PayPageProductSelectedViewMobile item={item} key={index}/>
+     )*/
 
-    let productSelected1 = <div className="grid gap-10 pb-4 pl-2">
-        {
-            ListProducts3.listProducts.map((item, index) =>
-                <GridSelectedItemsMobile returnDisplay={handleDisplay} isLast={
-                    index == ListProducts3.listProducts.length - 1? true : false
-                } key={index} guestProducts={item}/>
-            )
-        }
-    </div>
+    let productSelected1 =
+        <div className={styleMobile.divSelected}>
+            <div className={styleMobile.gridSelected}>
+                {
+                    ListProducts3.listProducts.map((item, index) =>
+                        <GridSelectedItemsMobile returnDisplay={handleDisplay} isLast={
+                            index == ListProducts3.listProducts.length - 1 ? true : false
+                        } key={index} guestProducts={item}/>
+                    )
+                }
+
+            </div>
+            <button onClick={handleDisplay}
+                className={styleMobile.buttonBack}>Volver</button>
+        </div>
     //endregion
     return (
         isSmallDown ?
@@ -111,18 +117,18 @@ export default function PayPage() {
             </div>
     )
 
-    function getTotalProducts(): number{
-        let total=0
-        ListProducts3.listProducts.forEach(item =>{
+    function getTotalProducts(): number {
+        let total = 0
+        ListProducts3.listProducts.forEach(item => {
             total += item.ListProducts.length
         })
         return total
     }
 
-    function getTotalPrice(): number{
+    function getTotalPrice(): number {
         let total = 0
         ListProducts3.listProducts.forEach(item => {
-            item.ListProducts.forEach(item2 =>{
+            item.ListProducts.forEach(item2 => {
                 total += item2.Price
             })
         })

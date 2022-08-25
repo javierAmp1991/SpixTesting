@@ -5,7 +5,7 @@ import CuponInputMobile from "./cuponInputMobile";
 import {inputCuponValues} from "./cuponInputMobile";
 import Image from "next/image";
 import Timer from "../../Desktop/Misc/timer";
-import {useState} from "react";
+import React, {useState} from "react";
 
 export class resumeBuy {
     TotalProducts: number
@@ -51,7 +51,6 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
         GetInputValue: handleSecondCupon
     }
     const newTotal = getTotalDiscount(resumeBuy.TotalPrice)
-
     function getTotalDiscount(oldTotal: number): number {
         let newTotal: number = oldTotal
         if (stateFirstCupon) {
@@ -73,22 +72,46 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
                     <div className={style.sizeBuyCar}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.buyCarNormal} alt=""/>
                     </div>
-                    <span className={style.positionNumberCar}>6</span>
+                    <div className={style.positionNumberCar}>
+                        {
+                            resumeBuy.TotalProducts > 9?
+                                <div className="relative">
+                                    <span className={style.positionNine}>9</span>
+                                    <span className={style.positionMore}>+</span>
+                                </div>
+                                :
+                                resumeBuy.TotalProducts
+                        }
+                    </div>
                 </button>
             </div>
             <div className={style.grid}>
                 <div className={style.gridItems}>
                     <div className={utilities.fontPrimaryText}>Bruto</div>
-                    <div className={utilities.fontPriceInclude}>$ 99.999</div>
+                    <div className={utilities.fontPriceInclude}>${Intl.NumberFormat("ES-CL"
+                    ).format(Math.round(resumeBuy.TotalPrice * 0.81))}</div>
                 </div>
                 <div className={style.gridItems}>
-                    <div className={utilities.fontPrimaryText}>Bruto</div>
-                    <div className={utilities.fontPriceInclude}>$ 99.999</div>
+                    <div className={utilities.fontPrimaryText}>Iva</div>
+                    <div className={utilities.fontPriceInclude}>+ ${Intl.NumberFormat("ES-CL"
+                    ).format(Math.round(resumeBuy.TotalPrice * 0.19))}</div>
                 </div>
-                <div className={style.gridItems}>
-                    <div className={utilities.fontPrimaryText}>Bruto</div>
-                    <div className={utilities.fontPriceInclude}>$ 99.999</div>
-                </div>
+                {
+                    stateFirstCupon &&
+                    <div className={style.gridItems}>
+                        <div className={utilities.fontPrimaryText}>Descuento1</div>
+                        <div className={utilities.fontPriceInclude}>- ${Intl.NumberFormat("ES-CL"
+                        ).format(Math.round(amountDiscount1))}</div>
+                    </div>
+                }
+                {
+                    stateSecondtCupon &&
+                    <div className={style.gridItems}>
+                        <div className={utilities.fontPrimaryText}>Descuento2</div>
+                        <div className={utilities.fontPriceInclude}>- ${Intl.NumberFormat("ES-CL"
+                        ).format(Math.round(amountDiscount2))}</div>
+                    </div>
+                }
             </div>
             <div className={style.gridCupons}>
                 <CuponInputMobile cuponProp={propCupon}/>
@@ -96,7 +119,8 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
             </div>
             <div className={`${utilities.fontTitle} ${style.gridItems} ${style.totalConainer}`}>
                 <div> Total</div>
-                <div> $199.999</div>
+                <div> ${Intl.NumberFormat("ES-CL"
+                ).format(Math.round(newTotal))}</div>
             </div>
             <div className={style.timerContainer}>
                 <div className={style.sizeIconTimer}>

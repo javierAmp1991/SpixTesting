@@ -37,7 +37,7 @@ export default function CuponInputMobile({cuponProp}: { cuponProp: inputCuponVal
                          src={GlobalConst.sourceImages.upArrow} alt=""/>
                     </div>
                 </div>
-                <div className={style.gridCupon}>
+                <div className={`${style.gridCupon} ${utilities.fontSecundaryText}`}>
                     <input onChange={handleInputCupon}
                         className={style.inputCupon} type="text" placeholder={cuponProp.titleCupon}/>
                     <div onClick={handleSendInputvalue}
