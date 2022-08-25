@@ -6,21 +6,64 @@ import CuponInputMobile from "./cuponInputMobile";
 import {inputCuponValues} from "../../Desktop/PayPage/cuponInput";
 import Image from "next/image";
 import Timer from "../../Desktop/Misc/timer";
+import {useState} from "react";
+
+export class resumeBuy {
+    TotalProducts: number
+    TotalPrice: number
+}
 
 const goToPay: string = "Pagar"
 const cancel: string = "Cancelar"
 const finishText: string = "para finalizar su compra"
-const propCupon: inputCuponValues = {
-    titleCupon: "Ingresa tu cupon",
-    placeHolder: "Ingresa tu cupón"
-}
-const propCuponRipley: inputCuponValues = {
-    titleCupon: "Ingresa tu cupon Ripley",
-    placeHolder: "Ingresa tu cupón"
-}
 
+export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
+                                             { displaySelectedItem: any, resumeBuy: resumeBuy }) {
+    let [stateFirstCupon, setStateFirstCupon] = useState(false)
+    let [stateSecondtCupon, setStateSecondCupon] = useState(false)
+    let [amountDiscount1, setAmountDiscount1] = useState(0)
+    let [amountDiscount2, setAmountDiscount2] = useState(0)
+    const handleFirstCupon = (cupon: string) => {
+        if (cupon == "first") {
+            setAmountDiscount1(amountDiscount1 = 9990)
+            setStateFirstCupon(stateFirstCupon = true)
+        } else {
+            setAmountDiscount1(amountDiscount1 = 0)
+            setStateFirstCupon(stateFirstCupon = false)
+        }
+    }
+    const handleSecondCupon = (cupon: string) => {
+        if (cupon == "second") {
+            setAmountDiscount2(amountDiscount2 = 19990)
+            setStateSecondCupon(stateSecondtCupon = true)
+        } else {
+            setAmountDiscount2(amountDiscount2 = 0)
+            setStateSecondCupon(stateSecondtCupon = false)
+        }
+    }
+    const propCupon: inputCuponValues = {
+        titleCupon: "Ingresa tu cupon",
+        placeHolder: "Ingresa tu cupón",
+        GetInputvalue: handleFirstCupon
+    }
+    const propCuponRipley: inputCuponValues = {
+        titleCupon: "Ingresa tu cupon Ripley",
+        placeHolder: "Ingresa tu cupón",
+        GetInputvalue: handleSecondCupon
+    }
+    const newTotal = getTotalDiscount(resumeBuy.TotalPrice)
 
-export default function DetailsPayMobile({displaySelectedItem}) {
+    function getTotalDiscount(oldTotal: number): number {
+        let newTotal: number = oldTotal
+        if (stateFirstCupon) {
+            newTotal -= amountDiscount1
+        }
+        if (stateSecondtCupon) {
+            newTotal -= amountDiscount2
+        }
+        return newTotal
+    }
+
     return (
         <div className={style.mainContainer}>
             <div className={style.gridTitleCar}>
