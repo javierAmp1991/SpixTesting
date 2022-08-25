@@ -1,6 +1,5 @@
 import style from "/styles/Desktop/PayPage/detailsPay.module.css"
 import utilities from "/styles/utilities.module.css"
-import ButtonBlueDesk from "../Misc/buttonBlue";
 import CuponInput, {inputCuponValues} from "./cuponInput";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";

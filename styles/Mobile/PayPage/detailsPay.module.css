@@ -42,13 +42,13 @@
 }
 
 .totalConainer {
-    padding: 24px var(--spaceX) 0px var(--spaceX);
+    padding: 24px var(--spaceX);
     border-top: 2px solid var(--separationLineColor);
     margin-top: 24px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 12px;
-    justify-content: right;
+    justify-content: left;
 }
 
 .gridCupons {
@@ -61,7 +61,7 @@
     border: 2px solid var(--separationLineColor);
     align-content: center;
     border-radius: 4px;
-    padding: 0px var(--spaceXGlobal);
+    padding: 0 var(--spaceXGlobal);
 }
 
 .borderCupon {
@@ -104,11 +104,11 @@
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    padding: 0px 0px var(--spaceYMini) 0px;
+    padding: 0 0 var(--spaceYMini) 0;
 }
 
 .paddingSection {
-    padding: 0px var(--spaceX);
+    padding: 0 var(--spaceX);
 }
 
 .maxWidthButton{
@@ -123,7 +123,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     bottom: var(--spaceY);
-    gap:24px;
+    gap:16px;
     margin: 2px 0 0 0;
 }
 
@@ -134,7 +134,7 @@
     justify-content: left;
     align-items: center;
     justify-items: left;
-    padding: 24px 0px;
+    padding: 0 0 24px 0;
     color: #da1818;
 }
 

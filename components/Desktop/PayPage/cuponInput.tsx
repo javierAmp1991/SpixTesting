@@ -30,9 +30,9 @@ export default function CuponInput({cuponProp}: { cuponProp: inputCuponValues })
                 </div>
                 <div className={style.gridCupon}>
                     <input className={style.inputCupon} type="text" placeholder={cuponProp.titleCupon}/>
-                    <div className={`${style.applyContainer} ${utilities.fontSecundaryText}`}>
+                    <button>
                         {titleButton}
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
