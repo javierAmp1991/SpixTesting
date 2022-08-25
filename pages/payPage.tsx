@@ -8,9 +8,12 @@ import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
 import NavMenu from "../components/Mobile/Misc/navMenu";
 import {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
+import {ListProducts3} from "../dataDemo/data";
 import {Menu} from "../dataDemo/data";
 import {ListProducts} from "../dataDemo/data";
+import {resumeBuy} from "../components/Desktop/PayPage/detailsPay";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
+
 const isDarkMode = false
 const toggleDarkMode = null
 const isLogged = false
@@ -29,18 +32,27 @@ export default function PayPage() {
     const isSmallDown = useMediaQuery(mediaQuery);
     let [isDisplayProdSelected, setIsDisplayProdSelected] = useState(false)
     let [isDiplaySug, setIsDisplaySug] = useState(false)
-    const handleIsDisplaySug = ()=> setIsDisplaySug(isDiplaySug = !isDiplaySug)
+    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     const handleDisplay = () => setIsDisplayProdSelected(
         isDisplayProdSelected = !isDisplayProdSelected)
     //region desktopComponents
-    let firstChildren = <GridSelectedItems>
-        {
-            ListProducts.listProducts.map((item, index) =>
-                <PayPageProductSelectedView item={item} key={index}/>
-            )
-        }
-    </GridSelectedItems>
-    let secondChildren = <DetailsPay/>
+    const resumeBuy: resumeBuy = {
+        TotalProducts: getTotalProducts(),
+        TotalPrice: getTotalPrice()
+    }
+
+    let firstChildren =
+        <div className="grid gap-10 pb-4 pl-2">
+            {
+                ListProducts3.listProducts.map((item, index) =>
+                    <GridSelectedItems isLast={
+                        index == ListProducts3.listProducts.length - 1? true : false
+                    } key={index} guestProducts={item}/>
+                )
+            }
+        </div>
+
+    let secondChildren = <DetailsPay resumeBuy={resumeBuy}/>
     const childrens: ChildrenProp =
         {
             childrenLeft: firstChildren,
@@ -60,7 +72,7 @@ export default function PayPage() {
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug}  isDarkMode={isDarkMode}/>
+                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
                             <div className={styleMobile.mainCont}>
                                 {
@@ -90,4 +102,22 @@ export default function PayPage() {
                 </div>
             </div>
     )
+
+    function getTotalProducts(): number{
+        let total=0
+        ListProducts3.listProducts.forEach(item =>{
+            total += item.ListProducts.length
+        })
+        return total
+    }
+
+    function getTotalPrice(): number{
+        let total = 0
+        ListProducts3.listProducts.forEach(item => {
+            item.ListProducts.forEach(item2 =>{
+                total += item2.Price
+            })
+        })
+        return total
+    }
 }

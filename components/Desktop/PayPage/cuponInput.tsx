@@ -7,6 +7,7 @@ import Image from "next/image";
 export class inputCuponValues {
     placeHolder: string;
     titleCupon: string;
+    GetInputvalue: any
 }
 
 const titleButton: string = "Aplicar"
@@ -15,6 +16,13 @@ export default function CuponInput({cuponProp}: { cuponProp: inputCuponValues })
     let [isDisplayCupon, setDisplayCupon] = useState(false)
     const handleDisplayCupon = () => setDisplayCupon(isDisplayCupon = !isDisplayCupon)
     const cssStyle = getCssStyle()
+    let [cuponValue, setCuponValue] = useState("")
+    const handleInputCupon = (e) => {
+        setCuponValue(cuponValue = e.target.value)
+    }
+    const handleSendInputvalue = () => {
+        cuponProp.GetInputvalue(cuponValue)
+    }
 
     return (
         <div className={style.containerCupon}>
@@ -28,9 +36,11 @@ export default function CuponInput({cuponProp}: { cuponProp: inputCuponValues })
                                src={GlobalConst.sourceImages.upArrow} alt=""/>
                     </div>
                 </div>
-                <div className={style.gridCupon}>
-                    <input className={style.inputCupon} type="text" placeholder={cuponProp.titleCupon}/>
-                    <button>
+                <div className={`${style.gridCupon} ${utilities.fontSecundaryText}`}>
+                    <input onChange={handleInputCupon}
+                           className={style.inputCupon} type="text" placeholder={cuponProp.titleCupon}/>
+                    <button className={style.applyContainer}
+                            onClick={handleSendInputvalue}>
                         {titleButton}
                     </button>
                 </div>

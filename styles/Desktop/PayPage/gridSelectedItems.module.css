@@ -1,22 +1,13 @@
 .grid {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 24px;
-    padding: 32px 8px 8px 6px;
-
-}
-
-.marginBottom {
-    padding-bottom: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 32px 8px 46px 8px;
     border-bottom: 2px solid var(--separationLineColor);
 }
-
-@media(min-width: 980px){
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-        padding: 32px 8px 0px 8px;
-
-    }
+.gridLast {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 32px 8px 46px 8px;
 }

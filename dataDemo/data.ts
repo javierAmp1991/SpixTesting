@@ -27,7 +27,7 @@ export enum discountFilters {
 
 export namespace AtributesData {
     export const listAtributes: SubcategoryFilter[] = [
-        {Name: "Corte ondulado", id: "abcde", },
+        {Name: "Corte ondulado", id: "abcde",},
         {Name: "Comida al paso", id: "abcdef", Type: "atributesCat"},
         {Name: "Festival callejero", id: "fg", Type: "atributesCat"},
     ]
@@ -757,6 +757,11 @@ export class productAmount {
     Amount: number;
 }
 
+export class GuestProducts {
+    NameGuest: string
+    ListProducts: Product[]
+}
+
 export namespace ListProducts2 {
     export const listProducts: sectionProduct[] = [
         {
@@ -988,6 +993,195 @@ export namespace ListProducts2 {
                         ImagePath: "/images/snack3.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
+                },
+            ]
+        }
+    ]
+}
+
+export namespace ListProducts3 {
+    export const listProducts: GuestProducts[] = [
+        {
+            NameGuest: "Javier",
+            ListProducts: [
+                {
+                    Name: "Ceveza 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/cerveza1.jpg",
+                    Tag: "Cerveza"
+
+                },
+                {
+                    Name: "Cerveza 2.2",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/cerveza2.jpg",
+                    Tag: "Cerveza"
+                },
+                {
+                    Name: "Cerveza 3.3",
+                    Price: 2990,
+                    DiscountPercent: 25,
+                    Include: null,
+                    ImagePath: "/images/cerveza3.jpg",
+                    Tag: "Energetica"
+                }
+                ,
+                {
+                    Name: "Cerveza 4.4",
+                    Price: 990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product2.jpg",
+                    Tag: "Snack"
+
+                },
+                {
+                    Name: "Cerveza 5.5",
+                    Price: 9990,
+                    DiscountPercent: 20,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/cerveza5.jpg",
+                    Tag: "Energetica"
+                }
+            ]
+        },
+        {
+            NameGuest: "Felipe",
+            ListProducts: [
+                {
+                        Name: "Hamburguesa 1.1",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/hamb1.jpg",
+                        Tag: "Cerveza"
+
+                },
+                {
+                        Name: "Hamburguesa 2.2",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/hamb2.jpg",
+                        Tag: "Cerveza"
+                },
+                {
+                        Name: "Hamburguesa 3.3",
+                        Price: 2990,
+                        DiscountPercent: 25,
+                        Include: null,
+                        ImagePath: "/images/hamb3.jpg",
+                        Tag: "Energetica"
+                }
+                ,
+                {
+                        Name: "Hamburguesa 4.4",
+                        Price: 990,
+                        DiscountPercent: 30,
+                        Include: null,
+                        ImagePath: "/images/hamb4.jpg",
+                        Tag: "Snack"
+
+                },
+                {
+                        Name: "Hamburguesa 5.5",
+                        Price: 9990,
+                        DiscountPercent: 20,
+                        Include: "Dcto 2 Un.",
+                        ImagePath: "/images/hamb5.jpg",
+                        Tag: "Energetica"
+                }
+            ]
+        },
+        {
+            NameGuest: "Alejandro",
+            ListProducts: [
+                {
+                        Name: "Energetica 1.1",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/product6.jpg",
+                        Tag: "Cerveza"
+
+                },
+                {
+                        Name: "Energetica 2.2",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/product8.jpg",
+                        Tag: "Cerveza"
+                },
+                {
+                        Name: "Energetica 3.3",
+                        Price: 2990,
+                        DiscountPercent: 25,
+                        Include: null,
+                        ImagePath: "/images/product9.jpg",
+                        Tag: "Energetica"
+                }
+                ,
+                {
+                        Name: "Energetica 4.4",
+                        Price: 990,
+                        DiscountPercent: 30,
+                        Include: null,
+                        ImagePath: "/images/bebidas.jpg",
+                        Tag: "Snack"
+
+                },
+                {
+                        Name: "Energetica 5.5",
+                        Price: 9990,
+                        DiscountPercent: 20,
+                        Include: "Dcto 2 Un.",
+                        ImagePath: "/images/beb2.jpg",
+                        Tag: "Energetica"
+                }
+            ]
+        },
+        {
+            NameGuest: "Fernanda",
+            ListProducts: [
+                {
+                        Name: "Snack 1.1",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/product3.jpg",
+                        Tag: "Cerveza"
+
+                },
+                {
+                        Name: "Snack 2.2",
+                        Price: 18990,
+                        DiscountPercent: 10,
+                        Include: "Lleve 2 pague 1",
+                        ImagePath: "/images/product5.jpg",
+                        Tag: "Cerveza"
+                },
+                {
+                        Name: "Snack 3.3",
+                        Price: 2990,
+                        DiscountPercent: 25,
+                        Include: null,
+                        ImagePath: "/images/snack1.jpg",
+                        Tag: "Energetica"
+                }
+                ,
+                {
+                        Name: "Snack 4.4",
+                        Price: 990,
+                        DiscountPercent: 30,
+                        Include: null,
+                        ImagePath: "/images/snack2.jpg",
+                        Tag: "Snack"
+
                 },
             ]
         }
