@@ -318,7 +318,7 @@ export default function EventPage() {
         },
         {
             Component: moreOffertDesk,
-            padding: paddingDefaultSectionDeskCarrousel
+            padding: paddingDefaultSectionDesk
         },
         {
             Component: productsDesk,

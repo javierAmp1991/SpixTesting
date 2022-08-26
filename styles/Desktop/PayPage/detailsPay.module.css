@@ -3,10 +3,9 @@
     --spaceX: 0px;
     --spaceXGlobal: 16px;
     --spaceYMini: 12px;
-    padding: var(--spaceY) var(--spaceXGlobal);
+    padding: 23px var(--spaceXGlobal);
     position: relative;
     height: 100%;
-
 }
 
 .grid{
