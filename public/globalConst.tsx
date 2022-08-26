@@ -65,7 +65,8 @@ export namespace GlobalConst{
         leftArrowRed: "/images/leftArrowRed.png",
         placeHolderImageUpload: "images/placeholderImageUpload.png",
         ratingIndFull: "/images/ratingNewIndFull.png",
-        ratingIndVoid: "/images/ratingNewIndVoid.png"
+        ratingIndVoid: "/images/ratingNewIndVoid.png",
+        emoticonButton: "/images/emoticon.png"
     }
 }
 

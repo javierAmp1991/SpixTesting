@@ -64,10 +64,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, 21px);
     justify-content: space-between;
-    gap: 16px;
-    height: 124px;
+    gap: 12px;
+    height: 114px;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: scroll;
     position: relative;
     width: 100%;
     transition: .4s;
@@ -79,7 +79,7 @@
 
 .positionAddIcon {
     position: absolute;
-    top: 12px;
+    top: 16px;
     right: 8px;
     opacity: .6;
 }

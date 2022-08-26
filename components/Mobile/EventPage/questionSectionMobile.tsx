@@ -53,7 +53,7 @@ export default function QuestionSectionMobile({children}) {
                                 )
                             }
                             <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                                <Image height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
+                                <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
                             </button>
                         </div>
                         <div>

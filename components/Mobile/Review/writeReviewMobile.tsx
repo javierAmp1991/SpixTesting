@@ -104,7 +104,7 @@ export default function WriteReviewMobile() {
                     )
                 }
                 <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                    <Image priority={true} height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
+                    <Image priority={true} height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
                 </button>
             </div>
             <div className={style.gridAddPhotos}>
