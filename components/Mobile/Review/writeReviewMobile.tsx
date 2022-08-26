@@ -64,7 +64,7 @@ export default function WriteReviewMobile() {
                                  key={index}
                                  className={`${style.sizeStar}
                             ${item ? style.animationStar : style.animationStarDis}`}>
-                                <Image layout={"fill"}
+                                <Image priority={true} layout={"fill"}
                                        src={item ?
                                            GlobalConst.sourceImages.ratingIndFull :
                                            GlobalConst.sourceImages.ratingIndVoid}
@@ -105,7 +105,7 @@ export default function WriteReviewMobile() {
                     )
                 }
                 <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                    <Image height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
+                    <Image priority={true} height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
                 </button>
             </div>
             <div className={style.gridAddPhotos}>

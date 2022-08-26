@@ -10,3 +10,75 @@
     height: 40px;
     text-indent: 40px;
 }
+
+.textAresContainer{
+    box-shadow: var(--shadowUnderProducts);
+    background: #f8f8f8;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.textAreaStyle{
+    resize: none;
+    width: 100%;
+    height: 120px;
+    padding: 16px;
+    background: #f8f8f8;
+    outline: none;
+}
+.mainContPadding{
+    padding: 32px 24px;
+    display: grid;
+    gap: 32px
+}
+
+.buttonStyle{
+    display: grid;
+    padding: 6px 32px;
+    background: var(--gradientBlueButton);
+    color: white;
+    border-radius: 4px;
+    margin: auto;
+}
+
+.emoticonContainerClose {
+    display: grid;
+    grid-template-columns: repeat(11, max-content);
+    overflow: hidden;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8px;
+    height: 48px;
+    transition: .4s;
+    position: relative;
+    width: 100%;
+    padding: 14px 48px 14px 16px;
+    background: #f8f8f8;
+    box-shadow: var(--shadowUnderProducts);
+    /*    background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
+}
+
+.emoticonContainerOpen {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    justify-content: space-between;
+    gap: 16px;
+    height: 124px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    transition: .4s;
+    padding: 14px 48px 14px 16px;
+    background: #f8f8f8;
+    box-shadow: var(--shadowUnderProducts);
+    /*background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
+}
+
+.positionAddIcon {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    opacity: .6;
+}

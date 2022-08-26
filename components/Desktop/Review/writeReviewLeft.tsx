@@ -63,7 +63,7 @@ export default function WriteReviewLeft() {
                                  key={index}
                                  className={`${style.sizeStar}
                             ${item ? style.animationStar : style.animationStarDis}`}>
-                                <Image layout={"fill"}
+                                <Image priority={true} layout={"fill"}
                                        src={item ?
                                            GlobalConst.sourceImages.ratingIndFull :
                                            GlobalConst.sourceImages.ratingIndVoid}

@@ -135,6 +135,10 @@ input {
     background: transparent;
 }
 
+button{
+    outline: none;
+}
+
 textarea{
     outline: none;
 }
