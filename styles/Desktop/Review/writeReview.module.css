@@ -49,7 +49,7 @@
 
 .emoticonContainerClose {
     display: grid;
-    grid-template-columns: repeat(15, max-content);
+    grid-template-columns: repeat(auto-fill, 21px);
     gap: 16px;
     overflow: hidden;
     align-items: center;
@@ -67,7 +67,7 @@
 
 .emoticonContainerOpen {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(auto-fill, 21px);
     justify-content: space-between;
     gap: 16px;
     height: 124px;

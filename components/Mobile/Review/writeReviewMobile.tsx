@@ -10,7 +10,7 @@ const placeholderReview: string = "Escribe tu reseña";
 const titleTitle: string = "Titulo";
 const titleWriteReview: string = "Cuentanos tu experiencia";
 const titleSection: string = "Tu reseña";
-const sendReview: string = "Enviar Reseña";
+const sendReview: string = "Publicar";
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑"]
