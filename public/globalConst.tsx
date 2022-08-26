@@ -62,7 +62,10 @@ export namespace GlobalConst{
         rightArrowClean: "/images/rightArrowBanner.png",
         leftArrowClean: "/images/leftArrowBanner.png",
         checkIconYellow: "/images/checkIconYellow.png",
-        leftArrowRed: "/images/leftArrowRed.png"
+        leftArrowRed: "/images/leftArrowRed.png",
+        placeHolderImageUpload: "images/placeholderImageUpload.png",
+        ratingIndFull: "/images/ratingNewIndFull.png",
+        ratingIndVoid: "/images/ratingNewIndVoid.png"
     }
 }
 

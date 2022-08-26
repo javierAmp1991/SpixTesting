@@ -8,6 +8,7 @@ import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import {Menu} from "../dataDemo/data";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import utilities from "/styles/utilities.module.css";
+import SideCard from "../components/Desktop/Review/sideCard";
 
 export default function WriteReview() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
@@ -17,7 +18,7 @@ export default function WriteReview() {
     const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
 
     let firstChildren = <WriteReviewLeft/>
-    let secondChildren = <div>Prueba</div>
+    let secondChildren = <SideCard/>
 
     const childrens: ChildrenProp =
         {

@@ -1,13 +1,15 @@
 .mainCont {
-    padding: 0 72px 0 4px;
+    padding: 0 72px 0 8px;
     display: grid;
     gap: 32px;
 }
 
 .containerInput {
+    --backgroundInput: #f8f8f8;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: var(--boxShadowCard);
+    box-shadow: var(--shadowUnderProducts);
+    background: var(--backgroundInput);
 }
 
 .sizeInputTitle {
@@ -15,6 +17,7 @@
     width: 100%;
     resize: none;
     height: 50px;
+    background: var(--backgroundInput);
 }
 
 .sizeInputReview {
@@ -22,6 +25,7 @@
     width: 100%;
     resize: none;
     height: 200px;
+    background: var(--backgroundInput);
 }
 
 .paddingTitleInter {
@@ -35,4 +39,100 @@
     margin: auto;
     color: white;
     display: grid;
+}
+
+.emoticonStyle {
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.gridAddPhotos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+}
+
+.emoticonContainerClose {
+    display: grid;
+    grid-template-columns: repeat(15, max-content);
+    gap: 16px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    border-radius: 8px;
+    transition: .4s;
+    position: relative;
+    width: 100%;
+    padding: 10px 48px 10px 16px;
+    background: #efefef;
+    box-shadow: var(--shadowUnderProducts);
+ background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.emoticonContainerOpen {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    justify-content: space-between;
+    gap: 16px;
+    height: 112px;
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    transition: .4s;
+    width: 100%;
+    padding: 10px 48px 10px 16px;
+    background: #efefef;
+    box-shadow: var(--shadowUnderProducts);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.positionAddIcon{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: .6;
+}
+
+.sizeStar{
+    height: 42px;
+    width: 42px;
+    position: relative;
+}
+
+.animationStar{
+    animation: scaleLikeIcon .2s linear;
+}
+.animationStarDis{
+    animation: deScaleLikeICon .2s linear;
+}
+
+@keyframes scaleLikeIcon {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes deScaleLikeICon {
+    0% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.gridReviewStars{
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 8px;
 }

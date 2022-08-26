@@ -1,27 +1,72 @@
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
 import style from "/styles/Desktop/Review/writeReview.module.css"
-const placeholderTitle: string = "Escribe un titulo";
-const placeholderReview: string = "Escribe tu review";
-const titleTitle: string = "Elija un titulo para su review";
-const titleWriteReview: string = "Escribe tu review";
-const titleSection: string = "Escribe tu review";
-const sendReview: string = "Enviar Review";
+import {useRef, useState} from "react";
+import {GlobalConst} from "../../../public/globalConst";
 
-export default function WriteReviewLeft(){
-    return(
+const placeholderTitle: string = "Escribe un titulo";
+const titleCalification: string = "Como calificarias ?"
+const placeholderReview: string = "Escribe tu review";
+const titleTitle: string = "Titulo";
+const titleWriteReview: string = "Cuentanos tu experiencia";
+const titleSection: string = "Tu reseña";
+const sendReview: string = "Enviar Reseña";
+const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
+    "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
+    "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑"]
+
+
+export default function WriteReviewLeft() {
+    let textAreaReview = useRef(null)
+    let [displayEmoticons, setDisplayEmoticons] = useState(false)
+    let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
+    let [inputTitle, setInputTitle] = useState("")
+    let [inputReview, setInputReview] = useState("")
+    const handleDisplayEmoticons = () => {
+        setDisplayEmoticons(displayEmoticons = !displayEmoticons)
+    }
+    const handleTitle = (e) => {
+        setInputTitle(inputTitle = e.target.value)
+    }
+    const handlereview = (e) => {
+        setInputReview(inputReview = e.target.value)
+    }
+    const handleAddEmoticon = (emoticon: string) => {
+        textAreaReview.current.value += emoticon
+    }
+    const handleCalification = (indexNum: number) => {
+        const newreviewCalification = reviewCalification.map((item, index) => {
+            if (index <= indexNum) {
+                return true
+            } else return false
+        })
+        setReviewCalification(reviewCalification = newreviewCalification)
+    }
+    return (
         <div className={style.mainCont}>
             <div className={utilities.fontTitle}>
                 {titleSection}
             </div>
             <div>
                 <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
-                    Como calificaria
+                    {titleCalification}
                 </div>
-                <div>
-                    <div>
-                        <Image width={150} height={30} src="/images/ratingNew.png"/>
-                    </div>
+                <div className={style.gridReviewStars}>
+                    {
+                        reviewCalification.map((item, index) =>
+                            <div onClick={() => handleCalification(index)}
+                                 key={index}
+                                 className={`${style.sizeStar}
+                            ${item ? style.animationStar : style.animationStarDis}`}>
+                                <Image layout={"fill"}
+                                       src={item ?
+                                           GlobalConst.sourceImages.ratingIndFull :
+                                           GlobalConst.sourceImages.ratingIndVoid}
+                                />
+                            </div>
+                        )
+                    }
+
                 </div>
             </div>
             <div>
@@ -29,7 +74,9 @@ export default function WriteReviewLeft(){
                     {titleTitle}
                 </div>
                 <div className={style.containerInput}>
-                    <textarea className={style.sizeInputTitle} placeholder={placeholderTitle}/>
+                    <textarea onChange={handleTitle}
+                              className={style.sizeInputTitle}
+                              placeholder={placeholderTitle}/>
                 </div>
             </div>
             <div>
@@ -37,16 +84,39 @@ export default function WriteReviewLeft(){
                     {titleWriteReview}
                 </div>
                 <div className={style.containerInput}>
-                    <textarea className={style.sizeInputReview}
-                              placeholder={placeholderReview} />
+                    <textarea
+                        onChange={handlereview}
+                        className={style.sizeInputReview}
+                        placeholder={placeholderReview}
+                        ref={textAreaReview}/>
                 </div>
             </div>
-            <div>
-                emoticones
+            <div className={displayEmoticons ? style.emoticonContainerOpen : style.emoticonContainerClose}>
+                {
+                    listEmoticons.map((item, index) =>
+                        <button onClick={() => handleAddEmoticon(item)} key={index}
+                                className={style.emoticonStyle}>{item}</button>
+                    )
+                }
+                <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
+                    <Image height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
+                </button>
             </div>
-            <div>
+            <div className={style.gridAddPhotos}>
                 <div>
-                    <Image width={200} height={200} src="/images/thedoor5.jpg"/>
+                    <Image width={200} height={200} src="/images/placeholderImageUpload.png"/>
+                </div>
+                <div>
+                    <Image width={200} height={200} src="/images/thedoor4.jpg"/>
+                </div>
+                <div>
+                    <Image width={200} height={200} src="/images/thedoor3.jpg"/>
+                </div>
+                <div>
+                    <Image width={200} height={200} src="/images/thedoor2.jpg"/>
+                </div>
+                <div>
+                    <Image width={200} height={200} src="/images/thedoor1.jpg"/>
                 </div>
             </div>
             <div>
