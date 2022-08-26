@@ -131,8 +131,12 @@ input {
 ::-webkit-scrollbar {
     display: none;
     -webkit-appearance: none;
-    width: 0px;
+    width: 0;
     background: transparent;
+}
+
+textarea{
+    outline: none;
 }
 
 input::-moz-focus-inner {

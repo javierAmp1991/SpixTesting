@@ -58,6 +58,7 @@ export default function Search() {
             }
         </LayoutButtonNavegation>
     //endregion
+
     let [isDiplaySug, setIsDisplaySug] = useState(false)
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (

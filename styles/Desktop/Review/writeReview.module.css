@@ -1,0 +1,38 @@
+.mainCont {
+    padding: 0 72px 0 4px;
+    display: grid;
+    gap: 32px;
+}
+
+.containerInput {
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--boxShadowCard);
+}
+
+.sizeInputTitle {
+    padding: 8px 12px;
+    width: 100%;
+    resize: none;
+    height: 50px;
+}
+
+.sizeInputReview {
+    padding: 8px 12px;
+    width: 100%;
+    resize: none;
+    height: 200px;
+}
+
+.paddingTitleInter {
+    padding-bottom: 16px;
+}
+
+.styleButton {
+    padding: 8px 56px;
+    border-radius: 4px;
+    background: var(--gradientBlueButton);
+    margin: auto;
+    color: white;
+    display: grid;
+}
