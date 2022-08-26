@@ -49,7 +49,7 @@ export default function WriteReviewLeft() {
                     {titleSection}
                 </div>
                 <div className={utilities.fontPrimaryText}>
-                    A continuacion podras hacer la reseña del evento organizado por <span className={utilities.styleLink}>El Huevo</span>
+                    A continuacion podras hacer la reseña del evento de <span className={utilities.styleLink}>El Huevo</span>
                 </div>
             </div>
             <div>
@@ -75,9 +75,9 @@ export default function WriteReviewLeft() {
                 </div>
             </div>
             <div>
-                {/*<div className={`${style.paddingTitleInter} ${utilities.fontName}`}>
+                <div className={`${style.paddingTitleInter} ${utilities.fontName}`}>
                     {titleTitle}
-                </div>*/}
+                </div>
                 <div className={style.containerInput}>
                     <textarea onChange={handleTitle}
                               className={style.sizeInputTitle}
@@ -109,19 +109,19 @@ export default function WriteReviewLeft() {
             </div>
             <div className={style.gridAddPhotos}>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/placeholderImageUpload.png"/>
+                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/placeholderImageUpload.png"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor4.jpg"/>
+                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor4.jpg"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor3.jpg"/>
+                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor3.jpg"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor2.jpg"/>
+                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor2.jpg"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor1.jpg"/>
+                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor1.jpg"/>
                 </div>
             </div>
             <div>

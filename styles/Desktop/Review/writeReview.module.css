@@ -13,15 +13,15 @@
 }
 
 .sizeInputTitle {
-    padding: 8px 12px;
+    padding: 12px;
     width: 100%;
     resize: none;
-    height: 50px;
+    height: 44px;
     background: var(--backgroundInput);
 }
 
 .sizeInputReview {
-    padding: 8px 12px;
+    padding: 12px;
     width: 100%;
     resize: none;
     height: 200px;
@@ -59,12 +59,12 @@
     overflow: hidden;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    height: 48px;
     border-radius: 8px;
     transition: .4s;
     position: relative;
     width: 100%;
-    padding: 10px 48px 10px 16px;
+    padding: 14px 48px 14px 16px;
     background: #f8f8f8;
     box-shadow: var(--shadowUnderProducts);
 /*    background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
@@ -75,13 +75,13 @@
     grid-template-columns: repeat(15, 1fr);
     justify-content: space-between;
     gap: 16px;
-    height: 112px;
+    height: 124px;
     overflow: hidden;
     border-radius: 8px;
     position: relative;
     transition: .4s;
     width: 100%;
-    padding: 10px 48px 10px 16px;
+    padding: 14px 48px 14px 16px;
     background: #f8f8f8;
     box-shadow: var(--shadowUnderProducts);
     /*background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
@@ -136,4 +136,49 @@
     display: grid;
     grid-template-columns: repeat(5, max-content);
     gap: 8px;
+}
+
+.gridReviewHeader{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 72px;
+    padding-bottom: 24px;
+}
+
+.fontReviewResume{
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 500;
+    color: #0F1111FF;
+}
+
+.sizeStarResume{
+    height: 24px;
+    width: 124px;
+    position: relative;
+}
+.styleBarReview{
+    height: 12px;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+}
+.styleProgresBarReview{
+    height: 12px;
+    border-radius: 6px;
+    position: absolute;
+    left: 0;
+    top: 4px;
+    background: #2D7DFFFF;
+}
+.gridStars{
+    display: grid;
+    grid-template-columns: 70px 1fr max-content;
+    gap: 20px
+}
+
+.gridProduct{
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 12px
 }

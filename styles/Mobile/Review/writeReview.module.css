@@ -13,10 +13,10 @@
 }
 
 .sizeInputTitle {
-    padding: 8px 12px;
+    padding: 12px;
     width: 100%;
     resize: none;
-    height: 50px;
+    height: 44px;
     background: var(--backgroundInput);
 }
 
@@ -49,7 +49,7 @@
 .gridAddPhotos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+    gap: 8px;
 }
 
 .emoticonContainerClose {
@@ -59,12 +59,12 @@
     overflow: hidden;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    height: 48px;
     border-radius: 8px;
     transition: .4s;
     position: relative;
     width: 100%;
-    padding: 10px 48px 10px 16px;
+    padding: 14px 48px 14px 16px;
     background: #f8f8f8;
     box-shadow: var(--shadowUnderProducts);
 /*    background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
@@ -75,13 +75,13 @@
     grid-template-columns: repeat(7, 1fr);
     justify-content: space-between;
     gap: 16px;
-    height: 112px;
+    height: 124px;
     overflow: scroll;
     border-radius: 8px;
     position: relative;
     transition: .4s;
     width: 100%;
-    padding: 10px 48px 10px 16px;
+    padding: 14px 48px 14px 16px;
     background: #f8f8f8;
     box-shadow: var(--shadowUnderProducts);
     /*background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/

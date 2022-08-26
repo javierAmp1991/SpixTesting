@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css";
 import style from "/styles/Mobile/Review/writeReview.module.css"
 import {useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+
 const placeholderTitle: string = "Escribe un titulo";
 const titleCalification: string = "Como calificarias ?"
 const placeholderReview: string = "Escribe tu reseña";
@@ -48,7 +49,8 @@ export default function WriteReviewMobile() {
                     {titleSection}
                 </div>
                 <div className={utilities.fontPrimaryText}>
-                    A continuacion podras hacer la reseña del evento organizado por <span className={utilities.styleLink}>El Huevo</span>
+                    A continuacion podras hacer la reseña del evento de <span
+                    className={utilities.styleLink}>El Huevo</span>
                 </div>
             </div>
             <div>
@@ -74,9 +76,9 @@ export default function WriteReviewMobile() {
                 </div>
             </div>
             <div>
-                {/*<div className={`${style.paddingTitleInter} ${utilities.fontName}`}>
+                <div className={`${style.paddingTitleInter} ${utilities.fontName}`}>
                     {titleTitle}
-                </div>*/}
+                </div>
                 <div className={style.containerInput}>
                     <textarea onChange={handleTitle}
                               className={style.sizeInputTitle}
