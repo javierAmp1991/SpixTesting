@@ -41,11 +41,6 @@
     display: grid;
 }
 
-.emoticonStyle {
-    font-size: 20px;
-    line-height: 20px;
-}
-
 .gridAddPhotos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
