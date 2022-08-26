@@ -5,7 +5,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/EventPage/questionSection.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-const sendQuestion: string= "Enviar Pregunta"
+const sendQuestion: string= "Enviar"
 const placeHolderQuestion: string = "Escribe tu pregunta"
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
@@ -53,7 +53,7 @@ export default function QuestionSectionDesk({children}) {
                                 )
                             }
                             <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                                <Image height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
+                                <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
                             </button>
                         </div>
                         <div>

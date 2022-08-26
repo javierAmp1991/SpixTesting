@@ -10,18 +10,19 @@
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
     background: var(--backgroundInput);
+    padding: 12px;
 }
 
 .sizeInputTitle {
-    padding: 12px;
+    display: grid;
+    align-items: center;
     width: 100%;
     resize: none;
-    height: 44px;
     background: var(--backgroundInput);
 }
 
 .sizeInputReview {
-    padding: 12px;
+
     width: 100%;
     resize: none;
     height: 200px;
@@ -84,9 +85,8 @@
 
 .positionAddIcon {
     position: absolute;
-    top: 8px;
-    right: 8px;
-    opacity: .6;
+    top: 16px;
+    right: 14px;
 }
 
 .sizeStar {

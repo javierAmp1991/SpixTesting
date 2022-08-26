@@ -78,7 +78,6 @@
 
 .positionAddIcon {
     position: absolute;
-    top: 12px;
-    right: 8px;
-    opacity: .6;
+    top: 16px;
+    right: 12px;
 }

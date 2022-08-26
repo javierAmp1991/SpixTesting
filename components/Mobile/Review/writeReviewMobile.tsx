@@ -80,7 +80,8 @@ export default function WriteReviewMobile() {
                     {titleTitle}
                 </div>
                 <div className={style.containerInput}>
-                    <textarea onChange={handleTitle}
+                    <textarea rows={1}
+                        onChange={handleTitle}
                               className={style.sizeInputTitle}
                               placeholder={placeholderTitle}/>
                 </div>

@@ -10,18 +10,18 @@
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
     background: var(--backgroundInput);
+    padding: 12px;
 }
 
 .sizeInputTitle {
-    padding: 12px;
+    display: grid;
+    align-items: center;
     width: 100%;
     resize: none;
-    height: 44px;
     background: var(--backgroundInput);
 }
 
 .sizeInputReview {
-    padding: 8px 12px;
     width: 100%;
     resize: none;
     height: 200px;

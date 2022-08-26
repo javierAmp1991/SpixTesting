@@ -5,7 +5,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
-const sendQuestion: string= "Enviar Pregunta"
+const sendQuestion: string= "Enviar"
 const placeHolderQuestion: string = "Escribe tu pregunta"
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",

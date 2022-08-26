@@ -10,7 +10,7 @@ const placeholderReview: string = "Escribe tu reseña";
 const titleTitle: string = "Titulo";
 const titleWriteReview: string = "Cuentanos tu experiencia";
 const titleSection: string = "Tu reseña";
-const sendReview: string = "Enviar Reseña";
+const sendReview: string = "Publicar";
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑"]
@@ -79,7 +79,8 @@ export default function WriteReviewLeft() {
                     {titleTitle}
                 </div>
                 <div className={style.containerInput}>
-                    <textarea onChange={handleTitle}
+                    <textarea
+                        rows={1} onChange={handleTitle}
                               className={style.sizeInputTitle}
                               placeholder={placeholderTitle}/>
                 </div>
@@ -104,7 +105,7 @@ export default function WriteReviewLeft() {
                     )
                 }
                 <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                    <Image height={24} width={24} src={GlobalConst.sourceImages.addIcon}/>
+                    <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
                 </button>
             </div>
             <div className={style.gridAddPhotos}>
