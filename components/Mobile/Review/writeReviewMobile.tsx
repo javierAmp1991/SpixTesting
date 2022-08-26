@@ -1,9 +1,8 @@
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
-import style from "/styles/Desktop/Review/writeReview.module.css"
+import style from "/styles/Mobile/Review/writeReview.module.css"
 import {useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-
 const placeholderTitle: string = "Escribe un titulo";
 const titleCalification: string = "Como calificarias ?"
 const placeholderReview: string = "Escribe tu reseña";
@@ -16,7 +15,7 @@ const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑"]
 
 
-export default function WriteReviewLeft() {
+export default function WriteReviewMobile() {
     let textAreaReview = useRef(null)
     let [displayEmoticons, setDisplayEmoticons] = useState(false)
     let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
@@ -109,19 +108,19 @@ export default function WriteReviewLeft() {
             </div>
             <div className={style.gridAddPhotos}>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/placeholderImageUpload.png"/>
+                    <Image width={200} height={200} src="/images/placeholderImageUpload.png"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor4.jpg"/>
+                    <Image width={200} height={200} src="/images/thedoor4.jpg"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor3.jpg"/>
+                    <Image width={200} height={200} src="/images/thedoor3.jpg"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor2.jpg"/>
+                    <Image width={200} height={200} src="/images/thedoor2.jpg"/>
                 </div>
                 <div>
-                    <Image width={200} height={200} objectFit={"cover"} src="/images/thedoor1.jpg"/>
+                    <Image width={200} height={200} src="/images/thedoor1.jpg"/>
                 </div>
             </div>
             <div>

@@ -9,6 +9,9 @@ import {Menu} from "../dataDemo/data";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import utilities from "/styles/utilities.module.css";
 import SideCard from "../components/Desktop/Review/sideCard";
+import WriteReviewMobile from "../components/Mobile/Review/writeReviewMobile";
+import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
+import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
 
 export default function WriteReview() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
@@ -33,7 +36,11 @@ export default function WriteReview() {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                        <WriteReviewLeft/>
+                        <>
+                        <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
+                        <WriteReviewMobile/>
+                        </>
                 }
                 <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
                          isActiveDarkModeButton={true}/>

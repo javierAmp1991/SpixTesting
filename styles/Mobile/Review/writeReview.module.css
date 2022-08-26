@@ -1,5 +1,5 @@
 .mainCont {
-    padding: 0 72px 0 8px;
+    padding: 24px 16px 32px 16px;
     display: grid;
     gap: 32px;
 }
@@ -54,7 +54,7 @@
 
 .emoticonContainerClose {
     display: grid;
-    grid-template-columns: repeat(15, max-content);
+    grid-template-columns: repeat(7, max-content);
     gap: 16px;
     overflow: hidden;
     align-items: center;
@@ -72,11 +72,11 @@
 
 .emoticonContainerOpen {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     justify-content: space-between;
     gap: 16px;
     height: 112px;
-    overflow: hidden;
+    overflow: scroll;
     border-radius: 8px;
     position: relative;
     transition: .4s;
