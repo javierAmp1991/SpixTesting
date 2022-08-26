@@ -90,8 +90,7 @@ export default function WriteReviewMobile() {
                     {titleWriteReview}
                 </div>
                 <div className={style.containerInput}>
-                    <textarea
-                        onChange={handlereview}
+                    <textarea onChange={handlereview}
                         className={style.sizeInputReview}
                         placeholder={placeholderReview}
                         ref={textAreaReview}/>
