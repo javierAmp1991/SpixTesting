@@ -13,9 +13,11 @@
 
 .containerProduct{
     border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadowUnderProducts);
 }
 
 .contInfo{
     --padding: 8px;
-    padding: var(--padding) var(--padding) var(--padding) 0px;
+    padding: var(--padding) var(--padding) var(--padding) 0;
 }

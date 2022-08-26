@@ -3,7 +3,7 @@
     --spaceX: 0px;
     --spaceXGlobal: 16px;
     --spaceYMini: 12px;
-    padding: var(--spaceY) var(--spaceXGlobal);
+    padding: 24px 16px;
     position: relative;
     display: grid;
     width: 100%;

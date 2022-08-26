@@ -27,6 +27,8 @@ import GridSelectedItemsMobile from "../components/Mobile/PayPage/gridSelectedIt
 import PayPageProductSelectedViewMobile from "../components/Mobile/PayPage/productSelectedViewMobile";
 import DetailsPayMobile from "../components/Mobile/PayPage/detailsPayMobile";
 import {useState} from "react";
+import Image from "next/image";
+import {GlobalConst} from "../public/globalConst";
 
 export default function PayPage() {
     const isSmallDown = useMediaQuery(mediaQuery);
@@ -76,8 +78,12 @@ export default function PayPage() {
                 }
 
             </div>
-            <button onClick={handleDisplay}
-                className={styleMobile.buttonBack}>Volver</button>
+            <div className={styleMobile.positionArrowBack}>
+                <button onClick={handleDisplay}
+                        className={styleMobile.buttonBack}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExitBlack}/>
+                </button>
+            </div>
         </div>
     //endregion
     return (

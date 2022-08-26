@@ -1,17 +1,18 @@
-.mainCont{
+.mainCont {
     padding: 0 0 40px 0;
 }
 
-.divSelected{
- padding: 24px 16px;
+.divSelected {
+    padding: 24px 16px 0 16px;
+    position: relative;
 }
 
-.gridSelected{
+.gridSelected {
     display: grid;
-    gap:24px
+    gap: 24px
 }
 
-.buttonBack{
+/*.buttonBack {
     display: grid;
     padding: 4px 72px;
     background: var(--gradientBlueButton);
@@ -20,4 +21,16 @@
     margin-bottom: 8px;
     color: white;
     border-radius: 4px;
+}*/
+
+.buttonBack {
+    height: 16px;
+    width: 20px;
+    position: relative;
+}
+
+.positionArrowBack {
+    position: absolute;
+    top: 18px;
+    right: 18px;
 }
