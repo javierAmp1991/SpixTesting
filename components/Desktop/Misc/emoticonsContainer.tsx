@@ -30,9 +30,8 @@ export default function EmoticonsContainer({addEmoticon}) {
             <button onClick={handleDisplayEmoticons} className={cssStyle.positionOpen}>
                 {
                     displayEmoticons?
-                        <Image height={14} width={14} src={GlobalConst.sourceImages.closeLoggin}/>:
+                        <Image height={13} width={13} src={GlobalConst.sourceImages.closeLoggin}/>:
                         <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
-
                 }
 
             </button>

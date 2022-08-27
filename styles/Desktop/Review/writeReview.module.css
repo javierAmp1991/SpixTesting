@@ -11,7 +11,7 @@
     box-shadow: var(--shadowUnderProducts);
     background: var(--backgroundInput);
     padding: 12px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
 }
 
 .containerInput {
