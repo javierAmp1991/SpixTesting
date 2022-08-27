@@ -32,5 +32,14 @@
     top: 4px;
     background: #2D7DFFFF;
     width: 40px;
+}
 
+.styleButtonAdd{
+    color: var(--colorSecundaryText);
+    box-shadow: var(--boxShadowCard);
+    text-align: left;
+    width: max-content;
+    padding: 5px 28px;
+    border-radius: 3px;
+    overflow: hidden;
 }

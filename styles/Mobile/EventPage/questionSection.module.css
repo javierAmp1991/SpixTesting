@@ -83,3 +83,12 @@
     right: 8px;
     opacity: .6;
 }
+
+.styleButtonAdd{
+    color: var(--colorSecundaryText);
+    box-shadow: var(--boxShadowCard);
+    text-align: left;
+    width: max-content;
+    padding: 5px 28px;
+    border-radius: 3px;
+}

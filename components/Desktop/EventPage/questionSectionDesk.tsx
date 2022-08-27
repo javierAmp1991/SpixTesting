@@ -32,7 +32,8 @@ export default function QuestionSectionDesk({children}) {
         <div>
             <LayoutCommRevQueDesk>
                 {children}
-                <button onClick={handleDisplayPopUp}>
+                <button className={style.styleButtonAdd}
+                    onClick={handleDisplayPopUp}>
                     Escribe una pregunta
                 </button>
             </LayoutCommRevQueDesk>

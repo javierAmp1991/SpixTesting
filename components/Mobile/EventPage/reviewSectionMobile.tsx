@@ -46,12 +46,13 @@ export default function ReviewSectionMobile({children, resumeReview}) {
             </div>
             <LayoutCommRevQue>
                 {children}
+                <Link href={"writeReview"}>
+                    <button className={style.styleButtonAdd} >
+                        escribe reseña
+                    </button>
+                </Link>
             </LayoutCommRevQue>
-            <Link href={"writeReview"}>
-                <button>
-                    escribe reseña
-                </button>
-            </Link>
+
         </>
     )
 }

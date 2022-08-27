@@ -31,10 +31,12 @@ export default function QuestionSectionMobile({children}) {
         <div>
             <LayoutCommRevQue>
                 {children}
+                <button className={style.styleButtonAdd}
+                        onClick={handleDisplayPopUp}>
+                    Escribe una pregunta
+                </button>
             </LayoutCommRevQue>
-            <button onClick={handleDisplayPopUp}>
-                Escribe una pregunta
-            </button>
+
             {
                 isMakeQuestion &&
                 <PopUpContainerMob isBackground={true} closePopUp={handleDisplayPopUp}>

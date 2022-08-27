@@ -82,3 +82,15 @@
     top: 16px;
     right: 12px;
 }
+
+.styleButtonAdd{
+    color: var(--colorSecundaryText);
+    box-shadow: var(--boxShadowCard);
+    text-align: left;
+    width: max-content;
+    border-radius: 3px;
+    padding: 5px 28px;
+}
+.styleButtonAdd:hover{
+    background: #f6f6f6;
+}
