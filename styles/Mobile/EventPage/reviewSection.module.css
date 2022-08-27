@@ -35,7 +35,7 @@
 }
 
 .styleButtonAdd{
-    color: var(--colorSecundaryText);
+    color: var(--colorPrimaryText);
     box-shadow: var(--boxShadowCard);
     text-align: left;
     width: max-content;
