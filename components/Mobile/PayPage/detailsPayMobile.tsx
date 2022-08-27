@@ -21,6 +21,7 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
     let [stateSecondtCupon, setStateSecondCupon] = useState(false)
     let [amountDiscount1, setAmountDiscount1] = useState(0)
     let [amountDiscount2, setAmountDiscount2] = useState(0)
+    let [isTimeOut, setTimeOut] = useState(false)
     const handleFirstCupon = (cupon: string) => {
         if (cupon == "first") {
             setAmountDiscount1(amountDiscount1 = 9990)
@@ -59,6 +60,9 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
             newTotal -= amountDiscount2
         }
         return newTotal
+    }
+    const handleTimeOut = () =>{
+        setTimeOut(isTimeOut = true)
     }
 
     return (
@@ -126,7 +130,7 @@ export default function DetailsPayMobile({displaySelectedItem, resumeBuy}:
                     <Image layout={"fill"} src={GlobalConst.sourceImages.timerRed} alt=""/>
                 </div>
                 <div>
-                    <Timer isDays={false}/>
+                    <Timer isTimeOut={handleTimeOut} isDays={false}/>
                 </div>
                 <div>
                     {finishText}

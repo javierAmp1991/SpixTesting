@@ -55,9 +55,14 @@
     color: white;
     padding: 4px 0;
     border-radius: 3px;
-
 }
 
+.styleButtonTimeOut{
+    background: #D4D6D7FF ;
+    color: white;
+    padding: 4px 0;
+    border-radius: 3px;
+}
 .buttonContainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -9,6 +9,7 @@ import {useState} from "react";
 const goToPay: string = "Pagar"
 const cancel: string = "Cancelar"
 const finishText: string = "para finalizar su compra"
+
 export class resumeBuy {
     TotalProducts: number
     TotalPrice: number
@@ -20,22 +21,21 @@ export default function DetailsPay({resumeBuy}: { resumeBuy: resumeBuy }) {
     let [stateSecondtCupon, setStateSecondCupon] = useState(false)
     let [amountDiscount1, setAmountDiscount1] = useState(0)
     let [amountDiscount2, setAmountDiscount2] = useState(0)
+    let [isTimeOut, setTimeOut] = useState(false)
     const handleFirstCupon = (cupon: string) => {
-        if(cupon == "first"){
+        if (cupon == "first") {
             setAmountDiscount1(amountDiscount1 = 9990)
             setStateFirstCupon(stateFirstCupon = true)
-        }
-        else{
+        } else {
             setAmountDiscount1(amountDiscount1 = 0)
             setStateFirstCupon(stateFirstCupon = false)
         }
     }
     const handleSecondCupon = (cupon: string) => {
-        if(cupon == "second"){
+        if (cupon == "second") {
             setAmountDiscount2(amountDiscount2 = 19990)
             setStateSecondCupon(stateSecondtCupon = true)
-        }
-        else{
+        } else {
             setAmountDiscount2(amountDiscount2 = 0)
             setStateSecondCupon(stateSecondtCupon = false)
         }
@@ -51,16 +51,22 @@ export default function DetailsPay({resumeBuy}: { resumeBuy: resumeBuy }) {
         GetInputvalue: handleSecondCupon
     }
     const newTotal = getTotalDiscount(resumeBuy.TotalPrice)
-    function getTotalDiscount(oldTotal: number):number{
+    const handleTimeOut = () =>{
+        setTimeOut(isTimeOut = true)
+    }
+
+    function getTotalDiscount(oldTotal: number): number {
         let newTotal: number = oldTotal
-        if(stateFirstCupon) {
+        if (stateFirstCupon) {
             newTotal -= amountDiscount1
         }
-        if(stateSecondtCupon){
+        if (stateSecondtCupon) {
             newTotal -= amountDiscount2
         }
         return newTotal
     }
+
+    const cssStyle = getCssStyle()
 
     return (
         <div className={style.mainContainer}>
@@ -116,7 +122,7 @@ export default function DetailsPay({resumeBuy}: { resumeBuy: resumeBuy }) {
                     <div className={style.sizeIconTimer}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.timerRed} alt=""/>
                     </div>
-                    <Timer isDays={false}/>
+                    <Timer isTimeOut={handleTimeOut} isDays={false}/>
                     <div>
                         {finishText}
                     </div>
@@ -124,9 +130,15 @@ export default function DetailsPay({resumeBuy}: { resumeBuy: resumeBuy }) {
             </div>
 
             <div className={style.buttonContainer}>
-                <button className={style.styleButton}>{cancel} </button>
-                <button className={style.styleButton}>{goToPay} </button>
+                <button className={cssStyle.styleButton}>{cancel} </button>
+                <button className={cssStyle.styleButton}>{goToPay} </button>
             </div>
         </div>
     )
+
+    function getCssStyle() {
+        return {
+            styleButton: isTimeOut ? style.styleButtonTimeOut : style.styleButton
+        }
+    }
 }

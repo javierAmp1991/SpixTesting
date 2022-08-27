@@ -1,11 +1,12 @@
 import {useEffect, useState} from "react";
 
-export default function Timer({isDays}: { isDays: boolean }) {
+export default function Timer({isDays, isTimeOut}: { isDays: boolean, isTimeOut: any }) {
     let [timeControl] = useState(new Date().getTime() + 600000)
     let [days, setDays] = useState("00")
     let [hours, setHours] = useState("00")
     let [minutes, setMinutes] = useState("00")
     let [seconds, setSeconds] = useState("00")
+    let [controlInterval, setControlInterval] = useState(true)
 
     const handleTimer = () => {
         isDays &&
@@ -14,6 +15,11 @@ export default function Timer({isDays}: { isDays: boolean }) {
         setHours(hours = correctNumber(getHours(new Date().getTime())))
         setMinutes(minutes = correctNumber(getMinutes(new Date().getTime())))
         setSeconds(seconds = correctNumber(getSeconds(new Date().getTime())))
+
+        if(minutes == "00" && seconds == "00"){
+            setControlInterval(controlInterval = false)
+            isTimeOut()
+        }
     }
 
     function getDays(num: number) {
@@ -43,8 +49,11 @@ export default function Timer({isDays}: { isDays: boolean }) {
     }
 
     useEffect(() => {
-        const interval = setInterval(handleTimer, 1000)
-        return () => clearInterval(interval)
+        if(controlInterval){
+            const interval = setInterval(handleTimer, 1000)
+            return () => clearInterval(interval)
+        }
+
     })
     return (
         <div>
