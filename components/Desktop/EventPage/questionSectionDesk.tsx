@@ -32,10 +32,11 @@ export default function QuestionSectionDesk({children}) {
         <div>
             <LayoutCommRevQueDesk>
                 {children}
+                <button onClick={handleDisplayPopUp}>
+                    Escribe una pregunta
+                </button>
             </LayoutCommRevQueDesk>
-            <button onClick={handleDisplayPopUp}>
-                Escribe una pregunta
-            </button>
+
             {
                 isMakeQuestion &&
                 <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handleDisplayPopUp}>

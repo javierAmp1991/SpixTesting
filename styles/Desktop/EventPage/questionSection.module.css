@@ -16,7 +16,7 @@
     background: #f8f8f8;
     border-radius: 6px;
     overflow: hidden;
-    padding: 12px;
+
 }
 
 .textAreaStyle{
@@ -25,6 +25,7 @@
     height: 120px;
     background: #f8f8f8;
     outline: none;
+    padding: 12px;
 }
 .mainContPadding{
     padding: 32px 24px;

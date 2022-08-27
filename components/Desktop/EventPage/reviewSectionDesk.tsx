@@ -46,12 +46,13 @@ export default function ReviewSectionDesk({children, resumeReview}) {
             </div>
             <LayoutCommRevQueDesk>
                 {children}
+                <Link href={"writeReview"}>
+                    <button>
+                        Escribe tu reseña
+                    </button>
+                </Link>
             </LayoutCommRevQueDesk>
-            <Link href={"writeReview"}>
-                <button>
-                    escribe reseña
-                </button>
-            </Link>
+
         </>
     )
 }

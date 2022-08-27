@@ -1,14 +1,12 @@
 .mainCont {
     position: relative;
-    padding: 0 24px 0 0;
-/*    box-shadow: var(--shadowUnderProducts);
-    border-radius: 6px;
-    background: #f8f8f8;*/
+    padding: 16px 46px 16px 16px;
+    background: #efefef;
 }
 
 .mainContClose {
     position: relative;
-    padding: 0 24px 16px 0;
+    padding: 16px 46px 16px 16px;
 }
 
 .emoticonContainerClose {
@@ -35,13 +33,13 @@
 
 .positionAddIcon {
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 18px;
+    right: 16px;
 }
 
 .positionAddIconClose {
     position: absolute;
     top: 0;
-    right:0;
+    right:16px;
     transition: .4s;
 }

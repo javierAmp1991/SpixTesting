@@ -1,7 +1,7 @@
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
 import style from "/styles/Desktop/Review/writeReview.module.css"
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import EmoticonsContainer from "../Misc/emoticonsContainer";
 const placeholderTitle: string = "Escribe un titulo";
@@ -36,6 +36,9 @@ export default function WriteReviewLeft() {
         })
         setReviewCalification(reviewCalification = newreviewCalification)
     }
+    useEffect(()=>{
+
+    })
     return (
         <div className={style.mainCont}>
             <div>

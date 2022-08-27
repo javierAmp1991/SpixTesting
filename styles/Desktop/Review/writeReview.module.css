@@ -10,7 +10,6 @@
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
     background: var(--backgroundInput);
-    padding: 12px;
     margin-bottom: 16px;
 }
 
@@ -35,6 +34,7 @@
     width: 100%;
     resize: none;
     height: 200px;
+    padding: 12px;
     background: var(--backgroundInput);
 }
 
