@@ -5,7 +5,9 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/EventPage/questionSection.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-const sendQuestion: string= "Enviar"
+import EmoticonsContainer from "../Misc/emoticonsContainer";
+
+const sendQuestion: string = "Enviar"
 const placeHolderQuestion: string = "Escribe tu pregunta"
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
@@ -41,20 +43,12 @@ export default function QuestionSectionDesk({children}) {
                         <div className={`${utilities.fontTitle}`}>
                             Tu pregunta
                         </div>
-                        <div className={style.textAresContainer}>
+                        <div>
+                            <div className={style.textAresContainer}>
                             <textarea ref={textAreaQuestion} placeholder={placeHolderQuestion}
-                                className={style.textAreaStyle}/>
-                        </div>
-                        <div className={displayEmoticons ? style.emoticonContainerOpen : style.emoticonContainerClose}>
-                            {
-                                listEmoticons.map((item, index) =>
-                                    <button onClick={() => handleAddEmoticon(item)} key={index}
-                                            className={style.emoticonStyle}>{item}</button>
-                                )
-                            }
-                            <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                                <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
-                            </button>
+                                      className={style.textAreaStyle}/>
+                            </div>
+                            <EmoticonsContainer addEmoticon={handleAddEmoticon}/>
                         </div>
                         <div>
                             <button className={style.buttonStyle}>

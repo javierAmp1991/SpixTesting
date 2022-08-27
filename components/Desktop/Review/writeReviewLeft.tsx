@@ -3,7 +3,7 @@ import utilities from "/styles/utilities.module.css";
 import style from "/styles/Desktop/Review/writeReview.module.css"
 import {useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-
+import EmoticonsContainer from "../Misc/emoticonsContainer";
 const placeholderTitle: string = "Escribe un titulo";
 const titleCalification: string = "Como calificarias ?"
 const placeholderReview: string = "Escribe tu reseña";
@@ -11,20 +11,14 @@ const titleTitle: string = "Titulo";
 const titleWriteReview: string = "Cuentanos tu experiencia";
 const titleSection: string = "Tu reseña";
 const sendReview: string = "Publicar";
-const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
-    "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
-    "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑"]
-
 
 export default function WriteReviewLeft() {
     let textAreaReview = useRef(null)
-    let [displayEmoticons, setDisplayEmoticons] = useState(false)
+
     let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
     let [inputTitle, setInputTitle] = useState("")
     let [inputReview, setInputReview] = useState("")
-    const handleDisplayEmoticons = () => {
-        setDisplayEmoticons(displayEmoticons = !displayEmoticons)
-    }
+
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
     }
@@ -89,24 +83,14 @@ export default function WriteReviewLeft() {
                 <div className={`${style.paddingTitleInter} ${utilities.fontName}`}>
                     {titleWriteReview}
                 </div>
-                <div className={style.containerInput}>
+                <div className={`${style.containerInputTitle}`}>
                     <textarea
                         onChange={handlereview}
                         className={style.sizeInputReview}
                         placeholder={placeholderReview}
                         ref={textAreaReview}/>
                 </div>
-            </div>
-            <div className={displayEmoticons ? style.emoticonContainerOpen : style.emoticonContainerClose}>
-                {
-                    listEmoticons.map((item, index) =>
-                        <button onClick={() => handleAddEmoticon(item)} key={index}
-                                className={style.emoticonStyle}>{item}</button>
-                    )
-                }
-                <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                    <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
-                </button>
+                <EmoticonsContainer addEmoticon={handleAddEmoticon} />
             </div>
             <div className={style.gridAddPhotos}>
                 <div>

@@ -3,6 +3,7 @@ import style from "/styles/Desktop/EventPage/reviewSection.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ReviewSectionDesk({children, resumeReview}) {
     return (
@@ -46,6 +47,11 @@ export default function ReviewSectionDesk({children, resumeReview}) {
             <LayoutCommRevQueDesk>
                 {children}
             </LayoutCommRevQueDesk>
+            <Link href={"writeReview"}>
+                <button>
+                    escribe reseña
+                </button>
+            </Link>
         </>
     )
 }

@@ -3,6 +3,7 @@ import style from "/styles/Mobile/EventPage/reviewSection.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ReviewSectionMobile({children, resumeReview}) {
     return (
@@ -46,6 +47,11 @@ export default function ReviewSectionMobile({children, resumeReview}) {
             <LayoutCommRevQue>
                 {children}
             </LayoutCommRevQue>
+            <Link href={"writeReview"}>
+                <button>
+                    escribe reseña
+                </button>
+            </Link>
         </>
     )
 }

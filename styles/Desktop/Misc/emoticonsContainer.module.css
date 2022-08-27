@@ -1,0 +1,46 @@
+.mainCont {
+    position: relative;
+    border-radius: 6px;
+    padding: 16px 48px 16px 16px;
+    box-shadow: var(--shadowUnderProducts);
+    background: #f8f8f8;
+}
+
+.mainContClose {
+    position: relative;
+    padding: 8px 48px 8px 16px;
+}
+
+
+.emoticonContainerClose {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 16px);
+    justify-content: space-between;
+    overflow: scroll;
+    height: 0;
+    gap: 12px;
+    transition: .4s;
+}
+
+.emoticonContainerOpen {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 16px);
+    justify-content: space-between;
+    gap: 12px;
+    height: 58px;
+    overflow: scroll;
+    transition: .4s;
+}
+
+.positionAddIcon {
+    position: absolute;
+    top: 18px;
+    right: 14px;
+    transition: .4s;
+}
+.positionAddIconClose {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    transition: .4s;
+}
