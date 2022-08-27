@@ -1,13 +1,12 @@
-import style from "/styles/Desktop/Misc/emoticonsContainer.module.css"
+import style from "/styles/Mobile/Misc/emoticonsContainer.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
-
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
     "😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑"]
 
-export default function EmoticonsContainer({addEmoticon}) {
+export default function EmoticonsContainerMobile({addEmoticon}) {
     let [displayEmoticons, setDisplayEmoticons] = useState(false)
     const cssStyle = getCssStyle()
     const handleDisplayEmoticons = () => {

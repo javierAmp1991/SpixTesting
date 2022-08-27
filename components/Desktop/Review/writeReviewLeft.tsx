@@ -39,12 +39,12 @@ export default function WriteReviewLeft() {
     return (
         <div className={style.mainCont}>
             <div>
-                <div className={`${utilities.fontTitle} ${style.paddingTitleInter}`}>
+                <div className={`${utilities.fontTitle}`}>
                     {titleSection}
                 </div>
-                <div className={utilities.fontPrimaryText}>
+                {/*<div className={utilities.fontPrimaryText}>
                     A continuacion podras hacer la reseña del evento de <span className={utilities.styleLink}>El Huevo</span>
-                </div>
+                </div>*/}
             </div>
             <div>
                 <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
@@ -89,8 +89,8 @@ export default function WriteReviewLeft() {
                         className={style.sizeInputReview}
                         placeholder={placeholderReview}
                         ref={textAreaReview}/>
-                </div>
                 <EmoticonsContainer addEmoticon={handleAddEmoticon} />
+                </div>
             </div>
             <div className={style.gridAddPhotos}>
                 <div>

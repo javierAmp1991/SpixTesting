@@ -23,7 +23,9 @@ export default function SideCard(){
                         <div>
                             {productEvent.EventName}
                         </div>
+                        <div className={utilities.fontSecundaryText}>Bar restaurant</div>
                     </div>
+
                 </div>
                 {/*<PayPageProductSelectedView item={ListProducts.listProducts[0]} />*/}
             </div>

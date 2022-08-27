@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css";
 import style from "/styles/Mobile/Review/writeReview.module.css"
 import {useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+import EmoticonsContainerMobile from "../Misc/emoticonsContainerMobile";
 
 const placeholderTitle: string = "Escribe un titulo";
 const titleCalification: string = "Como calificarias ?"
@@ -97,17 +98,7 @@ export default function WriteReviewMobile() {
                         ref={textAreaReview}/>
                 </div>
             </div>
-            <div className={displayEmoticons ? style.emoticonContainerOpen : style.emoticonContainerClose}>
-                {
-                    listEmoticons.map((item, index) =>
-                        <button onClick={() => handleAddEmoticon(item)} key={index}
-                                className={style.emoticonStyle}>{item}</button>
-                    )
-                }
-                <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                    <Image priority={true} height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
-                </button>
-            </div>
+            <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
             <div className={style.gridAddPhotos}>
                 <div>
                     <Image width={200} height={200} src="/images/placeholderImageUpload.png"/>

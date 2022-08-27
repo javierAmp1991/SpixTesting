@@ -5,6 +5,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
+import EmoticonsContainerMobile from "../Misc/emoticonsContainerMobile";
 const sendQuestion: string= "Enviar"
 const placeHolderQuestion: string = "Escribe tu pregunta"
 const listEmoticons: string[] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😀", "😁", "😂", "🤣", "😃", "😄", "😍", "💗", "😑",
@@ -45,17 +46,7 @@ export default function QuestionSectionMobile({children}) {
                             <textarea ref={textAreaQuestion} placeholder={placeHolderQuestion}
                                       className={style.textAreaStyle}/>
                         </div>
-                        <div className={displayEmoticons ? style.emoticonContainerOpen : style.emoticonContainerClose}>
-                            {
-                                listEmoticons.map((item, index) =>
-                                    <button onClick={() => handleAddEmoticon(item)} key={index}
-                                            className={style.emoticonStyle}>{item}</button>
-                                )
-                            }
-                            <button onClick={handleDisplayEmoticons} className={style.positionAddIcon}>
-                                <Image height={17} width={17} src={GlobalConst.sourceImages.emoticonButton}/>
-                            </button>
-                        </div>
+                        <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
                         <div>
                             <button className={style.buttonStyle}>
                                 {sendQuestion}

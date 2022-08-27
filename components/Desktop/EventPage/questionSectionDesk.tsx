@@ -47,8 +47,8 @@ export default function QuestionSectionDesk({children}) {
                             <div className={style.textAresContainer}>
                             <textarea ref={textAreaQuestion} placeholder={placeHolderQuestion}
                                       className={style.textAreaStyle}/>
-                            </div>
                             <EmoticonsContainer addEmoticon={handleAddEmoticon}/>
+                            </div>
                         </div>
                         <div>
                             <button className={style.buttonStyle}>

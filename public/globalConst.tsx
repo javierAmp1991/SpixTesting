@@ -66,7 +66,8 @@ export namespace GlobalConst{
         placeHolderImageUpload: "images/placeholderImageUpload.png",
         ratingIndFull: "/images/ratingNewIndFull.png",
         ratingIndVoid: "/images/ratingNewIndVoid.png",
-        emoticonButton: "/images/emoticon.png"
+        emoticonButton: "/images/emoticon.png",
+        closeEmoji: "/images/closeEmoji.png"
     }
 }
 

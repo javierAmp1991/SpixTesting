@@ -1,14 +1,17 @@
 .mainCont {
     position: relative;
-    padding: 0 24px 0 0;
-/*    box-shadow: var(--shadowUnderProducts);
+    padding: 12px 44px 12px 12px;
+    box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
-    background: #f8f8f8;*/
+    background: #f8f8f8;
 }
 
 .mainContClose {
     position: relative;
-    padding: 0 24px 16px 0;
+    padding: 12px 44px 12px 12px;
+    box-shadow: var(--shadowUnderProducts);
+    border-radius: 6px;
+    background: #f8f8f8;
 }
 
 .emoticonContainerClose {
@@ -16,7 +19,7 @@
     grid-template-columns: repeat(auto-fill, 16px);
     justify-content: space-between;
     overflow: scroll;
-    height: 0;
+    height: 21px;
     gap: 12px;
     transition: .4s;
     padding: 2px;
@@ -27,7 +30,7 @@
     grid-template-columns: repeat(auto-fill, 16px);
     justify-content: space-between;
     gap: 12px;
-    height: 58px;
+    height: 84px;
     overflow: scroll;
     transition: .4s;
     padding-right: 2px;
@@ -35,13 +38,13 @@
 
 .positionAddIcon {
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 14px;
+    right: 12px;
 }
 
 .positionAddIconClose {
     position: absolute;
-    top: 0;
-    right:0;
+    top: 15px;
+    right: 12px;
     transition: .4s;
 }
