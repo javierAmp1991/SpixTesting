@@ -232,25 +232,23 @@
 }
 
 .styleBarReview {
-    height: 12px;
-    border-radius: 6px;
+    height: 16px;
+    border-radius: 8px;
     background: rgba(0, 0, 0, 0.1);
     margin-top: 4px;
+    overflow: hidden;
 }
 
 .styleProgresBarReview {
-    height: 12px;
-    border-radius: 6px;
-    position: absolute;
-    left: 0;
-    top: 4px;
+    height: 16px;
+    transition: 1s;
     background: #2D7DFFFF;
 }
 
 .gridStars {
     display: grid;
-    grid-template-columns: 70px 1fr max-content;
-    gap: 20px
+    grid-template-columns: 70px 1fr 30px;
+    gap: 16px
 }
 
 .gridProduct {
@@ -270,6 +268,11 @@
     top: 4px;
     right: 4px;
     transition: .4s;
+}
+
+.imagePopUp{
+    width: 100%;
+    aspect-ratio: 3/4;
 }
 
 

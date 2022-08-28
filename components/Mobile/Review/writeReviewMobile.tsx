@@ -4,7 +4,11 @@ import style from "/styles/Mobile/Review/writeReview.module.css"
 import {useEffect, useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import EmoticonsContainerMobile from "../Misc/emoticonsContainerMobile";
+import PopUpContainerMob from "../Misc/popUpContainerMob";
+import PopUpContainer from "../../Desktop/Misc/popUpContainer";
+
 const idInputUpload: string = "idInputUploadReviewMobile"
+
 class UploadImage {
     FileImage: File
     Id: string
@@ -27,6 +31,8 @@ export default function WriteReviewMobile() {
     let [uploadImages, setUploadImages] = useState([])
     let [indexNum, setIndexNum] = useState(-99)
     let [controlAnimation, setControlAnimation] = useState(false)
+    let [displayPopUp, setDisplayPopUp] = useState(false)
+    let [imagePopUp, setImagePopUp] = useState("")
 
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
@@ -59,9 +65,7 @@ export default function WriteReviewMobile() {
             setReviewCalification(reviewCalification = newreviewCalification)
         }
     }, [indexNum])
-
     let [counterId, setCounterId] = useState(0)
-
     const handleUploadImages = (e) => {
         const newUploadImage: UploadImage = {
             FileImage: e.target.files[0],
@@ -71,22 +75,26 @@ export default function WriteReviewMobile() {
         setUploadImages(uploadImages = [...uploadImages, newUploadImage])
         setCounterId(counterId += 1)
     }
-
     const handleDeleteImage = (idImage: string) => {
         const newLisUploadImage: UploadImage[] = uploadImages.filter((item: UploadImage) => item.Id != idImage)
         setUploadImages(uploadImages = newLisUploadImage)
+    }
+    const handleDisplayPopUp = () => setDisplayPopUp(displayPopUp = !displayPopUp)
+    const handleImagePopUp = (id: string) => {
+        uploadImages.forEach(item => {
+            if (item.Id == id) {
+                setImagePopUp(imagePopUp = item.ProvisoryUrl)
+            }
+        })
+        handleDisplayPopUp()
     }
 
 
     return (
         <div className={style.mainCont}>
             <div>
-                <div className={`${utilities.fontTitle} ${style.paddingTitleInter}`}>
+                <div className={utilities.fontTitle}>
                     {titleSection}
-                </div>
-                <div className={utilities.fontPrimaryText}>
-                    A continuacion podras hacer la reseña del evento de <span
-                    className={utilities.styleLink}>El Huevo</span>
                 </div>
             </div>
             <div>
@@ -111,7 +119,7 @@ export default function WriteReviewMobile() {
                                        src={item ?
                                            GlobalConst.sourceImages.ratingIndFull :
                                            GlobalConst.sourceImages.ratingIndVoid}
-                                alt={""}/>
+                                       alt={""}/>
                             </div>
                         )
                     }
@@ -124,7 +132,7 @@ export default function WriteReviewMobile() {
                 </div>
                 <div className={style.containerInput}>
                     <textarea rows={1}
-                        onChange={handleTitle}
+                              onChange={handleTitle}
                               className={style.sizeInputTitle}
                               placeholder={placeholderTitle}/>
                 </div>
@@ -135,9 +143,9 @@ export default function WriteReviewMobile() {
                 </div>
                 <div className={style.containerInput}>
                     <textarea onChange={handlereview}
-                        className={style.sizeInputReview}
-                        placeholder={placeholderReview}
-                        ref={textAreaReview}/>
+                              className={style.sizeInputReview}
+                              placeholder={placeholderReview}
+                              ref={textAreaReview}/>
                 </div>
             </div>
             <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
@@ -152,15 +160,12 @@ export default function WriteReviewMobile() {
                 </div>
                 {
                     uploadImages.map((item, index) =>
-                        <div className={style.mainContUploadImage} key={index}>
+                        <div onClick={() => handleImagePopUp(item.Id)}
+                             className={style.mainContUploadImage} key={index}>
                             <Image priority={true}
                                    width={200} height={200}
                                    objectFit={"cover"} objectPosition={"top"}
                                    src={item.ProvisoryUrl} alt={""}/>
-                            <button onClick={() => handleDeleteImage(item.Id)}
-                                    className={style.positonDeleteIcon}>
-                                <Image width={12} height={12} src={GlobalConst.sourceImages.closeEmoji} alt={""}/>
-                            </button>
                         </div>
                     )
                 }
@@ -171,6 +176,19 @@ export default function WriteReviewMobile() {
                     {sendReview}
                 </button>
             </div>
+            {
+                displayPopUp &&
+                <PopUpContainerMob isButtonVisible={false}
+                                   isBackground={false}
+                                   closePopUp={handleDisplayPopUp}>
+                    <div className={style.imagePopUp}>
+                        <Image layout={"fill"}
+                               objectFit={"cover"}
+                               objectPosition={"top"}
+                               src={imagePopUp}/>
+                    </div>
+                </PopUpContainerMob>
+            }
         </div>
     )
 }

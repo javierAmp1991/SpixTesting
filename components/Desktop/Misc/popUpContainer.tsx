@@ -9,13 +9,13 @@ export default function PopUpContainer({children, closePopUp, isBackground, isBu
             <div onClick={closePopUp} className={style.blackScreen}/>
             <div className={cssStyle.modalBackground}>
                 {
-                    isButtonVisible ?
+                    isButtonVisible &&
                         <div onClick={closePopUp} className={style.positionDeleteIcon}>
                             <div className={style.sizeDeleteIcon}>
                                 <Image layout={"fill"} objectFit={"cover"}
                                        src={GlobalConst.sourceImages.closeX} alt=""/>
                             </div>
-                        </div> : <></>
+                        </div>
                 }
                 {children}
             </div>

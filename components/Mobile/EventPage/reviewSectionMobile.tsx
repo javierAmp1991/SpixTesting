@@ -4,6 +4,7 @@ import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import Link from "next/link";
+const buttonReview: string = "Escribe tu reseña"
 
 export default function ReviewSectionMobile({children, resumeReview}) {
     return (
@@ -15,7 +16,7 @@ export default function ReviewSectionMobile({children, resumeReview}) {
                     </div>
                     <div className={`${utilities.gridContentCenter} mb-2 justify-start `}>
                         <div className={style.sizeStarResume}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                         </div>
                     </div>
                     <div className={`${utilities.fontPrimaryText} text-left`}>
@@ -31,8 +32,7 @@ export default function ReviewSectionMobile({children, resumeReview}) {
                                     {item.numStars} estrellas
                                 </div>
 
-                                <div className="relative">
-                                    <div className={style.styleBarReview}></div>
+                                <div className={style.styleBarReview}>
                                     <div style={{width: item.numReviews}} className={style.styleProgresBarReview}></div>
                                 </div>
 
@@ -47,8 +47,8 @@ export default function ReviewSectionMobile({children, resumeReview}) {
             <LayoutCommRevQue>
                 {children}
                 <Link href={"writeReview"}>
-                    <button className={style.styleButtonAdd} >
-                        escribe reseña
+                    <button className={style.styleButtonAdd}>
+                        {buttonReview}
                     </button>
                 </Link>
             </LayoutCommRevQue>

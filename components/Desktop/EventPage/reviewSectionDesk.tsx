@@ -15,7 +15,7 @@ export default function ReviewSectionDesk({children, resumeReview}) {
                     </div>
                     <div className={`${utilities.gridContentCenter} justify-start mb-2`}>
                         <div className={style.sizeStarResume}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                         </div>
                     </div>
                     <div className={`${utilities.fontPrimaryText} text-left`}>
@@ -31,8 +31,7 @@ export default function ReviewSectionDesk({children, resumeReview}) {
                                     {item.numStars} estrellas
                                 </div>
 
-                                <div className="relative">
-                                    <div className={style.styleBarReview}></div>
+                                <div className={style.styleBarReview}>
                                     <div style={{width: item.numReviews}} className={style.styleProgresBarReview}></div>
                                 </div>
 

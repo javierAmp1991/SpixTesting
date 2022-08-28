@@ -116,6 +116,12 @@
     transition: .4s;
 }
 
+.imagePopUp{
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+
 .animationStar0 {
     animation: scaleLikeIcon0 var(--animattionTransition) linear;
 }

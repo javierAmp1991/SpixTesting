@@ -4,6 +4,7 @@ import style from "/styles/Desktop/Review/writeReview.module.css"
 import {useEffect, useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import EmoticonsContainer from "../Misc/emoticonsContainer";
+import PopUpContainer from "../Misc/popUpContainer";
 
 const placeholderTitle: string = "Escribe un titulo";
 const titleCalification: string = "Como calificarias ?"
@@ -22,13 +23,14 @@ class UploadImage {
 
 export default function WriteReviewLeft() {
     let textAreaReview = useRef(null)
-
     let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
     let [indexNum, setIndexNum] = useState(-99)
     let [controlAnimation, setControlAnimation] = useState(false)
     let [inputTitle, setInputTitle] = useState("")
     let [inputReview, setInputReview] = useState("")
     let [uploadImages, setUploadImages] = useState([])
+    let [displayPopUp, setDisplayPopUp] = useState(false)
+    let [imagePopUp, setImagePopUp] = useState("")
 
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
@@ -61,9 +63,7 @@ export default function WriteReviewLeft() {
             setReviewCalification(reviewCalification = newreviewCalification)
         }
     }, [indexNum])
-
     let [counterId, setCounterId] = useState(0)
-
     const handleUploadImages = (e) => {
         const newUploadImage: UploadImage = {
             FileImage: e.target.files[0],
@@ -73,10 +73,18 @@ export default function WriteReviewLeft() {
         setUploadImages(uploadImages = [...uploadImages, newUploadImage])
         setCounterId(counterId += 1)
     }
-
     const handleDeleteImage = (idImage: string) => {
         const newLisUploadImage: UploadImage[] = uploadImages.filter((item: UploadImage) => item.Id != idImage)
         setUploadImages(uploadImages = newLisUploadImage)
+    }
+    const handleDisplayPopUp = () => setDisplayPopUp(displayPopUp = !displayPopUp)
+    const handleImagePopUp = (id: string) => {
+        uploadImages.forEach(item =>{
+            if(item.Id == id){
+                setImagePopUp(imagePopUp = item.ProvisoryUrl)
+            }
+        })
+        handleDisplayPopUp()
     }
 
     return (
@@ -150,15 +158,12 @@ export default function WriteReviewLeft() {
                 </div>
                 {
                     uploadImages.map((item, index) =>
-                        <div className={style.mainContUploadImage} key={index}>
+                        <div onClick={() => handleImagePopUp(item.Id)} className={style.mainContUploadImage}
+                             key={index}>
                             <Image priority={true}
                                    width={200} height={200}
                                    objectFit={"cover"} objectPosition={"top"}
                                    src={item.ProvisoryUrl}/>
-                            <button onClick={() => handleDeleteImage(item.Id)}
-                                    className={style.positonDeleteIcon}>
-                                <Image width={12} height={12} src={GlobalConst.sourceImages.closeEmoji}/>
-                            </button>
                         </div>
                     )
                 }
@@ -168,6 +173,19 @@ export default function WriteReviewLeft() {
                     {sendReview}
                 </button>
             </div>
+            {
+                displayPopUp &&
+                <PopUpContainer isBackground={false}
+                                isButtonVisible={false}
+                                closePopUp={handleDisplayPopUp}>
+                    <div className={style.imagePopUp}>
+                        <Image layout={"fill"}
+                               objectFit={"cover"}
+                               objectPosition={"top"}
+                               src={imagePopUp}/>
+                    </div>
+                </PopUpContainer>
+            }
         </div>
     )
 }
