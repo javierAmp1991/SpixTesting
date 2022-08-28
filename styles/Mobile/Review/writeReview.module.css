@@ -2,6 +2,8 @@
     padding: 24px 16px 32px 16px;
     display: grid;
     gap: 32px;
+    --animattionTransition: .8s;
+    --rotation: -360deg;
 }
 
 .containerInput {
@@ -95,21 +97,148 @@
     position: relative;
 }
 
-.animationStar {
-    animation: scaleLikeIcon .2s linear;
+.gridReviewStars {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 8px;
+}
+
+.mainContUploadImage{
+    position: relative;
+    overflow: hidden;
+    opacity: .8;
+}
+
+.positonDeleteIcon{
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    transition: .4s;
+}
+
+.animationStar0 {
+    animation: scaleLikeIcon0 var(--animattionTransition) linear;
+}
+
+.animationStar1 {
+    animation: scaleLikeIcon1 var(--animattionTransition) calc(var(--animattionTransition) * 0.2) linear;
+}
+
+.animationStar2 {
+    animation: scaleLikeIcon2 var(--animattionTransition) calc(var(--animattionTransition) * 0.4) linear;
+}
+
+.animationStar3 {
+    animation: scaleLikeIcon3 var(--animattionTransition) calc(var(--animattionTransition) * 0.6) linear;
+}
+
+.animationStar4 {
+    animation: scaleLikeIcon4 var(--animattionTransition) calc(var(--animattionTransition) * 0.8) linear;
 }
 
 .animationStarDis {
-    animation: deScaleLikeICon .2s linear;
+    animation: deScaleLikeICon .1s linear;
 }
 
-@keyframes scaleLikeIcon {
+@keyframes scaleLikeIcon0 {
     0% {
+        transform: rotate(0deg);
+    }
+
+    69% {
+        transform: rotate(var(--rotation));
+    }
+
+    70% {
         transform: scale(1);
     }
 
-    50% {
-        transform: scale(1.2);
+    85% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes scaleLikeIcon1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    69% {
+        transform: rotate(var(--rotation));
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    85% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes scaleLikeIcon2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    69% {
+        transform: rotate(var(--rotation));
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    85% {
+        transform: scale(1.6);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes scaleLikeIcon3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    69% {
+        transform: rotate(var(--rotation));
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    85% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes scaleLikeIcon4 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    69% {
+        transform: rotate(var(--rotation));
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    85% {
+        transform: scale(1.8);
     }
 
     100% {
@@ -125,10 +254,4 @@
     100% {
         transform: scale(1);
     }
-}
-
-.gridReviewStars {
-    display: grid;
-    grid-template-columns: repeat(5, max-content);
-    gap: 8px;
 }

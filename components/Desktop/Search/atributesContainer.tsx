@@ -38,7 +38,8 @@ export default function AtributesContainer({item, click, isDarkMode, isOpenFilte
                                 <div className={`${utilities.gridMaxContent2} justify-between`}>
                                     <label htmlFor={`${item}CheckBox`}
                                            className={utilities.fontSecundaryText}></label>
-                                    <input onClick={() => click(subcategory)} className="checkboxDarkMode"
+                                    <input checked={subcategory.isChecked}
+                                        onClick={() => click(subcategory)} className="checkboxDarkMode"
                                            id={`${item}CheckBox`}
                                            type='radio'/>
                                 </div>

@@ -5,7 +5,7 @@ import {FiltersData} from "../../../dataDemo/data";
 import React, {useState} from "react";
 import SubCategoryContainerMobile from "./subCategoryContainerMobile";
 import AtributesContainerMobile from "./atributesContainerMobile";
-import {SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
+import {Filters, SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
 import {AtributesDataFilter} from "../../../dataDemo/data";
 import Image from "next/image";
 
@@ -13,6 +13,8 @@ let imageIcon = <Image className="h-4 w-full" src={GlobalConst.sourceImages.dele
 
 export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
     let [displayFilter, setDisplayFilter] = React.useState(style.displayInFilters)
+    let [listFilters, setListFilters] = useState(FiltersData.listFilters)
+    let [selectedTagsShow, setSelectedItemShow] = useState([])
 
     function handleClick() {
         setDisplayFilter(
@@ -21,23 +23,21 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
         hiddeResult()
     }
 
-    let [selectedTagsShow, setSelectedItemShow] = useState([])
-    const addItem = (subCategory: SubcategoryFilter) => {
-        if(selectedTagsShow.length == 0){
+    const handleSelectedCategory = (subCategory: SubcategoryFilter) => {
+        if (selectedTagsShow.length == 0) {
             addItemNew(subCategory)
-        }
-        else{
-            let bool: boolean = getBool(subCategory)
-            if(bool) {
+        } else {
+            let bool: boolean = isSelectedType(subCategory)
+            if (bool) {
                 replaceItem(subCategory)
-            }
-            else {
+            } else {
                 addItemNew(subCategory)
             }
         }
+        handleSelectInput(subCategory)
     }
 
-    function getBool(subcategory: SubcategoryFilter): boolean {
+    function isSelectedType(subcategory: SubcategoryFilter): boolean {
         let newValue: boolean = selectedTagsShow.some((item: SubcategoryFilter) => {
                 if (item.Type == subcategory.Type) {
                     return true;
@@ -49,26 +49,70 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
         return newValue;
     }
 
-    const replaceItem = (subCategory)=>{
-        const newList: SubcategoryFilter[] = selectedTagsShow.map(item =>{
-            if(item.Type == subCategory.Type) {
-                return subCategory
+    const handleSelectInput = (subcategory: SubcategoryFilter) => {
+        const newListFilters: Filters[] = listFilters.map((item) => {
+                if (item.FilterName == subcategory.Type) {
+                    const newSubCategory: SubcategoryFilter[] = item.SubCategorys.map(item2 => {
+                        if (item2.Name == subcategory.Name) {
+                            return {...item2, isChecked: true}
+                        } else {
+                            return {...item2, isChecked: false}
+                        }
+                    })
+                    return {...item, SubCategorys: newSubCategory}
+                } else {
+                    return item
+                }
             }
-            else return item
+        )
+        setListFilters(listFilters = newListFilters)
+    }
+    const replaceItem = (subCategory) => {
+        const newList: SubcategoryFilter[] = selectedTagsShow.map(item => {
+            if (item.Type == subCategory.Type) {
+                return subCategory
+            } else return item
         })
         setSelectedItemShow(selectedTagsShow = newList)
     }
-
-    const addItemNew = (subCategory: SubcategoryFilter)=>{
+    const addItemNew = (subCategory: SubcategoryFilter) => {
         setSelectedItemShow([...selectedTagsShow, subCategory])
     }
 
     const deleteItem = ((subCategory: SubcategoryFilter) => {
         const newItems: SubcategoryFilter[] = selectedTagsShow.filter(item => item != subCategory)
         setSelectedItemShow(selectedTagsShow = newItems)
+        handleDeselectedInput(subCategory)
     })
+    const handleDeselectedInput = (subcategory: SubcategoryFilter) => {
+        const newListFilters: Filters[] = listFilters.map((item) => {
+                if (item.FilterName == subcategory.Type) {
+                    const newSubCategory: SubcategoryFilter[] = item.SubCategorys.map(item2 => {
+                        return {...item2, isChecked: false}
+                    })
+                    return {...item, SubCategorys: newSubCategory}
+                } else {
+                    return item
+                }
+            }
+        )
+        setListFilters(listFilters = newListFilters)
+    }
 
-    const deleteAll = () => setSelectedItemShow([])
+    const deleteAll = () => {
+        setSelectedItemShow([])
+        handleDeselectedAll()
+    }
+    const handleDeselectedAll = () => {
+        const newListFilters: Filters[] = listFilters.map((item) => {
+                const newSubCategory: SubcategoryFilter[] = item.SubCategorys.map(item2 => {
+                    return {...item2, isChecked: false}
+                })
+                return {...item, SubCategorys: newSubCategory}
+            }
+        )
+        setListFilters(listFilters = newListFilters)
+    }
 
     const cssStyle = getCssStyle()
 
@@ -96,14 +140,20 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                     Filtros
                 </div>
             </div>
-            <div>
-                <AtributesContainerMobile isDarkMode={isDarkMode} click={addItem} item={AtributesDataFilter.atributes}/>
-            </div>
+
             <div>
                 {
-                    FiltersData.listFilters.map(item =>
-                        <SubCategoryContainerMobile isDarkMode={isDarkMode} click={addItem} key={item.FilterName}
-                                                    item={item}/>
+                    listFilters.map((item, index) =>
+                        index == 0 ?
+                            <AtributesContainerMobile isDarkMode={isDarkMode}
+                                                      click={handleSelectedCategory}
+                                                      key={item.FilterName}
+                                                      item={item}/>
+                            :
+                            <SubCategoryContainerMobile isDarkMode={isDarkMode}
+                                                        click={handleSelectedCategory}
+                                                        key={item.FilterName}
+                                                        item={item}/>
                     )
                 }
             </div>

@@ -7,8 +7,8 @@ import ContainerSelectedItemFull from "./containerSelectedItemFull";
 export default function SectionProductFull({item, addItem}:
                                            {item: sectionProduct, addItem: any}) {
     return (
-        <div className={style.paddingContainer}>
-            <div id={`${item.Title}`} className={`${utilities.fontTitle} ${style.marginBottomTitle} `}>
+        <div id={`${item.Title}`} className={style.paddingContainer}>
+            <div  className={`${utilities.fontTitle} ${style.marginBottomTitle} `}>
                 {item.Title}
             </div>
             <div className={style.grid}>

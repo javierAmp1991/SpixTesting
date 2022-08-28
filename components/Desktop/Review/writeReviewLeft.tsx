@@ -4,6 +4,7 @@ import style from "/styles/Desktop/Review/writeReview.module.css"
 import {useEffect, useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import EmoticonsContainer from "../Misc/emoticonsContainer";
+
 const placeholderTitle: string = "Escribe un titulo";
 const titleCalification: string = "Como calificarias ?"
 const placeholderReview: string = "Escribe tu reseña";
@@ -11,13 +12,23 @@ const titleTitle: string = "Titulo";
 const titleWriteReview: string = "Cuentanos tu experiencia";
 const titleSection: string = "Tu reseña";
 const sendReview: string = "Publicar";
+const idInputUpload: string = "idInputUploadReview"
+
+class UploadImage {
+    FileImage: File
+    Id: string
+    ProvisoryUrl: string
+}
 
 export default function WriteReviewLeft() {
     let textAreaReview = useRef(null)
 
     let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
+    let [indexNum, setIndexNum] = useState(-99)
+    let [controlAnimation, setControlAnimation] = useState(false)
     let [inputTitle, setInputTitle] = useState("")
     let [inputReview, setInputReview] = useState("")
+    let [uploadImages, setUploadImages] = useState([])
 
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
@@ -28,26 +39,52 @@ export default function WriteReviewLeft() {
     const handleAddEmoticon = (emoticon: string) => {
         textAreaReview.current.value += emoticon
     }
-    const handleCalification = (indexNum: number) => {
-        const newreviewCalification = reviewCalification.map((item, index) => {
-            if (index <= indexNum) {
-                return true
-            } else return false
-        })
-        setReviewCalification(reviewCalification = newreviewCalification)
-    }
-    useEffect(()=>{
+    const handleCalification = (index: number) => {
+        setControlAnimation(controlAnimation = true)
+        setReviewCalification(reviewCalification = [false, false, false, false, false])
+        if (indexNum == index) {
+            setIndexNum(indexNum = -999)
+            setControlAnimation(controlAnimation = false)
+        } else {
+            setIndexNum(indexNum = index)
+        }
 
-    })
+
+    }
+    useEffect(() => {
+        if (controlAnimation) {
+            const newreviewCalification = reviewCalification.map((item, index) => {
+                if (index <= indexNum) {
+                    return true
+                } else return false
+            })
+            setReviewCalification(reviewCalification = newreviewCalification)
+        }
+    }, [indexNum])
+
+    let [counterId, setCounterId] = useState(0)
+
+    const handleUploadImages = (e) => {
+        const newUploadImage: UploadImage = {
+            FileImage: e.target.files[0],
+            Id: `${e.target.files[0]}${counterId}`,
+            ProvisoryUrl: URL.createObjectURL(e.target.files[0])
+        }
+        setUploadImages(uploadImages = [...uploadImages, newUploadImage])
+        setCounterId(counterId += 1)
+    }
+
+    const handleDeleteImage = (idImage: string) => {
+        const newLisUploadImage: UploadImage[] = uploadImages.filter((item: UploadImage) => item.Id != idImage)
+        setUploadImages(uploadImages = newLisUploadImage)
+    }
+
     return (
         <div className={style.mainCont}>
             <div>
                 <div className={`${utilities.fontTitle}`}>
                     {titleSection}
                 </div>
-                {/*<div className={utilities.fontPrimaryText}>
-                    A continuacion podras hacer la reseña del evento de <span className={utilities.styleLink}>El Huevo</span>
-                </div>*/}
             </div>
             <div>
                 <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
@@ -59,7 +96,14 @@ export default function WriteReviewLeft() {
                             <div onClick={() => handleCalification(index)}
                                  key={index}
                                  className={`${style.sizeStar}
-                            ${item ? style.animationStar : style.animationStarDis}`}>
+                            ${item ?
+                                     index == 0 ? style.animationStar0 :
+                                         index == 1 ? style.animationStar1 :
+                                             index == 2 ? style.animationStar2 :
+                                                 index == 3 ? style.animationStar3 :
+                                                     style.animationStar4
+                                     :
+                                     style.animationStarDis}`}>
                                 <Image priority={true} layout={"fill"}
                                        src={item ?
                                            GlobalConst.sourceImages.ratingIndFull :
@@ -78,8 +122,8 @@ export default function WriteReviewLeft() {
                 <div className={style.containerInput}>
                     <textarea
                         rows={1} onChange={handleTitle}
-                              className={style.sizeInputTitle}
-                              placeholder={placeholderTitle}/>
+                        className={style.sizeInputTitle}
+                        placeholder={placeholderTitle}/>
                 </div>
             </div>
             <div>
@@ -92,25 +136,32 @@ export default function WriteReviewLeft() {
                         className={style.sizeInputReview}
                         placeholder={placeholderReview}
                         ref={textAreaReview}/>
-                <EmoticonsContainer addEmoticon={handleAddEmoticon} />
+                    <EmoticonsContainer addEmoticon={handleAddEmoticon}/>
                 </div>
             </div>
             <div className={style.gridAddPhotos}>
                 <div>
-                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/placeholderImageUpload.png"/>
+                    <label htmlFor={idInputUpload}>
+                        <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
+                               src="/images/placeholderImageUpload.png"/>
+                    </label>
+                    <input onChange={handleUploadImages} className="h-0 w-0 overflow-hidden" id={idInputUpload}
+                           type={"file"}/>
                 </div>
-                <div>
-                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor4.jpg"/>
-                </div>
-                <div>
-                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor3.jpg"/>
-                </div>
-                <div>
-                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor2.jpg"/>
-                </div>
-                <div>
-                    <Image priority={true} width={200} height={200} objectFit={"cover"} src="/images/thedoor1.jpg"/>
-                </div>
+                {
+                    uploadImages.map((item, index) =>
+                        <div className={style.mainContUploadImage} key={index}>
+                            <Image priority={true}
+                                   width={200} height={200}
+                                   objectFit={"cover"} objectPosition={"top"}
+                                   src={item.ProvisoryUrl}/>
+                            <button onClick={() => handleDeleteImage(item.Id)}
+                                    className={style.positonDeleteIcon}>
+                                <Image width={12} height={12} src={GlobalConst.sourceImages.closeEmoji}/>
+                            </button>
+                        </div>
+                    )
+                }
             </div>
             <div>
                 <button className={style.styleButton}>

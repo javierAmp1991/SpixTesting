@@ -1,8 +1,6 @@
 import Image from "next/image";
 
-export class SubcategoryFilter {
-    public Name: string;
-}
+import {SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
 
 export class Filters {
     public FilterName: string;
@@ -54,7 +52,8 @@ export default function SubCategoryContainerMobile({
                             <li key={index} className={`${utilities.gridMaxContent2} justify-between`}>
                                 <label htmlFor={`${subcategory.Name}CheckBox`}
                                        className={cssStyle.fontSecundaryText}>{subcategory.Name}</label>
-                                <input onChange={() => handleClick1(subcategory)} className="checkbox"
+                                <input checked={subcategory.isChecked}
+                                       onChange={() => handleClick1(subcategory)} className="checkbox"
                                        id={`${subcategory.Name}CheckBox`} type='radio'
                                        name={item.FilterName}/>
                             </li>
@@ -65,10 +64,11 @@ export default function SubCategoryContainerMobile({
                                         <div className="relative">
                                             <span
                                                 className={`${cssStyle.fontSecundaryText} ${style.positionDolar}`}>$</span>
-                                            <input id="inputNumberMin"
-                                                   className={`${cssStyle.styleRangePrice} ${cssStyle.bgInfo}`}
-                                                   placeholder="Precio Minimo"
-                                                   type="number"/>
+                                            <input
+                                                id="inputNumberMin"
+                                                className={`${cssStyle.styleRangePrice} ${cssStyle.bgInfo}`}
+                                                placeholder="Precio Minimo"
+                                                type="number"/>
                                         </div>
                                         <div className="relative">
                                             <span
@@ -81,7 +81,8 @@ export default function SubCategoryContainerMobile({
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label className="" htmlFor="checkbox+@subcategory.Name"></label>
-                                        <input onChange={() =>handleClick1(subcategory)}
+                                        <input checked={subcategory.isChecked}
+                                               onChange={() => handleClick1(subcategory)}
                                                className="checkbox" id={`checkbox${subcategory.Name}`} type='radio'
                                                name={item.FilterName}/>
                                     </div>
@@ -112,7 +113,8 @@ export default function SubCategoryContainerMobile({
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label className="font-normal"
                                                htmlFor="checkbox+@subcategory.Name"></label>
-                                        <input onChange={() => handleClick1(subcategory)}
+                                        <input checked={subcategory.isChecked}
+                                               onChange={() => handleClick1(subcategory)}
                                                className="checkbox" id="checkbox+@subcategory.Name" type='radio'
                                                name={item.FilterName}/>
                                     </div>

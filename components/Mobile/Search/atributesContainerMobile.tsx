@@ -35,7 +35,9 @@ export default function AtributesContainerMobile({item, click, isDarkMode}: {ite
                                 <li className={`${utilities.gridMaxContent2} justify-between`}>
                                     <label htmlFor={`${subcategory}CheckBox`}
                                            className={utilities.fontSecundaryText}></label>
-                                    <input onChange={() => click(subcategory)} className="checkbox" id={`${item}CheckBox`} type='radio'/>
+                                    <input checked={subcategory.isChecked}
+                                        onChange={() => click(subcategory)}
+                                           className="checkbox" id={`${item}CheckBox`} type='radio'/>
                                 </li>
                             </button>
                         </li>

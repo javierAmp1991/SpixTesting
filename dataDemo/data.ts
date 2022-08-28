@@ -24,26 +24,27 @@ export enum discountFilters {
     less50 = 'Hasta 50% dcto',
     greater50 = 'Mas 50% dcto'
 }
+const atributesType: string = "Atributos"
 
 export namespace AtributesData {
     export const listAtributes: SubcategoryFilter[] = [
-        {Name: "Corte ondulado", id: "abcde",},
-        {Name: "Comida al paso", id: "abcdef", Type: "atributesCat"},
-        {Name: "Festival callejero", id: "fg", Type: "atributesCat"},
+        {Name: "Corte ondulado", id: "abcde", isChecked:false},
+        {Name: "Comida al paso", id: "abcdef", Type: "atributesCat", isChecked:false},
+        {Name: "Festival callejero", id: "fg", Type: "atributesCat", isChecked:false},
     ]
 }
 
 export namespace AtributesDataFilter {
     export const atributes: Filters = {
-        FilterName: "Atributos",
+        FilterName: atributesType,
         SubCategorys:
             [
-                {Name: "Corte Ondulado", id: "123", Type: "atributesCat"},
-                {Name: "Comida al paso", id: "1234", Type: "atributesCat"},
-                {Name: "Festival Callejero", id: "12345", Type: "atributesCat"},
-                {Name: "Restaurantes de sushi", id: "123456", Type: "atributesCat"},
-                {Name: "Discos", id: "1234567", Type: "atributesCat"},
-                {Name: "Masaje terapeutico", id: "12345678", Type: "atributesCat"}
+                {Name: "Corte Ondulado", id: "123", Type: atributesType, isChecked:false},
+                {Name: "Comida al paso", id: "1234", Type: atributesType, isChecked:false},
+                {Name: "Festival Callejero", id: "12345", Type: atributesType, isChecked:false},
+                {Name: "Restaurantes de sushi", id: "123456", Type: atributesType, isChecked:false},
+                {Name: "Discos", id: "1234567", Type: atributesType, isChecked:false},
+                {Name: "Masaje terapeutico", id: "12345678", Type: atributesType, isChecked:false}
             ]
     }
 }
@@ -51,30 +52,42 @@ export namespace AtributesDataFilter {
 export namespace FiltersData {
     export const listFilters: Filters[] = [
         {
+            FilterName: atributesType,
+            SubCategorys:
+                [
+                    {Name: "Corte Ondulado", id: "123", Type: atributesType, isChecked:false},
+                    {Name: "Comida al paso", id: "1234", Type: atributesType, isChecked:false},
+                    {Name: "Festival Callejero", id: "12345", Type: atributesType, isChecked:false},
+                    {Name: "Restaurantes de sushi", id: "123456", Type: atributesType, isChecked:false},
+                    {Name: "Discos", id: "1234567", Type: atributesType, isChecked:false},
+                    {Name: "Masaje terapeutico", id: "12345678", Type: atributesType, isChecked:false}
+                ]
+        },
+        {
             FilterName: priceFilters.TitleSubcategory,
             SubCategorys:
                 [
-                    {Name: priceFilters.less15k, Type: priceFilters.TitleSubcategory, id: "123"},
-                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory, id: "1234"},
-                    {Name: priceFilters.greater50k, Type: priceFilters.TitleSubcategory, id: "12345"},
-                    {Name: priceFilters.priceRange, Type: priceFilters.TitleSubcategory, id: "123456"},
+                    {Name: priceFilters.less15k, Type: priceFilters.TitleSubcategory, id: "123", isChecked:false},
+                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory, id: "1234", isChecked:false},
+                    {Name: priceFilters.greater50k, Type: priceFilters.TitleSubcategory, id: "12345", isChecked:false},
+                    {Name: priceFilters.priceRange, Type: priceFilters.TitleSubcategory, id: "123456", isChecked:false},
                 ]
         },
         {
             FilterName: dateFilters.titleSubcategory,
             SubCategorys: [
-                {Name: dateFilters.today, Type: dateFilters.titleSubcategory, id: "123a"},
-                {Name: dateFilters.thisWeek, Type: dateFilters.titleSubcategory, id: "1234a"},
-                {Name: dateFilters.thisMonth, Type: dateFilters.titleSubcategory, id: "1235a"},
-                {Name: dateFilters.rangeDate, Type: dateFilters.titleSubcategory, id: "1236a"},
+                {Name: dateFilters.today, Type: dateFilters.titleSubcategory, id: "123a", isChecked:false},
+                {Name: dateFilters.thisWeek, Type: dateFilters.titleSubcategory, id: "1234a", isChecked:false},
+                {Name: dateFilters.thisMonth, Type: dateFilters.titleSubcategory, id: "1235a", isChecked:false},
+                {Name: dateFilters.rangeDate, Type: dateFilters.titleSubcategory, id: "1236a", isChecked:false},
             ]
         },
         {
             FilterName: discountFilters.titleSubcategory,
             SubCategorys: [
-                {Name: discountFilters.less25, Type: discountFilters.titleSubcategory, id: "123ab"},
-                {Name: discountFilters.less50, Type: discountFilters.titleSubcategory, id: "1234ab"},
-                {Name: discountFilters.greater50, Type: discountFilters.titleSubcategory, id: "12345ab"},
+                {Name: discountFilters.less25, Type: discountFilters.titleSubcategory, id: "123ab", isChecked:false},
+                {Name: discountFilters.less50, Type: discountFilters.titleSubcategory, id: "1234ab", isChecked:false},
+                {Name: discountFilters.greater50, Type: discountFilters.titleSubcategory, id: "12345ab", isChecked:false},
             ]
         }
     ]

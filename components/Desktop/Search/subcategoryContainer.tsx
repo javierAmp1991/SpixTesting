@@ -5,6 +5,7 @@ export class SubcategoryFilter {
     public id: string
     public Type?: string
     public rangeValue?: string
+    public isChecked: boolean
 }
 
 export class Filters {
@@ -43,7 +44,7 @@ export default function SubcategoryContainer({item, click, isDarkMode}:
                             <li key={index} className={`${utilities.gridMaxContent2} justify-between `}>
                                 <label htmlFor={`${subcategory.Name}CheckBox`}
                                        className={cssStyle.fontSecundaryText}>{subcategory.Name}</label>
-                                <input onChange={() => handleonChange(subcategory)} className="checkboxDarkMode"
+                                <input checked={subcategory.isChecked} onChange={() => handleonChange(subcategory)} className="checkboxDarkMode"
                                        id={`${subcategory.Name}CheckBox`} type='radio'
                                        name={item.FilterName}/>
                             </li>
@@ -70,7 +71,7 @@ export default function SubcategoryContainer({item, click, isDarkMode}:
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label htmlFor={`${subcategory.Name}CheckBox`}/>
-                                        <input onChange={() => handleonChange(subcategory)} className="checkboxDarkMode"
+                                        <input checked={subcategory.isChecked} onChange={() => handleonChange(subcategory)} className="checkboxDarkMode"
                                                id={`${subcategory.Name}CheckBox`} type='radio'
                                                name={item.FilterName}/>
                                     </div>
@@ -100,7 +101,7 @@ export default function SubcategoryContainer({item, click, isDarkMode}:
 
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label htmlFor={`${subcategory.Name}CheckBox`}/>
-                                        <input onChange={() => handleonChange(subcategory)} className="checkboxDarkMode"
+                                        <input checked={subcategory.isChecked} onChange={() => handleonChange(subcategory)} className="checkboxDarkMode"
                                                id={`${subcategory.Name}CheckBox`} type='radio'
                                                name={item.FilterName}/>
                                     </div>
