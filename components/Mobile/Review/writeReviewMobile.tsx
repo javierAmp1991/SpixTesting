@@ -33,6 +33,11 @@ export default function WriteReviewMobile() {
     let [controlAnimation, setControlAnimation] = useState(false)
     let [displayPopUp, setDisplayPopUp] = useState(false)
     let [imagePopUp, setImagePopUp] = useState("")
+    let [stateFStar, setStateFStar] = useState(false)
+    let [stateSStar, setStateSStar] = useState(false)
+    let [stateTStar, setStateTStar] = useState(false)
+    let [stateCStar, setStateCStar] = useState(false)
+    let [stateQStar, setStateQStar] = useState(false)
 
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
@@ -45,7 +50,11 @@ export default function WriteReviewMobile() {
     }
     const handleCalification = (index: number) => {
         setControlAnimation(controlAnimation = true)
-        setReviewCalification(reviewCalification = [false, false, false, false, false])
+        setStateFStar(stateFStar = false)
+        setStateSStar(stateSStar = false)
+        setStateTStar(stateTStar = false)
+        setStateCStar(stateCStar = false)
+        setStateQStar(stateQStar = false)
         if (indexNum == index) {
             setIndexNum(indexNum = -999)
             setControlAnimation(controlAnimation = false)
@@ -57,12 +66,25 @@ export default function WriteReviewMobile() {
     }
     useEffect(() => {
         if (controlAnimation) {
-            const newreviewCalification = reviewCalification.map((item, index) => {
-                if (index <= indexNum) {
-                    return true
-                } else return false
-            })
-            setReviewCalification(reviewCalification = newreviewCalification)
+            if (indexNum >= 0) {
+                setStateFStar(stateFStar = true)
+            }
+            if (indexNum >= 1) {
+                const timeOut = () => setStateSStar(stateSStar = true)
+                setTimeout(timeOut, 100)
+            }
+            if (indexNum >= 2) {
+                const timeOut = () => setStateTStar(stateTStar = true)
+                setTimeout(timeOut, 150)
+            }
+            if (indexNum >= 3) {
+                const timeOut = () => setStateCStar(stateCStar = true)
+                setTimeout(timeOut, 200)
+            }
+            if (indexNum >= 4) {
+                const timeOut = () => setStateQStar(stateQStar = true)
+                setTimeout(timeOut, 250)
+            }
         }
     }, [indexNum])
     let [counterId, setCounterId] = useState(0)
@@ -102,27 +124,48 @@ export default function WriteReviewMobile() {
                     {titleCalification}
                 </div>
                 <div className={style.gridReviewStars}>
-                    {
-                        reviewCalification.map((item, index) =>
-                            <div onClick={() => handleCalification(index)}
-                                 key={index}
-                                 className={`${style.sizeStar}
-                            ${item ?
-                                     index == 0 ? style.animationStar0 :
-                                         index == 1 ? style.animationStar1 :
-                                             index == 2 ? style.animationStar2 :
-                                                 index == 3 ? style.animationStar3 :
-                                                     style.animationStar4
-                                     :
-                                     style.animationStarDis}`}>
-                                <Image priority={true} layout={"fill"}
-                                       src={item ?
-                                           GlobalConst.sourceImages.ratingIndFull :
-                                           GlobalConst.sourceImages.ratingIndVoid}
-                                       alt={""}/>
-                            </div>
-                        )
-                    }
+                    <div className={style.gridReviewStars}>
+                        <div onClick={() => handleCalification(0)}
+                             className={`${style.sizeStar}
+                                             ${stateFStar ? style.animationStar0 : style.animationStarDis}`}>
+                            <Image priority={true} layout={"fill"}
+                                   src={stateFStar ?
+                                       GlobalConst.sourceImages.ratingIndFull :
+                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                        </div>
+                        <div onClick={() => handleCalification(1)}
+                             className={`${style.sizeStar}
+                                             ${stateSStar ? style.animationStar0 : style.animationStarDis}`}>
+                            <Image priority={true} layout={"fill"}
+                                   src={stateSStar ?
+                                       GlobalConst.sourceImages.ratingIndFull :
+                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                        </div>
+                        <div onClick={() => handleCalification(2)}
+                             className={`${style.sizeStar}
+                                             ${stateTStar ? style.animationStar0 : style.animationStarDis}`}>
+                            <Image priority={true} layout={"fill"}
+                                   src={stateTStar ?
+                                       GlobalConst.sourceImages.ratingIndFull :
+                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                        </div>
+                        <div onClick={() => handleCalification(3)}
+                             className={`${style.sizeStar}
+                                             ${stateCStar ? style.animationStar0 : style.animationStarDis}`}>
+                            <Image priority={true} layout={"fill"}
+                                   src={stateCStar ?
+                                       GlobalConst.sourceImages.ratingIndFull :
+                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                        </div>
+                        <div onClick={() => handleCalification(4)}
+                             className={`${style.sizeStar}
+                                             ${stateQStar ? style.animationStar0 : style.animationStarDis}`}>
+                            <Image priority={true} layout={"fill"}
+                                   src={stateQStar ?
+                                       GlobalConst.sourceImages.ratingIndFull :
+                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -150,14 +193,17 @@ export default function WriteReviewMobile() {
             </div>
             <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
             <div className={style.gridAddPhotos}>
-                <div>
-                    <label htmlFor={idInputUpload}>
-                        <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
-                               src="/images/placeholderImageUpload.png" alt={""}/>
-                    </label>
-                    <input onChange={handleUploadImages} className="h-0 w-0 overflow-hidden" id={idInputUpload}
-                           type={"file"}/>
-                </div>
+                {
+                    uploadImages.length < 3 &&
+                    <div>
+                        <label htmlFor={idInputUpload}>
+                            <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
+                                   src="/images/placeholderImageUpload.png" alt={""}/>
+                        </label>
+                        <input onChange={handleUploadImages} className="h-0 w-0 overflow-hidden" id={idInputUpload}
+                               type={"file"}/>
+                    </div>
+                }
                 {
                     uploadImages.map((item, index) =>
                         <div onClick={() => handleImagePopUp(item.Id)}
@@ -166,6 +212,10 @@ export default function WriteReviewMobile() {
                                    width={200} height={200}
                                    objectFit={"cover"} objectPosition={"top"}
                                    src={item.ProvisoryUrl} alt={""}/>
+                            <button onClick={() => handleDeleteImage(item.Id)}
+                                    className={style.positonDeleteIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon}/>
+                            </button>
                         </div>
                     )
                 }

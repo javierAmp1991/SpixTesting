@@ -23,7 +23,6 @@ class UploadImage {
 
 export default function WriteReviewLeft() {
     let textAreaReview = useRef(null)
-    let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
     let [indexNum, setIndexNum] = useState(-99)
     let [controlAnimation, setControlAnimation] = useState(false)
     let [inputTitle, setInputTitle] = useState("")
@@ -31,6 +30,11 @@ export default function WriteReviewLeft() {
     let [uploadImages, setUploadImages] = useState([])
     let [displayPopUp, setDisplayPopUp] = useState(false)
     let [imagePopUp, setImagePopUp] = useState("")
+    let [stateFStar, setStateFStar] = useState(false)
+    let [stateSStar, setStateSStar] = useState(false)
+    let [stateTStar, setStateTStar] = useState(false)
+    let [stateCStar, setStateCStar] = useState(false)
+    let [stateQStar, setStateQStar] = useState(false)
 
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
@@ -43,7 +47,11 @@ export default function WriteReviewLeft() {
     }
     const handleCalification = (index: number) => {
         setControlAnimation(controlAnimation = true)
-        setReviewCalification(reviewCalification = [false, false, false, false, false])
+        setStateFStar(stateFStar = false)
+        setStateSStar(stateSStar = false)
+        setStateTStar(stateTStar = false)
+        setStateCStar(stateCStar = false)
+        setStateQStar(stateQStar = false)
         if (indexNum == index) {
             setIndexNum(indexNum = -999)
             setControlAnimation(controlAnimation = false)
@@ -55,23 +63,38 @@ export default function WriteReviewLeft() {
     }
     useEffect(() => {
         if (controlAnimation) {
-            const newreviewCalification = reviewCalification.map((item, index) => {
-                if (index <= indexNum) {
-                    return true
-                } else return false
-            })
-            setReviewCalification(reviewCalification = newreviewCalification)
+            if (indexNum >= 0) {
+                setStateFStar(stateFStar = true)
+            }
+            if (indexNum >= 1) {
+                const timeOut = () => setStateSStar(stateSStar = true)
+                setTimeout(timeOut, 100)
+            }
+            if (indexNum >= 2) {
+                const timeOut = () => setStateTStar(stateTStar = true)
+                setTimeout(timeOut, 150)
+            }
+            if (indexNum >= 3) {
+                const timeOut = () => setStateCStar(stateCStar = true)
+                setTimeout(timeOut, 200)
+            }
+            if (indexNum >= 4) {
+                const timeOut = () => setStateQStar(stateQStar = true)
+                setTimeout(timeOut, 250)
+            }
         }
     }, [indexNum])
     let [counterId, setCounterId] = useState(0)
     const handleUploadImages = (e) => {
-        const newUploadImage: UploadImage = {
-            FileImage: e.target.files[0],
-            Id: `${e.target.files[0]}${counterId}`,
-            ProvisoryUrl: URL.createObjectURL(e.target.files[0])
+        if (uploadImages.length < 3) {
+            const newUploadImage: UploadImage = {
+                FileImage: e.target.files[0],
+                Id: `${e.target.files[0]}${counterId}`,
+                ProvisoryUrl: URL.createObjectURL(e.target.files[0])
+            }
+            setUploadImages(uploadImages = [...uploadImages, newUploadImage])
+            setCounterId(counterId += 1)
         }
-        setUploadImages(uploadImages = [...uploadImages, newUploadImage])
-        setCounterId(counterId += 1)
     }
     const handleDeleteImage = (idImage: string) => {
         const newLisUploadImage: UploadImage[] = uploadImages.filter((item: UploadImage) => item.Id != idImage)
@@ -79,8 +102,8 @@ export default function WriteReviewLeft() {
     }
     const handleDisplayPopUp = () => setDisplayPopUp(displayPopUp = !displayPopUp)
     const handleImagePopUp = (id: string) => {
-        uploadImages.forEach(item =>{
-            if(item.Id == id){
+        uploadImages.forEach(item => {
+            if (item.Id == id) {
                 setImagePopUp(imagePopUp = item.ProvisoryUrl)
             }
         })
@@ -99,28 +122,46 @@ export default function WriteReviewLeft() {
                     {titleCalification}
                 </div>
                 <div className={style.gridReviewStars}>
-                    {
-                        reviewCalification.map((item, index) =>
-                            <div onClick={() => handleCalification(index)}
-                                 key={index}
-                                 className={`${style.sizeStar}
-                            ${item ?
-                                     index == 0 ? style.animationStar0 :
-                                         index == 1 ? style.animationStar1 :
-                                             index == 2 ? style.animationStar2 :
-                                                 index == 3 ? style.animationStar3 :
-                                                     style.animationStar4
-                                     :
-                                     style.animationStarDis}`}>
-                                <Image priority={true} layout={"fill"}
-                                       src={item ?
-                                           GlobalConst.sourceImages.ratingIndFull :
-                                           GlobalConst.sourceImages.ratingIndVoid}
-                                />
-                            </div>
-                        )
-                    }
-
+                    <div onClick={() => handleCalification(0)}
+                         className={`${style.sizeStar}
+                                             ${stateFStar ? style.animationStar0 : style.animationStarDis}`}>
+                        <Image priority={true} layout={"fill"}
+                               src={stateFStar ?
+                                   GlobalConst.sourceImages.ratingIndFull :
+                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                    </div>
+                    <div onClick={() => handleCalification(1)}
+                         className={`${style.sizeStar}
+                                             ${stateSStar ? style.animationStar0 : style.animationStarDis}`}>
+                        <Image priority={true} layout={"fill"}
+                               src={stateSStar ?
+                                   GlobalConst.sourceImages.ratingIndFull :
+                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                    </div>
+                    <div onClick={() => handleCalification(2)}
+                         className={`${style.sizeStar}
+                                             ${stateTStar ? style.animationStar0 : style.animationStarDis}`}>
+                        <Image priority={true} layout={"fill"}
+                               src={stateTStar ?
+                                   GlobalConst.sourceImages.ratingIndFull :
+                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                    </div>
+                    <div onClick={() => handleCalification(3)}
+                         className={`${style.sizeStar}
+                                             ${stateCStar ? style.animationStar0 : style.animationStarDis}`}>
+                        <Image priority={true} layout={"fill"}
+                               src={stateCStar ?
+                                   GlobalConst.sourceImages.ratingIndFull :
+                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                    </div>
+                    <div onClick={() => handleCalification(4)}
+                         className={`${style.sizeStar}
+                                             ${stateQStar ? style.animationStar0 : style.animationStarDis}`}>
+                        <Image priority={true} layout={"fill"}
+                               src={stateQStar ?
+                                   GlobalConst.sourceImages.ratingIndFull :
+                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                    </div>
                 </div>
             </div>
             <div>
@@ -148,22 +189,28 @@ export default function WriteReviewLeft() {
                 </div>
             </div>
             <div className={style.gridAddPhotos}>
-                <div>
-                    <label htmlFor={idInputUpload}>
+                <div className="relative">
+                    <label htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
                         <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
                                src="/images/placeholderImageUpload.png"/>
                     </label>
-                    <input onChange={handleUploadImages} className="h-0 w-0 overflow-hidden" id={idInputUpload}
+                    <input onChange={handleUploadImages}
+                           className="h-0 w-0 absolute overflow-hidden"
+                           id={idInputUpload}
                            type={"file"}/>
                 </div>
                 {
                     uploadImages.map((item, index) =>
-                        <div onClick={() => handleImagePopUp(item.Id)} className={style.mainContUploadImage}
+                        <div className={style.mainContUploadImage}
                              key={index}>
-                            <Image priority={true}
+                            <Image onClick={() => handleImagePopUp(item.Id)} priority={true}
                                    width={200} height={200}
                                    objectFit={"cover"} objectPosition={"top"}
                                    src={item.ProvisoryUrl}/>
+                            <button onClick={() => handleDeleteImage(item.Id)}
+                                    className={style.positonDeleteIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon}/>
+                            </button>
                         </div>
                     )
                 }

@@ -11,35 +11,42 @@
     transition: .4s;
 }
 
+.fontSizeEmoji{
+    font-size: 18px;
+}
+
 .emoticonContainerClose {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 16px);
+    grid-template-columns: repeat(auto-fill, 18px);
     justify-content: space-between;
     overflow: scroll;
     height: 0;
     gap: 12px;
     transition: .4s;
     padding: 2px;
+    padding-right: 6px;
 }
 
 .emoticonContainerOpen {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 16px);
+    grid-template-columns: repeat(auto-fill, 18px);
     justify-content: space-between;
     gap: 12px;
-    height: 58px;
+    height: 64px;
     overflow: scroll;
     transition: .4s;
-    padding-right: 2px;
+    padding-right: 6px;
 }
 
 .positionAddIcon {
     position: absolute;
-    top: 18px;
+    top: 22px;
     right: 16px;
+    display: grid;
 }
 
 .positionAddIconClose {
+    display: grid;
     position: absolute;
     top: 16px;
     right:16px;

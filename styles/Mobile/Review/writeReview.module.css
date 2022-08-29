@@ -2,7 +2,7 @@
     padding: 24px 16px 32px 16px;
     display: grid;
     gap: 32px;
-    --animattionTransition: .8s;
+    --animattionTransition: .4s;
     --rotation: -360deg;
 }
 
@@ -45,7 +45,7 @@
 
 .gridAddPhotos {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 8px;
 }
 
@@ -121,6 +121,19 @@
     aspect-ratio: 3/4;
 }
 
+.positonDeleteIcon {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #c5c7c7;
+    top: 4px;
+    right: 4px;
+    transition: .4s;
+    z-index: 10000;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+}
+
 
 .animationStar0 {
     animation: scaleLikeIcon0 var(--animattionTransition) linear;
@@ -145,21 +158,12 @@
 .animationStarDis {
     animation: deScaleLikeICon .1s linear;
 }
-
 @keyframes scaleLikeIcon0 {
     0% {
-        transform: rotate(0deg);
-    }
-
-    69% {
-        transform: rotate(var(--rotation));
-    }
-
-    70% {
         transform: scale(1);
     }
 
-    85% {
+    50% {
         transform: scale(1.4);
     }
 
@@ -167,20 +171,13 @@
         transform: scale(1);
     }
 }
+
 @keyframes scaleLikeIcon1 {
     0% {
-        transform: rotate(0deg);
-    }
-
-    69% {
-        transform: rotate(var(--rotation));
-    }
-
-    70% {
         transform: scale(1);
     }
 
-    85% {
+    50% {
         transform: scale(1.5);
     }
 
@@ -188,20 +185,13 @@
         transform: scale(1);
     }
 }
+
 @keyframes scaleLikeIcon2 {
     0% {
-        transform: rotate(0deg);
-    }
-
-    69% {
-        transform: rotate(var(--rotation));
-    }
-
-    70% {
         transform: scale(1);
     }
 
-    85% {
+    50% {
         transform: scale(1.6);
     }
 
@@ -209,20 +199,13 @@
         transform: scale(1);
     }
 }
+
 @keyframes scaleLikeIcon3 {
     0% {
-        transform: rotate(0deg);
-    }
-
-    69% {
-        transform: rotate(var(--rotation));
-    }
-
-    70% {
         transform: scale(1);
     }
 
-    85% {
+    50% {
         transform: scale(1.7);
     }
 
@@ -230,21 +213,24 @@
         transform: scale(1);
     }
 }
+
 @keyframes scaleLikeIcon4 {
     0% {
-        transform: rotate(0deg);
-    }
-
-    69% {
-        transform: rotate(var(--rotation));
-    }
-
-    70% {
         transform: scale(1);
     }
 
-    85% {
+    50% {
         transform: scale(1.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes deScaleLikeICon {
+    0% {
+        transform: scale(.9);
     }
 
     100% {

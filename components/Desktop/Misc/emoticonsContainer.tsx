@@ -23,14 +23,14 @@ export default function EmoticonsContainer({addEmoticon}) {
                 {
                     listEmoticons.map((item, index) =>
                         <button onClick={() => handleAddEmoticons(item)} key={index}
-                                className={style.emoticonStyle}>{item}</button>
+                                className={style.fontSizeEmoji}>{item}</button>
                     )
                 }
             </div>
             <button onClick={handleDisplayEmoticons} className={cssStyle.positionOpen}>
                 {
                     displayEmoticons?
-                        <Image height={13} width={13} src={GlobalConst.sourceImages.closeEmoji} alt={""}/>:
+                        <Image height={14} width={13} src={GlobalConst.sourceImages.closeEmoji} alt={""}/>:
                         <Image height={18} width={18} src={GlobalConst.sourceImages.emoticonButton} alt={""}/>
                 }
             </button>
