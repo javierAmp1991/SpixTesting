@@ -109,13 +109,6 @@
     opacity: .8;
 }
 
-.positonDeleteIcon{
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    transition: .4s;
-}
-
 .imagePopUp{
     width: 100%;
     aspect-ratio: 3/4;
@@ -123,8 +116,8 @@
 
 .positonDeleteIcon {
     position: absolute;
-    height: 20px;
-    width: 20px;
+    height: 16px;
+    width: 16px;
     background: #c5c7c7;
     top: 4px;
     right: 4px;

@@ -204,9 +204,8 @@ export default function WriteReviewMobile() {
                 }
                 {
                     uploadImages.map((item, index) =>
-                        <div onClick={() => handleImagePopUp(item.Id)}
-                             className={style.mainContUploadImage} key={index}>
-                            <Image priority={true}
+                        <div className={style.mainContUploadImage} key={index}>
+                            <Image onClick={() => handleImagePopUp(item.Id)} priority={true}
                                    width={200} height={200}
                                    objectFit={"cover"} objectPosition={"top"}
                                    src={item.ProvisoryUrl} alt={""}/>
