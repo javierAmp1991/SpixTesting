@@ -40,7 +40,7 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
         mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);
 
         mainDivRef.current.style.transition = `none`;
-        mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
+        mainDivRef.current.style.transform = `translateX(${sizeDivRef.current.offsetWidth}px)`;
 
         setTimeout(()=>{
             mainDivRef.current.style.transition = `1000ms linear`;

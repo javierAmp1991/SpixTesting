@@ -18,6 +18,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
     /*const widthDiv = isSmallDown ? 8 : 15;*/
     let [listImagesCar, setListImagesCar] = useState(listImages)
     const renderContainer = useRef(null)
+    let intervalFunction = useRef(null)
     const mainDivRef = useRef(null)
     let [control, setControl] = useState(0)
     const addItem = () => {
@@ -63,6 +64,46 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         mainDivRef.current.addEventListener('transitionend', transition);
     }
 
+    const handleLeft = () =>{
+        const lastElement1 = mainDivRef.current.children[15];
+        const lastElement2 = mainDivRef.current.children[14];
+        const lastElement3 = mainDivRef.current.children[13];
+        const lastElement4 = mainDivRef.current.children[12];
+        const lastElement5 = mainDivRef.current.children[11];
+        const lastElement6 = mainDivRef.current.children[10];
+        const lastElement7 = mainDivRef.current.children[9];
+        const lastElement8 = mainDivRef.current.children[8];
+        let listElements = [lastElement1,lastElement2, lastElement3, lastElement4, lastElement5, lastElement6, lastElement7, lastElement8]
+        listElements.forEach(item =>{
+            mainDivRef.current.insertBefore(item, mainDivRef.current.firstChild);
+        })
+        /*mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);*/
+        const widthDiv: number = mainDivRef.current.offsetWidth + gap
+        mainDivRef.current.style.transition = `none`;
+        mainDivRef.current.style.transform = `translate(-${widthDiv}px)`;
+
+        setTimeout(()=>{
+            mainDivRef.current.style.transition = `2000ms linear`;
+            mainDivRef.current.style.transform = `translateX(0)`;
+        }, 30)
+    }
+
+    const handleMovright = ()=>{
+        clearInterval(intervalFunction.current)
+        handleRight()
+        intervalFunction.current = setInterval(handleRight, 10000)
+    }
+
+    const handleMoveLeft = () =>{
+        clearInterval(intervalFunction.current)
+        handleLeft()
+        intervalFunction.current = setInterval(handleRight, 10000)
+    }
+
+    /*useEffect(()=>{
+        intervalFunction.current = setInterval(handleRight, 10000)
+        return () => clearInterval(intervalFunction.current)
+    })*/
 
     useEffect(() => {
         const interval = setInterval(handleRight, 10000)
@@ -70,7 +111,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
     })
 
     return (
-        <div ref={renderContainer} className="overflow-hidden w-full">
+        <div ref={renderContainer} className="overflow-hidden w-full relative">
             <div ref={mainDivRef} style={{gap: `${gap}px`}} className={style.gridCarrouselAuto}>
                 {listImagesCar.map((image: string, index) =>
                     <div key={index} className={style.testImage}>
