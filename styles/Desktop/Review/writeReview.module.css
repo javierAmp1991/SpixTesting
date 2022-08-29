@@ -232,7 +232,7 @@
 .mainContUploadImage {
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadowUnderProducts);
+    /*box-shadow: var(--shadowUnderProducts);*/
 }
 
 .positonDeleteIcon {
