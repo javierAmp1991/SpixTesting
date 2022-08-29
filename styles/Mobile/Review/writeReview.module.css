@@ -51,7 +51,7 @@
 
 .emoticonContainerClose {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 21px);
+    grid-template-columns: repeat(auto-fill, 17px);
     justify-content: space-between;
     gap: 16px;
     overflow: hidden;
@@ -64,12 +64,11 @@
     padding: 14px 48px 14px 16px;
     background: #f8f8f8;
     box-shadow: var(--shadowUnderProducts);
-/*    background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
 }
 
 .emoticonContainerOpen {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 21px);
+    grid-template-columns: repeat(auto-fill, 17px);
     justify-content: space-between;
     gap: 16px;
     height: 114px;
@@ -81,7 +80,6 @@
     padding: 14px 48px 14px 16px;
     background: #f8f8f8;
     box-shadow: var(--shadowUnderProducts);
-    /*background: linear-gradient(145deg, rgba(253, 29, 29, 1) 0%, rgba(252, 176, 69, 1) 100%);*/
 }
 
 .positionAddIcon {
@@ -127,7 +125,6 @@
     border-radius: 50%;
 }
 
-
 .animationStar0 {
     animation: scaleLikeIcon0 var(--animattionTransition) linear;
 }
@@ -151,6 +148,7 @@
 .animationStarDis {
     animation: deScaleLikeICon .1s linear;
 }
+
 @keyframes scaleLikeIcon0 {
     0% {
         transform: scale(1);

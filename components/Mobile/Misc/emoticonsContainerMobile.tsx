@@ -22,7 +22,7 @@ export default function EmoticonsContainerMobile({addEmoticon}) {
                 {
                     listEmoticons.map((item, index) =>
                         <button onClick={() => handleAddEmoticons(item)} key={index}
-                                className={style.emoticonStyle}>{item}</button>
+                                className={style.fontSizeEmoji}>{item}</button>
                     )
                 }
             </div>

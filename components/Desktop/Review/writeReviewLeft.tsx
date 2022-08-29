@@ -68,19 +68,19 @@ export default function WriteReviewLeft() {
             }
             if (indexNum >= 1) {
                 const timeOut = () => setStateSStar(stateSStar = true)
-                setTimeout(timeOut, 100)
+                setTimeout(timeOut, 30)
             }
             if (indexNum >= 2) {
                 const timeOut = () => setStateTStar(stateTStar = true)
-                setTimeout(timeOut, 150)
+                setTimeout(timeOut, 60)
             }
             if (indexNum >= 3) {
                 const timeOut = () => setStateCStar(stateCStar = true)
-                setTimeout(timeOut, 200)
+                setTimeout(timeOut, 90)
             }
             if (indexNum >= 4) {
                 const timeOut = () => setStateQStar(stateQStar = true)
-                setTimeout(timeOut, 250)
+                setTimeout(timeOut, 120)
             }
         }
     }, [indexNum])

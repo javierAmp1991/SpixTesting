@@ -16,24 +16,25 @@
 
 .emoticonContainerClose {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 16px);
+    grid-template-columns: repeat(auto-fill, 17px);
     justify-content: space-between;
     overflow: hidden;
-    height: 21px;
+    height: 24px;
     gap: 12px;
     transition: .4s;
     padding: 2px;
+    padding-right: 4px;
 }
 
 .emoticonContainerOpen {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 16px);
+    grid-template-columns: repeat(auto-fill, 17px);
     justify-content: space-between;
     gap: 12px;
-    height: 84px;
+    height: 98px;
     overflow: scroll;
     transition: .4s;
-    padding-right: 2px;
+    padding-right: 4px;
 }
 
 .positionAddIcon {
@@ -44,7 +45,11 @@
 
 .positionAddIconClose {
     position: absolute;
-    top: 15px;
+    top: 17px;
     right: 12px;
     transition: .4s;
+}
+
+.fontSizeEmoji{
+    font-size: 17px;
 }

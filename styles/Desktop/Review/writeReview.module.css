@@ -254,10 +254,9 @@
 }
 
 .styleLabel{
-    display: inline-block;
-    height: 0;
-    width: 0;
-    overflow: hidden;
+    height: 200px;
+    width: 200px;
+    position: relative;
 }
 
 

@@ -18,8 +18,13 @@ export default function SideCard() {
                 <Image layout={"fill"} src={productEvent.BannerPath}/>
             </div>
             <div className="p-6">
-                <div className={`${utilities.fontTitle} pb-8`}>
-                    {productEvent.EventName}
+                <div className="pb-7">
+                    <div className={`${utilities.fontTitle} pb-2`}>
+                        {productEvent.EventName}
+                    </div>
+                    <div className={utilities.fontPrimaryText}>
+                        Bar Restaurant
+                    </div>
                 </div>
 
                 <div className="justify-left grid gap-3 content-start pb-8">
