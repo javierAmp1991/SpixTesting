@@ -67,6 +67,7 @@ import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 import Image from "next/image";
 import LayoutAutoCarrouselMobile from "../components/Mobile/Layouts/layoutAutoCarrouselMobile";
+import LayoutCarrouselMobileBanner from "../components/Mobile/Layouts/layoutCarrouselMobileBanner";
 //endregion
 
 //region constantes
@@ -163,13 +164,13 @@ export default function Index() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
 
     //region mobile components
-    let carrouselBannerMobile = <LayoutCarrouselMobile gapLayout={noGapLayout}>
+    let carrouselBannerMobile = <LayoutCarrouselMobileBanner gapLayout={noGapLayout}>
         {
             HomeBannerData.listBanners.map(item =>
                 <FullBannerMobile linkImage={item} key={item}/>
             )
         }
-    </LayoutCarrouselMobile>
+    </LayoutCarrouselMobileBanner>
     let carrouselAutoMobile = <LayoutAutoCarrouselMobile isDarkMode={isDarkMode}
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
