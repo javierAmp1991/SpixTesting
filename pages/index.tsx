@@ -66,6 +66,7 @@ import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLo
 import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 import Image from "next/image";
+import LayoutAutoCarrouselMobile from "../components/Mobile/Layouts/layoutAutoCarrouselMobile";
 //endregion
 
 //region constantes
@@ -169,7 +170,7 @@ export default function Index() {
             )
         }
     </LayoutCarrouselMobile>
-    let carrouselAutoMobile = <LayoutAutoCarrousel isDarkMode={isDarkMode}
+    let carrouselAutoMobile = <LayoutAutoCarrouselMobile isDarkMode={isDarkMode}
         listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
     let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>

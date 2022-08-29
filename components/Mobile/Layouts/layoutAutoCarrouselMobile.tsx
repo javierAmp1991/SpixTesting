@@ -1,18 +1,17 @@
-import style from "/styles/Desktop/Layouts/layoutAutoCarrousel.module.css"
+import style from "/styles/Mobile/Layouts/layoutAutoCarrousel.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
 import {useMediaQuery} from "../../../pages";
 
 const mediaQuery = '(max-width: 768px)';
-const gap: number = 23;
-
-export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
+export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDarkMode}:
                                                 {
                                                     gapLayout: number,
                                                     listImages: string[],
                                                     isDarkMode: boolean
                                                 }) {
+    const gap = (window.innerWidth - 328) / 2
     const cssStyle = getCssStyle()
     const isSmallDown = useMediaQuery(mediaQuery);
     /*const widthDiv = isSmallDown ? 8 : 15;*/
@@ -43,12 +42,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         const firstElement = mainDivRef.current.children[0];
         const secondElement = mainDivRef.current.children[1];
         const thirdElement = mainDivRef.current.children[2];
-        const fourthElement = mainDivRef.current.children[3];
-        const quinElement = mainDivRef.current.children[4];
-        const sixElement = mainDivRef.current.children[5];
-        const sevenElement = mainDivRef.current.children[6];
-        const eightElement = mainDivRef.current.children[7];
-        const childrens = [firstElement, secondElement, thirdElement, fourthElement, quinElement, sixElement, sevenElement, eightElement]
+        const childrens = [firstElement, secondElement, thirdElement]
         mainDivRef.current.style.transition = `2000ms linear`;
         const widthDiv: number = mainDivRef.current.offsetWidth + gap
         mainDivRef.current.style.transform = `translate(-${widthDiv}px)`;

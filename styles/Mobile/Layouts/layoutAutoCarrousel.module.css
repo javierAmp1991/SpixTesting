@@ -11,19 +11,11 @@
     aspect-ratio: 1/1;
     object-position: center;
     position: relative;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .paddingGradient {
     padding: 0;
 }
 
-@media (min-width: 1280px) {
-    .testImage {
-        width: 130px;
-        aspect-ratio: 1/1;
-        object-position: center;
-        position: relative;
-        border-radius: 6px;
-        overflow: hidden;
-    }
-}
