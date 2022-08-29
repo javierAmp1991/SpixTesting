@@ -5,7 +5,6 @@ import {useEffect, useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import EmoticonsContainerMobile from "../Misc/emoticonsContainerMobile";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
-import PopUpContainer from "../../Desktop/Misc/popUpContainer";
 
 const idInputUpload: string = "idInputUploadReviewMobile"
 
@@ -25,7 +24,6 @@ const sendReview: string = "Publicar";
 
 export default function WriteReviewMobile() {
     let textAreaReview = useRef(null)
-    let [reviewCalification, setReviewCalification] = useState([false, false, false, false, false])
     let [inputTitle, setInputTitle] = useState("")
     let [inputReview, setInputReview] = useState("")
     let [uploadImages, setUploadImages] = useState([])
@@ -131,7 +129,7 @@ export default function WriteReviewMobile() {
                             <Image priority={true} layout={"fill"}
                                    src={stateFStar ?
                                        GlobalConst.sourceImages.ratingIndFull :
-                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                         </div>
                         <div onClick={() => handleCalification(1)}
                              className={`${style.sizeStar}
@@ -139,7 +137,7 @@ export default function WriteReviewMobile() {
                             <Image priority={true} layout={"fill"}
                                    src={stateSStar ?
                                        GlobalConst.sourceImages.ratingIndFull :
-                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                         </div>
                         <div onClick={() => handleCalification(2)}
                              className={`${style.sizeStar}
@@ -147,7 +145,7 @@ export default function WriteReviewMobile() {
                             <Image priority={true} layout={"fill"}
                                    src={stateTStar ?
                                        GlobalConst.sourceImages.ratingIndFull :
-                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                         </div>
                         <div onClick={() => handleCalification(3)}
                              className={`${style.sizeStar}
@@ -155,7 +153,7 @@ export default function WriteReviewMobile() {
                             <Image priority={true} layout={"fill"}
                                    src={stateCStar ?
                                        GlobalConst.sourceImages.ratingIndFull :
-                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                         </div>
                         <div onClick={() => handleCalification(4)}
                              className={`${style.sizeStar}
@@ -163,7 +161,7 @@ export default function WriteReviewMobile() {
                             <Image priority={true} layout={"fill"}
                                    src={stateQStar ?
                                        GlobalConst.sourceImages.ratingIndFull :
-                                       GlobalConst.sourceImages.ratingIndVoid}/>
+                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                         </div>
                     </div>
 
@@ -214,7 +212,7 @@ export default function WriteReviewMobile() {
                                    src={item.ProvisoryUrl} alt={""}/>
                             <button onClick={() => handleDeleteImage(item.Id)}
                                     className={style.positonDeleteIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon}/>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
                             </button>
                         </div>
                     )
@@ -235,7 +233,7 @@ export default function WriteReviewMobile() {
                         <Image layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"top"}
-                               src={imagePopUp}/>
+                               src={imagePopUp} alt={""}/>
                     </div>
                 </PopUpContainerMob>
             }

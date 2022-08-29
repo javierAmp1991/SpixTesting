@@ -128,7 +128,7 @@ export default function WriteReviewLeft() {
                         <Image priority={true} layout={"fill"}
                                src={stateFStar ?
                                    GlobalConst.sourceImages.ratingIndFull :
-                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                                   GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                     </div>
                     <div onClick={() => handleCalification(1)}
                          className={`${style.sizeStar}
@@ -136,7 +136,7 @@ export default function WriteReviewLeft() {
                         <Image priority={true} layout={"fill"}
                                src={stateSStar ?
                                    GlobalConst.sourceImages.ratingIndFull :
-                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                                   GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                     </div>
                     <div onClick={() => handleCalification(2)}
                          className={`${style.sizeStar}
@@ -144,7 +144,7 @@ export default function WriteReviewLeft() {
                         <Image priority={true} layout={"fill"}
                                src={stateTStar ?
                                    GlobalConst.sourceImages.ratingIndFull :
-                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                                   GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                     </div>
                     <div onClick={() => handleCalification(3)}
                          className={`${style.sizeStar}
@@ -152,7 +152,7 @@ export default function WriteReviewLeft() {
                         <Image priority={true} layout={"fill"}
                                src={stateCStar ?
                                    GlobalConst.sourceImages.ratingIndFull :
-                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                                   GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                     </div>
                     <div onClick={() => handleCalification(4)}
                          className={`${style.sizeStar}
@@ -160,7 +160,7 @@ export default function WriteReviewLeft() {
                         <Image priority={true} layout={"fill"}
                                src={stateQStar ?
                                    GlobalConst.sourceImages.ratingIndFull :
-                                   GlobalConst.sourceImages.ratingIndVoid}/>
+                                   GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
                     </div>
                 </div>
             </div>
@@ -192,7 +192,7 @@ export default function WriteReviewLeft() {
                 <div className="relative">
                     <label htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
                         <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
-                               src="/images/placeholderImageUpload.png"/>
+                               src="/images/placeholderImageUpload.png" alt={""}/>
                     </label>
                     <input onChange={handleUploadImages}
                            className="h-0 w-0 absolute overflow-hidden"
@@ -206,10 +206,10 @@ export default function WriteReviewLeft() {
                             <Image onClick={() => handleImagePopUp(item.Id)} priority={true}
                                    width={200} height={200}
                                    objectFit={"cover"} objectPosition={"top"}
-                                   src={item.ProvisoryUrl}/>
+                                   src={item.ProvisoryUrl} alt={""}/>
                             <button onClick={() => handleDeleteImage(item.Id)}
                                     className={style.positonDeleteIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon}/>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
                             </button>
                         </div>
                     )
@@ -229,7 +229,7 @@ export default function WriteReviewLeft() {
                         <Image layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"top"}
-                               src={imagePopUp}/>
+                               src={imagePopUp} alt={""}/>
                     </div>
                 </PopUpContainer>
             }
