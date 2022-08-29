@@ -601,7 +601,7 @@ export default function Index() {
                             <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
                             {carrouselBannerMobile}
-                            <DefaultPageMobile listItem={listDefaultPageMobile}/>
+                            <DefaultPageMobile isHome={true} listItem={listDefaultPageMobile}/>
                         </>
                 }
                 <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}

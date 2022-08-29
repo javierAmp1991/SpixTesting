@@ -389,7 +389,6 @@
 .snapScroll {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    transition: 10s;
 }
 
 .divtest{

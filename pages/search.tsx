@@ -95,7 +95,9 @@ export default function Search() {
                             </div>
                         </>
                 }
-                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
+                <NavMenu isDarkMode={isDarkMode}
+                         toggleDarkMode={darkModeToggle}
+                         isLogged={false}
                          isActiveDarkModeButton={true}/>
             </div>
             :
