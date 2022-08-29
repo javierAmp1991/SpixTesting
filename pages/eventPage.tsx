@@ -370,7 +370,7 @@ export default function EventPage() {
                                 <Image layout={"fill"} src={bannerPath} alt=""/>
                             </div>
                             <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
-                                <DefaultPageMobile listItem={defaultList}/>
+                                <DefaultPageMobile isHome={false} listItem={defaultList}/>
                                 <FooterMobile/>
                             </div>
                         </>
