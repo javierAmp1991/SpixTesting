@@ -3,7 +3,8 @@ import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
 import {useMediaQuery} from "../../../pages";
-
+const sizeImage: number = 300
+const sizePadding: number = 24
 const mediaQuery = '(max-width: 768px)';
 export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDarkMode}:
                                                 {
@@ -13,7 +14,7 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
                                                 }) {
     const gap = (window.innerWidth - 358) / 2
     const cssStyle = getCssStyle()
-    const isSmallDown = useMediaQuery(mediaQuery);
+    const isSmall = useMediaQuery(mediaQuery);
     /*const widthDiv = isSmallDown ? 8 : 15;*/
     let [listImagesCar, setListImagesCar] = useState(listImages)
     const renderContainer = useRef(null)
