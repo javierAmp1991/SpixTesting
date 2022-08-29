@@ -189,16 +189,6 @@ export default function WriteReviewLeft() {
                 </div>
             </div>
             <div className={style.gridAddPhotos}>
-                <div className="relative">
-                    <label htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
-                        <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
-                               src="/images/placeholderImageUpload.png" alt={""}/>
-                    </label>
-                    <input onChange={handleUploadImages}
-                           className="h-0 w-0 absolute overflow-hidden"
-                           id={idInputUpload}
-                           type={"file"}/>
-                </div>
                 {
                     uploadImages.map((item, index) =>
                         <div className={style.mainContUploadImage}
@@ -214,6 +204,16 @@ export default function WriteReviewLeft() {
                         </div>
                     )
                 }
+                <div className="relative">
+                    <label className={style.labelStyle} htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
+                        <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
+                               src="/images/placeholderImageUpload.png" alt={""}/>
+                    </label>
+                    <input onChange={handleUploadImages}
+                           className="h-0 w-0 absolute overflow-hidden"
+                           id={idInputUpload}
+                           type={"file"}/>
+                </div>
             </div>
             <div>
                 <button className={style.styleButton}>

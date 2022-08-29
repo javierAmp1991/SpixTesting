@@ -253,4 +253,11 @@
     aspect-ratio: 3/4;
 }
 
+.styleLabel{
+    display: inline-block;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
 

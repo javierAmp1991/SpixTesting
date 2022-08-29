@@ -192,17 +192,6 @@ export default function WriteReviewMobile() {
             <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
             <div className={style.gridAddPhotos}>
                 {
-                    uploadImages.length < 3 &&
-                    <div>
-                        <label htmlFor={idInputUpload}>
-                            <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
-                                   src="/images/placeholderImageUpload.png" alt={""}/>
-                        </label>
-                        <input onChange={handleUploadImages} className="h-0 w-0 overflow-hidden" id={idInputUpload}
-                               type={"file"}/>
-                    </div>
-                }
-                {
                     uploadImages.map((item, index) =>
                         <div className={style.mainContUploadImage} key={index}>
                             <Image onClick={() => handleImagePopUp(item.Id)} priority={true}
@@ -215,6 +204,17 @@ export default function WriteReviewMobile() {
                             </button>
                         </div>
                     )
+                }
+                {
+                    uploadImages.length < 3 &&
+                    <div>
+                        <label htmlFor={idInputUpload}>
+                            <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
+                                   src="/images/placeholderImageUpload.png" alt={""}/>
+                        </label>
+                        <input onChange={handleUploadImages} className="h-0 w-0 overflow-hidden" id={idInputUpload}
+                               type={"file"}/>
+                    </div>
                 }
 
             </div>
