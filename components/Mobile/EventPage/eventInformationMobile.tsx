@@ -251,7 +251,7 @@ export default function EventInformationMobile({eventInformation, form}:
 
             {
                 displayDateSelector &&
-                    <PopUpContainerMob isBackground={true} closePopUp={handleCloseDate}>
+                    <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseDate}>
                         <div className={style.mainContSelecDate}>
                             <div className={`${utilities.fontTitle} ${style.titleCont}`}>
                                 Seleccionar Fecha
@@ -296,7 +296,7 @@ export default function EventInformationMobile({eventInformation, form}:
 
             {
                 displayVenue &&
-                    <PopUpContainerMob isBackground={true} closePopUp={handleCloseVenue}>
+                    <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseVenue}>
                         {
                             <div className={style.mainContMap}>
                                 <div className={` ${style.titleCont}`}>
