@@ -184,7 +184,7 @@ export default function ContResultProduct({
             </div>
             {
                 isDisplayAdd &&
-                <PopUpContainerMob closePopUp={handleDisplayAdd} isBackground={true}>
+                <PopUpContainerMob isButtonVisible={true} closePopUp={handleDisplayAdd} isBackground={true}>
                     {
                         <div className={style.mainContPop}>
                             <div className={`${utilities.fontTitle} ${style.contTitleClose}`}>
