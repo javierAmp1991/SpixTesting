@@ -77,8 +77,8 @@ export default function Search() {
                                 </div>
                                 <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} hiddeResult={handleClick}/>
                                 {
-                                    isDisplayResult ?
-                                        <>
+                                    isDisplayResult &&
+                                        <div>
                                             <div className={style.paddingContainer}>
                                                 <div className={`${cssStyle.fontSubTitle} ${style.paddingTitle}`}>
                                                     Resultados de {"Conciertos"}
@@ -88,9 +88,7 @@ export default function Search() {
                                                 </div>
                                             </div>
                                             {buttonsNavegationMobile}
-                                        </>
-                                        :
-                                        <></>
+                                        </div>
                                 }
                             </div>
                         </>

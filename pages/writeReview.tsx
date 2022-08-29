@@ -18,7 +18,6 @@ export default function WriteReview() {
     let [isDiplaySug, setIsDisplaySug] = useState(false)
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
 
     let firstChildren = <WriteReviewLeft/>
     let secondChildren = <SideCard/>
@@ -42,12 +41,12 @@ export default function WriteReview() {
                         <WriteReviewMobile/>
                         </>
                 }
-                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={darkModeToggle} isLogged={false}
+                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={null} isLogged={false}
                          isActiveDarkModeButton={true}/>
             </div>
             :
             <div>
-                <HeaderSpixDesktop darkMode={isDarkMode} isLogged={false} toggleDarkMode={darkModeToggle}/>
+                <HeaderSpixDesktop darkMode={isDarkMode} isLogged={false} toggleDarkMode={null}/>
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
                 <div className={`${utilities.maxWidthBodyContentSpix}`}>
                     <LayoutSideCard childrens={childrens}/>

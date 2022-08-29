@@ -5,7 +5,7 @@ import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const placeHolder: string = "Buscar evento, categoria o ciudad"
+const placeHolder: string = "Buscar evento"
 const nameInput: string = "searchBarMobile"
 
 export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, hiddeSug, getTextInput}:
