@@ -11,7 +11,7 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
                                                     listImages: string[],
                                                     isDarkMode: boolean
                                                 }) {
-    const gap = (window.innerWidth - 328) / 2
+    const gap = (window.innerWidth - 358) / 2
     const cssStyle = getCssStyle()
     const isSmallDown = useMediaQuery(mediaQuery);
     /*const widthDiv = isSmallDown ? 8 : 15;*/
@@ -19,6 +19,7 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
     const renderContainer = useRef(null)
     const mainDivRef = useRef(null)
     let [control, setControl] = useState(0)
+    let [gapCarrousel, setGapCarrousel] = useState(0)
     const addItem = () => {
         const newList = listImagesCar[control]
         setControl(control = control + 1)
@@ -63,9 +64,22 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
         return () => clearInterval(interval)
     })
 
+    useEffect(() => {
+        const handleSetGap = (number: number) => {
+            setGapCarrousel(gapCarrousel = number)
+        }
+
+        function resiveDiv() {
+            handleSetGap((window.innerWidth - 358) / 2 )
+        }
+
+        handleSetGap((window.innerWidth - 358) / 2 )
+        window.addEventListener('resize', resiveDiv)
+    }, [gapCarrousel]);
+
     return (
         <div ref={renderContainer} className="overflow-hidden w-full">
-            <div ref={mainDivRef} style={{gap: `${gap}px`}} className={style.gridCarrouselAuto}>
+            <div ref={mainDivRef} style={{gap: `${gapCarrousel}px`}} className={style.gridCarrouselAuto}>
                 {listImagesCar.map((image: string, index) =>
                     <div key={index} className={style.testImage}>
                         <Image priority={true} layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={image}
