@@ -39,7 +39,7 @@ export default function QuestionSectionMobile({children}) {
 
             {
                 isMakeQuestion &&
-                <PopUpContainerMob isBackground={true} closePopUp={handleDisplayPopUp}>
+                <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleDisplayPopUp}>
                     <div className={style.mainContPadding}>
                         <div className={`${utilities.fontTitle}`}>
                             Tu pregunta
