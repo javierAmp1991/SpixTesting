@@ -79,7 +79,8 @@ export default function SuggHeaderMobile({returnMet}) {
                     </div>
                 </button>
                 <div className={style.styleSearchBar}>
-                    <SearchBarMobile isDisplaySug={null}
+                    <SearchBarMobile isSug={true}
+                                     isDisplaySug={null}
                                      styleSearchBar={styleSearchBar}
                                      showSug={showSug}
                                      hiddeSug={hiddeSug}

@@ -7,3 +7,18 @@
     background: rgb(19,21,23);
     background: linear-gradient(90deg, rgba(19,21,23,1) 0%, rgba(34,37,40,1) 100%);
 }
+
+.gridLogoBar{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+}
+
+.sizeLogoSpix{
+    height: 28px;
+    width: 28px;
+    position: relative;
+}
+

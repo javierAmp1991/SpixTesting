@@ -4,11 +4,19 @@
 }
 
 .styleInput{
-    text-indent: var(--sizeSerchBar);
+    text-indent: 12px;
     height: var(--sizeSerchBar);
     width: 100%;
     border-radius: 4px;
 }
+
+.styleInputSug{
+    text-indent: 40px;
+    height: var(--sizeSerchBar);
+    width: 100%;
+    border-radius: 4px;
+}
+
 .spixLogoCont{
     position: absolute;
     height: var(--sizeSerchBar);

@@ -8,10 +8,10 @@ import Link from "next/link";
 const placeHolder: string = "Buscar evento, categoria o ciudad"
 const nameInput: string = "searchBarMobile"
 
-export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, hiddeSug, getTextInput}:
+export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug, getTextInput}:
                                             {
                                                 isDisplaySug: any, styleSearchBar: boolean,
-                                                showSug: any, hiddeSug: any, getTextInput: any
+                                                showSug: any, hiddeSug: any, getTextInput: any, isSug: boolean
                                             }) {
 
     let [isDisplayResult, setIsDisplayResult] = useState(false)
@@ -27,17 +27,20 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
 
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
-            <Link href={"/"}>
-                <div className={style.spixLogoCont}>
-                    <div className={style.spixLogoPro}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.magGlassGray} alt=""/>
+            {
+                isSug &&
+                <Link href={"/search"}>
+                    <div className={style.spixLogoCont}>
+                        <div className={style.spixLogoPro}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.magGlassGray} alt=""/>
+                        </div>
                     </div>
-                </div>
-            </Link>
+                </Link>
+            }
             <input onFocus={isDisplaySug}
-                onChange={getValueInput}
+                   onChange={getValueInput}
                    autoComplete="off"
-                   className={style.styleInput}
+                   className={isSug? style.styleInputSug : style.styleInput}
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
             {/*<Link href={"/search"}>
