@@ -171,7 +171,6 @@
     display: grid;
     justify-content: center;
     justify-items: center;
-    border: 1px solid var(--separationLineColor);
     transition: .4s;
     padding: 12px 4px;
 }
@@ -181,7 +180,6 @@
     justify-content: center;
     justify-items: center;
     display: grid;
-    border: 1px solid var(--separationLineColor);
     transition: .4s;
     padding: 12px 4px;
 }
