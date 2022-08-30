@@ -1,14 +1,16 @@
-.mainDiv{
+.mainDiv {
     padding: 0 12px;
 }
-.gridResult{
+
+.gridResult {
     display: grid;
-    gap:28px;
+    gap: 28px;
     padding: 4px;
 }
-.gridButtons{
-  display: grid;
+
+.gridButtons {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-    padding: 12px 0;
+    padding: 12px 4px;
 }
