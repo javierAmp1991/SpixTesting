@@ -73,7 +73,8 @@ export namespace GlobalConst{
         hambIcon: "/images/hamburguer1.png",
         sushiIcon: "/images/sushiIcon.png",
         cofeeIcon: "/images/cofeeIcon.png",
-        peruvianFood: "/images/peruvianIcon.png"
+        peruvianFood: "/images/peruvianIcon.png",
+        postres: "/images/postres1.png"
     }
 }
 

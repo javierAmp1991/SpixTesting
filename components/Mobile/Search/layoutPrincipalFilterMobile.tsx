@@ -45,6 +45,12 @@ const listFilters1: FilterProps[] = [
         Name: "Cafe",
         IsSelected: false
     },
+    {
+        Id: "abcdefghsdasw13",
+        ImagePath: GlobalConst.sourceImages.postres,
+        Name: "Postres",
+        IsSelected: false
+    }
 ]
 
 const principalFilterList: FilterProps[] = [
@@ -81,6 +87,7 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
         })
         setPrincipalFilters(principalFilters = newListFilter)
     }
+
     let [displayFilter, setDisplayFilter] = React.useState(style.displayInFilters)
     let [listFilters, setListFilters] = useState(FiltersData.listFilters)
     let [selectedTagsShow, setSelectedItemShow] = useState([])
@@ -229,7 +236,7 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                             )
                         }
                     </div>
-                    <button onClick={handleClick} className={style.imageSize}>
+                    <button onClick={handleClick} className={style.imageSizeButton}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
                     </button>
                 </div>
@@ -252,7 +259,24 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                 </div>
             </div>
 
-
+            <div className={`${selectedTagsShow.length != 0 && style.gridTitle} ${cssStyle.borderBottom}`}>
+                <div className={style.gridSelected}>
+                    {
+                        selectedTagsShow.map((item, index) =>
+                            <div key={index} className={`${utilities.gridMaxContent2} gap-3 ${cssStyle.styleTags}`}>
+                                <div className={utilities.clamp1}>
+                                    {item.Name}
+                                </div>
+                                <button onClick={() => deleteItem(item)}>
+                                    <div className="h-4 w-4 relative">
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+                                    </div>
+                                </button>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
 
             <div>
                 {
