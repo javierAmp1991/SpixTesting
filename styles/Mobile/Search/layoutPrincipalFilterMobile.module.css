@@ -1,7 +1,6 @@
 .gridSelected {
     display: grid;
     grid-auto-columns: max-content;
-    grid-auto-columns: max-content;
     grid-auto-flow: column;
     gap: 8px;
     overflow: scroll;
@@ -52,7 +51,7 @@
 }
 
 .displayInFilters {
-    height: 50px;
+    height: 140px;
     overflow: hidden;
 }
 
@@ -94,4 +93,116 @@
 
 .paddingContainer {
     padding: 0px 12px;
+}
+
+
+.gridAtributesAdvanced {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding: 0 16px;
+}
+
+.carrouselCont {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 16px;
+    padding: 12px 0;
+    overflow-x: scroll;
+}
+
+.buttonsCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+}
+
+.gridButton {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    padding: 8px 12px;
+    gap: 8px;
+    justify-content: center;
+    box-shadow: 3px 4px 6px #d5d1d1;
+    background: #f4f5f6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.gridButtonSelected {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    padding: 8px 12px;
+    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
+    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .4s;
+    animation: scaleClick .3s linear;
+}
+
+.imageSize {
+    height: 20px;
+    width: 26px;
+    position: relative;
+}
+.imageSizeButton{
+    height: 20px;
+    width: 20px;
+    position: relative;
+
+}
+
+.gridFilterImage {
+    border-radius: 5px;
+    display: grid;
+    box-shadow: 3px 4px 6px #d5d1d1;
+    justify-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background: #f4f5f6;
+    transition: .4s;
+    padding: 4px;
+}
+
+.gridFilterImageSelected {
+    border-radius: 5px;
+    display: grid;
+    justify-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
+    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
+    transition: .4s;
+    padding: 4px;
+    animation: scaleClick .3s linear;
+}
+
+@keyframes scaleClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.textFilter {
+    width: 60px;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 6px;
 }

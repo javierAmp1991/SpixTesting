@@ -6,12 +6,81 @@ import React, {useState} from "react";
 import SubCategoryContainerMobile from "./subCategoryContainerMobile";
 import AtributesContainerMobile from "./atributesContainerMobile";
 import {Filters, SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
-import {AtributesDataFilter} from "../../../dataDemo/data";
 import Image from "next/image";
+class FilterProps {
+    Id: string
+    ImagePath: string
+    Name: string
+    IsSelected: boolean
+}
 
-let imageIcon = <Image className="h-4 w-full" src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+const listFilters1: FilterProps[] = [
+    {
+        Id: "abcd",
+        ImagePath: GlobalConst.sourceImages.sushiIcon,
+        Name: "Sushi",
+        IsSelected: false
+    },
+    {
+        Id: "abcde",
+        ImagePath: GlobalConst.sourceImages.pizzaIcon,
+        Name: "Pizza",
+        IsSelected: false
+    },
+    {
+        Id: "abcdef",
+        ImagePath: GlobalConst.sourceImages.hambIcon,
+        Name: "Hamburguesa",
+        IsSelected: false
+    },
+    {
+        Id: "abcdefg",
+        ImagePath: GlobalConst.sourceImages.peruvianFood,
+        Name: "Peruana",
+        IsSelected: false
+    },
+    {
+        Id: "abcdefgh",
+        ImagePath: GlobalConst.sourceImages.cofeeIcon,
+        Name: "Cafe",
+        IsSelected: false
+    },
+]
+
+const principalFilterList: FilterProps[] = [
+    {
+        Id: "1234abcd",
+        ImagePath: GlobalConst.sourceImages.ratingIndFull,
+        Name: "Ofertas",
+        IsSelected: false
+    },
+    {
+        Id: "12345abcde",
+        ImagePath: GlobalConst.sourceImages.ratingIndFull,
+        Name: "Menor a Mayor",
+        IsSelected: false
+    },
+]
 
 export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
+    let [atributesFilters, setAtributesFilters] = useState(listFilters1)
+    const handleClickFilter = (idFilter: string, isClicked: boolean) => {
+        const newListFilter = atributesFilters.map(item => {
+            if (item.Id == idFilter) {
+                return {...item, IsSelected: isClicked}
+            } else return item
+        })
+        setAtributesFilters(atributesFilters = newListFilter)
+    }
+    let [principalFilters, setPrincipalFilters] = useState(principalFilterList)
+    const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
+        const newListFilter = principalFilters.map(item => {
+            if (item.Id == idFilter) {
+                return {...item, IsSelected: isClicked}
+            } else return item
+        })
+        setPrincipalFilters(principalFilters = newListFilter)
+    }
     let [displayFilter, setDisplayFilter] = React.useState(style.displayInFilters)
     let [listFilters, setListFilters] = useState(FiltersData.listFilters)
     let [selectedTagsShow, setSelectedItemShow] = useState([])
@@ -118,7 +187,7 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
 
     return (
         <div className={`${displayFilter} ${cssStyle.bg}`}>
-            <div className={`${style.gridTitle} ${cssStyle.borderBottom}`}>
+            {/*<div className={`${style.gridTitle} ${cssStyle.borderBottom}`}>
                 <div className={`${style.gridSelected}`}>
                     {
                         selectedTagsShow.map((item, index) =>
@@ -139,17 +208,55 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                      className={`grid items-center ${style.paddingFilters} ${cssStyle.borderLeft} ${cssStyle.fontSubTitle}`}>
                     Filtros
                 </div>
+            </div>*/}
+
+            <div>
+                <div className={style.gridAtributesAdvanced}>
+
+                    <div className={style.carrouselCont}>
+                        {
+                            atributesFilters.map((item, index) =>
+                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                        key={item.Id}
+                                        className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                    <div className={style.imageSize}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
+                            )
+                        }
+                    </div>
+                    <button onClick={handleClick} className={style.imageSize}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
+                    </button>
+                </div>
+
+                <div className={style.buttonsCont}>
+                    {
+                        principalFilters.map((item, index) =>
+                            <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                 className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                <div className={style.imageSizeButton}>
+                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                </div>
+                                <div className={utilities.fontPrimarText}>
+                                    {item.Name}
+                                </div>
+                            </div>
+                        )
+                    }
+
+                </div>
             </div>
+
+
 
             <div>
                 {
                     listFilters.map((item, index) =>
-                        index == 0 ?
-                            <AtributesContainerMobile isDarkMode={isDarkMode}
-                                                      click={handleSelectedCategory}
-                                                      key={item.FilterName}
-                                                      item={item}/>
-                            :
                             <SubCategoryContainerMobile isDarkMode={isDarkMode}
                                                         click={handleSelectedCategory}
                                                         key={item.FilterName}

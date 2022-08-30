@@ -1,5 +1,11 @@
-.mainCont {
 
+.gridAtributesAdvanced {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding: 0 16px;
 }
 
 .carrouselCont {
@@ -8,8 +14,7 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 16px;
-    border-bottom: 1px solid var(--separationLineColor);
-    padding: 16px;
+    padding: 12px 0;
     overflow-x: scroll;
 }
 
@@ -31,14 +36,15 @@
     border-radius: 5px;
     overflow: hidden;
 }
-.gridButtonSelected{
+
+.gridButtonSelected {
     display: grid;
     gap: 8px;
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
-    background: linear-gradient(145deg, rgba(84,226,243,.7) 0%, rgba(102,238,183,.7) 100%);
-    box-shadow: 3px 4px 6px rgba(102,238,183,1);
+    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
+    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
@@ -47,8 +53,14 @@
 
 .imageSize {
     height: 20px;
+    width: 26px;
+    position: relative;
+}
+.imageSizeButton{
+    height: 20px;
     width: 20px;
     position: relative;
+
 }
 
 .gridFilterImage {
@@ -69,21 +81,21 @@
     justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    background: linear-gradient(145deg, rgba(84,226,243,.7) 0%, rgba(102,238,183,.7) 100%);
-    box-shadow: 3px 4px 6px rgba(102,238,183,1);
+    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
+    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
     transition: .4s;
     padding: 4px;
     animation: scaleClick .3s linear;
 }
 
 @keyframes scaleClick {
-    0%{
+    0% {
         transform: scale(1);
     }
-    50%{
+    50% {
         transform: scale(1.1);
     }
-    100%{
+    100% {
         transform: scale(1);
     }
 }

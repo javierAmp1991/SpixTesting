@@ -63,7 +63,7 @@ export default function Search() {
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
         isSmallDown ?
-            <div className="pb-10">
+            <div>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
@@ -93,10 +93,6 @@ export default function Search() {
                             </div>
                         </>
                 }
-                <NavMenu isDarkMode={isDarkMode}
-                         toggleDarkMode={darkModeToggle}
-                         isLogged={false}
-                         isActiveDarkModeButton={true}/>
             </div>
             :
             <div>

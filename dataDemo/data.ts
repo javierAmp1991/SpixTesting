@@ -51,7 +51,7 @@ export namespace AtributesDataFilter {
 
 export namespace FiltersData {
     export const listFilters: Filters[] = [
-        {
+        /*{
             FilterName: atributesType,
             SubCategorys:
                 [
@@ -62,7 +62,7 @@ export namespace FiltersData {
                     {Name: "Discos", id: "1234567", Type: atributesType, isChecked:false},
                     {Name: "Masaje terapeutico", id: "12345678", Type: atributesType, isChecked:false}
                 ]
-        },
+        },*/
         {
             FilterName: priceFilters.TitleSubcategory,
             SubCategorys:
