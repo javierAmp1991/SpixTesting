@@ -121,7 +121,7 @@ export default function FilterSection() {
                 {
                     principalFilters.map((item, index) =>
                         <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                             className={item.IsSelected? style.gridButton : style.gridButtonSelected}>
+                             className={item.IsSelected? style.gridButtonSelected : style.gridButton}>
                             <div className={style.imageSize}>
                                 <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                             </div>
