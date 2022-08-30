@@ -102,7 +102,7 @@
     align-items: center;
     gap: 16px;
     border-bottom: 1px solid var(--separationLineColor);
-    padding: 0 16px;
+    padding: 0 12px;
 }
 
 .carrouselCont {
@@ -111,7 +111,7 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 16px;
-    padding: 12px 0;
+    padding: 12px 8px 12px 5px;
     overflow-x: scroll;
 }
 
@@ -131,12 +131,18 @@
     box-shadow: 3px 4px 6px #d5d1d1;
     background: #fafafa;
     border-radius: 5px;
+    align-items: center;
     overflow: hidden;
+}
+
+.paddingText {
+    padding-top: 2px;
 }
 
 .gridButtonSelected {
     display: grid;
     gap: 8px;
+    align-items: center;
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
@@ -148,7 +154,7 @@
     overflow: hidden;
     transition: .3s;
     transform: scale(1.05);
-   /*animation: scaleClick .3s linear;*/
+    /*animation: scaleClick .3s linear;*/
 }
 
 .imageSize {
