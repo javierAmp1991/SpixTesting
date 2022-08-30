@@ -2,6 +2,10 @@
     padding: 24px 16px 24px 16px;
 }
 
+.paddingSubtitle{
+    padding: 12px 12px 0 12px;
+}
+
 .gridTitleIn{
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -109,6 +113,7 @@
     box-shadow: 3px 4px 6px #d5d1d1;
     background: #fafafa;
     border-radius: 5px;
+    transition: .4s;
     overflow: hidden;
 }
 
@@ -123,6 +128,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
+    transform: scale(1.1);
     animation: scaleClick .3s linear;
 }
 
@@ -160,6 +166,7 @@
     box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
     transition: .4s;
     padding: 4px;
+    transform: scale(1.1);
     animation: scaleClick .3s linear;
 }
 
@@ -169,9 +176,6 @@
     }
     50% {
         transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
     }
 }
 

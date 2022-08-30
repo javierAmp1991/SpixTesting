@@ -200,7 +200,10 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 </div>
             </div>
 
-            <div>
+            <div className={isOpenFilter ? style.displayIn : style.displayOut}>
+                <div className={`${style.paddingSubtitle} ${cssStyle.fontName}`}>
+                    Categorias
+                </div>
                 <div className={style.carrouselCont}>
                     {
                         atributesFilters.map((item, index) =>
