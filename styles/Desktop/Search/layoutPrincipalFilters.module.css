@@ -152,7 +152,6 @@
     overflow: hidden;
     transition: .4s;
     transform: scale(1.05);
-    animation: scaleClick .3s linear;
 }
 
 .imageSize {
@@ -170,7 +169,8 @@
 .gridFilterImage {
     border-radius: 5px;
     display: grid;
-    box-shadow: 3px 4px 6px #d5d1d1;
+    /*box-shadow: 3px 4px 6px #d5d1d1;*/
+    border: 1px solid var(--separationLineColor);
     justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -185,14 +185,14 @@
     justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+    border: 1px solid var(--separationLineColor);
     /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
     box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
     background: #efeded;
-    box-shadow: 3px 4px 6px #d5d1d1;
+    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     transition: .4s;
     padding: 8px 4px;
     transform: scale(1.05);
-    animation: scaleClick .3s linear;
 }
 
 .paddingText {
