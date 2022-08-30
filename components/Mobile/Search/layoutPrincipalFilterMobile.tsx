@@ -7,6 +7,7 @@ import SubCategoryContainerMobile from "./subCategoryContainerMobile";
 import AtributesContainerMobile from "./atributesContainerMobile";
 import {Filters, SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
 import Image from "next/image";
+
 class FilterProps {
     Id: string
     ImagePath: string
@@ -281,10 +282,10 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
             <div>
                 {
                     listFilters.map((item, index) =>
-                            <SubCategoryContainerMobile isDarkMode={isDarkMode}
-                                                        click={handleSelectedCategory}
-                                                        key={item.FilterName}
-                                                        item={item}/>
+                        <SubCategoryContainerMobile isDarkMode={isDarkMode}
+                                                    click={handleSelectedCategory}
+                                                    key={item.FilterName}
+                                                    item={item}/>
                     )
                 }
             </div>

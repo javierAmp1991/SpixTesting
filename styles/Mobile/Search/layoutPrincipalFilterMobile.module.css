@@ -49,7 +49,7 @@
 }
 
 .displayInFilters {
-    height: 158px;
+    height: 144px;
     overflow: hidden;
 }
 
@@ -110,9 +110,16 @@
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    gap: 16px;
+    gap: 12px;
     padding: 12px 8px 12px 5px;
     overflow-x: scroll;
+}
+
+.engineButton{
+    background: #f1efef;
+    box-shadow: 3px 4px 6px #d5d1d1;
+    border-radius: 5px;
+    padding: 22px 8px;
 }
 
 .buttonsCont {
@@ -128,9 +135,10 @@
     padding: 8px 12px;
     gap: 8px;
     justify-content: center;
-    box-shadow: 3px 4px 6px #d5d1d1;
+    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     background: #fafafa;
     border-radius: 5px;
+    border: 1px solid var(--separationLineColor);
     align-items: center;
     overflow: hidden;
 }
@@ -149,7 +157,8 @@
     /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
   box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
     background: #efeded;
-    box-shadow: 3px 4px 6px #d5d1d1;
+    border: 1px solid var(--separationLineColor);
+    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
@@ -173,27 +182,35 @@
 .gridFilterImage {
     border-radius: 5px;
     display: grid;
-    box-shadow: 3px 4px 6px #d5d1d1;
+    grid-template-columns: max-content 70px;
+    align-items: center;
+    gap: 4px;
+    /*box-shadow: 3px 4px 6px #d5d1d1;*/
+    border: 1px solid var(--separationLineColor);
     justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     background: #fafafa;
     transition: .4s;
-    padding: 8px 4px;
+    padding: 6px 4px;
 }
 
 .gridFilterImageSelected {
     border-radius: 5px;
     display: grid;
+    gap: 4px;
+    grid-template-columns: max-content 70px;
+    align-items: center;
+    border: 1px solid var(--separationLineColor);
     justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
     box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
     background: #efeded;
-    box-shadow: 3px 4px 6px #d5d1d1;
+    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     transition: .4s;
-    padding: 8px 4px;
+    padding: 6px 4px;
     /*animation: scaleClick .3s linear;*/
     transform: scale(1.05);
 }
@@ -217,5 +234,4 @@
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-top: 12px;
 }
