@@ -146,8 +146,9 @@
     box-shadow: 3px 4px 6px #d5d1d1;
     border-radius: 5px;
     overflow: hidden;
-    transition: .4s;
-    animation: scaleClick .3s linear;
+    transition: .3s;
+    transform: scale(1.05);
+   /*animation: scaleClick .3s linear;*/
 }
 
 .imageSize {
@@ -186,8 +187,9 @@
     background: #efeded;
     box-shadow: 3px 4px 6px #d5d1d1;
     transition: .4s;
-    padding: 4px;
-    animation: scaleClick .3s linear;
+    padding: 8px 4px;
+    /*animation: scaleClick .3s linear;*/
+    transform: scale(1.05);
 }
 
 @keyframes scaleClick {
@@ -195,7 +197,7 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
     100% {
         transform: scale(1);
