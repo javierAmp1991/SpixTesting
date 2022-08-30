@@ -3,7 +3,7 @@
 }
 
 .paddingSubtitle{
-    padding: 12px 12px 0 12px;
+    padding: 12px 16px 0 16px;
 }
 
 .gridTitleIn{
@@ -89,6 +89,16 @@
 .displayOut {
     display: none;
 }
+
+.displayInAtr {
+    height: 36px;
+    overflow: hidden;
+}
+
+.displayOutAtr {
+    height: 100%;
+}
+
 
 .carrouselCont {
     display: grid;

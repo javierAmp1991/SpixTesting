@@ -52,7 +52,7 @@ export namespace GlobalConst{
         magGlassGray: "/images/lupaGray.png",
         bussinesIcon: "/images/negocios.png",
         stadiumIcon: "/images/stadiumGray.png",
-        leftArrowExitWhite: "/images/leftArrowExitWhite.png",
+        leftArrowExitWhite: "/images/leftArrowExitWhite1.png",
         closeX: "/images/closeX.png",
         googleMap: "/images/googleMap.png",
         addIcon: "/images/addicon.png",

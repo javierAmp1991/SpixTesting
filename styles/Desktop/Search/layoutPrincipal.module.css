@@ -58,6 +58,15 @@
     padding-left: 24px;
 }
 
+.displayInAtr{
+    height: 48px;
+    overflow: hidden;
+}
+.displayOutAtr{
+    height: 100%;
+}
+
+
 @media (min-width: 1281px) {
     .gridSearchOpen {
         grid-template-columns: repeat(4, 1fr);

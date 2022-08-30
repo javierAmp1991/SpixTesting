@@ -5,7 +5,7 @@ import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const placeHolder: string = "Buscar evento"
+const placeHolder: string = "Buscar evento, categoria o ciudad"
 const nameInput: string = "searchBarMobile"
 
 export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, hiddeSug, getTextInput}:
@@ -30,7 +30,7 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
             <Link href={"/"}>
                 <div className={style.spixLogoCont}>
                     <div className={style.spixLogoPro}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.spixAlone} alt=""/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.magGlassGray} alt=""/>
                     </div>
                 </div>
             </Link>
@@ -40,13 +40,13 @@ export default function SearchBarMobile({isDisplaySug, styleSearchBar, showSug, 
                    className={style.styleInput}
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
-            <Link href={"/search"}>
+            {/*<Link href={"/search"}>
                 <div className={style.styleButton}>
                     <button className={style.styleLupa}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.magGlass} alt=""/>
                     </button>
                 </div>
-            </Link>
+            </Link>*/}
         </div>
     )
 }

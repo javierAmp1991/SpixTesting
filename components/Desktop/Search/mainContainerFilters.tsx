@@ -185,6 +185,13 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
         setListFilters(listFilters = newListFilters)
     }
 
+    let [displaySub, setDisplaySub] = useState(style.displayIn)
+
+    function handleClick() {
+        setDisplaySub(
+            displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
+    }
+
     return (
         <>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
@@ -201,24 +208,33 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
             </div>
 
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
-                <div className={`${style.paddingSubtitle} ${cssStyle.fontName}`}>
-                    Categorias
-                </div>
-                <div className={style.carrouselCont}>
-                    {
-                        atributesFilters.map((item, index) =>
-                            <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                    key={item.Id}
-                                    className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                <div className={style.imageSize}>
-                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                    {item.Name}
-                                </div>
-                            </button>
-                        )
-                    }
+                <div className={displaySub}>
+                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                        <div className={`${cssStyle.fontName}`}>
+                            Categorias
+                        </div>
+                        <div onClick={handleClick} className="grid items-center">
+                            <div className="h-4 w-4 relative">
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={style.carrouselCont}>
+                        {
+                            atributesFilters.map((item, index) =>
+                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                        key={item.Id}
+                                        className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                    <div className={style.imageSize}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
+                            )
+                        }
+                    </div>
                 </div>
 
                 <div className={style.buttonsCont}>
@@ -242,7 +258,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
                 <div>
                     {
-                        selectedTagsShow.length >= 1 ?
+                        selectedTagsShow.length >= 1 &&
                             <div className={`${style.gridSelectedTags} ${cssStyle.borderBottom}`}>
                                 {
                                     selectedTagsShow.map((item, index) =>
@@ -261,8 +277,6 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                                     )
                                 }
                             </div>
-                            :
-                            ""
                     }
                 </div>
 
