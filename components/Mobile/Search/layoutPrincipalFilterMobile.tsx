@@ -69,7 +69,7 @@ const principalFilterList: FilterProps[] = [
     },
 ]
 
-export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
+export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode}) {
     let [atributesFilters, setAtributesFilters] = useState(listFilters1)
     const handleClickFilter = (idFilter: string, isClicked: boolean) => {
         const newListFilter = atributesFilters.map(item => {
@@ -89,16 +89,9 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
         setPrincipalFilters(principalFilters = newListFilter)
     }
 
-    let [displayFilter, setDisplayFilter] = React.useState(style.displayInFilters)
+
     let [listFilters, setListFilters] = useState(FiltersData.listFilters)
     let [selectedTagsShow, setSelectedItemShow] = useState([])
-
-    function handleClick() {
-        setDisplayFilter(
-            displayFilter == style.displayInFilters ? style.displayOutFilters : style.displayInFilters
-        )
-        hiddeResult()
-    }
 
     const handleSelectedCategory = (subCategory: SubcategoryFilter) => {
         if (selectedTagsShow.length == 0) {
@@ -194,7 +187,7 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
     const cssStyle = getCssStyle()
 
     return (
-        <div className={`${displayFilter} ${cssStyle.bg}`}>
+        <div className={`${isOpenFilter ? style.displayInFilters : style.displayOutFilters} ${cssStyle.bg}`}>
             {/*<div className={`${style.gridTitle} ${cssStyle.borderBottom}`}>
                 <div className={`${style.gridSelected}`}>
                     {
@@ -220,10 +213,10 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
 
             <div>
                 <div className={style.gridAtributesAdvanced}>
-
                     <div className={style.carrouselCont}>
                         {
                             atributesFilters.map((item, index) =>
+                                index % 2 === 0 &&
                                 <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
                                         key={item.Id}
                                         className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
@@ -237,9 +230,23 @@ export default function LayoutPrincipalFilterMobile({hiddeResult, isDarkMode}) {
                             )
                         }
                     </div>
-                    <button onClick={handleClick} className={style.imageSizeButton}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
-                    </button>
+                    <div className={style.carrouselCont}>
+                        {
+                            atributesFilters.map((item, index) =>
+                                index % 2 != 0 &&
+                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                        key={item.Id}
+                                        className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                    <div className={style.imageSize}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
+                            )
+                        }
+                    </div>
                 </div>
 
                 <div className={style.buttonsCont}>

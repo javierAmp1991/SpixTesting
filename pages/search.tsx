@@ -75,7 +75,7 @@ export default function Search() {
                                 <div className={style.styleBanner}>
                                     <Image layout={"fill"} src="/images/atr2.jpg" alt=""/>
                                 </div>
-                                <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} hiddeResult={handleClick}/>
+                                <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} isOpenFilter={isDisplayResult}/>
                                 {
                                     isDisplayResult &&
                                         <div>

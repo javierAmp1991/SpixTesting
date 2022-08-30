@@ -49,7 +49,7 @@
 }
 
 .displayInFilters {
-    height: 144px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -98,11 +98,10 @@
 
 .gridAtributesAdvanced {
     display: grid;
-    grid-template-columns: 1fr max-content;
     align-items: center;
-    gap: 16px;
     border-bottom: 1px solid var(--separationLineColor);
-    padding: 0 12px;
+    padding: 12px;
+    gap: 12px;
 }
 
 .carrouselCont {
@@ -111,7 +110,6 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 12px;
-    padding: 12px 8px 12px 5px;
     overflow-x: scroll;
 }
 
@@ -162,13 +160,12 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
-    transform: scale(1.05);
     /*animation: scaleClick .3s linear;*/
 }
 
 .imageSize {
-    height: 30px;
-    width: 36px;
+    height: 24px;
+    width: 30px;
     position: relative;
 }
 
@@ -182,12 +179,11 @@
 .gridFilterImage {
     border-radius: 5px;
     display: grid;
-    grid-template-columns: max-content 70px;
+    grid-template-columns: max-content 90px;
+    justify-content: space-between;
     align-items: center;
-    gap: 4px;
     /*box-shadow: 3px 4px 6px #d5d1d1;*/
     border: 1px solid var(--separationLineColor);
-    justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     background: #fafafa;
@@ -198,11 +194,9 @@
 .gridFilterImageSelected {
     border-radius: 5px;
     display: grid;
-    gap: 4px;
-    grid-template-columns: max-content 70px;
+    grid-template-columns: max-content 90px;
     align-items: center;
     border: 1px solid var(--separationLineColor);
-    justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
@@ -212,7 +206,6 @@
     transition: .4s;
     padding: 6px 4px;
     /*animation: scaleClick .3s linear;*/
-    transform: scale(1.05);
 }
 
 @keyframes scaleClick {
@@ -228,10 +221,9 @@
 }
 
 .textFilter {
-    width: 70px;
-    font-size: 14px;
-    line-height: 14px;
-    text-align: center;
+    font-size: 13px;
+    line-height: 13px;
     text-overflow: ellipsis;
     overflow: hidden;
+    text-align: right;
 }
