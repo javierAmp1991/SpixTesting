@@ -1,0 +1,48 @@
+.mainCont {
+
+}
+
+.carrouselCont {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding: 12px 0;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-snap-stop: always;
+    margin: 0 16px;
+}
+
+.buttonsCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.gridButton {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 16px;
+    padding: 6px 32px;
+    border: 1px solid red;
+    align-items: center;
+}
+
+.imageSize {
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+
+.gridFilterImage{
+    display: grid;
+    justify-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
