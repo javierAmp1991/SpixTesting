@@ -249,7 +249,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                                 <div className={style.imageSizeButton}>
                                     <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                                 </div>
-                                <div className={utilities.fontPrimarText}>
+                                <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
                                     {item.Name}
                                 </div>
                             </div>

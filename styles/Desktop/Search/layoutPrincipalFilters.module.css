@@ -195,6 +195,10 @@
     animation: scaleClick .3s linear;
 }
 
+.paddingText {
+    padding-top: 2px;
+}
+
 @keyframes scaleClick {
     0% {
         transform: scale(1);
@@ -211,6 +215,6 @@
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-top: 6px;
+    margin-top: 12px;
 }
 
