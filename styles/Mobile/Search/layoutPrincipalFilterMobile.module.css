@@ -49,7 +49,7 @@
 }
 
 .displayInFilters {
-    height: 200px;
+    height: 192px;
     overflow: hidden;
 }
 
@@ -106,9 +106,9 @@
 
 .carrouselCont {
     display: grid;
-    grid-template-columns: max-content;
+    grid-template-columns: 110px;
     grid-auto-flow: column;
-    grid-auto-columns: max-content;
+    grid-auto-columns: 110px;
     gap: 12px;
     overflow-x: scroll;
 }
@@ -130,42 +130,32 @@
 .gridButton {
     display: grid;
     grid-template-columns: max-content max-content;
-    padding: 8px 12px;
-    gap: 8px;
     justify-content: center;
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
-    background: #fafafa;
+    gap: 8px;
+    padding: 8px 12px;
     border-radius: 5px;
     border: 1px solid var(--separationLineColor);
-    align-items: center;
     overflow: hidden;
 }
 
 .paddingText {
-    padding-top: 2px;
+    padding-top: 3px;
 }
 
 .gridButtonSelected {
     display: grid;
     gap: 8px;
-    align-items: center;
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
-    /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
-  box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
-    background: #efeded;
     border: 1px solid var(--separationLineColor);
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     border-radius: 5px;
     overflow: hidden;
-    transition: .3s;
-    /*animation: scaleClick .3s linear;*/
 }
 
 .imageSize {
-    height: 24px;
-    width: 30px;
+    height: 40px;
+    width: 50px;
     position: relative;
 }
 
@@ -179,33 +169,21 @@
 .gridFilterImage {
     border-radius: 5px;
     display: grid;
-    grid-template-columns: max-content 90px;
-    justify-content: space-between;
-    align-items: center;
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
+    justify-content: center;
+    justify-items: center;
     border: 1px solid var(--separationLineColor);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    background: #fafafa;
     transition: .4s;
-    padding: 6px 4px;
+    padding: 12px 4px;
 }
 
 .gridFilterImageSelected {
     border-radius: 5px;
     display: grid;
-    grid-template-columns: max-content 90px;
-    align-items: center;
+    justify-content: center;
+    justify-items: center;
     border: 1px solid var(--separationLineColor);
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
-    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
-    background: #efeded;
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     transition: .4s;
-    padding: 6px 4px;
-    /*animation: scaleClick .3s linear;*/
+    padding: 12px 4px;
 }
 
 @keyframes scaleClick {
@@ -221,9 +199,9 @@
 }
 
 .textFilter {
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 14px;
+    line-height: 14px;
     text-overflow: ellipsis;
     overflow: hidden;
-    text-align: right;
+    margin-top: 12px;
 }

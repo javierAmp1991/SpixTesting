@@ -216,24 +216,6 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode}) 
                     <div className={style.carrouselCont}>
                         {
                             atributesFilters.map((item, index) =>
-                                index % 2 === 0 &&
-                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                        key={item.Id}
-                                        className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                    <div className={style.imageSize}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                    </div>
-                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                        {item.Name}
-                                    </div>
-                                </button>
-                            )
-                        }
-                    </div>
-                    <div className={style.carrouselCont}>
-                        {
-                            atributesFilters.map((item, index) =>
-                                index % 2 != 0 &&
                                 <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
                                         key={item.Id}
                                         className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>

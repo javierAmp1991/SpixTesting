@@ -68,7 +68,7 @@ export namespace GlobalConst{
         ratingIndVoid: "/images/ratingNewIndVoid.png",
         emoticonButton: "/images/emoticon.png",
         closeEmoji: "/images/closeEmoji.png",
-        engineIcon: "/images/engranaje2.png",
+        engineIcon: "/images/settingIcon.png",
         pizzaIcon: "/images/pizza.png",
         hambIcon: "/images/hamburguer1.png",
         sushiIcon: "/images/sushiIcon.png",

@@ -155,8 +155,8 @@
 }
 
 .imageSize {
-    height: 30px;
-    width: 36px;
+    height: 40px;
+    width: 50px;
     position: relative;
 }
 .imageSizeButton{
@@ -169,30 +169,21 @@
 .gridFilterImage {
     border-radius: 5px;
     display: grid;
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
-    border: 1px solid var(--separationLineColor);
+    justify-content: center;
     justify-items: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    background: #fafafa;
+    border: 1px solid var(--separationLineColor);
     transition: .4s;
-    padding: 8px 4px;
+    padding: 12px 4px;
 }
 
 .gridFilterImageSelected {
     border-radius: 5px;
-    display: grid;
+    justify-content: center;
     justify-items: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    display: grid;
     border: 1px solid var(--separationLineColor);
-    /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
-    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
-    background: #efeded;
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     transition: .4s;
-    padding: 8px 4px;
-    transform: scale(1.05);
+    padding: 12px 4px;
 }
 
 .paddingText {

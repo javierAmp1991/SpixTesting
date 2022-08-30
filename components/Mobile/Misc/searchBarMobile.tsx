@@ -27,8 +27,7 @@ export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug,
 
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
-            {
-                isSug &&
+
                 <Link href={"/search"}>
                     <div className={style.spixLogoCont}>
                         <div className={style.spixLogoPro}>
@@ -36,11 +35,10 @@ export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug,
                         </div>
                     </div>
                 </Link>
-            }
             <input onFocus={isDisplaySug}
                    onChange={getValueInput}
                    autoComplete="off"
-                   className={isSug? style.styleInputSug : style.styleInput}
+                   className={style.styleInputSug}
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
             {/*<Link href={"/search"}>
