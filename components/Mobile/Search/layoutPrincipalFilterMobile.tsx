@@ -69,7 +69,7 @@ const principalFilterList: FilterProps[] = [
     },
 ]
 
-export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode}) {
+export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, handleOpenFilter}) {
     let [atributesFilters, setAtributesFilters] = useState(listFilters1)
     const handleClickFilter = (idFilter: string, isClicked: boolean) => {
         const newListFilter = atributesFilters.map(item => {
@@ -249,6 +249,15 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode}) 
                 </div>
             </div>
 
+            <div className={style.gridResultFiltersIn}>
+                <div className={`${utilities.fontSubTitle}`}>
+                    Filtros
+                </div>
+                <button onClick={handleOpenFilter} className={"h-8 w-8 relative"}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
+                </button>
+            </div>
+
             <div className={`${selectedTagsShow.length != 0 && style.gridTitle} ${cssStyle.borderBottom}`}>
                 <div className={style.gridSelected}>
                     {
@@ -268,6 +277,8 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode}) 
                 </div>
             </div>
 
+
+
             <div>
                 {
                     listFilters.map((item, index) =>
@@ -278,6 +289,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode}) 
                     )
                 }
             </div>
+
             <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
                 <div className={cssStyle.fontName}>
                     Limpiar Filtros

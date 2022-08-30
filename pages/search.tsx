@@ -1,4 +1,5 @@
 import style from "/styles/Desktop/Search/layoutPrincipal.module.css"
+import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css"
 import utilities from "/styles/utilities.module.css"
 import {DropDownData} from "../dataDemo/data"
 import {Menu} from "../dataDemo/data";
@@ -76,30 +77,30 @@ export default function Search() {
                                 <div className={style.styleBanner}>
                                     <Image layout={"fill"} src="/images/atr2.jpg" alt=""/>
                                 </div>
-                                <LayoutPrincipalFilterMobile isDarkMode={isDarkMode} isOpenFilter={isDisplayResult}/>
+                                <LayoutPrincipalFilterMobile handleOpenFilter={handleClick}
+                                    isDarkMode={isDarkMode}
+                                    isOpenFilter={isDisplayResult}/>
 
-                                <div className={"relative"}>
-
-                                    <div className={style.paddingContainer}>
-                                        <button onClick={handleClick} className={"absolute top-0 right-0"}>
-                                            <div className={"h-8 w-8 relative"}>
-                                                <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
-                                            </div>
-                                        </button>
-                                        {
-                                            isDisplayResult &&
-                                            <>
-                                                <div className={`${cssStyle.fontSubTitle} ${style.paddingTitle}`}>
+                                {
+                                    isDisplayResult &&
+                                    <div className={"relative"}>
+                                        <div className={style.paddingContainer}>
+                                            <div className={styleMobile.gridResultFiltersOut}>
+                                                <div className={`${cssStyle.fontSubTitle}`}>
                                                     Resultados de {"Conciertos"}
                                                 </div>
-                                                <div className={style.gridResult}>
-                                                    {dropDownMobile}
-                                                </div>
-                                                {buttonsNavegationMobile}
-                                            </>
-                                        }
+                                                <button onClick={handleClick} className={"h-8 w-8 relative"}>
+                                                    <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
+                                                </button>
+                                            </div>
+
+                                            <div className={style.gridResult}>
+                                                {dropDownMobile}
+                                            </div>
+                                            {buttonsNavegationMobile}
+                                        </div>
                                     </div>
-                                </div>
+                                }
                             </div>
                         </>
                 }
