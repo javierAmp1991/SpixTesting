@@ -13,11 +13,13 @@
 }
 
 .styleBanner {
-    height: 100px;
+    height: 120px;
     width: 100%;
     object-fit: cover;
     object-position: center;
     position: relative;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
 }
 
 .gridSearchOpen {

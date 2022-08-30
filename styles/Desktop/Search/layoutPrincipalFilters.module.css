@@ -52,7 +52,7 @@
 .styleContainerAtr {
     display: grid;
     gap: 8px;
-    padding: 0px 7px 16px 7px;
+    padding: 0 7px 16px 7px;
 }
 
 .borderBottom {
@@ -99,6 +99,15 @@
     height: 100%;
 }
 
+.displayInAdb {
+    height: 48px;
+    overflow: hidden;
+}
+
+.displayOutAdb {
+    height: 100%;
+}
+
 
 .carrouselCont {
     display: grid;
@@ -142,13 +151,13 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
-    transform: scale(1.1);
+    transform: scale(1.05);
     animation: scaleClick .3s linear;
 }
 
 .imageSize {
-    height: 20px;
-    width: 26px;
+    height: 30px;
+    width: 36px;
     position: relative;
 }
 .imageSizeButton{
@@ -167,7 +176,7 @@
     scroll-snap-stop: always;
     background: #fafafa;
     transition: .4s;
-    padding: 4px;
+    padding: 8px 4px;
 }
 
 .gridFilterImageSelected {
@@ -181,8 +190,8 @@
     background: #efeded;
     box-shadow: 3px 4px 6px #d5d1d1;
     transition: .4s;
-    padding: 4px;
-    transform: scale(1.1);
+    padding: 8px 4px;
+    transform: scale(1.05);
     animation: scaleClick .3s linear;
 }
 

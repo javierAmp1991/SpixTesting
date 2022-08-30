@@ -186,10 +186,14 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
     }
 
     let [displaySub, setDisplaySub] = useState(style.displayIn)
-
     function handleClick() {
         setDisplaySub(
             displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
+    }
+    let [displayAdvanced, setDisplayAdvanced] = useState(style.displayIn)
+    function handleClickAdvanced() {
+        setDisplayAdvanced(
+            displayAdvanced == style.displayInAdb ? displayAdvanced = style.displayOutAdb : displayAdvanced = style.displayInAdb)
     }
 
     return (
@@ -256,9 +260,20 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
             </div>
 
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
-                <div>
-                    {
-                        selectedTagsShow.length >= 1 &&
+                <div className={displayAdvanced}>
+                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                        <div className={`${cssStyle.fontName}`}>
+                            Opciones Avanzadas
+                        </div>
+                        <div onClick={handleClickAdvanced} className="grid items-center">
+                            <div className="h-4 w-4 relative">
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        {
+                            selectedTagsShow.length >= 1 &&
                             <div className={`${style.gridSelectedTags} ${cssStyle.borderBottom}`}>
                                 {
                                     selectedTagsShow.map((item, index) =>
@@ -277,10 +292,10 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                                     )
                                 }
                             </div>
-                    }
-                </div>
+                        }
+                    </div>
 
-                {/*<div className={cssStyle.borderBottom}>
+                    {/*<div className={cssStyle.borderBottom}>
                     {
                         <AtributesContainer isOpenFilter={isOpenFilter} isDarkMode={isDarkMode}
                                             click={handleSelectedCategory}
@@ -288,33 +303,35 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                     }
                 </div>*/}
 
-                <div>
-                    {
-                        listFilters.map((item, index) =>
-                            /*<div className={cssStyle.borderBottom}>
-                                <AtributesContainer isOpenFilter={isOpenFilter}
-                                                    isDarkMode={isDarkMode}
-                                                    click={handleSelectedCategory}
-                                                    key={item.FilterName}
-                                                    item={item}/>
-                            </div>*/
-                            <SubcategoryContainer isDarkMode={isDarkMode}
-                                                  click={handleSelectedCategory}
-                                                  key={item.FilterName}
-                                                  item={item}/>
-                        )
+                    <div>
+                        {
+                            listFilters.map((item, index) =>
+                                /*<div className={cssStyle.borderBottom}>
+                                    <AtributesContainer isOpenFilter={isOpenFilter}
+                                                        isDarkMode={isDarkMode}
+                                                        click={handleSelectedCategory}
+                                                        key={item.FilterName}
+                                                        item={item}/>
+                                </div>*/
+                                <SubcategoryContainer isDarkMode={isDarkMode}
+                                                      click={handleSelectedCategory}
+                                                      key={item.FilterName}
+                                                      item={item}/>
+                            )
 
-                    }
-                </div>
-                <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
-                    <div className={cssStyle.fontName}>
-                        Limpiar Filtros
+                        }
                     </div>
-                    <button onClick={deleteAll}>
-                        <div className="h-4 w-3 relative">
-                            <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+
+                    <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
+                        <div className={cssStyle.fontName}>
+                            Limpiar Filtros
                         </div>
-                    </button>
+                        <button onClick={deleteAll}>
+                            <div className="h-4 w-3 relative">
+                                <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+                            </div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </>
