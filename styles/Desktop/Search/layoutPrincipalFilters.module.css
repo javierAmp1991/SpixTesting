@@ -91,7 +91,7 @@
 }
 
 .displayInAtr {
-    height: 36px;
+    height: 48px;
     overflow: hidden;
 }
 
@@ -104,7 +104,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding: 12px 16px;
+    padding: 12px 16px 18px 16px;
     overflow-x: scroll;
 }
 
@@ -112,6 +112,8 @@
     display: grid;
     gap: 16px;
     padding: 16px;
+    border-top: 1px solid var(--separationLineColor);
+    border-bottom: 1px solid var(--separationLineColor);
 }
 
 .gridButton {
@@ -133,8 +135,10 @@
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
-    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
-    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
+    /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
+    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
+    background: #efeded;
+    box-shadow: 3px 4px 6px #d5d1d1;
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
@@ -172,8 +176,10 @@
     justify-items: center;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
-    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);
+    /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
+    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
+    background: #efeded;
+    box-shadow: 3px 4px 6px #d5d1d1;
     transition: .4s;
     padding: 4px;
     transform: scale(1.1);
