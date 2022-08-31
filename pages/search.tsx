@@ -26,7 +26,7 @@ let AntSig: string[] = ["Anterior", "Siguiente"]
 export default function Search() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true)
-    let [isOpenFilters, setIsOpenFilters] = useState(false)
+    let [isOpenFilters, setIsOpenFilters] = useState(true)
     const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult)
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters)
@@ -75,7 +75,7 @@ export default function Search() {
                             <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                             <div className={cssStyle.bg}>
                                 <div className={style.styleBanner}>
-                                    <Image layout={"fill"} src="/images/atr2.jpg" alt=""/>
+                                    <Image layout={"fill"} objectPosition={"top"} src="/images/bannerFood.png" alt=""/>
                                 </div>
                                 <LayoutPrincipalFilterMobile handleOpenFilter={handleClick}
                                     isDarkMode={isDarkMode}
@@ -111,7 +111,7 @@ export default function Search() {
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
                     <div className={style.styleBanner}>
-                        <Image layout={"fill"} objectFit={"cover"} src="/images/atr2.jpg" alt=""/>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src="/images/bannerFood.png" alt=""/>
                     </div>
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>

@@ -160,6 +160,7 @@
 
 .paddingText {
     padding-top: 3px;
+    color: var(--colorPrimaryText);
 }
 
 .gridButtonSelected {
@@ -222,6 +223,7 @@
     font-size: 14px;
     line-height: 14px;
     text-overflow: ellipsis;
+    color: var(--colorPrimaryText);
     overflow: hidden;
     margin-top: 12px;
 }

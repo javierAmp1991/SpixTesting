@@ -19,3 +19,25 @@
 .styleTagsMenu{
     color: white;
 }
+
+.principalGrid{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+
+.sizeIconLoggin{
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+
+.firstText{
+    font-size: 10px;
+    line-height: 10px;
+    color: white;
+}
+.secondText{
+    font-size: 12px;
+    line-height: 12px;
+    color: white;
+}

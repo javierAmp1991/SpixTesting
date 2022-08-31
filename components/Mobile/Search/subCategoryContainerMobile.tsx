@@ -128,7 +128,7 @@ export default function SubCategoryContainerMobile({
     function getCssStyle() {
         return {
             fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
-            fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontPrimaryText,
             borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
             bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             styleRangePrice: isDarkMode ? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,

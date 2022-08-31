@@ -202,13 +202,13 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 <div className={cssStyle.fontTitle}>
                     Filtros
                 </div>
-                <div onClick={() => closeFilters()} className="grid content-center">
+                {/*<div onClick={() => closeFilters()} className="grid content-center">
                     <div className={style.styleArrowClose}>
                         <Image layout={"fill"}
                                src={isOpenFilter ? GlobalConst.sourceImages.leftArrow : GlobalConst.sourceImages.rightArrow}
                                alt=""/>
                     </div>
-                </div>
+                </div>*/}
             </div>
 
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>

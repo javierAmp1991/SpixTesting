@@ -129,7 +129,6 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) 
 
                 {
                     isLogged ?
-
                         <a className={styleGrid}>
                             <div className={style.containerAccountImage}>
                             </div>
