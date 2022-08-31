@@ -155,22 +155,25 @@
     gap: 8px;
     padding: 8px 12px;
     border-radius: 5px;
-    border: 2px solid var(--separationLineColor);
+    background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);
+    color: white;
     overflow: hidden;
 }
 
 .paddingText {
     padding-top: 3px;
-    color: var(--colorPrimaryText);
+    color: white;
+    font-weight: 500;
 }
 
 .gridButtonSelected {
     display: grid;
     gap: 8px;
+    background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);
+    color: white;
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
-    border: 2px solid var(--separationLineColor);
     border-radius: 5px;
     overflow: hidden;
 }

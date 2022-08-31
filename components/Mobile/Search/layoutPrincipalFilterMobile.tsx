@@ -239,7 +239,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                                 <div className={style.imageSizeButton}>
                                     <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                                 </div>
-                                <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
+                                <div className={`${style.paddingText}`}>
                                     {item.Name}
                                 </div>
                             </div>
