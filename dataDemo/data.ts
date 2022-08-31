@@ -260,9 +260,34 @@ export namespace CarrouselAutoHome {
     ];
 }
 
+export class MenuHeader{
+    Name: string
+    Link: string
+    Id: string
+}
+
 export namespace Menu {
-    export const listMenu: string[] = [
-        "Ofertas", "Destacados", "Noticias", "Reseñas"
+    export const listMenu: MenuHeader[] = [
+        {
+            Name: "Ofertas",
+            Link: "/",
+            Id: "1234"
+        },
+        {
+            Name: "Destacados",
+            Link: "/",
+            Id: "12345"
+        },
+        {
+            Name: "Restaurantes",
+            Link: "/searchRestaurant",
+            Id: "12346"
+        },
+        {
+            Name: "Reseñas",
+            Link: "/",
+            Id: "12347"
+        }
     ]
 }
 

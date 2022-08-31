@@ -2,17 +2,21 @@ import style from "/styles/Mobile/Misc/menuSpixMobile.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
+import Link from "next/link";
+import {MenuHeader} from "../../../dataDemo/data";
 
-export default function MenuSpixMobile({listItemMenu, isDarkMode}) {
+export default function MenuSpixMobile({listItemMenu, isDarkMode} : {listItemMenu: MenuHeader[], isDarkMode: boolean}) {
     let cssStyles = getCssStyle()
     return (
         <div className={`${cssStyles.bg} ${style.principalGrid}`}>
             <div className={style.gridTagsMenu}>
                 {
                     listItemMenu.map(menuTag =>
-                        <a key={menuTag} className={style.styleTagsMenu}>
-                            <div>{menuTag}</div>
-                        </a>
+                        <Link key={menuTag.Id} href={menuTag.Link}>
+                            <a className={style.styleTagsMenu}>
+                                <div>{menuTag.Name}</div>
+                            </a>
+                        </Link>
                     )
                 }
             </div>
@@ -31,8 +35,9 @@ export default function MenuSpixMobile({listItemMenu, isDarkMode}) {
             </a>*/}
         </div>
     )
-    function getCssStyle(){
-        return{
+
+    function getCssStyle() {
+        return {
             bg: isDarkMode ? style.bgMenuDarkMode : style.bgMenuMobile
         }
     }
