@@ -10,13 +10,11 @@ export default function EventHorizontalView({info, darkModeState}) {
         <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
             <a className="relative">
                 {
-                    info.SoldTickets >= info.TotalTickets * 0.90 ?
+                    info.SoldTickets >= info.TotalTickets * 0.90 &&
                         <div className={`${utilities.positionLastTicket} absolute z-20`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>
-                        :
-                        ""
                 }
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} src={info.CoverImage} alt=""/>
@@ -92,12 +90,10 @@ export default function EventHorizontalView({info, darkModeState}) {
                 </div>
 
                 {
-                    info.HasPromotableOffers ?
+                    info.HasPromotableOffers &&
                         <div>
                             <span className={utilities.styleSpixDiscountTag}>En oferta</span>
                         </div>
-                        :
-                        ""
                 }
             </div>
         </div>
@@ -108,7 +104,7 @@ export default function EventHorizontalView({info, darkModeState}) {
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,
-            fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            fontSecundaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude
         }
     }

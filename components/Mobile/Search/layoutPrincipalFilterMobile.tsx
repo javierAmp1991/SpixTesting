@@ -263,8 +263,14 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                 <div className={`${utilities.fontSubTitle}`}>
                     Filtros
                 </div>
-                <button onClick={handleOpenFilter} className={"h-5 w-7 relative"}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
+                <button onClick={handleOpenFilter} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                    <div className={utilities.fontPrimaryText}>
+                        Filtros
+                    </div>
+                    <div className={"h-3 w-4 relative"}>
+                        <Image layout={"fill"}
+                               src={GlobalConst.sourceImages.engineIcon}/>
+                    </div>
                 </button>
             </div>
 

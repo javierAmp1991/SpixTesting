@@ -192,10 +192,15 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
     }
 
     let [displaySub, setDisplaySub] = useState(style.displayIn)
+    let[displayPrinFil, setDisplayPrinFil] = useState(style.displayIn)
 
     function handleClick() {
         setDisplaySub(
             displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
+    }
+    function handleClick1() {
+        setDisplayPrinFil(
+            displayPrinFil == style.displayInAtr ? displayPrinFil = style.displayOutAtr : displayPrinFil = style.displayInAtr)
     }
 
     let [displayAdvanced, setDisplayAdvanced] = useState(style.displayIn)
@@ -257,22 +262,36 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                     </div>
                 }
 
-                <div className={style.buttonsCont}>
-                    {
-                        principalFilters.map((item, index) =>
-                            <div key={item.Id}
-                                 onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                                 className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                <div className={style.imageSizeButton}>
-                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
-                                    {item.Name}
+                <div>
+                    <div className={displayPrinFil}>
+                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                            <div className={`${cssStyle.fontName}`}>
+                                Ordenar por:
+                            </div>
+                            <div onClick={handleClick1} className="grid items-center">
+                                <div className="h-4 w-4 relative">
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                                 </div>
                             </div>
-                        )
-                    }
+                        </div>
+                        <div className={style.buttonsCont}>
+                            {
+                                principalFilters.map((item, index) =>
+                                    <div key={item.Id}
+                                         onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                         className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                        <div className={style.imageSizeButton}>
+                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                        </div>
+                                        <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
+                                            {item.Name}
+                                        </div>
+                                    </div>
+                                )
+                            }
 
+                        </div>
+                    </div>
                 </div>
             </div>
 

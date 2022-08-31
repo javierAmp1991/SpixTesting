@@ -1,5 +1,5 @@
 .widthDashBoard {
-    background: white;
+    background:white;
     height: 100%;
     box-shadow: -3px 0 12px rgba(0,0,0,.6);
 
@@ -54,14 +54,15 @@
 }
 
 .sizeCloseDesplegable {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 20px;
     position: relative;
 }
 
 .contDesplegable{
     display: grid;
     justify-items: right;
+    padding: 10px 0;
 }
 
 .sizeLogoSpix {

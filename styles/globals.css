@@ -13,7 +13,8 @@
     --colorSubTitles: #303435;
     --colorPrimaryText: #55595a;
     --colorName: #303435;
-    --colorSecundaryText: #d4d6d7;
+   /* --colorSecundaryText: #d4d6d7;*/
+    --colorSecundaryText: #8e8e8e;
     --linkColor: #2d7dff;
     --linkColorDarkMode: #15dae6;
     --buttonLinkColor: #2d7dff;
