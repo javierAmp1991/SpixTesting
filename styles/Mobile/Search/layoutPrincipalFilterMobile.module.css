@@ -49,7 +49,7 @@
 }
 
 .displayInFilters {
-    height: 161px;
+    height: 162px;
     overflow: hidden;
 }
 
@@ -108,7 +108,7 @@
     grid-template-columns: 1fr max-content;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 0;
+    padding: 23px 0;
 }
 
 .gridResultFiltersIn {
@@ -116,7 +116,7 @@
     grid-template-columns: 1fr max-content;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 16px;
+    padding: 24px 16px;
 }
 
 .paddingTitle {
