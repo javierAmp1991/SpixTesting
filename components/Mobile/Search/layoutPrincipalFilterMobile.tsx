@@ -253,7 +253,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                 <div className={`${utilities.fontSubTitle}`}>
                     Filtros
                 </div>
-                <button onClick={handleOpenFilter} className={"h-8 w-8 relative"}>
+                <button onClick={handleOpenFilter} className={"h-4 w-4 relative"}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
                 </button>
             </div>

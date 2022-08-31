@@ -89,7 +89,7 @@ export default function Search() {
                                                 <div className={`${cssStyle.fontSubTitle}`}>
                                                     Resultados de {"Conciertos"}
                                                 </div>
-                                                <button onClick={handleClick} className={"h-8 w-8 relative"}>
+                                                <button onClick={handleClick} className={"h-4 w-4 relative"}>
                                                     <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
                                                 </button>
                                             </div>
