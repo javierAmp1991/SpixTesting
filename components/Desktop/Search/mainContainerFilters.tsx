@@ -69,7 +69,7 @@ const principalFilterList: FilterProps[] = [
     },
     {
         Id: "12345abcde3244f",
-        ImagePath: "/images/lessToMore.png",
+        ImagePath: "/images/moreToLess.png",
         Name: "Mayor a Menor",
         IsSelected: false
     },
