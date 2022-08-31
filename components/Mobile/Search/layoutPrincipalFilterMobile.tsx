@@ -57,19 +57,19 @@ const listFilters1: FilterProps[] = [
 const principalFilterList: FilterProps[] = [
     {
         Id: "1234abcd",
-        ImagePath: "/images/starIconFilter.png",
+        ImagePath: "/images/discountIcon.png",
         Name: "En Oferta",
         IsSelected: false
     },
     {
         Id: "12345abcde",
-        ImagePath: "/images/lessToMore.png",
+        ImagePath: "/images/dollarUp.png",
         Name: "Menor a Mayor",
         IsSelected: false
     },
     {
         Id: "12345abcdedasdsw",
-        ImagePath: "/images/moreToLess.png",
+        ImagePath: "/images/dollarDown.png",
         Name: "Mayor a Menor",
         IsSelected: false
     },
@@ -259,7 +259,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                 <div className={`${utilities.fontSubTitle}`}>
                     Filtros
                 </div>
-                <button onClick={handleOpenFilter} className={"h-5 w-5 relative"}>
+                <button onClick={handleOpenFilter} className={"h-5 w-6 relative"}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
                 </button>
             </div>

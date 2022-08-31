@@ -141,8 +141,8 @@
 
 .buttonsCont {
     display: grid;
-    border-top: 1px solid var(--separationLineColor);
-    border-bottom: 1px solid var(--separationLineColor);
+    border-top: 2px solid var(--separationLineColor);
+    border-bottom: 2px solid var(--separationLineColor);
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
@@ -158,14 +158,13 @@
     gap: 8px;
     padding: 8px 12px;
     border-radius: 5px;
-    border: 1px solid var(--separationLineColor);
-    /*background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);*/
+    background: #fcfbfb;
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
     color: white;
     overflow: hidden;
 }
 
 .paddingText {
-    padding-top: 3px;
     color: var(--colorPrimaryText);
     font-weight: 400;
 }
@@ -173,9 +172,9 @@
 .gridButtonSelected {
     display: grid;
     gap: 8px;
-    /*background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);*/
     color: white;
     grid-template-columns: max-content max-content;
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
     justify-content: center;
     padding: 8px 12px;
     border-radius: 5px;
@@ -190,10 +189,15 @@
 }
 
 .imageSizeButton {
-    height: 24px;
+    height: 20px;
     width: 24px;
     position: relative;
+}
 
+.imageSizeButtonOffer {
+    height: 20px;
+    width: 20px;
+    position: relative;
 }
 
 .gridFilterImage {
