@@ -143,8 +143,11 @@
     display: grid;
     border-top: 1px solid var(--separationLineColor);
     border-bottom: 1px solid var(--separationLineColor);
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
     gap: 16px;
+    overflow-x: scroll;
     padding: 16px;
 }
 
@@ -155,26 +158,28 @@
     gap: 8px;
     padding: 8px 12px;
     border-radius: 5px;
-    background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);
+    border: 1px solid var(--separationLineColor);
+    /*background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);*/
     color: white;
     overflow: hidden;
 }
 
 .paddingText {
     padding-top: 3px;
-    color: white;
-    font-weight: 500;
+    color: var(--colorPrimaryText);
+    font-weight: 400;
 }
 
 .gridButtonSelected {
     display: grid;
     gap: 8px;
-    background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);
+    /*background: linear-gradient(145deg, rgba(8,95,178,1) 0%, rgba(13,111,202,1) 100%);*/
     color: white;
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
     border-radius: 5px;
+    border: 1px solid var(--separationLineColor);
     overflow: hidden;
 }
 

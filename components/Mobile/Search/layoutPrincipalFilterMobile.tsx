@@ -57,14 +57,20 @@ const listFilters1: FilterProps[] = [
 const principalFilterList: FilterProps[] = [
     {
         Id: "1234abcd",
-        ImagePath: GlobalConst.sourceImages.ratingIndFull,
-        Name: "Ofertas",
+        ImagePath: "/images/starIconFilter.png",
+        Name: "En Oferta",
         IsSelected: false
     },
     {
         Id: "12345abcde",
-        ImagePath: GlobalConst.sourceImages.ratingIndFull,
+        ImagePath: "/images/lessToMore.png",
         Name: "Menor a Mayor",
+        IsSelected: false
+    },
+    {
+        Id: "12345abcdedasdsw",
+        ImagePath: "/images/moreToLess.png",
+        Name: "Mayor a Menor",
         IsSelected: false
     },
 ]
