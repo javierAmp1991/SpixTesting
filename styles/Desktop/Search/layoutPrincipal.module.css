@@ -13,7 +13,7 @@
 }
 
 .styleBanner {
-    height: 120px;
+    height: 175px;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -31,37 +31,39 @@
     gap: 32px;
 }
 
-.mainContainerProperties{
+.mainContainerProperties {
     height: 100%;
     border-left: 1px solid var(--separationLineColor);
     border-right: 1px solid var(--separationLineColor);
 }
 
-.mainContainerPropertiesDarkMode{
+.mainContainerPropertiesDarkMode {
     width: 100%;
 }
 
-.paddingTitle{
+.paddingTitle {
     padding: 24px 0;
 }
 
-.gridResult{
+.gridResult {
     display: grid;
     gap: 32px;
 }
-.paddingContainer{
+
+.paddingContainer {
     padding: 0 16px;
 }
 
-.paddingLeftResult{
+.paddingLeftResult {
     padding-left: 24px;
 }
 
-.displayInAtr{
+.displayInAtr {
     height: 48px;
     overflow: hidden;
 }
-.displayOutAtr{
+
+.displayOutAtr {
     height: 100%;
 }
 
