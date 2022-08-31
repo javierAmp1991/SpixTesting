@@ -593,21 +593,18 @@ export default function Index() {
     return (
 
         isSmallDown ?
-            <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal} pb-10`}>
+            <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}`}>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
                             {carrouselBannerMobile}
                             <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
                         </>
                 }
-                <NavMenu toggleDarkMode={darkModeToggle} isActiveDarkModeButton={true}
-                         isDarkMode={isDarkMode}
-                         isLogged={isLogged}/>
             </div>
             :
             <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>

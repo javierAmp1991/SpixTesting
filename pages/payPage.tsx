@@ -94,7 +94,7 @@ export default function PayPage() {
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
                             <div className={styleMobile.mainCont}>
                                 {
@@ -106,10 +106,6 @@ export default function PayPage() {
                             </div>
                         </>
                 }
-                <NavMenu isDarkMode={isDarkMode}
-                         toggleDarkMode={toggleDarkMode}
-                         isLogged={isLogged}
-                         isActiveDarkModeButton={isActiveDarkModeButton}/>
             </div>
             :
             <div>

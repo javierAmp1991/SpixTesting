@@ -12,7 +12,7 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
             <a className="relative">
                 {
                     item.SoldTickets >= item.TotalTickets * 0.90 ?
-                        <div className="absolute z-20">
+                        <div className={`${utilities.positionLastTicket} absolute z-20`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>

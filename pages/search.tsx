@@ -20,6 +20,7 @@ import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMo
 import Image from "next/image";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import {GlobalConst} from "../public/globalConst";
+import SideSetting from "../components/Mobile/Misc/sideSetting";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -63,6 +64,8 @@ export default function Search() {
 
     let [isDiplaySug, setIsDisplaySug] = useState(false)
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
+    let [isDesplegable, setIsDesplegable] = useState(false)
+    const handleDesplegable = () => setIsDesplegable(isDesplegable = !isDesplegable)
     return (
         isSmallDown ?
             <div>
@@ -70,16 +73,19 @@ export default function Search() {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
-                        <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                        <div className={`${isDesplegable && utilities.noScrollBody} relative overflow-x-hidden`}>
+                            <HeaderSpixMobile isDesplegable={handleDesplegable}
+                                              displaySug={handleIsDisplaySug}
+                                              isDarkMode={isDarkMode}/>
                             <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                             <div className={cssStyle.bg}>
                                 <div className={style.styleBanner}>
-                                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src="/images/bannerFood.jpg" alt=""/>
+                                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
+                                           src="/images/bannerFood.jpg" alt=""/>
                                 </div>
                                 <LayoutPrincipalFilterMobile handleOpenFilter={handleClick}
-                                    isDarkMode={isDarkMode}
-                                    isOpenFilter={isDisplayResult}/>
+                                                             isDarkMode={isDarkMode}
+                                                             isOpenFilter={isDisplayResult}/>
 
                                 {
                                     isDisplayResult &&
@@ -102,7 +108,10 @@ export default function Search() {
                                     </div>
                                 }
                             </div>
-                        </>
+                            <div className={isDesplegable ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn}>
+                                <SideSetting closeDesplegable={handleDesplegable}/>
+                            </div>
+                        </div>
                 }
             </div>
             :
@@ -111,7 +120,8 @@ export default function Search() {
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
                     <div className={style.styleBanner}>
-                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src="/images/bannerFood.jpg" alt=""/>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
+                               src="/images/bannerFood.jpg" alt=""/>
                     </div>
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>

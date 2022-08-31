@@ -11,7 +11,7 @@ export default function EventHorizontalView({info, darkModeState}) {
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
-                        <div className="absolute z-20">
+                        <div className={`${utilities.positionLastTicket} absolute z-20`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>

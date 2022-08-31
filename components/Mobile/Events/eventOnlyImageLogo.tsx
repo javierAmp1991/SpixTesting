@@ -13,7 +13,7 @@ export default function EventOnlyImageLogo({item, darkMode}) {
                 </div>
                 {
                     item.SoldTickets >= item.TotalTickets * 0.90 ?
-                        <div className={`${style.positionLastTickets} absolute  z-40`}>
+                        <div className={`${style.positionLastTickets} absolute z-40`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>

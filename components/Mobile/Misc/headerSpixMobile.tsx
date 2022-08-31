@@ -5,7 +5,7 @@ import Image from "next/image";
 const styleSearchBar: boolean = false
 import {GlobalConst} from "../../../public/globalConst";
 
-export default function HeaderSpixMobile({isDarkMode, displaySug}) {
+export default function HeaderSpixMobile({isDarkMode, displaySug, isDesplegable}) {
     let cssStyles = getCssStyles()
     return (
         <div className={`${cssStyles.bgHeader} ${style.gridHeader}`}>
@@ -20,9 +20,9 @@ export default function HeaderSpixMobile({isDarkMode, displaySug}) {
                                  hiddeSug={null}
                                  getTextInput={null}
                 />
-                <div className={style.sizeLogoMenu}>
+                <button onClick={isDesplegable} className={style.sizeLogoMenu}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.menuIcon}/>
-                </div>
+                </button>
             </div>
         </div>
     )

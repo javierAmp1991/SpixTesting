@@ -23,13 +23,13 @@ export default function RestaurantFilterPage() {
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
         isSmallDown ?
-            <div className="pb-10">
+            <div>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                             <div className={cssStyle.bg}>
                                 <div className={style.styleBanner}>
@@ -40,10 +40,6 @@ export default function RestaurantFilterPage() {
                             </div>
                         </>
                 }
-                <NavMenu isDarkMode={isDarkMode}
-                         toggleDarkMode={darkModeToggle}
-                         isLogged={false}
-                         isActiveDarkModeButton={true}/>
             </div>
             :
             <div>

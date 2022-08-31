@@ -214,7 +214,6 @@
 .gridFilterImageSelected {
     border-radius: 5px;
     transition: .3s;
-    transform: scale(1.05);
     display: grid;
     justify-content: center;
     justify-items: center;
@@ -240,4 +239,29 @@
     color: var(--colorPrimaryText);
     overflow: hidden;
     margin-top: 12px;
+}
+
+.menuDesplegableIn{
+    position: absolute;
+    height: 100vh;
+    border-radius: 8px 0 0 8px;
+    width: 250px;
+    z-index: 5000;
+    top: 0;
+    overflow: hidden;
+    right: -100vw;
+    transition: .6s linear;
+}
+.menuDesplegableOut{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,.5);
+    z-index: 5000;
+    padding-left: 20vw;
+    border-radius: 8px 0 0 8px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    transition: .6s linear;
 }

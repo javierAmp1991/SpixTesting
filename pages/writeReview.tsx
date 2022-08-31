@@ -30,19 +30,17 @@ export default function WriteReview() {
 
     return (
         isSmallDown ?
-            <div className="pb-10">
+            <div>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                        <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                        <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
                             <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                         <WriteReviewMobile/>
                         </>
                 }
-                <NavMenu isDarkMode={isDarkMode} toggleDarkMode={null} isLogged={false}
-                         isActiveDarkModeButton={true}/>
             </div>
             :
             <div>

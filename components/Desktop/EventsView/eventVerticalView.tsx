@@ -17,7 +17,7 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
-                        <div className="absolute z-20">
+                        <div className={`${utilities.positionLastTicket} absolute z-20`}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket}/>
                         </div>
                         :

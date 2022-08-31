@@ -364,7 +364,7 @@ export default function EventPage() {
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile displaySug={handleIsDisplaySug} isDarkMode={false}/>
+                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={false}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={false}/>
                             <div className={styleMobile.bannerProperties}>
                                 <Image layout={"fill"} src={bannerPath} alt=""/>
@@ -374,11 +374,6 @@ export default function EventPage() {
                                 <FooterMobile/>
                             </div>
                         </>
-                }
-                {
-                    isSmallDown &&
-                    <NavMenu isDarkMode={false} isActiveDarkModeButton={false} toggleDarkMode={null}
-                             isLogged={false}/>
                 }
             </div>
             :

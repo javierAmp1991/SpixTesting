@@ -8,6 +8,11 @@
     transition: var(--transitionTimeDarkMode);
 }
 
+.noScrollBody{
+    height: 100vh;
+    overflow-y: hidden;
+}
+
 .maxWidthBodyContentSpix {
     width: 100%;
     max-width: var(--maxWidthBodyContent);

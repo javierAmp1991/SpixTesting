@@ -180,7 +180,6 @@
     display: grid;
     transition: .4s;
     padding: 12px 4px;
-    transform: scale(1.05);
 }
 
 .paddingText {
