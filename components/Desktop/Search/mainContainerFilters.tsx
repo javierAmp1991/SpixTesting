@@ -57,19 +57,19 @@ const listFilters1: FilterProps[] = [
 const principalFilterList: FilterProps[] = [
     {
         Id: "1234abcd",
-        ImagePath: "/images/starIconFilter.png",
+        ImagePath: "/images/discountIcon.png",
         Name: "En Oferta",
         IsSelected: false
     },
     {
         Id: "12345abcde",
-        ImagePath: "/images/lessToMore.png",
+        ImagePath: "/images/dollarUp.png",
         Name: "Menor a Mayor",
         IsSelected: false
     },
     {
         Id: "12345abcde3244f",
-        ImagePath: "/images/moreToLess.png",
+        ImagePath: "/images/dollarDown.png",
         Name: "Mayor a Menor",
         IsSelected: false
     },
@@ -202,6 +202,9 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
             displayAdvanced == style.displayInAdb ? displayAdvanced = style.displayOutAdb : displayAdvanced = style.displayInAdb)
     }
 
+    let[isOpenAdvancedFilter, setIsOpenAdvancedFilter] = useState(false)
+    const handleIsOpenAdvanced = () => setIsOpenAdvancedFilter(isOpenAdvancedFilter = !isOpenAdvancedFilter)
+
     return (
         <>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
@@ -265,13 +268,13 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 </div>
             </div>
 
-            <div className={isOpenFilter ? style.displayIn : style.displayOut}>
+            <div className={isOpenAdvancedFilter? style.displayOutAdb : style.displayInAdb}>
                 <div className={displayAdvanced}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                         <div className={`${cssStyle.fontName}`}>
                             Opciones Avanzadas
                         </div>
-                        <div onClick={handleClickAdvanced} className="grid items-center">
+                        <div onClick={handleIsOpenAdvanced} className="grid items-center">
                             <div className="h-4 w-4 relative">
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                             </div>
