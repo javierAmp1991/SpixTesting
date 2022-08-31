@@ -10,7 +10,7 @@
 
 .gridLogoBar{
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content 1fr max-content;
     align-items: center;
     gap: 8px;
     padding: 8px;
@@ -19,6 +19,12 @@
 .sizeLogoSpix{
     height: 28px;
     width: 28px;
+    position: relative;
+}
+
+.sizeLogoMenu{
+    height: 26px;
+    width: 26px;
     position: relative;
 }
 

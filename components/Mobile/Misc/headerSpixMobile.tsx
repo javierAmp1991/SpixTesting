@@ -20,6 +20,9 @@ export default function HeaderSpixMobile({isDarkMode, displaySug}) {
                                  hiddeSug={null}
                                  getTextInput={null}
                 />
+                <div className={style.sizeLogoMenu}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.menuIcon}/>
+                </div>
             </div>
         </div>
     )

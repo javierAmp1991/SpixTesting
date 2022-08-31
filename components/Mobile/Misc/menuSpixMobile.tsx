@@ -16,7 +16,7 @@ export default function MenuSpixMobile({listItemMenu, isDarkMode}) {
                     )
                 }
             </div>
-            <a className={`${utilities.gridMaxContent2} gap-3`}>
+            {/*<a className={`${utilities.gridMaxContent2} gap-3`}>
                 <div>
                     <div className={style.sizeIconLoggin}>
                         <Image layout={"fill"}
@@ -28,7 +28,7 @@ export default function MenuSpixMobile({listItemMenu, isDarkMode}) {
                     <div className={style.firstText}>Iniciar</div>
                     <div className={style.secondText}>Sesion</div>
                 </div>
-            </a>
+            </a>*/}
         </div>
     )
     function getCssStyle(){

@@ -49,7 +49,7 @@
 }
 
 .displayInFilters {
-    height: 191px;
+    height: 166px;
     overflow: hidden;
 }
 
@@ -99,7 +99,6 @@
 .gridAtributesAdvanced {
     display: grid;
     align-items: center;
-    border-bottom: 1px solid var(--separationLineColor);
     padding: 12px;
     gap: 12px;
 }
@@ -109,7 +108,7 @@
     grid-template-columns: 1fr max-content;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
+    padding: 16px 0;
 }
 
 .gridResultFiltersIn {
@@ -117,7 +116,7 @@
     grid-template-columns: 1fr max-content;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 16px;
+    padding: 16px 16px;
 }
 
 .paddingTitle {
@@ -142,6 +141,8 @@
 
 .buttonsCont {
     display: grid;
+    border-top: 1px solid var(--separationLineColor);
+    border-bottom: 1px solid var(--separationLineColor);
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     padding: 16px;
@@ -175,8 +176,8 @@
 }
 
 .imageSize {
-    height: 40px;
-    width: 50px;
+    height: 30px;
+    width: 40px;
     position: relative;
 }
 
@@ -194,7 +195,7 @@
     justify-items: center;
     /*border: 2px solid var(--separationLineColor);*/
     transition: .4s;
-    padding: 12px 4px;
+    padding: 4px;
 }
 
 .gridFilterImageSelected {
@@ -204,7 +205,7 @@
     justify-items: center;
     /*border: 2px solid var(--separationLineColor);*/
     transition: .4s;
-    padding: 12px 4px;
+    padding: 4px;
 }
 
 @keyframes scaleClick {

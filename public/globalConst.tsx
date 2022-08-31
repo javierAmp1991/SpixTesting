@@ -75,7 +75,8 @@ export namespace GlobalConst{
         cofeeIcon: "/images/cofeeIcon.png",
         peruvianFood: "/images/peruvianIcon.png",
         postres: "/images/postres1.png",
-        spixAloneWhite: "/images/spixAlineWhite.png"
+        spixAloneWhite: "/images/spixAlineWhite.png",
+        menuIcon: "/images/menu.png"
     }
 }
 
