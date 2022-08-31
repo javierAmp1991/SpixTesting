@@ -66,6 +66,7 @@ export default function Search() {
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     let [isDesplegable, setIsDesplegable] = useState(false)
     const handleDesplegable = () => setIsDesplegable(isDesplegable = !isDesplegable)
+    const isCategory: boolean = false
     return (
         isSmallDown ?
             <div>
@@ -79,11 +80,12 @@ export default function Search() {
                                               isDarkMode={isDarkMode}/>
                             <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                             <div className={cssStyle.bg}>
-                                <div className={style.styleBanner}>
+                                {/*<div className={style.styleBanner}>
                                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
                                            src="/images/bannerFood.jpg" alt=""/>
-                                </div>
-                                <LayoutPrincipalFilterMobile handleOpenFilter={handleClick}
+                                </div>*/}
+                                <LayoutPrincipalFilterMobile isCategory={isCategory}
+                                    handleOpenFilter={handleClick}
                                                              isDarkMode={isDarkMode}
                                                              isOpenFilter={isDisplayResult}/>
 
@@ -119,14 +121,14 @@ export default function Search() {
                 <HeaderSpixDesktop darkMode={isDarkMode} isLogged={false} toggleDarkMode={darkModeToggle}/>
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={style.styleBanner}>
+                   {/* <div className={style.styleBanner}>
                         <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
                                src="/images/bannerFood.jpg" alt=""/>
-                    </div>
+                    </div>*/}
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters isDarkMode={isDarkMode} isOpenFilter={isOpenFilters}
+                                <MainContainerFilters isCategory={isCategory} isDarkMode={isDarkMode} isOpenFilter={isOpenFilters}
                                                       closeFilters={handleOpenFilter}/>
                             }
                         </div>

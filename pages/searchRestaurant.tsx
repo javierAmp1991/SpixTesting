@@ -32,6 +32,7 @@ export default function SearchRestaurant() {
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters)
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle()
+    const isCategory: boolean = true
 
     //region desktop Components
     let dropDown =
@@ -82,7 +83,8 @@ export default function SearchRestaurant() {
                                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
                                            src="/images/bannerFood.jpg" alt=""/>
                                 </div>
-                                <LayoutPrincipalFilterMobile handleOpenFilter={handleClick}
+                                <LayoutPrincipalFilterMobile isCategory={isCategory}
+                                                             handleOpenFilter={handleClick}
                                                              isDarkMode={isDarkMode}
                                                              isOpenFilter={isDisplayResult}/>
 
@@ -107,7 +109,8 @@ export default function SearchRestaurant() {
                                     </div>
                                 }
                             </div>
-                            <div className={isDesplegable ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn}>
+                            <div
+                                className={isDesplegable ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn}>
                                 <SideSetting closeDesplegable={handleDesplegable}/>
                             </div>
                         </div>
@@ -125,7 +128,8 @@ export default function SearchRestaurant() {
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters isDarkMode={isDarkMode} isOpenFilter={isOpenFilters}
+                                <MainContainerFilters isCategory={isCategory} isDarkMode={isDarkMode}
+                                                      isOpenFilter={isOpenFilters}
                                                       closeFilters={handleOpenFilter}/>
                             }
                         </div>

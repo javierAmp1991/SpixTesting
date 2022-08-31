@@ -53,6 +53,11 @@
     overflow: hidden;
 }
 
+.displayInCategoryFilter{
+    height: 74px;
+    overflow: hidden;
+}
+
 .displayOutFilters {
     height: 100vh;
     overflow: scroll;

@@ -75,7 +75,7 @@ const principalFilterList: FilterProps[] = [
     },
 ]
 
-export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, handleOpenFilter}) {
+export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, handleOpenFilter, isCategory}) {
     let [atributesFilters, setAtributesFilters] = useState(listFilters1)
     const handleClickFilter = (idFilter: string, isClicked: boolean) => {
         const newListFilter = atributesFilters.map(item => {
@@ -193,7 +193,9 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
     const cssStyle = getCssStyle()
 
     return (
-        <div className={`${isOpenFilter ? style.displayInFilters : style.displayOutFilters} ${cssStyle.bg}`}>
+        <div className={`${isOpenFilter ? 
+            isCategory?  style.displayInFilters : style.displayInCategoryFilter : style.displayOutFilters} 
+        ${cssStyle.bg}`}>
             {/*<div className={`${style.gridTitle} ${cssStyle.borderBottom}`}>
                 <div className={`${style.gridSelected}`}>
                     {
@@ -218,24 +220,26 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
             </div>*/}
 
             <div>
-                <div className={style.gridAtributesAdvanced}>
-                    <div className={style.carrouselCont}>
-                        {
-                            atributesFilters.map((item, index) =>
-                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                        key={item.Id}
-                                        className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                    <div className={style.imageSize}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                    </div>
-                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                        {item.Name}
-                                    </div>
-                                </button>
-                            )
-                        }
+                {isCategory &&
+                    <div className={style.gridAtributesAdvanced}>
+                        <div className={style.carrouselCont}>
+                            {
+                                atributesFilters.map((item, index) =>
+                                    <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                            key={item.Id}
+                                            className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                        <div className={style.imageSize}>
+                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                        </div>
+                                        <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                            {item.Name}
+                                        </div>
+                                    </button>
+                                )
+                            }
+                        </div>
                     </div>
-                </div>
+                }
 
                 <div className={style.buttonsCont}>
                     {
@@ -282,7 +286,6 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                     }
                 </div>
             </div>
-
 
 
             <div>

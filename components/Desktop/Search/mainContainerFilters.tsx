@@ -75,7 +75,7 @@ const principalFilterList: FilterProps[] = [
     },
 ]
 
-export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode}) {
+export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode, isCategory}) {
 
     const cssStyle = getCssStyle()
     let [listFilters, setListFilters] = useState(FiltersData.listFilters)
@@ -192,17 +192,20 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
     }
 
     let [displaySub, setDisplaySub] = useState(style.displayIn)
+
     function handleClick() {
         setDisplaySub(
             displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
     }
+
     let [displayAdvanced, setDisplayAdvanced] = useState(style.displayIn)
+
     function handleClickAdvanced() {
         setDisplayAdvanced(
             displayAdvanced == style.displayInAdb ? displayAdvanced = style.displayOutAdb : displayAdvanced = style.displayInAdb)
     }
 
-    let[isOpenAdvancedFilter, setIsOpenAdvancedFilter] = useState(false)
+    let [isOpenAdvancedFilter, setIsOpenAdvancedFilter] = useState(false)
     const handleIsOpenAdvanced = () => setIsOpenAdvancedFilter(isOpenAdvancedFilter = !isOpenAdvancedFilter)
 
     return (
@@ -220,40 +223,45 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 </div>*/}
             </div>
 
+
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
-                <div className={displaySub}>
-                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                        <div className={`${cssStyle.fontName}`}>
-                            Categorias
-                        </div>
-                        <div onClick={handleClick} className="grid items-center">
-                            <div className="h-4 w-4 relative">
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                {
+                    isCategory &&
+                    <div className={displaySub}>
+                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                            <div className={`${cssStyle.fontName}`}>
+                                Categorias
+                            </div>
+                            <div onClick={handleClick} className="grid items-center">
+                                <div className="h-4 w-4 relative">
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                                </div>
                             </div>
                         </div>
+                        <div className={style.carrouselCont}>
+                            {
+                                atributesFilters.map((item, index) =>
+                                    <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                            key={item.Id}
+                                            className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                        <div className={style.imageSize}>
+                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                        </div>
+                                        <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                            {item.Name}
+                                        </div>
+                                    </button>
+                                )
+                            }
+                        </div>
                     </div>
-                    <div className={style.carrouselCont}>
-                        {
-                            atributesFilters.map((item, index) =>
-                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                        key={item.Id}
-                                        className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                    <div className={style.imageSize}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                    </div>
-                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                        {item.Name}
-                                    </div>
-                                </button>
-                            )
-                        }
-                    </div>
-                </div>
+                }
 
                 <div className={style.buttonsCont}>
                     {
                         principalFilters.map((item, index) =>
-                            <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                            <div key={item.Id}
+                                 onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
                                  className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
                                 <div className={style.imageSizeButton}>
                                     <Image layout={"fill"} src={item.ImagePath} alt={""}/>
@@ -268,7 +276,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                 </div>
             </div>
 
-            <div className={isOpenAdvancedFilter? style.displayOutAdb : style.displayInAdb}>
+            <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
                 <div className={displayAdvanced}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                         <div className={`${cssStyle.fontName}`}>
