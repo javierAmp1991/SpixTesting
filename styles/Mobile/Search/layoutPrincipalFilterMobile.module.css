@@ -160,7 +160,7 @@
     border-radius: 5px;
     background: #fcfbfb;
     box-shadow: 0 3px 8px rgba(0,0,0,.1);
-    color: white;
+    transition: .3s;
     overflow: hidden;
 }
 
@@ -174,11 +174,13 @@
     gap: 8px;
     color: white;
     grid-template-columns: max-content max-content;
-    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    background: #f1efef;
     justify-content: center;
     padding: 8px 12px;
     border-radius: 5px;
-    border: 1px solid var(--separationLineColor);
+    transition: .3s;
+    transform: scale(1.05);
     overflow: hidden;
 }
 
@@ -205,18 +207,17 @@
     display: grid;
     justify-content: center;
     justify-items: center;
-    /*border: 2px solid var(--separationLineColor);*/
-    transition: .4s;
+    transition: .3s;
     padding: 4px;
 }
 
 .gridFilterImageSelected {
     border-radius: 5px;
+    transition: .3s;
+    transform: scale(1.05);
     display: grid;
     justify-content: center;
     justify-items: center;
-    /*border: 2px solid var(--separationLineColor);*/
-    transition: .4s;
     padding: 4px;
 }
 

@@ -132,10 +132,9 @@
     padding: 8px 12px;
     gap: 8px;
     justify-content: center;
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
     box-shadow: 0 3px 8px rgba(0,0,0,.1);
     border-radius: 5px;
-    transition: .4s;
+    transition: .3s;
     overflow: hidden;
 }
 
@@ -145,13 +144,11 @@
     grid-template-columns: max-content max-content;
     justify-content: center;
     padding: 8px 12px;
-    /*background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
-    box-shadow: 3px 4px 6px rgba(84, 226, 243, 1);*/
-    box-shadow: 0 3px 8px rgba(0,0,0,.1);
-    /*box-shadow: 3px 4px 6px #d5d1d1;*/
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    background: #f1efef;
     border-radius: 5px;
     overflow: hidden;
-    transition: .4s;
+    transition: .3s;
     transform: scale(1.05);
 }
 
@@ -183,6 +180,7 @@
     display: grid;
     transition: .4s;
     padding: 12px 4px;
+    transform: scale(1.05);
 }
 
 .paddingText {
