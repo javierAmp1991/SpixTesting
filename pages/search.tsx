@@ -75,7 +75,7 @@ export default function Search() {
                             <MenuSpixMobile isDarkMode={isDarkMode} listItemMenu={Menu.listMenu}/>
                             <div className={cssStyle.bg}>
                                 <div className={style.styleBanner}>
-                                    <Image layout={"fill"} objectPosition={"top"} src="/images/bannerFood.png" alt=""/>
+                                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src="/images/bannerFood.jpg" alt=""/>
                                 </div>
                                 <LayoutPrincipalFilterMobile handleOpenFilter={handleClick}
                                     isDarkMode={isDarkMode}
@@ -111,7 +111,7 @@ export default function Search() {
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
                     <div className={style.styleBanner}>
-                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src="/images/bannerFood.png" alt=""/>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src="/images/bannerFood.jpg" alt=""/>
                     </div>
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
