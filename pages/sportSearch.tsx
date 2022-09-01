@@ -30,7 +30,7 @@ export default function SearchRestaurant() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
-    const textResultSection: string = "Deporte";
+    const textResultSection: string = "Deportes";
 
     //region desktop Components
     let dropDown =
@@ -79,7 +79,7 @@ export default function SearchRestaurant() {
                                         {textResultSection}
                                     </div>
                                     <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                        <div className={utilities.fontPrimaryText}>
+                                        <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                             Filtros
                                         </div>
                                         <div onClick={handleClick} className={"h-3 w-4 relative"}>

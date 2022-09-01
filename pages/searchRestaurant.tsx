@@ -78,7 +78,7 @@ export default function SearchRestaurant() {
                                         Restaurantes
                                     </div>
                                     <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                        <div className={utilities.fontPrimaryText}>
+                                        <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                             Filtros
                                         </div>
                                         <div onClick={handleClick} className={"h-3 w-4 relative"}>
