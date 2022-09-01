@@ -285,7 +285,7 @@ export namespace Menu {
         },
         {
             Name: "Reseñas",
-            Link: "/",
+            Link: "/reviewSearch",
             Id: "12347"
         }
     ]

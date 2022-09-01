@@ -106,7 +106,7 @@ export default function ReviewSearch() {
                         <div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
-                                    Resultados
+                                    Reseñas
                                 </div>
                                 <div className={style.gridReviewDesktop}>
                                     {
