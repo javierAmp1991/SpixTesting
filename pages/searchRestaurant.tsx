@@ -109,7 +109,8 @@ export default function SearchRestaurant() {
                                                       listCategoryFilter={categoryFilterRest}
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}/>
+                                                      isOpenFilter={isOpenFilters}
+                                                      isReview={isReview}/>
                             }
                         </div>
                         <div>

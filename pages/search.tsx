@@ -111,7 +111,8 @@ export default function Search() {
                                                       listCategoryFilter={null}
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}/>
+                                                      isOpenFilter={isOpenFilters}
+                                                      isReview={isReview}/>
                             }
                         </div>
                         <div>

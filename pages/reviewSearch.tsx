@@ -70,23 +70,23 @@ export default function ReviewSearch() {
                         isDisplayResult &&
                         <div className={"relative"}>
                             <div className={style.paddingContainer}>
-                                    <div className={styleMobile.gridResultFiltersOut}>
-                                        <div className={`${cssStyle.fontSubTitle}`}>
-                                            Reseñas
-                                        </div>
-                                        {
-                                            isReview &&
-                                            <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                                <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
-                                                    Filtros
-                                                </div>
-                                                <div onClick={handleClick} className={"h-3 w-4 relative"}>
-                                                    <Image layout={"fill"}
-                                                           src={GlobalConst.sourceImages.engineIcon}/>
-                                                </div>
-                                            </button>
-                                        }
+                                <div className={styleMobile.gridResultFiltersOut}>
+                                    <div className={`${cssStyle.fontSubTitle}`}>
+                                        Reseñas
                                     </div>
+                                    {
+                                        isReview &&
+                                        <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                            <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
+                                                Filtros
+                                            </div>
+                                            <div onClick={handleClick} className={"h-3 w-4 relative"}>
+                                                <Image layout={"fill"}
+                                                       src={GlobalConst.sourceImages.engineIcon}/>
+                                            </div>
+                                        </button>
+                                    }
+                                </div>
                                 <div className={style.gridResult}>
                                     {
                                         reviewSectionList.map((item, index) =>
@@ -110,7 +110,8 @@ export default function ReviewSearch() {
                                                       listPrincipalFilter={principalFilterReview}
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}/>
+                                                      isOpenFilter={isOpenFilters}
+                                                      isReview={isReview}/>
                             }
                         </div>
                         <div>

@@ -9,10 +9,19 @@ import Image from "next/image";
 import {CategoryFilter} from "../../../dataDemo/data";
 
 
-export default function MainContainerFilters({isOpenFilter, isDarkMode, isCategory, listCategoryFilter, listPrincipalFilter}:
-                                                 { isOpenFilter: boolean, isDarkMode: boolean,
+export default function MainContainerFilters({
+                                                 isOpenFilter,
+                                                 isDarkMode,
+                                                 isCategory,
+                                                 listCategoryFilter,
+                                                 listPrincipalFilter,
+                                                 isReview
+                                             }:
+                                                 {
+                                                     isOpenFilter: boolean, isDarkMode: boolean,
                                                      isCategory: boolean, listCategoryFilter: CategoryFilter[],
-                                                 listPrincipalFilter: CategoryFilter[]}) {
+                                                     listPrincipalFilter: CategoryFilter[], isReview: boolean
+                                                 }) {
 
     const cssStyle = getCssStyle()
 
@@ -212,9 +221,10 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
                             {
                                 principalFilters.map((item, index) =>
                                     <button key={item.Id}
-                                         onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                                         className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                        <div className={index == 0? style.imageSizeButton : style.imageSizeButtonPrincipal}>
+                                            onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                            className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                        <div
+                                            className={index == 0 ? style.imageSizeButton : style.imageSizeButtonPrincipal}>
                                             <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                                         </div>
                                         <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
@@ -230,67 +240,70 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
             </div>
 
             {/*advancedFilters*/}
-            <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
-                <div className={displayAdvanced}>
-                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                        <div className={`${cssStyle.fontName}`}>
-                            Opciones Avanzadas
-                        </div>
-                        <div onClick={handleIsOpenAdvanced} className="grid items-center">
-                            <div className="h-4 w-4 relative">
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+            {
+                isReview &&
+                <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
+                    <div className={displayAdvanced}>
+                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                            <div className={`${cssStyle.fontName}`}>
+                                Opciones Avanzadas
+                            </div>
+                            <div onClick={handleIsOpenAdvanced} className="grid items-center">
+                                <div className="h-4 w-4 relative">
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        {
-                            selectedTagsShow.length >= 1 &&
-                            <div className={`${style.gridSelectedTags} ${cssStyle.borderBottom}`}>
-                                {
-                                    selectedTagsShow.map((item, index) =>
-                                        <div key={index}
-                                             className={`${utilities.gridMaxContent2} ${cssStyle.styleTags}`}>
-                                            <div className={utilities.clamp1}>
-                                                {item.Name}
-                                            </div>
-                                            <button onClick={() => deleteItem(item)}>
-                                                <div className="h-4 w-4 relative">
-                                                    <Image layout={"fill"}
-                                                           src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+                        <div>
+                            {
+                                selectedTagsShow.length >= 1 &&
+                                <div className={`${style.gridSelectedTags} ${cssStyle.borderBottom}`}>
+                                    {
+                                        selectedTagsShow.map((item, index) =>
+                                            <div key={index}
+                                                 className={`${utilities.gridMaxContent2} ${cssStyle.styleTags}`}>
+                                                <div className={utilities.clamp1}>
+                                                    {item.Name}
                                                 </div>
-                                            </button>
-                                        </div>
-                                    )
-                                }
-                            </div>
-                        }
-                    </div>
-
-                    <div>
-                        {
-                            listFilters.map((item) =>
-
-                                <SubcategoryContainer isDarkMode={isDarkMode}
-                                                      click={handleSelectedCategory}
-                                                      key={item.FilterName}
-                                                      item={item}/>
-                            )
-
-                        }
-                    </div>
-
-                    <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
-                        <div className={cssStyle.fontName}>
-                            Limpiar Filtros
+                                                <button onClick={() => deleteItem(item)}>
+                                                    <div className="h-4 w-4 relative">
+                                                        <Image layout={"fill"}
+                                                               src={GlobalConst.sourceImages.deleteIcon} alt=""/>
+                                                    </div>
+                                                </button>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            }
                         </div>
-                        <button onClick={deleteAll}>
-                            <div className="h-4 w-3 relative">
-                                <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+
+                        <div>
+                            {
+                                listFilters.map((item) =>
+
+                                    <SubcategoryContainer isDarkMode={isDarkMode}
+                                                          click={handleSelectedCategory}
+                                                          key={item.FilterName}
+                                                          item={item}/>
+                                )
+
+                            }
+                        </div>
+
+                        <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
+                            <div className={cssStyle.fontName}>
+                                Limpiar Filtros
                             </div>
-                        </button>
+                            <button onClick={deleteAll}>
+                                <div className="h-4 w-3 relative">
+                                    <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+                                </div>
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
     )
 
