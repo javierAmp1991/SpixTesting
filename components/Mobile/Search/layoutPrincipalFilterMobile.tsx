@@ -173,7 +173,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
             </div>
 
             <div className={style.gridResultFiltersIn}>
-                <div className={`${utilities.fontSubTitle}`}>
+                <div className={`${utilities.fontSubTitle} `}>
                     Filtros
                 </div>
                 <button onClick={handleOpenFilter} className={`grid items-center`}>
@@ -183,6 +183,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                     </div>
                 </button>
             </div>
+
 
             <div className={`${selectedTagsShow.length != 0 && style.gridTitle} ${cssStyle.borderBottom}`}>
                 <div className={style.gridSelected}>

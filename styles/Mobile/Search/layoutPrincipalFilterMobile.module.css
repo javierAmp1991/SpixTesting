@@ -49,11 +49,16 @@
 }
 
 .displayInFilters {
-    height: 162px;
+    height: 164px;
     overflow: hidden;
 }
 
-.displayInCategoryFilter{
+.fontSize{
+    font-size: 14px;
+    line-height: 14px;
+}
+
+.displayInCategoryFilter {
     height: 74px;
     overflow: hidden;
 }
@@ -164,7 +169,7 @@
     padding: 8px 12px;
     border-radius: 5px;
     background: #fcfbfb;
-    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .1);
     transition: .3s;
     overflow: hidden;
 }
@@ -179,7 +184,7 @@
     gap: 8px;
     color: white;
     grid-template-columns: max-content max-content;
-    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     background: #f1efef;
     justify-content: center;
     padding: 8px 12px;
@@ -246,7 +251,7 @@
     margin-top: 12px;
 }
 
-.menuDesplegableIn{
+.menuDesplegableIn {
     position: absolute;
     height: 100vh;
     border-radius: 8px 0 0 8px;
@@ -257,11 +262,12 @@
     right: -100vw;
     transition: .6s linear;
 }
-.menuDesplegableOut{
+
+.menuDesplegableOut {
     position: absolute;
     height: 100vh;
     width: 100vw;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     z-index: 5000;
     padding-left: 20vw;
     border-radius: 8px 0 0 8px;
