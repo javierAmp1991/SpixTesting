@@ -2357,6 +2357,13 @@ export namespace ReviewSearchData {
             NameEvent: "Kuervos del Sur en vivo",
             ResumeStars: 3,
             ProfilePath: "/images/fotoperfil3.png"
+        },
+        {
+            PathBanner: "/images/banner10.jpg",
+            listReview: ReviewsSectionData.listReviews,
+            NameEvent: "On Tour Colection",
+            ResumeStars: 3,
+            ProfilePath: "/images/fotoperfil4.png"
         }
     ]
 }
@@ -2687,13 +2694,13 @@ export namespace CategoryPrincipalFiltersReview {
         {
             Id: "12345abcde",
             ImagePath: "/images/reviewUp.png",
-            Name: "Menor a Mayor",
+            Name: "Calificacion",
             IsSelected: false
         },
         {
             Id: "12345abcdedasdsw",
             ImagePath: "/images/reviewDown.png",
-            Name: "Mayor a Menor",
+            Name: "Calificacion",
             IsSelected: false
         },
     ]
