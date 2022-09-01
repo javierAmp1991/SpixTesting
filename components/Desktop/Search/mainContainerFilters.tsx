@@ -139,8 +139,9 @@ export default function MainContainerFilters({
         setListFilters(listFilters = newListFilters)
     }
 
-    let [displaySub, setDisplaySub] = useState(style.displayIn)
-    let [displayPrinFil, setDisplayPrinFil] = useState(style.displayIn)
+    let [displaySub, setDisplaySub] = useState(style.displayInAtr)
+    let [displayPrinFil, setDisplayPrinFil] = useState(style.displayInAtr)
+    let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayInAtr)
 
     function handleClick() {
         setDisplaySub(
@@ -150,6 +151,11 @@ export default function MainContainerFilters({
     function handleClick1() {
         setDisplayPrinFil(
             displayPrinFil == style.displayInAtr ? displayPrinFil = style.displayOutAtr : displayPrinFil = style.displayInAtr)
+    }
+
+    function handleClick2() {
+        setDisplaySuperCatgory(
+            displaySuperCategory == style.displayInAtr ? displaySuperCategory = style.displayOutAtr : displaySuperCategory = style.displayInAtr)
     }
 
     let [displayAdvanced, setDisplayAdvanced] = useState(style.displayIn)
@@ -171,7 +177,42 @@ export default function MainContainerFilters({
                 </div>
             </div>
 
-            {/*mainFilters*/}
+
+            {/*superCategory*/}
+            <div className={isOpenFilter ? style.displayIn : style.displayOut}>
+                {
+                    <div className={displaySuperCategory}>
+                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                            <div className={`${cssStyle.fontName}`}>
+                                Categorias
+                            </div>
+                            <div onClick={handleClick2} className="grid items-center">
+                                <div className="h-4 w-4 relative">
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={style.carrouselCont}>
+                            {
+                                atributesFilters.map((item) =>
+                                    <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                            key={item.Id}
+                                            className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                        <div className={style.imageSize}>
+                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                        </div>
+                                        <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                            {item.Name}
+                                        </div>
+                                    </button>
+                                )
+                            }
+                        </div>
+                    </div>
+                }
+            </div>
+
+            {/*subCategory*/}
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
                 {
                     isCategory &&

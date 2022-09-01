@@ -290,7 +290,7 @@ export namespace Menu {
             Id: "12345"
         },
         {
-            Name: "Restaurantes",
+            Name: "Comida",
             Link: "/searchRestaurant",
             Id: "12346"
         },
@@ -2684,6 +2684,13 @@ export class CategoryFilter {
     IsSelected: boolean
 }
 
+export class SuperCategoryFilter {
+    Name: string
+    Id: string
+    ListCategory: CategoryFilter[]
+    isSelected: boolean
+}
+
 export namespace CategoryFilterRestaurant {
     export const listCatRestaurant: CategoryFilter[] = [
         {
@@ -2794,7 +2801,7 @@ export namespace CategoryFilterSports {
         },
         {
             Id: "abcdefgh",
-            ImagePath:"/images/volley.png",
+            ImagePath: "/images/volley.png",
             Name: "Volleyball",
             IsSelected: false
         },
@@ -2834,7 +2841,7 @@ export namespace CategoryPrincipalFiltersReview {
     export const listPrinciaplFiltersReview: CategoryFilter[] = [
         {
             Id: "1234abcd",
-            ImagePath: "/images/popularIconReview.png",
+            ImagePath: "/images/hearticonColor.png",
             Name: "Mas Popular",
             IsSelected: false
         },
