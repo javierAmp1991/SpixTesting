@@ -27,7 +27,7 @@ export default function ReviewSearchViewMobile({reviewSection}: { reviewSection:
             <div className={style.gridReviews}>
                 {
                     reviewSection.listReview.map((item, index) =>
-                        <div key={index}>
+                        <div key={index} className={style.cardReview}>
                             <div className="grid gap-3">
                                 <div className={utilities.fontSubTitle}>
                                     {item.Title}
