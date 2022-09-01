@@ -162,6 +162,7 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
                 </div>
             </div>
 
+            {/*mainFilters*/}
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
                 {
                     isCategory &&
@@ -209,11 +210,11 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
                         </div>
                         <div className={style.buttonsCont}>
                             {
-                                principalFilters.map((item) =>
+                                principalFilters.map((item, index) =>
                                     <button key={item.Id}
                                          onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
                                          className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                        <div className={style.imageSizeButton}>
+                                        <div className={index == 0? style.imageSizeButton : style.imageSizeButtonPrincipal}>
                                             <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                                         </div>
                                         <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
@@ -228,6 +229,7 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
                 </div>
             </div>
 
+            {/*advancedFilters*/}
             <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
                 <div className={displayAdvanced}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>

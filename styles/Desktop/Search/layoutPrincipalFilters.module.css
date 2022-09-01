@@ -159,7 +159,11 @@
     height: 20px;
     width: 20px;
     position: relative;
-
+}
+.imageSizeButtonPrincipal{
+    height: 20px;
+    width: 28px;
+    position: relative;
 }
 
 .gridFilterImage {
