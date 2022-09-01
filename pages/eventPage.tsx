@@ -1,6 +1,6 @@
 // region data
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
-import {CommentSectionData, PublicityData} from "../dataDemo/data";
+import {CommentSectionData} from "../dataDemo/data";
 import {ReviewsSectionData} from "../dataDemo/data";
 import {QuestionSectionData} from "../dataDemo/data";
 import {ResumeReviews} from "../dataDemo/data";
@@ -23,9 +23,6 @@ import ReviewSectionMobile from "../components/Mobile/EventPage/reviewSectionMob
 import QuestionSectionMobile from "../components/Mobile/EventPage/questionSectionMobile";
 import ReviewMobile from "../components/Mobile/EventPage/reviewMobile";
 import QuestionMobile from "../components/Mobile/EventPage/questionMobile";
-import NavMenu from "../components/Mobile/Misc/navMenu";
-import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
-import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
 import EventInformationMobile from "../components/Mobile/EventPage/eventInformationMobile";
 import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
 import NewViewMobile from "../components/Mobile/CRM/newViewMobile";
@@ -44,8 +41,6 @@ import ReviewDesk from "../components/Desktop/EventPage/reviewDesk";
 import QuestionDesk from "../components/Desktop/EventPage/questionDesk";
 import CommentSectionDesk from "../components/Desktop/EventPage/commentSectionDesk";
 import LayoutCommRevQueDesk from "../components/Desktop/Layouts/layoutCommRevQueDesk";
-import HeaderSpixDesktop from "../components/Desktop/Misc/headerSpixDesktop";
-import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import SideCardEvent from "../components/Desktop/EventPage/sideCardEvent";
 import EventInformationDesk from "../components/Desktop/EventPage/eventInformationDesk";
 import FooterDesk from "../components/Desktop/EventPage/footerDesk";
@@ -57,15 +52,15 @@ import NewView from "../components/Desktop/CRM/newView";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import Image from "next/image";
-import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import React, {useState} from "react";
+import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 //endregion
 
 const spaceComponentsMobileY = 24
 const spaceComponentsDeskY = 40
 const spaceComponents = 40
 const noSpaceComponentsDesk = 0
-const noSpaceComponents = 0
 const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12}
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 2, pr: 2}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 2, pr: 2}
@@ -81,8 +76,6 @@ const gapLayout: number = 20
 const displayCarrousel = "grid"
 const gridTemplateColum3: string = "repeat(3,1fr)"
 const gridTemplateColum4: string = "repeat(4,1fr)"
-const gridTemplateColum5: string = "repeat(5,1fr)"
-const gridTemplateColum6: string = "repeat(6,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowY: string = "calc(50% - 16px)"
 let layoutPropProducts: LayoutCarrouselDeskProp = {
@@ -358,7 +351,19 @@ export default function EventPage() {
     const menuList = Menu.listMenu
     return (
         isLardeDown ?
-            <div>
+            <DefaultLayoutMobile isDarkMode={false}>
+                <>
+                    <div className={styleMobile.bannerProperties}>
+                        <Image layout={"fill"} src={bannerPath} alt=""/>
+                    </div>
+                    <div className={`${styleMobile.maxWidthMainContentMobile} ${cssStyle.paddingBottomMobile}`}>
+                        <DefaultPageMobile isDarkMode={false} isHome={false} listItem={defaultList}/>
+                        <FooterMobile/>
+                    </div>
+                </>
+
+            </DefaultLayoutMobile>
+            /*<div>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
@@ -375,9 +380,21 @@ export default function EventPage() {
                             </div>
                         </>
                 }
-            </div>
+            </div>*/
             :
-            <div>
+            <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
+                <>
+                    <div className={styleDesk.sizeBaner}>
+                        <Image layout={"fill"} src={bannerPath} alt=""/>
+                    </div>
+                    <div className={`${utilities.maxWidthBodyContentSpix}`}>
+                        <LayoutSideCard childrens={childrens}/>
+                        <FooterDesk/>
+                    </div>
+                </>
+
+            </DefaultLayoutDesktop>
+           /* <div>
                 <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
                 <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>
                 <div className={styleDesk.sizeBaner}>
@@ -387,7 +404,7 @@ export default function EventPage() {
                     <LayoutSideCard childrens={childrens}/>
                     <FooterDesk/>
                 </div>
-            </div>
+            </div>*/
     )
 
     function getCssStyle() {

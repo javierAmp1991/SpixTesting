@@ -2132,6 +2132,7 @@ export namespace CommentSectionData {
     ]
 }
 
+
 export namespace ReviewsSectionData {
     export const listReviews: review[] = [
         {
@@ -2156,7 +2157,29 @@ export namespace ReviewsSectionData {
 
         }
     ]
+}
 
+export class reviewSearch{
+    PathBanner: string
+    listReview: review[]
+
+}
+
+export namespace ReviewSearchData{
+    export const listReviewSearch: reviewSearch[] = [
+        {
+            PathBanner: "/images/banner.png",
+            listReview: ReviewsSectionData.listReviews
+        },
+        {
+            PathBanner: "/images/banner.png",
+            listReview: ReviewsSectionData.listReviews
+        },
+        {
+            PathBanner: "/images/banner.png",
+            listReview: ReviewsSectionData.listReviews
+        }
+    ]
 }
 
 export namespace QuestionSectionData {

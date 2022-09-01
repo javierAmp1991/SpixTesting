@@ -14,12 +14,13 @@ import {useMediaQuery} from "./index";
 import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
 import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
 import ContSelectedProduct from "../components/Mobile/eventProducts/contSelectedProduct";
-import NavMenu from "../components/Mobile/Misc/navMenu";
 import ContResultProduct from "../components/Mobile/eventProducts/contResultProduct";
 import LeftCard from "../components/Desktop/eventProduct/leftCard";
 import RightCard from "../components/Desktop/eventProduct/rightCard";
 import {sectionProduct} from "../dataDemo/data";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
+import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 //endregion
 
 const isDarkMode = false
@@ -220,12 +221,26 @@ export default function EventProducts() {
     }
     //endregion
 
-    let [isDiplaySug, setIsDisplaySug] = useState(false)
-    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
-
     return (
         isSmallDown ?
-            <div className={`${styleMob.mainContainerMobile} relative`}>
+            <DefaultLayoutMobile isDarkMode={isDarkMode}>
+                <div className={styleMob.heightCont}
+                     style={{height: heightDiv}}>
+                    <ContSelectedProduct isOpen={isOpenSelectedProduct}
+                                         guestSelected={guestSelected}
+                                         methodProps={methodProps}
+                                         listGuest={listGuests}
+                                         amountPerItem={amountPerItems}
+                                         removeItem={removeItemGuestSelected}/>
+                    <ContResultProduct isOpen={isOpenSelectedProduct}
+                                       methodProps={methodProps}
+                                       listGuests={listGuests}
+                                       listSectionProduct={listProductShow}
+                                       addItem={addItemGuestSelected}
+                                       removeItem={removeItemGuestSelected}/>
+                </div>
+            </DefaultLayoutMobile>
+           /* <div className={`${styleMob.mainContainerMobile} relative`}>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
@@ -250,9 +265,27 @@ export default function EventProducts() {
                             </div>
                         </>
                 }
-            </div>
+            </div>*/
             :
-            <div>
+            <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={toggleDarkMode}>
+                <div className={utilities.maxWidthBodyContentSpix}>
+                    <div className={styleDesk.grid}>
+                        <LeftCard
+                            listSectionPro={listProductShow}
+                            addItemGuest={addItemGuestSelected}
+                            deleteItemGuest={removeItemGuestSelected}/>
+
+                        <RightCard guestSelected={guestSelected}
+                                   listGuest={listGuests}
+                                   methodProps={methodProps}
+                                   listProduct={ListProducts.listProducts}
+                                   removeItemGuestSelected={removeItemGuestSelected}
+                                   amountPerItem={amountPerItems}
+                                   upDateGuestSelected={handleGuestSelected}/>
+                    </div>
+                </div>
+            </DefaultLayoutDesktop>
+/*            <div>
                 <HeaderSpixDesktop isLogged={isLogged} darkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
                 <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={menuList}/>
                 <div className={utilities.maxWidthBodyContentSpix}>
@@ -271,6 +304,6 @@ export default function EventProducts() {
                                    upDateGuestSelected={handleGuestSelected}/>
                     </div>
                 </div>
-            </div>
+            </div>*/
     )
 }

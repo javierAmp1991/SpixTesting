@@ -1,0 +1,16 @@
+.sizeReviewStar{
+    height: 16px;
+    width: 90px;
+    position: relative;
+}
+
+.sizeBanner{
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+.gridReviews{
+    display: grid;
+    gap: 16px;
+    margin-top: 16px;
+}

@@ -1,7 +1,5 @@
 //region importComponents
 import utilities from "/styles/utilities.module.css";
-import HeaderSpixDesktop from "../components/Desktop/Misc/headerSpixDesktop";
-import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import FullBanner from "../components/Desktop/Misc/fullBanner";
 import LayoutAutoCarrousel from "../components/Desktop/Layouts/layoutAutoCarrousel";
 import LayoutCarrousel from "../components/Desktop/Layouts/layoutCarrousel";
@@ -19,8 +17,6 @@ import LayoutCategoryFooter from "../components/Desktop/Layouts/layoutCategoryFo
 import HomeCategorysFooter from "../components/Desktop/Home/homeCategorysFooter";
 import HomeOwnPublicityDesktop from "../components/Desktop/Home/homeOwnPublicityDesktop";
 import DefaultPage from "../components/Desktop/defaulPage";
-import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
-import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
 import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
 import FullBannerMobile from "../components/Mobile/Misc/fullBannerMobile";
 import HomeLoggin from "../components/Mobile/Home/homeLoggin";
@@ -36,7 +32,6 @@ import HomeCategorysFooterMobile from "../components/Mobile/Home/homeCategorysFo
 import LayoutDropDown from "../components/Desktop/Layouts/layoutDropDown";
 import DefaultPageMobile, {paddingAsignation} from "../components/Mobile/defaultPageMobile";
 import HomeOwnPublicityMobile from "../components/Mobile/Home/homeOwnPublicityMobile";
-import NavMenu from "../components/Mobile/Misc/navMenu";
 import {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
@@ -44,7 +39,6 @@ import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarro
 //endregion
 
 //region importData
-import {Menu} from "../dataDemo/data";
 import {HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
 import {DailyOfferData} from "../dataDemo/data";
@@ -61,13 +55,14 @@ import {MostPopularData} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
 import {InformationHomeData} from "../dataDemo/data";
 import Link from "next/link";
-import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 import Image from "next/image";
 import LayoutAutoCarrouselMobile from "../components/Mobile/Layouts/layoutAutoCarrouselMobile";
 import LayoutCarrouselMobileBanner from "../components/Mobile/Layouts/layoutCarrouselMobileBanner";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
+import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 //endregion
 
 //region constantes
@@ -172,7 +167,8 @@ export default function Index() {
         }
     </LayoutCarrouselMobileBanner>
     let carrouselAutoMobile = <LayoutAutoCarrouselMobile isDarkMode={isDarkMode}
-        listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
+                                                         listImages={CarrouselAutoHome.listImage}
+                                                         gapLayout={gapLayout}/>
 
     let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>
 
@@ -353,36 +349,36 @@ export default function Index() {
         }
     </LayoutCarrouselLoop>
     let carrouselAuto = <LayoutAutoCarrousel isDarkMode={isDarkMode}
-        listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
+                                             listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
     let carrouselAuto1 = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
         <div className={utilities.gridtest}>
             {
                 CarrouselAutoHome.listImage.map((item, index) =>
-                    index >= 0 && index <= 2?
-                    <div className={utilities.divtest}>
-                        <Image priority={true} layout={"fill"} objectFit={"cover"} src={item}/>
-                    </div>:<></>
+                    index >= 0 && index <= 2 ?
+                        <div className={utilities.divtest}>
+                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+                        </div> : <></>
                 )
             }
         </div>
         <div className={utilities.gridtest}>
             {
                 CarrouselAutoHome.listImage.map((item, index) =>
-                    index >= 1 && index <= 3?
+                    index >= 1 && index <= 3 ?
                         <div className={utilities.divtest}>
-                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item}/>
-                        </div>:<></>
+                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+                        </div> : <></>
                 )
             }
         </div>
         <div className={utilities.gridtest}>
             {
                 CarrouselAutoHome.listImage.map((item, index) =>
-                    index >= 2 && index <= 4?
+                    index >= 2 && index <= 4 ?
                         <div className={utilities.divtest}>
-                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item}/>
-                        </div>:<></>
+                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+                        </div> : <></>
                 )
             }
         </div>
@@ -588,12 +584,17 @@ export default function Index() {
         },
     ]
 //endregion
-    let [isDiplaySug, setIsDisplaySug] = useState(false)
-    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
     return (
 
         isSmallDown ?
-            <div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}`}>
+            <DefaultLayoutMobile isDarkMode={isDarkMode}>
+                <>
+                    {carrouselBannerMobile}
+                    <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
+                </>
+            </DefaultLayoutMobile>
+
+            /*<div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}`}>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
@@ -605,16 +606,24 @@ export default function Index() {
                             <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
                         </>
                 }
-            </div>
+            </div>*/
             :
-            <div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
-                <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
-                {carrouselBanner}
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <DefaultPage listItem={listDefaultPage}/>
-                </div>
+            <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={darkModeToggle}>
+                <>
+                    {carrouselBanner}
+                    <div className={utilities.maxWidthBodyContentSpix}>
+                        <DefaultPage listItem={listDefaultPage}/>
+                    </div>
+                </>
+            </DefaultLayoutDesktop>
+        /*<div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
+            <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
+            <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+            {carrouselBanner}
+            <div className={utilities.maxWidthBodyContentSpix}>
+                <DefaultPage listItem={listDefaultPage}/>
             </div>
+        </div>*/
     )
 }
 

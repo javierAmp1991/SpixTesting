@@ -2,24 +2,19 @@ import style from "/styles/Desktop/Search/layoutPrincipal.module.css"
 import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css"
 import utilities from "/styles/utilities.module.css"
 import {DropDownData} from "../dataDemo/data"
-import {Menu} from "../dataDemo/data";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
-import HeaderSpixDesktop from "../components/Desktop/Misc/headerSpixDesktop";
-import MenuSpixDesktop from "../components/Desktop/Misc/menuSpixDesktop";
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import MainContainerFilters from "../components/Desktop/Search/mainContainerFilters";
 import React, {useState} from "react";
 import {useMediaQuery} from "./index";
-import HeaderSpixMobile from "../components/Mobile/Misc/headerSpixMobile";
-import MenuSpixMobile from "../components/Mobile/Misc/menuSpixMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
 import LayoutPrincipalFilterMobile from "../components/Mobile/Search/layoutPrincipalFilterMobile";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
 import Image from "next/image";
-import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import {GlobalConst} from "../public/globalConst";
-import SideSetting from "../components/Mobile/Misc/sideSetting";
+import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -62,13 +57,48 @@ export default function SearchRestaurant() {
         </LayoutButtonNavegation>
     //endregion
 
-    let [isDiplaySug, setIsDisplaySug] = useState(false)
-    const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
-    let [isDesplegable, setIsDesplegable] = useState(false)
-    const handleDesplegable = () => setIsDesplegable(isDesplegable = !isDesplegable)
     return (
         isSmallDown ?
-            <div>
+            <DefaultLayoutMobile isDarkMode={isDarkMode}>
+                <div className={cssStyle.bg}>
+                    <div className={style.styleBanner}>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
+                               src="/images/bannerFood.jpg" alt=""/>
+                    </div>
+                    <LayoutPrincipalFilterMobile isCategory={isCategory}
+                                                 handleOpenFilter={handleClick}
+                                                 isDarkMode={isDarkMode}
+                                                 isOpenFilter={isDisplayResult}/>
+
+                    {
+                        isDisplayResult &&
+                        <div className={"relative"}>
+                            <div className={style.paddingContainer}>
+                                <div className={styleMobile.gridResultFiltersOut}>
+                                    <div className={`${cssStyle.fontSubTitle}`}>
+                                        Restaurantes
+                                    </div>
+                                    <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <div className={utilities.fontPrimaryText}>
+                                            Filtros
+                                        </div>
+                                        <div onClick={handleClick} className={"h-3 w-4 relative"}>
+                                            <Image layout={"fill"}
+                                                   src={GlobalConst.sourceImages.engineIcon} alt={""}/>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <div className={style.gridResult}>
+                                    {dropDownMobile}
+                                </div>
+                                {buttonsNavegationMobile}
+                            </div>
+                        </div>
+                    }
+                </div>
+            </DefaultLayoutMobile>
+            /*<div>
                 {
                     isDiplaySug ?
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
@@ -121,11 +151,9 @@ export default function SearchRestaurant() {
                             </div>
                         </div>
                 }
-            </div>
+            </div>*/
             :
-            <div>
-                <HeaderSpixDesktop darkMode={isDarkMode} isLogged={false} toggleDarkMode={darkModeToggle}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+            <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
                     <div className={style.styleBanner}>
                         <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
@@ -152,7 +180,37 @@ export default function SearchRestaurant() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </DefaultLayoutDesktop>
+        /*            <div>
+                        <HeaderSpixDesktop darkMode={isDarkMode} isLogged={false} toggleDarkMode={darkModeToggle}/>
+                        <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+                        <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
+                            <div className={style.styleBanner}>
+                                <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
+                                       src="/images/bannerFood.jpg" alt=""/>
+                            </div>
+                            <div className={`${cssStyle.gridFilterDesktop}`}>
+                                <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                                    {
+                                        <MainContainerFilters isCategory={isCategory} isDarkMode={isDarkMode}
+                                                              isOpenFilter={isOpenFilters}
+                                                              closeFilters={handleOpenFilter}/>
+                                    }
+                                </div>
+                                <div>
+                                    <div className={style.paddingLeftResult}>
+                                        <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                            Resultados de {"conciertos"}
+                                        </div>
+                                        <div className={cssStyle.gridSearch}>
+                                            {dropDown}
+                                        </div>
+                                    </div>
+                                    {buttonsNavegation}
+                                </div>
+                            </div>
+                        </div>
+                    </div>*/
     )
 
     function getCssStyle() {
