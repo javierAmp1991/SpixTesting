@@ -2164,6 +2164,7 @@ export class reviewSearch{
     listReview: review[]
     NameEvent: string
     ResumeStars: number
+    ProfilePath: string
 
 }
 
@@ -2173,19 +2174,22 @@ export namespace ReviewSearchData{
             PathBanner: "/images/banner.png",
             listReview: ReviewsSectionData.listReviews,
             NameEvent: "Tributo a PetShop Boys y A ha",
-            ResumeStars: 4
+            ResumeStars: 4,
+            ProfilePath: "/images/fotoperfil2.png"
         },
         {
             PathBanner: "/images/banner7.jpg",
             listReview: ReviewsSectionData.listReviews,
             NameEvent: "Djarum Super Guns N Roses",
-            ResumeStars: 4
+            ResumeStars: 4,
+            ProfilePath: "/images/fotoperfil1.png"
         },
         {
             PathBanner: "/images/banner8.jpg",
             listReview: ReviewsSectionData.listReviews,
             NameEvent: "Kuervos del Sur en vivo",
-            ResumeStars: 3
+            ResumeStars: 3,
+            ProfilePath: "/images/fotoperfil3.png"
         }
     ]
 }

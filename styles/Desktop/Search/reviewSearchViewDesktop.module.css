@@ -34,8 +34,8 @@
 }
 
 .fontResume {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 16px;
 }
 
 .infoCont {
@@ -53,4 +53,19 @@
 }
 .cardReview:hover{
     transform: scale(1.05);
+}
+
+.gridProfile {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.sizeProfile {
+    height: 48px;
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
 }

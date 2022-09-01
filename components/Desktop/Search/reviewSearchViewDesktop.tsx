@@ -15,11 +15,8 @@ export default function ReviewSearchViewDesktope({reviewSection}: { reviewSectio
                     {reviewSection.NameEvent}
                 </div>
                 <div className={style.gridStarResume}>
-                    <div className={style.sizeStar}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.ratingIndFull}/>
-                    </div>
                     <div className={`${utilities.fontSecundaryText} ${style.fontResume}`}>
-                        {reviewSection.ResumeStars} de 5
+                        Calificacion: {reviewSection.ResumeStars} de 5
                     </div>
                 </div>
             </div>
@@ -29,14 +26,23 @@ export default function ReviewSearchViewDesktope({reviewSection}: { reviewSectio
                         index >= 0 && index <= 1 &&
                         <div key={index} className={style.cardReview}>
                             <div className="grid gap-3">
-                                <div className={utilities.fontSubTitle}>
-                                    {item.Title}
-                                </div>
-                                <div className="grid pb-0.5">
-                                    <div className={style.sizeReviewStar}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                                <div className={style.gridProfile}>
+                                    <div className={style.sizeProfile}>
+                                        <Image layout={"fill"} src={reviewSection.ProfilePath}/>
+                                    </div>
+                                    <div>
+                                        <div className={utilities.fontSubTitle}>
+                                            {item.Title}
+                                        </div>
+                                        <div className="grid pt-2">
+                                            <div className={style.sizeReviewStar}>
+                                                <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars}
+                                                       alt=""/>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div className="grid gap-0.5">
                                     <div className={utilities.fontPrimaryText}>
                                         <div className={utilities.clamp3}>
