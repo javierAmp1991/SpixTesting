@@ -31,6 +31,7 @@ export default function ReviewSearch() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
+    const isReview: boolean = false;
     //region desktop Components
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -62,27 +63,30 @@ export default function ReviewSearch() {
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
-                                                 isOpenFilter={isDisplayResult}/>
+                                                 isOpenFilter={isDisplayResult}
+                                                 isReview={isReview}/>
 
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
                             <div className={style.paddingContainer}>
-                                <div className={styleMobile.gridResultFiltersOut}>
-                                    <div className={`${cssStyle.fontSubTitle}`}>
-                                        Reseñas
+                                    <div className={styleMobile.gridResultFiltersOut}>
+                                        <div className={`${cssStyle.fontSubTitle}`}>
+                                            Reseñas
+                                        </div>
+                                        {
+                                            isReview &&
+                                            <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                                <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
+                                                    Filtros
+                                                </div>
+                                                <div onClick={handleClick} className={"h-3 w-4 relative"}>
+                                                    <Image layout={"fill"}
+                                                           src={GlobalConst.sourceImages.engineIcon}/>
+                                                </div>
+                                            </button>
+                                        }
                                     </div>
-                                    <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                        <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
-                                            Filtros
-                                        </div>
-                                        <div onClick={handleClick} className={"h-3 w-4 relative"}>
-                                            <Image layout={"fill"}
-                                                   src={GlobalConst.sourceImages.engineIcon}/>
-                                        </div>
-                                    </button>
-                                </div>
-
                                 <div className={style.gridResult}>
                                     {
                                         reviewSectionList.map((item, index) =>

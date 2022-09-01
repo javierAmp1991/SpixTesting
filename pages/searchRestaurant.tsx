@@ -30,6 +30,7 @@ export default function SearchRestaurant() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
+    const isReview: boolean = true;
 
     //region desktop Components
     let dropDown =
@@ -68,7 +69,8 @@ export default function SearchRestaurant() {
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
-                                                 isOpenFilter={isDisplayResult}/>
+                                                 isOpenFilter={isDisplayResult}
+                                                 isReview={isReview}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>

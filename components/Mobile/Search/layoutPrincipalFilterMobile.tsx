@@ -14,12 +14,13 @@ export default function LayoutPrincipalFilterMobile({
                                                         handleOpenFilter,
                                                         isCategory,
                                                         listCategoryFilter,
-                                                        listPrincipalFilter
+                                                        listPrincipalFilter,
+                                                        isReview,
                                                     }:
                                                         {
                                                             isOpenFilter: boolean, isDarkMode: boolean, handleOpenFilter: any,
                                                             isCategory: boolean, listCategoryFilter: CategoryFilter[],
-                                                            listPrincipalFilter: CategoryFilter[]
+                                                            listPrincipalFilter: CategoryFilter[], isReview: boolean
                                                         }) {
     const cssStyle = getCssStyle()
 
@@ -184,6 +185,7 @@ export default function LayoutPrincipalFilterMobile({
 
             {
                 !isOpenFilter &&
+                isReview &&
                 <>
                     <div className={style.gridResultFiltersIn}>
                         <div className={`${utilities.fontSubTitle} `}>

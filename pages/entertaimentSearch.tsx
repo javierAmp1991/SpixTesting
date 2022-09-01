@@ -31,6 +31,7 @@ export default function SearchRestaurant() {
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
     const textResultSection: string = "Entretencion";
+    const isReview: boolean = true;
 
     //region desktop Components
     let dropDown =
@@ -69,7 +70,8 @@ export default function SearchRestaurant() {
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
-                                                 isOpenFilter={isDisplayResult}/>
+                                                 isOpenFilter={isDisplayResult}
+                                                 isReview={isReview}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>

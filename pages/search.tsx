@@ -20,14 +20,16 @@ import {CategoryPrincipalFilters} from "../dataDemo/data";
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function Search() {
-    const listPrincipalFilters: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters
+    const listPrincipalFilters: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
-    let [isDisplayResult, setIsDisplayResult] = useState(true)
-    let [isOpenFilters, setIsOpenFilters] = useState(true)
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
-    const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult)
+    let [isDisplayResult, setIsDisplayResult] = useState(true);
+    let [isOpenFilters, setIsOpenFilters] = useState(true);
+    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
-    let cssStyle = getCssStyle()
+    let cssStyle = getCssStyle();
+    const isReview: boolean = true;
+    const isCategory: boolean = false;
 
     //region desktop Components
     let dropDown =
@@ -57,7 +59,7 @@ export default function Search() {
         </LayoutButtonNavegation>
     //endregion
 
-    const isCategory: boolean = false
+
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
@@ -68,7 +70,8 @@ export default function Search() {
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
-                                                 isOpenFilter={isDisplayResult}/>
+                                                 isOpenFilter={isDisplayResult}
+                                                 isReview={isReview}/>
 
                     {
                         isDisplayResult &&
