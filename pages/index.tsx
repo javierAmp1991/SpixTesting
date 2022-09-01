@@ -522,10 +522,10 @@ export default function Index() {
     </LayoutCategoryFooter>
 
     let listDefaultPage: ComponentWithSpace[] = [
-        {
+        /*{
             Component: carrouselAuto,
             padding: paddingGeneralDesk
-        },
+        },*/
         /* {
              Component: information,
              padding: paddingGeneralDesk
@@ -593,37 +593,20 @@ export default function Index() {
                     <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
                 </>
             </DefaultLayoutMobile>
-
-            /*<div className={`${isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}`}>
-                {
-                    isDiplaySug ?
-                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
-                        :
-                        <>
-                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
-                            <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
-                            {carrouselBannerMobile}
-                            <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
-                        </>
-                }
-            </div>*/
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={darkModeToggle}>
                 <>
                     {carrouselBanner}
+                    <div className={utilities.styleGradientIndex}>
+                        <div className={utilities.maxWidthBodyContentSpix}>
+                            {carrouselAuto}
+                        </div>
+                    </div>
                     <div className={utilities.maxWidthBodyContentSpix}>
                         <DefaultPage listItem={listDefaultPage}/>
                     </div>
                 </>
             </DefaultLayoutDesktop>
-        /*<div className={isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal}>
-            <HeaderSpixDesktop toggleDarkMode={darkModeToggle} darkMode={isDarkMode} isLogged={isLogged}/>
-            <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
-            {carrouselBanner}
-            <div className={utilities.maxWidthBodyContentSpix}>
-                <DefaultPage listItem={listDefaultPage}/>
-            </div>
-        </div>*/
     )
 }
 

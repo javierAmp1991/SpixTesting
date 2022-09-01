@@ -28,7 +28,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                     :
                     <div className={`${cssStyle.stopScroll} ${styleMobile.mainCont}`}>
                         <HeaderSpixMobile isDarkMode={isDarkMode}
-                                          isDesplegable={handleSideSetting}
+                                          isDesplegable={null}
                                           displaySug={handleDisplaySug}/>
                         <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
                         {/*------------------children*-----------------*/}

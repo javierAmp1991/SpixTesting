@@ -413,6 +413,13 @@
     gap: 18px;
 }
 
+.styleGradientIndex{
+    max-width: var(--maxWidthBanner);
+    margin: auto;
+    background: linear-gradient(rgba(10,102,188,1) 0%, rgba(255,255,255, 1) 100%);
+    padding: 40px 0;
+}
+
 @media (min-width: 1281px) {
     .borderCards:hover {
         transform: scale(var(--scaleHover));

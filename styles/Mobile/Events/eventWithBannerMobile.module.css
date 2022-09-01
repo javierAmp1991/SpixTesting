@@ -19,7 +19,7 @@
 }
 
 .sizeProductEWB {
-    --sizeProduct: 64px;
+    --sizeProduct: 84px;
     width: var(--sizeProduct);
     height: var(--sizeProduct);
     object-fit: cover;

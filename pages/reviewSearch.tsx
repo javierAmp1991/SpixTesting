@@ -12,7 +12,7 @@ import MainContainerFilters from "../components/Desktop/Search/mainContainerFilt
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
-import {CategoryFilter, reviewSearch, ReviewSearchData} from "../dataDemo/data";
+import {CategoryFilter, CategoryFilterEntertaiment, reviewSearch, ReviewSearchData} from "../dataDemo/data";
 import ReviewSearchViewMobile from "../components/Mobile/Search/reviewSearchViewMobile";
 import ReviewSearchViewDesktope from "../components/Desktop/Search/reviewSearchViewDesktop";
 import {CategoryPrincipalFiltersReview} from "../dataDemo/data";
@@ -20,16 +20,17 @@ import {CategoryPrincipalFiltersReview} from "../dataDemo/data";
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function ReviewSearch() {
-    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersReview.listPrinciaplFiltersReview
-    const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch
+    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersReview.listPrinciaplFiltersReview;
+    const categoryFilterRest: CategoryFilter[] = CategoryFilterEntertaiment.listCatEntertaiment;
+    const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
-    let [isDisplayResult, setIsDisplayResult] = useState(true)
-    let [isOpenFilters, setIsOpenFilters] = useState(true)
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
-    const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult)
+    let [isDisplayResult, setIsDisplayResult] = useState(true);
+    let [isOpenFilters, setIsOpenFilters] = useState(true);
+    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
-    let cssStyle = getCssStyle()
-    const isCategory: boolean = false
+    let cssStyle = getCssStyle();
+    const isCategory: boolean = true;
     //region desktop Components
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -57,7 +58,7 @@ export default function ReviewSearch() {
                 <div className={cssStyle.bg}>
 
                     <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
-                                                 listCategoryFilter={null}
+                                                 listCategoryFilter={categoryFilterRest}
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
@@ -101,7 +102,7 @@ export default function ReviewSearch() {
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters listCategoryFilter={null}
+                                <MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}

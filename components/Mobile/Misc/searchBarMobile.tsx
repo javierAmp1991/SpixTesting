@@ -28,6 +28,8 @@ export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug,
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
 
+            {
+                !isSug &&
                 <Link href={"/search"}>
                     <div className={style.spixLogoCont}>
                         <div className={style.spixLogoPro}>
@@ -35,19 +37,23 @@ export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug,
                         </div>
                     </div>
                 </Link>
+            }
             <input onFocus={isDisplaySug}
                    onChange={getValueInput}
                    autoComplete="off"
                    className={style.styleInputSug}
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
-            {/*<Link href={"/search"}>
-                <div className={style.styleButton}>
-                    <button className={style.styleLupa}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.magGlass} alt=""/>
-                    </button>
-                </div>
-            </Link>*/}
+            {
+                isSug &&
+                <Link href={"/search"}>
+                    <div className={style.styleButton}>
+                        <button className={style.styleLupa}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.magGlass} alt=""/>
+                        </button>
+                    </div>
+                </Link>
+            }
         </div>
     )
 }

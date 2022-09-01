@@ -210,7 +210,7 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
                         <div className={style.buttonsCont}>
                             {
                                 principalFilters.map((item) =>
-                                    <div key={item.Id}
+                                    <button key={item.Id}
                                          onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
                                          className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
                                         <div className={style.imageSizeButton}>
@@ -219,7 +219,7 @@ export default function MainContainerFilters({isOpenFilter, isDarkMode, isCatego
                                         <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
                                             {item.Name}
                                         </div>
-                                    </div>
+                                    </button>
                                 )
                             }
 
