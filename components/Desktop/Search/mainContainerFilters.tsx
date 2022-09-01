@@ -2,86 +2,25 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Search/layoutPrincipalFilters.module.css"
 import {FiltersData} from "../../../dataDemo/data"
 import {GlobalConst} from "../../../public/globalConst";
-import {AtributesDataFilter} from "../../../dataDemo/data";
 import SubcategoryContainer, {Filters} from "./subcategoryContainer";
-import AtributesContainer from "./atributesContainer";
 import React, {useState} from "react";
 import {SubcategoryFilter} from "./subcategoryContainer";
 import Image from "next/image";
+import {CategoryFilter} from "../../../dataDemo/data";
 
-class FilterProps {
-    Id: string
-    ImagePath: string
-    Name: string
-    IsSelected: boolean
-}
 
-const listFilters1: FilterProps[] = [
-    {
-        Id: "abcd",
-        ImagePath: GlobalConst.sourceImages.sushiIcon,
-        Name: "Sushi",
-        IsSelected: false
-    },
-    {
-        Id: "abcde",
-        ImagePath: GlobalConst.sourceImages.pizzaIcon,
-        Name: "Pizza",
-        IsSelected: false
-    },
-    {
-        Id: "abcdef",
-        ImagePath: GlobalConst.sourceImages.hambIcon,
-        Name: "Hamburguesa",
-        IsSelected: false
-    },
-    {
-        Id: "abcdefg",
-        ImagePath: GlobalConst.sourceImages.peruvianFood,
-        Name: "Peruana",
-        IsSelected: false
-    },
-    {
-        Id: "abcdefgh",
-        ImagePath: GlobalConst.sourceImages.cofeeIcon,
-        Name: "Cafe",
-        IsSelected: false
-    },
-    {
-        Id: "abcdefghsdasw13",
-        ImagePath: GlobalConst.sourceImages.postres,
-        Name: "Postres",
-        IsSelected: false
-    },
-]
-const principalFilterList: FilterProps[] = [
-    {
-        Id: "1234abcd",
-        ImagePath: "/images/discountIcon.png",
-        Name: "En Oferta",
-        IsSelected: false
-    },
-    {
-        Id: "12345abcde",
-        ImagePath: "/images/dollarUp.png",
-        Name: "Menor a Mayor",
-        IsSelected: false
-    },
-    {
-        Id: "12345abcde3244f",
-        ImagePath: "/images/dollarDown.png",
-        Name: "Mayor a Menor",
-        IsSelected: false
-    },
-]
-
-export default function MainContainerFilters({closeFilters, isOpenFilter, isDarkMode, isCategory}) {
+export default function MainContainerFilters({isOpenFilter, isDarkMode, isCategory, listCategoryFilter, listPrincipalFilter}:
+                                                 { isOpenFilter: boolean, isDarkMode: boolean,
+                                                     isCategory: boolean, listCategoryFilter: CategoryFilter[],
+                                                 listPrincipalFilter: CategoryFilter[]}) {
 
     const cssStyle = getCssStyle()
+
+    //region hooks
     let [listFilters, setListFilters] = useState(FiltersData.listFilters)
     let [selectedTagsShow, setSelectedItemShow] = useState([])
 
-    let [atributesFilters, setAtributesFilters] = useState(listFilters1)
+    let [atributesFilters, setAtributesFilters] = useState(listCategoryFilter)
     const handleClickFilter = (idFilter: string, isClicked: boolean) => {
         const newListFilter = atributesFilters.map(item => {
             if (item.Id == idFilter) {
@@ -90,7 +29,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
         })
         setAtributesFilters(atributesFilters = newListFilter)
     }
-    let [principalFilters, setPrincipalFilters] = useState(principalFilterList)
+    let [principalFilters, setPrincipalFilters] = useState(listPrincipalFilter)
     const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
         const newListFilter = principalFilters.map(item => {
             if (item.Id == idFilter) {
@@ -192,12 +131,13 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
     }
 
     let [displaySub, setDisplaySub] = useState(style.displayIn)
-    let[displayPrinFil, setDisplayPrinFil] = useState(style.displayIn)
+    let [displayPrinFil, setDisplayPrinFil] = useState(style.displayIn)
 
     function handleClick() {
         setDisplaySub(
             displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
     }
+
     function handleClick1() {
         setDisplayPrinFil(
             displayPrinFil == style.displayInAtr ? displayPrinFil = style.displayOutAtr : displayPrinFil = style.displayInAtr)
@@ -212,22 +152,15 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
 
     let [isOpenAdvancedFilter, setIsOpenAdvancedFilter] = useState(false)
     const handleIsOpenAdvanced = () => setIsOpenAdvancedFilter(isOpenAdvancedFilter = !isOpenAdvancedFilter)
+    //endregions
 
     return (
-        <>
+        <div>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
                 <div className={cssStyle.fontTitle}>
                     Filtros
                 </div>
-                {/*<div onClick={() => closeFilters()} className="grid content-center">
-                    <div className={style.styleArrowClose}>
-                        <Image layout={"fill"}
-                               src={isOpenFilter ? GlobalConst.sourceImages.leftArrow : GlobalConst.sourceImages.rightArrow}
-                               alt=""/>
-                    </div>
-                </div>*/}
             </div>
-
 
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
                 {
@@ -245,7 +178,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                         </div>
                         <div className={style.carrouselCont}>
                             {
-                                atributesFilters.map((item, index) =>
+                                atributesFilters.map((item) =>
                                     <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
                                             key={item.Id}
                                             className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
@@ -276,7 +209,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                         </div>
                         <div className={style.buttonsCont}>
                             {
-                                principalFilters.map((item, index) =>
+                                principalFilters.map((item) =>
                                     <div key={item.Id}
                                          onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
                                          className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
@@ -331,24 +264,10 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                         }
                     </div>
 
-                    {/*<div className={cssStyle.borderBottom}>
-                    {
-                        <AtributesContainer isOpenFilter={isOpenFilter} isDarkMode={isDarkMode}
-                                            click={handleSelectedCategory}
-                                            item={AtributesDataFilter.atributes}/>
-                    }
-                </div>*/}
-
                     <div>
                         {
-                            listFilters.map((item, index) =>
-                                /*<div className={cssStyle.borderBottom}>
-                                    <AtributesContainer isOpenFilter={isOpenFilter}
-                                                        isDarkMode={isDarkMode}
-                                                        click={handleSelectedCategory}
-                                                        key={item.FilterName}
-                                                        item={item}/>
-                                </div>*/
+                            listFilters.map((item) =>
+
                                 <SubcategoryContainer isDarkMode={isDarkMode}
                                                       click={handleSelectedCategory}
                                                       key={item.FilterName}
@@ -370,7 +289,7 @@ export default function MainContainerFilters({closeFilters, isOpenFilter, isDark
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 
     function getCssStyle() {

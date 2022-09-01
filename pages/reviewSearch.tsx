@@ -12,23 +12,24 @@ import MainContainerFilters from "../components/Desktop/Search/mainContainerFilt
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
-import {reviewSearch, ReviewSearchData} from "../dataDemo/data";
+import {CategoryFilter, reviewSearch, ReviewSearchData} from "../dataDemo/data";
 import ReviewSearchViewMobile from "../components/Mobile/Search/reviewSearchViewMobile";
 import ReviewSearchViewDesktope from "../components/Desktop/Search/reviewSearchViewDesktop";
+import {CategoryPrincipalFiltersReview} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function ReviewSearch() {
+    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersReview.listPrinciaplFiltersReview
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true)
     let [isOpenFilters, setIsOpenFilters] = useState(true)
     const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult)
-    const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters)
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle()
-    const isCategory: boolean = true
+    const isCategory: boolean = false
     //region desktop Components
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -55,7 +56,9 @@ export default function ReviewSearch() {
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
 
-                    <LayoutPrincipalFilterMobile isCategory={isCategory}
+                    <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
+                                                 listCategoryFilter={null}
+                                                 isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}/>
@@ -98,9 +101,11 @@ export default function ReviewSearch() {
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters isCategory={isCategory} isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}
-                                                      closeFilters={handleOpenFilter}/>
+                                <MainContainerFilters listCategoryFilter={null}
+                                                      listPrincipalFilter={principalFilterReview}
+                                                      isCategory={isCategory}
+                                                      isDarkMode={isDarkMode}
+                                                      isOpenFilter={isOpenFilters}/>
                             }
                         </div>
                         <div>

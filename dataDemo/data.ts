@@ -1,6 +1,6 @@
 import {Filters} from "../components/Desktop/Search/subcategoryContainer";
-
 import {SubcategoryFilter} from "../components/Desktop/Search/subcategoryContainer";
+import {GlobalConst} from "../public/globalConst";
 
 export enum priceFilters {
     TitleSubcategory = 'Precios',
@@ -24,13 +24,14 @@ export enum discountFilters {
     less50 = 'Hasta 50% dcto',
     greater50 = 'Mas 50% dcto'
 }
+
 const atributesType: string = "Atributos"
 
 export namespace AtributesData {
     export const listAtributes: SubcategoryFilter[] = [
-        {Name: "Corte ondulado", id: "abcde", isChecked:false},
-        {Name: "Comida al paso", id: "abcdef", Type: "atributesCat", isChecked:false},
-        {Name: "Festival callejero", id: "fg", Type: "atributesCat", isChecked:false},
+        {Name: "Corte ondulado", id: "abcde", isChecked: false},
+        {Name: "Comida al paso", id: "abcdef", Type: "atributesCat", isChecked: false},
+        {Name: "Festival callejero", id: "fg", Type: "atributesCat", isChecked: false},
     ]
 }
 
@@ -39,12 +40,12 @@ export namespace AtributesDataFilter {
         FilterName: atributesType,
         SubCategorys:
             [
-                {Name: "Corte Ondulado", id: "123", Type: atributesType, isChecked:false},
-                {Name: "Comida al paso", id: "1234", Type: atributesType, isChecked:false},
-                {Name: "Festival Callejero", id: "12345", Type: atributesType, isChecked:false},
-                {Name: "Restaurantes de sushi", id: "123456", Type: atributesType, isChecked:false},
-                {Name: "Discos", id: "1234567", Type: atributesType, isChecked:false},
-                {Name: "Masaje terapeutico", id: "12345678", Type: atributesType, isChecked:false}
+                {Name: "Corte Ondulado", id: "123", Type: atributesType, isChecked: false},
+                {Name: "Comida al paso", id: "1234", Type: atributesType, isChecked: false},
+                {Name: "Festival Callejero", id: "12345", Type: atributesType, isChecked: false},
+                {Name: "Restaurantes de sushi", id: "123456", Type: atributesType, isChecked: false},
+                {Name: "Discos", id: "1234567", Type: atributesType, isChecked: false},
+                {Name: "Masaje terapeutico", id: "12345678", Type: atributesType, isChecked: false}
             ]
     }
 }
@@ -67,27 +68,37 @@ export namespace FiltersData {
             FilterName: priceFilters.TitleSubcategory,
             SubCategorys:
                 [
-                    {Name: priceFilters.less15k, Type: priceFilters.TitleSubcategory, id: "123", isChecked:false},
-                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory, id: "1234", isChecked:false},
-                    {Name: priceFilters.greater50k, Type: priceFilters.TitleSubcategory, id: "12345", isChecked:false},
-                    {Name: priceFilters.priceRange, Type: priceFilters.TitleSubcategory, id: "123456", isChecked:false},
+                    {Name: priceFilters.less15k, Type: priceFilters.TitleSubcategory, id: "123", isChecked: false},
+                    {Name: priceFilters.less50k, Type: priceFilters.TitleSubcategory, id: "1234", isChecked: false},
+                    {Name: priceFilters.greater50k, Type: priceFilters.TitleSubcategory, id: "12345", isChecked: false},
+                    {
+                        Name: priceFilters.priceRange,
+                        Type: priceFilters.TitleSubcategory,
+                        id: "123456",
+                        isChecked: false
+                    },
                 ]
         },
         {
             FilterName: dateFilters.titleSubcategory,
             SubCategorys: [
-                {Name: dateFilters.today, Type: dateFilters.titleSubcategory, id: "123a", isChecked:false},
-                {Name: dateFilters.thisWeek, Type: dateFilters.titleSubcategory, id: "1234a", isChecked:false},
-                {Name: dateFilters.thisMonth, Type: dateFilters.titleSubcategory, id: "1235a", isChecked:false},
-                {Name: dateFilters.rangeDate, Type: dateFilters.titleSubcategory, id: "1236a", isChecked:false},
+                {Name: dateFilters.today, Type: dateFilters.titleSubcategory, id: "123a", isChecked: false},
+                {Name: dateFilters.thisWeek, Type: dateFilters.titleSubcategory, id: "1234a", isChecked: false},
+                {Name: dateFilters.thisMonth, Type: dateFilters.titleSubcategory, id: "1235a", isChecked: false},
+                {Name: dateFilters.rangeDate, Type: dateFilters.titleSubcategory, id: "1236a", isChecked: false},
             ]
         },
         {
             FilterName: discountFilters.titleSubcategory,
             SubCategorys: [
-                {Name: discountFilters.less25, Type: discountFilters.titleSubcategory, id: "123ab", isChecked:false},
-                {Name: discountFilters.less50, Type: discountFilters.titleSubcategory, id: "1234ab", isChecked:false},
-                {Name: discountFilters.greater50, Type: discountFilters.titleSubcategory, id: "12345ab", isChecked:false},
+                {Name: discountFilters.less25, Type: discountFilters.titleSubcategory, id: "123ab", isChecked: false},
+                {Name: discountFilters.less50, Type: discountFilters.titleSubcategory, id: "1234ab", isChecked: false},
+                {
+                    Name: discountFilters.greater50,
+                    Type: discountFilters.titleSubcategory,
+                    id: "12345ab",
+                    isChecked: false
+                },
             ]
         }
     ]
@@ -253,14 +264,14 @@ export namespace CarrouselAutoHome {
         "/images/auto10.jpg",
         "/images/auto11.jpg",
         "/images/auto12.jpg",
-        "/images/auto13.jpg",
         "/images/auto14.jpg",
+        "/images/auto13.jpg",
         "/images/auto15.jpg",
         "/images/auto16.jpg",
     ];
 }
 
-export class MenuHeader{
+export class MenuHeader {
     Name: string
     Link: string
     Id: string
@@ -287,6 +298,16 @@ export namespace Menu {
             Name: "Reseñas",
             Link: "/reviewSearch",
             Id: "12347"
+        },
+        {
+            Name: "Deportes",
+            Link: "/sportSearch",
+            Id: "12347lñfdsf"
+        },
+        {
+            Name: "Entretencion",
+            Link: "/entertaimentSearch",
+            Id: "123cdsf47dsd"
         }
     ]
 }
@@ -1101,47 +1122,47 @@ export namespace ListProducts3 {
             NameGuest: "Felipe",
             ListProducts: [
                 {
-                        Name: "Hamburguesa 1.1",
-                        Price: 18990,
-                        DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/hamb1.jpg",
-                        Tag: "Cerveza"
+                    Name: "Hamburguesa 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/hamb1.jpg",
+                    Tag: "Cerveza"
 
                 },
                 {
-                        Name: "Hamburguesa 2.2",
-                        Price: 18990,
-                        DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/hamb2.jpg",
-                        Tag: "Cerveza"
+                    Name: "Hamburguesa 2.2",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/hamb2.jpg",
+                    Tag: "Cerveza"
                 },
                 {
-                        Name: "Hamburguesa 3.3",
-                        Price: 2990,
-                        DiscountPercent: 25,
-                        Include: null,
-                        ImagePath: "/images/hamb3.jpg",
-                        Tag: "Energetica"
+                    Name: "Hamburguesa 3.3",
+                    Price: 2990,
+                    DiscountPercent: 25,
+                    Include: null,
+                    ImagePath: "/images/hamb3.jpg",
+                    Tag: "Energetica"
                 }
                 ,
                 {
-                        Name: "Hamburguesa 4.4",
-                        Price: 990,
-                        DiscountPercent: 30,
-                        Include: null,
-                        ImagePath: "/images/hamb4.jpg",
-                        Tag: "Snack"
+                    Name: "Hamburguesa 4.4",
+                    Price: 990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/hamb4.jpg",
+                    Tag: "Snack"
 
                 },
                 {
-                        Name: "Hamburguesa 5.5",
-                        Price: 9990,
-                        DiscountPercent: 20,
-                        Include: "Dcto 2 Un.",
-                        ImagePath: "/images/hamb5.jpg",
-                        Tag: "Energetica"
+                    Name: "Hamburguesa 5.5",
+                    Price: 9990,
+                    DiscountPercent: 20,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/hamb5.jpg",
+                    Tag: "Energetica"
                 }
             ]
         },
@@ -1149,47 +1170,47 @@ export namespace ListProducts3 {
             NameGuest: "Alejandro",
             ListProducts: [
                 {
-                        Name: "Energetica 1.1",
-                        Price: 18990,
-                        DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product6.jpg",
-                        Tag: "Cerveza"
+                    Name: "Energetica 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product6.jpg",
+                    Tag: "Cerveza"
 
                 },
                 {
-                        Name: "Energetica 2.2",
-                        Price: 18990,
-                        DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product8.jpg",
-                        Tag: "Cerveza"
+                    Name: "Energetica 2.2",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product8.jpg",
+                    Tag: "Cerveza"
                 },
                 {
-                        Name: "Energetica 3.3",
-                        Price: 2990,
-                        DiscountPercent: 25,
-                        Include: null,
-                        ImagePath: "/images/product9.jpg",
-                        Tag: "Energetica"
+                    Name: "Energetica 3.3",
+                    Price: 2990,
+                    DiscountPercent: 25,
+                    Include: null,
+                    ImagePath: "/images/product9.jpg",
+                    Tag: "Energetica"
                 }
                 ,
                 {
-                        Name: "Energetica 4.4",
-                        Price: 990,
-                        DiscountPercent: 30,
-                        Include: null,
-                        ImagePath: "/images/bebidas.jpg",
-                        Tag: "Snack"
+                    Name: "Energetica 4.4",
+                    Price: 990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/bebidas.jpg",
+                    Tag: "Snack"
 
                 },
                 {
-                        Name: "Energetica 5.5",
-                        Price: 9990,
-                        DiscountPercent: 20,
-                        Include: "Dcto 2 Un.",
-                        ImagePath: "/images/beb2.jpg",
-                        Tag: "Energetica"
+                    Name: "Energetica 5.5",
+                    Price: 9990,
+                    DiscountPercent: 20,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/beb2.jpg",
+                    Tag: "Energetica"
                 }
             ]
         },
@@ -1197,38 +1218,38 @@ export namespace ListProducts3 {
             NameGuest: "Fernanda",
             ListProducts: [
                 {
-                        Name: "Snack 1.1",
-                        Price: 18990,
-                        DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product3.jpg",
-                        Tag: "Cerveza"
+                    Name: "Snack 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product3.jpg",
+                    Tag: "Cerveza"
 
                 },
                 {
-                        Name: "Snack 2.2",
-                        Price: 18990,
-                        DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
-                        ImagePath: "/images/product5.jpg",
-                        Tag: "Cerveza"
+                    Name: "Snack 2.2",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product5.jpg",
+                    Tag: "Cerveza"
                 },
                 {
-                        Name: "Snack 3.3",
-                        Price: 2990,
-                        DiscountPercent: 25,
-                        Include: null,
-                        ImagePath: "/images/snack1.jpg",
-                        Tag: "Energetica"
+                    Name: "Snack 3.3",
+                    Price: 2990,
+                    DiscountPercent: 25,
+                    Include: null,
+                    ImagePath: "/images/snack1.jpg",
+                    Tag: "Energetica"
                 }
                 ,
                 {
-                        Name: "Snack 4.4",
-                        Price: 990,
-                        DiscountPercent: 30,
-                        Include: null,
-                        ImagePath: "/images/snack2.jpg",
-                        Tag: "Snack"
+                    Name: "Snack 4.4",
+                    Price: 990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/snack2.jpg",
+                    Tag: "Snack"
 
                 },
             ]
@@ -1560,6 +1581,153 @@ export namespace DropDownData {
             TicketPriceMin: 7990,
             TicketPriceMax: 12990,
         }
+    ]
+}
+
+export namespace DropDownDataSport {
+    export const listDropDown: EventLookUp[] = [
+        {
+            EventName: "Futbol de salon",
+            CoverImage: "/images/sport1.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 29990,
+            TicketPriceMax: 299990,
+        },
+        {
+            EventName: "Torneo Futbol",
+            CoverImage: "/images/sport2.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 5, 5),
+            MaxDate: new Date(2022, 6, 5),
+            InVenues: "Teatro Caupolican",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
+        {
+            EventName: "Torneo de basketball",
+            CoverImage: "/images/sport3.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            MinDate: new Date(2022, 6, 5),
+            MaxDate: new Date(2022, 7, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 7990,
+            TicketPriceMax: 12990,
+        },
+        {
+            EventName: "The legends Tournament",
+            CoverImage: "/images/sport4.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 7, 5),
+            MaxDate: new Date(2022, 8, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 6990,
+            TicketPriceMax: 9990,
+        },
+        {
+            EventName: "Torneo tenis senior",
+            CoverImage: "/images/sport5.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            MinDate: new Date(2022, 8, 5),
+            MaxDate: new Date(2022, 9, 5),
+            InVenues: "movistar arena, estadio nacional, el huevo",
+            TicketPriceMin: 8990,
+            TicketPriceMax: 18990,
+        },
+        {
+            EventName: "Babolpa Cup",
+            CoverImage: "/images/sport6.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 9, 5),
+            MaxDate: new Date(2022, 10, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
+        {
+            EventName: "Boxing night",
+            CoverImage: "/images/sport7.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 29990,
+            TicketPriceMax: 299990,
+        },
+        {
+            EventName: "Boxing fight",
+            CoverImage: "/images/sport8.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 5, 5),
+            MaxDate: new Date(2022, 6, 5),
+            InVenues: "Teatro Caupolican",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
+        {
+            EventName: "Rugby Sur",
+            CoverImage: "/images/sport9.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            MinDate: new Date(2022, 6, 5),
+            MaxDate: new Date(2022, 7, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 7990,
+            TicketPriceMax: 12990,
+        },
+        {
+            EventName: "rugby Sudamericano",
+            CoverImage: "/images/sport10.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 7, 5),
+            MaxDate: new Date(2022, 8, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 6990,
+            TicketPriceMax: 9990,
+        },
+        {
+            EventName: "2K22 Sprint",
+            CoverImage: "/images/sport11.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            MinDate: new Date(2022, 8, 5),
+            MaxDate: new Date(2022, 9, 5),
+            InVenues: "movistar arena, estadio nacional, el huevo",
+            TicketPriceMin: 8990,
+            TicketPriceMax: 18990,
+        },
+        {
+            EventName: "Final Sprint",
+            CoverImage: "/images/sport12.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 9, 5),
+            MaxDate: new Date(2022, 10, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
     ]
 }
 
@@ -2132,7 +2300,6 @@ export namespace CommentSectionData {
     ]
 }
 
-
 export namespace ReviewsSectionData {
     export const listReviews: review[] = [
         {
@@ -2159,7 +2326,7 @@ export namespace ReviewsSectionData {
     ]
 }
 
-export class reviewSearch{
+export class reviewSearch {
     PathBanner: string
     listReview: review[]
     NameEvent: string
@@ -2168,7 +2335,7 @@ export class reviewSearch{
 
 }
 
-export namespace ReviewSearchData{
+export namespace ReviewSearchData {
     export const listReviewSearch: reviewSearch[] = [
         {
             PathBanner: "/images/banner.png",
@@ -2353,6 +2520,182 @@ export namespace FormList {
             text: "Se busca banda de rock, metal y cumbia para reemplazo ",
             link: ""
         }
+    ]
+}
+
+export class CategoryFilter {
+    Id: string
+    ImagePath: string
+    Name: string
+    IsSelected: boolean
+}
+
+export namespace CategoryFilterRestaurant {
+    export const listCatRestaurant: CategoryFilter[] = [
+        {
+            Id: "abcd",
+            ImagePath: GlobalConst.sourceImages.sushiIcon,
+            Name: "Sushi",
+            IsSelected: false
+        },
+        {
+            Id: "abcde",
+            ImagePath: GlobalConst.sourceImages.pizzaIcon,
+            Name: "Pizza",
+            IsSelected: false
+        },
+        {
+            Id: "abcdef",
+            ImagePath: GlobalConst.sourceImages.hambIcon,
+            Name: "Hamburguesa",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefg",
+            ImagePath: GlobalConst.sourceImages.peruvianFood,
+            Name: "Peruana",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefgh",
+            ImagePath: GlobalConst.sourceImages.cofeeIcon,
+            Name: "Cafe",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefghsdasw13",
+            ImagePath: GlobalConst.sourceImages.postres,
+            Name: "Postres",
+            IsSelected: false
+        },
+    ]
+}
+
+export namespace CategoryFilterEntertaiment {
+    export const listCatEntertaiment: CategoryFilter[] = [
+        {
+            Id: "abcd",
+            ImagePath: "/images/concerts.png",
+            Name: "Conciertos",
+            IsSelected: false
+        },
+        {
+            Id: "abcde",
+            ImagePath: "/images/cinemaIcon.png",
+            Name: "Cines",
+            IsSelected: false
+        },
+        {
+            Id: "abcdef",
+            ImagePath: "/images/nightClubIcon.png",
+            Name: "Club nocturno",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefg",
+            ImagePath: "/images/sports.png",
+            Name: "Deportes",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefgh",
+            ImagePath: "/images/zooIcon.png",
+            Name: "Zoologico",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefghsdasw13",
+            ImagePath: "/images/restaurantIcon.png",
+            Name: "Restaurantes",
+            IsSelected: false
+        },
+    ]
+}
+
+export namespace CategoryFilterSports {
+    export const listCatSports: CategoryFilter[] = [
+        {
+            Id: "abcd",
+            ImagePath: "/images/futbol.png",
+            Name: "Futbol",
+            IsSelected: false
+        },
+        {
+            Id: "abcde",
+            ImagePath: "/images/box.png",
+            Name: "Boxeo",
+            IsSelected: false
+        },
+        {
+            Id: "abcdef",
+            ImagePath: "/images/basket.png",
+            Name: "Basquetball",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefg",
+            ImagePath: "/images/rugby.png",
+            Name: "Rugby",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefgh",
+            ImagePath:"/images/volley.png",
+            Name: "Volleyball",
+            IsSelected: false
+        },
+        {
+            Id: "abcdefghsdasw13",
+            ImagePath: "/images/golf.png",
+            Name: "Golf",
+            IsSelected: false
+        },
+    ]
+}
+
+export namespace CategoryPrincipalFilters {
+    export const listPrinciaplFilters: CategoryFilter[] = [
+        {
+            Id: "1234abcd",
+            ImagePath: "/images/discountIcon.png",
+            Name: "En Oferta",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcde",
+            ImagePath: "/images/dollarUp.png",
+            Name: "Menor a Mayor",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcdedasdsw",
+            ImagePath: "/images/dollarDown.png",
+            Name: "Mayor a Menor",
+            IsSelected: false
+        },
+    ]
+}
+
+export namespace CategoryPrincipalFiltersReview {
+    export const listPrinciaplFiltersReview: CategoryFilter[] = [
+        {
+            Id: "1234abcd",
+            ImagePath: "/images/discountIcon.png",
+            Name: "Mas Popular",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcde",
+            ImagePath: "/images/dollarUp.png",
+            Name: "Menor a Mayor",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcdedasdsw",
+            ImagePath: "/images/dollarDown.png",
+            Name: "Mayor a Menor",
+            IsSelected: false
+        },
     ]
 }
 

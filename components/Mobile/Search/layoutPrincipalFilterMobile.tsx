@@ -4,79 +4,18 @@ import {GlobalConst} from "../../../public/globalConst";
 import {FiltersData} from "../../../dataDemo/data";
 import React, {useState} from "react";
 import SubCategoryContainerMobile from "./subCategoryContainerMobile";
-import AtributesContainerMobile from "./atributesContainerMobile";
 import {Filters, SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
 import Image from "next/image";
+import {CategoryFilter} from "../../../dataDemo/data";
 
-class FilterProps {
-    Id: string
-    ImagePath: string
-    Name: string
-    IsSelected: boolean
-}
+export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, handleOpenFilter, isCategory, listCategoryFilter, listPrincipalFilter}:
+                                                    {isOpenFilter: boolean, isDarkMode: boolean, handleOpenFilter: any,
+                                                        isCategory: boolean, listCategoryFilter: CategoryFilter[],
+                                                    listPrincipalFilter: CategoryFilter[]}) {
+    const cssStyle = getCssStyle()
 
-const listFilters1: FilterProps[] = [
-    {
-        Id: "abcd",
-        ImagePath: GlobalConst.sourceImages.sushiIcon,
-        Name: "Sushi",
-        IsSelected: false
-    },
-    {
-        Id: "abcde",
-        ImagePath: GlobalConst.sourceImages.pizzaIcon,
-        Name: "Pizza",
-        IsSelected: false
-    },
-    {
-        Id: "abcdef",
-        ImagePath: GlobalConst.sourceImages.hambIcon,
-        Name: "Hamburguesa",
-        IsSelected: false
-    },
-    {
-        Id: "abcdefg",
-        ImagePath: GlobalConst.sourceImages.peruvianFood,
-        Name: "Peruana",
-        IsSelected: false
-    },
-    {
-        Id: "abcdefgh",
-        ImagePath: GlobalConst.sourceImages.cofeeIcon,
-        Name: "Cafe",
-        IsSelected: false
-    },
-    {
-        Id: "abcdefghsdasw13",
-        ImagePath: GlobalConst.sourceImages.postres,
-        Name: "Postres",
-        IsSelected: false
-    }
-]
-
-const principalFilterList: FilterProps[] = [
-    {
-        Id: "1234abcd",
-        ImagePath: "/images/discountIcon.png",
-        Name: "En Oferta",
-        IsSelected: false
-    },
-    {
-        Id: "12345abcde",
-        ImagePath: "/images/dollarUp.png",
-        Name: "Menor a Mayor",
-        IsSelected: false
-    },
-    {
-        Id: "12345abcdedasdsw",
-        ImagePath: "/images/dollarDown.png",
-        Name: "Mayor a Menor",
-        IsSelected: false
-    },
-]
-
-export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, handleOpenFilter, isCategory}) {
-    let [atributesFilters, setAtributesFilters] = useState(listFilters1)
+    //region hooks
+    let [atributesFilters, setAtributesFilters] = useState(listCategoryFilter)
     const handleClickFilter = (idFilter: string, isClicked: boolean) => {
         const newListFilter = atributesFilters.map(item => {
             if (item.Id == idFilter) {
@@ -85,7 +24,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
         })
         setAtributesFilters(atributesFilters = newListFilter)
     }
-    let [principalFilters, setPrincipalFilters] = useState(principalFilterList)
+    let [principalFilters, setPrincipalFilters] = useState(listPrincipalFilter)
     const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
         const newListFilter = principalFilters.map(item => {
             if (item.Id == idFilter) {
@@ -189,42 +128,16 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
         )
         setListFilters(listFilters = newListFilters)
     }
-
-    const cssStyle = getCssStyle()
+    //endregion
 
     return (
-        <div className={`${isOpenFilter ? 
-            isCategory?  style.displayInFilters : style.displayInCategoryFilter : style.displayOutFilters} 
-        ${cssStyle.bg}`}>
-            {/*<div className={`${style.gridTitle} ${cssStyle.borderBottom}`}>
-                <div className={`${style.gridSelected}`}>
-                    {
-                        selectedTagsShow.map((item, index) =>
-                            <div key={index} className={`${utilities.gridMaxContent2} gap-3 ${cssStyle.styleTags}`}>
-                                <div className={utilities.clamp1}>
-                                    {item.Name}
-                                </div>
-                                <button onClick={() => deleteItem(item)}>
-                                    <div className="h-4 w-4 relative">
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt=""/>
-                                    </div>
-                                </button>
-                            </div>
-                        )
-                    }
-                </div>
-                <div onClick={handleClick}
-                     className={`grid items-center ${style.paddingFilters} ${cssStyle.borderLeft} ${cssStyle.fontSubTitle}`}>
-                    Filtros
-                </div>
-            </div>*/}
-
+        <div className={`${cssStyle.divStyle} ${cssStyle.bg}`}>
             <div>
                 {isCategory &&
                     <div className={style.gridAtributesAdvanced}>
                         <div className={style.carrouselCont}>
                             {
-                                atributesFilters.map((item, index) =>
+                                atributesFilters.map((item) =>
                                     <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
                                             key={item.Id}
                                             className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
@@ -243,7 +156,7 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
 
                 <div className={style.buttonsCont}>
                     {
-                        principalFilters.map((item, index) =>
+                        principalFilters.map((item) =>
                             <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
                                  className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
                                 <div className={style.imageSizeButton}>
@@ -263,13 +176,10 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                 <div className={`${utilities.fontSubTitle}`}>
                     Filtros
                 </div>
-                <button onClick={handleOpenFilter} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                    <div className={utilities.fontPrimaryText}>
-                        Filtros
-                    </div>
+                <button onClick={handleOpenFilter} className={`grid items-center`}>
                     <div className={"h-3 w-4 relative"}>
                         <Image layout={"fill"}
-                               src={GlobalConst.sourceImages.engineIcon}/>
+                               src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                     </div>
                 </button>
             </div>
@@ -293,10 +203,9 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
                 </div>
             </div>
 
-
             <div>
                 {
-                    listFilters.map((item, index) =>
+                    listFilters.map((item) =>
                         <SubCategoryContainerMobile isDarkMode={isDarkMode}
                                                     click={handleSelectedCategory}
                                                     key={item.FilterName}
@@ -326,7 +235,8 @@ export default function LayoutPrincipalFilterMobile({isOpenFilter, isDarkMode, h
             fontSubTitle: isDarkMode ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
             borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
             borderLeft: isDarkMode ? style.borderLeftDarkMode : style.borderLeft,
-            bg: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo
+            bg: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
+            divStyle: isOpenFilter ? isCategory ? style.displayInFilters : style.displayInCategoryFilter : style.displayOutFilters
         }
     }
 }

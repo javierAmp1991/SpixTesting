@@ -1,7 +1,6 @@
 import style from "/styles/Desktop/Search/layoutPrincipal.module.css"
 import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css"
 import utilities from "/styles/utilities.module.css"
-import {CategoryFilter, DropDownData} from "../dataDemo/data"
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
@@ -15,23 +14,27 @@ import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import {CategoryPrincipalFilters} from "../dataDemo/data";
+import {CategoryFilterSports, DropDownDataSport, CategoryFilter, CategoryPrincipalFilters} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
-export default function Search() {
-    const listPrincipalFilters: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters
+export default function SearchRestaurant() {
+    const categoryFilterRest: CategoryFilter[] = CategoryFilterSports.listCatSports;
+    const categoryPrincipalFilter: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
-    let [isDisplayResult, setIsDisplayResult] = useState(true)
-    let [isOpenFilters, setIsOpenFilters] = useState(true)
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode)
-    const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult)
+    let [isDisplayResult, setIsDisplayResult] = useState(true);
+    let [isOpenFilters, setIsOpenFilters] = useState(true);
+    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
+    const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
-    let cssStyle = getCssStyle()
+    let cssStyle = getCssStyle();
+    const isCategory: boolean = true;
+    const textResultSection: string = "Deporte";
 
     //region desktop Components
     let dropDown =
-        DropDownData.listDropDown.map((item, index) =>
+        DropDownDataSport.listDropDown.map((item, index) =>
             <EventVerticalView key={index} isHideName={false} dropDown={true} darkModeState={isDarkMode} info={item}/>
         )
 
@@ -44,7 +47,7 @@ export default function Search() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownData.listDropDown.map((item, index) =>
+    let dropDownMobile = DropDownDataSport.listDropDown.map((item, index) =>
         <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
     )
     let buttonsNavegationMobile =
@@ -57,26 +60,23 @@ export default function Search() {
         </LayoutButtonNavegation>
     //endregion
 
-    const isCategory: boolean = false
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
-
-                    <LayoutPrincipalFilterMobile listPrincipalFilter={listPrincipalFilters}
-                                                 listCategoryFilter={null}
+                    <LayoutPrincipalFilterMobile listPrincipalFilter={categoryPrincipalFilter}
+                                                 listCategoryFilter={categoryFilterRest}
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}/>
-
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
                             <div className={style.paddingContainer}>
                                 <div className={styleMobile.gridResultFiltersOut}>
                                     <div className={`${cssStyle.fontSubTitle}`}>
-                                        Resultados de {"Conciertos"}
+                                        {textResultSection}
                                     </div>
                                     <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                         <div className={utilities.fontPrimaryText}>
@@ -104,8 +104,8 @@ export default function Search() {
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters listPrincipalFilter={listPrincipalFilters}
-                                                      listCategoryFilter={null}
+                                <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
+                                                      listCategoryFilter={categoryFilterRest}
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}/>
@@ -114,7 +114,7 @@ export default function Search() {
                         <div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
-                                    Resultados de {"conciertos"}
+                                    {textResultSection}
                                 </div>
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
