@@ -61,10 +61,10 @@ export default function SearchRestaurant() {
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
-                    <div className={style.styleBanner}>
+                   {/* <div className={style.styleBanner}>
                         <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
                                src="/images/bannerFood.jpg" alt=""/>
-                    </div>
+                    </div>*/}
                     <LayoutPrincipalFilterMobile isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
@@ -155,10 +155,10 @@ export default function SearchRestaurant() {
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={style.styleBanner}>
+                    {/*<div className={style.styleBanner}>
                         <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"}
                                src="/images/bannerFood.jpg" alt=""/>
-                    </div>
+                    </div>*/}
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
