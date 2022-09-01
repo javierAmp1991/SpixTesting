@@ -170,7 +170,7 @@ export default function SearchRestaurant() {
                         <div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
-                                    Resultados de {"conciertos"}
+                                    Restaurantes
                                 </div>
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
