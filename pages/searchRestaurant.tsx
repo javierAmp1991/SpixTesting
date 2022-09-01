@@ -14,7 +14,7 @@ import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import {CategoryFilterRestaurant, DropDownData, CategoryFilter, CategoryPrincipalFilters} from "../dataDemo/data";
+import {CategoryFilterRestaurant, DropDownDataRestaurant, CategoryFilter, CategoryPrincipalFilters} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -34,7 +34,7 @@ export default function SearchRestaurant() {
 
     //region desktop Components
     let dropDown =
-        DropDownData.listDropDown.map((item, index) =>
+        DropDownDataRestaurant.listDropDown.map((item, index) =>
             <EventVerticalView key={index} isHideName={false} dropDown={true} darkModeState={isDarkMode} info={item}/>
         )
 
@@ -47,7 +47,7 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownData.listDropDown.map((item, index) =>
+    let dropDownMobile = DropDownDataRestaurant.listDropDown.map((item, index) =>
         <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
     )
     let buttonsNavegationMobile =
