@@ -190,6 +190,7 @@
     display: grid;
     grid-template-columns: max-content max-content;
     justify-content: center;
+    background: #fcfbfb;
     align-items: center;
     gap: 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
