@@ -179,6 +179,7 @@ export default function MainContainerFilters({
 
 
             {/*superCategory*/}
+            {isCategory&&
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>
                 {
                     <div className={displaySuperCategory}>
@@ -211,6 +212,7 @@ export default function MainContainerFilters({
                     </div>
                 }
             </div>
+            }
 
             {/*subCategory*/}
             <div className={isOpenFilter ? style.displayIn : style.displayOut}>

@@ -143,7 +143,8 @@ export default function LayoutPrincipalFilterMobile({
     return (
         <div className={`${cssStyle.bg}`}>
             <div>
-                {isCategory &&
+                {
+                    isCategory &&
                     <div className={style.gridAtributesAdvanced}>
                         <div className={style.carrouselCont}>
                             {
@@ -163,24 +164,26 @@ export default function LayoutPrincipalFilterMobile({
                         </div>
                     </div>
                 }
+                {
+                    isCategory &&
+                    <div className={style.buttonsContSub}>
+                        {
+                            atributesFilters.map((item) =>
+                                <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
+                                        key={item.Id}
+                                        className={style.gridButtonSub}>
+                                    <div className={style.imageSizeSub}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
+                            )
+                        }
+                    </div>
+                }
 
-                <div className={style.buttonsContSub}>
-                    {
-                        atributesFilters.map((item) =>
-                            <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                    key={item.Id}
-                                    className={style.gridButtonSub}>
-                                <div className={style.imageSizeSub}>
-                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
-                                    {item.Name}
-                                </div>
-                            </button>
-                        )
-                    }
-
-                </div>
 
                 <div className={style.buttonsCont}>
                     {
