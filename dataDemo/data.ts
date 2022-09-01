@@ -2680,19 +2680,19 @@ export namespace CategoryPrincipalFiltersReview {
     export const listPrinciaplFiltersReview: CategoryFilter[] = [
         {
             Id: "1234abcd",
-            ImagePath: "/images/discountIcon.png",
+            ImagePath: "/images/popularIconReview.png",
             Name: "Mas Popular",
             IsSelected: false
         },
         {
             Id: "12345abcde",
-            ImagePath: "/images/dollarUp.png",
+            ImagePath: "/images/reviewUp.png",
             Name: "Menor a Mayor",
             IsSelected: false
         },
         {
             Id: "12345abcdedasdsw",
-            ImagePath: "/images/dollarDown.png",
+            ImagePath: "/images/reviewDown.png",
             Name: "Mayor a Menor",
             IsSelected: false
         },
