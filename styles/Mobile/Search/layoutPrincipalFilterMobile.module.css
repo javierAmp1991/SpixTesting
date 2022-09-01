@@ -192,9 +192,9 @@
     justify-content: center;
     align-items: center;
     gap: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     padding: 4px 12px;
     border-radius: 4px;
-    background: linear-gradient(145deg, rgba(7, 99, 185, 1) 0%, rgba(8, 95, 178, 1) 33%, rgba(13, 111, 202, 1) 66%, rgba(13, 111, 202, 1) 100%);
     transition: .3s;
     overflow: hidden;
 }
@@ -286,7 +286,7 @@
     font-size: 14px;
     line-height: 14px;
     text-overflow: ellipsis;
-    color: white;
+    color: var(--colorPrimaryText);
     overflow: hidden;
 }
 
