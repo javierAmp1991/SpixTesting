@@ -14,6 +14,7 @@ import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
 import {reviewSearch, ReviewSearchData} from "../dataDemo/data";
 import ReviewSearchViewMobile from "../components/Mobile/Search/reviewSearchViewMobile";
+import ReviewSearchViewDesktope from "../components/Desktop/Search/reviewSearchViewDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -105,10 +106,14 @@ export default function ReviewSearch() {
                         <div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
-                                    Resultados de {"conciertos"}
+                                    Resultados
                                 </div>
-                                <div className={cssStyle.gridSearch}>
-
+                                <div className={style.gridReviewDesktop}>
+                                    {
+                                        reviewSectionList.map((item, index) =>
+                                            <ReviewSearchViewDesktope key={index} reviewSection={item}/>
+                                        )
+                                    }
                                 </div>
                             </div>
                             {buttonsNavegation}

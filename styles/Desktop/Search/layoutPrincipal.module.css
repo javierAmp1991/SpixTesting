@@ -67,6 +67,11 @@
     height: 100%;
 }
 
+.gridReviewDesktop{
+    display: grid;
+    gap: 40px;
+}
+
 
 @media (min-width: 1281px) {
     .styleBanner {

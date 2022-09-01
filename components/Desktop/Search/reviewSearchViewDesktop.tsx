@@ -1,11 +1,10 @@
 import Image from "next/image";
-import {review} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
-import style from "/styles/Mobile/Search/reviewSearchViewMobile.module.css"
+import style from "/styles/Desktop/Search/reviewSearchViewDesktop.module.css"
 import {reviewSearch} from "../../../dataDemo/data";
 
-export default function ReviewSearchViewMobile({reviewSection}: { reviewSection: reviewSearch }) {
+export default function ReviewSearchViewDesktope({reviewSection}: { reviewSection: reviewSearch }) {
     return (
         <div>
             <div className={style.sizeBanner}>
@@ -27,7 +26,7 @@ export default function ReviewSearchViewMobile({reviewSection}: { reviewSection:
             <div className={style.gridReviews}>
                 {
                     reviewSection.listReview.map((item, index) =>
-                        <div key={index}>
+                        <div key={index} className={style.cardReview}>
                             <div className="grid gap-3">
                                 <div className={utilities.fontSubTitle}>
                                     {item.Title}
