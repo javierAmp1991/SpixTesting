@@ -3277,7 +3277,7 @@ export namespace SuperCategoryServices{
             Name: "Spa",
             PathIcon: "/images/spa.png",
             Id: "Spa123",
-            ListCategory: [
+            /*ListCategory: [
                 {
                     Id: "abcd",
                     ImagePath: "/images/colorimetria.png",
@@ -3302,14 +3302,15 @@ export namespace SuperCategoryServices{
                     Name: "Ballayage",
                     IsSelected: false
                 },
-            ],
+            ],*/
+            ListCategory: null,
             isSelected: false
         },
         {
             Name: "Salon Belleza",
             PathIcon: "/images/salonBelleza.png",
             Id: "SalonBelleza123",
-            ListCategory: [
+            /*ListCategory: [
                 {
                     Id: "abcd",
                     ImagePath: "/images/colorimetria.png",
@@ -3334,7 +3335,8 @@ export namespace SuperCategoryServices{
                     Name: "Ballayage",
                     IsSelected: false
                 },
-            ],
+            ],*/
+            ListCategory: null,
             isSelected: false
         },
         {
