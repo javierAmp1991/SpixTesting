@@ -13,7 +13,7 @@
     --colorSubTitles: #303435;
     --colorPrimaryText: #55595a;
     --colorName: #303435;
-   /* --colorSecundaryText: #d4d6d7;*/
+    /* --colorSecundaryText: #d4d6d7;*/
     --colorSecundaryText: #8e8e8e;
     --linkColor: #2d7dff;
     --linkColorDarkMode: #15dae6;
@@ -136,11 +136,11 @@ input {
     background: transparent;
 }
 
-button{
+button {
     outline: none;
 }
 
-textarea{
+textarea {
     outline: none;
 }
 
@@ -157,6 +157,14 @@ input[type="number"] {
     outline: none;
     -moz-appearance: textfield;
 }
+
+
+input[type="checkbox"] {
+    height: 8px;
+    width: 8px;
+    border-bottom: 2px solid red;
+}
+
 
 input[type="email"]::-moz-focus-inner {
     border: 0;

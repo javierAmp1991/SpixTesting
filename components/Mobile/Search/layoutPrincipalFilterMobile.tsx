@@ -181,9 +181,7 @@ export default function LayoutPrincipalFilterMobile({
                                     </div>
                                     <div className={`${utilities.gridMaxContent2} items-center`}>
                                         <label/>
-                                        <input className="checkboxDarkMode"
-                                               type='radio'
-                                        />
+                                        <input className={style.inputRadioStyle} type='radio' name="test"/>
                                     </div>
                                 </button>
                             )
