@@ -111,7 +111,7 @@
     align-items: center;
     padding: 12px;
     gap: 12px;
-    background: linear-gradient(rgb(11, 106, 194) 0%, rgba(255,255,255, 1) 100%);
+    background: linear-gradient(rgba(13,111,202,1) 0%, rgba(255,255,255, 1) 100%);
 }
 
 .gridResultFiltersOut {
