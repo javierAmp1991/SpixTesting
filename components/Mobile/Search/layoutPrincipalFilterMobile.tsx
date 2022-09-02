@@ -7,6 +7,7 @@ import SubCategoryContainerMobile from "./subCategoryContainerMobile";
 import {Filters, SubcategoryFilter} from "../../Desktop/Search/subcategoryContainer";
 import Image from "next/image";
 import {CategoryFilter} from "../../../dataDemo/data";
+import {CategoryFilterEntertaiment} from "../../../dataDemo/data";
 
 export default function LayoutPrincipalFilterMobile({
                                                         isOpenFilter,
@@ -168,7 +169,7 @@ export default function LayoutPrincipalFilterMobile({
                     isCategory &&
                     <div className={style.buttonsContSub}>
                         {
-                            atributesFilters.map((item) =>
+                            CategoryFilterEntertaiment.listCatEntertaiment.map((item) =>
                                 <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
                                         key={item.Id}
                                         className={style.gridButtonSub}>
