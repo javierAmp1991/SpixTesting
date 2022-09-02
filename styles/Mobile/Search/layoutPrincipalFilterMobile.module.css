@@ -190,6 +190,7 @@
 .gridButtonSub {
     display: grid;
     grid-template-columns: max-content max-content max-content;
+    align-items: center;
     justify-content: center;
     background: #fcfbfb;
     align-items: center;
