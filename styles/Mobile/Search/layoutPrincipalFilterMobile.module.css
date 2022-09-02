@@ -267,10 +267,12 @@
     border-radius: 6px;
     overflow: hidden;
     transition: .1s;
-    box-shadow: 0px 3px 8px rgba(0,0,0,.2);
+/*    box-shadow: 0px 3px 8px rgba(0,0,0,.2);
+    background: #f1efef;*/
+    background: #f6f2f2;
+    box-shadow: 0 0 9px rgb(0, 140, 255);
     display: grid;
     transform: scale(1.05);
-    background: #f1efef;
     justify-content: center;
     justify-items: center;
     padding: 8px;

@@ -46,7 +46,7 @@ const firstGuest: Guest = {
     isSelected: true,
     listProductAmount: []
 };
-const numberMenos: number = 129;
+const numberMenos: number = 93;
 
 export default function EventProducts() {
     //region basic
@@ -240,32 +240,32 @@ export default function EventProducts() {
                                        removeItem={removeItemGuestSelected}/>
                 </div>
             </DefaultLayoutMobile>
-           /* <div className={`${styleMob.mainContainerMobile} relative`}>
-                {
-                    isDiplaySug ?
-                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
-                        :
-                        <>
-                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
-                            <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                            <div className={styleMob.heightCont}
-                                 style={{height: heightDiv}}>
-                                <ContSelectedProduct isOpen={isOpenSelectedProduct}
-                                                     guestSelected={guestSelected}
-                                                     methodProps={methodProps}
-                                                     listGuest={listGuests}
-                                                     amountPerItem={amountPerItems}
-                                                     removeItem={removeItemGuestSelected}/>
-                                <ContResultProduct isOpen={isOpenSelectedProduct}
-                                                   methodProps={methodProps}
-                                                   listGuests={listGuests}
-                                                   listSectionProduct={listProductShow}
-                                                   addItem={addItemGuestSelected}
-                                                   removeItem={removeItemGuestSelected}/>
-                            </div>
-                        </>
-                }
-            </div>*/
+            /* <div className={`${styleMob.mainContainerMobile} relative`}>
+                 {
+                     isDiplaySug ?
+                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
+                         :
+                         <>
+                             <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
+                             <div className={styleMob.heightCont}
+                                  style={{height: heightDiv}}>
+                                 <ContSelectedProduct isOpen={isOpenSelectedProduct}
+                                                      guestSelected={guestSelected}
+                                                      methodProps={methodProps}
+                                                      listGuest={listGuests}
+                                                      amountPerItem={amountPerItems}
+                                                      removeItem={removeItemGuestSelected}/>
+                                 <ContResultProduct isOpen={isOpenSelectedProduct}
+                                                    methodProps={methodProps}
+                                                    listGuests={listGuests}
+                                                    listSectionProduct={listProductShow}
+                                                    addItem={addItemGuestSelected}
+                                                    removeItem={removeItemGuestSelected}/>
+                             </div>
+                         </>
+                 }
+             </div>*/
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={toggleDarkMode}>
                 <div className={utilities.maxWidthBodyContentSpix}>
@@ -285,25 +285,25 @@ export default function EventProducts() {
                     </div>
                 </div>
             </DefaultLayoutDesktop>
-/*            <div>
-                <HeaderSpixDesktop isLogged={isLogged} darkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={menuList}/>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={styleDesk.grid}>
-                        <LeftCard
-                            listSectionPro={listProductShow}
-                            addItemGuest={addItemGuestSelected}
-                            deleteItemGuest={removeItemGuestSelected}/>
+        /*            <div>
+                        <HeaderSpixDesktop isLogged={isLogged} darkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
+                        <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={menuList}/>
+                        <div className={utilities.maxWidthBodyContentSpix}>
+                            <div className={styleDesk.grid}>
+                                <LeftCard
+                                    listSectionPro={listProductShow}
+                                    addItemGuest={addItemGuestSelected}
+                                    deleteItemGuest={removeItemGuestSelected}/>
 
-                        <RightCard guestSelected={guestSelected}
-                                   listGuest={listGuests}
-                                   methodProps={methodProps}
-                                   listProduct={ListProducts.listProducts}
-                                   removeItemGuestSelected={removeItemGuestSelected}
-                                   amountPerItem={amountPerItems}
-                                   upDateGuestSelected={handleGuestSelected}/>
-                    </div>
-                </div>
-            </div>*/
+                                <RightCard guestSelected={guestSelected}
+                                           listGuest={listGuests}
+                                           methodProps={methodProps}
+                                           listProduct={ListProducts.listProducts}
+                                           removeItemGuestSelected={removeItemGuestSelected}
+                                           amountPerItem={amountPerItems}
+                                           upDateGuestSelected={handleGuestSelected}/>
+                            </div>
+                        </div>
+                    </div>*/
     )
 }

@@ -1883,6 +1883,130 @@ export namespace DropDownDataSport {
     ]
 }
 
+export namespace DropDownDataServices{
+    export const listDropDown: EventLookUp[] = [
+        {
+            EventName: "Salon Fame",
+            CoverImage: "/images/serv1.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 29990,
+            TicketPriceMax: 299990,
+        },
+        {
+            EventName: "Oslyala",
+            CoverImage: "/images/serv2.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 5, 5),
+            MaxDate: new Date(2022, 6, 5),
+            InVenues: "Teatro Caupolican",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
+        {
+            EventName: "Ellora",
+            CoverImage: "/images/serv3.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            MinDate: new Date(2022, 6, 5),
+            MaxDate: new Date(2022, 7, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 7990,
+            TicketPriceMax: 12990,
+        },
+        {
+            EventName: "Barber Shop",
+            CoverImage: "/images/serv4.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 7, 5),
+            MaxDate: new Date(2022, 8, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 6990,
+            TicketPriceMax: 9990,
+        },
+        {
+            EventName: "Marcelos",
+            CoverImage: "/images/serv5.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            MinDate: new Date(2022, 8, 5),
+            MaxDate: new Date(2022, 9, 5),
+            InVenues: "movistar arena, estadio nacional, el huevo",
+            TicketPriceMin: 8990,
+            TicketPriceMax: 18990,
+        },
+        {
+            EventName: "Isis",
+            CoverImage: "/images/serv6.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 9, 5),
+            MaxDate: new Date(2022, 10, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
+        {
+            EventName: "Teresa Azagra",
+            CoverImage: "/images/serv7.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 29990,
+            TicketPriceMax: 299990,
+        },
+        {
+            EventName: "Spa Luna",
+            CoverImage: "/images/serv8.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 5, 5),
+            MaxDate: new Date(2022, 6, 5),
+            InVenues: "Teatro Caupolican",
+            TicketPriceMin: 9990,
+            TicketPriceMax: 59990,
+        },
+        {
+            EventName: "Beuty Spa",
+            CoverImage: "/images/serv9.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            MinDate: new Date(2022, 6, 5),
+            MaxDate: new Date(2022, 7, 5),
+            InVenues: "Estadio nacional",
+            TicketPriceMin: 7990,
+            TicketPriceMax: 12990,
+        },
+        {
+            EventName: "Dentistry",
+            CoverImage: "/images/serv10.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            MinDate: new Date(2022, 7, 5),
+            MaxDate: new Date(2022, 8, 5),
+            InVenues: "Cinemark, Cine Hoyts, Cine Planet",
+            TicketPriceMin: 6990,
+            TicketPriceMax: 9990,
+        },
+    ]
+}
+
 export namespace Cines {
     export const listCines: EventLookUp[] = [
         {
@@ -2940,7 +3064,7 @@ export namespace SuperCategoryEntertaiment{
         },
         {
             Name: "Conciertos",
-            PathIcon: "/images/concerts.png",
+            PathIcon: "/images/microfono.png",
             Id: "conciertos123",
             /*ListCategory: [
                 {
@@ -3006,7 +3130,7 @@ export namespace SuperCategoryEntertaiment{
         },
         {
             Name: "Festivales",
-            PathIcon: "/images/festival.png",
+            PathIcon: "/images/concerts.png",
             Id: "festivales123",
             /*ListCategory: [
                 {

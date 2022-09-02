@@ -16,7 +16,7 @@ import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {
     SuperCategoryServices,
-    DropDownDataSport,
+    DropDownDataServices,
     CategoryFilter,
     CategoryPrincipalFilters,
     SuperCategoryFilter
@@ -41,7 +41,7 @@ export default function SearchServices() {
 
     //region desktop Components
     let dropDown =
-        DropDownDataSport.listDropDown.map((item, index) =>
+        DropDownDataServices.listDropDown.map((item, index) =>
             <EventVerticalView key={index} isHideName={false} dropDown={true} darkModeState={isDarkMode} info={item}/>
         )
 
@@ -54,7 +54,7 @@ export default function SearchServices() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownDataSport.listDropDown.map((item, index) =>
+    let dropDownMobile = DropDownDataServices.listDropDown.map((item, index) =>
         <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
     )
     let buttonsNavegationMobile =
