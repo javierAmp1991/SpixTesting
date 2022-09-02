@@ -179,6 +179,12 @@ export default function LayoutPrincipalFilterMobile({
                                     <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
                                         {item.Name}
                                     </div>
+                                    <div className={`${utilities.gridMaxContent2} items-center`}>
+                                        <label/>
+                                        <input className="checkboxDarkMode"
+                                               type='radio'
+                                        />
+                                    </div>
                                 </button>
                             )
                         }
@@ -242,21 +248,22 @@ export default function LayoutPrincipalFilterMobile({
                     </div>
 
                     <div className={style.buttonsCont}>
-                    {
-                        principalFilters.map((item) =>
-                            <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                                 className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                <div className={style.imageSizeButton}>
-                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                        {
+                            principalFilters.map((item) =>
+                                <div key={item.Id}
+                                     onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                     className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                    <div className={style.imageSizeButton}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${style.paddingText}`}>
+                                        {item.Name}
+                                    </div>
                                 </div>
-                                <div className={`${style.paddingText}`}>
-                                    {item.Name}
-                                </div>
-                            </div>
-                        )
-                    }
+                            )
+                        }
 
-                </div>
+                    </div>
 
                     <div>
                         {
