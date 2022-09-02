@@ -139,7 +139,9 @@
     grid-auto-flow: column;
     grid-auto-columns: 100px;
     overflow-x: scroll;
-    padding: 16px 16px;
+    padding: 16px 16px 18px 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+
 }
 
 .engineButton {
@@ -168,7 +170,6 @@
     gap: 16px;
     overflow-x: scroll;
     padding: 20px 16px 22px 16px;
-    border-top: 1px solid var(--separationLineColor);
     border-bottom: 1px solid var(--separationLineColor);
 }
 

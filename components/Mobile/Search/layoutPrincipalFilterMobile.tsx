@@ -159,65 +159,76 @@ export default function LayoutPrincipalFilterMobile({
         setListFilters(listFilters = newListFilters)
     }
 
-    let[displayOrderBy, setDisplayOrderB] = useState(true)
+    let [displayOrderBy, setDisplayOrderB] = useState(true)
     const handleOrderBy = () => setDisplayOrderB(displayOrderBy = !displayOrderBy)
+
+    function isSubCategoryFull() : boolean {
+        let isFull: boolean = true
+        listSuperCat.forEach(item =>{
+            if(item.isSelected){
+                if(item.ListCategory == null){
+                    isFull = false
+                }
+            }
+        })
+        return isFull
+    }
     //endregion
 
     return (
         <div className={`${cssStyle.bg}`}>
-            <div>
-                {
-                    isCategory &&
-                    <div className={style.gridAtributesAdvanced}>
-                        <div className={style.carrouselCont}>
-                            {
-                                listSuperCat.map((item) =>
-                                    <button onClick={() => handleClickFilter(item.Id)}
-                                            key={item.Id}
-                                            className={item.isSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                        <div className={style.imageSize}>
-                                            <Image layout={"fill"} src={item.PathIcon} alt={""}/>
-                                        </div>
-                                        <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                            {item.Name}
-                                        </div>
-                                    </button>
-                                )
-                            }
-                        </div>
-                    </div>
-                }
-                {
-                    isCategory &&
-                    <div className={style.buttonsContSub}>
+            {
+                isCategory &&
+                <div className={style.gridAtributesAdvanced}>
+                    <div className={style.carrouselCont}>
                         {
                             listSuperCat.map((item) =>
-                                item.isSelected &&
-                                item.ListCategory.map((item2) =>
-                                    <div key={item2.Id}
-                                         className={style.gridButtonSub}>
-                                        <div className={style.imageSizeSub}>
-                                            <Image layout={"fill"} src={item2.ImagePath} alt={""}/>
-                                        </div>
-                                        <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
-                                            {item2.Name}
-                                        </div>
-                                        <div className={`${utilities.gridMaxContent2} items-center`}>
-                                            <input onChange={() => handleClickSubCategory(item2.Id, item.Id)}
-                                                   className={style.inputRadioStyle}
-                                                   id={item.Name}
-                                                   checked={item2.IsSelected}
-                                                   type='radio'
-                                                   name={item.Name}/>
-                                        </div>
-                                    </div>)
+                                <button onClick={() => handleClickFilter(item.Id)}
+                                        key={item.Id}
+                                        className={item.isSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                    <div className={style.imageSize}>
+                                        <Image layout={"fill"} src={item.PathIcon} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
                             )
                         }
                     </div>
-                }
+                </div>
+            }
+            {
+                isCategory &&
+                isSubCategoryFull() &&
+                <div className={style.buttonsContSub}>
+                    {
+                        listSuperCat.map((item) =>
+                            item.isSelected &&
+                            item.ListCategory.map((item2) =>
+                                <div key={item2.Id}
+                                     className={style.gridButtonSub}>
+                                    <div className={style.imageSizeSub}>
+                                        <Image layout={"fill"} src={item2.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
+                                        {item2.Name}
+                                    </div>
+                                    <div className={`${utilities.gridMaxContent2} items-center`}>
+                                        <input onChange={() => handleClickSubCategory(item2.Id, item.Id)}
+                                               className={style.inputRadioStyle}
+                                               id={item.Name}
+                                               checked={item2.IsSelected}
+                                               type='radio'
+                                               name={item.Name}/>
+                                    </div>
+                                </div>)
+                        )
+                    }
+                </div>
+            }
 
-
-                {/*<div className={style.buttonsCont}>
+            {/*<div className={style.buttonsCont}>
                     {
                         principalFilters.map((item) =>
                             <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
@@ -233,7 +244,6 @@ export default function LayoutPrincipalFilterMobile({
                     }
 
                 </div>*/}
-            </div>
 
             {
                 !isOpenFilter &&
@@ -257,7 +267,7 @@ export default function LayoutPrincipalFilterMobile({
                                 Ordenar por:
                             </div>
                             <div onClick={handleOrderBy}
-                                className="grid items-center">
+                                 className="grid items-center">
                                 <div className="h-4 w-5 relative">
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                                 </div>

@@ -27,7 +27,6 @@ export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug,
 
     return (
         <div className={`${utilities.fontSecundaryText} ${style.mainCont}`}>
-
             {
                 !isSug &&
                 <Link href={"/search"}>
@@ -41,7 +40,7 @@ export default function SearchBarMobile({isDisplaySug, isSug, showSug, hiddeSug,
             <input onFocus={isDisplaySug}
                    onChange={getValueInput}
                    autoComplete="off"
-                   className={style.styleInputSug}
+                   className={ isSug? style.styleInputSug : style.styleInput}
                    type="text" name={nameInput}
                    placeholder={placeHolder}/>
             {

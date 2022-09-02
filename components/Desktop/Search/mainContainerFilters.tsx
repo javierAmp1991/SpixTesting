@@ -3,11 +3,12 @@ import style from "/styles/Desktop/Search/layoutPrincipalFilters.module.css"
 import {FiltersData} from "../../../dataDemo/data"
 import {GlobalConst} from "../../../public/globalConst";
 import SubcategoryContainer, {Filters} from "./subcategoryContainer";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {SubcategoryFilter} from "./subcategoryContainer";
 import Image from "next/image";
 import {CategoryFilter} from "../../../dataDemo/data";
 import {SuperCategoryFilter} from "../../../dataDemo/data";
+
 const categoryTitle: string = "Categorias"
 const subcategoryTitle: string = "Subcategorias"
 
@@ -166,6 +167,18 @@ export default function MainContainerFilters({
     let [displayPrinFil, setDisplayPrinFil] = useState(style.displayInAtr)
     let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayOutAtr)
 
+    function isSubCategoryFull() : boolean {
+        let isFull: boolean = true
+        listSuperCat.forEach(item =>{
+            if(item.isSelected){
+                if(item.ListCategory == null){
+                    isFull = false
+                }
+            }
+        })
+        return isFull
+    }
+
     function handleClick() {
         setDisplaySub(
             displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
@@ -202,8 +215,9 @@ export default function MainContainerFilters({
 
 
             {/*superCategory*/}
-            {isCategory &&
-                <div className={isOpenFilter ? style.displayIn : style.displayOut}>
+            {
+                isCategory &&
+                <div>
                     {
                         <div className={displaySuperCategory}>
                             <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
@@ -238,80 +252,79 @@ export default function MainContainerFilters({
             }
 
             {/*subCategory*/}
-            <div className={isOpenFilter ? style.displayIn : style.displayOut}>
-                {
-                    isCategory &&
-                    <div className={displaySub}>
-                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                            <div className={`${cssStyle.fontName}`}>
-                                {subcategoryTitle}
-                            </div>
-                            <div onClick={handleClick} className="grid items-center">
-                                <div className="h-4 w-4 relative">
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
-                                </div>
-                            </div>
+            {
+                isCategory &&
+                isSubCategoryFull() &&
+                <div className={displaySub}>
+                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                        <div className={`${cssStyle.fontName}`}>
+                            {subcategoryTitle}
                         </div>
-                        <div className={style.carrouselContSub}>
-                            {
-                                listSuperCat.map((item) =>
-                                    item.isSelected &&
-                                    item.ListCategory.map(item2 =>
-                                        <button onClick={() => handleClickSubCategory(item2.Id, item.Id)}
-                                                key={item2.Id}
-                                                className={style.gridButtonSub}>
-                                            <div className={style.imageSize}>
-                                                <Image layout={"fill"} src={item2.ImagePath} alt={""}/>
-                                            </div>
-                                            <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
-                                                {item2.Name}
-                                            </div>
-                                            <div className={`${utilities.gridMaxContent2} items-center`}>
-                                                <input onChange={() => handleClickSubCategory(item2.Id, item.Id)}
-                                                       className={style.inputRadioStyle}
-                                                       id={item2.Name}
-                                                       checked={item2.IsSelected}
-                                                       type='radio'
-                                                       name={item2.Name}/>
-                                            </div>
-                                        </button>
-                                    )
-                                )
-                            }
+                        <div onClick={handleClick} className="grid items-center">
+                            <div className="h-4 w-4 relative">
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                            </div>
                         </div>
                     </div>
-                }
-
-                <div>
-                    <div className={displayPrinFil}>
-                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                            <div className={`${cssStyle.fontName}`}>
-                                Ordenar por:
-                            </div>
-                            <div onClick={handleClick1} className="grid items-center">
-                                <div className="h-4 w-4 relative">
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={style.buttonsCont}>
-                            {
-                                principalFilters.map((item, index) =>
-                                    <button key={item.Id}
-                                            onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                                            className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                        <div
-                                            className={index == 0 ? style.imageSizeButton : style.imageSizeButtonPrincipal}>
-                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                    <div className={style.carrouselContSub}>
+                        {
+                            listSuperCat.map((item) =>
+                                item.isSelected &&
+                                item.ListCategory.map(item2 =>
+                                    <button onClick={() => handleClickSubCategory(item2.Id, item.Id)}
+                                            key={item2.Id}
+                                            className={style.gridButtonSub}>
+                                        <div className={style.imageSize}>
+                                            <Image layout={"fill"} src={item2.ImagePath} alt={""}/>
                                         </div>
-                                        <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
-                                            {item.Name}
+                                        <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
+                                            {item2.Name}
+                                        </div>
+                                        <div className={`${utilities.gridMaxContent2} items-center`}>
+                                            <input onChange={() => handleClickSubCategory(item2.Id, item.Id)}
+                                                   className={style.inputRadioStyle}
+                                                   id={item2.Name}
+                                                   checked={item2.IsSelected}
+                                                   type='radio'
+                                                   name={item2.Name}/>
                                         </div>
                                     </button>
                                 )
-                            }
+                            )
+                        }
+                    </div>
+                </div>
+            }
 
+            <div>
+                <div className={displayPrinFil}>
+                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                        <div className={`${cssStyle.fontName}`}>
+                            Ordenar por:
                         </div>
+                        <div onClick={handleClick1} className="grid items-center">
+                            <div className="h-4 w-4 relative">
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={style.buttonsCont}>
+                        {
+                            principalFilters.map((item, index) =>
+                                <button key={item.Id}
+                                        onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                        className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                    <div
+                                        className={index == 0 ? style.imageSizeButton : style.imageSizeButtonPrincipal}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
+                            )
+                        }
+
                     </div>
                 </div>
             </div>

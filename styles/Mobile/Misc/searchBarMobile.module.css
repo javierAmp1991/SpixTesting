@@ -4,7 +4,7 @@
 }
 
 .styleInput{
-    text-indent: 12px;
+    text-indent: 40px;
     height: var(--sizeSerchBar);
     width: 100%;
     border-radius: 4px;
@@ -21,7 +21,7 @@
     position: absolute;
     height: var(--sizeSerchBar);
     top: 0;
-    right: 10px;
+    left: 10px;
     display: grid;
     align-items: center;
     justify-items: center;
