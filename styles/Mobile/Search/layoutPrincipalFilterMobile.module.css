@@ -111,7 +111,7 @@
     align-items: center;
     padding: 12px;
     gap: 12px;
-    background: linear-gradient(rgba(13,111,202,1) 0%, rgba(255,255,255, 1) 100%);
+    background: linear-gradient(rgba(13,111,202,1) 0%, rgb(137, 189, 238) 100%);
 }
 
 .gridResultFiltersOut {
@@ -288,6 +288,7 @@
     line-height: 14px;
     text-overflow: ellipsis;
     color: var(--colorPrimaryText);
+/*    color: white;*/
     overflow: hidden;
     margin-top: 12px;
 }
