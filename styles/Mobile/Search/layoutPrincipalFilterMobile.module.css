@@ -111,6 +111,7 @@
     align-items: center;
     padding: 12px;
     gap: 12px;
+    background: linear-gradient(rgb(11, 106, 194) 0%, rgba(255,255,255, 1) 100%);
 }
 
 .gridResultFiltersOut {
@@ -163,7 +164,7 @@
 
 .buttonsContSub {
     display: grid;
-    border-top: 2px solid var(--separationLineColor);
+    /*border-top: 2px solid var(--separationLineColor);*/
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
@@ -200,7 +201,7 @@
     justify-content: center;
     background: #fcfbfb;
     align-items: center;
-    gap: 7px;
+    gap: 6px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     padding: 6px 12px;
     border-radius: 4px;
