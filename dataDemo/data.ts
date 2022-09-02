@@ -2881,7 +2881,7 @@ export namespace SuperCategoryFood{
 export namespace SuperCategoryEntertaiment{
     export const listSuperCat: SuperCategoryFilter[] = [
         {
-            Name: "Club Nocturno",
+            Name: "Night Club",
             PathIcon: "/images/nightClubIcon.png",
             Id: "clubNocturno123",
             ListCategory: [
@@ -2937,7 +2937,7 @@ export namespace SuperCategoryEntertaiment{
                 },
                 {
                     Id: "abcdef",
-                    ImagePath: "/images/sub.png",
+                    ImagePath: "/images/imax.png",
                     Name: "IMAX",
                     IsSelected: false
                 },
@@ -3540,7 +3540,7 @@ export namespace SuperCategoryReview{
             isSelected: false
         },
         {
-            Name: "Club Nocturno",
+            Name: "Night Club",
             PathIcon: "/images/nightClubIcon.png",
             Id: "clubNocturno123",
             ListCategory: [
