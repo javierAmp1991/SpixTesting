@@ -12,7 +12,13 @@ import MainContainerFilters from "../components/Desktop/Search/mainContainerFilt
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
-import {CategoryFilter, CategoryFilterEntertaiment, reviewSearch, ReviewSearchData} from "../dataDemo/data";
+import {
+    CategoryFilter,
+    SuperCategoryReview,
+    reviewSearch,
+    ReviewSearchData,
+    SuperCategoryFilter
+} from "../dataDemo/data";
 import ReviewSearchViewMobile from "../components/Mobile/Search/reviewSearchViewMobile";
 import ReviewSearchViewDesktope from "../components/Desktop/Search/reviewSearchViewDesktop";
 import {CategoryPrincipalFiltersReview} from "../dataDemo/data";
@@ -21,7 +27,7 @@ let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function ReviewSearch() {
     const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersReview.listPrinciaplFiltersReview;
-    const categoryFilterRest: CategoryFilter[] = CategoryFilterEntertaiment.listCatEntertaiment;
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryReview.listSuperCat
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
@@ -82,7 +88,7 @@ export default function ReviewSearch() {
                                             </div>
                                             <div onClick={handleClick} className={"h-3 w-4 relative"}>
                                                 <Image layout={"fill"}
-                                                       src={GlobalConst.sourceImages.engineIcon}/>
+                                                       src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                             </div>
                                         </button>
                                     }

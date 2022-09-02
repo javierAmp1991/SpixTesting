@@ -3467,7 +3467,158 @@ export namespace SuperCategoryServices{
     ]
 }
 
-export namespace CategoryFilterRestaurant {
+export namespace SuperCategoryReview{
+    export const listSuperCat: SuperCategoryFilter[] = [
+        {
+            Name: "Peluqueria",
+            PathIcon: "/images/peluqueria.png",
+            Id: "Peluqueria123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/colorimetria.png",
+                    Name: "Colorimetria",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/lavado.png",
+                    Name: "Lavado",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/platinado.png",
+                    Name: "Platinado",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/ballayage.png",
+                    Name: "Ballayage",
+                    IsSelected: false
+                },
+            ],
+            isSelected: true
+        },
+        {
+            Name: "Futbol",
+            PathIcon: "/images/futbol.png",
+            Id: "futbol123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/chilena.png",
+                    Name: "Seleccion",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/colo.png",
+                    Name: "Colo Colo",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/uchile.png",
+                    Name: "U. de Chile",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/catolica.png",
+                    Name: "U. Catolica",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: "/images/wander.png",
+                    Name: "Wanderers",
+                    IsSelected: false
+                }
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Club Nocturno",
+            PathIcon: "/images/nightClubIcon.png",
+            Id: "clubNocturno123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/rock.png",
+                    Name: "Rock",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/trap.png",
+                    Name: "Trap",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/cumbia.png",
+                    Name: "Cumbia",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/regeton.png",
+                    Name: "Reggaeton",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Restaurant",
+            PathIcon: "/images/restaurant.png",
+            Id: "restauratn123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: true
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+    ]
+}
+
+/*export namespace CategoryFilterRestaurant {
     export const listCatRestaurant: CategoryFilter[] = [
         {
             Id: "abcd",
@@ -3588,7 +3739,7 @@ export namespace CategoryFilterSports {
             IsSelected: false
         },
     ]
-}
+}*/
 
 export namespace CategoryPrincipalFilters {
     export const listPrinciaplFilters: CategoryFilter[] = [
