@@ -105,13 +105,11 @@
     padding: 0 12px;
 }
 
-
 .gridAtributesAdvanced {
     display: grid;
     align-items: center;
     padding: 12px;
     gap: 12px;
-    background: linear-gradient(rgb(9, 105, 194) 0%, rgb(128, 181, 234) 100%);
 }
 
 .gridResultFiltersOut {
@@ -164,7 +162,7 @@
 
 .buttonsContSub {
     display: grid;
-    /*border-top: 2px solid var(--separationLineColor);*/
+    border-top: 2px solid var(--separationLineColor);
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
@@ -288,7 +286,6 @@
     line-height: 14px;
     text-overflow: ellipsis;
     color: var(--colorPrimaryText);
-    color: white;
     overflow: hidden;
     margin-top: 12px;
 }
