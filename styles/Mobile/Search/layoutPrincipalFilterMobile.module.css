@@ -169,7 +169,8 @@
     grid-auto-flow: column;
     gap: 16px;
     overflow-x: scroll;
-    padding: 16px;
+    padding: 20px 16px;
+    border-bottom: 2px solid var(--separationLineColor);
 }
 
 

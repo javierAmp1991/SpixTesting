@@ -185,7 +185,7 @@ export default function LayoutPrincipalFilterMobile({
                 }
 
 
-                <div className={style.buttonsCont}>
+                {/*<div className={style.buttonsCont}>
                     {
                         principalFilters.map((item) =>
                             <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
@@ -200,7 +200,7 @@ export default function LayoutPrincipalFilterMobile({
                         )
                     }
 
-                </div>
+                </div>*/}
             </div>
 
             {
@@ -239,6 +239,23 @@ export default function LayoutPrincipalFilterMobile({
                             }
                         </div>
                     </div>
+
+                    <div className={style.buttonsCont}>
+                    {
+                        principalFilters.map((item) =>
+                            <div key={item.Id} onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                 className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                <div className={style.imageSizeButton}>
+                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                </div>
+                                <div className={`${style.paddingText}`}>
+                                    {item.Name}
+                                </div>
+                            </div>
+                        )
+                    }
+
+                </div>
 
                     <div>
                         {
