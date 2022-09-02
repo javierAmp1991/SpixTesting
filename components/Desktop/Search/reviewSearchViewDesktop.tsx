@@ -49,8 +49,8 @@ export default function ReviewSearchViewDesktope({reviewSection}: { reviewSectio
                                             {item.Review}
                                         </div>
                                     </div>
-                                    <div className={utilities.styleLink}>
-                                        <span className={utilities.fontSecundaryText}>Por </span>{item.ByWho}
+                                    <div className={utilities.fontPrimaryText}>
+                                        Por {item.ByWho}
                                     </div>
                                 </div>
                             </div>

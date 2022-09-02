@@ -3088,40 +3088,34 @@ export namespace SuperCategorySports{
             ListCategory: [
                 {
                     Id: "abcd",
-                    ImagePath: GlobalConst.sourceImages.sushiIcon,
-                    Name: "Sushi",
+                    ImagePath: "/images/chilena.png",
+                    Name: "Seleccion",
                     IsSelected: false
                 },
                 {
                     Id: "abcde",
-                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
-                    Name: "Pizza",
+                    ImagePath: "/images/colo.png",
+                    Name: "Colo Colo",
                     IsSelected: false
                 },
                 {
                     Id: "abcdef",
-                    ImagePath: GlobalConst.sourceImages.hambIcon,
-                    Name: "Hamburguesa",
+                    ImagePath: "/images/uchile.png",
+                    Name: "U. de Chile",
                     IsSelected: false
                 },
                 {
                     Id: "abcdefg",
-                    ImagePath: GlobalConst.sourceImages.peruvianFood,
-                    Name: "Peruana",
+                    ImagePath: "/images/catolica.png",
+                    Name: "U. Catolica",
                     IsSelected: false
                 },
                 {
                     Id: "abcdefgh",
-                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
-                    Name: "Cafe",
+                    ImagePath: "/images/wander.png",
+                    Name: "Wanderers",
                     IsSelected: false
-                },
-                {
-                    Id: "abcdefghsdasw13",
-                    ImagePath: GlobalConst.sourceImages.postres,
-                    Name: "Postres",
-                    IsSelected: false
-                },
+                }
             ],
             isSelected: true
         },
