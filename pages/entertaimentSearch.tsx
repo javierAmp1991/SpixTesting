@@ -14,12 +14,18 @@ import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import {CategoryFilterEntertaiment, DropDownData, CategoryFilter, CategoryPrincipalFilters} from "../dataDemo/data";
+import {
+    SuperCategoryEntertaiment,
+    DropDownData,
+    CategoryFilter,
+    CategoryPrincipalFilters,
+    SuperCategoryFilter
+} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function SearchRestaurant() {
-    const categoryFilterRest: CategoryFilter[] = CategoryFilterEntertaiment.listCatEntertaiment;
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryEntertaiment.listSuperCat;
     const categoryPrincipalFilter: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);

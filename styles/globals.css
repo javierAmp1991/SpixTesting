@@ -31,7 +31,7 @@
     --paddingContentHomeYDesk: 40px;
     --transitionTimeDarkMode: .4s;
     --bgNormalInfo: white;
-    --colorShadow: #dedede;
+    --colorShadow: #eeeeee;
     --colorShadowBlue: #2d7dff;
     --boxShadowCard: 1px 1px 2px var(--colorShadow), -1px -1px 2px var(--colorShadow), 1px -1px 2px var(--colorShadow), -1px 1px 2px var(--colorShadow);
     --boxShadowBlue: 1px 1px 5px var(--colorShadowBlue), -1px -1px 5px var(--colorShadowBlue), 1px -1px 5px var(--colorShadowBlue), -1px 1px 5px var(--colorShadowBlue);
@@ -50,7 +50,7 @@
     --heightImageNewHomeDesk: 224px;
     --transitionHover: .4s;
     --scaleHover: 1.01;
-    --colorShadowHover: #adadad;
+    --colorShadowHover: #c2c1c1;
     --colorShadowHoverDarkMode: #ff7f23;
     --difShadowHover: 16px;
     --desplNegShadowHover: 6px;

@@ -15,7 +15,7 @@ import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {
-    SuperCategorySports,
+    SuperCategoryServices,
     DropDownDataSport,
     CategoryFilter,
     CategoryPrincipalFilters,
@@ -24,8 +24,8 @@ import {
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
-export default function SearchRestaurant() {
-    const categoryFilterRest: SuperCategoryFilter[] = SuperCategorySports.listSuperCat;
+export default function SearchServices() {
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryServices.listSuperCat;
     const categoryPrincipalFilter: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
@@ -36,7 +36,7 @@ export default function SearchRestaurant() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
-    const textResultSection: string = "Deportes";
+    const textResultSection: string = "Servicios";
     const isReview: boolean = true;
 
     //region desktop Components

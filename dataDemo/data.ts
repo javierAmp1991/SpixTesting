@@ -290,14 +290,9 @@ export namespace Menu {
             Id: "12345"
         },
         {
-            Name: "Comida",
-            Link: "/searchRestaurant",
-            Id: "12346"
-        },
-        {
-            Name: "Reseñas",
-            Link: "/reviewSearch",
-            Id: "12347"
+            Name: "Entretencion",
+            Link: "/entertaimentSearch",
+            Id: "123cdsf47dsd"
         },
         {
             Name: "Deportes",
@@ -305,9 +300,19 @@ export namespace Menu {
             Id: "12347lñfdsf"
         },
         {
-            Name: "Entretencion",
-            Link: "/entertaimentSearch",
-            Id: "123cdsf47dsd"
+            Name: "Comida",
+            Link: "/searchRestaurant",
+            Id: "12346"
+        },
+        {
+            Name: "Servicios",
+            Link: "/servicesSearch",
+            Id: "12347"
+        },
+        {
+            Name: "Reseñas",
+            Link: "/reviewSearch",
+            Id: "123478"
         }
     ]
 }
@@ -2687,8 +2692,785 @@ export class CategoryFilter {
 export class SuperCategoryFilter {
     Name: string
     Id: string
+    PathIcon: string
     ListCategory: CategoryFilter[]
     isSelected: boolean
+}
+
+export namespace SuperCategoryFood{
+    export const listSuperCat: SuperCategoryFilter[] = [
+        {
+            Name: "Restaurant",
+            PathIcon: "/images/restaurant.png",
+            Id: "restauratn123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: true
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: true
+        },
+        {
+            Name: "Restobar",
+            PathIcon: "/images/restobar.png",
+            Id: "restobar123",
+            ListCategory: [
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Buffet",
+            PathIcon: "/images/buffette.png",
+            Id: "buffet123",
+            ListCategory: [
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Cafeteria",
+            PathIcon: "/images/cofee.png",
+            Id: "cafeteria123",
+            ListCategory: [
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        }
+    ]
+}
+
+export namespace SuperCategoryEntertaiment{
+    export const listSuperCat: SuperCategoryFilter[] = [
+        {
+            Name: "Club Nocturno",
+            PathIcon: "/images/nightClubIcon.png",
+            Id: "clubNocturno123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/rock.png",
+                    Name: "Rock",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/trap.png",
+                    Name: "Trap",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/cumbia.png",
+                    Name: "Cumbia",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/regeton.png",
+                    Name: "Reggaeton",
+                    IsSelected: false
+                },
+            ],
+            isSelected: true
+        },
+        {
+            Name: "Cines",
+            PathIcon: "/images/cinemaIcon.png",
+            Id: "cines123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/3d.png",
+                    Name: "3D",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/sub.png",
+                    Name: "SUB",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/sub.png",
+                    Name: "DUB",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/sub.png",
+                    Name: "IMAX",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Conciertos",
+            PathIcon: "/images/concerts.png",
+            Id: "conciertos123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Zoologicos",
+            PathIcon: "/images/zooIcon.png",
+            Id: "zoologicos123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Festivales",
+            PathIcon: "/images/festival.png",
+            Id: "festivales123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        }
+    ]
+}
+
+export namespace SuperCategorySports{
+    export const listSuperCat: SuperCategoryFilter[] = [
+        {
+            Name: "Futbol",
+            PathIcon: "/images/futbol.png",
+            Id: "futbol123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: true
+        },
+        {
+            Name: "Boxeo",
+            PathIcon: "/images/box.png",
+            Id: "Boxeo123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Rugby",
+            PathIcon: "/images/rugby.png",
+            Id: "Rugby123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Volleyball",
+            PathIcon: "/images/volley.png",
+            Id: "Volleyball123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Basketball",
+            PathIcon: "/images/basket.png",
+            Id: "Basketball123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        }
+    ]
+}
+
+export namespace SuperCategoryServices{
+    export const listSuperCat: SuperCategoryFilter[] = [
+        {
+            Name: "Peluqueria",
+            PathIcon: "/images/peluqueria.png",
+            Id: "Peluqueria123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/colorimetria.png",
+                    Name: "Colorimetria",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/lavado.png",
+                    Name: "Lavado",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/platinado.png",
+                    Name: "Platinado",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/ballayage.png",
+                    Name: "Ballayage",
+                    IsSelected: false
+                },
+            ],
+            isSelected: true
+        },
+        {
+            Name: "Spa",
+            PathIcon: "/images/spa.png",
+            Id: "Spa123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Salon Belleza",
+            PathIcon: "/images/salonBelleza.png",
+            Id: "SalonBelleza123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+        {
+            Name: "Odontologia",
+            PathIcon: "/images/odontologia.png",
+            Id: "Odontologia123",
+            ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],
+            isSelected: false
+        },
+    ]
 }
 
 export namespace CategoryFilterRestaurant {

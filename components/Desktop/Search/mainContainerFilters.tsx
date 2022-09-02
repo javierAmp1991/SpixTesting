@@ -7,6 +7,9 @@ import React, {useState} from "react";
 import {SubcategoryFilter} from "./subcategoryContainer";
 import Image from "next/image";
 import {CategoryFilter} from "../../../dataDemo/data";
+import {SuperCategoryFilter} from "../../../dataDemo/data";
+const categoryTitle: string = "Categorias"
+const subcategoryTitle: string = "Subcategorias"
 
 
 export default function MainContainerFilters({
@@ -19,7 +22,7 @@ export default function MainContainerFilters({
                                              }:
                                                  {
                                                      isOpenFilter: boolean, isDarkMode: boolean,
-                                                     isCategory: boolean, listCategoryFilter: CategoryFilter[],
+                                                     isCategory: boolean, listCategoryFilter: SuperCategoryFilter[],
                                                      listPrincipalFilter: CategoryFilter[], isReview: boolean
                                                  }) {
 
@@ -29,21 +32,41 @@ export default function MainContainerFilters({
     let [listFilters, setListFilters] = useState(FiltersData.listFilters)
     let [selectedTagsShow, setSelectedItemShow] = useState([])
 
-    let [atributesFilters, setAtributesFilters] = useState(listCategoryFilter)
-    const handleClickFilter = (idFilter: string, isClicked: boolean) => {
-        const newListFilter = atributesFilters.map(item => {
+    let [listSuperCat, setListSuperCat] = useState(listCategoryFilter)
+    const handleClickFilter = (idFilter: string) => {
+        const newListSuperCat: SuperCategoryFilter[] = listSuperCat.map(item => {
             if (item.Id == idFilter) {
-                return {...item, IsSelected: isClicked}
-            } else return item
+                return {...item, isSelected: true}
+            } else return {...item, isSelected: false}
         })
-        setAtributesFilters(atributesFilters = newListFilter)
+        setListSuperCat(listSuperCat = newListSuperCat)
     }
+    const handleClickSubCategory = (idSubCat: string, idSupCat: string) => {
+        const newSuperCategory: SuperCategoryFilter[] = listSuperCat.map(item => {
+                if (idSupCat == item.Id) {
+                    const newSubCateogry: CategoryFilter[] = item.ListCategory.map(subItem => {
+                            if (subItem.Id == idSubCat) {
+                                return {...subItem, IsSelected: true}
+                            } else {
+                                return {...subItem, IsSelected: false}
+                            }
+                        }
+                    )
+                    return {...item, ListCategory: newSubCateogry}
+                } else {
+                    return item
+                }
+            }
+        )
+        setListSuperCat(listSuperCat = newSuperCategory)
+    }
+
     let [principalFilters, setPrincipalFilters] = useState(listPrincipalFilter)
     const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
         const newListFilter = principalFilters.map(item => {
             if (item.Id == idFilter) {
                 return {...item, IsSelected: isClicked}
-            } else return item
+            } else return {...item, IsSelected: false}
         })
         setPrincipalFilters(principalFilters = newListFilter)
     }
@@ -141,7 +164,7 @@ export default function MainContainerFilters({
 
     let [displaySub, setDisplaySub] = useState(style.displayInAtr)
     let [displayPrinFil, setDisplayPrinFil] = useState(style.displayInAtr)
-    let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayInAtr)
+    let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayOutAtr)
 
     function handleClick() {
         setDisplaySub(
@@ -179,39 +202,39 @@ export default function MainContainerFilters({
 
 
             {/*superCategory*/}
-            {isCategory&&
-            <div className={isOpenFilter ? style.displayIn : style.displayOut}>
-                {
-                    <div className={displaySuperCategory}>
-                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                            <div className={`${cssStyle.fontName}`}>
-                                Categorias
-                            </div>
-                            <div onClick={handleClick2} className="grid items-center">
-                                <div className="h-4 w-4 relative">
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+            {isCategory &&
+                <div className={isOpenFilter ? style.displayIn : style.displayOut}>
+                    {
+                        <div className={displaySuperCategory}>
+                            <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                                <div className={`${cssStyle.fontName}`}>
+                                    {categoryTitle}
+                                </div>
+                                <div onClick={handleClick2} className="grid items-center">
+                                    <div className="h-4 w-4 relative">
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                                    </div>
                                 </div>
                             </div>
+                            <div className={style.carrouselCont}>
+                                {
+                                    listSuperCat.map((item) =>
+                                        <button onClick={() => handleClickFilter(item.Id)}
+                                                key={item.Id}
+                                                className={item.isSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                            <div className={style.imageSize}>
+                                                <Image layout={"fill"} src={item.PathIcon} alt={""}/>
+                                            </div>
+                                            <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                                {item.Name}
+                                            </div>
+                                        </button>
+                                    )
+                                }
+                            </div>
                         </div>
-                        <div className={style.carrouselCont}>
-                            {
-                                atributesFilters.map((item) =>
-                                    <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                            key={item.Id}
-                                            className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                        <div className={style.imageSize}>
-                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                        </div>
-                                        <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                            {item.Name}
-                                        </div>
-                                    </button>
-                                )
-                            }
-                        </div>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
             }
 
             {/*subCategory*/}
@@ -221,7 +244,7 @@ export default function MainContainerFilters({
                     <div className={displaySub}>
                         <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                             <div className={`${cssStyle.fontName}`}>
-                                Categorias
+                                {subcategoryTitle}
                             </div>
                             <div onClick={handleClick} className="grid items-center">
                                 <div className="h-4 w-4 relative">
@@ -229,19 +252,30 @@ export default function MainContainerFilters({
                                 </div>
                             </div>
                         </div>
-                        <div className={style.carrouselCont}>
+                        <div className={style.carrouselContSub}>
                             {
-                                atributesFilters.map((item) =>
-                                    <button onClick={() => handleClickFilter(item.Id, !item.IsSelected)}
-                                            key={item.Id}
-                                            className={item.IsSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                        <div className={style.imageSize}>
-                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                        </div>
-                                        <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                            {item.Name}
-                                        </div>
-                                    </button>
+                                listSuperCat.map((item) =>
+                                    item.isSelected &&
+                                    item.ListCategory.map(item2 =>
+                                        <button onClick={() => handleClickSubCategory(item2.Id, item.Id)}
+                                                key={item2.Id}
+                                                className={style.gridButtonSub}>
+                                            <div className={style.imageSize}>
+                                                <Image layout={"fill"} src={item2.ImagePath} alt={""}/>
+                                            </div>
+                                            <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
+                                                {item2.Name}
+                                            </div>
+                                            <div className={`${utilities.gridMaxContent2} items-center`}>
+                                                <input onChange={() => handleClickSubCategory(item2.Id, item.Id)}
+                                                       className={style.inputRadioStyle}
+                                                       id={item2.Name}
+                                                       checked={item2.IsSelected}
+                                                       type='radio'
+                                                       name={item2.Name}/>
+                                            </div>
+                                        </button>
+                                    )
                                 )
                             }
                         </div>
