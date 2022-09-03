@@ -155,7 +155,8 @@ export function useMediaQuery(query) {
 
 export default function Index() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
+    const darkModeToggle = null
     const isSmallDown = useMediaQuery('(max-width: 1281px)');
 
     //region mobile components

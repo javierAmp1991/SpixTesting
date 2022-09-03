@@ -30,7 +30,8 @@ export default function SearchRestaurant() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
+    const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
@@ -38,6 +39,8 @@ export default function SearchRestaurant() {
     const isCategory: boolean = true;
     const textResultSection: string = "Deportes";
     const isReview: boolean = true;
+    const isDisplaySubCategory: boolean = false;
+
 
     //region desktop Components
     let dropDown =
@@ -117,7 +120,8 @@ export default function SearchRestaurant() {
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}/>
+                                                      isReview={isReview}
+                                                      isDisplaySubCategory={isDisplaySubCategory}/>
                             }
                         </div>
                         <div>

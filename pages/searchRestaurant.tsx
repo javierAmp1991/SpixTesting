@@ -14,7 +14,13 @@ import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import {SuperCategoryFood, DropDownDataRestaurant, CategoryFilter, SuperCategoryFilter, CategoryPrincipalFilters} from "../dataDemo/data";
+import {
+    SuperCategoryFood,
+    DropDownDataRestaurant,
+    CategoryFilter,
+    SuperCategoryFilter,
+    CategoryPrincipalFilters
+} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -24,13 +30,15 @@ export default function SearchRestaurant() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
+    const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
     const isReview: boolean = true;
+    const isDisplaySubCategory: boolean = false;
 
     //region desktop Components
     let dropDown =
@@ -110,7 +118,8 @@ export default function SearchRestaurant() {
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}/>
+                                                      isReview={isReview}
+                                                      isDisplaySubCategory={isDisplaySubCategory}/>
                             }
                         </div>
                         <div>

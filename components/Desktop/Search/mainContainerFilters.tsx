@@ -19,12 +19,13 @@ export default function MainContainerFilters({
                                                  isCategory,
                                                  listCategoryFilter,
                                                  listPrincipalFilter,
-                                                 isReview
+                                                 isReview,
+                                                 isDisplaySubCategory
                                              }:
                                                  {
                                                      isOpenFilter: boolean, isDarkMode: boolean,
                                                      isCategory: boolean, listCategoryFilter: SuperCategoryFilter[],
-                                                     listPrincipalFilter: CategoryFilter[], isReview: boolean
+                                                     listPrincipalFilter: CategoryFilter[], isReview: boolean, isDisplaySubCategory: boolean
                                                  }) {
 
     const cssStyle = getCssStyle()
@@ -163,15 +164,15 @@ export default function MainContainerFilters({
         setListFilters(listFilters = newListFilters)
     }
 
-    let [displaySub, setDisplaySub] = useState(style.displayOutAtr)
-    let [displayPrinFil, setDisplayPrinFil] = useState(style.displayInAtr)
+    let [displaySub, setDisplaySub] = useState(true)
+    let [displayPrinFil, setDisplayPrinFil] = useState(isDisplaySubCategory)
     let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayOutAtr)
 
-    function isSubCategoryFull() : boolean {
+    function isSubCategoryFull(): boolean {
         let isFull: boolean = true
-        listSuperCat.forEach(item =>{
-            if(item.isSelected){
-                if(item.ListCategory == null){
+        listSuperCat.forEach(item => {
+            if (item.isSelected) {
+                if (item.ListCategory == null) {
                     isFull = false
                 }
             }
@@ -180,13 +181,11 @@ export default function MainContainerFilters({
     }
 
     function handleClick() {
-        setDisplaySub(
-            displaySub == style.displayInAtr ? displaySub = style.displayOutAtr : displaySub = style.displayInAtr)
+        setDisplaySub(displaySub = !displaySub)
     }
 
     function handleClick1() {
-        setDisplayPrinFil(
-            displayPrinFil == style.displayInAtr ? displayPrinFil = style.displayOutAtr : displayPrinFil = style.displayInAtr)
+        setDisplayPrinFil(displayPrinFil = !displayPrinFil)
     }
 
     function handleClick2() {
@@ -255,7 +254,7 @@ export default function MainContainerFilters({
             {
                 isCategory &&
                 isSubCategoryFull() &&
-                <div className={displaySub}>
+                <div className={displaySub? style.displayOutAdb : style.displayInAdb}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                         <div className={`${cssStyle.fontName}`}>
                             {subcategoryTitle}
@@ -297,7 +296,7 @@ export default function MainContainerFilters({
             }
 
             <div>
-                <div className={displayPrinFil}>
+                <div className={displayPrinFil? style.displayOutAdb : style.displayInAdb}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                         <div className={`${cssStyle.fontName}`}>
                             Ordenar por:
@@ -332,7 +331,7 @@ export default function MainContainerFilters({
             {/*advancedFilters*/}
             {
                 isReview &&
-                <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
+                <div className={isOpenAdvancedFilter? style.displayOutAdb : style.displayInAdb}>
                     <div className={displayAdvanced}>
                         <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                             <div className={`${cssStyle.fontName}`}>

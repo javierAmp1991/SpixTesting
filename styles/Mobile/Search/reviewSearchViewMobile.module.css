@@ -65,3 +65,7 @@
     border-radius: 50%;
     overflow: hidden;
 }
+
+.paddingSeeMore{
+    padding: 24px 4px 12px 4px ;
+}

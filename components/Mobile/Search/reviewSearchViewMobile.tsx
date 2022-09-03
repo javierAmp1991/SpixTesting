@@ -1,5 +1,4 @@
 import Image from "next/image";
-import {review} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
 import style from "/styles/Mobile/Search/reviewSearchViewMobile.module.css"
@@ -26,6 +25,7 @@ export default function ReviewSearchViewMobile({reviewSection}: { reviewSection:
             <div className={style.gridReviews}>
                 {
                     reviewSection.listReview.map((item, index) =>
+                        index >= 0 && index <= 1 &&
                         <div key={index} className={style.cardReview}>
                             <div className="grid gap-3">
                                 <div className={style.gridProfile}>
@@ -59,6 +59,9 @@ export default function ReviewSearchViewMobile({reviewSection}: { reviewSection:
                         </div>
                     )
                 }
+            </div>
+            <div className={`${utilities.styleLink} ${style.paddingSeeMore}`}>
+                Ver mas
             </div>
         </div>
     )

@@ -58,6 +58,9 @@ export default function ReviewSearchViewDesktope({reviewSection}: { reviewSectio
                     )
                 }
             </div>
+            <div className={`${utilities.styleLink} ${style.paddingSeeMore}`}>
+                Ver mas
+            </div>
         </div>
     )
 }

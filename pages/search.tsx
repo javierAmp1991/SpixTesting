@@ -24,12 +24,15 @@ export default function Search() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
+    const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isReview: boolean = true;
     const isCategory: boolean = false;
+    const isDisplaySubCategory: boolean = true;
+
 
     //region desktop Components
     let dropDown =
@@ -112,7 +115,8 @@ export default function Search() {
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}/>
+                                                      isReview={isReview}
+                                                      isDisplaySubCategory={isDisplaySubCategory}/>
                             }
                         </div>
                         <div>
