@@ -147,7 +147,7 @@
 
 .gridButtonSub {
     display: grid;
-    grid-template-columns: max-content max-content max-content;
+    grid-template-columns: 42px 1fr max-content;
     align-items: center;
     justify-content: center;
     background: #fcfbfb;
@@ -236,7 +236,7 @@
 .textFilterSub {
     font-size: 14px;
     line-height: 14px;
-    text-align: center;
+    text-align:left;
     text-overflow: ellipsis;
     overflow: hidden;
 }

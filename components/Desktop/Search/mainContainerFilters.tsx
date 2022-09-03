@@ -163,7 +163,7 @@ export default function MainContainerFilters({
         setListFilters(listFilters = newListFilters)
     }
 
-    let [displaySub, setDisplaySub] = useState(style.displayInAtr)
+    let [displaySub, setDisplaySub] = useState(style.displayOutAtr)
     let [displayPrinFil, setDisplayPrinFil] = useState(style.displayInAtr)
     let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayOutAtr)
 

@@ -2876,7 +2876,7 @@ export namespace SuperCategoryFood{
                     Id: "abcde",
                     ImagePath: "/images/preparados.png",
                     Name: "Preparados",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcd",
@@ -2920,7 +2920,7 @@ export namespace SuperCategoryFood{
                     Id: "abcdef",
                     ImagePath: GlobalConst.sourceImages.hambIcon,
                     Name: "Hamburguesa",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcd",
@@ -2964,7 +2964,7 @@ export namespace SuperCategoryFood{
                     Id: "abcdefg",
                     ImagePath: "/images/espresso.png",
                     Name: "Espresso",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcd",
@@ -3007,7 +3007,7 @@ export namespace SuperCategoryEntertaiment{
                     Id: "abcd",
                     ImagePath: "/images/rock.png",
                     Name: "Rock",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcde",
@@ -3039,7 +3039,7 @@ export namespace SuperCategoryEntertaiment{
                     Id: "abcd",
                     ImagePath: "/images/3d.png",
                     Name: "3D",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcde",
@@ -3175,7 +3175,7 @@ export namespace SuperCategorySports{
                     Id: "abcd",
                     ImagePath: "/images/chilena.png",
                     Name: "Seleccion",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcde",
@@ -3374,7 +3374,7 @@ export namespace SuperCategoryServices{
                     Id: "abcd",
                     ImagePath: "/images/colorimetria.png",
                     Name: "Colorimetria",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcde",
@@ -3472,7 +3472,7 @@ export namespace SuperCategoryServices{
                     Id: "abcd",
                     ImagePath: "/images/caries.png",
                     Name: "Caries",
-                    IsSelected: false
+                    IsSelected: true
                 },
                 {
                     Id: "abcde",
