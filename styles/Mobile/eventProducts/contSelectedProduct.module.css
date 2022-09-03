@@ -4,7 +4,7 @@
     max-width: 768px;
     height: 81px;
     overflow: hidden;
-    top: calc(100% - 121px);
+    top: calc(100% - 81px);
     background: white;
     --spaceYContSelPro: 20px;
     --sizeLeftArrow: 20px;
@@ -74,7 +74,7 @@
     border-bottom: 1px solid var(--separationLineColor);
     border-radius: 16px 16px 0 0;
     position: fixed;
-    bottom: 40px;
+    bottom: 0;
     width: 100%;
     height: 0;
     overflow: hidden;
@@ -85,7 +85,7 @@
 
 .totalButtonContainerOpen {
     position: fixed;
-    bottom: 40px;
+    bottom: 0;
     height: 81px;
     z-index: 5000;
     width: 100%;
