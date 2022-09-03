@@ -1935,7 +1935,7 @@ export namespace DropDownDataServices{
         },
         {
             EventName: "Marcelos",
-            CoverImage: "/images/serv5.jpg",
+            CoverImage: "/images/serv5M.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
             MinDate: new Date(2022, 8, 5),
