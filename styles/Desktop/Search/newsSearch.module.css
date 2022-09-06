@@ -3,20 +3,60 @@
     aspect-ratio: 2/1;
     position: relative;
 }
-.mainCont{
-  box-shadow: var(--shadowUnderProducts);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: .4s;
-}
-.absCont{
-  padding: 8px 12px;
+
+.mainCont {
+    box-shadow: var(--shadowUnderProducts);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .4s;
 }
 
-.writeNew{
-  margin-top: 4px;
+.absCont {
+    padding: 8px 12px;
 }
 
-.mainCont:hover{
-transform: scale(1.05);
+.writeNew {
+    margin-top: 4px;
+    text-align: right;
+}
+
+.eventNew {
+    margin-top: 4px;
+}
+
+.mainCont:hover {
+    transform: scale(1.05);
+}
+
+.gridImageInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sizeImagePrincipal {
+    width: 100%;
+    aspect-ratio: 4/2;
+    position: relative;
+}
+
+.boxShadowCard {
+    box-shadow: var(--shadowUnderProducts);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contInfo {
+    padding: 16px;
+}
+
+.PrincipalGridNews {
+    display: grid;
+    gap: 40px;
+}
+
+.gridInfo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }

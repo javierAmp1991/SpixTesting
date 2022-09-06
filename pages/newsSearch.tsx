@@ -24,6 +24,9 @@ import {
 } from "../dataDemo/data";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
+import NewSearcPrincipalDesktop from "../components/Desktop/Search/newSearcPrincipalDesktop";
+import PublicityView from "../components/Desktop/CRM/publicityView";
+import {PublicityData} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -44,6 +47,8 @@ export default function ReviewSearch() {
     const isReview: boolean = false;
     const isDisplaySubCategory: boolean = true;
     const newsText: string = "Noticias";
+    const publicity: string = PublicityData.publicityList[0]
+    const publicity1: string = PublicityData.publicityList[1]
 
     //region desktop Components
 
@@ -133,12 +138,31 @@ export default function ReviewSearch() {
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {newsText}
                                 </div>
-                                <div className={style.gridNews}>
-                                    {
-                                        newSearchList.map((item) =>
-                                            <NewsSearchDesktop key={item.Id} item={item}/>
-                                        )
-                                    }
+                                <div className={style.PrincipalGridNews}>
+                                    <NewSearcPrincipalDesktop item={newSearchList[0]}/>
+                                    <PublicityView linkImage={publicity}/>
+
+                                    <div className={style.gridNews3}>
+                                        {
+                                            newSearchList.map((item, index) =>
+                                                index >= 1 && index <= 3 &&
+                                                <NewsSearchDesktop key={item.Id} item={item}/>
+                                            )
+                                        }
+                                    </div>
+
+                                    <PublicityView linkImage={publicity1}/>
+
+                                    <div className={style.gridNews2}>
+                                        {
+                                            newSearchList.map((item, index) =>
+                                                index > 3 &&
+                                                <NewsSearchDesktop key={item.Id} item={item}/>
+                                            )
+                                        }
+                                    </div>
+
+
                                 </div>
                             </div>
                             {buttonsNavegation}
