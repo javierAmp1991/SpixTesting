@@ -150,7 +150,6 @@ export default function ReviewSearch() {
                                             )
                                         }
                                     </div>
-
                                     <PublicityView linkImage={publicity1}/>
 
                                     <div className={style.gridNews2}>

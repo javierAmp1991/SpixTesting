@@ -11,7 +11,7 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                     <Image layout={"fill"} src={item.PathImage} alt={""}/>
                 </div>
                 <div className={style.gridInfo}>
-                    <div className={`${utilities.fontTitle}`}>
+                    <div className={`${utilities.fontName}`}>
                         {item.Title}
                     </div>
                     <div className={utilities.fontPrimaryText}>

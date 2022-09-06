@@ -2063,7 +2063,7 @@ export namespace DropDownNewSearch {
         },
         {
             Id: "123456",
-            Title: "Trap latino de primera para inaugurar el Share Festival",
+            Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
             SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
             PathImage: "/images/anuel.jpg",
             Event: "Evento generico 1",
@@ -2095,7 +2095,7 @@ export namespace DropDownNewSearch {
         },
         {
             Id: "123456",
-            Title: "Trap latino de primera para inaugurar el Share Festival",
+            Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
             SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
             PathImage: "/images/new2.webp",
             Event: "Evento generico 1",
@@ -2111,7 +2111,7 @@ export namespace DropDownNewSearch {
         },
         {
             Id: "1234asdsdh56",
-            Title: "Trap latino de primera para inaugurar el Share Festival",
+            Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
             SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
             PathImage: "/images/new4.webp",
             Event: "Evento generico 1",

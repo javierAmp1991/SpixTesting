@@ -1,6 +1,6 @@
 .publicityProperties {
     width: 100%;
-    height: 210px;
+    aspect-ratio: 6/1;
     object-fit: cover;
     object-position: center;
     position: relative;

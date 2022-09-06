@@ -11,7 +11,7 @@ export default function NewsSearchDesktop({item} : {item: News}){
                 <Image layout={"fill"} src={item.PathImage}/>
             </div>
             <div className={style.absCont}>
-                <div className={`${utilities.fontName} ${utilities.clamp1}`}>
+                <div className={`${utilities.fontName} ${utilities.clamp2}`}>
                     {item.Title}
                 </div>
                 <div className={`${utilities.fontPrimaryText} ${style.eventNew}`}>
