@@ -1,12 +1,13 @@
 import style from "/styles/Desktop/Misc/fullBanner.module.css"
-import utilities from "/styles/utilities.module.css"
+import Link from "next/link";
 import Image from "next/image";
-const idCarrouselBanner: string = "idCarrouselBanner"
 
-export default function FullBanner({item}) {
+export default function FullBanner({item} : {item: string}) {
     return (
-        <a className={`${style.sizeImageBanner} ${utilities.snapScroll}`}>
-            <Image priority={true} layout={"fill"} objectFit={"cover"} id={idCarrouselBanner} src={item} alt=""/>
-        </a>
+        <Link href={"/"}>
+            <div className={style.sizeImageBanner}>
+                <Image layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+            </div>
+        </Link>
     )
 }

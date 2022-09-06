@@ -171,7 +171,7 @@ export default function Index() {
                                                          listImages={CarrouselAutoHome.listImage}
                                                          gapLayout={gapLayout}/>
 
-    let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>
+    /*let informationMobile = <HomeLoggin isDarkMode={isDarkMode}></HomeLoggin>*/
 
     let dailyOfferMobile = <TitleSection titleLink={dailyOfferHeaderTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
@@ -349,10 +349,11 @@ export default function Index() {
             )
         }
     </LayoutCarrouselLoop>
+
     let carrouselAuto = <LayoutAutoCarrousel isDarkMode={isDarkMode}
                                              listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
-    let carrouselAuto1 = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
+   /* let carrouselAuto1 = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
         <div className={utilities.gridtest}>
             {
                 CarrouselAutoHome.listImage.map((item, index) =>
@@ -383,14 +384,15 @@ export default function Index() {
                 )
             }
         </div>
-    </LayoutCarrouselLoop>
+    </LayoutCarrouselLoop>*/
 
-    let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>
+   /* let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>*/
 
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
         <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
     </TitleSection>
+
     let mostPopular = <TitleSection darkModeState={isDarkMode} paddingTitle={titleLinkPadding}
                                     titleLink={mostPopularTleLink}>
         {
@@ -531,7 +533,7 @@ export default function Index() {
              Component: information,
              padding: paddingGeneralDesk
          },*/
-        {
+       {
             Component: dailyOffer,
             padding: paddingGeneralDesk
         },
@@ -586,17 +588,16 @@ export default function Index() {
     ]
 //endregion
     return (
-
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
-                <>
+                <div>
                     {carrouselBannerMobile}
                     <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
-                </>
+                </div>
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={darkModeToggle}>
-                <>
+                <div>
                     {carrouselBanner}
                     <div className={utilities.styleGradientIndex}>
                         <div className={utilities.maxWidthBodyContentSpix}>
@@ -606,7 +607,7 @@ export default function Index() {
                     <div className={utilities.maxWidthBodyContentSpix}>
                         <DefaultPage listItem={listDefaultPage}/>
                     </div>
-                </>
+                </div>
             </DefaultLayoutDesktop>
     )
 }

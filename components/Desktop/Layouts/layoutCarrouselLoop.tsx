@@ -4,7 +4,6 @@ import {GlobalConst} from "../../../public/globalConst";
 import React, {useEffect, useRef, useState} from "react";
 import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css";
 import styleCarrouselLoop from "/styles/Desktop/Layouts/layoutCarrouselLoop.module.css"
-import {LayoutCarrouselDeskProp} from "./layoutCarrousel";
 
 export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
     const mainDivRef = useRef(null)
@@ -14,9 +13,9 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
         const firstElement = mainDivRef.current.children[0];
         mainDivRef.current.style.transition = `1000ms linear`;
         mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
-        const transition = () =>{
+        const transition = () => {
             mainDivRef.current.style.transition = `none`;
-            mainDivRef.current.style.transform = `translateX(0px)`;
+            mainDivRef.current.style.transform = `translateX(0)`;
             mainDivRef.current.appendChild(firstElement);
             mainDivRef.current.removeEventListener('transitionend', transition)
         }
@@ -24,35 +23,36 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
     }
     const handleRightAuto = () => {
         const firstElement = mainDivRef.current.children[0];
-        mainDivRef.current.style.transition = `2000ms linear`;
+        mainDivRef.current.style.transition = `1000ms linear`;
         mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
-        const transition = () =>{
+        const transition = () => {
             mainDivRef.current.style.transition = `none`;
-            mainDivRef.current.style.transform = `translateX(0px)`;
+            mainDivRef.current.style.transform = `translateX(0)`;
             mainDivRef.current.appendChild(firstElement);
             mainDivRef.current.removeEventListener('transitionend', transition)
         }
         mainDivRef.current.addEventListener('transitionend', transition);
     }
+
     const handleLeft = () => {
-        const indexLastElement = children.length - 1
-        const lastElement = mainDivRef.current.children[indexLastElement];
+        const lastIndex: number = mainDivRef.current.children.length - 1;
+        const lastElement = mainDivRef.current.children[lastIndex];
         mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);
-
         mainDivRef.current.style.transition = `none`;
-        mainDivRef.current.style.transform = `translateX(${sizeDivRef.current.offsetWidth}px)`;
+        mainDivRef.current.style.transform = `translateX(-${sizeDivRef.current.offsetWidth}px)`;
 
-        setTimeout(()=>{
+        setTimeout(() => {
             mainDivRef.current.style.transition = `1000ms linear`;
-            mainDivRef.current.style.transform = `translateX(0)`;
+            mainDivRef.current.style.transform = `translateX(0px)`;
         }, 30)
     }
-    useEffect(()=>{
-        if(isAuto){
-            const interval = setInterval(handleRightAuto, 5000)
+
+    /*useEffect(() => {
+        if (isAuto) {
+            const interval = setInterval(handleRightAuto, 12000)
             return () => clearInterval(interval)
         }
-    })
+    })*/
 
     return (
         <div className={styles.mainDivCarrouselProperties}>
@@ -60,7 +60,7 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
                     style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    ${visibility ? utilities.opacity0 : ""}`}>
+                    ${visibility && utilities.opacity0}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
             </button>
 
@@ -76,7 +76,7 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
                     style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    ${visibility ? utilities.opacity0 : ""}`}>
+                    ${visibility && utilities.opacity0}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
             </button>
         </div>

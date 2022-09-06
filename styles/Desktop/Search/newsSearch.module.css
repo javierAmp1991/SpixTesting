@@ -1,0 +1,22 @@
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 2/1;
+    position: relative;
+}
+.mainCont{
+  box-shadow: var(--shadowUnderProducts);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: .4s;
+}
+.absCont{
+  padding: 8px 12px;
+}
+
+.writeNew{
+  margin-top: 4px;
+}
+
+.mainCont:hover{
+transform: scale(1.05);
+}

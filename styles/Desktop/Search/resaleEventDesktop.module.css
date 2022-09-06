@@ -1,0 +1,12 @@
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.sizeImage:hover {
+    transform: scale(1.05);
+}

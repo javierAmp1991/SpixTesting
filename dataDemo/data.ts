@@ -242,11 +242,9 @@ export namespace HomeBannerData {
         "/images/banner1.jpg",
         "/images/banner5.jpg",
         "/images/banner6.jpg",
-        "/images/banner2.jpg",
-        "/images/banner3.jpg",
-        "/images/banner1.jpg",
-        "/images/banner5.jpg",
-        "/images/banner6.jpg",
+        "/images/banner7.jpg",
+        "/images/banner8.jpg",
+        "/images/banner10.jpg",
     ]
 }
 
@@ -313,7 +311,17 @@ export namespace Menu {
             Name: "Reseñas",
             Link: "/reviewSearch",
             Id: "123478"
-        }
+        },
+        {
+            Name: "Noticias",
+            Link: "/newsSearch",
+            Id: "123478dasdsad123"
+        },
+        {
+            Name: "Reventa",
+            Link: "/resaleEventSearch",
+            Id: "123xcc478dasdsad123"
+        },
     ]
 }
 
@@ -363,9 +371,27 @@ export namespace DailyOfferData {
                 Include: "Dcto 2 Un.",
                 ImagePath: "/images/product2.jpg"
             },
-            {Name: "Producto 3.1", Price: 1990, DiscountPercent: 30, Include: null, ImagePath: "/images/product3.jpg"},
-            {Name: "Producto 4.1", Price: 2990, DiscountPercent: 25, Include: null, ImagePath: "/images/product4.jpg"},
-            {Name: "Producto 5.1", Price: 990, DiscountPercent: 30, Include: null, ImagePath: "/images/product5.jpg"},
+            {
+                Name: "Producto 3.1",
+                Price: 1990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product3.jpg"
+            },
+            {
+                Name: "Producto 4.1",
+                Price: 2990,
+                DiscountPercent: 25,
+                Include: null,
+                ImagePath: "/images/product4.jpg"
+            },
+            {
+                Name: "Producto 5.1",
+                Price: 990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product5.jpg"
+            },
             {
                 Name: "Producto 6.1",
                 Price: 9990,
@@ -373,16 +399,34 @@ export namespace DailyOfferData {
                 Include: "Dcto 2 Un.",
                 ImagePath: "/images/product6.jpg"
             },
-            {Name: "Producto 7.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product7.jpg"},
-            {Name: "Producto 8.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product8.jpg"},
-            {Name: "Producto 9.1", Price: 10990, DiscountPercent: 30, Include: null, ImagePath: "/images/product9.jpg"},
+            {
+                Name: "Producto 7.1",
+                Price: 10990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product7.jpg"
+            },
+            {
+                Name: "Producto 8.1",
+                Price: 10990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product8.jpg"
+            },
+            {
+                Name: "Producto 9.1",
+                Price: 10990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product9.jpg"
+            },
             {
                 Name: "Producto 10.1",
                 Price: 6990,
                 DiscountPercent: 30,
                 Include: null,
                 ImagePath: "/images/product10.jpg"
-            },
+            },/**/
         ]
     }
 }
@@ -1883,7 +1927,7 @@ export namespace DropDownDataSport {
     ]
 }
 
-export namespace DropDownDataServices{
+export namespace DropDownDataServices {
     export const listDropDown: EventLookUp[] = [
         {
             EventName: "Salon Fame",
@@ -2003,6 +2047,83 @@ export namespace DropDownDataServices{
             InVenues: "Cinemark, Cine Hoyts, Cine Planet",
             TicketPriceMin: 6990,
             TicketPriceMax: 9990,
+        },
+    ]
+}
+
+export namespace DropDownNewSearch {
+    export const listNews: News[] = [
+        {
+            Id: "12345",
+            Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+            SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+            PathImage: "/images/daddy.jpg"
+        },
+        {
+            Id: "123456",
+            Title: "Trap latino de primera para inaugurar el Share Festival",
+            SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+            PathImage: "/images/anuel.jpg"
+        },
+        {
+            Id: "1234567",
+            Title: "Ozzy Osbourne rompe nuevo récord: Número 1 del rock con su single «Patient Number 9»",
+            SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
+            PathImage: "/images/ossy.jpg"
+        },
+        {
+            Id: "12345678",
+            Title: "Queen anuncia los detalles de “Rhapsody Over London”, un concierto espectacular que se emitirá para todo el mundo",
+            SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
+            PathImage: "/images/queen.jpg"
+        },
+        {
+            Id: "12345",
+            Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+            SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+            PathImage: "/images/new1.webp"
+        },
+        {
+            Id: "123456",
+            Title: "Trap latino de primera para inaugurar el Share Festival",
+            SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+            PathImage: "/images/new2.webp"
+        },
+        {
+            Id: "123sdad45",
+            Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+            SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+            PathImage: "/images/new3.webp"
+        },
+        {
+            Id: "1234asdsdh56",
+            Title: "Trap latino de primera para inaugurar el Share Festival",
+            SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+            PathImage: "/images/new4.webp"
+        },
+        {
+            Id: "123456ñlsñdl87",
+            Title: "Ozzy Osbourne rompe nuevo récord: Número 1 del rock con su single «Patient Number 9»",
+            SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
+            PathImage: "/images/new5.webp"
+        },
+        {
+            Id: "1234567dsadpp9388",
+            Title: "Queen anuncia los detalles de “Rhapsody Over London”, un concierto espectacular que se emitirá para todo el mundo",
+            SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
+            PathImage: "/images/new6.webp"
+        },
+        {
+            Id: "12aswdñlsñdl87",
+            Title: "Ozzy Osbourne rompe nuevo récord: Número 1 del rock con su single «Patient Number 9»",
+            SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
+            PathImage: "/images/new7.webp"
+        },
+        {
+            Id: "12sadl67dsadpp9388",
+            Title: "Queen anuncia los detalles de “Rhapsody Over London”, un concierto espectacular que se emitirá para todo el mundo",
+            SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
+            PathImage: "/images/new8.webp"
         },
     ]
 }
@@ -2758,7 +2879,7 @@ class InformationHome {
     public LinkImage?: string;
 }
 
-class News {
+export class News {
     Id: string;
     Title: string;
     SubTitle: string;
@@ -2821,7 +2942,7 @@ export class SuperCategoryFilter {
     isSelected: boolean
 }
 
-export namespace SuperCategoryFood{
+export namespace SuperCategoryFood {
     export const listSuperCat: SuperCategoryFilter[] = [
         {
             Name: "Restaurant",
@@ -2996,7 +3117,7 @@ export namespace SuperCategoryFood{
     ]
 }
 
-export namespace SuperCategoryEntertaiment{
+export namespace SuperCategoryEntertaiment {
     export const listSuperCat: SuperCategoryFilter[] = [
         {
             Name: "Night Club",
@@ -3164,7 +3285,7 @@ export namespace SuperCategoryEntertaiment{
     ]
 }
 
-export namespace SuperCategorySports{
+export namespace SuperCategorySports {
     export const listSuperCat: SuperCategoryFilter[] = [
         {
             Name: "Futbol",
@@ -3363,7 +3484,7 @@ export namespace SuperCategorySports{
     ]
 }
 
-export namespace SuperCategoryServices{
+export namespace SuperCategoryServices {
     export const listSuperCat: SuperCategoryFilter[] = [
         {
             Name: "Peluqueria",
@@ -3492,7 +3613,7 @@ export namespace SuperCategoryServices{
     ]
 }
 
-export namespace SuperCategoryReview{
+export namespace SuperCategoryReview {
     export const listSuperCat: SuperCategoryFilter[] = [
         {
             Name: "Peluqueria",
@@ -3811,6 +3932,29 @@ export namespace CategoryPrincipalFiltersReview {
             Id: "12345abcdedasdsw",
             ImagePath: "/images/reviewDown.png",
             Name: "Calificacion",
+            IsSelected: false
+        },
+    ]
+}
+
+export namespace CategoryPrincipalFiltersSearch {
+    export const listPrinciaplFilters: CategoryFilter[] = [
+        {
+            Id: "1234abcd",
+            ImagePath: "/images/hearticonColor.png",
+            Name: "Mas Popular",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcde",
+            ImagePath: "/images/reviewUp.png",
+            Name: "Recientes",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcdedasdsw",
+            ImagePath: "/images/reviewDown.png",
+            Name: "Antiguos",
             IsSelected: false
         },
     ]

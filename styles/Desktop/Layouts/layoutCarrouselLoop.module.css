@@ -5,5 +5,5 @@
     grid-auto-flow: column;
 }
 .mainContCar{
-    overflow: scroll;
+    overflow: hidden;
 }

@@ -1,0 +1,7 @@
+.sizeImage{
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
