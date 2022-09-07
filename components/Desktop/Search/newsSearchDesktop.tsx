@@ -9,11 +9,11 @@ export default function NewsSearchDesktop({item}: { item: News }) {
     return (
         <div className={style.mainCont}>
             <div className={style.sizeImage}>
-                <Image layout={"fill"} src={item.PathImage}/>
+                <Image layout={"fill"} src={item.PathImage} alt={""}/>
             </div>
             <div className={style.absCont}>
                 <div>
-                    <div className={`${utilities.fontName} ${utilities.clamp2}`}>
+                    <div className={`${style.fontTitle} ${utilities.clamp2}`}>
                         {item.Title}
                     </div>
                     <div className={`${utilities.fontPrimaryText} ${style.eventNew}`}>
@@ -21,18 +21,21 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                     </div>
                 </div>
                 <div>
-                    <div className={`${utilities.clamp2} ${utilities.fontPrimaryText}`}>
+                    <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
                         {item.SubTitle}
                     </div>
-                <div className={`${utilities.styleLink} ${style.writeNew}`}>
-                    {writeRNew}
+                    <div className={`${utilities.styleLink} ${style.writeNew}`}>
+                        {writeRNew}
+                    </div>
                 </div>
-                </div>
-                <div className={style.gridButton}>
-                    <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
-                        Ir al Evento
-                    </button>
-                </div>
+                {
+                    item.HasEvent &&
+                    <div className={style.gridButton}>
+                        <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
+                            Ir al Evento
+                        </button>
+                    </div>
+                }
             </div>
 
         </div>

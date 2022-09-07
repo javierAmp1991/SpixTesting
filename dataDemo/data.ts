@@ -2059,7 +2059,8 @@ export namespace DropDownNewSearch {
             SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
             PathImage: "/images/daddy.jpg",
             Event: "Daddy Yankee On Tour",
-            Date: "Hoy"
+            Date: "Hoy",
+            HasEvent: true
         },
         {
             Id: "123456",
@@ -2067,7 +2068,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
             PathImage: "/images/anuel.jpg",
             Event: "Evento generico 1",
-            Date: "Hoy"
+            Date: "Hoy",
+            HasEvent: true
         },
         {
             Id: "1234567",
@@ -2075,7 +2077,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
             PathImage: "/images/ossy.jpg",
             Event: "Evento generico 1",
-            Date: "Ayer"
+            Date: "Ayer",
+            HasEvent: true
         },
         {
             Id: "12345678",
@@ -2083,7 +2086,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
             PathImage: "/images/queen.jpg",
             Event: "Evento generico 1",
-            Date: "Hace 2 dias"
+            Date: "Hace 2 dias",
+            HasEvent: false
         },
         {
             Id: "12345",
@@ -2091,7 +2095,8 @@ export namespace DropDownNewSearch {
             SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
             PathImage: "/images/new1.webp",
             Event: "Evento generico 1",
-            Date: "Ayer"
+            Date: "Ayer",
+            HasEvent: true
         },
         {
             Id: "123456",
@@ -2099,7 +2104,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
             PathImage: "/images/new2.webp",
             Event: "Evento generico 1",
-            Date: "Hoy"
+            Date: "Hoy",
+            HasEvent: false
         },
         {
             Id: "123sdad45",
@@ -2107,7 +2113,8 @@ export namespace DropDownNewSearch {
             SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
             PathImage: "/images/new3.webp",
             Event: "Evento generico 1",
-            Date: "Ayer"
+            Date: "Ayer",
+            HasEvent: true
         },
         {
             Id: "1234asdsdh56",
@@ -2115,7 +2122,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
             PathImage: "/images/new4.webp",
             Event: "Evento generico 1",
-            Date: "Hace 3 dias"
+            Date: "Hace 3 dias",
+            HasEvent: true
         },
         {
             Id: "123456ñlsñdl87",
@@ -2123,7 +2131,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
             PathImage: "/images/new5.webp",
             Event: "Evento generico 1",
-            Date: "Hoy"
+            Date: "Hoy",
+            HasEvent: true
         },
         {
             Id: "1234567dsadpp9388",
@@ -2131,7 +2140,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
             PathImage: "/images/new6.webp",
             Event: "Evento generico 1",
-            Date: "Hace 5 dias"
+            Date: "Hace 5 dias",
+            HasEvent: false
         },
         {
             Id: "12aswdñlsñdl87",
@@ -2139,7 +2149,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
             PathImage: "/images/new7.webp",
             Event: "Evento generico 1",
-            Date: "Ayer"
+            Date: "Ayer",
+            HasEvent: true
         },
         {
             Id: "12sadl67dsadpp9388",
@@ -2147,7 +2158,8 @@ export namespace DropDownNewSearch {
             SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
             PathImage: "/images/new8.webp",
             Event: "Evento generico 1",
-            Date: "Hace 1 Semana"
+            Date: "Hace 1 Semana",
+            HasEvent: true
         },
     ]
 }
@@ -2921,7 +2933,8 @@ export class News {
     SubTitle: string;
     PathImage: string;
     Event?: string;
-    Date?: string
+    Date?: string;
+    HasEvent?: boolean
 }
 
 export class review {
@@ -3806,6 +3819,161 @@ export namespace SuperCategoryReview {
     ]
 }
 
+export namespace SuperCategoryNews {
+    export const listSuperCat: SuperCategoryFilter[] = [
+        {
+            Name: "Peluqueria",
+            PathIcon: "/images/peluqueria.png",
+            Id: "Peluqueria123",
+            /*ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/colorimetria.png",
+                    Name: "Colorimetria",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/lavado.png",
+                    Name: "Lavado",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/platinado.png",
+                    Name: "Platinado",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/ballayage.png",
+                    Name: "Ballayage",
+                    IsSelected: false
+                },
+            ],*/
+            ListCategory: null,
+            isSelected: false
+        },
+        {
+            Name: "Futbol",
+            PathIcon: "/images/futbol.png",
+            Id: "futbol123",
+            /*ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/chilena.png",
+                    Name: "Seleccion",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/colo.png",
+                    Name: "Colo Colo",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/uchile.png",
+                    Name: "U. de Chile",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/catolica.png",
+                    Name: "U. Catolica",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: "/images/wander.png",
+                    Name: "Wanderers",
+                    IsSelected: false
+                }
+            ],*/
+            ListCategory: null,
+            isSelected: false
+        },
+        {
+            Name: "Night Club",
+            PathIcon: "/images/nightClubIcon.png",
+            Id: "clubNocturno123",
+            /*ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/rock.png",
+                    Name: "Rock",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/trap.png",
+                    Name: "Trap",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/cumbia.png",
+                    Name: "Cumbia",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/regeton.png",
+                    Name: "Reggaeton",
+                    IsSelected: false
+                },
+            ],*/
+            ListCategory: null,
+            isSelected: false
+        },
+        {
+            Name: "Restaurant",
+            PathIcon: "/images/restaurant.png",
+            Id: "restauratn123",
+            /*ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: GlobalConst.sourceImages.sushiIcon,
+                    Name: "Sushi",
+                    IsSelected: true
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: GlobalConst.sourceImages.pizzaIcon,
+                    Name: "Pizza",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: GlobalConst.sourceImages.hambIcon,
+                    Name: "Hamburguesa",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: GlobalConst.sourceImages.peruvianFood,
+                    Name: "Peruana",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: GlobalConst.sourceImages.cofeeIcon,
+                    Name: "Cafe",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefghsdasw13",
+                    ImagePath: GlobalConst.sourceImages.postres,
+                    Name: "Postres",
+                    IsSelected: false
+                },
+            ],*/
+            ListCategory: null,
+            isSelected: false
+        },
+    ]
+}
+
 /*export namespace CategoryFilterRestaurant {
     export const listCatRestaurant: CategoryFilter[] = [
         {
@@ -3992,6 +4160,29 @@ export namespace CategoryPrincipalFiltersSearch {
         {
             Id: "12345abcdedasdsw",
             ImagePath: "/images/reviewDown.png",
+            Name: "Antiguos",
+            IsSelected: false
+        },
+    ]
+}
+
+export namespace CategoryPrincipalFiltersNews {
+    export const listPrinciaplFilters: CategoryFilter[] = [
+        {
+            Id: "1234abcd",
+            ImagePath: "/images/hearticonColor.png",
+            Name: "Mas Popular",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcde",
+            ImagePath: "/images/mostRevent.png",
+            Name: "Recientes",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcdedasdsw",
+            ImagePath: "/images/mostOld.png",
             Name: "Antiguos",
             IsSelected: false
         },

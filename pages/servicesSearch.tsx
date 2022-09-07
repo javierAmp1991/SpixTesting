@@ -40,6 +40,7 @@ export default function SearchServices() {
     const textResultSection: string = "Servicios";
     const isReview: boolean = true;
     const isDisplaySubCategory: boolean = false;
+    const isPrincipalFill: boolean = true
 
     //region desktop Components
     let dropDown =
@@ -120,7 +121,8 @@ export default function SearchServices() {
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
                                                       isReview={isReview}
-                                                      isDisplaySubCategory={isDisplaySubCategory}/>
+                                                      isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill}/>
                             }
                         </div>
                         <div>

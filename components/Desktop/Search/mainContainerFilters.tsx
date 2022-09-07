@@ -20,12 +20,14 @@ export default function MainContainerFilters({
                                                  listCategoryFilter,
                                                  listPrincipalFilter,
                                                  isReview,
-                                                 isDisplaySubCategory
+                                                 isDisplaySubCategory,
+                                                 IsPrincipalFill
                                              }:
                                                  {
                                                      isOpenFilter: boolean, isDarkMode: boolean,
                                                      isCategory: boolean, listCategoryFilter: SuperCategoryFilter[],
-                                                     listPrincipalFilter: CategoryFilter[], isReview: boolean, isDisplaySubCategory: boolean
+                                                     listPrincipalFilter: CategoryFilter[], isReview: boolean, isDisplaySubCategory: boolean,
+                                                     IsPrincipalFill: boolean
                                                  }) {
 
     const cssStyle = getCssStyle()
@@ -169,7 +171,7 @@ export default function MainContainerFilters({
     let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayOutAtr)
 
     function isSubCategoryFull(): boolean {
-        let isFull: boolean = true
+        let isFull: boolean;
         listSuperCat.forEach(item => {
             if (item.isSelected) {
                 if (item.ListCategory == null) {
@@ -254,7 +256,7 @@ export default function MainContainerFilters({
             {
                 isCategory &&
                 isSubCategoryFull() &&
-                <div className={displaySub? style.displayOutAdb : style.displayInAdb}>
+                <div className={displaySub ? style.displayOutAdb : style.displayInAdb}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                         <div className={`${cssStyle.fontName}`}>
                             {subcategoryTitle}
@@ -295,43 +297,46 @@ export default function MainContainerFilters({
                 </div>
             }
 
-            <div>
-                <div className={displayPrinFil? style.displayOutAdb : style.displayInAdb}>
-                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                        <div className={`${cssStyle.fontName}`}>
-                            Ordenar por:
-                        </div>
-                        <div onClick={handleClick1} className="grid items-center">
-                            <div className="h-4 w-4 relative">
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+            {
+                IsPrincipalFill &&
+                <div>
+                    <div className={displayPrinFil ? style.displayOutAdb : style.displayInAdb}>
+                        <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                            <div className={`${cssStyle.fontName}`}>
+                                Ordenar por:
+                            </div>
+                            <div onClick={handleClick1} className="grid items-center">
+                                <div className="h-4 w-4 relative">
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={style.buttonsCont}>
-                        {
-                            principalFilters.map((item, index) =>
-                                <button key={item.Id}
-                                        onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                                        className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                    <div
-                                        className={index == 0 ? style.imageSizeButton : style.imageSizeButtonPrincipal}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
-                                    </div>
-                                    <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
-                                        {item.Name}
-                                    </div>
-                                </button>
-                            )
-                        }
+                        <div className={style.buttonsCont}>
+                            {
+                                principalFilters.map((item, index) =>
+                                    <button key={item.Id}
+                                            onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                            className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                        <div
+                                            className={index == 0 ? style.imageSizeButton : style.imageSizeButtonPrincipal}>
+                                            <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                        </div>
+                                        <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
+                                            {item.Name}
+                                        </div>
+                                    </button>
+                                )
+                            }
 
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
 
             {/*advancedFilters*/}
             {
                 isReview &&
-                <div className={isOpenAdvancedFilter? style.displayOutAdb : style.displayInAdb}>
+                <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
                     <div className={displayAdvanced}>
                         <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                             <div className={`${cssStyle.fontName}`}>

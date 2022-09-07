@@ -14,13 +14,13 @@ import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
 import {
     CategoryFilter,
-    SuperCategoryReview,
+    SuperCategoryNews,
     reviewSearch,
     ReviewSearchData,
     SuperCategoryFilter,
     DropDownNewSearch,
     News,
-    CategoryPrincipalFiltersSearch
+    CategoryPrincipalFiltersNews
 } from "../dataDemo/data";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
@@ -33,8 +33,8 @@ let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function ReviewSearch() {
     const newSearchList: News[] = DropDownNewSearch.listNews
-    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersSearch.listPrinciaplFilters;
-    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryReview.listSuperCat
+    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersNews.listPrinciaplFilters;
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryNews.listSuperCat
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
@@ -47,6 +47,7 @@ export default function ReviewSearch() {
     const isCategory: boolean = true;
     const isReview: boolean = false;
     const isDisplaySubCategory: boolean = true;
+    const isPrincipalFill: boolean = false
     const newsText: string = "Noticias";
     const publicity: string = PublicityData.publicityList[0]
     const publicity1: string = PublicityData.publicityList[1]
@@ -141,7 +142,8 @@ export default function ReviewSearch() {
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
                                                       isReview={isReview}
-                                                      isDisplaySubCategory={isDisplaySubCategory}/>
+                                                      isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill}/>
                             }
                         </div>
                         <div>

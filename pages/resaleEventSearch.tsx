@@ -43,6 +43,7 @@ export default function ResaleEventSearch() {
     const isReview: boolean = false;
     const isDisplaySubCategory: boolean = true;
     const resaleText: string = "Reventa";
+    const isPrincipalFill: boolean = true
 
     //region desktop Components
 
@@ -124,7 +125,8 @@ export default function ResaleEventSearch() {
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
                                                       isReview={isReview}
-                                                      isDisplaySubCategory={isDisplaySubCategory}/>
+                                                      isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill}/>
                             }
                         </div>
                         <div>
@@ -135,7 +137,7 @@ export default function ResaleEventSearch() {
                                 <div className={style.gridResaleEvents}>
                                     {
                                         newSearchList.map((item) =>
-                                            <ResaleEventDesktop item={item} key={item.EventId} />
+                                            <ResaleEventDesktop item={item} key={item.EventId}/>
                                         )
                                     }
                                 </div>
@@ -146,6 +148,7 @@ export default function ResaleEventSearch() {
                 </div>
             </DefaultLayoutDesktop>
     )
+
     function getCssStyle() {
         return {
             bg: isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal,

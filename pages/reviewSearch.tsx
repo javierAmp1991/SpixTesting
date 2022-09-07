@@ -40,6 +40,7 @@ export default function ReviewSearch() {
     const isCategory: boolean = true;
     const isReview: boolean = false;
     const isDisplaySubCategory: boolean = true;
+    const isPrincipalFill: boolean = true
 
     //region desktop Components
 
@@ -121,7 +122,8 @@ export default function ReviewSearch() {
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
                                                       isReview={isReview}
-                                                      isDisplaySubCategory={isDisplaySubCategory}/>
+                                                      isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill}/>
                             }
                         </div>
                         <div>

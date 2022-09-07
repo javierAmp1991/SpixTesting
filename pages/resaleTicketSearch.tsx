@@ -40,6 +40,7 @@ export default function SearchRestaurant() {
     const textResultSection: string = "Entradas";
     const isReview: boolean = true;
     const isDisplaySubCategory: boolean = false;
+    const isPrincipalFill: boolean = true
 
     //region desktop Components
     let dropDown =
@@ -120,7 +121,8 @@ export default function SearchRestaurant() {
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
                                                       isReview={isReview}
-                                                      isDisplaySubCategory={isDisplaySubCategory}/>
+                                                      isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill}/>
                             }
                         </div>
                         <div>

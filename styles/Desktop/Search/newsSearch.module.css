@@ -6,8 +6,6 @@
 
 .mainCont {
     box-shadow: var(--shadowUnderProducts);
-    border-radius: 8px;
-    overflow: hidden;
     transition: .4s;
 }
 
@@ -62,8 +60,6 @@
 .mainDiv {
     position: relative;
     box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
-    border-radius: 8px;
-    overflow: hidden;
     transition: .4s;
 }
 
@@ -123,6 +119,11 @@
     box-shadow: 0 3px 8px rgba(0,0,0,.2);
     border-radius: 6px;
     overflow: hidden;
+    transition: .4s;
+}
+
+.styleButtonNo:hover{
+    background: #f5f8f8;
 }
 
 .styleButton:hover {
@@ -132,4 +133,16 @@
 .styleTitle{
     font-size: 23px;
     font-weight: 500;
+}
+
+.fontTitle{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--colorName);
+}
+
+.fontSubTitle{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--colorSubTitles);
 }
