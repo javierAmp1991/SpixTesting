@@ -7,57 +7,32 @@ import Link from "next/link";
 const writeRNew: string = "Leer noticia"
 const goToTheEvent: string = "Ir al evento"
 
-export default function NewsSearchDesktop({item}: { item: News }) {
+export default function NewsSearchDesktop({item, isSubtitle}: { item: News, isSubtitle: boolean }) {
     return (
         <div className={style.mainCont}>
             <div className={style.sizeImage}>
                 <Image layout={"fill"} src={item.PathImage} alt={""}/>
             </div>
             <div className={style.absCont}>
-                <div>
-                    <div className={`${style.fontTitle} ${utilities.clamp2}`}>
-                        {item.Title}
-                    </div>
-                    <div className={`${utilities.fontSecundaryText} ${style.eventNew}`}>
-                        {item.Date}
-                    </div>
+                <div className={`${style.fontTitle} ${utilities.clamp2}`}>
+                    {item.Title}
                 </div>
-                <div>
-                   {/* <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
+                <div className={`${utilities.fontSecundaryText} ${style.eventNew}`}>
+                    {item.Date}
+                </div>
+                {
+                    isSubtitle &&
+                    <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
                         {item.SubTitle}
-                    </div>*/}
-                    <div className={style.gridLast}>
-                        <Link href={""}>
-                            <a className={`${utilities.styleLink} ${style.writeNew}`}>
-                                {writeRNew}
-                            </a>
-                        </Link>
-                        {/*{
-                            item.HasEvent &&
-                            <Link href={""}>
-                                <a className={utilities.styleLink}>
-                                    {goToTheEvent}
-                                </a>
-                            </Link>
-                        }
-                        {
-                            item.HasEvent &&
-                            <div className={style.gridButton}>
-                                <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
-                                    Ir al Evento
-                                </button>
-                            </div>
-                        }*/}
                     </div>
-                </div>
-                {/*{
-                    item.HasEvent &&
-                    <div className={style.gridButton}>
-                        <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
-                            Ir al Evento
-                        </button>
-                    </div>
-                }*/}
+                }
+                <Link href={""}>
+                    <a className={style.gridReadNew}>
+                        <span className={`${utilities.styleLink} ${style.writeNew}`}>
+                            {writeRNew}
+                        </span>
+                    </a>
+                </Link>
             </div>
 
         </div>

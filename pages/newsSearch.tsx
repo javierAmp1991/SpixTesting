@@ -161,7 +161,7 @@ export default function ReviewSearch() {
                                         {
                                             newSearchList.map((item, index) =>
                                                 index >= 1 && index <= 2 &&
-                                                <NewsSearchDesktop key={item.Id} item={item}/>
+                                                <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
@@ -171,7 +171,7 @@ export default function ReviewSearch() {
                                         {
                                             newSearchList.map((item, index) =>
                                                 index > 2 &&
-                                                <NewsSearchDesktop key={item.Id} item={item}/>
+                                                <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>

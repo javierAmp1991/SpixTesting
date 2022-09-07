@@ -3971,6 +3971,52 @@ export namespace SuperCategoryNews {
             ListCategory: null,
             isSelected: false
         },
+        {
+            Name: "Odontologia",
+            PathIcon: "/images/odontologia.png",
+            Id: "Odontologia123",
+            ListCategory:null,
+            isSelected: false
+        },
+        {
+            Name: "Boxeo",
+            PathIcon: "/images/box.png",
+            Id: "Boxeo123",
+            /*ListCategory: [
+                {
+                    Id: "abcd",
+                    ImagePath: "/images/chilena.png",
+                    Name: "Seleccion",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcde",
+                    ImagePath: "/images/colo.png",
+                    Name: "Colo Colo",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdef",
+                    ImagePath: "/images/uchile.png",
+                    Name: "U. de Chile",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefg",
+                    ImagePath: "/images/catolica.png",
+                    Name: "U. Catolica",
+                    IsSelected: false
+                },
+                {
+                    Id: "abcdefgh",
+                    ImagePath: "/images/wander.png",
+                    Name: "Wanderers",
+                    IsSelected: false
+                }
+            ],*/
+            ListCategory: null,
+            isSelected: false
+        },
     ]
 }
 

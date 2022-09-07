@@ -6,18 +6,18 @@
 }
 
 .mainCont:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .sizeBanner {
     width: 100%;
-    aspect-ratio: 3/1;
+    aspect-ratio: 4/1;
     position: relative;
 }
 
 .profileSize {
-    height: 48px;
-    width: 48px;
+    height: 16px;
+    width: 16px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
@@ -26,7 +26,8 @@
 .gridImageInfo {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 12px;
+    align-items: center;
+    gap: 8px;
 }
 
 .infoDiv {
@@ -41,4 +42,14 @@
     padding-top: 16px;
     display: grid;
     justify-items: center;
+}
+
+.sizeImage{
+    width: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.mainDivProd{
+    display: grid;
 }

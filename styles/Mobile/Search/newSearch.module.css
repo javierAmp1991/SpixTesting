@@ -22,14 +22,15 @@
 }
 
 .absCont {
-    padding: 16px 12px;
+    padding: 12px 16px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 2px;
 }
 
 .writeNew {
-    margin-top: 4px;
+    display: grid;
+    justify-content: right;
 }
 
 .writeNewPrincipal {
@@ -37,10 +38,10 @@
 }
 
 .gridInfo {
-    padding: 16px;
+    padding: 12px 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 4px;
 }
 
 .gridButton {
@@ -56,7 +57,7 @@
 }
 
 .styleButtonNo {
-    padding: 4px 24px;
+    padding: 2px 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     border-radius: 6px;
     overflow: hidden;

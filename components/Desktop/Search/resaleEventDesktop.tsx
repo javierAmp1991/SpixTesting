@@ -12,36 +12,34 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 <Image layout={"fill"} objectFit={"cover"} src={item.BannerImage} alt={""}/>
             </div>
             <div className={`${style.infoDiv} ${utilities.fontPrimaryText}`}>
+                <div className={utilities.fontName}>
+                    {item.NameEvent}
+                </div>
+
+                <div className={`${utilities.fontSecundaryText}`}>
+                    {
+                        item.ListProducts.map((product, index) =>
+                            <div className={style.mainDivProd}>
+                                <div className={style.sizeImage}>
+                                    <Image layout={"fill"} src={"/images/beb1.jpg"}/>
+                                </div>
+                                <div key={index}>
+                                    <div>{product.Name} </div>
+                                    <span>X {product.Amount}</span> - <span>${Intl.NumberFormat("ES-CL").format(Math.round(product.Price))}</span>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
+
                 <div className={style.gridImageInfo}>
                     <div className={style.profileSize}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
                     </div>
-                    <div>
-                        <div className={utilities.fontName}>
-                            {item.Name}
-                        </div>
-                        <div className={utilities.fontPrimaryText}>
-                            {item.NameEvent}
-                        </div>
+                    <div className={utilities.fontPrimaryText}>
+                        {item.Name}
                     </div>
                 </div>
-
-                <div>
-                    <div>
-                        Articulos:
-                    </div>
-                    <div className={`${utilities.fontSecundaryText}`}>
-                        {
-                            item.ListProducts.map((product, index) =>
-                                <div key={index}>
-                                    <span>{product.Name} </span>
-                                    <span>X {product.Amount}</span> - <span>${Intl.NumberFormat("ES-CL").format(Math.round(product.Price))}</span>
-                                </div>
-                            )
-                        }
-                    </div>
-                </div>
-
 
                 <Link href={""}>
                     <a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.divPrice}`}>
