@@ -3,6 +3,7 @@ import style from "/styles/Desktop/Search/newsSearch.module.css"
 import utilities from "/styles/utilities.module.css";
 import {News} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
+import Link from "next/link";
 
 export default function NewSearcPrincipalDesktop({item}: { item: News }) {
     return (
@@ -17,9 +18,12 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                             <div className={`${utilities.fontTitle}`}>
                                 {item.Title}
                             </div>
-                            <div className={utilities.fontPrimaryText}>
-                                Evento: {item.Event}
-                            </div>
+                            <Link href={"/eventPage"}>
+                                <a>
+                                    <span>Creado por: </span>
+                                    <span className={utilities.styleLink}>{item.Event}</span>
+                                </a>
+                            </Link>
                             <div className={utilities.fontPrimaryText}>
                                 Fecha: {item.Date}
                             </div>

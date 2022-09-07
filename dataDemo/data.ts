@@ -2058,8 +2058,8 @@ export namespace DropDownNewSearch {
             Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
             SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
             PathImage: "/images/daddy.jpg",
-            Event: "Evento generico 1",
-            Date: "Fecha generica"
+            Event: "El Huevo",
+            Date: "Hoy"
         },
         {
             Id: "123456",

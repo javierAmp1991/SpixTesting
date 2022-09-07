@@ -99,11 +99,3 @@
     flex-direction: column;
     gap: 6px;
 }
-
-.sizeBanner {
-    width: 100%;
-    aspect-ratio: 4/1;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-}
