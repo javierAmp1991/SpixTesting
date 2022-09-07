@@ -1,0 +1,243 @@
+.paddingTitle {
+    padding: 24px 16px 24px 16px;
+}
+
+.paddingSubtitle{
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.gridTitleIn{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.paddingCleanFilters {
+    padding: 16px 18px 16px 8px;
+}
+
+.styleTags {
+    justify-content: space-between;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background: var(--gradientSpix);
+    color: white;
+}
+
+.styleTagsDarkMode {
+    justify-content: space-between;
+    padding: 3px 8px;
+    border-radius: 3px;
+    background-color: #ee9617;
+    background-image: linear-gradient(315deg, #ee9617 0%, #fe5858 74%);
+    color: white;
+}
+
+.styleContainerSelected {
+    display: grid;
+    gap: 8px;
+    padding: 16px 8px;
+}
+
+.styleContainerSelectedMobile {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 8px;
+    overflow: scroll;
+    width: calc(100vw - 32px);
+}
+
+.styleContainerAtr {
+    display: grid;
+    gap: 8px;
+    padding: 0 7px 16px 7px;
+}
+
+.styleArrowClose {
+    height: 21px;
+    width: 21px;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+    position: relative;
+}
+
+.gridSelectedTags {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+}
+
+.paddingTitleAtr {
+    padding: 12px;
+}
+
+.gridAtributes {
+    display: grid;
+    gap: 12px;
+    padding: 0 16px 16px 16px;
+}
+
+.displayIn {
+
+}
+
+.displayOut {
+    display: none;
+}
+
+.displayInAtr {
+    height: 49px;
+    overflow: hidden;
+}
+
+.displayOutAtr {
+    height: 100%;
+}
+
+.displayInAdb {
+    height: 49px;
+    overflow: hidden;
+}
+
+.displayOutAdb {
+    height: 100%;
+}
+
+
+.carrouselCont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 12px 16px 18px 16px;
+    overflow-x: scroll;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.carrouselContSub {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 8px;
+    padding: 12px 16px 18px 16px;
+    overflow-x: scroll;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.buttonsCont {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.gridButton {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    padding: 8px 12px;
+    gap: 8px;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,.1);
+    border-radius: 5px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.gridButtonSub {
+    display: grid;
+    grid-template-columns: 42px 1fr max-content;
+    align-items: center;
+    justify-content: center;
+    background: #fcfbfb;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.gridButtonSelected {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    padding: 8px 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    background: #f1efef;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .3s;
+    transform: scale(1.05);
+}
+
+.imageSize {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+.imageSizeButton{
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+.imageSizeButtonPrincipal{
+    height: 20px;
+    width: 28px;
+    position: relative;
+}
+
+.gridFilterImage {
+    border-radius: 5px;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    transition: .1s;
+    padding: 12px 4px;
+}
+
+.gridFilterImageSelected {
+    border-radius: 5px;
+    transform: scale(1.05);
+    background: #f6f2f2;
+    box-shadow: 0 0 9px rgb(0, 140, 255);
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    transition: .1s;
+    padding: 12px 4px;
+}
+
+.paddingText {
+    padding-top: 2px;
+}
+
+@keyframes scaleClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.textFilter {
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.textFilterSub {
+    font-size: 14px;
+    line-height: 14px;
+    text-align:left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+

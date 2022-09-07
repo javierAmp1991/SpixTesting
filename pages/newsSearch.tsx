@@ -27,6 +27,7 @@ import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import NewSearcPrincipalDesktop from "../components/Desktop/Search/newSearcPrincipalDesktop";
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import {PublicityData} from "../dataDemo/data";
+import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -106,11 +107,21 @@ export default function ReviewSearch() {
                                     }
                                 </div>
                                 <div className={style.gridResult}>
-                                    {
-                                        newSearchList.map((item) =>
-                                            <NewsSearchMobile key={item.Id} item={item}/>
-                                        )
-                                    }
+                                    <div>
+                                        Princiapl New
+                                    </div>
+                                    <PublicityViewMobile linkImage={publicity}/>
+                                    <div>
+                                        Second New
+                                    </div>
+                                    <PublicityViewMobile linkImage={publicity1}/>
+                                    <div className={styleMobile.gridDropDownNew}>
+                                        {
+                                            newSearchList.map((item) =>
+                                                <NewsSearchMobile key={item.Id} item={item}/>
+                                            )
+                                        }
+                                    </div>
                                 </div>
                                 {buttonsNavegationMobile}
                             </div>

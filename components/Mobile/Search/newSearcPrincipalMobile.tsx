@@ -1,11 +1,10 @@
 import Image from "next/image";
-import style from "/styles/Desktop/Search/newsSearch.module.css"
+import style from "/styles/Mobile/Search/newsSearch.module.css"
 import utilities from "/styles/utilities.module.css";
 import {News} from "../../../dataDemo/data";
-import {GlobalConst} from "../../../public/globalConst";
 import Link from "next/link";
 
-export default function NewSearcPrincipalDesktop({item}: { item: News }) {
+export default function NewSearcPrincipalMobile({item}: { item: News }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.boxShadowCard}>
@@ -15,7 +14,7 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                     </div>
                     <div className={style.gridInfo}>
                         <div className={style.grid1}>
-                            <div className={style.styleTitle}>
+                            <div className={`${utilities.fontTitle}`}>
                                 {item.Title}
                             </div>
                             <Link href={""}>
@@ -24,23 +23,15 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                                     <span className={utilities.styleLink}> {item.Event}</span>
                                 </a>
                             </Link>
+                            <div className={utilities.fontPrimaryText}>
+                                Fecha: {item.Date}
+                            </div>
                         </div>
                         <div className={`${utilities.fontPrimaryText} ${utilities.clamp4}`}>
                             {item.SubTitle}
                         </div>
-                        <div className={utilities.fontPrimaryText}>
-                            <button className={style.styleButton}>
-                                Ir al Evento
-                            </button>
-                        </div>
-                        <div className={`${utilities.gridMaxContent2} justify-between`}>
-                            <div className={`${utilities.styleLink}`}>
-                                Leer Noticia
-                            </div>
-                            <div className={utilities.fontPrimaryText}>
-                                {item.Date}
-                            </div>
-
+                        <div className={`${utilities.styleLink} ${style.writeNewPrincipal}`}>
+                            Leer Noticia
                         </div>
                     </div>
                 </div>

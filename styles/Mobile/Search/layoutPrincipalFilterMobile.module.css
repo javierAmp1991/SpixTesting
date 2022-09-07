@@ -334,3 +334,16 @@
     transition: .6s linear;
 }
 
+.gridDropDownNew{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+}
+
+@media (min-width: 500px) {
+    .gridDropDownNew{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+}
