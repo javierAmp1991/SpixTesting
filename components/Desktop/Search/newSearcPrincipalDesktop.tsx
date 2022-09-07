@@ -18,30 +18,24 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                             <div className={style.styleTitle}>
                                 {item.Title}
                             </div>
-                            <Link href={""}>
-                                <a>
-                                    <span>Por: </span>
-                                    <span className={utilities.styleLink}> {item.Event}</span>
-                                </a>
-                            </Link>
+                            <div className={utilities.fontPrimaryText}>
+                                {item.Date}
+                            </div>
                         </div>
-                        <div className={`${utilities.fontPrimaryText} ${utilities.clamp4}`}>
-                            {item.SubTitle}
+                        <div>
+                            <div className={`${utilities.fontPrimaryText} ${utilities.clamp4}`}>
+                                {item.SubTitle}
+                            </div>
+                            <div className={`${utilities.styleLink} mt-2`}>
+                                Leer Noticia
+                            </div>
                         </div>
-                        <div className={utilities.fontPrimaryText}>
+                        <div className={`${utilities.fontPrimaryText} ${style.gridButton}`}>
                             <button className={style.styleButton}>
                                 Ir al Evento
                             </button>
                         </div>
-                        <div className={`${utilities.gridMaxContent2} justify-between`}>
-                            <div className={`${utilities.styleLink}`}>
-                                Leer Noticia
-                            </div>
-                            <div className={utilities.fontPrimaryText}>
-                                {item.Date}
-                            </div>
 
-                        </div>
                     </div>
                 </div>
             </div>

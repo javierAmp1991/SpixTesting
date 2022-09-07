@@ -101,11 +101,15 @@
     gap: 6px;
 }
 
+.gridButton{
+    display: grid;
+    justify-items: right;
+}
+
 .styleButton {
     display: grid;
     padding: 4px 42px;
     box-shadow: var(--shadowUnderProducts);
-    margin: auto;
     border-radius: 6px;
     overflow: hidden;
     transition: .4s;
