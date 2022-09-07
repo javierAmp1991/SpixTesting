@@ -32,7 +32,7 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                                 {writeRNew}
                             </a>
                         </Link>
-                        {
+                        {/*{
                             item.HasEvent &&
                             <Link href={""}>
                                 <a className={utilities.styleLink}>
@@ -40,16 +40,24 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                                 </a>
                             </Link>
                         }
+                        {
+                            item.HasEvent &&
+                            <div className={style.gridButton}>
+                                <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
+                                    Ir al Evento
+                                </button>
+                            </div>
+                        }*/}
                     </div>
                 </div>
-                {/*{
+                {
                     item.HasEvent &&
                     <div className={style.gridButton}>
                         <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
                             Ir al Evento
                         </button>
                     </div>
-                }*/}
+                }
             </div>
 
         </div>
