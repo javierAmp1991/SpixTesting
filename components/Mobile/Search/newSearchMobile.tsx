@@ -22,7 +22,7 @@ export default function NewsSearchMobile({item}: { item: News }) {
                     </div>
                 </div>
                 <div>
-                    <div className={`${utilities.clamp2} ${style.SubTitle}`}>
+                    <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
                         {item.SubTitle}
                     </div>
                     <div className={`${utilities.styleLink} ${style.writeNew}`}>
@@ -32,7 +32,7 @@ export default function NewsSearchMobile({item}: { item: News }) {
                 {
                     item.HasEvent &&
                     <div className={style.gridButton}>
-                        <button className={style.styleButton}>
+                        <button className={`${style.styleButton} ${utilities.fontPrimaryText}`}>
                             {goToEvent}
                         </button>
                     </div>

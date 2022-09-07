@@ -21,7 +21,7 @@ export default function NewSearcPrincipalMobile({item}: { item: News }) {
                             </div>
                         </div>
                         <div>
-                            <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
+                            <div className={`${style.fontSubTitle} ${utilities.clamp3}`}>
                                 {item.SubTitle}
                             </div>
                             <div className={`${utilities.styleLink} ${style.writeNewPrincipal}`}>
@@ -29,7 +29,7 @@ export default function NewSearcPrincipalMobile({item}: { item: News }) {
                             </div>
                         </div>
                         <div className={style.gridButton}>
-                            <button className={style.styleButton}>
+                            <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
                                 {goTotheEvent}
                             </button>
                         </div>

@@ -23,9 +23,9 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                     </div>
                 </div>
                 <div>
-                    <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
+                   {/* <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
                         {item.SubTitle}
-                    </div>
+                    </div>*/}
                     <div className={style.gridLast}>
                         <Link href={""}>
                             <a className={`${utilities.styleLink} ${style.writeNew}`}>
@@ -50,14 +50,14 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                         }*/}
                     </div>
                 </div>
-                {
+                {/*{
                     item.HasEvent &&
                     <div className={style.gridButton}>
                         <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
                             Ir al Evento
                         </button>
                     </div>
-                }
+                }*/}
             </div>
 
         </div>

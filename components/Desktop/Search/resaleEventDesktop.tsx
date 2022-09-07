@@ -34,7 +34,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         {
                             item.ListProducts.map((product, index) =>
                                 <div key={index}>
-                                    <span>- {product.Name} </span>
+                                    <span>{product.Name} </span>
                                     <span>X {product.Amount}</span> - <span>${Intl.NumberFormat("ES-CL").format(Math.round(product.Price))}</span>
                                 </div>
                             )
