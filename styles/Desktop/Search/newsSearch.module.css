@@ -103,7 +103,7 @@
 
 .styleButton {
     display: grid;
-    padding: 4px 32px;
+    padding: 4px 42px;
     box-shadow: var(--shadowUnderProducts);
     margin: auto;
     border-radius: 6px;
