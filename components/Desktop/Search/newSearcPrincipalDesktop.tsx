@@ -24,7 +24,7 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                         <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
                             {item.SubTitle}
                         </div>
-                        <div className={`${utilities.styleLink} ${style.writeNew}`}>
+                        <div className={`${utilities.styleLink} ${style.writeNewPrincipal}`}>
                             Leer Noticia
                         </div>
                     </div>
