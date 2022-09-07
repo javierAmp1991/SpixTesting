@@ -1,12 +1,44 @@
-.sizeImage {
-    width: 100%;
-    aspect-ratio: 3/4;
-    position: relative;
-    border-radius: 8px;
+.mainCont {
+    box-shadow: var(--shadowUnderProducts);
+    border-radius: 6px;
     overflow: hidden;
     transition: .4s;
 }
 
-.sizeImage:hover {
+.mainCont:hover {
     transform: scale(1.05);
+}
+
+.sizeBanner {
+    width: 100%;
+    aspect-ratio: 3/1;
+    position: relative;
+}
+
+.profileSize {
+    height: 48px;
+    width: 48px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.gridImageInfo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+}
+
+.infoDiv {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.divPrice{
+    border-top: 1px solid var(--separationLineColor);
+    padding-top: 16px;
+    display: grid;
+    justify-items: center;
 }

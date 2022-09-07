@@ -1,9 +1,8 @@
 import Image from "next/image";
-import style from "/styles/Mobile/Search/newsSearch.module.css"
+import style from "/styles/Mobile/Search/newSearch.module.css"
 import utilities from "/styles/utilities.module.css";
 import {News} from "../../../dataDemo/data";
-import Link from "next/link";
-
+const goTotheEvent: string = "Ir al Evento"
 export default function NewSearcPrincipalMobile({item}: { item: News }) {
     return (
         <div className={style.mainDiv}>
@@ -14,24 +13,25 @@ export default function NewSearcPrincipalMobile({item}: { item: News }) {
                     </div>
                     <div className={style.gridInfo}>
                         <div className={style.grid1}>
-                            <div className={`${utilities.fontTitle}`}>
+                            <div className={`${style.styleTitle} ${utilities.clamp2}`}>
                                 {item.Title}
                             </div>
-                            <Link href={""}>
-                                <a>
-                                    <span>Por: </span>
-                                    <span className={utilities.styleLink}> {item.Event}</span>
-                                </a>
-                            </Link>
-                            <div className={utilities.fontPrimaryText}>
-                                Fecha: {item.Date}
+                            <div className={utilities.fontSecundaryText}>
+                                {item.Date}
                             </div>
                         </div>
-                        <div className={`${utilities.fontPrimaryText} ${utilities.clamp4}`}>
-                            {item.SubTitle}
+                        <div>
+                            <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
+                                {item.SubTitle}
+                            </div>
+                            <div className={`${utilities.styleLink} ${style.writeNewPrincipal}`}>
+                                Leer Noticia
+                            </div>
                         </div>
-                        <div className={`${utilities.styleLink} ${style.writeNewPrincipal}`}>
-                            Leer Noticia
+                        <div className={style.gridButton}>
+                            <button className={style.styleButton}>
+                                {goTotheEvent}
+                            </button>
                         </div>
                     </div>
                 </div>

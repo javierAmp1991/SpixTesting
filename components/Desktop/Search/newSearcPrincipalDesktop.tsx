@@ -16,7 +16,7 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                             <div className={style.styleTitle}>
                                 {item.Title}
                             </div>
-                            <div className={utilities.fontPrimaryText}>
+                            <div className={utilities.fontSecundaryText}>
                                 {item.Date}
                             </div>
                         </div>

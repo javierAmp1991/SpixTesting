@@ -18,8 +18,8 @@ import {
     reviewSearch,
     ReviewSearchData,
     SuperCategoryFilter,
-    DropDownData,
-    CategoryPrincipalFiltersSearch, EventLookUp
+    DropDownResale,
+    CategoryPrincipalFiltersSearch, ResaleProduct
 } from "../dataDemo/data";
 import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop";
 import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
@@ -27,7 +27,7 @@ import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
 export default function ResaleEventSearch() {
-    const newSearchList: EventLookUp[] = DropDownData.listDropDown
+    const resaleSearchList: ResaleProduct[] = DropDownResale.listDropDown
     const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersSearch.listPrinciaplFilters;
     const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryReview.listSuperCat
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
@@ -89,11 +89,11 @@ export default function ResaleEventSearch() {
                                     </div>
                                     {
                                         isReview &&
-                                        <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                             <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                                 Filtros
                                             </div>
-                                            <div onClick={handleClick} className={"h-3 w-4 relative"}>
+                                            <div  className={"h-3 w-4 relative"}>
                                                 <Image layout={"fill"}
                                                        src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                             </div>
@@ -102,8 +102,8 @@ export default function ResaleEventSearch() {
                                 </div>
                                 <div className={style.gridResaleEventMobile}>
                                     {
-                                        newSearchList.map((item) =>
-                                            <ResaleEventMobile key={item.EventId} item={item}/>
+                                        resaleSearchList.map((item) =>
+                                            <ResaleEventMobile key={item.Id} item={item}/>
                                         )
                                     }
                                 </div>
@@ -136,8 +136,8 @@ export default function ResaleEventSearch() {
                                 </div>
                                 <div className={style.gridResaleEvents}>
                                     {
-                                        newSearchList.map((item) =>
-                                            <ResaleEventDesktop item={item} key={item.EventId}/>
+                                        resaleSearchList.map((item) =>
+                                            <ResaleEventDesktop key={item.Id} item={item}/>
                                         )
                                     }
                                 </div>

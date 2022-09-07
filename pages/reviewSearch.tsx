@@ -86,11 +86,11 @@ export default function ReviewSearch() {
                                     </div>
                                     {
                                         isReview &&
-                                        <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                             <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                                 Filtros
                                             </div>
-                                            <div onClick={handleClick} className={"h-3 w-4 relative"}>
+                                            <div  className={"h-3 w-4 relative"}>
                                                 <Image layout={"fill"}
                                                        src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                             </div>

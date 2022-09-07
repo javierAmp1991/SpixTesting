@@ -2,8 +2,10 @@ import Image from "next/image";
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Search/newsSearch.module.css"
 import {News} from "../../../dataDemo/data";
+import Link from "next/link";
 
 const writeRNew: string = "Leer noticia"
+const goToTheEvent: string = "Ir al evento"
 
 export default function NewsSearchDesktop({item}: { item: News }) {
     return (
@@ -16,7 +18,7 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                     <div className={`${style.fontTitle} ${utilities.clamp2}`}>
                         {item.Title}
                     </div>
-                    <div className={`${utilities.fontPrimaryText} ${style.eventNew}`}>
+                    <div className={`${utilities.fontSecundaryText} ${style.eventNew}`}>
                         {item.Date}
                     </div>
                 </div>
@@ -24,18 +26,30 @@ export default function NewsSearchDesktop({item}: { item: News }) {
                     <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
                         {item.SubTitle}
                     </div>
-                    <div className={`${utilities.styleLink} ${style.writeNew}`}>
-                        {writeRNew}
+                    <div className={style.gridLast}>
+                        <Link href={""}>
+                            <a className={`${utilities.styleLink} ${style.writeNew}`}>
+                                {writeRNew}
+                            </a>
+                        </Link>
+                        {
+                            item.HasEvent &&
+                            <Link href={""}>
+                                <a className={utilities.styleLink}>
+                                    {goToTheEvent}
+                                </a>
+                            </Link>
+                        }
                     </div>
                 </div>
-                {
+                {/*{
                     item.HasEvent &&
                     <div className={style.gridButton}>
                         <button className={`${style.styleButtonNo} ${utilities.fontPrimaryText}`}>
                             Ir al Evento
                         </button>
                     </div>
-                }
+                }*/}
             </div>
 
         </div>

@@ -3,16 +3,87 @@
     aspect-ratio: 2/1;
     position: relative;
 }
-.mainCont{
+
+.sizeImagePrincipal {
+    width: 100%;
+    aspect-ratio: 2/1;
+    position: relative;
+}
+
+.mainDiv {
+    position: relative;
     box-shadow: var(--shadowUnderProducts);
-    border-radius: 8px;
+    transition: .4s;
+}
+
+.mainCont {
+    box-shadow: var(--shadowUnderProducts);
+    transition: .4s;
+}
+
+.absCont {
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.writeNew {
+    margin-top: 4px;
+}
+
+.writeNewPrincipal {
+    margin-top: 4px;
+}
+
+.gridInfo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gridButton {
+    display: grid;
+    justify-items: right;
+}
+
+.styleButton {
+    display: grid;
+    padding: 4px 32px;
+    box-shadow: var(--shadowUnderProducts);
+    transition: .4s;
+}
+
+.styleButtonNo {
+    padding: 2px 16px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    border-radius: 6px;
     overflow: hidden;
     transition: .4s;
 }
-.absCont{
-    padding: 8px 12px;
+
+.styleButtonNo:hover {
+    background: #f5f8f8;
 }
 
-.writeNew{
-    margin-top: 4px;
+.styleButton:hover {
+    background: #f5f8f8;
+}
+
+.styleTitle {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.fontTitle {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--colorName);
+}
+
+.fontSubTitle {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--colorSubTitles);
 }

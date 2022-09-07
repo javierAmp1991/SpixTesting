@@ -4189,3 +4189,188 @@ export namespace CategoryPrincipalFiltersNews {
     ]
 }
 
+export namespace DropDownResale{
+    export const listDropDown: ResaleProduct[] = [
+        {
+            BannerImage: "/images/banner1.jpg",
+            Name: "Francisco Meneses",
+            ProfileImage: "/images/fotoPerfil1.png",
+            NameEvent: "Festival Orquesta",
+            TotalDiscount: 20,
+            Price: 20000,
+            ListProducts: [
+                {
+                    Name: "Entrada Palco",
+                    Price: 5990,
+                    Amount: 1
+                },
+                {
+                    Name: "Cerveza Cristal",
+                    Price: 1990,
+                    Amount: 2
+                },
+                {
+                    Name: "Papas Lays",
+                    Price: 2990,
+                    Amount: 1
+                }
+            ],
+            Id: "jsdha123dsuwq"
+
+        },
+        {
+            BannerImage: "/images/banner2.jpg",
+            Name: "Arturo Pascal",
+            ProfileImage: "/images/fotoPerfil2.png",
+            NameEvent: "Star Wars Sinfonico",
+            TotalDiscount: 30,
+            Price: 35000,
+            ListProducts: [
+                {
+                    Name: "Entrada Palco",
+                    Price: 5990,
+                    Amount: 1
+                },
+                {
+                    Name: "Cerveza Cristal",
+                    Price: 1990,
+                    Amount: 2
+                },
+                {
+                    Name: "Papas Lays",
+                    Price: 2990,
+                    Amount: 1
+                }
+            ],
+            Id: "jsdewegghauwq"
+
+        },
+        {
+            BannerImage: "/images/banner3.jpg",
+            Name: "Pilar Ruiz",
+            ProfileImage: "/images/fotoPerfil3.png",
+            NameEvent: "Seafret",
+            TotalDiscount: 40,
+            Price: 40000,
+            ListProducts: [
+                {
+                    Name: "Entrada Palco",
+                    Price: 5990,
+                    Amount: 1
+                },
+                {
+                    Name: "Cerveza Cristal",
+                    Price: 1990,
+                    Amount: 2
+                },
+                {
+                    Name: "Papas Lays",
+                    Price: 2990,
+                    Amount: 1
+                }
+            ],
+            Id: "jsdewqehauw2322q"
+
+        },
+        {
+            BannerImage: "/images/banner6.jpg",
+            Name: "Pedro Rodriguez",
+            ProfileImage: "/images/fotoPerfil4.png",
+            NameEvent: "Fiebre del memo",
+            TotalDiscount: 20,
+            Price: 27000,
+            ListProducts: [
+                {
+                    Name: "Entrada Palco",
+                    Price: 5990,
+                    Amount: 1
+                },
+                {
+                    Name: "Cerveza Cristal",
+                    Price: 1990,
+                    Amount: 2
+                },
+                {
+                    Name: "Papas Lays",
+                    Price: 2990,
+                    Amount: 1
+                }
+            ],
+            Id: "jsdhawqe12uwq"
+
+        },
+        {
+            BannerImage: "/images/banner5.jpg",
+            Name: "Isidora Alvarez",
+            ProfileImage: "/images/fotoPerfil5.png",
+            NameEvent: "Nikkita",
+            TotalDiscount: 20,
+            Price: 25000,
+            ListProducts: [
+                {
+                    Name: "Entrada Palco",
+                    Price: 5990,
+                    Amount: 1
+                },
+                {
+                    Name: "Cerveza Cristal",
+                    Price: 1990,
+                    Amount: 2
+                },
+                {
+                    Name: "Papas Lays",
+                    Price: 2990,
+                    Amount: 1
+                }
+            ],
+            Id: "jsdhauwq"
+
+        },
+        {
+            BannerImage: "/images/banner7.jpg",
+            Name: "Antonia Herrera",
+            ProfileImage: "/images/foto perfil.jpg",
+            NameEvent: "Guns N Roses",
+            TotalDiscount: 20,
+            Price: 60000,
+            ListProducts: [
+                {
+                    Name: "Entrada Palco",
+                    Price: 5990,
+                    Amount: 1
+                },
+                {
+                    Name: "Cerveza Cristal",
+                    Price: 1990,
+                    Amount: 2
+                },
+                {
+                    Name: "Papas Lays",
+                    Price: 2990,
+                    Amount: 1
+                }
+            ],
+            Id: "jsdhauwq"
+
+        },
+    ]
+}
+
+class productResale {
+    Name: string
+    Price: number
+    Amount: number
+}
+
+export class ResaleProduct{
+    Id: string
+    BannerImage: string
+    Name: string
+    ProfileImage: string
+    NameEvent: string
+    TotalDiscount: number
+    Price: number
+    ListProducts: productResale[]
+
+}
+

@@ -28,6 +28,7 @@ import NewSearcPrincipalDesktop from "../components/Desktop/Search/newSearcPrinc
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import {PublicityData} from "../dataDemo/data";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
+import NewSearcPrincipalMobile from "../components/Mobile/Search/newSearcPrincipalMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -96,11 +97,11 @@ export default function ReviewSearch() {
                                     </div>
                                     {
                                         isReview &&
-                                        <button className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                             <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                                 Filtros
                                             </div>
-                                            <div onClick={handleClick} className={"h-3 w-4 relative"}>
+                                            <div  className={"h-3 w-4 relative"}>
                                                 <Image layout={"fill"}
                                                        src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                             </div>
@@ -109,16 +110,17 @@ export default function ReviewSearch() {
                                 </div>
                                 <div className={style.gridResult}>
                                     <div>
-                                        Princiapl New
+                                        <NewSearcPrincipalMobile item={newSearchList[0]}/>
                                     </div>
                                     <PublicityViewMobile linkImage={publicity}/>
                                     <div>
-                                        Second New
+                                        <NewSearcPrincipalMobile item={newSearchList[1]}/>
                                     </div>
                                     <PublicityViewMobile linkImage={publicity1}/>
                                     <div className={styleMobile.gridDropDownNew}>
                                         {
-                                            newSearchList.map((item) =>
+                                            newSearchList.map((item, index) =>
+                                                index > 1 &&
                                                 <NewsSearchMobile key={item.Id} item={item}/>
                                             )
                                         }

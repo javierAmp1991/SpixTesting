@@ -177,6 +177,9 @@ export default function MainContainerFilters({
                 if (item.ListCategory == null) {
                     isFull = false
                 }
+                else{
+                    isFull = true
+                }
             }
         })
         return isFull

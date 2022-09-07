@@ -17,7 +17,6 @@
 }
 
 .writeNew {
-    margin-top: 4px;
     text-align: left;
 }
 
@@ -43,7 +42,7 @@
 }
 
 .mainCont:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .gridImageInfo {
@@ -136,13 +135,20 @@
 }
 
 .fontTitle{
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 500;
     color: var(--colorName);
 }
 
 .fontSubTitle{
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 400;
     color: var(--colorSubTitles);
+}
+
+.gridLast{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    margin-top: 8px;
 }
