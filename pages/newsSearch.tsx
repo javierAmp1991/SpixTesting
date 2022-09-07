@@ -142,26 +142,24 @@ export default function ReviewSearch() {
                                     <NewSearcPrincipalDesktop item={newSearchList[0]}/>
                                     <PublicityView linkImage={publicity}/>
 
-                                    <div className={style.gridNews3}>
+                                    <div className={style.gridNews2}>
                                         {
                                             newSearchList.map((item, index) =>
-                                                index >= 1 && index <= 3 &&
+                                                index >= 1 && index <= 2 &&
                                                 <NewsSearchDesktop key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
                                     <PublicityView linkImage={publicity1}/>
 
-                                    <div className={style.gridNews2}>
+                                    <div className={style.gridNews3}>
                                         {
                                             newSearchList.map((item, index) =>
-                                                index > 3 &&
+                                                index > 2 &&
                                                 <NewsSearchDesktop key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
-
-
                                 </div>
                             </div>
                             {buttonsNavegation}
