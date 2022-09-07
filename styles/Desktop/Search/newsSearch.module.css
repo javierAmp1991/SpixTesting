@@ -12,12 +12,15 @@
 }
 
 .absCont {
-    padding: 8px 12px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .writeNew {
     margin-top: 4px;
-    text-align: right;
+    text-align: left;
 }
 
 .writeNewPrincipal {
@@ -47,7 +50,7 @@
 
 .gridImageInfo {
     display: grid;
-    grid-template-columns: 48% 52%;
+    grid-template-columns: 45% 55%;
 }
 
 .sizeImagePrincipal {
@@ -92,7 +95,7 @@
     padding: 16px 24px 16px 16px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 20px;
 }
 
 .grid1 {
@@ -108,11 +111,18 @@
 
 .styleButton {
     display: grid;
-    padding: 4px 42px;
+    padding: 4px 32px;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
     overflow: hidden;
     transition: .4s;
+}
+
+.styleButtonNo{
+    padding: 2px 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .styleButton:hover {
