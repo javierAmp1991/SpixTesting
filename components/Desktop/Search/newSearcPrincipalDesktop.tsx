@@ -20,7 +20,6 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                             </div>
                             <Link href={"/eventPage"}>
                                 <a>
-                                    <span>Por: </span>
                                     <span className={utilities.styleLink}>{item.Event}</span>
                                 </a>
                             </Link>
