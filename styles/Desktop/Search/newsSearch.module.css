@@ -35,7 +35,7 @@
 
 .gridImageInfo {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 45% 55%;
 }
 
 .sizeImagePrincipal {
