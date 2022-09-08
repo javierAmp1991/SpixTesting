@@ -95,3 +95,9 @@
     width: 16px;
     position: relative;
 }
+
+.gridImageInfo2{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}

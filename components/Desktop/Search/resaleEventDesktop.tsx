@@ -38,7 +38,8 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     return (
         <div className={style.mainCont}>
             <div className={`${style.infoDiv} ${utilities.fontPrimaryText}`}>
-                <div className={style.gridImageInfo}>
+                {/*<div className={style.gridImageInfo}>*/}
+                <div className={style.gridImageInfo2}>
                     <div className={style.profileSize}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
                     </div>
@@ -49,14 +50,13 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 <div ref={mainDivTranslate} className={"relative w-full"}>
 
                     <button onClick={handleLeft}
-                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                            className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
+                            className={`${style.positionArrowLeft}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
                     </button>
 
-                    <div onPointerOver={showArrow} onPointerOut={hiddeArrow} ref={mainDivRef}
+                    <div ref={mainDivRef}
                          className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
                         {
                             item.ListProducts.map((product, index) =>
@@ -74,8 +74,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     </div>
 
                     <button onClick={handleRight}
-                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                            className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
+                            className={`${style.positionArrowRight}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                         </div>
