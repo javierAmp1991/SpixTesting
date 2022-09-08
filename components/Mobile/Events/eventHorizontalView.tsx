@@ -6,6 +6,13 @@ import React from "react";
 
 export default function EventHorizontalView({info, darkModeState}) {
     let cssStyles = getCssStyles()
+    function getNumber(num: number) : string{
+        let newNum: string = `${num}`
+        if(num >= 0 && num <=9){
+            newNum = `0${num}`
+        }
+        return newNum
+    }
     return (
         <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
             <a className="relative">
@@ -21,12 +28,12 @@ export default function EventHorizontalView({info, darkModeState}) {
                 </div>
             </a>
 
-            <div className={`${cssStyles.bgInfo} grid content-start p-2`}>
-                <div className={`${cssStyles.fontName} ${utilities.clamp2}`}>
+            <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
+                <div className={`${cssStyles.fontTitle} ${utilities.clamp2}`}>
                     {info.EventName}
                 </div>
 
-                <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
+                <div className={`${utilities.gridMaxContent2} items-center gap-1.5`}>
                     {
                         info.Rating != null ?
                             <>
@@ -34,7 +41,7 @@ export default function EventHorizontalView({info, darkModeState}) {
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.ratingNew} alt=""/>
                                 </div>
-                                <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
+                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12}`}>
                                     ({info.Rating})
                                 </div>
                             </>
@@ -44,14 +51,14 @@ export default function EventHorizontalView({info, darkModeState}) {
                                     <Image layout={"fill"}
                                            src={GlobalConst.sourceImages.ratingNull} alt=""/>
                                 </div>
-                                <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
+                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12}`}>
                                     (0)
                                 </div>
                             </>
                     }
                 </div>
 
-                <div className={`${cssStyles.fontPriceInclude} mb-2`}>
+                <div className={`${cssStyles.fontPriceInclude} pt-1`}>
                     {
                         info.TicketPriceMin == info.TicketPriceMax ?
                             <>
@@ -69,7 +76,7 @@ export default function EventHorizontalView({info, darkModeState}) {
                     }
                 </div>
 
-                <div className={`${cssStyles.fontSecundaryText} mb-1`}>
+                <div className={`${cssStyles.fontSecundaryText}`}>
                     {
                         info.MinDate == info.MaxDate ?
                             <>
@@ -79,13 +86,13 @@ export default function EventHorizontalView({info, darkModeState}) {
                             </>
                             :
                             <>
-                                <div>Desde el {info.MinDate.getDay()} de {info.MinDate.getMonth()}</div>
-                                <div>Desde el {info.MaxDate.getDay()} de {info.MaxDate.getMonth()}</div>
+                                <div>Desde el {getNumber(info.MinDate.getDay())} de {getNumber(info.MinDate.getMonth())}</div>
+                                <div>Desde el {getNumber(info.MaxDate.getDay())} de {getNumber(info.MaxDate.getMonth())}</div>
                             </>
                     }
                 </div>
 
-                <div className={`${cssStyles.fontSecundaryText} ${utilities.clamp2} mb-2`}>
+                <div className={`${cssStyles.fontSecundaryText} ${utilities.clamp2}`}>
                     En {info.InVenues}
                 </div>
 
@@ -103,7 +110,7 @@ export default function EventHorizontalView({info, darkModeState}) {
         return {
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,
+            fontTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
             fontSecundaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude
         }

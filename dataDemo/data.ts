@@ -1,6 +1,7 @@
 import {Filters} from "../components/Desktop/Search/subcategoryContainer";
 import {SubcategoryFilter} from "../components/Desktop/Search/subcategoryContainer";
 import {GlobalConst} from "../public/globalConst";
+import exp from "constants";
 
 export enum priceFilters {
     TitleSubcategory = 'Precios',
@@ -4420,6 +4421,24 @@ export namespace DropDownResale{
 
         },
     ]
+}
+
+export namespace EventResale{
+    export const eventResale: ResaleEvent = {
+        Title: "Tributo a PetShop Boys y Aha",
+        Subtitle: "Lo mejor del Rock ochentero",
+        Rating: 4,
+        Banner: "/images/banner.png",
+        ListResalePack: DropDownResale.listDropDown
+    }
+}
+
+export class ResaleEvent{
+    Title: string
+    Subtitle: string
+    Rating: number
+    Banner: string
+    ListResalePack: ResaleProduct[]
 }
 
 class productResale {

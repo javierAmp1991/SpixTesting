@@ -1,51 +1,50 @@
-import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
-import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import style from "/styles/Desktop/Search/layoutPrincipal.module.css";
-import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css";
-import utilities from "/styles/utilities.module.css";
+import style from "/styles/Desktop/Search/layoutPrincipal.module.css"
+import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css"
+import utilities from "/styles/utilities.module.css"
+import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
+import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
+import MainContainerFilters from "../components/Desktop/Search/mainContainerFilters";
 import React, {useState} from "react";
 import {useMediaQuery} from "./index";
 import LayoutPrincipalFilterMobile from "../components/Mobile/Search/layoutPrincipalFilterMobile";
+import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
 import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
-import MainContainerFilters from "../components/Desktop/Search/mainContainerFilters";
-import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
-import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
-import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
+import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
+import {ListEventSearch} from "../dataDemo/search/searchData";
 import {
+    SuperCategoryEntertaiment,
     CategoryFilter,
-    SuperCategoryReview,
-    reviewSearch,
-    ReviewSearchData,
-    SuperCategoryFilter,
-    DropDownResale,
-    CategoryPrincipalFiltersSearch, ResaleProduct
+    CategoryPrincipalFilters,
+    SuperCategoryFilter
 } from "../dataDemo/data";
-import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop";
-import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
+import ResaleEventViewDesktop from "../components/Desktop/Search/resaleEventViewDesktop";
+import ResaleEventviewMobile from "../components/Mobile/Search/resaleEventviewMobile";
 
-let AntSig: string[] = ["Anterior", "Siguiente"];
+let AntSig: string[] = ["Anterior", "Siguiente"]
 
-export default function ResaleEventSearch() {
-    const resaleSearchList: ResaleProduct[] = DropDownResale.listDropDown
-    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersSearch.listPrinciaplFilters;
-    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryReview.listSuperCat
-    const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
+export default function SearchRestaurant() {
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryEntertaiment.listSuperCat;
+    const categoryPrincipalFilter: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
     /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
     const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
+    const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isCategory: boolean = true;
-    const isReview: boolean = false;
-    const isDisplaySubCategory: boolean = true;
-    const resaleText: string = "Reventa";
+    const textResultSection: string = "Entradas";
+    const isReview: boolean = true;
+    const isDisplaySubCategory: boolean = false;
     const isPrincipalFill: boolean = true
 
     //region desktop Components
+    let dropDown = ListEventSearch.eventSearch.map((item) =>
+        <ResaleEventViewDesktop key={item.Id} darkModeState={isDarkMode} item={item}/>)
 
     let buttonsNavegation = <LayoutButtonNavegation>
         {
@@ -56,7 +55,9 @@ export default function ResaleEventSearch() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-
+    let dropDownMobile = ListEventSearch.eventSearch.map((item) =>
+        <ResaleEventviewMobile darkModeState={isDarkMode} item={item} key={item.Id}/>
+    )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>
             {
@@ -66,46 +67,40 @@ export default function ResaleEventSearch() {
             }
         </LayoutButtonNavegation>
     //endregion
+
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
-
-                    <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
+                    <LayoutPrincipalFilterMobile listPrincipalFilter={categoryPrincipalFilter}
                                                  listCategoryFilter={categoryFilterRest}
                                                  isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
                                                  isReview={isReview}/>
-
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
                             <div className={style.paddingContainer}>
                                 <div className={styleMobile.gridResultFiltersOut}>
                                     <div className={`${cssStyle.fontSubTitle}`}>
-                                        {resaleText}
+                                        {textResultSection}
                                     </div>
-                                    {
-                                        isReview &&
-                                        <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                            <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
-                                                Filtros
-                                            </div>
-                                            <div  className={"h-3 w-4 relative"}>
-                                                <Image layout={"fill"}
-                                                       src={GlobalConst.sourceImages.engineIcon} alt={""}/>
-                                            </div>
-                                        </button>
-                                    }
+                                    <button onClick={handleClick}
+                                            className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
+                                            Filtros
+                                        </div>
+                                        <div className={"h-3 w-4 relative"}>
+                                            <Image layout={"fill"}
+                                                   src={GlobalConst.sourceImages.engineIcon} alt={""}/>
+                                        </div>
+                                    </button>
                                 </div>
-                                <div className={style.gridResaleEventMobile}>
-                                    {
-                                        resaleSearchList.map((item) =>
-                                            <ResaleEventMobile key={item.Id} item={item}/>
-                                        )
-                                    }
+
+                                <div className={style.gridResult}>
+                                    {dropDownMobile}
                                 </div>
                                 {buttonsNavegationMobile}
                             </div>
@@ -119,8 +114,8 @@ export default function ResaleEventSearch() {
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters listCategoryFilter={categoryFilterRest}
-                                                      listPrincipalFilter={principalFilterReview}
+                                <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
+                                                      listCategoryFilter={categoryFilterRest}
                                                       isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
@@ -132,14 +127,10 @@ export default function ResaleEventSearch() {
                         <div>
                             <div className={style.paddingLeftResult}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
-                                    {resaleText}
+                                    {textResultSection}
                                 </div>
-                                <div className={style.gridResaleEvents}>
-                                    {
-                                        resaleSearchList.map((item) =>
-                                            <ResaleEventDesktop key={item.Id} item={item}/>
-                                        )
-                                    }
+                                <div className={cssStyle.gridSearch}>
+                                    {dropDown}
                                 </div>
                             </div>
                             {buttonsNavegation}
@@ -153,7 +144,7 @@ export default function ResaleEventSearch() {
         return {
             bg: isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal,
             bgInfo: isDarkMode ?
-                isOpenFilters && utilities.bgDarkModeInfo
+                isOpenFilters ? utilities.bgDarkModeInfo : ""
                 :
                 utilities.bgNormalInfo,
             gridFilterDesktop: isOpenFilters ? style.gridPrincipal : style.gridPrincipalClose,

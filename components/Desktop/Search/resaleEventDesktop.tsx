@@ -5,7 +5,6 @@ import utilities from "/styles/utilities.module.css";
 import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
-import {func} from "prop-types";
 
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
@@ -46,21 +45,21 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     return (
         <div className={style.gridNewPa}>
             <div className={cssStyle.gridType}>
-                <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                     className={utilities.fontPrimaryText}>
+                <div className={utilities.fontPrimaryText}>
                     Pack de {item.ListProducts.length} productos
                 </div>
+
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
                      ref={mainDivTranslate} className={"relative w-full"}>
-                    <button onClick={handleLeft}
+                    <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            onClick={handleLeft}
                             className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
                     </button>
 
-                    <div ref={mainDivRef}
-                         className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
+                    <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
                         {
                             item.ListProducts.map((product, index) =>
                                 <div key={index} className={style.mainDivProd}>
@@ -70,7 +69,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                     </div>
                                     <div className={style.gridPriceName}>
                                         <div>{product.Name} X {product.Amount}</div>
-                                        <span>${getMoneyValue(product.Price)}</span>
+                                        <span className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
                                     </div>
                                 </div>
                             )
@@ -114,12 +113,14 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
                         </div>
                     </div>
-                    <div className={style.gridImageInfo}>
-                        <div className={style.profileSize}>
-                            <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                        </div>
-                        <div className={style.overflowName}>
-                            {item.Name}
+                    <div className={style.divImageInfo}>
+                        <div className={style.gridImageInfo}>
+                            <div className={style.profileSize}>
+                                <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                            </div>
+                            <div className={style.overflowName}>
+                                {item.Name}
+                            </div>
                         </div>
                     </div>
                 </a>

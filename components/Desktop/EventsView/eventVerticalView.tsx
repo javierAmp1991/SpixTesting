@@ -5,20 +5,20 @@ import React, {useState} from "react";
 import Image from "next/image";
 
 export default function EventVerticalView({info, darkModeState, dropDown, isHideName}) {
-    let [displayName, setDisplayName] = useState(true)
+/*    let [displayName, setDisplayName] = useState(true)
     const handleShowName = () => setDisplayName(displayName = true)
-    const handleHiddeName = () => setDisplayName(displayName = false)
+    const handleHiddeName = () => setDisplayName(displayName = false)*/
     let cssStyles = getCssStyles()
 
     return (
-        <div onPointerOver={handleHiddeName}
-             onPointerOut={handleShowName}
+        <div /*onPointerOver={handleHiddeName}
+             onPointerOut={handleShowName}*/
              className={`${styles.principalGridVertical} ${cssStyles.borderCard}`}>
             <a className="relative">
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 ?
                         <div className={`${utilities.positionLastTicket} absolute z-20`}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket}/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
                         </div>
                         :
                         ""
@@ -28,11 +28,11 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                 </div>
             </a>
 
-            <div className={`${cssStyles.bgInfo} grid p-2 content-start`}>
+            <div className={`${cssStyles.bgInfo} grid px-6 py-2 content-start`}>
                 {
                     isHideName ?
                         <div
-                            className={`${cssStyles.fontName} ${utilities.clamp1} ${cssStyles.displayName} text-center`}>
+                            className={`${cssStyles.fontName} ${utilities.clamp1}`}>
                             {info.EventName}
                         </div>
                         :
@@ -42,14 +42,14 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
 
                 }
 
-                <div className={`${utilities.gridMaxContent2} items-center justify-center gap-1.5 mb-2`}>
+                <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
                     {
                         info.Rating != null ?
                             <>
                                 <div className={utilities.ratingStarsProperties}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
                                 </div>
-                                <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
+                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                     ({info.Rating})
                                 </div>
                             </>
@@ -58,14 +58,14 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                                 <div className={utilities.ratingStarsProperties}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
                                 </div>
-                                <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
+                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
                                     (0)
                                 </div>
                             </>
                     }
                 </div>
 
-                <div className={`${cssStyles.fontPriceInclude} text-center mb-1`}>
+                <div className={`${cssStyles.fontPriceInclude}  mb-1`}>
                     {
                         info.TicketPriceMin == info.TicketPriceMax ?
                             <>
@@ -93,7 +93,7 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
             fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,
             fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude,
-            displayName: displayName ? styles.displayIn : styles.displayOut
+            /*displayName: displayName ? styles.displayIn : styles.displayOut*/
         }
     }
 }
