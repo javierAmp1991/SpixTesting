@@ -5,10 +5,6 @@
     transition: .4s;
 }
 
-.mainCont:hover {
-    transform: scale(1.03);
-}
-
 .sizeBanner {
     width: 100%;
     aspect-ratio: 4/1;
@@ -16,8 +12,8 @@
 }
 
 .profileSize {
-    height: 16px;
-    width: 16px;
+    height: 24px;
+    width: 24px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
@@ -37,19 +33,53 @@
     gap: 12px;
 }
 
-.divPrice{
+.divPrice {
     border-top: 1px solid var(--separationLineColor);
-    padding-top: 16px;
-    display: grid;
-    justify-items: center;
+    padding-top: 12px;
+    align-items: center;
 }
 
-.sizeImage{
+.sizeImage {
     width: 60px;
     height: 60px;
     position: relative;
 }
 
-.mainDivProd{
+.mainDivProd {
     display: grid;
+    justify-items: center;
+}
+
+.gridProducts {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+.gridPriceName {
+    display: grid;
+    justify-items: center;
+}
+
+.sizeArrow {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: var(--boxShadowCard);
+}
+
+.positionArrowLeft {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 0;
+}
+
+.positionArrowRight {
+    position: absolute;
+    top: calc(50% - 10px);
+    right: 0;
 }

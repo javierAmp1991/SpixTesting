@@ -46,7 +46,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured, s
                     style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    ${visibility ? utilities.opacity0 : ""}`}>
+                    ${visibility && utilities.opacity0}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
             </button>
 
@@ -68,7 +68,7 @@ export default function LayoutCarrousel({children, layoutProp, handleFeatured, s
                     style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    ${visibility ? utilities.opacity0 : ""}`}>
+                    ${visibility && utilities.opacity0}`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
             </button>
         </div>

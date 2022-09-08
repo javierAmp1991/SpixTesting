@@ -119,8 +119,6 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                     </div>
                 )}
             </div>
-            <div onClick={handleLeft}>mover derecha</div>
-            <div onClick={handleRight}>mover izquierda</div>
         </div>
 
     )

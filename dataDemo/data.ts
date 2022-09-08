@@ -4259,6 +4259,11 @@ export namespace DropDownResale{
                     Name: "Papas Lays",
                     Price: 2990,
                     Amount: 1
+                },
+                {
+                    Name: "Coca-Cola",
+                    Price: 1990,
+                    Amount: 1
                 }
             ],
             Id: "jsdha123dsuwq"
@@ -4285,6 +4290,11 @@ export namespace DropDownResale{
                 {
                     Name: "Papas Lays",
                     Price: 2990,
+                    Amount: 1
+                },
+                {
+                    Name: "Coca-Cola",
+                    Price: 1990,
                     Amount: 1
                 }
             ],
@@ -4313,6 +4323,11 @@ export namespace DropDownResale{
                     Name: "Papas Lays",
                     Price: 2990,
                     Amount: 1
+                },
+                {
+                    Name: "Coca-Cola",
+                    Price: 1990,
+                    Amount: 1
                 }
             ],
             Id: "jsdewqehauw2322q"
@@ -4339,6 +4354,11 @@ export namespace DropDownResale{
                 {
                     Name: "Papas Lays",
                     Price: 2990,
+                    Amount: 1
+                },
+                {
+                    Name: "Coca-Cola",
+                    Price: 1990,
                     Amount: 1
                 }
             ],
@@ -4367,6 +4387,11 @@ export namespace DropDownResale{
                     Name: "Papas Lays",
                     Price: 2990,
                     Amount: 1
+                },
+                {
+                    Name: "Coca-Cola",
+                    Price: 1990,
+                    Amount: 1
                 }
             ],
             Id: "jsdhauwq"
@@ -4393,6 +4418,11 @@ export namespace DropDownResale{
                 {
                     Name: "Papas Lays",
                     Price: 2990,
+                    Amount: 1
+                },
+                {
+                    Name: "Coca-Cola",
+                    Price: 1990,
                     Amount: 1
                 }
             ],
