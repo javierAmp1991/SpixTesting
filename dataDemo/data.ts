@@ -4240,7 +4240,7 @@ export namespace DropDownResale{
         {
             BannerImage: "/images/banner1.jpg",
             Name: "Francisco Meneses",
-            ProfileImage: "/images/fotoPerfil1.png",
+            ProfileImage: "/images/fotoPerfil7.jpg",
             NameEvent: "Festival Orquesta",
             TotalDiscount: 20,
             Price: 20000,

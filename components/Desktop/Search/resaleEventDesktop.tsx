@@ -46,7 +46,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         {item.Name}
                     </div>
                 </div>
-                <div ref={mainDivTranslate} className={"relative"}>
+                <div ref={mainDivTranslate} className={"relative w-full"}>
 
                     <button onClick={handleLeft}
                             onPointerOver={showArrow} onPointerOut={hiddeArrow}
@@ -62,7 +62,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             item.ListProducts.map((product, index) =>
                                 <div key={index} className={style.mainDivProd}>
                                     <div className={style.sizeImage}>
-                                        <Image priority={true} layout={"fill"} src={"/images/beb1.jpg"} alt={""}/>
+                                        <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"} alt={""}/>
                                     </div>
                                     <div className={style.gridPriceName}>
                                         <div>{product.Name} X {product.Amount}</div>
