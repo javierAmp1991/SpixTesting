@@ -5,18 +5,19 @@ import utilities from "/styles/utilities.module.css";
 import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
+import PopUpContainer from "../Misc/popUpContainer";
 
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
-    function getMoneyValue(num: number): string {
-        return Intl.NumberFormat("ES-CL").format(Math.round(num))
-    }
-
     let [visibility, setVisibility] = useState(true);
+    let[displaPopUp, setDisplayPopUp] = useState(false)
     const mainDivRef = useRef(null)
     const mainDivTranslate = useRef(null)
     const cssStyle = getCssStyle()
 
+    const handlePopUp = () => {
+        setDisplayPopUp(displaPopUp = !displaPopUp)
+    }
     const handleRight = () => {
         const firstElement = mainDivRef.current.children[0];
         mainDivRef.current.style.transition = `1000ms linear`;
@@ -47,16 +48,18 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 <div className={utilities.fontName}>
                     Pack de {item.ListProducts.length} productos
                 </div>
+                <button onClick={handlePopUp} className={utilities.styleLink}>
+                    Ver productos
+                </button>
 
-                <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                     ref={mainDivTranslate} className={"relative w-full"}>
-                    <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                <div ref={mainDivTranslate} className={"relative w-full"}>
+                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
                             className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
-                    </button>
+                    </button>*/}
 
                     <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
                         {
@@ -76,16 +79,15 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         }
                     </div>
 
-                    <button onClick={handleRight}
+                    {/*<button onClick={handleRight}
                             onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                         </div>
-                    </button>
+                    </button>*/}
                 </div>
             </div>
-
             <Link href={""}>
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
                     <div className={style.gridTotal}>
@@ -114,20 +116,54 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             </div>
                             <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
                         </div>
-                    </div>
-                    <div className={style.divImageInfo}>
-                        <div className={style.gridImageInfo}>
-                            <div className={style.profileSize}>
-                                <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                            </div>
-                            <div className={style.overflowName}>
-                                {item.Name}
+
+                        <button className={style.styleButton}>
+                            Comprar
+                        </button>
+
+                        <div className={style.divImageInfo}>
+                            <div className={style.gridImageInfo}>
+                                <div className={style.profileSize}>
+                                    <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                                </div>
+                                <div className={style.overflowName}>
+                                    {item.Name}
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </a>
 
             </Link>
+
+            {
+                displaPopUp &&
+                <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handlePopUp}>
+                        <div className={style.mainDivPopUp}>
+                            <div className={`${utilities.fontName} mb-8`}>
+                                Pack de {item.ListProducts.length} productos
+                            </div>
+                            <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProductsPop}`}>
+                                {
+                                    item.ListProducts.map((product, index) =>
+                                        <div key={index} className={style.mainDivProdPop}>
+                                            <div className={style.sizeImage}>
+                                                <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
+                                                       alt={""}/>
+                                            </div>
+                                            <div className={style.gridPriceName}>
+                                                <div>{product.Name} X {product.Amount}</div>
+                                                <span
+                                                    className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        </div>
+                </PopUpContainer>
+            }
         </div>
     )
 
@@ -137,6 +173,11 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
             borderType: item.PreviousPrice > item.Price ? style.borderRightDivRed : style.borderRightDivGreen
         }
     }
+
+    function getMoneyValue(num: number): string {
+        return Intl.NumberFormat("ES-CL").format(Math.round(num))
+    }
+
 
     function showArrow() {
         setVisibility(visibility = false);
