@@ -48,8 +48,8 @@
 }
 
 .sizeImage {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     position: relative;
 }
 
@@ -146,12 +146,10 @@
 }
 
 .rightDiv {
-    padding: 12px 16px;
+    padding: 30px 16px;
     display: grid;
     grid-template-rows: 1fr max-content;
     gap: 8px;
-    justify-items: center;
-    justify-content: center;
 }
 
 .borderRightDivRed {
