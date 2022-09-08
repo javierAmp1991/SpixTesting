@@ -9,8 +9,7 @@ import {useRef, useState} from "react";
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
     function getMoneyValue(num: number): string {
-        let newNum: string = Intl.NumberFormat("ES-CL").format(Math.round(num))
-        return newNum
+        return Intl.NumberFormat("ES-CL").format(Math.round(num))
     }
 
     let [visibility, setVisibility] = useState(true);
@@ -45,7 +44,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     return (
         <div className={style.gridNewPa}>
             <div className={cssStyle.gridType}>
-                <div className={utilities.fontPrimaryText}>
+                <div className={utilities.fontName}>
                     Pack de {item.ListProducts.length} productos
                 </div>
 
@@ -69,7 +68,8 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                     </div>
                                     <div className={style.gridPriceName}>
                                         <div>{product.Name} X {product.Amount}</div>
-                                        <span className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
+                                        <span
+                                            className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
                                     </div>
                                 </div>
                             )
@@ -89,25 +89,27 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
             <Link href={""}>
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
                     <div className={style.gridTotal}>
-                        <div className={utilities.font12}>
+                        <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2`}>
                             {
                                 item.PreviousPrice > item.Price ?
-                                    <span><Image width={14} height={10} src={"/images/dollarDown.png"}/> </span>
+                                    <span><Image width={14} height={10} src={"/images/dollarDown.png"}
+                                                 alt={""}/> </span>
                                     :
-                                    <span><Image width={14} height={10} src={"/images/dollarUp.png"}/> </span>
+                                    <span><Image width={14} height={10} src={"/images/dollarUp.png"} alt={""}/> </span>
                             }
-
-                            <span>Antes: </span>
-                            <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                            <div>
+                                <span>Antes: </span>
+                                <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                            </div>
                         </div>
 
                         <div className={`${utilities.gridMaxContent2} gap-1`}>
                             <div className={style.sizeDiscount}>
                                 {
                                     item.PreviousPrice > item.Price ?
-                                        <Image layout={"fill"} src={"/images/discountIcon.png"}/>
+                                        <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
                                         :
-                                        <Image layout={"fill"} src={"/images/discountIconGreen.png"}/>
+                                        <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
                                 }
                             </div>
                             <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
