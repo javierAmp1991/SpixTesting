@@ -4272,7 +4272,7 @@ export namespace DropDownResale{
         {
             BannerImage: "/images/banner2.jpg",
             Name: "Arturo Pascal",
-            ProfileImage: "/images/fotoPerfil2.png",
+            ProfileImage: "/images/fotoperfil2.png",
             NameEvent: "Star Wars Sinfonico",
             TotalDiscount: 30,
             Price: 35000,
@@ -4304,7 +4304,7 @@ export namespace DropDownResale{
         {
             BannerImage: "/images/banner3.jpg",
             Name: "Pilar Ruiz",
-            ProfileImage: "/images/fotoPerfil3.png",
+            ProfileImage: "/images/fotoperfil3.png",
             NameEvent: "Seafret",
             TotalDiscount: 40,
             Price: 40000,
@@ -4336,7 +4336,7 @@ export namespace DropDownResale{
         {
             BannerImage: "/images/banner6.jpg",
             Name: "Pedro Rodriguez",
-            ProfileImage: "/images/fotoPerfil4.png",
+            ProfileImage: "/images/fotoperfil4.png",
             NameEvent: "Fiebre del memo",
             TotalDiscount: 20,
             Price: 27000,
@@ -4368,7 +4368,7 @@ export namespace DropDownResale{
         {
             BannerImage: "/images/banner5.jpg",
             Name: "Isidora Alvarez",
-            ProfileImage: "/images/fotoPerfil5.png",
+            ProfileImage: "/images/fotoperfil5.png",
             NameEvent: "Nikkita",
             TotalDiscount: 20,
             Price: 25000,
@@ -4400,7 +4400,7 @@ export namespace DropDownResale{
         {
             BannerImage: "/images/banner7.jpg",
             Name: "Antonia Herrera",
-            ProfileImage: "/images/foto perfil.jpg",
+            ProfileImage: "/images/fotoPerfil8.jpg",
             NameEvent: "Guns N Roses",
             TotalDiscount: 20,
             Price: 60000,
