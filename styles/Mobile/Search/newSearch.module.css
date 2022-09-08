@@ -30,7 +30,7 @@
 
 .writeNew {
     display: grid;
-    justify-content: right;
+    justify-content: left;
 }
 
 .writeNewPrincipal {

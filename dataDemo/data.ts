@@ -4239,10 +4239,10 @@ export namespace DropDownResale{
     export const listDropDown: ResaleProduct[] = [
         {
             BannerImage: "/images/banner1.jpg",
-            Name: "Francisco Meneses",
+            Name: "franciscoMeneses",
             ProfileImage: "/images/fotoPerfil7.jpg",
             NameEvent: "Festival Orquesta",
-            TotalDiscount: 20,
+            PreviousPrice: 40000,
             Price: 20000,
             ListProducts: [
                 {
@@ -4259,11 +4259,6 @@ export namespace DropDownResale{
                     Name: "Papas Lays",
                     Price: 2990,
                     Amount: 1
-                },
-                {
-                    Name: "Coca-Cola",
-                    Price: 1990,
-                    Amount: 1
                 }
             ],
             Id: "jsdha123dsuwq"
@@ -4271,10 +4266,10 @@ export namespace DropDownResale{
         },
         {
             BannerImage: "/images/banner2.jpg",
-            Name: "Arturo Pascal",
+            Name: "arturoPascal",
             ProfileImage: "/images/fotoperfil2.png",
             NameEvent: "Star Wars Sinfonico",
-            TotalDiscount: 30,
+            PreviousPrice: 45000,
             Price: 35000,
             ListProducts: [
                 {
@@ -4303,10 +4298,10 @@ export namespace DropDownResale{
         },
         {
             BannerImage: "/images/banner3.jpg",
-            Name: "Pilar Ruiz",
+            Name: "pilarRuiz",
             ProfileImage: "/images/fotoperfil3.png",
             NameEvent: "Seafret",
-            TotalDiscount: 40,
+            PreviousPrice: 30000,
             Price: 40000,
             ListProducts: [
                 {
@@ -4328,6 +4323,11 @@ export namespace DropDownResale{
                     Name: "Coca-Cola",
                     Price: 1990,
                     Amount: 1
+                },
+                {
+                    Name: "Snacks",
+                    Price: 1990,
+                    Amount: 1
                 }
             ],
             Id: "jsdewqehauw2322q"
@@ -4335,10 +4335,10 @@ export namespace DropDownResale{
         },
         {
             BannerImage: "/images/banner6.jpg",
-            Name: "Pedro Rodriguez",
+            Name: "pedroRodriguez",
             ProfileImage: "/images/fotoperfil4.png",
             NameEvent: "Fiebre del memo",
-            TotalDiscount: 20,
+            PreviousPrice: 20000,
             Price: 27000,
             ListProducts: [
                 {
@@ -4367,10 +4367,10 @@ export namespace DropDownResale{
         },
         {
             BannerImage: "/images/banner5.jpg",
-            Name: "Isidora Alvarez",
+            Name: "isidoraAlvarez",
             ProfileImage: "/images/fotoperfil5.png",
             NameEvent: "Nikkita",
-            TotalDiscount: 20,
+            PreviousPrice: 40000,
             Price: 25000,
             ListProducts: [
                 {
@@ -4399,10 +4399,10 @@ export namespace DropDownResale{
         },
         {
             BannerImage: "/images/banner7.jpg",
-            Name: "Antonia Herrera",
+            Name: "antoniaHerrera",
             ProfileImage: "/images/fotoPerfil8.jpg",
             NameEvent: "Guns N Roses",
-            TotalDiscount: 20,
+            PreviousPrice: 40000,
             Price: 60000,
             ListProducts: [
                 {
@@ -4414,16 +4414,6 @@ export namespace DropDownResale{
                     Name: "Cerveza Cristal",
                     Price: 1990,
                     Amount: 2
-                },
-                {
-                    Name: "Papas Lays",
-                    Price: 2990,
-                    Amount: 1
-                },
-                {
-                    Name: "Coca-Cola",
-                    Price: 1990,
-                    Amount: 1
                 }
             ],
             Id: "jsdhauwq"
@@ -4444,7 +4434,7 @@ export class ResaleProduct{
     Name: string
     ProfileImage: string
     NameEvent: string
-    TotalDiscount: number
+    PreviousPrice: number
     Price: number
     ListProducts: productResale[]
 

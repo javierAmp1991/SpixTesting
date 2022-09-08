@@ -144,7 +144,7 @@
 
 .gridReadNew{
     display: grid;
-    justify-content: right;
+    justify-content: left;
 }
 
 .gridLast{

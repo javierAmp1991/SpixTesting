@@ -5,11 +5,19 @@ import utilities from "/styles/utilities.module.css";
 import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
+import {func} from "prop-types";
 
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
+
+    function getMoneyValue(num: number): string {
+        let newNum: string = Intl.NumberFormat("ES-CL").format(Math.round(num))
+        return newNum
+    }
+
     let [visibility, setVisibility] = useState(true);
     const mainDivRef = useRef(null)
     const mainDivTranslate = useRef(null)
+    const cssStyle = getCssStyle()
 
     const handleRight = () => {
         const firstElement = mainDivRef.current.children[0];
@@ -36,78 +44,96 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         }, 30)
     }
     return (
-        <div className={style.mainCont}>
-            <div className={`${style.infoDiv} ${utilities.fontPrimaryText}`}>
-                <div className={style.gridNewPa}>
-                    {/*<div className={style.gridImageInfo}>*/}
-                    <div className={"border-r border-gray-200 pr-4"}>
-                        <div className={style.gridImageInfo}>
-                            <div className={style.profileSize}>
-                                <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                            </div>
-                            <div className={utilities.fontName}>
-                                {item.Name}
-                            </div>
+        <div className={style.gridNewPa}>
+            <div className={cssStyle.gridType}>
+                <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                     className={utilities.fontPrimaryText}>
+                    Pack de {item.ListProducts.length} productos
+                </div>
+                <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                     ref={mainDivTranslate} className={"relative w-full"}>
+                    <button onClick={handleLeft}
+                            className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
+                        <div className={style.sizeArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
-                        <div ref={mainDivTranslate} className={"relative w-full"}>
+                    </button>
 
-                            <button onClick={handleLeft}
-                                    className={`${style.positionArrowLeft}`}>
-                                <div className={style.sizeArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+                    <div ref={mainDivRef}
+                         className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
+                        {
+                            item.ListProducts.map((product, index) =>
+                                <div key={index} className={style.mainDivProd}>
+                                    <div className={style.sizeImage}>
+                                        <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
+                                               alt={""}/>
+                                    </div>
+                                    <div className={style.gridPriceName}>
+                                        <div>{product.Name} X {product.Amount}</div>
+                                        <span>${getMoneyValue(product.Price)}</span>
+                                    </div>
                                 </div>
-                            </button>
-
-                            <div ref={mainDivRef}
-                                 className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
-                                {
-                                    item.ListProducts.map((product, index) =>
-                                        <div key={index} className={style.mainDivProd}>
-                                            <div className={style.sizeImage}>
-                                                <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
-                                                       alt={""}/>
-                                            </div>
-                                            <div className={style.gridPriceName}>
-                                                <div>{product.Name} X {product.Amount}</div>
-                                                <span>${Intl.NumberFormat("ES-CL").format(Math.round(product.Price))}</span>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
-
-                            <button onClick={handleRight}
-                                    className={`${style.positionArrowRight}`}>
-                                <div className={style.sizeArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
-                                </div>
-                            </button>
-                        </div>
+                            )
+                        }
                     </div>
 
-
-                    <Link href={""}>
-                        <a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.gridPrice}`}>
-                            {/*<a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.divPrice}`}>*/}
-                            <div>
-                                <span>Antes: </span>
-                                <span className="line-through">
-                                                ${Intl.NumberFormat("ES-CL"
-                                ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
-                            </div>
-                            <div className={`${utilities.gridMaxContent2} gap-1`}>
-                                <div className={style.sizeDiscount}>
-                                    <Image layout={"fill"} src={"/images/discountIcon.png"}/>
-                                </div>
-                                <span
-                                    className={utilities.fontPriceInclude}>Total: ${Intl.NumberFormat("ES-CL").format(Math.round(item.Price))} </span>
-                            </div>
-                        </a>
-                    </Link>
+                    <button onClick={handleRight}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
+                        <div className={style.sizeArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
+                        </div>
+                    </button>
                 </div>
             </div>
+
+            <Link href={""}>
+                <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
+                    <div className={style.gridTotal}>
+                        <div className={utilities.font12}>
+                            {
+                                item.PreviousPrice > item.Price ?
+                                    <span><Image width={14} height={10} src={"/images/dollarDown.png"}/> </span>
+                                    :
+                                    <span><Image width={14} height={10} src={"/images/dollarUp.png"}/> </span>
+                            }
+
+                            <span>Antes: </span>
+                            <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                        </div>
+
+                        <div className={`${utilities.gridMaxContent2} gap-1`}>
+                            <div className={style.sizeDiscount}>
+                                {
+                                    item.PreviousPrice > item.Price ?
+                                        <Image layout={"fill"} src={"/images/discountIcon.png"}/>
+                                        :
+                                        <Image layout={"fill"} src={"/images/discountIconGreen.png"}/>
+                                }
+                            </div>
+                            <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
+                        </div>
+                    </div>
+                    <div className={style.gridImageInfo}>
+                        <div className={style.profileSize}>
+                            <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                        </div>
+                        <div className={style.overflowName}>
+                            {item.Name}
+                        </div>
+                    </div>
+                </a>
+
+            </Link>
         </div>
     )
+
+    function getCssStyle() {
+        return {
+            gridType: item.PreviousPrice > item.Price ? style.leftDivRed : style.leftDivGreen,
+            borderType: item.PreviousPrice > item.Price ? style.borderRightDivRed : style.borderRightDivGreen
+        }
+    }
 
     function showArrow() {
         setVisibility(visibility = false);
