@@ -41,11 +41,11 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 <div className={style.gridNewPa}>
                     {/*<div className={style.gridImageInfo}>*/}
                     <div className={"border-r border-gray-200 pr-4"}>
-                        <div className={style.gridImageInfo2}>
+                        <div className={style.gridImageInfo}>
                             <div className={style.profileSize}>
                                 <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
                             </div>
-                            <div className={utilities.fontPrimaryText}>
+                            <div className={utilities.fontName}>
                                 {item.Name}
                             </div>
                         </div>
@@ -89,18 +89,18 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     <Link href={""}>
                         <a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.gridPrice}`}>
                             {/*<a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.divPrice}`}>*/}
+                            <div>
+                                <span>Antes: </span>
+                                <span className="line-through">
+                                                ${Intl.NumberFormat("ES-CL"
+                                ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
+                            </div>
                             <div className={`${utilities.gridMaxContent2} gap-1`}>
                                 <div className={style.sizeDiscount}>
                                     <Image layout={"fill"} src={"/images/discountIcon.png"}/>
                                 </div>
                                 <span
                                     className={utilities.fontPriceInclude}>Total: ${Intl.NumberFormat("ES-CL").format(Math.round(item.Price))} </span>
-                            </div>
-                            <div>
-                                <span>Antes: </span>
-                                <span className="line-through">
-                                                ${Intl.NumberFormat("ES-CL"
-                                ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
                             </div>
                         </a>
                     </Link>

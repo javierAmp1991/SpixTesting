@@ -12,8 +12,8 @@
 }
 
 .profileSize {
-    height: 24px;
-    width: 24px;
+    height: 28px;
+    width: 28px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
@@ -110,7 +110,8 @@
 .gridPrice{
     display: grid;
     grid-template-rows: max-content max-content;
+    margin: auto;
     gap: 8px;
-    justify-items: right;
-    justify-content: right;
+    justify-items: center;
+    justify-content: center;
 }
