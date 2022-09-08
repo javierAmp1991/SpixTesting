@@ -8,13 +8,13 @@ import {useRef, useState} from "react";
 
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     let [visibility, setVisibility] = useState(true);
-    let[translate, setTranslate] = useState("")
     const mainDivRef = useRef(null)
+    const mainDivTranslate = useRef(null)
 
     const handleRight = () => {
         const firstElement = mainDivRef.current.children[0];
         mainDivRef.current.style.transition = `1000ms linear`;
-        mainDivRef.current.style.transform = `translateX(-${mainDivRef.current.offsetWidth}px)`;
+        mainDivRef.current.style.transform = `translateX(-${mainDivTranslate.current.offsetWidth}px)`;
         const transition = () => {
             mainDivRef.current.style.transition = `none`;
             mainDivRef.current.style.transform = `translateX(0)`;
@@ -28,7 +28,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         const lastElement = mainDivRef.current.children[lastIndex];
         mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);
         mainDivRef.current.style.transition = `none`;
-        mainDivRef.current.style.transform = `translateX(-${mainDivRef.current.offsetWidth}px)`;
+        mainDivRef.current.style.transform = `translateX(-${mainDivTranslate.current.offsetWidth}px)`;
 
         setTimeout(() => {
             mainDivRef.current.style.transition = `1000ms linear`;
@@ -46,15 +46,15 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         {item.Name}
                     </div>
                 </div>
-                <div className={"relative"}>
+                <div ref={mainDivTranslate} className={"relative"}>
 
-                    <div onClick={handleLeft}
-                        onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                         className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
+                    <button onClick={handleLeft}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
-                    </div>
+                    </button>
 
                     <div onPointerOver={showArrow} onPointerOut={hiddeArrow} ref={mainDivRef}
                          className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
@@ -73,23 +73,31 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         }
                     </div>
 
-                    <div onClick={handleRight}
-                        onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                         className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
+                    <button onClick={handleRight}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                         </div>
-                    </div>
+                    </button>
                 </div>
 
 
                 <Link href={""}>
                     <a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.divPrice}`}>
-                        <span className={utilities.fontPriceInclude}>Total: ${Intl.NumberFormat("ES-CL").format(Math.round(item.Price))} </span>
-                        <span>Antes: </span>
-                        <span className="line-through">
+                        <div className={style.sizeDiscount}>
+                            <Image layout={"fill"} src={"/images/discountIcon.png"}/>
+                        </div>
+                        <div>
+                            <span
+                                className={utilities.fontPriceInclude}>Total: ${Intl.NumberFormat("ES-CL").format(Math.round(item.Price))} </span>
+                        </div>
+                        <div>
+                            <span>Antes: </span>
+                            <span className="line-through">
                                                 ${Intl.NumberFormat("ES-CL"
-                        ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
+                            ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
+                        </div>
                     </a>
                 </Link>
             </div>

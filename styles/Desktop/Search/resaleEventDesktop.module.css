@@ -34,9 +34,12 @@
 }
 
 .divPrice {
-    border-top: 1px solid var(--separationLineColor);
-    padding-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
     align-items: center;
+    gap: 6px;
+/*    border-top: 1px solid var(--separationLineColor);
+    padding-top: 12px;*/
 }
 
 .sizeImage {
@@ -57,6 +60,7 @@
     grid-auto-flow: column;
     overflow-x: hidden;
     position: relative;
+    transition: 1s;
 }
 
 .gridPriceName {
@@ -76,10 +80,18 @@
     position: absolute;
     top: calc(50% - 10px);
     left: 0;
+    z-index: 5000;
 }
 
 .positionArrowRight {
     position: absolute;
     top: calc(50% - 10px);
     right: 0;
+    z-index: 5000;
+}
+
+.sizeDiscount{
+    height: 18px;
+    width: 18px;
+    position: relative;
 }
