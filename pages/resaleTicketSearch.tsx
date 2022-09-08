@@ -87,23 +87,22 @@ export default function ResaleTicketSearch() {
                         isDisplayResult &&
                         <div className={"relative"}>
                             <div className={style.paddingContainer}>
-                                <div className={styleMobile.gridResultFiltersOut}>
-                                    <div className={`${cssStyle.fontSubTitle}`}>
-                                        {resaleText}
+                                <div className={style.gridHeaderResult}>
+                                    <div className={styleMobile.sizeBanner}>
+                                        <Image layout={"fill"} src={resaleBanner}/>
                                     </div>
-                                    {
-                                        isReview &&
-                                        <button onClick={handleClick}
-                                                className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                            <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
-                                                Filtros
-                                            </div>
-                                            <div className={"h-3 w-4 relative"}>
-                                                <Image layout={"fill"}
-                                                       src={GlobalConst.sourceImages.engineIcon} alt={""}/>
-                                            </div>
-                                        </button>
-                                    }
+                                    <div>
+                                        <div className={utilities.fontTitle}>
+                                            {resaleTitle}
+                                        </div>
+                                        <div className={`${utilities.fontSubTitle} mt-3`}>
+                                            {resaleSubtile}
+                                        </div>
+                                        <div
+                                            className={`${utilities.fontPrimaryText} ${utilities.ratingStarsProperties} mt-3`}>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}/>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className={styleMobile.gridResaleEventMobile}>
                                     {
@@ -147,7 +146,8 @@ export default function ResaleTicketSearch() {
                                         <div className={`${utilities.fontSubTitle} mt-3`}>
                                             {resaleSubtile}
                                         </div>
-                                        <div className={`${utilities.fontPrimaryText} ${utilities.ratingStarsProperties} mt-3`}>
+                                        <div
+                                            className={`${utilities.fontPrimaryText} ${utilities.ratingStarsProperties} mt-3`}>
                                             <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}/>
                                         </div>
                                     </div>

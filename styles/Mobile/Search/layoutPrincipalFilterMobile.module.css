@@ -345,6 +345,13 @@
     gap: 24px;
 }
 
+.sizeBanner{
+    width: 100%;
+    aspect-ratio: 3/1;
+    position: relative;
+    overflow: hidden;
+}
+
 @media (min-width: 500px) {
     .gridDropDownNew{
         display: grid;

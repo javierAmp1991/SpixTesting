@@ -26,6 +26,7 @@
     gap: 6px;
     margin: auto;
 }
+
 .overflowName {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -151,13 +152,13 @@
 }
 
 .borderRightDivRed {
-   /* --borderTypeRed: 2px dashed #da0e0e;
-    border-right: var(--borderTypeRed);
-    border-top: var(--borderTypeRed);
-    border-bottom: var(--borderTypeRed);*/
-/*    border-right: 6px solid #da0e0e;
-    border-top: 1px solid #da0e0e;
-    border-bottom: 1px solid #da0e0e;*/
+    /* --borderTypeRed: 2px dashed #da0e0e;
+     border-right: var(--borderTypeRed);
+     border-top: var(--borderTypeRed);
+     border-bottom: var(--borderTypeRed);*/
+    /*    border-right: 6px solid #da0e0e;
+        border-top: 1px solid #da0e0e;
+        border-bottom: 1px solid #da0e0e;*/
 }
 
 .borderRightDivGreen {
@@ -165,7 +166,7 @@
     border-right: var(--borderTypeGreen);
     border-top: var(--borderTypeGreen);
     border-bottom: var(--borderTypeGreen);*/
-/*    border-right: 6px solid #11a40b;
-    border-top: 1px solid #11a40b;
-    border-bottom: 1px solid #11a40b;*/
+    /*    border-right: 6px solid #11a40b;
+        border-top: 1px solid #11a40b;
+        border-bottom: 1px solid #11a40b;*/
 }
