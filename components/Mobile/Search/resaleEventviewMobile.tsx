@@ -4,16 +4,19 @@ import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import React from "react";
 import {EventSearch} from "../../../dataDemo/search/searchData";
+import Link from "next/link";
 
 export default function ResaleEventviewMobile({item, darkModeState}: { item: EventSearch, darkModeState: boolean }) {
     let cssStyles = getCssStyles()
     return (
         <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
-            <a className="relative">
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={item.CoverImage} alt=""/>
-                </div>
-            </a>
+            <Link href={"/resaleTicketSearch"}>
+                <a className="relative">
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} src={item.CoverImage} alt=""/>
+                    </div>
+                </a>
+            </Link>
 
             <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
                 <div className={`${cssStyles.fontName} ${utilities.clamp2}`}>
