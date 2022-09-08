@@ -105,7 +105,7 @@ export default function ResaleTicketSearch() {
                                         </button>
                                     }
                                 </div>
-                                <div className={style.gridResaleEventMobile}>
+                                <div className={styleMobile.gridResaleEventMobile}>
                                     {
                                         resaleSearchList.map((item) =>
                                             <ResaleEventMobile key={item.Id} item={item}/>

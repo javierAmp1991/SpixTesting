@@ -278,6 +278,11 @@
     padding: 8px;
 }
 
+.gridResaleEventMobile{
+    display: grid;
+    gap: 24px;
+}
+
 @keyframes scaleClick {
     0% {
         transform: scale(1);

@@ -9,8 +9,7 @@ import {useRef, useState} from "react";
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
     function getMoneyValue(num: number): string {
-        let newNum: string = Intl.NumberFormat("ES-CL").format(Math.round(num))
-        return newNum
+        return Intl.NumberFormat("ES-CL").format(Math.round(num))
     }
 
     let [visibility, setVisibility] = useState(true);
@@ -45,19 +44,19 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     return (
         <div className={style.gridNewPa}>
             <div className={cssStyle.gridType}>
-                <div className={utilities.fontPrimaryText}>
+                <div className={utilities.fontName}>
                     Pack de {item.ListProducts.length} productos
                 </div>
 
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
                      ref={mainDivTranslate} className={"relative w-full"}>
-                    <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
                             className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
-                    </button>
+                    </button>*/}
 
                     <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
                         {
@@ -76,13 +75,13 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         }
                     </div>
 
-                    <button onClick={handleRight}
+                    {/*<button onClick={handleRight}
                             onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                         </div>
-                    </button>
+                    </button>*/}
                 </div>
             </div>
 

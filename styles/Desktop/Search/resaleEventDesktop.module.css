@@ -110,7 +110,7 @@
 
 .gridNewPa {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 65% 35%;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 5px;
     overflow: hidden;
