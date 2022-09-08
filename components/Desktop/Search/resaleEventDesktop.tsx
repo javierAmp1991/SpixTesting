@@ -38,67 +38,73 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     return (
         <div className={style.mainCont}>
             <div className={`${style.infoDiv} ${utilities.fontPrimaryText}`}>
-                {/*<div className={style.gridImageInfo}>*/}
-                <div className={style.gridImageInfo2}>
-                    <div className={style.profileSize}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                    </div>
-                    <div className={utilities.fontPrimaryText}>
-                        {item.Name}
-                    </div>
-                </div>
-                <div ref={mainDivTranslate} className={"relative w-full"}>
-
-                    <button onClick={handleLeft}
-                            className={`${style.positionArrowLeft}`}>
-                        <div className={style.sizeArrow}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+                <div className={style.gridNewPa}>
+                    {/*<div className={style.gridImageInfo}>*/}
+                    <div className={"border-r border-gray-200 pr-4"}>
+                        <div className={style.gridImageInfo2}>
+                            <div className={style.profileSize}>
+                                <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                            </div>
+                            <div className={utilities.fontPrimaryText}>
+                                {item.Name}
+                            </div>
                         </div>
-                    </button>
+                        <div ref={mainDivTranslate} className={"relative w-full"}>
 
-                    <div ref={mainDivRef}
-                         className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
-                        {
-                            item.ListProducts.map((product, index) =>
-                                <div key={index} className={style.mainDivProd}>
-                                    <div className={style.sizeImage}>
-                                        <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"} alt={""}/>
-                                    </div>
-                                    <div className={style.gridPriceName}>
-                                        <div>{product.Name} X {product.Amount}</div>
-                                        <span>${Intl.NumberFormat("ES-CL").format(Math.round(product.Price))}</span>
-                                    </div>
+                            <button onClick={handleLeft}
+                                    className={`${style.positionArrowLeft}`}>
+                                <div className={style.sizeArrow}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                                 </div>
-                            )
-                        }
+                            </button>
+
+                            <div ref={mainDivRef}
+                                 className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
+                                {
+                                    item.ListProducts.map((product, index) =>
+                                        <div key={index} className={style.mainDivProd}>
+                                            <div className={style.sizeImage}>
+                                                <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
+                                                       alt={""}/>
+                                            </div>
+                                            <div className={style.gridPriceName}>
+                                                <div>{product.Name} X {product.Amount}</div>
+                                                <span>${Intl.NumberFormat("ES-CL").format(Math.round(product.Price))}</span>
+                                            </div>
+                                        </div>
+                                    )
+                                }
+                            </div>
+
+                            <button onClick={handleRight}
+                                    className={`${style.positionArrowRight}`}>
+                                <div className={style.sizeArrow}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
+                                </div>
+                            </button>
+                        </div>
                     </div>
 
-                    <button onClick={handleRight}
-                            className={`${style.positionArrowRight}`}>
-                        <div className={style.sizeArrow}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
-                        </div>
-                    </button>
-                </div>
 
-
-                <Link href={""}>
-                    <a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.divPrice}`}>
-                        <div className={style.sizeDiscount}>
-                            <Image layout={"fill"} src={"/images/discountIcon.png"}/>
-                        </div>
-                        <div>
-                            <span
-                                className={utilities.fontPriceInclude}>Total: ${Intl.NumberFormat("ES-CL").format(Math.round(item.Price))} </span>
-                        </div>
-                        <div>
-                            <span>Antes: </span>
-                            <span className="line-through">
+                    <Link href={""}>
+                        <a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.gridPrice}`}>
+                            {/*<a className={`${utilities.fontSecundaryText} ${utilities.font12} ${style.divPrice}`}>*/}
+                            <div className={`${utilities.gridMaxContent2} gap-1`}>
+                                <div className={style.sizeDiscount}>
+                                    <Image layout={"fill"} src={"/images/discountIcon.png"}/>
+                                </div>
+                                <span
+                                    className={utilities.fontPriceInclude}>Total: ${Intl.NumberFormat("ES-CL").format(Math.round(item.Price))} </span>
+                            </div>
+                            <div>
+                                <span>Antes: </span>
+                                <span className="line-through">
                                                 ${Intl.NumberFormat("ES-CL"
-                            ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
-                        </div>
-                    </a>
-                </Link>
+                                ).format(Math.round((item.Price * item.TotalDiscount / 100) + item.Price))}</span>
+                            </div>
+                        </a>
+                    </Link>
+                </div>
             </div>
         </div>
     )
