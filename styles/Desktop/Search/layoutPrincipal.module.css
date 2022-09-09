@@ -121,6 +121,14 @@
     position: relative;
 }
 
+.fontSubTitle{
+    color: var(--colorSubTitles);
+    font-size: 17px;
+    line-height: 17px;
+    font-family: Helvetica, sans-serif, Arial;
+    font-weight: 300;
+}
+
 @media (min-width: 1281px) {
     .styleBanner {
         height: 250px;

@@ -93,7 +93,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
                     <div className={style.gridTotal}>
                         <div>
-                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-1`}>
+                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
                                 {
                                     item.PreviousPrice > item.Price ?
                                         <span><Image width={14} height={10} src={"/images/dollarDown.png"}
@@ -131,12 +131,10 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                 </div>
                             </div>
                         </div>
-
-                        <button className={style.styleButton}>
-                            Comprar
-                        </button>
                     </div>
-
+                    <button className={style.styleButton}>
+                        Comprar
+                    </button>
                 </a>
 
             </Link>

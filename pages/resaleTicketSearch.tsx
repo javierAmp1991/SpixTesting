@@ -143,7 +143,7 @@ export default function ResaleTicketSearch() {
                                         <div className={utilities.fontTitle}>
                                             {resaleTitle}
                                         </div>
-                                        <div className={`${utilities.fontSubTitle} mt-3`}>
+                                        <div className={`${style.fontSubTitle} mt-3`}>
                                             {resaleSubtile}
                                         </div>
                                         <div

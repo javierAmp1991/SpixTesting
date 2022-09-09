@@ -178,13 +178,13 @@
 
 .gridTotal {
     display: grid;
-    gap: 24px;
+    gap: 20px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 .rightDiv {
-    padding: 24px 22px;
+    padding: 16px 22px;
     display: grid;
     grid-template-rows: 1fr max-content;
     gap: 8px;
