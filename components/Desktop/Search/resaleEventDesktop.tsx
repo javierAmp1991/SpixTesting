@@ -42,15 +42,18 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
             mainDivRef.current.style.transform = `translateX(0px)`;
         }, 30)
     }
+
     return (
         <div className={`${style.gridNewPa} ${cssStyle.borderResale}`}>
             <div className={cssStyle.gridType}>
-                <div className={utilities.fontName}>
-                    Pack de {item.ListProducts.length} productos
+                <div>
+                    <div className={utilities.fontName}>
+                        Pack de {item.ListProducts.length} productos
+                    </div>
+                    <button onClick={handlePopUp} className={utilities.fontSecundaryText}>
+                        Ver productos
+                    </button>
                 </div>
-                <button onClick={handlePopUp} className={utilities.styleLink}>
-                    Ver productos
-                </button>
 
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
                      ref={mainDivTranslate} className={"relative w-full"}>
@@ -66,11 +69,12 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         {
                             item.ListProducts.map((product, index) =>
                                 <div key={index} className={style.mainDivProd}>
-                                    <div className={style.sizeImage}>
-                                        <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
-                                               alt={""}/>
-                                    </div>
                                     <div className={style.gridPriceName}>
+                                        <div className={style.sizeImage}>
+                                            <Image priority={true} layout={"fill"} objectFit={"cover"}
+                                                   src={"/images/product1.jpg"}
+                                                   alt={""}/>
+                                        </div>
                                         <div>{product.Name} X {product.Amount}</div>
                                         <span
                                             className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
@@ -89,32 +93,28 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     </button>
                 </div>
 
-                <div className={cssStyle.colorEti}>
-                    <div className={style.circulo}/>
-                </div>
-
-                {/*<div className={style.positionEtiqueta}>
-                    <div className={cssStyle.rectangulo}/>
-                    <div className={cssStyle.trapecio}>
-                        <div className={style.circulo}/>
+                <div className={style.divImageInfo}>
+                    <div className={style.gridImageInfo}>
+                        <div className={style.profileSize}>
+                            <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                        </div>
+                        <div className={`${style.overflowName} ${utilities.fontPrimaryText}`}>
+                            {item.Name}
+                        </div>
                     </div>
-                </div>*/}
+                </div>
             </div>
+
             <Link href={""}>
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
                     <div className={style.gridTotal}>
-                        <div className={style.divImageInfo}>
-                            <div className={style.gridImageInfo}>
-                                <div className={style.profileSize}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                                </div>
-                                <div className={style.overflowName}>
-                                    {item.Name}
-                                </div>
-                            </div>
+                        <div className={cssStyle.colorEti}>
+                            <span className={style.dicountPer}>
+                                - 20%
+                            </span>
                         </div>
 
-                        <div className={"mb-2"}>
+                        <div className={style.divTotal}>
                             <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
                                 {
                                     item.PreviousPrice > item.Price ?
@@ -148,7 +148,6 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         </button>
                     </div>
                 </a>
-
             </Link>
 
             {
@@ -163,14 +162,20 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             {
                                 item.ListProducts.map((product, index) =>
                                     <div key={index} className={style.mainDivProdPop}>
-                                        <div className={style.sizeImage}>
-                                            <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
-                                                   alt={""}/>
-                                        </div>
-                                        <div className={style.gridPriceName}>
+                                        <div className={style.gridPriceNameProp}>
+                                            <div className={style.sizeImageProp}>
+                                                <Image priority={true} layout={"fill"} src={"/images/product1.jpg"}
+                                                       alt={""}/>
+                                            </div>
                                             <div>{product.Name} X {product.Amount}</div>
-                                            <span
-                                                className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
+                                            <div className={utilities.fontPriceInclude}>
+                                                ${getMoneyValue(product.Price)}
+                                            </div>
+                                            <div className={utilities.fontSecundaryText}>
+                                                <span>Antes: </span>
+                                                <span
+                                                    className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 )
@@ -189,7 +194,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
             borderResale: item.PreviousPrice > item.Price ? style.boxShadowRed : style.boxShadowGreen,
             colorEti: item.PreviousPrice > item.Price ? style.etiquetaRed : style.etiquetaGreen,
             trapecio: item.PreviousPrice > item.Price ? style.trapecioRed : style.trapecioGreen,
-            rectangulo: item.PreviousPrice > item.Price ? style.rectanguloRed : style.rectanguloGreen
+            rectangulo: item.PreviousPrice > item.Price ? style.rectanguloRed : style.rectanguloGreenu
         }
     }
 

@@ -54,6 +54,12 @@
     position: relative;
 }
 
+.sizeImageProp {
+    width: 140px;
+    height: 140px;
+    position: relative;
+}
+
 .mainDivProd {
     display: grid;
     justify-items: center;
@@ -61,10 +67,10 @@
 
 .mainDivProdPop {
     display: grid;
-    width: 180px;
     margin: auto;
+    width: 100%;
     justify-items: center;
-    padding: 12px;
+    padding: 12px 24px;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
     overflow: hidden;
@@ -83,17 +89,17 @@
 
 .gridProductsPop {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
-    padding: 8px 0 12px 0;
+    padding: 8px 8px 12px 8px;
 }
 
 .mainDivPopUp {
-    margin: 24px 60px;
-    max-height: 512px;
+    margin: 24px 32px;
+    max-height: 570px;
     display: grid;
     grid-template-rows: max-content auto;
     overflow: scroll;
@@ -101,8 +107,13 @@
 
 .gridPriceName {
     display: grid;
-    gap: 2px;
+    gap: 4px;
     justify-items: center;
+}
+
+.gridPriceNameProp {
+    display: grid;
+    gap: 4px;
 }
 
 .sizeArrow {
@@ -169,26 +180,35 @@
     padding: 12px 16px;
     border-right: 2px dashed #da0e0e;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .leftDivGreen {
     padding: 12px 16px;
     border-right: 2px dashed #11a40b;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 
+.divTotal {
+    display: grid;
+    align-content: center;
 }
 
 .gridTotal {
     display: grid;
-    gap: 24px;
-    grid-template-rows: repeat(3, max-content);
-    margin-top: auto;
-    margin-bottom: auto;
+    grid-template-rows: 1fr max-content;
+    align-content: end;
 }
 
 .rightDiv {
     padding: 16px 22px;
     display: grid;
+    position: relative;
 }
 
 .borderRightDivRed {
@@ -220,27 +240,35 @@
     overflow: hidden;
 }
 
-.etiquetaRed{
-    width: 30px;
-    height: 45px;
+.etiquetaRed {
+    width: 36px;
+    height: 50px;
     border-radius: 0 0 20px 20px;
-    background: #da0e0e ;
+    box-shadow: 2px 2px 5px #9a0101;
+    background: #da0e0e;
     position: absolute;
     right: 16px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
     top: 0;
 }
 
-.etiquetaGreen{
-    width: 30px;
-    height: 45px;
+.etiquetaGreen {
+    width: 36px;
+    height: 50px;
     border-radius: 0 0 20px 20px;
+    box-shadow: 2px 2px 5px #046701;
     background: #11a40b;
+    display: grid;
+    align-content: center;
+    justify-content: center;
     position: absolute;
     right: 16px;
     top: 0;
 }
 
-.circulo{
+.circulo {
     position: absolute;
     bottom: 10px;
     background: white;
@@ -258,10 +286,10 @@
     border-top: 25px solid #da0e0e;
 }
 
-.rectanguloGreen{
-    width:45px;
+.rectanguloGreen {
+    width: 45px;
     height: 45px;
-    background:#11a40b ;
+    background: #11a40b;
 }
 
 .trapecioGreen {
@@ -272,14 +300,19 @@
     border-top: 25px solid #11a40b;
 }
 
-.rectanguloRed{
-    width:45px;
+.rectanguloRed {
+    width: 45px;
     height: 45px;
-    background:#da0e0e ;
+    background: #da0e0e;
 }
 
-.positionEtiqueta{
+.positionEtiqueta {
     position: absolute;
     right: 16px;
     top: 0;
+}
+
+.dicountPer {
+    color: white;
+    font-size: 11px;
 }
