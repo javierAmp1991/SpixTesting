@@ -4236,6 +4236,23 @@ export namespace CategoryPrincipalFiltersNews {
     ]
 }
 
+export namespace CategoryPrincipalFilterTicket{
+    export const filters: CategoryFilter[] = [
+        {
+            Id: "12345abcde",
+            ImagePath: "/images/dollarUp.png",
+            Name: "Menor a Mayor",
+            IsSelected: false
+        },
+        {
+            Id: "12345abcdedasdsw",
+            ImagePath: "/images/dollarDown.png",
+            Name: "Mayor a Menor",
+            IsSelected: false
+        }
+    ]
+}
+
 export namespace DropDownResale{
     export const listDropDown: ResaleProduct[] = [
         {

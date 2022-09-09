@@ -168,13 +168,30 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                         </div>
                                         <div className={style.gridPriceNameProp}>
                                             <div>{product.Name} X {product.Amount}</div>
-                                            <div className={utilities.fontPriceInclude}>
-                                                ${getMoneyValue(product.Price)}
+                                            <div className={`${utilities.gridMaxContent2} gap-1`}>
+                                                <div className={style.sizeDiscount}>
+                                                    {
+                                                        item.PreviousPrice > item.Price ?
+                                                            <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
+                                                            :
+                                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
+                                                    }
+                                                </div>
+                                                <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
                                             </div>
-                                            <div className={utilities.fontSecundaryText}>
-                                                <span>Antes: </span>
-                                                <span
-                                                    className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2`}>
+                                                {
+                                                    item.PreviousPrice > item.Price ?
+                                                        <span><Image width={14} height={10} src={"/images/dollarDown.png"}
+                                                                     alt={""}/> </span>
+                                                        :
+                                                        <span><Image width={14} height={10} src={"/images/dollarUp.png"}
+                                                                     alt={""}/> </span>
+                                                }
+                                                <div>
+                                                    <span>Antes: </span>
+                                                    <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -10,18 +10,24 @@ import {SuperCategoryFilter} from "../../../dataDemo/data";
 import {CategoryFilter} from "../../../dataDemo/data";
 
 export default function LayoutPrincipalFilterMobile({
-                                                        isOpenFilter,
-                                                        isDarkMode,
+                                                        isOpenFilter, isDarkMode,
+                                                        isCategory, isDisplayCategory,
+                                                        isSubCategory, isDisplaySubCategory,
+                                                        isAdvancedFilter, isDisplayAdvancedFilter,
+                                                        IsPrincipalFill, isDisplayPrincipalFill,
+                                                        listCategoryFilter, listPrincipalFilter,
                                                         handleOpenFilter,
-                                                        isCategory,
-                                                        listCategoryFilter,
-                                                        listPrincipalFilter,
-                                                        isReview,
                                                     }:
                                                         {
-                                                            isOpenFilter: boolean, isDarkMode: boolean, handleOpenFilter: any,
-                                                            isCategory: boolean, listCategoryFilter: SuperCategoryFilter[],
-                                                            listPrincipalFilter: CategoryFilter[], isReview: boolean
+                                                             handleOpenFilter: any,
+                                                            isOpenFilter: boolean, isDarkMode: boolean,
+                                                            isCategory: boolean, isDisplayCategory: boolean
+                                                            isSubCategory: boolean, isDisplaySubCategory: boolean,
+                                                            isAdvancedFilter: boolean, isDisplayAdvancedFilter: boolean,
+                                                            IsPrincipalFill: boolean, isDisplayPrincipalFill: boolean
+                                                            listCategoryFilter: SuperCategoryFilter[],
+                                                            listPrincipalFilter: CategoryFilter[],
+
                                                         }) {
     const cssStyle = getCssStyle()
 
@@ -159,7 +165,7 @@ export default function LayoutPrincipalFilterMobile({
         setListFilters(listFilters = newListFilters)
     }
 
-    let [displayOrderBy, setDisplayOrderB] = useState(true)
+    let [displayOrderBy, setDisplayOrderB] = useState(isDisplayPrincipalFill)
     const handleOrderBy = () => setDisplayOrderB(displayOrderBy = !displayOrderBy)
 
     function isSubCategoryFull() : boolean {
@@ -202,7 +208,7 @@ export default function LayoutPrincipalFilterMobile({
                 </div>
             }
             {
-                isCategory &&
+                isSubCategory &&
                 isSubCategoryFull() &&
                 <div className={style.buttonsContSub}>
                     {
@@ -233,7 +239,6 @@ export default function LayoutPrincipalFilterMobile({
 
             {
                 !isOpenFilter &&
-                isReview &&
                 <>
                     <div className={style.gridResultFiltersIn}>
                         <div className={`${utilities.fontSubTitle} `}>
@@ -247,84 +252,96 @@ export default function LayoutPrincipalFilterMobile({
                         </button>
                     </div>
 
-                    <div>
-                        <div className={`${utilities.gridMaxContent2} ${style.paddingOrderBy} justify-between`}>
-                            <div className={`${cssStyle.fontName}`}>
-                                Ordenar por:
-                            </div>
-                            <div onClick={handleOrderBy}
-                                 className="grid items-center">
-                                <div className="h-4 w-5 relative">
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                    {
+                        isDisplayPrincipalFill &&
+                        <div>
+                            <div className={`${utilities.gridMaxContent2} ${style.paddingOrderBy} justify-between`}>
+                                <div className={`${cssStyle.fontName}`}>
+                                    Ordenar por:
+                                </div>
+                                <div onClick={handleOrderBy}
+                                     className="grid items-center">
+                                    <div className="h-4 w-5 relative">
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        {
-                            displayOrderBy &&
-                            <div className={style.buttonsCont}>
-                                {
-                                    principalFilters.map((item) =>
-                                        <div key={item.Id}
-                                             onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
-                                             className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
-                                            <div className={style.imageSizeButton}>
-                                                <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                            {
+                                displayOrderBy &&
+                                <div className={style.buttonsCont}>
+                                    {
+                                        principalFilters.map((item) =>
+                                            <div key={item.Id}
+                                                 onClick={() => handleClickPrincipalFilters(item.Id, !item.IsSelected)}
+                                                 className={item.IsSelected ? style.gridButtonSelected : style.gridButton}>
+                                                <div className={style.imageSizeButton}>
+                                                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                                                </div>
+                                                <div className={`${style.paddingText}`}>
+                                                    {item.Name}
+                                                </div>
                                             </div>
-                                            <div className={`${style.paddingText}`}>
+                                        )
+                                    }
+
+                                </div>
+                            }
+                        </div>
+                    }
+
+                    {
+                        isAdvancedFilter &&
+                        <div className={`${selectedTagsShow.length != 0 && style.gridTitle} ${cssStyle.borderBottom}`}>
+                            <div className={style.gridSelected}>
+                                {
+                                    selectedTagsShow.map((item, index) =>
+                                        <div key={index}
+                                             className={`${utilities.gridMaxContent2} gap-3 ${cssStyle.styleTags}`}>
+                                            <div className={utilities.clamp1}>
                                                 {item.Name}
                                             </div>
+                                            <button onClick={() => deleteItem(item)}>
+                                                <div className="h-4 w-4 relative">
+                                                    <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon}
+                                                           alt=""/>
+                                                </div>
+                                            </button>
                                         </div>
                                     )
                                 }
-
                             </div>
-                        }
-                    </div>
+                        </div>
+                    }
 
-                    <div className={`${selectedTagsShow.length != 0 && style.gridTitle} ${cssStyle.borderBottom}`}>
-                        <div className={style.gridSelected}>
-                            {
-                                selectedTagsShow.map((item, index) =>
-                                    <div key={index}
-                                         className={`${utilities.gridMaxContent2} gap-3 ${cssStyle.styleTags}`}>
-                                        <div className={utilities.clamp1}>
-                                            {item.Name}
-                                        </div>
-                                        <button onClick={() => deleteItem(item)}>
-                                            <div className="h-4 w-4 relative">
-                                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon}
-                                                       alt=""/>
-                                            </div>
-                                        </button>
+                    {
+                        isAdvancedFilter &&
+                        <>
+                            <div>
+                                {
+                                    listFilters.map((item) =>
+                                        <SubCategoryContainerMobile isDarkMode={isDarkMode}
+                                                                    click={handleSelectedCategory}
+                                                                    key={item.FilterName}
+                                                                    item={item}/>
+                                    )
+                                }
+                            </div>
+                            <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
+                                <div className={cssStyle.fontName}>
+                                    Limpiar Filtros
+                                </div>
+                                <button onClick={deleteAll}>
+                                    <div className="h-4 w-3 relative">
+                                        <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
                                     </div>
-                                )
-                            }
-                        </div>
-                    </div>
-
-                    <div>
-                        {
-                            listFilters.map((item) =>
-                                <SubCategoryContainerMobile isDarkMode={isDarkMode}
-                                                            click={handleSelectedCategory}
-                                                            key={item.FilterName}
-                                                            item={item}/>
-                            )
-                        }
-                    </div>
-
-                    <div className={`${utilities.gridMaxContent2} ${style.paddingCleanFilters} justify-between`}>
-                        <div className={cssStyle.fontName}>
-                            Limpiar Filtros
-                        </div>
-                        <button onClick={deleteAll}>
-                            <div className="h-4 w-3 relative">
-                                <Image layout={"fill"} src={cssStyle.cleanIcon} alt=""/>
+                                </button>
                             </div>
-                        </button>
-                    </div>
+                        </>
+                    }
                 </>
             }
+
+
         </div>
     )
 

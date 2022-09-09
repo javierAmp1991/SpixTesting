@@ -75,7 +75,8 @@ let resultInfo: ResultInfo = {
     Sugresult: listSug
 }
 
-export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}) {
+export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}:
+                                              { darkMode: boolean, isLogged: boolean, toggleDarkMode: Function }) {
     let [isdisplaySug, setIsDisplaySug] = useState(false)
     const showIsDisplaySug = () => setIsDisplaySug(isdisplaySug = true)
     const hiddeIsDisplaySug = () => setIsDisplaySug(isdisplaySug = false)

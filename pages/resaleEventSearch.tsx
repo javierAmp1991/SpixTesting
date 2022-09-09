@@ -21,6 +21,7 @@ import {
 } from "../dataDemo/data";
 import ResaleEventViewDesktop from "../components/Desktop/Search/resaleEventViewDesktop";
 import ResaleEventviewMobile from "../components/Mobile/Search/resaleEventviewMobile";
+import {bool} from "prop-types";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -36,11 +37,18 @@ export default function SearchRestaurant() {
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
-    const isCategory: boolean = true;
     const textResultSection: string = "Entradas";
     const isReview: boolean = true;
+
+    const isCategory: boolean = true;
+    const isDisplayCategory: boolean = true;
+    const isSubCategory: boolean = false;
     const isDisplaySubCategory: boolean = false;
-    const isPrincipalFill: boolean = true
+    const isPrincipalFill: boolean = true;
+    const isDisplayPrincipalFill: boolean = true;
+    const isAdvancedFilter: boolean = true;
+    const isDisplayAdvancedFilter: boolean = false;
+
 
     //region desktop Components
     let dropDown = ListEventSearch.eventSearch.map((item) =>
@@ -74,11 +82,16 @@ export default function SearchRestaurant() {
                 <div className={cssStyle.bg}>
                     <LayoutPrincipalFilterMobile listPrincipalFilter={categoryPrincipalFilter}
                                                  listCategoryFilter={categoryFilterRest}
-                                                 isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
-                                                 isReview={isReview}/>
+                                                 isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                 isSubCategory={isSubCategory}
+                                                 isDisplaySubCategory={isDisplaySubCategory}
+                                                 IsPrincipalFill={isPrincipalFill}
+                                                 isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                 isAdvancedFilter={isAdvancedFilter}
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
@@ -116,12 +129,12 @@ export default function SearchRestaurant() {
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
                                                       listCategoryFilter={categoryFilterRest}
-                                                      isCategory={isCategory}
+                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                      isSubCategory={isSubCategory} isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill} isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                      isAdvancedFilter={isAdvancedFilter} isDisplayAdvancedFilter={isDisplayAdvancedFilter}
                                                       isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}
-                                                      isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}/>
+                                                      isOpenFilter={isOpenFilters}/>
                             }
                         </div>
                         <div>

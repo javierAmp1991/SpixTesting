@@ -37,10 +37,16 @@ export default function ReviewSearch() {
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
-    const isCategory: boolean = true;
     const isReview: boolean = false;
+
+    const isCategory: boolean = true;
+    const isDisplayCategory: boolean = true;
+    const isSubCategory: boolean = false;
     const isDisplaySubCategory: boolean = true;
-    const isPrincipalFill: boolean = true
+    const isPrincipalFill: boolean = true;
+    const isDisplayPrincipalFill: boolean = true;
+    const isAdvancedFilter: boolean = false;
+    const isDisplayAdvancedFilter: boolean = false;
 
     //region desktop Components
 
@@ -70,11 +76,16 @@ export default function ReviewSearch() {
 
                     <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
                                                  listCategoryFilter={categoryFilterRest}
-                                                 isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
-                                                 isReview={isReview}/>
+                                                 isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                 isSubCategory={isSubCategory}
+                                                 isDisplaySubCategory={isDisplaySubCategory}
+                                                 IsPrincipalFill={isPrincipalFill}
+                                                 isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                 isAdvancedFilter={isAdvancedFilter}
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
 
                     {
                         isDisplayResult &&
@@ -118,12 +129,16 @@ export default function ReviewSearch() {
                             {
                                 <MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
-                                                      isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}
+
+                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                      isSubCategory={isSubCategory}
                                                       isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}/>
+                                                      IsPrincipalFill={isPrincipalFill}
+                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                      isAdvancedFilter={isAdvancedFilter}
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                             }
                         </div>
                         <div>

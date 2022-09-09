@@ -19,7 +19,7 @@ import {
     ReviewSearchData,
     SuperCategoryFilter,
     EventResale,
-    CategoryPrincipalFiltersSearch,
+    CategoryPrincipalFilterTicket,
     ResaleProduct
 } from "../dataDemo/data";
 import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop";
@@ -33,7 +33,7 @@ export default function ResaleTicketSearch() {
     const resaleTitle: string = EventResale.eventResale.Title
     const resaleSubtile: string = EventResale.eventResale.Subtitle
     const resaleRating: number = EventResale.eventResale.Rating
-    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersSearch.listPrinciaplFilters;
+    const principalFilterReview: CategoryFilter[] = CategoryPrincipalFilterTicket.filters;
     const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryReview.listSuperCat
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
@@ -44,10 +44,16 @@ export default function ResaleTicketSearch() {
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
-    const isCategory: boolean = true;
     const isReview: boolean = false;
-    const isDisplaySubCategory: boolean = true;
-    const isPrincipalFill: boolean = true
+
+    const isCategory: boolean = false;
+    const isDisplayCategory: boolean = false;
+    const isSubCategory: boolean = false;
+    const isDisplaySubCategory: boolean = false;
+    const isPrincipalFill: boolean = true;
+    const isDisplayPrincipalFill: boolean = true;
+    const isAdvancedFilter: boolean = false;
+    const isDisplayAdvancedFilter: boolean = false;
 
     //region desktop Components
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -73,46 +79,61 @@ export default function ResaleTicketSearch() {
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
-
-                    <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
-                                                 listCategoryFilter={categoryFilterRest}
-                                                 isCategory={isCategory}
-                                                 handleOpenFilter={handleClick}
-                                                 isDarkMode={isDarkMode}
-                                                 isOpenFilter={isDisplayResult}
-                                                 isReview={isReview}/>
-
-                    {
-                        isDisplayResult &&
-                        <div className={"relative"}>
-                            <div className={style.paddingContainer}>
-                                <div className={style.gridHeaderResult}>
-                                    <div className={styleMobile.sizeBanner}>
-                                        <Image layout={"fill"} src={resaleBanner} alt={""}/>
-                                    </div>
-                                    <div>
-                                        <div className={utilities.fontTitle}>
-                                            {resaleTitle}
-                                        </div>
-                                        <div className={`${styleMobile.fontSubTitle} mt-3`}>
-                                            {resaleSubtile}
-                                        </div>
-                                        <div
-                                            className={`${utilities.fontPrimaryText} ${styleMobile.ratingStarProp} mt-3`}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt={""}/>
-                                        </div>
-                                    </div>
+                    <div className={style.gridHeaderResult}>
+                        <div className={styleMobile.sizeBanner}>
+                            <Image layout={"fill"} src={resaleBanner} alt={""}/>
+                        </div>
+                        <div className={style.paddingInfo}>
+                            <div className={utilities.fontTitle}>
+                                {resaleTitle}
+                            </div>
+                            <div className={`${styleMobile.fontSubTitle} mt-3`}>
+                                {resaleSubtile}
+                            </div>
+                            <div className={styleMobile.gridDisplayFilter}>
+                                <div className={`${utilities.fontPrimaryText} ${styleMobile.ratingStarProp}`}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt={""}/>
                                 </div>
-                                <div className={styleMobile.gridResaleEventMobile}>
-                                    {
-                                        resaleSearchList.map((item) =>
-                                            <ResaleEventMobile key={item.Id} item={item}/>
-                                        )
-                                    }
-                                </div>
-                                {buttonsNavegationMobile}
+                                <button onClick={handleClick}
+                                        className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                    <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
+                                        Filtros
+                                    </div>
+                                    <div className={"h-3 w-4 relative"}>
+                                        <Image layout={"fill"}
+                                               src={GlobalConst.sourceImages.engineIcon} alt={""}/>
+                                    </div>
+                                </button>
                             </div>
                         </div>
+                    </div>
+                    {
+                        isDisplayResult ?
+                            <div className={"relative"}>
+                                <div className={style.paddingContainer}>
+                                    <div className={styleMobile.gridResaleEventMobile}>
+                                        {
+                                            resaleSearchList.map((item) =>
+                                                <ResaleEventMobile key={item.Id} item={item}/>
+                                            )
+                                        }
+                                    </div>
+                                    {buttonsNavegationMobile}
+                                </div>
+                            </div>
+                            :
+                            <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
+                                                         listCategoryFilter={categoryFilterRest}
+                                                         handleOpenFilter={handleClick}
+                                                         isDarkMode={isDarkMode}
+                                                         isOpenFilter={isDisplayResult}
+                                                         isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                         isSubCategory={isSubCategory}
+                                                         isDisplaySubCategory={isDisplaySubCategory}
+                                                         IsPrincipalFill={isPrincipalFill}
+                                                         isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                         isAdvancedFilter={isAdvancedFilter}
+                                                         isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                     }
                 </div>
             </DefaultLayoutMobile>
@@ -124,12 +145,16 @@ export default function ResaleTicketSearch() {
                             {
                                 <MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
-                                                      isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}
+
+                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                      isSubCategory={isSubCategory}
                                                       isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}/>
+                                                      IsPrincipalFill={isPrincipalFill}
+                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                      isAdvancedFilter={isAdvancedFilter}
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                             }
                         </div>
                         <div>

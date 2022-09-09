@@ -366,6 +366,15 @@
     font-weight: 300;
 }
 
+.gridDisplayFilter{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-top: 12px;
+}
+
 @media (min-width: 500px) {
     .gridDropDownNew{
         display: grid;

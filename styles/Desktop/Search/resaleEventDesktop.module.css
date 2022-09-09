@@ -25,6 +25,7 @@
     align-items: center;
     gap: 6px;
     margin: auto;
+    margin-top: 4px;
 }
 
 .overflowName {
@@ -245,7 +246,7 @@
     width: 36px;
     height: 50px;
     border-radius: 0 0 20px 20px;
-    box-shadow: 2px 2px 5px #9a0101;
+    box-shadow: 2px 2px 4px #9a0101;
     background: #da0e0e;
     position: absolute;
     right: 16px;
@@ -259,7 +260,7 @@
     width: 36px;
     height: 50px;
     border-radius: 0 0 20px 20px;
-    box-shadow: 2px 2px 5px #046701;
+    box-shadow: 2px 2px 4px #046701;
     background: #11a40b;
     display: grid;
     align-content: center;

@@ -36,10 +36,16 @@ export default function SearchRestaurant() {
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
-    const isCategory: boolean = true;
     const isReview: boolean = true;
-    const isDisplaySubCategory: boolean = false;
-    const isPrincipalFill: boolean = true
+
+    const isCategory: boolean = true;
+    const isDisplayCategory: boolean = true;
+    const isSubCategory: boolean = true;
+    const isDisplaySubCategory: boolean = true;
+    const isPrincipalFill: boolean = true;
+    const isDisplayPrincipalFill: boolean = true;
+    const isAdvancedFilter: boolean = true;
+    const isDisplayAdvancedFilter: boolean = false;
 
     //region desktop Components
     let dropDown =
@@ -75,11 +81,16 @@ export default function SearchRestaurant() {
                 <div className={cssStyle.bg}>
                     <LayoutPrincipalFilterMobile listPrincipalFilter={categoryPrincipalFilter}
                                                  listCategoryFilter={categoryFilterRest}
-                                                 isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
-                                                 isReview={isReview}/>
+                                                 isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                 isSubCategory={isSubCategory}
+                                                 isDisplaySubCategory={isDisplaySubCategory}
+                                                 IsPrincipalFill={isPrincipalFill}
+                                                 isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                 isAdvancedFilter={isAdvancedFilter}
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
@@ -116,12 +127,15 @@ export default function SearchRestaurant() {
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
                                                       listCategoryFilter={categoryFilterRest}
-                                                      isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}
+                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                      isSubCategory={isSubCategory}
                                                       isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}/>
+                                                      IsPrincipalFill={isPrincipalFill}
+                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                      isAdvancedFilter={isAdvancedFilter}
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                             }
                         </div>
                         <div>

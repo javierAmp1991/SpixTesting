@@ -14,20 +14,21 @@ const subcategoryTitle: string = "Subcategorias"
 
 
 export default function MainContainerFilters({
-                                                 isOpenFilter,
-                                                 isDarkMode,
-                                                 isCategory,
-                                                 listCategoryFilter,
-                                                 listPrincipalFilter,
-                                                 isReview,
-                                                 isDisplaySubCategory,
-                                                 IsPrincipalFill
+                                                 isOpenFilter, isDarkMode,
+                                                 isCategory, isDisplayCategory,
+                                                 isSubCategory, isDisplaySubCategory,
+                                                 isAdvancedFilter, isDisplayAdvancedFilter,
+                                                 IsPrincipalFill, isDisplayPrincipalFill,
+                                                 listCategoryFilter, listPrincipalFilter,
                                              }:
                                                  {
                                                      isOpenFilter: boolean, isDarkMode: boolean,
-                                                     isCategory: boolean, listCategoryFilter: SuperCategoryFilter[],
-                                                     listPrincipalFilter: CategoryFilter[], isReview: boolean, isDisplaySubCategory: boolean,
-                                                     IsPrincipalFill: boolean
+                                                     isCategory: boolean, isDisplayCategory: boolean
+                                                     isSubCategory: boolean, isDisplaySubCategory: boolean,
+                                                     isAdvancedFilter: boolean, isDisplayAdvancedFilter: boolean,
+                                                     IsPrincipalFill: boolean, isDisplayPrincipalFill: boolean
+                                                     listCategoryFilter: SuperCategoryFilter[],
+                                                     listPrincipalFilter: CategoryFilter[],
                                                  }) {
 
     const cssStyle = getCssStyle()
@@ -166,9 +167,11 @@ export default function MainContainerFilters({
         setListFilters(listFilters = newListFilters)
     }
 
-    let [displaySub, setDisplaySub] = useState(true)
-    let [displayPrinFil, setDisplayPrinFil] = useState(isDisplaySubCategory)
-    let [displaySuperCategory, setDisplaySuperCatgory] = useState(style.displayOutAtr)
+    let [displaySub, setDisplaySub] = useState(isDisplaySubCategory)
+    let [displayPrinFil, setDisplayPrinFil] = useState(isDisplayPrincipalFill)
+    let [displaySuperCategory, setDisplaySuperCatgory] = useState(isDisplayCategory)
+    let [isOpenAdvancedFilter, setIsOpenAdvancedFilter] = useState(isDisplayAdvancedFilter)
+
 
     function isSubCategoryFull(): boolean {
         let isFull: boolean;
@@ -176,8 +179,7 @@ export default function MainContainerFilters({
             if (item.isSelected) {
                 if (item.ListCategory == null) {
                     isFull = false
-                }
-                else{
+                } else {
                     isFull = true
                 }
             }
@@ -185,28 +187,28 @@ export default function MainContainerFilters({
         return isFull
     }
 
-    function handleClick() {
+    const handleIsOpenAdvanced = () => setIsOpenAdvancedFilter(isOpenAdvancedFilter = !isOpenAdvancedFilter)
+    let [displayAdvanced, setDisplayAdvanced] = useState(style.displayIn)
+
+    function handleDisplaSub() {
         setDisplaySub(displaySub = !displaySub)
     }
 
-    function handleClick1() {
+    function handleDisplayPrinFill() {
         setDisplayPrinFil(displayPrinFil = !displayPrinFil)
     }
 
-    function handleClick2() {
+    function handleDisplaySuperCat() {
         setDisplaySuperCatgory(
-            displaySuperCategory == style.displayInAtr ? displaySuperCategory = style.displayOutAtr : displaySuperCategory = style.displayInAtr)
+            displaySuperCategory = !displaySuperCategory)
     }
-
-    let [displayAdvanced, setDisplayAdvanced] = useState(style.displayIn)
 
     function handleClickAdvanced() {
         setDisplayAdvanced(
             displayAdvanced == style.displayInAdb ? displayAdvanced = style.displayOutAdb : displayAdvanced = style.displayInAdb)
     }
 
-    let [isOpenAdvancedFilter, setIsOpenAdvancedFilter] = useState(false)
-    const handleIsOpenAdvanced = () => setIsOpenAdvancedFilter(isOpenAdvancedFilter = !isOpenAdvancedFilter)
+
     //endregions
 
     return (
@@ -216,55 +218,47 @@ export default function MainContainerFilters({
                     Filtros
                 </div>
             </div>
-
-
-            {/*superCategory*/}
             {
                 isCategory &&
-                <div>
-                    {
-                        <div className={displaySuperCategory}>
-                            <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
-                                <div className={`${cssStyle.fontName}`}>
-                                    {categoryTitle}
-                                </div>
-                                <div onClick={handleClick2} className="grid items-center">
-                                    <div className="h-4 w-4 relative">
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={style.carrouselCont}>
-                                {
-                                    listSuperCat.map((item) =>
-                                        <button onClick={() => handleClickFilter(item.Id)}
-                                                key={item.Id}
-                                                className={item.isSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
-                                            <div className={style.imageSize}>
-                                                <Image layout={"fill"} src={item.PathIcon} alt={""}/>
-                                            </div>
-                                            <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
-                                                {item.Name}
-                                            </div>
-                                        </button>
-                                    )
-                                }
+                <div className={displaySuperCategory? style.displayOutAtr : style.displayInAtr  }>
+                    <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
+                        <div className={`${cssStyle.fontName}`}>
+                            {categoryTitle}
+                        </div>
+                        <div onClick={handleDisplaySuperCat} className="grid items-center">
+                            <div className="h-4 w-4 relative">
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                             </div>
                         </div>
-                    }
+                    </div>
+                    <div className={style.carrouselCont}>
+                        {
+                            listSuperCat.map((item) =>
+                                <button onClick={() => handleClickFilter(item.Id)}
+                                        key={item.Id}
+                                        className={item.isSelected ? style.gridFilterImageSelected : style.gridFilterImage}>
+                                    <div className={style.imageSize}>
+                                        <Image layout={"fill"} src={item.PathIcon} alt={""}/>
+                                    </div>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                        {item.Name}
+                                    </div>
+                                </button>
+                            )
+                        }
+                    </div>
                 </div>
             }
 
-            {/*subCategory*/}
             {
-                isCategory &&
+                isSubCategory &&
                 isSubCategoryFull() &&
                 <div className={displaySub ? style.displayOutAdb : style.displayInAdb}>
                     <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
                         <div className={`${cssStyle.fontName}`}>
                             {subcategoryTitle}
                         </div>
-                        <div onClick={handleClick} className="grid items-center">
+                        <div onClick={handleDisplaSub} className="grid items-center">
                             <div className="h-4 w-4 relative">
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                             </div>
@@ -308,7 +302,7 @@ export default function MainContainerFilters({
                             <div className={`${cssStyle.fontName}`}>
                                 Ordenar por:
                             </div>
-                            <div onClick={handleClick1} className="grid items-center">
+                            <div onClick={handleDisplayPrinFill} className="grid items-center">
                                 <div className="h-4 w-4 relative">
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt=""/>
                                 </div>
@@ -336,9 +330,8 @@ export default function MainContainerFilters({
                 </div>
             }
 
-            {/*advancedFilters*/}
             {
-                isReview &&
+                isAdvancedFilter &&
                 <div className={isOpenAdvancedFilter ? style.displayOutAdb : style.displayInAdb}>
                     <div className={displayAdvanced}>
                         <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
