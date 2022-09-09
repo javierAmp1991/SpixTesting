@@ -15,6 +15,14 @@ export default function ResaleEventViewDesktop({item, darkModeState}: { item: Ev
                     <div className={`${styles.sizeImage} z-10`}>
                         <Image layout={"fill"} src={item.CoverImage} alt=""/>
                     </div>
+                    <div className={`${utilities.gridMaxContent2} absolute bottom-2 z-30 right-2 items-center`}>
+                        <div className={utilities.ratingStarsProperties}>
+                            <Image layout={"fill"}
+                                   src={item.Rating != null ?
+                                       GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull}
+                                   alt=""/>
+                        </div>
+                    </div>
                 </a>
             </Link>
 
@@ -28,7 +36,7 @@ export default function ResaleEventViewDesktop({item, darkModeState}: { item: Ev
                     {item.SubTitle}
                 </div>
 
-                <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
+                {/*<div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
                     {
                         item.Rating != null ?
                             <>
@@ -49,10 +57,10 @@ export default function ResaleEventViewDesktop({item, darkModeState}: { item: Ev
                                 </div>
                             </>
                     }
-                </div>
+                </div>*/}
 
                 <div className={`${cssStyles.fontPrimaryText} mb-1`}>
-                    Total reventas: {item.TotalResale}
+                    {item.TotalResale} reventas
                 </div>
             </div>
         </div>

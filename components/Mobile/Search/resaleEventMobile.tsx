@@ -25,13 +25,26 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     <div className={utilities.fontName}>
                         Pack de {item.ListProducts.length} productos
                     </div>
+                    <div className={style.divImageInfo}>
+                        <div className={style.gridImageInfo}>
+                            <div className={style.profileSize}>
+                                <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                            </div>
+                            <div className={`${style.overflowName} ${utilities.fontPrimaryText}`}>
+                                {item.Name}
+                            </div>
+                        </div>
+                    </div>
 
-                    <button onClick={handlePopUp} className={utilities.fontSecundaryText}>
+                    {/*<button onClick={handlePopUp} className={utilities.fontSecundaryText}>
                         Ver productos
-                    </button>
+                    </button>*/}
                 </div>
 
                 <div className={"relative w-full"}>
+                    <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
+                        Ver mas
+                    </button>
                     <div className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
                         {
                             item.ListProducts.map((product, index) =>
@@ -51,7 +64,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     </div>
                 </div>
 
-                <div className={style.divImageInfo}>
+                {/*<div className={style.divImageInfo}>
                     <div className={style.gridImageInfo}>
                         <div className={style.profileSize}>
                             <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
@@ -60,7 +73,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             {item.Name}
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
 
             <Link href={""}>

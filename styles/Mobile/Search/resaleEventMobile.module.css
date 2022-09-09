@@ -140,22 +140,22 @@ width: 100%;
 }
 
 .leftDivRed {
-    padding: 12px 16px;
+    padding: 12px;
     border-right: 2px dashed #da0e0e;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
 
 }
 
 .leftDivGreen {
-    padding: 12px 16px;
+    padding: 12px;
     border-right: 2px dashed #11a40b;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
 }
 
 .gridTotal {
@@ -184,8 +184,8 @@ width: 100%;
 }
 
 .etiquetaRed {
-    width: 36px;
-    height: 50px;
+    width: 32px;
+    height: 40px;
     border-radius: 0 0 20px 20px;
     box-shadow: 2px 2px 4px #9a0101;
     background: #da0e0e;
@@ -198,8 +198,8 @@ width: 100%;
 }
 
 .etiquetaGreen {
-    width: 36px;
-    height: 50px;
+    width: 32px;
+    height: 42px;
     border-radius: 0 0 20px 20px;
     box-shadow: 2px 2px 4px #046701;
     background: #11a40b;
@@ -252,4 +252,12 @@ width: 100%;
 .dicountPer {
     color: white;
     font-size: 11px;
+    font-weight: 600;
+}
+
+.positionSeeMore{
+    position: absolute;
+    right: 0px;
+    top: -6px;
+    z-index: 100000000;
 }

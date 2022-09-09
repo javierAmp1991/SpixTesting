@@ -94,7 +94,7 @@
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
-    padding: 8px 8px 12px 8px;
+    padding: 8px 24px 12px 24px;
 }
 
 .mainDivPopUp {
@@ -243,8 +243,8 @@
 }
 
 .etiquetaRed {
-    width: 36px;
-    height: 50px;
+    width: 32px;
+    height: 42px;
     border-radius: 0 0 20px 20px;
     box-shadow: 2px 2px 4px #9a0101;
     background: #da0e0e;
@@ -257,8 +257,8 @@
 }
 
 .etiquetaGreen {
-    width: 36px;
-    height: 50px;
+    width: 32px;
+    height: 42px;
     border-radius: 0 0 20px 20px;
     box-shadow: 2px 2px 4px #046701;
     background: #11a40b;
@@ -317,4 +317,12 @@
 .dicountPer {
     color: white;
     font-size: 11px;
+    font-weight: 600;
+}
+
+.positionSeeMore{
+    position: absolute;
+    right: 4px;
+    top: -12px;
+    z-index: 100000000;
 }

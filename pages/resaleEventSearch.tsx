@@ -44,9 +44,9 @@ export default function SearchRestaurant() {
     const isDisplayCategory: boolean = true;
     const isSubCategory: boolean = false;
     const isDisplaySubCategory: boolean = false;
-    const isPrincipalFill: boolean = true;
-    const isDisplayPrincipalFill: boolean = true;
-    const isAdvancedFilter: boolean = true;
+    const isPrincipalFill: boolean = false;
+    const isDisplayPrincipalFill: boolean = false;
+    const isAdvancedFilter: boolean = false;
     const isDisplayAdvancedFilter: boolean = false;
 
 

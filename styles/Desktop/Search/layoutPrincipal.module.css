@@ -132,6 +132,10 @@
     font-weight: 300;
 }
 
+.paddingTitleNextEvent{
+padding: 24px 16px;
+}
+
 @media (min-width: 1281px) {
     .styleBanner {
         height: 250px;

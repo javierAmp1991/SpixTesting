@@ -3698,7 +3698,7 @@ export namespace SuperCategoryReview {
                 },
             ],*/
             ListCategory: null,
-            isSelected: true
+            isSelected: false
         },
         {
             Name: "Futbol",

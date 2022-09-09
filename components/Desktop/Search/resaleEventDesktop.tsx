@@ -6,6 +6,7 @@ import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
+const buy: string = "Comprar";
 
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
@@ -50,13 +51,28 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     <div className={utilities.fontName}>
                         Pack de {item.ListProducts.length} productos
                     </div>
-                    <button onClick={handlePopUp} className={utilities.fontSecundaryText}>
+                    <div className={style.divImageInfo}>
+                        <div className={style.gridImageInfo}>
+                            <div className={style.profileSize}>
+                                <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                            </div>
+                            <div className={`${style.overflowName} ${utilities.fontPrimaryText}`}>
+                                {item.Name}
+                            </div>
+                        </div>
+                    </div>
+                    {/*<button onClick={handlePopUp} className={utilities.fontSecundaryText}>
                         Ver productos
-                    </button>
+                    </button>*/}
                 </div>
 
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
                      ref={mainDivTranslate} className={"relative w-full"}>
+
+                    <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
+                        Ver mas
+                    </button>
+
                     <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
                             className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
@@ -93,7 +109,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     </button>
                 </div>
 
-                <div className={style.divImageInfo}>
+                {/*<div className={style.divImageInfo}>
                     <div className={style.gridImageInfo}>
                         <div className={style.profileSize}>
                             <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
@@ -102,7 +118,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             {item.Name}
                         </div>
                     </div>
-                </div>
+                </div>*/}
             </div>
 
             <Link href={""}>
@@ -144,7 +160,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         </div>
 
                         <button className={style.styleButton}>
-                            Comprar
+                            {buy}
                         </button>
                     </div>
                 </a>
@@ -163,7 +179,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                 item.ListProducts.map((product, index) =>
                                     <div key={index} className={style.mainDivProdPop}>
                                         <div className={style.sizeImageProp}>
-                                            <Image priority={true} layout={"fill"} src={"/images/product1.jpg"}
+                                            <Image priority={true} layout={"fill"} src={"/images/cerveza1.jpg"}
                                                    alt={""}/>
                                         </div>
                                         <div className={style.gridPriceNameProp}>

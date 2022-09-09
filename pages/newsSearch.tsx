@@ -51,7 +51,7 @@ export default function ReviewSearch() {
     const publicity1: string = PublicityData.publicityList[1]
 
     const isCategory: boolean = true;
-    const isDisplayCategory: boolean = false;
+    const isDisplayCategory: boolean = true;
     const isSubCategory: boolean = false;
     const isDisplaySubCategory: boolean = true;
     const isPrincipalFill: boolean = true;
@@ -149,7 +149,7 @@ export default function ReviewSearch() {
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
-                                <MainContainerFilters listCategoryFilter={categoryFilterRest}
+                                /*<MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
@@ -159,7 +159,10 @@ export default function ReviewSearch() {
                                                       IsPrincipalFill={isPrincipalFill}
                                                       isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                       isAdvancedFilter={isAdvancedFilter}
-                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>*/
+                                <div className={`${utilities.fontTitle} ${style.paddingTitleNextEvent}`}>
+                                    Proximos Eventos
+                                </div>
                             }
                         </div>
                         <div>
