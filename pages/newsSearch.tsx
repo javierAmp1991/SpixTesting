@@ -29,14 +29,18 @@ import PublicityView from "../components/Desktop/CRM/publicityView";
 import {PublicityData} from "../dataDemo/data";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import NewSearcPrincipalMobile from "../components/Mobile/Search/newSearcPrincipalMobile";
+import PublicityNews from "../components/Desktop/CRM/publicityNews";
+import {PublicitySearch, listPublicityNews} from "../dataDemo/search/searchData";
+import PublicityNewsMobile from "../components/Mobile/CRM/publicityNewsMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function ReviewSearch() {
     const newSearchList: News[] = DropDownNewSearch.listNews
     const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersNews.listPrinciaplFilters;
-    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryNews.listSuperCat
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryNews.listSuperCat;
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
+    const listPublicity: PublicitySearch[] = listPublicityNews.list
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
@@ -47,8 +51,11 @@ export default function ReviewSearch() {
     let cssStyle = getCssStyle();
     const isReview: boolean = false;
     const newsText: string = "Noticias";
+    const nextEventsText: string = "Proximos Eventos";
     const publicity: string = PublicityData.publicityList[0]
     const publicity1: string = PublicityData.publicityList[1]
+    let [displayNextEvent, setDisplayNextEvent] = useState(true)
+    const handleDisplayNextEvent = () => setDisplayNextEvent(displayNextEvent = !displayNextEvent)
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -85,7 +92,7 @@ export default function ReviewSearch() {
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
 
-                    <LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
+                    {/*<LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
                                                  listCategoryFilter={categoryFilterRest}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
@@ -96,48 +103,87 @@ export default function ReviewSearch() {
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                  isAdvancedFilter={isAdvancedFilter}
-                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>*/}
 
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
                             <div className={style.paddingContainer}>
                                 <div className={styleMobile.gridResultFiltersOut}>
-                                    <div className={`${cssStyle.fontSubTitle}`}>
-                                        {newsText}
+                                    <div className={styleMobile.gridNewNext}>
+                                        {
+                                            displayNextEvent ?
+                                                <div className={`${cssStyle.fontSubTitle}`}>
+                                                    {newsText}
+                                                </div>
+                                                :
+                                                <div className={`${cssStyle.fontSubTitle}`}>
+                                                    {nextEventsText}
+                                                </div>
+
+
+                                        }
+                                        {
+                                            displayNextEvent ?
+                                                <button onClick={handleDisplayNextEvent}
+                                                        className={utilities.fontSecundaryText}>
+                                                    {nextEventsText}
+                                                </button>
+                                                :
+                                                <button onClick={handleDisplayNextEvent}
+                                                        className={utilities.fontSecundaryText}>
+                                                    {newsText}
+                                                </button>
+                                        }
                                     </div>
-                                    {
+                                    {/*{
                                         isReview &&
-                                        <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <button onClick={handleClick}
+                                                className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                             <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                                 Filtros
                                             </div>
-                                            <div  className={"h-3 w-4 relative"}>
+                                            <div className={"h-3 w-4 relative"}>
                                                 <Image layout={"fill"}
                                                        src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                             </div>
                                         </button>
-                                    }
+                                    }*/}
                                 </div>
-                                <div className={style.gridResult}>
-                                    <div>
-                                        <NewSearcPrincipalMobile item={newSearchList[0]}/>
-                                    </div>
-                                    <PublicityViewMobile linkImage={publicity}/>
-                                    <div>
-                                        <NewSearcPrincipalMobile item={newSearchList[1]}/>
-                                    </div>
-                                    <PublicityViewMobile linkImage={publicity1}/>
-                                    <div className={styleMobile.gridDropDownNew}>
-                                        {
-                                            newSearchList.map((item, index) =>
-                                                index > 1 &&
-                                                <NewsSearchMobile key={item.Id} item={item}/>
-                                            )
-                                        }
-                                    </div>
-                                </div>
-                                {buttonsNavegationMobile}
+                                {
+                                    displayNextEvent ?
+                                        <>
+                                            <div className={style.gridResult}>
+                                                <div>
+                                                    <NewSearcPrincipalMobile item={newSearchList[0]}/>
+                                                </div>
+                                                <PublicityViewMobile linkImage={publicity}/>
+                                                <div>
+                                                    <NewsSearchMobile isSubtitle={true} item={newSearchList[1]}/>
+                                                </div>
+                                                <PublicityViewMobile linkImage={publicity1}/>
+                                                <div className={styleMobile.gridDropDownNew}>
+                                                    {
+                                                        newSearchList.map((item, index) =>
+                                                            index > 1 &&
+                                                            <NewsSearchMobile isSubtitle={false} key={item.Id} item={item}/>
+                                                        )
+                                                    }
+                                                </div>
+                                            </div>
+                                            {buttonsNavegationMobile}
+                                        </>
+                                        :
+                                        <>
+                                            <div className={styleMobile.gridPublicity}>
+                                                {
+                                                    listPublicity.map(item =>
+                                                        <PublicityNewsMobile item={item} key={item.Id}/>
+                                                    )
+                                                }
+                                            </div>
+                                        </>
+                                }
                             </div>
                         </div>
                     }
@@ -148,8 +194,7 @@ export default function ReviewSearch() {
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
-                            {
-                                /*<MainContainerFilters listCategoryFilter={categoryFilterRest}
+                            {/*<MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
@@ -159,11 +204,20 @@ export default function ReviewSearch() {
                                                       IsPrincipalFill={isPrincipalFill}
                                                       isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                       isAdvancedFilter={isAdvancedFilter}
-                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>*/
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>*/}
+                            <div>
                                 <div className={`${utilities.fontTitle} ${style.paddingTitleNextEvent}`}>
                                     Proximos Eventos
                                 </div>
-                            }
+                                <div className={style.gridPublicityNews}>
+                                    {
+                                        listPublicity.map(item =>
+                                            <PublicityNews item={item} key={item.Id}/>
+                                        )
+                                    }
+                                </div>
+
+                            </div>
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>

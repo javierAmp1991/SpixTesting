@@ -375,6 +375,19 @@
     margin-top: 12px;
 }
 
+.gridPublicity{
+    display: grid;
+    gap: 32px;
+    padding: 0 2px 24px 2px;
+}
+
+.gridNewNext{
+ display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+}
+
 @media (min-width: 500px) {
     .gridDropDownNew{
         display: grid;

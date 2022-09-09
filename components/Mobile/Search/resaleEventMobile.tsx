@@ -141,10 +141,12 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                         </div>
                                         <div className={style.gridPriceNamePop}>
                                             <div>{product.Name} X {product.Amount}</div>
-                                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
+                                            <div
+                                                className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
                                                 {
                                                     item.PreviousPrice > item.Price ?
-                                                        <span><Image width={14} height={10} src={"/images/dollarDown.png"}
+                                                        <span><Image width={14} height={10}
+                                                                     src={"/images/dollarDown.png"}
                                                                      alt={""}/> </span>
                                                         :
                                                         <span><Image width={14} height={10} src={"/images/dollarUp.png"}
@@ -152,7 +154,8 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                 }
                                                 <div>
                                                     <span>Antes: </span>
-                                                    <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                                    <span
+                                                        className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
                                                 </div>
                                             </div>
 
@@ -160,12 +163,20 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                 <div className={style.sizeDiscount}>
                                                     {
                                                         item.PreviousPrice > item.Price ?
-                                                            <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
+                                                            <Image layout={"fill"} src={"/images/discountIcon.png"}
+                                                                   alt={""}/>
                                                             :
-                                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
+                                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"}
+                                                                   alt={""}/>
                                                     }
                                                 </div>
-                                                <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
+                                                <span
+                                                    className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
+                                            </div>
+                                        </div>
+                                        <div className={cssStyle.colorEti}>
+                                            <div className={style.dicountPer}>
+                                                - 25%
                                             </div>
                                         </div>
                                     </div>

@@ -1,0 +1,15 @@
+.sizeBanner{
+    width: 100%;
+    aspect-ratio: 3.5/1;
+    position: relative;
+}
+.mainDiv{
+    box-shadow: var(--shadowUnderProducts);
+    transition: .4s;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.divInfo{
+    padding: 8px 12px;
+}

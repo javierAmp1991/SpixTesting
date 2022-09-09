@@ -210,6 +210,11 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className={cssStyle.colorEti}>
+                                            <div className={style.dicountPer}>
+                                                - 25%
+                                            </div>
+                                        </div>
                                     </div>
                                 )
                             }

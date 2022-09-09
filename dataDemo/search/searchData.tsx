@@ -7,6 +7,54 @@ export class EventSearch{
     TotalResale: number
 }
 
+export class PublicitySearch{
+    Id: string
+    Title: string
+    Subtitle: string
+    Date: Date
+    BannerPath: string
+}
+
+export namespace listPublicityNews{
+    export const list: PublicitySearch[] = [
+        {
+            Id: "asda34cvffdsds",
+            Title: "Star Wars",
+            Subtitle: "Sinfonico",
+            Date: new Date(2022,10,10),
+            BannerPath: "/images/banner2.jpg"
+        },
+        {
+            Id: "asdas9893dawdds",
+            Title: "Seafret",
+            Subtitle: "Seafret",
+            Date: new Date(2022,10,20),
+            BannerPath: "/images/banner3.jpg"
+        },
+        {
+            Id: "asd12dwdasds",
+            Title: "Guns N Roses",
+            Subtitle: "Arum Super",
+            Date: new Date(2022,11,26),
+            BannerPath: "/images/banner7.jpg"
+        },
+        {
+            Id: "asdd232asds",
+            Title: "Nikkita",
+            Subtitle: "Concert 2022",
+            Date: new Date(2022,9,15),
+            BannerPath: "/images/banner5.jpg"
+        },
+        {
+            Id: "asdasdwqwef566s",
+            Title: "Fiebre del Memo",
+            Subtitle: "La Fonda",
+            Date: new Date(2022,8,9),
+            BannerPath: "/images/banner6.jpg"
+        }
+    ]
+}
+
 export namespace ListEventSearch{
     export const eventSearch: EventSearch[] = [
         {

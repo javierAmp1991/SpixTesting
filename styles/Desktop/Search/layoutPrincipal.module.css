@@ -136,6 +136,12 @@
 padding: 24px 16px;
 }
 
+.gridPublicityNews{
+  padding: 0 16px;
+    display: grid;
+    gap: 40px;
+}
+
 @media (min-width: 1281px) {
     .styleBanner {
         height: 250px;
