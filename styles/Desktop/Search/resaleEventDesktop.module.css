@@ -93,7 +93,7 @@
 
 .mainDivPopUp {
     margin: 24px 60px;
-    max-height: 500px;
+    max-height: 512px;
     display: grid;
     grid-template-rows: max-content auto;
     overflow: scroll;
