@@ -47,7 +47,6 @@ export default function ResaleTicketSearch() {
     const isCategory: boolean = true;
     const isReview: boolean = false;
     const isDisplaySubCategory: boolean = true;
-    const resaleText: string = "Reventa";
     const isPrincipalFill: boolean = true
 
     //region desktop Components
@@ -89,7 +88,7 @@ export default function ResaleTicketSearch() {
                             <div className={style.paddingContainer}>
                                 <div className={style.gridHeaderResult}>
                                     <div className={styleMobile.sizeBanner}>
-                                        <Image layout={"fill"} src={resaleBanner}/>
+                                        <Image layout={"fill"} src={resaleBanner} alt={""}/>
                                     </div>
                                     <div>
                                         <div className={utilities.fontTitle}>
@@ -100,7 +99,7 @@ export default function ResaleTicketSearch() {
                                         </div>
                                         <div
                                             className={`${utilities.fontPrimaryText} ${styleMobile.ratingStarProp} mt-3`}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}/>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt={""}/>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +136,7 @@ export default function ResaleTicketSearch() {
                             <div className={style.paddingLeftResult}>
                                 <div className={style.gridHeaderResult}>
                                     <div className={style.sizeBanner}>
-                                        <Image layout={"fill"} src={resaleBanner}/>
+                                        <Image layout={"fill"} src={resaleBanner} alt={""}/>
                                     </div>
                                     <div>
                                         <div className={utilities.fontTitle}>
@@ -148,7 +147,7 @@ export default function ResaleTicketSearch() {
                                         </div>
                                         <div
                                             className={`${utilities.fontPrimaryText} ${style.ratingStarProp} mt-3`}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars}/>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt={""}/>
                                         </div>
                                     </div>
                                 </div>
