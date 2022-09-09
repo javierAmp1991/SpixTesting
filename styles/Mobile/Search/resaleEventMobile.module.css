@@ -81,9 +81,16 @@
 .gridPriceName {
     padding: 8px 12px;
     display: grid;
-width: 100%;
+    width: 100%;
     justify-content: center;
     justify-items: center;
+    gap: 2px;
+}
+
+.gridPriceNamePop {
+    padding: 8px 12px;
+    display: grid;
+    width: 100%;
     gap: 2px;
 }
 
@@ -234,7 +241,7 @@ width: 100%;
 .gridProductsPop {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    gap: 20px;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
@@ -255,7 +262,7 @@ width: 100%;
     font-weight: 600;
 }
 
-.positionSeeMore{
+.positionSeeMore {
     position: absolute;
     right: 0px;
     top: -6px;

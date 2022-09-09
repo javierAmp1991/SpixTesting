@@ -138,14 +138,33 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                             <Image priority={true} layout={"fill"} src={"/images/product1.jpg"}
                                                    alt={""}/>
                                         </div>
-                                        <div className={style.gridPriceName}>
+                                        <div className={style.gridPriceNamePop}>
                                             <div>{product.Name} X {product.Amount}</div>
-                                            <span
-                                                className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
-                                            <div className={utilities.fontSecundaryText}>
-                                                <span>Antes: </span>
-                                                <span
-                                                    className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
+                                                {
+                                                    item.PreviousPrice > item.Price ?
+                                                        <span><Image width={14} height={10} src={"/images/dollarDown.png"}
+                                                                     alt={""}/> </span>
+                                                        :
+                                                        <span><Image width={14} height={10} src={"/images/dollarUp.png"}
+                                                                     alt={""}/> </span>
+                                                }
+                                                <div>
+                                                    <span>Antes: </span>
+                                                    <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                                </div>
+                                            </div>
+
+                                            <div className={`${utilities.gridMaxContent2} gap-1`}>
+                                                <div className={style.sizeDiscount}>
+                                                    {
+                                                        item.PreviousPrice > item.Price ?
+                                                            <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
+                                                            :
+                                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
+                                                    }
+                                                </div>
+                                                <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
                                             </div>
                                         </div>
                                     </div>
