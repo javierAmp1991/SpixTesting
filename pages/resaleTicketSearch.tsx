@@ -147,8 +147,8 @@ export default function ResaleTicketSearch() {
                                             {resaleSubtile}
                                         </div>
                                         <div
-                                            className={`${utilities.fontPrimaryText} ${utilities.ratingStarsProperties} mt-3`}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}/>
+                                            className={`${utilities.fontPrimaryText} ${style.ratingStarProp} mt-3`}>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars}/>
                                         </div>
                                     </div>
                                 </div>

@@ -148,11 +148,13 @@
 }
 
 .boxShadowRed {
-    box-shadow: 0 2px 8px #da0e0e;
+    /*box-shadow: 0 2px 8px #da0e0e;*/
+    border: 2px solid #da0e0e ;
 }
 
 .boxShadowGreen {
-    box-shadow: 0 2px 8px #11a40b;
+    /*box-shadow: 0 2px 8px #11a40b;*/
+    border: 2px solid #11a40b;
 }
 
 .gridPrice {
@@ -176,13 +178,13 @@
 
 .gridTotal {
     display: grid;
-    gap: 16px;
+    gap: 24px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 .rightDiv {
-    padding: 30px 22px;
+    padding: 24px 22px;
     display: grid;
     grid-template-rows: 1fr max-content;
     gap: 8px;
@@ -209,9 +211,10 @@
 }
 
 .styleButton {
-    color: var(--colorPrimaryText);
+    color: white;
+    background: var(--gradientBlueButton);
     padding: 2px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, .2);
-    border-radius: 2px;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, .2);
+    border-radius: 4px;
     overflow: hidden;
 }
