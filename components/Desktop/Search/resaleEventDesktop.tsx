@@ -88,6 +88,17 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         </div>
                     </button>
                 </div>
+
+                <div className={cssStyle.colorEti}>
+                    <div className={style.circulo}/>
+                </div>
+
+                {/*<div className={style.positionEtiqueta}>
+                    <div className={cssStyle.rectangulo}/>
+                    <div className={cssStyle.trapecio}>
+                        <div className={style.circulo}/>
+                    </div>
+                </div>*/}
             </div>
             <Link href={""}>
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
@@ -175,7 +186,10 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         return {
             gridType: item.PreviousPrice > item.Price ? style.leftDivRed : style.leftDivGreen,
             borderType: item.PreviousPrice > item.Price ? style.borderRightDivRed : style.borderRightDivGreen,
-            borderResale: item.PreviousPrice > item.Price ? style.boxShadowRed : style.boxShadowGreen
+            borderResale: item.PreviousPrice > item.Price ? style.boxShadowRed : style.boxShadowGreen,
+            colorEti: item.PreviousPrice > item.Price ? style.etiquetaRed : style.etiquetaGreen,
+            trapecio: item.PreviousPrice > item.Price ? style.trapecioRed : style.trapecioGreen,
+            rectangulo: item.PreviousPrice > item.Price ? style.rectanguloRed : style.rectanguloGreen
         }
     }
 
