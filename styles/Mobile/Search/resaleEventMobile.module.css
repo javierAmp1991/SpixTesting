@@ -55,8 +55,8 @@
 }
 
 .sizeImagePop {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    aspect-ratio: 1/1;
     position: relative;
 }
 
@@ -79,9 +79,10 @@
 }
 
 .gridPriceName {
+    padding: 8px 12px;
     display: grid;
+width: 100%;
     gap: 2px;
-    justify-items: center;
 }
 
 .sizeArrow {
@@ -222,8 +223,6 @@
     display: grid;
     margin: auto;
     width: 100%;
-    justify-items: center;
-    padding: 12px;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
     overflow: hidden;
@@ -233,7 +232,7 @@
 .gridProductsPop {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 28px;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
@@ -242,7 +241,7 @@
 
 .mainDivPopUp {
     margin: 24px 16px;
-    max-height: 512px;
+    max-height: 560px;
     display: grid;
     grid-template-rows: max-content auto;
     overflow: scroll;

@@ -26,7 +26,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         Pack de {item.ListProducts.length} productos
                     </div>
 
-                    <button onClick={handlePopUp} className={utilities.styleLink}>
+                    <button onClick={handlePopUp} className={utilities.fontSecundaryText}>
                         Ver productos
                     </button>
                 </div>
@@ -121,12 +121,11 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             {
                                 item.ListProducts.map((product, index) =>
                                     <div key={index} className={style.mainDivProdPop}>
+                                        <div className={style.sizeImagePop}>
+                                            <Image priority={true} layout={"fill"} src={"/images/product1.jpg"}
+                                                   alt={""}/>
+                                        </div>
                                         <div className={style.gridPriceName}>
-                                            <div className={style.sizeImagePop}>
-                                                <Image priority={true} layout={"fill"} src={"/images/product1.jpg"}
-                                                       alt={""}/>
-                                            </div>
-
                                             <div>{product.Name} X {product.Amount}</div>
                                             <span
                                                 className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
