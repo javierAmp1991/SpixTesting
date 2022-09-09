@@ -92,7 +92,18 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
             <Link href={""}>
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
                     <div className={style.gridTotal}>
-                        <div>
+                        <div className={style.divImageInfo}>
+                            <div className={style.gridImageInfo}>
+                                <div className={style.profileSize}>
+                                    <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
+                                </div>
+                                <div className={style.overflowName}>
+                                    {item.Name}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={"mb-2"}>
                             <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
                                 {
                                     item.PreviousPrice > item.Price ?
@@ -121,20 +132,10 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             </div>
                         </div>
 
-                        <div className={style.divImageInfo}>
-                            <div className={style.gridImageInfo}>
-                                <div className={style.profileSize}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                                </div>
-                                <div className={style.overflowName}>
-                                    {item.Name}
-                                </div>
-                            </div>
-                        </div>
+                        <button className={style.styleButton}>
+                            Comprar
+                        </button>
                     </div>
-                    <button className={style.styleButton}>
-                        Comprar
-                    </button>
                 </a>
 
             </Link>

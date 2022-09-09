@@ -145,16 +145,15 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
+    box-shadow: var(--shadowUnderProducts);
 }
 
 .boxShadowRed {
     /*box-shadow: 0 2px 8px #da0e0e;*/
-    border: 2px solid #da0e0e ;
 }
 
 .boxShadowGreen {
     /*box-shadow: 0 2px 8px #11a40b;*/
-    border: 2px solid #11a40b;
 }
 
 .gridPrice {
@@ -178,7 +177,8 @@
 
 .gridTotal {
     display: grid;
-    gap: 20px;
+    gap: 24px;
+    grid-template-rows: repeat(3, max-content);
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -186,8 +186,6 @@
 .rightDiv {
     padding: 16px 22px;
     display: grid;
-    grid-template-rows: 1fr max-content;
-    gap: 8px;
 }
 
 .borderRightDivRed {
