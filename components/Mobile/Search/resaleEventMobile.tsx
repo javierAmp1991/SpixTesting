@@ -25,7 +25,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     <div className={utilities.fontName}>
                         Pack de {item.ListProducts.length} productos
                     </div>
-                    <div className={style.divImageInfo}>
+                    <div className={`${style.divImageInfo} mt-1`}>
                         <div className={style.gridImageInfo}>
                             <div className={style.profileSize}>
                                 <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
