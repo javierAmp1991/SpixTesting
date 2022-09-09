@@ -321,5 +321,6 @@
 }
 
 .positionSeeMore{
+    text-decoration: underline 1px var(--colorSecundaryText);
     z-index: 100000000;
 }
