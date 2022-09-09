@@ -120,8 +120,6 @@ export default function ReviewSearch() {
                                                 <div className={`${cssStyle.fontSubTitle}`}>
                                                     {nextEventsText}
                                                 </div>
-
-
                                         }
                                         {
                                             displayNextEvent ?
