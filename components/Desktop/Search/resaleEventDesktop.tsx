@@ -141,7 +141,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 displaPopUp &&
                 <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handlePopUp}>
                         <div className={style.mainDivPopUp}>
-                            <div className={`${utilities.fontName} mb-8`}>
+                            <div className={`${utilities.fontName} mb-5`}>
                                 Pack de {item.ListProducts.length} productos
                             </div>
                             <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProductsPop}`}>
