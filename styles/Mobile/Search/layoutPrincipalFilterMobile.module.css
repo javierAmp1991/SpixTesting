@@ -352,6 +352,20 @@
     overflow: hidden;
 }
 
+.ratingStarProp{
+    height: 20px;
+    width: 106px;
+    position: relative;
+}
+
+.fontSubTitle{
+    color: var(--colorSubTitles);
+    font-size: 17px;
+    line-height: 17px;
+    font-family: Helvetica, sans-serif, Arial;
+    font-weight: 300;
+}
+
 @media (min-width: 500px) {
     .gridDropDownNew{
         display: grid;

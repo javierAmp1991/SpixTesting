@@ -95,11 +95,11 @@ export default function ResaleTicketSearch() {
                                         <div className={utilities.fontTitle}>
                                             {resaleTitle}
                                         </div>
-                                        <div className={`${utilities.fontSubTitle} mt-3`}>
+                                        <div className={`${styleMobile.fontSubTitle} mt-3`}>
                                             {resaleSubtile}
                                         </div>
                                         <div
-                                            className={`${utilities.fontPrimaryText} ${utilities.ratingStarsProperties} mt-3`}>
+                                            className={`${utilities.fontPrimaryText} ${styleMobile.ratingStarProp} mt-3`}>
                                             <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}/>
                                         </div>
                                     </div>
