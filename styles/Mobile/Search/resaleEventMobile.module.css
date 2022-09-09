@@ -79,7 +79,7 @@
 }
 
 .gridPriceName {
-    padding: 8px 12px;
+    padding: 0 12px;
     display: grid;
     width: 100%;
     justify-content: center;
@@ -263,8 +263,5 @@
 }
 
 .positionSeeMore {
-    position: absolute;
-    right: 0px;
-    top: -6px;
     z-index: 100000000;
 }

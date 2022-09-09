@@ -69,10 +69,6 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
                      ref={mainDivTranslate} className={"relative w-full"}>
 
-                    <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
-                        Ver mas
-                    </button>
-
                     <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
                             className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
@@ -81,7 +77,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         </div>
                     </button>
 
-                    <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
+                    <div ref={mainDivRef} className={`${utilities.fontPrimaryText} ${style.gridProducts}`}>
                         {
                             item.ListProducts.map((product, index) =>
                                 <div key={index} className={style.mainDivProd}>
@@ -92,8 +88,8 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                    alt={""}/>
                                         </div>
                                         <div>{product.Name} X {product.Amount}</div>
-                                        <span
-                                            className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
+                                        {/*<span
+                                            className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>*/}
                                     </div>
                                 </div>
                             )
@@ -108,6 +104,10 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         </div>
                     </button>
                 </div>
+
+                <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
+                    Ver productos
+                </button>
 
                 {/*<div className={style.divImageInfo}>
                     <div className={style.gridImageInfo}>

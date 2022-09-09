@@ -42,10 +42,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 </div>
 
                 <div className={"relative w-full"}>
-                    <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
-                        Ver mas
-                    </button>
-                    <div className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
+                    <div className={`${utilities.fontPrimaryText} ${style.gridProducts}`}>
                         {
                             item.ListProducts.map((product, index) =>
                                 <div key={index} className={style.mainDivProd}>
@@ -55,14 +52,18 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                    alt={""}/>
                                         </div>
                                         <div>{product.Name} X {product.Amount}</div>
-                                        <span
-                                            className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
+                                        {/*<span
+                                            className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>*/}
                                     </div>
                                 </div>
                             )
                         }
                     </div>
                 </div>
+
+                <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
+                    Ver Productos
+                </button>
 
                 {/*<div className={style.divImageInfo}>
                     <div className={style.gridImageInfo}>
