@@ -59,13 +59,16 @@
     justify-items: center;
 }
 
-.mainDivProdPop{
+.mainDivProdPop {
     display: grid;
+    width: 180px;
+    margin: auto;
     justify-items: center;
     padding: 12px;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 
 .gridProducts {
@@ -78,14 +81,22 @@
     transition: 1s;
 }
 
-.gridProductsPop{
-  display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+.gridProductsPop {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 24px;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+    padding: 8px 0 12px 0;
 }
 
-.mainDivPopUp{
-    padding: 24px 60px;
+.mainDivPopUp {
+    margin: 24px 60px;
+    max-height: 500px;
+    display: grid;
+    grid-template-rows: max-content auto;
+    overflow: scroll;
 }
 
 .gridPriceName {
@@ -131,10 +142,17 @@
 .gridNewPa {
     display: grid;
     grid-template-columns: 65% 35%;
-    box-shadow: var(--shadowUnderProducts);
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
+}
+
+.boxShadowRed {
+    box-shadow: 0 2px 8px #da0e0e;
+}
+
+.boxShadowGreen {
+    box-shadow: 0 2px 8px #11a40b;
 }
 
 .gridPrice {
@@ -190,9 +208,10 @@
         border-bottom: 1px solid #11a40b;*/
 }
 
-.styleButton{
-    color: white;
-    background: var(--gradientBlueButton);
+.styleButton {
+    color: var(--colorPrimaryText);
+    padding: 2px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .2);
     border-radius: 2px;
     overflow: hidden;
 }

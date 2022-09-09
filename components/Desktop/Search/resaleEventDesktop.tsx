@@ -10,7 +10,7 @@ import PopUpContainer from "../Misc/popUpContainer";
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
     let [visibility, setVisibility] = useState(true);
-    let[displaPopUp, setDisplayPopUp] = useState(false)
+    let [displaPopUp, setDisplayPopUp] = useState(false)
     const mainDivRef = useRef(null)
     const mainDivTranslate = useRef(null)
     const cssStyle = getCssStyle()
@@ -43,7 +43,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         }, 30)
     }
     return (
-        <div className={style.gridNewPa}>
+        <div className={`${style.gridNewPa} ${cssStyle.borderResale}`}>
             <div className={cssStyle.gridType}>
                 <div className={utilities.fontName}>
                     Pack de {item.ListProducts.length} productos
@@ -52,14 +52,15 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     Ver productos
                 </button>
 
-                <div ref={mainDivTranslate} className={"relative w-full"}>
-                    {/*<button onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                     ref={mainDivTranslate} className={"relative w-full"}>
+                    <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
                             className={`${style.positionArrowLeft} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                         </div>
-                    </button>*/}
+                    </button>
 
                     <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProducts}`}>
                         {
@@ -79,47 +80,46 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         }
                     </div>
 
-                    {/*<button onClick={handleRight}
+                    <button onClick={handleRight}
                             onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             className={`${style.positionArrowRight} ${visibility && utilities.opacity0}`}>
                         <div className={style.sizeArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                         </div>
-                    </button>*/}
+                    </button>
                 </div>
             </div>
             <Link href={""}>
                 <a className={`${utilities.fontSecundaryText} ${style.rightDiv} ${cssStyle.borderType}`}>
                     <div className={style.gridTotal}>
-                        <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2`}>
-                            {
-                                item.PreviousPrice > item.Price ?
-                                    <span><Image width={14} height={10} src={"/images/dollarDown.png"}
-                                                 alt={""}/> </span>
-                                    :
-                                    <span><Image width={14} height={10} src={"/images/dollarUp.png"} alt={""}/> </span>
-                            }
-                            <div>
-                                <span>Antes: </span>
-                                <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
-                            </div>
-                        </div>
-
-                        <div className={`${utilities.gridMaxContent2} gap-1`}>
-                            <div className={style.sizeDiscount}>
+                        <div>
+                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-1`}>
                                 {
                                     item.PreviousPrice > item.Price ?
-                                        <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
+                                        <span><Image width={14} height={10} src={"/images/dollarDown.png"}
+                                                     alt={""}/> </span>
                                         :
-                                        <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
+                                        <span><Image width={14} height={10} src={"/images/dollarUp.png"}
+                                                     alt={""}/> </span>
                                 }
+                                <div>
+                                    <span>Antes: </span>
+                                    <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                </div>
                             </div>
-                            <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
-                        </div>
 
-                        <button className={style.styleButton}>
-                            Comprar
-                        </button>
+                            <div className={`${utilities.gridMaxContent2} gap-1`}>
+                                <div className={style.sizeDiscount}>
+                                    {
+                                        item.PreviousPrice > item.Price ?
+                                            <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
+                                            :
+                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
+                                    }
+                                </div>
+                                <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
+                            </div>
+                        </div>
 
                         <div className={style.divImageInfo}>
                             <div className={style.gridImageInfo}>
@@ -131,6 +131,10 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                 </div>
                             </div>
                         </div>
+
+                        <button className={style.styleButton}>
+                            Comprar
+                        </button>
                     </div>
 
                 </a>
@@ -140,28 +144,29 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
             {
                 displaPopUp &&
                 <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handlePopUp}>
-                        <div className={style.mainDivPopUp}>
-                            <div className={`${utilities.fontName} mb-5`}>
-                                Pack de {item.ListProducts.length} productos
-                            </div>
-                            <div ref={mainDivRef} className={`${utilities.fontSecundaryText} ${style.gridProductsPop}`}>
-                                {
-                                    item.ListProducts.map((product, index) =>
-                                        <div key={index} className={style.mainDivProdPop}>
-                                            <div className={style.sizeImage}>
-                                                <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
-                                                       alt={""}/>
-                                            </div>
-                                            <div className={style.gridPriceName}>
-                                                <div>{product.Name} X {product.Amount}</div>
-                                                <span
-                                                    className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
+                    <div className={style.mainDivPopUp}>
+                        <div className={`${utilities.fontName} mb-5`}>
+                            Pack de {item.ListProducts.length} productos
                         </div>
+
+                        <div className={`${utilities.fontSecundaryText} ${style.gridProductsPop}`}>
+                            {
+                                item.ListProducts.map((product, index) =>
+                                    <div key={index} className={style.mainDivProdPop}>
+                                        <div className={style.sizeImage}>
+                                            <Image priority={true} layout={"fill"} src={"/images/beb2.jpg"}
+                                                   alt={""}/>
+                                        </div>
+                                        <div className={style.gridPriceName}>
+                                            <div>{product.Name} X {product.Amount}</div>
+                                            <span
+                                                className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
                 </PopUpContainer>
             }
         </div>
@@ -170,7 +175,8 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     function getCssStyle() {
         return {
             gridType: item.PreviousPrice > item.Price ? style.leftDivRed : style.leftDivGreen,
-            borderType: item.PreviousPrice > item.Price ? style.borderRightDivRed : style.borderRightDivGreen
+            borderType: item.PreviousPrice > item.Price ? style.borderRightDivRed : style.borderRightDivGreen,
+            borderResale: item.PreviousPrice > item.Price ? style.boxShadowRed : style.boxShadowGreen
         }
     }
 
