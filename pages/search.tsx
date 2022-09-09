@@ -30,9 +30,15 @@ export default function Search() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isReview: boolean = true;
+
     const isCategory: boolean = false;
-    const isDisplaySubCategory: boolean = true;
-    const isPrincipalFill: boolean = true
+    const isDisplayCategory: boolean = false;
+    const isSubCategory: boolean = false;
+    const isDisplaySubCategory: boolean = false;
+    const isPrincipalFill: boolean = true;
+    const isDisplayPrincipalFill: boolean = true;
+    const isAdvancedFilter: boolean = false;
+    const isDisplayAdvancedFilter: boolean = false;
 
 
     //region desktop Components
@@ -71,11 +77,16 @@ export default function Search() {
 
                     <LayoutPrincipalFilterMobile listPrincipalFilter={listPrincipalFilters}
                                                  listCategoryFilter={null}
-                                                 isCategory={isCategory}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
-                                                 isReview={isReview}/>
+                                                 isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                 isSubCategory={isSubCategory}
+                                                 isDisplaySubCategory={isDisplaySubCategory}
+                                                 IsPrincipalFill={isPrincipalFill}
+                                                 isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                 isAdvancedFilter={isAdvancedFilter}
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
 
                     {
                         isDisplayResult &&
@@ -113,12 +124,16 @@ export default function Search() {
                             {
                                 <MainContainerFilters listPrincipalFilter={listPrincipalFilters}
                                                       listCategoryFilter={null}
-                                                      isCategory={isCategory}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
-                                                      isReview={isReview}
+
+                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                      isSubCategory={isSubCategory}
                                                       isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}/>
+                                                      IsPrincipalFill={isPrincipalFill}
+                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                      isAdvancedFilter={isAdvancedFilter}
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                             }
                         </div>
                         <div>
