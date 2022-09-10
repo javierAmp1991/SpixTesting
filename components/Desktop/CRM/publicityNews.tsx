@@ -14,12 +14,12 @@ export default function PublicityNews({item}: { item: PublicitySearch }) {
                 <div className={utilities.fontName}>
                     {item.Title}
                 </div>
-                <div>
+                {/*<div>
                     {item.Subtitle}
                 </div>
                 <div className={utilities.fontPrimaryText}>
                     {item.Date.toLocaleDateString()}
-                </div>
+                </div>*/}
             </div>
         </div>
     )

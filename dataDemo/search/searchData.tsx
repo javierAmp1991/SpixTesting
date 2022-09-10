@@ -22,35 +22,35 @@ export namespace listPublicityNews{
             Title: "Star Wars",
             Subtitle: "Sinfonico",
             Date: new Date(2022,10,10),
-            BannerPath: "/images/banner2.jpg"
+            BannerPath: "/images/cartel1.jpg"
         },
         {
             Id: "asdas9893dawdds",
             Title: "Seafret",
             Subtitle: "Seafret",
             Date: new Date(2022,10,20),
-            BannerPath: "/images/banner3.jpg"
+            BannerPath: "/images/cartel2.jpg"
         },
         {
             Id: "asd12dwdasds",
             Title: "Guns N Roses",
             Subtitle: "Arum Super",
             Date: new Date(2022,11,26),
-            BannerPath: "/images/banner7.jpg"
+            BannerPath: "/images/cartel3.jpg"
         },
         {
             Id: "asdd232asds",
             Title: "Nikkita",
             Subtitle: "Concert 2022",
             Date: new Date(2022,9,15),
-            BannerPath: "/images/banner5.jpg"
+            BannerPath: "/images/cartel4.jpg"
         },
         {
             Id: "asdasdwqwef566s",
             Title: "Fiebre del Memo",
             Subtitle: "La Fonda",
             Date: new Date(2022,8,9),
-            BannerPath: "/images/banner6.jpg"
+            BannerPath: "/images/cartel5.jpg"
         }
     ]
 }
