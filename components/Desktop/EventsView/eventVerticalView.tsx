@@ -16,15 +16,37 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
              className={`${styles.principalGridVertical} ${cssStyles.borderCard}`}>
             <a className="relative">
                 {
-                    info.SoldTickets >= info.TotalTickets * 0.90 ?
+                    info.SoldTickets >= info.TotalTickets * 0.90 &&
                         <div className={`${utilities.positionLastTicket} absolute z-20`}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
                         </div>
-                        :
-                        ""
                 }
+
                 <div className={`${styles.sizeImage} z-10`}>
-                    <Image layout={"fill"} src={info.CoverImage} alt=""/>
+                    <Image layout={"fill"} objectFit={"cover"} src={info.CoverImage} alt=""/>
+                </div>
+
+                <div className={`${utilities.gridMaxContent2} items-center absolute z-60 bottom-0 right-2 gap-1.5 mb-2`}>
+                    {
+                        info.Rating != null ?
+                            <>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
+                                </div>
+                                {/*<div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
+                                    ({info.Rating})
+                                </div>*/}
+                            </>
+                            :
+                            <>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
+                                </div>
+                                {/*<div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
+                                    (0)
+                                </div>*/}
+                            </>
+                    }
                 </div>
             </a>
 
@@ -41,29 +63,15 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                         </div>
 
                 }
-
-                <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
-                    {
-                        info.Rating != null ?
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                    ({info.Rating})
-                                </div>
-                            </>
-                            :
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                    (0)
-                                </div>
-                            </>
-                    }
+                <div className={`${utilities.fontPrimaryText} mb-0.5`}>
+                    On Tour 2022
                 </div>
+
+                <div className={`${utilities.fontSecundaryText} mb-2`}>
+                    22 de Nov del 2022
+                </div>
+
+
 
                 <div className={`${cssStyles.fontPriceInclude}  mb-1`}>
                     {
