@@ -51,7 +51,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                             <Image priority={true} layout={"fill"} src={"/images/product1.jpg"}
                                                    alt={""}/>
                                         </div>
-                                        <div>{product.Name} X {product.Amount}</div>
+                                        <div>x{product.Amount} {product.Name}</div>
                                         {/*<span
                                             className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>*/}
                                     </div>
@@ -140,7 +140,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                    alt={""}/>
                                         </div>
                                         <div className={style.gridPriceNamePop}>
-                                            <div>{product.Name} X {product.Amount}</div>
+                                            <div>x{product.Amount} {product.Name}</div>
                                             <div
                                                 className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-1`}>
                                                 {
