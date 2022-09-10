@@ -58,7 +58,7 @@ export default function EventVerticalView({info, darkModeState, dropDown, isHide
                             {info.EventName}
                         </div>
                         :
-                        <div className={`${cssStyles.fontName} ${utilities.clamp1} text-center`}>
+                        <div className={`${cssStyles.fontName} ${utilities.clamp1}`}>
                             {info.EventName}
                         </div>
 
