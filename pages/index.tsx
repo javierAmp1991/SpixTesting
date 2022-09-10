@@ -88,6 +88,7 @@ const displayCarrousel = "grid"
 const gridFullSpace = "100%"
 const gridTemplateColum2: string = "repeat(2,1fr)"
 const gridTemplateColum3: string = "repeat(3,1fr)"
+const gridTemplateColum4: string = "repeat(4,1fr)"
 const gridTemplateColum5: string = "repeat(5,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowOut: string = "-40px"
@@ -110,7 +111,7 @@ const layoutPropFeatured: LayoutCarrouselDeskProp = {
 }
 const layoutPropCarrousel: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum5,
+    Grid: gridTemplateColum4,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowOut,
@@ -426,10 +427,10 @@ export default function Index() {
     const handleCaroousel1Items = (e) => setCarrousel1Items(getCarrousel1Items = e)
     let carrousel1 = <TitleSection paddingTitle={null} titleLink={todayInValpoTitleLink} darkModeState={isDarkMode}>
         {
-            <LayoutCarrousel sumar={4} handleFeatured={handleCaroousel1Items} layoutProp={layoutPropCarrousel}>
+            <LayoutCarrousel sumar={3} handleFeatured={handleCaroousel1Items} layoutProp={layoutPropCarrousel}>
                 {
                     TodayInValpo.listEventLookUp.map((item, index) =>
-                        index >= getCarrousel1Items && index <= getCarrousel1Items + 4 ?
+                        index >= getCarrousel1Items && index <= getCarrousel1Items + 3 ?
                             <EventVerticalView darkModeState={isDarkMode}
                                                isHideName={true}
                                                dropDown={false}
@@ -461,10 +462,10 @@ export default function Index() {
     let [getCarrousel2Items, setCarrousel2Items] = useState(0)
     const handleCaroousel2Items = (e) => setCarrousel2Items(getCarrousel2Items = e)
     let carrousel2 = <TitleSection paddingTitle={null} titleLink={inOfferTitleLink} darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={4} handleFeatured={handleCaroousel2Items} layoutProp={layoutPropCarrousel}>
+        <LayoutCarrousel sumar={3} handleFeatured={handleCaroousel2Items} layoutProp={layoutPropCarrousel}>
             {
                 InOffer.listInOffer.map((item, index) =>
-                    index >= getCarrousel2Items && index <= getCarrousel2Items + 4 ?
+                    index >= getCarrousel2Items && index <= getCarrousel2Items + 3 ?
                         <EventVerticalView isHideName={true}
                                            dropDown={false}
                                            info={item}
