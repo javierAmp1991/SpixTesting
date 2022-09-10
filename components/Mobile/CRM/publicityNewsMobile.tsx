@@ -18,7 +18,7 @@ export default function PublicityNewsMobile({item}: { item: PublicitySearch }) {
                     {item.Subtitle}
                 </div>
                 <div className={utilities.fontPrimaryText}>
-                    {item.Date.toLocaleDateString()}
+                    {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
                 </div>
             </div>
         </div>
