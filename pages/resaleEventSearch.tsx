@@ -100,7 +100,7 @@ export default function SearchRestaurant() {
                                     <div className={`${cssStyle.fontSubTitle}`}>
                                         {textResultSection}
                                     </div>
-                                    <button onClick={handleClick}
+                                    {/*<button onClick={handleClick}
                                             className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                         <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                             Filtros
@@ -109,7 +109,7 @@ export default function SearchRestaurant() {
                                             <Image layout={"fill"}
                                                    src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                         </div>
-                                    </button>
+                                    </button>*/}
                                 </div>
 
                                 <div className={style.gridResult}>

@@ -142,7 +142,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                         <div className={style.gridPriceNamePop}>
                                             <div>{product.Name} X {product.Amount}</div>
                                             <div
-                                                className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
+                                                className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-1`}>
                                                 {
                                                     item.PreviousPrice > item.Price ?
                                                         <span><Image width={14} height={10}

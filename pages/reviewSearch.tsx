@@ -90,9 +90,9 @@ export default function ReviewSearch() {
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
-                            <div className={style.paddingContainer}>
+                            <div >
                                 <div className={styleMobile.gridResultFiltersOut}>
-                                    <div className={`${cssStyle.fontSubTitle}`}>
+                                    <div className={`${cssStyle.fontSubTitle} px-5`}>
                                         Reseñas
                                     </div>
                                     {

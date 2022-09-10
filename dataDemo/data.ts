@@ -4257,7 +4257,7 @@ export namespace DropDownResale{
     export const listDropDown: ResaleProduct[] = [
         {
             BannerImage: "/images/banner1.jpg",
-            Name: "franciscoMeneses",
+            Name: "franciscaMeneses",
             ProfileImage: "/images/fotoPerfil7.jpg",
             NameEvent: "Festival Orquesta",
             PreviousPrice: 40000,
