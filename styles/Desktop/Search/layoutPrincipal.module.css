@@ -22,12 +22,12 @@
 .gridSearchOpen {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    gap: 40px;
 }
 
 .gridSearchClose {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
 }
 
@@ -149,7 +149,7 @@
     }
 
     .gridSearchOpen {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .gridSearchClose {

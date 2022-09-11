@@ -111,7 +111,7 @@ const layoutPropFeatured: LayoutCarrouselDeskProp = {
 }
 const layoutPropCarrousel: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum4,
+    Grid: gridTemplateColum5,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowOut,
@@ -424,13 +424,14 @@ export default function Index() {
     </TitleSection>
 
     let [getCarrousel1Items, setCarrousel1Items] = useState(0)
+    const carrouselNumber = 4
     const handleCaroousel1Items = (e) => setCarrousel1Items(getCarrousel1Items = e)
     let carrousel1 = <TitleSection paddingTitle={null} titleLink={todayInValpoTitleLink} darkModeState={isDarkMode}>
         {
-            <LayoutCarrousel sumar={3} handleFeatured={handleCaroousel1Items} layoutProp={layoutPropCarrousel}>
+            <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items} layoutProp={layoutPropCarrousel}>
                 {
                     TodayInValpo.listEventLookUp.map((item, index) =>
-                        index >= getCarrousel1Items && index <= getCarrousel1Items + 3 ?
+                        index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber ?
                             <EventVerticalView darkModeState={isDarkMode}
                                                isHideName={true}
                                                dropDown={false}
@@ -462,14 +463,14 @@ export default function Index() {
     let [getCarrousel2Items, setCarrousel2Items] = useState(0)
     const handleCaroousel2Items = (e) => setCarrousel2Items(getCarrousel2Items = e)
     let carrousel2 = <TitleSection paddingTitle={null} titleLink={inOfferTitleLink} darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={3} handleFeatured={handleCaroousel2Items} layoutProp={layoutPropCarrousel}>
+        <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel2Items} layoutProp={layoutPropCarrousel}>
             {
                 InOffer.listInOffer.map((item, index) =>
-                    index >= getCarrousel2Items && index <= getCarrousel2Items + 3 ?
+                    index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
                         <EventVerticalView isHideName={true}
                                            dropDown={false}
                                            info={item}
-                                           darkModeState={isDarkMode} key={index}/> : <></>
+                                           darkModeState={isDarkMode} key={index}/>
                 )
             }
         </LayoutCarrousel>
@@ -483,8 +484,8 @@ export default function Index() {
         <LayoutCarrousel sumar={3} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNewsItem && index <= getNewsItem + 2 ?
-                        <NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/> : <></>
+                    index >= getNewsItem && index <= getNewsItem + 2 &&
+                        <NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
@@ -500,8 +501,8 @@ export default function Index() {
             {
 
                 Restaurants.listRestaurants.map((item, index) =>
-                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 4 ?
-                        <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/> : <></>
+                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 4 &&
+                        <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
                 )
             }
         </LayoutCarrousel>
@@ -591,14 +592,14 @@ export default function Index() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
-                <div>
+                <div className={utilities.bgBodyNormal}>
                     {carrouselBannerMobile}
                     <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
                 </div>
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={darkModeToggle}>
-                <div>
+                <div className={utilities.bgBodyNormal}>
                     {carrouselBanner}
                     <div className={utilities.styleGradientIndex}>
                         <div className={utilities.maxWidthBodyContentSpix}>

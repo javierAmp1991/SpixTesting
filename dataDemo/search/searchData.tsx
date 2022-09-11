@@ -1,4 +1,4 @@
-export class EventSearch{
+export class EventSearch {
     Id: string
     CoverImage: string
     Title: string
@@ -7,7 +7,7 @@ export class EventSearch{
     TotalResale: number
 }
 
-export class PublicitySearch{
+export class PublicitySearch {
     Id: string
     Title: string
     Subtitle: string
@@ -15,47 +15,100 @@ export class PublicitySearch{
     BannerPath: string
 }
 
-export namespace listPublicityNews{
+export enum typeNews {
+    base, principal, featured
+}
+
+export class newsBase {
+    id: string
+    type: typeNews
+    title: string
+    link: string
+}
+
+export class newsFeatured extends newsBase {
+    subTitle: string
+}
+
+export class newsPrinciapl extends newsFeatured {
+    goTo: string
+}
+
+export namespace listFeatured {
+    export const list: newsFeatured[] = [
+        {
+            type: typeNews.featured,
+            id: "pruebadestacado",
+            title: "prueba",
+            link: "prueba",
+            subTitle: "prueba",
+        }
+    ]
+}
+export namespace listNewBase {
+    export const list: newsBase[] = [
+        {
+            id: "pruebabase",
+            type: typeNews.base,
+            title: "prueba",
+            link: "prueba",
+        }
+    ]
+}
+export namespace listnewPrincipal {
+    export const list: newsPrinciapl[] = [
+        {
+            id: "pruebaprincipal",
+            type: typeNews.principal,
+            title: "prueba",
+            link: "prueba",
+            subTitle: "prueba",
+            goTo: "prueba"
+        }
+    ]
+}
+
+export namespace listPublicityNews {
     export const list: PublicitySearch[] = [
         {
             Id: "asda34cvffdsds",
             Title: "Star Wars",
             Subtitle: "Sinfonico",
-            Date: new Date(2022,10,10),
+            Date: new Date(2022, 10, 10),
             BannerPath: "/images/cartel1.jpg"
         },
         {
             Id: "asdas9893dawdds",
             Title: "Seafret",
             Subtitle: "Seafret",
-            Date: new Date(2022,10,20),
+            Date: new Date(2022, 10, 20),
             BannerPath: "/images/cartel2.jpg"
         },
         {
             Id: "asd12dwdasds",
             Title: "Guns N Roses",
             Subtitle: "Arum Super",
-            Date: new Date(2022,11,26),
+            Date: new Date(2022, 11, 26),
             BannerPath: "/images/cartel3.jpg"
         },
         {
             Id: "asdd232asds",
             Title: "Nikkita",
             Subtitle: "Concert 2022",
-            Date: new Date(2022,9,15),
+            Date: new Date(2022, 9, 15),
             BannerPath: "/images/cartel4.jpg"
         },
         {
             Id: "asdasdwqwef566s",
             Title: "Fiebre del Memo",
             Subtitle: "La Fonda",
-            Date: new Date(2022,8,9),
+            Date: new Date(2022, 8, 9),
             BannerPath: "/images/cartel5.jpg"
         }
     ]
 }
 
-export namespace ListEventSearch{
+export namespace ListEventSearch {
     export const eventSearch: EventSearch[] = [
         {
             Id: "123abc1",
@@ -188,3 +241,4 @@ export namespace ListEventSearch{
         },
     ]
 }
+
