@@ -91,6 +91,9 @@ export default function EventInformationMobile({eventInformation, form}:
                             <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
                             </div>
+                            <div className={utilities.fontPrimaryText}>
+                                {eventInformation.Subtitle}
+                            </div>
 
                             <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1`}>
                                 {
@@ -118,8 +121,6 @@ export default function EventInformationMobile({eventInformation, form}:
                                         </>
                                 }
                             </div>
-
-                            <div className={utilities.fontSecundaryText}>Bar restaurant</div>
                         </div>
                     </div>
 
@@ -188,6 +189,11 @@ export default function EventInformationMobile({eventInformation, form}:
 
                 <div className={`${utilities.fontPrimaryText} ${style.paddingDescription}`}>
                     {eventInformation.Description}
+                </div>
+
+                <div className={utilities.fontSecundaryText}>
+                    <span className={utilities.fontPrimaryText}>Categoria: </span>
+                    <span className={utilities.fontSecundaryText}>Bar restaurant</span>
                 </div>
 
                 <div className={style.gridTags}>

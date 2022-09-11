@@ -66,34 +66,24 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 {eventInformation.EventName}
                             </div>
 
-                            <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1`}>
-                                {
-                                    eventInformation.Rating != null ?
-                                        <>
-                                            <div className={utilities.ratingStarsProperties}>
-                                                <Image layout={"fill"} objectFit={"cover"}
-                                                       src={GlobalConst.sourceImages.ratingNew} alt=""/>
-                                            </div>
-                                            <div
-                                                className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                                ({eventInformation.Rating})
-                                            </div>
-                                        </>
-                                        :
-                                        <>
-                                            <div className={utilities.ratingStarsProperties}>
-                                                <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull}
-                                                       alt=""/>
-                                            </div>
-                                            <div
-                                                className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                                (0)
-                                            </div>
-                                        </>
-                                }
+                            <div className={`${utilities.fontPrimaryText} mb-1`}>
+                                {eventInformation.Subtitle}
                             </div>
 
-                            <div className={utilities.fontSecundaryText}>Bar restaurant</div>
+                            <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1`}>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"} objectFit={"cover"}
+                                           src={eventInformation.Rating != null ?
+                                               GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull}
+                                           alt=""/>
+                                </div>
+                                <div className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
+                                    ({eventInformation.Rating != null ?
+                                    eventInformation.Rating : 0})
+                                </div>
+                            </div>
+
+                            {/*<div className={utilities.fontSecundaryText}>Bar restaurant</div>*/}
                         </div>
                     </div>
 
@@ -147,13 +137,13 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
                 </div>
 
-                <div className={style.gridButtons}>
+                <button className={style.gridButtons}>
                     <ButtonBlue text={textButton}/>
-                </div>
+                </button>
             </div>
 
             {
-                displayImage ?
+                displayImage &&
                     <PopUpContainer closePopUp={handleClose}
                                     isBackground={false}
                                     isButtonVisible={false}>
@@ -163,10 +153,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                        alt=""/>
                             </div>
                         }
-                    </PopUpContainer> : <></>
+                    </PopUpContainer>
             }
             {
-                displayDateSelector ?
+                displayDateSelector &&
                     <PopUpContainer isButtonVisible={true}
                                     isBackground={true}
                                     closePopUp={handleCloseDate}>
@@ -210,11 +200,11 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 <ButtonBlue text={"Aceptar"}/>
                             </div>
                         </div>
-                    </PopUpContainer> : <></>
+                    </PopUpContainer>
             }
 
             {
-                displayVenue ?
+                displayVenue &&
                     <PopUpContainer closePopUp={handleCloseVenue}
                                     isBackground={true}
                                     isButtonVisible={true}>
@@ -248,7 +238,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                 </div>
                             </div>
                         }
-                    </PopUpContainer> : <></>
+                    </PopUpContainer>
             }
         </div>
     )

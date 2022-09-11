@@ -1,207 +1,106 @@
 import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Desktop/Events/eventVerticalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
-import React, {useState} from "react";
+import React from "react";
 import Image from "next/image";
-import globby from "globby";
+import {
+    BaseVerticalView,
+    VerticalViewClass,
+    VerticalViewResale,
+    VerticalViewSearch
+} from "../../../dataDemo/EventView/eventVerticalView";
 
-const toggle: boolean = false
+const totalResaleText = "Total reventas: "
 
-export default function EventVerticalView({info, darkModeState, dropDown, isHideName}) {
+export default function EventVerticalView({item, darkModeState}:
+                                              { item: BaseVerticalView, darkModeState: boolean }) {
     /*    let [displayName, setDisplayName] = useState(true)
         const handleShowName = () => setDisplayName(displayName = true)
         const handleHiddeName = () => setDisplayName(displayName = false)*/
     let cssStyles = getCssStyles()
+    let newItem: VerticalViewSearch;
+    let newItem2: VerticalViewResale;
+    if (item.Type == VerticalViewClass.search) {
+        newItem = item as VerticalViewSearch
+    } else {
+        newItem2 = item as VerticalViewResale
+    }
 
     return (
-        toggle ?
-            <div /*onPointerOver={handleHiddeName}
-             onPointerOut={handleShowName}*/
-                className={`${styles.principalGridVertical} ${styles.boxShadow}`}>
-                <a className="relative">
-                    {
-                        info.SoldTickets >= info.TotalTickets * 0.90 &&
-                        <div className={`${utilities.positionLastTicket} absolute z-20`}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+        <div className={`${styles.principalGridVertical}`}>
+            <a className={styles.containerImage}>
+                {
+                    item.SoldTickets >= item.TotalTickets * 0.90 &&
+                    <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+                    </div>
+                }
+                <div className={`${styles.sizeImage} ${styles.zIndexImage}`}>
+                    <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
+                </div>
+            </a>
+
+            <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
+                <div className={styles.TopDivInfo}>
+                    <div className={`${cssStyles.fontName} ${utilities.clamp1}`}>
+                        {item.Title}
+                    </div>
+
+                    <div className={`${utilities.fontPrimaryText} ${styles.subTitleMargin}`}>
+                        {item.Subtitle}
+                    </div>
+
+                    <div className={styles.gridRatingStar}>
+                        <div className={utilities.ratingStarsProperties}>
+                            <Image layout={"fill"} src={item.Rating != null ?
+                                GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull} alt=""/>
                         </div>
-                    }
-
-                    <div className={`${styles.sizeImage} z-10`}>
-                        <Image layout={"fill"} objectFit={"cover"} src={info.CoverImage} alt=""/>
-                    </div>
-
-                    {/* <div className={`${utilities.gridMaxContent2} items-center absolute z-60 bottom-0 right-2 gap-1.5 mb-2`}>
-                    {
-                        info.Rating != null ?
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                    ({info.Rating})
-                                </div>
-                            </>
-                            :
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                    (0)
-                                </div>
-                            </>
-                    }
-                </div>*/}
-                </a>
-
-                <div className={`${cssStyles.bgInfo} grid px-6 py-2 ${styles.border} content-start`}>
-                    {
-                        isHideName ?
-                            <div
-                                className={`${cssStyles.fontName} ${utilities.clamp1}`}>
-                                {info.EventName}
-                            </div>
-                            :
-                            <div className={`${cssStyles.fontName} ${utilities.clamp1}`}>
-                                {info.EventName}
-                            </div>
-
-                    }
-                    <div className={`${utilities.fontPrimaryText} mb-0.5`}>
-                        On Tour 2022
-                    </div>
-
-                    <div className={`${utilities.gridMaxContent2} items-center bottom-0 right-2 gap-1.5 mb-3`}>
-                        {
-                            info.Rating != null ?
-                                <>
-                                    <div className={utilities.ratingStarsProperties}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
-                                    </div>
-                                    <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                        ({info.Rating})
-                                    </div>
-                                </>
-                                :
-                                <>
-                                    <div className={utilities.ratingStarsProperties}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
-                                    </div>
-                                    <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                        (0)
-                                    </div>
-                                </>
-                        }
-                    </div>
-
-                    {/*<div className={`${utilities.fontSecundaryText} mb-3`}>
-                    22 de Nov del 2022
-                </div>*/}
-
-
-                    <div className={`${cssStyles.fontPriceInclude}  mb-1`}>
-                        {
-                            info.TicketPriceMin == info.TicketPriceMax ?
-                                <>
-                                    ${Intl.NumberFormat("ES-CL"
-                                ).format(Math.round(info.TicketPriceMin))}
-
-                                </>
-                                :
-                                <>
-                                    ${Intl.NumberFormat("ES-CL"
-                                ).format(Math.round(info.TicketPriceMin))} -
-                                    ${Intl.NumberFormat("ES-CL"
-                                ).format(Math.round(info.TicketPriceMax))}
-                                </>
-                        }
+                        <div className={`${cssStyles.fontSecundaryText} ${styles.contRating}`}>
+                            ({item.Rating != null ? item.Rating : 0})
+                        </div>
                     </div>
                 </div>
-            </div>
-            :
-            <div /*onPointerOver={handleHiddeName}
-             onPointerOut={handleShowName}*/
-                className={`${styles.principalGridVertical} ${styles.boxShadow}`}>
-                <a className="relative">
-                    {
-                        info.SoldTickets >= info.TotalTickets * 0.90 &&
-                        <div className={`${utilities.positionLastTicket} absolute z-20`}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
-                        </div>
-                    }
-
-                    <div className={`${styles.sizeImage} z-10`}>
-                        <Image layout={"fill"} objectFit={"cover"} src={info.CoverImage} alt=""/>
-                    </div>
-                </a>
-
-                <div className={`${cssStyles.bgInfo} grid py-3 px-4 ${styles.border} content-start`}>
-                    <div className={"pl-2 pb-2"}>
-                        <div
-                            className={`${cssStyles.fontName} ${utilities.clamp1}`}>
-                            {info.EventName}
-                        </div>
-                        <div className={`${utilities.fontPrimaryText}`}>
-                            On Tour 2022
-                        </div>
-                        <div className={`${utilities.gridMaxContent2} items-center bottom-0 right-2 gap-1.5`}>
-                            {
-                                info.Rating != null ?
-                                    <>
-                                        <div className={utilities.ratingStarsProperties}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt=""/>
-                                        </div>
-                                        <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                            ({info.Rating})
-                                        </div>
-                                    </>
-                                    :
-                                    <>
-                                        <div className={utilities.ratingStarsProperties}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNull} alt=""/>
-                                        </div>
-                                        <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                            (0)
-                                        </div>
-                                    </>
-                            }
-                        </div>
-                    </div>
-                    <div className={"pl-2 pt-2 border-t border-gray-200"}>
-                        <div className={`${styles.gridIconInfo} mb-1`}>
+                {
+                    item.Type == VerticalViewClass.search &&
+                    <div className={styles.bottomDivSearch}>
+                        <div className={`${styles.gridIconInfo}`}>
                             <div className={styles.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon}/>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                             </div>
                             <div className={`${utilities.fontSecundaryText}`}>
-                                22 de Nov del 2022
+                                {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
                             </div>
                         </div>
-                        <div className={styles.gridIconInfo}>
-                            <div className={styles.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon}/>
-                            </div>
 
-                        <div className={`${cssStyles.fontPriceInclude} `}>
+                        <div className={`${styles.gridIconInfo}`}>
+                            <div className={styles.sizeIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
+                            </div>
                             {
-                                info.TicketPriceMin == info.TicketPriceMax ?
+                                newItem.MinPrice == newItem.MaxPrice ?
                                     <>
                                         ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(info.TicketPriceMin))}
-
+                                    ).format(Math.round(newItem.MinPrice))}
                                     </>
                                     :
                                     <>
                                         ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(info.TicketPriceMin))} -
+                                    ).format(Math.round(newItem.MinPrice))} -
                                         ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(info.TicketPriceMax))}
+                                    ).format(Math.round(newItem.MaxPrice))}
                                     </>
                             }
                         </div>
-                        </div>
                     </div>
-                </div>
+                }
+                {
+                    item.Type == VerticalViewClass.searchResale &&
+                    <div className={`${utilities.fontPrimaryText} ${styles.bottomDivResale}`}>
+                        {totalResaleText} {newItem2.TotalResale}
+                    </div>
+                }
             </div>
+        </div>
     )
 
     function getCssStyles() {

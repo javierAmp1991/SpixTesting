@@ -21,6 +21,8 @@ import {
     CategoryPrincipalFilters,
     SuperCategoryFilter
 } from "../dataDemo/data";
+import {DropDownServvicesSearch} from "../dataDemo/search/searchData";
+import {BaseVerticalView} from "../dataDemo/EventView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -50,8 +52,8 @@ export default function SearchServices() {
 
     //region desktop Components
     let dropDown =
-        DropDownDataServices.listDropDown.map((item, index) =>
-            <EventVerticalView key={index} isHideName={false} dropDown={true} darkModeState={isDarkMode} info={item}/>
+        DropDownServvicesSearch.listDropDown.map((item, index) =>
+            <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>

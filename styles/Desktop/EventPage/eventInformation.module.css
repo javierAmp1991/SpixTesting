@@ -93,9 +93,9 @@
 
 .gridButtons {
     display: grid;
-    grid-template-columns: repeat(1, max-content);
     justify-content: center;
     padding: 14px 0;
+    margin: auto;
 }
 
 .containerShowProp {

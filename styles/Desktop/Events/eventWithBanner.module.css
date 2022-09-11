@@ -32,7 +32,10 @@
 
 .gridCarrouselProductsEWB {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+    width: 80%;
+    margin: auto;
     gap: 16px;
 }
 

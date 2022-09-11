@@ -8,8 +8,6 @@ import React, {useState} from "react";
 import {useMediaQuery} from "./index";
 import LayoutPrincipalFilterMobile from "../components/Mobile/Search/layoutPrincipalFilterMobile";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
-import Image from "next/image";
-import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {ListEventSearch} from "../dataDemo/search/searchData";
@@ -19,9 +17,9 @@ import {
     CategoryPrincipalFilters,
     SuperCategoryFilter
 } from "../dataDemo/data";
-import ResaleEventViewDesktop from "../components/Desktop/Search/resaleEventViewDesktop";
+import {BaseVerticalView, DropDownResale} from "../dataDemo/EventView/eventVerticalView";
 import ResaleEventviewMobile from "../components/Mobile/Search/resaleEventviewMobile";
-import {bool} from "prop-types";
+import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -51,8 +49,8 @@ export default function SearchRestaurant() {
 
 
     //region desktop Components
-    let dropDown = ListEventSearch.eventSearch.map((item) =>
-        <ResaleEventViewDesktop key={item.Id} darkModeState={isDarkMode} item={item}/>)
+    let dropDown = DropDownResale.list.map((item: BaseVerticalView) =>
+        <EventVerticalView key={item.Id} darkModeState={isDarkMode} item={item}/>)
 
     let buttonsNavegation = <LayoutButtonNavegation>
         {

@@ -34,7 +34,7 @@ export default function EventInformationDesk({
                         {
                             eventInformation.ListImages.map((item, index) =>
                                 index == 0 ?
-                                    <div onClick={handleVideo} className={`${style.containerImageSelection}`}>
+                                    <button onClick={handleVideo} className={`${style.containerImageSelection}`}>
                                         <div className={style.sizeImageSelection}>
                                             <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </div>
@@ -42,14 +42,14 @@ export default function EventInformationDesk({
                                             <Image layout={"fill"} objectFit={"cover"}
                                                    src={GlobalConst.sourceImages.playIcon} alt=""/>
                                         </div>
-                                    </div>
+                                    </button>
                                     :
-                                    <div onClick={() => handleTargetImage(item)}
+                                    <button onClick={() => handleTargetImage(item)}
                                          className={`${style.containerImageSelection} relative`}>
                                         <div className={style.sizeImageSelection}>
                                             <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </div>
-                                    </div>
+                                    </button>
                             )
                         }
                     </div>
@@ -71,6 +71,11 @@ export default function EventInformationDesk({
 
                 <div className={`${utilities.fontPrimaryText} ${style.paddingDescription}`}>
                     {eventInformation.Description}
+                </div>
+
+                <div className={utilities.fontSecundaryText}>
+                    <span className={utilities.fontPrimaryText}>Categoria: </span>
+                    <span className={utilities.fontSecundaryText}>Bar restaurant</span>
                 </div>
 
                 <div className={style.gridAtributes}>

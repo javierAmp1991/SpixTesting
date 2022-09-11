@@ -1,7 +1,6 @@
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Home/homeFeatured.module.css"
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 export default function HomeFeatured({featuredItem, darkModeState}) {
@@ -18,12 +17,16 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                         <Image layout={"fill"} src={featuredItem.LogoPath} alt=""/>
                     </div>
                 </div>
-                <div className="px-2 pb-2 pt-8">
-                    <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
+                <div className={style.mainDivInfo}>
+                    <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 `}>
                         {featuredItem.EventName}
                     </div>
 
-                    <div className={`${utilities.gridMaxContent2} items-center justify-center gap-1.5 mb-2`}>
+                    <div className={utilities.fontPrimaryText}>
+                        {featuredItem.Subtitle}
+                    </div>
+
+                    <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
                         {
                             featuredItem.Rating != null ?
                                 <>
@@ -45,7 +48,7 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                                 </>
                         }
                     </div>
-                    {
+                    {/*{
                         featuredItem.Tags != null ?
                             <div className={`${utilities.gridMaxContent3} justify-center gap-1 mb-3`}>
                                 {
@@ -59,9 +62,9 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                             </div>
                             :
                             <></>
-                    }
+                    }*/}
 
-                    <div className={`${cssStyle.fontPriceInclude} mb-1 text-center`}>
+                    <div className={`${cssStyle.fontPriceInclude} mb-1`}>
                         {
                             featuredItem.TicketPriceMin == featuredItem.TicketPriceMax ?
                                 <>

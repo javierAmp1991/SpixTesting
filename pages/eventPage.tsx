@@ -55,6 +55,9 @@ import Image from "next/image";
 import React, {useState} from "react";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
+import {BaseVerticalView, InOfferHome} from "../dataDemo/EventView/eventVerticalView";
+import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
+import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -151,7 +154,9 @@ export default function EventPage() {
         <LayoutCarrouselMobile gapLayout={24}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    <NewViewMobile item={item} isDarkMode={false} key={index}/>
+                    <div key={item.Id} className={"w-80"}>
+                        <NewsSearchMobile isSubtitle={true}  item={item}/>
+                    </div>
                 )
             }
         </LayoutCarrouselMobile>
@@ -264,8 +269,8 @@ export default function EventPage() {
         <LayoutCarrousel sumar={2} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNews && index <= getNews + 2 ?
-                        <NewView homeNew={item} darkModeState={false} key={index}/> : <></>
+                    index >= getNews && index <= getNews + 2 &&
+                            <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
                 )
             }
         </LayoutCarrousel>
@@ -295,11 +300,9 @@ export default function EventPage() {
                                        paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
         <LayoutCarrousel sumar={3} handleFeatured={handleGetExtra} layoutProp={layoutPropCarrousel}>
             {
-                InOffer.listInOffer.map((item, index) =>
-                    index >= getExtra && index <= getExtra + 3 ?
-                        <EventVerticalView info={item} darkModeState={false}
-                                           dropDown={false} isHideName={false}
-                                           key={index}/> : <></>
+                InOfferHome.list.map((item, index) =>
+                    index >= getExtra && index <= getExtra + 3 &&
+                        <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>

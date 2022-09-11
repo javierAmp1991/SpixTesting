@@ -5,39 +5,27 @@ export default function TestNew<T extends newsBase>({item}: { item: T }) {
     let itemPrincipal: newsPrinciapl = itemProp as newsPrinciapl
     let itemFeatured: newsFeatured = itemProp as newsFeatured
 
-    function getType<T extends newsBase>(item: T): newsPrinciapl {
-        let newItem: unknown = item;
-        return newItem as newsPrinciapl
+    if (item.type === typeNews.principal) {
+        let itemProp: unknown = item
+        let itemPrincipal: newsPrinciapl = itemProp as newsPrinciapl
+        return (
+            <div>
+                {itemPrincipal.title} {itemPrincipal.subTitle} {itemPrincipal.goTo}
+            </div>
+        )
+    } else if (item.type === typeNews.featured) {
+        let itemProp: unknown = item
+        let itemPrincipal: newsFeatured = itemProp as newsFeatured
+        return (
+            <div>
+                {itemPrincipal.title} {itemPrincipal.subTitle}
+            </div>
+        )
     }
-
-    function getType1<T extends newsBase>(item: T): newsFeatured {
-        let newItem: unknown = item;
-        return newItem as newsFeatured
-    }
-
     return (
+
         <div>
-            {
-                item.type === typeNews.principal &&
-                <div>
-                    {itemPrincipal.title} {itemPrincipal.subTitle} {itemPrincipal.goTo}
-                </div>
-
-            }
-            {
-                item.type === typeNews.featured &&
-                <div>
-                    {itemFeatured.title} {itemFeatured.subTitle}
-                </div>
-
-            }
-            {
-                item.type === typeNews.base &&
-                <div>
-                    {item.title}
-                </div>
-
-            }
+            {item.title}
         </div>
     )
 }

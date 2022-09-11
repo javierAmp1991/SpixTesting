@@ -125,6 +125,8 @@ export namespace FeaturedHome {
         {
             EventId: "123456",
             EventName: "Thor Love and Thunder",
+            Subtitle: "Thor Love and Thunder",
+
             Popularity: 160,
             Rating: 42,
             TicketPriceMin: 9990,
@@ -143,6 +145,8 @@ export namespace FeaturedHome {
         {
             EventId: "12345",
             EventName: "Minions: Nace un villano",
+            Subtitle: "Minions: Nace un villano",
+
             Popularity: 10,
             Rating: 37,
             TicketPriceMin: 8990,
@@ -162,6 +166,8 @@ export namespace FeaturedHome {
         {
             EventId: "1234",
             EventName: "Jurassic World: Dominion",
+            Subtitle: "Jurassic World: Dominion",
+
             Popularity: 10,
             Rating: 48,
             TicketPriceMin: 7990,
@@ -181,6 +187,8 @@ export namespace FeaturedHome {
         {
             EventId: "123",
             EventName: "Light Year",
+            Subtitle: "Light Year",
+
             Popularity: 1,
             Rating: 39,
             TicketPriceMin: 7990,
@@ -218,6 +226,9 @@ export namespace FeaturedHome {
         {
             EventId: "1",
             EventName: "Thor Love and Thunder",
+            Subtitle: "Thor Love and Thunder",
+
+
             Popularity: 160,
             Rating: 42,
             TicketPriceMin: 9990,
@@ -354,6 +365,7 @@ export namespace DailyOfferData {
     export const dailyOffer: EventLookUp = {
         EventId: "1235",
         EventName: "Tributo a Pet Shop Boys y A Ha",
+        Subtitle: "Lo mejor del Rock Internacional",
         Rating: 30,
         Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
         BannerPath: "/images/banner.png",
@@ -414,20 +426,20 @@ export namespace DailyOfferData {
                 Include: null,
                 ImagePath: "/images/product8.jpg"
             },
-            {
-                Name: "Producto 9.1",
-                Price: 10990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product9.jpg"
-            },
-            {
-                Name: "Producto 10.1",
-                Price: 6990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product10.jpg"
-            },/**/
+            /*           {
+                           Name: "Producto 9.1",
+                           Price: 10990,
+                           DiscountPercent: 30,
+                           Include: null,
+                           ImagePath: "/images/product9.jpg"
+                       },
+                       {
+                           Name: "Producto 10.1",
+                           Price: 6990,
+                           DiscountPercent: 30,
+                           Include: null,
+                           ImagePath: "/images/product10.jpg"
+                       }*/
         ]
     }
 }
@@ -1311,6 +1323,7 @@ export namespace EventPageEvent {
     export const eventPage: EventLookUp = {
         EventId: "12345abcde",
         EventName: "Tributo a Pet Shop Boys y A Ha",
+        Subtitle: "Lo mejor del Rock",
         Description: "Back to 80's en vivo: Noruega (Tributo A Ha ) y Suburbia (Tributo a Pet Shop Boys). Evento con aforo , según fase , para mayores de 18 años con pase de movilidad .Tenemos convenio con estacionamiento en Petrobras , Reserva tu estacionamiento al whatsapp : +56944864934",
         Rating: 30,
         Tags: ["Rock", "Conciertos", "Festivales"],
@@ -2866,6 +2879,7 @@ export namespace ResumeReviews {
 export class EventLookUp {
     public EventId?: string
     public EventName?: string
+    public Subtitle?: string
     public Description?: string
     public Popularity?: number
     public Rating?: number
@@ -3976,7 +3990,7 @@ export namespace SuperCategoryNews {
             Name: "Odontologia",
             PathIcon: "/images/odontologia.png",
             Id: "Odontologia123",
-            ListCategory:null,
+            ListCategory: null,
             isSelected: false
         },
         {
@@ -4236,7 +4250,7 @@ export namespace CategoryPrincipalFiltersNews {
     ]
 }
 
-export namespace CategoryPrincipalFilterTicket{
+export namespace CategoryPrincipalFilterTicket {
     export const filters: CategoryFilter[] = [
         {
             Id: "12345abcde",
@@ -4253,7 +4267,7 @@ export namespace CategoryPrincipalFilterTicket{
     ]
 }
 
-export namespace DropDownResale{
+export namespace DropDownResale {
     export const listDropDown: ResaleProduct[] = [
         {
             BannerImage: "/images/banner1.jpg",
@@ -4440,7 +4454,7 @@ export namespace DropDownResale{
     ]
 }
 
-export namespace EventResale{
+export namespace EventResale {
     export const eventResale: ResaleEvent = {
         Title: "Tributo a PetShop Boys y Aha",
         Subtitle: "Lo mejor del Rock ochentero",
@@ -4450,7 +4464,7 @@ export namespace EventResale{
     }
 }
 
-export class ResaleEvent{
+export class ResaleEvent {
     Title: string
     Subtitle: string
     Rating: number
@@ -4464,7 +4478,7 @@ class productResale {
     Amount: number
 }
 
-export class ResaleProduct{
+export class ResaleProduct {
     Id: string
     BannerImage: string
     Name: string

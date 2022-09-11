@@ -5,14 +5,12 @@ import LayoutAutoCarrousel from "../components/Desktop/Layouts/layoutAutoCarrous
 import LayoutCarrousel from "../components/Desktop/Layouts/layoutCarrousel";
 import LayoutRow5 from "../components/Desktop/Layouts/layoutRow5";
 import TitleSection from "../components/Desktop/Misc/titleSection";
-import HomeInformation from "../components/Desktop/Home/homeInformation";
 import HomeFeatured from "../components/Desktop/Home/homeFeatured";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import HomeRoundedView from "../components/Desktop/Home/homeRoundedView";
 import EventOnlyImageView from "../components/Desktop/EventsView/eventOnlyImageView";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
-import NewView from "../components/Desktop/CRM/newView";
 import LayoutCategoryFooter from "../components/Desktop/Layouts/layoutCategoryFooter";
 import HomeCategorysFooter from "../components/Desktop/Home/homeCategorysFooter";
 import HomeOwnPublicityDesktop from "../components/Desktop/Home/homeOwnPublicityDesktop";
@@ -39,7 +37,7 @@ import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarro
 //endregion
 
 //region importData
-import {HomeBannerData} from "../dataDemo/data";
+import {DropDownNewSearch, HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
 import {DailyOfferData} from "../dataDemo/data";
 import {FeaturedHome} from "../dataDemo/data";
@@ -53,16 +51,17 @@ import {DropDownData} from "../dataDemo/data";
 import {AtributesFooter} from "../dataDemo/data";
 import {MostPopularData} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
-import {InformationHomeData} from "../dataDemo/data";
+import {BaseVerticalView, TodayInValpoHome, InOfferHome, DropDownHome} from "../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
-import Image from "next/image";
 import LayoutAutoCarrouselMobile from "../components/Mobile/Layouts/layoutAutoCarrouselMobile";
 import LayoutCarrouselMobileBanner from "../components/Mobile/Layouts/layoutCarrouselMobileBanner";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
+import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
+import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 //endregion
 
 //region constantes
@@ -245,8 +244,11 @@ export default function Index() {
                                    paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                HomeNewsData.listNews.map(item =>
-                    <NewViewMobile item={item} isDarkMode={isDarkMode} key={item.Id}/>
+                DropDownNewSearch.listNews.map(item =>
+                    /*<NewViewMobile item={item} isDarkMode={isDarkMode} key={item.Id}/>*/
+                    <div key={item.Id} className={"w-80"}>
+                        <NewsSearchMobile isSubtitle={true}  item={item}/>
+                    </div>
                 )
             }
         </LayoutCarrouselMobile>
@@ -354,40 +356,40 @@ export default function Index() {
     let carrouselAuto = <LayoutAutoCarrousel isDarkMode={isDarkMode}
                                              listImages={CarrouselAutoHome.listImage} gapLayout={gapLayout}/>
 
-   /* let carrouselAuto1 = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
-        <div className={utilities.gridtest}>
-            {
-                CarrouselAutoHome.listImage.map((item, index) =>
-                    index >= 0 && index <= 2 ?
-                        <div className={utilities.divtest}>
-                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
-                        </div> : <></>
-                )
-            }
-        </div>
-        <div className={utilities.gridtest}>
-            {
-                CarrouselAutoHome.listImage.map((item, index) =>
-                    index >= 1 && index <= 3 ?
-                        <div className={utilities.divtest}>
-                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
-                        </div> : <></>
-                )
-            }
-        </div>
-        <div className={utilities.gridtest}>
-            {
-                CarrouselAutoHome.listImage.map((item, index) =>
-                    index >= 2 && index <= 4 ?
-                        <div className={utilities.divtest}>
-                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
-                        </div> : <></>
-                )
-            }
-        </div>
-    </LayoutCarrouselLoop>*/
+    /* let carrouselAuto1 = <LayoutCarrouselLoop isAuto={true} layoutProp={layoutPropBanner}>
+         <div className={utilities.gridtest}>
+             {
+                 CarrouselAutoHome.listImage.map((item, index) =>
+                     index >= 0 && index <= 2 ?
+                         <div className={utilities.divtest}>
+                             <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+                         </div> : <></>
+                 )
+             }
+         </div>
+         <div className={utilities.gridtest}>
+             {
+                 CarrouselAutoHome.listImage.map((item, index) =>
+                     index >= 1 && index <= 3 ?
+                         <div className={utilities.divtest}>
+                             <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+                         </div> : <></>
+                 )
+             }
+         </div>
+         <div className={utilities.gridtest}>
+             {
+                 CarrouselAutoHome.listImage.map((item, index) =>
+                     index >= 2 && index <= 4 ?
+                         <div className={utilities.divtest}>
+                             <Image priority={true} layout={"fill"} objectFit={"cover"} src={item} alt={""}/>
+                         </div> : <></>
+                 )
+             }
+         </div>
+     </LayoutCarrouselLoop>*/
 
-   /* let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>*/
+    /* let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>*/
 
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
@@ -428,15 +430,14 @@ export default function Index() {
     const handleCaroousel1Items = (e) => setCarrousel1Items(getCarrousel1Items = e)
     let carrousel1 = <TitleSection paddingTitle={null} titleLink={todayInValpoTitleLink} darkModeState={isDarkMode}>
         {
-            <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items} layoutProp={layoutPropCarrousel}>
+            <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items}
+                             layoutProp={layoutPropCarrousel}>
                 {
-                    TodayInValpo.listEventLookUp.map((item, index) =>
-                        index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber ?
-                            <EventVerticalView darkModeState={isDarkMode}
-                                               isHideName={true}
-                                               dropDown={false}
-                                               info={item}
-                                               key={index}/> : <></>
+                    TodayInValpoHome.list.map((item: BaseVerticalView, index) =>
+                        index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
+                        <EventVerticalView darkModeState={isDarkMode}
+                                           item={item}
+                                           key={item.Id}/>
                     )
                 }
             </LayoutCarrousel>
@@ -463,14 +464,12 @@ export default function Index() {
     let [getCarrousel2Items, setCarrousel2Items] = useState(0)
     const handleCaroousel2Items = (e) => setCarrousel2Items(getCarrousel2Items = e)
     let carrousel2 = <TitleSection paddingTitle={null} titleLink={inOfferTitleLink} darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel2Items} layoutProp={layoutPropCarrousel}>
+        <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel2Items}
+                         layoutProp={layoutPropCarrousel}>
             {
-                InOffer.listInOffer.map((item, index) =>
+                InOfferHome.list.map((item: BaseVerticalView, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
-                        <EventVerticalView isHideName={true}
-                                           dropDown={false}
-                                           info={item}
-                                           darkModeState={isDarkMode} key={index}/>
+                    <EventVerticalView item={item} darkModeState={isDarkMode} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
@@ -483,9 +482,10 @@ export default function Index() {
     let news = <TitleSection paddingTitle={null} darkModeState={isDarkMode} titleLink={newsHomeTitleLink}>
         <LayoutCarrousel sumar={3} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
-                HomeNewsData.listNews.map((item, index) =>
+                DropDownNewSearch.listNews.map((item, index) =>
                     index >= getNewsItem && index <= getNewsItem + 2 &&
-                        <NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>
+                    /*<NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>*/
+                    <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
                 )
             }
         </LayoutCarrousel>
@@ -502,7 +502,7 @@ export default function Index() {
 
                 Restaurants.listRestaurants.map((item, index) =>
                     index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 4 &&
-                        <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
+                    <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
                 )
             }
         </LayoutCarrousel>
@@ -511,9 +511,8 @@ export default function Index() {
 
     let dropDown = <LayoutDropDown>
         {
-            DropDownData.listDropDown.map(item =>
-                <EventVerticalView isHideName={true} dropDown={true} info={item} darkModeState={isDarkMode}
-                                   key={item.EventId}/>
+            DropDownHome.list.map((item: BaseVerticalView) =>
+                <EventVerticalView item={item} darkModeState={isDarkMode} key={item.Id}/>
             )
         }
     </LayoutDropDown>
@@ -535,7 +534,7 @@ export default function Index() {
              Component: information,
              padding: paddingGeneralDesk
          },*/
-       {
+        {
             Component: dailyOffer,
             padding: paddingGeneralDesk
         },

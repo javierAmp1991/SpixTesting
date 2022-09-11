@@ -16,6 +16,7 @@ import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {CategoryPrincipalFilters} from "../dataDemo/data";
+import {BaseVerticalView, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -43,8 +44,8 @@ export default function Search() {
 
     //region desktop Components
     let dropDown =
-        DropDownData.listDropDown.map((item, index) =>
-            <EventVerticalView key={index} isHideName={false} dropDown={true} darkModeState={isDarkMode} info={item}/>
+        DropDownSearch.list.map((item: BaseVerticalView, ) =>
+            <EventVerticalView key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
