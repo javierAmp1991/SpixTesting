@@ -8,6 +8,7 @@ import {useRef, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
 import LayoutCarrouselLoop from "../Layouts/layoutCarrouselLoop";
 import {LayoutCarrouselDeskProp} from "../Layouts/layoutCarrousel";
+
 const buy: string = "Comprar";
 const displayCarrousel = "grid"
 const gridFullSpace = "100%"
@@ -29,6 +30,15 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     const mainDivRef = useRef(null)
     const mainDivTranslate = useRef(null)
     const cssStyle = getCssStyle()
+
+    function getDiscount(previousProce: number, actualPrice: number): string {
+        let discount: number = Math.round(100 - (actualPrice * 100 / previousProce));
+        if (discount > 0) {
+            return `- ${discount}%`
+        } else {
+            return `+ ${-discount}%`
+        }
+    }
 
     const handlePopUp = () => {
         setDisplayPopUp(displaPopUp = !displaPopUp)
@@ -143,7 +153,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         <div className={cssStyle.colorEti}>
                             <span className={style.dicountPer}>
                                 {
-                                    item.PreviousPrice > item.Price? "- 20%" : "+ 25%"
+                                    getDiscount(item.PreviousPrice, item.Price)
                                 }
                             </span>
                         </div>
@@ -202,10 +212,12 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                         </div>
                                         <div className={style.gridPriceNameProp}>
                                             <div>x{product.Amount} {product.Name} </div>
-                                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-1`}>
+                                            <div
+                                                className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-1`}>
                                                 {
                                                     item.PreviousPrice > item.Price ?
-                                                        <span><Image width={14} height={10} src={"/images/dollarDown.png"}
+                                                        <span><Image width={14} height={10}
+                                                                     src={"/images/dollarDown.png"}
                                                                      alt={""}/> </span>
                                                         :
                                                         <span><Image width={14} height={10} src={"/images/dollarUp.png"}
@@ -213,24 +225,30 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                 }
                                                 <div>
                                                     <span>Antes: </span>
-                                                    <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
+                                                    <span
+                                                        className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
                                                 </div>
                                             </div>
                                             <div className={`${utilities.gridMaxContent2} gap-1`}>
                                                 <div className={style.sizeDiscount}>
                                                     {
                                                         item.PreviousPrice > item.Price ?
-                                                            <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
+                                                            <Image layout={"fill"} src={"/images/discountIcon.png"}
+                                                                   alt={""}/>
                                                             :
-                                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
+                                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"}
+                                                                   alt={""}/>
                                                     }
                                                 </div>
-                                                <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
+                                                <span
+                                                    className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
                                             </div>
                                         </div>
                                         <div className={cssStyle.colorEti}>
                                             <div className={style.dicountPer}>
-                                                - 25%
+                                                {
+                                                    getDiscount(item.PreviousPrice, item.Price)
+                                                }
                                             </div>
                                         </div>
                                     </div>

@@ -12,6 +12,15 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))
     }
 
+    function getDiscount(previousProce: number, actualPrice: number): string {
+        let discount: number = Math.round(100 - (actualPrice * 100 / previousProce));
+        if (discount > 0) {
+            return `- ${discount}%`
+        } else {
+            return `+ ${-discount}%`
+        }
+    }
+
     let [displaPopUp, setDisplayPopUp] = useState(false)
     const handlePopUp = () => {
         setDisplayPopUp(displaPopUp = !displaPopUp)
@@ -83,7 +92,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         <div className={cssStyle.colorEti}>
                             <span className={style.dicountPer}>
                                 {
-                                    item.PreviousPrice > item.Price? "- 20%" : "+ 25%"
+                                    getDiscount(item.PreviousPrice, item.Price)
                                 }
                             </span>
                         </div>
@@ -178,7 +187,9 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                         </div>
                                         <div className={cssStyle.colorEti}>
                                             <div className={style.dicountPer}>
-                                                - 25%
+                                                {
+                                                    getDiscount(item.PreviousPrice, item.Price)
+                                                }
                                             </div>
                                         </div>
                                     </div>

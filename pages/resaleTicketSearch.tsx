@@ -92,8 +92,13 @@ export default function ResaleTicketSearch() {
                                 {resaleSubtile}
                             </div>
                             <div className={styleMobile.gridDisplayFilter}>
-                                <div className={`${utilities.fontPrimaryText} ${styleMobile.ratingStarProp}`}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt={""}/>
+                                <div className={style.gridStarNumberMobile}>
+                                    <div className={`${utilities.fontPrimaryText} ${styleMobile.ratingStarProp}`}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew} alt={""}/>
+                                    </div>
+                                    <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
+                                        ({resaleRating})
+                                    </span>
                                 </div>
                                 <button onClick={handleClick}
                                         className={`${utilities.gridMaxContent2} gap-2 items-center`}>
@@ -172,9 +177,14 @@ export default function ResaleTicketSearch() {
                                         <div className={`${style.fontSubTitle} mt-3`}>
                                             {resaleSubtile}
                                         </div>
-                                        <div
-                                            className={`${utilities.fontPrimaryText} ${style.ratingStarProp} mt-3`}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt={""}/>
+                                        <div className={style.gridStarNumber}>
+                                            <div className={`${utilities.fontPrimaryText} ${style.ratingStarProp}`}>
+                                                <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars}
+                                                       alt={""}/>
+                                            </div>
+                                            <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
+                                                ({resaleRating})
+                                            </span>
                                         </div>
                                     </div>
                                 </div>

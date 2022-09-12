@@ -153,6 +153,21 @@
     gap: 40px;
 }
 
+.gridStarNumber{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.gridStarNumberMobile{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px;
+    align-items: end;
+}
+
 @media (min-width: 1281px) {
     .gridResaleEvents {
         grid-template-columns: repeat(2, 1fr);

@@ -157,7 +157,7 @@ export default function EventPage() {
             {
                 HomeNewsData.listNews.map((item, index) =>
                     <div key={item.Id} className={"w-80"}>
-                        <NewsSearchMobile isSubtitle={true}  item={item}/>
+                        <NewsSearchMobile isSubtitle={false}  item={item}/>
                     </div>
                 )
             }

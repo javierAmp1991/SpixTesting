@@ -29,8 +29,7 @@
 }
 
 .gridInfo {
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 16px;
 }
 
 .gridInfoNormal{
@@ -60,16 +59,16 @@
 }
 
 .bottomDivSearch {
-    padding: 8px 0 0 8px;
-    margin: 10px 6px 0 6px;
+    padding: 8px 0 0 0;
+    margin: 10px 6px 0 14px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;
 }
 
 .bottomDivResale {
-    padding: 8px 0 0 8px;
-    margin: 10px 6px 0 6px;
+    padding: 8px 0 0 0;
+    margin: 10px 6px 0 14px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;
