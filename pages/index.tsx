@@ -102,7 +102,7 @@ const layoutPropBanner: LayoutCarrouselDeskProp = {
 }
 const layoutPropFeatured: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum2,
+    Grid: gridTemplateColum3,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowOut,
@@ -415,10 +415,10 @@ export default function Index() {
     const handleFeatured = (e) => setFeaturedItems(getFeaturedItems = e)
     let featured = <TitleSection paddingTitle={null}
                                  titleLink={featuredHomeTitleLink} darkModeState={isDarkMode}>{
-        <LayoutCarrousel sumar={2} handleFeatured={handleFeatured}
+        <LayoutCarrousel sumar={3} handleFeatured={handleFeatured}
                          layoutProp={layoutPropFeatured}>{
             FeaturedHome.listFeaturedHome.map((item, index) =>
-                index >= getFeaturedItems && index <= getFeaturedItems + 1 ?
+                index >= getFeaturedItems && index <= getFeaturedItems + 2 ?
                     <HomeFeatured darkModeState={isDarkMode} featuredItem={item} key={index}/> : <></>
             )
         }
