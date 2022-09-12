@@ -18,35 +18,23 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                 </div>
             </div>
             <div className={style.paddingMainCont}>
-                <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 text-center`}>
+                <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5`}>
                     {item.EventName}
                 </div>
-
-                <div className={`${utilities.gridMaxContent2} items-center justify-center gap-1.5 mb-2`}>
-                    {
-                        item.Rating != null ?
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src="/images/ratingNew.png" alt=""/>
-                                </div>
-                                <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
-                                    ({item.Rating})
-                                </div>
-                            </>
-                            :
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src="/images/ratingNull.png" alt=""/>
-                                </div>
-                                <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
-                                    (0)
-                                </div>
-                            </>
-                    }
+                <div className={utilities.fontPrimaryText}>
+                    {item.Subtitle}
                 </div>
-               {/* {
+
+                <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
+                    <div className={utilities.ratingStarsProperties}>
+                        <Image layout={"fill"}
+                               src={item.Rating != null ? "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
+                    </div>
+                    <div className={`${cssStyle.fontSecundaryText} ${utilities.font12} pt-0.5`}>
+                        ({item.Rating != null ? item.Rating : 0})
+                    </div>
+                </div>
+                {/* {
                     item.Tags != null ?
                         <div className={`${utilities.gridMaxContent3} justify-center gap-1 mb-3`}>
                             {
@@ -61,7 +49,7 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                         <></>
                 }*/}
 
-                <div className={`${cssStyle.fontPriceInclude} text-center`}>
+                <div className={`${cssStyle.fontPriceInclude}`}>
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>

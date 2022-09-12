@@ -1,6 +1,6 @@
 .principalGridHorizontal {
     display: grid;
-    grid-template-columns: 160px auto;
+    grid-template-columns: 150px auto;
 }
 
 .containerImage {
@@ -8,7 +8,7 @@
 }
 
 .sizeImage {
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/5;
 }
 
 .zIndexLastTicket {
@@ -24,7 +24,7 @@
 
 .sizeImage {
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 5/6;
     position: relative;
 }
 
@@ -60,8 +60,8 @@
 }
 
 .bottomDivSearch {
-    padding: 4px 0 0 12px;
-    margin-top: 10px;
+    padding: 10px 0 0 12px;
+    margin-top: 12px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;

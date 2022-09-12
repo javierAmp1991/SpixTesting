@@ -50,10 +50,10 @@ export default function EventHorizontalView({info, darkModeState}:
 
             <div className={`${cssStyles.bgInfo} ${cssStyles.gridInfo}`}>
                 <div className={style.TopDivInfo}>
-                    <div className={`${cssStyles.fontTitle} ${utilities.clamp2} ${style.titleMargin}`}>
+                    <div className={`${cssStyles.fontTitle} ${utilities.clamp1} ${style.titleMargin}`}>
                         {info.Title}
                     </div>
-                    <div className={`${utilities.fontPrimary} ${style.subTitleMargin}`}>
+                    <div className={`${utilities.fontPrimary} ${style.subTitleMargin} ${utilities.clamp1}`}>
                         {info.Subtitle}
                     </div>
 

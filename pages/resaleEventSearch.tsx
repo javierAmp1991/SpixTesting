@@ -20,6 +20,7 @@ import {
 import {BaseVerticalView, DropDownResale} from "../dataDemo/EventView/eventVerticalView";
 import ResaleEventviewMobile from "../components/Mobile/Search/resaleEventviewMobile";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
+import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -62,8 +63,8 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = ListEventSearch.eventSearch.map((item) =>
-        <ResaleEventviewMobile darkModeState={isDarkMode} item={item} key={item.Id}/>
+    let dropDownMobile = DropDownResale.list.map((item) =>
+        <EventVerticalViewMobile isDarkMode={isDarkMode} item={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>
