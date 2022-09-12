@@ -46,7 +46,7 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                             </>
                     }
                 </div>
-                {
+               {/* {
                     item.Tags != null ?
                         <div className={`${utilities.gridMaxContent3} justify-center gap-1 mb-3`}>
                             {
@@ -59,7 +59,7 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                         </div>
                         :
                         <></>
-                }
+                }*/}
 
                 <div className={`${cssStyle.fontPriceInclude} text-center`}>
                     {

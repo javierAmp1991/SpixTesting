@@ -1,11 +1,12 @@
 .bannerFeatureProperties{
-    height: var(--heightBannerFeaturedDesk);
     width: 100%;
+    aspect-ratio: 3.5/1;
     object-fit: cover;
     object-position: center;
 }
 
 .logoFeatureProperties{
+    --sizeLogoFeaturedHome: 44px;
     height: var(--sizeLogoFeaturedHome) ;
     width: var(--sizeLogoFeaturedHome) ;
     box-shadow: var(--boxShadowCard);
@@ -17,8 +18,25 @@
 }
 
 .mainDivInfo{
-    width: 200px;
+    width: max-content;
     margin: auto;
-    padding: 40px 0 12px 0;
+    padding: 24px 0 12px 0;
 }
+
+.gridRatingStar{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-content: end;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.subTitleMargin{
+    margin-bottom: 4px;
+}
+
+.titleMargin{
+    margin-bottom: 2px;
+}
+
 

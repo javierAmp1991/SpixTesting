@@ -1,17 +1,17 @@
 .bannerFeatureProperties {
     width: 100%;
-    aspect-ratio: 3/1;
+    aspect-ratio: 3.5/1;
     object-fit: cover;
     object-position: center;
     position: relative;
 }
 
 .paddingMainCont {
-    padding: 26px 8px 8px 8px;
+    padding: 20px 8px 8px 8px;
 }
 
 .logoFeatureProperties {
-    --sizeLogoFeatureMobile: 48px;
+    --sizeLogoFeatureMobile: 42px;
     height: var(--sizeLogoFeatureMobile);
     width: var(--sizeLogoFeatureMobile);
     box-shadow: var(--boxShadowCard);

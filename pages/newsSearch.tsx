@@ -194,7 +194,7 @@ export default function ReviewSearch() {
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
+                    <div className={`${style.gridPrincipalNews}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {/*<MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
@@ -222,7 +222,7 @@ export default function ReviewSearch() {
                             </div>
                         </div>
                         <div>
-                            <div className={style.paddingLeftResult}>
+                            <div className={style.paddingLeftResultNews}>
                                 <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {newsText}
                                 </div>

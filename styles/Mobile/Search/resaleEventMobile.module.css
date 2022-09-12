@@ -231,7 +231,7 @@
 .mainDivProdPop {
     display: grid;
     margin: auto;
-    width: 100%;
+    width: 200px;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
     overflow: hidden;
@@ -241,7 +241,7 @@
 
 .gridProductsPop {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     overflow: scroll;
     scroll-snap-type: y mandatory;
@@ -266,4 +266,14 @@
 .positionSeeMore {
     text-decoration: underline 1px var(--colorSecundaryText);
     z-index: 100000000;
+}
+
+@media (min-width: 460px){
+    .mainDivProdPop {
+        width: 100%;
+    }
+
+    .gridProductsPop {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

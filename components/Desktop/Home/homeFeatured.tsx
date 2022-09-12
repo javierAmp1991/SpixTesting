@@ -7,48 +7,36 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
     let cssStyle = getCssStyles()
     return (
 
-            <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
-                <div className="relative">
-                    <div className={style.bannerFeatureProperties}>
-                        <Image layout={"fill"} src={featuredItem.CoverImage}
-                               alt=""/>
+        <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
+            <div className="relative">
+                <div className={style.bannerFeatureProperties}>
+                    <Image layout={"fill"} src={featuredItem.CoverImage}
+                           alt=""/>
+                </div>
+                <div className={style.logoFeatureProperties}>
+                    <Image layout={"fill"} src={featuredItem.LogoPath} alt=""/>
+                </div>
+            </div>
+            <div className={style.mainDivInfo}>
+                <div className={`${utilities.clamp2} ${cssStyle.fontName} ${style.titleMargin} `}>
+                    {featuredItem.EventName}
+                </div>
+
+                <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin}`}>
+                    {featuredItem.Subtitle}
+                </div>
+
+                <div className={style.gridRatingStar}>
+                    <div className={utilities.ratingStarsProperties}>
+                        <Image layout={"fill"}
+                               src={featuredItem.Rating != null ?
+                                   "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
                     </div>
-                    <div className={style.logoFeatureProperties}>
-                        <Image layout={"fill"} src={featuredItem.LogoPath} alt=""/>
+                    <div className={`${cssStyle.fontSecundaryText} ${utilities.font12}`}>
+                        ({featuredItem.Rating != null ? featuredItem.Rating : 0})
                     </div>
                 </div>
-                <div className={style.mainDivInfo}>
-                    <div className={`${utilities.clamp2} ${cssStyle.fontName} pb-0.5 `}>
-                        {featuredItem.EventName}
-                    </div>
-
-                    <div className={utilities.fontPrimaryText}>
-                        {featuredItem.Subtitle}
-                    </div>
-
-                    <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
-                        {
-                            featuredItem.Rating != null ?
-                                <>
-                                    <div className={utilities.ratingStarsProperties}>
-                                        <Image layout={"fill"}
-                                               src="/images/ratingNew.png" alt=""/>
-                                    </div>
-                                    <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
-                                        ({featuredItem.Rating})
-                                    </div>
-                                </>
-                                :
-                                <>
-                                    <Image loading="lazy" className={utilities.ratingStarsProperties}
-                                           src="/images/ratingNull.png" alt=""/>
-                                    <div className={`${cssStyle.fontSecundaryText} font12 pt-0.5`}>
-                                        (0)
-                                    </div>
-                                </>
-                        }
-                    </div>
-                    {/*{
+                {/*{
                         featuredItem.Tags != null ?
                             <div className={`${utilities.gridMaxContent3} justify-center gap-1 mb-3`}>
                                 {
@@ -64,25 +52,25 @@ export default function HomeFeatured({featuredItem, darkModeState}) {
                             <></>
                     }*/}
 
-                    <div className={`${cssStyle.fontPriceInclude} mb-1`}>
-                        {
-                            featuredItem.TicketPriceMin == featuredItem.TicketPriceMax ?
-                                <>
-                                    ${Intl.NumberFormat("ES-Cl"
-                                ).format(Math.round(featuredItem.TicketPriceMin))}
+                <div className={`${cssStyle.fontPriceInclude}`}>
+                    {
+                        featuredItem.TicketPriceMin == featuredItem.TicketPriceMax ?
+                            <>
+                                ${Intl.NumberFormat("ES-Cl"
+                            ).format(Math.round(featuredItem.TicketPriceMin))}
 
-                                </>
-                                :
-                                <>
-                                    ${Intl.NumberFormat("ES-Cl"
-                                ).format(Math.round(featuredItem.TicketPriceMin))} -
-                                    ${Intl.NumberFormat("ES-Cl"
-                                ).format(Math.round(featuredItem.TicketPriceMax))}
-                                </>
-                        }
-                    </div>
+                            </>
+                            :
+                            <>
+                                ${Intl.NumberFormat("ES-Cl"
+                            ).format(Math.round(featuredItem.TicketPriceMin))} -
+                                ${Intl.NumberFormat("ES-Cl"
+                            ).format(Math.round(featuredItem.TicketPriceMax))}
+                            </>
+                    }
                 </div>
             </div>
+        </div>
     )
 
     function getCssStyles() {

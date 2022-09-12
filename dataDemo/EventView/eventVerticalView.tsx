@@ -5,6 +5,7 @@ export enum VerticalViewClass {
 }
 
 export class BaseVerticalView {
+    Link? : string
     Type: VerticalViewClass
     Id: string
     PathImage: string
@@ -639,6 +640,7 @@ export namespace DropDownSearch {
 export namespace DropDownResale {
     export const list: VerticalViewResale[] = [
         {
+            Link: "/resaleTicketSearch",
             Title: "Metallica WorldWired",
             Subtitle: "Metallica WorldWired",
             PathImage: "/images/cartel0.jpg",
@@ -650,6 +652,7 @@ export namespace DropDownResale {
             TotalResale: 10
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Asesino sin memoria",
             Subtitle: "Asesino sin memoria",
             PathImage: "/images/cartel1.jpg",
@@ -661,6 +664,7 @@ export namespace DropDownResale {
             TotalResale: 11
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Classic Music Festival",
             Subtitle: "Classic Music Festival",
             PathImage: "/images/cartel2.jpg",
@@ -672,6 +676,7 @@ export namespace DropDownResale {
             TotalResale: 12
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Daddy Yankee World tour",
             Subtitle: "Daddy Yankee World tour",
             PathImage: "/images/cartel3.jpg",
@@ -683,6 +688,7 @@ export namespace DropDownResale {
             TotalResale: 3
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Light Year",
             Subtitle: "Light Year",
             PathImage: "/images/cartel4.jpg",
@@ -694,6 +700,7 @@ export namespace DropDownResale {
             TotalResale: 4
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Singer Concert",
             Subtitle: "Singer Concert",
             PathImage: "/images/cartel5.jpg",
@@ -705,6 +712,7 @@ export namespace DropDownResale {
             TotalResale: 5
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Metallica WorldWired",
             Subtitle: "Metallica WorldWired",
             PathImage: "/images/cartel6.jpg",
@@ -716,6 +724,7 @@ export namespace DropDownResale {
             TotalResale: 10
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Asesino sin memoria",
             Subtitle: "Asesino sin memoria",
             PathImage: "/images/cartel7.jpg",
@@ -727,6 +736,7 @@ export namespace DropDownResale {
             TotalResale: 9
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Classic Music Festival",
             Subtitle: "Classic Music Festival",
             PathImage: "/images/cartel8.jpg",
@@ -738,6 +748,7 @@ export namespace DropDownResale {
             TotalResale: 8
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Daddy Yankee World tour",
             Subtitle: "Daddy Yankee World tour",
             PathImage: "/images/cartel9.jpg",
@@ -749,6 +760,7 @@ export namespace DropDownResale {
             TotalResale: 7
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Light Year",
             Subtitle: "Light Year",
             PathImage: "/images/cartel10.jpg",
@@ -760,6 +772,7 @@ export namespace DropDownResale {
             TotalResale: 20
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Singer Concert",
             Subtitle: "Singer Concert",
             PathImage: "/images/cartel11.jpg",
@@ -771,6 +784,7 @@ export namespace DropDownResale {
             TotalResale: 21
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Metallica WorldWired",
             Subtitle: "Metallica WorldWired",
             PathImage: "/images/cartel12.jpg",
@@ -782,6 +796,7 @@ export namespace DropDownResale {
             TotalResale: 22
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Asesino sin memoria",
             Subtitle: "Asesino sin memoria",
             PathImage: "/images/cartel13.jpg",
@@ -793,6 +808,7 @@ export namespace DropDownResale {
             TotalResale: 23
         },
         {
+            Link: "/resaleTicketSearch",
             Title: "Classic Music Festival",
             Subtitle: "Classic Music Festival",
             PathImage: "/images/cartel14.jpg",

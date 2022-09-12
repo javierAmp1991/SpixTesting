@@ -34,9 +34,9 @@
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     justify-content: center;
-    width: 80%;
+    width: 90%;
     margin: auto;
-    gap: 16px;
+    gap: 40px;
 }
 
 .overflowCarrouselProductsEWB {

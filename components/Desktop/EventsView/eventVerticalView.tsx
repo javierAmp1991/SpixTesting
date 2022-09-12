@@ -9,6 +9,7 @@ import {
     VerticalViewResale,
     VerticalViewSearch
 } from "../../../dataDemo/EventView/eventVerticalView";
+import Link from "next/link";
 
 const totalResaleText = "Total reventas: "
 
@@ -28,17 +29,20 @@ export default function EventVerticalView({item, darkModeState, isVertical}:
 
     return (
         <div className={`${styles.principalGridVertical}`}>
-            <a className={styles.containerImage}>
-                {
-                    item.SoldTickets >= item.TotalTickets * 0.90 &&
-                    <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+            <Link href={item.Type == VerticalViewClass.searchResale? item.Link : ""}>
+                <a className={styles.containerImage}>
+                    {
+                        item.SoldTickets >= item.TotalTickets * 0.90 &&
+                        <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+                        </div>
+                    }
+                    <div className={cssStyles.imageProportion}>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={item.PathImage}
+                               alt=""/>
                     </div>
-                }
-                <div className={cssStyles.imageProportion}>
-                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={item.PathImage} alt=""/>
-                </div>
-            </a>
+                </a>
+            </Link>
 
             <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
                 <div className={styles.TopDivInfo}>
@@ -105,7 +109,7 @@ export default function EventVerticalView({item, darkModeState, isVertical}:
 
     function getCssStyles() {
         return {
-            imageProportion: isVertical? styles.sizeImageVertical : styles.sizeImageSquare,
+            imageProportion: isVertical ? styles.sizeImageVertical : styles.sizeImageSquare,
             /*borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,*/
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,

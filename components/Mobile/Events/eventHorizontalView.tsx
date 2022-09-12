@@ -3,6 +3,7 @@ import style from "/styles/Mobile/Events/eventHorizontalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 import {
     BaseVerticalView,
     VerticalViewClass,
@@ -33,19 +34,21 @@ export default function EventHorizontalView({info, darkModeState}:
 
     return (
         <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
-            <a className={style.containerImage}>
-                {
-                    info.SoldTickets >= info.TotalTickets * 0.90 &&
-                    <div className={`${utilities.positionLastTicket} ${style.zIndexLastTicket}`}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
+            <Link href={info.Type == VerticalViewClass.searchResale ? info.Link : ""}>
+                <a className={style.containerImage}>
+                    {
+                        info.SoldTickets >= info.TotalTickets * 0.90 &&
+                        <div className={`${utilities.positionLastTicket} ${style.zIndexLastTicket}`}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                        </div>
+                    }
+                    <div className={`${style.sizeImage}`}>
+                        <Image layout={"fill"} objectFit={"cover"} src={info.PathImage} alt=""/>
                     </div>
-                }
-                <div className={`${style.sizeImage}`}>
-                    <Image layout={"fill"} objectFit={"cover"} src={info.PathImage} alt=""/>
-                </div>
-            </a>
+                </a>
+            </Link>
 
-            <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
+            <div className={`${cssStyles.bgInfo} ${cssStyles.gridInfo}`}>
                 <div className={style.TopDivInfo}>
                     <div className={`${cssStyles.fontTitle} ${utilities.clamp2} ${style.titleMargin}`}>
                         {info.Title}
@@ -137,9 +140,10 @@ export default function EventHorizontalView({info, darkModeState}:
 
     function getCssStyles() {
         return {
+            gridInfo: info.Type == VerticalViewClass.base ? style.gridInfoNormal : style.gridInfo,
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontTitle: darkModeState ? utilities.fontTitleDarkMode : utilities.fontTitle,
+            fontTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
             fontSecundaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude
         }

@@ -25,36 +25,23 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
             </a>
 
             <div className={`${cssStyles.bgInfo} grid p-2`}>
-                <div className={`${cssStyles.fontName} ${utilities.clamp2} text-center`}>
+                <div className={`${cssStyles.fontName} ${utilities.clamp2}`}>
                     {item.EventName}
                 </div>
 
-                <div className={`${utilities.gridMaxContent2} items-center justify-center gap-1.5 mb-2`}>
-                    {
-                        item.Rating != null ?
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src="/images/ratingNew.png" alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
-                                    ({item.Rating})
-                                </div>
-                            </>
-                            :
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src="/images/ratingNull.png" alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} font12 pt-0.5`}>
-                                    (0)
-                                </div>
-                            </>
-                    }
+                <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-2`}>
+                    <div className={utilities.ratingStarsProperties}>
+                        <Image layout={"fill"}
+                               src={item.Rating != null ?
+                                   "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
+                    </div>
+                    <div className={`${cssStyles.fontSecundaryText} ${utilities.font12} pt-0.5`}>
+                        ({item.Rating != null ? item.Rating : 0})
+                    </div>
+
                 </div>
 
-                <div className={`${cssStyles.fontPriceInclude} text-center mb-1`}>
+                <div className={`${cssStyles.fontPriceInclude}  mb-1`}>
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
