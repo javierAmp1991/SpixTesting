@@ -49,6 +49,14 @@
     object-fit: cover;
 }
 
+.gridHeaderResult {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
 .displayInFilters {
     height: 164px;
     overflow: hidden;
@@ -279,6 +287,7 @@
 }
 
 .gridResaleEventMobile{
+    margin-top: 24px;
     display: grid;
     gap: 24px;
 }

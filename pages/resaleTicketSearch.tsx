@@ -80,7 +80,7 @@ export default function ResaleTicketSearch() {
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
-                    <div className={style.gridHeaderResult}>
+                    <div className={styleMobile.gridHeaderResult}>
                         <div className={styleMobile.sizeBanner}>
                             <Image layout={"fill"} src={resaleBanner} alt={""}/>
                         </div>

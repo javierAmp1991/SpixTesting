@@ -28,7 +28,6 @@ export default function LayoutPrincipalFilterMobile({
                                                             isReturnActive: boolean
                                                             listCategoryFilter: SuperCategoryFilter[],
                                                             listPrincipalFilter: CategoryFilter[],
-
                                                         }) {
     const cssStyle = getCssStyle()
 
