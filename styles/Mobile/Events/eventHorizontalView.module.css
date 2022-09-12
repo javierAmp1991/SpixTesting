@@ -29,12 +29,14 @@
 }
 
 .gridInfo {
-    padding: 14px 12px;
+    padding: 14px 12px 0 12px;
 }
+/*
 
 .gridInfoNormal{
     padding: 16px 0 0 0;
 }
+*/
 
 .subTitleMargin {
     padding-bottom: 3px;
