@@ -106,6 +106,8 @@ let layoutPropNews: LayoutCarrouselDeskProp = {
     PositionArrowY: positionArrowY
 }
 
+const isVertical: boolean = true;
+
 export default function EventPage() {
     //region components mobile
     let commentSection = <TitleSection titleLink={commentTitle}
@@ -302,7 +304,7 @@ export default function EventPage() {
             {
                 InOfferHome.list.map((item, index) =>
                     index >= getExtra && index <= getExtra + 3 &&
-                        <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
+                        <EventVerticalView isVertical={isVertical} item={item} darkModeState={false} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>

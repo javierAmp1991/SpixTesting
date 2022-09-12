@@ -21,7 +21,7 @@ import {
     CategoryPrincipalFilters,
     SuperCategoryFilter
 } from "../dataDemo/data";
-import {BaseVerticalView, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import {BaseVerticalView, DropDownHome, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -39,6 +39,7 @@ export default function SearchRestaurant() {
     let cssStyle = getCssStyle();
     const textResultSection: string = "Entretencion";
     const isReview: boolean = true;
+    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -52,7 +53,7 @@ export default function SearchRestaurant() {
     //region desktop Components
     let dropDown =
         DropDownSearch.list.map((item, index) =>
-            <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
+            <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -64,8 +65,8 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownData.listDropDown.map((item, index) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
+    let dropDownMobile = DropDownSearch.list.map((item, index) =>
+        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>

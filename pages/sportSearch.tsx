@@ -40,6 +40,7 @@ export default function SearchRestaurant() {
     let cssStyle = getCssStyle();
     const textResultSection: string = "Deportes";
     const isReview: boolean = true;
+    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -53,7 +54,7 @@ export default function SearchRestaurant() {
     //region desktop Components
     let dropDown =
         DropDownSportSearch.listDropDown.map((item: BaseVerticalView, ) =>
-            <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
+            <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -65,8 +66,8 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownDataSport.listDropDown.map((item, index) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
+    let dropDownMobile = DropDownSportSearch.listDropDown.map((item, index) =>
+        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>

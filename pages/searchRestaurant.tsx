@@ -39,6 +39,7 @@ export default function SearchRestaurant() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isReview: boolean = true;
+    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -52,7 +53,7 @@ export default function SearchRestaurant() {
     //region desktop Components
     let dropDown =
         DropDownRestaurantSearch.listDropDown.map((item : BaseVerticalView, index) =>
-            <EventVerticalView key={index} darkModeState={isDarkMode} item={item}/>
+            <EventVerticalView isVertical={isVertical} key={index} darkModeState={isDarkMode} item={item}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -64,8 +65,8 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownDataRestaurant.listDropDown.map((item, index) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
+    let dropDownMobile = DropDownRestaurantSearch.listDropDown.map((item, index) =>
+        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>

@@ -40,6 +40,7 @@ export default function SearchServices() {
     let cssStyle = getCssStyle();
     const textResultSection: string = "Servicios";
     const isReview: boolean = true;
+    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -53,7 +54,7 @@ export default function SearchServices() {
     //region desktop Components
     let dropDown =
         DropDownServvicesSearch.listDropDown.map((item, index) =>
-            <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
+            <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -65,8 +66,8 @@ export default function SearchServices() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownDataServices.listDropDown.map((item, index) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
+    let dropDownMobile = DropDownServvicesSearch.listDropDown.map((item, index) =>
+        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>

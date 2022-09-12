@@ -3,86 +3,119 @@ import style from "/styles/Mobile/Events/eventHorizontalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import React from "react";
+import {
+    BaseVerticalView,
+    VerticalViewClass,
+    VerticalViewResale,
+    VerticalViewSearch
+} from "../../../dataDemo/EventView/eventVerticalView";
 
-export default function EventHorizontalView({info, darkModeState}) {
+const totalResaleText = "Total reventas: "
+
+export default function EventHorizontalView({info, darkModeState}:
+                                                { info: BaseVerticalView, darkModeState: boolean }) {
     let cssStyles = getCssStyles()
-    function getNumber(num: number) : string{
+    let newItem: VerticalViewSearch;
+    let newItem2: VerticalViewResale;
+    if (info.Type == VerticalViewClass.search) {
+        newItem = info as VerticalViewSearch
+    } else {
+        newItem2 = info as VerticalViewResale
+    }
+
+    function getNumber(num: number): string {
         let newNum: string = `${num}`
-        if(num >= 0 && num <=9){
+        if (num >= 0 && num <= 9) {
             newNum = `0${num}`
         }
         return newNum
     }
+
     return (
         <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
-            <a className="relative">
+            <a className={style.containerImage}>
                 {
                     info.SoldTickets >= info.TotalTickets * 0.90 &&
-                        <div className={`${utilities.positionLastTicket} absolute z-20`}>
-                            <Image layout={"fill"}
-                                   src={GlobalConst.sourceImages.lastTicket} alt=""/>
-                        </div>
+                    <div className={`${utilities.positionLastTicket} ${style.zIndexLastTicket}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
+                    </div>
                 }
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={info.CoverImage} alt=""/>
+                <div className={`${style.sizeImage}`}>
+                    <Image layout={"fill"} objectFit={"cover"} src={info.PathImage} alt=""/>
                 </div>
             </a>
 
             <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
-                <div className={`${cssStyles.fontTitle} ${utilities.clamp2}`}>
-                    {info.EventName}
+                <div className={style.TopDivInfo}>
+                    <div className={`${cssStyles.fontTitle} ${utilities.clamp2} ${style.titleMargin}`}>
+                        {info.Title}
+                    </div>
+                    <div className={`${utilities.fontPrimary} ${style.subTitleMargin}`}>
+                        {info.Subtitle}
+                    </div>
+
+                    <div className={style.gridRatingStar}>
+                        <div className={utilities.ratingStarsProperties}>
+                            <Image layout={"fill"}
+                                   src={info.Rating != null ?
+                                       GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull}
+                                   alt=""/>
+                        </div>
+                        <div className={`${cssStyles.fontSecundaryText} ${style.contRating}`}>
+                            ({info.Rating != null ? info.Rating : 0})
+                        </div>
+                    </div>
                 </div>
 
-                <div className={`${utilities.gridMaxContent2} items-center gap-1.5`}>
-                    {
-                        info.Rating != null ?
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src={GlobalConst.sourceImages.ratingNew} alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12}`}>
-                                    ({info.Rating})
-                                </div>
-                            </>
-                            :
-                            <>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src={GlobalConst.sourceImages.ratingNull} alt=""/>
-                                </div>
-                                <div className={`${cssStyles.fontSecundaryText} ${utilities.font12}`}>
-                                    (0)
-                                </div>
-                            </>
-                    }
-                </div>
+                {
+                    info.Type == VerticalViewClass.search &&
+                    <div className={style.bottomDivSearch}>
+                        <div className={`${style.gridIconInfo}`}>
+                            <div className={style.sizeIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                            </div>
+                            <div className={`${utilities.fontSecundaryText}`}>
+                                {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
+                            </div>
+                        </div>
 
-                <div className={`${cssStyles.fontPriceInclude} pt-1`}>
-                    {
-                        info.TicketPriceMin == info.TicketPriceMax ?
-                            <>
-                                ${Intl.NumberFormat("ES-CL"
-                            ).format(Math.round(info.TicketPriceMin))}
+                        <div className={`${style.gridIconInfo}`}>
+                            <div className={style.sizeIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
+                            </div>
+                            {
+                                newItem.MinPrice == newItem.MaxPrice ?
+                                    <>
+                                        {
+                                            getNumber(newItem.MinPrice)
+                                        }
+                                    </>
+                                    :
+                                    <>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(newItem.MinPrice))} -
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(newItem.MaxPrice))}
+                                    </>
+                            }
+                        </div>
+                    </div>
+                }
+                {
+                    info.Type == VerticalViewClass.searchResale &&
+                    <div className={`${utilities.fontPrimaryText} ${style.bottomDivSearch}`}>
+                        {totalResaleText} {newItem2.TotalResale}
+                    </div>
+                }
 
-                            </>
-                            :
-                            <>
-                                ${Intl.NumberFormat("ES-CL"
-                            ).format(Math.round(info.TicketPriceMin))} -
-                                ${Intl.NumberFormat("ES-CL"
-                            ).format(Math.round(info.TicketPriceMax))}
-                            </>
-                    }
-                </div>
-
+                {/*
                 <div className={`${cssStyles.fontSecundaryText}`}>
                     {
                         info.MinDate == info.MaxDate ?
                             <>
-                                {/*Faltan @((eventLookUp.MinDate - DateTime.Now).Value.ToString("hh")):
+                                Faltan @((eventLookUp.MinDate - DateTime.Now).Value.ToString("hh")):
                                     @((eventLookUp.MinDate - DateTime.Now).Value.ToString("mm")):
-                                    @((eventLookUp.MinDate - DateTime.Now).Value.ToString("ss"))*/}
+                                    @((eventLookUp.MinDate - DateTime.Now).Value.ToString("ss"))
                             </>
                             :
                             <>
@@ -92,16 +125,12 @@ export default function EventHorizontalView({info, darkModeState}) {
                     }
                 </div>
 
-                <div className={`${cssStyles.fontSecundaryText} ${utilities.clamp2}`}>
-                    En {info.InVenues}
-                </div>
-
                 {
                     info.HasPromotableOffers &&
                         <div>
                             <span className={utilities.styleSpixDiscountTag}>En oferta</span>
                         </div>
-                }
+                }*/}
             </div>
         </div>
     )
@@ -110,7 +139,7 @@ export default function EventHorizontalView({info, darkModeState}) {
         return {
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
+            fontTitle: darkModeState ? utilities.fontTitleDarkMode : utilities.fontTitle,
             fontSecundaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude
         }

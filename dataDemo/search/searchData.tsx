@@ -1,5 +1,5 @@
 import {EventLookUp} from "../data";
-import {VerticalViewClass, VerticalViewSearch} from "../EventView/eventVerticalView";
+import {VerticalViewClass, VerticalViewSearch, BaseVerticalView} from "../EventView/eventVerticalView";
 
 export class EventSearch {
     Id: string
@@ -110,6 +110,61 @@ export namespace listPublicityNews {
             Date: new Date(2022, 8, 9),
             BannerPath: "/images/cartel5.jpg"
         }
+    ]
+}
+
+export namespace listPublicityNews1{
+    export const list: BaseVerticalView[] = [
+        {
+            Type: VerticalViewClass.base,
+            Id: "12",
+            Title: "Tenemos Explosivos",
+            Subtitle: "Tenemos Explosivos",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/oferta6.jpg",
+        },
+        {
+            Type: VerticalViewClass.base,
+            Id: "123",
+            Title: "KEVIN CORRAL",
+            Subtitle: "KEVIN CORRAL",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/oferta2.jpg",
+        },
+        {
+            Type: VerticalViewClass.base,
+            Id: "1234",
+            Title: "Mundos Magicos",
+            Subtitle: "Mundos Magicos",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/oferta3.jpg",
+        },
+        {
+            Type: VerticalViewClass.base,
+            Id: "12345",
+            Title: "Tributo Bon Jovi",
+            Subtitle: "Tributo Bon Jovi",
+            Rating: 300,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/oferta4.jpg",
+        },
+        {
+            Type: VerticalViewClass.base,
+            Id: "123456",
+            Title: "Aura club",
+            Subtitle: "Aura club",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 3000,
+            PathImage: "/images/oferta5.jpg",
+        },
     ]
 }
 

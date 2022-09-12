@@ -133,6 +133,7 @@ const layoutPropNews: LayoutCarrouselDeskProp = {
     PositionArrowY: positionArrowY
 }
 const isLogged: boolean = false
+const isVertical: boolean = true;
 //endregion
 
 type useMediaQuery = (query: string) => boolean;
@@ -266,8 +267,8 @@ export default function Index() {
     let publicity2Mobile = <PublicityViewMobile linkImage={PublicityData.publicityList[1]}/>
 
     let dropDownMobile = <LayoutDropDownMobile gapLayout={gapLayout}>{
-        DropDownData.listDropDown.map(item =>
-            <EventHorizontalView info={item} darkModeState={isDarkMode} key={item.EventId}/>
+        DropDownHome.list.map(item =>
+            <EventHorizontalView info={item} darkModeState={isDarkMode} key={item.Id}/>
         )
     }
     </LayoutDropDownMobile>
@@ -435,7 +436,7 @@ export default function Index() {
                 {
                     TodayInValpoHome.list.map((item: BaseVerticalView, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
-                        <EventVerticalView darkModeState={isDarkMode}
+                        <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode}
                                            item={item}
                                            key={item.Id}/>
                     )
@@ -469,7 +470,7 @@ export default function Index() {
             {
                 InOfferHome.list.map((item: BaseVerticalView, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
-                    <EventVerticalView item={item} darkModeState={isDarkMode} key={item.Id}/>
+                    <EventVerticalView isVertical={isVertical} item={item} darkModeState={isDarkMode} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
@@ -512,7 +513,7 @@ export default function Index() {
     let dropDown = <LayoutDropDown>
         {
             DropDownHome.list.map((item: BaseVerticalView) =>
-                <EventVerticalView item={item} darkModeState={isDarkMode} key={item.Id}/>
+                <EventVerticalView isVertical={isVertical} item={item} darkModeState={isDarkMode} key={item.Id}/>
             )
         }
     </LayoutDropDown>

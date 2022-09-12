@@ -30,8 +30,11 @@ import {PublicityData} from "../dataDemo/data";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import NewSearcPrincipalMobile from "../components/Mobile/Search/newSearcPrincipalMobile";
 import PublicityNews from "../components/Desktop/CRM/publicityNews";
-import {PublicitySearch, listPublicityNews} from "../dataDemo/search/searchData";
+import {PublicitySearch, listPublicityNews, listPublicityNews1} from "../dataDemo/search/searchData";
 import PublicityNewsMobile from "../components/Mobile/CRM/publicityNewsMobile";
+import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
+import {Base} from "postcss-selector-parser";
+import {BaseVerticalView} from "../dataDemo/EventView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -40,7 +43,7 @@ export default function ReviewSearch() {
     const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersNews.listPrinciaplFilters;
     const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryNews.listSuperCat;
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
-    const listPublicity: PublicitySearch[] = listPublicityNews.list
+    const listPublicity: BaseVerticalView[] = listPublicityNews1.list
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
@@ -56,6 +59,7 @@ export default function ReviewSearch() {
     const publicity1: string = PublicityData.publicityList[1]
     let [displayNextEvent, setDisplayNextEvent] = useState(true)
     const handleDisplayNextEvent = () => setDisplayNextEvent(displayNextEvent = !displayNextEvent)
+    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -173,13 +177,13 @@ export default function ReviewSearch() {
                                         </>
                                         :
                                         <>
-                                            <div className={styleMobile.gridPublicity}>
+                                            {/*<div className={styleMobile.gridPublicity}>
                                                 {
                                                     listPublicity.map(item =>
                                                         <PublicityNewsMobile item={item} key={item.Id}/>
                                                     )
                                                 }
-                                            </div>
+                                            </div>*/}
                                         </>
                                 }
                             </div>
@@ -209,8 +213,8 @@ export default function ReviewSearch() {
                                 </div>
                                 <div className={style.gridPublicityNews}>
                                     {
-                                        listPublicity.map(item =>
-                                            <PublicityNews item={item} key={item.Id}/>
+                                        listPublicity.map((item) =>
+                                            <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode} isVertical={isVertical}/>
                                         )
                                     }
                                 </div>

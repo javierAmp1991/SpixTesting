@@ -12,33 +12,42 @@
     position: relative;
 }
 
-.sizeImage {
+.sizeImageSquare {
+    width: 100%;
+    position: relative;
+    z-index: 20;
+    aspect-ratio: 1/1;
+}
+
+.sizeImageVertical{
+    width: 100%;
+    position: relative;
+    z-index: 20;
     aspect-ratio: 4/5;
 }
 
 .zIndexLastTicket {
     position: absolute;
-    z-index: 20;
-}
-
-.zIndexImage {
-    position: relative;
-    z-index: 20;
+    z-index: 40;
 }
 
 .subTitleMargin{
-    margin-bottom: 3px;
+    margin-bottom: 4px;
+}
+
+.titleMargin{
+    margin-bottom: 2px;
 }
 
 .princiaplGridInfo {
     display: grid;
     align-content: start;
-    padding: 8px 16px 0 16px;
+    padding: 10px 0 0 0;
     border-top: 2px solid #f5f5f5;
 }
 
 .TopDivInfo {
-    padding: 0 8px 12px 8px;
+    padding: 0 24px 12px 24px;
 }
 
 .gridRatingStar{
@@ -56,10 +65,10 @@
 }
 
 .bottomDivSearch {
-    padding: var(--paddinBottomDivX);
+    padding: 12px 24px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
-    gap: 3px;
+    gap: 6px;
 }
 
 .bottomDivResale {

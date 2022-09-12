@@ -44,7 +44,7 @@
 
 .gridImageInfo {
     display: grid;
-    grid-template-columns: 42% 58%;
+    grid-template-columns: 45% 55%;
 }
 
 .sizeImagePrincipal {
@@ -139,7 +139,7 @@
 .fontSubTitle{
     font-size: 15px;
     font-weight: 400;
-    color: var(--colorSubTitles);
+    color: var(--colorPrimaryText);
 }
 
 .gridReadNew{

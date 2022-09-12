@@ -12,8 +12,8 @@ import {
 
 const totalResaleText = "Total reventas: "
 
-export default function EventVerticalView({item, darkModeState}:
-                                              { item: BaseVerticalView, darkModeState: boolean }) {
+export default function EventVerticalView({item, darkModeState, isVertical}:
+                                              { item: BaseVerticalView, darkModeState: boolean, isVertical: boolean }) {
     /*    let [displayName, setDisplayName] = useState(true)
         const handleShowName = () => setDisplayName(displayName = true)
         const handleHiddeName = () => setDisplayName(displayName = false)*/
@@ -35,14 +35,14 @@ export default function EventVerticalView({item, darkModeState}:
                         <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
                     </div>
                 }
-                <div className={`${styles.sizeImage} ${styles.zIndexImage}`}>
-                    <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
+                <div className={cssStyles.imageProportion}>
+                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={item.PathImage} alt=""/>
                 </div>
             </a>
 
             <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
                 <div className={styles.TopDivInfo}>
-                    <div className={`${cssStyles.fontName} ${utilities.clamp1}`}>
+                    <div className={`${cssStyles.fontName} ${utilities.clamp1} ${styles.titleMargin}`}>
                         {item.Title}
                     </div>
 
@@ -95,7 +95,7 @@ export default function EventVerticalView({item, darkModeState}:
                 }
                 {
                     item.Type == VerticalViewClass.searchResale &&
-                    <div className={`${utilities.fontPrimaryText} ${styles.bottomDivResale}`}>
+                    <div className={`${utilities.fontPrimaryText} ${styles.bottomDivSearch}`}>
                         {totalResaleText} {newItem2.TotalResale}
                     </div>
                 }
@@ -105,6 +105,7 @@ export default function EventVerticalView({item, darkModeState}:
 
     function getCssStyles() {
         return {
+            imageProportion: isVertical? styles.sizeImageVertical : styles.sizeImageSquare,
             /*borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,*/
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,

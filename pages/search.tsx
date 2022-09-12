@@ -1,7 +1,7 @@
 import style from "/styles/Desktop/Search/layoutPrincipal.module.css"
 import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css"
 import utilities from "/styles/utilities.module.css"
-import {CategoryFilter, DropDownData} from "../dataDemo/data"
+import {CategoryFilter} from "../dataDemo/data"
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
@@ -31,6 +31,7 @@ export default function Search() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const isReview: boolean = true;
+    const isVertical: boolean = false;
 
     const isCategory: boolean = false;
     const isDisplayCategory: boolean = false;
@@ -45,7 +46,7 @@ export default function Search() {
     //region desktop Components
     let dropDown =
         DropDownSearch.list.map((item: BaseVerticalView, ) =>
-            <EventVerticalView key={item.Id} darkModeState={isDarkMode} item={item}/>
+            <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -57,8 +58,8 @@ export default function Search() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownData.listDropDown.map((item, index) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={index}></EventHorizontalView>
+    let dropDownMobile = DropDownSearch.list.map((item: BaseVerticalView) =>
+        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>
