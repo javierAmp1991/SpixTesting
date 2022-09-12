@@ -49,6 +49,7 @@ export default function SearchRestaurant() {
     const isDisplayPrincipalFill: boolean = true;
     const isAdvancedFilter: boolean = true;
     const isDisplayAdvancedFilter: boolean = false;
+    const isReturnActive: boolean = true
 
     //region desktop Components
     let dropDown =
@@ -93,7 +94,8 @@ export default function SearchRestaurant() {
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                  isAdvancedFilter={isAdvancedFilter}
-                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                 isReturnActive={isReturnActive}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>

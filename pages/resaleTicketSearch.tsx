@@ -54,6 +54,7 @@ export default function ResaleTicketSearch() {
     const isDisplayPrincipalFill: boolean = true;
     const isAdvancedFilter: boolean = false;
     const isDisplayAdvancedFilter: boolean = false;
+    const isReturnActive: boolean = true
 
     //region desktop Components
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -133,7 +134,8 @@ export default function ResaleTicketSearch() {
                                                          IsPrincipalFill={isPrincipalFill}
                                                          isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                          isAdvancedFilter={isAdvancedFilter}
-                                                         isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                         isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                         isReturnActive={isReturnActive}/>
                     }
                 </div>
             </DefaultLayoutMobile>

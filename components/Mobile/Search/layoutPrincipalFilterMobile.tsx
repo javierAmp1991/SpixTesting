@@ -16,7 +16,7 @@ export default function LayoutPrincipalFilterMobile({
                                                         isAdvancedFilter, isDisplayAdvancedFilter,
                                                         IsPrincipalFill, isDisplayPrincipalFill,
                                                         listCategoryFilter, listPrincipalFilter,
-                                                        handleOpenFilter,
+                                                        handleOpenFilter, isReturnActive
                                                     }:
                                                         {
                                                              handleOpenFilter: any,
@@ -24,7 +24,8 @@ export default function LayoutPrincipalFilterMobile({
                                                             isCategory: boolean, isDisplayCategory: boolean
                                                             isSubCategory: boolean, isDisplaySubCategory: boolean,
                                                             isAdvancedFilter: boolean, isDisplayAdvancedFilter: boolean,
-                                                            IsPrincipalFill: boolean, isDisplayPrincipalFill: boolean
+                                                            IsPrincipalFill: boolean, isDisplayPrincipalFill: boolean,
+                                                            isReturnActive: boolean
                                                             listCategoryFilter: SuperCategoryFilter[],
                                                             listPrincipalFilter: CategoryFilter[],
 
@@ -240,17 +241,21 @@ export default function LayoutPrincipalFilterMobile({
             {
                 !isOpenFilter &&
                 <>
-                    <div className={style.gridResultFiltersIn}>
-                        <div className={`${utilities.fontSubTitle} `}>
-                            Filtros
-                        </div>
-                        <button onClick={handleOpenFilter} className={`grid items-center`}>
-                            <div className={"h-3 w-4 relative"}>
-                                <Image layout={"fill"}
-                                       src={GlobalConst.sourceImages.engineIcon} alt={""}/>
+                    {
+                        isReturnActive &&
+                        <div className={style.gridResultFiltersIn}>
+                            <div className={`${utilities.fontSubTitle} `}>
+                                Filtros
                             </div>
-                        </button>
-                    </div>
+                            <button onClick={handleOpenFilter} className={`grid items-center`}>
+                                <div className={"h-3 w-4 relative"}>
+                                    <Image layout={"fill"}
+                                           src={GlobalConst.sourceImages.engineIcon} alt={""}/>
+                                </div>
+                            </button>
+                        </div>
+                    }
+
 
                     {
                         isDisplayPrincipalFill &&

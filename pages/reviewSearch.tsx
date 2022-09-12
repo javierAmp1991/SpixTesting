@@ -47,6 +47,7 @@ export default function ReviewSearch() {
     const isDisplayPrincipalFill: boolean = true;
     const isAdvancedFilter: boolean = false;
     const isDisplayAdvancedFilter: boolean = false;
+    const isReturnActive: boolean = false
 
     //region desktop Components
 
@@ -85,23 +86,25 @@ export default function ReviewSearch() {
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                  isAdvancedFilter={isAdvancedFilter}
-                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                 isReturnActive={isReturnActive}/>
 
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
-                            <div >
+                            <div>
                                 <div className={styleMobile.gridResultFiltersOut}>
                                     <div className={`${cssStyle.fontSubTitle} px-5`}>
                                         Reseñas
                                     </div>
                                     {
                                         isReview &&
-                                        <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                        <button onClick={handleClick}
+                                                className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                             <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                                 Filtros
                                             </div>
-                                            <div  className={"h-3 w-4 relative"}>
+                                            <div className={"h-3 w-4 relative"}>
                                                 <Image layout={"fill"}
                                                        src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                             </div>

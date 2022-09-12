@@ -50,10 +50,11 @@ export default function SearchRestaurant() {
     const isDisplayPrincipalFill: boolean = true;
     const isAdvancedFilter: boolean = true;
     const isDisplayAdvancedFilter: boolean = false;
+    const isReturnActive: boolean = true
 
     //region desktop Components
     let dropDown =
-        DropDownSportSearch.listDropDown.map((item: BaseVerticalView, ) =>
+        DropDownSportSearch.listDropDown.map((item: BaseVerticalView,) =>
             <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
@@ -94,7 +95,8 @@ export default function SearchRestaurant() {
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                  isAdvancedFilter={isAdvancedFilter}
-                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                 isReturnActive={isReturnActive}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
@@ -103,11 +105,12 @@ export default function SearchRestaurant() {
                                     <div className={`${cssStyle.fontSubTitle}`}>
                                         {textResultSection}
                                     </div>
-                                    <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                    <button onClick={handleClick}
+                                            className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                         <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                             Filtros
                                         </div>
-                                        <div  className={"h-3 w-4 relative"}>
+                                        <div className={"h-3 w-4 relative"}>
                                             <Image layout={"fill"}
                                                    src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                         </div>

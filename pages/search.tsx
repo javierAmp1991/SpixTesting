@@ -41,11 +41,12 @@ export default function Search() {
     const isDisplayPrincipalFill: boolean = true;
     const isAdvancedFilter: boolean = false;
     const isDisplayAdvancedFilter: boolean = false;
+    const isReturnActive: boolean = true
 
 
     //region desktop Components
     let dropDown =
-        DropDownSearch.list.map((item: BaseVerticalView, ) =>
+        DropDownSearch.list.map((item: BaseVerticalView,) =>
             <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
@@ -88,7 +89,8 @@ export default function Search() {
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                  isAdvancedFilter={isAdvancedFilter}
-                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                 isReturnActive={isReturnActive}/>
 
                     {
                         isDisplayResult &&
@@ -98,11 +100,12 @@ export default function Search() {
                                     <div className={`${cssStyle.fontSubTitle}`}>
                                         Resultados de {"Conciertos"}
                                     </div>
-                                    <button onClick={handleClick} className={`${utilities.gridMaxContent2} gap-2 items-center`}>
+                                    <button onClick={handleClick}
+                                            className={`${utilities.gridMaxContent2} gap-2 items-center`}>
                                         <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
                                             Filtros
                                         </div>
-                                        <div  className={"h-3 w-4 relative"}>
+                                        <div className={"h-3 w-4 relative"}>
                                             <Image layout={"fill"}
                                                    src={GlobalConst.sourceImages.engineIcon} alt={""}/>
                                         </div>

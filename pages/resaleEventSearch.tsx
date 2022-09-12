@@ -49,6 +49,7 @@ export default function SearchRestaurant() {
     const isDisplayPrincipalFill: boolean = false;
     const isAdvancedFilter: boolean = false;
     const isDisplayAdvancedFilter: boolean = false;
+    const isReturnActive: boolean = true
 
 
     //region desktop Components
@@ -92,7 +93,8 @@ export default function SearchRestaurant() {
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
                                                  isAdvancedFilter={isAdvancedFilter}
-                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                                 isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                 isReturnActive={isReturnActive}/>
                     {
                         isDisplayResult &&
                         <div className={"relative"}>
@@ -131,9 +133,12 @@ export default function SearchRestaurant() {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
                                                       listCategoryFilter={categoryFilterRest}
                                                       isCategory={isCategory} isDisplayCategory={isDisplayCategory}
-                                                      isSubCategory={isSubCategory} isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill} isDisplayPrincipalFill={isDisplayPrincipalFill}
-                                                      isAdvancedFilter={isAdvancedFilter} isDisplayAdvancedFilter={isDisplayAdvancedFilter}
+                                                      isSubCategory={isSubCategory}
+                                                      isDisplaySubCategory={isDisplaySubCategory}
+                                                      IsPrincipalFill={isPrincipalFill}
+                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                      isAdvancedFilter={isAdvancedFilter}
+                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}/>
                             }
