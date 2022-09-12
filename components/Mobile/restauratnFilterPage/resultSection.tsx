@@ -5,6 +5,7 @@ import EventHorizontalView from "../Events/eventHorizontalView";
 const nextButton: string = "Siguiente"
 const returnButton: string = "Anterior"
 
+/*
 export default function ResultSection({listResult} : {listResult: EventLookUp[]}) {
     return (
         <div className={style.mainDiv}>
@@ -22,4 +23,4 @@ export default function ResultSection({listResult} : {listResult: EventLookUp[]}
             </div>
         </div>
     )
-}
+}*/
