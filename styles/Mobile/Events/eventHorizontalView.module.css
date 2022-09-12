@@ -60,7 +60,7 @@
 
 .bottomDivSearch {
     padding: 8px 0 0 0;
-    margin: 10px 6px 0 14px;
+    margin: 10px 14px 0 14px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;
@@ -68,7 +68,7 @@
 
 .bottomDivResale {
     padding: 8px 0 0 0;
-    margin: 10px 6px 0 14px;
+    margin: 10px 14px 0 14px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;
