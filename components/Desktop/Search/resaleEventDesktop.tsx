@@ -6,7 +6,21 @@ import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
+import LayoutCarrouselLoop from "../Layouts/layoutCarrouselLoop";
+import {LayoutCarrouselDeskProp} from "../Layouts/layoutCarrousel";
 const buy: string = "Comprar";
+const displayCarrousel = "grid"
+const gridFullSpace = "100%"
+const positionArrowIn: string = "0"
+const positionArrowY: string = "calc(50% - 16px)"
+const layoutPropBanner: LayoutCarrouselDeskProp = {
+    Display: displayCarrousel,
+    Grid: gridFullSpace,
+    Gap: 0,
+    Padding: 0,
+    PositionArrowX: positionArrowIn,
+    PositionArrowY: positionArrowY
+}
 
 export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
@@ -61,13 +75,10 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             </div>
                         </div>
                     </div>
-                    {/*<button onClick={handlePopUp} className={utilities.fontSecundaryText}>
-                        Ver productos
-                    </button>*/}
                 </div>
 
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                     ref={mainDivTranslate} className={"relative w-full"}>
+                     ref={mainDivTranslate} className={"relative w-full overflow-hidden"}>
 
                     <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
@@ -88,8 +99,6 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                                                    alt={""}/>
                                         </div>
                                         <div>x{product.Amount} {product.Name}</div>
-                                        {/*<span
-                                            className={utilities.fontPriceInclude}>${getMoneyValue(product.Price)}</span>*/}
                                     </div>
                                 </div>
                             )
@@ -105,20 +114,27 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     </button>
                 </div>
 
+                {/*<LayoutCarrouselLoop isAuto={false} layoutProp={layoutPropBanner}>
+                    {
+                        item.ListProducts.map((product, index) =>
+                            <div key={index} className={style.mainDivProd}>
+                                <div className={style.gridPriceName}>
+                                    <div className={style.sizeImage}>
+                                        <Image priority={true} layout={"fill"} objectFit={"cover"}
+                                               src={"/images/product1.jpg"}
+                                               alt={""}/>
+                                    </div>
+                                    <div>x{product.Amount} {product.Name}</div>
+                                </div>
+                            </div>
+                        )
+                    }
+
+                </LayoutCarrouselLoop>*/}
+
                 <button onClick={handlePopUp} className={`${utilities.fontSecundaryText} ${style.positionSeeMore}`}>
                     Ver productos
                 </button>
-
-                {/*<div className={style.divImageInfo}>
-                    <div className={style.gridImageInfo}>
-                        <div className={style.profileSize}>
-                            <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt={""}/>
-                        </div>
-                        <div className={`${style.overflowName} ${utilities.fontPrimaryText}`}>
-                            {item.Name}
-                        </div>
-                    </div>
-                </div>*/}
             </div>
 
             <Link href={""}>

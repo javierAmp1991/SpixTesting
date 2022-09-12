@@ -62,6 +62,7 @@
 }
 
 .mainDivProd {
+    width: 100%;
     display: grid;
     justify-items: center;
 }
@@ -80,10 +81,11 @@
 
 .gridProducts {
     display: grid;
-    grid-template-columns: 100%;
-    grid-auto-columns: 100%;
+    grid-template-columns: 232px;
+    grid-auto-columns: 232px;
     grid-auto-flow: column;
     overflow-x: hidden;
+    width: max-content;
     position: relative;
     transition: 1s;
 }
