@@ -2,7 +2,7 @@ export namespace GlobalConst{
     export const sourceImages = {
         leftArrow: "/images/leftArrowN1.png",
         rightArrow: "/images/rightArrowN1.png",
-        lastTicket: "/images/listonRojoUltimas.png",
+        lastTicket: "/images/lastTicketTiny.png",
         logginHeaderDesktop: "/images/iniciarSesioinWhite.png",
         locationHeaderDesktop: "/images/ubicacion.png",
         logoSpixHeaderDesk: "/images/spix.png",

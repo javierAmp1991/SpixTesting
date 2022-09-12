@@ -24,7 +24,7 @@
 
 .sizeImage {
     width: 100%;
-    aspect-ratio: 5/6;
+    aspect-ratio: 1/1;
     position: relative;
 }
 
@@ -62,6 +62,14 @@
 .bottomDivSearch {
     padding: 10px 0 0 12px;
     margin-top: 12px;
+    border-top: 2px solid var(--separationLineColor);
+    display: grid;
+    gap: 2px;
+}
+
+.bottomDivResale {
+    padding: 10px 0 0 12px;
+    margin-top: 14px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;

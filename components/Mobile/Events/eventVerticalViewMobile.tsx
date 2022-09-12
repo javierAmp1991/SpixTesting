@@ -11,13 +11,11 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
         <div className={`${styles.principalGridVertical} ${cssStyles.borderCard} ${styles.widthDropDownVertical}`}>
             <a className="relative">
                 {
-                    item.SoldTickets >= item.TotalTickets * 0.90 ?
+                    item.SoldTickets >= item.TotalTickets * 0.90 &&
                         <div className={`${utilities.positionLastTicket} absolute z-20`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>
-                        :
-                        ""
                 }
                 <div className={`${styles.sizeImage}`}>
                     <Image layout={"fill"} objectFit={"cover"} src={item.CoverImage} alt=""/>
@@ -26,6 +24,10 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
 
             <div className={`${cssStyles.bgInfo} grid p-2`}>
                 <div className={`${cssStyles.fontName} ${utilities.clamp2}`}>
+                    {item.EventName}
+                </div>
+
+                <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
                     {item.EventName}
                 </div>
 
@@ -41,7 +43,7 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
 
                 </div>
 
-                <div className={`${cssStyles.fontPriceInclude}  mb-1`}>
+                {/*<div className={`${cssStyles.fontPriceInclude}  mb-1`}>
                     {
                         item.TicketPriceMin == item.TicketPriceMax ?
                             <>
@@ -57,7 +59,7 @@ export default function EventVerticalViewMobile({item, isDarkMode}) {
                             ).format(Math.round(item.TicketPriceMax))}
                             </>
                     }
-                </div>
+                </div>*/}
             </div>
         </div>
     )

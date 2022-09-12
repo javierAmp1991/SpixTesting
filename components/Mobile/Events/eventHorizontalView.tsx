@@ -106,7 +106,7 @@ export default function EventHorizontalView({info, darkModeState}:
                 }
                 {
                     info.Type == VerticalViewClass.searchResale &&
-                    <div className={`${utilities.fontPrimaryText} ${style.bottomDivSearch}`}>
+                    <div className={`${utilities.fontPrimaryText} ${style.bottomDivResale}`}>
                         {totalResaleText} {newItem2.TotalResale}
                     </div>
                 }
