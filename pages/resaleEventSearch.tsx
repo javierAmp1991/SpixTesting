@@ -37,6 +37,7 @@ export default function SearchRestaurant() {
     let cssStyle = getCssStyle();
     const textResultSection: string = "Entradas";
     const isReview: boolean = true;
+    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -50,7 +51,7 @@ export default function SearchRestaurant() {
 
     //region desktop Components
     let dropDown = DropDownResale.list.map((item: BaseVerticalView) =>
-        <EventVerticalView key={item.Id} darkModeState={isDarkMode} item={item}/>)
+        <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>)
 
     let buttonsNavegation = <LayoutButtonNavegation>
         {

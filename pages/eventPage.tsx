@@ -272,7 +272,7 @@ export default function EventPage() {
             {
                 HomeNewsData.listNews.map((item, index) =>
                     index >= getNews && index <= getNews + 2 &&
-                            <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
+                            <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
                 )
             }
         </LayoutCarrousel>
