@@ -48,7 +48,7 @@ export default function EventHorizontalView({info, darkModeState}:
                 </a>
             </Link>
 
-            <div className={`${cssStyles.bgInfo} ${cssStyles.gridInfo}`}>
+            <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
                 <div className={style.TopDivInfo}>
                     <div className={`${cssStyles.fontTitle} ${utilities.clamp1} ${style.titleMargin}`}>
                         {info.Title}
@@ -140,7 +140,7 @@ export default function EventHorizontalView({info, darkModeState}:
 
     function getCssStyles() {
         return {
-            gridInfo: info.Type == VerticalViewClass.base ? style.gridInfoNormal : style.gridInfo,
+
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,

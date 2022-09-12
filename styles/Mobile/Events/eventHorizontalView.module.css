@@ -1,6 +1,6 @@
 .principalGridHorizontal {
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 150px 1fr;
 }
 
 .containerImage {
@@ -29,7 +29,7 @@
 }
 
 .gridInfo {
-    padding: 16px 12px;
+    padding: 14px 12px;
 }
 
 .gridInfoNormal{
@@ -37,11 +37,11 @@
 }
 
 .subTitleMargin {
-    margin-bottom: 4px;
+    padding-bottom: 3px;
 }
 
 .titleMargin {
-    margin-bottom: 2px;
+    padding-bottom: 2px;
 }
 
 .gridRatingStar {
