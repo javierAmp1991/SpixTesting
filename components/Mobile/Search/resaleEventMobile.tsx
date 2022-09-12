@@ -82,7 +82,9 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     <div className={style.gridTotal}>
                         <div className={cssStyle.colorEti}>
                             <span className={style.dicountPer}>
-                                - 25%
+                                {
+                                    item.PreviousPrice > item.Price? "- 20%" : "+ 25%"
+                                }
                             </span>
                         </div>
 
