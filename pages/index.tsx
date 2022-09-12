@@ -135,6 +135,7 @@ const layoutPropNews: LayoutCarrouselDeskProp = {
 }
 const isLogged: boolean = false
 const isVertical: boolean = false;
+const isVerticalCarrousel: boolean = true;
 //endregion
 
 type useMediaQuery = (query: string) => boolean;
@@ -437,7 +438,7 @@ export default function Index() {
                 {
                     TodayInValpoHome.list.map((item: BaseVerticalView, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
-                        <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode}
+                        <EventVerticalView isVertical={isVerticalCarrousel} darkModeState={isDarkMode}
                                            item={item}
                                            key={item.Id}/>
                     )
@@ -471,7 +472,7 @@ export default function Index() {
             {
                 InOfferHome.list.map((item: BaseVerticalView, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
-                    <EventVerticalView isVertical={isVertical} item={item} darkModeState={isDarkMode} key={item.Id}/>
+                    <EventVerticalView isVertical={isVerticalCarrousel} item={item} darkModeState={isDarkMode} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
