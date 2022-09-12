@@ -46,12 +46,10 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                             <Image layout={"fill"} objectFit={"cover"} src={item.BannerPath} alt=""/>
                         </div>
                         {
-                            displayLogoRating ?
+                            displayLogoRating &&
                                 <div className={styles.propertiesLogoEWB}>
                                     <Image layout={"fill"} src={item.LogoPath} alt=""/>
                                 </div>
-                                :
-                                ""
                         }
 
                     </div>
@@ -62,15 +60,13 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                             {item.EventName}
                         </div>
                         {
-                            displayLogoRating ?
+                            displayLogoRating &&
                                 <div className={`${utilities.gridMaxContent2} grid justify-center mb-1`}>
                                     <div className={utilities.ratingStarsProperties}>
                                         <Image layout={"fill"}
                                                src="/images/ratingNew.png" alt=""/>
                                     </div>
                                 </div>
-                                :
-                                ""
                         }
 
 
@@ -95,9 +91,9 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                             <div className={styles.gridCarrouselProductsEWB}>
                                 {
                                     item.ListProducts.map(product =>
-                                        <div key={product.Name}>
+                                        <div key={product.Name} className={styles.mainDivPro}>
                                             <div className="mb-2">
-                                                <div className={`${styles.sizeProductEWB} m-auto`}>
+                                                <div className={`${styles.sizeProductEWB}`}>
                                                     <Image layout={"fill"}
                                                            src={product.ImagePath} alt=""/>
                                                 </div>

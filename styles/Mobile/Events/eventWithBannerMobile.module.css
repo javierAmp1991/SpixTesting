@@ -18,6 +18,10 @@
     overflow: hidden;
 }
 
+.mainDivPro{
+    width: 100px;
+}
+
 .sizeProductEWB {
     --sizeProduct: 88px;
     width: var(--sizeProduct);
