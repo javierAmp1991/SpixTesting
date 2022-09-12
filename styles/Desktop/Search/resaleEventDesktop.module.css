@@ -252,7 +252,7 @@
 }
 
 .etiquetaRed {
-    width: 32px;
+    width: 36px;
     height: 42px;
     border-radius: 0 0 20px 20px;
     box-shadow: 2px 2px 4px #9a0101;
@@ -266,7 +266,7 @@
 }
 
 .etiquetaGreen {
-    width: 32px;
+    width: 36px;
     height: 42px;
     border-radius: 0 0 20px 20px;
     box-shadow: 2px 2px 4px #046701;
@@ -326,7 +326,7 @@
 .dicountPer {
     color: white;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .positionSeeMore{
