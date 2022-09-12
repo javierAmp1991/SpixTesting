@@ -34,6 +34,7 @@ import {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
 import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarrousel";
+import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 //endregion
 
 //region importData
@@ -133,7 +134,7 @@ const layoutPropNews: LayoutCarrouselDeskProp = {
     PositionArrowY: positionArrowY
 }
 const isLogged: boolean = false
-const isVertical: boolean = true;
+const isVertical: boolean = false;
 //endregion
 
 type useMediaQuery = (query: string) => boolean;
@@ -267,7 +268,7 @@ export default function Index() {
     let publicity2Mobile = <PublicityViewMobile linkImage={PublicityData.publicityList[1]}/>
 
     let dropDownMobile = <LayoutDropDownMobile gapLayout={gapLayout}>{
-        DropDownHome.list.map(item =>
+        DropDownSearch.list.map(item =>
             <EventHorizontalView info={item} darkModeState={isDarkMode} key={item.Id}/>
         )
     }
@@ -512,7 +513,7 @@ export default function Index() {
 
     let dropDown = <LayoutDropDown>
         {
-            DropDownHome.list.map((item: BaseVerticalView) =>
+            DropDownSearch.list.map((item: BaseVerticalView) =>
                 <EventVerticalView isVertical={isVertical} item={item} darkModeState={isDarkMode} key={item.Id}/>
             )
         }

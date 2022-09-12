@@ -1,7 +1,7 @@
 import style from "/styles/Desktop/Search/layoutPrincipal.module.css"
 import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.module.css"
 import utilities from "/styles/utilities.module.css"
-import {CategoryFilter} from "../dataDemo/data"
+import {CategoryFilter, SuperCategoryEntertaiment, SuperCategoryFilter} from "../dataDemo/data"
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
@@ -22,6 +22,7 @@ let AntSig: string[] = ["Anterior", "Siguiente"]
 
 export default function Search() {
     const listPrincipalFilters: CategoryFilter[] = CategoryPrincipalFilters.listPrinciaplFilters;
+    const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryEntertaiment.listSuperCat;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
@@ -33,13 +34,13 @@ export default function Search() {
     const isReview: boolean = true;
     const isVertical: boolean = false;
 
-    const isCategory: boolean = false;
-    const isDisplayCategory: boolean = false;
-    const isSubCategory: boolean = false;
-    const isDisplaySubCategory: boolean = false;
+    const isCategory: boolean = true;
+    const isDisplayCategory: boolean = true;
+    const isSubCategory: boolean = true;
+    const isDisplaySubCategory: boolean = true;
     const isPrincipalFill: boolean = true;
     const isDisplayPrincipalFill: boolean = true;
-    const isAdvancedFilter: boolean = false;
+    const isAdvancedFilter: boolean = true;
     const isDisplayAdvancedFilter: boolean = false;
     const isReturnActive: boolean = true
 
@@ -79,7 +80,7 @@ export default function Search() {
                 <div className={cssStyle.bg}>
 
                     <LayoutPrincipalFilterMobile listPrincipalFilter={listPrincipalFilters}
-                                                 listCategoryFilter={null}
+                                                 listCategoryFilter={categoryFilterRest}
                                                  handleOpenFilter={handleClick}
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
@@ -128,7 +129,7 @@ export default function Search() {
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={listPrincipalFilters}
-                                                      listCategoryFilter={null}
+                                                      listCategoryFilter={categoryFilterRest}
                                                       isDarkMode={isDarkMode}
                                                       isOpenFilter={isOpenFilters}
 

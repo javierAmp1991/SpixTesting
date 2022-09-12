@@ -60,16 +60,16 @@
 }
 
 .bottomDivSearch {
-    padding: 10px 0 0 12px;
-    margin-top: 12px;
+    padding: 8px 0 0 8px;
+    margin: 10px 6px 0 6px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;
 }
 
 .bottomDivResale {
-    padding: 10px 0 0 12px;
-    margin-top: 14px;
+    padding: 8px 0 0 8px;
+    margin: 10px 6px 0 6px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     gap: 2px;

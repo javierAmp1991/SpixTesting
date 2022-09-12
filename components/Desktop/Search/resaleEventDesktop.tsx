@@ -78,7 +78,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 </div>
 
                 <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                     ref={mainDivTranslate} className={"relative w-full overflow-hidden"}>
+                     ref={mainDivTranslate} className={"relative overflow-hidden"}>
 
                     <button onPointerOver={showArrow} onPointerOut={hiddeArrow}
                             onClick={handleLeft}
@@ -142,7 +142,9 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                     <div className={style.gridTotal}>
                         <div className={cssStyle.colorEti}>
                             <span className={style.dicountPer}>
-                                - 20%
+                                {
+                                    item.PreviousPrice > item.Price? "- 20%" : "+ 25%"
+                                }
                             </span>
                         </div>
 

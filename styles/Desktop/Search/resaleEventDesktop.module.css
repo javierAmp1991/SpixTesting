@@ -62,9 +62,7 @@
 }
 
 .mainDivProd {
-    width: 100%;
-    display: grid;
-    justify-items: center;
+    width: 232px;
 }
 
 .mainDivProdPop {
@@ -81,12 +79,20 @@
 
 .gridProducts {
     display: grid;
-    grid-template-columns: 232px;
-    grid-auto-columns: 232px;
+    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
     grid-auto-flow: column;
     overflow-x: hidden;
     width: max-content;
     position: relative;
+    transition: 1s;
+}
+
+.gridProducts {
+    display: flex;
+    flex-direction: row;
+    overflow-x: hidden;
+    width: max-content;
     transition: 1s;
 }
 
