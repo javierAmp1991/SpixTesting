@@ -41,20 +41,44 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                             ({item.Rating != null ? item.Rating : 0})
                         </div>
                     </div>
-                </div>
 
-                <div className={style.borderDiv}>
-                    <div className={style.bottomDivSearch}>
+                    {
+                        item.Type == FeaturedViewClass.base &&
                         <div className={`${style.gridIconInfo}`}>
                             <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
                             </div>
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
-                            </div>
+                            {
+                                newItem.MinPrice == newItem.MaxPrice ?
+                                    <>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(newItem.MinPrice))}
+                                    </>
+                                    :
+                                    <>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(newItem.MinPrice))} -
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(newItem.MaxPrice))}
+                                    </>
+                            }
                         </div>
-                        {
-                            item.Type == FeaturedViewClass.Search &&
+                    }
+                </div>
+
+               {
+                    item.Type == FeaturedViewClass.Search &&
+                    <div className={style.borderDiv}>
+                        <div className={style.bottomDivSearch}>
+                            <div className={`${style.gridIconInfo}`}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                                </div>
+                                <div className={`${utilities.fontSecundaryText}`}>
+                                    {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
+                                </div>
+                            </div>
+
                             <div className={`${style.gridIconInfo}`}>
                                 <div className={style.sizeIcon}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
@@ -74,9 +98,9 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                                         </>
                                 }
                             </div>
-                        }
+                        </div>
                     </div>
-                </div>
+                }
             </div>
         </div>
     )

@@ -190,7 +190,7 @@ export namespace FeaturedListSearch {
 export namespace FeaturedListHome {
     export const list: BaseFeaturedView[] = [
         {
-            Type: FeaturedViewClass.Search,
+            Type: FeaturedViewClass.base,
             Id: "123456",
             MinPrice: 9990,
             MaxPrice: 59990,
@@ -202,7 +202,7 @@ export namespace FeaturedListHome {
             PathLogo: "/images/cineplanet.png"
         },
         {
-            Type: FeaturedViewClass.Search,
+            Type: FeaturedViewClass.base,
             Id: "12345",
             Title: "Minions: Nace un villano",
             Subtitle: "Minions: Nace un villano",
@@ -215,7 +215,7 @@ export namespace FeaturedListHome {
 
         },
         {
-            Type: FeaturedViewClass.Search,
+            Type: FeaturedViewClass.base,
             Id: "1234",
             Title: "Jurassic World: Dominion",
             Subtitle: "Jurassic World: Dominion",
@@ -228,7 +228,7 @@ export namespace FeaturedListHome {
 
         },
         {
-            Type: FeaturedViewClass.Search,
+            Type: FeaturedViewClass.base,
             Id: "123",
             Title: "Light Year",
             Subtitle: "Light Year",
@@ -241,7 +241,7 @@ export namespace FeaturedListHome {
 
         },
         {
-            Type: FeaturedViewClass.Search,
+            Type: FeaturedViewClass.base,
             Id: "12",
             Title: "Top Gun Maverick",
             Subtitle: "Top Gun Maverick",
@@ -253,7 +253,7 @@ export namespace FeaturedListHome {
             PathLogo: "/images/cineplanet.png"
         },
         {
-            Type: FeaturedViewClass.Search,
+            Type: FeaturedViewClass.base,
             Id: "1",
             Title: "Thor Love and Thunder",
             Subtitle: "Thor Love and Thunder",

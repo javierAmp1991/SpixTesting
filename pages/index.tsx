@@ -35,6 +35,7 @@ import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
 import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarrousel";
 import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import {FeaturedListHome} from "../dataDemo/EventView/featureView";
 //endregion
 
 //region importData
@@ -63,6 +64,7 @@ import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
+import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 //endregion
 
 //region constantes
@@ -74,6 +76,7 @@ const cinemasTitleLink: [string, string] = ["Cines", "#"]
 const inOfferTitleLink: [string, string] = ["En Oferta", "#"]
 const newsHomeTitleLink: [string, string] = ["Noticias", "#"]
 const restaurantsHomeTitleLink: [string, string] = ["Restaurantes", "#"]
+const dropDownTitleLink: [string, string] = ["Descubre mas", "#"]
 const spaceComponents = 40
 const noSpaceComponents = 0
 const spaceComponentsMobileY = 24
@@ -250,7 +253,7 @@ export default function Index() {
                 DropDownNewSearch.listNews.map(item =>
                     /*<NewViewMobile item={item} isDarkMode={isDarkMode} key={item.Id}/>*/
                     <div key={item.Id} className={"w-80"}>
-                        <NewsSearchMobile isSubtitle={true}  item={item}/>
+                        <NewsSearchMobile isSubtitle={true} item={item}/>
                     </div>
                 )
             }
@@ -268,12 +271,14 @@ export default function Index() {
     </TitleSection>
     let publicity2Mobile = <PublicityViewMobile linkImage={PublicityData.publicityList[1]}/>
 
-    let dropDownMobile = <LayoutDropDownMobile gapLayout={gapLayout}>{
-        DropDownSearch.list.map(item =>
-            <EventHorizontalView info={item} darkModeState={isDarkMode} key={item.Id}/>
-        )
-    }
-    </LayoutDropDownMobile>
+    let dropDownMobile = <TitleSection titleLink={dropDownTitleLink} darkModeState={isDarkMode} paddingTitle={spaceComponentsMobileY}>
+        <LayoutDropDownMobile gapLayout={gapLayout}>{
+            DropDownSearch.list.map(item =>
+                <EventHorizontalView info={item} darkModeState={isDarkMode} key={item.Id}/>
+            )
+        }
+        </LayoutDropDownMobile>
+    </TitleSection>
 
     let categorysFooterMobile = <LayoutCategoryFooter>
         {
@@ -340,10 +345,10 @@ export default function Index() {
             Component: dropDownMobile,
             padding: paddingGeneralMobile
         },
-        {
+        /*{
             Component: categorysFooterMobile,
             padding: paddingGeneralMobile
-        }
+        }*/
     ]
 //endregion
 
@@ -419,9 +424,9 @@ export default function Index() {
                                  titleLink={featuredHomeTitleLink} darkModeState={isDarkMode}>{
         <LayoutCarrousel sumar={3} handleFeatured={handleFeatured}
                          layoutProp={layoutPropFeatured}>{
-            FeaturedHome.listFeaturedHome.map((item, index) =>
-                index >= getFeaturedItems && index <= getFeaturedItems + 2 ?
-                    <HomeFeatured darkModeState={isDarkMode} featuredItem={item} key={index}/> : <></>
+            FeaturedListHome.list.map((item, index) =>
+                index >= getFeaturedItems && index <= getFeaturedItems + 2 &&
+                    <FeaturedViewDesktop darkModeState={isDarkMode} item={item} key={index}/>
             )
         }
         </LayoutCarrousel>
@@ -472,7 +477,8 @@ export default function Index() {
             {
                 InOfferHome.list.map((item: BaseVerticalView, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
-                    <EventVerticalView isVertical={isVerticalCarrousel} item={item} darkModeState={isDarkMode} key={item.Id}/>
+                    <EventVerticalView isVertical={isVerticalCarrousel} item={item} darkModeState={isDarkMode}
+                                       key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
@@ -512,13 +518,16 @@ export default function Index() {
     </TitleSection>
     let publicity2 = <PublicityView linkImage={PublicityData.publicityList[1]}/>
 
-    let dropDown = <LayoutDropDown>
-        {
-            DropDownSearch.list.map((item: BaseVerticalView) =>
-                <EventVerticalView isVertical={isVertical} item={item} darkModeState={isDarkMode} key={item.Id}/>
-            )
-        }
-    </LayoutDropDown>
+    let dropDown = <TitleSection titleLink={dropDownTitleLink} paddingTitle={titleLinkPadding}
+                                 darkModeState={isDarkMode}>
+        <LayoutDropDown>
+            {
+                DropDownSearch.list.map((item: BaseVerticalView) =>
+                    <EventVerticalView isVertical={isVertical} item={item} darkModeState={isDarkMode} key={item.Id}/>
+                )
+            }
+        </LayoutDropDown>
+    </TitleSection>
 
     let categorysFooter = <LayoutCategoryFooter>
         {
@@ -585,10 +594,10 @@ export default function Index() {
             Component: dropDown,
             padding: paddingGeneralDesk
         },
-        {
-            Component: categorysFooter,
-            padding: paddingGeneralDesk
-        },
+        /*        {
+                    Component: categorysFooter,
+                    padding: paddingGeneralDesk
+                },*/
     ]
 //endregion
     return (

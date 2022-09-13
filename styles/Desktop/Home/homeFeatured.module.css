@@ -44,7 +44,7 @@
 
 .mainDivInfo {
     display: grid;
-    grid-template-columns: 42% 58%;
+    grid-template-columns: 50% 50%;
     gap: 12px;
     margin: auto;
     padding: 8px 10px;

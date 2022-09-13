@@ -435,6 +435,12 @@
     }
 }
 
+@media(min-width: 1600px){
+    .maxWidthBodyContentSpix{
+        width: 1500px;
+    }
+}
+
 
 
 

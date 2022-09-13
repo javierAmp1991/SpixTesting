@@ -6,6 +6,7 @@
 
 @media (min-width: 1281px) {
     .dropDownGrid {
+        padding: 0 136px ;
         grid-template-columns: repeat(4, 1fr);
     }
 }
