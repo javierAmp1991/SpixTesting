@@ -38,6 +38,7 @@ export default function FeaturedSearch() {
     let cssStyle = getCssStyle();
     const isVertical: boolean = false;
     const publicity: string = PublicityData.publicityList[0]
+    const publicity1: string = PublicityData.publicityList[1]
     const featuredText: string = "Destacados";
 
     const isCategory: boolean = true;
@@ -52,6 +53,10 @@ export default function FeaturedSearch() {
 
 
     //region desktop Components
+    let dropDownMisc =
+        DropDownSearch.list.map((item: BaseVerticalView,) =>
+            <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>
+        )
     let dropDown =
         FeaturedListSearch.list.map((item: BaseFeaturedView) =>
             <FeaturedViewDesktop key={item.Id} darkModeState={isDarkMode} item={item}/>
@@ -161,13 +166,14 @@ export default function FeaturedSearch() {
                                 </div>
                                 <div className={style.PrincipalGridNews}>
                                     <FeaturedViewPrincipal item={PrincipalFeaturedSearch.item}/>
+                                    <PublicityView linkImage={publicity}/>
 
                                     <div className={style.gridFeaturedSearch}>
                                         {dropDownFeatured}
                                     </div>
-                                    <PublicityView linkImage={publicity}/>
+                                    <PublicityView linkImage={publicity1}/>
                                     <div className={style.gridFeaturedSearchDropDown}>
-                                        {dropDown}
+                                        {dropDownMisc}
                                     </div>
                                 </div>
                             </div>

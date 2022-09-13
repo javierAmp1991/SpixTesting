@@ -10,7 +10,7 @@ export default function FeaturedViewPrincipal({item}: { item: FeaturedViewSearch
     return (
         <div className={style.mainDiv}>
             <div className={style.sizeBanner}>
-                <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt={""}/>
+                <Image layout={"fill"} objectFit={"cover"} objectPosition={"right"} src={"/images/thorAficheCuadrado.jpeg"} alt={""}/>
             </div>
             <div className={style.gridFeaturePrincipal}>
                 <div className={style.mainDivInfo}>
@@ -40,6 +40,9 @@ export default function FeaturedViewPrincipal({item}: { item: FeaturedViewSearch
 
                     <div className={style.borderDiv}>
                         <div className={style.bottomDivSearch}>
+                            <div className={style.positionMedalla}>
+                                <Image layout={"fill"} src={"/images/medalla.png"}/>
+                            </div>
                             <div className={`${style.gridIconInfo}`}>
                                 <div className={style.sizeIcon}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
@@ -72,8 +75,34 @@ export default function FeaturedViewPrincipal({item}: { item: FeaturedViewSearch
                             }
                         </div>
                     </div>
+
+                    <div className={style.mainDivProducts}>
+                    {
+                        item.ListProducts.map((item, index) =>
+                            index >= 0 && index <= 3 &&
+                            <div key={index} className={style.boxShadowPro}>
+                                <div className={style.sizeImageProduct}>
+                                    <div className={style.aspectImage}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                                    </div>
+                                    <div className={utilities.positionLastTicket}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                                               alt=""/>
+                                    </div>
+                                </div>
+
+                                <div className={style.gridInfoProduct}>
+                                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                                        {item.Name}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
                 </div>
-                <div className={style.mainDivProducts}>
+                </div>
+            </div>
+            {/*<div className={style.mainDivProducts}>
                     {
                         item.ListProducts.map((item, index) =>
                             <div key={index} className={style.boxShadowPro}>
@@ -95,8 +124,7 @@ export default function FeaturedViewPrincipal({item}: { item: FeaturedViewSearch
                             </div>
                         )
                     }
-                </div>
-            </div>
+                </div>*/}
         </div>
     )
 }

@@ -2,22 +2,24 @@
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 45% 55%;
 }
+
 
 .sizeBanner{
     width: 100%;
-    aspect-ratio: 5/1;
+    aspect-ratio: 3/2;
     position: relative;
-
 }
 
 .gridFeaturePrincipal{
     display: grid;
-    grid-template-columns: 50% 50%;
 }
 
 .mainDivInfo {
     padding: 10px 20px;
+    position: relative;
 }
 
 .gridRatingStar {
@@ -48,6 +50,7 @@
     padding: 6px 0 0 0;
     display: grid;
     gap: 6px;
+    position: relative;
 }
 
 .gridIconInfo {
@@ -63,6 +66,16 @@
     position: relative;
 }
 
+.positionMedalla{
+    --sizeLogoFeaturedHome: 32px;
+    height: var(--sizeLogoFeaturedHome);
+    width: var(--sizeLogoFeaturedHome);
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+}
+
 .logoFeatureProperties {
     --sizeLogoFeaturedHome: 44px;
     height: var(--sizeLogoFeaturedHome);
@@ -72,17 +85,19 @@
     overflow: hidden;
     position: absolute;
     top: 2px;
-    right: 10%;
+    right: 0;
     /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
         left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
 
 .mainDivProducts{
-    border-left: 1px solid var(--separationLineColor);
+    border-top: 2px solid var(--separationLineColor);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    padding: 10px 16px;
+    grid-template-columns: repeat(4, 1fr);
+    margin: auto;
+    margin-top: 8px;
+    gap: 52px;
+    padding: 10px 5px 0 5px;
 }
 
 .sizeImageProduct{

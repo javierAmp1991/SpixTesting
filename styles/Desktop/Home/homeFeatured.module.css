@@ -1,6 +1,6 @@
 .bannerFeatureProperties {
     width: 100%;
-    aspect-ratio: 3.5/1;
+    aspect-ratio: 3/1;
     object-fit: cover;
     object-position: center;
 }
@@ -14,7 +14,7 @@
     overflow: hidden;
     position: absolute;
     top: 2px;
-    right: 10%;
+    right: 5%;
     /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
         left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
