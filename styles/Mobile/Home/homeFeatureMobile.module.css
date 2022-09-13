@@ -12,6 +12,8 @@
     margin: auto;
 }
 
+
+
 .logoFeatureProperties {
     --sizeLogoFeatureMobile: 42px;
     height: var(--sizeLogoFeatureMobile);

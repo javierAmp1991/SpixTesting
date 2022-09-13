@@ -1,16 +1,16 @@
 import utilities from "/styles/utilities.module.css"
-import style from "/styles/Desktop/Home/homeFeatured.module.css"
+import style from "/styles/Mobile/Events/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
 import {FeaturedViewClass, BaseFeaturedView, FeaturedViewSearch} from "../../../dataDemo/EventView/featureView";
 import {GlobalConst} from "../../../public/globalConst";
 
-export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
+export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
     let newItem: FeaturedViewSearch = item as FeaturedViewSearch
     let cssStyle = getCssStyles()
     return (
 
-        <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.mainDiv}`}>
+        <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
             <div className="relative">
                 <div className={style.bannerFeatureProperties}>
                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>

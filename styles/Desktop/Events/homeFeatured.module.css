@@ -1,7 +1,3 @@
-.mainDiv{
-    position: relative;
-}
-
 .bannerFeatureProperties {
     width: 100%;
     aspect-ratio: 4/1;
@@ -15,12 +11,13 @@
     box-shadow: var(--boxShadowCard);
     border-radius: 50%;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     top: 2px;
     right: 5%;
     /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
         left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
+
 .borderLogo {
     position: absolute;
     background: white;
@@ -37,8 +34,9 @@
     width: var(--sizeLogoFeaturedHome);
     border-radius: 50%;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     top: calc(100% - (var(--sizeLogoFeaturedHome) / 2));
+    right: 24px;
     /*left: calc(50% - (var(--sizeLogoFeaturedHome) / 2));*/
 }
 

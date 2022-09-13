@@ -22,6 +22,10 @@ import {FeaturedListSearch, BaseFeaturedView, PrincipalFeaturedSearch} from "../
 import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import FeaturedViewPrincipal from "../components/Desktop/Search/featuredViewPrincipal";
+import PublicityNewsMobile from "../components/Mobile/CRM/publicityNewsMobile";
+import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
+import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
+import FeaturedViewPrincipalMobile from "../components/Mobile/Search/featuredViewPrincipal";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -80,6 +84,12 @@ export default function FeaturedSearch() {
     let dropDownMobile = DropDownSearch.list.map((item: BaseVerticalView) =>
         <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
     )
+
+    let dropDownFeaturedMobile =
+        FeaturedListSearch.list.map((item: BaseFeaturedView, index) =>
+            index == 0 &&
+            <FeaturedViewMobile key={item.Id} darkModeState={isDarkMode} item={item}/>
+        )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>
             {
@@ -116,7 +126,7 @@ export default function FeaturedSearch() {
                             <div className={style.paddingContainer}>
                                 <div className={styleMobile.gridResultFiltersOut}>
                                     <div className={`${cssStyle.fontSubTitle}`}>
-                                        Resultados de {"Conciertos"}
+                                        Resultados de {"Destacados"}
                                     </div>
                                     <button onClick={handleClick}
                                             className={`${utilities.gridMaxContent2} gap-2 items-center`}>
@@ -131,6 +141,10 @@ export default function FeaturedSearch() {
                                 </div>
 
                                 <div className={style.gridResult}>
+                                    <FeaturedViewPrincipalMobile item={PrincipalFeaturedSearch.item}/>
+                                    <PublicityViewMobile linkImage={publicity}/>
+                                    {dropDownFeaturedMobile}
+                                    <PublicityViewMobile linkImage={publicity1}/>
                                     {dropDownMobile}
                                 </div>
                                 {buttonsNavegationMobile}
