@@ -2,7 +2,7 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Home/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
-import {FeaturedViewClass, BaseFeaturedView, FeaturedViewSearch} from "../../../dataDemo/EventView/featureView";
+import {BaseFeaturedView, FeaturedViewClass, FeaturedViewSearch} from "../../../dataDemo/EventView/featureView";
 import {GlobalConst} from "../../../public/globalConst";
 
 export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
@@ -21,7 +21,7 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                     </div>
                 </div>
             </div>
-            <div className={style.mainDivInfo}>
+            <div className={item.Type == FeaturedViewClass.base? style.mainDivInfoBase : style.mainDivInfo }>
                 <div className={style.topDiv}>
                     <div className={`${utilities.clamp1} ${cssStyle.fontName} ${style.titleMargin} `}>
                         {item.Title}
