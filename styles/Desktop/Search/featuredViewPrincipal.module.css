@@ -1,0 +1,92 @@
+.mainDiv{
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sizeBanner{
+    width: 100%;
+    aspect-ratio: 5/1;
+    position: relative;
+
+}
+
+.gridFeaturePrincipal{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.mainDivInfo {
+    padding: 10px 20px;
+}
+
+.gridRatingStar {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-content: end;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+
+.subTitleMargin {
+    margin-bottom: 4px;
+}
+
+.titleMargin {
+    margin-bottom: 2px;
+}
+
+.topDiv {
+    position: relative;
+}
+
+.borderDiv {
+    border-top: 2px solid var(--separationLineColor);
+}
+
+.bottomDivSearch {
+    padding: 6px 0 0 0;
+    display: grid;
+    gap: 6px;
+}
+
+.gridIconInfo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px;
+    align-items: center;
+}
+
+.sizeIcon {
+    height: 12px;
+    width: 12px;
+    position: relative;
+}
+
+.logoFeatureProperties {
+    --sizeLogoFeaturedHome: 44px;
+    height: var(--sizeLogoFeaturedHome);
+    width: var(--sizeLogoFeaturedHome);
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 2px;
+    right: 10%;
+    /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
+        left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
+}
+
+.mainDivProducts{
+    border-left: 1px solid var(--separationLineColor);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding: 10px 16px;
+}
+
+.sizeImageProduct{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}

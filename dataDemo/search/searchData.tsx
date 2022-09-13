@@ -1,4 +1,5 @@
 import {EventLookUp} from "../data";
+
 import {VerticalViewClass, VerticalViewSearch, BaseVerticalView} from "../EventView/eventVerticalView";
 
 export class EventSearch {

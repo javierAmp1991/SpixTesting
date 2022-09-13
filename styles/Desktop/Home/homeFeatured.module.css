@@ -1,29 +1,44 @@
-.bannerFeatureProperties{
+.bannerFeatureProperties {
     width: 100%;
     aspect-ratio: 3.5/1;
     object-fit: cover;
     object-position: center;
 }
 
-.logoFeatureProperties{
+.logoFeatureProperties {
     --sizeLogoFeaturedHome: 44px;
-    height: var(--sizeLogoFeaturedHome) ;
-    width: var(--sizeLogoFeaturedHome) ;
+    height: var(--sizeLogoFeaturedHome);
+    width: var(--sizeLogoFeaturedHome);
     box-shadow: var(--boxShadowCard);
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
-    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
-    left: calc(50% - (var(--sizeLogoFeaturedHome)/2));
+    top: 2px;
+    right: 10%;
+    /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
+        left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
 
-.mainDivInfo{
-    width: max-content;
+.logoFeaturePropertiesv2 {
+    --sizeLogoFeaturedHome: 52px;
+    border: 4px solid white;
+    height: var(--sizeLogoFeaturedHome);
+    width: var(--sizeLogoFeaturedHome);
+/*    box-shadow: var(--boxShadowCard);*/
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(100% - (var(--sizeLogoFeaturedHome) / 2));
+    right: 24px;
+    /*left: calc(50% - (var(--sizeLogoFeaturedHome) / 2));*/
+}
+
+.mainDivInfo {
     margin: auto;
-    padding: 24px 0 12px 0;
+    padding: 10px 20px;
 }
 
-.gridRatingStar{
+.gridRatingStar {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-content: end;
@@ -31,12 +46,41 @@
     margin-bottom: 6px;
 }
 
-.subTitleMargin{
+.subTitleMargin {
     margin-bottom: 4px;
 }
 
-.titleMargin{
+.titleMargin {
     margin-bottom: 2px;
+}
+
+.topDiv {
+    margin: auto;
+    position: relative;
+}
+
+.borderDiv {
+    border-top: 2px solid var(--separationLineColor);
+}
+
+.bottomDivSearch {
+    padding: 6px 0 0 0;
+    display: grid;
+    gap: 6px;
+    margin: auto;
+}
+
+.gridIconInfo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px;
+    align-items: center;
+}
+
+.sizeIcon {
+    height: 12px;
+    width: 12px;
+    position: relative;
 }
 
 

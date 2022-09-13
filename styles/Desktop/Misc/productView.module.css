@@ -9,6 +9,12 @@
     object-fit: cover;
 }
 
+.sizeImageProduct{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
 .boxShadowPro {
     box-shadow: var(--shadowUnderProducts);
     border-radius: 12px;

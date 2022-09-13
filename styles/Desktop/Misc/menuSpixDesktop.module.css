@@ -15,5 +15,7 @@
     overflow: scroll;
 }
 .styleTagsMenu{
+    font-family: Helvetica, sans-serif, Arial;
+    font-weight: 450;
     color: white;
 }

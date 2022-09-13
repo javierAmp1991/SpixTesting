@@ -5,7 +5,7 @@ export enum VerticalViewClass {
 }
 
 export class BaseVerticalView {
-    Link? : string
+    Link?: string
     Type: VerticalViewClass
     Id: string
     PathImage: string
@@ -277,7 +277,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"1216"
+            Id: "1216"
         },
         {
             Title: "Asesino sin memoria",
@@ -287,7 +287,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"1215"
+            Id: "1215"
         },
         {
             Title: "Classic Music Festival",
@@ -297,7 +297,7 @@ export namespace DropDownHome {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"1214"
+            Id: "1214"
         },
         {
             Title: "Daddy Yankee World tour",
@@ -307,7 +307,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"1213"
+            Id: "1213"
         },
         {
             Title: "Light Year",
@@ -327,7 +327,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"1211"
+            Id: "1211"
         },
         {
             Title: "Metallica WorldWired",
@@ -337,7 +337,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"1210"
+            Id: "1210"
         },
         {
             Title: "Asesino sin memoria",
@@ -347,7 +347,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"129"
+            Id: "129"
         },
         {
             Title: "Classic Music Festival",
@@ -357,7 +357,7 @@ export namespace DropDownHome {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"128"
+            Id: "128"
         },
         {
             Title: "Daddy Yankee World tour",
@@ -367,7 +367,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"127"
+            Id: "127"
         },
         {
             Title: "Light Year",
@@ -387,7 +387,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"125"
+            Id: "125"
         },
         {
             Title: "Metallica WorldWired",
@@ -397,7 +397,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"124"
+            Id: "124"
         },
         {
             Title: "Asesino sin memoria",
@@ -407,7 +407,7 @@ export namespace DropDownHome {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"123"
+            Id: "123"
         },
         {
             Title: "Classic Music Festival",
@@ -417,7 +417,7 @@ export namespace DropDownHome {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.base,
-            Id:"12"
+            Id: "12"
         }
     ]
 }
@@ -432,7 +432,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"1216",
+            Id: "1216",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -446,7 +446,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"1215",
+            Id: "1215",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -460,7 +460,7 @@ export namespace DropDownSearch {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"1214",
+            Id: "1214",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -474,7 +474,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"1213",
+            Id: "1213",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -502,7 +502,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"1211",
+            Id: "1211",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -516,7 +516,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"1210",
+            Id: "1210",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -530,7 +530,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"129",
+            Id: "129",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -544,7 +544,7 @@ export namespace DropDownSearch {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"128",
+            Id: "128",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -558,7 +558,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"127",
+            Id: "127",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -586,7 +586,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"125",
+            Id: "125",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -600,7 +600,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"124",
+            Id: "124",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -614,7 +614,7 @@ export namespace DropDownSearch {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"123",
+            Id: "123",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -628,7 +628,7 @@ export namespace DropDownSearch {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.search,
-            Id:"12",
+            Id: "12",
             MinPrice: 2990,
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
@@ -648,7 +648,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"1216",
+            Id: "1216",
             TotalResale: 10
         },
         {
@@ -660,7 +660,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"1215",
+            Id: "1215",
             TotalResale: 11
         },
         {
@@ -672,7 +672,7 @@ export namespace DropDownResale {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"1214",
+            Id: "1214",
             TotalResale: 12
         },
         {
@@ -684,7 +684,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"1213",
+            Id: "1213",
             TotalResale: 3
         },
         {
@@ -708,7 +708,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"1211",
+            Id: "1211",
             TotalResale: 5
         },
         {
@@ -720,7 +720,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"1210",
+            Id: "1210",
             TotalResale: 10
         },
         {
@@ -732,7 +732,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"129",
+            Id: "129",
             TotalResale: 9
         },
         {
@@ -744,7 +744,7 @@ export namespace DropDownResale {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"128",
+            Id: "128",
             TotalResale: 8
         },
         {
@@ -756,7 +756,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"127",
+            Id: "127",
             TotalResale: 7
         },
         {
@@ -780,7 +780,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"125",
+            Id: "125",
             TotalResale: 21
         },
         {
@@ -792,7 +792,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"124",
+            Id: "124",
             TotalResale: 22
         },
         {
@@ -804,7 +804,7 @@ export namespace DropDownResale {
             SoldTickets: 990,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"123",
+            Id: "123",
             TotalResale: 23
         },
         {
@@ -816,7 +816,7 @@ export namespace DropDownResale {
             SoldTickets: 500,
             Rating: 30,
             Type: VerticalViewClass.searchResale,
-            Id:"12",
+            Id: "12",
             TotalResale: 30
         }
     ]

@@ -334,6 +334,11 @@ export namespace Menu {
             Link: "/resaleEventSearch",
             Id: "123xcc478dasdsad123"
         },
+        {
+            Name: "Destacados",
+            Link: "/featuredSearch",
+            Id: "12sdsd3c478dcasdsad123"
+        },
     ]
 }
 
