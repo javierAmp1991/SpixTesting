@@ -1,11 +1,11 @@
 import Image from "next/image";
-import {FeaturedViewClass, FeaturedViewSearchPrincipal} from "../../../dataDemo/EventView/featureView";
+import {FeaturedViewClass, BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
 import style from "/styles/Mobile/Search/featuredViewPrincipal.module.css"
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
 import React from "react";
 
-export default function FeaturedViewPrincipalMobile({item}: { item: FeaturedViewSearchPrincipal }) {
+export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeaturedView }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.sizeBanner}>
@@ -47,28 +47,25 @@ export default function FeaturedViewPrincipalMobile({item}: { item: FeaturedView
                                     {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
                                 </div>
                             </div>
-                            {
-                                item.Type == FeaturedViewClass.Search &&
-                                <div className={`${style.gridIconInfo}`}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                    </div>
-                                    {
-                                        item.MinPrice == item.MaxPrice ?
-                                            <>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.MinPrice))}
-                                            </>
-                                            :
-                                            <>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.MinPrice))} -
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.MaxPrice))}
-                                            </>
-                                    }
+                            <div className={`${style.gridIconInfo}`}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
                                 </div>
-                            }
+                                {
+                                    item.MinPrice == item.MaxPrice ?
+                                        <>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(item.MinPrice))}
+                                        </>
+                                        :
+                                        <>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(item.MinPrice))} -
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(item.MaxPrice))}
+                                        </>
+                                }
+                            </div>
                         </div>
                     </div>
 

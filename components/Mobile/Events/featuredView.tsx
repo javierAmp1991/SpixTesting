@@ -2,11 +2,10 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Events/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
-import {FeaturedViewClass, BaseFeaturedView, FeaturedViewSearch} from "../../../dataDemo/EventView/featureView";
+import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
 import {GlobalConst} from "../../../public/globalConst";
 
 export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
-    let newItem: FeaturedViewSearch = item as FeaturedViewSearch
     let cssStyle = getCssStyles()
     return (
 
@@ -50,31 +49,28 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                             </div>
                             <div className={`${utilities.fontSecundaryText}`}>
-                                {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
+                                {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
                             </div>
                         </div>
-                        {
-                            item.Type == FeaturedViewClass.Search &&
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                </div>
-                                {
-                                    newItem.MinPrice == newItem.MaxPrice ?
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(newItem.MinPrice))}
-                                        </>
-                                        :
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(newItem.MinPrice))} -
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(newItem.MaxPrice))}
-                                        </>
-                                }
+                        <div className={`${style.gridIconInfo}`}>
+                            <div className={style.sizeIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
                             </div>
-                        }
+                            {
+                                item.MinPrice == item.MaxPrice ?
+                                    <>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(item.MinPrice))}
+                                    </>
+                                    :
+                                    <>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(item.MinPrice))} -
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(item.MaxPrice))}
+                                    </>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
