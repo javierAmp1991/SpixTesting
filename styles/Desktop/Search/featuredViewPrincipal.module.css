@@ -35,7 +35,7 @@
 }
 
 .boxShadowPro{
-    box-shadow: var(--shadowUnderProducts);
+    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
     background: white;
@@ -100,7 +100,7 @@
 
 
 .logoFeatureProperties {
-    --sizeLogoFeaturedHome: 44px;
+    --sizeLogoFeaturedHome: 52px;
     height: var(--sizeLogoFeaturedHome);
     width: var(--sizeLogoFeaturedHome);
     box-shadow: var(--boxShadowCard);
