@@ -1,3 +1,10 @@
+.mainDiv{
+    position: relative;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
 .bannerFeatureProperties {
     width: 100%;
     aspect-ratio: 4/1;
@@ -46,7 +53,8 @@
     grid-template-columns: 48% 52%;
     gap: 12px;
     margin: auto;
-    padding: 12px 10px;
+    padding: 10px;
+    position: relative;
 }
 
 .gridRatingStar {
@@ -69,8 +77,6 @@
 }
 
 .borderDiv {
-    padding-left: 12px;
-    border-left: 2px solid var(--separationLineColor);
 }
 
 /*.bottomDivSearch {
@@ -84,7 +90,7 @@
     display: grid;
     grid-template-rows: repeat(2, max-content);
     justify-content: left;
-    gap: 6px;
+    gap: 4px;
     padding-top: 2px;
 }
 
@@ -100,5 +106,33 @@
     width: 12px;
     position: relative;
 }
+
+.mainDivProductsSingle{
+    position: absolute;
+    right: 16px;
+    top: -24px;
+    display: grid;
+    grid-template-columns: repeat(1, 120px);
+    gap: 12px;
+}
+
+.sizeImageProductSingle{
+    width: 100%;
+    aspect-ratio: 1.2/1;
+    position: relative;
+}
+
+.gridInfoProduct{
+    padding: 4px 16px 10px 16px;
+}
+
+.boxShadowPro{
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    transition: .4s;
+}
+
 
 

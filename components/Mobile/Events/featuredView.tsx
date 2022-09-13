@@ -8,8 +8,105 @@ import {GlobalConst} from "../../../public/globalConst";
 export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
     let cssStyle = getCssStyles()
     return (
+        <div className={style.mainDiv}>
+            <div className="relative">
+                <div className={style.bannerFeatureProperties}>
+                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
+                </div>
+                <div className={style.borderLogo}>
+                    <div className={style.logoFeaturePropertiesv2}>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.PathLogo} alt=""/>
+                    </div>
+                </div>
+            </div>
 
-        <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
+            <div className={style.mainDivInfo}>
+                <div className={style.topDiv}>
+                    <div className={`${utilities.clamp1} ${cssStyle.fontName} ${style.titleMargin} `}>
+                        {item.Title}
+                    </div>
+
+                    <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin} ${utilities.clamp1}`}>
+                        {item.Subtitle}
+                    </div>
+
+                    <div className={style.gridRatingStar}>
+                        <div className={utilities.ratingStarsProperties}>
+                            <Image layout={"fill"}
+                                   src={item.Rating != null ?
+                                       "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
+                        </div>
+                        <div className={`${cssStyle.fontSecundaryText} ${utilities.font12}`}>
+                            ({item.Rating != null ? item.Rating : 0})
+                        </div>
+                    </div>
+
+                    <div className={style.borderDiv}>
+                        <div className={style.bottomDivSearch}>
+                            <div className={`${style.gridIconInfo}`}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                                </div>
+                                <div className={`${utilities.fontSecundaryText}`}>
+                                    {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
+                                </div>
+                            </div>
+
+                            <div className={`${style.gridIconInfo}`}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
+                                </div>
+                                {
+                                    item.MinPrice == item.MaxPrice ?
+                                        <>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(item.MinPrice))}
+                                        </>
+                                        :
+                                        <>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(item.MinPrice))} -
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(item.MaxPrice))}
+                                        </>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div className={style.mainDivProductsSingle}>
+                    {
+                        item.ListProducts.map((item, index) =>
+                            index == 0 &&
+                            <div key={index} className={style.boxShadowPro}>
+                                <div className={style.sizeImageProductSingle}>
+                                    <div className={style.aspectImage}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                                    </div>
+                                    <div className={utilities.positionLastTicket}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                                               alt=""/>
+                                    </div>
+                                </div>
+
+                                <div className={style.gridInfoProduct}>
+                                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                                        {item.Name}
+                                    </div>
+                                    <div className={utilities.fontPriceInclude}>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(item.Price))}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        </div>
+
+        /*<div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
             <div className="relative">
                 <div className={style.bannerFeatureProperties}>
                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
@@ -74,7 +171,7 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*/
     )
 
     function getCssStyles() {
