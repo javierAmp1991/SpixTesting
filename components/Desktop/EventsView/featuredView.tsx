@@ -2,15 +2,17 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Home/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
-import {BaseFeaturedView, FeaturedViewClass, FeaturedViewSearch} from "../../../dataDemo/EventView/featureView";
+import {
+    BaseFeaturedView
+} from "../../../dataDemo/EventView/featureView";
 import {GlobalConst} from "../../../public/globalConst";
 
-export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
-    let newItem: FeaturedViewSearch = item as FeaturedViewSearch
+export default function FeaturedViewDesktop({item, darkModeState, showItems}:
+{ item: BaseFeaturedView, darkModeState: boolean, showItems: number }) {
     let cssStyle = getCssStyles()
     return (
 
-        <div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.mainDiv}`}>
+        <div className={style.mainDiv}>
             <div className="relative">
                 <div className={style.bannerFeatureProperties}>
                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
@@ -21,7 +23,8 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                     </div>
                 </div>
             </div>
-            <div className={item.Type == FeaturedViewClass.base? style.mainDivInfoBase : style.mainDivInfo }>
+
+            <div className={style.mainDivInfo}>
                 <div className={style.topDiv}>
                     <div className={`${utilities.clamp1} ${cssStyle.fontName} ${style.titleMargin} `}>
                         {item.Title}
@@ -42,32 +45,6 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                         </div>
                     </div>
 
-                    {
-                        item.Type == FeaturedViewClass.base &&
-                        <div className={`${style.gridIconInfo}`}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                            </div>
-                            {
-                                newItem.MinPrice == newItem.MaxPrice ?
-                                    <>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MinPrice))}
-                                    </>
-                                    :
-                                    <>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MinPrice))} -
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MaxPrice))}
-                                    </>
-                            }
-                        </div>
-                    }
-                </div>
-
-               {
-                    item.Type == FeaturedViewClass.Search &&
                     <div className={style.borderDiv}>
                         <div className={style.bottomDivSearch}>
                             <div className={`${style.gridIconInfo}`}>
@@ -75,7 +52,7 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                                 </div>
                                 <div className={`${utilities.fontSecundaryText}`}>
-                                    {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
+                                    {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
                                 </div>
                             </div>
 
@@ -84,23 +61,52 @@ export default function FeaturedViewDesktop({item, darkModeState}: { item: BaseF
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
                                 </div>
                                 {
-                                    newItem.MinPrice == newItem.MaxPrice ?
+                                    item.MinPrice == item.MaxPrice ?
                                         <>
                                             ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(newItem.MinPrice))}
+                                        ).format(Math.round(item.MinPrice))}
                                         </>
                                         :
                                         <>
                                             ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(newItem.MinPrice))} -
+                                        ).format(Math.round(item.MinPrice))} -
                                             ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(newItem.MaxPrice))}
+                                        ).format(Math.round(item.MaxPrice))}
                                         </>
                                 }
                             </div>
                         </div>
                     </div>
-                }
+
+                </div>
+                <div className={showItems == 0? style.mainDivProductsSingle : style.mainDivProducts}>
+                    {
+                        item.ListProducts.map((item, index) =>
+                            index >= 0 && index <= showItems &&
+                            <div key={index} className={style.boxShadowPro}>
+                                <div className={showItems == 0? style.sizeImageProductSingle: style.sizeImageProduct }>
+                                    <div className={style.aspectImage}>
+                                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                                    </div>
+                                    <div className={utilities.positionLastTicket}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                                               alt=""/>
+                                    </div>
+                                </div>
+
+                                <div className={style.gridInfoProduct}>
+                                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                                        {item.Name}
+                                    </div>
+                                    <div className={utilities.fontPriceInclude}>
+                                        ${Intl.NumberFormat("ES-CL"
+                                    ).format(Math.round(item.Price))}
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
             </div>
         </div>
     )

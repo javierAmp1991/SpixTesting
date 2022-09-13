@@ -61,15 +61,15 @@ export default function FeaturedSearch() {
         DropDownSearch.list.map((item: BaseVerticalView,) =>
             <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
-    let dropDown =
+    /*let dropDown =
         FeaturedListSearch.list.map((item: BaseFeaturedView) =>
             <FeaturedViewDesktop key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
-
+*/
     let dropDownFeatured =
         FeaturedListSearch.list.map((item: BaseFeaturedView, index) =>
             index >= 0 && index <=1 &&
-            <FeaturedViewDesktop key={item.Id} darkModeState={isDarkMode} item={item}/>
+            <FeaturedViewDesktop showItems={1} key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>

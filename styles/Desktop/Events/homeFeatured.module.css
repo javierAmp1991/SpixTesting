@@ -97,4 +97,27 @@
     position: relative;
 }
 
+.mainDivProducts{
+    position: absolute;
+    right: 40px;
+    top: -28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.sizeImageProduct{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.boxShadowPro{
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    transition: .4s;
+}
+
 

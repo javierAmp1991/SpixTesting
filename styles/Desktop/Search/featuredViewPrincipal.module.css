@@ -20,7 +20,7 @@
 .mainDivInfo {
     display: grid;
     grid-template-columns: 1fr max-content;
-    padding: 10px 20px 16px 20px;
+    padding: 10px 40px 16px 40px;
     position: relative;
 }
 
@@ -113,7 +113,7 @@
 
 .mainDivProducts{
     position: absolute;
-    right: 24px;
+    right: 40px;
     top: -28px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);

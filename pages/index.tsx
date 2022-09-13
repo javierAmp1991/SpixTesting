@@ -35,7 +35,7 @@ import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
 import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarrousel";
 import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
-import {FeaturedListHome} from "../dataDemo/EventView/featureView";
+import {FeaturedListSearch} from "../dataDemo/EventView/featureView";
 //endregion
 
 //region importData
@@ -424,9 +424,9 @@ export default function Index() {
                                  titleLink={featuredHomeTitleLink} darkModeState={isDarkMode}>{
         <LayoutCarrousel sumar={3} handleFeatured={handleFeatured}
                          layoutProp={layoutPropFeatured}>{
-            FeaturedListHome.list.map((item, index) =>
+            FeaturedListSearch.list.map((item, index) =>
                 index >= getFeaturedItems && index <= getFeaturedItems + 2 &&
-                    <FeaturedViewDesktop darkModeState={isDarkMode} item={item} key={index}/>
+                    <FeaturedViewDesktop showItems={0} darkModeState={isDarkMode} item={item} key={index}/>
             )
         }
         </LayoutCarrousel>
