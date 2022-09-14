@@ -1,3 +1,6 @@
+.mainDiv{
+    position: relative;
+}
 .sizeBannerEWB {
     height: 128px;
     width: 100%;
@@ -7,19 +10,17 @@
 }
 
 .propertiesLogoEWB {
-    --sizeLogo: 56px;
+    --sizeLogo: 44px;
     height: var(--sizeLogo);
     width: var(--sizeLogo);
-    position: absolute;
     border-radius: 50%;
     box-shadow: var(--boxShadowCard);
-    left: calc(50% - (var(--sizeLogo) / 2));
-    top: calc(100% - (var(--sizeLogo) / 2));
     overflow: hidden;
+    position: relative;
 }
 
 .mainDivPro{
-    width: 100px;
+    width: 88px;
 }
 
 .sizeProductEWB {
@@ -50,6 +51,48 @@
     position: relative;
 }
 
+.mainDivInfo{
+    padding: 12px 0;
+    display: grid;
+    justify-items: center;
+    position: relative;
+}
+
+.positionLogo{
+    position: absolute;
+    top: 6px;
+    right: 6px;
+}
+
+.timerIconProp{
+    height: 16px;
+    aspect-ratio: 1.2/1;
+    position: relative;
+}
+
+.gridTags{
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap:8px;
+    margin-top: 10px;
+}
+
+.mainDivTimer{
+    background: linear-gradient(177deg, rgba(237,54,26,1) 0%, rgba(215,112,33,1) 100%);
+    overflow: hidden;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 6px;
+    overflow: hidden;
+}
 @media (min-width: 1281px){
     .gridCarrouselProductsEWB {
         display: grid;

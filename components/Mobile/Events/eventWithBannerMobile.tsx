@@ -3,12 +3,20 @@ import styles from "/styles/Mobile/Events/eventWithBannerMobile.module.css"
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
+import {GlobalConst} from "../../../public/globalConst";
 
 const alignmentTextProduct: string = "text-center"
 
 
 export default function EventWithBannerMobile({item, darkModeState, displayLogoRating}) {
     let cssStyles = getCssStyles();
+    const principalInfoEventProp: PrincipalInfoEventPropMob = {
+        Title: item.EventName,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: false
+    }
     let [isActive, setIsActive] = useState(false);
     const handleClick = () => {
         setIsActive(isActive = !isActive);
@@ -28,8 +36,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
     function correctNumber(num: number): string {
         if (num >= 0 && num <= 9) {
             return `0${num}`
-        }
-        else return `${num}`
+        } else return `${num}`
     }
 
     useEffect(() => {
@@ -39,87 +46,68 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
 
     return (
         <Link href={"/eventPage"}>
-            <div className={cssStyles.borderCard}>
-                <div className="grid">
-                    <div className="relative">
-                        <div className={styles.sizeBannerEWB}>
-                            <Image layout={"fill"} objectFit={"cover"} src={item.BannerPath} alt=""/>
+            <div className={`${cssStyles.borderCard} ${styles.mainDiv}`}>
+                <div className={styles.sizeBannerEWB}>
+                    <Image layout={"fill"} objectFit={"cover"} src={item.BannerPath} alt=""/>
+                </div>
+                {
+                    displayLogoRating &&
+                    <div className={`${styles.positionLogo} ${utilities.gradientLogoDesktop}`}>
+                        <div className={styles.propertiesLogoEWB}>
+                            <Image layout={"fill"} src={item.LogoPath} alt=""/>
                         </div>
-                        {
-                            displayLogoRating &&
-                                <div className={styles.propertiesLogoEWB}>
-                                    <Image layout={"fill"} src={item.LogoPath} alt=""/>
-                                </div>
-                        }
-
                     </div>
+                }
 
-                    <div
-                        className={`${cssStyles.bgInfo} ${cssStyles.paddingUnderLogo} pb-3 grid justify-center justify-items-center`}>
-                        <div className={`${cssStyles.fontSubTitle} ${alignmentTextProduct} mb-2`}>
-                            {item.EventName}
-                        </div>
+                <div className={`${cssStyles.bgInfo} ${styles.mainDivInfo}`}>
+
+                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
+
+                    <div className={styles.gridTags}>
                         {
-                            displayLogoRating &&
-                                <div className={`${utilities.gridMaxContent2} grid justify-center mb-1`}>
-                                    <div className={utilities.ratingStarsProperties}>
-                                        <Image layout={"fill"}
-                                               src="/images/ratingNew.png" alt=""/>
-                                    </div>
+                            item.Tags.map(offer =>
+                                <div key={offer} className={utilities.styleSpixDiscountTag}>
+                                    {offer}
                                 </div>
+                            )
                         }
+                    </div>
+                </div>
 
-
-                        <div className={`${cssStyles.fontPrimaryText} ${alignmentTextProduct} mb-3`}>
-                            Expira en {hours}:{minutes}:{seconds}
-                        </div>
-
-                        <div className={`${utilities.gridMaxContent3} gap-1`}>
+                <div className={styles.containerCarrouselEWB}>
+                    <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                         className={styles.overflowCarrouselProductsEWB}>
+                        <div className={styles.gridCarrouselProductsEWB}>
                             {
-                                item.Tags.map(offer =>
-                                    <div key={offer} className={utilities.styleSpixDiscountTag}>
-                                        {offer}
+                                item.ListProducts.map(product =>
+                                    <div key={product.Name} className={styles.mainDivPro}>
+                                        <div className="mb-2">
+                                            <div className={`${styles.sizeProductEWB}`}>
+                                                <Image layout={"fill"}
+                                                       src={product.ImagePath} alt=""/>
+                                            </div>
+                                        </div>
+                                        <div
+                                            className={`${utilities.fontPriceInclude} mb-1 ${alignmentTextProduct} `}>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(product.Price))}
+                                        </div>
+                                        <div
+                                            className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
+                                                        ${utilities.font12}`}>
+                                            <span>Antes: </span>
+                                            <span className="line-through">
+                                                    ${Intl.NumberFormat("ES-CL"
+                                            ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
+                                            </span>
+                                        </div>
                                     </div>
                                 )
                             }
                         </div>
                     </div>
-
-                    <div className={styles.containerCarrouselEWB}>
-                        <div onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                             className={styles.overflowCarrouselProductsEWB}>
-                            <div className={styles.gridCarrouselProductsEWB}>
-                                {
-                                    item.ListProducts.map(product =>
-                                        <div key={product.Name} className={styles.mainDivPro}>
-                                            <div className="mb-2">
-                                                <div className={`${styles.sizeProductEWB}`}>
-                                                    <Image layout={"fill"}
-                                                           src={product.ImagePath} alt=""/>
-                                                </div>
-                                            </div>
-                                            <div
-                                                className={`${utilities.fontPriceInclude} mb-1 ${alignmentTextProduct} `}>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(product.Price))}
-                                            </div>
-                                            <div
-                                                className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
-                                                        ${utilities.font12}`}>
-                                                <span>Antes: </span>
-                                                <span className="line-through">
-                                                    ${Intl.NumberFormat("ES-CL"
-                                                ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
-                                            </span>
-                                            </div>
-                                        </div>
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
             </div>
         </Link>
     )
