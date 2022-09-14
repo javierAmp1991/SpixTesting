@@ -402,7 +402,7 @@ export default function MainContainerFilters({
             fontTitle: isDarkMode ? utilities.fontTitleDarkMode : utilities.fontTitle,
             bg: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             cleanIcon: isDarkMode ? GlobalConst.sourceImages.cleanIconWhite : GlobalConst.sourceImages.cleanIcon,
-            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
+            fontName: isDarkMode ? utilities.fontNameDesktopDarkMode : utilities.fontNameDesktop,
             styleTags: isDarkMode ? style.styleTagsDarkMode : style.styleTags,
             borderBottom:
                 isOpenFilter ?

@@ -1,6 +1,6 @@
 .principalGridHorizontal {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 170px 1fr;
 }
 
 .containerImage {
@@ -29,7 +29,7 @@
 }
 
 .gridInfo {
-    padding: 14px 12px 0 12px;
+    padding: 16px 12px 0 12px;
 }
 /*
 
@@ -62,10 +62,9 @@
 
 .bottomDivSearch {
     padding: 8px 0 0 0;
-    /*margin: 10px 14px 0 14px;*/
     border-top: 2px solid var(--separationLineColor);
     display: grid;
-    gap: 2px;
+    gap: 6px;
 }
 
 .bottomDivResale {

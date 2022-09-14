@@ -45,8 +45,8 @@
     display: grid;
     grid-template-rows: repeat(2, max-content);
     justify-content: left;
-    gap: 6px;
-    padding-top: 6px;
+    gap: 8px;
+    padding-top: 8px;
 }
 
 .gridInfoProduct {
