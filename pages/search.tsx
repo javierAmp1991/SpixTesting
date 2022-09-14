@@ -48,7 +48,7 @@ export default function Search() {
     //region desktop Components
     let dropDown =
         DropDownSearch.list.map((item: BaseEventCard,) =>
-            <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>
+            <EventVerticalView key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
