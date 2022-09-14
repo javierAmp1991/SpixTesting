@@ -5,14 +5,20 @@
 }
 
 .propertiesLogoEWB {
-    height: var(--sizeLogoEWB);
-    width: var(--sizeLogoEWB);
-    position: absolute;
+    --sizeLogoEwbDesk: 60px;
+    height: var(--sizeLogoEwbDesk);
+    width: var(--sizeLogoEwbDesk);
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: var(--boxShadowCard);
-    left: calc(50% - (var(--sizeLogoEWB) / 2));
-    top: calc(-1 * (var(--sizeLogoEWB) / 2));
+/*    left: calc(50% - (var(--sizeLogoEWB) / 2));
+    top: calc(-1 * (var(--sizeLogoEWB) / 2));*/
+}
+
+.positionLogo{
+    position: absolute;
+    top: 6px;
+    right: 6px;
 }
 
 .styleArrowEWBProducts {
@@ -63,32 +69,41 @@
 }
 
 .widthContainer {
+    position: relative;
     width: 100%;
 }
 
 .mainContainerInfo{
-    padding: 40px 0 12px 0;
+    padding: 12px 0 12px 0;
     display: grid;
     justify-items: center;
     position: relative;
 }
 
 .mainDivTimer{
-    --widthTimer: 85px;
     background: linear-gradient(177deg, rgba(237,54,26,1) 0%, rgba(215,112,33,1) 100%);
-    width: var(--widthTimer);
-    height: 90px;
-    border-radius: 0 0 calc(var(--widthTimer)/2) calc(var(--widthTimer)/2);
     overflow: hidden;
     color: white;
-    display: grid;
-    grid-template-rows: repeat(2, max-content);
-    justify-items: center;
     font-weight: 500;
     position: absolute;
-    padding-top: 18px;
-    top: 0;
-    right: 32px;
+    top: 12px;
+    right: 12px;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 6px;
+    overflow: hidden;
+    /*    --widthTimer: 85px;
+        width: var(--widthTimer);
+        height: 90px;
+        border-radius: 0 0 calc(var(--widthTimer)/2) calc(var(--widthTimer)/2);
+        display: grid;
+        grid-template-rows: repeat(2, max-content);
+        justify-items: center;
+        padding-top: 18px;
+*/
 }
 
 .gridTags{
@@ -96,4 +111,10 @@
     grid-template-columns: repeat(3, max-content);
     gap:12px;
     margin-top: 8px;
+}
+
+.timerIconProp{
+    height: 16px;
+    aspect-ratio: 1.2/1;
+    position: relative;
 }

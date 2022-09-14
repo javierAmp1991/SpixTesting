@@ -53,7 +53,6 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                     <div className={style.mainDivProducts}>
                         {
                             item.ListProducts.map((item, index) =>
-                                index >= 0 && index <= 3 &&
                                 <div key={index} className={style.boxShadowPro}>
                                     <div className={style.sizeImageProduct}>
                                         <div className={style.aspectImage}>

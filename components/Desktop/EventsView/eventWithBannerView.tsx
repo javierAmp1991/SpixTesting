@@ -49,15 +49,24 @@ export default function EventWithBannerView({item, darkModeState}) {
                     </div>
                 </Link>
 
-
-                <div className={`${cssStyles.bgInfo} ${styles.mainContainerInfo}`}>
+                <div className={`${utilities.gradientLogoDesktop} ${styles.positionLogo}`}>
                     <div className={styles.propertiesLogoEWB}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
                     </div>
+                </div>
+
+
+                <div className={`${cssStyles.bgInfo} ${styles.mainContainerInfo}`}>
+                    {/*                   <div className={styles.propertiesLogoEWB}>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
+                    </div>*/}
 
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
 
                     <div className={styles.mainDivTimer}>
+                        <span className={styles.timerIconProp}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.timerIcon}/>
+                        </span>
                         <span>
                             Expira en
                         </span>

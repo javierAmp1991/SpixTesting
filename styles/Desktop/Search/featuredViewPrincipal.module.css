@@ -75,9 +75,9 @@
 .mainDivProducts {
     position: absolute;
     right: 40px;
-    top: -20px;
+    top: -40px;
     display: grid;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: repeat(3, 120px);
     gap: 16px;
 }
 

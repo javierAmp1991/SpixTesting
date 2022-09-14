@@ -3,7 +3,7 @@
     --sizeTitleMobile: 17px;
     font-size: var(--sizeTitleMobile);
     line-height: var(--sizeTitleMobile);
-    font-weight: 300;
+    font-weight: 500;
     color: var(--colorTitleMobile);
     font-family: Helvetica, sans-serif, Arial;
 }
@@ -50,6 +50,11 @@
     --sizeFontMiniMobile: 12px;
     font-size: var(--sizeFontMiniMobile);
     line-height: var(--sizeFontMiniMobile);
+}
+
+.gradientLogoMobile{
+    padding: 3px;
+    background: var(--gradientSpix);
 }
 /*#endregion Mobile Class*/
 
@@ -100,6 +105,12 @@
     --sizeFontMiniDesktop: 12px;
     font-size: var(--sizeFontMiniDesktop);
     line-height: var(--sizeFontMiniDesktop);
+}
+
+.gradientLogoDesktop{
+    padding: 3px;
+    background: var(--gradientSpix);
+    border-radius: 50%;
 }
 /*#endregion Desktop Class*/
 

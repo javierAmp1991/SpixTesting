@@ -199,7 +199,7 @@ export default function Index() {
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
                 FeaturedListHome.list.map((item, index) =>
-                    <div style={{width: 320}} key={item.Id}>
+                    <div style={{width: 340}} key={item.Id}>
                         <FeaturedViewMobile darkModeState={isDarkMode} item={item} />
                     </div>
                 )
@@ -248,7 +248,7 @@ export default function Index() {
             {
                 DropDownNewSearch.listNews.map(item =>
                     /*<NewViewMobile item={item} isDarkMode={isDarkMode} key={item.Id}/>*/
-                    <div key={item.Id} style={{width: 320}}>
+                    <div key={item.Id} style={{width: 330}}>
                         <NewsSearchMobile isSubtitle={false} item={item}/>
                     </div>
                 )

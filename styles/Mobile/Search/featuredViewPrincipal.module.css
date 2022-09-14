@@ -97,22 +97,20 @@
 
 .gridProductSelected {
     display: grid;
-    grid-template-columns: 100px;
-    grid-auto-columns: 100px;
+    grid-template-columns: 120px;
+    grid-auto-columns: 120px;
     grid-auto-flow: column;
     position: absolute;
-    top: -14px;
-    right: 12px;
+    top: -26px;
+    right: 6px;
 }
 
 .gridProductSelection {
     display: grid;
-    grid-template-columns: 60px;
-    grid-auto-columns: 60px;
-    grid-auto-flow: column;
-    gap: 12px;
+    grid-template-columns: repeat(3, 70px);
+    justify-content: space-around;
     overflow: scroll;
-    padding: 6px;
+    padding: 6px 16px;
 }
 
 .sizeImageProduct {

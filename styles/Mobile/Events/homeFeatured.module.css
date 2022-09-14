@@ -7,7 +7,7 @@
 
 .bannerFeatureProperties {
     width: 100%;
-    aspect-ratio: 3.5/1;
+    aspect-ratio: 3/1;
     object-fit: cover;
 }
 
@@ -50,10 +50,10 @@
 
 .mainDivProductsSingle{
     position: absolute;
-    right: 16px;
-    top: -10px;
+    right: 10px;
+    top: -26px;
     display: grid;
-    grid-template-columns: repeat(1, 100px);
+    grid-template-columns: repeat(1, 120px);
     gap: 12px;
 }
 

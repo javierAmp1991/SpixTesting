@@ -56,10 +56,10 @@
 .mainDivProductsSingle {
     position: absolute;
     right: 16px;
-    top: -10px;
+    top: -12px;
     display: grid;
-    grid-template-columns: 100px;
-    grid-auto-columns: 100px;
+    grid-template-columns: 120px;
+    grid-auto-columns: 120px;
     grid-auto-flow: column;
     gap: 12px;
 }

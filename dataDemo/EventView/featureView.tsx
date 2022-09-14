@@ -38,30 +38,6 @@ export namespace PrincipalFeaturedSearch{
             PathLogo: "/images/cineplanet.png",
             ListProducts: [
                 {
-                    Name: "Producto 1.1",
-                    Price: 18990,
-                    DiscountPercent: 10,
-                    Include: "Lleve 2 pague 1",
-                    ImagePath: "/images/product1.jpg",
-                    Tag: "Cerveza"
-                },
-                {
-                    Name: "Producto 2.2",
-                    Price: 2990,
-                    DiscountPercent: 25,
-                    Include: null,
-                    ImagePath: "/images/product4.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 3.3",
-                    Price: 990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product5.jpg",
-                    Tag: "Snack"
-                },
-                {
                     Name: "Producto 4.4",
                     Price: 9990,
                     DiscountPercent: 20,
@@ -520,30 +496,6 @@ export namespace FeaturedListHome {
                     ImagePath: "/images/product5.jpg",
                     Tag: "Snack"
                 },
-                {
-                    Name: "Producto 4.4",
-                    Price: 9990,
-                    DiscountPercent: 20,
-                    Include: "Dcto 2 Un.",
-                    ImagePath: "/images/product6.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 5.5",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg",
-                    Tag: "Bebida"
-                },
-                {
-                    Name: "Producto 6.6",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg",
-                    Tag: "Energeticas"
-                },
             ],
             MinDate: new Date(2022, 1, 8),
             MaxDate: new Date(2022, 1, 8),
@@ -583,30 +535,6 @@ export namespace FeaturedListHome {
                     Include: null,
                     ImagePath: "/images/product5.jpg",
                     Tag: "Snack"
-                },
-                {
-                    Name: "Producto 4.4",
-                    Price: 9990,
-                    DiscountPercent: 20,
-                    Include: "Dcto 2 Un.",
-                    ImagePath: "/images/product6.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 5.5",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg",
-                    Tag: "Bebida"
-                },
-                {
-                    Name: "Producto 6.6",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg",
-                    Tag: "Energeticas"
                 },
             ],
             MinDate: new Date(2022, 1, 8),
@@ -649,30 +577,6 @@ export namespace FeaturedListHome {
                     ImagePath: "/images/product5.jpg",
                     Tag: "Snack"
                 },
-                {
-                    Name: "Producto 4.4",
-                    Price: 9990,
-                    DiscountPercent: 20,
-                    Include: "Dcto 2 Un.",
-                    ImagePath: "/images/product6.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 5.5",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg",
-                    Tag: "Bebida"
-                },
-                {
-                    Name: "Producto 6.6",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg",
-                    Tag: "Energeticas"
-                },
             ],
             MinDate: new Date(2022, 1, 8),
             MaxDate: new Date(2022, 1, 8),
@@ -713,30 +617,6 @@ export namespace FeaturedListHome {
                     Include: null,
                     ImagePath: "/images/product5.jpg",
                     Tag: "Snack"
-                },
-                {
-                    Name: "Producto 4.4",
-                    Price: 9990,
-                    DiscountPercent: 20,
-                    Include: "Dcto 2 Un.",
-                    ImagePath: "/images/product6.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 5.5",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg",
-                    Tag: "Bebida"
-                },
-                {
-                    Name: "Producto 6.6",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg",
-                    Tag: "Energeticas"
                 },
             ],
             MinDate: new Date(2022, 1, 8),
@@ -779,30 +659,6 @@ export namespace FeaturedListHome {
                     ImagePath: "/images/product5.jpg",
                     Tag: "Snack"
                 },
-                {
-                    Name: "Producto 4.4",
-                    Price: 9990,
-                    DiscountPercent: 20,
-                    Include: "Dcto 2 Un.",
-                    ImagePath: "/images/product6.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 5.5",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg",
-                    Tag: "Bebida"
-                },
-                {
-                    Name: "Producto 6.6",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg",
-                    Tag: "Energeticas"
-                },
             ],
             MinDate: new Date(2022, 1, 8),
             MaxDate: new Date(2022, 1, 8),
@@ -842,30 +698,6 @@ export namespace FeaturedListHome {
                     Include: null,
                     ImagePath: "/images/product5.jpg",
                     Tag: "Snack"
-                },
-                {
-                    Name: "Producto 4.4",
-                    Price: 9990,
-                    DiscountPercent: 20,
-                    Include: "Dcto 2 Un.",
-                    ImagePath: "/images/product6.jpg",
-                    Tag: "Energetica"
-                },
-                {
-                    Name: "Producto 5.5",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg",
-                    Tag: "Bebida"
-                },
-                {
-                    Name: "Producto 6.6",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg",
-                    Tag: "Energeticas"
                 },
             ],
             MinDate: new Date(2022, 1, 8),
