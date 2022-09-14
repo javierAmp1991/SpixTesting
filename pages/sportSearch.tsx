@@ -16,7 +16,6 @@ import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {
     SuperCategorySports,
-    DropDownDataSport,
     CategoryFilter,
     CategoryPrincipalFilters,
     SuperCategoryFilter
@@ -39,8 +38,6 @@ export default function SearchRestaurant() {
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     let cssStyle = getCssStyle();
     const textResultSection: string = "Deportes";
-    const isReview: boolean = true;
-    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -55,7 +52,7 @@ export default function SearchRestaurant() {
     //region desktop Components
     let dropDown =
         DropDownSportSearch.listDropDown.map((item: BaseEventCard,) =>
-            <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
+            <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -67,7 +64,7 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownSportSearch.listDropDown.map((item, index) =>
+    let dropDownMobile = DropDownSportSearch.listDropDown.map((item) =>
         <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
