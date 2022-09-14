@@ -5,23 +5,33 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import {
-    BaseVerticalView,
-    VerticalViewClass,
-    VerticalViewResale,
-    VerticalViewSearch
+    BaseEventCard,
+    EventCardFull,
+    EventCardResale,
+    EventCardType,
+    EventCardWithDate,
+    EventCardWithPrice
 } from "../../../dataDemo/EventView/eventVerticalView";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 
 const totalResaleText = "Total reventas: "
 
-export default function EventHorizontalView({info, darkModeState}:
-                                                { info: BaseVerticalView, darkModeState: boolean }) {
+export default function EventHorizontalView({item, darkModeState}:
+                                                { item: BaseEventCard, darkModeState: boolean }) {
     let cssStyles = getCssStyles()
-    let newItem: VerticalViewSearch;
-    let newItem2: VerticalViewResale;
-    if (info.Type == VerticalViewClass.search) {
-        newItem = info as VerticalViewSearch
-    } else {
-        newItem2 = info as VerticalViewResale
+    let itemFull: EventCardFull;
+    let itemWithPrice: EventCardWithPrice;
+    let itemWithDate: EventCardWithDate;
+    let itemWithResale: EventCardResale;
+
+    if (item.Type == EventCardType.EventCardFull) {
+        itemFull = item as EventCardFull
+    } else if (item.Type == EventCardType.EventCardWithPrice) {
+        itemWithPrice = item as EventCardWithPrice
+    } else if(item.Type == EventCardType.EventCardWithDate){
+        itemWithDate = item as EventCardWithDate
+    }else{
+        itemWithResale = item as EventCardResale
     }
 
     function getNumber(num: number): string {
@@ -32,84 +42,77 @@ export default function EventHorizontalView({info, darkModeState}:
         return newNum
     }
 
+    const principalInfoEventProp: PrincipalInfoEventPropMob = {
+        Title: item.Title,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: false
+    }
+
     return (
         <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
-            <Link href={info.Type == VerticalViewClass.searchResale ? info.Link : ""}>
+            <Link href={item.Type == EventCardType.EventCardWithResale ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
-                        info.SoldTickets >= info.TotalTickets * 0.90 &&
+                        item.SoldTickets >= item.TotalTickets * 0.90 &&
                         <div className={`${utilities.positionLastTicket} ${style.zIndexLastTicket}`}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>
                     }
                     <div className={`${style.sizeImage}`}>
-                        <Image layout={"fill"} objectFit={"cover"} src={info.PathImage} alt=""/>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
                     </div>
                 </a>
             </Link>
 
             <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
                 <div className={style.TopDivInfo}>
-                    <div className={`${cssStyles.fontTitle} ${utilities.clamp1} ${style.titleMargin}`}>
-                        {info.Title}
-                    </div>
-                    <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin} ${utilities.clamp1}`}>
-                        {info.Subtitle}
-                    </div>
+                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
+                </div>
+                <div className={style.bottomDivSearch}>
+                    {
+                        item.Type == EventCardType.EventCardFull &&
+                        <>
+                            <div className={`${style.gridIconInfo}`}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                                </div>
+                                <div className={`${utilities.fontSecundaryText}`}>
+                                    {itemFull.MinDate.getDate()} de {itemFull.MinDate.toLocaleString("es-US", {month: "short"})} del {itemFull.MinDate.getFullYear()}
+                                </div>
+                            </div>
 
-                    <div className={style.gridRatingStar}>
-                        <div className={utilities.ratingStarsProperties}>
-                            <Image layout={"fill"}
-                                   src={info.Rating != null ?
-                                       GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull}
-                                   alt=""/>
+                            <div className={`${style.gridIconInfo}`}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
+                                </div>
+                                {
+                                    itemFull.MinPrice ==itemFull.MaxPrice ?
+                                        <>
+                                            {
+                                                getNumber(itemFull.MinPrice)
+                                            }
+                                        </>
+                                        :
+                                        <>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(itemFull.MinPrice))} -
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(itemFull.MaxPrice))}
+                                        </>
+                                }
+                            </div>
+                        </>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithResale &&
+                        <div className={`${utilities.fontPrimaryText}`}>
+                            {totalResaleText} {itemWithResale.TotalResale}
                         </div>
-                        <div className={`${cssStyles.fontSecundaryText} ${style.contRating}`}>
-                            ({info.Rating != null ? info.Rating : 0})
-                        </div>
-                    </div>
+                    }
                 </div>
 
-                {
-                    info.Type == VerticalViewClass.search &&
-                    <div className={style.bottomDivSearch}>
-                        <div className={`${style.gridIconInfo}`}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                            </div>
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
-                            </div>
-                        </div>
-
-                        <div className={`${style.gridIconInfo}`}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                            </div>
-                            {
-                                newItem.MinPrice == newItem.MaxPrice ?
-                                    <>
-                                        {
-                                            getNumber(newItem.MinPrice)
-                                        }
-                                    </>
-                                    :
-                                    <>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MinPrice))} -
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MaxPrice))}
-                                    </>
-                            }
-                        </div>
-                    </div>
-                }
-                {
-                    info.Type == VerticalViewClass.searchResale &&
-                    <div className={`${utilities.fontPrimaryText} ${style.bottomDivResale}`}>
-                        {totalResaleText} {newItem2.TotalResale}
-                    </div>
-                }
 
                 {/*
                 <div className={`${cssStyles.fontSecundaryText}`}>

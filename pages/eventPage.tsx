@@ -25,7 +25,6 @@ import ReviewMobile from "../components/Mobile/EventPage/reviewMobile";
 import QuestionMobile from "../components/Mobile/EventPage/questionMobile";
 import EventInformationMobile from "../components/Mobile/EventPage/eventInformationMobile";
 import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
-import NewViewMobile from "../components/Mobile/CRM/newViewMobile";
 import ProductViewMobile from "../components/Mobile/Misc/productViewMobile";
 import EventWithBannerMobile from "../components/Mobile/Events/eventWithBannerMobile";
 import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
@@ -48,14 +47,13 @@ import ProductViewDesk from "../components/Desktop/Misc/productViewDesk";
 import LayoutCarrousel from "../components/Desktop/Layouts/layoutCarrousel";
 import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarrousel";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
-import NewView from "../components/Desktop/CRM/newView";
 import LayoutSideCard, {ChildrenProp} from "../components/Desktop/Layouts/layoutSideCard";
 import DefaultPage, {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import Image from "next/image";
 import React, {useState} from "react";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import {BaseVerticalView, InOfferHome} from "../dataDemo/EventView/eventVerticalView";
+import {InOfferHome} from "../dataDemo/EventView/eventVerticalView";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 //endregion
@@ -77,6 +75,7 @@ const productstTitle: [string, string] = ["Productos", "/eventProductsFull"]
 const otherEventTitle: [string, string] = ["Otros eventos", "#"]
 const gapLayout: number = 20
 const displayCarrousel = "grid"
+const gridTemplateColum2: string = "repeat(2,1fr)"
 const gridTemplateColum3: string = "repeat(3,1fr)"
 const gridTemplateColum4: string = "repeat(4,1fr)"
 const positionArrowIn: string = "5px"
@@ -84,20 +83,12 @@ const positionArrowY: string = "calc(50% - 16px)"
 let layoutPropProducts: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum4,
-    Gap: 32,
-    Padding: spaceComponents,
-    PositionArrowX: positionArrowIn,
-    PositionArrowY: positionArrowY
-}
-let layoutPropCarrousel: LayoutCarrouselDeskProp = {
-    Display: displayCarrousel,
-    Grid: gridTemplateColum4,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowIn,
     PositionArrowY: positionArrowY
 }
-let layoutPropNews: LayoutCarrouselDeskProp = {
+let layoutPropCarrousel: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridTemplateColum3,
     Gap: gapLayout,
@@ -105,8 +96,14 @@ let layoutPropNews: LayoutCarrouselDeskProp = {
     PositionArrowX: positionArrowIn,
     PositionArrowY: positionArrowY
 }
-
-const isVertical: boolean = true;
+let layoutPropNews: LayoutCarrouselDeskProp = {
+    Display: displayCarrousel,
+    Grid: gridTemplateColum2,
+    Gap: gapLayout,
+    Padding: spaceComponents,
+    PositionArrowX: positionArrowIn,
+    PositionArrowY: positionArrowY
+}
 
 export default function EventPage() {
     //region components mobile
@@ -155,7 +152,7 @@ export default function EventPage() {
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <LayoutCarrouselMobile gapLayout={24}>
             {
-                HomeNewsData.listNews.map((item, index) =>
+                HomeNewsData.listNews.map((item) =>
                     <div key={item.Id} className={"w-80"}>
                         <NewsSearchMobile isSubtitle={false}  item={item}/>
                     </div>
@@ -268,10 +265,10 @@ export default function EventPage() {
     const handleSetGetNews = (e) => setGetNews(getNews = e)
     let newsDesk = <TitleSection titleLink={newsTitle}
                                  paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel sumar={2} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
+        <LayoutCarrousel sumar={1} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNews && index <= getNews + 2 &&
+                    index >= getNews && index <= getNews + 1 &&
                             <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
                 )
             }
@@ -300,11 +297,11 @@ export default function EventPage() {
     const handleGetExtra = (e) => setGetExtra(getExtra = e)
     let eventExtraDesk = <TitleSection titleLink={otherEventTitle}
                                        paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
-        <LayoutCarrousel sumar={3} handleFeatured={handleGetExtra} layoutProp={layoutPropCarrousel}>
+        <LayoutCarrousel sumar={2} handleFeatured={handleGetExtra} layoutProp={layoutPropCarrousel}>
             {
                 InOfferHome.list.map((item, index) =>
-                    index >= getExtra && index <= getExtra + 3 &&
-                        <EventVerticalView isVertical={isVertical} item={item} darkModeState={false} key={item.Id}/>
+                    index >= getExtra && index <= getExtra + 2 &&
+                        <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
@@ -353,7 +350,6 @@ export default function EventPage() {
     const isLardeDown = useMediaQuery('(max-width: 1280px)');
     const cssStyle = getCssStyle()
     const bannerPath = EventPageEvent.eventPage.BannerPath
-    const menuList = Menu.listMenu
     return (
         isLardeDown ?
             <DefaultLayoutMobile isDarkMode={false}>

@@ -7,22 +7,8 @@
 
 .bannerFeatureProperties {
     width: 100%;
-    aspect-ratio: 4/1;
+    aspect-ratio: 3.5/1;
     object-fit: cover;
-}
-
-.logoFeatureProperties {
-    --sizeLogoFeaturedHome: 44px;
-    height: var(--sizeLogoFeaturedHome);
-    width: var(--sizeLogoFeaturedHome);
-    box-shadow: var(--boxShadowCard);
-    border-radius: 50%;
-    overflow: hidden;
-    position: absolute;
-    top: 2px;
-    right: 5%;
-    /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
-        left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
 
 .logoFeaturePropertiesv2 {
@@ -33,86 +19,41 @@
     overflow: hidden;
     position: relative;
     background: white;
-    /*top: calc(100% - (var(--sizeLogoFeaturedHome) / 2));*/
-
-    /*left: calc(50% - (var(--sizeLogoFeaturedHome) / 2));*/
 }
 
 .borderLogo {
     position: absolute;
     background: white;
     padding: 2px;
-    top: 12px;
-    right: 12px;
+    top: 6px;
+    right: 6px;
     border-radius: 50%;
     overflow: hidden;
 }
 
 .mainDivInfo {
     display: grid;
-    grid-template-columns: 48% 52%;
+    grid-template-columns: 60% 40%;
     gap: 12px;
     margin: auto;
     padding: 10px;
     position: relative;
 }
 
-.gridRatingStar {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-content: end;
-    gap: 4px;
-}
-
-.subTitleMargin {
-    margin-bottom: 4px;
-}
-
-.titleMargin {
-    margin-bottom: 2px;
-}
-
-.topDiv {
-    position: relative;
-}
-
-.borderDiv {
-}
-
-/*.bottomDivSearch {
-    padding: 6px 0 0 0;
-    display: grid;
-    gap: 6px;
-    margin: auto;
-}*/
-
 .bottomDivSearch {
     display: grid;
     grid-template-rows: repeat(2, max-content);
     justify-content: left;
-    gap: 4px;
-    padding-top: 2px;
-}
-
-.gridIconInfo {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 4px;
-    align-items: center;
-}
-
-.sizeIcon {
-    height: 12px;
-    width: 12px;
-    position: relative;
+    gap: 6px;
+    padding-top: 8px;
 }
 
 .mainDivProductsSingle{
     position: absolute;
     right: 16px;
-    top: -24px;
+    top: -10px;
     display: grid;
-    grid-template-columns: repeat(1, 120px);
+    grid-template-columns: repeat(1, 100px);
     gap: 12px;
 }
 
@@ -123,7 +64,7 @@
 }
 
 .gridInfoProduct{
-    padding: 4px 16px 10px 16px;
+    padding: 4px 12px 10px 12px;
 }
 
 .boxShadowPro{

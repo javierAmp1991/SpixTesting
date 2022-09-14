@@ -4,8 +4,27 @@ import Image from "next/image";
 import React from "react";
 import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
 import {GlobalConst} from "../../../public/globalConst";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
+import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
+import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
 
 export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
+    const principalInfoEvent: PrincipalInfoEventPropMob = {
+        Title: item.Title,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: darkModeState
+    }
+    const priceIncludeInfo: PriceIncludeInfoPropMobile = {
+        MinPrice: item.MinPrice,
+        MaxPrice: item.MaxPrice,
+        IsDarkMode: false
+    }
+    const dateInfo: DateInfoPropMobile = {
+        MinDate: item.MinDate,
+        MaxDate: item.MaxDate,
+        IsDarkMode: false,
+    }
     let cssStyle = getCssStyles()
     return (
         <div className={style.mainDiv}>
@@ -22,58 +41,11 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
 
             <div className={style.mainDivInfo}>
                 <div className={style.topDiv}>
-                    <div className={`${utilities.clamp1} ${cssStyle.fontName} ${style.titleMargin} `}>
-                        {item.Title}
+                    <PrincipalInfoEventMobile item={principalInfoEvent}/>
+                    <div className={style.bottomDivSearch}>
+                        <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
+                        <DateInfoEventMobile item={dateInfo}/>
                     </div>
-
-                    <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin} ${utilities.clamp1}`}>
-                        {item.Subtitle}
-                    </div>
-
-                    <div className={style.gridRatingStar}>
-                        <div className={utilities.ratingStarsProperties}>
-                            <Image layout={"fill"}
-                                   src={item.Rating != null ?
-                                       "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
-                        </div>
-                        <div className={`${cssStyle.fontSecundaryText} ${utilities.font12}`}>
-                            ({item.Rating != null ? item.Rating : 0})
-                        </div>
-                    </div>
-
-                    <div className={style.borderDiv}>
-                        <div className={style.bottomDivSearch}>
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText}`}>
-                                    {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
-                                </div>
-                            </div>
-
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                </div>
-                                {
-                                    item.MinPrice == item.MaxPrice ?
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MinPrice))}
-                                        </>
-                                        :
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MinPrice))} -
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MaxPrice))}
-                                        </>
-                                }
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
                 <div className={style.mainDivProductsSingle}>
                     {
@@ -105,73 +77,6 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                 </div>
             </div>
         </div>
-
-        /*<div className={`${cssStyle.borderCard} ${cssStyle.bgInfo} ${style.sizeFeaturedDiv}`}>
-            <div className="relative">
-                <div className={style.bannerFeatureProperties}>
-                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
-                </div>
-                <div className={style.borderLogo}>
-                    <div className={style.logoFeaturePropertiesv2}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.PathLogo} alt=""/>
-                    </div>
-                </div>
-            </div>
-            <div className={style.mainDivInfo}>
-                <div className={style.topDiv}>
-                    <div className={`${utilities.clamp1} ${cssStyle.fontName} ${style.titleMargin} `}>
-                        {item.Title}
-                    </div>
-
-                    <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin} ${utilities.clamp1}`}>
-                        {item.Subtitle}
-                    </div>
-
-                    <div className={style.gridRatingStar}>
-                        <div className={utilities.ratingStarsProperties}>
-                            <Image layout={"fill"}
-                                   src={item.Rating != null ?
-                                       "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
-                        </div>
-                        <div className={`${cssStyle.fontSecundaryText} ${utilities.font12}`}>
-                            ({item.Rating != null ? item.Rating : 0})
-                        </div>
-                    </div>
-                </div>
-
-                <div className={style.borderDiv}>
-                    <div className={style.bottomDivSearch}>
-                        <div className={`${style.gridIconInfo}`}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                            </div>
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
-                            </div>
-                        </div>
-                        <div className={`${style.gridIconInfo}`}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                            </div>
-                            {
-                                item.MinPrice == item.MaxPrice ?
-                                    <>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(item.MinPrice))}
-                                    </>
-                                    :
-                                    <>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(item.MinPrice))} -
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(item.MaxPrice))}
-                                    </>
-                            }
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>*/
     )
 
     function getCssStyles() {

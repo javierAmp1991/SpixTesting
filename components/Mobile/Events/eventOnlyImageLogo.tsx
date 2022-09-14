@@ -12,13 +12,11 @@ export default function EventOnlyImageLogo({item, darkMode}) {
                     <Image layout={"fill"} objectFit={"cover"}  src={item.CoverImage} alt=""/>
                 </div>
                 {
-                    item.SoldTickets >= item.TotalTickets * 0.90 ?
+                    item.SoldTickets >= item.TotalTickets * 0.90 &&
                         <div className={`${style.positionLastTickets} absolute z-40`}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>
-                        :
-                        ""
                 }
                 <div className={style.styleLogo}>
                     <Image layout={"fill"}  src="/images/logo el Huevo.jpg" alt=""/>

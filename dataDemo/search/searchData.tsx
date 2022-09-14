@@ -1,6 +1,4 @@
-import {EventLookUp} from "../data";
-
-import {VerticalViewClass, VerticalViewSearch, BaseVerticalView} from "../EventView/eventVerticalView";
+import {EventCardType, EventCardWithDate, EventCardFull} from "../EventView/eventVerticalView";
 
 export class EventSearch {
     Id: string
@@ -115,9 +113,9 @@ export namespace listPublicityNews {
 }
 
 export namespace listPublicityNews1{
-    export const list: BaseVerticalView[] = [
+    export const list: EventCardWithDate[] = [
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithDate,
             Id: "12",
             Title: "Tenemos Explosivos",
             Subtitle: "Tenemos Explosivos",
@@ -125,9 +123,11 @@ export namespace listPublicityNews1{
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta6.jpg",
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithDate,
             Id: "123",
             Title: "KEVIN CORRAL",
             Subtitle: "KEVIN CORRAL",
@@ -135,9 +135,11 @@ export namespace listPublicityNews1{
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/oferta2.jpg",
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithDate,
             Id: "1234",
             Title: "Mundos Magicos",
             Subtitle: "Mundos Magicos",
@@ -145,9 +147,11 @@ export namespace listPublicityNews1{
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta3.jpg",
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithDate,
             Id: "12345",
             Title: "Tributo Bon Jovi",
             Subtitle: "Tributo Bon Jovi",
@@ -155,9 +159,11 @@ export namespace listPublicityNews1{
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/oferta4.jpg",
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithDate,
             Id: "123456",
             Title: "Aura club",
             Subtitle: "Aura club",
@@ -165,6 +171,8 @@ export namespace listPublicityNews1{
             TotalTickets: 10000,
             SoldTickets: 3000,
             PathImage: "/images/oferta5.jpg",
+            MinDate: new Date(2022, 4, 5),
+            MaxDate: new Date(2022, 5, 5),
         },
     ]
 }
@@ -304,11 +312,11 @@ export namespace ListEventSearch {
 }
 
 export namespace DropDownRestaurantSearch {
-    export const listDropDown: VerticalViewSearch[] = [
+    export const listDropDown: EventCardFull[] = [
         {
             Title: "Cinzano",
             Subtitle: "Cinzano",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest1.png",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -322,7 +330,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Marco Polo",
             Subtitle: "Marco Polo",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest2.png",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -336,7 +344,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Nomade",
             Subtitle: "Nomade",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest3.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
@@ -350,7 +358,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Amor y Pastas",
             Subtitle: "Amor y Pastas",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest4.jpeg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -364,7 +372,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "La tienda de Pia",
             Subtitle: "La tienda de Pia",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest5.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
@@ -378,7 +386,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Delicias",
             Subtitle: "Delicias",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest6.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -392,7 +400,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Delicious Food",
             Subtitle: "Delicious Food",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest7.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -406,7 +414,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Indra Restaurant",
             Subtitle: "Indra Restaurant",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest8.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -418,7 +426,7 @@ export namespace DropDownRestaurantSearch {
             MaxPrice: 59990,
         },
         {
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Title: "Food 4 You",
             Subtitle: "Food 4 You",
             PathImage: "/images/rest9.jpg",
@@ -434,7 +442,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "Haitani Restaurant",
             Subtitle: "Haitani Restaurant",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest10.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -448,7 +456,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "China Town",
             Subtitle: "China Town",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest11.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
@@ -462,7 +470,7 @@ export namespace DropDownRestaurantSearch {
         {
             Title: "La Cabrera",
             Subtitle: "La Cabrera",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/rest12.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -477,12 +485,12 @@ export namespace DropDownRestaurantSearch {
 }
 
 export namespace DropDownSportSearch {
-    export const listDropDown: VerticalViewSearch[] = [
+    export const listDropDown: EventCardFull[] = [
         {
             Id: "12",
             Title: "Futbol de salon",
             Subtitle: "Futbol de salon",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport1.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -496,7 +504,7 @@ export namespace DropDownSportSearch {
             Id: "123",
             Title: "Torneo Futbol",
             Subtitle: "Torneo Futbol",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport2.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -511,7 +519,7 @@ export namespace DropDownSportSearch {
             Id: "124",
             Title: "Torneo de basketball",
             Subtitle: "Torneo de basketball",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport3.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
@@ -525,7 +533,7 @@ export namespace DropDownSportSearch {
             Id: "125",
             Title: "The legends Tournament",
             Subtitle: "The legends Tournament",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
 
             PathImage: "/images/sport4.jpg",
             TotalTickets: 1000,
@@ -540,7 +548,7 @@ export namespace DropDownSportSearch {
             Id: "126",
             Title: "Torneo tenis senior",
             Subtitle: "Torneo tenis senior",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport5.jpg",
             Rating: 60,
             TotalTickets: 1000,
@@ -554,7 +562,7 @@ export namespace DropDownSportSearch {
             Id: "127",
             Title: "Babolpa Cup",
             Subtitle: "Babolpa Cup",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport6.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -568,7 +576,7 @@ export namespace DropDownSportSearch {
             Id: "128",
             Title: "Boxing night",
             Subtitle: "Boxing night",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport7.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -582,7 +590,7 @@ export namespace DropDownSportSearch {
             Id: "129",
             Title: "Boxing fight",
             Subtitle: "Boxing fight",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
 
             PathImage: "/images/sport8.jpg",
             TotalTickets: 1000,
@@ -597,7 +605,7 @@ export namespace DropDownSportSearch {
             Id: "1210",
             Title: "Rugby Sur",
             Subtitle: "Rugby Sur",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
 
             PathImage: "/images/sport9.jpg",
             TotalTickets: 1000,
@@ -612,7 +620,7 @@ export namespace DropDownSportSearch {
             Id: "1211",
             Title: "rugby Sudamericano",
             Subtitle: "rugby Sudamericano",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport10.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -626,7 +634,7 @@ export namespace DropDownSportSearch {
             Id: "1212",
             Title: "2K22 Sprint",
             Subtitle: "2K22 Sprint",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Rating: 50,
             PathImage: "/images/sport11.jpg",
             TotalTickets: 1000,
@@ -640,7 +648,7 @@ export namespace DropDownSportSearch {
             Id: "1214",
             Title: "Final Sprint",
             Subtitle: "Final Sprint",
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             PathImage: "/images/sport12.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
@@ -654,7 +662,7 @@ export namespace DropDownSportSearch {
 }
 
 export namespace DropDownServvicesSearch {
-    export const listDropDown: VerticalViewSearch[] = [
+    export const listDropDown: EventCardFull[] = [
         {
             Title: "Salon Fame",
             Subtitle: "Salon Fame",
@@ -664,7 +672,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 4, 5),
             MaxDate: new Date(2022, 5, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1239",
             MinPrice: 29990,
             MaxPrice: 299990,
@@ -678,7 +686,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 5, 5),
             MaxDate: new Date(2022, 6, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1238",
             MinPrice: 9990,
             MaxPrice: 59990,
@@ -692,7 +700,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 6, 5),
             MaxDate: new Date(2022, 7, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1237",
             MinPrice: 7990,
             MaxPrice: 12990,
@@ -706,7 +714,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 7, 5),
             MaxDate: new Date(2022, 8, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1236",
             MinPrice: 6990,
             MaxPrice: 9990,
@@ -720,7 +728,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 8, 5),
             MaxDate: new Date(2022, 9, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1235",
             MinPrice: 8990,
             MaxPrice: 18990,
@@ -734,7 +742,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 9, 5),
             MaxDate: new Date(2022, 10, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1234",
             MinPrice: 9990,
             MaxPrice: 59990,
@@ -748,7 +756,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 4, 5),
             MaxDate: new Date(2022, 5, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1233",
             MinPrice: 29990,
             MaxPrice: 299990,
@@ -762,7 +770,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 5, 5),
             MaxDate: new Date(2022, 6, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1232",
             MinPrice: 9990,
             MaxPrice: 59990,
@@ -776,7 +784,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 6, 5),
             MaxDate: new Date(2022, 7, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"1231",
             MinPrice: 7990,
             MaxPrice: 12990,
@@ -790,7 +798,7 @@ export namespace DropDownServvicesSearch {
             Rating: 30,
             MinDate: new Date(2022, 7, 5),
             MaxDate: new Date(2022, 8, 5),
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id:"123",
             MinPrice: 6990,
             MaxPrice: 9990,

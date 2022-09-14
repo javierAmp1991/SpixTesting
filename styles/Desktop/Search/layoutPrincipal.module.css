@@ -60,7 +60,7 @@
 }
 
 .paddingLeftResult {
-    padding-left: 32px;
+    padding-left: 47px;
     /*padding-right: 45px;*/
 }
 
@@ -80,19 +80,19 @@
 .gridReviewDesktop {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 20px;
 }
 
 .gridNews3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 20px;
 }
 
 .gridNews2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 20px;
 }
 
 .gridResaleEvents {
@@ -148,7 +148,7 @@
 }
 
 .gridPublicityNews {
-    padding: 0 32px;
+    padding: 0 16px;
     display: grid;
     gap: 40px;
 }
@@ -176,7 +176,7 @@
 
 .gridFeaturedSearchDropDown{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px
 }
 
@@ -190,7 +190,7 @@
     }
 
     .gridSearchOpen {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .gridSearchClose {

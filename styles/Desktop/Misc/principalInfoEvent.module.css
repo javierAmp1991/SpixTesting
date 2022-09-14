@@ -1,0 +1,14 @@
+.subTitleMargin {
+    margin-bottom: 5px;
+}
+
+.titleMargin {
+    margin-bottom: 5px;
+}
+
+.gridRatingStar {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-content: end;
+    gap: 4px;
+}

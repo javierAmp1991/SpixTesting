@@ -55,7 +55,7 @@
 }
 
 .containerImageSelection {
-    --sizeImageSelection: 70px;
+    --sizeImageSelection: 60px;
     --borderRadiousImageSelection: 6px;
     height: var(--sizeImageSelection);
     aspect-ratio: 1/1;
@@ -87,8 +87,8 @@
 
 .gridSelectionZone {
     display: grid;
-    grid-template-rows: repeat(5, max-content);
-    align-content: space-between;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 12px;
 }
 
 .gridButtons {

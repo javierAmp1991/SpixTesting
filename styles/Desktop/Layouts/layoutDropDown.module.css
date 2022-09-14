@@ -1,12 +1,11 @@
 .dropDownGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 20px;
 }
 
 @media (min-width: 1281px) {
     .dropDownGrid {
-        padding: 0 18px ;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }

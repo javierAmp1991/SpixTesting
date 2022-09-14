@@ -1460,11 +1460,11 @@ export namespace MostPopularData {
             TotalTickets: 1000,
             SoldTickets: 500,
         },
-        {
+/*        {
             CoverImage: "/images/terraza.jpg",
             TotalTickets: 1000,
             SoldTickets: 990,
-        }
+        }*/
     ]
 
 }

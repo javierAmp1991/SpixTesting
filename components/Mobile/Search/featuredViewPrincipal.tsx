@@ -3,125 +3,113 @@ import {FeaturedViewClass, BaseFeaturedView} from "../../../dataDemo/EventView/f
 import style from "/styles/Mobile/Search/featuredViewPrincipal.module.css"
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
-import React from "react";
+import React, {useState} from "react";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
+import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
+import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
+import {number} from "prop-types";
 
 export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeaturedView }) {
+    let [productSelected, setProductSelected] = useState(0)
+    const handleProductSelected = (num: number) => {
+        setProductSelected(productSelected = num)
+    }
+    const principalInfoEvent: PrincipalInfoEventPropMob = {
+        Title: item.Title,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: false
+    }
+    const priceIncludeInfo: PriceIncludeInfoPropMobile = {
+        MinPrice: item.MinPrice,
+        MaxPrice: item.MaxPrice,
+        IsDarkMode: false
+    }
+    const dateInfo: DateInfoPropMobile = {
+        MinDate: item.MinDate,
+        MaxDate: item.MaxDate,
+        IsDarkMode: false,
+    }
     return (
-        <div className={style.mainDiv}>
-            <div className={style.sizeBanner}>
-                <Image layout={"fill"} objectFit={"cover"} objectPosition={"right"} src={item.PathImage} alt={""}/>
-            </div>
-            <div className={style.borderLogo}>
-                <div className={style.logoFeatureProperties}>
-                    <Image layout={"fill"} src={item.PathLogo} alt=""/>
+        <>
+            <div className={style.mainDiv}>
+                <div className={style.sizeBanner}>
+                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"right"} src={item.PathImage} alt={""}/>
                 </div>
-            </div>
-            <div className={style.gridFeaturePrincipal}>
-                <div className={style.mainDivInfo}>
-                    <div className={style.topDiv}>
-                        <div>
-                            <div className={`${utilities.clamp2} ${utilities.fontName} ${style.titleMargin} `}>
-                                {item.Title}
-                            </div>
-
-                            <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin}`}>
-                                {item.Subtitle}
-                            </div>
-                            <div className={style.gridRatingStar}>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src={item.Rating != null ?
-                                               "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText} ${utilities.font12}`}>
-                                    ({item.Rating != null ? item.Rating : 0})
-                                </div>
-                            </div>
-                        </div>
-                        <div className={style.bottomDivSearch}>
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText}`}>
-                                    {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
-                                </div>
-                            </div>
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                </div>
-                                {
-                                    item.MinPrice == item.MaxPrice ?
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MinPrice))}
-                                        </>
-                                        :
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MinPrice))} -
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MaxPrice))}
-                                        </>
-                                }
-                            </div>
-                        </div>
+                <div className={style.borderLogo}>
+                    <div className={style.logoFeatureProperties}>
+                        <Image layout={"fill"} src={item.PathLogo} alt=""/>
                     </div>
-
-                    <div className={style.mainDivProducts}>
-                        {
-                            item.ListProducts.map((item, index) =>
-                                index >= 0 && index <= 4 &&
-                                <div key={index} className={style.boxShadowPro}>
-                                    <div className={style.sizeImageProduct}>
-                                        <div className={style.aspectImage}>
-                                            <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                </div>
+                <div className={style.gridFeaturePrincipal}>
+                    <div className={style.mainDivInfo}>
+                        <div className={style.topDiv}>
+                            <PrincipalInfoEventMobile item={principalInfoEvent}/>
+                            <div className={style.bottomDivSearch}>
+                                <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
+                                <DateInfoEventMobile item={dateInfo}/>
+                            </div>
+                        </div>
+                        <div className={style.gridProductSelected}>
+                            {
+                                item.ListProducts.map((item, index) =>
+                                    index == productSelected &&
+                                    <div key={index} className={style.boxShadowPro}>
+                                        <div className={style.sizeImageProduct}>
+                                            <div className={style.aspectImage}>
+                                                <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                                            </div>
+                                            <div className={utilities.positionLastTicket}>
+                                                <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                                                       alt=""/>
+                                            </div>
                                         </div>
-                                        <div className={utilities.positionLastTicket}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                                                   alt=""/>
+
+                                        <div className={style.gridInfoProduct}>
+                                            <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                                                {item.Name}
+                                            </div>
+                                            <div className={utilities.fontPriceInclude}>
+                                                ${Intl.NumberFormat("ES-CL"
+                                            ).format(Math.round(item.Price))}
+                                            </div>
                                         </div>
                                     </div>
-
-                                    {/* <div className={style.gridInfoProduct}>
-                                        <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
-                                            {item.Name}
-                                        </div>
-                                        <div className={utilities.fontPriceInclude}>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.Price))}
-                                        </div>
-                                    </div>*/}
-                                </div>
-                            )
-                        }
+                                )
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-            {/*<div className={style.mainDivProducts}>
-                    {
-                        item.ListProducts.map((item, index) =>
-                            <div key={index} className={style.boxShadowPro}>
-                                <div className={style.sizeImageProduct}>
-                                    <div className={style.aspectImage}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
-                                    </div>
-                                    <div className={utilities.positionLastTicket}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                                               alt=""/>
-                                    </div>
-                                </div>
 
-                                <div className={style.gridInfoProduct}>
-                                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
-                                        {item.Name}
-                                    </div>
+            <div className={style.gridProductSelection}>
+                {
+                    item.ListProducts.map((item, index) =>
+
+                        <div onClick={() => handleProductSelected(index)} key={index}
+                             className={index == productSelected ? style.boxShadowProSelected : style.boxShadowPro}>
+                            <div className={style.sizeProductSelection}>
+                                <div className={style.aspectImage}>
+                                    <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                                </div>
+                                <div className={utilities.positionLastTicket}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                                           alt=""/>
                                 </div>
                             </div>
-                        )
-                    }
-                </div>*/}
-        </div>
+                            {/*<div className={style.gridInfoProduct}>
+                                <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                                    {item.Name}
+                                </div>
+                                <div className={utilities.fontPriceInclude}>
+                                    ${Intl.NumberFormat("ES-CL"
+                                ).format(Math.round(item.Price))}
+                                </div>
+                            </div>*/}
+                        </div>
+                    )
+                }
+            </div>
+        </>
     )
 }

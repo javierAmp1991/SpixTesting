@@ -4,32 +4,59 @@ import {GlobalConst} from "../../../public/globalConst";
 import React from "react";
 import Image from "next/image";
 import {
-    BaseVerticalView,
-    VerticalViewClass,
-    VerticalViewResale,
-    VerticalViewSearch
+    BaseEventCard,
+    EventCardFull,
+    EventCardResale,
+    EventCardWithDate,
+    EventCardWithPrice,
+    EventCardType
 } from "../../../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
+import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
+import {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
+import {DateInfoProp} from "../Misc/dateInfoEvent";
 
 const totalResaleText = "Total reventas: "
 
-export default function EventVerticalView({item, darkModeState, isVertical}:
-                                              { item: BaseVerticalView, darkModeState: boolean, isVertical: boolean }) {
-    /*    let [displayName, setDisplayName] = useState(true)
-        const handleShowName = () => setDisplayName(displayName = true)
-        const handleHiddeName = () => setDisplayName(displayName = false)*/
+export default function EventVerticalView({item, darkModeState}: { item: BaseEventCard, darkModeState: boolean }) {
     let cssStyles = getCssStyles()
-    let newItem: VerticalViewSearch;
-    let newItem2: VerticalViewResale;
-    if (item.Type == VerticalViewClass.search) {
-        newItem = item as VerticalViewSearch
+
+    let itemFull: EventCardFull;
+    let itemWithPrice: EventCardWithPrice;
+    let itemWithDate: EventCardWithDate;
+    let itemWithResale: EventCardResale;
+
+    if (item.Type == EventCardType.EventCardFull) {
+        itemFull = item as EventCardFull
+    } else if (item.Type == EventCardType.EventCardWithPrice) {
+        itemWithPrice = item as EventCardWithPrice
+    } else if (item.Type == EventCardType.EventCardWithDate) {
+        itemWithDate = item as EventCardWithDate
     } else {
-        newItem2 = item as VerticalViewResale
+        itemWithResale = item as EventCardResale
     }
+
+    const principalInfoEventProp: PrincipalInfoEventProp = {
+        Title: item.Title,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: false
+    }
+
+    /*    const priceIncludeInfo: PriceIncludeInfoProp = {
+            MinPrice: itemWithPrice.MinPrice,
+            MaxPrice: itemWithPrice.MaxPrice,
+            IsDarkMode: false
+        }
+        const dateInfo: DateInfoProp = {
+            MinDate: itemWithDate.MinDate,
+            MaxDate: itemWithDate.MaxDate,
+            IsDarkMode: false,
+        }*/
 
     return (
         <div className={`${styles.principalGridVertical}`}>
-            <Link href={item.Type == VerticalViewClass.searchResale? item.Link : ""}>
+            <Link href={item.Type == EventCardType.EventCardWithResale ? item.Link : ""}>
                 <a className={styles.containerImage}>
                     {
                         item.SoldTickets >= item.TotalTickets * 0.90 &&
@@ -37,85 +64,104 @@ export default function EventVerticalView({item, darkModeState, isVertical}:
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
                         </div>
                     }
-                    <div className={cssStyles.imageProportion}>
-                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={item.PathImage}
-                               alt=""/>
+                    <div className={styles.sizeImage}>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
                     </div>
                 </a>
             </Link>
 
             <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
                 <div className={styles.TopDivInfo}>
-                    <div className={`${cssStyles.fontName} ${utilities.clamp1} ${styles.titleMargin}`}>
-                        {item.Title}
-                    </div>
-
-                    <div className={`${utilities.fontPrimaryText} ${styles.subTitleMargin}`}>
-                        {item.Subtitle}
-                    </div>
-
-                    <div className={styles.gridRatingStar}>
-                        <div className={utilities.ratingStarsProperties}>
-                            <Image layout={"fill"} src={item.Rating != null ?
-                                GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull} alt=""/>
-                        </div>
-                        <div className={`${cssStyles.fontSecundaryText} ${styles.contRating}`}>
-                            ({item.Rating != null ? item.Rating : 0})
-                        </div>
-                    </div>
+                    <PrincipalInfoEvent item={principalInfoEventProp}/>
                 </div>
-                {
-                    item.Type == VerticalViewClass.search &&
-                    <div className={styles.bottomDivSearch}>
+
+                <div className={styles.bottomDivSearch}>
+                    {
+                        item.Type == EventCardType.EventCardWithDate &&
                         <div className={`${styles.gridIconInfo}`}>
                             <div className={styles.sizeIcon}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                             </div>
                             <div className={`${utilities.fontSecundaryText}`}>
-                                {newItem.MinDate.getDate()} de {newItem.MinDate.toLocaleString("es-US", {month: "short"})} del {newItem.MinDate.getFullYear()}
+                                {itemWithDate.MinDate.getDate()} de {itemWithDate.MinDate.toLocaleString("es-US", {month: "short"})} del {itemWithDate.MinDate.getFullYear()}
                             </div>
                         </div>
+                    }
 
+                    {
+                        item.Type == EventCardType.EventCardWithPrice &&
                         <div className={`${styles.gridIconInfo}`}>
                             <div className={styles.sizeIcon}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
                             </div>
                             {
-                                newItem.MinPrice == newItem.MaxPrice ?
-                                    <>
+                                itemWithPrice.MinPrice == itemWithPrice.MaxPrice ?
+                                    <div className={utilities.fontPriceIncludeDesktop}>
                                         ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MinPrice))}
-                                    </>
+                                    ).format(Math.round(itemFull.MinPrice))}
+                                    </div>
                                     :
-                                    <>
+                                    <div className={utilities.fontPriceIncludeDesktop}>
                                         ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MinPrice))} -
+                                    ).format(Math.round(itemWithPrice.MinPrice))} -
                                         ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(newItem.MaxPrice))}
-                                    </>
+                                    ).format(Math.round(itemWithPrice.MaxPrice))}
+                                    </div>
                             }
                         </div>
-                    </div>
-                }
-                {
-                    item.Type == VerticalViewClass.searchResale &&
-                    <div className={`${utilities.fontPrimaryText} ${styles.bottomDivSearch}`}>
-                        {totalResaleText} {newItem2.TotalResale}
-                    </div>
-                }
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardFull &&
+                        <>
+                            <div className={`${styles.gridIconInfo}`}>
+                                <div className={styles.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                                </div>
+                                <div className={`${utilities.fontSecundaryText}`}>
+                                    {itemFull.MinDate.getDate()} de {itemFull.MinDate.toLocaleString("es-US", {month: "short"})} del {itemFull.MinDate.getFullYear()}
+                                </div>
+                            </div>
+                            <div className={`${styles.gridIconInfo}`}>
+                                <div className={styles.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
+                                </div>
+                                {
+                                    itemFull.MinPrice == itemFull.MaxPrice ?
+                                        <div className={utilities.fontPriceIncludeDesktop}>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(itemFull.MinPrice))}
+                                        </div>
+                                        :
+                                        <div className={utilities.fontPriceIncludeDesktop}>
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(itemFull.MinPrice))} -
+                                            ${Intl.NumberFormat("ES-CL"
+                                        ).format(Math.round(itemFull.MaxPrice))}
+                                        </div>
+                                }
+                            </div>
+                        </>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithResale &&
+                        <div className={`${utilities.fontPrimaryText}`}>
+                            {totalResaleText} {itemWithResale.TotalResale}
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     )
 
     function getCssStyles() {
         return {
-            imageProportion: isVertical ? styles.sizeImageVertical : styles.sizeImageSquare,
-            /*borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,*/
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontName: darkModeState ? utilities.fontNameDarkMode : utilities.fontName,
-            fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            fontTitle: darkModeState ? utilities.fontTitleDarkMode : utilities.fontTitleDesktop,
+            fontSubtitle: darkModeState ? utilities.fontSubtitleDarkMode : utilities.fontSubtitleDesktop,
+            fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDesktopDarkMode : utilities.fontSecundaryTextDesktop,
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude,
-            /*displayName: displayName ? styles.displayIn : styles.displayOut*/
         }
     }
 }

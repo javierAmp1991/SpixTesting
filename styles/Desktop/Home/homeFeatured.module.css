@@ -1,4 +1,4 @@
-.mainDiv{
+.mainDiv {
     position: relative;
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
@@ -11,25 +11,12 @@
     object-fit: cover;
 }
 
-.logoFeatureProperties {
-    --sizeLogoFeaturedHome: 44px;
-    height: var(--sizeLogoFeaturedHome);
-    width: var(--sizeLogoFeaturedHome);
-    box-shadow: var(--boxShadowCard);
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    top: 2px;
-    right: 5%;
-    /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
-        left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
-}
 .borderLogo {
     position: absolute;
     background: white;
     padding: 2px;
-    top: 12px;
-    right: 12px;
+    top: 6px;
+    right: 6px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -47,98 +34,43 @@
 
 .mainDivInfo {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 70% 30%;
     gap: 12px;
     margin: auto;
-    padding: 8px 16px;
+    padding: 12px 16px;
     position: relative;
 }
-
-.gridRatingStar {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-content: end;
-    gap: 4px;
-    margin-bottom: 6px;
-}
-
-.subTitleMargin {
-    margin-bottom: 4px;
-}
-
-.titleMargin {
-    margin-bottom: 2px;
-}
-
-.topDiv {
-    position: relative;
-}
-
-.borderDiv {
-}
-
-/*.bottomDivSearch {
-    padding: 6px 0 0 0;
-    display: grid;
-    gap: 6px;
-    margin: auto;
-}*/
 
 .bottomDivSearch {
     display: grid;
     grid-template-rows: repeat(2, max-content);
     justify-content: left;
-    gap: 4px;
+    gap: 6px;
+    padding-top: 6px;
 }
 
-.gridInfoProduct{
+.gridInfoProduct {
     padding: 4px 16px 10px 16px;
 }
 
-.gridIconInfo {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 4px;
-    align-items: center;
-}
-
-.sizeIcon {
-    height: 12px;
-    width: 12px;
-    position: relative;
-}
-
-.mainDivProducts{
+.mainDivProductsSingle {
     position: absolute;
     right: 16px;
-    top: -40px;
+    top: -10px;
     display: grid;
-    grid-template-columns: repeat(2, 113px);
+    grid-template-columns: 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
     gap: 12px;
 }
 
-.mainDivProductsSingle{
-    position: absolute;
-    right: 16px;
-    top: -24px;
-    display: grid;
-    grid-template-columns: repeat(1, 120px);
-    gap: 12px;
-}
-
-.sizeImageProduct{
-    width: 100%;
-    aspect-ratio: 1/1;
-    position: relative;
-}
-
-.sizeImageProductSingle{
+.sizeImageProductSingle {
     width: 100%;
     aspect-ratio: 1.2/1;
     position: relative;
 }
 
-.boxShadowPro{
+.boxShadowPro {
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;

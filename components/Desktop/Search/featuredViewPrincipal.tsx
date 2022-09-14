@@ -1,13 +1,33 @@
 import Image from "next/image";
-import {
-    BaseFeaturedView,
-} from "../../../dataDemo/EventView/featureView";
+import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
 import style from "/styles/Desktop/Search/featuredViewPrincipal.module.css"
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
 import React from "react";
+import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
+import DateInfoEvent from "../Misc/dateInfoEvent";
+import {DateInfoProp} from "../Misc/dateInfoEvent";
+import PriceIncludeInfoEvent from "../Misc/priceIncludeInfoEvent";
+import {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
 
 export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }) {
+    const principalInfoEventProp: PrincipalInfoEventProp = {
+        Title: item.Title,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: false
+    }
+    const priceIncludeInfo: PriceIncludeInfoProp = {
+        MinPrice: item.MinPrice,
+        MaxPrice: item.MaxPrice,
+        IsDarkMode: false
+    }
+    const dateInfo: DateInfoProp = {
+        MinDate: item.MinDate,
+        MaxDate: item.MaxDate,
+        IsDarkMode: false,
+    }
+
     return (
         <div className={style.mainDiv}>
             <div className={style.sizeBanner}>
@@ -22,52 +42,10 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                 <div className={style.mainDivInfo}>
                     <div className={style.topDiv}>
                         <div>
-                            <div className={`${utilities.clamp2} ${utilities.fontName} ${style.titleMargin} `}>
-                                {item.Title}
-                            </div>
-
-                            <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin}`}>
-                                {item.Subtitle}
-                            </div>
-                            <div className={style.gridRatingStar}>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"}
-                                           src={item.Rating != null ?
-                                               "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText} ${utilities.font12}`}>
-                                    ({item.Rating != null ? item.Rating : 0})
-                                </div>
-                            </div>
-
+                            <PrincipalInfoEvent item={principalInfoEventProp}/>
                             <div className={style.bottomDivSearch}>
-                                <div className={`${style.gridIconInfo}`}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                                    </div>
-                                    <div className={`${utilities.fontSecundaryText}`}>
-                                        {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
-                                    </div>
-                                </div>
-                                <div className={`${style.gridIconInfo}`}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                    </div>
-                                    {
-                                        item.MinPrice == item.MaxPrice ?
-                                            <>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.MinPrice))}
-                                            </>
-                                            :
-                                            <>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.MinPrice))} -
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.MaxPrice))}
-                                            </>
-                                    }
-                                </div>
+                                <DateInfoEvent item={dateInfo}/>
+                                <PriceIncludeInfoEvent item={priceIncludeInfo}/>
                             </div>
                         </div>
                     </div>
@@ -75,7 +53,7 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                     <div className={style.mainDivProducts}>
                         {
                             item.ListProducts.map((item, index) =>
-                                index >= 0 && index <= 4 &&
+                                index >= 0 && index <= 3 &&
                                 <div key={index} className={style.boxShadowPro}>
                                     <div className={style.sizeImageProduct}>
                                         <div className={style.aspectImage}>
@@ -91,7 +69,7 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                                         <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                                             {item.Name}
                                         </div>
-                                        <div className={utilities.fontPriceInclude}>
+                                        <div className={utilities.fontPriceIncludeDesktop}>
                                             ${Intl.NumberFormat("ES-CL"
                                         ).format(Math.round(item.Price))}
                                         </div>

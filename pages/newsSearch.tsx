@@ -5,10 +5,6 @@ import styleMobile from "/styles/Mobile/Search/layoutPrincipalFilterMobile.modul
 import utilities from "/styles/utilities.module.css"
 import React, {useState} from "react";
 import {useMediaQuery} from "./index";
-import LayoutPrincipalFilterMobile from "../components/Mobile/Search/layoutPrincipalFilterMobile";
-import Image from "next/image";
-import {GlobalConst} from "../public/globalConst";
-import MainContainerFilters from "../components/Desktop/Search/mainContainerFilters";
 import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNavegation";
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
@@ -29,12 +25,9 @@ import PublicityView from "../components/Desktop/CRM/publicityView";
 import {PublicityData} from "../dataDemo/data";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import NewSearcPrincipalMobile from "../components/Mobile/Search/newSearcPrincipalMobile";
-import PublicityNews from "../components/Desktop/CRM/publicityNews";
-import {PublicitySearch, listPublicityNews, listPublicityNews1} from "../dataDemo/search/searchData";
-import PublicityNewsMobile from "../components/Mobile/CRM/publicityNewsMobile";
+import {listPublicityNews1} from "../dataDemo/search/searchData";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
-import {Base} from "postcss-selector-parser";
-import {BaseVerticalView} from "../dataDemo/EventView/eventVerticalView";
+import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -43,7 +36,7 @@ export default function ReviewSearch() {
     const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersNews.listPrinciaplFilters;
     const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryNews.listSuperCat;
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
-    const listPublicity: BaseVerticalView[] = listPublicityNews1.list
+    const listPublicity: BaseEventCard[] = listPublicityNews1.list
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
@@ -214,7 +207,7 @@ export default function ReviewSearch() {
                                 <div className={style.gridPublicityNews}>
                                     {
                                         listPublicity.map((item) =>
-                                            <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode} isVertical={isVertical}/>
+                                            <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>
                                         )
                                     }
                                 </div>

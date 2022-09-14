@@ -1,4 +1,4 @@
-.mainDiv{
+.mainDiv {
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
@@ -6,101 +6,21 @@
     position: relative;
 }
 
-
-.sizeBanner{
+.sizeBanner {
     width: 100%;
     aspect-ratio: 5.3/1;
     position: relative;
 }
 
-.gridFeaturePrincipal{
-    display: grid;
-}
-
 .mainDivInfo {
     display: grid;
     grid-template-columns: 1fr max-content;
-    padding: 10px 40px 16px 40px;
+    padding: 14px 40px;
     position: relative;
 }
-
-.borderLogo {
-    position: absolute;
-    background: white;
-    padding: 2px;
-    top: 12px;
-    right: 12px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.boxShadowPro{
-    box-shadow: var(--boxShadowCard);
-    border-radius: 6px;
-    overflow: hidden;
-    background: white;
-    transition: .4s;
-}
-
-.boxShadowPro:hover{
-    transform: scale(1.02);
-    box-shadow: var(--boxShadowCardHover);
-}
-
-.gridRatingStar {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-content: end;
-    gap: 4px;
-    margin-bottom: 6px;
-}
-
-.subTitleMargin {
-    margin-bottom: 4px;
-}
-
-.titleMargin {
-    margin-bottom: 2px;
-}
-
-.topDiv {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 12px;
-    position: relative;
-}
-
-.borderDiv {
-    border-top: 2px solid var(--separationLineColor);
-}
-
-.bottomDivSearch {
-    display: grid;
-    gap: 6px;
-    position: relative;
-}
-
-.gridIconInfo {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 4px;
-    align-items: center;
-}
-
-.gridInfoProduct{
-    padding: 4px 16px 10px 16px;
-}
-
-
-.sizeIcon {
-    height: 12px;
-    width: 12px;
-    position: relative;
-}
-
 
 .logoFeatureProperties {
-    --sizeLogoFeaturedHome: 52px;
+    --sizeLogoFeaturedHome: 44px;
     height: var(--sizeLogoFeaturedHome);
     width: var(--sizeLogoFeaturedHome);
     box-shadow: var(--boxShadowCard);
@@ -111,16 +31,57 @@
         left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
 
-.mainDivProducts{
+.borderLogo {
     position: absolute;
-    right: 40px;
-    top: -28px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 12px;
+    background: white;
+    padding: 2px;
+    top: 6px;
+    right: 6px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-.sizeImageProduct{
+.boxShadowPro {
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    transition: .4s;
+}
+
+.boxShadowPro:hover {
+    transform: scale(1.02);
+    box-shadow: var(--boxShadowCardHover);
+}
+
+.topDiv {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    position: relative;
+}
+
+.bottomDivSearch {
+    padding-top: 5px;
+    display: grid;
+    gap: 4px;
+    position: relative;
+}
+
+.gridInfoProduct {
+    padding: 4px 16px 10px 16px;
+}
+
+.mainDivProducts {
+    position: absolute;
+    right: 40px;
+    top: -20px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 16px;
+}
+
+.sizeImageProduct {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;

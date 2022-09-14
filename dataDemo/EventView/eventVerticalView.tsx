@@ -1,12 +1,13 @@
-export enum VerticalViewClass {
-    base,
-    search,
-    searchResale
+export enum EventCardType {
+    EventCardWithPrice,
+    EventCardWithDate,
+    EventCardWithResale,
+    EventCardFull
 }
 
-export class BaseVerticalView {
+export abstract class BaseEventCard {
     Link?: string
-    Type: VerticalViewClass
+    Type: EventCardType
     Id: string
     PathImage: string
     Title: string
@@ -16,28 +17,40 @@ export class BaseVerticalView {
     Rating: number
 }
 
-export class VerticalViewSearch extends BaseVerticalView {
-    MinDate: Date
-    MaxDate: Date
+export class EventCardWithPrice extends BaseEventCard {
     MinPrice: number
     MaxPrice: number
 }
 
-export class VerticalViewResale extends BaseVerticalView {
+export class EventCardWithDate extends BaseEventCard {
+    MaxDate: Date;
+    MinDate: Date;
+}
+
+export class EventCardResale extends BaseEventCard {
     TotalResale: number
 }
 
-export namespace TodayInValpoHome {
-    export const list: BaseVerticalView[] = [
+export class EventCardFull extends BaseEventCard {
+    MinPrice: number
+    MaxPrice: number
+    MinDate: Date
+    MaxDate: Date
+}
+
+export namespace TodayInValpoFull {
+    export const list: EventCardWithPrice[] = [
         {
             Id: "123456",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Title: "Restaurant Cinzano",
             Subtitle: "Cinzano",
             Rating: 30,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/cinzano.jpg",
+            MinPrice: 2990,
+            MaxPrice: 9990,
         },
         {
             Id: "1234567",
@@ -46,8 +59,10 @@ export namespace TodayInValpoHome {
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/Woo.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "WOO! Club",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
@@ -57,8 +72,10 @@ export namespace TodayInValpoHome {
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/blackphone.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Black Phone",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
@@ -68,8 +85,10 @@ export namespace TodayInValpoHome {
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/terrraza1.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Terraza Bellavista",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
@@ -79,8 +98,10 @@ export namespace TodayInValpoHome {
             TotalTickets: 10000,
             SoldTickets: 3000,
             PathImage: "/images/marcoPolo.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Marco Polo",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
@@ -90,72 +111,88 @@ export namespace TodayInValpoHome {
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/Civico.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Bar Civico",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
-            Id: "123456",
+            Id: "1123456",
             Title: "Restaurant Cinzano",
             Rating: 30,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/cinzano.jpg",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Restaurant Cinzano",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
-            Id: "1234567",
+            Id: "21234567",
             Title: "WOO! Club",
             Rating: 30,
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/Woo.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "WOO! Club",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
-            Id: "12345678",
+            Id: "312345678",
             Title: "Black Phone",
             Rating: 30,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/blackphone.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Black Phone",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
-            Id: "123456789",
+            Id: "4123456789",
             Title: "Terraza Bellavista",
             Rating: 300,
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/terrraza1.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Terraza Bellavista",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
         {
-            Id: "1234567890",
+            Id: "51234567890",
             Title: "Marco Polo",
             Rating: 30,
             TotalTickets: 10000,
             SoldTickets: 3000,
             PathImage: "/images/marcoPolo.png",
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardWithPrice,
             Subtitle: "Marco Polo",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
         },
     ]
 }
 
 export namespace InOfferHome {
-    export const list: BaseVerticalView[] = [
+    export const list: EventCardFull[] = [
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "12",
             Title: "Tenemos Explosivos",
             Subtitle: "Tenemos Explosivos",
@@ -165,7 +202,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta6.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "123",
             Title: "KEVIN CORRAL",
             Subtitle: "KEVIN CORRAL",
@@ -175,7 +216,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta2.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1234",
             Title: "Mundos Magicos",
             Subtitle: "Mundos Magicos",
@@ -185,7 +230,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta3.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "12345",
             Title: "Tributo Bon Jovi",
             Subtitle: "Tributo Bon Jovi",
@@ -195,7 +244,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta4.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "123456",
             Title: "Aura club",
             Subtitle: "Aura club",
@@ -205,7 +258,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta5.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1234567",
             Title: "Todas Partes",
             Subtitle: "Todas Partes",
@@ -215,7 +272,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta1.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "12",
             Title: "Tenemos Explosivos",
             Subtitle: "Tenemos Explosivos",
@@ -225,7 +286,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta6.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "123",
             Title: "KEVIN CORRAL",
             Subtitle: "KEVIN CORRAL",
@@ -235,7 +300,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta2.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1234",
             Title: "Mundos Magicos",
             Subtitle: "Mundos Magicos",
@@ -245,7 +314,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta3.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "12345",
             Title: "Tributo Bon Jovi",
             Subtitle: "Tributo Bon Jovi",
@@ -255,7 +328,11 @@ export namespace InOfferHome {
             PathImage: "/images/oferta4.jpg",
         },
         {
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "123456",
             Title: "Aura club",
             Subtitle: "Aura club",
@@ -268,7 +345,7 @@ export namespace InOfferHome {
 }
 
 export namespace DropDownHome {
-    export const list: BaseVerticalView[] = [
+    export const list: EventCardFull[] = [
         {
             Title: "Metallica WorldWired",
             Subtitle: "Metallica WorldWired",
@@ -276,7 +353,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1216"
         },
         {
@@ -286,7 +367,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1215"
         },
         {
@@ -296,7 +381,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1214"
         },
         {
@@ -306,7 +395,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1213"
         },
         {
@@ -316,7 +409,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1212"
         },
         {
@@ -326,7 +423,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1211"
         },
         {
@@ -336,7 +437,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "1210"
         },
         {
@@ -346,7 +451,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "129"
         },
         {
@@ -356,7 +465,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "128"
         },
         {
@@ -366,7 +479,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "127"
         },
         {
@@ -375,7 +492,11 @@ export namespace DropDownHome {
             PathImage: "/images/cartel10.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Rating: 30,
             Id: "126"
         },
@@ -386,7 +507,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "125"
         },
         {
@@ -396,7 +521,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "124"
         },
         {
@@ -406,7 +535,11 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "123"
         },
         {
@@ -416,14 +549,18 @@ export namespace DropDownHome {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.base,
+            Type: EventCardType.EventCardFull,
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
             Id: "12"
         }
     ]
 }
 
 export namespace DropDownSearch {
-    export const list: VerticalViewSearch[] = [
+    export const list: EventCardFull[] = [
         {
             Title: "Metallica WorldWired",
             Subtitle: "Metallica WorldWired",
@@ -431,7 +568,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1216",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -445,7 +582,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1215",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -459,7 +596,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1214",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -473,7 +610,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1213",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -487,7 +624,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1212",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -501,7 +638,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1211",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -515,7 +652,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "1210",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -529,7 +666,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "129",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -543,7 +680,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "128",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -557,7 +694,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "127",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -570,7 +707,7 @@ export namespace DropDownSearch {
             PathImage: "/images/cartel10.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Rating: 30,
             Id: "126",
             MinPrice: 2990,
@@ -585,7 +722,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "125",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -599,7 +736,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "124",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -613,7 +750,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "123",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -627,7 +764,7 @@ export namespace DropDownSearch {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.search,
+            Type: EventCardType.EventCardFull,
             Id: "12",
             MinPrice: 2990,
             MaxPrice: 9990,
@@ -638,7 +775,7 @@ export namespace DropDownSearch {
 }
 
 export namespace DropDownResale {
-    export const list: VerticalViewResale[] = [
+    export const list: EventCardResale[] = [
         {
             Link: "/resaleTicketSearch",
             Title: "Metallica WorldWired",
@@ -647,7 +784,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1216",
             TotalResale: 10
         },
@@ -659,7 +796,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1215",
             TotalResale: 11
         },
@@ -671,7 +808,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1214",
             TotalResale: 12
         },
@@ -683,7 +820,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1213",
             TotalResale: 3
         },
@@ -695,7 +832,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1212",
             TotalResale: 4
         },
@@ -707,7 +844,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1211",
             TotalResale: 5
         },
@@ -719,7 +856,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "1210",
             TotalResale: 10
         },
@@ -731,7 +868,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "129",
             TotalResale: 9
         },
@@ -743,7 +880,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "128",
             TotalResale: 8
         },
@@ -755,7 +892,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "127",
             TotalResale: 7
         },
@@ -766,7 +903,7 @@ export namespace DropDownResale {
             PathImage: "/images/cartel10.jpg",
             TotalTickets: 1000,
             SoldTickets: 500,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Rating: 30,
             Id: "126",
             TotalResale: 20
@@ -779,7 +916,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "125",
             TotalResale: 21
         },
@@ -791,7 +928,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "124",
             TotalResale: 22
         },
@@ -803,7 +940,7 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 990,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "123",
             TotalResale: 23
         },
@@ -815,9 +952,10 @@ export namespace DropDownResale {
             TotalTickets: 1000,
             SoldTickets: 500,
             Rating: 30,
-            Type: VerticalViewClass.searchResale,
+            Type: EventCardType.EventCardWithResale,
             Id: "12",
             TotalResale: 30
         }
     ]
 }
+

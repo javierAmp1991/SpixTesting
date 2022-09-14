@@ -1,3 +1,108 @@
+/*#region Mobile Class*/
+.fontTitleMobile {
+    --sizeTitleMobile: 17px;
+    font-size: var(--sizeTitleMobile);
+    line-height: var(--sizeTitleMobile);
+    font-weight: 300;
+    color: var(--colorTitleMobile);
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+.fontSubtitleMobile {
+    --sizeSubtitleMobile: 15px;
+    font-size: var(--sizeSubtitleMobile);
+    line-height: var(--sizeSubtitleMobile);
+    font-weight: 300;
+    color: var(--colorSubtitleMobile);
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+.fontPriceIncludeMobile {
+    --fontSizeLineHeightMob: 15px;
+    font-size: var(--fontSizeLineHeightMob);
+    line-height: var(--fontSizeLineHeightMob);
+    font-weight: 500;
+    color: var(--colorPriceIncludeMobile);
+}
+
+.fontPrimaryTextMobile{
+    color: var(--colorPrimaryTextMobile);
+}
+
+.fontSecundaryTextMobile{
+    color: var(--colorSecundaryTextMobile);
+}
+
+.ratingStarsPropertiesMobile {
+    height: 17px;
+    width: 80px;
+    position: relative;
+}
+
+.fontMiniMobile{
+    --sizeFontMiniMobile: 12px;
+    font-size: var(--sizeFontMiniMobile);
+    line-height: var(--sizeFontMiniMobile);
+}
+/*#endregion Mobile Class*/
+
+/*----------------------------------------------------------------------------------------*/
+
+/*#region Desktop Class*/
+.fontTitleDesktop {
+    --sizeTitleDesktop: 20px;
+    font-size: var(--sizeTitleDesktop);
+    line-height: var(--sizeTitleDesktop);
+    font-weight: 300;
+    color: var(--colorTitleDesktop);
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+.fontSubtitleDesktop {
+    --sizeSubTitleDesktop: 17px;
+    font-size: var(--sizeSubTitleDesktop);
+    line-height: var(--sizeSubTitleDesktop);
+    font-weight: 300;
+    color: var(--colorSubtitleMobile);
+    font-family: Helvetica, sans-serif, Arial;
+}
+
+.fontPriceIncludeDesktop {
+    --fontSizeLineHeightDesktop: 17px;
+    font-size: var(--fontSizeLineHeightDesktop);
+    line-height: var(--fontSizeLineHeightDesktop);
+    font-weight: 500;
+    color: var(--colorPriceIncludeDesktop);
+}
+
+.fontPrimaryTextDesktop{
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.fontSecundaryTextDesktop{
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.ratingStarsPropertiesDesktop {
+    height: 17px;
+    width: 80px;
+    position: relative;
+}
+
+.fontMiniDesktop{
+    --sizeFontMiniDesktop: 12px;
+    font-size: var(--sizeFontMiniDesktop);
+    line-height: var(--sizeFontMiniDesktop);
+}
+/*#endregion Desktop Class*/
+
+/*#region old class*/
+
+.ratingStarsProperties {
+    height: 17px;
+    width: 80px;
+    position: relative;
+}
 .bgBodyNormal {
     background: var(--colorBodyNormal);
     transition: var(--transitionTimeDarkMode);
@@ -8,7 +113,7 @@
     transition: var(--transitionTimeDarkMode);
 }
 
-.noScrollBody{
+.noScrollBody {
     height: 100vh;
     overflow-y: hidden;
 }
@@ -18,10 +123,12 @@
     max-width: var(--maxWidthBodyContent);
     margin: auto;
 }
-.maxWidthMobile{
+
+.maxWidthMobile {
     max-width: 768px;
     margin: auto;
 }
+
 .paddingMainContent {
     padding: 0px 8px;
 }
@@ -109,7 +216,8 @@
 }
 
 .fontName {
-    font-size: 16px;
+    font-size: 21px;
+    line-height: 22px;
     font-weight: 400;
     color: var(--colorName);
     transition: var(--transitionTimeDarkMode);
@@ -183,14 +291,13 @@
     font-size: 12px;
 }
 
-
 .styleSpixDiscountTag {
     font-size: var(--fontSizeMini);
     background: var(--colorTagDiscount);
     padding: 1px 8px;
     color: white;
     font-weight: 500;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .styleSpixTag {
@@ -209,12 +316,6 @@
     color: white;
     font-weight: 500;
     border-radius: 8px;
-}
-
-.ratingStarsProperties {
-    height: 15px;
-    width: 80px;
-    position: relative;
 }
 
 .bgFirstGradient {
@@ -401,23 +502,23 @@
     scroll-snap-stop: always;
 }
 
-.divtest{
+.divtest {
     width: 394px;
     aspect-ratio: 2/1;
     position: relative;
     object-fit: cover;
 }
 
-.gridtest{
+.gridtest {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
 }
 
-.styleGradientIndex{
+.styleGradientIndex {
     max-width: var(--maxWidthBanner);
     margin: auto;
-    background: linear-gradient(rgba(10,102,188,1) 0%, rgba(255,255,255, 1) 100%);
+    background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgba(255, 255, 255, 1) 100%);
     padding: 40px 0;
 }
 
@@ -435,11 +536,13 @@
     }
 }
 
-@media(min-width: 1600px){
-    .maxWidthBodyContentSpix{
+@media (min-width: 1600px) {
+    .maxWidthBodyContentSpix {
         width: 1500px;
     }
 }
+
+/*#endregion old class*/
 
 
 

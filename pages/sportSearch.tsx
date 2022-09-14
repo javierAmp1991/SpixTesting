@@ -22,7 +22,7 @@ import {
     SuperCategoryFilter
 } from "../dataDemo/data";
 import {DropDownSportSearch} from "../dataDemo/search/searchData";
-import {BaseVerticalView} from "../dataDemo/EventView/eventVerticalView";
+import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -54,7 +54,7 @@ export default function SearchRestaurant() {
 
     //region desktop Components
     let dropDown =
-        DropDownSportSearch.listDropDown.map((item: BaseVerticalView,) =>
+        DropDownSportSearch.listDropDown.map((item: BaseEventCard,) =>
             <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
@@ -68,7 +68,7 @@ export default function SearchRestaurant() {
     //endregion
     //region mobile Components
     let dropDownMobile = DropDownSportSearch.listDropDown.map((item, index) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
+        <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>

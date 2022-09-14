@@ -1,4 +1,4 @@
-.mainDiv{
+.mainDiv {
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
@@ -7,75 +7,53 @@
 }
 
 
-.sizeBanner{
+.sizeBanner {
     width: 100%;
     aspect-ratio: 3/1;
     position: relative;
 }
 
-.gridFeaturePrincipal{
+.gridFeaturePrincipal {
     display: grid;
 }
 
 .mainDivInfo {
     display: grid;
-    gap:8px;
-    padding: 8px 10px;
+    grid-template-columns: 60% 40%;
+    gap: 8px;
+    padding: 10px;
     position: relative;
 }
 
-.boxShadowPro{
-    box-shadow: var(--boxShadowCard);
+.boxShadowPro {
+    box-shadow: 0 0 5px #cec8c8;
     border-radius: 6px;
     overflow: hidden;
     background: white;
     transition: .4s;
 }
 
-.gridRatingStar {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-content: end;
-    gap: 4px;
-    margin-bottom: 6px;
-}
-
-.subTitleMargin {
-    margin-bottom: 4px;
-}
-
-.titleMargin {
-    margin-bottom: 2px;
+.boxShadowProSelected {
+    box-shadow: 0 0 5px #e7620d;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    transition: .4s;
 }
 
 .topDiv {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 12px;
     position: relative;
-}
-
-.borderDiv {
-    border-top: 2px solid var(--separationLineColor);
 }
 
 .bottomDivSearch {
-    padding-left: 12px;
-    border-left: 1px solid var(--separationLineColor);
     display: grid;
     grid-template-rows: repeat(2, max-content);
     gap: 6px;
+    padding-top: 8px;
     position: relative;
 }
 
-.gridIconInfo {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 4px;
-    align-items: center;
-}
-
-.gridInfoProduct{
+.gridInfoProduct {
     padding: 4px 8px 10px 8px;
 }
 
@@ -95,23 +73,21 @@
     border-radius: 50%;
     position: relative;
     overflow: hidden;
-    /*    top: calc(100% - (var(--sizeLogoFeaturedHome)/2));
-        left: calc(50% - (var(--sizeLogoFeaturedHome)/2));*/
 }
 
 .borderLogo {
     position: absolute;
     background: white;
     padding: 2px;
-    top: 12px;
-    right: 12px;
+    top: 6px;
+    right: 6px;
     border-radius: 50%;
     overflow: hidden;
 }
 
-.mainDivProducts{
+.mainDivProducts {
     display: grid;
-    grid-template-columns: 80px;
+    grid-template-columns: 100px;
     grid-auto-flow: column;
     grid-auto-columns: 80px;
     overflow-x: scroll;
@@ -119,8 +95,35 @@
     padding: 8px 4px;
 }
 
-.sizeImageProduct{
+.gridProductSelected {
+    display: grid;
+    grid-template-columns: 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    position: absolute;
+    top: -14px;
+    right: 12px;
+}
+
+.gridProductSelection {
+    display: grid;
+    grid-template-columns: 60px;
+    grid-auto-columns: 60px;
+    grid-auto-flow: column;
+    gap: 12px;
+    overflow: scroll;
+    padding: 6px;
+}
+
+.sizeImageProduct {
+    width: 100%;
+    aspect-ratio: 1.2/1;
+    position: relative;
+}
+
+.sizeProductSelection {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
 }
+

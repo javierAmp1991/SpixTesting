@@ -17,7 +17,7 @@ import {
     CategoryPrincipalFilters,
     SuperCategoryFilter
 } from "../dataDemo/data";
-import {BaseVerticalView, DropDownResale} from "../dataDemo/EventView/eventVerticalView";
+import {BaseEventCard, DropDownResale} from "../dataDemo/EventView/eventVerticalView";
 import ResaleEventviewMobile from "../components/Mobile/Search/resaleEventviewMobile";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
@@ -53,7 +53,7 @@ export default function SearchRestaurant() {
 
 
     //region desktop Components
-    let dropDown = DropDownResale.list.map((item: BaseVerticalView) =>
+    let dropDown = DropDownResale.list.map((item: BaseEventCard) =>
         <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>)
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -66,7 +66,7 @@ export default function SearchRestaurant() {
     //endregion
     //region mobile Components
     let dropDownMobile = DropDownResale.list.map((item) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
+        <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
         <LayoutButtonNavegation>

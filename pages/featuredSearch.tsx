@@ -17,7 +17,7 @@ import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {CategoryPrincipalFilters} from "../dataDemo/data";
-import {BaseVerticalView, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import {BaseEventCard, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 import {FeaturedListSearch, BaseFeaturedView, PrincipalFeaturedSearch} from "../dataDemo/EventView/featureView";
 import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import PublicityView from "../components/Desktop/CRM/publicityView";
@@ -58,8 +58,8 @@ export default function FeaturedSearch() {
 
     //region desktop Components
     let dropDownMisc =
-        DropDownSearch.list.map((item: BaseVerticalView,) =>
-            <EventVerticalView isVertical={isVertical} key={item.Id} darkModeState={isDarkMode} item={item}/>
+        DropDownSearch.list.map((item: BaseEventCard,) =>
+            <EventVerticalView key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
     /*let dropDown =
         FeaturedListSearch.list.map((item: BaseFeaturedView) =>
@@ -69,7 +69,7 @@ export default function FeaturedSearch() {
     let dropDownFeatured =
         FeaturedListSearch.list.map((item: BaseFeaturedView, index) =>
             index >= 0 && index <=1 &&
-            <FeaturedViewDesktop showItems={1} key={item.Id} darkModeState={isDarkMode} item={item}/>
+            <FeaturedViewDesktop itemsShow={0} key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
@@ -81,8 +81,8 @@ export default function FeaturedSearch() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownSearch.list.map((item: BaseVerticalView) =>
-        <EventHorizontalView darkModeState={isDarkMode} info={item} key={item.Id}/>
+    let dropDownMobile = DropDownSearch.list.map((item: BaseEventCard) =>
+        <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
     )
 
     let dropDownFeaturedMobile =

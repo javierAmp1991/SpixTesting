@@ -69,13 +69,6 @@
     border-left: 2px solid var(--separationLineColor);
 }
 
-/*.bottomDivSearch {
-    padding: 6px 0 0 0;
-    display: grid;
-    gap: 6px;
-    margin: auto;
-}*/
-
 .bottomDivSearch {
     display: grid;
     grid-template-rows: repeat(2, max-content);
@@ -97,7 +90,7 @@
     position: relative;
 }
 
-.mainDivProducts{
+.mainDivProducts {
     position: absolute;
     right: 40px;
     top: -28px;
@@ -106,13 +99,13 @@
     gap: 12px;
 }
 
-.sizeImageProduct{
+.sizeImageProduct {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
 }
 
-.boxShadowPro{
+.boxShadowPro {
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;

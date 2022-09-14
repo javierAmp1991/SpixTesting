@@ -2,14 +2,31 @@ import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/Home/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
-import {
-    BaseFeaturedView
-} from "../../../dataDemo/EventView/featureView";
+import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
 import {GlobalConst} from "../../../public/globalConst";
+import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
+import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
+import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
 
-export default function FeaturedViewDesktop({item, darkModeState, showItems}:
-{ item: BaseFeaturedView, darkModeState: boolean, showItems: number }) {
+export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
+                                                { item: BaseFeaturedView, darkModeState: boolean, itemsShow: number}) {
     let cssStyle = getCssStyles()
+    const principalInfoEventProp: PrincipalInfoEventProp = {
+        Title: item.Title,
+        Subtitle: item.Subtitle,
+        Rating: item.Rating,
+        isDarkMode: false
+    }
+    const priceIncludeInfo: PriceIncludeInfoProp = {
+        MinPrice: item.MinPrice,
+        MaxPrice: item.MaxPrice,
+        IsDarkMode: false
+    }
+    const dateInfo: DateInfoProp = {
+        MinDate: item.MinDate,
+        MaxDate: item.MaxDate,
+        IsDarkMode: false,
+    }
     return (
 
         <div className={style.mainDiv}>
@@ -26,65 +43,18 @@ export default function FeaturedViewDesktop({item, darkModeState, showItems}:
 
             <div className={style.mainDivInfo}>
                 <div className={style.topDiv}>
-                    <div className={`${utilities.clamp1} ${cssStyle.fontName} ${style.titleMargin} `}>
-                        {item.Title}
+                    <PrincipalInfoEvent item={principalInfoEventProp}/>
+                    <div className={style.bottomDivSearch}>
+                        <DateInfoEvent item={dateInfo}/>
+                        <PriceIncludeInfoEvent item={priceIncludeInfo}/>
                     </div>
-
-                    <div className={`${utilities.fontPrimaryText} ${style.subTitleMargin} ${utilities.clamp1}`}>
-                        {item.Subtitle}
-                    </div>
-
-                    <div className={style.gridRatingStar}>
-                        <div className={utilities.ratingStarsProperties}>
-                            <Image layout={"fill"}
-                                   src={item.Rating != null ?
-                                       "/images/ratingNew.png" : "/images/ratingNull.png"} alt=""/>
-                        </div>
-                        <div className={`${cssStyle.fontSecundaryText} ${utilities.font12}`}>
-                            ({item.Rating != null ? item.Rating : 0})
-                        </div>
-                    </div>
-
-                    <div className={style.borderDiv}>
-                        <div className={style.bottomDivSearch}>
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText}`}>
-                                    {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
-                                </div>
-                            </div>
-
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                </div>
-                                {
-                                    item.MinPrice == item.MaxPrice ?
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MinPrice))}
-                                        </>
-                                        :
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MinPrice))} -
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(item.MaxPrice))}
-                                        </>
-                                }
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-                <div className={showItems == 0? style.mainDivProductsSingle : style.mainDivProducts}>
+                <div className={style.mainDivProductsSingle}>
                     {
                         item.ListProducts.map((item, index) =>
-                            index >= 0 && index <= showItems &&
+                            index >= 0 && index <= itemsShow &&
                             <div key={index} className={style.boxShadowPro}>
-                                <div className={showItems == 0? style.sizeImageProductSingle: style.sizeImageProduct }>
+                                <div className={style.sizeImageProductSingle}>
                                     <div className={style.aspectImage}>
                                         <Image layout={"fill"} src={item.ImagePath} alt=""/>
                                     </div>

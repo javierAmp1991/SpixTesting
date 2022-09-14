@@ -3,8 +3,8 @@
 @tailwind utilities;
 /*Mobile Section*/
 :root {
-    --maxWidthBodyContent: 1200px;
-    --maxWidthBanner: 1600px;
+    --maxWidthBodyContent: 1100px;
+    --maxWidthBanner: 1920px;
     --colorBodyDarkMode: #121212;
     --colorBodyNormal: white;
     /*    --colorBodyNormal: #ebebeb;*/
@@ -103,6 +103,26 @@
     --group4Circle: #CC8EF5;
     --group5Circle: #0ed7c4;
     --group6Circle: #8CE8C3;
+}
+
+/*new DesktopRoot*/
+:root{
+    --colorTitleDesktop: #0f1111;
+    --colorSubtitleDesktop: #55595a;
+    --colorPrimaryTextDesktop: #55595a;
+    --colorSecundaryTextDesktop: #8e8e8e;
+    --colorPriceIncludeDesktop: #1a1d1d;
+    --linkColorDesktop:  #2d7dff;
+}
+
+/*newMobileRoot*/
+:root{
+    --colorTitleMobile: #0f1111;
+    --colorSubtitleMobile: #55595a;
+    --colorPrimaryTextMobile: #55595a;
+    --colorSecundaryTextMobile: #8e8e8e;
+    --colorPriceIncludeMobile: #1a1d1d;
+    --linkColorDesktop:  #2d7dff;
 }
 
 html,

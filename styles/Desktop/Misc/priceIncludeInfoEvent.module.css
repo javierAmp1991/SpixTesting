@@ -1,0 +1,12 @@
+.gridIconInfo {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px;
+    align-items: center;
+}
+
+.sizeIcon {
+    height: 12px;
+    width: 12px;
+    position: relative;
+}

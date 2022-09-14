@@ -1,7 +1,6 @@
 .styleImage {
-    --sizeImage: 240px;
-    width: var(--sizeImage);
-    height: calc(var(--sizeImage)* 1.5);
+    width: 80%;
+    aspect-ratio: 1/1;
     margin: auto;
 }
 .styleLogo{
@@ -10,8 +9,8 @@
     height: var(--sizeLogoOI);
     width: var(--sizeLogoOI);
     border-radius: 50%;
-    bottom: 0px;
-    right: 0px;
+    bottom: 6px;
+    right: 6px;
     overflow: hidden;
 }
 .snapScroll{

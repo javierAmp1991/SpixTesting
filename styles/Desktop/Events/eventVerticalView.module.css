@@ -12,18 +12,11 @@
     position: relative;
 }
 
-.sizeImageSquare {
+.sizeImage {
     width: 100%;
     position: relative;
     z-index: 20;
     aspect-ratio: 1/1;
-}
-
-.sizeImageVertical{
-    width: 100%;
-    position: relative;
-    z-index: 20;
-    aspect-ratio: 4/5;
 }
 
 .zIndexLastTicket {
@@ -31,12 +24,8 @@
     z-index: 40;
 }
 
-.subTitleMargin{
-    margin-bottom: 4px;
-}
-
-.titleMargin{
-    margin-bottom: 2px;
+.subTitleMargin {
+    margin-bottom: 6px;
 }
 
 .princiaplGridInfo {
@@ -50,18 +39,15 @@
     padding: 0 24px 12px 24px;
 }
 
-.gridRatingStar{
+.gridRatingStar {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 4px;
 }
 
-.contRating{
-    display: grid;
+.contRating {
     margin-top: 3px;
-    font-size: 12px;
-    line-height: 12px;
 }
 
 .bottomDivSearch {
