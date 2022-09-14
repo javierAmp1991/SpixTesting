@@ -54,7 +54,7 @@ export default function SearchRestaurant() {
     //region desktop Components
     let dropDown =
         DropDownSearch.list.map((item, index) =>
-            <EventVerticalView isVertical={isVertical} darkModeState={isDarkMode} item={item} key={item.Id}/>
+            <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
     let buttonsNavegation = <LayoutButtonNavegation>
