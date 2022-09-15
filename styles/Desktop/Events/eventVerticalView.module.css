@@ -3,7 +3,7 @@
     /* border: 2px solid #eeeeee;*/
     /*border-bottom: 1px solid #dedcdc;*/
     display: grid;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
 }

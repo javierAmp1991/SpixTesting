@@ -1,7 +1,7 @@
 import utilities from "/styles/utilities.module.css";
 import style from "/styles/Mobile/Misc/principalInfoEvent.module.css";
 import Image from "next/image";
-import React from "react";
+import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 
 export class PrincipalInfoEventPropMob {
@@ -12,6 +12,8 @@ export class PrincipalInfoEventPropMob {
 }
 
 export default function PrincipalInfoEventMobile({item}: {item: PrincipalInfoEventPropMob }){
+    let numRating = 5
+    let [listRating, setListRating] = useState([true, true, true, true, false])
     const cssStyle = getCssStyle()
     return (
         <>
@@ -24,10 +26,20 @@ export default function PrincipalInfoEventMobile({item}: {item: PrincipalInfoEve
             </div>
 
             <div className={style.gridRatingStar}>
-                <div className={utilities.ratingStarsPropertiesMobile}>
+                <div className={style.gridStars}>
+                    {
+                        listRating.map((item, index) =>
+                            <div key={index} className={style.sizeStar}>
+                                <Image layout={"fill"}
+                                       src={index < numRating? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                            </div>
+                        )
+                    }
+                </div>
+               {/* <div className={utilities.ratingStarsPropertiesMobile}>
                     <Image layout={"fill"}
                            src={cssStyle.RatingImage} alt=""/>
-                </div>
+                </div>*/}
                 <div className={`${cssStyle.RatingText} ${utilities.font12}`}>
                     ({item.Rating != null ? item.Rating : 0})
                 </div>

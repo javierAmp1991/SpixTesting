@@ -12,3 +12,16 @@
     align-content: end;
     gap: 4px;
 }
+
+.gridStars{
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 4px;
+    align-items: center;
+}
+
+.sizeStar{
+    height: 17px;
+    width: 17px;
+    position: relative;
+}

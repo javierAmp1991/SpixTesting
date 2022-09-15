@@ -1,7 +1,7 @@
 import utilities from "/styles/utilities.module.css";
 import style from "/styles/Desktop/Misc/principalInfoEvent.module.css";
 import Image from "next/image";
-import React from "react";
+import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 
 export class PrincipalInfoEventProp {
@@ -12,6 +12,8 @@ export class PrincipalInfoEventProp {
 }
 
 export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventProp }) {
+    let [listRating, setListRating] = useState([true, true, true, true, false])
+    let numRating = 4
     const cssStyle = getCssStyle()
     return (
         <>
@@ -24,10 +26,20 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
             </div>
 
             <div className={style.gridRatingStar}>
-                <div className={utilities.ratingStarsPropertiesDesktop}>
+                <div className={style.gridStars}>
+                    {
+                        listRating.map((item, index) =>
+                            <div key={index} className={style.sizeStar}>
+                                <Image layout={"fill"}
+                                    src={index < numRating? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                            </div>
+                        )
+                    }
+                </div>
+                {/*<div className={utilities.ratingStarsPropertiesDesktop}>
                     <Image layout={"fill"}
                            src={cssStyle.RatingImage} alt=""/>
-                </div>
+                </div>*/}
                 <div className={`${cssStyle.RatingText} ${utilities.font12}`}>
                     ({item.Rating != null ? item.Rating : 0})
                 </div>
