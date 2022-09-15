@@ -288,8 +288,8 @@ export default function EventPage() {
         <LayoutCarrousel sumar={3} handleFeatured={handleGetProducts} layoutProp={layoutPropProducts}>
             {
                 ListProductsExtra.listProducts.map((item, index) =>
-                    index >= getProducst && index <= getProducst + 3 ?
-                        <ProductViewDesk isDisplayOffer={true} size={null} key={index} item={item}/> : <></>
+                    index >= getProducst && index <= getProducst + 3 &&
+                        <ProductViewDesk isDisplayOffer={true} size={null} key={index} item={item}/>
                 )
             }
         </LayoutCarrousel>

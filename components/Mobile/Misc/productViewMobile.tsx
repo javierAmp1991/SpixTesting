@@ -57,8 +57,8 @@ export default function ProductViewMobile({item, size, isDisplayOffer}:
 
     function getProductSize() {
         return {
-            widthContainer: size != null && {width: size},
-            sizeImage: size != null && {height: (size - 10), width: (size - 10)}
+            widthContainer: size != null? {width: size} : {},
+            sizeImage: size != null ? {height: (size - 10), width: (size - 10)} : {}
         }
     }
 }
