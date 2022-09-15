@@ -173,7 +173,7 @@ export default function EventPage() {
         <LayoutCarrouselMobile gapLayout={20}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                    <ProductViewMobile size={180} key={index} item={item}/>
+                    <ProductViewMobile isDisplayOffer={true} size={180} key={index} item={item}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -289,7 +289,7 @@ export default function EventPage() {
             {
                 ListProductsExtra.listProducts.map((item, index) =>
                     index >= getProducst && index <= getProducst + 3 ?
-                        <ProductViewDesk size={null} key={index} item={item}/> : <></>
+                        <ProductViewDesk isDisplayOffer={true} size={null} key={index} item={item}/> : <></>
                 )
             }
         </LayoutCarrousel>
