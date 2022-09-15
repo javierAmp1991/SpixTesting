@@ -503,34 +503,34 @@ export namespace ListOffertData {
                     Include: "Dcto 2 Un.",
                     ImagePath: "/images/product6.jpg"
                 },
-                {
-                    Name: "Producto 7.1",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product7.jpg"
-                },
-                {
-                    Name: "Producto 8.1",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product8.jpg"
-                },
-                {
-                    Name: "Producto 9.1",
-                    Price: 10990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product9.jpg"
-                },
-                {
-                    Name: "Producto 10.1",
-                    Price: 6990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product10.jpg"
-                },
+                /*                {
+                                    Name: "Producto 7.1",
+                                    Price: 10990,
+                                    DiscountPercent: 30,
+                                    Include: null,
+                                    ImagePath: "/images/product7.jpg"
+                                },
+                                {
+                                    Name: "Producto 8.1",
+                                    Price: 10990,
+                                    DiscountPercent: 30,
+                                    Include: null,
+                                    ImagePath: "/images/product8.jpg"
+                                },
+                                {
+                                    Name: "Producto 9.1",
+                                    Price: 10990,
+                                    DiscountPercent: 30,
+                                    Include: null,
+                                    ImagePath: "/images/product9.jpg"
+                                },
+                                {
+                                    Name: "Producto 10.1",
+                                    Price: 6990,
+                                    DiscountPercent: 30,
+                                    Include: null,
+                                    ImagePath: "/images/product10.jpg"
+                                },*/
             ]
         },
         {

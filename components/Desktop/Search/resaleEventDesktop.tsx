@@ -6,7 +6,6 @@ import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
-import LayoutCarrouselLoop from "../Layouts/layoutCarrouselLoop";
 import {LayoutCarrouselDeskProp} from "../Layouts/layoutCarrousel";
 
 const buy: string = "Comprar";
@@ -72,7 +71,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         <div className={`${style.gridNewPa} ${cssStyle.borderResale}`}>
             <div className={cssStyle.gridType}>
                 <div>
-                    <div className={utilities.fontName}>
+                    <div className={utilities.fontNameDesktop}>
                         Pack de {item.ListProducts.length} productos
                     </div>
                     <div className={style.divImageInfo}>
@@ -198,7 +197,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 displaPopUp &&
                 <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handlePopUp}>
                     <div className={style.mainDivPopUp}>
-                        <div className={`${utilities.fontName} mb-5`}>
+                        <div className={`${utilities.fontNameDesktop} mb-5`}>
                             Pack de {item.ListProducts.length} productos
                         </div>
 

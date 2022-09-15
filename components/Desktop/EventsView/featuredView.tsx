@@ -54,7 +54,7 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                     {
                         item.ListProducts.map((item, index) =>
                             index == 0 &&
-                            <ProductViewDesk item={item} size={140}/>
+                            <ProductViewDesk isDisplayOffer={false} item={item} size={125}/>
                         )
                     }
                 </div>

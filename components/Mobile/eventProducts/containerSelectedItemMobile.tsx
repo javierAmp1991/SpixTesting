@@ -25,7 +25,7 @@ export default function ContainerSelectedItemMobile({item, addItem, removeItem}:
     return (
         <div onClick={() => handleItem(item.IsSelected)}
              className={cssStyle.boxShadow}>
-            <ProductViewMobile size={sizeProductFragment} item={item.Product}/>
+            <ProductViewMobile isDisplayOffer={true} size={sizeProductFragment} item={item.Product}/>
             {
                 item.IsSelected ?
                     <div className={style.sizeChecked}>

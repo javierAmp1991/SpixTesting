@@ -35,7 +35,8 @@
     --colorShadow: #eeeeee;
     --colorShadowBlue: #2d7dff;
     /*--boxShadowCard: 1px 1px 2px var(--colorShadow), -1px -1px 2px var(--colorShadow), 1px -1px 2px var(--colorShadow), -1px 1px 2px var(--colorShadow);*/
-    --boxShadowCard: 0 0 10px rgba(0, 0, 0, .15);
+    /*--boxShadowCard: 0 0 10px rgba(0, 0, 0, .15);*/
+    --boxShadowCard: 0 0 2px rgba(0, 0, 0, .20);
     --boxShadowCardHover: 0 0 10px rgba(0, 0, 0, .4);
     --boxShadowBlue: 1px 1px 5px var(--colorShadowBlue), -1px -1px 5px var(--colorShadowBlue), 1px -1px 5px var(--colorShadowBlue), -1px 1px 5px var(--colorShadowBlue);
     --gapHomeCarrousels: 16px;

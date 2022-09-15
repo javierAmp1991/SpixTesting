@@ -163,7 +163,7 @@
 
 .gridNewPa {
     display: grid;
-    grid-template-columns: 65% 35%;
+    grid-template-columns: 63% 37%;
     border-radius: 5px;
     overflow: hidden;
     transition: .4s;
@@ -217,7 +217,7 @@
 }
 
 .rightDiv {
-    padding: 16px 22px;
+    padding: 16px;
     display: grid;
     position: relative;
 }

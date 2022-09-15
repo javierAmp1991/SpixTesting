@@ -15,7 +15,7 @@
 .mainDivInfo {
     display: grid;
     grid-template-columns: 1fr max-content;
-    padding: 14px 40px;
+    padding: 14px 16px;
     position: relative;
 }
 
@@ -56,15 +56,15 @@
 
 .topDiv {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: 30% 70%;
     gap: 12px;
     position: relative;
 }
 
 .bottomDivSearch {
-    padding-top: 5px;
+    padding-top: 9px;
     display: grid;
-    gap: 4px;
+    gap: 8px;
     position: relative;
 }
 
@@ -74,11 +74,11 @@
 
 .mainDivProducts {
     position: absolute;
-    right: 40px;
+    right: 10px;
     bottom: 16px;
     display: grid;
-    grid-template-columns: repeat(1, 150px);
-    gap: 16px;
+    grid-template-columns: repeat(4, 125px);
+    gap: 10px;
 }
 
 .sizeImageProduct {

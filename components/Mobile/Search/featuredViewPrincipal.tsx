@@ -46,15 +46,15 @@ export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeatured
                     <div className={style.topDiv}>
                         <PrincipalInfoEventMobile item={principalInfoEvent}/>
                         <div className={style.bottomDivSearch}>
-                            <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
                             <DateInfoEventMobile item={dateInfo}/>
+                            <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
                         </div>
                     </div>
                     <div className={style.gridProductSelected}>
                         {
                             item.ListProducts.map((item, index) =>
                                     index == productSelected &&
-                                    <ProductViewMobile item={item} size={120}/>
+                                    <ProductViewMobile isDisplayOffer={false} item={item} size={120}/>
                             )
                         }
                     </div>

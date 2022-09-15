@@ -58,15 +58,15 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                     <div className={style.mainDivProducts}>
                         {
                             item.ListProducts.map((item, index) =>
-                                index == selectedItem &&
-                                <ProductViewDesk item={item} size={140}/>
+                                index >= 0 && index <= 3 &&
+                                <ProductViewDesk isDisplayOffer={false} item={item} size={120}/>
                             )
                         }
                     </div>
                 </div>
             </div>
 
-            <div className={style.gridImageSelection}>
+            {/*<div className={style.gridImageSelection}>
                 {
                     item.ListProducts.map((itemNew, index) =>
                         <div key={itemNew.Name} onClick={() => handleSelectedItem(index)}
@@ -75,7 +75,7 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                         </div>
                     )
                 }
-            </div>
+            </div>*/}
         </div>
     )
 }

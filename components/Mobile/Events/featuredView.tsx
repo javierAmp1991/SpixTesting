@@ -28,54 +28,35 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
     }
     let cssStyle = getCssStyles()
     return (
-        <div className={style.mainDiv}>
-            <div className="relative">
-                <div className={style.bannerFeatureProperties}>
-                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
-                </div>
-                {/*<div className={style.borderLogo}>
+        <div className={style.shadowDivSpace}>
+            <div className={style.mainDiv}>
+                <div className="relative">
+                    <div className={style.bannerFeatureProperties}>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
+                    </div>
+                    {/*<div className={style.borderLogo}>
                     <div className={style.logoFeaturePropertiesv2}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathLogo} alt=""/>
                     </div>
                 </div>*/}
-            </div>
-
-            <div className={style.mainDivInfo}>
-                <div className={style.topDiv}>
-                    <PrincipalInfoEventMobile item={principalInfoEvent}/>
-                    <div className={style.bottomDivSearch}>
-                        <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
-                        <DateInfoEventMobile item={dateInfo}/>
-                    </div>
                 </div>
-                <div className={style.mainDivProductsSingle}>
-                    {
-                        item.ListProducts.map((item, index) =>
-                            index == 0 &&
-                            <ProductViewMobile item={item} size={120}/>
-                            /*<div key={index} className={style.boxShadowPro}>
-                                <div className={style.sizeImageProductSingle}>
-                                    <div className={style.aspectImage}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
-                                    </div>
-                                    <div className={utilities.positionLastTicket}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                                               alt=""/>
-                                    </div>
-                                </div>
 
-                                <div className={style.gridInfoProduct}>
-                                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
-                                        {item.Name}
-                                    </div>
-                                    <div className={utilities.fontPriceInclude}>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(item.Price))}
-                                    </div>
-                                </div>
-                            </div>*/
-                        )
-                    }
+                <div className={style.mainDivInfo}>
+                    <div className={style.topDiv}>
+                        <PrincipalInfoEventMobile item={principalInfoEvent}/>
+                        <div className={style.bottomDivSearch}>
+                            <DateInfoEventMobile item={dateInfo}/>
+                            <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
+                        </div>
+                    </div>
+                    <div className={style.mainDivProductsSingle}>
+                        {
+                            item.ListProducts.map((item, index) =>
+                                index == 0 &&
+                                <ProductViewMobile isDisplayOffer={false} item={item} size={120}/>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
         </div>

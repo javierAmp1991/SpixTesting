@@ -278,7 +278,7 @@ export default function EventPage() {
 
     let moreOffertDesk = <TitleSection titleLink={discountTitle}
                                        paddingTitle={spaceComponentsDeskY} darkModeState={false}>
-        <EventWithBannerMobile displayLogoRating={false} item={ListOffertData.listOffert[3]} darkModeState={false}/>
+        <EventWithBannerMobile displayLogoRating={false} item={ListOffertData.listOffert[0]} darkModeState={false}/>
     </TitleSection>
 
     let [getProducst, setGetProducst] = useState(0)

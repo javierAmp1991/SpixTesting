@@ -5,6 +5,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
+import ProductViewDesk from "../Misc/productViewDesk";
 
 const alignmentTextProduct: string = "text-center"
 
@@ -64,9 +65,9 @@ export default function EventWithBannerView({item, darkModeState}) {
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
 
                     <div className={styles.mainDivTimer}>
-                        <span className={styles.timerIconProp}>
+                        {/*<span className={styles.timerIconProp}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.timerIcon}/>
-                        </span>
+                        </span>*/}
                         <span>
                             Expira en
                         </span>
@@ -90,8 +91,10 @@ export default function EventWithBannerView({item, darkModeState}) {
                     <div className={styles.overflowCarrouselProductsEWB}>
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
-                                item.ListProducts.map(product =>
-                                    <div className={styles.mainDivPro} key={product.Name}>
+                                item.ListProducts.map((item, index) =>
+                                    <ProductViewDesk item={item} size={100} isDisplayOffer={false} key={index}/>
+                                )
+                                   /* <div className={styles.mainDivPro} key={product.Name}>
                                         <div className={`${styles.sizeProductEWB}`}>
                                             <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath}
                                                    alt=""/>
@@ -111,8 +114,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                                             </span>
                                             </div>
                                         </div>
-                                    </div>
-                                )
+                                    </div>*/
                             }
                         </div>
                     </div>

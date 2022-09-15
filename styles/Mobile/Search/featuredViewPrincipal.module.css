@@ -48,7 +48,7 @@
 .bottomDivSearch {
     display: grid;
     grid-template-rows: repeat(2, max-content);
-    gap: 10px;
+    gap: 8px;
     padding-top: 10px;
     position: relative;
 }
@@ -102,7 +102,7 @@
     grid-auto-flow: column;
     position: absolute;
     bottom: 16px;
-    right: 24px;
+    right: 16px;
 }
 
 .gridProductSelection {

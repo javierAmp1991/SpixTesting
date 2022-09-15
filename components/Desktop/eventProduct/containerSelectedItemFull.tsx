@@ -9,7 +9,7 @@ export default function ContainerSelectedItemFull({item, addItem}:
     return (
         <div onClick={() => addItem(item.Product, !item.IsSelected)}
              className={style.containerSelectedItem}>
-            <ProductViewDesk size={null} item={item.Product}/>
+            <ProductViewDesk isDisplayOffer={true} size={null} item={item.Product}/>
         </div>
     )
 }

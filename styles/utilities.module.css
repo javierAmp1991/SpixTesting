@@ -2,7 +2,7 @@
 .fontTitleMobile {
     --sizeTitleMobile: 17px;
     font-size: var(--sizeTitleMobile);
-    line-height: var(--sizeTitleMobile);
+/*    line-height: var(--sizeTitleMobile);*/
     font-weight: 500;
     color: var(--colorTitleMobile);
     font-family: Helvetica, sans-serif, Arial;
@@ -11,7 +11,7 @@
 .fontSubtitleMobile {
     --sizeSubtitleMobile: 15px;
     font-size: var(--sizeSubtitleMobile);
-    line-height: var(--sizeSubtitleMobile);
+/*    line-height: var(--sizeSubtitleMobile);*/
     font-weight: 300;
 /*    color: var(--colorSubtitleMobile);
     font-family: Helvetica, sans-serif, Arial;*/
@@ -28,7 +28,7 @@
 .fontNameDesktop{
     --fontSizeNameMob: 16px;
     font-size: var(--fontSizeNameMob);
-    line-height: var(--fontSizeNameMob);
+/*    line-height: var(--fontSizeNameMob);*/
     font-weight: 400;
 }
 
@@ -49,7 +49,7 @@
 .fontMiniMobile{
     --sizeFontMiniMobile: 12px;
     font-size: var(--sizeFontMiniMobile);
-    line-height: var(--sizeFontMiniMobile);
+  /*  line-height: var(--sizeFontMiniMobile);*/
 }
 
 .gradientLogoMobile{
@@ -64,7 +64,7 @@
 .fontTitleDesktop {
     --sizeTitleDesktop: 20px;
     font-size: var(--sizeTitleDesktop);
-    line-height: var(--sizeTitleDesktop);
+   /* line-height: var(--sizeTitleDesktop);*/
     font-weight: 300;
     color: var(--colorTitleDesktop);
     font-family: Helvetica, sans-serif, Arial;
@@ -73,7 +73,7 @@
 .fontSubtitleDesktop {
     --sizeSubTitleDesktop: 17px;
     font-size: var(--sizeSubTitleDesktop);
-    line-height: var(--sizeSubTitleDesktop);
+/*    line-height: var(--sizeSubTitleDesktop);*/
     font-weight: 300;
    /* color: var(--colorSecundaryTextDesktop);
     font-family: Helvetica, sans-serif, Arial;*/
@@ -82,7 +82,7 @@
 .fontPriceIncludeDesktop {
     --fontSizeLineHeightDesktop: 17px;
     font-size: var(--fontSizeLineHeightDesktop);
-    line-height: var(--fontSizeLineHeightDesktop);
+    /*line-height: var(--fontSizeLineHeightDesktop);*/
     font-weight: 500;
     color: var(--colorPriceIncludeDesktop);
 }
@@ -104,7 +104,7 @@
 .fontMiniDesktop{
     --sizeFontMiniDesktop: 12px;
     font-size: var(--sizeFontMiniDesktop);
-    line-height: var(--sizeFontMiniDesktop);
+    /*line-height: var(--sizeFontMiniDesktop);*/
 }
 
 .gradientLogoDesktop{

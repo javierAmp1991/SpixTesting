@@ -92,8 +92,8 @@
 
 .mainDivProducts {
     position: absolute;
-    right: 40px;
-    top: -28px;
+    right: 16px;
+    bottom: 16px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;

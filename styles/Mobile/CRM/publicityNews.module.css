@@ -4,7 +4,7 @@
     position: relative;
 }
 .mainDiv{
-    box-shadow: var(--shadowUnderProducts);
+    box-shadow: var(--boxShadowCard);
     transition: .4s;
     border-radius: 6px;
     overflow: hidden;

@@ -9,6 +9,7 @@ import PopUpContainer from "../Misc/popUpContainer";
 import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
+import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 
 const textButton: string = "Comprar Entradas"
 
@@ -22,6 +23,13 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     let [displayVenue, setDisplayVenue] = useState(false)
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
+
+    const principalInfo: PrincipalInfoEventProp = {
+        Title: eventInformation.EventName,
+        Subtitle: eventInformation.Subtitle,
+        Rating: eventInformation.Rating,
+        isDarkMode: false
+    }
 
     let [venueDateList, setVenueDateList] = useState(eventInformation.VenueDate)
     const handleVenueList = (itemNew: DateVenue) => {
@@ -62,6 +70,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                             <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
                         </div>
                         <div>
+                            {/*<PrincipalInfoEvent item={principalInfo}/>*/}
                             <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
                             </div>

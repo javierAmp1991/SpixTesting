@@ -1,9 +1,8 @@
 .mainDiv{
     position: relative;
-    box-shadow: var(--boxShadowCard);
+    box-shadow: 0 0 2px rgba(0,0,0,.20);
     border-radius: 6px;
     overflow: hidden;
-    scroll-snap-align: start;
 }
 
 .bannerFeatureProperties {
@@ -36,7 +35,6 @@
     display: grid;
     grid-template-columns: 60% 40%;
     gap: 12px;
-    margin: auto;
     padding: 10px;
     position: relative;
 }
@@ -51,8 +49,8 @@
 
 .mainDivProductsSingle{
     position: absolute;
-    right: 24px;
-    bottom: 16px;
+    right: 16px;
+    bottom: 10px;
     display: grid;
     grid-template-columns: repeat(1, 120px);
     gap: 12px;
@@ -69,11 +67,15 @@
 }
 
 .boxShadowPro{
-    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
     background: white;
     transition: .4s;
+}
+
+.shadowDivSpace{
+    padding: 4px;
+    scroll-snap-align: start;
 }
 
 

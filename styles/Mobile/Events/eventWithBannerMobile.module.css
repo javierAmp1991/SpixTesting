@@ -97,14 +97,14 @@
 @media (min-width: 1281px){
     .gridCarrouselProductsEWB {
         display: grid;
-        grid-template-columns: repeat(6, max-content);
+        grid-template-columns: repeat(7, max-content);
         width: max-content;
         margin: auto;
         gap: 12px;
     }
 
     .sizeProductEWB {
-        --sizeProduct: 84px;
+        --sizeProduct: 80px;
         width: var(--sizeProduct);
         height: var(--sizeProduct);
         object-fit: cover;

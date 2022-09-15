@@ -11,7 +11,7 @@ export default function ContainerSelectedItemMobileFull({item, addItem}:
                                                             { item: productSelected, addItem: any }) {
     return (
         <div className={style.containerSelectedItem}>
-            <ProductViewMobile size={sizeProductFragment} item={item.Product}/>
+            <ProductViewMobile isDisplayOffer={true} size={sizeProductFragment} item={item.Product}/>
 
         </div>
     )

@@ -12,6 +12,8 @@ import Image from "next/image";
 
 const textButton: string = "Comprar Entradas"
 import {EventPageEvent} from "../../../dataDemo/data";
+import {PrincipalInfoEventProp} from "../../Desktop/Misc/principalInfoEvent";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 /*let inputRadio: inputRadioProp[] = [
     {
         NameLabel: new Date(2022, 7, 5),
@@ -60,6 +62,13 @@ export default function EventInformationMobile({eventInformation, form}:
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
 
+    const principalInfo: PrincipalInfoEventPropMob = {
+        Title: eventInformation.EventName,
+        Subtitle: eventInformation.Subtitle,
+        Rating: eventInformation.Rating,
+        isDarkMode: false
+    }
+
     let [venueDateSelected, setvenueDateSelected] = useState(venueDateList[0])
     const handleSetVenueDateSelected = () => {
         /*setvenueDateSelected(venueDateSelected = item)*/
@@ -88,7 +97,8 @@ export default function EventInformationMobile({eventInformation, form}:
                             <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
                         </div>
                         <div>
-                            <div className={`${utilities.fontSubTitle} mb-1`}>
+                            <PrincipalInfoEventMobile item={principalInfo}/>
+                           {/* <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
                             </div>
                             <div className={utilities.fontPrimaryText}>
@@ -120,7 +130,7 @@ export default function EventInformationMobile({eventInformation, form}:
                                             </div>
                                         </>
                                 }
-                            </div>
+                            </div>*/}
                         </div>
                     </div>
 

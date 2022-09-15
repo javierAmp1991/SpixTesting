@@ -23,7 +23,7 @@ export default function ContainerSelectedItem({item, addItemGuest, deleteItemGue
     return (
         <div onClick={() => handleItem(item.IsSelected)}
              className={cssStyle.boxShadow}>
-            <ProductViewDesk size={null} item={item.Product}/>
+            <ProductViewDesk isDisplayOffer={true} size={null} item={item.Product}/>
             {
                 item.IsSelected ?
                     <div className={style.sizeChecked}>
