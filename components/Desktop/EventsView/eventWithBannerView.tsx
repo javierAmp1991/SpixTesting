@@ -49,11 +49,11 @@ export default function EventWithBannerView({item, darkModeState}) {
                     </div>
                 </Link>
 
-                <div className={`${utilities.gradientLogoDesktop} ${styles.positionLogo}`}>
+                {/*<div className={`${utilities.gradientLogoDesktop} ${styles.positionLogo}`}>
                     <div className={styles.propertiesLogoEWB}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
                     </div>
-                </div>
+                </div>*/}
 
 
                 <div className={`${cssStyles.bgInfo} ${styles.mainContainerInfo}`}>
@@ -91,24 +91,25 @@ export default function EventWithBannerView({item, darkModeState}) {
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
                                 item.ListProducts.map(product =>
-                                    <div key={product.Name}>
+                                    <div className={styles.mainDivPro} key={product.Name}>
                                         <div className={`${styles.sizeProductEWB}`}>
                                             <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath}
                                                    alt=""/>
                                         </div>
-                                        <div
-                                            className={`${utilities.fontPriceInclude} ${alignmentTextProduct} mb-1 mt-1`}>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(product.Price))}
-                                        </div>
-                                        <div
-                                            className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
-                                                        ${utilities.font12}`}>
-                                            <span>Antes: </span>
-                                            <span className="line-through">
+                                        <div className={styles.mainDivInfoPro}>
+                                            <div className={`${utilities.fontPriceInclude} mb-1 mt-1`}>
                                                 ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
+                                            ).format(Math.round(product.Price))}
+                                            </div>
+                                            <div
+                                                className={`${utilities.fontSecundaryText}
+                                                        ${utilities.font12}`}>
+                                                <span>Antes: </span>
+                                                <span className="line-through">
+                                                ${Intl.NumberFormat("ES-CL"
+                                                ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
                                             </span>
+                                            </div>
                                         </div>
                                     </div>
                                 )

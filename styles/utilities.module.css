@@ -13,8 +13,8 @@
     font-size: var(--sizeSubtitleMobile);
     line-height: var(--sizeSubtitleMobile);
     font-weight: 300;
-    color: var(--colorSubtitleMobile);
-    font-family: Helvetica, sans-serif, Arial;
+/*    color: var(--colorSubtitleMobile);
+    font-family: Helvetica, sans-serif, Arial;*/
 }
 
 .fontPriceIncludeMobile {
@@ -75,8 +75,8 @@
     font-size: var(--sizeSubTitleDesktop);
     line-height: var(--sizeSubTitleDesktop);
     font-weight: 300;
-   /* color: var(--colorSecundaryTextDesktop);*/
-    /*font-family: Helvetica, sans-serif, Arial;*/
+   /* color: var(--colorSecundaryTextDesktop);
+    font-family: Helvetica, sans-serif, Arial;*/
 }
 
 .fontPriceIncludeDesktop {
@@ -115,6 +115,18 @@
 /*#endregion Desktop Class*/
 
 /*#region old class*/
+
+.mainDivCarrousel{
+    width: 100%;
+    display: grid;
+    margin: auto;
+    justify-content: center;
+    scroll-snap-align: start;
+}
+
+.snapScrollAlignStart{
+    scroll-snap-align: start;
+}
 
 .ratingStarsProperties {
     height: 17px;

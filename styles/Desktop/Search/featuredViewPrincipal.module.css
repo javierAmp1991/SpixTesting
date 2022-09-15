@@ -75,9 +75,9 @@
 .mainDivProducts {
     position: absolute;
     right: 40px;
-    top: -40px;
+    bottom: 16px;
     display: grid;
-    grid-template-columns: repeat(3, 120px);
+    grid-template-columns: repeat(1, 150px);
     gap: 16px;
 }
 
@@ -85,4 +85,35 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+}
+
+.sizeImageSelection{
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.gridImageSelection{
+    border-top: 2px solid var(--separationLineColor);
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    justify-content: center;
+    gap: 16px;
+}
+
+.boxShadowPro {
+    box-shadow: 0 0 5px #cec8c8;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    transition: .4s;
+}
+
+.boxShadowProSelected {
+    box-shadow: 0 0 5px #e7620d;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    transition: .4s;
 }

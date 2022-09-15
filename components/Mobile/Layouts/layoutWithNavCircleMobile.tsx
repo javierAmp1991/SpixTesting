@@ -41,11 +41,9 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
 
     }
     return (
-        <div>
-            <div onScroll={handleScroll} ref={divRef} className={style.overFlowSnap}>
-                <div className={`${style.gridImageSection}`}>
-                    {children}
-                </div>
+        <>
+            <div onScroll={handleScroll} ref={divRef} className={style.gridImageSection}>
+                {children}
             </div>
             <div className={style.gridNavItems}>
                 {
@@ -54,7 +52,7 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                              ${index == circleSelected ? cssStyle.navCircleColor : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
-        </div>
+        </>
     )
 
     function getCssStyle() {

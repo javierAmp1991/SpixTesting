@@ -8,7 +8,6 @@ import TitleSection from "../components/Desktop/Misc/titleSection";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import HomeRoundedView from "../components/Desktop/Home/homeRoundedView";
-import EventOnlyImageView from "../components/Desktop/EventsView/eventOnlyImageView";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
 import LayoutCategoryFooter from "../components/Desktop/Layouts/layoutCategoryFooter";
 import HomeCategorysFooter from "../components/Desktop/Home/homeCategorysFooter";
@@ -17,8 +16,6 @@ import DefaultPage from "../components/Desktop/defaulPage";
 import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
 import FullBannerMobile from "../components/Mobile/Misc/fullBannerMobile";
 import EventWithBannerMobile from "../components/Mobile/Events/eventWithBannerMobile";
-import HomeFeaturedMobile from "../components/Mobile/Home/homeFeatureMobile";
-import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import HomeRoundedViewMobile from "../components/Mobile/Home/homeRoundedViewMobile";
 import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
@@ -31,7 +28,7 @@ import {ComponentWithSpace} from "../components/Desktop/defaulPage";
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
 import React, {useState, useEffect} from "react";
 import {LayoutCarrouselDeskProp} from "../components/Desktop/Layouts/layoutCarrousel";
-import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import {DropDownSearch, MostPopularDataHome} from "../dataDemo/EventView/eventVerticalView";
 import {FeaturedListSearch, FeaturedListHome} from "../dataDemo/EventView/featureView";
 //endregion
 
@@ -39,19 +36,14 @@ import {FeaturedListSearch, FeaturedListHome} from "../dataDemo/EventView/featur
 import {DropDownNewSearch, HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
 import {DailyOfferData} from "../dataDemo/data";
-import {FeaturedHome} from "../dataDemo/data";
-import {TodayInValpo} from "../dataDemo/data";
 import {PublicityData} from "../dataDemo/data";
 import {Cines} from "../dataDemo/data";
-import {InOffer} from "../dataDemo/data";
 import {Restaurants} from "../dataDemo/data";
 import {AtributesFooter} from "../dataDemo/data";
-import {MostPopularData} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
 import {BaseEventCard, InOfferHome, TodayInValpoFull, DropDownHome} from "../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
-import EventOnlyImageLogo from "../components/Mobile/Events/eventOnlyImageLogo";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 import LayoutAutoCarrouselMobile from "../components/Mobile/Layouts/layoutAutoCarrouselMobile";
 import LayoutCarrouselMobileBanner from "../components/Mobile/Layouts/layoutCarrouselMobileBanner";
@@ -61,6 +53,8 @@ import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
+import {TodayInValpoMobile, InOfferHomeMobile, MostPopularDataHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
+import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 //endregion
 
 //region constantes
@@ -180,14 +174,21 @@ export default function Index() {
                                    darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
         </Link>
     </TitleSection>
-    let mostPopularMobile = <TitleSection darkModeState={isDarkMode} paddingTitle={titleLinkPadding}
+    let mostPopularMobile = <TitleSection darkModeState={isDarkMode} paddingTitle={spaceComponentsMobileY}
                                           titleLink={mostPopularTleLink}>
         {
             <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
                 {
-                    MostPopularData.listMostPopular.map((item, index) =>
-                        <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
+                    MostPopularDataHomeMobile.list.map((item) =>
+                        <div key={item.Id} className={utilities.mainDivCarrousel}>
+
+                            <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={isDarkMode}/>
+                        </div>
+
                     )
+                    /*MostPopularData.listMostPopular.map((item, index) =>
+                        <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
+                    )*/
                 }
             </LayoutWithNavCircleMobile>
 
@@ -196,23 +197,23 @@ export default function Index() {
     </TitleSection>
     let featuredMobile = <TitleSection titleLink={featuredHomeTitleLink} darkModeState={isDarkMode}
                                        paddingTitle={spaceComponentsMobileY}>
-        <LayoutCarrouselMobile gapLayout={gapLayout}>
+        {/* <LayoutCarrouselMobile gapLayout={gapLayout}>*/}
+        <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
             {
-                FeaturedListHome.list.map((item, index) =>
-                    <div style={{width: 340}} key={item.Id}>
-                        <FeaturedViewMobile darkModeState={isDarkMode} item={item} />
-                    </div>
+                FeaturedListHome.list.map((item) =>
+                    <FeaturedViewMobile key={item.Id} darkModeState={isDarkMode} item={item}/>
                 )
             }
-        </LayoutCarrouselMobile>
+        </LayoutWithNavCircleMobile>
+        {/*</LayoutCarrouselMobile>*/}
     </TitleSection>
     let carrousel1Mobile = <TitleSection titleLink={todayInValpoTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                TodayInValpo.listEventLookUp.map(item =>
-                    <EventVerticalViewMobile item={item} isDarkMode={isDarkMode}
-                                             key={item.EventId}/>
+                TodayInValpoMobile.list.map(item =>
+                    <EventVerticalViewMob isActiveSnap={true} item={item} darkModeState={isDarkMode}
+                                          key={item.Id}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -233,9 +234,9 @@ export default function Index() {
                                          paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                InOffer.listInOffer.map(item =>
-                    <EventVerticalViewMobile item={item} isDarkMode={isDarkMode}
-                                             key={item.EventId}/>
+                InOfferHomeMobile.list.map(item =>
+                    <EventVerticalViewMob isActiveSnap={true} item={item} darkModeState={isDarkMode}
+                                          key={item.Id}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -248,7 +249,7 @@ export default function Index() {
             {
                 DropDownNewSearch.listNews.map(item =>
                     /*<NewViewMobile item={item} isDarkMode={isDarkMode} key={item.Id}/>*/
-                    <div key={item.Id} style={{width: 330}}>
+                    <div key={item.Id} className={utilities.snapScrollAlignStart} style={{width: 330}}>
                         <NewsSearchMobile isSubtitle={false} item={item}/>
                     </div>
                 )
@@ -269,7 +270,7 @@ export default function Index() {
 
     let dropDownMobile = <TitleSection titleLink={dropDownTitleLink} darkModeState={isDarkMode}
                                        paddingTitle={spaceComponentsMobileY}>
-        <LayoutDropDownMobile gapLayout={gapLayout}>{
+        <LayoutDropDownMobile gapLayout={10}>{
             DropDownSearch.list.map(item =>
                 <EventHorizontalView item={item} darkModeState={isDarkMode} key={item.Id}/>
             )
@@ -404,10 +405,10 @@ export default function Index() {
     let mostPopular = <TitleSection darkModeState={isDarkMode} paddingTitle={titleLinkPadding}
                                     titleLink={mostPopularTleLink}>
         {
-            <LayoutRow5 gapLayout={16}>
+            <LayoutRow5 gapLayout={20}>
                 {
-                    MostPopularData.listMostPopular.map((item, index) =>
-                        <EventOnlyImageView darkMode={isDarkMode} item={item} key={index}/>
+                    MostPopularDataHome.list.map((item) =>
+                        <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
                     )
 
                 }

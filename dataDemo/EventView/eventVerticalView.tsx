@@ -1,3 +1,5 @@
+import {EventLookUp} from "../data";
+
 export enum EventCardType {
     EventCardWithPrice,
     EventCardWithDate,
@@ -956,6 +958,67 @@ export namespace DropDownResale {
             Id: "12",
             TotalResale: 30
         }
+    ]
+}
+
+export namespace MostPopularDataHome {
+    export const list: EventCardFull[] = [
+        {
+            Title: "Cumbre del Spund",
+            Subtitle: "la gran fiesta",
+            PathImage: "/images/elHuevo.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardFull,
+            Id: "12",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Bar Cinzano",
+            Subtitle: "Bar Cinzano",
+            PathImage: "/images/cinzano.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardFull,
+            Id: "12aq",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "SabaWoo",
+            Subtitle: "X Ley C Sale",
+            PathImage: "/images/woo.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardFull,
+            Id: "12ab",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Liga de Masccotas",
+            Subtitle: "Supermascotas",
+            PathImage: "/images/mascotas.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardFull,
+            Id: "12abc",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
     ]
 }
 

@@ -55,11 +55,11 @@
 
 .mainDivProductsSingle {
     position: absolute;
-    right: 16px;
-    top: -12px;
+    right: 10px;
+    bottom: 10px;
     display: grid;
-    grid-template-columns: 120px;
-    grid-auto-columns: 120px;
+    grid-template-columns: 140px;
+    grid-auto-columns: 140px;
     grid-auto-flow: column;
     gap: 12px;
 }

@@ -13,6 +13,8 @@ import {
     EventCardWithPrice
 } from "../../../dataDemo/EventView/eventVerticalView";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
+import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
+import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 
 const totalResaleText = "Total reventas: "
 
@@ -24,12 +26,38 @@ export default function EventHorizontalView({item, darkModeState}:
     let itemWithDate: EventCardWithDate;
     let itemWithResale: EventCardResale;
 
+    let priceIncludeInfoFull: PriceIncludeInfoPropMobile
+    let dateInfoFull: DateInfoPropMobile
+    let priceIncludeInfo: PriceIncludeInfoPropMobile;
+    let dateInfo: DateInfoPropMobile;
+
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
+        priceIncludeInfoFull = {
+            MinPrice: itemFull.MinPrice,
+            MaxPrice: itemFull.MaxPrice,
+            IsDarkMode: darkModeState
+        }
+        dateInfoFull = {
+            MinDate: itemFull.MinDate,
+            MaxDate: itemFull.MaxDate,
+            IsDarkMode: darkModeState
+        }
     } else if (item.Type == EventCardType.EventCardWithPrice) {
         itemWithPrice = item as EventCardWithPrice
+        priceIncludeInfo = {
+            MaxPrice: itemWithPrice.MaxPrice,
+            MinPrice: itemWithPrice.MinPrice,
+            IsDarkMode: darkModeState
+        }
     } else if(item.Type == EventCardType.EventCardWithDate){
         itemWithDate = item as EventCardWithDate
+        dateInfo = {
+            MinDate: itemWithDate.MinDate,
+            MaxDate: itemWithDate.MaxDate,
+            IsDarkMode: darkModeState
+        }
+
     }else{
         itemWithResale = item as EventCardResale
     }
@@ -73,7 +101,9 @@ export default function EventHorizontalView({item, darkModeState}:
                     {
                         item.Type == EventCardType.EventCardFull &&
                         <>
-                            <div className={`${style.gridIconInfo}`}>
+                            <DateInfoEventMobile item={dateInfoFull}/>
+                            <PriceIncludeInfoEventMobile item={priceIncludeInfoFull}/>
+                           {/* <div className={`${style.gridIconInfo}`}>
                                 <div className={style.sizeIcon}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                                 </div>
@@ -101,7 +131,7 @@ export default function EventHorizontalView({item, darkModeState}:
                                         ).format(Math.round(itemFull.MaxPrice))}
                                         </>
                                 }
-                            </div>
+                            </div>*/}
                         </>
                     }
 
@@ -112,31 +142,6 @@ export default function EventHorizontalView({item, darkModeState}:
                         </div>
                     }
                 </div>
-
-
-                {/*
-                <div className={`${cssStyles.fontSecundaryText}`}>
-                    {
-                        info.MinDate == info.MaxDate ?
-                            <>
-                                Faltan @((eventLookUp.MinDate - DateTime.Now).Value.ToString("hh")):
-                                    @((eventLookUp.MinDate - DateTime.Now).Value.ToString("mm")):
-                                    @((eventLookUp.MinDate - DateTime.Now).Value.ToString("ss"))
-                            </>
-                            :
-                            <>
-                                <div>Desde el {getNumber(info.MinDate.getDay())} de {getNumber(info.MinDate.getMonth())}</div>
-                                <div>Desde el {getNumber(info.MaxDate.getDay())} de {getNumber(info.MaxDate.getMonth())}</div>
-                            </>
-                    }
-                </div>
-
-                {
-                    info.HasPromotableOffers &&
-                        <div>
-                            <span className={utilities.styleSpixDiscountTag}>En oferta</span>
-                        </div>
-                }*/}
             </div>
         </div>
     )

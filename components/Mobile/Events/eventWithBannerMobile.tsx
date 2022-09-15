@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 import {GlobalConst} from "../../../public/globalConst";
+import ProductViewMobile from "../Misc/productViewMobile";
 
 const alignmentTextProduct: string = "text-center"
 
@@ -50,14 +51,14 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                 <div className={styles.sizeBannerEWB}>
                     <Image layout={"fill"} objectFit={"cover"} src={item.BannerPath} alt=""/>
                 </div>
-                {
+                {/*{
                     displayLogoRating &&
                     <div className={`${styles.positionLogo} ${utilities.gradientLogoDesktop}`}>
                         <div className={styles.propertiesLogoEWB}>
                             <Image layout={"fill"} src={item.LogoPath} alt=""/>
                         </div>
                     </div>
-                }
+                }*/}
 
                 <div className={`${cssStyles.bgInfo} ${styles.mainDivInfo}`}>
 
@@ -80,6 +81,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
                                 item.ListProducts.map(product =>
+                                    /*<ProductViewMobile item={product} size={125}/>*/
                                     <div key={product.Name} className={styles.mainDivPro}>
                                         <div className="mb-2">
                                             <div className={`${styles.sizeProductEWB}`}>

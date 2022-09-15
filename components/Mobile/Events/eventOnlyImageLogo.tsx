@@ -18,9 +18,9 @@ export default function EventOnlyImageLogo({item, darkMode}) {
                                    src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>
                 }
-                <div className={style.styleLogo}>
+                {/*<div className={style.styleLogo}>
                     <Image layout={"fill"}  src="/images/logo el Huevo.jpg" alt=""/>
-                </div>
+                </div>*/}
             </div>
         </div>
     )

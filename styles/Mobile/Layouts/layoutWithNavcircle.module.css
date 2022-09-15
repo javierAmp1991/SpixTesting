@@ -39,23 +39,20 @@
 
 .gridImageSection {
     display: grid;
-    grid-template-columns: 100%;
-    grid-auto-columns: 100%;
+    grid-template-columns: calc(100vw - 24px);
+    grid-auto-columns: calc(100vw - 24px);
     grid-auto-flow: column;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    overflow: scroll;
+    padding: 8px 0;
 }
 
 .snapScroll {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    transition: 10s;
 }
 
 .overFlowSnap {
-    display: grid;
-    grid-template-columns: 100%;
-    grid-auto-columns: 100%;
-    grid-auto-flow: column;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    transition: 10s;
+
 }

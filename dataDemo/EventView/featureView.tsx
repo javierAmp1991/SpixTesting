@@ -61,6 +61,22 @@ export namespace PrincipalFeaturedSearch{
                     ImagePath: "/images/product8.jpg",
                     Tag: "Energeticas"
                 },
+                {
+                    Name: "Producto 4.4",
+                    Price: 9990,
+                    DiscountPercent: 20,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/product6.jpg",
+                    Tag: "Energetica"
+                },
+                {
+                    Name: "Producto 5.5",
+                    Price: 10990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product9.jpg",
+                    Tag: "Bebida"
+                }
             ]
         }
 }

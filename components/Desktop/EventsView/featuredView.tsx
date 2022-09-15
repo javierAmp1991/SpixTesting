@@ -7,6 +7,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
 import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
+import ProductViewDesk from "../Misc/productViewDesk";
 
 export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                                                 { item: BaseFeaturedView, darkModeState: boolean, itemsShow: number}) {
@@ -34,11 +35,11 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                 <div className={style.bannerFeatureProperties}>
                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
                 </div>
-                <div className={style.borderLogo}>
+                {/*<div className={style.borderLogo}>
                     <div className={style.logoFeaturePropertiesv2}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathLogo} alt=""/>
                     </div>
-                </div>
+                </div>*/}
             </div>
 
             <div className={style.mainDivInfo}>
@@ -52,28 +53,8 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                 <div className={style.mainDivProductsSingle}>
                     {
                         item.ListProducts.map((item, index) =>
-                            index >= 0 && index <= itemsShow &&
-                            <div key={index} className={style.boxShadowPro}>
-                                <div className={style.sizeImageProductSingle}>
-                                    <div className={style.aspectImage}>
-                                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
-                                    </div>
-                                    <div className={utilities.positionLastTicket}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                                               alt=""/>
-                                    </div>
-                                </div>
-
-                                <div className={style.gridInfoProduct}>
-                                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
-                                        {item.Name}
-                                    </div>
-                                    <div className={utilities.fontPriceInclude}>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(item.Price))}
-                                    </div>
-                                </div>
-                            </div>
+                            index == 0 &&
+                            <ProductViewDesk item={item} size={140}/>
                         )
                     }
                 </div>

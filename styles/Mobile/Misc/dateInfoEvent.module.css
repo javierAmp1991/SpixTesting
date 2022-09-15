@@ -10,3 +10,7 @@
     width: 12px;
     position: relative;
 }
+
+.dateStyle{
+    font-weight: 300;
+}

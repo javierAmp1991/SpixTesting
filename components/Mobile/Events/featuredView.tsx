@@ -7,6 +7,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
+import ProductViewMobile from "../Misc/productViewMobile";
 
 export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
     const principalInfoEvent: PrincipalInfoEventPropMob = {
@@ -32,11 +33,11 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                 <div className={style.bannerFeatureProperties}>
                     <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
                 </div>
-                <div className={style.borderLogo}>
+                {/*<div className={style.borderLogo}>
                     <div className={style.logoFeaturePropertiesv2}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathLogo} alt=""/>
                     </div>
-                </div>
+                </div>*/}
             </div>
 
             <div className={style.mainDivInfo}>
@@ -51,7 +52,8 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                     {
                         item.ListProducts.map((item, index) =>
                             index == 0 &&
-                            <div key={index} className={style.boxShadowPro}>
+                            <ProductViewMobile item={item} size={120}/>
+                            /*<div key={index} className={style.boxShadowPro}>
                                 <div className={style.sizeImageProductSingle}>
                                     <div className={style.aspectImage}>
                                         <Image layout={"fill"} src={item.ImagePath} alt=""/>
@@ -71,7 +73,7 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                                     ).format(Math.round(item.Price))}
                                     </div>
                                 </div>
-                            </div>
+                            </div>*/
                         )
                     }
                 </div>

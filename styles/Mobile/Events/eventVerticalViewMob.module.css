@@ -6,6 +6,12 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, .15);
     border-radius: 6px;
     overflow: hidden;
+    width: 220px;
+    margin: auto;
+}
+
+.scrollSnapMobile{
+
 }
 
 .containerImage {
@@ -60,10 +66,10 @@
 }
 
 .bottomDivSearch {
-    padding: 12px 24px;
+    padding: 10px 24px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
-    gap: 6px;
+    gap: 10px;
 }
 
 .bottomDivResale {

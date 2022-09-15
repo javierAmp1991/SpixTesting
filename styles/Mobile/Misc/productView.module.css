@@ -9,9 +9,10 @@
     object-fit: cover;
 }
 .boxShadowPro {
-    box-shadow: var(--shadowUnderProducts);
+    box-shadow: var(--boxShadowCard);
     border-radius: 8px;
     overflow: hidden;
+    margin-left: 10px;
 }
 .gridPriceWithDiscount {
     display: grid;

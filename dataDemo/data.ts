@@ -453,7 +453,8 @@ export namespace ListOffertData {
     export const listOffert: EventLookUp[] = [
         {
             EventId: "1235",
-            EventName: "Dcto Medios de pago Falabella",
+            EventName: "Dcto Medios de pago",
+            Subtitle: "Asociado a Falabella",
             Rating: 30,
             Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
             BannerPath: "/images/banner.png",

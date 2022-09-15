@@ -1,5 +1,6 @@
 .sizeImageRoundedCarrousel {
-    width: 120px;
+    /*width:120px*/
+    width: 95px;
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: top;
@@ -11,4 +12,8 @@
 
 .paddingGradient{
     padding: 3px;
+}
+
+.mainDiv{
+    scroll-snap-align: start;
 }

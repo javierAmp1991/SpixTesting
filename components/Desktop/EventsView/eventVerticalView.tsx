@@ -13,8 +13,6 @@ import {
 } from "../../../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
-import {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
-import {DateInfoProp} from "../Misc/dateInfoEvent";
 
 const totalResaleText = "Total reventas: "
 

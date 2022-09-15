@@ -48,8 +48,8 @@
 .bottomDivSearch {
     display: grid;
     grid-template-rows: repeat(2, max-content);
-    gap: 6px;
-    padding-top: 8px;
+    gap: 10px;
+    padding-top: 10px;
     position: relative;
 }
 
@@ -101,16 +101,18 @@
     grid-auto-columns: 120px;
     grid-auto-flow: column;
     position: absolute;
-    top: -26px;
-    right: 6px;
+    bottom: 16px;
+    right: 24px;
 }
 
 .gridProductSelection {
+    border-top: 2px solid var(--separationLineColor);
     display: grid;
-    grid-template-columns: repeat(3, 70px);
+    grid-template-columns: repeat(5, 1fr);
     justify-content: space-around;
+    gap: 12px;
     overflow: scroll;
-    padding: 6px 16px;
+    padding: 16px 10px;
 }
 
 .sizeImageProduct {

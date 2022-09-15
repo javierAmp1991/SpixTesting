@@ -29,7 +29,7 @@
 }
 
 .gridInfo {
-    padding: 16px 12px 0 12px;
+    padding: 18px 12px 0 12px;
 }
 /*
 
@@ -61,10 +61,10 @@
 }
 
 .bottomDivSearch {
-    padding: 8px 0 0 0;
+    padding: 10px 0 0 0;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
-    gap: 6px;
+    gap: 10px;
 }
 
 .bottomDivResale {
@@ -76,7 +76,7 @@
 }
 
 .TopDivInfo {
-    padding: 0 0 8px 0;
+    padding: 0 0 10px 0;
 }
 
 .sizeIcon {

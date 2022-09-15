@@ -15,7 +15,8 @@ export default function DateInfoEventMobile({item} : {item: DateInfoPropMobile})
             <div className={style.sizeIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
             </div>
-            <div className={`${utilities.fontSecundaryTextMobile}`}>
+            {/*<div className={`${utilities.fontSecundaryTextMobile}`}>*/}
+            <div className={style.dateStyle}>
                 {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
             </div>
         </div>

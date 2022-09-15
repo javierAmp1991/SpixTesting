@@ -12,12 +12,12 @@
 
 .mainDiv {
     position: relative;
-    box-shadow: var(--shadowUnderProducts);
+    box-shadow: var(--boxShadowCard);
     transition: .4s;
 }
 
 .mainCont {
-    box-shadow: var(--shadowUnderProducts);
+    box-shadow: var(--boxShadowCard);
     transition: .4s;
 }
 

@@ -40,8 +40,9 @@
     grid-template-columns: repeat(8, 1fr);
     justify-content: center;
     width: 90%;
+    padding: 6px 4px;
     margin: auto;
-    gap: 40px;
+    gap: 24px;
 }
 
 .overflowCarrouselProductsEWB {
@@ -75,9 +76,9 @@
 
 .mainContainerInfo{
     padding: 12px 0 12px 0;
+    margin: auto;
     display: grid;
-    justify-items: center;
-    position: relative;
+    justify-items: left;
 }
 
 .mainDivTimer{
@@ -86,8 +87,8 @@
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 204px;
+    right: 10px;
     display: grid;
     grid-template-columns: repeat(3, max-content);
     align-items: center;
@@ -110,11 +111,19 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap:12px;
-    margin-top: 8px;
+    margin-top: 11px;
+}
+
+.mainDivPro{
+    box-shadow: var(--boxShadowCard);
 }
 
 .timerIconProp{
     height: 16px;
     aspect-ratio: 1.2/1;
     position: relative;
+}
+
+.mainDivInfoPro{
+    padding: 4px 8px 8px 8px;
 }

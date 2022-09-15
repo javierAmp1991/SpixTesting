@@ -56,6 +56,8 @@ import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {InOfferHome} from "../dataDemo/EventView/eventVerticalView";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
+import {InOfferHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
+import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -153,8 +155,8 @@ export default function EventPage() {
         <LayoutCarrouselMobile gapLayout={24}>
             {
                 HomeNewsData.listNews.map((item) =>
-                    <div key={item.Id} className={"w-80"}>
-                        <NewsSearchMobile isSubtitle={false}  item={item}/>
+                    <div key={item.Id} style={{width: 330}}>
+                        <NewsSearchMobile isSubtitle={false} item={item}/>
                     </div>
                 )
             }
@@ -168,7 +170,7 @@ export default function EventPage() {
 
     let products = <TitleSection titleLink={productstTitle}
                                  paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-        <LayoutCarrouselMobile gapLayout={24}>
+        <LayoutCarrouselMobile gapLayout={20}>
             {
                 ListProducts.listProducts.map((item, index) =>
                     <ProductViewMobile size={180} key={index} item={item}/>
@@ -180,9 +182,8 @@ export default function EventPage() {
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <LayoutCarrouselMobile gapLayout={24}>
             {
-                InOffer.listInOffer.map((item, index) =>
-                    <EventVerticalViewMobile item={item} isDarkMode={false}
-                                             key={index}/>
+                InOfferHomeMobile.list.map((item, index) =>
+                    <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={false} key={index}/>
                 )
             }
         </LayoutCarrouselMobile>
@@ -269,7 +270,7 @@ export default function EventPage() {
             {
                 HomeNewsData.listNews.map((item, index) =>
                     index >= getNews && index <= getNews + 1 &&
-                            <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
+                    <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
                 )
             }
         </LayoutCarrousel>
@@ -301,7 +302,7 @@ export default function EventPage() {
             {
                 InOfferHome.list.map((item, index) =>
                     index >= getExtra && index <= getExtra + 2 &&
-                        <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
+                    <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
                 )
             }
         </LayoutCarrousel>
@@ -395,17 +396,17 @@ export default function EventPage() {
                 </>
 
             </DefaultLayoutDesktop>
-           /* <div>
-                <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
-                <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>
-                <div className={styleDesk.sizeBaner}>
-                    <Image layout={"fill"} src={bannerPath} alt=""/>
-                </div>
-                <div className={`${utilities.maxWidthBodyContentSpix}`}>
-                    <LayoutSideCard childrens={childrens}/>
-                    <FooterDesk/>
-                </div>
-            </div>*/
+        /* <div>
+             <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>
+             <MenuSpixDesktop listItemMEnu={menuList} darkMode={false}/>
+             <div className={styleDesk.sizeBaner}>
+                 <Image layout={"fill"} src={bannerPath} alt=""/>
+             </div>
+             <div className={`${utilities.maxWidthBodyContentSpix}`}>
+                 <LayoutSideCard childrens={childrens}/>
+                 <FooterDesk/>
+             </div>
+         </div>*/
     )
 
     function getCssStyle() {

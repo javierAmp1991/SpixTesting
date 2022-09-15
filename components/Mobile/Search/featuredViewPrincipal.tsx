@@ -8,6 +8,7 @@ import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/princ
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import {number} from "prop-types";
+import ProductViewMobile from "../Misc/productViewMobile";
 
 export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeaturedView }) {
     let [productSelected, setProductSelected] = useState(0)
@@ -31,57 +32,34 @@ export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeatured
         IsDarkMode: false,
     }
     return (
-        <>
-            <div className={style.mainDiv}>
-                <div className={style.sizeBanner}>
-                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"right"} src={item.PathImage} alt={""}/>
+        <div className={style.mainDiv}>
+            <div className={style.sizeBanner}>
+                <Image layout={"fill"} objectFit={"cover"} objectPosition={"right"} src={item.PathImage} alt={""}/>
+            </div>
+            {/*<div className={style.borderLogo}>
+                <div className={style.logoFeatureProperties}>
+                    <Image layout={"fill"} src={item.PathLogo} alt=""/>
                 </div>
-                <div className={style.borderLogo}>
-                    <div className={style.logoFeatureProperties}>
-                        <Image layout={"fill"} src={item.PathLogo} alt=""/>
+            </div>*/}
+            <div className={style.gridFeaturePrincipal}>
+                <div className={style.mainDivInfo}>
+                    <div className={style.topDiv}>
+                        <PrincipalInfoEventMobile item={principalInfoEvent}/>
+                        <div className={style.bottomDivSearch}>
+                            <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
+                            <DateInfoEventMobile item={dateInfo}/>
+                        </div>
                     </div>
-                </div>
-                <div className={style.gridFeaturePrincipal}>
-                    <div className={style.mainDivInfo}>
-                        <div className={style.topDiv}>
-                            <PrincipalInfoEventMobile item={principalInfoEvent}/>
-                            <div className={style.bottomDivSearch}>
-                                <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
-                                <DateInfoEventMobile item={dateInfo}/>
-                            </div>
-                        </div>
-                        <div className={style.gridProductSelected}>
-                            {
-                                item.ListProducts.map((item, index) =>
+                    <div className={style.gridProductSelected}>
+                        {
+                            item.ListProducts.map((item, index) =>
                                     index == productSelected &&
-                                    <div key={index} className={style.boxShadowPro}>
-                                        <div className={style.sizeImageProduct}>
-                                            <div className={style.aspectImage}>
-                                                <Image layout={"fill"} src={item.ImagePath} alt=""/>
-                                            </div>
-                                            <div className={utilities.positionLastTicket}>
-                                                <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                                                       alt=""/>
-                                            </div>
-                                        </div>
-
-                                        <div className={style.gridInfoProduct}>
-                                            <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
-                                                {item.Name}
-                                            </div>
-                                            <div className={utilities.fontPriceInclude}>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(item.Price))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        </div>
+                                    <ProductViewMobile item={item} size={120}/>
+                            )
+                        }
                     </div>
                 </div>
             </div>
-
             <div className={style.gridProductSelection}>
                 {
                     item.ListProducts.map((item, index) =>
@@ -110,6 +88,7 @@ export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeatured
                     )
                 }
             </div>
-        </>
+        </div>
+
     )
 }

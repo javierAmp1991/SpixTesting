@@ -3,6 +3,7 @@
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
+    scroll-snap-align: start;
 }
 
 .bannerFeatureProperties {
@@ -44,14 +45,14 @@
     display: grid;
     grid-template-rows: repeat(2, max-content);
     justify-content: left;
-    gap: 6px;
-    padding-top: 8px;
+    gap: 10px;
+    padding-top: 10px;
 }
 
 .mainDivProductsSingle{
     position: absolute;
-    right: 10px;
-    top: -26px;
+    right: 24px;
+    bottom: 16px;
     display: grid;
     grid-template-columns: repeat(1, 120px);
     gap: 12px;
