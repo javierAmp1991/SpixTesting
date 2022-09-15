@@ -96,7 +96,7 @@
 @media (min-width: 1281px){
     .gridCarrouselProductsEWB {
         display: grid;
-        grid-template-columns: repeat(8, max-content);
+        grid-template-columns: repeat(6, max-content);
         width: max-content;
         margin: auto;
         gap: 12px;

@@ -1,18 +1,24 @@
 .styleImage {
-    width: 80%;
+    width: 60%;
     aspect-ratio: 1/1;
     margin: auto;
 }
-.styleLogo{
-    --sizeLogoOI: 48px;
+
+.positionLogo{
     position: absolute;
+    bottom: 6px;
+    right: 6px;
+}
+
+.styleLogo {
+    --sizeLogoOI: 44px;
+    position: relative;
     height: var(--sizeLogoOI);
     width: var(--sizeLogoOI);
     border-radius: 50%;
-    bottom: 6px;
-    right: 6px;
     overflow: hidden;
 }
-.snapScroll{
+
+.snapScroll {
     scroll-snap-align: start;
 }

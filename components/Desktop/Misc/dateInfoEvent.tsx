@@ -16,7 +16,7 @@ export default function DateInfoEvent({item} : {item: DateInfoProp}){
             <div className={style.sizeIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
             </div>
-            <div className={`${utilities.fontSecundaryTextDesktop}`}>
+            <div className={`${utilities.fontSecundaryTextDesktop} ${style.fontSize}`}>
                 {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
             </div>
         </div>

@@ -118,7 +118,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                                 <div className={styles.sizeIcon}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                                 </div>
-                                <div className={`${utilities.fontSecundaryText}`}>
+                                <div className={`${styles.fontSize}`}>
                                     {itemFull.MinDate.getDate()} de {itemFull.MinDate.toLocaleString("es-US", {month: "short"})} del {itemFull.MinDate.getFullYear()}
                                 </div>
                             </div>

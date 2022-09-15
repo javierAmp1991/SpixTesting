@@ -54,7 +54,7 @@
 
 .gradientLogoMobile{
     padding: 3px;
-    background: var(--gradientSpix);
+    background: white;
 }
 /*#endregion Mobile Class*/
 
@@ -75,8 +75,8 @@
     font-size: var(--sizeSubTitleDesktop);
     line-height: var(--sizeSubTitleDesktop);
     font-weight: 300;
-    color: var(--colorSubtitleMobile);
-    font-family: Helvetica, sans-serif, Arial;
+   /* color: var(--colorSecundaryTextDesktop);*/
+    /*font-family: Helvetica, sans-serif, Arial;*/
 }
 
 .fontPriceIncludeDesktop {
@@ -109,7 +109,7 @@
 
 .gradientLogoDesktop{
     padding: 3px;
-    background: var(--gradientSpix);
+    background: white;
     border-radius: 50%;
 }
 /*#endregion Desktop Class*/
