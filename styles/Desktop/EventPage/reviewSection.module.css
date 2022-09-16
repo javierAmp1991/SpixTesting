@@ -3,6 +3,9 @@
     grid-template-columns: max-content max-content;
     gap: 72px;
     padding-bottom: 24px;
+    width: max-content;
+    border-bottom: 1px solid var(--separationLineColor);
+    margin-bottom: 32px;
 }
 
 .fontReviewResume{
