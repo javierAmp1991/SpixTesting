@@ -166,7 +166,7 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
             {/*<div ref={mainDivRef} style={{gap: `${gapCarrousel}px`}} className={style.gridCarrouselAuto}>*/}
             <div ref={mainDivRef} className={style.gridCarrouselAuto}>
                 {
-                    listImageNewB.map((image: cateMobile, index) =>
+                    listImageNewW.map((image: cateMobile, index) =>
                     <div key={index} className={style.mainDiv}>
                         <div key={index} className={style.testImage}>
                             <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>

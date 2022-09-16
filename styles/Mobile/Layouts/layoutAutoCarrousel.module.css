@@ -33,6 +33,7 @@
     transition: .4s;
     background: var(--gradientSpix);
     background: white;
+    background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
     /*   border: 1px solid rgba(10, 102, 188, 1);*/
     border-radius: 6px;
     overflow: hidden;
@@ -61,5 +62,6 @@
     color: #1a1919;
     color: rgba(10, 102, 188, 1);
     font-weight: 500;
+    color: white;
 }
 
