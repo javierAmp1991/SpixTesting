@@ -85,7 +85,7 @@
     background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
     overflow: hidden;
     color: white;
-    font-weight: 500;
+    font-weight: 400;
     position: absolute;
     top: 205px;
     right: 12px;
@@ -93,7 +93,7 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 5px;
-    padding: 4px 8px;
+    padding: 3px 6px;
     border-radius: 6px;
     /*    --widthTimer: 85px;
         width: var(--widthTimer);
