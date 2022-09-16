@@ -249,7 +249,7 @@ export default function Index() {
             {
                 DropDownNewSearch.listNews.map(item =>
                     /*<NewViewMobile item={item} isDarkMode={isDarkMode} key={item.Id}/>*/
-                    <div key={item.Id} className={utilities.snapScrollAlignStart} style={{width: 330}}>
+                    <div key={item.Id} style={{width: 330}}>
                         <NewsSearchMobile isSubtitle={false} item={item}/>
                     </div>
                 )
