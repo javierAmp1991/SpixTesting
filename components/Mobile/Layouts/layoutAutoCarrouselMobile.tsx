@@ -3,15 +3,98 @@ import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
 import {useMediaQuery} from "../../../pages";
+import {cate} from "../../Desktop/Layouts/layoutAutoCarrousel";
+
 const sizeImage: number = 300
 const sizePadding: number = 24
 const mediaQuery = '(max-width: 768px)';
+
+export class cateMobile {
+    Name: string
+    Image: string
+}
+
+const listImageNew: cateMobile[] = [
+
+    {Image: "/images/auto1.jpg", Name: "Rock"},
+    {Image: "/images/auto2.jpg", Name: "Conciertos"},
+    {Image: "/images/auto3.jpg", Name: "Beleza"},
+    {Image: "/images/auto4.jpg", Name: "Spa"},
+    {Image: "/images/auto5.jpg", Name: "Futbol"},
+    {Image: "/images/auto6.jpg", Name: "Reggaeton"},
+    {Image: "/images/auto7.jpg", Name: "Basketball"},
+    {Image: "/images/auto8.jpg", Name: "Peluqueria"},
+    {Image: "/images/auto9.jpg", Name: "Educacion"},
+    {Image: "/images/auto10.jpg", Name: "Masajes"},
+    {Image: "/images/auto11.jpg", Name: "Pop"},
+    {Image: "/images/auto12.jpg", Name: "Zoologico"},
+    {Image: "/images/auto14.jpg", Name: "Pizzas"},
+    {Image: "/images/auto13.jpg", Name: "Cafe"},
+    {Image: "/images/auto15.jpg", Name: "Tributos"},
+    {Image: "/images/auto16.jpg", Name: "Pasteleria"},
+];
+
+const listImageNewW: cate[] = [
+    {Image: "/images/autocat1W.png", Name: "Rock"},
+    {Image: "/images/autocat2W.png", Name: "Conciertos"},
+    {Image: "/images/autocat3W.png", Name: "Beleza"},
+    {Image: "/images/autocat4W.png", Name: "Spa"},
+    {Image: "/images/autocat1W.png", Name: "Futbol"},
+    {Image: "/images/autocat2W.png", Name: "Reggaeton"},
+    {Image: "/images/autocat3W.png", Name: "Basketball"},
+    {Image: "/images/autocat4W.png", Name: "Peluqueria"},
+    {Image: "/images/autocat1W.png", Name: "Educacion"},
+    {Image: "/images/autocat2W.png", Name: "Masajes"},
+    {Image: "/images/autocat3W.png", Name: "Pop"},
+    {Image: "/images/autocat4W.png", Name: "Zoologico"},
+    {Image: "/images/autocat1W.png", Name: "Pizzas"},
+    {Image: "/images/autocat2W.png", Name: "Cafe"},
+    {Image: "/images/autocat3W.png", Name: "Tributos"},
+    {Image: "/images/autocat4W.png", Name: "Pasteleria"},
+
+    /* {Image:"/images/auto1.jpg", Name:"Rock"},
+     {Image:"/images/auto2.jpg", Name:"Conciertos"},
+     {Image:"/images/auto3.jpg", Name:"Beleza"},
+     {Image:"/images/auto4.jpg", Name:"Spa"},
+     {Image:"/images/auto5.jpg", Name:"Futbol"},
+     {Image:"/images/auto6.jpg", Name:"Reggaeton"},
+     {Image:"/images/auto7.jpg", Name:"Basketball"},
+     {Image:"/images/auto8.jpg", Name:"Peluqueria"},
+     {Image:"/images/auto9.jpg", Name:"Educacion"},
+     {Image:"/images/auto10.jpg", Name:"Masajes"},
+     {Image:"/images/auto11.jpg", Name:"Pop"},
+     {Image:"/images/auto12.jpg", Name:"Zoologico"},
+     {Image:"/images/auto14.jpg", Name:"Pizzas"},
+     {Image:"/images/auto13.jpg", Name:"Cafe"},
+     {Image:"/images/auto15.jpg", Name:"Tributos"},
+     {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
+];
+
+const listImageNewB: cate[] = [
+    {Image: "/images/autocat1B.png", Name: "Rock"},
+    {Image: "/images/autocat2B.png", Name: "Conciertos"},
+    {Image: "/images/autocat3B.png", Name: "Beleza"},
+    {Image: "/images/autocat4B.png", Name: "Spa"},
+    {Image: "/images/autocat1B.png", Name: "Futbol"},
+    {Image: "/images/autocat2B.png", Name: "Reggaeton"},
+    {Image: "/images/autocat3B.png", Name: "Basketball"},
+    {Image: "/images/autocat4B.png", Name: "Peluqueria"},
+    {Image: "/images/autocat1B.png", Name: "Educacion"},
+    {Image: "/images/autocat2B.png", Name: "Masajes"},
+    {Image: "/images/autocat3B.png", Name: "Pop"},
+    {Image: "/images/autocat4B.png", Name: "Zoologico"},
+    {Image: "/images/autocat1B.png", Name: "Pizzas"},
+    {Image: "/images/autocat2B.png", Name: "Cafe"},
+    {Image: "/images/autocat3B.png", Name: "Tributos"},
+    {Image: "/images/autocat4B.png", Name: "Pasteleria"},
+];
+
 export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDarkMode}:
-                                                {
-                                                    gapLayout: number,
-                                                    listImages: string[],
-                                                    isDarkMode: boolean
-                                                }) {
+                                                      {
+                                                          gapLayout: number,
+                                                          listImages: string[],
+                                                          isDarkMode: boolean
+                                                      }) {
     const gap = (window.innerWidth - 358) / 2
     const cssStyle = getCssStyle()
     const isSmall = useMediaQuery(mediaQuery);
@@ -60,33 +143,40 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
     }
 
 
-    useEffect(() => {
+    /*useEffect(() => {
         const interval = setInterval(handleRight, 10000)
         return () => clearInterval(interval)
-    })
+    })*/
 
-    useEffect(() => {
+   /* useEffect(() => {
         const handleSetGap = (number: number) => {
             setGapCarrousel(gapCarrousel = number)
         }
 
         function resiveDiv() {
-            handleSetGap((window.innerWidth - 358) / 2 )
+            handleSetGap((window.innerWidth - 358) / 2)
         }
 
-        handleSetGap((window.innerWidth - 358) / 2 )
+        handleSetGap((window.innerWidth - 358) / 2)
         window.addEventListener('resize', resiveDiv)
-    }, [gapCarrousel]);
+    }, [gapCarrousel]);*/
 
     return (
-        <div ref={renderContainer} className="overflow-hidden w-full">
-            <div ref={mainDivRef} style={{gap: `${gapCarrousel}px`}} className={style.gridCarrouselAuto}>
-                {listImagesCar.map((image: string, index) =>
-                    <div key={index} className={style.testImage}>
-                        <Image priority={true} layout={"fill"} objectFit={"cover"} objectPosition={"center"} src={image}
-                               alt=""/>
+        <div ref={renderContainer} className="overflow-scroll w-full">
+            {/*<div ref={mainDivRef} style={{gap: `${gapCarrousel}px`}} className={style.gridCarrouselAuto}>*/}
+            <div ref={mainDivRef} className={style.gridCarrouselAuto}>
+                {
+                    listImageNewB.map((image: cateMobile, index) =>
+                    <div key={index} className={style.mainDiv}>
+                        <div key={index} className={style.testImage}>
+                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>
+                        </div>
+                        <div className={`${style.mainDivName} ${utilities.clamp1}`}>
+                            {image.Name}
+                        </div>
                     </div>
-                )}
+                )
+                }
             </div>
         </div>
 

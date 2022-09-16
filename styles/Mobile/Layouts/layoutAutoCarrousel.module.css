@@ -3,6 +3,10 @@
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
+    overflow: scroll;
+    gap: 16px;
+    padding: 0 0 20px 0;
+    scroll-snap-type: x mandatory;
 }
 
 .backgroundCarrousel{
@@ -11,7 +15,7 @@
 }
 
 .testImage {
-    width: 110px;
+    width: 60px;
     aspect-ratio: 1/1;
     object-position: center;
     position: relative;
@@ -21,5 +25,41 @@
 
 .paddingGradient {
     padding: 0;
+}
+
+.mainDiv{
+    --padding: 10px;
+    padding: var(--padding) calc(var(--padding) + 15px);
+    transition: .4s;
+    background: var(--gradientSpix);
+    background: white;
+    /*   border: 1px solid rgba(10, 102, 188, 1);*/
+    border-radius: 6px;
+    overflow: hidden;
+    scroll-snap-align: start;
+}
+
+/*.mainDivName{
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 3px 6px rgba(0,0,0,.3);
+    text-align: center;
+    background: linear-gradient(145deg, #0ed7c4 0%, #15DAE6FF 100%);
+    padding: 2px 0;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    width: 90px;
+    bottom: -12px;
+    left: 10px;
+    transition: .4s;
+}*/
+
+.mainDivName {
+    padding-top: 9px;
+    text-align: center;
+    color: #1a1919;
+    color: rgba(10, 102, 188, 1);
+    font-weight: 500;
 }
 

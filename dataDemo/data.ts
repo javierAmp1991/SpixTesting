@@ -440,7 +440,8 @@ export namespace DailyOfferData {
                  Include: null,
                  ImagePath: "/images/product10.jpg"
              }*/
-        ]
+        ],
+        ListAtributes: ["Rock", "Conciertos", "Festivales"]
     }
 }
 
@@ -2903,6 +2904,7 @@ export class EventLookUp {
     public Video?: string
     public Date?: Date[]
     public VenueDate?: DateVenue[]
+    public ListAtributes?: String[]
 }
 
 export class DateVenue {

@@ -1,15 +1,10 @@
 import utilities from "/styles/utilities.module.css"
 import styles from "/styles/Desktop/Events/eventWithBanner.module.css"
 import React, {useEffect, useState} from "react";
-import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
-import ProductViewDesk from "../Misc/productViewDesk";
 import ProductViewHorizontal from "../Misc/ProductViewHorizontal";
-
-const alignmentTextProduct: string = "text-center"
-
 
 export default function EventWithBannerView({item, darkModeState}) {
     const principalInfoEventProp: PrincipalInfoEventProp = {
@@ -59,32 +54,49 @@ export default function EventWithBannerView({item, darkModeState}) {
 
 
                 <div className={`${cssStyles.bgInfo} ${styles.mainContainerInfo}`}>
-                    {/*                   <div className={styles.propertiesLogoEWB}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
-                    </div>*/}
+                    <div className={styles.mainDivInfoQ}>
+                        <div className={styles.grid1Info}>
+                            <PrincipalInfoEvent item={principalInfoEventProp}/>
+                        </div>
+                        <div className={styles.gridAdInfo}>
+                            <div className={utilities.fontSecundaryText}>
+                                <span className={utilities.fontPrimaryText}>Categoria: </span>
+                                <span className={utilities.fontSecundaryText}>Bar restaurant</span>
+                            </div>
 
-                    <PrincipalInfoEvent item={principalInfoEventProp}/>
+                            <div className={styles.mainDivTimer}>
+                                <span>Expira en </span>
+                                <span>{hours}:{minutes}:{seconds}</span>
+                            </div>
 
-                    <div className={styles.mainDivTimer}>
-                        {/*<span className={styles.timerIconProp}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.timerIcon}/>
-                        </span>*/}
-                        <span>
-                            Expira en
-                        </span>
-                        <span>
-                            {hours}:{minutes}:{seconds}
-                        </span>
-                    </div>
-
-                    <div className={styles.gridTags}>
-                        {
-                            item.Tags.map((offer, index) =>
-                                <div key={index} className={utilities.styleSpixDiscountTag}>
-                                    {offer}
+                            <div className={styles.gridTags}>
+                                {
+                                    item.Tags.map((offer, index) =>
+                                        <div key={index} className={utilities.styleSpixDiscountTag}>
+                                            {offer}
+                                        </div>
+                                    )
+                                }
+                            </div>
+                        </div>
+                        {/*<div className={styles.gridAtributes}>
+                                <div className={utilities.fontPrimaryText}>
+                                    Atributos:
                                 </div>
-                            )
-                        }
+                                {
+                                    item.ListAtributes.map((item, index) =>
+                                        index != item.length - 1 ?
+                                            <a className={utilities.fontSecundaryText} key={index}>{item},</a>
+                                            :
+                                            <a className={utilities.fontSecundaryText} key={index}>{item}.</a>
+                                    )
+                                }
+                            </div>*/}
+
+                        {/*<div className={styles.mainDivTimer}>
+                            <span>Expira en </span>
+                            <span>{hours}:{minutes}:{seconds}</span>
+                        </div>*/}
                     </div>
                 </div>
 

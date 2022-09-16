@@ -125,7 +125,11 @@
 
 /*#region old class*/
 
-.maxWidthMobile{
+.opacity5 {
+    opacity: .5;
+}
+
+.maxWidthMobile {
     max-width: 768px;
     margin: auto;
 }

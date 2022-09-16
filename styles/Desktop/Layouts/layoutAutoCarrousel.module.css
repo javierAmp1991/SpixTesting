@@ -4,10 +4,63 @@
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     transition: 2s linear;
+    padding-bottom: 20px;
+}
+
+.mainDiv{
+    --padding: 10px;
+    padding: var(--padding) calc(var(--padding) + 15px);
+    transition: .4s;
+    background: var(--gradientSpix);
+    background: white;
+    background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
+ /*   border: 1px solid rgba(10, 102, 188, 1);*/
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.mainDivW{
+    --padding: 10px;
+    padding: var(--padding) calc(var(--padding) + 15px);
+    transition: .4s;
+    background: var(--gradientSpix);
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.mainDivName{
+    padding-top: 9px;
+    text-align: center;
+    color: #1a1919;
+    color: rgba(10, 102, 188, 1);
+    color: white;
+    font-weight: 500;
+/*    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 2px 3px 6px rgba(0,0,0,.3);
+    text-align: center;
+    background: linear-gradient(145deg, #0ed7c4 0%, #15DAE6FF 100%);
+    padding: 2px 0;
+    color: white;
+    font-weight: 500;
+    position: absolute;
+    width: 112px;
+    bottom: -12px;
+    left: 9px;
+    transition: .4s;*/
+}
+
+.mainDivNameW{
+    padding-top: 9px;
+    text-align: center;
+    color: #333;
+    color: rgba(10, 102, 188, 1);
+    font-weight: 500;
 }
 
 .testImage {
-    width: 100px;
+    /*width: 90px;*/
     aspect-ratio: 1/1;
     object-position: center;
     position: relative;
@@ -17,13 +70,25 @@
     padding: 0;
 }
 
-@media (min-width: 1280px) {
-    .testImage {
-        width: 130px;
-        aspect-ratio: 1/1;
-        object-position: center;
-        position: relative;
-        border-radius: 6px;
-        overflow: hidden;
-    }
+.sizeArrowLeft{
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    z-index: 500000;
+    left: 4px;
+    border-radius: 50%;
+    box-shadow: var(--boxShadowCard);
+    top: calc(50% - 16px);
 }
+
+.sizeArrowRight{
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    z-index: 50000000;
+    right: 4px;
+    border-radius: 50%;
+    box-shadow: var(--boxShadowCard);
+    top: calc(50% - 16px);
+}
+
