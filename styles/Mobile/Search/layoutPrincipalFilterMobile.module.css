@@ -62,7 +62,7 @@
     overflow: hidden;
 }
 
-.fontSize{
+.fontSize {
     font-size: 14px;
     line-height: 14px;
 }
@@ -143,9 +143,9 @@
 
 .carrouselCont {
     display: grid;
-    grid-template-columns: 100px;
+    grid-template-columns: 90px;
     grid-auto-flow: column;
-    grid-auto-columns: 100px;
+    grid-auto-columns: 90px;
     overflow-x: scroll;
     padding: 16px 16px 18px 16px;
     border-bottom: 1px solid var(--separationLineColor);
@@ -195,7 +195,7 @@
     overflow: hidden;
 }
 
-.inputRadioStyle{
+.inputRadioStyle {
     height: 12px;
     width: 12px;
     margin-top: 1px;
@@ -204,7 +204,6 @@
 .gridButtonSub {
     display: grid;
     grid-template-columns: max-content max-content max-content;
-    align-items: center;
     justify-content: center;
     background: #fcfbfb;
     align-items: center;
@@ -247,9 +246,11 @@
     width: 20px;
     position: relative;
 }
-.paddingOrderBy{
+
+.paddingOrderBy {
     padding: 16px 32px 16px 16px;
 }
+
 .imageSizeButton {
     height: 20px;
     width: 26px;
@@ -275,8 +276,6 @@
     border-radius: 6px;
     overflow: hidden;
     transition: .1s;
-/*    box-shadow: 0px 3px 8px rgba(0,0,0,.2);
-    background: #f1efef;*/
     background: #f6f2f2;
     box-shadow: 0 0 9px rgb(0, 140, 255);
     display: grid;
@@ -286,7 +285,7 @@
     padding: 8px;
 }
 
-.gridResaleEventMobile{
+.gridResaleEventMobile {
     margin-top: 24px;
     display: grid;
     gap: 24px;
@@ -321,7 +320,6 @@
     overflow: hidden;
 }
 
-
 .menuDesplegableIn {
     position: absolute;
     height: 100vh;
@@ -348,26 +346,26 @@
     transition: .6s linear;
 }
 
-.gridDropDownNew{
+.gridDropDownNew {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 24px;
 }
 
-.sizeBanner{
+.sizeBanner {
     width: 100%;
     aspect-ratio: 3/1;
     position: relative;
     overflow: hidden;
 }
 
-.ratingStarProp{
+.ratingStarProp {
     height: 20px;
     width: 106px;
     position: relative;
 }
 
-.fontSubTitle{
+.fontSubTitle {
     color: var(--colorSubTitles);
     font-size: 17px;
     line-height: 17px;
@@ -375,7 +373,7 @@
     font-weight: 300;
 }
 
-.gridDisplayFilter{
+.gridDisplayFilter {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
@@ -384,22 +382,22 @@
     margin-top: 12px;
 }
 
-.gridPublicity{
+.gridPublicity {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 32px;
     padding: 0 2px 24px 2px;
 }
 
-.gridNewNext{
- display: grid;
+.gridNewNext {
+    display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
     align-items: center;
 }
 
 @media (min-width: 500px) {
-    .gridDropDownNew{
+    .gridDropDownNew {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px;

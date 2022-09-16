@@ -11,7 +11,7 @@ export class PrincipalInfoEventPropMob {
     isDarkMode: boolean
 }
 
-export default function PrincipalInfoEventMobile({item}: {item: PrincipalInfoEventPropMob }){
+export default function PrincipalInfoEventMobile({item}: { item: PrincipalInfoEventPropMob }) {
     let numRating = 5
     let [listRating, setListRating] = useState([true, true, true, true, false])
     const cssStyle = getCssStyle()
@@ -31,17 +31,17 @@ export default function PrincipalInfoEventMobile({item}: {item: PrincipalInfoEve
                         listRating.map((item, index) =>
                             <div key={index} className={style.sizeStar}>
                                 <Image layout={"fill"}
-                                       src={index < numRating? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                                       src={index < numRating ? GlobalConst.sourceImages.ratingIndFull
+                                           : GlobalConst.sourceImages.ratingIndVoid}/>
                             </div>
                         )
                     }
                 </div>
-               {/* <div className={utilities.ratingStarsPropertiesMobile}>
-                    <Image layout={"fill"}
-                           src={cssStyle.RatingImage} alt=""/>
-                </div>*/}
-                <div className={`${cssStyle.RatingText} ${utilities.font12}`}>
-                    ({item.Rating != null ? item.Rating : 0})
+
+                <div className={style.paddingRating}>
+                    <div className={`${cssStyle.RatingText} ${utilities.fontMiniMobile}`}>
+                        ({item.Rating != null ? item.Rating : 0})
+                    </div>
                 </div>
             </div>
         </>

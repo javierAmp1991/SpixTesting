@@ -5,7 +5,7 @@ import React, {useEffect, useState, useRef} from "react";
 import {useMediaQuery} from "../../../pages";
 
 const mediaQuery = '(max-width: 768px)';
-const gap: number = 23;
+const gap: number = 31;
 
 export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                                                 {
@@ -48,8 +48,8 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         const quinElement = mainDivRef.current.children[4];
         const sixElement = mainDivRef.current.children[5];
         const sevenElement = mainDivRef.current.children[6];
-        const eightElement = mainDivRef.current.children[7];
-        const childrens = [firstElement, secondElement, thirdElement, fourthElement, quinElement, sixElement, sevenElement, eightElement]
+        /*const eightElement = mainDivRef.current.children[7];*/
+        const childrens = [firstElement, secondElement, thirdElement, fourthElement, quinElement, sixElement, sevenElement]
         mainDivRef.current.style.transition = `2000ms linear`;
         const widthDiv: number = mainDivRef.current.offsetWidth + gap
         mainDivRef.current.style.transform = `translate(-${widthDiv}px)`;
@@ -72,8 +72,8 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         const lastElement5 = mainDivRef.current.children[11];
         const lastElement6 = mainDivRef.current.children[10];
         const lastElement7 = mainDivRef.current.children[9];
-        const lastElement8 = mainDivRef.current.children[8];
-        let listElements = [lastElement1, lastElement2, lastElement3, lastElement4, lastElement5, lastElement6, lastElement7, lastElement8]
+        /*const lastElement8 = mainDivRef.current.children[8];*/
+        let listElements = [lastElement1, lastElement2, lastElement3, lastElement4, lastElement5, lastElement6, lastElement7]
         listElements.forEach(item => {
             mainDivRef.current.insertBefore(item, mainDivRef.current.firstChild);
         })

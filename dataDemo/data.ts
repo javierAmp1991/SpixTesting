@@ -391,7 +391,7 @@ export namespace DailyOfferData {
                 Include: null,
                 ImagePath: "/images/product3.jpg"
             },
-  /*          {
+            {
                 Name: "Producto 4.1",
                 Price: 2990,
                 DiscountPercent: 25,
@@ -439,7 +439,7 @@ export namespace DailyOfferData {
                 DiscountPercent: 30,
                 Include: null,
                 ImagePath: "/images/product10.jpg"
-            }*/
+            }
         ]
     }
 }

@@ -75,7 +75,7 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap:8px;
-    margin-top: 11px;
+    margin-top: 12px;
 }
 
 .mainDivTimer{

@@ -31,17 +31,15 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
                         listRating.map((item, index) =>
                             <div key={index} className={style.sizeStar}>
                                 <Image layout={"fill"}
-                                    src={index < numRating? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                                       src={index < numRating ? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
                             </div>
                         )
                     }
                 </div>
-                {/*<div className={utilities.ratingStarsPropertiesDesktop}>
-                    <Image layout={"fill"}
-                           src={cssStyle.RatingImage} alt=""/>
-                </div>*/}
-                <div className={`${cssStyle.RatingText} ${utilities.font12}`}>
-                    ({item.Rating != null ? item.Rating : 0})
+                <div className={style.paddingRating}>
+                    <div className={`${cssStyle.RatingText} ${utilities.fontMiniDesktop}`}>
+                        ({item.Rating != null ? item.Rating : 0})
+                    </div>
                 </div>
             </div>
         </>

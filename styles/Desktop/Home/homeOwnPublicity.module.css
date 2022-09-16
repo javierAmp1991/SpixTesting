@@ -2,7 +2,10 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
+
+    transition: .4s;
 }
+
 .gridOwnPublicity {
     display: grid;
     grid-template-columns: max-content 1fr;
@@ -10,7 +13,13 @@
 }
 
 .paddingContainerOwnPublicity {
-    padding: 24px;
+    padding: 40px 24px;
+    box-shadow: var(--boxShadowCard);
+    transition: .4s;
+}
+
+.paddingContainerOwnPublicity:hover{
+    transform: scale(1.03);
 }
 
 .heightImageOwnPublicity {
@@ -26,7 +35,7 @@
     display: grid;
     gap: 16px;
     align-content: center;
-    padding: 0px 0px 0px 24px;
+    padding: 0 0 0 24px;
 }
 
 .fontMainText {

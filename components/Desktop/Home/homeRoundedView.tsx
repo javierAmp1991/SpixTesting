@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function HomeRoundedView({info, darkModeState}) {
     let cssStyles = getCssStyles()
     return (
-        <div className={`${cssStyles.borderCard} ${utilities.borderRadious50}`}>
+        <div className={`${style.mainDiv} ${utilities.borderRadious50}`}>
             <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${cssStyles.bgFirstGradient}`}>
                 <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${cssStyles.bgSecondGradient}`}>
                     <div className={style.sizeImageRoundedCarrousel}>

@@ -9,19 +9,23 @@
 .gridRatingStar {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    align-content: end;
     gap: 4px;
 }
 
-.gridStars{
+.gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
     gap: 4px;
     align-items: center;
 }
 
-.sizeStar{
+.sizeStar {
     height: 17px;
     width: 17px;
     position: relative;
+}
+
+.paddingRating {
+    display: grid;
+    align-items: end;
 }

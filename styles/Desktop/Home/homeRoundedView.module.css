@@ -8,6 +8,15 @@
     overflow: hidden;
 }
 
+.mainDiv{
+    box-shadow: var(--boxShadowCard);
+    transition: .4s;
+}
+
+.mainDiv:hover{
+    transform: scale(1.03);
+}
+
 .paddingGradient{
     padding: 3px;
 }

@@ -27,7 +27,7 @@
 .gridSearchOpen {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 16px;
 }
 
 .gridSearchClose {
@@ -61,7 +61,7 @@
 
 .paddingLeftResult {
     padding-left: 35px;
-    padding-right: 12px;
+    padding-right: 16px;
 }
 
 .paddingLeftResultResale{

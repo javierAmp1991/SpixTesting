@@ -1,6 +1,7 @@
 .principalGridHorizontal {
     display: grid;
     grid-template-columns: 170px 1fr;
+    box-shadow: 0 0 3px rgba(0,0,0,.20);
 }
 
 .containerImage {
@@ -29,7 +30,7 @@
 }
 
 .gridInfo {
-    padding: 18px 12px 0 12px;
+    padding: 10px 12px 0 12px;
 }
 /*
 
@@ -37,14 +38,6 @@
     padding: 16px 0 0 0;
 }
 */
-
-.subTitleMargin {
-    padding-bottom: 3px;
-}
-
-.titleMargin {
-    padding-bottom: 2px;
-}
 
 .gridRatingStar {
     display: grid;
@@ -70,13 +63,13 @@
 .bottomDivResale {
     padding: 8px 0 0 0;
     /*margin: 10px 14px 0 14px;*/
-    border-top: 2px solid var(--separationLineColor);
+    border-top: 1px solid var(--separationLineColor);
     display: grid;
     gap: 2px;
 }
 
 .TopDivInfo {
-    padding: 0 0 10px 0;
+    padding: 0 0 14px 0;
 }
 
 .sizeIcon {

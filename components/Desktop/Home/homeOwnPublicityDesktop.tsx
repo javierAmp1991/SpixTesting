@@ -9,7 +9,7 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
             {
                 listItem.map((info, index) =>
                     <div key={index}
-                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity} ${cssStyles.borderCard}`}>
+                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity}`}>
                         <div className="grid content-center">
                             <div className={style.heightImageOwnPublicity}>
                                 <Image layout={"fill"} src={info.LinkImage}

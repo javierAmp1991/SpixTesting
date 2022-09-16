@@ -2,7 +2,7 @@
 .fontTitleMobile {
     --sizeTitleMobile: 17px;
     font-size: var(--sizeTitleMobile);
-/*    line-height: var(--sizeTitleMobile);*/
+    /*    line-height: var(--sizeTitleMobile);*/
     font-weight: 500;
     color: var(--colorTitleMobile);
     font-family: Helvetica, sans-serif, Arial;
@@ -11,10 +11,10 @@
 .fontSubtitleMobile {
     --sizeSubtitleMobile: 15px;
     font-size: var(--sizeSubtitleMobile);
-/*    line-height: var(--sizeSubtitleMobile);*/
+    /*    line-height: var(--sizeSubtitleMobile);*/
     font-weight: 300;
-/*    color: var(--colorSubtitleMobile);
-    font-family: Helvetica, sans-serif, Arial;*/
+    /*    color: var(--colorSubtitleMobile);
+        font-family: Helvetica, sans-serif, Arial;*/
 }
 
 .fontPriceIncludeMobile {
@@ -25,18 +25,18 @@
     color: var(--colorPriceIncludeMobile);
 }
 
-.fontNameMobile{
+.fontNameMobile {
     --fontSizeNameMob: 16px;
     font-size: var(--fontSizeNameMob);
-/*    line-height: var(--fontSizeNameMob);*/
+    /*    line-height: var(--fontSizeNameMob);*/
     font-weight: 400;
 }
 
-.fontPrimaryTextMobile{
+.fontPrimaryTextMobile {
     color: var(--colorPrimaryTextMobile);
 }
 
-.fontSecundaryTextMobile{
+.fontSecundaryTextMobile {
     color: var(--colorSecundaryTextMobile);
 }
 
@@ -46,16 +46,17 @@
     position: relative;
 }
 
-.fontMiniMobile{
+.fontMiniMobile {
     --sizeFontMiniMobile: 12px;
     font-size: var(--sizeFontMiniMobile);
-  /*  line-height: var(--sizeFontMiniMobile);*/
+    line-height: var(--sizeFontMiniMobile);
 }
 
-.gradientLogoMobile{
+.gradientLogoMobile {
     padding: 3px;
     background: white;
 }
+
 /*#endregion Mobile Class*/
 
 /*----------------------------------------------------------------------------------------*/
@@ -64,7 +65,7 @@
 .fontTitleDesktop {
     --sizeTitleDesktop: 20px;
     font-size: var(--sizeTitleDesktop);
-   /* line-height: var(--sizeTitleDesktop);*/
+    /* line-height: var(--sizeTitleDesktop);*/
     font-weight: 300;
     color: var(--colorTitleDesktop);
     font-family: Helvetica, sans-serif, Arial;
@@ -73,10 +74,10 @@
 .fontSubtitleDesktop {
     --sizeSubTitleDesktop: 17px;
     font-size: var(--sizeSubTitleDesktop);
-/*    line-height: var(--sizeSubTitleDesktop);*/
+    /*    line-height: var(--sizeSubTitleDesktop);*/
     font-weight: 300;
-   /* color: var(--colorSecundaryTextDesktop);
-    font-family: Helvetica, sans-serif, Arial;*/
+    /* color: var(--colorSecundaryTextDesktop);
+     font-family: Helvetica, sans-serif, Arial;*/
 }
 
 .fontPriceIncludeDesktop {
@@ -87,18 +88,18 @@
     color: var(--colorPriceIncludeDesktop);
 }
 
-.fontNameDesktop{
+.fontNameDesktop {
     --fontSizeNameMob: 15px;
     font-size: var(--fontSizeNameMob);
     /*    line-height: var(--fontSizeNameMob);*/
     font-weight: 400;
 }
 
-.fontPrimaryTextDesktop{
+.fontPrimaryTextDesktop {
     color: var(--colorPrimaryTextDesktop);
 }
 
-.fontSecundaryTextDesktop{
+.fontSecundaryTextDesktop {
     color: var(--colorSecundaryTextDesktop);
 }
 
@@ -108,22 +109,23 @@
     position: relative;
 }
 
-.fontMiniDesktop{
+.fontMiniDesktop {
     --sizeFontMiniDesktop: 12px;
     font-size: var(--sizeFontMiniDesktop);
-    /*line-height: var(--sizeFontMiniDesktop);*/
+    line-height: var(--sizeFontMiniDesktop);
 }
 
-.gradientLogoDesktop{
+.gradientLogoDesktop {
     padding: 3px;
     background: white;
     border-radius: 50%;
 }
+
 /*#endregion Desktop Class*/
 
 /*#region old class*/
 
-.mainDivCarrousel{
+.mainDivCarrousel {
     width: 100%;
     display: grid;
     margin: auto;
@@ -131,7 +133,7 @@
     scroll-snap-align: start;
 }
 
-.snapScrollAlignStart{
+.snapScrollAlignStart {
     scroll-snap-align: start;
 }
 
@@ -140,6 +142,7 @@
     width: 80px;
     position: relative;
 }
+
 .bgBodyNormal {
     background: var(--colorBodyNormal);
     transition: var(--transitionTimeDarkMode);

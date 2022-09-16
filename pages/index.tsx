@@ -83,6 +83,7 @@ const gridTemplateColum2: string = "repeat(2,1fr)"
 const gridTemplateColum3: string = "repeat(3,1fr)"
 const gridTemplateColum4: string = "repeat(4,1fr)"
 const gridTemplateColum5: string = "repeat(5,1fr)"
+const gridTemplateColum6: string = "repeat(6,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowOut: string = "-40px"
 const positionArrowY: string = "calc(50% - 16px)"
@@ -112,7 +113,7 @@ const layoutPropCarrousel: LayoutCarrouselDeskProp = {
 }
 const layoutPropCarrouselRounded: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum5,
+    Grid: gridTemplateColum6,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowOut,
@@ -395,19 +396,10 @@ export default function Index() {
      </LayoutCarrouselLoop>*/
 
     /* let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>*/
-    let [getDayliOfferItems, setDailOffer] = useState(0)
-    const handleDailyOffer = (e) => setFeaturedItems(getFeaturedItems = e)
+
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={2} handleFeatured={handleDailyOffer}
-                         layoutProp={layoutPropFeatured}>
-            {
-                <>
-                    <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
-                    <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
-                </>
-            }
-        </LayoutCarrousel>
+        <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
 
     </TitleSection>
 
@@ -466,10 +458,10 @@ export default function Index() {
         setGetCArrouselRounded1(getCarrouselRounded1 = e)
     }
     let carrouselRounded1 = <TitleSection paddingTitle={null} titleLink={cinemasTitleLink} darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={4} handleFeatured={handleCarrouselRound1} layoutProp={layoutPropCarrouselRounded}>
+        <LayoutCarrousel sumar={5} handleFeatured={handleCarrouselRound1} layoutProp={layoutPropCarrouselRounded}>
             {
                 Cines.listCines.map((item, index) =>
-                    index >= getCarrouselRounded1 && index <= getCarrouselRounded1 + 4 ?
+                    index >= getCarrouselRounded1 && index <= getCarrouselRounded1 + 5 ?
                         <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/> : <></>
                 )
             }
@@ -501,7 +493,7 @@ export default function Index() {
                 DropDownNewSearch.listNews.map((item, index) =>
                     index >= getNewsItem && index <= getNewsItem + 2 &&
                     /*<NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>*/
-                    <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
+                    <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
                 )
             }
         </LayoutCarrousel>
@@ -513,11 +505,11 @@ export default function Index() {
     }
     let carrouselRounded2 = <TitleSection paddingTitle={null} titleLink={restaurantsHomeTitleLink}
                                           darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={4} handleFeatured={handleCarrouselRound2} layoutProp={layoutPropCarrouselRounded}>
+        <LayoutCarrousel sumar={5} handleFeatured={handleCarrouselRound2} layoutProp={layoutPropCarrouselRounded}>
             {
 
                 Restaurants.listRestaurants.map((item, index) =>
-                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 4 &&
+                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 5 &&
                     <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
                 )
             }

@@ -6,6 +6,11 @@
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
+    transition: .4s;
+}
+
+.principalGridVertical:hover{
+    transform: scale(1.03);
 }
 
 .containerImage {

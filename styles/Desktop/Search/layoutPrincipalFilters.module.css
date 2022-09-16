@@ -111,8 +111,8 @@
 .carrouselCont {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-    padding: 12px 16px 18px 16px;
+    gap: 16px;
+    padding: 12px 20px 18px 20px;
     overflow-x: scroll;
     border-bottom: 1px solid var(--separationLineColor);
 }
@@ -150,7 +150,7 @@
     grid-template-columns: 42px 1fr max-content;
     align-items: center;
     justify-content: center;
-    background: #fcfbfb;
+/*    background: #fcfbfb;*/
     align-items: center;
     gap: 6px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
@@ -167,7 +167,7 @@
     justify-content: center;
     padding: 8px 12px;
     box-shadow: 0 3px 8px rgba(0,0,0,.2);
-    background: #f1efef;
+/*    background: #f1efef;*/
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
@@ -202,7 +202,7 @@
 .gridFilterImageSelected {
     border-radius: 5px;
     transform: scale(1.05);
-    background: #f6f2f2;
+ /*   background: #f6f2f2;*/
     box-shadow: 0 0 9px rgb(0, 140, 255);
     justify-content: center;
     justify-items: center;

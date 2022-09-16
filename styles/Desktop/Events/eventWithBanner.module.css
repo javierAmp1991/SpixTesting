@@ -40,7 +40,8 @@
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    padding: 6px 4px;
+    justify-content: center;
+    padding: 8px 4px;
     gap: 24px;
 }
 
@@ -74,10 +75,10 @@
 }
 
 .mainContainerInfo{
-    padding: 12px 16px 0 16px;
+    padding: 12px 16px 4px 16px;
     display: grid;
+    margin: auto;
     justify-items: left;
-    position: relative;
 }
 
 .mainDivTimer{
@@ -86,7 +87,7 @@
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 15px;
+    top: 205px;
     right: 12px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -109,7 +110,7 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap:12px;
-    margin-top: 11px;
+    margin-top: 13px;
 }
 
 .mainDivPro{

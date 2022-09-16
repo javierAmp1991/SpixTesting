@@ -78,7 +78,7 @@ export default function EventHorizontalView({item, darkModeState}:
     }
 
     return (
-        <div className={`${style.principalGridHorizontal} ${cssStyles.borderCard}`}>
+        <div className={`${style.principalGridHorizontal}`}>
             <Link href={item.Type == EventCardType.EventCardWithResale ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
