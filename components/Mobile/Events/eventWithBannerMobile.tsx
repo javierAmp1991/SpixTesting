@@ -64,6 +64,16 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
 
                     <PrincipalInfoEventMobile item={principalInfoEventProp}/>
 
+                    <div className={styles.mainDivTimer}>
+                        <span>
+                            Expira en
+                        </span>
+                        <span>
+                            {hours}:{minutes}:{seconds}
+                        </span>
+                    </div>
+
+
                     <div className={styles.gridTags}>
                         {
                             item.Tags.map(offer =>
@@ -80,9 +90,9 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                          className={styles.overflowCarrouselProductsEWB}>
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
-                                item.ListProducts.map(product =>
-                                    /*<ProductViewMobile item={product} size={125}/>*/
-                                    <div key={product.Name} className={styles.mainDivPro}>
+                                item.ListProducts.map((product, index) =>
+                                        <ProductViewMobile key={index} isDisplayOffer={false} item={product} size={110}/>
+                                    /*<div key={product.Name} className={styles.mainDivPro}>
                                         <div className="mb-2">
                                             <div className={`${styles.sizeProductEWB}`}>
                                                 <Image layout={"fill"}
@@ -103,7 +113,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                                             ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
                                             </span>
                                         </div>
-                                    </div>
+                                    </div>*/
                                 )
                             }
                         </div>
