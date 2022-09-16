@@ -271,7 +271,7 @@ export default function Index() {
     let dropDownMobile = <TitleSection titleLink={dropDownTitleLink} darkModeState={isDarkMode}
                                        paddingTitle={spaceComponentsMobileY}>
         <LayoutDropDownMobile gapLayout={10}>{
-            DropDownSearch.list.map(item =>
+            DropDownSearch.list.map((item) =>
                 <EventHorizontalView item={item} darkModeState={isDarkMode} key={item.Id}/>
             )
         }

@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 170px 1fr;
     box-shadow: 0 0 3px rgba(0,0,0,.20);
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .containerImage {

@@ -91,7 +91,6 @@ export default function EventInformationDesk({
                         )
                     }
                 </div>
-
             </div>
 
             <div className="px-0.5">

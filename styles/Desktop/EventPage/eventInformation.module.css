@@ -157,7 +157,7 @@
 .gridImageSelection {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 32px;
+    gap: 16px;
 }
 
 .gridForm {

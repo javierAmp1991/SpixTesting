@@ -10,6 +10,7 @@ import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 
 const textButton: string = "Comprar Entradas"
 
@@ -24,7 +25,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
 
-    const principalInfo: PrincipalInfoEventProp = {
+    const principalInfo: PrincipalInfoEventPropMob = {
         Title: eventInformation.EventName,
         Subtitle: eventInformation.Subtitle,
         Rating: eventInformation.Rating,
@@ -71,7 +72,8 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                         </div>
                         <div>
                             {/*<PrincipalInfoEvent item={principalInfo}/>*/}
-                            <div className={`${utilities.fontSubTitle} mb-1`}>
+                            <PrincipalInfoEventMobile item={principalInfo}/>
+                            {/*<div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
                             </div>
 
@@ -90,7 +92,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                     ({eventInformation.Rating != null ?
                                     eventInformation.Rating : 0})
                                 </div>
-                            </div>
+                            </div>*/}
 
                             {/*<div className={utilities.fontSecundaryText}>Bar restaurant</div>*/}
                         </div>

@@ -164,7 +164,7 @@ export default function ResaleTicketSearch() {
                                                       isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                             }
                         </div>
-                        <>
+                        <div>
                             <div className={style.paddingLeftResultResale}>
                                 <div className={style.gridHeaderResult}>
                                     <div className={style.sizeBanner}>
@@ -197,7 +197,7 @@ export default function ResaleTicketSearch() {
                                 </div>
                             </div>
                             {buttonsNavegation}
-                        </>
+                        </div>
                     </div>
                 </div>
             </DefaultLayoutDesktop>

@@ -28,6 +28,10 @@ import NewSearcPrincipalMobile from "../components/Mobile/Search/newSearcPrincip
 import {listPublicityNews1} from "../dataDemo/search/searchData";
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
+import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
+import {MoreOfferSearch} from "../dataDemo/EventView/eventVerticalView";
+import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
+import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -36,7 +40,7 @@ export default function ReviewSearch() {
     const principalFilterReview: CategoryFilter[] = CategoryPrincipalFiltersNews.listPrinciaplFilters;
     const categoryFilterRest: SuperCategoryFilter[] = SuperCategoryNews.listSuperCat;
     const reviewSectionList: reviewSearch[] = ReviewSearchData.listReviewSearch;
-    const listPublicity: BaseEventCard[] = listPublicityNews1.list
+    const listPublicity: BaseEventCard[] = MoreOfferSearch.list;
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
@@ -131,19 +135,6 @@ export default function ReviewSearch() {
                                                 </button>
                                         }
                                     </div>
-                                    {/*{
-                                        isReview &&
-                                        <button onClick={handleClick}
-                                                className={`${utilities.gridMaxContent2} gap-2 items-center`}>
-                                            <div className={`${utilities.fontPrimaryText} ${styleMobile.fontSize}`}>
-                                                Filtros
-                                            </div>
-                                            <div className={"h-3 w-4 relative"}>
-                                                <Image layout={"fill"}
-                                                       src={GlobalConst.sourceImages.engineIcon} alt={""}/>
-                                            </div>
-                                        </button>
-                                    }*/}
                                 </div>
                                 {
                                     displayNextEvent ?
@@ -170,13 +161,13 @@ export default function ReviewSearch() {
                                         </>
                                         :
                                         <>
-                                            {/*<div className={styleMobile.gridPublicity}>
+                                            <LayoutDropDownMobile gapLayout={10}>
                                                 {
                                                     listPublicity.map(item =>
-                                                        <PublicityNewsMobile item={item} key={item.Id}/>
+                                                        <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
                                                     )
                                                 }
-                                            </div>*/}
+                                            </LayoutDropDownMobile>
                                         </>
                                 }
                             </div>

@@ -1,4 +1,3 @@
-import {EventLookUp} from "../data";
 
 export enum EventCardType {
     EventCardWithPrice,
@@ -1016,6 +1015,83 @@ export namespace MostPopularDataHome {
             Id: "12abc",
             MinPrice: 2990,
             MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+    ]
+}
+
+export namespace MoreOfferSearch {
+    export const list: EventCardWithDate[] = [
+        {
+            Title: "Metallica WorldWired",
+            Subtitle: "Metallica WorldWired",
+            PathImage: "/images/cartel0.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithDate,
+            Id: "1216",
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Asesino sin memoria",
+            Subtitle: "Asesino sin memoria",
+            PathImage: "/images/cartel1.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithDate,
+            Id: "1215",
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Classic Music Festival",
+            Subtitle: "Classic Music Festival",
+            PathImage: "/images/cartel2.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardWithDate,
+            Id: "1214",
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Daddy Yankee World tour",
+            Subtitle: "Daddy Yankee World tour",
+            PathImage: "/images/cartel3.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithDate,
+            Id: "1213",
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Light Year",
+            Subtitle: "Light Year",
+            PathImage: "/images/cartel4.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardWithDate,
+            Id: "1212",
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
+        {
+            Title: "Singer Concert",
+            Subtitle: "Singer Concert",
+            PathImage: "/images/cartel5.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithDate,
+            Id: "1211",
             MinDate: new Date(2022, 10, 11),
             MaxDate: new Date(2022, 11, 25)
         },

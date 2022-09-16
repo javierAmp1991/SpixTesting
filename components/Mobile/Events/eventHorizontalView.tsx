@@ -15,6 +15,7 @@ import {
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
+import DateInfoEvent from "../../Desktop/Misc/dateInfoEvent";
 
 const totalResaleText = "Total reventas: "
 
@@ -62,13 +63,13 @@ export default function EventHorizontalView({item, darkModeState}:
         itemWithResale = item as EventCardResale
     }
 
-    function getNumber(num: number): string {
+/*    function getNumber(num: number): string {
         let newNum: string = `${num}`
         if (num >= 0 && num <= 9) {
             newNum = `0${num}`
         }
         return newNum
-    }
+    }*/
 
     const principalInfoEventProp: PrincipalInfoEventPropMob = {
         Title: item.Title,
@@ -133,6 +134,16 @@ export default function EventHorizontalView({item, darkModeState}:
                                 }
                             </div>*/}
                         </>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithDate &&
+                        <DateInfoEvent item={dateInfo}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithPrice &&
+                        <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
                     }
 
                     {
