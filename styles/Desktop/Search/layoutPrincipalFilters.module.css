@@ -208,7 +208,7 @@
     justify-items: center;
     display: grid;
     transition: .1s;
-    padding: 12px 4px;
+    padding: 4px;
 }
 
 .paddingText {
@@ -229,7 +229,6 @@
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-top: 8px;
 }
 
 .textFilterSub {
