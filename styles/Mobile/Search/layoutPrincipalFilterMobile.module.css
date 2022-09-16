@@ -276,8 +276,8 @@
     border-radius: 6px;
     overflow: hidden;
     transition: .1s;
-    background: #f6f2f2;
-    box-shadow: 0 0 9px rgb(0, 140, 255);
+/*    background: #f6f2f2;*/
+    box-shadow: 0 0 8px rgb(0, 140, 255);
     display: grid;
     transform: scale(1.05);
     justify-content: center;
@@ -305,11 +305,10 @@
 
 .textFilter {
     font-size: 14px;
-    line-height: 14px;
     text-overflow: ellipsis;
     color: var(--colorPrimaryText);
     overflow: hidden;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .textFilterSub {

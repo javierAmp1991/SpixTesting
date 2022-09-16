@@ -198,7 +198,7 @@ export default function LayoutPrincipalFilterMobile({
                                     <div className={style.imageSize}>
                                         <Image layout={"fill"} src={item.PathIcon} alt={""}/>
                                     </div>
-                                    <div className={`${utilities.fontPrimarText} ${style.textFilter}`}>
+                                    <div className={`${utilities.fontPrimarText} ${style.textFilter} ${utilities.clamp1}`}>
                                         {item.Name}
                                     </div>
                                 </button>

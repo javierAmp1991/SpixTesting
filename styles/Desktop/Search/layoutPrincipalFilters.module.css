@@ -112,7 +112,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding: 12px 20px 18px 20px;
+    padding: 12px 22px 18px 22px;
     overflow-x: scroll;
     border-bottom: 1px solid var(--separationLineColor);
 }
@@ -226,16 +226,14 @@
 
 .textFilter {
     font-size: 14px;
-    line-height: 14px;
     text-align: center;
     text-overflow: ellipsis;
     overflow: hidden;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 .textFilterSub {
     font-size: 14px;
-    line-height: 14px;
     text-align:left;
     text-overflow: ellipsis;
     overflow: hidden;
