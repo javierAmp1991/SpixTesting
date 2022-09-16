@@ -36,7 +36,7 @@ export default function SearchRestaurant() {
     const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
-    const isSmallDown = useMediaQuery('(max-width: 768px)');
+    const isSmallDown = useMediaQuery('(max-width: 1280px)');
     let cssStyle = getCssStyle();
     const isReview: boolean = true;
     const isVertical: boolean = false;
@@ -98,7 +98,7 @@ export default function SearchRestaurant() {
                                                  isReturnActive={isReturnActive}/>
                     {
                         isDisplayResult &&
-                        <div className={"relative"}>
+                        <div className={`${utilities.maxWidthMobile} relative`}>
                             <div className={style.paddingContainer}>
                                 <div className={styleMobile.gridResultFiltersOut}>
                                     <div className={`${cssStyle.fontSubTitle}`}>

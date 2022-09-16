@@ -152,7 +152,7 @@ export default function Index() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
     const darkModeToggle = null
-    const isSmallDown = useMediaQuery('(max-width: 1281px)');
+    const isSmallDown = useMediaQuery('(max-width: 1280px)');
 
     //region mobile components
     let carrouselBannerMobile = <LayoutCarrouselMobileBanner gapLayout={noGapLayout}>

@@ -8,7 +8,7 @@ import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 
 export default function WriteReview() {
-    const isSmallDown = useMediaQuery('(max-width: 768px)');
+    const isSmallDown = useMediaQuery('(max-width: 1281px)');
     let isDarkMode: boolean = false;
 
     let firstChildren = <WriteReviewLeft/>
@@ -22,7 +22,9 @@ export default function WriteReview() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
+                <div className={utilities.maxWidthMobile}>
                 <WriteReviewMobile/>
+                </div>
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={null}>

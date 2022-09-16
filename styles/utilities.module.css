@@ -125,6 +125,11 @@
 
 /*#region old class*/
 
+.maxWidthMobile{
+    max-width: 768px;
+    margin: auto;
+}
+
 .mainDivCarrousel {
     width: 100%;
     display: grid;

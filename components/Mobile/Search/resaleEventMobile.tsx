@@ -31,7 +31,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         <div className={style.gridNewPa}>
             <div className={cssStyle.gridType}>
                 <div>
-                    <div className={utilities.fontName}>
+                    <div className={utilities.fontNameMobile}>
                         Pack de {item.ListProducts.length} productos
                     </div>
                     <div className={`${style.divImageInfo} mt-1`}>
@@ -138,7 +138,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                 displaPopUp &&
                 <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handlePopUp}>
                     <div className={style.mainDivPopUp}>
-                        <div className={`${utilities.fontName} mb-5`}>
+                        <div className={`${utilities.fontTitleMobile} mb-5`}>
                             Pack de {item.ListProducts.length} productos
                         </div>
 

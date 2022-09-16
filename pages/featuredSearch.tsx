@@ -38,7 +38,7 @@ export default function FeaturedSearch() {
     /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
     const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
-    const isSmallDown = useMediaQuery('(max-width: 768px)');
+    const isSmallDown = useMediaQuery('(max-width: 1280px)');
     let cssStyle = getCssStyle();
     const isVertical: boolean = false;
     const publicity: string = PublicityData.publicityList[0]
@@ -122,7 +122,7 @@ export default function FeaturedSearch() {
 
                     {
                         isDisplayResult &&
-                        <div className={"relative"}>
+                        <div className={`${utilities.maxWidthMobile} relative`}>
                             <div className={style.paddingContainer}>
                                 <div className={styleMobile.gridResultFiltersOut}>
                                     <div className={`${cssStyle.fontSubTitle}`}>

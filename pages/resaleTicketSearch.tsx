@@ -42,7 +42,7 @@ export default function ResaleTicketSearch() {
     /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
     const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
-    const isSmallDown = useMediaQuery('(max-width: 768px)');
+    const isSmallDown = useMediaQuery('(max-width: 1280px)');
     let cssStyle = getCssStyle();
     const isReview: boolean = false;
 
@@ -115,7 +115,7 @@ export default function ResaleTicketSearch() {
                     </div>
                     {
                         isDisplayResult ?
-                            <div className={"relative"}>
+                            <div className={`${utilities.maxWidthMobile} relative`}>
                                 <div className={style.paddingContainer}>
                                     <div className={styleMobile.gridResaleEventMobile}>
                                         {
