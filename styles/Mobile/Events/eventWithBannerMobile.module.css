@@ -1,6 +1,7 @@
-.mainDiv{
+.mainDiv {
     position: relative;
 }
+
 .sizeBannerEWB {
     height: 128px;
     width: 100%;
@@ -19,7 +20,7 @@
     position: relative;
 }
 
-.mainDivPro{
+.mainDivPro {
     width: 88px;
 }
 
@@ -37,6 +38,7 @@
     grid-template-columns: 1fr;
     grid-auto-columns: 1fr;
     grid-auto-flow: column;
+    padding: 6px 4px;
     gap: 16px;
 }
 
@@ -46,39 +48,37 @@
 
 .containerCarrouselEWB {
     display: grid;
-    padding: 12px;
+    padding: 0 8px 8px 8px;
     background: white;
     position: relative;
 }
 
-.mainDivInfo{
-    padding: 12px 0;
+.mainDivInfo {
+    padding: 12px 12px;
     display: grid;
-    width: max-content;
-    margin: auto;
     position: relative;
 }
 
-.positionLogo{
+.positionLogo {
     position: absolute;
     top: 6px;
     right: 6px;
 }
 
-.timerIconProp{
+.timerIconProp {
     height: 16px;
     aspect-ratio: 1.2/1;
     position: relative;
 }
 
-.gridTags{
+.gridTags {
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    gap:8px;
+    gap: 8px;
     margin-top: 12px;
 }
 
-.mainDivTimer{
+.mainDivTimer {
     background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
     overflow: hidden;
     color: white;
@@ -94,7 +94,8 @@
     width: max-content;
     margin-top: 9px;
 }
-@media (min-width: 1281px){
+
+@media (min-width: 1281px) {
     .gridCarrouselProductsEWB {
         display: grid;
         grid-template-columns: repeat(7, max-content);

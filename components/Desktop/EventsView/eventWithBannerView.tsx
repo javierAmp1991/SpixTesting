@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 import ProductViewDesk from "../Misc/productViewDesk";
+import ProductViewHorizontal from "../Misc/ProductViewHorizontal";
 
 const alignmentTextProduct: string = "text-center"
 
@@ -93,29 +94,8 @@ export default function EventWithBannerView({item, darkModeState}) {
                             {
                                 item.ListProducts.map((item, index) =>
                                     index >= 0 && index <= 6 &&
-                                    <ProductViewDesk item={item} size={110} isDisplayOffer={false} key={index}/>
+                                    <ProductViewHorizontal item={item} size={120} isDisplayOffer={true} key={index}/>
                                 )
-                                /* <div className={styles.mainDivPro} key={product.Name}>
-                                     <div className={`${styles.sizeProductEWB}`}>
-                                         <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath}
-                                                alt=""/>
-                                     </div>
-                                     <div className={styles.mainDivInfoPro}>
-                                         <div className={`${utilities.fontPriceInclude} mb-1 mt-1`}>
-                                             ${Intl.NumberFormat("ES-CL"
-                                         ).format(Math.round(product.Price))}
-                                         </div>
-                                         <div
-                                             className={`${utilities.fontSecundaryText}
-                                                     ${utilities.font12}`}>
-                                             <span>Antes: </span>
-                                             <span className="line-through">
-                                             ${Intl.NumberFormat("ES-CL"
-                                             ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
-                                         </span>
-                                         </div>
-                                     </div>
-                                 </div>*/
                             }
                         </div>
                     </div>
