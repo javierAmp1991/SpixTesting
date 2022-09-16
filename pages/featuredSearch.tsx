@@ -142,8 +142,8 @@ export default function FeaturedSearch() {
 
                                 <div className={style.gridResult}>
                                     <FeaturedViewPrincipalMobile item={PrincipalFeaturedSearch.item}/>
-                                    <PublicityViewMobile linkImage={publicity}/>
-                                    {dropDownFeaturedMobile}
+                                    {/*<PublicityViewMobile linkImage={publicity}/>
+                                    {dropDownFeaturedMobile}*/}
                                     <PublicityViewMobile linkImage={publicity1}/>
                                     {dropDownMobile}
                                 </div>
@@ -180,11 +180,11 @@ export default function FeaturedSearch() {
                                 </div>
                                 <div className={style.PrincipalGridNews}>
                                     <FeaturedViewPrincipal item={PrincipalFeaturedSearch.item}/>
-                                    <PublicityView linkImage={publicity}/>
+                                    {/*<PublicityView linkImage={publicity}/>
 
                                     <div className={style.gridFeaturedSearch}>
                                         {dropDownFeatured}
-                                    </div>
+                                    </div>*/}
                                     <PublicityView linkImage={publicity1}/>
                                     <div className={style.gridFeaturedSearchDropDown}>
                                         {dropDownMisc}

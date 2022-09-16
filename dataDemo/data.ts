@@ -296,8 +296,8 @@ export namespace Menu {
         },
         {
             Name: "Destacados",
-            Link: "/",
-            Id: "12345"
+            Link: "/featuredSearch",
+            Id: "12sdsd3c478dcasdsad123"
         },
         {
             Name: "Entretencion",
@@ -333,11 +333,6 @@ export namespace Menu {
             Name: "Reventa",
             Link: "/resaleEventSearch",
             Id: "123xcc478dasdsad123"
-        },
-        {
-            Name: "Destacados",
-            Link: "/featuredSearch",
-            Id: "12sdsd3c478dcasdsad123"
         },
     ]
 }
@@ -396,7 +391,7 @@ export namespace DailyOfferData {
                 Include: null,
                 ImagePath: "/images/product3.jpg"
             },
-            {
+  /*          {
                 Name: "Producto 4.1",
                 Price: 2990,
                 DiscountPercent: 25,
@@ -431,20 +426,20 @@ export namespace DailyOfferData {
                 Include: null,
                 ImagePath: "/images/product8.jpg"
             },
-            /*           {
-                           Name: "Producto 9.1",
-                           Price: 10990,
-                           DiscountPercent: 30,
-                           Include: null,
-                           ImagePath: "/images/product9.jpg"
-                       },
-                       {
-                           Name: "Producto 10.1",
-                           Price: 6990,
-                           DiscountPercent: 30,
-                           Include: null,
-                           ImagePath: "/images/product10.jpg"
-                       }*/
+            {
+                Name: "Producto 9.1",
+                Price: 10990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product9.jpg"
+            },
+            {
+                Name: "Producto 10.1",
+                Price: 6990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product10.jpg"
+            }*/
         ]
     }
 }
@@ -1461,11 +1456,11 @@ export namespace MostPopularData {
             TotalTickets: 1000,
             SoldTickets: 500,
         },
-/*        {
-            CoverImage: "/images/terraza.jpg",
-            TotalTickets: 1000,
-            SoldTickets: 990,
-        }*/
+        /*        {
+                    CoverImage: "/images/terraza.jpg",
+                    TotalTickets: 1000,
+                    SoldTickets: 990,
+                }*/
     ]
 
 }

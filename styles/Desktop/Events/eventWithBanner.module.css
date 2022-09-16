@@ -37,11 +37,10 @@
 
 .gridCarrouselProductsEWB {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    justify-content: center;
-    width: 90%;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
     padding: 6px 4px;
-    margin: auto;
     gap: 24px;
 }
 
@@ -75,27 +74,26 @@
 }
 
 .mainContainerInfo{
-    padding: 12px 0 12px 0;
-    margin: auto;
+    padding: 12px 16px 0 16px;
     display: grid;
     justify-items: left;
+    position: relative;
 }
 
 .mainDivTimer{
-    background: linear-gradient(145deg, #2193b0 0%, #34acc7 100%);
+    background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
     overflow: hidden;
     color: white;
     font-weight: 500;
     position: absolute;
-    top: 204px;
-    right: 10px;
+    top: 15px;
+    right: 12px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 5px;
-    padding: 4px 9px;
+    padding: 4px 8px;
     border-radius: 6px;
-    overflow: hidden;
     /*    --widthTimer: 85px;
         width: var(--widthTimer);
         height: 90px;

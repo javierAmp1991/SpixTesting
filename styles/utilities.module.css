@@ -25,7 +25,7 @@
     color: var(--colorPriceIncludeMobile);
 }
 
-.fontNameDesktop{
+.fontNameMobile{
     --fontSizeNameMob: 16px;
     font-size: var(--fontSizeNameMob);
 /*    line-height: var(--fontSizeNameMob);*/
@@ -85,6 +85,13 @@
     /*line-height: var(--fontSizeLineHeightDesktop);*/
     font-weight: 500;
     color: var(--colorPriceIncludeDesktop);
+}
+
+.fontNameDesktop{
+    --fontSizeNameMob: 15px;
+    font-size: var(--fontSizeNameMob);
+    /*    line-height: var(--fontSizeNameMob);*/
+    font-weight: 400;
 }
 
 .fontPrimaryTextDesktop{

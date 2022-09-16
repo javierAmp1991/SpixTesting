@@ -164,8 +164,8 @@ export default function ResaleTicketSearch() {
                                                       isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
                             }
                         </div>
-                        <div>
-                            <div className={style.paddingLeftResult}>
+                        <>
+                            <div className={style.paddingLeftResultResale}>
                                 <div className={style.gridHeaderResult}>
                                     <div className={style.sizeBanner}>
                                         <Image layout={"fill"} src={resaleBanner} alt={""}/>
@@ -197,7 +197,7 @@ export default function ResaleTicketSearch() {
                                 </div>
                             </div>
                             {buttonsNavegation}
-                        </div>
+                        </>
                     </div>
                 </div>
             </DefaultLayoutDesktop>

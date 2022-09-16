@@ -399,7 +399,7 @@ export default function MainContainerFilters({
 
     function getCssStyle() {
         return {
-            fontTitle: isDarkMode ? utilities.fontTitleDarkMode : utilities.fontTitle,
+            fontTitle: isDarkMode ? utilities.fontTitleDesktopDarkMode : utilities.fontTitleDesktop,
             bg: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             cleanIcon: isDarkMode ? GlobalConst.sourceImages.cleanIconWhite : GlobalConst.sourceImages.cleanIcon,
             fontName: isDarkMode ? utilities.fontNameDesktopDarkMode : utilities.fontNameDesktop,

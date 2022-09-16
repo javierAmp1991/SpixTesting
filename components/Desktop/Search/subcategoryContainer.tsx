@@ -114,8 +114,8 @@ export default function SubcategoryContainer({item, click, isDarkMode}:
 
     function getCssStyle() {
         return {
-            fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontPrimaryText,
-            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
+            fontSecundaryText: isDarkMode ? utilities.fontSecundaryTextDesktopDarkMode : utilities.fontPrimaryTextDesktop,
+            fontName: isDarkMode ? utilities.fontNameDesktopDarkMode : utilities.fontNameDesktop,
             borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
             bgInfo: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             styleRangePrice: isDarkMode ? style.styleRangePriceInputDarkMode : style.styleRangePriceInput,

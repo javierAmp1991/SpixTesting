@@ -351,10 +351,10 @@ export default function LayoutPrincipalFilterMobile({
 
     function getCssStyle() {
         return {
-            fontName: isDarkMode ? utilities.fontNameDarkMode : utilities.fontName,
+            fontName: isDarkMode ? utilities.fontNameMobileDarkMode : utilities.fontNameMobile,
             cleanIcon: isDarkMode ? GlobalConst.sourceImages.cleanIconWhite : GlobalConst.sourceImages.cleanIcon,
             styleTags: isDarkMode ? style.styleTagsDarkMode : style.styleTags,
-            fontSubTitle: isDarkMode ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
+            fontSubTitle: isDarkMode ? utilities.fontSubTitleMobileDarkMode : utilities.fontSubTitleMobile,
             borderBottom: isDarkMode ? style.borderBottomDarkMode : style.borderBottom,
             borderLeft: isDarkMode ? style.borderLeftDarkMode : style.borderLeft,
             bg: isDarkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,

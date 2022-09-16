@@ -92,29 +92,30 @@ export default function EventWithBannerView({item, darkModeState}) {
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
                                 item.ListProducts.map((item, index) =>
-                                    <ProductViewDesk item={item} size={100} isDisplayOffer={false} key={index}/>
+                                    index >= 0 && index <= 6 &&
+                                    <ProductViewDesk item={item} size={110} isDisplayOffer={false} key={index}/>
                                 )
-                                   /* <div className={styles.mainDivPro} key={product.Name}>
-                                        <div className={`${styles.sizeProductEWB}`}>
-                                            <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath}
-                                                   alt=""/>
-                                        </div>
-                                        <div className={styles.mainDivInfoPro}>
-                                            <div className={`${utilities.fontPriceInclude} mb-1 mt-1`}>
-                                                ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round(product.Price))}
-                                            </div>
-                                            <div
-                                                className={`${utilities.fontSecundaryText}
-                                                        ${utilities.font12}`}>
-                                                <span>Antes: </span>
-                                                <span className="line-through">
-                                                ${Intl.NumberFormat("ES-CL"
-                                                ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
-                                            </span>
-                                            </div>
-                                        </div>
-                                    </div>*/
+                                /* <div className={styles.mainDivPro} key={product.Name}>
+                                     <div className={`${styles.sizeProductEWB}`}>
+                                         <Image layout={"fill"} objectFit={"cover"} src={product.ImagePath}
+                                                alt=""/>
+                                     </div>
+                                     <div className={styles.mainDivInfoPro}>
+                                         <div className={`${utilities.fontPriceInclude} mb-1 mt-1`}>
+                                             ${Intl.NumberFormat("ES-CL"
+                                         ).format(Math.round(product.Price))}
+                                         </div>
+                                         <div
+                                             className={`${utilities.fontSecundaryText}
+                                                     ${utilities.font12}`}>
+                                             <span>Antes: </span>
+                                             <span className="line-through">
+                                             ${Intl.NumberFormat("ES-CL"
+                                             ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
+                                         </span>
+                                         </div>
+                                     </div>
+                                 </div>*/
                             }
                         </div>
                     </div>

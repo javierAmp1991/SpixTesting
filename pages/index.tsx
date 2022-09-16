@@ -184,7 +184,6 @@ export default function Index() {
 
                             <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={isDarkMode}/>
                         </div>
-
                     )
                     /*MostPopularData.listMostPopular.map((item, index) =>
                         <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
@@ -396,10 +395,20 @@ export default function Index() {
      </LayoutCarrouselLoop>*/
 
     /* let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>*/
-
+    let [getDayliOfferItems, setDailOffer] = useState(0)
+    const handleDailyOffer = (e) => setFeaturedItems(getFeaturedItems = e)
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        <LayoutCarrousel sumar={2} handleFeatured={handleDailyOffer}
+                         layoutProp={layoutPropFeatured}>
+            {
+                <>
+                    <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+                    <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+                </>
+            }
+        </LayoutCarrousel>
+
     </TitleSection>
 
     let mostPopular = <TitleSection darkModeState={isDarkMode} paddingTitle={titleLinkPadding}
