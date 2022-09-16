@@ -83,8 +83,8 @@ export default function EventInformationDesk({
                         Atributos:
                     </div>
                     {
-                        eventInformation.ListAtributes.map((item, index) =>
-                            index != eventInformation.ListAtributes.length - 1 ?
+                        eventInformation.Tags.map((item, index) =>
+                            index != eventInformation.Tags.length - 1 ?
                                 <a className={utilities.fontSecundaryText} key={index}>{item},</a>
                                 :
                                 <a className={utilities.fontSecundaryText} key={index}>{item}.</a>
