@@ -1,6 +1,6 @@
 .sizeBannerEWB {
-    height: var(--heightBannerEWBDesk);
     width: 100%;
+    aspect-ratio: 5.5/1;
     position: relative;
 }
 
@@ -87,7 +87,7 @@
     color: white;
     font-weight: 400;
     position: absolute;
-    top: 205px;
+    top: 215px;
     right: 12px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
