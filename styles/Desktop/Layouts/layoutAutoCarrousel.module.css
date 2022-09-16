@@ -12,8 +12,8 @@
     padding: var(--padding) calc(var(--padding) + 15px);
     transition: .4s;
     background: var(--gradientSpix);
-    background: white;
     background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
+    background: white;
  /*   border: 1px solid rgba(10, 102, 188, 1);*/
     border-radius: 6px;
     overflow: hidden;
@@ -32,8 +32,8 @@
 .mainDivName{
     padding-top: 9px;
     text-align: center;
-    color: #1a1919;
     color: rgba(10, 102, 188, 1);
+    color: #1a1919;
     color: white;
     font-weight: 500;
 /*    border-radius: 4px;

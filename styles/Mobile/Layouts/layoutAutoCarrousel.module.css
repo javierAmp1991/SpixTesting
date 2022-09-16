@@ -60,7 +60,10 @@
     padding-top: 9px;
     text-align: center;
     color: #1a1919;
+    background: linear-gradient(145deg, #fde90e 0%, #fae957 100%);
     color: rgba(10, 102, 188, 1);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-weight: 500;
     color: white;
 }
