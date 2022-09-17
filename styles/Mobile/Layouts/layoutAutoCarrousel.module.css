@@ -5,7 +5,7 @@
     grid-auto-flow: column;
     overflow: scroll;
     gap: 16px;
-    padding: 0 0 20px 0;
+    padding: 0 0 25px 0;
     scroll-snap-type: x mandatory;
 }
 
@@ -28,16 +28,16 @@
 }
 
 .mainDiv{
-    --padding: 10px;
-    padding: var(--padding) calc(var(--padding) + 15px);
+    --padding: 25px;
+    padding: var(--padding) calc(var(--padding));
     transition: .4s;
     background: var(--gradientSpix);
     background: white;
     background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
     /*   border: 1px solid rgba(10, 102, 188, 1);*/
     border-radius: 6px;
-    overflow: hidden;
     scroll-snap-align: start;
+    position: relative;
 }
 
 /*.mainDivName{
@@ -55,6 +55,20 @@
     left: 10px;
     transition: .4s;
 }*/
+
+.rectangleName{
+    position: absolute;
+    text-align: center;
+    padding: 1px 12px;
+    width: 90px;
+    left: 10px;
+    bottom: -12px;
+    color: whitesmoke;
+    border-radius: 3px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #f1dd0c 0%, #ecda45 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
 
 .mainDivName {
     padding-top: 9px;
