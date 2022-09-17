@@ -75,24 +75,23 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 8px;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
 .mainDivTimer {
-    background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
+    /*background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);*/
     overflow: hidden;
     color: white;
-    font-size: 12px;
-    line-height: 12px;
+    color: rgb(12, 108, 197) ;
     font-weight: 400;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 5px;
-    padding: 4px 8px;
+    /*padding: 4px 8px;*/
     border-radius: 4px;
     width: max-content;
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 @media (min-width: 1281px) {

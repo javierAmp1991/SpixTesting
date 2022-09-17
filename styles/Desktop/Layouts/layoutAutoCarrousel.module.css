@@ -8,34 +8,41 @@
 }
 
 .mainDiv{
-    --padding: 10px;
-    padding: var(--padding) calc(var(--padding) + 15px);
+    --padding: 25px;
+    padding: var(--padding) calc(var(--padding));
     transition: .4s;
     background: var(--gradientSpix);
-    background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
     background: white;
+    background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
  /*   border: 1px solid rgba(10, 102, 188, 1);*/
     border-radius: 6px;
-    overflow: hidden;
+    position: relative;
 }
 
 .mainDivW{
-    --padding: 10px;
-    padding: var(--padding) calc(var(--padding) + 15px);
+    --padding: 25px;
+    padding: var(--padding) calc(var(--padding));
     transition: .4s;
     background: var(--gradientSpix);
     background: white;
     border-radius: 6px;
     overflow: hidden;
+    position: relative;
 }
 
 .mainDivName{
-    padding-top: 9px;
     text-align: center;
-    color: rgba(10, 102, 188, 1);
-    color: #1a1919;
-    color: white;
-    font-weight: 500;
+    border-radius: 3px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #efe41a 0%, #e0e54b 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    color: whitesmoke;
+    position: absolute;
+    font-weight: 600;
+    width: 120px;
+    padding: 1px 12px;
+    left: 10px;
+    bottom: -15px;
 /*    border-radius: 4px;
     overflow: hidden;
     box-shadow: 2px 3px 6px rgba(0,0,0,.3);
@@ -44,19 +51,31 @@
     padding: 2px 0;
     color: white;
     font-weight: 500;
-    position: absolute;
-    width: 112px;
-    bottom: -12px;
-    left: 9px;
     transition: .4s;*/
 }
+
+
 
 .mainDivNameW{
     padding-top: 9px;
     text-align: center;
     color: #333;
     color: rgba(10, 102, 188, 1);
+    color: white;
     font-weight: 500;
+}
+
+.rectangleName{
+    position: absolute;
+    text-align: center;
+    padding: 1px 12px;
+    width: 90px;
+    left: 10px;
+    color: whitesmoke;
+    border-radius: 3px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #f1dd0c 0%, #ecda45 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
 }
 
 .testImage {

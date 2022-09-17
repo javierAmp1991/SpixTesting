@@ -441,7 +441,8 @@ export namespace DailyOfferData {
                  ImagePath: "/images/product10.jpg"
              }*/
         ],
-        ListAtributes: ["Rock", "Conciertos", "Festivales"]
+        ListAtributes: ["Rock", "Conciertos", "Festivales"],
+        Category: "Bar Restaurant"
     }
 }
 
@@ -478,7 +479,7 @@ export namespace ListOffertData {
                     Include: null,
                     ImagePath: "/images/product3.jpg"
                 },
-                {
+/*                {
                     Name: "Producto 4.1",
                     Price: 2990,
                     DiscountPercent: 25,
@@ -499,35 +500,36 @@ export namespace ListOffertData {
                     Include: "Dcto 2 Un.",
                     ImagePath: "/images/product6.jpg"
                 },
-                /*                {
-                                    Name: "Producto 7.1",
-                                    Price: 10990,
-                                    DiscountPercent: 30,
-                                    Include: null,
-                                    ImagePath: "/images/product7.jpg"
-                                },
-                                {
-                                    Name: "Producto 8.1",
-                                    Price: 10990,
-                                    DiscountPercent: 30,
-                                    Include: null,
-                                    ImagePath: "/images/product8.jpg"
-                                },
-                                {
-                                    Name: "Producto 9.1",
-                                    Price: 10990,
-                                    DiscountPercent: 30,
-                                    Include: null,
-                                    ImagePath: "/images/product9.jpg"
-                                },
-                                {
-                                    Name: "Producto 10.1",
-                                    Price: 6990,
-                                    DiscountPercent: 30,
-                                    Include: null,
-                                    ImagePath: "/images/product10.jpg"
-                                },*/
-            ]
+                {
+                    Name: "Producto 7.1",
+                    Price: 10990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product7.jpg"
+                },
+                {
+                    Name: "Producto 8.1",
+                    Price: 10990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product8.jpg"
+                },
+                {
+                    Name: "Producto 9.1",
+                    Price: 10990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product9.jpg"
+                },
+                {
+                    Name: "Producto 10.1",
+                    Price: 6990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product10.jpg"
+                },*/
+            ],
+            Category: "Descuentos"
         },
         {
             EventId: "12357",
@@ -2905,6 +2907,8 @@ export class EventLookUp {
     public Date?: Date[]
     public VenueDate?: DateVenue[]
     public ListAtributes?: String[]
+    public Category?: string
+
 }
 
 export class DateVenue {

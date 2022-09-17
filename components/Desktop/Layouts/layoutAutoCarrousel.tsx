@@ -49,22 +49,22 @@ const listImageNew: cate[] = [
 ];
 
 const listImageNewW: cate[] = [
-    {Image: "/images/autocat1W.png", Name: "Rock"},
-    {Image: "/images/autocat2W.png", Name: "Conciertos"},
-    {Image: "/images/autocat3W.png", Name: "Beleza"},
-    {Image: "/images/autocat4W.png", Name: "Spa"},
-    {Image: "/images/autocat1W.png", Name: "Futbol"},
-    {Image: "/images/autocat2W.png", Name: "Reggaeton"},
-    {Image: "/images/autocat3W.png", Name: "Basketball"},
-    {Image: "/images/autocat4W.png", Name: "Peluqueria"},
+    {Image: "/images/autocat1W.png", Name: "Restaurant"},
+    {Image: "/images/autocat2W.png", Name: "Deporte"},
+    {Image: "/images/autocat3W.png", Name: "Peluqueria"},
+    {Image: "/images/autocat4W.png", Name: "Rock"},
+    {Image: "/images/autocat5W.png", Name: "Restobar"},
+    {Image: "/images/autocat6W.png", Name: "Zoologico"},
+    {Image: "/images/autocat7W.png", Name: "Cine"},
     {Image: "/images/autocat1W.png", Name: "Educacion"},
     {Image: "/images/autocat2W.png", Name: "Masajes"},
     {Image: "/images/autocat3W.png", Name: "Pop"},
-    {Image: "/images/autocat4W.png", Name: "Zoologico"},
-    {Image: "/images/autocat1W.png", Name: "Pizzas"},
-    {Image: "/images/autocat2W.png", Name: "Cafe"},
-    {Image: "/images/autocat3W.png", Name: "Tributos"},
-    {Image: "/images/autocat4W.png", Name: "Pasteleria"},
+    {Image: "/images/autocat4W.png", Name: "Conciertos"},
+    {Image: "/images/autocat5W.png", Name: "Pizzas"},
+    {Image: "/images/autocat6W.png", Name: "Cafe"},
+    {Image: "/images/autocat7W.png", Name: "Tributos"},
+    {Image: "/images/autocat1W.png", Name: "Pasteleria"},
+    {Image: "/images/autocat2W.png", Name: "Peluqueria"},
 
     /* {Image:"/images/auto1.jpg", Name:"Rock"},
      {Image:"/images/auto2.jpg", Name:"Conciertos"},
@@ -89,18 +89,18 @@ const listImageNewB: cate[] = [
     {Image: "/images/autocat2B.png", Name: "Conciertos"},
     {Image: "/images/autocat3B.png", Name: "Beleza"},
     {Image: "/images/autocat4B.png", Name: "Spa"},
-    {Image: "/images/autocat1B.png", Name: "Futbol"},
-    {Image: "/images/autocat2B.png", Name: "Reggaeton"},
-    {Image: "/images/autocat3B.png", Name: "Basketball"},
-    {Image: "/images/autocat4B.png", Name: "Peluqueria"},
+    {Image: "/images/autocat5B.png", Name: "Futbol"},
+    {Image: "/images/autocat6B.png", Name: "Reggaeton"},
+    {Image: "/images/autocat7B.png", Name: "Basketball"},
     {Image: "/images/autocat1B.png", Name: "Educacion"},
     {Image: "/images/autocat2B.png", Name: "Masajes"},
     {Image: "/images/autocat3B.png", Name: "Pop"},
     {Image: "/images/autocat4B.png", Name: "Zoologico"},
-    {Image: "/images/autocat1B.png", Name: "Pizzas"},
-    {Image: "/images/autocat2B.png", Name: "Cafe"},
-    {Image: "/images/autocat3B.png", Name: "Tributos"},
-    {Image: "/images/autocat4B.png", Name: "Pasteleria"},
+    {Image: "/images/autocat5B.png", Name: "Pizzas"},
+    {Image: "/images/autocat6B.png", Name: "Cafe"},
+    {Image: "/images/autocat7B.png", Name: "Tributos"},
+    {Image: "/images/autocat1B.png", Name: "Pasteleria"},
+    {Image: "/images/autocat2B.png", Name: "Peluqueria"},
 ];
 
 const widthCat: number = 90;
@@ -209,7 +209,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         return () => clearInterval(interval)
     })
 
-    const isBlue: boolean = false
+    const isBlue: boolean = true
     return (
 
         <div ref={renderContainer} className=" relative overflow-hidden">

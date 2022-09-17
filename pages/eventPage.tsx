@@ -58,6 +58,7 @@ import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import {InOfferHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
+import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -278,7 +279,7 @@ export default function EventPage() {
 
     let moreOffertDesk = <TitleSection titleLink={discountTitle}
                                        paddingTitle={spaceComponentsDeskY} darkModeState={false}>
-        <EventWithBannerMobile displayLogoRating={false} item={ListOffertData.listOffert[0]} darkModeState={false}/>
+        <EventWithBannerView sizeImageProduct={90} item={ListOffertData.listOffert[0]} darkModeState={false}/>
     </TitleSection>
 
     let [getProducst, setGetProducst] = useState(0)

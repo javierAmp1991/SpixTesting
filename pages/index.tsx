@@ -399,7 +399,7 @@ export default function Index() {
 
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <EventWithBannerView darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        <EventWithBannerView sizeImageProduct={120} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
 
     </TitleSection>
 

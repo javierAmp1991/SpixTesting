@@ -6,7 +6,7 @@ import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 import ProductViewHorizontal from "../Misc/ProductViewHorizontal";
 
-export default function EventWithBannerView({item, darkModeState}) {
+export default function EventWithBannerView({item, darkModeState, sizeImageProduct}) {
     const principalInfoEventProp: PrincipalInfoEventProp = {
         Title: item.EventName,
         Subtitle: item.Subtitle,
@@ -61,7 +61,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                         <div className={styles.gridAdInfo}>
                             <div className={utilities.fontSecundaryText}>
                                 <span className={utilities.fontPrimaryText}>Categoria: </span>
-                                <span className={utilities.fontSecundaryText}>Bar restaurant</span>
+                                <span className={utilities.fontSecundaryText}>{item.Category}</span>
                             </div>
 
                             <div className={styles.mainDivTimer}>
@@ -106,7 +106,7 @@ export default function EventWithBannerView({item, darkModeState}) {
                             {
                                 item.ListProducts.map((item, index) =>
                                     index >= 0 && index <= 6 &&
-                                    <ProductViewHorizontal item={item} size={120} isDisplayOffer={true} key={index}/>
+                                    <ProductViewHorizontal item={item} size={sizeImageProduct} isDisplayOffer={true} key={index}/>
                                 )
                             }
                         </div>
