@@ -148,18 +148,18 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
         return () => clearInterval(interval)
     })*/
 
-   /* useEffect(() => {
-        const handleSetGap = (number: number) => {
-            setGapCarrousel(gapCarrousel = number)
-        }
+    /* useEffect(() => {
+         const handleSetGap = (number: number) => {
+             setGapCarrousel(gapCarrousel = number)
+         }
 
-        function resiveDiv() {
-            handleSetGap((window.innerWidth - 358) / 2)
-        }
+         function resiveDiv() {
+             handleSetGap((window.innerWidth - 358) / 2)
+         }
 
-        handleSetGap((window.innerWidth - 358) / 2)
-        window.addEventListener('resize', resiveDiv)
-    }, [gapCarrousel]);*/
+         handleSetGap((window.innerWidth - 358) / 2)
+         window.addEventListener('resize', resiveDiv)
+     }, [gapCarrousel]);*/
 
     return (
         <div ref={renderContainer} className="overflow-scroll w-full">
@@ -167,15 +167,17 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
             <div ref={mainDivRef} className={style.gridCarrouselAuto}>
                 {
                     listImageNewW.map((image: cateMobile, index) =>
-                    <div key={index} className={style.mainDiv}>
-                        <div key={index} className={style.testImage}>
-                            <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>
-                        </div>
-                        <div className={`${style.rectangleName} ${utilities.clamp1}`}>
+                        <div key={index} className={style.mainDiv}>
+                            <div key={index} className={style.testImage}>
+                                <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>
+                            </div>
+                            <div className={`${style.rectangleName} ${utilities.clamp1}`}>
+                            <span className={style.colorName}>
                             {image.Name}
+                            </span>
+                            </div>
                         </div>
-                    </div>
-                )
+                    )
                 }
             </div>
         </div>

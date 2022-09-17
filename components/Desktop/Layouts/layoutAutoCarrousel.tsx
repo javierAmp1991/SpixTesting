@@ -226,19 +226,21 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                     isBlue ?
                         listImageNewW.map((image: cate, index) =>
                             <div key={index} className={style.mainDiv}>
-                                <div style={{width:widthCat}} className={style.testImage}>
+                                <div style={{width: widthCat}} className={style.testImage}>
                                     <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
                                            alt=""/>
                                 </div>
                                 <div className={`${style.mainDivName} ${utilities.clamp1}`}>
+                                    <span className={style.colorName}>
                                     {image.Name}
+                                    </span>
                                 </div>
                             </div>
                         )
                         :
                         listImageNewB.map((image: cate, index) =>
                             <div key={index} className={style.mainDivW}>
-                                <div style={{width:widthCat}} className={style.testImage}>
+                                <div style={{width: widthCat}} className={style.testImage}>
                                     <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
                                            alt=""/>
                                 </div>

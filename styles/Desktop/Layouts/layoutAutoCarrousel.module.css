@@ -7,19 +7,19 @@
     padding-bottom: 20px;
 }
 
-.mainDiv{
+.mainDiv {
     --padding: 25px;
     padding: var(--padding) calc(var(--padding));
     transition: .4s;
     background: var(--gradientSpix);
     background: white;
     background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
- /*   border: 1px solid rgba(10, 102, 188, 1);*/
+    /*   border: 1px solid rgba(10, 102, 188, 1);*/
     border-radius: 6px;
     position: relative;
 }
 
-.mainDivW{
+.mainDivW {
     --padding: 25px;
     padding: var(--padding) calc(var(--padding));
     transition: .4s;
@@ -30,35 +30,40 @@
     position: relative;
 }
 
-.mainDivName{
+.colorName {
+    background: var(--gradientSpix);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.mainDivName {
     text-align: center;
     border-radius: 3px;
     overflow: hidden;
     background: linear-gradient(145deg, #efe41a 0%, #e0e54b 100%);
     background: linear-gradient(145deg, #f6e25b 0%, #FFEA61 100%);
 
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    color: rgba(10, 102, 188, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    color: #1435d9;
     position: absolute;
     font-weight: 600;
     width: 120px;
     padding: 1px 12px;
     left: 10px;
     bottom: -15px;
-/*    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 2px 3px 6px rgba(0,0,0,.3);
-    text-align: center;
-    background: linear-gradient(145deg, #0ed7c4 0%, #15DAE6FF 100%);
-    padding: 2px 0;
-    color: white;
-    font-weight: 500;
-    transition: .4s;*/
+    /*    border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 2px 3px 6px rgba(0,0,0,.3);
+        text-align: center;
+        background: linear-gradient(145deg, #0ed7c4 0%, #15DAE6FF 100%);
+        padding: 2px 0;
+        color: white;
+        font-weight: 500;
+        transition: .4s;*/
 }
 
 
-
-.mainDivNameW{
+.mainDivNameW {
     padding-top: 9px;
     text-align: center;
     color: #333;
@@ -67,7 +72,7 @@
     font-weight: 500;
 }
 
-.rectangleName{
+.rectangleName {
     position: absolute;
     text-align: center;
     padding: 1px 12px;
@@ -77,7 +82,7 @@
     border-radius: 3px;
     overflow: hidden;
     background: linear-gradient(145deg, #f1dd0c 0%, #ecda45 100%);
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 .testImage {
@@ -91,7 +96,7 @@
     padding: 0;
 }
 
-.sizeArrowLeft{
+.sizeArrowLeft {
     height: 32px;
     width: 32px;
     position: absolute;
@@ -102,7 +107,7 @@
     top: calc(50% - 16px);
 }
 
-.sizeArrowRight{
+.sizeArrowRight {
     height: 32px;
     width: 32px;
     position: absolute;

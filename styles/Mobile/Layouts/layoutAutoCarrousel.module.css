@@ -56,6 +56,12 @@
     transition: .4s;
 }*/
 
+.colorName {
+    background: var(--gradientSpix);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
 .rectangleName{
     position: absolute;
     text-align: center;
