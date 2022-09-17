@@ -31,20 +31,23 @@
 }
 
 .colorName {
-    background: var(--gradientSpix);
+    /*background: var(--gradientSpix);
     -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    -webkit-background-clip: text;*/
+    color: #171616;
 }
 
 .mainDivName {
     text-align: center;
     border-radius: 3px;
     overflow: hidden;
-    background: linear-gradient(145deg, #efe41a 0%, #e0e54b 100%);
-    background: linear-gradient(145deg, #f6e25b 0%, #FFEA61 100%);
+/*    background: linear-gradient(145deg, #efe41a 0%, #e0e54b 100%);
+    background: linear-gradient(145deg, #f6e25b 0%, #FFEA61 100%);*/
+    background: white;
 
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     color: #1435d9;
+    color: black;
     position: absolute;
     font-weight: 600;
     width: 120px;
@@ -66,9 +69,9 @@
 .mainDivNameW {
     padding-top: 9px;
     text-align: center;
-    color: #333;
     color: rgba(10, 102, 188, 1);
     color: white;
+    color: #333;
     font-weight: 500;
 }
 
@@ -79,6 +82,7 @@
     width: 90px;
     left: 10px;
     color: whitesmoke;
+    color: black;
     border-radius: 3px;
     overflow: hidden;
     background: linear-gradient(145deg, #f1dd0c 0%, #ecda45 100%);
