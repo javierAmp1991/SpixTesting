@@ -38,7 +38,7 @@
     background: linear-gradient(145deg, #f6e25b 0%, #FFEA61 100%);
 
     box-shadow: 0 2px 4px rgba(0,0,0,.1);
-    color: whitesmoke;
+    color: rgba(10, 102, 188, 1);
     position: absolute;
     font-weight: 600;
     width: 120px;
