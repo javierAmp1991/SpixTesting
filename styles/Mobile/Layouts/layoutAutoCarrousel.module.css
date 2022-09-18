@@ -38,7 +38,7 @@
     border-radius: 6px;
     scroll-snap-align: start;
     position: relative;
-/*    overflow: hidden;*/
+overflow: hidden;
 }
 
 /*.mainDivName{
