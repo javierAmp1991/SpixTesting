@@ -84,6 +84,25 @@ const listImageNewW: cate[] = [
      {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
 ];
 
+const listImage: cate[] = [
+    {Image: "/images/autocatI1.png", Name: "Restaurant"},
+    {Image: "/images/autocatI2.png", Name: "Deporte"},
+    {Image: "/images/autocatI3.png", Name: "Peluqueria"},
+    {Image: "/images/autocatI4.png", Name: "Rock"},
+    {Image: "/images/autocatI5.png", Name: "Restobar"},
+    {Image: "/images/autocatI6.png", Name: "Zoologico"},
+    {Image: "/images/autocatI7.png", Name: "Cine"},
+    {Image: "/images/autocatI1.png", Name: "Educacion"},
+    {Image: "/images/autocatI2.png", Name: "Masajes"},
+    {Image: "/images/autocatI3.png", Name: "Pop"},
+    {Image: "/images/autocatI4.png", Name: "Conciertos"},
+    {Image: "/images/autocatI5.png", Name: "Pizzas"},
+    {Image: "/images/autocatI6.png", Name: "Cafe"},
+    {Image: "/images/autocatI7.png", Name: "Tributos"},
+    {Image: "/images/autocatI1.png", Name: "Pasteleria"},
+    {Image: "/images/autocatI2.png", Name: "Peluqueria"},
+];
+
 const listImageNewB: cate[] = [
     {Image: "/images/autocat1B.png", Name: "Rock"},
     {Image: "/images/autocat2B.png", Name: "Conciertos"},
@@ -103,9 +122,9 @@ const listImageNewB: cate[] = [
     {Image: "/images/autocat2B.png", Name: "Peluqueria"},
 ];
 
-const widthCat: number = 90;
+const widthCat: number = 70;
 const numberItems: number = 7;
-const gap: number = ((1100 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
+const gap: number = ((1100 - ((widthCat + 70) * numberItems)) / (numberItems - 1))
 export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                                                 {
                                                     gapLayout: number,
@@ -209,7 +228,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         return () => clearInterval(interval)
     })
 
-    const isBlue: boolean = true
+    const isDeg: boolean = true
     return (
 
         <div ref={renderContainer} className=" relative overflow-hidden">
@@ -223,32 +242,24 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                  className={`${style.gridCarrouselAuto}`}>
 
                 {
-                    isBlue ?
-                        listImageNewW.map((image: cate, index) =>
-                            <div key={index} className={style.mainDiv}>
-                                <div style={{width: widthCat}} className={style.testImage}>
-                                    <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
-                                           alt=""/>
-                                </div>
-                                <div className={`${style.mainDivName} ${utilities.clamp1}`}>
-                                    <span className={style.colorName}>
-                                    {image.Name}
-                                    </span>
-                                </div>
+                    listImageNewW.map((image: cate, index) =>
+                        <div key={index} className={style.mainDiv}>
+                            <div style={{width: widthCat}} className={style.testImage}>
+                                <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
+                                       alt=""/>
                             </div>
-                        )
-                        :
-                        listImageNewB.map((image: cate, index) =>
-                            <div key={index} className={style.mainDivW}>
-                                <div style={{width: widthCat}} className={style.testImage}>
-                                    <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
-                                           alt=""/>
-                                </div>
-                                <div className={`${style.mainDivNameW} ${utilities.clamp1}`}>
-                                    {image.Name}
-                                </div>
+                            <div className={style.mainDivName}>T</div>
+                            <div className={`${style.mainDivNameL} ${utilities.clamp1}`}>
+                                {image.Name}
                             </div>
-                        )
+                            {/*<div className={style.superRectangule}>
+                                {image.Name}
+                            </div>
+                            {/*<div className={style.normalName}>
+                                {image.Name}
+                            </div>*/}
+                        </div>
+                    )
                 }
             </div>
 

@@ -171,10 +171,9 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
                             <div key={index} className={style.testImage}>
                                 <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>
                             </div>
-                            <div className={`${style.rectangleName} ${utilities.clamp1}`}>
-                            <span className={style.colorName}>
-                            {image.Name}
-                            </span>
+                            <div className={style.mainDivName}>T</div>
+                            <div className={`${style.mainDivNameL} ${utilities.clamp1}`}>
+                                {image.Name}
                             </div>
                         </div>
                     )

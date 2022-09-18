@@ -129,6 +129,11 @@
     align-content: center;
 }
 
+.grid1Info{
+    padding-right: 48px;
+    border-right: 2px solid var(--separationLineColor);
+}
+
 .gridTags {
     display: grid;
     grid-template-columns: repeat(3, max-content);
@@ -152,14 +157,12 @@
 .mainDivInfoQ {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(2, 1fr) max-content;
+    grid-template-columns: max-content 1fr;
 }
 
 .gridAdInfo {
     display: flex;
     flex-direction: column;
     gap: 9px;
-    border-left: 2px solid var(--separationLineColor);
-    padding-left: 24px;
-    margin-left: 12px;
+    padding-left: 48px;
 }

@@ -6,7 +6,8 @@
     --maxWidthBodyContent: 1100px;
     --maxWidthBanner: 1920px;
     --colorBodyDarkMode: #121212;
-    --colorBodyNormal: white;
+    --colorBodyNormal: #f5f2f2;
+   --colorBodyNormal: white;
 /*    --colorBodyNormal: #ebebeb;*/
     --colorTitlesMobile: #0f1111;
     --colorTitlesDesktop: #0f1111;

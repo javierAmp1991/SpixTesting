@@ -1,5 +1,9 @@
 .principalGridVertical {
     --paddinBottomDivX: 12px;
+    --sizeCir: 16px;
+    --sizeCirLat: 16px;
+    --botTomCircle: 24px;
+    --boxShadowCircle: 0 0 0 inset rgba(0, 0, 0, .2);
     /* border: 2px solid #eeeeee;*/
     /*border-bottom: 1px solid #dedcdc;*/
     display: grid;
@@ -7,9 +11,10 @@
     border-radius: 6px;
     overflow: hidden;
     transition: .4s;
+    position: relative;
 }
 
-.principalGridVertical:hover{
+.principalGridVertical:hover {
     transform: scale(1.03);
 }
 
@@ -17,9 +22,8 @@
     position: relative;
 }
 
-
-.fontSize{
-/*    color: var(--colorSecundaryTextDesktop);*/
+.fontSize {
+    /*    color: var(--colorSecundaryTextDesktop);*/
     /*color: #ababab;*/
     font-size: 16px;
     font-weight: 300;
@@ -46,11 +50,12 @@
     display: grid;
     align-content: start;
     padding: 10px 0 0 0;
-    border-top: 2px solid #f5f5f5;
 }
 
 .TopDivInfo {
-    padding: 0 24px 12px 24px;
+    padding: 0 24px 14px 24px;
+    position: relative;
+
 }
 
 .gridRatingStar {
@@ -65,10 +70,15 @@
 }
 
 .bottomDivSearch {
-    padding: 12px 24px;
-    border-top: 2px solid var(--separationLineColor);
+    background: linear-gradient(145deg, rgba(252, 176, 69, 1) 0%, rgb(253, 234, 29) 100%);
+    background: linear-gradient(145deg, #ffe32d 0%, #fde653 100%);
+    background: white;
+    padding: 10px 24px 10px 24px;
     display: grid;
-    gap: 6px;
+    gap: 4px;
+    position: relative;
+    border-top: 2px dashed #e0dddd;
+    /*overflow: hidden;*/
 }
 
 .bottomDivResale {
@@ -88,7 +98,6 @@
     align-items: center;
 }
 
-
 .displayIn {
     height: 0;
     overflow: hidden;
@@ -98,6 +107,344 @@
 .displayOut {
     height: 24px;
     transition: .2s;
+}
+
+
+.bottomCircle1 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(0% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle2 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(10% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle3 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(20% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle4 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(30% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle5 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(40% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle6 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(50% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle7 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(60% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle8 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(70% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle9 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(80% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle10 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(90% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle11 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--sizeCir) / 2);
+    left: calc(100% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle1 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(0% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle2 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(10% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle3 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(20% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle4 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(30% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle5 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(40% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle6 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(50% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle7 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(60% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle8 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(70% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle9 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(80% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle10 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(90% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle11 {
+    height: var(--sizeCir);
+    width: var(--sizeCir);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--sizeCir) / 2);
+    left: calc(100% - (var(--sizeCir) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.bottomCircle {
+    height: var(--botTomCircle);
+    width: var(--botTomCircle);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: calc(-1 * var(--botTomCircle) / 2);
+    left: calc(50% - (var(--botTomCircle) / 2));
+    z-index: 100000000;
+    box-shadow: var(--boxShadowCircle);
+}
+
+.topCircle {
+    height: var(--botTomCircle);
+    width: var(--botTomCircle);
+    background: var(--colorBodyNormal);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    top: calc(-1 * var(--botTomCircle) / 2);
+    left: calc(50% - (var(--botTomCircle) / 2));
+    z-index: 100000000;
+}
+
+.leftOval {
+    width: var(--sizeCirLat);
+    height: var(--sizeCirLat);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 10000000000000000000000;
+    overflow: hidden;
+    top: calc(var(--sizeCirLat) / 2 * -1);
+    right: calc(var(--sizeCirLat) / 2 * -1);
+    box-shadow: 0 0 6px inset rgba(0,0,0,.1);
+}
+
+.rightOval {
+    width: var(--sizeCirLat);
+    height: var(--sizeCirLat);
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 10000000000000000000000;
+    left: calc(var(--sizeCirLat) / 2 * -1);
+    top: calc(var(--sizeCirLat) / 2 * -1);
+    box-shadow: 0 0 6px inset rgba(0,0,0,.1);
 }
 
 

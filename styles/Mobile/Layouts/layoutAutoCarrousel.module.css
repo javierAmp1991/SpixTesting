@@ -9,7 +9,7 @@
     scroll-snap-type: x mandatory;
 }
 
-.backgroundCarrousel{
+.backgroundCarrousel {
     background: gray;
     overflow: hidden;
 }
@@ -27,9 +27,9 @@
     padding: 0;
 }
 
-.mainDiv{
-    --padding: 25px;
-    padding: var(--padding) calc(var(--padding));
+.mainDiv {
+    --padding: 30px;
+    padding: 20px 30px 40px 30px;
     transition: .4s;
     background: var(--gradientSpix);
     background: white;
@@ -38,6 +38,7 @@
     border-radius: 6px;
     scroll-snap-align: start;
     position: relative;
+/*    overflow: hidden;*/
 }
 
 /*.mainDivName{
@@ -57,38 +58,85 @@
 }*/
 
 .colorName {
- /*   background: var(--gradientSpix);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;*/
-   color:  #171616;
+    /* -webkit-text-fill-color: transparent;
+       -webkit-background-clip: text;*/
+    color: #171616;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.rectangleName{
+.rectangleName {
     position: absolute;
     text-align: center;
-    padding: 1px 12px;
-    width: 90px;
+    padding: 1px 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
     left: 10px;
     bottom: -12px;
     color: rgba(10, 102, 188, 1);
     font-weight: 500;
     border-radius: 3px;
-    overflow: hidden;
-/*    background: linear-gradient(145deg, #e9f10c 0%, #e6ec45 100%);
-    background: linear-gradient(145deg, #f6e25b 0%, #FFEA61 100%);*/
-    background: white;
-    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+    background: #ffff29;
+    background: linear-gradient(145deg, #ffe32d 0%, #fde653 100%);
+    background: linear-gradient(145deg, #fff52d 0%, #fdef53 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 .mainDivName {
     padding-top: 9px;
     text-align: center;
-   /* background: linear-gradient(145deg, #fde90e 0%, #fae957 100%);
-    color: rgba(10, 102, 188, 1);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;*/
+    /* background: linear-gradient(145deg, #fde90e 0%, #fae957 100%);
+     color: rgba(10, 102, 188, 1);
+     -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;*/
     font-weight: 600;
-    color:rgba(10, 102, 188, 1);
+    color: rgba(10, 102, 188, 1);
     color: #1a1919;
+}
+
+.mainDivName {
+    text-align: center;
+    /*    border-radius: 3px;
+        overflow: hidden;*/
+    /*    background: linear-gradient(145deg, #efe41a 0%, #e0e54b 100%);
+        background: linear-gradient(145deg, #f6e25b 0%, #FFEA61 100%);*/
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    position: absolute;
+    font-weight: 800;
+    width: 120px;
+    opacity: .5;
+    opacity: .8;
+    color: transparent;
+    background: linear-gradient(145deg, #2989d0 0%, #ab1a1a 100%);
+    background: linear-gradient(145deg, #2989d0 0%, #1a48ab 100%);
+    background: linear-gradient(145deg, #7a7979 0%, #2c2b2b 100%);
+    padding: 2px 4px;
+    left: 0px;
+    /*bottom: -15px;*/
+    bottom: 0;
+    /*border-radius: 8px 8px 0 0;*/
+    /*background: linear-gradient(145deg, #fffb15 0%, #fdf910 100%);*/
+    /*    border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 2px 3px 6px rgba(0,0,0,.3);
+        text-align: center;
+        background: linear-gradient(145deg, #0ed7c4 0%, #15DAE6FF 100%);
+        padding: 2px 0;
+        color: white;
+        font-weight: 500;
+        transition: .4s;*/
+}
+
+.mainDivNameL {
+    text-align: center;
+    position: absolute;
+    font-weight: 600;
+    width: 120px;
+    z-index: 1000;
+    left: 0;
+    padding: 2px 4px;
+    bottom: 0;
+    color: white;
 }
 
