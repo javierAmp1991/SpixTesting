@@ -79,19 +79,20 @@
 }
 
 .mainDivTimer {
-    /*background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);*/
+    background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
     overflow: hidden;
     color: white;
-    color: rgb(12, 108, 197) ;
     font-weight: 400;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 5px;
-    /*padding: 4px 8px;*/
+    padding: 4px 8px;
+    font-size: 13px;
+    line-height: 13px;
     border-radius: 4px;
     width: max-content;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 @media (min-width: 1281px) {
