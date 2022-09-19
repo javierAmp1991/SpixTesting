@@ -57,7 +57,7 @@ export default function SearchRestaurant() {
 
     //region desktop Components
     let dropDown = OfferSearch.list.map(item =>
-        <EventVerticalView item={item} darkModeState={isDarkMode}/>
+        <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>
     )
 
 
