@@ -24,6 +24,7 @@ import {
 } from "../dataDemo/data";
 import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop";
 import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
+import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -177,7 +178,10 @@ export default function ResaleTicketSearch() {
                                         <div className={`${utilities.fontSubtitleDesktop} mt-3`}>
                                             {resaleSubtile}
                                         </div>
-                                        <div className={style.gridStarNumber}>
+                                        <div className={"mt-3"}>
+                                            <RatingStarDesktop item={4}/>
+                                        </div>
+                                        {/*<div className={style.gridStarNumber}>
                                             <div className={`${utilities.fontPrimaryText} ${style.ratingStarProp}`}>
                                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}
                                                        alt={""}/>
@@ -185,7 +189,7 @@ export default function ResaleTicketSearch() {
                                             <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
                                                 ({resaleRating})
                                             </span>
-                                        </div>
+                                        </div>*/}
                                     </div>
                                 </div>
                                 <div className={style.gridResaleEvents}>

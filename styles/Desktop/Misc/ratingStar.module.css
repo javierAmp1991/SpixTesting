@@ -17,6 +17,12 @@
     position: relative;
 }
 
+.sizeStarDesktop{
+    height: 19px;
+    width: 19px;
+    position: relative;
+}
+
 .paddingRating {
     display: grid;
     align-items: end;

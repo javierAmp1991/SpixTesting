@@ -26,6 +26,8 @@ import {
 import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop";
 import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
 import ProductViewDesk from "../components/Desktop/Misc/productViewDesk";
+import RatingStar from "../components/Mobile/Misc/ratingStar";
+import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -179,7 +181,10 @@ export default function ResaleTicketSearch() {
                                         <div className={`${utilities.fontSubtitleDesktop} mt-3`}>
                                             {resaleSubtile}
                                         </div>
-                                        <div className={style.gridStarNumber}>
+                                        <div className={"mt-3"}>
+                                            <RatingStarDesktop item={4}/>
+                                        </div>
+                                        {/*<div className={style.gridStarNumber}>
                                             <div className={`${utilities.fontPrimaryText} ${style.ratingStarProp}`}>
                                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}
                                                        alt={""}/>
@@ -187,13 +192,14 @@ export default function ResaleTicketSearch() {
                                             <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
                                                 ({resaleRating})
                                             </span>
-                                        </div>
+                                        </div>*/}
                                     </div>
                                 </div>
                                 <div className={style.gridProductOffer}>
                                     {
                                         ListProducts.listProducts.map((item, index) =>
-                                        <ProductViewDesk key={index} item={item} size={null} isDisplayOffer={true}/>)
+                                            <ProductViewDesk key={index} item={item} size={null}
+                                                             isDisplayOffer={true}/>)
                                     }
                                 </div>
                             </div>
