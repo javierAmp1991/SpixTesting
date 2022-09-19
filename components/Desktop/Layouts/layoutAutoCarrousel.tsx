@@ -49,24 +49,26 @@ const listImageNew: cate[] = [
 ];
 
 const listImageNewW: cate[] = [
+    {Image: "/images/autocat5W.png", Name: "Night Club"},
+    {Image: "/images/autocat4W.png", Name: "Conciertos"},
     {Image: "/images/autocat1W.png", Name: "Restaurant"},
-    {Image: "/images/autocat2W.png", Name: "Deporte"},
     {Image: "/images/autocat3W.png", Name: "Peluqueria"},
-    {Image: "/images/autocat4W.png", Name: "Rock"},
-    {Image: "/images/autocat5W.png", Name: "Restobar"},
-    {Image: "/images/autocat6W.png", Name: "Zoologico"},
     {Image: "/images/autocat7W.png", Name: "Cine"},
-    {Image: "/images/autocat8W.png", Name: "Educacion"},
-    {Image: "/images/autocat9W.png", Name: "Masajes"},
+    {Image: "/images/autocat10W.png", Name: "Veterinaria"},
+    {Image: "/images/autocat2W.png", Name: "Futbol"},
+    {Image: "/images/autocat6W.png", Name: "Zoologico"},
+    {Image: "/images/autocat9W.png", Name: "Spa"},
+    /*{Image: "/images/autocat8W.png", Name: "Educacion"},*/
+    {Image: "/images/autocat5W.png", Name: "Night Club"},
+    {Image: "/images/autocat4W.png", Name: "Conciertos"},
     {Image: "/images/autocat1W.png", Name: "Restaurant"},
-    {Image: "/images/autocat2W.png", Name: "Deporte"},
     {Image: "/images/autocat3W.png", Name: "Peluqueria"},
-    {Image: "/images/autocat4W.png", Name: "Rock"},
-    {Image: "/images/autocat5W.png", Name: "Restobar"},
-    {Image: "/images/autocat6W.png", Name: "Zoologico"},
     {Image: "/images/autocat7W.png", Name: "Cine"},
-    {Image: "/images/autocat8W.png", Name: "Educacion"},
-    {Image: "/images/autocat9W.png", Name: "Masajes"},
+    {Image: "/images/autocat10W.png", Name: "Veterinaria"},
+    {Image: "/images/autocat2W.png", Name: "Futbol"},
+    {Image: "/images/autocat6W.png", Name: "Zoologico"},
+    {Image: "/images/autocat9W.png", Name: "Spa"},
+
 
     /* {Image:"/images/auto1.jpg", Name:"Rock"},
      {Image:"/images/auto2.jpg", Name:"Conciertos"},

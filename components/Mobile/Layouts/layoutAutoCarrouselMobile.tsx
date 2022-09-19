@@ -35,52 +35,16 @@ const listImageNew: cateMobile[] = [
 ];
 
 const listImageNewW: cate[] = [
+    {Image: "/images/autocat5W.png", Name: "Night Club"},
+    {Image: "/images/autocat4W.png", Name: "Conciertos"},
     {Image: "/images/autocat1W.png", Name: "Restaurant"},
-    {Image: "/images/autocat2W.png", Name: "Deporte"},
     {Image: "/images/autocat3W.png", Name: "Peluqueria"},
-    {Image: "/images/autocat4W.png", Name: "Rock"},
-    {Image: "/images/autocat5W.png", Name: "Restobar"},
-    {Image: "/images/autocat6W.png", Name: "Zoologico"},
     {Image: "/images/autocat7W.png", Name: "Cine"},
-    {Image: "/images/autocat8W.png", Name: "Educacion"},
-    {Image: "/images/autocat9W.png", Name: "Masajes"}
-
-    /* {Image:"/images/auto1.jpg", Name:"Rock"},
-     {Image:"/images/auto2.jpg", Name:"Conciertos"},
-     {Image:"/images/auto3.jpg", Name:"Beleza"},
-     {Image:"/images/auto4.jpg", Name:"Spa"},
-     {Image:"/images/auto5.jpg", Name:"Futbol"},
-     {Image:"/images/auto6.jpg", Name:"Reggaeton"},
-     {Image:"/images/auto7.jpg", Name:"Basketball"},
-     {Image:"/images/auto8.jpg", Name:"Peluqueria"},
-     {Image:"/images/auto9.jpg", Name:"Educacion"},
-     {Image:"/images/auto10.jpg", Name:"Masajes"},
-     {Image:"/images/auto11.jpg", Name:"Pop"},
-     {Image:"/images/auto12.jpg", Name:"Zoologico"},
-     {Image:"/images/auto14.jpg", Name:"Pizzas"},
-     {Image:"/images/auto13.jpg", Name:"Cafe"},
-     {Image:"/images/auto15.jpg", Name:"Tributos"},
-     {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
-];
-
-const listImageNewB: cate[] = [
-    {Image: "/images/autocat1B.png", Name: "Rock"},
-    {Image: "/images/autocat2B.png", Name: "Conciertos"},
-    {Image: "/images/autocat3B.png", Name: "Beleza"},
-    {Image: "/images/autocat4B.png", Name: "Spa"},
-    {Image: "/images/autocat1B.png", Name: "Futbol"},
-    {Image: "/images/autocat2B.png", Name: "Reggaeton"},
-    {Image: "/images/autocat3B.png", Name: "Basketball"},
-    {Image: "/images/autocat4B.png", Name: "Peluqueria"},
-    {Image: "/images/autocat1B.png", Name: "Educacion"},
-    {Image: "/images/autocat2B.png", Name: "Masajes"},
-    {Image: "/images/autocat3B.png", Name: "Pop"},
-    {Image: "/images/autocat4B.png", Name: "Zoologico"},
-    {Image: "/images/autocat1B.png", Name: "Pizzas"},
-    {Image: "/images/autocat2B.png", Name: "Cafe"},
-    {Image: "/images/autocat3B.png", Name: "Tributos"},
-    {Image: "/images/autocat4B.png", Name: "Pasteleria"},
-];
+    {Image: "/images/autocat10W.png", Name: "Veterinaria"},
+    {Image: "/images/autocat2W.png", Name: "Futbol"},
+    {Image: "/images/autocat6W.png", Name: "Zoologico"},
+    {Image: "/images/autocat9W.png", Name: "Spa"},
+    ];
 
 export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDarkMode}:
                                                       {
