@@ -11,11 +11,11 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
     let getSizeProduct = getProductSize()
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
-            <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
-                <div className={style.aspectImage}>
-                    <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
+                    <div className={style.aspectImage}>
+                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                    </div>
                 </div>
-            </div>
 
             <div className={utilities.positionLastTicket}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}

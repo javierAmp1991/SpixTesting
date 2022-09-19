@@ -157,6 +157,9 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     {
                         item.Type == EventCardType.EventCardWithOffer &&
                         <>
+                            <div className={`${utilities.fontPrimaryText}`}>
+                                Productos en oferta: {itemWithOffer.TotalOffers}
+                            </div>
                             <div className={styles.gridTags}>
                                 {
                                     itemWithOffer.ListTagsOffer.map(item =>
@@ -166,9 +169,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                                     )
                                 }
                             </div>
-                            <div className={`${utilities.fontPrimaryText}`}>
-                                Productos en oferta: {itemWithOffer.TotalOffers}
-                            </div>
+
                         </>
                     }
                 </div>

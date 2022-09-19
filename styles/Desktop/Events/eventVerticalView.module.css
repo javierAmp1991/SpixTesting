@@ -460,7 +460,7 @@
     font-size: 13px;
     line-height: 13px;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 3px;
     overflow: hidden;
     padding: 3px 10px;
     background: var(--colorTagDiscount);

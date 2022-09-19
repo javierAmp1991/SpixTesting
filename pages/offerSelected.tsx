@@ -181,7 +181,7 @@ export default function ResaleTicketSearch() {
                                         </div>
                                         <div className={style.gridStarNumber}>
                                             <div className={`${utilities.fontPrimaryText} ${style.ratingStarProp}`}>
-                                                <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars}
+                                                <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}
                                                        alt={""}/>
                                             </div>
                                             <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
