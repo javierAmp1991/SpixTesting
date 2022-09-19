@@ -27,5 +27,6 @@
 
 .paddingRating {
     display: grid;
-    align-items: end;
+    padding-top: 3px;
+    align-items: center;
 }
