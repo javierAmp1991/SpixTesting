@@ -118,7 +118,7 @@
 
 .sizeBanner {
     width: 100%;
-    aspect-ratio: 5/1;
+    aspect-ratio: 4.5/1;
     position: relative;
 }
 
@@ -188,6 +188,12 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px
+}
+
+.gridProductOffer{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 @media (min-width: 1281px) {

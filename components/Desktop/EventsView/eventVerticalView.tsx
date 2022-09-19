@@ -8,7 +8,8 @@ import {
     EventCardFull,
     EventCardResale,
     EventCardType,
-    EventCardWithDate, EventCardWithOffer,
+    EventCardWithDate,
+    EventCardWithOffer,
     EventCardWithPrice
 } from "../../../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
@@ -58,7 +59,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
 
     return (
         <div className={`${styles.principalGridVertical}`}>
-            <Link href={item.Type == EventCardType.EventCardWithResale ? item.Link : ""}>
+            <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer? item.Link : ""}>
                 <a className={styles.containerImage}>
                     {
                         item.SoldTickets >= item.TotalTickets * 0.90 &&

@@ -1115,7 +1115,7 @@ export namespace OfferSearch{
             Rating: 30,
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
-            Link: "/",
+            Link: "/offerSelected",
             ListTagsOffer: ["2 x 1", "Dcto 2da uni" ],
             TotalOffers: 10
         },
@@ -1128,7 +1128,7 @@ export namespace OfferSearch{
             Rating: 30,
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
-            Link: "/",
+            Link: "/offerSelected",
             ListTagsOffer: ["50% dcto", "2 x 1" ],
             TotalOffers: 10
         },
@@ -1141,7 +1141,7 @@ export namespace OfferSearch{
             Rating: 30,
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
-            Link: "/",
+            Link: "/offerSelected",
             ListTagsOffer: ["50% dcto" ],
             TotalOffers: 10
         },
@@ -1154,7 +1154,7 @@ export namespace OfferSearch{
             Rating: 30,
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
-            Link: "/",
+            Link: "/offerSelected",
             ListTagsOffer: ["50% dcto", "Dcto 2da uni" ],
             TotalOffers: 10
         },
@@ -1167,7 +1167,7 @@ export namespace OfferSearch{
             Rating: 30,
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
-            Link: "/",
+            Link: "/offerSelected",
             ListTagsOffer: ["Dcto 2da uni" ],
             TotalOffers: 10
         },
@@ -1180,7 +1180,7 @@ export namespace OfferSearch{
             Rating: 30,
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
-            Link: "/",
+            Link: "/offerSelected",
             ListTagsOffer: ["50% dcto" ],
             TotalOffers: 10
         }
