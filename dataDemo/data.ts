@@ -447,6 +447,143 @@ export namespace DailyOfferData {
     }
 }
 
+export namespace OfferSearchData{
+    export const list: EventLookUp[] = [
+        {
+            EventId: "1235",
+            EventName: "Tributo a Pet Shop Boys y A Ha",
+            Subtitle: "Lo mejor del Rock Internacional",
+            Rating: 30,
+            Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
+            BannerPath: "/images/banner.png",
+            LogoPath: "/images/logo el Huevo.jpg",
+            ListProducts: [
+                {
+                    Name: "Producto 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product1.jpg"
+                },
+                {
+                    Name: "Producto 2.1", Price: 4990,
+                    DiscountPercent: 25,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/product2.jpg"
+                },
+                {
+                    Name: "Producto 3.1",
+                    Price: 1990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product3.jpg"
+                },
+            ],
+            ListAtributes: ["Rock", "Conciertos", "Festivales"],
+            Category: "Bar Restaurant"
+        },
+        {
+            EventId: "12356",
+            EventName: "Star Wars Sinfonico",
+            Subtitle: "Orquesta sinfonica 2022",
+            Rating: 30,
+            Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
+            BannerPath: "/images/banner2.jpg",
+            LogoPath: "/images/logo el Huevo.jpg",
+            ListProducts: [
+                {
+                    Name: "Producto 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product4.jpg"
+                },
+                {
+                    Name: "Producto 2.1", Price: 4990,
+                    DiscountPercent: 25,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/product5.jpg"
+                },
+                {
+                    Name: "Producto 3.1",
+                    Price: 1990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product6.jpg"
+                },
+            ],
+            ListAtributes: ["Rock", "Conciertos", "Festivales"],
+            Category: "Bar Restaurant"
+        },
+        {
+            EventId: "12357",
+            EventName: "Seafret, most of us",
+            Subtitle: "Latin American Tour",
+            Rating: 30,
+            Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
+            BannerPath: "/images/banner3.jpg",
+            LogoPath: "/images/logo el Huevo.jpg",
+            ListProducts: [
+                {
+                    Name: "Producto 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product7.jpg"
+                },
+                {
+                    Name: "Producto 2.1", Price: 4990,
+                    DiscountPercent: 25,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/product8.jpg"
+                },
+                {
+                    Name: "Producto 3.1",
+                    Price: 1990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product9.jpg"
+                },
+            ],
+            ListAtributes: ["Rock", "Conciertos", "Festivales"],
+            Category: "Bar Restaurant"
+        },
+        {
+            EventId: "12358",
+            EventName: "Nikkita Wild",
+            Subtitle: "Nikkita wild",
+            Rating: 30,
+            Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
+            BannerPath: "/images/banner5.jpg",
+            LogoPath: "/images/logo el Huevo.jpg",
+            ListProducts: [
+                {
+                    Name: "Producto 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product10.jpg"
+                },
+                {
+                    Name: "Producto 2.1", Price: 4990,
+                    DiscountPercent: 25,
+                    Include: "Dcto 2 Un.",
+                    ImagePath: "/images/product1.jpg"
+                },
+                {
+                    Name: "Producto 3.1",
+                    Price: 1990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product2.jpg"
+                },
+            ],
+            ListAtributes: ["Rock", "Conciertos", "Festivales"],
+            Category: "Bar Restaurant"
+        }
+    ]
+}
+
 export namespace ListOffertData {
     export const listOffert: EventLookUp[] = [
         {

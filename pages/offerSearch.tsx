@@ -26,6 +26,7 @@ import ProductOfferSearch from "../components/Desktop/Search/productOfferSearch"
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
 import EventWithBannerViewSearch from "../components/Desktop/EventsView/eventWithBannerViewSearch";
 import EventWithBannerVertical from "../components/Desktop/EventsView/eventWithBannerVertical";
+import {OfferSearchData} from "../dataDemo/data";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -55,15 +56,11 @@ export default function SearchRestaurant() {
 
     //region desktop Components
     let dropDown =
-        /*DropDownSearch.list.map((item) =>*/
-             /*<ProductOfferSearch key={item.Id}/>*/
-        <>
-            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
-            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
-            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
-            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
-        </>
-        /*)*/
+        OfferSearchData.list.map((item, index) =>
+            <EventWithBannerVertical item={item} darkModeState={isDarkMode} key={item.EventId}/>
+        )
+
+
 
     let buttonsNavegation = <LayoutButtonNavegation>
         {
