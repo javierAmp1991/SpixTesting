@@ -74,7 +74,7 @@
 .fontSubtitleDesktop {
     --sizeSubTitleDesktop: 17px;
     font-size: var(--sizeSubTitleDesktop);
-    line-height: 20px;
+    line-height: 22px;
     font-weight: 300;
     /* color: var(--colorSecundaryTextDesktop);
      font-family: Helvetica, sans-serif, Arial;*/
