@@ -3,6 +3,7 @@ export enum EventCardType {
     EventCardWithPrice,
     EventCardWithDate,
     EventCardWithResale,
+    EventCardWithOffer,
     EventCardFull
 }
 
@@ -30,6 +31,11 @@ export class EventCardWithDate extends BaseEventCard {
 
 export class EventCardResale extends BaseEventCard {
     TotalResale: number
+}
+
+export class EventCardWithOffer extends BaseEventCard{
+    ListTagsOffer: string[]
+    TotalOffers: number
 }
 
 export class EventCardFull extends BaseEventCard {
@@ -1095,6 +1101,89 @@ export namespace MoreOfferSearch {
             MinDate: new Date(2022, 10, 11),
             MaxDate: new Date(2022, 11, 25)
         },
+    ]
+}
+
+export namespace OfferSearch{
+    export const list: EventCardWithOffer[] = [
+        {
+            Title: "Tributo a Pet Shop Boys y A Ha",
+            Subtitle: "Lo mejor del Rock Internacional",
+            PathImage: "/images/inOffer1.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/",
+            ListTagsOffer: ["50% dcto", "2 x 1", "Dcto 2da uni" ],
+            TotalOffers: 10
+        },
+        {
+            Title: "Star Wars Sinfonico",
+            Subtitle: "Orquesta Internacional",
+            PathImage: "/images/inOffer2.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 400,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/",
+            ListTagsOffer: ["50% dcto", "2 x 1" ],
+            TotalOffers: 10
+        },
+        {
+            Title: "Seafret, most of us",
+            Subtitle: "Latin American Tour",
+            PathImage: "/images/inOffer3.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/",
+            ListTagsOffer: ["50% dcto" ],
+            TotalOffers: 10
+        },
+        {
+            Title: "Nikkita Wild",
+            Subtitle: "Nikkita wild",
+            PathImage: "/images/inOffer4.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/",
+            ListTagsOffer: ["50% dcto", "Dcto 2da uni" ],
+            TotalOffers: 10
+        },
+        {
+            Title: "Moonage Daydream",
+            Subtitle: "Pelicula de Brett Morgen",
+            PathImage: "/images/inOffer5.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/",
+            ListTagsOffer: ["Dcto 2da uni" ],
+            TotalOffers: 10
+        },
+        {
+            Title: "El perro samurai",
+            Subtitle: "La leyenda de kakamucho",
+            PathImage: "/images/inOffer6.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 3000,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/",
+            ListTagsOffer: ["50% dcto" ],
+            TotalOffers: 10
+        }
     ]
 }
 

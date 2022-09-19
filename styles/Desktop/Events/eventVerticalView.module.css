@@ -431,7 +431,7 @@
     overflow: hidden;
     top: calc(var(--sizeCirLat) / 2 * -1);
     right: calc(var(--sizeCirLat) / 2 * -1);
-    box-shadow: 0 0 6px inset rgba(0,0,0,.1);
+    box-shadow: 0 0 6px inset rgba(0, 0, 0, .1);
 }
 
 .rightOval {
@@ -444,7 +444,26 @@
     z-index: 10000000000000000000000;
     left: calc(var(--sizeCirLat) / 2 * -1);
     top: calc(var(--sizeCirLat) / 2 * -1);
-    box-shadow: 0 0 6px inset rgba(0,0,0,.1);
+    box-shadow: 0 0 6px inset rgba(0, 0, 0, .1);
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px;
+    align-items: center;
+    padding-bottom: 2px;
+}
+
+.tagStyleDisc {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 3px 8px;
+    background: var(--colorTagDiscount);
+    color: white;
 }
 
 

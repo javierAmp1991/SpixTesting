@@ -22,6 +22,7 @@ import {
     SuperCategoryFilter
 } from "../dataDemo/data";
 import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import {OfferSearch} from "../dataDemo/EventView/eventVerticalView";
 import ProductOfferSearch from "../components/Desktop/Search/productOfferSearch";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
 import EventWithBannerViewSearch from "../components/Desktop/EventsView/eventWithBannerViewSearch";
@@ -55,11 +56,9 @@ export default function SearchRestaurant() {
     const isReturnActive: boolean = true
 
     //region desktop Components
-    let dropDown =
-        OfferSearchData.list.map((item, index) =>
-            <EventWithBannerVertical item={item} darkModeState={isDarkMode} key={item.EventId}/>
-        )
-
+    let dropDown = OfferSearch.list.map(item =>
+        <EventVerticalView item={item} darkModeState={isDarkMode}/>
+    )
 
 
     let buttonsNavegation = <LayoutButtonNavegation>

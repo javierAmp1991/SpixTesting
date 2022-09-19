@@ -7,9 +7,9 @@ import {
     BaseEventCard,
     EventCardFull,
     EventCardResale,
-    EventCardWithDate,
-    EventCardWithPrice,
-    EventCardType
+    EventCardType,
+    EventCardWithDate, EventCardWithOffer,
+    EventCardWithPrice
 } from "../../../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
@@ -23,6 +23,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
     let itemWithPrice: EventCardWithPrice;
     let itemWithDate: EventCardWithDate;
     let itemWithResale: EventCardResale;
+    let itemWithOffer: EventCardWithOffer;
 
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
@@ -30,7 +31,10 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         itemWithPrice = item as EventCardWithPrice
     } else if (item.Type == EventCardType.EventCardWithDate) {
         itemWithDate = item as EventCardWithDate
-    } else {
+    } else if (item.Type == EventCardType.EventCardWithOffer){
+        itemWithOffer = item as EventCardWithOffer
+    }
+    else {
         itemWithResale = item as EventCardResale
     }
 
@@ -74,31 +78,6 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                 </div>
 
                 <div className={styles.bottomDivSearch}>
-{/*
-                    <div className={styles.leftOval}/>
-                    <div className={styles.rightOval}/>*/}
-                    {/*<div className={styles.bottomCircle2}/>
-                    <div className={styles.bottomCircle3}/>
-                    <div className={styles.bottomCircle4}/>
-                    <div className={styles.bottomCircle5}/>
-                    <div className={styles.bottomCircle6}/>
-                    <div className={styles.bottomCircle7}/>
-                    <div className={styles.bottomCircle8}/>
-                    <div className={styles.bottomCircle9}/>
-                    <div className={styles.bottomCircle10}/>*/}
-                    {/*                    <div className={styles.bottomCircle11}/>
-                    <div className={styles.bottomCircle1}/>*/}
-                                        {/*<div className={styles.topCircle1}/>
-                    <div className={styles.topCircle2}/>
-                    <div className={styles.topCircle3}/>
-                    <div className={styles.topCircle4}/>
-                    <div className={styles.topCircle5}/>
-                    <div className={styles.topCircle6}/>
-                    <div className={styles.topCircle7}/>
-                    <div className={styles.topCircle8}/>
-                    <div className={styles.topCircle9}/>
-                    <div className={styles.topCircle10}/>
-                    <div className={styles.topCircle11}/>*/}
                     {
                         item.Type == EventCardType.EventCardWithDate &&
                         <div className={`${styles.gridIconInfo}`}>
@@ -172,6 +151,24 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                         <div className={`${utilities.fontPrimaryText}`}>
                             {totalResaleText} {itemWithResale.TotalResale}
                         </div>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithOffer &&
+                        <>
+                            <div className={styles.gridTags}>
+                                {
+                                    itemWithOffer.ListTagsOffer.map(item =>
+                                    <div key={item} className={styles.tagStyleDisc}>
+                                        {item}
+                                    </div>
+                                    )
+                                }
+                            </div>
+                            <div className={`${utilities.fontPrimaryText}`}>
+                                Productos en oferta: {itemWithOffer.TotalOffers}
+                            </div>
+                        </>
                     }
                 </div>
             </div>
