@@ -163,6 +163,6 @@
 .gridAdInfo {
     display: flex;
     flex-direction: column;
-    gap: 9px;
+    gap: 6px;
     padding-left: 48px;
 }
