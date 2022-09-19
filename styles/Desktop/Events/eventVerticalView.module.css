@@ -461,7 +461,7 @@
     font-weight: 500;
     border-radius: 10px;
     overflow: hidden;
-    padding: 3px 8px;
+    padding: 3px 10px;
     background: var(--colorTagDiscount);
     color: white;
 }
