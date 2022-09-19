@@ -59,9 +59,9 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                             <PrincipalInfoEvent item={principalInfoEventProp}/>
                         </div>
                         <div className={styles.gridAdInfo}>
-                            <div className={utilities.fontSecundaryText}>
-                                <span className={utilities.fontPrimaryText}>Categoria: </span>
-                                <span className={utilities.fontSecundaryText}>{item.Category}</span>
+                            <div className={utilities.fontPrimaryTextText}>
+                                <span>Categoria: </span>
+                                <span>{item.Category}</span>
                             </div>
 
                             <div className={styles.mainDivTimer}>
