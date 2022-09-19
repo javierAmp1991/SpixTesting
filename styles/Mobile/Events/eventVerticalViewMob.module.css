@@ -65,10 +65,10 @@
 }
 
 .bottomDivSearch {
-    padding: 10px 24px;
-    border-top: 2px solid var(--separationLineColor);
+    padding: 8px 24px;
+    border-top: 2px dashed #e7e7e7;
     display: grid;
-    gap: 10px;
+    gap: 6px;
 }
 
 .bottomDivResale {
