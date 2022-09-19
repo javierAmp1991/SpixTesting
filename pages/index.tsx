@@ -55,6 +55,7 @@ import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
 import {TodayInValpoMobile, InOfferHomeMobile, MostPopularDataHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
+import ImageGradientView from "../components/Desktop/EventsView/ImageGradientView";
 //endregion
 
 //region constantes
@@ -494,7 +495,8 @@ export default function Index() {
                 DropDownNewSearch.listNews.map((item, index) =>
                     index >= getNewsItem && index <= getNewsItem + 2 &&
                     /*<NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>*/
-                    <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
+                    /*<NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>*/
+                    <ImageGradientView/>
                 )
             }
         </LayoutCarrousel>

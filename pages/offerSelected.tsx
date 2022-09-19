@@ -173,10 +173,10 @@ export default function ResaleTicketSearch() {
                                         <Image layout={"fill"} src={resaleBanner} alt={""}/>
                                     </div>
                                     <div>
-                                        <div className={utilities.fontTitle}>
+                                        <div className={utilities.fontTitleDesktop}>
                                             {resaleTitle}
                                         </div>
-                                        <div className={`${style.fontSubTitle} mt-3`}>
+                                        <div className={`${utilities.fontSubtitleDesktop} mt-3`}>
                                             {resaleSubtile}
                                         </div>
                                         <div className={style.gridStarNumber}>
