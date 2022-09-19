@@ -50,7 +50,7 @@
     display: grid;
     grid-template-rows: repeat(2, max-content);
     justify-content: left;
-    gap: 8px;
+    gap: 5px;
     padding-top: 8px;
 }
 
