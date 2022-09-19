@@ -14,7 +14,7 @@
 }
 
 .testImage {
-    width: 60px;
+    width: 50px;
     aspect-ratio: 1/1;
     object-position: center;
     position: relative;
@@ -28,7 +28,7 @@
 
 .mainDiv {
     --padding: 30px;
-    padding: 20px 30px 40px 30px;
+    padding: 15px 25px 35px 25px;
     transition: .4s;
     background: var(--gradientSpix);
     background: white;
@@ -103,7 +103,7 @@ overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     position: absolute;
     font-weight: 800;
-    width: 120px;
+    width: 100px;
     opacity: .5;
     opacity: .8;
     color: transparent;
@@ -131,7 +131,7 @@ overflow: hidden;
     text-align: center;
     position: absolute;
     font-weight: 600;
-    width: 120px;
+    width: 100px;
     z-index: 1000;
     left: 0;
     padding: 2px 4px;

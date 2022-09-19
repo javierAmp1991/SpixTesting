@@ -56,15 +56,17 @@ const listImageNewW: cate[] = [
     {Image: "/images/autocat5W.png", Name: "Restobar"},
     {Image: "/images/autocat6W.png", Name: "Zoologico"},
     {Image: "/images/autocat7W.png", Name: "Cine"},
-    {Image: "/images/autocat1W.png", Name: "Educacion"},
-    {Image: "/images/autocat2W.png", Name: "Masajes"},
-    {Image: "/images/autocat3W.png", Name: "Pop"},
-    {Image: "/images/autocat4W.png", Name: "Conciertos"},
-    {Image: "/images/autocat5W.png", Name: "Pizzas"},
-    {Image: "/images/autocat6W.png", Name: "Cafe"},
-    {Image: "/images/autocat7W.png", Name: "Tributos"},
-    {Image: "/images/autocat1W.png", Name: "Pasteleria"},
-    {Image: "/images/autocat2W.png", Name: "Peluqueria"},
+    {Image: "/images/autocat8W.png", Name: "Educacion"},
+    {Image: "/images/autocat9W.png", Name: "Masajes"},
+    {Image: "/images/autocat1W.png", Name: "Restaurant"},
+    {Image: "/images/autocat2W.png", Name: "Deporte"},
+    {Image: "/images/autocat3W.png", Name: "Peluqueria"},
+    {Image: "/images/autocat4W.png", Name: "Rock"},
+    {Image: "/images/autocat5W.png", Name: "Restobar"},
+    {Image: "/images/autocat6W.png", Name: "Zoologico"},
+    {Image: "/images/autocat7W.png", Name: "Cine"},
+    {Image: "/images/autocat8W.png", Name: "Educacion"},
+    {Image: "/images/autocat9W.png", Name: "Masajes"},
 
     /* {Image:"/images/auto1.jpg", Name:"Rock"},
      {Image:"/images/auto2.jpg", Name:"Conciertos"},
@@ -122,9 +124,9 @@ const listImageNewB: cate[] = [
     {Image: "/images/autocat2B.png", Name: "Peluqueria"},
 ];
 
-const widthCat: number = 70;
-const numberItems: number = 7;
-const gap: number = ((1100 - ((widthCat + 70) * numberItems)) / (numberItems - 1))
+const widthCat: number = 50;
+const numberItems: number = 9;
+const gap: number = ((1092 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
 export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                                                 {
                                                     gapLayout: number,
@@ -167,8 +169,9 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         const quinElement = mainDivRef.current.children[4];
         const sixElement = mainDivRef.current.children[5];
         const sevenElement = mainDivRef.current.children[6];
-        /*const eightElement = mainDivRef.current.children[7];*/
-        const childrens = [firstElement, secondElement, thirdElement, fourthElement, quinElement, sixElement, sevenElement]
+        const eightElement = mainDivRef.current.children[7];
+        const ninehtElement = mainDivRef.current.children[8];
+        const childrens = [firstElement, secondElement, thirdElement, fourthElement, quinElement, sixElement, sevenElement, eightElement, ninehtElement]
         mainDivRef.current.style.transition = `2000ms linear`;
         const widthDiv: number = mainDivRef.current.offsetWidth + gap
         mainDivRef.current.style.transform = `translate(-${widthDiv}px)`;
@@ -191,8 +194,9 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         const lastElement5 = mainDivRef.current.children[11];
         const lastElement6 = mainDivRef.current.children[10];
         const lastElement7 = mainDivRef.current.children[9];
-        /*const lastElement8 = mainDivRef.current.children[8];*/
-        let listElements = [lastElement1, lastElement2, lastElement3, lastElement4, lastElement5, lastElement6, lastElement7]
+        const lastElement8 = mainDivRef.current.children[8];
+        const lastElement9 = mainDivRef.current.children[7];
+        let listElements = [lastElement1, lastElement2, lastElement3, lastElement4, lastElement5, lastElement6, lastElement7, lastElement8, lastElement9]
         listElements.forEach(item => {
             mainDivRef.current.insertBefore(item, mainDivRef.current.firstChild);
         })
@@ -207,15 +211,15 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
     }
 
     const handleMovright = () => {
-        clearInterval(intervalFunction.current)
+        /*clearInterval(intervalFunction.current)*/
         handleRight()
-        intervalFunction.current = setInterval(handleRight, 10000)
+        /*intervalFunction.current = setInterval(handleRight, 10000)*/
     }
 
     const handleMoveLeft = () => {
-        clearInterval(intervalFunction.current)
+        /*clearInterval(intervalFunction.current)*/
         handleLeft()
-        intervalFunction.current = setInterval(handleRight, 10000)
+        /*intervalFunction.current = setInterval(handleRight, 10000)*/
     }
 
     /*useEffect(()=>{
@@ -223,10 +227,10 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         return () => clearInterval(intervalFunction.current)
     })*/
 
-    useEffect(() => {
+    /*useEffect(() => {
         const interval = setInterval(handleRight, 10000)
         return () => clearInterval(interval)
-    })
+    })*/
 
     const isDeg: boolean = true
     return (

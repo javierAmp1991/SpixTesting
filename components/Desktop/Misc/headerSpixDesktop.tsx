@@ -11,8 +11,8 @@ import Link from "next/link";
 const styleGrid: string = `${utilities.gridMaxContent2} gap-3`
 const paddingImage: string = "pt-1.5"
 const styleSideText: string = `${style.colorTextHeader} text-left`
-const fontFirstText: string = utilities.font12
-const fontSecondText: string = utilities.font14
+const fontFirstText: string = style.styleFirstText
+const fontSecondText: string = style.stlyleSecondText
 const mode = "Modo" /*llamar a algo*/
 const day = "Dia" /*llamar a algo*/
 const night = "Noche" /*llamar a algo*/

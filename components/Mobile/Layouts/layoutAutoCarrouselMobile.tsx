@@ -42,15 +42,8 @@ const listImageNewW: cate[] = [
     {Image: "/images/autocat5W.png", Name: "Restobar"},
     {Image: "/images/autocat6W.png", Name: "Zoologico"},
     {Image: "/images/autocat7W.png", Name: "Cine"},
-    {Image: "/images/autocat1W.png", Name: "Educacion"},
-    {Image: "/images/autocat2W.png", Name: "Masajes"},
-    {Image: "/images/autocat3W.png", Name: "Pop"},
-    {Image: "/images/autocat4W.png", Name: "Conciertos"},
-    {Image: "/images/autocat5W.png", Name: "Pizzas"},
-    {Image: "/images/autocat6W.png", Name: "Cafe"},
-    {Image: "/images/autocat7W.png", Name: "Tributos"},
-    {Image: "/images/autocat1W.png", Name: "Pasteleria"},
-    {Image: "/images/autocat2W.png", Name: "Peluqueria"},
+    {Image: "/images/autocat8W.png", Name: "Educacion"},
+    {Image: "/images/autocat9W.png", Name: "Masajes"}
 
     /* {Image:"/images/auto1.jpg", Name:"Rock"},
      {Image:"/images/auto2.jpg", Name:"Conciertos"},
@@ -171,7 +164,6 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
                             <div key={index} className={style.testImage}>
                                 <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>
                             </div>
-                            <div className={style.mainDivName}>T</div>
                             <div className={`${style.mainDivNameL} ${utilities.clamp1}`}>
                                 {image.Name}
                             </div>

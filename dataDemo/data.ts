@@ -249,6 +249,7 @@ export namespace FeaturedHome {
 
 export namespace HomeBannerData {
     export const listBanners: string[] = [
+        "/images/bannerHd.jpg",
         "/images/banner2.jpg",
         "/images/banner3.jpg",
         "/images/banner1.jpg",

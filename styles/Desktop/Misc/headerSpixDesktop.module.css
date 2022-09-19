@@ -55,6 +55,15 @@
     position: relative;
 }
 
+.styleFirstText{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.stlyleSecondText{
+    font-size: 14px;
+    font-weight: 500;
+}
 .sizeAccountImage {
     height: var(--sizeAccountImageHeaderDesktop);
     width: var(--sizeAccountImageHeaderDesktop);
