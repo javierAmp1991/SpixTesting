@@ -114,7 +114,7 @@ const layoutPropCarrousel: LayoutCarrouselDeskProp = {
 }
 const layoutPropCarrouselRounded: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum6,
+    Grid: gridTemplateColum5,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowOut,
@@ -459,10 +459,10 @@ export default function Index() {
         setGetCArrouselRounded1(getCarrouselRounded1 = e)
     }
     let carrouselRounded1 = <TitleSection paddingTitle={null} titleLink={cinemasTitleLink} darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={5} handleFeatured={handleCarrouselRound1} layoutProp={layoutPropCarrouselRounded}>
+        <LayoutCarrousel sumar={4} handleFeatured={handleCarrouselRound1} layoutProp={layoutPropCarrouselRounded}>
             {
                 Cines.listCines.map((item, index) =>
-                    index >= getCarrouselRounded1 && index <= getCarrouselRounded1 + 5 ?
+                    index >= getCarrouselRounded1 && index <= getCarrouselRounded1 + 4 ?
                         <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/> : <></>
                 )
             }
@@ -506,11 +506,11 @@ export default function Index() {
     }
     let carrouselRounded2 = <TitleSection paddingTitle={null} titleLink={restaurantsHomeTitleLink}
                                           darkModeState={isDarkMode}>
-        <LayoutCarrousel sumar={5} handleFeatured={handleCarrouselRound2} layoutProp={layoutPropCarrouselRounded}>
+        <LayoutCarrousel sumar={4} handleFeatured={handleCarrouselRound2} layoutProp={layoutPropCarrouselRounded}>
             {
 
                 Restaurants.listRestaurants.map((item, index) =>
-                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 5 &&
+                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 4 &&
                     <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
                 )
             }

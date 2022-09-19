@@ -1116,7 +1116,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/",
-            ListTagsOffer: ["50% dcto", "2 x 1", "Dcto 2da uni" ],
+            ListTagsOffer: ["2 x 1", "Dcto 2da uni" ],
             TotalOffers: 10
         },
         {
