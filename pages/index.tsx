@@ -55,6 +55,7 @@ import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
 import {TodayInValpoMobile, InOfferHomeMobile, MostPopularDataHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
+import ImageGradientView from "../components/Desktop/EventsView/ImageGradientView";
 //endregion
 
 //region constantes
@@ -400,7 +401,7 @@ export default function Index() {
 
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <EventWithBannerView sizeImageProduct={120} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        <EventWithBannerView sizeImageProduct={100} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
 
     </TitleSection>
 
@@ -491,11 +492,16 @@ export default function Index() {
     let news = <TitleSection paddingTitle={null} darkModeState={isDarkMode} titleLink={newsHomeTitleLink}>
         <LayoutCarrousel sumar={3} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
-                DropDownNewSearch.listNews.map((item, index) =>
+                <>
+                    <ImageGradientView/>
+                    <ImageGradientView/>
+                    <ImageGradientView/>
+                </>
+                /*DropDownNewSearch.listNews.map((item, index) =>
                     index >= getNewsItem && index <= getNewsItem + 2 &&
-                    /*<NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>*/
+                    /!*<NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>*!/
                     <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
-                )
+                )*/
             }
         </LayoutCarrousel>
     </TitleSection>

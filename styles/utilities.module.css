@@ -121,6 +121,17 @@
     border-radius: 50%;
 }
 
+.fontPriceBeforeText {
+    color: var(--colorSecundaryTextDesktop);
+    font-size: 13px;
+}
+
+.fontPriceBeforeDesktop {
+    text-decoration: line-through;
+    color: var(--colorSecundaryTextDesktop);
+    font-size: 12px;
+}
+
 /*#endregion Desktop Class*/
 
 /*#region old class*/

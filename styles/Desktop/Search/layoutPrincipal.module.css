@@ -64,11 +64,11 @@
     padding-right: 16px;
 }
 
-.paddingLeftResultResale{
+.paddingLeftResultResale {
     padding-left: 35px;
 }
 
-.paddingLeftResultNews{
+.paddingLeftResultNews {
     padding-left: 32px;
 }
 
@@ -157,7 +157,7 @@
     gap: 40px;
 }
 
-.gridStarNumber{
+.gridStarNumber {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 6px;
@@ -165,20 +165,26 @@
     margin-top: 10px;
 }
 
-.gridStarNumberMobile{
+.gridOffer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gridStarNumberMobile {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 6px;
     align-items: end;
 }
 
-.gridFeaturedSearch{
+.gridFeaturedSearch {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px
 }
 
-.gridFeaturedSearchDropDown{
+.gridFeaturedSearchDropDown {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px

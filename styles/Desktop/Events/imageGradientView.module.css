@@ -1,0 +1,26 @@
+.mainDiv{
+    width: 100%;
+    position: relative;
+}
+.sizeImage{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.gradient{
+    position: absolute;
+    height: 80px;
+    opacity: .7;
+    width: 100%;
+    background: linear-gradient(180deg, transparent 0%, white 20%, black 100%);
+    bottom: 0;
+    z-index: 900;
+}
+.text{
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    z-index: 1000;
+    bottom: 0;
+}

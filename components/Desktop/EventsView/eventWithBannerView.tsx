@@ -46,19 +46,37 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                     </div>
                 </Link>
 
-                {/*<div className={`${utilities.gradientLogoDesktop} ${styles.positionLogo}`}>
-                    <div className={styles.propertiesLogoEWB}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.LogoPath} alt=""/>
-                    </div>
-                </div>*/}
-
-
                 <div className={`${cssStyles.bgInfo} ${styles.mainContainerInfo}`}>
                     <div className={styles.mainDivInfoQ}>
                         <div className={styles.grid1Info}>
                             <PrincipalInfoEvent item={principalInfoEventProp}/>
+                            <div className={styles.mainDivTimer}>
+                                <span>Expira en </span>
+                                <span>{hours}:{minutes}:{seconds}</span>
+                            </div>
+                            <div className={styles.gridTags}>
+                                {
+                                    item.Tags.map((offer, index) =>
+                                        <div key={index} className={utilities.styleSpixDiscountTag}>
+                                            {offer}
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
-                        <div className={styles.gridAdInfo}>
+                        <div className={styles.containerCarrouselEWB}>
+                            <div className={styles.overflowCarrouselProductsEWB}>
+                                <div className={styles.gridCarrouselProductsEWB}>
+                                    {
+                                        item.ListProducts.map((item, index) =>
+                                            index >= 0 && index <= 6 &&
+                                            <ProductViewHorizontal item={item} size={sizeImageProduct} isDisplayOffer={true} key={index}/>
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        {/*<div className={styles.gridAdInfo}>
                             <div className={utilities.fontPrimaryTextText}>
                                 <span>Categoria: </span>
                                 <span>{item.Category}</span>
@@ -78,7 +96,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                                     )
                                 }
                             </div>
-                        </div>
+                        </div>*/}
                         {/*<div className={styles.gridAtributes}>
                                 <div className={utilities.fontPrimaryText}>
                                     Atributos:
@@ -100,7 +118,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                     </div>
                 </div>
 
-                <div className={styles.containerCarrouselEWB}>
+                {/*<div className={styles.containerCarrouselEWB}>
                     <div className={styles.overflowCarrouselProductsEWB}>
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
@@ -111,7 +129,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                             }
                         </div>
                     </div>
-                </div>
+                </div>*/}
 
             </div>
         </div>

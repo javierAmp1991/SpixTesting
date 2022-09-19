@@ -45,10 +45,10 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
             <div className={style.mainDivInfo}>
                 <div className={style.topDiv}>
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
-                    <div className={style.bottomDivSearch}>
+                    {/*<div className={style.bottomDivSearch}>
                         <DateInfoEvent item={dateInfo}/>
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
-                    </div>
+                    </div>*/}
                 </div>
                 <div className={style.mainDivProductsSingle}>
                     {
