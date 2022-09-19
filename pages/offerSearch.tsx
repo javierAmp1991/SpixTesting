@@ -14,6 +14,7 @@ import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
+import {DailyOfferData} from "../dataDemo/data";
 import {
     SuperCategoryEntertaiment,
     CategoryFilter,
@@ -22,6 +23,9 @@ import {
 } from "../dataDemo/data";
 import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 import ProductOfferSearch from "../components/Desktop/Search/productOfferSearch";
+import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
+import EventWithBannerViewSearch from "../components/Desktop/EventsView/eventWithBannerViewSearch";
+import EventWithBannerVertical from "../components/Desktop/EventsView/eventWithBannerVertical";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -51,9 +55,15 @@ export default function SearchRestaurant() {
 
     //region desktop Components
     let dropDown =
-        DropDownSearch.list.map((item) =>
-             <ProductOfferSearch key={item.Id}/>
-        )
+        /*DropDownSearch.list.map((item) =>*/
+             /*<ProductOfferSearch key={item.Id}/>*/
+        <>
+            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
+            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
+            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
+            <EventWithBannerVertical item={DailyOfferData.dailyOffer} darkModeState={isDarkMode}/>
+        </>
+        /*)*/
 
     let buttonsNavegation = <LayoutButtonNavegation>
         {

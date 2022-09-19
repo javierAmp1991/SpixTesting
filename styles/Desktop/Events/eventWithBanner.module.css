@@ -80,6 +80,12 @@
     justify-items: left;
 }
 
+.mainContainerInfoSearch {
+    padding: 20px 48px 12px 48px;
+    display: grid;
+    justify-items: left;
+}
+
 .contTimer {
     display: grid;
     align-content: start;
@@ -93,7 +99,7 @@
     color: white;
     font-size: 13px;
     line-height: 13px;
-    padding: 3px 8px;
+    padding: 4px 8px;
     width: max-content;
     border-radius: 3px;
     font-weight: 500;
@@ -102,7 +108,7 @@
     /*    position: absolute;
         top: 215px;
         right: 12px;*/
-   /* margin-top: 4px;*/
+    /* margin-top: 4px;*/
     /*    --widthTimer: 85px;
         width: var(--widthTimer);
         height: 90px;
@@ -132,7 +138,7 @@
     align-content: center;
 }
 
-.grid1Info{
+.grid1Info {
     padding-right: 48px;
     border-right: 2px solid var(--separationLineColor);
 }
@@ -169,4 +175,23 @@
     flex-direction: column;
     gap: 6px;
     padding-left: 48px;
+}
+
+
+.contCarSearch {
+    padding-left: 24px;
+    display: grid;
+    gap: 16px;
+}
+
+.imageSelection {
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.gridImageSelection {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 12px;
 }
