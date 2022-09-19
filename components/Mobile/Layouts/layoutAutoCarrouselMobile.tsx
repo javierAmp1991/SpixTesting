@@ -160,12 +160,15 @@ export default function LayoutAutoCarrouselMobile({gapLayout, listImages, isDark
             <div ref={mainDivRef} className={style.gridCarrouselAuto}>
                 {
                     listImageNewW.map((image: cateMobile, index) =>
-                        <div key={index} className={style.mainDiv}>
-                            <div key={index} className={style.testImage}>
-                                <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image} alt=""/>
-                            </div>
-                            <div className={`${style.mainDivNameL} ${utilities.clamp1}`}>
-                                {image.Name}
+                        <div key={index} className={style.snapDiv}>
+                            <div  className={style.mainDiv}>
+                                <div key={index} className={style.testImage}>
+                                    <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
+                                           alt=""/>
+                                </div>
+                                <div className={`${style.mainDivNameL} ${utilities.clamp1}`}>
+                                    {image.Name}
+                                </div>
                             </div>
                         </div>
                     )
