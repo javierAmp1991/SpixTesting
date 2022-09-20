@@ -56,6 +56,11 @@ import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
 import {TodayInValpoMobile, InOfferHomeMobile, MostPopularDataHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 import ImageGradientView from "../components/Desktop/EventsView/ImageGradientView";
+import {
+    TodayInValpoGradient,
+    InOfferHomeGradient,
+    MostPopularGradient
+} from "../dataDemo/EventView/EventCardWithGradient";
 //endregion
 
 //region constantes
@@ -410,10 +415,10 @@ export default function Index() {
         {
             <LayoutRow5 gapLayout={20}>
                 {
-                    MostPopularDataHome.list.map((item) =>
-                        <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
-                    )
-
+                    /*MostPopularDataHome.list.map((item) =>
+                        <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>)*/
+                    MostPopularGradient.list.map((item, index) =>
+                        <ImageGradientView item={item} key={item.Id}/>)
                 }
             </LayoutRow5>
         }
@@ -442,12 +447,15 @@ export default function Index() {
             <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items}
                              layoutProp={layoutPropCarrousel}>
                 {
-                    TodayInValpoFull.list.map((item: BaseEventCard, index) =>
+                    TodayInValpoGradient.list.map((item, index) =>
+                        index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
+                        <ImageGradientView item={item}/>
+                    )
+                    /*TodayInValpoFull.list.map((item: BaseEventCard, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
                         <EventVerticalView darkModeState={isDarkMode}
                                            item={item}
-                                           key={item.Id}/>
-                    )
+                                           key={item.Id}/>)*/
                 }
             </LayoutCarrousel>
         }
@@ -476,11 +484,13 @@ export default function Index() {
         <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel2Items}
                          layoutProp={layoutPropCarrousel}>
             {
-                InOfferHome.list.map((item: BaseEventCard, index) =>
+                InOfferHomeGradient.list.map((item, index) =>
+                    index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
+                    <ImageGradientView item={item}/>)
+                /*InOfferHome.list.map((item: BaseEventCard, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
                     <EventVerticalView item={item} darkModeState={isDarkMode}
-                                       key={item.Id}/>
-                )
+                                       key={item.Id}/>)*/
             }
         </LayoutCarrousel>
     </TitleSection>
@@ -492,11 +502,12 @@ export default function Index() {
     let news = <TitleSection paddingTitle={null} darkModeState={isDarkMode} titleLink={newsHomeTitleLink}>
         <LayoutCarrousel sumar={3} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
+                /*TodayInValpoGradient.list.map((item, index) =>
+                    index >= getNewsItem && index <= getNewsItem + 2 &&
+                    <ImageGradientView item={item} key={item.Id}/>)*/
                 DropDownNewSearch.listNews.map((item, index) =>
                     index >= getNewsItem && index <= getNewsItem + 2 &&
-                    /*<NewView homeNew={item} darkModeState={isDarkMode} key={item.Id}/>*/
-                    /*<NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>*/
-                    <ImageGradientView/>
+                    <NewsSearchDesktop isSubtitle={true} item={item}/>
                 )
             }
         </LayoutCarrousel>

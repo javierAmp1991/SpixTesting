@@ -78,6 +78,7 @@ export namespace GlobalConst{
         spixAloneWhite: "/images/spixAlineWhite.png",
         menuIcon: "/images/menu.png",
         ticketIcon: "/images/ticket.png",
+        ticketIconWhite: "/images/ticketWhite.png",
         timerIcon: "/images/timerIcon.png"
     }
 }

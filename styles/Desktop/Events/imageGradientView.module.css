@@ -1,28 +1,135 @@
-.mainDiv{
+.mainDiv {
     width: 100%;
     position: relative;
+    overflow: hidden;
 }
-.sizeImage{
+
+.principalDiv {
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .4s;
+}
+
+.principalDiv:hover {
+    transform: scale(1.03);
+}
+
+.sizeImage {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
 }
 
-.gradient{
+.gradient2{
     position: absolute;
-    height: 80px;
-    opacity: .7;
+    height: 60%;
     width: 100%;
-    background: linear-gradient(180deg, transparent 0%, white 20%, black 100%);
+    opacity: .8;
+    background: radial-gradient(circle at top, transparent 20%, black 100%);
+    transform: scaleX(3.5);
+    bottom: 0;
+    z-index: 800;
+    transition: .4s;
+}
+
+.gradient {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    opacity: 1;
+    /*background: radial-gradient(ellipse at top, transparent 30%, #626060 40%, black 60%, black 100%);*/
+    background: radial-gradient(circle at top, transparent 20%, black 100%);
+    transform: scaleX(2.5);
     bottom: 0;
     z-index: 900;
+    transition: .4s;
 }
 
-
-.text{
+.gradientVisible {
     position: absolute;
-    height: 80px;
+    height: 100%;
     width: 100%;
-    z-index: 1000;
+    opacity: 1;
+    /*background: radial-gradient(ellipse at top, transparent 30%, #626060 40%, black 60%, black 100%);*/
+    /*background: radial-gradient(ellipse at top, transparent 30%, #313030 40%, black 100%);*/
+    background: radial-gradient(circle at top, transparent 20%, black 100%);
+    transform: scaleX(2.5);
     bottom: 0;
+    z-index: 900;
+    transition: .4s;
 }
+
+.mainDivInfo {
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    display: grid;
+    width: 100%;
+    padding: 0 24px 24px 24px;
+}
+
+.title {
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.subtitle {
+    color: white;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+.contRating {
+    margin-top: 3px;
+}
+
+.price {
+    overflow: hidden;
+    height: 0;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    color: white;
+    transition: .4s;
+}
+
+.priceVisible {
+    padding-top: 11px;
+    height: 29px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    color: white;
+    transition: .4s;
+}
+
+.beforePriceText {
+    color: white;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 400;
+}
+
+.beforePrice {
+    text-decoration: line-through;
+    color: white;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 400;
+}
+
+.gridIconInfo{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+}
+
+.sizeIcon {
+    height: 15px;
+    width: 15px;
+    position: relative;
+}
+
