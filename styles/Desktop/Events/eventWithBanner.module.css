@@ -41,19 +41,20 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     justify-content: center;
-    padding: 8px 32px;
-    gap: 16px;
+    padding: 8px 0 8px 32px;
+    gap: 12px;
 }
 
 .overflowCarrouselProductsEWB {
-    overflow: scroll;
+    display: grid;
+    align-content: center;
+    justify-content: start;
 }
 
 .containerCarrouselEWB {
     display: grid;
-    padding: 12px 12px 12px 20px;
-    background: white;
     position: relative;
+    background: white;
 }
 
 .positionArrowEWBLeft {

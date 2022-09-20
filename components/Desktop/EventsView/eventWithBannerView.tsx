@@ -69,7 +69,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                                 <div className={styles.gridCarrouselProductsEWB}>
                                     {
                                         item.ListProducts.map((item, index) =>
-                                            index >= 0 && index <= 6 &&
+                                            index >= 0 && index <= 4 &&
                                             <ProductViewHorizontal item={item} size={sizeImageProduct} isDisplayOffer={true} key={index}/>
                                         )
                                     }
@@ -110,7 +110,6 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                                     )
                                 }
                             </div>*/}
-
                         {/*<div className={styles.mainDivTimer}>
                             <span>Expira en </span>
                             <span>{hours}:{minutes}:{seconds}</span>

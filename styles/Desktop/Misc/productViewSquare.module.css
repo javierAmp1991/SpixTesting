@@ -1,0 +1,71 @@
+.containerProductProp {
+    position: relative;
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+.sizeImageProduct {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.boxShadowPro {
+    box-shadow: var(--boxShadowCard);
+    border-radius: 12px;
+    position: relative;
+    padding: 12px 12px 48px 12px;
+}
+
+.gridPriceWithDiscount {
+    display: grid;
+    align-content: center;
+}
+
+.gridInfoProduct {
+    display: grid;
+    gap: 4px;
+    padding: 8px 8px 8px 0;
+    position: absolute;
+}
+
+.contImage{
+    position: relative;
+    padding: 0 32px;
+}
+
+.gridInfoProductHorizontal{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px 8px 8px;
+}
+
+.aspectRatio {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.cont{
+
+}
+
+.image {
+    object-fit: cover;
+}
+
+.gridHorizontalProduct {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px;
+    position: relative;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 4px;
+}

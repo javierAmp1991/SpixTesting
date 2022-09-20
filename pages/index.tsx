@@ -61,6 +61,7 @@ import {
     InOfferHomeGradient,
     MostPopularGradient
 } from "../dataDemo/EventView/EventCardWithGradient";
+import ImageGradientViewMobile from "../components/Mobile/Events/ImageGradientView";
 //endregion
 
 //region constantes
@@ -187,12 +188,17 @@ export default function Index() {
         {
             <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
                 {
-                    MostPopularDataHomeMobile.list.map((item) =>
+                    /*MostPopularDataHomeMobile.list.map((item) =>
                         <div key={item.Id} className={utilities.mainDivCarrousel}>
-
                             <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={isDarkMode}/>
+                        </div>)*/
+
+                    MostPopularGradient.list.map((item, index) =>
+                        <div key={item.Id} className={`${utilities.snapScroll} px-10`}>
+                            <ImageGradientViewMobile item={item} key={item.Id}/>
                         </div>
                     )
+
                     /*MostPopularData.listMostPopular.map((item, index) =>
                         <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
                     )*/
@@ -406,7 +412,7 @@ export default function Index() {
 
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <EventWithBannerView sizeImageProduct={100} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        <EventWithBannerView sizeImageProduct={110} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
 
     </TitleSection>
 
@@ -447,15 +453,14 @@ export default function Index() {
             <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items}
                              layoutProp={layoutPropCarrousel}>
                 {
-                    TodayInValpoGradient.list.map((item, index) =>
+                    /*TodayInValpoGradient.list.map((item, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
-                        <ImageGradientView item={item}/>
-                    )
-                    /*TodayInValpoFull.list.map((item: BaseEventCard, index) =>
+                        <ImageGradientView item={item}/>)*/
+                    TodayInValpoFull.list.map((item: BaseEventCard, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
                         <EventVerticalView darkModeState={isDarkMode}
                                            item={item}
-                                           key={item.Id}/>)*/
+                                           key={item.Id}/>)
                 }
             </LayoutCarrousel>
         }
@@ -484,13 +489,13 @@ export default function Index() {
         <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel2Items}
                          layoutProp={layoutPropCarrousel}>
             {
-                InOfferHomeGradient.list.map((item, index) =>
+                /*InOfferHomeGradient.list.map((item, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
-                    <ImageGradientView item={item}/>)
-                /*InOfferHome.list.map((item: BaseEventCard, index) =>
+                    <ImageGradientView item={item}/>)*/
+                InOfferHome.list.map((item: BaseEventCard, index) =>
                     index >= getCarrousel2Items && index <= getCarrousel2Items + carrouselNumber &&
                     <EventVerticalView item={item} darkModeState={isDarkMode}
-                                       key={item.Id}/>)*/
+                                       key={item.Id}/>)
             }
         </LayoutCarrousel>
     </TitleSection>

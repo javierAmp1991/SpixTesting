@@ -11,10 +11,6 @@
     transition: .4s;
 }
 
-.principalDiv:hover {
-    transform: scale(1.03);
-}
-
 .sizeImage {
     width: 100%;
     aspect-ratio: 1/1;

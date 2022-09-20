@@ -48,6 +48,7 @@ export default function SearchRestaurant() {
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
     const isSubCategory: boolean = true;
+    const isSubCategoryMobile: boolean = false;
     const isDisplaySubCategory: boolean = true;
     const isPrincipalFill: boolean = true;
     const isDisplayPrincipalFill: boolean = true;
@@ -93,7 +94,7 @@ export default function SearchRestaurant() {
                                                  isDarkMode={isDarkMode}
                                                  isOpenFilter={isDisplayResult}
                                                  isCategory={isCategory} isDisplayCategory={isDisplayCategory}
-                                                 isSubCategory={isSubCategory}
+                                                 isSubCategory={isSubCategoryMobile}
                                                  isDisplaySubCategory={isDisplaySubCategory}
                                                  IsPrincipalFill={isPrincipalFill}
                                                  isDisplayPrincipalFill={isDisplayPrincipalFill}
