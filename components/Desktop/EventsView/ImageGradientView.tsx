@@ -35,7 +35,7 @@ export default function ImageGradientView({item, isDarkMode}:
         <div className={cssStyle.border} onPointerOver={handleShow} onPointerOut={handleHidde}>
             <div className={style.mainDiv}>
                 <div className={style.sizeImage}>
-                    <Image layout={"fill"} objectFit={"cover"} src={item.PathImage}/>
+                    <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt={""}/>
                 </div>
                 <div className={cssStyle.gradient}/>
                 <div className={style.gradient2}/>

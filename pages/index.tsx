@@ -91,7 +91,6 @@ const gridTemplateColum2: string = "repeat(2,1fr)"
 const gridTemplateColum3: string = "repeat(3,1fr)"
 const gridTemplateColum4: string = "repeat(4,1fr)"
 const gridTemplateColum5: string = "repeat(5,1fr)"
-const gridTemplateColum6: string = "repeat(6,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowOut: string = "-40px"
 const positionArrowY: string = "calc(50% - 16px)"
@@ -192,7 +191,7 @@ export default function Index() {
                             <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={isDarkMode}/>
                         </div>)*/
 
-                    MostPopularGradient.list.map((item, index) =>
+                    MostPopularGradient.list.map((item) =>
                         <div key={item.Id} className={`${utilities.snapScroll} px-10`}>
                             <ImageGradientViewMobile item={item} key={item.Id}/>
                         </div>
@@ -290,13 +289,13 @@ export default function Index() {
         </LayoutDropDownMobile>
     </TitleSection>
 
-    let categorysFooterMobile = <LayoutCategoryFooter>
+   /* let categorysFooterMobile = <LayoutCategoryFooter>
         {
             AtributesFooter.listAtribute.map(item =>
                 <HomeCategorysFooterMobile isDarkMode={isDarkMode} item={item} key={item.Title}/>
             )
         }
-    </LayoutCategoryFooter>
+    </LayoutCategoryFooter>*/
 
     let listDefaultPageMobile: ComponentWithSpaceMobile[] = [
         {
@@ -422,7 +421,7 @@ export default function Index() {
                 {
                     /*MostPopularDataHome.list.map((item) =>
                         <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>)*/
-                    MostPopularGradient.list.map((item, index) =>
+                    MostPopularGradient.list.map((item) =>
                         <ImageGradientView isDarkMode={isDarkMode} item={item} key={item.Id}/>)
                 }
             </LayoutRow5>
@@ -546,13 +545,13 @@ export default function Index() {
         </LayoutDropDown>
     </TitleSection>
 
-    let categorysFooter = <LayoutCategoryFooter>
+    /*let categorysFooter = <LayoutCategoryFooter>
         {
             AtributesFooter.listAtribute.map(item =>
                 <HomeCategorysFooter darkModeState={isDarkMode} item={item} key={item.Title}/>
             )
         }
-    </LayoutCategoryFooter>
+    </LayoutCategoryFooter>*/
 
     let listDefaultPage: ComponentWithSpace[] = [
         /*{
