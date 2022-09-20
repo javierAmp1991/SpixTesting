@@ -80,8 +80,8 @@ const noSpaceComponents = 0
 const spaceComponentsMobileY = 24
 const paddingGeneralMobile: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12}
 const paddingPublcity: paddingAsignation = {pt: 24, pb: 24, pl: 0, pr: 0}
-const paddingGeneralDesk: paddingAsignation = {pt: 25, pb: 25, pl: 0, pr: 0}
-const paddingGeneralDeskCarrousel: paddingAsignation = {pt: 25, pb: 0, pl: 0, pr: 0}
+const paddingGeneralDesk: paddingAsignation = {pt: 40, pb: 40, pl: 0, pr: 0}
+const paddingGeneralDeskCarrousel: paddingAsignation = {pt: 40, pb: 15, pl: 0, pr: 0}
 const titleLinkPadding = spaceWithTitleDesk
 const gapLayout: number = 20
 const noGapLayout: number = 0
@@ -104,7 +104,7 @@ const layoutPropBanner: LayoutCarrouselDeskProp = {
 }
 const layoutPropFeatured: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum2,
+    Grid: gridTemplateColum3,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowOut,
@@ -157,7 +157,8 @@ export function useMediaQuery(query) {
 
 export default function Index() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
-    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
+    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
+    const darkModeToggle = null;
     const isSmallDown = useMediaQuery('(max-width: 1280px)');
 
     //region mobile components
@@ -289,13 +290,13 @@ export default function Index() {
         </LayoutDropDownMobile>
     </TitleSection>
 
-   /* let categorysFooterMobile = <LayoutCategoryFooter>
-        {
-            AtributesFooter.listAtribute.map(item =>
-                <HomeCategorysFooterMobile isDarkMode={isDarkMode} item={item} key={item.Title}/>
-            )
-        }
-    </LayoutCategoryFooter>*/
+    /* let categorysFooterMobile = <LayoutCategoryFooter>
+         {
+             AtributesFooter.listAtribute.map(item =>
+                 <HomeCategorysFooterMobile isDarkMode={isDarkMode} item={item} key={item.Title}/>
+             )
+         }
+     </LayoutCategoryFooter>*/
 
     let listDefaultPageMobile: ComponentWithSpaceMobile[] = [
         {
@@ -410,7 +411,10 @@ export default function Index() {
 
     let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <EventWithBannerView sizeImageProduct={110} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        <div className={"grid grid-cols-2 gap-4"}>
+            <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+            <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+        </div>
 
     </TitleSection>
 
@@ -432,10 +436,10 @@ export default function Index() {
     const handleFeatured = (e) => setFeaturedItems(getFeaturedItems = e)
     let featured = <TitleSection paddingTitle={null}
                                  titleLink={featuredHomeTitleLink} darkModeState={isDarkMode}>{
-        <LayoutCarrousel sumar={2} handleFeatured={handleFeatured}
+        <LayoutCarrousel sumar={3} handleFeatured={handleFeatured}
                          layoutProp={layoutPropFeatured}>{
             FeaturedListSearch.list.map((item, index) =>
-                index >= getFeaturedItems && index <= getFeaturedItems + 1 &&
+                index >= getFeaturedItems && index <= getFeaturedItems + 2 &&
                 <FeaturedViewDesktop itemsShow={1} darkModeState={isDarkMode} item={item} key={index}/>
             )
         }
@@ -451,14 +455,14 @@ export default function Index() {
             <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items}
                              layoutProp={layoutPropCarrousel}>
                 {
-                    /*TodayInValpoGradient.list.map((item, index) =>
+                    TodayInValpoGradient.list.map((item, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
-                        <ImageGradientView item={item}/>)*/
-                    TodayInValpoFull.list.map((item: BaseEventCard, index) =>
+                        <ImageGradientView isDarkMode={isDarkMode} item={item}/>)
+                    /*TodayInValpoFull.list.map((item: BaseEventCard, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
                         <EventVerticalView darkModeState={isDarkMode}
                                            item={item}
-                                           key={item.Id}/>)
+                                           key={item.Id}/>)*/
                 }
             </LayoutCarrousel>
         }
@@ -567,29 +571,29 @@ export default function Index() {
             padding: paddingGeneralDesk
         },
         {
-            Component: mostPopular,
-            padding: paddingGeneralDesk
-        },
-        {
             Component: featured,
             padding: paddingGeneralDeskCarrousel
         },
         {
-            Component: carrousel1,
-            padding: paddingGeneralDeskCarrousel
+            Component: mostPopular,
+            padding: paddingGeneralDesk
         },
         {
             Component: publicity1,
             padding: paddingGeneralDesk
         },
         {
-            Component: carrouselRounded1,
+            Component: carrousel1,
             padding: paddingGeneralDeskCarrousel
         },
         {
-            Component: carrousel2,
+            Component: carrouselRounded1,
             padding: paddingGeneralDeskCarrousel
         },
+        /*{
+            Component: carrousel2,
+            padding: paddingGeneralDeskCarrousel
+        },*/
         {
             Component: ownPublicity,
             padding: paddingGeneralDesk
@@ -642,7 +646,7 @@ export default function Index() {
 
     function getCssStyle() {
         return {
-            gradientCategories: isDarkMode? utilities.gradientCatDesktopDarkMode : utilities.gradientCatDesktop
+            gradientCategories: isDarkMode ? utilities.gradientCatDesktopDarkMode : utilities.gradientCatDesktop
         }
     }
 }

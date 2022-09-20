@@ -21,27 +21,30 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
                 {item.Title}
             </div>
 
-            <div className={`${cssStyle.Subtitle} ${style.subTitleMargin} ${utilities.clamp1}`}>
+            <div className={`${cssStyle.Subtitle} ${utilities.clamp1}`}>
                 {item.Subtitle}
             </div>
 
-            <div className={style.gridRatingStar}>
-                <div className={style.gridStars}>
-                    {
-                        listRating.map((item, index) =>
-                            <div key={index} className={style.sizeStar}>
-                                <Image layout={"fill"}
-                                       src={index < numRating ? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
-                            </div>
-                        )
-                    }
-                </div>
-                <div className={style.paddingRating}>
-                    <div className={`${cssStyle.RatingText} ${utilities.fontMiniDesktop}`}>
-                        ({item.Rating != null ? item.Rating : 0})
+            {
+                item.Rating != null &&
+                <div className={style.gridRatingStar}>
+                    <div className={style.gridStars}>
+                        {
+                            listRating.map((item, index) =>
+                                <div key={index} className={style.sizeStar}>
+                                    <Image layout={"fill"}
+                                           src={index < numRating ? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                                </div>
+                            )
+                        }
+                    </div>
+                    <div className={style.paddingRating}>
+                        <div className={`${cssStyle.RatingText} ${utilities.fontMiniDesktop}`}>
+                            ({item.Rating != null ? item.Rating : 0})
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
         </>
     )
 

@@ -7,7 +7,7 @@
     --maxWidthBanner: 1920px;
     --colorBodyDarkMode: #121212;
     --colorBodyNormal: white;
-    /*    --colorBodyNormal: #ebebeb;*/
+    --colorBodyNormal: #ebebeb;
     --colorTitlesMobile: #0f1111;
     --colorTitlesDesktop: #0f1111;
     --colorPriceInclude: #1a1d1d;
@@ -111,7 +111,7 @@
 
 /*new DesktopRoot*/
 :root {
-    --colorBackGroundDesktopNormal: white;
+    --colorBackGroundDesktopNormal: #ebebeb;
     --colorBackGroundDesktopDarkMode: #121212;
     --bgNormalInfoDesktop: white;
     --bgDarkModeInfoDesktop: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);

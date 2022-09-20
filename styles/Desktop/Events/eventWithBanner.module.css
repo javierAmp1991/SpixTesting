@@ -1,6 +1,6 @@
 .sizeBannerEWB {
     width: 100%;
-    aspect-ratio: 5.5/1;
+    aspect-ratio: 4/1;
     position: relative;
 }
 
@@ -37,18 +37,9 @@
 
 .gridCarrouselProductsEWB {
     display: grid;
-    grid-template-columns: max-content;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    justify-content: center;
-    padding: 8px 0 8px 32px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 8px;
     gap: 12px;
-}
-
-.overflowCarrouselProductsEWB {
-    display: grid;
-    align-content: center;
-    justify-content: start;
 }
 
 .containerCarrouselEWB {
@@ -75,9 +66,8 @@
 }
 
 .mainContainerInfo {
-    padding: 20px 24px 12px 24px;
-    display: grid;
-    justify-items: left;
+    /*padding: 20px 24px 12px 24px;*/
+    padding: 12px;
 }
 
 .mainContainerInfoSearch {
@@ -140,7 +130,7 @@
 
 .grid1Info {
     padding-right: 48px;
-    border-right: 2px solid var(--separationLineColor);
+    border-right: 1px solid var(--separationLineColor);
 }
 
 .gridTags {
@@ -167,7 +157,6 @@
 .mainDivInfoQ {
     display: grid;
     width: 100%;
-    grid-template-columns: max-content 1fr;
 }
 
 .gridAdInfo {

@@ -82,8 +82,8 @@
 }
 
 .priceVisible {
-    padding-top: 8px;
-    height: 29px;
+    margin-top: 5px;
+    height: 26px;
     transition: .4s;
 }
 

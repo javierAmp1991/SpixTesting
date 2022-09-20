@@ -21,11 +21,11 @@ export default function PriceIncludeInfoEvent({item}: { item: PriceIncludeInfoPr
                 {
                     item.MinPrice == item.MaxPrice ?
                         <>
-                            {getMoneyValue(item.MinPrice)}
+                            ${getMoneyValue(item.MinPrice)}
                         </>
                         :
                         <>
-                            {getMoneyValue(item.MinPrice)} - {getMoneyValue(item.MaxPrice)}
+                            ${getMoneyValue(item.MinPrice)} - {getMoneyValue(item.MaxPrice)}
                         </>
                 }
             </div>

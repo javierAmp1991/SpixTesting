@@ -26,13 +26,10 @@ export default function Search() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
     let [isDisplayResult, setIsDisplayResult] = useState(true);
     let [isOpenFilters, setIsOpenFilters] = useState(true);
-    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
-    const darkModeToggle = null
+    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 1280px)');
     let cssStyle = getCssStyle();
-    const isReview: boolean = true;
-    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;

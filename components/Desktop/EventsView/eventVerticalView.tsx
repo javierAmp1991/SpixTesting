@@ -69,7 +69,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         Title: item.Title,
         Subtitle: item.Subtitle,
         Rating: item.Rating,
-        isDarkMode: darkModeState
+        isDarkMode: darkModeState,
     }
 
     /*    const priceIncludeInfo: PriceIncludeInfoProp = {
@@ -109,38 +109,11 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     {
                         item.Type == EventCardType.EventCardWithDate &&
                         <DateInfoEvent item={dateInfo}/>
-                        /*<div className={`${styles.gridIconInfo}`}>
-                            <div className={styles.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                            </div>
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {itemWithDate.MinDate.getDate()} de {itemWithDate.MinDate.toLocaleString("es-US", {month: "short"})} del {itemWithDate.MinDate.getFullYear()}
-                            </div>
-                        </div>*/
                     }
 
                     {
                         item.Type == EventCardType.EventCardWithPrice &&
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
-                        /*<div className={`${styles.gridIconInfo}`}>
-                            <div className={styles.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                            </div>
-                            {
-                                itemWithPrice.MinPrice == itemWithPrice.MaxPrice ?
-                                    <div className={utilities.fontPriceIncludeDesktop}>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(itemFull.MinPrice))}
-                                    </div>
-                                    :
-                                    <div className={utilities.fontPriceIncludeDesktop}>
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(itemWithPrice.MinPrice))} -
-                                        ${Intl.NumberFormat("ES-CL"
-                                    ).format(Math.round(itemWithPrice.MaxPrice))}
-                                    </div>
-                            }
-                        </div>*/
                     }
 
                     {
@@ -148,33 +121,6 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                         <>
                             <DateInfoEvent item={dateInfoFull}/>
                             <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
-                            {/*<div className={`${styles.gridIconInfo}`}>
-                                <div className={styles.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                                </div>
-                                <div className={`${styles.fontSize}`}>
-                                    {itemFull.MinDate.getDate()} de {itemFull.MinDate.toLocaleString("es-US", {month: "short"})} del {itemFull.MinDate.getFullYear()}
-                                </div>
-                            </div>
-                            <div className={`${styles.gridIconInfo}`}>
-                                <div className={styles.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                </div>
-                                {
-                                    itemFull.MinPrice == itemFull.MaxPrice ?
-                                        <div className={utilities.fontPriceIncludeDesktop}>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(itemFull.MinPrice))}
-                                        </div>
-                                        :
-                                        <div className={utilities.fontPriceIncludeDesktop}>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(itemFull.MinPrice))} -
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(itemFull.MaxPrice))}
-                                        </div>
-                                }
-                            </div>*/}
                         </>
                     }
 

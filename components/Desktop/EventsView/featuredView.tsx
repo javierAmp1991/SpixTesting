@@ -11,12 +11,13 @@ import ProductViewDesk from "../Misc/productViewDesk";
 
 export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                                                 { item: BaseFeaturedView, darkModeState: boolean, itemsShow: number }) {
+    const darkModeFalse: boolean = false;
     let cssStyle = getCssStyles()
     const principalInfoEventProp: PrincipalInfoEventProp = {
         Title: item.Title,
         Subtitle: item.Subtitle,
         Rating: item.Rating,
-        isDarkMode: darkModeState
+        isDarkMode: darkModeFalse
     }
     const priceIncludeInfo: PriceIncludeInfoProp = {
         MinPrice: item.MinPrice,
@@ -40,19 +41,19 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
             <div className={style.mainDivInfo}>
                 <div className={style.topDiv}>
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
-                    {/*<div className={style.bottomDivSearch}>
-                        <DateInfoEvent item={dateInfo}/>
+                    <div className={style.bottomDivSearch}>
+                        {/*<DateInfoEvent item={dateInfo}/>*/}
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
-                    </div>*/}
+                    </div>
                 </div>
-                <div className={style.mainDivProductsSingle}>
+                {/*<div className={style.mainDivProductsSingle}>
                     {
                         item.ListProducts.map((item, index) =>
                             index == 0 &&
                             <ProductViewDesk isDisplayOffer={false} item={item} size={130}/>
                         )
                     }
-                </div>
+                </div>*/}
             </div>
         </div>
     )
@@ -60,7 +61,7 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
     function getCssStyles() {
         return {
             borderCard: darkModeState ? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop,
-            bgInfo: darkModeState ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
+            bgInfo: darkModeFalse ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
         }
     }
 }

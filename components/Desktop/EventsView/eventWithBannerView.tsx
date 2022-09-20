@@ -5,13 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 import ProductViewHorizontal from "../Misc/ProductViewHorizontal";
+import ProductViewDesk from "../Misc/productViewDesk";
 
 export default function EventWithBannerView({item, darkModeState, sizeImageProduct}) {
+    const darkModeFalse: boolean = false;
     const principalInfoEventProp: PrincipalInfoEventProp = {
         Title: item.EventName,
         Subtitle: item.Subtitle,
         Rating: item.Rating,
-        isDarkMode: darkModeState
+        isDarkMode: darkModeFalse
     }
     let cssStyles = getCssStyles();
     let [timeOut] = useState(new Date(2023, 11, 23, 23, 59, 59))
@@ -47,7 +49,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
 
             <div className={styles.mainContainerInfo}>
                 <div className={styles.mainDivInfoQ}>
-                    <div className={styles.grid1Info}>
+                    {/* <div className={styles.grid1Info}>
                         <PrincipalInfoEvent item={principalInfoEventProp}/>
                         <div className={styles.mainDivTimer}>
                             <span>Expira en </span>
@@ -62,18 +64,15 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                                 )
                             }
                         </div>
-                    </div>
+                    </div>*/}
                     <div className={styles.containerCarrouselEWB}>
-                        <div className={styles.overflowCarrouselProductsEWB}>
-                            <div className={styles.gridCarrouselProductsEWB}>
-                                {
-                                    item.ListProducts.map((item, index) =>
-                                        index >= 0 && index <= 4 &&
-                                        <ProductViewHorizontal item={item} size={sizeImageProduct}
-                                                               isDisplayOffer={true} key={index}/>
-                                    )
-                                }
-                            </div>
+                        <div className={styles.gridCarrouselProductsEWB}>
+                            {
+                                item.ListProducts.map((item, index) =>
+                                    <ProductViewDesk item={item} size={sizeImageProduct}
+                                                     isDisplayOffer={false} key={index}/>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
@@ -84,7 +83,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
     function getCssStyles() {
         return {
             borderCard: darkModeState ? utilities.borderCardDesktopDarkModeNoHover : utilities.borderCardDesktopNoHover,
-            bgInfo: darkModeState ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
+            bgInfo: darkModeFalse ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
         }
     }
 

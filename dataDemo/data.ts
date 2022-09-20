@@ -392,55 +392,55 @@ export namespace DailyOfferData {
                 Include: null,
                 ImagePath: "/images/product3.jpg"
             },
-            /*{
+            {
                Name: "Producto 4.1",
                Price: 2990,
                DiscountPercent: 25,
                Include: null,
                ImagePath: "/images/product4.jpg"
            },
-           {
-                Name: "Producto 5.1",
-                Price: 990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product5.jpg"
-            },
-            {
-                Name: "Producto 6.1",
-                Price: 9990,
-                DiscountPercent: 20,
-                Include: "Dcto 2 Un.",
-                ImagePath: "/images/product6.jpg"
-            },
-            {
-                Name: "Producto 7.1",
-                Price: 10990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product7.jpg"
-            },
-            {
-                Name: "Producto 8.1",
-                Price: 10990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product8.jpg"
-            },
-            {
-                Name: "Producto 9.1",
-                Price: 10990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product9.jpg"
-            },
-            {
-                Name: "Producto 10.1",
-                Price: 6990,
-                DiscountPercent: 30,
-                Include: null,
-                ImagePath: "/images/product10.jpg"
-            }*/
+            /*{
+                 Name: "Producto 5.1",
+                 Price: 990,
+                 DiscountPercent: 30,
+                 Include: null,
+                 ImagePath: "/images/product5.jpg"
+             },
+             {
+                 Name: "Producto 6.1",
+                 Price: 9990,
+                 DiscountPercent: 20,
+                 Include: "Dcto 2 Un.",
+                 ImagePath: "/images/product6.jpg"
+             },
+             {
+                 Name: "Producto 7.1",
+                 Price: 10990,
+                 DiscountPercent: 30,
+                 Include: null,
+                 ImagePath: "/images/product7.jpg"
+             },
+             {
+                 Name: "Producto 8.1",
+                 Price: 10990,
+                 DiscountPercent: 30,
+                 Include: null,
+                 ImagePath: "/images/product8.jpg"
+             },
+             {
+                 Name: "Producto 9.1",
+                 Price: 10990,
+                 DiscountPercent: 30,
+                 Include: null,
+                 ImagePath: "/images/product9.jpg"
+             },
+             {
+                 Name: "Producto 10.1",
+                 Price: 6990,
+                 DiscountPercent: 30,
+                 Include: null,
+                 ImagePath: "/images/product10.jpg"
+             }*/
         ],
         ListAtributes: ["Rock", "Conciertos", "Festivales"],
         Category: "Bar Restaurant"

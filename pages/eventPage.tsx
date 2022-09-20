@@ -54,13 +54,13 @@ import EventWithBannerView from "../components/Desktop/EventsView/eventWithBanne
 //endregion
 
 const spaceComponentsMobileY = 24
-const spaceComponentsDeskY = 40
-const spaceComponents = 40
+const spaceComponentsDeskY = 25
+const spaceComponents = 25
 const noSpaceComponentsDesk = 0
 const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12}
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 2, pr: 2}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 2, pr: 2}
-const paddingDefaultSectionDeskCarrousel: paddingAsignation = {pt: 40, pb: 0, pl: 2, pr: 2}
+const paddingDefaultSectionDeskCarrousel: paddingAsignation = {pt: 40, pb: 15, pl: 2, pr: 2}
 /*const commentTitle: [string, string] = ["Comentarios", "#"]*/
 const reviewtTitle: [string, string] = ["Reseñas", "#"]
 const questionTitle: [string, string] = ["Preguntas", "#"]
