@@ -4,16 +4,6 @@
     overflow: hidden;
 }
 
-.principalDiv {
-    box-shadow: var(--boxShadowCard);
-    border-radius: 6px;
-    overflow: hidden;
-    transition: .4s;
-}
-
-.principalDiv:hover {
-    transform: scale(1.03);
-}
 
 .sizeImage {
     width: 100%;
@@ -88,20 +78,12 @@
 .price {
     overflow: hidden;
     height: 0;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 18px;
-    color: white;
     transition: .4s;
 }
 
 .priceVisible {
-    padding-top: 11px;
+    padding-top: 8px;
     height: 29px;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 18px;
-    color: white;
     transition: .4s;
 }
 

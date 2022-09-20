@@ -423,7 +423,7 @@ export default function Index() {
                     /*MostPopularDataHome.list.map((item) =>
                         <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>)*/
                     MostPopularGradient.list.map((item, index) =>
-                        <ImageGradientView item={item} key={item.Id}/>)
+                        <ImageGradientView isDarkMode={isDarkMode} item={item} key={item.Id}/>)
                 }
             </LayoutRow5>
         }

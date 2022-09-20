@@ -3,7 +3,6 @@ import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React from "react";
-import {func} from "prop-types";
 
 export class PriceIncludeInfoProp {
     MinPrice: number
@@ -22,24 +21,25 @@ export default function PriceIncludeInfoEvent({item}: { item: PriceIncludeInfoPr
                 {
                     item.MinPrice == item.MaxPrice ?
                         <>
-                            ${Intl.NumberFormat("ES-CL"
-                        ).format(Math.round(item.MinPrice))}
+                            {getMoneyValue(item.MinPrice)}
                         </>
                         :
                         <>
-                            ${Intl.NumberFormat("ES-CL"
-                        ).format(Math.round(item.MinPrice))} -
-                            ${Intl.NumberFormat("ES-CL"
-                        ).format(Math.round(item.MaxPrice))}
+                            {getMoneyValue(item.MinPrice)} - {getMoneyValue(item.MaxPrice)}
                         </>
                 }
             </div>
         </div>
     )
-    function getCssStyle(){
-        return{
-            icon: item.IsDarkMode? GlobalConst.sourceImages.ticketIconWhite : GlobalConst.sourceImages.ticketIcon,
-            fontPrice: item.IsDarkMode? utilities.fontPriceIncludeDesktopDarkMode : utilities.fontPriceIncludeDesktop
+
+    function getMoneyValue(num: number): string {
+        return Intl.NumberFormat("ES-CL").format(Math.round(num))
+    }
+
+    function getCssStyle() {
+        return {
+            icon: item.IsDarkMode ? GlobalConst.sourceImages.ticketIconWhite : GlobalConst.sourceImages.ticketIcon,
+            fontPrice: item.IsDarkMode ? utilities.fontPriceIncludeDesktopDarkMode : utilities.fontPriceIncludeDesktop
         }
     }
 }

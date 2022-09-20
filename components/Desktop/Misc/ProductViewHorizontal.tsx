@@ -1,16 +1,14 @@
 import style from "/styles/Desktop/Misc/productView.module.css"
 import utilities from "/styles/utilities.module.css"
 import {Product} from "../../../dataDemo/data";
-import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 
 export default function ProductViewHorizontal({item, size, isDisplayOffer}:
-                                            { item: Product, size: number, isDisplayOffer: boolean }) {
-
+                                                  { item: Product, size: number, isDisplayOffer: boolean }) {
 
     let getSizeProduct = getProductSize()
     return (
-        <div className={style.gridHorizontalProduct}>
+        <div className={`${style.gridHorizontalProduct}`}>
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
                 <div className={style.aspectImage}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
@@ -48,8 +46,6 @@ export default function ProductViewHorizontal({item, size, isDisplayOffer}:
                         }
                     </div>
                 }
-
-
             </div>
         </div>
     )
