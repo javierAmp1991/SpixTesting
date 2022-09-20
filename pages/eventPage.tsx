@@ -1,23 +1,19 @@
 // region data
 import {ComponentWithSpaceMobile} from "../components/Mobile/defaultPageMobile";
-import {CommentSectionData} from "../dataDemo/data";
 import {ReviewsSectionData} from "../dataDemo/data";
 import {QuestionSectionData} from "../dataDemo/data";
 import {ResumeReviews} from "../dataDemo/data";
-import {Menu} from "../dataDemo/data";
 import {EventPageEvent} from "../dataDemo/data";
 import {HomeNewsData} from "../dataDemo/data";
 import {ListOffertData} from "../dataDemo/data";
 import {ListProductsExtra} from "../dataDemo/data";
 import {ListProducts} from "../dataDemo/data";
 import {FormList} from "../dataDemo/data";
-import {InOffer} from "../dataDemo/data";
 import styleDesk from "/styles/Desktop/EventPage/eventPageDesk.module.css"
 import styleMobile from "/styles/Mobile/EventPage/eventPageMobile.module.css"
 import utilities from "/styles/utilities.module.css"
 //endregion
 //region components
-import CommentMobile from "../components/Mobile/EventPage/commentMobile";
 import LayoutCommRevQue from "../components/Mobile/Layouts/layoutCommRevQue";
 import ReviewSectionMobile from "../components/Mobile/EventPage/reviewSectionMobile";
 import QuestionSectionMobile from "../components/Mobile/EventPage/questionSectionMobile";
@@ -27,18 +23,14 @@ import EventInformationMobile from "../components/Mobile/EventPage/eventInformat
 import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
 import ProductViewMobile from "../components/Mobile/Misc/productViewMobile";
 import EventWithBannerMobile from "../components/Mobile/Events/eventWithBannerMobile";
-import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
 import TitleSection from "../components/Desktop/Misc/titleSection";
 import DefaultPageMobile, {paddingAsignation} from "../components/Mobile/defaultPageMobile";
 import FooterMobile from "../components/Mobile/EventPage/footerMobile";
-import CommentSectionMobile from "../components/Mobile/EventPage/commentSectionMobile";
 import {useMediaQuery} from "./index";
-import CommentDesk from "../components/Desktop/EventPage/commentDesk";
 import ReviewSectionDesk from "../components/Desktop/EventPage/reviewSectionDesk";
 import QuestionSectionDesk from "../components/Desktop/EventPage/questionSectionDesk";
 import ReviewDesk from "../components/Desktop/EventPage/reviewDesk";
 import QuestionDesk from "../components/Desktop/EventPage/questionDesk";
-import CommentSectionDesk from "../components/Desktop/EventPage/commentSectionDesk";
 import LayoutCommRevQueDesk from "../components/Desktop/Layouts/layoutCommRevQueDesk";
 import SideCardEvent from "../components/Desktop/EventPage/sideCardEvent";
 import EventInformationDesk from "../components/Desktop/EventPage/eventInformationDesk";
@@ -69,7 +61,7 @@ const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 2, pr: 2}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 2, pr: 2}
 const paddingDefaultSectionDeskCarrousel: paddingAsignation = {pt: 40, pb: 0, pl: 2, pr: 2}
-const commentTitle: [string, string] = ["Comentarios", "#"]
+/*const commentTitle: [string, string] = ["Comentarios", "#"]*/
 const reviewtTitle: [string, string] = ["Reseñas", "#"]
 const questionTitle: [string, string] = ["Preguntas", "#"]
 const newsTitle: [string, string] = ["Noticias", "#"]
@@ -110,7 +102,7 @@ let layoutPropNews: LayoutCarrouselDeskProp = {
 
 export default function EventPage() {
     //region components mobile
-    let commentSection = <TitleSection titleLink={commentTitle}
+/*    let commentSection = <TitleSection titleLink={commentTitle}
                                        paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <CommentSectionMobile>
             {
@@ -123,7 +115,8 @@ export default function EventPage() {
                 </LayoutCommRevQue>
             }
         </CommentSectionMobile>
-    </TitleSection>
+    </TitleSection>*/
+
     let reviewSection = <TitleSection titleLink={reviewtTitle}
                                       paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <ReviewSectionMobile resumeReview={ResumeReviews.resumeReviews}>
@@ -224,7 +217,7 @@ export default function EventPage() {
     //region componentsDesktop
     let eventInformationDesk = <EventInformationDesk formList={FormList.listForm}
                                                      eventInformation={EventPageEvent.eventPage}/>
-    let commentSectionDesk = <TitleSection titleLink={commentTitle}
+/*    let commentSectionDesk = <TitleSection titleLink={commentTitle}
                                            paddingTitle={spaceComponentsDeskY} darkModeState={false}>
         <CommentSectionDesk>
             {
@@ -237,7 +230,7 @@ export default function EventPage() {
                 </LayoutCommRevQueDesk>
             }
         </CommentSectionDesk>
-    </TitleSection>
+    </TitleSection>*/
     let reviewSectionDesk = <TitleSection titleLink={reviewtTitle}
                                           paddingTitle={spaceComponentsDeskY} darkModeState={false}>
         <ReviewSectionDesk resumeReview={ResumeReviews.resumeReviews}>
@@ -271,7 +264,7 @@ export default function EventPage() {
             {
                 HomeNewsData.listNews.map((item, index) =>
                     index >= getNews && index <= getNews + 1 &&
-                    <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
+                    <NewsSearchDesktop isDarkMode={false} isSubtitle={false} key={item.Id} item={item}/>
                 )
             }
         </LayoutCarrousel>
