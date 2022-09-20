@@ -249,7 +249,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
 
                 {
                     listImageNewW.map((image: cate, index) =>
-                        <div key={index} className={style.mainDiv}>
+                        <div key={index} className={`${style.mainDiv} ${cssStyle.background}`}>
                             <div style={{width: widthCat}} className={style.testImage}>
                                 <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
                                        alt=""/>
@@ -258,12 +258,6 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                             <div className={`${style.mainDivNameL} ${utilities.clamp1}`}>
                                 {image.Name}
                             </div>
-                            {/*<div className={style.superRectangule}>
-                                {image.Name}
-                            </div>
-                            {/*<div className={style.normalName}>
-                                {image.Name}
-                            </div>*/}
                         </div>
                     )
                 }
@@ -286,6 +280,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
 
     function getCssStyle() {
         return {
+            background: isDarkMode? style.backGroundDivDarkMode : style.backGroundDiv,
             firstGradient: isDarkMode ? utilities.bgFirstGradientDarkMode : utilities.bgFirstGradient,
             secondGradient: isDarkMode ? utilities.bgSecondGradientDarkMode : utilities.bgSecondGradient
         }

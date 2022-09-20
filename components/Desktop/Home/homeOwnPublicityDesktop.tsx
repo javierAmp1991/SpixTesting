@@ -5,16 +5,15 @@ import Image from "next/image";
 export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
     let cssStyles = getCssStyles()
     return (
-        <div className={style.PrincipalGrid}>
+        <div className={`${style.PrincipalGrid}`}>
             {
                 listItem.map((info, index) =>
-                    <div key={index}
-                         className={`${style.gridOwnPublicity} ${cssStyles.bgInfo} ${style.paddingContainerOwnPublicity}`}>
-                        <div className="grid content-center">
-                            <div className={style.heightImageOwnPublicity}>
-                                <Image layout={"fill"} src={info.LinkImage}
-                                       alt=""/>
-                            </div>
+                    <div key={index} className={`${style.gridOwnPublicity} 
+                                                 ${cssStyles.borderCard} ${cssStyles.bgInfo}    
+                                                 ${style.paddingContainerOwnPublicity}`}>
+                        <div className={style.heightImageOwnPublicity}>
+                            <Image layout={"fill"} src={info.LinkImage}
+                                   alt=""/>
                         </div>
                         <div className={`${style.containerInfoProperties}`}>
                             <div className={cssStyles.fontTitle}>
@@ -24,10 +23,8 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
                                 <div className="mb-1">{info.FirstText}</div>
                                 <div>{info.SecondText}</div>
                             </div>
-                            <div>
-                                <div className={cssStyles.buttonSeeMore}>
-                                    Ver mas
-                                </div>
+                            <div className={cssStyles.buttonSeeMore}>
+                                Ver mas
                             </div>
                         </div>
                     </div>
@@ -38,7 +35,7 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
 
     function getCssStyles() {
         return {
-            borderCard: darkMode ? utilities.borderCardsDarkMode : utilities.borderCards,
+            borderCard: darkMode ? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop,
             bgInfo: darkMode ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
             fontTitle: darkMode ? utilities.fontTitleDarkMode : utilities.fontTitle,
             fontPrimaryText: darkMode ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,

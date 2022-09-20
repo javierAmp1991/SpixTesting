@@ -76,7 +76,7 @@ let resultInfo: ResultInfo = {
 }
 
 export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}:
-                                              { darkMode: boolean, isLogged: boolean, toggleDarkMode: Function }) {
+                                              { darkMode: boolean, isLogged: boolean, toggleDarkMode: any }) {
     let [isdisplaySug, setIsDisplaySug] = useState(false)
     const showIsDisplaySug = () => setIsDisplaySug(isdisplaySug = true)
     const hiddeIsDisplaySug = () => setIsDisplaySug(isdisplaySug = false)
@@ -167,7 +167,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}:
                     </div>
                 </a>*/}
 
-                <button onClick={null} className={styleGrid}>
+                <button onClick={toggleDarkMode} className={styleGrid}>
                     <div className={paddingImage}>
                         <div className={style.sizeIconDarkMode}>
                             <Image layout={"fill"} src={darkModeIconInfo.icon} alt=""/>

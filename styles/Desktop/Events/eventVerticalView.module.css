@@ -7,7 +7,6 @@
     /* border: 2px solid #eeeeee;*/
     /*border-bottom: 1px solid #dedcdc;*/
     display: grid;
-    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
     transition: .4s;
@@ -70,15 +69,11 @@
 }
 
 .bottomDivSearch {
-    background: linear-gradient(145deg, rgba(252, 176, 69, 1) 0%, rgb(253, 234, 29) 100%);
-    background: linear-gradient(145deg, #ffe32d 0%, #fde653 100%);
-    background: white;
     padding: 8px 24px 8px 24px;
     display: grid;
     gap: 2px;
     position: relative;
     border-top: 2px dashed #e7e7e7;
-    /*overflow: hidden;*/
 }
 
 .bottomDivResale {

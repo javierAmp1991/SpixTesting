@@ -5,30 +5,35 @@ import {News} from "../../../dataDemo/data";
 import Link from "next/link";
 
 const writeRNew: string = "Leer noticia"
-const goToTheEvent: string = "Ir al evento"
 
-export default function NewsSearchDesktop({item, isSubtitle}: { item: News, isSubtitle: boolean }) {
+
+export default function NewsSearchDesktop({
+                                              item,
+                                              isSubtitle,
+                                              isDarkMode
+                                          }: { item: News, isSubtitle: boolean, isDarkMode: boolean }) {
+    const cssStyle = getCssStyle()
     return (
-        <div className={style.mainCont}>
+        <div className={cssStyle.mainDiv}>
             <div className={style.sizeImage}>
                 <Image layout={"fill"} src={item.PathImage} alt={""}/>
             </div>
             <div className={style.absCont}>
-                <div className={`${style.fontTitle} ${utilities.clamp2}`}>
+                <div className={`${cssStyle.title} ${utilities.clamp2}`}>
                     {item.Title}
                 </div>
-                <div className={`${utilities.fontSecundaryText} ${style.eventNew}`}>
+                <div className={`${cssStyle.date} ${style.eventNew}`}>
                     {item.Date}
                 </div>
                 {
                     isSubtitle &&
-                    <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
+                    <div className={`${utilities.clamp2} ${cssStyle.subtitle}`}>
                         {item.SubTitle}
                     </div>
                 }
                 <Link href={""}>
                     <a className={style.gridReadNew}>
-                        <span className={`${utilities.styleLink} ${style.writeNew}`}>
+                        <span className={`${cssStyle.styleLink} ${style.writeNew}`}>
                             {writeRNew}
                         </span>
                     </a>
@@ -37,4 +42,14 @@ export default function NewsSearchDesktop({item, isSubtitle}: { item: News, isSu
 
         </div>
     )
+
+    function getCssStyle() {
+        return {
+            mainDiv: isDarkMode ? style.mainContDarkMode : style.mainCont,
+            styleLink: isDarkMode ? utilities.styleLinkDarkMode : utilities.styleLink,
+            title: isDarkMode? style.fontTitleDarkMode : style.fontTitle,
+            subtitle: isDarkMode ? style.fontSubTitleDarkMode : style.fontSubTitle,
+            date: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText
+        }
+    }
 }

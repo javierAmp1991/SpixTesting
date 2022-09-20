@@ -10,15 +10,24 @@ export class DateInfoProp {
     IsDarkMode: boolean
 }
 
-export default function DateInfoEvent({item} : {item: DateInfoProp}){
-    return(
+export default function DateInfoEvent({item}: { item: DateInfoProp }) {
+    const cssStyle = getCssStyle()
+
+    return (
         <div className={`${style.gridIconInfo}`}>
             <div className={style.sizeIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
+                <Image layout={"fill"} src={cssStyle.icon} alt={""}/>
             </div>
-            <div className={`${utilities.fontSecundaryTextDesktop} ${style.fontSize}`}>
+            <div className={cssStyle.font}>
                 {item.MinDate.getDate()} de {item.MinDate.toLocaleString("es-US", {month: "short"})} del {item.MinDate.getFullYear()}
             </div>
         </div>
     )
+
+    function getCssStyle() {
+        return {
+            icon: item.IsDarkMode ? GlobalConst.sourceImages.calendarIconWhite : GlobalConst.sourceImages.calendarIcon,
+            font: item.IsDarkMode ? style.fontSizeDarkMode : style.fontSize
+        }
+    }
 }

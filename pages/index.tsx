@@ -158,8 +158,7 @@ export function useMediaQuery(query) {
 
 export default function Index() {
     let [isDarkMode, setIsDarkModeP] = React.useState(false);
-    /*const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);*/
-    const darkModeToggle = null
+    const darkModeToggle = () => setIsDarkModeP(isDarkMode = !isDarkMode);
     const isSmallDown = useMediaQuery('(max-width: 1280px)');
 
     //region mobile components
@@ -512,7 +511,7 @@ export default function Index() {
                     <ImageGradientView item={item} key={item.Id}/>)*/
                 DropDownNewSearch.listNews.map((item, index) =>
                     index >= getNewsItem && index <= getNewsItem + 2 &&
-                    <NewsSearchDesktop isSubtitle={true} item={item}/>
+                    <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true} item={item}/>
                 )
             }
         </LayoutCarrousel>
@@ -628,9 +627,9 @@ export default function Index() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={darkModeToggle}>
-                <div className={utilities.bgBodyNormal}>
+                <div>
                     {carrouselBanner}
-                    <div className={utilities.styleGradientIndex}>
+                    <div className={getCssStyle().gradientCategories}>
                         <div className={utilities.maxWidthBodyContentSpix}>
                             {carrouselAuto}
                         </div>
@@ -641,6 +640,12 @@ export default function Index() {
                 </div>
             </DefaultLayoutDesktop>
     )
+
+    function getCssStyle() {
+        return {
+            gradientCategories: isDarkMode? utilities.gradientCatDesktopDarkMode : utilities.gradientCatDesktop
+        }
+    }
 }
 
 

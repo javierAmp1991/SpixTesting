@@ -54,7 +54,6 @@
 .containerCarrouselEWB {
     display: grid;
     position: relative;
-    background: white;
 }
 
 .positionArrowEWBLeft {

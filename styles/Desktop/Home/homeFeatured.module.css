@@ -1,13 +1,6 @@
 .mainDiv {
     position: relative;
-    box-shadow: var(--boxShadowCard);
-    border-radius: 6px;
-    overflow: hidden;
     transition: .4s;
-}
-
-.mainDiv:hover{
-    transform: scale(1.03);
 }
 
 .bannerFeatureProperties {

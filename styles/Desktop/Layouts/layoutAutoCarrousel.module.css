@@ -10,22 +10,19 @@
 .mainDiv {
     padding: 15px 25px 35px 25px;
     transition: .4s;
-    background: var(--gradientSpix);
-    background: white;
-    background: linear-gradient(rgba(10, 102, 188, 1) 0%, rgb(56, 139, 238) 100%);
-    background: linear-gradient(180deg, #fd904c 0%, #f8832f 100%);
-    background: linear-gradient(180deg, #5e5e5e 0%, #1e1d1d 100%);
-    background: linear-gradient(180deg, #265bcc 0%, #2382c9 100%);
-    background: rgba(8,95,178,1);
-    background: linear-gradient(90deg, rgba(34,37,40,1) 0%, rgba(35,47,62,1) 100%);
-    background: linear-gradient(180deg, rgb(20, 117, 210) 0%, rgb(26, 130, 225) 100%);
-    background:rgb(36, 129, 215);
-    box-shadow: 0 0 5px rgb(29, 103, 178), 0 1px 5px rgb(11, 59, 107);
-
-    /*   border: 1px solid rgba(10, 102, 188, 1);*/
     border-radius: 6px;
     overflow: hidden;
     position: relative;
+}
+
+.backGroundDiv {
+    background: rgb(36, 129, 215);
+    box-shadow: 0 0 5px rgb(29, 103, 178), 0 1px 5px rgb(11, 59, 107);
+}
+
+.backGroundDivDarkMode {
+    background: var(--colorBackGroundDesktopDarkMode);
+    box-shadow: var(--boxShadowCardDarkMode);
 }
 
 .mainDivW {

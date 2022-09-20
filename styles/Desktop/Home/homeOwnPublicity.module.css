@@ -2,7 +2,6 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 16px;
-
     transition: .4s;
 }
 
@@ -14,7 +13,6 @@
 
 .paddingContainerOwnPublicity {
     padding: 40px 24px;
-    box-shadow: var(--boxShadowCard);
     transition: .4s;
 }
 

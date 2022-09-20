@@ -6,15 +6,15 @@
     --maxWidthBodyContent: 1100px;
     --maxWidthBanner: 1920px;
     --colorBodyDarkMode: #121212;
-    --colorBodyNormal: #f5f2f2;
-   --colorBodyNormal: white;
-/*    --colorBodyNormal: #ebebeb;*/
+    --colorBodyNormal: white;
+    /*    --colorBodyNormal: #ebebeb;*/
     --colorTitlesMobile: #0f1111;
     --colorTitlesDesktop: #0f1111;
     --colorPriceInclude: #1a1d1d;
     --colorSubTitles: #303435;
     --colorPrimaryText: #55595a;
     --colorName: #303435;
+    --colorDarkModeDesktop: white;
     /* --colorSecundaryText: #d4d6d7;*/
     --colorSecundaryText: #8e8e8e;
     --linkColor: #2d7dff;
@@ -33,11 +33,13 @@
     --paddingContentHomeYDesk: 40px;
     --transitionTimeDarkMode: .4s;
     --bgNormalInfo: white;
+    --bgDarkModeInfo: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
     --colorShadow: #eeeeee;
     --colorShadowBlue: #2d7dff;
     /*--boxShadowCard: 1px 1px 2px var(--colorShadow), -1px -1px 2px var(--colorShadow), 1px -1px 2px var(--colorShadow), -1px 1px 2px var(--colorShadow);*/
     --boxShadowCard: 0 0 10px rgba(0, 0, 0, .20);
-/*    --boxShadowCard: 0 0 4px rgba(0, 0, 0, .30);*/
+    --boxShadowCardDarkMode: 0 0 10px #ff7f23;
+    /*    --boxShadowCard: 0 0 4px rgba(0, 0, 0, .30);*/
     --boxShadowCardHover: 0 0 10px rgba(0, 0, 0, .4);
     --boxShadowBlue: 1px 1px 5px var(--colorShadowBlue), -1px -1px 5px var(--colorShadowBlue), 1px -1px 5px var(--colorShadowBlue), -1px 1px 5px var(--colorShadowBlue);
     --gapHomeCarrousels: 16px;
@@ -108,23 +110,32 @@
 }
 
 /*new DesktopRoot*/
-:root{
+:root {
+    --colorBackGroundDesktopNormal: white;
+    --colorBackGroundDesktopDarkMode: #121212;
+    --bgNormalInfoDesktop: white;
+    --bgDarkModeInfoDesktop: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
     --colorTitleDesktop: #0f1111;
     --colorSubtitleDesktop: #55595a;
     --colorPrimaryTextDesktop: #55595a;
     --colorSecundaryTextDesktop: #8e8e8e;
     --colorPriceIncludeDesktop: #1a1d1d;
-    --linkColorDesktop:  #2d7dff;
+    --linkColorDesktop: #2d7dff;
+    --boxShadowCardDesktop: 0 0 10px rgba(0, 0, 0, .20);
+    --boxShadowCardDarkModeDesktop: 0 0 10px #ff7f23;
+    --transformScale: 1.03;
+    --transitionTimeDesktop: .4s;
+
 }
 
 /*newMobileRoot*/
-:root{
+:root {
     --colorTitleMobile: #0f1111;
     --colorSubtitleMobile: #55595a;
     --colorPrimaryTextMobile: #55595a;
     --colorSecundaryTextMobile: #8e8e8e;
     --colorPriceIncludeMobile: #1a1d1d;
-    --linkColorDesktop:  #2d7dff;
+    --linkColorDesktop: #2d7dff;
 }
 
 html,
@@ -135,7 +146,6 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-weight: 400;
     font-size: 14px;
-    scroll-behavior: smooth;
 }
 
 .noScrollBody {

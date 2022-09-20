@@ -6,11 +6,24 @@
 
 .mainCont {
     box-shadow: var(--boxShadowCard);
-    transition: .4s;
+    transition: var(--transitionTimeDesktop);
+}
+
+.mainCont:hover {
+    transform: scale(var(--transformScale));
+}
+
+.mainContDarkMode {
+    box-shadow: var(--boxShadowCardDarkMode);
+    transition: var(--transitionTimeDesktop);
+}
+
+.mainContDarkMode:hover {
+    transform: scale(var(--transformScale));
 }
 
 .absCont {
-    padding:12px 16px;
+    padding: 12px 16px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -36,7 +49,6 @@
     height: 32px;
     background: linear-gradient(90deg, rgba(13, 111, 202, 1) 0%, rgba(8, 95, 178, 1) 100%);
 }
-
 
 .mainCont:hover {
     transform: scale(1.03);
@@ -95,7 +107,7 @@
     flex-direction: column;
 }
 
-.gridButton{
+.gridButton {
     display: grid;
     justify-items: right;
 }
@@ -103,21 +115,21 @@
 .styleButton {
     display: grid;
     padding: 2px 28px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
     border-radius: 4px;
     overflow: hidden;
     transition: .4s;
 }
 
-.styleButtonNo{
+.styleButtonNo {
     padding: 1px 16px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
     border-radius: 3px;
     overflow: hidden;
     transition: .4s;
 }
 
-.styleButtonNo:hover{
+.styleButtonNo:hover {
     background: #f5f8f8;
 }
 
@@ -125,29 +137,41 @@
     background: #f5f8f8;
 }
 
-.styleTitle{
+.styleTitle {
     font-size: 23px;
     font-weight: 500;
 }
 
-.fontTitle{
+.fontTitle {
     font-size: 19px;
     font-weight: 500;
     color: var(--colorName);
 }
 
-.fontSubTitle{
+.fontTitleDarkMode {
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--colorDarkModeDesktop);
+}
+
+.fontSubTitle {
     font-size: 15px;
     font-weight: 400;
     color: var(--colorPrimaryText);
 }
 
-.gridReadNew{
+.fontSubTitleDarkMode {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--colorDarkModeDesktop);
+}
+
+.gridReadNew {
     display: grid;
     justify-content: left;
 }
 
-.gridLast{
+.gridLast {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;

@@ -14,6 +14,8 @@ import {
 } from "../../../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
+import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
+import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
 
 const totalResaleText = "Total reventas: "
 
@@ -26,16 +28,40 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
     let itemWithResale: EventCardResale;
     let itemWithOffer: EventCardWithOffer;
 
+    let priceIncludeInfoFull: PriceIncludeInfoProp;
+    let dateInfoFull: DateInfoProp;
+    let priceIncludeInfo: PriceIncludeInfoProp;
+    let dateInfo: DateInfoProp;
+
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
+        priceIncludeInfoFull = {
+            MinPrice: itemFull.MinPrice,
+            MaxPrice: itemFull.MaxPrice,
+            IsDarkMode: darkModeState
+        }
+        dateInfoFull = {
+            MinDate: itemFull.MinDate,
+            MaxDate: itemFull.MaxDate,
+            IsDarkMode: darkModeState
+        }
     } else if (item.Type == EventCardType.EventCardWithPrice) {
         itemWithPrice = item as EventCardWithPrice
+        priceIncludeInfo = {
+            MaxPrice: itemWithPrice.MaxPrice,
+            MinPrice: itemWithPrice.MinPrice,
+            IsDarkMode: darkModeState
+        }
     } else if (item.Type == EventCardType.EventCardWithDate) {
         itemWithDate = item as EventCardWithDate
-    } else if (item.Type == EventCardType.EventCardWithOffer){
+        dateInfo = {
+            MinDate: itemWithDate.MinDate,
+            MaxDate: itemWithDate.MaxDate,
+            IsDarkMode: darkModeState
+        }
+    } else if (item.Type == EventCardType.EventCardWithOffer) {
         itemWithOffer = item as EventCardWithOffer
-    }
-    else {
+    } else {
         itemWithResale = item as EventCardResale
     }
 
@@ -43,7 +69,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         Title: item.Title,
         Subtitle: item.Subtitle,
         Rating: item.Rating,
-        isDarkMode: false
+        isDarkMode: darkModeState
     }
 
     /*    const priceIncludeInfo: PriceIncludeInfoProp = {
@@ -58,8 +84,9 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         }*/
 
     return (
-        <div className={`${styles.principalGridVertical}`}>
-            <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer? item.Link : ""}>
+        <div className={`${styles.principalGridVertical} ${cssStyles.bgInfo} ${cssStyles.borderCard}`}>
+            <Link
+                href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
                 <a className={styles.containerImage}>
                     {
                         item.SoldTickets >= item.TotalTickets * 0.90 &&
@@ -73,7 +100,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                 </a>
             </Link>
 
-            <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
+            <div className={styles.princiaplGridInfo}>
                 <div className={styles.TopDivInfo}>
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
                 </div>
@@ -81,19 +108,21 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                 <div className={styles.bottomDivSearch}>
                     {
                         item.Type == EventCardType.EventCardWithDate &&
-                        <div className={`${styles.gridIconInfo}`}>
+                        <DateInfoEvent item={dateInfo}/>
+                        /*<div className={`${styles.gridIconInfo}`}>
                             <div className={styles.sizeIcon}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                             </div>
                             <div className={`${utilities.fontSecundaryText}`}>
                                 {itemWithDate.MinDate.getDate()} de {itemWithDate.MinDate.toLocaleString("es-US", {month: "short"})} del {itemWithDate.MinDate.getFullYear()}
                             </div>
-                        </div>
+                        </div>*/
                     }
 
                     {
                         item.Type == EventCardType.EventCardWithPrice &&
-                        <div className={`${styles.gridIconInfo}`}>
+                        <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+                        /*<div className={`${styles.gridIconInfo}`}>
                             <div className={styles.sizeIcon}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
                             </div>
@@ -111,13 +140,15 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                                     ).format(Math.round(itemWithPrice.MaxPrice))}
                                     </div>
                             }
-                        </div>
+                        </div>*/
                     }
 
                     {
                         item.Type == EventCardType.EventCardFull &&
                         <>
-                            <div className={`${styles.gridIconInfo}`}>
+                            <DateInfoEvent item={dateInfoFull}/>
+                            <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
+                            {/*<div className={`${styles.gridIconInfo}`}>
                                 <div className={styles.sizeIcon}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
                                 </div>
@@ -143,7 +174,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                                         ).format(Math.round(itemFull.MaxPrice))}
                                         </div>
                                 }
-                            </div>
+                            </div>*/}
                         </>
                     }
 
@@ -160,9 +191,9 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                             <div className={styles.gridTags}>
                                 {
                                     itemWithOffer.ListTagsOffer.map(item =>
-                                    <div key={item} className={styles.tagStyleDisc}>
-                                        {item}
-                                    </div>
+                                        <div key={item} className={styles.tagStyleDisc}>
+                                            {item}
+                                        </div>
                                     )
                                 }
                             </div>
@@ -173,30 +204,13 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     }
                 </div>
             </div>
-
-            {/*            <div className={styles.topCircle1}/>
-            <div className={styles.topCircle2}/>
-            <div className={styles.topCircle3}/>
-            <div className={styles.topCircle4}/>
-            <div className={styles.topCircle5}/>
-            <div className={styles.topCircle6}/>
-            <div className={styles.topCircle7}/>
-            <div className={styles.topCircle8}/>
-            <div className={styles.topCircle9}/>
-            <div className={styles.topCircle10}/>
-            <div className={styles.topCircle11}/>*/}
-            {/*            <div className={styles.bottomCircle}/>
-            <div className={styles.topCircle}/>*/}
         </div>
     )
 
     function getCssStyles() {
         return {
-            bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontTitle: darkModeState ? utilities.fontTitleDarkMode : utilities.fontTitleDesktop,
-            fontSubtitle: darkModeState ? utilities.fontSubtitleDarkMode : utilities.fontSubtitleDesktop,
-            fontSecundaryText: darkModeState ? utilities.fontSecundaryTextDesktopDarkMode : utilities.fontSecundaryTextDesktop,
-            fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude,
+            borderCard: darkModeState ? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop,
+            bgInfo: darkModeState ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
         }
     }
 }

@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React from "react";
+import {func} from "prop-types";
 
 export class PriceIncludeInfoProp {
     MinPrice: number
@@ -11,12 +12,13 @@ export class PriceIncludeInfoProp {
 }
 
 export default function PriceIncludeInfoEvent({item}: { item: PriceIncludeInfoProp }) {
+    const cssStyle = getCssStyle()
     return (
         <div className={style.gridIconInfo}>
             <div className={style.sizeIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
+                <Image layout={"fill"} src={cssStyle.icon} alt={""}/>
             </div>
-            <div className={utilities.fontPriceIncludeDesktop}>
+            <div className={cssStyle.fontPrice}>
                 {
                     item.MinPrice == item.MaxPrice ?
                         <>
@@ -34,4 +36,10 @@ export default function PriceIncludeInfoEvent({item}: { item: PriceIncludeInfoPr
             </div>
         </div>
     )
+    function getCssStyle(){
+        return{
+            icon: item.IsDarkMode? GlobalConst.sourceImages.ticketIconWhite : GlobalConst.sourceImages.ticketIcon,
+            fontPrice: item.IsDarkMode? utilities.fontPriceIncludeDesktopDarkMode : utilities.fontPriceIncludeDesktop
+        }
+    }
 }
