@@ -218,7 +218,7 @@ export default function ReviewSearch() {
                                         {
                                             newSearchList.map((item, index) =>
                                                 index >= 1 && index <= 2 &&
-                                                <NewsSearchDesktop isSubtitle={true} key={item.Id} item={item}/>
+                                                <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true} key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
@@ -228,7 +228,7 @@ export default function ReviewSearch() {
                                         {
                                             newSearchList.map((item, index) =>
                                                 index > 2 &&
-                                                <NewsSearchDesktop isSubtitle={false} key={item.Id} item={item}/>
+                                                <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={false} key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
