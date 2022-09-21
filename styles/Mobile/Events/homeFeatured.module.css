@@ -33,7 +33,7 @@
 
 .mainDivInfo {
     display: grid;
-    grid-template-columns: 60% 40%;
+    /*grid-template-columns: 60% 40%;*/
     gap: 12px;
     padding: 10px;
     position: relative;

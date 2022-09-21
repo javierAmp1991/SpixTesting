@@ -1,5 +1,3 @@
-import {EventCardFull, EventCardType} from "./eventVerticalView";
-
 export enum EventCardTypeWithGradient {
     EventCardWithPrice,
     EventCardWithDate,

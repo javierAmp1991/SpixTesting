@@ -177,7 +177,7 @@ export default function ReviewSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
+                <div className={utilities.maxWidthBodyContentSpix}>
                     <div className={`${style.gridPrincipalNews}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {/*<MainContainerFilters listCategoryFilter={categoryFilterRest}

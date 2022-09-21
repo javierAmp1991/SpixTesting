@@ -1,4 +1,12 @@
 /*#region Mobile Class*/
+.bgBodyNormalMobile {
+    background: var(--colorBackGroundMobileNormal);
+}
+
+.bgBodyDarkModeMobile {
+    background: var(--colorBackGroundMobileDarkMode);
+}
+
 .fontTitleMobile {
     --sizeTitleMobile: 17px;
     font-size: var(--sizeTitleMobile);
@@ -8,13 +16,26 @@
     font-family: Helvetica, sans-serif, Arial;
 }
 
+.fontTitleMobileDarkMode {
+    --sizeTitleMobile: 17px;
+    font-size: var(--sizeTitleMobile);
+    /*    line-height: var(--sizeTitleMobile);*/
+    font-weight: 500;
+    color: var(--colorDarkModeMobile);
+    font-family: Helvetica, sans-serif, Arial;
+}
+
 .fontSubtitleMobile {
     --sizeSubtitleMobile: 15px;
     font-size: var(--sizeSubtitleMobile);
-    /*    line-height: var(--sizeSubtitleMobile);*/
     font-weight: 300;
-    /*    color: var(--colorSubtitleMobile);
-        font-family: Helvetica, sans-serif, Arial;*/
+}
+
+.fontSubtitleMobileDarkMode {
+    --sizeSubtitleMobile: 15px;
+    font-size: var(--sizeSubtitleMobile);
+    font-weight: 300;
+    color: var(--colorDarkModeMobile);
 }
 
 .fontPriceIncludeMobile {
@@ -25,7 +46,22 @@
     color: var(--colorPriceIncludeMobile);
 }
 
+.fontPriceIncludeMobileDarkMode {
+    --fontSizeLineHeightMob: 15px;
+    font-size: var(--fontSizeLineHeightMob);
+    line-height: var(--fontSizeLineHeightMob);
+    font-weight: 500;
+    color: var(--colorDarkModeMobile);
+}
+
 .fontNameMobile {
+    --fontSizeNameMob: 16px;
+    font-size: var(--fontSizeNameMob);
+    /*    line-height: var(--fontSizeNameMob);*/
+    font-weight: 400;
+}
+
+.fontNameMobileDarkMode {
     --fontSizeNameMob: 16px;
     font-size: var(--fontSizeNameMob);
     /*    line-height: var(--fontSizeNameMob);*/

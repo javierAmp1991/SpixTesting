@@ -21,9 +21,9 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
     const cssStyle = getCssStyle()
     //endregion
     return (
-        <div>
+        <div className={cssStyle.background}>
             {
-                isDisplaySug ?
+                isDisplaySug?
                     <SuggHeaderMobile returnMet={handleDisplaySug}/>
                     :
                     <div className={`${cssStyle.stopScroll} ${styleMobile.mainCont}`}>
@@ -31,9 +31,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                                           isDesplegable={null}
                                           displaySug={handleDisplaySug}/>
                         <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
-                        {/*------------------children*-----------------*/}
                         {children}
-                        {/*------------------children*-----------------*/}
                         <div className={cssStyle.desplegableCont}>
                             <SideSetting closeDesplegable={handleSideSetting}/>
                         </div>
@@ -44,6 +42,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
 
     function getCssStyle() {
         return {
+            background: isDarkMode? utilities.bgBodyDarkModeMobile : utilities.bgBodyNormalMobile,
             stopScroll: isOpenSideSetting && utilities.noScrollBody,
             desplegableCont: isOpenSideSetting ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn
         }

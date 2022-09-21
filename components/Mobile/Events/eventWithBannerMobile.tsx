@@ -51,29 +51,10 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                 <div className={styles.sizeBannerEWB}>
                     <Image layout={"fill"} objectFit={"cover"} src={item.BannerPath} alt=""/>
                 </div>
-                {/*{
-                    displayLogoRating &&
-                    <div className={`${styles.positionLogo} ${utilities.gradientLogoDesktop}`}>
-                        <div className={styles.propertiesLogoEWB}>
-                            <Image layout={"fill"} src={item.LogoPath} alt=""/>
-                        </div>
-                    </div>
-                }*/}
 
                 <div className={`${cssStyles.bgInfo} ${styles.mainDivInfo}`}>
 
-                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
-
-                    <div className={styles.mainDivTimer}>
-                        <span>
-                            Expira en
-                        </span>
-                        <span>
-                            {hours}:{minutes}:{seconds}
-                        </span>
-                    </div>
-
-
+                    {/*<PrincipalInfoEventMobile item={principalInfoEventProp}/>*/}
                     <div className={styles.gridTags}>
                         {
                             item.Tags.map(offer =>
@@ -82,6 +63,14 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                                 </div>
                             )
                         }
+                    </div>
+                    <div className={styles.mainDivTimer}>
+                        <span>
+                            Expira en
+                        </span>
+                        <span>
+                            {hours}:{minutes}:{seconds}
+                        </span>
                     </div>
                 </div>
 

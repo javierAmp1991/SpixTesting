@@ -49,14 +49,14 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                             <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
                         </div>
                     </div>
-                    <div className={style.mainDivProductsSingle}>
+                    {/*<div className={style.mainDivProductsSingle}>
                         {
                             item.ListProducts.map((item, index) =>
                                 index == 0 &&
                                 <ProductViewMobile isDisplayOffer={false} item={item} size={120}/>
                             )
                         }
-                    </div>
+                    </div>*/}
                 </div>
             </div>
         </div>

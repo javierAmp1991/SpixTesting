@@ -223,10 +223,13 @@ export default function Index() {
                                          paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                TodayInValpoMobile.list.map(item =>
+                /*TodayInValpoMobile.list.map(item =>
                     <EventVerticalViewMob isActiveSnap={true} item={item} darkModeState={isDarkMode}
-                                          key={item.Id}/>
-                )
+                                          key={item.Id}/>)*/
+                TodayInValpoGradient.list.map(item =>
+                    <div key={item.Id} className={"w-64"}>
+                        <ImageGradientViewMobile item={item}/>
+                    </div>)
             }
         </LayoutCarrouselMobile>
     </TitleSection>
@@ -242,7 +245,7 @@ export default function Index() {
             }
         </LayoutCarrouselMobile>
     </TitleSection>
-    let carrousel2Mobile = <TitleSection titleLink={inOfferTitleLink} darkModeState={isDarkMode}
+    /*let carrousel2Mobile = <TitleSection titleLink={inOfferTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
@@ -252,7 +255,7 @@ export default function Index() {
                 )
             }
         </LayoutCarrouselMobile>
-    </TitleSection>
+    </TitleSection>*/
     let ownPublicityMobile = <HomeOwnPublicityMobile listItem={OwnPublicityData.listOwnPublicity}
                                                      darkMode={isDarkMode}/>
     let newsMobile = <TitleSection titleLink={newsHomeTitleLink} darkModeState={isDarkMode}
@@ -331,10 +334,10 @@ export default function Index() {
             Component: carrouselRounded1Mobile,
             padding: paddingGeneralMobile
         },
-        {
+        /*{
             Component: carrousel2Mobile,
             padding: paddingGeneralMobile
-        },
+        },*/
         {
             Component: ownPublicityMobile,
             padding: paddingGeneralMobile
@@ -623,7 +626,7 @@ export default function Index() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
-                <div className={utilities.bgBodyNormal}>
+                <div>
                     {carrouselBannerMobile}
                     <DefaultPageMobile isDarkMode={isDarkMode} isHome={true} listItem={listDefaultPageMobile}/>
                 </div>

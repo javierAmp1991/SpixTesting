@@ -130,12 +130,15 @@
 
 /*newMobileRoot*/
 :root {
+    --colorBackGroundMobileNormal: white;
+    --colorBackGroundMobileDarkMode: #121212;
     --colorTitleMobile: #0f1111;
     --colorSubtitleMobile: #55595a;
     --colorPrimaryTextMobile: #55595a;
     --colorSecundaryTextMobile: #8e8e8e;
     --colorPriceIncludeMobile: #1a1d1d;
     --linkColorDesktop: #2d7dff;
+    --colorDarkModeMobile: white;
 }
 
 html,

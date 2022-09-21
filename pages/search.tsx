@@ -17,6 +17,7 @@ import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {CategoryPrincipalFilters} from "../dataDemo/data";
 import {BaseEventCard, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -74,7 +75,7 @@ export default function Search() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
-                <div className={cssStyle.bg}>
+                <div>
 
                     <LayoutPrincipalFilterMobile listPrincipalFilter={listPrincipalFilters}
                                                  listCategoryFilter={categoryFilterRest}
@@ -121,23 +122,22 @@ export default function Search() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
+                <LayoutSearchDesktop>
+                    <>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
-                            {
-                                <MainContainerFilters listPrincipalFilter={listPrincipalFilters}
-                                                      listCategoryFilter={categoryFilterRest}
-                                                      isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}
+                            {<MainContainerFilters listPrincipalFilter={listPrincipalFilters}
+                                                   listCategoryFilter={categoryFilterRest}
+                                                   isDarkMode={isDarkMode}
+                                                   isOpenFilter={isOpenFilters}
 
-                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
-                                                      isSubCategory={isSubCategory}
-                                                      isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}
-                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
-                                                      isAdvancedFilter={isAdvancedFilter}
-                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
-                            }
+                                                   isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                   isSubCategory={isSubCategory}
+                                                   isDisplaySubCategory={isDisplaySubCategory}
+                                                   IsPrincipalFill={isPrincipalFill}
+                                                   isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                   isAdvancedFilter={isAdvancedFilter}
+                                                   isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>}
+
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>
@@ -150,8 +150,8 @@ export default function Search() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

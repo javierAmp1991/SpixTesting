@@ -12,7 +12,7 @@ export class PrincipalInfoEventPropMob {
 }
 
 export default function PrincipalInfoEventMobile({item}: { item: PrincipalInfoEventPropMob }) {
-    let numRating = 5
+    let numRating = 4
     let [listRating, setListRating] = useState([true, true, true, true, false])
     const cssStyle = getCssStyle()
     return (
@@ -25,25 +25,30 @@ export default function PrincipalInfoEventMobile({item}: { item: PrincipalInfoEv
                 {item.Subtitle}
             </div>
 
-            <div className={style.gridRatingStar}>
-                <div className={style.gridStars}>
-                    {
-                        listRating.map((item, index) =>
-                            <div key={index} className={style.sizeStar}>
-                                <Image layout={"fill"}
-                                       src={index < numRating ? GlobalConst.sourceImages.ratingIndFull
-                                           : GlobalConst.sourceImages.ratingIndVoid}/>
-                            </div>
-                        )
-                    }
-                </div>
+            {
+                item.Rating != null &&
+                <div className={style.gridRatingStar}>
+                    <div className={style.gridStars}>
+                        {
+                            listRating.map((item, index) =>
+                                <div key={index} className={style.sizeStar}>
+                                    <Image layout={"fill"}
+                                           src={index < numRating ? GlobalConst.sourceImages.ratingIndFull
+                                               : GlobalConst.sourceImages.ratingIndVoid}/>
+                                </div>
+                            )
+                        }
+                    </div>
 
-                <div className={style.paddingRating}>
-                    <div className={`${cssStyle.RatingText} ${utilities.fontMiniMobile}`}>
-                        ({item.Rating != null ? item.Rating : 0})
+                    <div className={style.paddingRating}>
+                        <div className={`${cssStyle.RatingText} ${utilities.fontMiniMobile}`}>
+                            ({item.Rating != null ? item.Rating : 0})
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+
+
         </>
     )
 
