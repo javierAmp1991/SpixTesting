@@ -85,7 +85,7 @@
 .mainDivTimer {
     background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
     overflow: hidden;
-    color: rgb(12, 108, 197);
+    /*color: rgb(12, 108, 197);*/
     color: white;
     font-size: 13px;
     line-height: 13px;
@@ -94,7 +94,7 @@
     border-radius: 3px;
     font-weight: 500;
     align-items: center;
-    margin-top: 12px;
+    /*margin-top: 12px;*/
     /*    position: absolute;
         top: 215px;
         right: 12px;*/
@@ -129,8 +129,9 @@
 }
 
 .grid1Info {
-    padding-right: 48px;
-    border-right: 1px solid var(--separationLineColor);
+    /*padding-right: 48px;
+    border-right: 1px solid var(--separationLineColor);*/
+    padding: 0 0 10px 6px;
 }
 
 .gridTags {

@@ -35,7 +35,7 @@ import {FeaturedListSearch, FeaturedListHome} from "../dataDemo/EventView/featur
 //region importData
 import {DropDownNewSearch, HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
-import {DailyOfferData} from "../dataDemo/data";
+import {DailyOfferData, DailyOfferData2} from "../dataDemo/data";
 import {PublicityData} from "../dataDemo/data";
 import {Cines} from "../dataDemo/data";
 import {Restaurants} from "../dataDemo/data";
@@ -413,7 +413,7 @@ export default function Index() {
                                    darkModeState={isDarkMode}>
         <div className={"grid grid-cols-2 gap-4"}>
             <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
-            <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
+            <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData2.dailyOffer}/>
         </div>
 
     </TitleSection>

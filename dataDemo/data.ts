@@ -368,7 +368,7 @@ export namespace DailyOfferData {
         EventName: "Tributo a Pet Shop Boys y A Ha",
         Subtitle: "Lo mejor del Rock Internacional",
         Rating: 30,
-        Tags: ["Hasta 50%", "Leva 2 paga 1", "Dcto 2 uni."],
+        Tags: ["Hasta 50%", "Dcto 2 uni."],
         BannerPath: "/images/banner.png",
         LogoPath: "/images/logo el Huevo.jpg",
         ListProducts: [
@@ -441,6 +441,49 @@ export namespace DailyOfferData {
                  Include: null,
                  ImagePath: "/images/product10.jpg"
              }*/
+        ],
+        ListAtributes: ["Rock", "Conciertos", "Festivales"],
+        Category: "Bar Restaurant"
+    }
+}
+
+export namespace DailyOfferData2 {
+    export const dailyOffer: EventLookUp = {
+        EventId: "1235",
+        EventName: "Tributo a Pet Shop Boys y A Ha",
+        Subtitle: "Lo mejor del Rock Internacional",
+        Rating: 30,
+        Tags: ["Hasta 50%", "Leva 2 paga 1"],
+        BannerPath: "/images/banner5.jpg",
+        LogoPath: "/images/logo el Huevo.jpg",
+        ListProducts: [
+            {
+                Name: "Producto 1.1",
+                Price: 18990,
+                DiscountPercent: 10,
+                Include: "Lleve 2 pague 1",
+                ImagePath: "/images/product5.jpg"
+            },
+            {
+                Name: "Producto 2.1", Price: 4990,
+                DiscountPercent: 25,
+                Include: "Dcto 2 Un.",
+                ImagePath: "/images/product6.jpg"
+            },
+            {
+                Name: "Producto 3.1",
+                Price: 1990,
+                DiscountPercent: 30,
+                Include: null,
+                ImagePath: "/images/product7.jpg"
+            },
+            {
+                Name: "Producto 4.1",
+                Price: 2990,
+                DiscountPercent: 25,
+                Include: null,
+                ImagePath: "/images/product8.jpg"
+            },
         ],
         ListAtributes: ["Rock", "Conciertos", "Festivales"],
         Category: "Bar Restaurant"

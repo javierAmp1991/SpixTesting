@@ -49,6 +49,21 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
 
             <div className={styles.mainContainerInfo}>
                 <div className={styles.mainDivInfoQ}>
+                    <div className={styles.grid1Info}>
+                        <div className={styles.mainDivTimer}>
+                            <span>Expira en </span>
+                            <span>{hours}:{minutes}:{seconds}</span>
+                        </div>
+                        <div className={styles.gridTags}>
+                            {
+                                item.Tags.map((offer, index) =>
+                                    <div key={index} className={utilities.styleSpixDiscountTag}>
+                                        {offer}
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
                     {/* <div className={styles.grid1Info}>
                         <PrincipalInfoEvent item={principalInfoEventProp}/>
                         <div className={styles.mainDivTimer}>
