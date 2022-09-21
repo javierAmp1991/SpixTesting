@@ -32,7 +32,6 @@
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
     background: var(--backgroundInput);
-    margin-bottom: 16px;
 }
 
 .containerInput {

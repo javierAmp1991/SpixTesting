@@ -128,7 +128,7 @@ export default function WriteNewLeft() {
                 </div>
             </div>
             <div>
-                <div className={`${style.paddingTitleInter} ${utilities.fontNameDesktop}`}>
+                <div className={`${style.paddingTitleInter} ${utilities.fontTitle}`}>
                     {titleWriteReview}
                 </div>
                 <div className={`${style.containerInputTitle}`}>

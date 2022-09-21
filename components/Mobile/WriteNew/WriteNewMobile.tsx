@@ -80,11 +80,11 @@ export default function WriteNewMobile() {
 
     return (
         <div className={style.mainCont}>
-            <div className={`${utilities.fontTitleDesktop}`}>
+            <div className={`${utilities.fontTitle}`}>
                 {titleSection}
             </div>
             <div>
-                <div className={`${utilities.fontNameDesktop} ${style.paddingTitleInter}`}>
+                <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
                     {portada}
                 </div>
                 <div className="relative">
@@ -117,7 +117,7 @@ export default function WriteNewMobile() {
                 </div>
             </div>
             <div>
-                <div className={`${style.paddingTitleInter} ${utilities.fontNameDesktop}`}>
+                <div className={`${style.paddingTitleInter} ${utilities.fontTitle}`}>
                     {titleTitle}
                 </div>
                 <div className={style.containerInput}>
@@ -128,7 +128,7 @@ export default function WriteNewMobile() {
                 </div>
             </div>
             <div>
-                <div className={`${style.paddingTitleInter} ${utilities.fontNameDesktop}`}>
+                <div className={`${style.paddingTitleInter} ${utilities.fontTitle}`}>
                     {titleWriteReview}
                 </div>
                 <div className={`${style.containerInputTitle}`}>
@@ -137,9 +137,11 @@ export default function WriteNewMobile() {
                         className={style.sizeInputReview}
                         placeholder={placeholderReview}
                         ref={textAreaReview}/>
-                    <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
                 </div>
             </div>
+
+            <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
+
             <div className={style.gridAddPhotos}>
                 {
                     uploadImages.map((item, index) =>
