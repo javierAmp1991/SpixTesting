@@ -1,11 +1,10 @@
 import style from "/styles/Desktop/Review/writeReview.module.css"
-import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
-import {GlobalConst} from "../../../public/globalConst";
 import {EventLookUp, EventPageEvent} from "../../../dataDemo/data";
 import {ResumeReviews} from "../../../dataDemo/data";
 import React from "react";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
+import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
 
 const starSingletext: string = "estrella"
 const starMoretext: string = "estrellas"
@@ -17,6 +16,11 @@ export default function SideCardNew() {
         isDarkMode: false,
         Rating: 20
     }
+    const newDate: DateInfoProp = {
+        MinDate: new Date(2022, 10, 24),
+        MaxDate: new Date(2022, 10, 24),
+        IsDarkMode: false
+    }
     const resumeReview = ResumeReviews.resumeReviews
     const productEvent: EventLookUp = EventPageEvent.eventPage
     return (
@@ -27,9 +31,11 @@ export default function SideCardNew() {
             <div className="p-6">
                 <div className="pb-7">
                     <PrincipalInfoEventMobile item={newItem}/>
+                    <div className={"mt-2.5"}>
+                        <DateInfoEvent item={newDate}/>
+                    </div>
                 </div>
-
-            {/*    <div className="justify-left grid gap-3 content-start pb-8">
+                {/*    <div className="justify-left grid gap-3 content-start pb-8">
                     <div className={style.fontReviewResume}>
                         {resumeReview.rating} de 5
                     </div>

@@ -5,11 +5,18 @@ import {GlobalConst} from "../../../public/globalConst";
 import {EventLookUp, EventPageEvent} from "../../../dataDemo/data";
 import {ResumeReviews} from "../../../dataDemo/data";
 import React from "react";
+import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 
 const starSingletext: string = "estrella"
 const starMoretext: string = "estrellas"
 
 export default function SideCard() {
+    const newItem: PrincipalInfoEventPropMob = {
+        Title: "Tributo a PetShop Boys y A ha",
+        Subtitle: "Lo mejor del rock ochentero",
+        isDarkMode: false,
+        Rating: null
+    }
     const resumeReview = ResumeReviews.resumeReviews
     const productEvent: EventLookUp = EventPageEvent.eventPage
     return (
@@ -19,12 +26,7 @@ export default function SideCard() {
             </div>
             <div className="p-6">
                 <div className="pb-7">
-                    <div className={`${utilities.fontTitle} pb-2`}>
-                        {productEvent.EventName}
-                    </div>
-                    <div className={utilities.fontPrimaryText}>
-                        Bar Restaurant
-                    </div>
+                    <PrincipalInfoEventMobile item={newItem}/>
                 </div>
 
                 <div className="justify-left grid gap-3 content-start pb-8">
