@@ -6,6 +6,7 @@ import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import WriteNewLeft from "../components/Desktop/WriteNew/WriteNewLeft";
 import SideCardNew from "../components/Desktop/WriteNew/sideCardNew";
+import WriteNewMobile from "../components/Mobile/WriteNew/WriteNewMobile";
 
 export default function WriteReview() {
     const isSmallDown = useMediaQuery('(max-width: 1281px)');
@@ -23,7 +24,7 @@ export default function WriteReview() {
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={utilities.maxWidthMobile}>
-                <WriteReviewMobile/>
+                <WriteNewMobile/>
                 </div>
             </DefaultLayoutMobile>
             :

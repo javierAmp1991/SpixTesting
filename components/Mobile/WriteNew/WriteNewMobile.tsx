@@ -1,10 +1,10 @@
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
-import style from "/styles/Desktop/WriteNew/writeNew.module.css"
+import style from "/styles/Mobile/WriteNew/writeNew.module.css"
 import {useRef, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-import EmoticonsContainer from "../Misc/emoticonsContainer";
-import PopUpContainer from "../Misc/popUpContainer";
+import EmoticonsContainerMobile from "../Misc/emoticonsContainerMobile";
+import PopUpContainerMob from "../Misc/popUpContainerMob";
 
 const placeholderTitle: string = "Escribe un titulo";
 const placeholderReview: string = "Escribe tu noticia";
@@ -22,7 +22,7 @@ class UploadImage {
     ProvisoryUrl: string
 }
 
-export default function WriteNewLeft() {
+export default function WriteNewMobile() {
     let textAreaReview = useRef(null)
     let [inputTitle, setInputTitle] = useState("")
     let [inputReview, setInputReview] = useState("")
@@ -84,7 +84,7 @@ export default function WriteNewLeft() {
                 {titleSection}
             </div>
             <div>
-                <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
+                <div className={`${utilities.fontNameDesktop} ${style.paddingTitleInter}`}>
                     {portada}
                 </div>
                 <div className="relative">
@@ -103,7 +103,7 @@ export default function WriteNewLeft() {
                             :
                             <>
                                 <div className={style.mainContPortada}>
-                                    <label  htmlFor={idUploadPortada}>
+                                    <label htmlFor={idUploadPortada}>
                                         <Image style={{background: "#f8f8f8"}} priority={true} layout={"fill"}
                                                objectFit={"contain"} src="/images/placeholderImageUpload.png" alt={""}/>
                                     </label>
@@ -117,7 +117,7 @@ export default function WriteNewLeft() {
                 </div>
             </div>
             <div>
-                <div className={`${style.paddingTitleInter} ${utilities.fontTitle}`}>
+                <div className={`${style.paddingTitleInter} ${utilities.fontNameDesktop}`}>
                     {titleTitle}
                 </div>
                 <div className={style.containerInput}>
@@ -137,7 +137,7 @@ export default function WriteNewLeft() {
                         className={style.sizeInputReview}
                         placeholder={placeholderReview}
                         ref={textAreaReview}/>
-                    <EmoticonsContainer addEmoticon={handleAddEmoticon}/>
+                    <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
                 </div>
             </div>
             <div className={style.gridAddPhotos}>
@@ -155,16 +155,19 @@ export default function WriteNewLeft() {
                         </div>
                     )
                 }
-                <div className={`${style.mainContaExtraImage} ${style.boxUploadInput}`}>
-                    <label className={style.labelStyle} htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
-                        <Image priority={true} objectFit={"cover"} layout={"fill"}
-                               src="/images/placeholderImageUpload.png" alt={""}/>
-                    </label>
-                    <input onChange={handleUploadImages}
-                           className="h-0 w-0 absolute overflow-hidden"
-                           id={idInputUpload}
-                           type={"file"}/>
-                </div>
+                {
+                    uploadImages.length < 3 &&
+                    <div className={`${style.mainContaExtraImage} ${style.boxUploadInput}`}>
+                        <label className={style.labelStyle} htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
+                            <Image priority={true} objectFit={"cover"} layout={"fill"}
+                                   src="/images/placeholderImageUpload.png" alt={""}/>
+                        </label>
+                        <input onChange={handleUploadImages}
+                               className="h-0 w-0 absolute overflow-hidden"
+                               id={idInputUpload}
+                               type={"file"}/>
+                    </div>
+                }
             </div>
             <div>
                 <button className={style.styleButton}>
@@ -173,16 +176,16 @@ export default function WriteNewLeft() {
             </div>
             {
                 displayPopUp &&
-                <PopUpContainer isBackground={false}
-                                isButtonVisible={false}
-                                closePopUp={handleDisplayPopUp}>
+                <PopUpContainerMob isBackground={false}
+                                   isButtonVisible={false}
+                                   closePopUp={handleDisplayPopUp}>
                     <div className={style.imagePopUp}>
                         <Image layout={"fill"}
                                objectFit={"cover"}
                                objectPosition={"top"}
                                src={imagePopUp} alt={""}/>
                     </div>
-                </PopUpContainer>
+                </PopUpContainerMob>
             }
         </div>
     )
