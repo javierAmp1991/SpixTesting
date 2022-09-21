@@ -62,6 +62,15 @@
 /*----------------------------------------------------------------------------------------*/
 
 /*#region Desktop Class*/
+
+.bgBodyNormalDesktop {
+    background: var(--colorBackGroundDesktopNormal);
+}
+
+.bgBodyDarkModeDesktop {
+    background: var(--colorBackGroundDesktopDarkMode);
+}
+
 .fontTitleDesktop {
     --sizeTitleDesktop: 20px;
     font-size: var(--sizeTitleDesktop);
@@ -266,10 +275,12 @@
     transition: var(--transitionTimeDarkMode);
 }
 
+
 .bgBodyDarkMode {
     background: var(--colorBodyDarkMode);
     transition: var(--transitionTimeDarkMode);
 }
+
 
 .noScrollBody {
     height: 100vh;
@@ -455,7 +466,7 @@
     padding: 1px 8px;
     color: white;
     font-weight: 500;
-    border-radius: 10px;
+    border-radius: 4px;
 }
 
 .styleSpixTag {
@@ -477,11 +488,11 @@
 }
 
 .bgFirstGradient {
-/*    background-color: #045de9;
-    background-image: linear-gradient(60deg, #045de9 0%, #048fe9 74%);
-    background: rgb(4, 93, 233);
-    background: linear-gradient(90deg, rgba(4, 93, 233, 1) 0%, rgba(4, 163, 233, 1) 19%, rgba(4, 155, 233, 1) 39%, rgba(4, 59, 233, 1) 61%, rgba(4, 205, 233, 1) 80%, rgba(4, 74, 233, 1) 100%);
-    background: rgb(131, 164, 212);*/
+    /*    background-color: #045de9;
+        background-image: linear-gradient(60deg, #045de9 0%, #048fe9 74%);
+        background: rgb(4, 93, 233);
+        background: linear-gradient(90deg, rgba(4, 93, 233, 1) 0%, rgba(4, 163, 233, 1) 19%, rgba(4, 155, 233, 1) 39%, rgba(4, 59, 233, 1) 61%, rgba(4, 205, 233, 1) 80%, rgba(4, 74, 233, 1) 100%);
+        background: rgb(131, 164, 212);*/
     background: linear-gradient(90deg, rgba(131, 164, 212, 1) 0%, rgba(182, 251, 255, 1) 50%, rgba(148, 187, 233, 1) 100%);
 }
 

@@ -50,10 +50,6 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
             <div className={styles.mainContainerInfo}>
                 <div className={styles.mainDivInfoQ}>
                     <div className={styles.grid1Info}>
-                        <div className={styles.mainDivTimer}>
-                            <span>Expira en </span>
-                            <span>{hours}:{minutes}:{seconds}</span>
-                        </div>
                         <div className={styles.gridTags}>
                             {
                                 item.Tags.map((offer, index) =>
@@ -62,6 +58,10 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                                     </div>
                                 )
                             }
+                        </div>
+                        <div className={styles.mainDivTimer}>
+                            <span>Expira en </span>
+                            <span>{hours}:{minutes}:{seconds}</span>
                         </div>
                     </div>
                     {/* <div className={styles.grid1Info}>

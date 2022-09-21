@@ -129,7 +129,7 @@ export default function SearchServices() {
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
                 <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
+                    <div className={utilities.maxWidthBodyContentSpix}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}

@@ -121,7 +121,7 @@ export default function Search() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
+                <div className={utilities.maxWidthBodyContentSpix}>
                     <div className={`${cssStyle.gridFilterDesktop}`}>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {

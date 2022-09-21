@@ -21,7 +21,7 @@ export default function DefaultLayoutDesktop({children, isDarkMode, darkModeTogg
 
     function getCssStyle() {
         return {
-            bgBod: isDarkMode? utilities.bgBodyDarkMode : utilities.bgBodyNormal
+            bgBod: isDarkMode ? utilities.bgBodyDarkModeDesktop : utilities.bgBodyNormalDesktop
         }
     }
 }

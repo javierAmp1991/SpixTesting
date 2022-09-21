@@ -131,6 +131,9 @@
 .grid1Info {
     /*padding-right: 48px;
     border-right: 1px solid var(--separationLineColor);*/
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
     padding: 0 0 10px 6px;
 }
 
@@ -138,7 +141,6 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 8px;
-    margin-top: 14px;
 }
 
 .mainDivPro {

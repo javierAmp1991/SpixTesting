@@ -37,12 +37,12 @@ export default function ImageGradientView({item, isDarkMode}:
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt={""}/>
                 </div>
-                <div className={cssStyle.gradient}/>
+                <div className={style.gradientVisible}/>
                 {/*<div className={style.gradient2}/>*/}
 
                 <div className={style.mainDivInfo}>
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
-                    <div className={cssStyle.divPrice}>
+                    <div className={style.priceVisible}>
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
                     </div>
                 </div>
