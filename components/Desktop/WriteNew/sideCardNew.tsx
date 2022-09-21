@@ -1,13 +1,10 @@
-import style from "/styles/Desktop/Review/writeReview.module.css"
+import style from "/styles/Desktop/WriteNew/writeNew.module.css"
 import Image from "next/image";
-import {EventLookUp, EventPageEvent} from "../../../dataDemo/data";
-import {ResumeReviews} from "../../../dataDemo/data";
+import {EventPageEvent} from "../../../dataDemo/data";
 import React from "react";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
 
-const starSingletext: string = "estrella"
-const starMoretext: string = "estrellas"
 
 export default function SideCardNew() {
     const newItem: PrincipalInfoEventPropMob = {
@@ -21,12 +18,12 @@ export default function SideCardNew() {
         MaxDate: new Date(2022, 10, 24),
         IsDarkMode: false
     }
-    const resumeReview = ResumeReviews.resumeReviews
-    const productEvent: EventLookUp = EventPageEvent.eventPage
     return (
         <div>
-            <div className={style.bannerStyle}>
-                <Image layout={"fill"} src={productEvent.BannerPath}/>
+            <div className={"px-4 pt-6"}>
+                <div className={style.bannerStyle}>
+                    <Image layout={"fill"} objectFit={"cover"} src={EventPageEvent.eventPage.CoverImage} alt={""}/>
+                </div>
             </div>
             <div className="p-6">
                 <div className="pb-7">
