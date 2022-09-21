@@ -31,7 +31,7 @@ export default function SideCardNew() {
             <div className="p-6">
                 <div className="pb-7">
                     <PrincipalInfoEventMobile item={newItem}/>
-                    <div className={"mt-2.5"}>
+                    <div className={"mt-2"}>
                         <DateInfoEvent item={newDate}/>
                     </div>
                 </div>
