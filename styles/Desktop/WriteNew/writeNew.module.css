@@ -1,0 +1,168 @@
+.mainCont {
+    padding: 0 72px 0 8px;
+    display: grid;
+    gap: 32px;
+    --animattionTransition: .4s;
+    --rotation: -360deg;
+}
+
+.mainContPortada {
+    width: 240px;
+    height: 160px;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--boxShadowCard);
+}
+
+.mainContaExtraImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.boxUploadInput{
+    box-shadow: var(--boxShadowCard);
+}
+
+
+.containerInputTitle {
+    --backgroundInput: #f8f8f8;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadowUnderProducts);
+    background: var(--backgroundInput);
+    margin-bottom: 16px;
+}
+
+.containerInput {
+    --backgroundInput: #f8f8f8;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: var(--shadowUnderProducts);
+    background: var(--backgroundInput);
+    padding: 12px;
+}
+
+.sizeInputTitle {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    resize: none;
+    background: var(--backgroundInput);
+}
+
+.sizeInputReview {
+    width: 100%;
+    resize: none;
+    height: 200px;
+    padding: 12px;
+    background: var(--backgroundInput);
+}
+
+.paddingTitleInter {
+    padding-bottom: 16px;
+}
+
+.styleButton {
+    padding: 8px 56px;
+    border-radius: 4px;
+    background: var(--gradientBlueButton);
+    margin: auto;
+    color: white;
+    display: grid;
+}
+
+.gridAddPhotos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.bannerStyle {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    aspect-ratio: 2/1;
+    position: relative;
+}
+
+.gridReviewStars {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 8px;
+}
+
+.gridReviewHeader {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 72px;
+    padding-bottom: 24px;
+}
+
+.fontReviewResume {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 500;
+    color: #0F1111FF;
+}
+
+.sizeStarResume {
+    height: 24px;
+    width: 124px;
+    position: relative;
+}
+
+.styleBarReview {
+    height: 16px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.styleProgresBarReview {
+    height: 16px;
+    transition: 1s;
+    background: #2D7DFFFF;
+}
+
+.gridStars {
+    display: grid;
+    grid-template-columns: 70px 1fr 30px;
+    gap: 16px
+}
+
+.gridProduct {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 12px
+}
+
+.mainContUploadImage {
+    position: relative;
+    overflow: hidden;
+    /*box-shadow: var(--shadowUnderProducts);*/
+}
+
+.positonDeleteIcon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transition: .4s;
+    background: #c5c7c7;
+    top: 4px;
+    z-index: 10000;
+    right: 4px;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 50%;
+}
+
+.imagePopUp {
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+
+
+
