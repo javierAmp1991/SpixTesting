@@ -15,7 +15,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
     const principalInfoEventProp: PrincipalInfoEventPropMob = {
         Title: item.EventName,
         Subtitle: item.Subtitle,
-        Rating: item.Rating,
+        Rating: null,
         isDarkMode: false
     }
     let [isActive, setIsActive] = useState(false);
@@ -53,8 +53,7 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                 </div>
 
                 <div className={`${cssStyles.bgInfo} ${styles.mainDivInfo}`}>
-
-                    {/*<PrincipalInfoEventMobile item={principalInfoEventProp}/>*/}
+                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
                     <div className={styles.gridTags}>
                         {
                             item.Tags.map(offer =>

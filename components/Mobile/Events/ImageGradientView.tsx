@@ -8,18 +8,12 @@ import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/p
 
 export default function ImageGradientViewMobile({item}: { item: BaseEventCardWithGradient }) {
     let itemWithPrice: EventCardWithGradientPrice = item as EventCardWithGradientPrice
-
-    function getMoneyValue(num: number): string {
-        return Intl.NumberFormat("ES-CL").format(Math.round(num))
-    }
-
     const newItem: PrincipalInfoEventPropMob = {
         Title: item.Title,
         Subtitle: item.Subtitle,
         Rating: null,
         isDarkMode: true
     }
-
     const priceInclude: PriceIncludeInfoPropMobile = {
         MaxPrice: itemWithPrice.MaxPrice,
         MinPrice: itemWithPrice.MinPrice,

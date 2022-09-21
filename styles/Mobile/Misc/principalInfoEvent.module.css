@@ -1,5 +1,5 @@
 .subTitleMargin {
-    margin-bottom: 4px;
+
 }
 
 .titleMargin {
@@ -11,6 +11,7 @@
     grid-template-columns: repeat(2, max-content);
     align-content: end;
     gap: 4px;
+    margin-top: 4px;
 }
 
 .gridStars{

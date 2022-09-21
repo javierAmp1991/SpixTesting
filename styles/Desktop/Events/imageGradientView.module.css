@@ -61,57 +61,18 @@
 
 .title {
     color: white;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 20px;
+    color: white;
+}
+
+.titleMargin{
+    margin-bottom: 1px;
 }
 
 .subtitle {
     color: white;
     font-weight: 400;
     font-size: 17px;
-}
-
-.contRating {
-    margin-top: 3px;
-}
-
-.price {
-    overflow: hidden;
-    height: 0;
-    transition: .4s;
-}
-
-.priceVisible {
-    margin-top: 5px;
-    height: 26px;
-    transition: .4s;
-}
-
-.beforePriceText {
-    color: white;
-    font-size: 13px;
-    line-height: 13px;
-    font-weight: 400;
-}
-
-.beforePrice {
-    text-decoration: line-through;
-    color: white;
-    font-size: 13px;
-    line-height: 13px;
-    font-weight: 400;
-}
-
-.gridIconInfo{
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-items: center;
-    gap: 4px;
-}
-
-.sizeIcon {
-    height: 15px;
-    width: 15px;
-    position: relative;
 }
 

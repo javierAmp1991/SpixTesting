@@ -41,7 +41,14 @@ export default function ImageGradientView({item, isDarkMode}:
                 {/*<div className={style.gradient2}/>*/}
 
                 <div className={style.mainDivInfo}>
-                    <PrincipalInfoEvent item={principalInfoEventProp}/>
+                    <div className={`${utilities.clamp1} ${style.title} ${style.titleMargin}`}>
+                        {item.Title}
+                    </div>
+
+                    <div className={`${style.subtitle} ${utilities.clamp1}`}>
+                        {item.Subtitle}
+                    </div>
+                    {/*<PrincipalInfoEvent item={principalInfoEventProp}/>*/}
                     <div className={style.priceVisible}>
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
                     </div>
@@ -54,7 +61,7 @@ export default function ImageGradientView({item, isDarkMode}:
         return {
             gradient: stateVisible ? style.gradientVisible : style.gradient,
             divPrice: stateVisible ? style.priceVisible : style.price,
-            border: isDarkMode ? utilities.borderCardDesktopDarkModeNoHover : utilities.borderCardDesktopNoHover
+            border: isDarkMode ? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop
         }
 
     }

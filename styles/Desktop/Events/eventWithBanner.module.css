@@ -94,7 +94,7 @@
     border-radius: 3px;
     font-weight: 500;
     align-items: center;
-    /*margin-top: 12px;*/
+    margin-top: 12px;
     /*    position: absolute;
         top: 215px;
         right: 12px;*/
@@ -132,7 +132,6 @@
     /*padding-right: 48px;
     border-right: 1px solid var(--separationLineColor);*/
     display: grid;
-    grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
     padding: 0 0 10px 6px;
 }
@@ -141,6 +140,7 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 8px;
+    margin-top: 12px;
 }
 
 .mainDivPro {

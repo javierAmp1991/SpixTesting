@@ -4,7 +4,6 @@ import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
-import ProductViewHorizontal from "../Misc/ProductViewHorizontal";
 import ProductViewDesk from "../Misc/productViewDesk";
 
 export default function EventWithBannerView({item, darkModeState, sizeImageProduct}) {
@@ -12,7 +11,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
     const principalInfoEventProp: PrincipalInfoEventProp = {
         Title: item.EventName,
         Subtitle: item.Subtitle,
-        Rating: item.Rating,
+        Rating: null,
         isDarkMode: darkModeFalse
     }
     let cssStyles = getCssStyles();
@@ -50,6 +49,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
             <div className={styles.mainContainerInfo}>
                 <div className={styles.mainDivInfoQ}>
                     <div className={styles.grid1Info}>
+                        <PrincipalInfoEvent item={principalInfoEventProp}/>
                         <div className={styles.gridTags}>
                             {
                                 item.Tags.map((offer, index) =>
@@ -64,22 +64,6 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                             <span>{hours}:{minutes}:{seconds}</span>
                         </div>
                     </div>
-                    {/* <div className={styles.grid1Info}>
-                        <PrincipalInfoEvent item={principalInfoEventProp}/>
-                        <div className={styles.mainDivTimer}>
-                            <span>Expira en </span>
-                            <span>{hours}:{minutes}:{seconds}</span>
-                        </div>
-                        <div className={styles.gridTags}>
-                            {
-                                item.Tags.map((offer, index) =>
-                                    <div key={index} className={utilities.styleSpixDiscountTag}>
-                                        {offer}
-                                    </div>
-                                )
-                            }
-                        </div>
-                    </div>*/}
                     <div className={styles.containerCarrouselEWB}>
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
