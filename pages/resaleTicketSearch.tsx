@@ -25,6 +25,7 @@ import {
 import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop";
 import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
 import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -147,9 +148,9 @@ export default function ResaleTicketSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                <LayoutSearchDesktop>
+                    <>
+                        <div className={`${cssStyle.mainContainer}`}>
                             {
                                 <MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
@@ -202,8 +203,8 @@ export default function ResaleTicketSearch() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

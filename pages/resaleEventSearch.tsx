@@ -22,6 +22,7 @@ import ResaleEventviewMobile from "../components/Mobile/Search/resaleEventviewMo
 import EventVerticalView from "../components/Desktop/EventsView/eventVerticalView";
 import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -126,9 +127,9 @@ export default function SearchRestaurant() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                <LayoutSearchDesktop>
+                    <>
+                        <div className={`${cssStyle.mainContainer}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
                                                       listCategoryFilter={categoryFilterRest}
@@ -154,8 +155,8 @@ export default function SearchRestaurant() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

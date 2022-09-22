@@ -1,9 +1,14 @@
 import style from "/styles/Desktop/Layouts/layoutSeach.module.css"
 
-export default function LayoutSearch({children}) {
+export class LayoutSearchProp {
+    FirstChildren: JSX.Element
+    SecondChildren: JSX.Element
+}
+
+export default function LayoutSearch({item}: { item: LayoutSearchProp }) {
     return (
-        <div className={style.gridSearch}>
-            {children}
+        <div className={style.layoutPrincipal}>
+
         </div>
     )
 }

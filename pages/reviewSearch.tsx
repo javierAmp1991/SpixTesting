@@ -22,6 +22,7 @@ import {
 import ReviewSearchViewMobile from "../components/Mobile/Search/reviewSearchViewMobile";
 import ReviewSearchViewDesktope from "../components/Desktop/Search/reviewSearchViewDesktop";
 import {CategoryPrincipalFiltersReview} from "../dataDemo/data";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -126,9 +127,9 @@ export default function ReviewSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                <LayoutSearchDesktop>
+                    <>
+                        <div className={`${cssStyle.mainContainer}`}>
                             {
                                 <MainContainerFilters listCategoryFilter={categoryFilterRest}
                                                       listPrincipalFilter={principalFilterReview}
@@ -159,8 +160,8 @@ export default function ReviewSearch() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

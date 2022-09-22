@@ -1,11 +1,5 @@
-.gridSearch {
+.gridPrincipal {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-}
-
-@media (min-width: 1281px) {
-    .gridSearch {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    grid-template-columns: 310px 1fr;
+    margin-top: 40px;
 }

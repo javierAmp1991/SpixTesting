@@ -28,6 +28,7 @@ import EventWithBannerView from "../components/Desktop/EventsView/eventWithBanne
 import EventWithBannerViewSearch from "../components/Desktop/EventsView/eventWithBannerViewSearch";
 import EventWithBannerVertical from "../components/Desktop/EventsView/eventWithBannerVertical";
 import {OfferSearchData} from "../dataDemo/data";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -132,9 +133,9 @@ export default function SearchRestaurant() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                <LayoutSearchDesktop>
+                    <>
+                        <div className={`${cssStyle.mainContainer}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
                                                       listCategoryFilter={categoryFilterRest}
@@ -155,14 +156,14 @@ export default function SearchRestaurant() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {textResultSection}
                                 </div>*/}
-                                <div className={style.gridOffer}>
+                                <div className={style.gridSearchOpen}>
                                     {dropDown}
                                 </div>
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

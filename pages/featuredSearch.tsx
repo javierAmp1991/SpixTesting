@@ -26,6 +26,7 @@ import PublicityNewsMobile from "../components/Mobile/CRM/publicityNewsMobile";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
 import FeaturedViewPrincipalMobile from "../components/Mobile/Search/featuredViewPrincipal";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -69,7 +70,7 @@ export default function FeaturedSearch() {
 */
     let dropDownFeatured =
         FeaturedListSearch.list.map((item: BaseFeaturedView, index) =>
-            index >= 0 && index <=1 &&
+            index >= 0 && index <= 1 &&
             <FeaturedViewDesktop itemsShow={0} key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
 
@@ -156,9 +157,9 @@ export default function FeaturedSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                <LayoutSearchDesktop>
+                    <>
+                        <div className={`${cssStyle.mainContainer}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={listPrincipalFilters}
                                                       listCategoryFilter={categoryFilterRest}
@@ -187,15 +188,15 @@ export default function FeaturedSearch() {
                                         {dropDownFeatured}
                                     </div>*/}
                                     <PublicityView linkImage={publicity1}/>
-                                    <div className={style.gridFeaturedSearchDropDown}>
+                                    <div className={style.gridSearchOpen}>
                                         {dropDownMisc}
                                     </div>
                                 </div>
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

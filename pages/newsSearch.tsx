@@ -32,6 +32,7 @@ import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalVi
 import {MoreOfferSearch} from "../dataDemo/EventView/eventVerticalView";
 import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -152,7 +153,8 @@ export default function ReviewSearch() {
                                                     {
                                                         newSearchList.map((item, index) =>
                                                             index > 1 &&
-                                                            <NewsSearchMobile isSubtitle={false} key={item.Id} item={item}/>
+                                                            <NewsSearchMobile isSubtitle={false} key={item.Id}
+                                                                              item={item}/>
                                                         )
                                                     }
                                                 </div>
@@ -164,7 +166,8 @@ export default function ReviewSearch() {
                                             <LayoutDropDownMobile gapLayout={10}>
                                                 {
                                                     listPublicity.map(item =>
-                                                        <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
+                                                        <EventHorizontalView darkModeState={isDarkMode} item={item}
+                                                                             key={item.Id}/>
                                                     )
                                                 }
                                             </LayoutDropDownMobile>
@@ -177,33 +180,17 @@ export default function ReviewSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={utilities.maxWidthBodyContentSpix}>
-                    <div className={`${style.gridPrincipalNews}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
-                            {/*<MainContainerFilters listCategoryFilter={categoryFilterRest}
-                                                      listPrincipalFilter={principalFilterReview}
-                                                      isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}
-                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
-                                                      isSubCategory={isSubCategory}
-                                                      isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}
-                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
-                                                      isAdvancedFilter={isAdvancedFilter}
-                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>*/}
-                            <div>
-                                <div className={`${utilities.fontTitle} ${style.paddingTitleNextEvent}`}>
-                                    Proximos Eventos
-                                </div>
-                                <div className={style.gridPublicityNews}>
-                                    {
-                                        listPublicity.map((item) =>
-                                            <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>
-                                        )
-                                    }
-                                </div>
-
+                <LayoutSearchDesktop>
+                    <>
+                        <div className={style.gridPublicityNews}>
+                            <div className={`${utilities.fontTitle}`}>
+                                Proximos Eventos
                             </div>
+                            {
+                                listPublicity.map((item) =>
+                                    <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>
+                                )
+                            }
                         </div>
                         <div>
                             <div className={style.paddingLeftResultNews}>
@@ -218,7 +205,8 @@ export default function ReviewSearch() {
                                         {
                                             newSearchList.map((item, index) =>
                                                 index >= 1 && index <= 2 &&
-                                                <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true} key={item.Id} item={item}/>
+                                                <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true}
+                                                                   key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
@@ -228,7 +216,8 @@ export default function ReviewSearch() {
                                         {
                                             newSearchList.map((item, index) =>
                                                 index > 2 &&
-                                                <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={false} key={item.Id} item={item}/>
+                                                <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={false}
+                                                                   key={item.Id} item={item}/>
                                             )
                                         }
                                     </div>
@@ -236,8 +225,8 @@ export default function ReviewSearch() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

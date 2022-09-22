@@ -4,6 +4,7 @@
     overflow: hidden;
     display: grid;
     position: relative;
+    background: white;
 }
 
 .sizeBanner {
