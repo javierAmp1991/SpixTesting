@@ -204,7 +204,7 @@ export default function WriteReviewLeft() {
                         </div>
                     )
                 }
-                <div className="relative">
+                <div className={style.boxShadowUpload}>
                     <label className={style.labelStyle} htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
                         <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
                                src="/images/placeholderImageUpload.png" alt={""}/>

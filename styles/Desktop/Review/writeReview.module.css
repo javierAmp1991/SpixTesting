@@ -284,3 +284,7 @@
     margin-top: 6px;
 }
 
+.boxShadowUpload{
+    box-shadow: var(--boxShadowCard);
+}
+
