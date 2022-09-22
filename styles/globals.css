@@ -200,7 +200,6 @@ input[type="number"] {
 input[type="checkbox"] {
     height: 8px;
     width: 8px;
-    border-bottom: 2px solid red;
 }
 
 
