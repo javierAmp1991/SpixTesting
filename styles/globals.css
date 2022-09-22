@@ -3,7 +3,7 @@
 @tailwind utilities;
 /*Mobile Section*/
 :root {
-    --maxWidthBodyContent: 1100px;
+    --maxWidthBodyContent: 1366px;
     --maxWidthBanner: 1920px;
     --colorBodyDarkMode: #121212;
     --colorBodyNormal: white;
