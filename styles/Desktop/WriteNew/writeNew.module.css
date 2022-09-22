@@ -7,8 +7,8 @@
 }
 
 .mainContPortada {
-    width: 240px;
-    height: 160px;
+    width: 320px;
+    height: 200px;
     position: relative;
     border-radius: 6px;
     overflow: hidden;
@@ -83,7 +83,7 @@
     width: 100%;
     border-radius: 8px 8px 0 0;
     overflow: hidden;
-    aspect-ratio: 2/1;
+    aspect-ratio: 2.5/1;
     position: relative;
 }
 
@@ -161,6 +161,44 @@
 .imagePopUp {
     width: 100%;
     aspect-ratio: 3/4;
+}
+
+.mainDivPadding{
+    padding: 16px 12px;
+}
+
+.mainContInfo{
+    padding-bottom: 16px;
+    border-bottom: 1px solid #dcdbdb;
+}
+
+.mainContPrevNew{
+    padding: 20px 5px 5px 5px;
+}
+
+.stylePortada{
+    width: 100%;
+    aspect-ratio: 2/1;
+    position: relative;
+}
+
+.gridNew{
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title {
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--colorName);
+}
+
+.subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--colorPrimaryText);
 }
 
 
