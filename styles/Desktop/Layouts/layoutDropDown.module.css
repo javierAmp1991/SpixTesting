@@ -1,6 +1,6 @@
 .dropDownGridPrincipal {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: max-content 1fr;
     gap: 20px;
 }
 

@@ -1,0 +1,6 @@
+.cont{
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--boxShadowCard);
+}

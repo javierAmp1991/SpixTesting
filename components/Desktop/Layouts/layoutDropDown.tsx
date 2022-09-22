@@ -9,11 +9,11 @@ export class DropDownProp {
 export default function LayoutDropDown({item}: { item: DropDownProp }) {
     return (
         <div className={styles.dropDownGridPrincipal}>
-            <div className={styles.dropDownGrid}>
-                {item.FirstChildren}
-            </div>
             <div className={styles.gridPublicity}>
                 {item.SecondChildren}
+            </div>
+            <div className={styles.dropDownGrid}>
+                {item.FirstChildren}
             </div>
         </div>
     )
