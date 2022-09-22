@@ -72,7 +72,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                                 item.ListProducts.map((item, index) =>
                                     index >= 0 && index < 3 &&
                                     <ProductViewDesk item={item} size={sizeImageProduct}
-                                                     isDisplayOffer={false} key={index}/>
+                                                     isDisplayOffer={true} key={index}/>
                                 )
                             }
                         </div>
