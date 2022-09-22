@@ -16,6 +16,7 @@ import {sectionProduct} from "../dataDemo/data";
 import LeftCardFull from "../components/Desktop/eventProduct/leftCardFull";
 import ContResultProductFull from "../components/Mobile/eventProducts/contResultProductFull";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 //endregion
 
 const isDarkMode = false
@@ -129,7 +130,8 @@ export default function EventProducts() {
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug}
+                                              isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
                             <div className={styleMob.heightCont}>
                                 <ContResultProductFull isOpen={false}
@@ -143,14 +145,12 @@ export default function EventProducts() {
                 }
             </div>
             :
-            <div>
-                <HeaderSpixDesktop isLogged={isLogged} darkMode={isDarkMode} toggleDarkMode={toggleDarkMode}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={menuList}/>
-                <div className={utilities.maxWidthBodyContentSpix}>
+            <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={null}>
+                <div>
                     <LeftCardFull
                         handleAddProduct={handListProductShow}
                         listSectionPro={listProductShow}/>
                 </div>
-            </div>
+            </DefaultLayoutDesktop>
     )
 }
