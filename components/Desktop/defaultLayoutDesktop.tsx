@@ -11,7 +11,7 @@ export default function DefaultLayoutDesktop({children, isDarkMode, darkModeTogg
                                                  }) {
     const listMenu = Menu.listMenu
     const cssStyle = getCssStyle()
-    const limitHeader: boolean = true
+    const limitHeader: boolean = false
     return (
         <div className={cssStyle.bgBod}>
             <HeaderSpixDesktop limit={limitHeader} darkMode={isDarkMode} isLogged={isLogged} toggleDarkMode={darkModeToggle}/>
