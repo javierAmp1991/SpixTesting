@@ -22,28 +22,26 @@ export default function SideCard() {
     return (
         <div>
             <div className={style.bannerStyle}>
-                <Image layout={"fill"} src={productEvent.BannerPath}/>
+                <Image layout={"fill"} src={productEvent.BannerPath} alt={""}/>
             </div>
-            <div className="p-6">
-                <div className="pb-7">
+            <div className={style.mainDivInfo}>
+                <div className={style.divInfo}>
                     <PrincipalInfoEventMobile item={newItem}/>
                 </div>
 
-                <div className="justify-left grid gap-3 content-start pb-8">
+                <div className={style.mainDivResume}>
                     <div className={style.fontReviewResume}>
                         {resumeReview.rating} de 5
                     </div>
-                    <div className={`${utilities.gridContentCenter} justify-start mb-1.5`}>
-                        <div className={style.sizeStarResume}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
-                        </div>
+                    <div className={style.sizeStarResume}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
                     </div>
-                    <div className={`${utilities.fontPrimaryText} text-left`}>
+                    <div className={`${utilities.fontPrimaryText} ${style.resumeReview}`}>
                         {resumeReview.totalReview} <span>Reseñas</span>
                     </div>
                 </div>
 
-                <div className={`${utilities.fontPrimaryText} grid gap-4`}>
+                <div className={`${utilities.fontPrimaryText} ${style.gridRatings}`}>
                     {
                         resumeReview.infoReviews.map((item, index) =>
                             <div key={index} className={style.gridStars}>

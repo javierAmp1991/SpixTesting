@@ -253,10 +253,34 @@
     aspect-ratio: 3/4;
 }
 
-.styleLabel{
+.styleLabel {
     height: 200px;
     width: 200px;
     position: relative;
 }
 
+.divInfo {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.mainDivInfo {
+    padding: 16px;
+}
+
+.mainDivResume {
+    display: grid;
+    padding: 18px 0 20px 0;
+    gap: 8px;
+    justify-content: left;
+}
+
+.gridRatings {
+    display: grid;
+    gap: 12px;
+}
+
+.resumeReview{
+    margin-top: 6px;
+}
 
