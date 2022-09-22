@@ -21,7 +21,7 @@ import HomeRoundedViewMobile from "../components/Mobile/Home/homeRoundedViewMobi
 import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
 import HomeCategorysFooterMobile from "../components/Mobile/Home/homeCategorysFooterMobile";
-import LayoutDropDown from "../components/Desktop/Layouts/layoutDropDown";
+import LayoutDropDown, {DropDownProp} from "../components/Desktop/Layouts/layoutDropDown";
 import DefaultPageMobile, {paddingAsignation} from "../components/Mobile/defaultPageMobile";
 import HomeOwnPublicityMobile from "../components/Mobile/Home/homeOwnPublicityMobile";
 import {ComponentWithSpace} from "../components/Desktop/defaulPage";
@@ -62,6 +62,8 @@ import {
     MostPopularGradient
 } from "../dataDemo/EventView/EventCardWithGradient";
 import ImageGradientViewMobile from "../components/Mobile/Events/ImageGradientView";
+import Image from "next/image";
+import PublicityVertical, {VerticalPublicityProp} from "../components/Desktop/CRM/publicityVertical";
 //endregion
 
 //region constantes
@@ -541,15 +543,49 @@ export default function Index() {
     </TitleSection>
     let publicity2 = <PublicityView linkImage={PublicityData.publicityList[1]}/>
 
-    let dropDown = <TitleSection titleLink={dropDownTitleLink} paddingTitle={titleLinkPadding}
-                                 darkModeState={isDarkMode}>
-        <LayoutDropDown>
+    const firstChildrenDropDown =
+        <>
             {
                 DropDownHome.list.map((item: BaseEventCard) =>
-                    <EventVerticalView item={item} darkModeState={isDarkMode} key={item.Id}/>
+                    <EventVerticalView item={item} darkModeState={isDarkMode} key={item.Id}/>)
+            }
+        </>
+
+    let listPub: VerticalPublicityProp[] = [
+        {
+            Id: "wdadak231",
+            PathImage: "/images/verticalPublicity.jpg",
+            Link: "",
+            Width: 300,
+            Height: 875
+        },
+        {
+            Id: "asdjdj39934as",
+            PathImage: "/images/verticalPublicity2.jpg",
+            Link: "",
+            Width: 300,
+            Height: 875
+        }
+    ]
+
+    const secondChildrenDropDown =
+        <>
+            {
+                listPub.map((item) =>
+                    <PublicityVertical key={item.Id} item={item}/>
                 )
             }
-        </LayoutDropDown>
+        </>
+
+    const childrensDropDown: DropDownProp = {
+        FirstChildren: firstChildrenDropDown,
+        SecondChildren: secondChildrenDropDown
+    }
+
+    let dropDown = <TitleSection titleLink={dropDownTitleLink} paddingTitle={titleLinkPadding}
+                                 darkModeState={isDarkMode}>
+
+        <LayoutDropDown item={childrensDropDown}/>
     </TitleSection>
 
     /*let categorysFooter = <LayoutCategoryFooter>

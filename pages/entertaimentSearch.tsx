@@ -21,6 +21,7 @@ import {
     SuperCategoryFilter
 } from "../dataDemo/data";
 import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -124,9 +125,9 @@ export default function SearchRestaurant() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={`${cssStyle.gridFilterDesktop}`}>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                <LayoutSearchDesktop>
+                    <>
+                        <div>
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
                                                       listCategoryFilter={categoryFilterRest}
@@ -144,17 +145,17 @@ export default function SearchRestaurant() {
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>
-                                <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {textResultSection}
-                                </div>
+                                </div>*/}
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
                                 </div>
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

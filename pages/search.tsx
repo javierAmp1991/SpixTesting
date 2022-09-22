@@ -124,7 +124,7 @@ export default function Search() {
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
                 <LayoutSearchDesktop>
                     <>
-                        <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
+                        <div className={`${cssStyle.mainContainer}`}>
                             {<MainContainerFilters listPrincipalFilter={listPrincipalFilters}
                                                    listCategoryFilter={categoryFilterRest}
                                                    isDarkMode={isDarkMode}
@@ -141,9 +141,9 @@ export default function Search() {
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>
-                                <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Resultados de {"conciertos"}
-                                </div>
+                                </div>*/}
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
                                 </div>
@@ -158,10 +158,6 @@ export default function Search() {
     function getCssStyle() {
         return {
             bg: isDarkMode ? utilities.bgBodyDarkMode : utilities.bgBodyNormal,
-            bgInfo: isDarkMode ?
-                isOpenFilters ? utilities.bgDarkModeInfo : ""
-                :
-                utilities.bgNormalInfo,
             gridFilterDesktop: isOpenFilters ? style.gridPrincipal : style.gridPrincipalClose,
             mainContainer: isDarkMode ? style.mainContainerPropertiesDarkMode : style.mainContainerProperties,
             gridSearch: isOpenFilters ? style.gridSearchOpen : style.gridSearchClose,

@@ -1,6 +1,7 @@
 .gridPrincipal {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 310px 1fr;
+    margin-top: 40px;
 }
 
 .gridPrincipalNews {
@@ -61,7 +62,7 @@
 
 .paddingLeftResult {
     padding-left: 35px;
-    padding-right: 16px;
+    /*padding-right: 16px;*/
 }
 
 .paddingLeftResultResale {

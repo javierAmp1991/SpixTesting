@@ -4,6 +4,8 @@ import Image from "next/image";
 import React, {useEffect, useState, useRef} from "react";
 import {useMediaQuery} from "../../../pages";
 import {GlobalConst} from "../../../public/globalConst";
+import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
+import item = PrincipalFeaturedSearch.item;
 
 const mediaQuery = '(max-width: 768px)';
 
@@ -52,8 +54,8 @@ const listImageNewW: cate[] = [
      {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
 ];
 const widthCat: number = 50;
-const numberItems: number = 9;
-const gap: number = ((1090 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
+const numberItems: number = 11;
+const gap: number = ((1430 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
 export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                                                 {
                                                     gapLayout: number,
@@ -89,6 +91,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
     let [visibility, setVisibility] = useState(true);
 
     const handleRight = () => {
+
         const firstElement = mainDivRef.current.children[0];
         const secondElement = mainDivRef.current.children[1];
         const thirdElement = mainDivRef.current.children[2];
@@ -98,6 +101,9 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
         const sevenElement = mainDivRef.current.children[6];
         const eightElement = mainDivRef.current.children[7];
         const ninehtElement = mainDivRef.current.children[8];
+        /*const childrensMov: [] = mainDivRef.current.map((item, index) => {
+                if (index <= (numberItems - 1)) {return mainDivRef.current.children[index]}
+        })*/
         const childrens = [firstElement, secondElement, thirdElement, fourthElement, quinElement, sixElement, sevenElement, eightElement, ninehtElement]
         mainDivRef.current.style.transition = `2000ms linear`;
         const widthDiv: number = mainDivRef.current.offsetWidth + gap

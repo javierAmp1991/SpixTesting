@@ -1,8 +1,20 @@
 import styles from "/styles/Desktop/Layouts/layoutDropDown.module.css"
-export default function LayoutDropDown({children}){
-    return(
-        <div className={styles.dropDownGrid}>
-            {children}
+
+export class DropDownProp {
+    FirstChildren: JSX.Element
+    SecondChildren: JSX.Element
+}
+
+
+export default function LayoutDropDown({item}: { item: DropDownProp }) {
+    return (
+        <div className={styles.dropDownGridPrincipal}>
+            <div className={styles.dropDownGrid}>
+                {item.FirstChildren}
+            </div>
+            <div className={styles.gridPublicity}>
+                {item.SecondChildren}
+            </div>
         </div>
     )
 }

@@ -146,9 +146,9 @@ export default function ReviewSearch() {
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>
-                                <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Reseñas
-                                </div>
+                                </div>*/}
                                 <div className={style.gridReviewDesktop}>
                                     {
                                         reviewSectionList.map((item, index) =>

@@ -1,4 +1,9 @@
 import {GlobalConst} from "../../../public/globalConst";
+import style from "/styles/Desktop/Search/subcategoryContainer.module.css"
+import utilities from "/styles/utilities.module.css"
+import React, {useState} from "react";
+import {dateFilters, priceFilters} from "../../../dataDemo/data";
+import Image from "next/image";
 
 export class SubcategoryFilter {
     public Name: string;
@@ -13,11 +18,6 @@ export class Filters {
     public SubCategorys: SubcategoryFilter[];
 }
 
-import style from "/styles/Desktop/Search/subcategoryContainer.module.css"
-import utilities from "/styles/utilities.module.css"
-import React, {useState} from "react";
-import {dateFilters, priceFilters} from "../../../dataDemo/data";
-import Image from "next/image";
 
 export default function SubcategoryContainer({item, click, isDarkMode}:
                                                  { item: Filters, click: any, isDarkMode: boolean }) {

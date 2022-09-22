@@ -176,9 +176,9 @@ export default function FeaturedSearch() {
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>
-                                <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {featuredText}
-                                </div>
+                                </div>*/}
                                 <div className={style.PrincipalGridNews}>
                                     <FeaturedViewPrincipal item={PrincipalFeaturedSearch.item}/>
                                     {/*<PublicityView linkImage={publicity}/>

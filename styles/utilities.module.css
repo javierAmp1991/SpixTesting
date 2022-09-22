@@ -108,7 +108,7 @@
 }
 
 .fontTitleDesktop {
-    --sizeTitleDesktop: 20px;
+    --sizeTitleDesktop: 18px;
     font-size: var(--sizeTitleDesktop);
     line-height: 26px;
     font-weight: 300;
@@ -126,9 +126,9 @@
 }
 
 .fontSubtitleDesktop {
-    --sizeSubTitleDesktop: 17px;
+    --sizeSubTitleDesktop: 16px;
     font-size: var(--sizeSubTitleDesktop);
-    line-height: 22px;
+    line-height: 20px;
     font-weight: 300;
     /* color: var(--colorSecundaryTextDesktop);
      font-family: Helvetica, sans-serif, Arial;*/

@@ -207,9 +207,9 @@ export default function ReviewSearch() {
                         </div>
                         <div>
                             <div className={style.paddingLeftResultNews}>
-                                <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {newsText}
-                                </div>
+                                </div>*/}
                                 <div className={style.PrincipalGridNews}>
                                     <NewSearcPrincipalDesktop item={newSearchList[0]}/>
                                     <PublicityView linkImage={publicity}/>

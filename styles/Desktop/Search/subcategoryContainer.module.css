@@ -1,19 +1,26 @@
-.paddingTitle{
-    padding: 12px 16px;
+.mainCont {
+    --paddingX: 32px;
 }
-.borderBottom{
+
+.paddingTitle {
+    padding: 12px var(--paddingX);
+}
+
+.borderBottom {
     border-bottom: 1px solid var(--separationLineColor);
 }
-.borderBottomDarkMode{
+
+.borderBottomDarkMode {
     border-bottom: 1px solid var(--separationLineColorDarkMode);
 }
-.gridContainerSubcategory{
+
+.gridContainerSubcategory {
     display: grid;
     gap: 12px;
-    padding: 0 18px 16px 24px;
+    padding: 0 var(--paddingX) 16px var(--paddingX);
 }
 
-.styleRangePriceInput{
+.styleRangePriceInput {
     box-shadow: var(--boxShadowCard);
     height: 32px;
     width: 150px;
@@ -21,14 +28,14 @@
     text-indent: 28px;
 }
 
-.styleRangePriceInputDarkMode{
+.styleRangePriceInputDarkMode {
     height: 32px;
     width: 150px;
     border-radius: 2px;
     text-indent: 28px;
 }
 
-.styleContainerDareInput{
+.styleContainerDareInput {
     height: 32px;
     width: 150px;
     position: relative;
@@ -37,14 +44,14 @@
 
 }
 
-.styleContainerDareInputDarkMode{
+.styleContainerDareInputDarkMode {
     height: 32px;
     width: 150px;
     position: relative;
     border-radius: 2px;
 }
 
-.styleRangeDateInput{
+.styleRangeDateInput {
     height: 32px;
     width: 150px;
     position: absolute;
@@ -52,12 +59,14 @@
     padding: 0 5px;
     opacity: 0;
 }
-.positionDolar{
+
+.positionDolar {
     position: absolute;
     top: 6px;
     left: 10px;
 }
-.positionCalendar{
+
+.positionCalendar {
     position: absolute;
     top: 11px;
     left: 8px;

@@ -145,9 +145,9 @@ export default function SearchRestaurant() {
                         </div>
                         <div>
                             <div className={style.paddingLeftResult}>
-                                <div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
+                                {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {textResultSection}
-                                </div>
+                                </div>*/}
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
                                 </div>

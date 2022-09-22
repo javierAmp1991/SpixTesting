@@ -3,7 +3,7 @@ import style from "/styles/Desktop/Search/layoutPrincipalFilters.module.css"
 import {FiltersData} from "../../../dataDemo/data"
 import {GlobalConst} from "../../../public/globalConst";
 import SubcategoryContainer, {Filters} from "./subcategoryContainer";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {SubcategoryFilter} from "./subcategoryContainer";
 import Image from "next/image";
 import {CategoryFilter} from "../../../dataDemo/data";
@@ -212,7 +212,7 @@ export default function MainContainerFilters({
     //endregions
 
     return (
-        <div>
+        <div className={style.mainCont}>
             <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
                 <div className={cssStyle.fontTitle}>
                     Filtros
