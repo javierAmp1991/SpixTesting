@@ -111,7 +111,7 @@
 
 /*new DesktopRoot*/
 :root {
-    --colorBackGroundDesktopNormal: #f5f4f4;
+    --colorBackGroundDesktopNormal: white;
     --colorBackGroundDesktopDarkMode: #121212;
     --bgNormalInfoDesktop: white;
     --bgDarkModeInfoDesktop: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
