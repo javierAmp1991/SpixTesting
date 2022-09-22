@@ -64,7 +64,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
 
     return (
         <div>
-            <div className={style.paddingMainConatiner}>
+            <div className={`${style.paddingMainConatiner} bg-white`}>
                 <div className={style.gridMainContainer}>
                     <div className={`${style.gridImageTitle} mb-1`}>
                         <div className={`${style.sizeLogo}`}>

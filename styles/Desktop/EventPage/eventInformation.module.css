@@ -10,6 +10,8 @@
 
 .paddingMainConatiner {
     padding: 0 8px;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .paddingDescription {
