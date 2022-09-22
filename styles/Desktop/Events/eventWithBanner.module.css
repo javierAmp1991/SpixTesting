@@ -85,8 +85,8 @@
     /*background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);*/
     overflow: hidden;
     color: #ee1d1d;
-    display: grid;
-    grid-template-rows: repeat(2, max-content);
+    /*display: grid;*/
+    /*grid-template-columns: repeat(2, max-content);*/
     /*color: white;*/
     font-size: 14px;
     padding-top: 3px;
