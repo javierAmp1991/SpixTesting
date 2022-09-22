@@ -49,15 +49,17 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
             <div className={styles.mainContainerInfo}>
                 <div className={styles.mainDivInfoQ}>
                     <div className={styles.grid1Info}>
-                        <PrincipalInfoEvent item={principalInfoEventProp}/>
-                        <div className={styles.gridTags}>
-                            {
-                                item.Tags.map((offer, index) =>
-                                    <div key={index} className={utilities.styleSpixDiscountTag}>
-                                        {offer}
-                                    </div>
-                                )
-                            }
+                        <div>
+                            <PrincipalInfoEvent item={principalInfoEventProp}/>
+                            <div className={styles.gridTags}>
+                                {
+                                    item.Tags.map((offer, index) =>
+                                        <div key={index} className={utilities.styleSpixDiscountTag}>
+                                            {offer}
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
                         <div className={styles.mainDivTimer}>
                             <span>Expira en </span>
@@ -68,6 +70,7 @@ export default function EventWithBannerView({item, darkModeState, sizeImageProdu
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
                                 item.ListProducts.map((item, index) =>
+                                    index >= 0 && index < 3 &&
                                     <ProductViewDesk item={item} size={sizeImageProduct}
                                                      isDisplayOffer={false} key={index}/>
                                 )

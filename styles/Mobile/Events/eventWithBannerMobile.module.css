@@ -35,27 +35,23 @@
 
 .gridCarrouselProductsEWB {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
-    padding: 8px 6px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 4px 2px;
     gap: 16px;
-}
-
-.overflowCarrouselProductsEWB {
-    overflow: scroll;
 }
 
 .containerCarrouselEWB {
     display: grid;
-    padding: 0 8px 8px 8px;
+    padding: 0 8px 12px 8px;
     background: white;
     position: relative;
 }
 
 .mainDivInfo {
-    padding: 12px 12px;
+    padding: 12px;
     display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 12px;
     position: relative;
     justify-content: space-between;
 }
@@ -80,20 +76,22 @@
 }
 
 .mainDivTimer {
-    background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);
+    /*background: linear-gradient(145deg, rgb(12, 108, 197) 0%, rgb(21, 119, 211) 100%);*/
     overflow: hidden;
-    color: white;
-    font-weight: 400;
+    /*color: white;*/
+    color: #ee1d1d;
+    font-weight: 500;
+    justify-items: right;
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(2, max-content);
     align-items: center;
     gap: 5px;
-    padding: 4px 8px;
+    /*padding: 4px 8px;*/
     font-size: 13px;
     line-height: 13px;
     border-radius: 4px;
     width: max-content;
-    margin-top: 10px;
+    padding-top: 5px;
 }
 
 @media (min-width: 1281px) {

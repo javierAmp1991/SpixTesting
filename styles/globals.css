@@ -23,7 +23,7 @@
     --buttonlinkColorDarkMode: #15dae6;
     --tagColorNormal: #2d7dff;
     --tagColorDarkMode: #ff7f23;
-    --colorTagDiscount: #f81d2e;
+    --colorTagDiscount: linear-gradient(145deg, rgba(230, 40, 55, 1) 0%, rgba(248, 29, 46, 1) 100%);
     --darkModetextColor: white;
     --paddingContentHomeXMob: 8px;
     --paddingContentHomeYMob: 24px;
@@ -111,7 +111,7 @@
 
 /*new DesktopRoot*/
 :root {
-    --colorBackGroundDesktopNormal: white;
+    --colorBackGroundDesktopNormal: #f5f4f4;
     --colorBackGroundDesktopDarkMode: #121212;
     --bgNormalInfoDesktop: white;
     --bgDarkModeInfoDesktop: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
@@ -121,7 +121,7 @@
     --colorSecundaryTextDesktop: #8e8e8e;
     --colorPriceIncludeDesktop: #1a1d1d;
     --linkColorDesktop: #2d7dff;
-    --boxShadowCardDesktop: 0 0 10px rgba(0, 0, 0, .20);
+    --boxShadowCardDesktop: 0 0 10px rgba(0, 0, 0, .28);
     --boxShadowCardDarkModeDesktop: 0 0 10px #ff7f23;
     --transformScale: 1.03;
     --transitionTimeDesktop: .4s;

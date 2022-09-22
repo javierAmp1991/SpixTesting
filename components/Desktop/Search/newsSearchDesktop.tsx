@@ -14,7 +14,7 @@ export default function NewsSearchDesktop({
                                           }: { item: News, isSubtitle: boolean, isDarkMode: boolean }) {
     const cssStyle = getCssStyle()
     return (
-        <div className={`${cssStyle.mainDiv} ${cssStyle.bg}`}>
+        <div className={`${cssStyle.borderCard} ${cssStyle.bg}`}>
             <div className={style.sizeImage}>
                 <Image layout={"fill"} src={item.PathImage} alt={""}/>
             </div>
@@ -45,12 +45,12 @@ export default function NewsSearchDesktop({
 
     function getCssStyle() {
         return {
-            mainDiv: isDarkMode ? style.mainContDarkMode : style.mainCont,
             bg: isDarkMode ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
             styleLink: isDarkMode ? utilities.styleLinkDarkMode : utilities.styleLink,
             title: isDarkMode? style.fontTitleDarkMode : style.fontTitle,
             subtitle: isDarkMode ? style.fontSubTitleDarkMode : style.fontSubTitle,
-            date: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText
+            date: isDarkMode ? utilities.fontSecundaryTextDarkMode : utilities.fontSecundaryText,
+            borderCard: isDarkMode? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop,
         }
     }
 }

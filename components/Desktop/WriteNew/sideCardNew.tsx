@@ -20,9 +20,9 @@ export default function SideCardNew() {
     }
     return (
         <div>
-            <div className={"px-4 pt-6"}>
+            <div className={""}>
                 <div className={style.bannerStyle}>
-                    <Image layout={"fill"} objectFit={"cover"} src={EventPageEvent.eventPage.CoverImage} alt={""}/>
+                    <Image layout={"fill"} objectFit={"cover"} src={EventPageEvent.eventPage.BannerPath} alt={""}/>
                 </div>
             </div>
             <div className="p-6">

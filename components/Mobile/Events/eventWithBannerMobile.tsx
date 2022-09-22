@@ -53,23 +53,25 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                 </div>
 
                 <div className={`${cssStyles.bgInfo} ${styles.mainDivInfo}`}>
-                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
-                    <div className={styles.gridTags}>
-                        {
-                            item.Tags.map(offer =>
-                                <div key={offer} className={utilities.styleSpixDiscountTag}>
-                                    {offer}
-                                </div>
-                            )
-                        }
+                    <div>
+                        <PrincipalInfoEventMobile item={principalInfoEventProp}/>
+                        <div className={styles.gridTags}>
+                            {
+                                item.Tags.map(offer =>
+                                    <div key={offer} className={utilities.styleSpixDiscountTag}>
+                                        {offer}
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
                     <div className={styles.mainDivTimer}>
-                        <span>
+                        <div>
                             Expira en
-                        </span>
-                        <span>
+                        </div>
+                        <div>
                             {hours}:{minutes}:{seconds}
-                        </span>
+                        </div>
                     </div>
                 </div>
 
@@ -79,29 +81,8 @@ export default function EventWithBannerMobile({item, darkModeState, displayLogoR
                         <div className={styles.gridCarrouselProductsEWB}>
                             {
                                 item.ListProducts.map((product, index) =>
-                                        <ProductViewMobile key={index} isDisplayOffer={false} item={product} size={110}/>
-                                    /*<div key={product.Name} className={styles.mainDivPro}>
-                                        <div className="mb-2">
-                                            <div className={`${styles.sizeProductEWB}`}>
-                                                <Image layout={"fill"}
-                                                       src={product.ImagePath} alt=""/>
-                                            </div>
-                                        </div>
-                                        <div
-                                            className={`${utilities.fontPriceInclude} mb-1 ${alignmentTextProduct} `}>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(product.Price))}
-                                        </div>
-                                        <div
-                                            className={`${utilities.fontSecundaryText} ${alignmentTextProduct} 
-                                                        ${utilities.font12}`}>
-                                            <span>Antes: </span>
-                                            <span className="line-through">
-                                                    ${Intl.NumberFormat("ES-CL"
-                                            ).format(Math.round((product.Price * product.DiscountPercent / 100) + product.Price))}
-                                            </span>
-                                        </div>
-                                    </div>*/
+                                    index >= 0 && index <= 2 &&
+                                    <ProductViewMobile key={index} isDisplayOffer={false} item={product} size={null}/>
                                 )
                             }
                         </div>

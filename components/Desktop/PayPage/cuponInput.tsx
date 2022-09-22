@@ -7,7 +7,7 @@ import Image from "next/image";
 export class inputCuponValues {
     placeHolder: string;
     titleCupon: string;
-    GetInputvalue: any
+    GetInputvalue: Function
 }
 
 const titleButton: string = "Aplicar"
