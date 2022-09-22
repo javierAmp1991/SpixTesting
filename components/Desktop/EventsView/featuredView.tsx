@@ -46,14 +46,14 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
                     </div>
                 </div>
-                {/*<div className={style.mainDivProductsSingle}>
+                <div className={style.mainDivProductsSingle}>
                     {
                         item.ListProducts.map((item, index) =>
                             index == 0 &&
                             <ProductViewDesk isDisplayOffer={false} item={item} size={130}/>
                         )
                     }
-                </div>*/}
+                </div>
             </div>
         </div>
     )
