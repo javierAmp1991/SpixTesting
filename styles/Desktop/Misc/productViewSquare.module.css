@@ -6,6 +6,7 @@
     justify-items: center;
     justify-content: center;
     object-fit: cover;
+    background: white;
 }
 
 .sizeImageProduct {
@@ -18,7 +19,8 @@
     box-shadow: var(--boxShadowCard);
     border-radius: 12px;
     position: relative;
-    padding: 12px 12px 48px 12px;
+    padding: 12px 12px 80px 12px;
+    background: white;
 }
 
 .gridPriceWithDiscount {

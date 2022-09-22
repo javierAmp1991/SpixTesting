@@ -4,7 +4,7 @@
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     transition: 2s linear;
-    padding: 5px 2px;
+    padding: 5px;
 }
 
 .mainDiv {

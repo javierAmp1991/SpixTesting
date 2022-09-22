@@ -1,7 +1,6 @@
 import style from "/styles/Desktop/Misc/productViewSquare.module.css"
 import utilities from "/styles/utilities.module.css"
 import {Product} from "../../../dataDemo/data";
-import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 
 export default function ProductViewSquare({item, size, isDisplayOffer}:
@@ -17,6 +16,9 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                 </div>
             </div>
             <div className={style.gridInfoProduct}>
+                <div>
+                    {item.Name}
+                </div>
                 <div className={`${utilities.fontPriceInclude}`}>
                     ${getMoneyValue(item.Price)}
                 </div>

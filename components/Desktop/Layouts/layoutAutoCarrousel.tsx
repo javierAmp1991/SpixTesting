@@ -12,42 +12,6 @@ export class cate {
     Image: string
 }
 
-const listImageNew: cate[] = [
-    {Image: "/images/autocat1.png", Name: "Rock"},
-    {Image: "/images/autocat2.png", Name: "Conciertos"},
-    {Image: "/images/autocat3.png", Name: "Beleza"},
-    {Image: "/images/autocat4.png", Name: "Spa"},
-    {Image: "/images/autocat1.png", Name: "Futbol"},
-    {Image: "/images/autocat2.png", Name: "Reggaeton"},
-    {Image: "/images/autocat3.png", Name: "Basketball"},
-    {Image: "/images/autocat4.png", Name: "Peluqueria"},
-    {Image: "/images/autocat1.png", Name: "Educacion"},
-    {Image: "/images/autocat2.png", Name: "Masajes"},
-    {Image: "/images/autocat3.png", Name: "Pop"},
-    {Image: "/images/autocat4.png", Name: "Zoologico"},
-    {Image: "/images/autocat1.png", Name: "Pizzas"},
-    {Image: "/images/autocat2.png", Name: "Cafe"},
-    {Image: "/images/autocat3.png", Name: "Tributos"},
-    {Image: "/images/autocat4.png", Name: "Pasteleria"},
-
-    /* {Image:"/images/auto1.jpg", Name:"Rock"},
-     {Image:"/images/auto2.jpg", Name:"Conciertos"},
-     {Image:"/images/auto3.jpg", Name:"Beleza"},
-     {Image:"/images/auto4.jpg", Name:"Spa"},
-     {Image:"/images/auto5.jpg", Name:"Futbol"},
-     {Image:"/images/auto6.jpg", Name:"Reggaeton"},
-     {Image:"/images/auto7.jpg", Name:"Basketball"},
-     {Image:"/images/auto8.jpg", Name:"Peluqueria"},
-     {Image:"/images/auto9.jpg", Name:"Educacion"},
-     {Image:"/images/auto10.jpg", Name:"Masajes"},
-     {Image:"/images/auto11.jpg", Name:"Pop"},
-     {Image:"/images/auto12.jpg", Name:"Zoologico"},
-     {Image:"/images/auto14.jpg", Name:"Pizzas"},
-     {Image:"/images/auto13.jpg", Name:"Cafe"},
-     {Image:"/images/auto15.jpg", Name:"Tributos"},
-     {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
-];
-
 const listImageNewW: cate[] = [
     {Image: "/images/autocat5W.png", Name: "Night Club"},
     {Image: "/images/autocat4W.png", Name: "Conciertos"},
@@ -87,48 +51,9 @@ const listImageNewW: cate[] = [
      {Image:"/images/auto15.jpg", Name:"Tributos"},
      {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
 ];
-
-const listImage: cate[] = [
-    {Image: "/images/autocatI1.png", Name: "Restaurant"},
-    {Image: "/images/autocatI2.png", Name: "Deporte"},
-    {Image: "/images/autocatI3.png", Name: "Peluqueria"},
-    {Image: "/images/autocatI4.png", Name: "Rock"},
-    {Image: "/images/autocatI5.png", Name: "Restobar"},
-    {Image: "/images/autocatI6.png", Name: "Zoologico"},
-    {Image: "/images/autocatI7.png", Name: "Cine"},
-    {Image: "/images/autocatI1.png", Name: "Educacion"},
-    {Image: "/images/autocatI2.png", Name: "Masajes"},
-    {Image: "/images/autocatI3.png", Name: "Pop"},
-    {Image: "/images/autocatI4.png", Name: "Conciertos"},
-    {Image: "/images/autocatI5.png", Name: "Pizzas"},
-    {Image: "/images/autocatI6.png", Name: "Cafe"},
-    {Image: "/images/autocatI7.png", Name: "Tributos"},
-    {Image: "/images/autocatI1.png", Name: "Pasteleria"},
-    {Image: "/images/autocatI2.png", Name: "Peluqueria"},
-];
-
-const listImageNewB: cate[] = [
-    {Image: "/images/autocat1B.png", Name: "Rock"},
-    {Image: "/images/autocat2B.png", Name: "Conciertos"},
-    {Image: "/images/autocat3B.png", Name: "Beleza"},
-    {Image: "/images/autocat4B.png", Name: "Spa"},
-    {Image: "/images/autocat5B.png", Name: "Futbol"},
-    {Image: "/images/autocat6B.png", Name: "Reggaeton"},
-    {Image: "/images/autocat7B.png", Name: "Basketball"},
-    {Image: "/images/autocat1B.png", Name: "Educacion"},
-    {Image: "/images/autocat2B.png", Name: "Masajes"},
-    {Image: "/images/autocat3B.png", Name: "Pop"},
-    {Image: "/images/autocat4B.png", Name: "Zoologico"},
-    {Image: "/images/autocat5B.png", Name: "Pizzas"},
-    {Image: "/images/autocat6B.png", Name: "Cafe"},
-    {Image: "/images/autocat7B.png", Name: "Tributos"},
-    {Image: "/images/autocat1B.png", Name: "Pasteleria"},
-    {Image: "/images/autocat2B.png", Name: "Peluqueria"},
-];
-
 const widthCat: number = 50;
 const numberItems: number = 9;
-const gap: number = ((1092 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
+const gap: number = ((1090 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
 export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                                                 {
                                                     gapLayout: number,

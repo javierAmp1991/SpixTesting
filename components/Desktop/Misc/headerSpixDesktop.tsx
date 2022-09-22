@@ -75,8 +75,8 @@ let resultInfo: ResultInfo = {
     Sugresult: listSug
 }
 
-export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}:
-                                              { darkMode: boolean, isLogged: boolean, toggleDarkMode: any }) {
+export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode, limit}:
+                                              { darkMode: boolean, isLogged: boolean, toggleDarkMode: any, limit: boolean }) {
     let [isdisplaySug, setIsDisplaySug] = useState(false)
     const showIsDisplaySug = () => setIsDisplaySug(isdisplaySug = true)
     const hiddeIsDisplaySug = () => setIsDisplaySug(isdisplaySug = false)
@@ -88,7 +88,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}:
 
     return (
         <div className={cssStyles.backgroundColor}>
-            <div className={style.gridHeader}>
+            <div className={`${cssStyles.gridHeader} ${cssStyles.limitDiv}`}>
                 <Link href={"/"}>
                     <div className={paddingImage}>
                         <div className={style.sizeIconLogo}>
@@ -191,7 +191,9 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode}:
 
     function getCssStyles() {
         return {
-            backgroundColor: darkMode ? style.bgHeaderSpixDarkMode : style.bgHeaderSpix
+            backgroundColor: darkMode ? style.bgHeaderSpixDarkMode : style.bgHeaderSpix,
+            limitDiv: limit && utilities.maxWidthBodyContentSpix,
+            gridHeader: limit? style.gridHeaderLimit : style.gridHeader
         }
     }
 }

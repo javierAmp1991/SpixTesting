@@ -22,7 +22,8 @@ class UploadImage {
     ProvisoryUrl: string
 }
 
-export default function WriteNewLeft() {
+export default function WriteNewLeft({handlePreTitle, handlePrevSubtitle, handlePrevImage}:
+                                         { handlePreTitle: Function, handlePrevSubtitle: Function, handlePrevImage: Function }) {
     let textAreaReview = useRef(null)
     let [inputTitle, setInputTitle] = useState("")
     let [inputReview, setInputReview] = useState("")
@@ -33,21 +34,28 @@ export default function WriteNewLeft() {
 
     const handleTitle = (e) => {
         setInputTitle(inputTitle = e.target.value)
+        handlePreTitle(e.target.value)
     }
     const handlereview = (e) => {
         setInputReview(inputReview = e.target.value)
+        handlePrevSubtitle(e.target.value)
     }
     const handleAddEmoticon = (emoticon: string) => {
         textAreaReview.current.value += emoticon
     }
     let [counterId, setCounterId] = useState(0)
-    let handleUploadPortada = (e) => {
+    const handleUploadPortada = (e) => {
         const newUploadImage: UploadImage = {
             FileImage: e.target.files[0],
             Id: `${e.target.files[0]}${counterId}`,
             ProvisoryUrl: URL.createObjectURL(e.target.files[0])
         }
         setImagePortada(imagePortada = [newUploadImage])
+        handlePrevImage(URL.createObjectURL(e.target.files[0]))
+    }
+    const handleDeletePortada = () => {
+        setImagePortada(imagePortada = [])
+        handlePrevImage("")
     }
     const handleUploadImages = (e) => {
         if (uploadImages.length < 3) {
@@ -93,9 +101,9 @@ export default function WriteNewLeft() {
                             <div className={style.mainContPortada}>
                                 <Image onClick={handlePopUpPortada}
                                        priority={true}
-                                       objectFit={"cover"} objectPosition={"top"} layout={"fill"}
+                                       objectFit={"cover"} layout={"fill"}
                                        src={imagePortada[0].ProvisoryUrl} alt={""}/>
-                                <button onClick={() => setImagePortada(imagePortada = [])}
+                                <button onClick={handleDeletePortada}
                                         className={style.positonDeleteIcon}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
                                 </button>
@@ -103,9 +111,9 @@ export default function WriteNewLeft() {
                             :
                             <>
                                 <div className={style.mainContPortada}>
-                                    <label  htmlFor={idUploadPortada}>
+                                    <label htmlFor={idUploadPortada}>
                                         <Image style={{background: "#f8f8f8"}} priority={true} layout={"fill"}
-                                               objectFit={"contain"} src="/images/placeholderImageUpload.png" alt={""}/>
+                                               objectFit={"contain"} src="/images/placeholderImageRec.png" alt={""}/>
                                     </label>
                                 </div>
                                 <input onChange={handleUploadPortada}
@@ -158,7 +166,7 @@ export default function WriteNewLeft() {
                 <div className={`${style.mainContaExtraImage} ${style.boxUploadInput}`}>
                     <label className={style.labelStyle} htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
                         <Image priority={true} objectFit={"cover"} layout={"fill"}
-                               src="/images/placeholderImageUpload.png" alt={""}/>
+                               src="/images/placeholderImageSquare.png" alt={""}/>
                     </label>
                     <input onChange={handleUploadImages}
                            className="h-0 w-0 absolute overflow-hidden"

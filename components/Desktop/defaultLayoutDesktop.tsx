@@ -11,10 +11,11 @@ export default function DefaultLayoutDesktop({children, isDarkMode, darkModeTogg
                                                  }) {
     const listMenu = Menu.listMenu
     const cssStyle = getCssStyle()
+    const limitHeader: boolean = true
     return (
         <div className={cssStyle.bgBod}>
-            <HeaderSpixDesktop darkMode={isDarkMode} isLogged={isLogged} toggleDarkMode={darkModeToggle}/>
-            <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={listMenu}/>
+            <HeaderSpixDesktop limit={limitHeader} darkMode={isDarkMode} isLogged={isLogged} toggleDarkMode={darkModeToggle}/>
+            <MenuSpixDesktop limit={limitHeader} darkMode={isDarkMode} listItemMEnu={listMenu}/>
             {children}
         </div>
     )

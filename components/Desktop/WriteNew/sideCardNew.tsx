@@ -1,21 +1,34 @@
-import style from "/styles/Desktop/WriteNew/writeNew.module.css"
+import style from "/styles/Desktop/WriteNew/writeNew.module.css";
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
-import {EventPageEvent} from "../../../dataDemo/data";
 import React from "react";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 
-export default function SideCardNew() {
+const writeNew: string = "Leer noticia";
+const today: string = "Hoy";
+
+export class SideNewPop {
+    Id: string
+    PathBanner: string
+    Title: string
+    SubTitle: string
+    Rating: number
+    PathImageNew: string
+    TitleNew: string
+    SubtitleNew: string
+}
+
+export default function SideCardNew({item}: { item: SideNewPop }) {
     const newItem: PrincipalInfoEventPropMob = {
-        Title: "Tributo a PetShop Boys y A ha",
-        Subtitle: "Lo mejor del rock ochentero",
+        Title: item.Title,
+        Subtitle: item.SubTitle,
         isDarkMode: false,
-        Rating: 20
+        Rating: item.Rating
     }
     return (
         <div>
             <div className={style.bannerStyle}>
-                <Image layout={"fill"} objectFit={"cover"} src={EventPageEvent.eventPage.BannerPath} alt={""}/>
+                <Image layout={"fill"} objectFit={"cover"} src={item.PathBanner} alt={""}/>
             </div>
             <div className={style.mainDivPadding}>
                 <div className={style.mainContInfo}>
@@ -25,20 +38,20 @@ export default function SideCardNew() {
                 <div className={style.mainContPrevNew}>
                     <div className={utilities.borderCardDesktopNoHover}>
                         <div className={style.stylePortada}>
-                            <Image layout={"fill"} src={"/images/new2.webp"} alt={""}/>
+                            <Image layout={"fill"} objectFit={"cover"} src={item.PathImageNew} alt={""}/>
                         </div>
                         <div className={style.gridNew}>
                             <div className={`${style.title} ${utilities.clamp1}`}>
-                                Titulo noticia para comprobar el largo
+                                {item.TitleNew}
                             </div>
                             <div className={`${style.subtitle} ${utilities.clamp2}`}>
-                                Bajada noticia para comprobar el largo con el que se va a ver cuando se ponga cada uno de los
+                                {item.SubtitleNew}
                             </div>
                             <div className={utilities.fontPrimaryText}>
-                                Hoy
+                                {today}
                             </div>
                             <div className={utilities.styleLink}>
-                                Leer noticia
+                                {writeNew}
                             </div>
                         </div>
                     </div>

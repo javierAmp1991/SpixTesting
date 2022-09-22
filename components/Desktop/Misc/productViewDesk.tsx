@@ -17,10 +17,14 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
                     </div>
                 </div>
 
-            <div className={utilities.positionLastTicket}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                       alt=""/>
-            </div>
+            {
+                item.Include != null &&
+                <div className={utilities.positionLastTicket}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
+                           alt=""/>
+                </div>
+            }
+
 
             <div className={style.gridInfoProduct}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>

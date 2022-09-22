@@ -6,7 +6,7 @@ import {ResumeReviews} from "../dataDemo/data";
 import {EventPageEvent} from "../dataDemo/data";
 import {HomeNewsData} from "../dataDemo/data";
 import {ListOffertData} from "../dataDemo/data";
-import {ListProductsExtra} from "../dataDemo/data";
+import {ListProductsExtra, ListProductsExtraOffer} from "../dataDemo/data";
 import {ListProducts} from "../dataDemo/data";
 import {FormList} from "../dataDemo/data";
 import styleDesk from "/styles/Desktop/EventPage/eventPageDesk.module.css"
@@ -51,6 +51,7 @@ import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import {InOfferHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
+import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -288,6 +289,21 @@ export default function EventPage() {
             }
         </LayoutCarrousel>
     </TitleSection>
+
+    let [getProducstOffer, setGetProducstOffer] = useState(0)
+    const handleGetProductsOffer = (e) => setGetProducstOffer(getProducstOffer = e)
+    let productsDeskOffer = <TitleSection titleLink={productstTitle}
+                                     paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
+        <LayoutCarrousel sumar={3} handleFeatured={handleGetProductsOffer} layoutProp={layoutPropProducts}>
+            {
+                ListProductsExtraOffer.listProducts.map((item, index) =>
+                    index >= getProducstOffer && index <= getProducstOffer + 3 &&
+                    <ProductViewSquare isDisplayOffer={true} size={null} key={index} item={item}/>
+                )
+            }
+        </LayoutCarrousel>
+    </TitleSection>
+
     let [getExtra, setGetExtra] = useState(0)
     const handleGetExtra = (e) => setGetExtra(getExtra = e)
     let eventExtraDesk = <TitleSection titleLink={otherEventTitle}
@@ -307,9 +323,13 @@ export default function EventPage() {
             padding: paddingEventInformation
         },
         {
+            Component: productsDeskOffer,
+            padding: paddingDefaultSectionDeskCarrousel
+        },
+       /* {
             Component: moreOffertDesk,
             padding: paddingDefaultSectionDesk
-        },
+        },*/
         {
             Component: productsDesk,
             padding: paddingDefaultSectionDeskCarrousel

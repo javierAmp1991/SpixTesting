@@ -7,6 +7,15 @@
     padding: 10px 24px;
 }
 
+.gridHeaderLimit {
+    display: grid;
+    grid-template-columns: repeat(2, max-content) 1fr repeat(2, max-content);
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 24px;
+    padding: 10px 0;
+}
+
 .bgHeaderSpix {
     background: rgb(7, 99, 185);
     background: linear-gradient(180deg, rgba(7, 99, 185, 1) 0%, rgba(6, 91, 172, 1) 100%);

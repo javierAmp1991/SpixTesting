@@ -1,13 +1,14 @@
 import style from "/styles/Desktop/Misc/menuSpixDesktop.module.css"
 import {MenuHeader} from "../../../dataDemo/data";
 import Link from "next/link";
+import utilities from "/styles/utilities.module.css";
 
-export default function MenuSpixDesktop({listItemMEnu, darkMode}:
-                                            { listItemMEnu: MenuHeader[], darkMode: boolean }) {
+export default function MenuSpixDesktop({listItemMEnu, darkMode, limit}:
+                                            { listItemMEnu: MenuHeader[], darkMode: boolean, limit: boolean }) {
     let cssStyles = getCssStyle()
     return (
-        <div className={`${cssStyles.bg} pl-8 py-2 w-full m-auto`}>
-            <div className={style.gridTagsMenu}>
+        <div className={`${cssStyles.bg} ${cssStyles.StyleLimit}`}>
+            <div className={`${style.gridTagsMenu} ${cssStyles.limitDiv}`}>
                 {
                     listItemMEnu.map(menuTag =>
                         <Link key={menuTag.Id} href={menuTag.Link}>
@@ -23,7 +24,9 @@ export default function MenuSpixDesktop({listItemMEnu, darkMode}:
 
     function getCssStyle() {
         return {
-            bg: darkMode ? style.bgMenuDarkMode : style.bgMenu
+            bg: darkMode ? style.bgMenuDarkMode : style.bgMenu,
+            StyleLimit: limit? style.mainContMenuLimit : style.mainContMenu,
+            limitDiv: limit && utilities.maxWidthBodyContentSpix
         }
     }
 }
