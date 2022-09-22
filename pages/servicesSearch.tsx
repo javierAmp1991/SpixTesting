@@ -23,6 +23,7 @@ import {
 } from "../dataDemo/data";
 import {DropDownServvicesSearch} from "../dataDemo/search/searchData";
 import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -36,11 +37,9 @@ export default function SearchServices() {
     const darkModeToggle = null
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const handleOpenFilter = () => setIsOpenFilters(isOpenFilters = !isOpenFilters);
-    const isSmallDown = useMediaQuery('(max-width: 1280px)');
+    const isSmallDown = useMediaQuery('(max-width: 1281px)');
     let cssStyle = getCssStyle();
     const textResultSection: string = "Servicios";
-    const isReview: boolean = true;
-    const isVertical: boolean = false;
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
@@ -128,8 +127,8 @@ export default function SearchServices() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={utilities.maxWidthBodyContentSpix}>
+                <LayoutSearchDesktop>
+                    <>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
@@ -156,8 +155,8 @@ export default function SearchServices() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 

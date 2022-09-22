@@ -23,6 +23,7 @@ import {
 } from "../dataDemo/data";
 import {DropDownRestaurantSearch} from "../dataDemo/search/searchData";
 import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
+import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -127,8 +128,8 @@ export default function SearchRestaurant() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <div className={`${cssStyle.bg} ${utilities.maxWidthBodyContentSpix}`}>
-                    <div className={utilities.maxWidthBodyContentSpix}>
+                <LayoutSearchDesktop>
+                    <>
                         <div className={`${cssStyle.mainContainer} ${cssStyle.bgInfo}`}>
                             {
                                 <MainContainerFilters listPrincipalFilter={categoryPrincipalFilter}
@@ -155,8 +156,8 @@ export default function SearchRestaurant() {
                             </div>
                             {buttonsNavegation}
                         </div>
-                    </div>
-                </div>
+                    </>
+                </LayoutSearchDesktop>
             </DefaultLayoutDesktop>
     )
 
