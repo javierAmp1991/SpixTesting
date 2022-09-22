@@ -29,6 +29,7 @@ import DetailsPayMobile from "../components/Mobile/PayPage/detailsPayMobile";
 import {useState} from "react";
 import Image from "next/image";
 import {GlobalConst} from "../public/globalConst";
+import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 
 export default function PayPage() {
     const isSmallDown = useMediaQuery(mediaQuery);
@@ -94,7 +95,8 @@ export default function PayPage() {
                         <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
                         :
                         <>
-                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug} isDarkMode={isDarkMode}/>
+                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug}
+                                              isDarkMode={isDarkMode}/>
                             <MenuSpixMobile listItemMenu={Menu.listMenu} isDarkMode={isDarkMode}/>
                             <div className={styleMobile.mainCont}>
                                 {
@@ -108,15 +110,11 @@ export default function PayPage() {
                 }
             </div>
             :
-            <div>
-                <HeaderSpixDesktop isLogged={isLogged}
-                                   toggleDarkMode={toggleDarkMode}
-                                   darkMode={isDarkMode}/>
-                <MenuSpixDesktop darkMode={isDarkMode} listItemMEnu={Menu.listMenu}/>
+            <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={isLogged} darkModeToggle={null}>
                 <div className={`${utilities.maxWidthBodyContentSpix} ${styleDesk.mainContent}`}>
                     <LayoutSideCard childrens={childrens}/>
                 </div>
-            </div>
+            </DefaultLayoutDesktop>
     )
 
     function getTotalProducts(): number {
