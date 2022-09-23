@@ -1,0 +1,8 @@
+.mainDiv{
+    display: grid;
+    gap: 8px;
+    border: 1px solid var(--separationLineColor);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 12px;
+}

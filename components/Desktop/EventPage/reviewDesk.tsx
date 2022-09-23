@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function ReviewDesk({item}: { item: review }) {
     return (
-        <div className="grid gap-3">
+        <div className={style.mainDiv}>
             <div className={`${utilities.gridMaxContent2} gap-3`}>
                 <div className={utilities.gridContentCenter}>
                     <div className={style.sizeReviewImage}>
