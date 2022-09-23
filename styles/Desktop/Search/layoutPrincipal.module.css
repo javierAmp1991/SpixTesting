@@ -1,8 +1,8 @@
 .gridPrincipal {
     display: grid;
-    grid-template-columns: 310px 1fr;
-    margin-top: 40px;
-    padding-bottom: 40px;
+    grid-template-columns: 260px 1fr;
+    margin-top: 16px;
+    padding-bottom: 16px;
 }
 
 .gridPrincipalNews {
@@ -62,7 +62,7 @@
 }
 
 .paddingLeftResult {
-    padding-left: 35px;
+    padding-left: 20px;
     /*padding-right: 16px;*/
 }
 
@@ -196,32 +196,32 @@
 
 .gridProductOffer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 16px;
 }
 
 .layoutResaleTicket {
     display: grid;
-    width: 1280px;
+    width: 1300px;
     margin: auto;
     padding-top: 20px;
 }
 
 .layoutNews {
     display: grid;
-    width: 1440px;
+    width: 1300px;
     margin: auto;
     padding-top: 20px;
 }
 
-.layoutOfferSelected{
+.layoutOfferSelected {
     display: grid;
-    width: 900px;
+    width: 1300px;
     margin: auto;
     padding-top: 20px;
 }
 
-.gridPrinciaplNews{
+.gridPrinciaplNews {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;

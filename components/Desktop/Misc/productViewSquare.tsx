@@ -26,7 +26,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                 <div>
                     {item.Name}
                 </div>
-                <div className={`${utilities.fontPriceInclude}`}>
+                <div className={`${utilities.fontPriceIncludeDesktop}`}>
                     ${getMoneyValue(item.Price)}
                 </div>
                 {
@@ -59,7 +59,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
     function getProductSize() {
         return {
             widthContainer: size != null ? {height: size, width: size} : {},
-            sizeImage: size != null ? {width: size - 57} : {}
+            sizeImage: size != null ? {width: size} : {}
         }
     }
 }

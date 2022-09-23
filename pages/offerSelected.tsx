@@ -30,6 +30,7 @@ import RatingStar from "../components/Mobile/Misc/ratingStar";
 import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 import OrderBy from "../components/Desktop/Search/orderBy";
+import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -157,7 +158,7 @@ export default function ResaleTicketSearch() {
                     <div className={style.gridProductOffer}>
                         {
                             ListProducts.listProducts.map((item, index) =>
-                                <ProductViewDesk key={index} item={item} size={null}
+                                <ProductViewSquare key={index} item={item} size={null}
                                                  isDisplayOffer={true}/>)
                         }
                     </div>

@@ -53,9 +53,9 @@ const listImageNewW: cate[] = [
      {Image:"/images/auto15.jpg", Name:"Tributos"},
      {Image:"/images/auto16.jpg", Name:"Pasteleria"},*/
 ];
-const widthCat: number = 60;
-const numberItems: number = 10;
-const gap: number = ((1430 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
+const widthCat: number = 70;
+const numberItems: number = 9;
+const gap: number = ((1340 - ((widthCat + 50) * numberItems)) / (numberItems - 1))
 export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
                                                 {
                                                     gapLayout: number,

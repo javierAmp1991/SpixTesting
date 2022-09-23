@@ -1,5 +1,5 @@
 .gridPrincipal {
     display: grid;
-    grid-template-columns: 310px 1fr;
-    margin-top: 40px;
+    grid-template-columns: 280px 1fr;
+    margin-top: 10px;
 }

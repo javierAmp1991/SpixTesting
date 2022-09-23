@@ -1,4 +1,3 @@
-
 export enum EventCardType {
     EventCardBase,
     EventCardWithPrice,
@@ -34,7 +33,7 @@ export class EventCardResale extends BaseEventCard {
     TotalResale: number
 }
 
-export class EventCardWithOffer extends BaseEventCard{
+export class EventCardWithOffer extends BaseEventCard {
     ListTagsOffer: string[]
     TotalOffers: number
 }
@@ -353,157 +352,135 @@ export namespace InOfferHome {
 }
 
 export namespace InOfferHomeBase {
-    export const list: EventCardFull[] = [
+    export const list: EventCardWithPrice[] = [
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "12",
             Title: "Tenemos Explosivos",
             Subtitle: "Tenemos Explosivos",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta6.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "123",
             Title: "KEVIN CORRAL",
             Subtitle: "KEVIN CORRAL",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/oferta2.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "1234",
             Title: "Mundos Magicos",
             Subtitle: "Mundos Magicos",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta3.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "12345",
             Title: "Tributo Bon Jovi",
             Subtitle: "Tributo Bon Jovi",
-            Rating: 300,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/oferta4.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "123456",
             Title: "Aura club",
             Subtitle: "Aura club",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 3000,
             PathImage: "/images/oferta5.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "1234567",
             Title: "Todas Partes",
             Subtitle: "Todas Partes",
-            Rating: 300,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta1.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "12",
             Title: "Tenemos Explosivos",
             Subtitle: "Tenemos Explosivos",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta6.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "123",
             Title: "KEVIN CORRAL",
             Subtitle: "KEVIN CORRAL",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/oferta2.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "1234",
             Title: "Mundos Magicos",
             Subtitle: "Mundos Magicos",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 5000,
             PathImage: "/images/oferta3.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "12345",
             Title: "Tributo Bon Jovi",
             Subtitle: "Tributo Bon Jovi",
-            Rating: 300,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 9990,
             PathImage: "/images/oferta4.jpg",
         },
         {
-            Type: EventCardType.EventCardBase,
+            Type: EventCardType.EventCardWithPrice,
             MinPrice: 2990,
             MaxPrice: 9990,
-            MinDate: new Date(2022, 10, 11),
-            MaxDate: new Date(2022, 11, 25),
             Id: "123456",
             Title: "Aura club",
             Subtitle: "Aura club",
-            Rating: 30,
+            Rating: null,
             TotalTickets: 10000,
             SoldTickets: 3000,
             PathImage: "/images/oferta5.jpg",
@@ -1264,7 +1241,77 @@ export namespace MoreOfferSearch {
     ]
 }
 
-export namespace OfferSearch{
+export namespace DailyOfferDeskOffer {
+    export const list: EventCardWithOffer[] = [
+        {
+            Title: "Tributo a Pet Shop Boys y A Ha",
+            Subtitle: "Lo mejor del Rock Internacional",
+            PathImage: "/images/inOffer1.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["2 x 1", "Dcto 2da uni"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Star Wars Sinfonico",
+            Subtitle: "Orquesta Internacional",
+            PathImage: "/images/inOffer2.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 400,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["50% dcto", "2 x 1"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Seafret, most of us",
+            Subtitle: "Latin American Tour",
+            PathImage: "/images/inOffer3.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["50% dcto"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Nikkita Wild",
+            Subtitle: "Nikkita wild",
+            PathImage: "/images/inOffer4.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["50% dcto", "Dcto 2da uni"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Moonage Daydream",
+            Subtitle: "Pelicula de Brett Morgen",
+            PathImage: "/images/inOffer5.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardType.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["Dcto 2da uni"],
+            TotalOffers: 10
+        },
+    ]
+}
+
+export namespace OfferSearch {
     export const list: EventCardWithOffer[] = [
         {
             Title: "Tributo a Pet Shop Boys y A Ha",
@@ -1276,7 +1323,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/offerSelected",
-            ListTagsOffer: ["2 x 1", "Dcto 2da uni" ],
+            ListTagsOffer: ["2 x 1", "Dcto 2da uni"],
             TotalOffers: 10
         },
         {
@@ -1289,7 +1336,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/offerSelected",
-            ListTagsOffer: ["50% dcto", "2 x 1" ],
+            ListTagsOffer: ["50% dcto", "2 x 1"],
             TotalOffers: 10
         },
         {
@@ -1302,7 +1349,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/offerSelected",
-            ListTagsOffer: ["50% dcto" ],
+            ListTagsOffer: ["50% dcto"],
             TotalOffers: 10
         },
         {
@@ -1315,7 +1362,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/offerSelected",
-            ListTagsOffer: ["50% dcto", "Dcto 2da uni" ],
+            ListTagsOffer: ["50% dcto", "Dcto 2da uni"],
             TotalOffers: 10
         },
         {
@@ -1328,7 +1375,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/offerSelected",
-            ListTagsOffer: ["Dcto 2da uni" ],
+            ListTagsOffer: ["Dcto 2da uni"],
             TotalOffers: 10
         },
         {
@@ -1341,7 +1388,7 @@ export namespace OfferSearch{
             Type: EventCardType.EventCardWithOffer,
             Id: "12",
             Link: "/offerSelected",
-            ListTagsOffer: ["50% dcto" ],
+            ListTagsOffer: ["50% dcto"],
             TotalOffers: 10
         }
     ]

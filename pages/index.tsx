@@ -41,7 +41,13 @@ import {Cines} from "../dataDemo/data";
 import {Restaurants} from "../dataDemo/data";
 import {AtributesFooter} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
-import {BaseEventCard, InOfferHome, TodayInValpoFull, DropDownHome, InOfferHomeBase} from "../dataDemo/EventView/eventVerticalView";
+import {
+    BaseEventCard,
+    InOfferHome,
+    TodayInValpoFull,
+    DropDownHome,
+    InOfferHomeBase, DailyOfferDeskOffer
+} from "../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
@@ -59,7 +65,7 @@ import ImageGradientView from "../components/Desktop/EventsView/ImageGradientVie
 import {
     TodayInValpoGradient,
     InOfferHomeGradient,
-    MostPopularGradient
+    MostPopularGradient,
 } from "../dataDemo/EventView/EventCardWithGradient";
 import ImageGradientViewMobile from "../components/Mobile/Events/ImageGradientView";
 import Image from "next/image";
@@ -67,7 +73,7 @@ import PublicityVertical, {VerticalPublicityProp} from "../components/Desktop/CR
 //endregion
 
 //region constantes
-const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "#"]
+const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas del dia", "#"]
 const mostPopularTleLink: [string, string] = ["Mas Populares", "#"]
 const featuredHomeTitleLink: [string, string] = ["Destacados", "#"]
 const todayInValpoTitleLink: [string, string] = ["Hoy en Valparaiso", "#"]
@@ -97,6 +103,14 @@ const gridTemplateColum6: string = "repeat(6,1fr)"
 const positionArrowIn: string = "5px"
 const positionArrowOut: string = "-40px"
 const positionArrowY: string = "calc(50% - 16px)"
+const layoutPropDailyOffers: LayoutCarrouselDeskProp = {
+    Display: displayCarrousel,
+    Grid: gridTemplateColum5,
+    Gap: gapLayout,
+    Padding: spaceComponents,
+    PositionArrowX: positionArrowOut,
+    PositionArrowY: positionArrowY
+}
 const layoutPropBanner: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
     Grid: gridFullSpace,
@@ -414,13 +428,21 @@ export default function Index() {
      </LayoutCarrouselLoop>*/
 
     /* let information = <HomeInformation listItem={InformationHomeData.listInformationHome} darkModeState={isDarkMode}/>*/
-
-    let dailyOffer = <TitleSection paddingTitle={titleLinkPadding} titleLink={dailyOfferHeaderTitleLink}
+    let [getDailyOffer, setDailyOffer] = useState(0)
+    const handleDailyOffer = (e) => setDailyOffer(getDailyOffer = e)
+    let dailyOffer = <TitleSection paddingTitle={null} titleLink={dailyOfferHeaderTitleLink}
                                    darkModeState={isDarkMode}>
-        <div className={"grid grid-cols-2 gap-4"}>
+        {/*<div className={"grid grid-cols-2 gap-4"}>
             <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
             <EventWithBannerView sizeImageProduct={null} darkModeState={isDarkMode} item={DailyOfferData2.dailyOffer}/>
-        </div>
+        </div>*/}
+        <LayoutCarrousel layoutProp={layoutPropDailyOffers} handleFeatured={handleDailyOffer} sumar={4}>
+            {
+                DailyOfferDeskOffer.list.map(item =>
+                <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>)
+            }
+
+        </LayoutCarrousel>
 
     </TitleSection>
 
@@ -429,10 +451,10 @@ export default function Index() {
         {
             <LayoutRow5 gapLayout={20}>
                 {
-                    /*MostPopularDataHome.list.map((item) =>
-                        <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>)*/
-                    MostPopularGradient.list.map((item) =>
-                        <ImageGradientView isDarkMode={isDarkMode} item={item} key={item.Id}/>)
+                    MostPopularDataHome.list.map((item) =>
+                        <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>)
+                    /*MostPopularGradient.list.map((item) =>
+                        <ImageGradientView isDarkMode={isDarkMode} item={item} key={item.Id}/>)*/
                 }
             </LayoutRow5>
         }
@@ -464,7 +486,7 @@ export default function Index() {
                     /*TodayInValpoGradient.list.map((item, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
                         <ImageGradientView isDarkMode={isDarkMode} item={item}/>)*/
-                    InOfferHomeBase.list.map((item: BaseEventCard, index) =>
+                    TodayInValpoFull.list.map((item: BaseEventCard, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
                         <EventVerticalView darkModeState={isDarkMode}
                                            item={item}
@@ -485,7 +507,7 @@ export default function Index() {
             {
                 Cines.listCines.map((item, index) =>
                     index >= getCarrouselRounded1 && index <= getCarrouselRounded1 + 5 &&
-                        <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
+                    <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
                 )
             }
         </LayoutCarrousel>
@@ -536,7 +558,7 @@ export default function Index() {
             {
 
                 Restaurants.listRestaurants.map((item, index) =>
-                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 4 &&
+                    index >= getCarrouselRounded2 && index <= getCarrouselRounded2 + 5 &&
                     <HomeRoundedView info={item} darkModeState={isDarkMode} key={index}/>
                 )
             }
@@ -557,15 +579,15 @@ export default function Index() {
             Id: "wdadak231",
             PathImage: "/images/verticalPublicity.jpg",
             Link: "",
-            Width: 300,
-            Height: 885
+            Width: 243,
+            Height: 875
         },
         {
             Id: "asdjdj39934as",
             PathImage: "/images/verticalPublicity2.jpg",
             Link: "",
-            Width: 300,
-            Height: 885
+            Width: 243,
+            Height: 875
         }
     ]
 
