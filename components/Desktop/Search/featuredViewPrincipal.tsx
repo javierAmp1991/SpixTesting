@@ -10,6 +10,7 @@ import {DateInfoProp} from "../Misc/dateInfoEvent";
 import PriceIncludeInfoEvent from "../Misc/priceIncludeInfoEvent";
 import {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
 import ProductViewDesk from "../Misc/productViewDesk";
+import ProductViewSquare from "../Misc/productViewSquare";
 
 export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }) {
     let [selectedItem, setSelectedItem] = useState(0)
@@ -58,8 +59,8 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                     <div className={style.mainDivProducts}>
                         {
                             item.ListProducts.map((item, index) =>
-                                index >= 0 && index <= 3 &&
-                                <ProductViewDesk isDisplayOffer={false} item={item} size={120}/>
+                                index >= 0 && index <= 4 &&
+                                <ProductViewSquare isDisplayOffer={false} item={item} size={160}/>
                             )
                         }
                     </div>

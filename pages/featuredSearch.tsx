@@ -184,11 +184,12 @@ export default function FeaturedSearch() {
                                 <OrderBy listPrincipalFilter={listPrincipalFilters} isDarkMode={isDarkMode}/>
                                 <div className={style.PrincipalGridNews}>
                                     <FeaturedViewPrincipal item={PrincipalFeaturedSearch.item}/>
-                                    {/*<PublicityView linkImage={publicity}/>
+                                    <PublicityView linkImage={publicity}/>
 
                                     <div className={style.gridFeaturedSearch}>
                                         {dropDownFeatured}
-                                    </div>*/}
+                                    </div>
+
                                     <PublicityView linkImage={publicity1}/>
                                     <div className={style.gridSearchOpen}>
                                         {dropDownMisc}

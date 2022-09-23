@@ -68,7 +68,15 @@ export namespace PrincipalFeaturedSearch{
                     Include: null,
                     ImagePath: "/images/product9.jpg",
                     Tag: "Bebida"
-                }
+                },
+ /*               {
+                    Name: "Producto 6.6",
+                    Price: 10990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product8.jpg",
+                    Tag: "Energeticas"
+                },*/
             ]
         }
 }
@@ -464,7 +472,6 @@ export namespace FeaturedListSearch {
         },
     ]
 }
-
 
 export namespace FeaturedListHome {
     export const list: BaseFeaturedView[] = [
