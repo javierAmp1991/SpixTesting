@@ -44,14 +44,14 @@ export default function ReviewSearch() {
     let [displayNextEvent, setDisplayNextEvent] = useState(true)
     const handleDisplayNextEvent = () => setDisplayNextEvent(displayNextEvent = !displayNextEvent)
 
-/*    const isCategory: boolean = true;
-    const isDisplayCategory: boolean = true;
-    const isSubCategory: boolean = false;
-    const isDisplaySubCategory: boolean = true;
-    const isPrincipalFill: boolean = true;
-    const isDisplayPrincipalFill: boolean = true;
-    const isAdvancedFilter: boolean = false;
-    const isDisplayAdvancedFilter: boolean = false;*/
+    /*    const isCategory: boolean = true;
+        const isDisplayCategory: boolean = true;
+        const isSubCategory: boolean = false;
+        const isDisplaySubCategory: boolean = true;
+        const isPrincipalFill: boolean = true;
+        const isDisplayPrincipalFill: boolean = true;
+        const isAdvancedFilter: boolean = false;
+        const isDisplayAdvancedFilter: boolean = false;*/
 
     //region desktop Components
 
@@ -171,13 +171,16 @@ export default function ReviewSearch() {
                                     {newsText}
                                 </div>*/}
                         <div className={style.PrincipalGridNews}>
-                            <NewSearcPrincipalDesktop item={newSearchList[0]}/>
+                            <div className={style.gridPrinciaplNews}>
+                                <NewSearcPrincipalDesktop item={newSearchList[0]}/>
+                                <NewSearcPrincipalDesktop item={newSearchList[0]}/>
+                            </div>
                             <PublicityView linkImage={publicity}/>
 
-                            <div className={style.gridNews2}>
+                            <div className={style.gridNews3}>
                                 {
                                     newSearchList.map((item, index) =>
-                                        index >= 1 && index <= 2 &&
+                                        index >= 1 && index <= 3 &&
                                         <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true}
                                                            key={item.Id} item={item}/>
                                     )
@@ -185,7 +188,7 @@ export default function ReviewSearch() {
                             </div>
                             <PublicityView linkImage={publicity1}/>
 
-                            <div className={style.gridNews3}>
+                            <div className={style.gridNews4}>
                                 {
                                     newSearchList.map((item, index) =>
                                         index > 2 &&
@@ -198,7 +201,7 @@ export default function ReviewSearch() {
                     </div>
                     {buttonsNavegation}
                 </div>
-               {/* <LayoutSearchDesktop>
+                {/* <LayoutSearchDesktop>
                     <>
                         <div className={style.gridPublicityNews}>
                             <div className={`${utilities.fontTitle}`}>

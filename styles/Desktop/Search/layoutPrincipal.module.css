@@ -95,10 +95,10 @@
     gap: 16px;
 }
 
-.gridNews2 {
+.gridNews4 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
 }
 
 .gridResaleEvents {
@@ -209,7 +209,7 @@
 
 .layoutNews {
     display: grid;
-    width: 1200px;
+    width: 1440px;
     margin: auto;
     padding-top: 20px;
 }
@@ -219,6 +219,12 @@
     width: 900px;
     margin: auto;
     padding-top: 20px;
+}
+
+.gridPrinciaplNews{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 @media (min-width: 1281px) {

@@ -56,7 +56,7 @@
 
 .gridImageInfo {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
     background: white;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .styleTitle {
-    font-size: 23px;
+    font-size: 21px;
     font-weight: 500;
 }
 

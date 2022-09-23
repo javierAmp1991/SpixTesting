@@ -13,7 +13,7 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                     </div>
                     <div className={style.gridInfo}>
                         <div className={style.grid1}>
-                            <div className={style.styleTitle}>
+                            <div className={`${style.styleTitle} ${utilities.clamp2}`}>
                                 {item.Title}
                             </div>
                             <div className={utilities.fontSecundaryText}>
@@ -21,7 +21,7 @@ export default function NewSearcPrincipalDesktop({item}: { item: News }) {
                             </div>
                         </div>
                         <div>
-                            <div className={`${style.fontSubTitle} ${utilities.clamp4}`}>
+                            <div className={`${style.fontSubTitle} ${utilities.clamp3}`}>
                                 {item.SubTitle}
                             </div>
                             <div className={`${utilities.styleLink} mt-1`}>
