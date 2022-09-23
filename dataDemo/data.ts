@@ -947,25 +947,9 @@ export namespace ListOffertData {
 export namespace ListProductsExtra {
     export const listProducts: Product[] = [
         {
-            Name: "Producto 1.1",
-            Price: 18990,
-            DiscountPercent: 10,
-            Include: null,
-            ImagePath: "/images/product1.jpg",
-            Tag: "Cerveza"
-        },
-        {
-            Name: "Producto 2.2",
-            Price: 2990,
-            DiscountPercent: 25,
-            Include: null,
-            ImagePath: "/images/product4.jpg",
-            Tag: "Energetica"
-        },
-        {
             Name: "Producto 3.3",
             Price: 990,
-            DiscountPercent: 30,
+            DiscountPercent: null,
             Include: null,
             ImagePath: "/images/product5.jpg",
             Tag: "Snack"
@@ -973,7 +957,7 @@ export namespace ListProductsExtra {
         {
             Name: "Producto 4.4",
             Price: 9990,
-            DiscountPercent: 20,
+            DiscountPercent: null,
             Include: null,
             ImagePath: "/images/product6.jpg",
             Tag: "Energetica"
@@ -981,7 +965,7 @@ export namespace ListProductsExtra {
         {
             Name: "Producto 5.5",
             Price: 10990,
-            DiscountPercent: 30,
+            DiscountPercent: null,
             Include: null,
             ImagePath: "/images/product7.jpg",
             Tag: "Bebida"
@@ -989,7 +973,7 @@ export namespace ListProductsExtra {
         {
             Name: "Producto 6.6",
             Price: 10990,
-            DiscountPercent: 30,
+            DiscountPercent: null,
             Include: null,
             ImagePath: "/images/product8.jpg",
             Tag: "Energeticas"
@@ -997,10 +981,34 @@ export namespace ListProductsExtra {
         {
             Name: "Producto 1.1",
             Price: 18990,
-            DiscountPercent: 10,
+            DiscountPercent: null,
             Include: null,
             ImagePath: "/images/product1.jpg",
             Tag: "Cerveza"
+        },
+        {
+            Name: "Producto 2.2",
+            Price: 2990,
+            DiscountPercent: null,
+            Include: null,
+            ImagePath: "/images/product4.jpg",
+            Tag: "Energetica"
+        },
+        {
+            Name: "Producto 1.1",
+            Price: 18990,
+            DiscountPercent: null,
+            Include: null,
+            ImagePath: "/images/product1.jpg",
+            Tag: "Cerveza"
+        },
+        {
+            Name: "Producto 6.6",
+            Price: 10990,
+            DiscountPercent: null,
+            Include: null,
+            ImagePath: "/images/product8.jpg",
+            Tag: "Energeticas"
         },
     ]
 }

@@ -12,7 +12,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
             {
-                item.Include != null || item.DiscountPercent != 0 &&
+                item.Include != null || item.DiscountPercent != null &&
                 <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
@@ -29,21 +29,25 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                 <div className={`${utilities.fontPriceInclude}`}>
                     ${getMoneyValue(item.Price)}
                 </div>
-                <div className={`${utilities.fontSecundaryText}`}>
-                    {
-                        item.Include != null ?
-                            <>
-                                {item.Include}
-                            </>
-                            :
-                            <>
-                                <span>Antes: </span>
-                                <span className="line-through">
+                {
+                    item.Include != null || item.DiscountPercent != null &&
+                    <div className={`${utilities.fontSecundaryText}`}>
+                        {
+                            item.Include != null ?
+                                <>
+                                    {item.Include}
+                                </>
+                                :
+                                <>
+                                    <span>Antes: </span>
+                                    <span className="line-through">
                                     ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}
                                 </span>
-                            </>
-                    }
-                </div>
+                                </>
+                        }
+                    </div>
+                }
+
             </div>
         </div>
     )

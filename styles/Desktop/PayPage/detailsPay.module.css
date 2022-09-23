@@ -6,6 +6,9 @@
     padding: 23px var(--spaceXGlobal);
     position: relative;
     height: 100%;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .grid{

@@ -287,7 +287,7 @@ export default function EventPage() {
             {
                 ListProductsExtra.listProducts.map((item, index) =>
                     index >= getProducst && index <= getProducst + 3 &&
-                    <ProductViewDesk isDisplayOffer={true} size={null} key={index} item={item}/>
+                    <ProductViewSquare isDisplayOffer={false} size={null} key={index} item={item}/>
                 )
             }
         </LayoutCarrousel>
