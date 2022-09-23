@@ -72,6 +72,7 @@
     --purpleGradientTag: rgba(232, 46, 138, 1);
     --gradientBlueButton: linear-gradient(177deg, rgba(42, 120, 247, 1) 0%, rgba(52, 128, 251, 1) 100%);
     --separationLineColor: #f0f0f0;
+    --separationLineColor2: #e0dfdf;
     --separationLineColorDarkMode: black;
     --spaceXMainContainerMobile: 12px;
     --heightRightCard: 630px;
@@ -122,7 +123,7 @@
     --colorSecundaryTextDesktop: #8e8e8e;
     --colorPriceIncludeDesktop: #1a1d1d;
     --linkColorDesktop: #2d7dff;
-    --boxShadowCardDesktop: 0 0 10px rgba(0, 0, 0, .10);
+    --boxShadowCardDesktop: 0 0 6px rgba(0, 0, 0, .20);
     --boxShadowCardDarkModeDesktop: 0 0 10px #ff7f23;
     --transformScale: 1.03;
     --transitionTimeDesktop: .4s;

@@ -4,6 +4,7 @@ import utilities from "/styles/utilities.module.css"
 const titleSection: string = "Productos seleccionados"
 import {GuestProducts} from "../../../dataDemo/data";
 import PayPageProductSelectedView from "./productSelectedView";
+import ProductViewSquare from "../Misc/productViewSquare";
 
 export default function GridSelectedItems({guestProducts, isLast}:
 { guestProducts: GuestProducts, isLast:boolean }) {
@@ -16,7 +17,7 @@ export default function GridSelectedItems({guestProducts, isLast}:
             <div className={isLast? style.gridLast : style.grid}>
                 {
                     guestProducts.ListProducts.map((item, index) =>
-                        <PayPageProductSelectedView item={item} key={index}/>
+                        <ProductViewSquare size={null} isDisplayOffer={true} item={item} key={index}/>
                     )
                 }
             </div>
