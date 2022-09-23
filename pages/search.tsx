@@ -18,6 +18,7 @@ import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {CategoryPrincipalFilters} from "../dataDemo/data";
 import {BaseEventCard, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -144,6 +145,7 @@ export default function Search() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Resultados de {"conciertos"}
                                 </div>*/}
+                                <OrderBy listPrincipalFilter={listPrincipalFilters} isDarkMode={isDarkMode}/>
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
                                 </div>

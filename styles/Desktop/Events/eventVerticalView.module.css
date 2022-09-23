@@ -36,6 +36,13 @@
     aspect-ratio: 1/1;
 }
 
+.sizeImageBase{
+    width: 100%;
+    position: relative;
+    z-index: 20;
+    aspect-ratio: 4/3;
+}
+
 .zIndexLastTicket {
     position: absolute;
     z-index: 40;

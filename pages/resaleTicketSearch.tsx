@@ -26,6 +26,7 @@ import ResaleEventDesktop from "../components/Desktop/Search/resaleEventDesktop"
 import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
 import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -148,41 +149,54 @@ export default function ResaleTicketSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <LayoutSearchDesktop>
-                    <>
-                        <div className={`${cssStyle.mainContainer}`}>
+                <div className={style.layoutResaleTicket}>
+                    <div className={style.paddingLeftResultResale}>
+                        <OrderBy listPrincipalFilter={principalFilterReview} isDarkMode={isDarkMode}/>
+                        <div className={style.gridResaleEvents}>
                             {
-                                <MainContainerFilters listCategoryFilter={categoryFilterRest}
-                                                      listPrincipalFilter={principalFilterReview}
-                                                      isDarkMode={isDarkMode}
-                                                      isOpenFilter={isOpenFilters}
-
-                                                      isCategory={isCategory} isDisplayCategory={isDisplayCategory}
-                                                      isSubCategory={isSubCategory}
-                                                      isDisplaySubCategory={isDisplaySubCategory}
-                                                      IsPrincipalFill={isPrincipalFill}
-                                                      isDisplayPrincipalFill={isDisplayPrincipalFill}
-                                                      isAdvancedFilter={isAdvancedFilter}
-                                                      isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                resaleSearchList.map((item) =>
+                                    <ResaleEventDesktop key={item.Id} item={item}/>
+                                )
                             }
                         </div>
-                        <div>
-                            <div className={style.paddingLeftResultResale}>
-                                <div className={style.gridHeaderResult}>
-                                    <div className={style.sizeBanner}>
-                                        <Image layout={"fill"} src={resaleBanner} alt={""}/>
-                                    </div>
-                                    <div>
-                                        <div className={utilities.fontTitleDesktop}>
-                                            {resaleTitle}
+                    </div>
+                    {buttonsNavegation}
+                    {/*<LayoutSearchDesktop>
+                        <>
+                            <div className={`${cssStyle.mainContainer}`}>
+                                {
+                                    <MainContainerFilters listCategoryFilter={categoryFilterRest}
+                                                          listPrincipalFilter={principalFilterReview}
+                                                          isDarkMode={isDarkMode}
+                                                          isOpenFilter={isOpenFilters}
+
+                                                          isCategory={isCategory} isDisplayCategory={isDisplayCategory}
+                                                          isSubCategory={isSubCategory}
+                                                          isDisplaySubCategory={isDisplaySubCategory}
+                                                          IsPrincipalFill={isPrincipalFill}
+                                                          isDisplayPrincipalFill={isDisplayPrincipalFill}
+                                                          isAdvancedFilter={isAdvancedFilter}
+                                                          isDisplayAdvancedFilter={isDisplayAdvancedFilter}/>
+                                }
+                            </div>
+                            <div>
+                                <div className={style.paddingLeftResultResale}>
+                                    <OrderBy listPrincipalFilter={principalFilterReview} isDarkMode={isDarkMode}/>
+                                    <div className={style.gridHeaderResult}>
+                                        <div className={style.sizeBanner}>
+                                            <Image layout={"fill"} src={resaleBanner} alt={""}/>
                                         </div>
-                                        <div className={`${utilities.fontSubtitleDesktop} mt-3`}>
-                                            {resaleSubtile}
-                                        </div>
-                                        <div className={"mt-3"}>
-                                            <RatingStarDesktop item={4}/>
-                                        </div>
-                                        {/*<div className={style.gridStarNumber}>
+                                        <div>
+                                            <div className={utilities.fontTitleDesktop}>
+                                                {resaleTitle}
+                                            </div>
+                                            <div className={`${utilities.fontSubtitleDesktop} mt-3`}>
+                                                {resaleSubtile}
+                                            </div>
+                                            <div className={"mt-3"}>
+                                                <RatingStarDesktop item={4}/>
+                                            </div>
+                                            <div className={style.gridStarNumber}>
                                             <div className={`${utilities.fontPrimaryText} ${style.ratingStarProp}`}>
                                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}
                                                        alt={""}/>
@@ -190,21 +204,22 @@ export default function ResaleTicketSearch() {
                                             <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
                                                 ({resaleRating})
                                             </span>
-                                        </div>*/}
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div className={style.gridResaleEvents}>
+                                        {
+                                            resaleSearchList.map((item) =>
+                                                <ResaleEventDesktop key={item.Id} item={item}/>
+                                            )
+                                        }
                                     </div>
                                 </div>
-                                <div className={style.gridResaleEvents}>
-                                    {
-                                        resaleSearchList.map((item) =>
-                                            <ResaleEventDesktop key={item.Id} item={item}/>
-                                        )
-                                    }
-                                </div>
+                                {buttonsNavegation}
                             </div>
-                            {buttonsNavegation}
-                        </div>
-                    </>
-                </LayoutSearchDesktop>
+                        </>
+                    </LayoutSearchDesktop>*/}
+                </div>
             </DefaultLayoutDesktop>
     )
 

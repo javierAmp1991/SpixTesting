@@ -94,7 +94,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
                         </div>
                     }
-                    <div className={styles.sizeImage}>
+                    <div className={cssStyles.ImageProportion}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
                     </div>
                 </a>
@@ -105,50 +105,53 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     <PrincipalInfoEvent item={principalInfoEventProp}/>
                 </div>
 
-                <div className={styles.bottomDivSearch}>
-                    {
-                        item.Type == EventCardType.EventCardWithDate &&
-                        <DateInfoEvent item={dateInfo}/>
-                    }
+                {
+                    item.Type != EventCardType.EventCardBase &&
+                    <div className={styles.bottomDivSearch}>
+                        {
+                            item.Type == EventCardType.EventCardWithDate &&
+                            <DateInfoEvent item={dateInfo}/>
+                        }
 
-                    {
-                        item.Type == EventCardType.EventCardWithPrice &&
-                        <PriceIncludeInfoEvent item={priceIncludeInfo}/>
-                    }
+                        {
+                            item.Type == EventCardType.EventCardWithPrice &&
+                            <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+                        }
 
-                    {
-                        item.Type == EventCardType.EventCardFull &&
-                        <>
-                            <DateInfoEvent item={dateInfoFull}/>
-                            <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
-                        </>
-                    }
+                        {
+                            item.Type == EventCardType.EventCardFull &&
+                            <>
+                                <DateInfoEvent item={dateInfoFull}/>
+                                <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
+                            </>
+                        }
 
-                    {
-                        item.Type == EventCardType.EventCardWithResale &&
-                        <div className={styles.textResaleOffer}>
-                            {totalResaleText} {itemWithResale.TotalResale}
-                        </div>
-                    }
-
-                    {
-                        item.Type == EventCardType.EventCardWithOffer &&
-                        <>
-                            <div className={styles.gridTags}>
-                                {
-                                    itemWithOffer.ListTagsOffer.map(item =>
-                                        <div key={item} className={styles.tagStyleDisc}>
-                                            {item}
-                                        </div>
-                                    )
-                                }
-                            </div>
+                        {
+                            item.Type == EventCardType.EventCardWithResale &&
                             <div className={styles.textResaleOffer}>
-                                Productos en oferta: {itemWithOffer.TotalOffers}
+                                {totalResaleText} {itemWithResale.TotalResale}
                             </div>
-                        </>
-                    }
-                </div>
+                        }
+
+                        {
+                            item.Type == EventCardType.EventCardWithOffer &&
+                            <>
+                                <div className={styles.gridTags}>
+                                    {
+                                        itemWithOffer.ListTagsOffer.map(item =>
+                                            <div key={item} className={styles.tagStyleDisc}>
+                                                {item}
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                <div className={styles.textResaleOffer}>
+                                    Productos en oferta: {itemWithOffer.TotalOffers}
+                                </div>
+                            </>
+                        }
+                    </div>
+                }
             </div>
         </div>
     )
@@ -157,6 +160,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         return {
             borderCard: darkModeState ? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop,
             bgInfo: darkModeState ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
+            ImageProportion: item.Type == EventCardType.EventCardBase ? styles.sizeImageBase : styles.sizeImage
         }
     }
 }

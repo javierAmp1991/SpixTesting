@@ -24,7 +24,7 @@ export default function ReviewSearchViewDesktope({reviewSection}: { reviewSectio
                 {
                     reviewSection.listReview.map((item, index) =>
                         index >= 0 && index <= 1 &&
-                        <div key={index} className={style.cardReview}>
+                        <div key={index} className={`${style.cardReview} ${index == 0 && style.borderBottom}`}>
                             <div className="grid gap-3">
                                 <div className={style.gridProfile}>
                                     <div className={style.sizeProfile}>

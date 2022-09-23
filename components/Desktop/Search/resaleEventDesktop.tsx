@@ -158,29 +158,19 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                         </div>
 
                         <div className={style.divTotal}>
-                            <div className={`${utilities.font12} ${utilities.gridMaxContent2} gap-2 mb-2`}>
-                                {
-                                    item.PreviousPrice > item.Price ?
-                                        <span><Image width={14} height={10} src={"/images/dollarDown.png"}
-                                                     alt={""}/> </span>
-                                        :
-                                        <span><Image width={14} height={10} src={"/images/dollarUp.png"}
-                                                     alt={""}/> </span>
-                                }
+                            <div className={style.gridIconTotal}>
+                                <div className={style.sizeDiscountUp}>
+                                    <Image layout={"fill"} src={cssStyle.SourceImageDiscount} alt={""}/>
+                                </div>
                                 <div>
                                     <span>Antes: </span>
                                     <span className="line-through">{getMoneyValue((item.PreviousPrice))}</span>
                                 </div>
                             </div>
 
-                            <div className={`${utilities.gridMaxContent2} gap-1`}>
+                            <div className={style.gridIconPrice}>
                                 <div className={style.sizeDiscount}>
-                                    {
-                                        item.PreviousPrice > item.Price ?
-                                            <Image layout={"fill"} src={"/images/discountIcon.png"} alt={""}/>
-                                            :
-                                            <Image layout={"fill"} src={"/images/discountIconGreen.png"} alt={""}/>
-                                    }
+                                    <Image layout={"fill"} src={cssStyle.SourceImagePrice} alt={""}/>
                                 </div>
                                 <span className={utilities.fontPriceInclude}>Total: {getMoneyValue(item.Price)}</span>
                             </div>
@@ -262,12 +252,14 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
 
     function getCssStyle() {
         return {
-            gridType: item.PreviousPrice > item.Price ? style.leftDivRed : style.leftDivGreen,
-            borderType: item.PreviousPrice > item.Price ? style.borderRightDivRed : style.borderRightDivGreen,
-            borderResale: item.PreviousPrice > item.Price ? style.boxShadowRed : style.boxShadowGreen,
-            colorEti: item.PreviousPrice > item.Price ? style.etiquetaRed : style.etiquetaGreen,
-            trapecio: item.PreviousPrice > item.Price ? style.trapecioRed : style.trapecioGreen,
-            rectangulo: item.PreviousPrice > item.Price ? style.rectanguloRed : style.rectanguloGreenu
+            gridType: item.PreviousPrice < item.Price ? style.leftDivRed : style.leftDivGreen,
+            borderType: item.PreviousPrice < item.Price ? style.borderRightDivRed : style.borderRightDivGreen,
+            borderResale: item.PreviousPrice < item.Price ? style.boxShadowRed : style.boxShadowGreen,
+            colorEti: item.PreviousPrice < item.Price ? style.etiquetaRed : style.etiquetaGreen,
+            trapecio: item.PreviousPrice < item.Price ? style.trapecioRed : style.trapecioGreen,
+            rectangulo: item.PreviousPrice < item.Price ? style.rectanguloRed : style.rectanguloGreenu,
+            SourceImageDiscount: item.PreviousPrice < item.Price ? "/images/dollarDown.png" : "/images/dollarUp.png",
+            SourceImagePrice: item.PreviousPrice < item.Price ? "/images/discountIcon.png" : "/images/discountIconGreen.png",
         }
     }
 

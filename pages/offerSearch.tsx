@@ -29,6 +29,7 @@ import EventWithBannerViewSearch from "../components/Desktop/EventsView/eventWit
 import EventWithBannerVertical from "../components/Desktop/EventsView/eventWithBannerVertical";
 import {OfferSearchData} from "../dataDemo/data";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -156,6 +157,7 @@ export default function SearchRestaurant() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {textResultSection}
                                 </div>*/}
+                                <OrderBy listPrincipalFilter={categoryPrincipalFilter} isDarkMode={isDarkMode}/>
                                 <div className={style.gridSearchOpen}>
                                     {dropDown}
                                 </div>

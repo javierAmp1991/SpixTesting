@@ -35,7 +35,7 @@
     /*grid-template-columns: 60% 40%;*/
     gap: 12px;
     margin: auto;
-    padding: 12px 32px;
+    padding: 12px 24px;
     position: relative;
 }
 
@@ -53,7 +53,7 @@
 
 .mainDivProductsSingle {
     position: absolute;
-    right: 40px;
+    right: 24px;
     bottom: 16px;
     display: grid;
 }

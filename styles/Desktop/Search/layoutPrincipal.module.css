@@ -103,7 +103,7 @@
 
 .gridResaleEvents {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px
 }
 
@@ -120,7 +120,7 @@
 
 .sizeBanner {
     width: 100%;
-    aspect-ratio: 4.5/1;
+    aspect-ratio: 5/1;
     position: relative;
 }
 
@@ -194,16 +194,34 @@
     gap: 16px
 }
 
-.gridProductOffer{
+.gridProductOffer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
 }
 
+.layoutResaleTicket {
+    display: grid;
+    width: 1280px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.layoutNews {
+    display: grid;
+    width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.layoutOfferSelected{
+    display: grid;
+    width: 900px;
+    margin: auto;
+    padding-top: 20px;
+}
+
 @media (min-width: 1281px) {
-    .gridResaleEvents {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .styleBanner {
         height: 250px;

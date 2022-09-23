@@ -23,6 +23,7 @@ import ReviewSearchViewMobile from "../components/Mobile/Search/reviewSearchView
 import ReviewSearchViewDesktope from "../components/Desktop/Search/reviewSearchViewDesktop";
 import {CategoryPrincipalFiltersReview} from "../dataDemo/data";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -150,6 +151,7 @@ export default function ReviewSearch() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     Reseñas
                                 </div>*/}
+                                <OrderBy listPrincipalFilter={principalFilterReview} isDarkMode={isDarkMode}/>
                                 <div className={style.gridReviewDesktop}>
                                     {
                                         reviewSectionList.map((item, index) =>

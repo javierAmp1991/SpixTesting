@@ -1,0 +1,45 @@
+.mainDiv {
+    padding: 12px 16px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+    margin-bottom: 20px;
+}
+
+.gridOrderBy {
+    display: grid;
+    grid-template-columns: max-content repeat(3, max-content);
+    gap: 20px;
+    align-items: center;
+}
+
+.gridButton {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 8px;
+    justify-content: center;
+    padding: 6px 24px;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.gridButtonSelected {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    gap: 8px;
+    padding: 6px 24px;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: .3s;
+    transform: scale(1.05);
+}
+
+.imageSizeButton {
+    height: 20px;
+    width: 24px;
+    position: relative;
+}

@@ -23,6 +23,7 @@ import EventVerticalView from "../components/Desktop/EventsView/eventVerticalVie
 import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -149,6 +150,7 @@ export default function SearchRestaurant() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {textResultSection}
                                 </div>*/}
+                                <OrderBy listPrincipalFilter={categoryPrincipalFilter} isDarkMode={isDarkMode}/>
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
                                 </div>

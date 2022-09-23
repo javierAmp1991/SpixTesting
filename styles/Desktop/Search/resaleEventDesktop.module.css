@@ -155,6 +155,31 @@
     position: relative;
 }
 
+.sizeDiscountUp {
+    height: 14px;
+    width: 16px;
+    position: relative;
+}
+
+.gridIconTotal{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 5px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 12px;
+    align-items: center;
+ }
+
+.gridIconPrice{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 5px;
+    align-items: center;
+}
+
+
+
 .gridImageInfo2 {
     display: grid;
     justify-content: center;
@@ -168,6 +193,7 @@
     overflow: hidden;
     transition: .4s;
     box-shadow: var(--shadowUnderProducts);
+    background: white;
 }
 
 .boxShadowRed {
@@ -329,7 +355,7 @@
     font-weight: 500;
 }
 
-.positionSeeMore{
+.positionSeeMore {
     text-decoration: underline 1px var(--colorSecundaryText);
     z-index: 100000000;
 }

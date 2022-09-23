@@ -16,14 +16,13 @@ import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
 import {
     SuperCategoryServices,
-    DropDownDataServices,
     CategoryFilter,
     CategoryPrincipalFilters,
     SuperCategoryFilter
 } from "../dataDemo/data";
 import {DropDownServvicesSearch} from "../dataDemo/search/searchData";
-import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -53,7 +52,7 @@ export default function SearchServices() {
 
     //region desktop Components
     let dropDown =
-        DropDownServvicesSearch.listDropDown.map((item, index) =>
+        DropDownServvicesSearch.listDropDown.map((item) =>
             <EventVerticalView darkModeState={isDarkMode} item={item} key={item.Id}/>
         )
 
@@ -66,7 +65,7 @@ export default function SearchServices() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownServvicesSearch.listDropDown.map((item, index) =>
+    let dropDownMobile = DropDownServvicesSearch.listDropDown.map((item) =>
         <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =
@@ -149,6 +148,7 @@ export default function SearchServices() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {textResultSection}
                                 </div>*/}
+                                <OrderBy listPrincipalFilter={categoryPrincipalFilter} isDarkMode={isDarkMode}/>
                                 <div className={cssStyle.gridSearch}>
                                     {dropDown}
                                 </div>

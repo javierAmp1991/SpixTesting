@@ -1,5 +1,6 @@
 .mainCont {
     --paddingX: 32px;
+    --paddingYFilter: 24px;
     background: white;
     border-radius: 6px;
 }
@@ -118,7 +119,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    padding: 12px var(--paddingX) 18px var(--paddingX);
+    padding: var(--paddingYFilter) var(--paddingX);
     overflow-x: scroll;
     border-bottom: 1px solid var(--separationLineColor);
 }
@@ -127,7 +128,7 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 8px;
-    padding: 12px var(--paddingX) 18px var(--paddingX);
+    padding: var(--paddingYFilter) var(--paddingX);
     overflow-x: scroll;
     border-bottom: 1px solid var(--separationLineColor);
 }

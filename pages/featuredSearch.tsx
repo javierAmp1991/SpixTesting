@@ -27,6 +27,7 @@ import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
 import FeaturedViewPrincipalMobile from "../components/Mobile/Search/featuredViewPrincipal";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -180,6 +181,7 @@ export default function FeaturedSearch() {
                                 {/*<div className={`${cssStyle.fontTitle} ${style.styleTitleResult}`}>
                                     {featuredText}
                                 </div>*/}
+                                <OrderBy listPrincipalFilter={listPrincipalFilters} isDarkMode={isDarkMode}/>
                                 <div className={style.PrincipalGridNews}>
                                     <FeaturedViewPrincipal item={PrincipalFeaturedSearch.item}/>
                                     {/*<PublicityView linkImage={publicity}/>

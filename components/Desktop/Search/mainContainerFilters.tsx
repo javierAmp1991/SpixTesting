@@ -213,11 +213,11 @@ export default function MainContainerFilters({
 
     return (
         <div className={style.mainCont}>
-            <div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
+            {/*<div className={`${cssStyle.borderBottom} ${style.paddingTitle} ${style.gridTitleIn}`}>
                 <div className={cssStyle.fontTitle}>
                     Filtros
                 </div>
-            </div>
+            </div>*/}
             {
                 isCategory &&
                 <div className={displaySuperCategory? style.displayOutAtr : style.displayInAtr  }>
@@ -295,7 +295,7 @@ export default function MainContainerFilters({
             }
 
             {
-                IsPrincipalFill &&
+                /*IsPrincipalFill &&
                 <div>
                     <div className={displayPrinFil ? style.displayOutAdb : style.displayInAdb}>
                         <div className={`${utilities.gridMaxContent2} ${style.paddingSubtitle} justify-between`}>
@@ -327,7 +327,7 @@ export default function MainContainerFilters({
 
                         </div>
                     </div>
-                </div>
+                </div>*/
             }
 
             {

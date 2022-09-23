@@ -3,13 +3,12 @@ import style from "/styles/Desktop/Home/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
 import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
-import {GlobalConst} from "../../../public/globalConst";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
 import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
-import ProductViewDesk from "../Misc/productViewDesk";
+import ProductViewSquare from "../Misc/productViewSquare";
 
-export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
+export default function FeaturedViewDesktop({item, darkModeState}:
                                                 { item: BaseFeaturedView, darkModeState: boolean, itemsShow: number }) {
     const darkModeFalse: boolean = false;
     let cssStyle = getCssStyles()
@@ -50,7 +49,7 @@ export default function FeaturedViewDesktop({item, darkModeState, itemsShow}:
                     {
                         item.ListProducts.map((item, index) =>
                             index == 0 &&
-                            <ProductViewDesk isDisplayOffer={true} item={item} size={130}/>
+                            <ProductViewSquare isDisplayOffer={true} item={item} size={170}/>
                         )
                     }
                 </div>

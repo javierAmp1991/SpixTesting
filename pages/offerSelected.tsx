@@ -29,6 +29,7 @@ import ProductViewDesk from "../components/Desktop/Misc/productViewDesk";
 import RatingStar from "../components/Mobile/Misc/ratingStar";
 import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
+import OrderBy from "../components/Desktop/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -151,7 +152,19 @@ export default function ResaleTicketSearch() {
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
-                <LayoutSearchDesktop>
+                <div className={style.layoutOfferSelected}>
+                    <OrderBy listPrincipalFilter={principalFilterReview} isDarkMode={isDarkMode}/>
+                    <div className={style.gridProductOffer}>
+                        {
+                            ListProducts.listProducts.map((item, index) =>
+                                <ProductViewDesk key={index} item={item} size={null}
+                                                 isDisplayOffer={true}/>)
+                        }
+                    </div>
+                    {buttonsNavegation}
+                </div>
+
+                {/*<LayoutSearchDesktop>
                     <>
                         <div className={`${cssStyle.mainContainer}`}>
                             {
@@ -185,7 +198,7 @@ export default function ResaleTicketSearch() {
                                         <div className={"mt-3"}>
                                             <RatingStarDesktop item={4}/>
                                         </div>
-                                        {/*<div className={style.gridStarNumber}>
+                                        <div className={style.gridStarNumber}>
                                             <div className={`${utilities.fontPrimaryText} ${style.ratingStarProp}`}>
                                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ratingNew}
                                                        alt={""}/>
@@ -193,7 +206,7 @@ export default function ResaleTicketSearch() {
                                             <span className={`${utilities.font12} ${utilities.fontSecundaryText}`}>
                                                 ({resaleRating})
                                             </span>
-                                        </div>*/}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className={style.gridProductOffer}>
@@ -207,7 +220,7 @@ export default function ResaleTicketSearch() {
                             {buttonsNavegation}
                         </div>
                     </>
-                </LayoutSearchDesktop>
+                </LayoutSearchDesktop>*/}
             </DefaultLayoutDesktop>
     )
 

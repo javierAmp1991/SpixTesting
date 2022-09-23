@@ -2,6 +2,7 @@ import style from "/styles/Desktop/Misc/productViewSquare.module.css"
 import utilities from "/styles/utilities.module.css"
 import {Product} from "../../../dataDemo/data";
 import Image from "next/image";
+import {GlobalConst} from "../../../public/globalConst";
 
 export default function ProductViewSquare({item, size, isDisplayOffer}:
                                               { item: Product, size: number, isDisplayOffer: boolean }) {
@@ -10,6 +11,12 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
     let getSizeProduct = getProductSize()
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
+            {
+                item.Include != null && item.DiscountPercent != 0 &&
+                <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                </div>
+            }
             <div className={style.contImage}>
                 <div className={style.aspectRatio}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
@@ -38,9 +45,6 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                     }
                 </div>
             </div>
-            {/*<div className={utilities.positionLastTicket}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-            </div>*/}
         </div>
     )
 

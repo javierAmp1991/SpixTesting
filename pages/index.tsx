@@ -41,7 +41,7 @@ import {Cines} from "../dataDemo/data";
 import {Restaurants} from "../dataDemo/data";
 import {AtributesFooter} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
-import {BaseEventCard, InOfferHome, TodayInValpoFull, DropDownHome} from "../dataDemo/EventView/eventVerticalView";
+import {BaseEventCard, InOfferHome, TodayInValpoFull, DropDownHome, InOfferHomeBase} from "../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
@@ -461,14 +461,14 @@ export default function Index() {
             <LayoutCarrousel sumar={carrouselNumber} handleFeatured={handleCaroousel1Items}
                              layoutProp={layoutPropCarrousel}>
                 {
-                    TodayInValpoGradient.list.map((item, index) =>
+                    /*TodayInValpoGradient.list.map((item, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
-                        <ImageGradientView isDarkMode={isDarkMode} item={item}/>)
-                    /*TodayInValpoFull.list.map((item: BaseEventCard, index) =>
+                        <ImageGradientView isDarkMode={isDarkMode} item={item}/>)*/
+                    InOfferHomeBase.list.map((item: BaseEventCard, index) =>
                         index >= getCarrousel1Items && index <= getCarrousel1Items + carrouselNumber &&
                         <EventVerticalView darkModeState={isDarkMode}
                                            item={item}
-                                           key={item.Id}/>)*/
+                                           key={item.Id}/>)
                 }
             </LayoutCarrousel>
         }

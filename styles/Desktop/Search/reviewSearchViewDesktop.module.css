@@ -1,5 +1,5 @@
 .mainContRev {
-    --paddingX: 24px;
+    --paddingX: 32px;
     background: white;
     border-radius: 6px;
     overflow: hidden;
@@ -10,6 +10,10 @@
     height: 16px;
     width: 90px;
     position: relative;
+}
+
+.borderBottom{
+  border-bottom: 1px solid var(--separationLineColor);
 }
 
 .sizeBanner {
@@ -35,7 +39,6 @@
 .gridReviews {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 24px;
     margin-top: 16px;
     padding: 0 var(--paddingX);
 }
@@ -53,14 +56,7 @@
 }
 
 .cardReview {
-    border: 1px solid var(--separationLineColor);
-    padding: 12px;
-    border-radius: 6px;
-    transition: .4s;
-}
-
-.cardReview:hover {
-    transform: scale(1.05);
+    padding: 16px 0;
 }
 
 .gridProfile {
@@ -79,5 +75,5 @@
 }
 
 .paddingSeeMore {
-    padding: 24px var(--paddingX) 12px var(--paddingX);
+    padding: 0 var(--paddingX) 12px var(--paddingX);
 }
