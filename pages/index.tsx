@@ -580,14 +580,14 @@ export default function Index() {
             PathImage: "/images/verticalPublicity.jpg",
             Link: "",
             Width: 243,
-            Height: 875
+            Height: 852
         },
         {
             Id: "asdjdj39934as",
             PathImage: "/images/verticalPublicity2.jpg",
             Link: "",
             Width: 243,
-            Height: 875
+            Height: 852
         }
     ]
 

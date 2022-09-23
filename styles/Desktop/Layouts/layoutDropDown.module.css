@@ -6,8 +6,8 @@
 
 .gridPublicity {
     display: grid;
+    grid-template-rows: max-content;
     gap: 20px;
-
 }
 
 .dropDownGrid {

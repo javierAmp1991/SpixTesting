@@ -57,11 +57,11 @@
 .princiaplGridInfo {
     display: grid;
     align-content: start;
-    padding: 10px 0 0 0;
+    padding: 8px 0 0 0;
 }
 
 .TopDivInfo {
-    padding: 0 12px 12px 12px;
+    padding: 0 12px 10px 12px;
     position: relative;
 
 }
@@ -78,7 +78,7 @@
 }
 
 .bottomDivSearch {
-    padding: 8px 12px;
+    padding: 6px 12px;
     display: grid;
     gap: 2px;
     position: relative;
