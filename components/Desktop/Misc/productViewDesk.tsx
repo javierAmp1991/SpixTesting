@@ -20,8 +20,7 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
             {
                 item.Include != null || item.DiscountPercent != null &&
                 <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                           alt=""/>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
             }
 
