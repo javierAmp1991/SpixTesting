@@ -86,7 +86,7 @@ let layoutPropProducts: LayoutCarrouselDeskProp = {
 }
 let layoutPropCarrousel: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum3,
+    Grid: gridTemplateColum4,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowIn,
@@ -94,7 +94,7 @@ let layoutPropCarrousel: LayoutCarrouselDeskProp = {
 }
 let layoutPropNews: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
-    Grid: gridTemplateColum2,
+    Grid: gridTemplateColum3,
     Gap: gapLayout,
     Padding: spaceComponents,
     PositionArrowX: positionArrowIn,
@@ -264,7 +264,7 @@ export default function EventPage() {
         <LayoutCarrousel sumar={1} handleFeatured={handleSetGetNews} layoutProp={layoutPropNews}>
             {
                 HomeNewsData.listNews.map((item, index) =>
-                    index >= getNews && index <= getNews + 1 &&
+                    index >= getNews && index <= getNews + 2 &&
                     <NewsSearchDesktop isDarkMode={false} isSubtitle={false} key={item.Id} item={item}/>
                 )
             }
@@ -311,7 +311,7 @@ export default function EventPage() {
         <LayoutCarrousel sumar={2} handleFeatured={handleGetExtra} layoutProp={layoutPropCarrousel}>
             {
                 InOfferHome.list.map((item, index) =>
-                    index >= getExtra && index <= getExtra + 2 &&
+                    index >= getExtra && index <= getExtra + 3 &&
                     <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
                 )
             }

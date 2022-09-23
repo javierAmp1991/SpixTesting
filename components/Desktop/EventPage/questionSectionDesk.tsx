@@ -29,15 +29,12 @@ export default function QuestionSectionDesk({children}) {
         textAreaQuestion.current.value += emoticon
     }
     return (
-        <div>
-            <LayoutCommRevQueDesk>
-                {children}
-                <button className={style.styleButtonAdd}
+        <div className={style.mainDivQuestionDiv}>
+            {children}
+            <button className={style.styleButtonAdd}
                     onClick={handleDisplayPopUp}>
-                    Escribe una pregunta
-                </button>
-            </LayoutCommRevQueDesk>
-
+                Escribe una pregunta
+            </button>
             {
                 isMakeQuestion &&
                 <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handleDisplayPopUp}>
@@ -49,7 +46,7 @@ export default function QuestionSectionDesk({children}) {
                             <div className={style.textAresContainer}>
                             <textarea ref={textAreaQuestion} placeholder={placeHolderQuestion}
                                       className={style.textAreaStyle}/>
-                            <EmoticonsContainer addEmoticon={handleAddEmoticon}/>
+                                <EmoticonsContainer addEmoticon={handleAddEmoticon}/>
                             </div>
                         </div>
                         <div>

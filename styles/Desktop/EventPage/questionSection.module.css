@@ -1,3 +1,11 @@
+.mainDivQuestionDiv{
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 24px 32px;
+    box-shadow: var(--boxShadowCard);
+}
+
 .searchBarContainerProperties{
     width: 100%;
     position: relative;

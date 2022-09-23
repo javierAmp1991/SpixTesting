@@ -27,8 +27,8 @@ export default function EventInformationDesk({
 
     const cssStyle = getCssStyle()
     return (
-        <div>
-            <div>
+        <>
+            <div className={style.mainContEventInformation}>
                 <div className={style.gridImageSelection}>
                     <div className={style.gridSelectionZone}>
                         {
@@ -45,7 +45,7 @@ export default function EventInformationDesk({
                                     </button>
                                     :
                                     <button onClick={() => handleTargetImage(item)}
-                                         className={`${style.containerImageSelection} relative`}>
+                                            className={`${style.containerImageSelection} relative`}>
                                         <div className={style.sizeImageSelection}>
                                             <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </div>
@@ -93,7 +93,7 @@ export default function EventInformationDesk({
                 </div>
             </div>
 
-            <div className="px-0.5">
+            {/*<div className="px-0.5">
                 {
                     formList.length > 0 &&
                     <LayoutPurpleContainer isDarkMode={false}>
@@ -109,8 +109,8 @@ export default function EventInformationDesk({
                         </div>
                     </LayoutPurpleContainer>
                 }
-            </div>
-        </div>
+            </div>*/}
+        </>
     )
 
     function getCssStyle() {

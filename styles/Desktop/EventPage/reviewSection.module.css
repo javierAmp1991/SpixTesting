@@ -1,7 +1,15 @@
+.mainDivResumeDiv{
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 24px 32px;
+    box-shadow: var(--boxShadowCard);
+}
+
 .gridReviewHeader{
     display: grid;
-    grid-template-columns: max-content max-content;
-    gap: 72px;
+    grid-template-columns: max-content max-content 1fr;
+    gap: 60px;
     padding-bottom: 24px;
     width: max-content;
     border-bottom: 1px solid var(--separationLineColor);

@@ -1,4 +1,3 @@
-import LayoutCommRevQueDesk from "../Layouts/layoutCommRevQueDesk";
 import style from "/styles/Desktop/EventPage/reviewSection.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
@@ -7,7 +6,7 @@ import Link from "next/link";
 
 export default function ReviewSectionDesk({children, resumeReview}) {
     return (
-        <>
+        <div className={style.mainDivResumeDiv}>
             <div className={style.gridReviewHeader}>
                 <div className="justify-left grid gap-3 content-start">
                     <div className={style.fontReviewResume}>
@@ -43,15 +42,13 @@ export default function ReviewSectionDesk({children, resumeReview}) {
                     }
                 </div>
             </div>
-            <LayoutCommRevQueDesk>
-                {children}
-                <Link href={"writeReview"}>
-                    <button className={style.styleButtonAdd}>
-                        Escribe tu reseña
-                    </button>
-                </Link>
-            </LayoutCommRevQueDesk>
+            {children}
+            <Link href={"writeReview"}>
+                <button className={style.styleButtonAdd}>
+                    Escribe tu reseña
+                </button>
+            </Link>
 
-        </>
+        </div>
     )
 }

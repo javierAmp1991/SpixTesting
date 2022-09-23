@@ -9,7 +9,7 @@
 }
 
 .paddingMainConatiner {
-    padding: 0 8px;
+    padding: 0 20px;
     border-radius: 6px;
     overflow: hidden;
 }
@@ -57,7 +57,7 @@
 }
 
 .containerImageSelection {
-    --sizeImageSelection: 60px;
+    --sizeImageSelection: 85px;
     --borderRadiousImageSelection: 6px;
     height: var(--sizeImageSelection);
     aspect-ratio: 1/1;
@@ -159,7 +159,7 @@
 .gridImageSelection {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 16px;
+    gap: 32px;
 }
 
 .gridForm {
@@ -228,6 +228,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
+
 /*.paddingContInpu::-webkit-scrollbar{
     background: #d7d7d7;
     display: inherit;
@@ -263,13 +264,14 @@
     position: relative;
     border: 2px solid transparent;
 }
-.positionChekcICon{
+
+.positionChekcICon {
     position: absolute;
     top: calc(50% - 12px);
     right: 12px;
 }
 
-.checkIconProp{
+.checkIconProp {
     position: relative;
     width: 24px;
     height: 24px;
@@ -278,10 +280,10 @@
 .styleDateSelected {
     /*border: 2px solid rgba(249,214,43,1);*/
     /*background: linear-gradient(145deg, rgba(249,214,43,.3) 0%, rgba(255,215,16,.3) 100%);*/
-    background: linear-gradient(145deg, rgba(84,226,243,.7) 0%, rgba(102,238,183,.7) 100%);
+    background: linear-gradient(145deg, rgba(84, 226, 243, .7) 0%, rgba(102, 238, 183, .7) 100%);
     border-radius: 8px;
-    border: 2px solid rgba(84,226,243,1);
-    box-shadow: 0 1px 12px rgba(102,238,183,1);
+    border: 2px solid rgba(84, 226, 243, 1);
+    box-shadow: 0 1px 12px rgba(102, 238, 183, 1);
     padding: 12px;
     transition: .4s;
     display: grid;
@@ -304,7 +306,7 @@
     border-top: 2px solid var(--separationLineColor);
     padding-top: 24px;
     width: 150px;
-    margin:auto;
+    margin: auto;
 }
 
 .gridLinkMap {
@@ -322,10 +324,18 @@
     position: relative;
 }
 
-.styleButton{
-    padding:4px 24px;
+.styleButton {
+    padding: 4px 24px;
     background: var(--gradientBlueButton);
     color: white;
     font-weight: 500;
     border-radius: 4px;
+}
+
+.mainContEventInformation {
+    background: white;
+    padding: 24px 32px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--boxShadowCard);
 }

@@ -6,7 +6,7 @@ import {reviewSearch} from "../../../dataDemo/data";
 
 export default function ReviewSearchViewDesktope({reviewSection}: { reviewSection: reviewSearch }) {
     return (
-        <div>
+        <div className={style.mainContRev}>
             <div className={style.sizeBanner}>
                 <Image layout={"fill"} src={reviewSection.PathBanner}/>
             </div>
