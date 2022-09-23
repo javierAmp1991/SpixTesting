@@ -52,6 +52,8 @@ import {InOfferHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
 import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
+import FormView from "../components/Mobile/Misc/formView";
+import LayoutPurpleContainer from "../components/Desktop/Layouts/layoutPurpleContainer";
 //endregion
 
 const spaceComponentsMobileY = 24
@@ -69,6 +71,7 @@ const newsTitle: [string, string] = ["Noticias", "#"]
 const discountTitle: [string, string] = ["Ofertas", "#"]
 const productstTitle: [string, string] = ["Productos", "/eventProductsFull"]
 const otherEventTitle: [string, string] = ["Otros eventos", "#"]
+const inSearchTitle: [string, string] = ["Se busca", "#"]
 const gapLayout: number = 20
 const displayCarrousel = "grid"
 const gridTemplateColum2: string = "repeat(2,1fr)"
@@ -103,20 +106,20 @@ let layoutPropNews: LayoutCarrouselDeskProp = {
 
 export default function EventPage() {
     //region components mobile
-/*    let commentSection = <TitleSection titleLink={commentTitle}
-                                       paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-        <CommentSectionMobile>
-            {
-                <LayoutCommRevQue>
-                    {
-                        CommentSectionData.listComment.map((item, index) =>
-                            <CommentMobile item={item} key={index}/>
-                        )
-                    }
-                </LayoutCommRevQue>
-            }
-        </CommentSectionMobile>
-    </TitleSection>*/
+    /*    let commentSection = <TitleSection titleLink={commentTitle}
+                                           paddingTitle={spaceComponentsMobileY} darkModeState={false}>
+            <CommentSectionMobile>
+                {
+                    <LayoutCommRevQue>
+                        {
+                            CommentSectionData.listComment.map((item, index) =>
+                                <CommentMobile item={item} key={index}/>
+                            )
+                        }
+                    </LayoutCommRevQue>
+                }
+            </CommentSectionMobile>
+        </TitleSection>*/
 
     let reviewSection = <TitleSection titleLink={reviewtTitle}
                                       paddingTitle={spaceComponentsMobileY} darkModeState={false}>
@@ -218,20 +221,20 @@ export default function EventPage() {
     //region componentsDesktop
     let eventInformationDesk = <EventInformationDesk formList={FormList.listForm}
                                                      eventInformation={EventPageEvent.eventPage}/>
-/*    let commentSectionDesk = <TitleSection titleLink={commentTitle}
-                                           paddingTitle={spaceComponentsDeskY} darkModeState={false}>
-        <CommentSectionDesk>
-            {
-                <LayoutCommRevQueDesk>
-                    {
-                        CommentSectionData.listComment.map((item, index) =>
-                            <CommentDesk item={item} key={index}/>
-                        )
-                    }
-                </LayoutCommRevQueDesk>
-            }
-        </CommentSectionDesk>
-    </TitleSection>*/
+    /*    let commentSectionDesk = <TitleSection titleLink={commentTitle}
+                                               paddingTitle={spaceComponentsDeskY} darkModeState={false}>
+            <CommentSectionDesk>
+                {
+                    <LayoutCommRevQueDesk>
+                        {
+                            CommentSectionData.listComment.map((item, index) =>
+                                <CommentDesk item={item} key={index}/>
+                            )
+                        }
+                    </LayoutCommRevQueDesk>
+                }
+            </CommentSectionDesk>
+        </TitleSection>*/
     let reviewSectionDesk = <TitleSection titleLink={reviewtTitle}
                                           paddingTitle={spaceComponentsDeskY} darkModeState={false}>
         <ReviewSectionDesk resumeReview={ResumeReviews.resumeReviews}>
@@ -284,16 +287,35 @@ export default function EventPage() {
             {
                 ListProductsExtra.listProducts.map((item, index) =>
                     index >= getProducst && index <= getProducst + 3 &&
-                        <ProductViewDesk isDisplayOffer={true} size={null} key={index} item={item}/>
+                    <ProductViewDesk isDisplayOffer={true} size={null} key={index} item={item}/>
                 )
             }
         </LayoutCarrousel>
     </TitleSection>
 
+    let inSearch = <TitleSection titleLink={inSearchTitle}
+                                 paddingTitle={spaceComponentsDeskY} darkModeState={false}>
+        <div className="px-0.5">
+            {
+                FormList.listForm.length > 0 &&
+                <LayoutPurpleContainer isDarkMode={false}>
+                    {
+                        FormList.listForm.map((item, index) =>
+                            <div key={index}>
+                                <FormView item={item}/>
+                            </div>
+                        )
+                    }
+                </LayoutPurpleContainer>
+            }
+        </div>
+
+    </TitleSection>
+
     let [getProducstOffer, setGetProducstOffer] = useState(0)
     const handleGetProductsOffer = (e) => setGetProducstOffer(getProducstOffer = e)
-    let productsDeskOffer = <TitleSection titleLink={productstTitle}
-                                     paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
+    let productsDeskOffer = <TitleSection titleLink={discountTitle}
+                                          paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
         <LayoutCarrousel sumar={3} handleFeatured={handleGetProductsOffer} layoutProp={layoutPropProducts}>
             {
                 ListProductsExtraOffer.listProducts.map((item, index) =>
@@ -323,13 +345,17 @@ export default function EventPage() {
             padding: paddingEventInformation
         },
         {
+            Component: inSearch,
+            padding: paddingDefaultSectionDeskCarrousel
+        },
+        {
             Component: productsDeskOffer,
             padding: paddingDefaultSectionDeskCarrousel
         },
-       /* {
-            Component: moreOffertDesk,
-            padding: paddingDefaultSectionDesk
-        },*/
+        /* {
+             Component: moreOffertDesk,
+             padding: paddingDefaultSectionDesk
+         },*/
         {
             Component: productsDesk,
             padding: paddingDefaultSectionDeskCarrousel

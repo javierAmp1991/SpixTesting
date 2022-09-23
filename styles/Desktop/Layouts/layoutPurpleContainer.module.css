@@ -1,6 +1,20 @@
 .borderCardInformation{
     box-shadow: var(--boxShadowCard);
+    background: white;
 }
 .bgLineDown {
     background: #e82e8a;
+}
+
+.gridForm {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    justify-content: center;
+}
+
+.gridForm3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }

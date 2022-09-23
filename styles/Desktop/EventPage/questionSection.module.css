@@ -98,6 +98,7 @@
     width: max-content;
     border-radius: 3px;
     padding: 5px 28px;
+    margin-top: 24px;
 }
 .styleButtonAdd:hover{
     background: #f6f6f6;

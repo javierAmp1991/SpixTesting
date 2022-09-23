@@ -57,7 +57,7 @@
 }
 
 .containerImageSelection {
-    --sizeImageSelection: 85px;
+    --sizeImageSelection: 84px;
     --borderRadiousImageSelection: 6px;
     height: var(--sizeImageSelection);
     aspect-ratio: 1/1;

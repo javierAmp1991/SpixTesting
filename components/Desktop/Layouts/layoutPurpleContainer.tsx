@@ -1,15 +1,19 @@
 import style from "../../../styles/Desktop/Layouts/layoutPurpleContainer.module.css";
 
-export default function LayoutPurpleContainer({children, isDarkMode}){
+export default function LayoutPurpleContainer({children, isDarkMode}) {
     const cssStyles = getCssStyle()
-    return(
+    return (
         <div className={cssStyles.borderCard}>
-            {children}
+            <div className={`${cssStyles.gridForm} py-4`}>
+                {children}
+            </div>
             <div className={`${style.bgLineDown} w-full h-1`}></div>
         </div>
     )
-    function getCssStyle(){
-        return{
+
+    function getCssStyle() {
+        return {
+            gridForm: children.length >= 3 ? style.gridForm3 : style.gridForm,
             borderCard: isDarkMode ? "" : style.borderCardInformation
         }
     }
