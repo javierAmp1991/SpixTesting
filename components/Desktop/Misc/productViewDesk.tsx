@@ -34,7 +34,7 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
                     {
                         item.DiscountPercent != null &&
                         <div className={style.discountBox}>
-                            <Image width={12} height={8} src={"/images/dollarUp.png"}/>
+                            <Image width={12} height={8} src={"/images/dollarUp.png"} alt={""}/>
                             <span className={style.discountStyle}>
                             {item.DiscountPercent}%
                         </span>

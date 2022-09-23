@@ -57,6 +57,7 @@
 .gridImageInfo {
     display: grid;
     grid-template-columns: 40% 60%;
+    box-shadow: var(--boxShadowCard);
     background: white;
 }
 
@@ -68,7 +69,7 @@
 
 .mainDiv {
     position: relative;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .4);
+    box-shadow: var(--boxShadowCard);
     transition: .4s;
 }
 

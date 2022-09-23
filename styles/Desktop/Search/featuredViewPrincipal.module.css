@@ -65,7 +65,7 @@
 .bottomDivSearch {
     padding-top: 9px;
     display: grid;
-    gap: 8px;
+    gap: 4px;
     position: relative;
 }
 

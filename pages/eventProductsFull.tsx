@@ -146,7 +146,7 @@ export default function EventProducts() {
             </div>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={null}>
-                <div>
+                <div className={utilities.maxWidthBodyContentSpix}>
                     <LeftCardFull
                         handleAddProduct={handListProductShow}
                         listSectionPro={listProductShow}/>
