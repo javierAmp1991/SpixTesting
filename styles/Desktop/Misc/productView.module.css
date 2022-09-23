@@ -63,3 +63,26 @@
     padding: 4px;
     background: white;
 }
+
+.discountBox {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 4px;
+    background: rgba(0, 128, 0, .1);
+    padding: 3px 6px;
+    height: max-content;
+}
+
+.gridPriceICon {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.discountStyle {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #06b906;
+}

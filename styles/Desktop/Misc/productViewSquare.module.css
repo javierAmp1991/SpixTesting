@@ -20,7 +20,7 @@
     border-radius: 12px;
     position: relative;
     background: white;
-    padding: 0 16px;
+    padding: 0 8px;
 }
 
 .gridPriceWithDiscount {
@@ -34,12 +34,12 @@
     padding: 8px;
 }
 
-.contImage{
+.contImage {
     position: relative;
     padding: 12px 32px 0 32px;
 }
 
-.gridInfoProductHorizontal{
+.gridInfoProductHorizontal {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -52,11 +52,11 @@
     aspect-ratio: 1/1;
 }
 
-.zindexListon{
+.zindexListon {
     z-index: 6000000;
 }
 
-.cont{
+.cont {
 
 }
 
@@ -73,4 +73,27 @@
     border-radius: 6px;
     overflow: hidden;
     padding: 4px;
+}
+
+.discountBox {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 4px;
+    background: rgba(0, 128, 0, .1);
+    padding: 3px 6px;
+    height: max-content;
+}
+
+.gridPriceICon {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.discountStyle {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #06b906;
 }

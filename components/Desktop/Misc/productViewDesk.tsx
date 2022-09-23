@@ -18,7 +18,7 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
                 </div>
 
             {
-                item.Include != null &&
+                item.Include != null || item.DiscountPercent != null &&
                 <div className={utilities.positionLastTicket}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
                            alt=""/>
@@ -30,8 +30,14 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}
                 </div>
-                <div className={`${utilities.fontPriceInclude}`}>
+                <div className={`${utilities.fontPriceInclude} ${style.gridPriceICon}`}>
                     ${getMoneyValue(item.Price)}
+                    <div className={style.discountBox}>
+                        <Image width={12} height={8} src={"/images/dollarUp.png"}/>
+                        <span className={style.discountStyle}>
+                            {item.DiscountPercent}%
+                        </span>
+                    </div>
                 </div>
 
                 {
