@@ -28,12 +28,15 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                 </div>
                 <div className={`${utilities.fontPriceIncludeDesktop} ${style.gridPriceICon}`}>
                     ${getMoneyValue(item.Price)}
-                    <div className={style.discountBox}>
-                        <Image width={12} height={8} src={"/images/dollarUp.png"}/>
-                        <span className={style.discountStyle}>
+                    {
+                        item.DiscountPercent != null &&
+                        <div className={style.discountBox}>
+                            <Image width={12} height={8} src={"/images/dollarUp.png"}/>
+                            <span className={style.discountStyle}>
                             {item.DiscountPercent}%
                         </span>
-                    </div>
+                        </div>
+                    }
                 </div>
                 {
                     item.Include != null || item.DiscountPercent != null &&

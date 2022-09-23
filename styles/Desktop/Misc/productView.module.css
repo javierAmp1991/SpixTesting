@@ -73,6 +73,11 @@
     height: max-content;
 }
 
+.zindexListon {
+    z-index: 6000000;
+}
+
+
 .gridPriceICon {
     display: grid;
     grid-template-columns: repeat(2, max-content);

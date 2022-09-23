@@ -11,15 +11,15 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
     let getSizeProduct = getProductSize()
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
-                <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
-                    <div className={style.aspectImage}>
-                        <Image layout={"fill"} src={item.ImagePath} alt=""/>
-                    </div>
+            <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
+                <div className={style.aspectImage}>
+                    <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
+            </div>
 
             {
                 item.Include != null || item.DiscountPercent != null &&
-                <div className={utilities.positionLastTicket}>
+                <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
                            alt=""/>
                 </div>
@@ -32,12 +32,15 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
                 </div>
                 <div className={`${utilities.fontPriceInclude} ${style.gridPriceICon}`}>
                     ${getMoneyValue(item.Price)}
-                    <div className={style.discountBox}>
-                        <Image width={12} height={8} src={"/images/dollarUp.png"}/>
-                        <span className={style.discountStyle}>
+                    {
+                        item.DiscountPercent != null &&
+                        <div className={style.discountBox}>
+                            <Image width={12} height={8} src={"/images/dollarUp.png"}/>
+                            <span className={style.discountStyle}>
                             {item.DiscountPercent}%
                         </span>
-                    </div>
+                        </div>
+                    }
                 </div>
 
                 {
