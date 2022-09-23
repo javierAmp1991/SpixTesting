@@ -1161,6 +1161,20 @@ export namespace MostPopularDataHome {
             MinDate: new Date(2022, 10, 11),
             MaxDate: new Date(2022, 11, 25)
         },
+        {
+            Title: "Metallica WorldWired",
+            Subtitle: "Metallica WorldWired",
+            PathImage: "/images/cartel0.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardType.EventCardFull,
+            Id: "1216",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25)
+        },
     ]
 }
 
