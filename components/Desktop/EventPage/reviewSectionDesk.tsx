@@ -44,9 +44,11 @@ export default function ReviewSectionDesk({children, resumeReview}) {
             </div>
             {children}
             <Link href={"writeReview"}>
-                <button className={style.styleButtonAdd}>
-                    Escribe tu reseña
-                </button>
+                <div className={style.containerButton}>
+                    <button className={style.styleButtonAdd}>
+                        Escribe tu reseña
+                    </button>
+                </div>
             </Link>
 
         </div>

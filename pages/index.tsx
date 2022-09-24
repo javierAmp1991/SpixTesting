@@ -439,7 +439,7 @@ export default function Index() {
         <LayoutCarrousel layoutProp={layoutPropDailyOffers} handleFeatured={handleDailyOffer} sumar={4}>
             {
                 DailyOfferDeskOffer.list.map(item =>
-                <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>)
+                    <EventVerticalView key={item.Id} item={item} darkModeState={isDarkMode}/>)
             }
 
         </LayoutCarrousel>
@@ -628,14 +628,17 @@ export default function Index() {
              Component: information,
              padding: paddingGeneralDesk
          },*/
-        {
-            Component: dailyOffer,
-            padding: paddingGeneralDesk
-        },
+
         {
             Component: featured,
             padding: paddingGeneralDeskCarrousel
         },
+
+        {
+            Component: carrousel1,
+            padding: paddingGeneralDeskCarrousel
+        },
+
         {
             Component: mostPopular,
             padding: paddingGeneralDesk
@@ -645,9 +648,10 @@ export default function Index() {
             padding: paddingGeneralDesk
         },
         {
-            Component: carrousel1,
-            padding: paddingGeneralDeskCarrousel
+            Component: dailyOffer,
+            padding: paddingGeneralDesk
         },
+
         {
             Component: carrouselRounded1,
             padding: paddingGeneralDeskCarrousel

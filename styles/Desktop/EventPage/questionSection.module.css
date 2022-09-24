@@ -103,3 +103,8 @@
 .styleButtonAdd:hover{
     background: #f6f6f6;
 }
+
+.containerButton{
+    display: grid;
+    justify-content: right;
+}

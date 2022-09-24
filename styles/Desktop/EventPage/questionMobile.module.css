@@ -1,8 +1,19 @@
 .mainDiv{
     display: grid;
     gap: 8px;
-    border: 1px solid var(--separationLineColor);
+    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
     padding: 12px;
+    transition: .4s;
+}
+
+.mainDiv:hover {
+    transform: scale(1.03);
+
+}
+
+.containerButton{
+    display: grid;
+    justify-content: right;
 }

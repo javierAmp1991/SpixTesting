@@ -31,10 +31,12 @@ export default function QuestionSectionDesk({children}) {
     return (
         <div className={style.mainDivQuestionDiv}>
             {children}
-            <button className={style.styleButtonAdd}
-                    onClick={handleDisplayPopUp}>
-                Escribe una pregunta
-            </button>
+            <div className={style.containerButton}>
+                <button className={style.styleButtonAdd}
+                        onClick={handleDisplayPopUp}>
+                    Escribe una pregunta
+                </button>
+            </div>
             {
                 isMakeQuestion &&
                 <PopUpContainer isButtonVisible={true} isBackground={true} closePopUp={handleDisplayPopUp}>

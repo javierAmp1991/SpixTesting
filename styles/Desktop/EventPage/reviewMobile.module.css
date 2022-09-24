@@ -1,12 +1,18 @@
-.mainDiv{
+.mainDiv {
     display: grid;
     gap: 8px;
-    border: 1px solid var(--separationLineColor);
+    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
     padding: 12px;
+    transition: .4s;
 }
-.sizeReviewImage{
+
+.mainDiv:hover {
+    transform: scale(1.03);
+}
+
+.sizeReviewImage {
     --sizeReviewImage: 42px;
     height: var(--sizeReviewImage);
     width: var(--sizeReviewImage);
@@ -14,20 +20,26 @@
     position: relative;
     overflow: hidden;
 }
-.maxWidthtextReview{
+
+.maxWidthtextReview {
     max-width: 500px;
 }
 
-.sizeCheckIcon{
+.sizeCheckIcon {
     --sizeCheckIcon: 10px;
     height: var(--sizeCheckIcon);
     width: var(--sizeCheckIcon);
     position: relative;
 }
 
-.sizeReviewStar{
+.sizeReviewStar {
     --sizeReviewStar: 15px;
     height: var(--sizeReviewStar);
     width: 85px;
     position: relative;
+}
+
+.containerButton{
+    display: grid;
+    justify-content: right;
 }

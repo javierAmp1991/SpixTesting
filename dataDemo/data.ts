@@ -3035,6 +3035,13 @@ export namespace ReviewsSectionData {
             ProfileImage: "/images/fotoperfil3.png",
             Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
 
+        },
+        {
+            ByWho: "Paulo Andrade",
+            Title: "Con todo el power",
+            ProfileImage: "/images/fotoperfil4.png",
+            Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
         }
     ]
 }
@@ -3097,6 +3104,11 @@ export namespace QuestionSectionData {
             Question: "Donde puedo ver devoluciones?",
             Answer: "Inbox",
             ByWho: "Juan Castillo"
+        },
+        {
+            Question: "Se puede pagar con cuenta rut?",
+            Answer: "Si se puede",
+            ByWho: "Alberto Fernandez"
         }
     ]
 }
