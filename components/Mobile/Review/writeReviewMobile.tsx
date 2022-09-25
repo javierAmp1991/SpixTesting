@@ -207,7 +207,7 @@ export default function WriteReviewMobile() {
                 }
                 {
                     uploadImages.length < 3 &&
-                    <div>
+                    <div className={style.mainContUploadImage}>
                         <label htmlFor={idInputUpload}>
                             <Image priority={true} width={200} height={200} objectFit={"cover"} objectPosition={"top"}
                                    src="/images/placeholderImageSquare.png" alt={""}/>

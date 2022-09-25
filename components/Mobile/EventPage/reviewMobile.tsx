@@ -44,7 +44,7 @@ export default function ReviewMobile({item}: { item: review }) {
 
             <div className="grid gap-0.5">
                 <div className={utilities.fontPrimaryText}>
-                    <div className={style.maxWidthtextReview}>
+                    <div className={`${style.maxWidthtextReview} ${utilities.clamp3}`}>
                         {item.Review}
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 .mainDiv{
     position: relative;
-    box-shadow: 0 0 2px rgba(0,0,0,.20);
+    box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -33,9 +33,9 @@
 
 .mainDivInfo {
     display: grid;
-    /*grid-template-columns: 60% 40%;*/
+    grid-template-columns: 60% 40%;
     gap: 12px;
-    padding: 10px;
+    padding: 10px 16px;
     position: relative;
 }
 
@@ -52,8 +52,7 @@
     right: 16px;
     bottom: 10px;
     display: grid;
-    grid-template-columns: repeat(1, 120px);
-    gap: 12px;
+    grid-template-columns: repeat(1, 130px);
 }
 
 .sizeImageProductSingle{

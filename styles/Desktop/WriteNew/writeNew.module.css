@@ -8,6 +8,8 @@
 
 .mainContSideCard{
     background: white;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .mainContPortada {
@@ -85,8 +87,6 @@
 
 .bannerStyle {
     width: 100%;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
     aspect-ratio: 2.5/1;
     position: relative;
 }

@@ -4,10 +4,10 @@
     gap: 32px;
     --animattionTransition: .4s;
     --rotation: -360deg;
+    --backgroundInput: #f8f8f8;
 }
 
 .containerInput {
-    --backgroundInput: #f8f8f8;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
@@ -33,6 +33,7 @@
 .paddingTitleInter {
     padding-bottom: 16px;
 }
+
 
 .styleButton {
     padding: 8px 56px;
@@ -105,6 +106,8 @@
     position: relative;
     overflow: hidden;
     opacity: .8;
+    background: var(--backgroundInput);
+    box-shadow: var(--shadowUnderProducts);
 }
 
 .imagePopUp{

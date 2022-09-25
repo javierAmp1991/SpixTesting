@@ -28,7 +28,7 @@ export default function SideCardNew({item}: { item: SideNewPop }) {
     return (
         <div className={style.mainContSideCard}>
             <div className={style.bannerStyle}>
-                <Image layout={"fill"} objectFit={"cover"} src={item.PathBanner} alt={""}/>
+                <Image layout={"fill"} src={item.PathBanner} alt={""}/>
             </div>
             <div className={style.mainDivPadding}>
                 <div className={style.mainContInfo}>
