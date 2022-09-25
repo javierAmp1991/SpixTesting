@@ -21,7 +21,7 @@ export class LevelUser {
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
     User: "@user001",
-    Level: 1
+    Level: 0
 }
 const userRequirement: number = 2
 
@@ -276,7 +276,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             {
                 displayLevelUser &&
                 <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
-                        <LevelUserPopUp/>
+                        <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
                 </PopUpContainer>
             }
         </div>

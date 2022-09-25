@@ -15,7 +15,7 @@ export default function SideCard() {
         Title: "Tributo a PetShop Boys y A ha",
         Subtitle: "Lo mejor del rock ochentero",
         isDarkMode: false,
-        Rating: null
+        Rating: 40
     }
     const resumeReview = ResumeReviews.resumeReviews
     const productEvent: EventLookUp = EventPageEvent.eventPage

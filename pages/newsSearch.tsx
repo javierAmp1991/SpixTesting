@@ -23,6 +23,7 @@ import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
 import {MoreOfferSearch} from "../dataDemo/EventView/eventVerticalView";
 import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
+import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -123,39 +124,57 @@ export default function ReviewSearch() {
                                 </div>*/}
                                 {
                                     displayNextEvent &&
-                                        <div className={"mt-5"}>
-                                            <div className={style.gridResult}>
+                                    <div className={"mt-5"}>
+                                        <div className={style.gridResult}>
+                                            <div className={"w-full"}>
+                                                <div className={`${utilities.fontTitleDesktop} mb-5`}>
+                                                    Noticias del dia
+                                                </div>
                                                 <div>
                                                     <NewSearcPrincipalMobile item={newSearchList[0]}/>
                                                 </div>
-                                                <PublicityViewMobile linkImage={publicity}/>
-                                                <div>
-                                                    <NewsSearchMobile isSubtitle={true} item={newSearchList[1]}/>
+                                            </div>
+                                            <PublicityViewMobile linkImage={publicity}/>
+                                            <div className={"w-full"}>
+                                                <div className={`${utilities.fontTitleDesktop} mb-5`}>
+                                                    Noticias Destacadas
                                                 </div>
-                                                <PublicityViewMobile linkImage={publicity1}/>
-                                                <div className={styleMobile.gridDropDownNew}>
+                                                {/*<LayoutCarrouselMobile gapLayout={16}>
                                                     {
                                                         newSearchList.map((item, index) =>
-                                                            index > 1 &&
-                                                            <NewsSearchMobile isSubtitle={false} key={item.Id}
-                                                                              item={item}/>
-                                                        )
+                                                            index >= 0 && index <= 2 &&
+                                                            <div className={"w-72"}>
+                                                                <NewsSearchMobile isSubtitle={true}
+                                                                                  item={item}/>
+                                                            </div>)
                                                     }
-                                                </div>
+                                                </LayoutCarrouselMobile>*/}
+
                                             </div>
-                                            {buttonsNavegationMobile}
-                                        </div>
-                                        /*:
-                                        <>
-                                            <LayoutDropDownMobile gapLayout={10}>
+                                            <PublicityViewMobile linkImage={publicity1}/>
+                                            <div className={styleMobile.gridDropDownNew}>
                                                 {
-                                                    listPublicity.map(item =>
-                                                        <EventHorizontalView darkModeState={isDarkMode} item={item}
-                                                                             key={item.Id}/>
+                                                    newSearchList.map((item, index) =>
+                                                        index > 1 &&
+                                                        <NewsSearchMobile isSubtitle={false} key={item.Id}
+                                                                          item={item}/>
                                                     )
                                                 }
-                                            </LayoutDropDownMobile>
-                                        </>*/
+                                            </div>
+                                        </div>
+                                        {buttonsNavegationMobile}
+                                    </div>
+                                    /*:
+                                    <>
+                                        <LayoutDropDownMobile gapLayout={10}>
+                                            {
+                                                listPublicity.map(item =>
+                                                    <EventHorizontalView darkModeState={isDarkMode} item={item}
+                                                                         key={item.Id}/>
+                                                )
+                                            }
+                                        </LayoutDropDownMobile>
+                                    </>*/
                                 }
                             </div>
                         </div>
@@ -170,20 +189,29 @@ export default function ReviewSearch() {
                                     {newsText}
                                 </div>*/}
                         <div className={style.PrincipalGridNews}>
-                            <div className={style.gridPrinciaplNews}>
-                                <NewSearcPrincipalDesktop item={newSearchList[0]}/>
-                                <NewSearcPrincipalDesktop item={newSearchList[2]}/>
+                            <div>
+                                <div className={`${utilities.fontTitleDesktop} mb-7`}>
+                                    Noticias del dia
+                                </div>
+                                <div className={style.gridPrinciaplNews}>
+                                    <NewSearcPrincipalDesktop item={newSearchList[0]}/>
+                                    <NewSearcPrincipalDesktop item={newSearchList[2]}/>
+                                </div>
                             </div>
                             <PublicityView linkImage={publicity}/>
-
-                            <div className={style.gridNews3}>
-                                {
-                                    newSearchList.map((item, index) =>
-                                        index >= 1 && index <= 3 &&
-                                        <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true}
-                                                           key={item.Id} item={item}/>
-                                    )
-                                }
+                            <div>
+                                <div className={`${utilities.fontTitleDesktop} mb-7`}>
+                                    Noticias destacadas
+                                </div>
+                                <div className={style.gridNews3}>
+                                    {
+                                        newSearchList.map((item, index) =>
+                                            index >= 1 && index <= 3 &&
+                                            <NewsSearchDesktop isDarkMode={isDarkMode} isSubtitle={true}
+                                                               key={item.Id} item={item}/>
+                                        )
+                                    }
+                                </div>
                             </div>
                             <PublicityView linkImage={publicity1}/>
 

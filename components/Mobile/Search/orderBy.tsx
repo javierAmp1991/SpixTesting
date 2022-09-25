@@ -22,9 +22,9 @@ export default function OrderByMobile({
     return (
         <div className={style.mainDiv}>
             <div className={style.gridOrderBy}>
-                <div className={`${cssStyle.fontName}`}>
+                {/*<div className={`${cssStyle.fontName}`}>
                     Ordenar por:
-                </div>
+                </div>*/}
                 {
                     principalFilters.map((item, index) =>
                         <button key={item.Id}

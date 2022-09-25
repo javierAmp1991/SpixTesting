@@ -4,6 +4,7 @@
     overflow: hidden;
     background: white;
     margin-bottom: 16px;
+    --colorTags: 1px solid rgba(173, 190, 204, 0.3);
 }
 
 .gridOrderBy {
@@ -22,7 +23,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
-    border: 1px solid rgba(19,135, 215, .3);
+    border: var(--colorTags);
 }
 
 .gridButtonSelected {
@@ -35,7 +36,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
-    border: 1px solid rgba(19,135, 215, .3);
+    border: var(--colorTags);
     transform: scale(1.03);
 }
 

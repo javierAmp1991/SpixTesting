@@ -76,7 +76,7 @@ import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalVi
 //endregion
 
 //region constantes
-const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas del dia", "#"]
+const dailyOfferHeaderTitleLink: [string, string] = ["Ofertas", "#"]
 const mostPopularTleLink: [string, string] = ["Mas Populares", "#"]
 const featuredHomeTitleLink: [string, string] = ["Destacados", "#"]
 const todayInValpoTitleLink: [string, string] = ["Hoy en Valparaiso", "#"]

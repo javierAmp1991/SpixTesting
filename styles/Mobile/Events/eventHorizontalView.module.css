@@ -1,7 +1,7 @@
 .principalGridHorizontal {
     display: grid;
     grid-template-columns: 170px 1fr;
-    box-shadow: 0 0 3px rgba(0,0,0,.20);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .20);
     border-radius: 6px;
     overflow: hidden;
 }
@@ -34,12 +34,6 @@
 .gridInfo {
     padding: 8px 6px 0 10px;
 }
-/*
-
-.gridInfoNormal{
-    padding: 16px 0 0 0;
-}
-*/
 
 .gridRatingStar {
     display: grid;
@@ -57,7 +51,7 @@
 
 .bottomDivSearch {
     padding: 10px 0 0 0;
-    border-top: 2px solid var(--separationLineColor);
+    border-top: 2px dashed var(--separationLineColor);
     display: grid;
     gap: 5px;
 }
@@ -106,7 +100,7 @@
     color: white;
 }
 
-.textResaleOffer{
+.textResaleOffer {
     font-size: 14px;
     color: var(--colorPrimaryTextDesktop);
     font-weight: 400;

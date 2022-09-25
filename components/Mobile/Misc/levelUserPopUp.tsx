@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/Misc/levelUserPopUp.module.css"
+import style from "/styles/Mobile/Misc/levelUserPopUp.module.css"
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 
@@ -24,7 +24,7 @@ const level2ReqLvl1: string[] = [
 const disclaimer: string = "Esta verificacion fue solicitada por el adminsitrador del evento y no es un requisito impuesto por Spix. Lo anterior queda a discrecion del admnitrador del evento \n" +
     "y generalmente es solicitado para asegurar la seguridad del cliente (ud), la exclusividad del evento o por aspectos legales."
 
-export default function LevelUserPopUp({levelVerfication, levelUser}: { levelVerfication: number, levelUser: number }) {
+export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { levelVerfication: number, levelUser: number }) {
     const mainText: string = `Este evento requiere de verificacion nivel ${levelVerfication} para comprar entradas. La verificacion nivel ${levelVerfication} consiste de los siguientes requisitos:`
 
     return (

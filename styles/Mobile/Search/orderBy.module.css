@@ -1,12 +1,12 @@
 .mainDiv {
     background: white;
     margin: 16px 0;
-    overflow: scroll;
+    --colorTags: 1px solid rgba(173, 190, 204, 0.3);
 }
 
 .gridOrderBy {
     display: grid;
-    grid-template-columns: max-content repeat(3, max-content);
+    grid-template-columns:repeat(2, 1fr);
     gap: 12px;
     align-items: center;
 }
@@ -20,7 +20,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
-    border: 1px solid rgba(19,135, 215, .3);
+    border: var(--colorTags);
 }
 
 .gridButtonSelected {
@@ -33,7 +33,7 @@
     border-radius: 5px;
     overflow: hidden;
     transition: .3s;
-    border: 1px solid rgba(19,135, 215, .3);
+    border: var(--colorTags);
     transform: scale(1.03);
 }
 

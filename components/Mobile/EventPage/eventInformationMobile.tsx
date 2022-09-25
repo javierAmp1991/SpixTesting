@@ -13,6 +13,7 @@ import Image from "next/image";
 const textButton: string = "Comprar Entradas"
 import {EventPageEvent} from "../../../dataDemo/data";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
+import LevelUserPopUpMobile from "../Misc/levelUserPopUp";
 /*let inputRadio: inputRadioProp[] = [
     {
         NameLabel: new Date(2022, 7, 5),
@@ -50,7 +51,7 @@ export class LevelUser {
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
     User: "@user001",
-    Level: 1
+    Level: 0
 }
 const userRequirement: number = 2
 
@@ -379,7 +380,7 @@ export default function EventInformationMobile({eventInformation, form}:
             {
                 displayLevelUser &&
                 <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseLevelUser}>
-
+                    <LevelUserPopUpMobile levelVerfication={userRequirement} levelUser={user.Level}/>
                 </PopUpContainerMob>
             }
         </div>

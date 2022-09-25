@@ -158,6 +158,12 @@ body {
     overflow: hidden;
 }
 
+p {
+    text-align: left;
+    -webkit-hyphens: auto; /* A día de hoy aún es necesario el prefijo para soportar a Safari */
+    hyphens: auto;
+}
+
 a {
     color: inherit;
     text-decoration: none;
