@@ -14,7 +14,7 @@ export default function PublicityVertical({item}: { item: VerticalPublicityProp 
     return (
         <Link href={item.Link}>
             <div style={{width: item.Width, height: item.Height}} className={style.cont}>
-                <Image layout={"fill"} src={item.PathImage}/>
+                <Image priority={true} layout={"fill"} src={item.PathImage}/>
             </div>
         </Link>
     )

@@ -1,4 +1,4 @@
-import {EventCardType} from "../../EventView/eventVerticalView";
+import {EventCardType, EventCardWithDate} from "../../EventView/eventVerticalView";
 
 export enum EventCardTypeMobile {
     EventCardWithPrice,
@@ -496,6 +496,107 @@ export namespace MostPopularDataHomeMobile {
             MaxPrice: 9990,
             MinDate: new Date(2022, 10, 11),
             MaxDate: new Date(2022, 11, 25)
+        },
+    ]
+}
+
+export namespace ExtraEventPageMobile {
+    export const list: EventCardWithDateMobile[] = [
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "12",
+            Title: "Tenemos Explosivos",
+            Subtitle: "Tenemos Explosivos",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/oferta6.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "123",
+            Title: "KEVIN CORRAL",
+            Subtitle: "KEVIN CORRAL",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/oferta2.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "1234",
+            Title: "Mundos Magicos",
+            Subtitle: "Mundos Magicos",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/oferta3.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "12345",
+            Title: "Tributo Bon Jovi",
+            Subtitle: "Tributo Bon Jovi",
+            Rating: 300,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/oferta4.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "123456",
+            Title: "Aura club",
+            Subtitle: "Aura club",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 3000,
+            PathImage: "/images/oferta5.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "1234567",
+            Title: "Todas Partes",
+            Subtitle: "Todas Partes",
+            Rating: 300,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/oferta1.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "12",
+            Title: "Tenemos Explosivos",
+            Subtitle: "Tenemos Explosivos",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/oferta6.jpg",
+        },
+        {
+            Type: EventCardTypeMobile.EventCardWithDate,
+            MinDate: new Date(2022, 10, 11),
+            MaxDate: new Date(2022, 11, 25),
+            Id: "123",
+            Title: "KEVIN CORRAL",
+            Subtitle: "KEVIN CORRAL",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/oferta2.jpg",
         },
     ]
 }

@@ -45,10 +45,10 @@ import Image from "next/image";
 import React, {useState} from "react";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
-import {InOfferHome} from "../dataDemo/EventView/eventVerticalView";
+import {ExtraEventPage, InOfferHome} from "../dataDemo/EventView/eventVerticalView";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
-import {InOfferHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
+import {ExtraEventPageMobile, InOfferHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
 import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
@@ -192,7 +192,7 @@ export default function EventPage() {
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                InOfferHomeMobile.list.map((item, index) =>
+                ExtraEventPageMobile.list.map((item, index) =>
                     <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={false} key={index}/>
                 )
             }
@@ -344,7 +344,7 @@ export default function EventPage() {
                                        paddingTitle={noSpaceComponentsDesk} darkModeState={false}>
         <LayoutCarrousel sumar={2} handleFeatured={handleGetExtra} layoutProp={layoutPropCarrousel}>
             {
-                InOfferHome.list.map((item, index) =>
+                ExtraEventPage.list.map((item, index) =>
                     index >= getExtra && index <= getExtra + 3 &&
                     <EventVerticalView item={item} darkModeState={false} key={item.Id}/>
                 )

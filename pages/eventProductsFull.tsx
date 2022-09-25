@@ -17,6 +17,7 @@ import LeftCardFull from "../components/Desktop/eventProduct/leftCardFull";
 import ContResultProductFull from "../components/Mobile/eventProducts/contResultProductFull";
 import SuggHeaderMobile from "../components/Mobile/Misc/suggHeaderMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
+import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 //endregion
 
 const isDarkMode = false
@@ -124,26 +125,15 @@ export default function EventProducts() {
 
     return (
         isSmallDown ?
-            <div className={styleMob.mainContainerMobile}>
-                {
-                    isDiplaySug ?
-                        <SuggHeaderMobile returnMet={handleIsDisplaySug}/>
-                        :
-                        <>
-                            <HeaderSpixMobile isDesplegable={null} displaySug={handleIsDisplaySug}
-                                              isDarkMode={isDarkMode}/>
-                            <MenuSpixMobile listItemMenu={menuList} isDarkMode={isDarkMode}/>
-                            <div className={styleMob.heightCont}>
-                                <ContResultProductFull isOpen={false}
-                                                       methodProps={methodProps}
-                                                       addItem={handListProductShow}
-                                                       listSectionProduct={listProductShow}/>
+            <DefaultLayoutMobile isDarkMode={isDarkMode}>
+                <div className={styleMob.heightCont}>
+                    <ContResultProductFull isOpen={false}
+                                           methodProps={methodProps}
+                                           addItem={handListProductShow}
+                                           listSectionProduct={listProductShow}/>
 
-                            </div>
-
-                        </>
-                }
-            </div>
+                </div>
+            </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={null}>
                 <div className={utilities.maxWidthBodyContentSpix}>

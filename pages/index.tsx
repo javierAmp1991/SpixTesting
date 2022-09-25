@@ -588,14 +588,14 @@ export default function Index() {
     let listPub: VerticalPublicityProp[] = [
         {
             Id: "wdadak231",
-            PathImage: "/images/verticalPublicity.jpg",
+            PathImage: "/images/verticalPublicity.png",
             Link: "",
             Width: 243,
             Height: 852
         },
         {
             Id: "asdjdj39934as",
-            PathImage: "/images/verticalPublicity2.jpg",
+            PathImage: "/images/verticalPublicity2.png",
             Link: "",
             Width: 243,
             Height: 852
@@ -660,7 +660,7 @@ export default function Index() {
         },
         {
             Component: dailyOffer,
-            padding: paddingGeneralDesk
+            padding: paddingGeneralDeskCarrousel
         },
 
         {
