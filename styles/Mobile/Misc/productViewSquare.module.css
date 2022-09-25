@@ -30,8 +30,8 @@
 
 .gridInfoProduct {
     display: grid;
-    gap: 2px;
-    padding: 8px;
+    gap: 1px;
+    padding: 8px 8px 8px 0;
 }
 
 .contImage {

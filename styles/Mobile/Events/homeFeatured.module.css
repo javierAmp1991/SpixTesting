@@ -35,7 +35,7 @@
     display: grid;
     grid-template-columns: 60% 40%;
     gap: 12px;
-    padding: 10px 16px;
+    padding: 10px;
     position: relative;
 }
 
@@ -49,10 +49,8 @@
 
 .mainDivProductsSingle{
     position: absolute;
-    right: 16px;
+    right: 10px;
     bottom: 10px;
-    display: grid;
-    grid-template-columns: repeat(1, 130px);
 }
 
 .sizeImageProductSingle{

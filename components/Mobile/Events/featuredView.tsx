@@ -6,6 +6,7 @@ import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/princ
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
 import ProductViewMobile from "../Misc/productViewMobile";
+import ProductViewSquareMobile from "../Misc/productViewSquare";
 
 export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
     const principalInfoEvent: PrincipalInfoEventPropMob = {
@@ -50,7 +51,7 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                         {
                             item.ListProducts.map((item, index) =>
                                 index == 0 &&
-                                <ProductViewMobile isDisplayOffer={false} item={item} size={130}/>
+                                <ProductViewSquareMobile isDisplayOffer={false} item={item} size={140}/>
                             )
                         }
                     </div>

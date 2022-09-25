@@ -97,10 +97,9 @@
 
 .gridProductSelected {
     display: grid;
-    grid-template-columns: 120px;
     position: absolute;
     bottom: 16px;
-    right: 24px;
+    right: 12px;
 }
 
 .gridProductSelection {

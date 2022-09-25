@@ -9,6 +9,7 @@ import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/p
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import {number} from "prop-types";
 import ProductViewMobile from "../Misc/productViewMobile";
+import ProductViewSquareMobile from "../Misc/productViewSquare";
 
 export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeaturedView }) {
     let [productSelected, setProductSelected] = useState(0)
@@ -54,7 +55,7 @@ export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeatured
                         {
                             item.ListProducts.map((item, index) =>
                                     index == productSelected &&
-                                    <ProductViewMobile isDisplayOffer={false} item={item} size={130}/>
+                                    <ProductViewSquareMobile isDisplayOffer={false} item={item} size={140}/>
                             )
                         }
                     </div>
