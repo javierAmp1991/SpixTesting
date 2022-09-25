@@ -11,6 +11,19 @@ import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 
+export class LevelUser {
+    Id: string
+    User: string
+    Level: number
+}
+
+const user: LevelUser = {
+    Id: "iwewqndsaj2383",
+    User: "@user001",
+    Level: 1
+}
+const userRequirement: number = 2
+
 const textButton: string = "Comprar Entradas"
 
 export default function SideCardEvent({eventInformation}: { eventInformation: EventLookUp }) {
@@ -23,6 +36,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     let [displayVenue, setDisplayVenue] = useState(false)
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
+    let [displayLevelUser, setDisplayLevelUser] = useState(false)
+    const handleOpenLevelUser = () => setDisplayLevelUser(displayLevelUser = true)
+    const handleCloseLevelUser = () => setDisplayLevelUser(displayLevelUser = false)
 
     const principalInfo: PrincipalInfoEventPropMob = {
         Title: eventInformation.EventName,
@@ -61,12 +77,19 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
         handleCloseDate()
     }
 
+    const handleClickBuy = () => {
+        if(user.Level < userRequirement) {
+            handleOpenLevelUser()
+        }
+    }
+
     return (
         <div>
             <div className={`${style.paddingMainConatiner} bg-white`}>
                 <div className={style.gridMainContainer}>
                     <div className={`${style.gridImageTitle} mb-1`}>
-                        <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${utilities.bgFirstGradient}`}>
+                        <div
+                            className={`${style.paddingGradient} ${utilities.borderRadious50} ${utilities.bgFirstGradient}`}>
                             <div className={`${style.sizeLogo}`}>
                                 <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
                             </div>
@@ -149,8 +172,9 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
                 </div>
 
-                <button className={style.gridButtons}>
-                    <ButtonBlue text={textButton}/>
+                <button onClick={handleClickBuy} className={styleCard.gridButton}>
+                    <span>{textButton} </span>
+                    <Image width={18} height={16} src={GlobalConst.sourceImages.shieldIcon} alt={""}/>
                 </button>
             </div>
 
@@ -159,12 +183,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                 <PopUpContainer closePopUp={handleClose}
                                 isBackground={false}
                                 isButtonVisible={false}>
-                    {
-                        <div className={style.sizeImage}>
-                            <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
-                                   alt=""/>
-                        </div>
-                    }
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
+                               alt=""/>
+                    </div>
                 </PopUpContainer>
             }
             {
@@ -220,36 +242,52 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                 <PopUpContainer closePopUp={handleCloseVenue}
                                 isBackground={true}
                                 isButtonVisible={true}>
-                    {
-                        <div className={style.mainContMap}>
-                            <div className={` ${style.titleCont}`}>
-                                <div className={`${utilities.fontTitle} mb-2`}>
-                                    {venueDateSelected.Venue}
-                                </div>
-                                <div className={utilities.fontSecundaryText}>
-                                    Capacidad: {venueDateSelected.Capacity} personas
-                                </div>
+                    <div className={style.mainContMap}>
+                        <div className={` ${style.titleCont}`}>
+                            <div className={`${utilities.fontTitle} mb-2`}>
+                                {venueDateSelected.Venue}
                             </div>
-                            <div className={style.contMap}>
-                                <div className={style.imgMap}>
-                                    <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
-                                </div>
-                            </div>
-                            <div>
-                                <div className={utilities.fontPrimaryText}>
-                                    {venueDateSelected.Venue}
-                                </div>
-                                <div className={style.gridLinkMap}>
-                                    <div className={style.sizeLogoMap}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
-                                    </div>
-                                    <a href={venueDateSelected.LinkGoogleMap} className={utilities.styleLink}>
-                                        Ver en Google Maps
-                                    </a>
-                                </div>
+                            <div className={utilities.fontSecundaryText}>
+                                Capacidad: {venueDateSelected.Capacity} personas
                             </div>
                         </div>
-                    }
+                        <div className={style.contMap}>
+                            <div className={style.imgMap}>
+                                <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
+                            </div>
+                        </div>
+                        <div>
+                            <div className={utilities.fontPrimaryText}>
+                                {venueDateSelected.Venue}
+                            </div>
+                            <div className={style.gridLinkMap}>
+                                <div className={style.sizeLogoMap}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
+                                </div>
+                                <a href={venueDateSelected.LinkGoogleMap} className={utilities.styleLink}>
+                                    Ver en Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </PopUpContainer>
+            }
+            {
+                displayLevelUser &&
+                <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
+                    <div>
+                        <div>
+                            cuadro 1
+                        </div>
+                        <div>
+                            cuadro 2
+                        </div>
+                        <div>
+                            <button>Completar registro</button>
+                            <button>Cerrar</button>
+                        </div>
+                    </div>
+
                 </PopUpContainer>
             }
         </div>

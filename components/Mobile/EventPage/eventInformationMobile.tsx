@@ -41,6 +41,19 @@ import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/princ
     }
 ]*/
 
+export class LevelUser {
+    Id: string
+    User: string
+    Level: number
+}
+
+const user: LevelUser = {
+    Id: "iwewqndsaj2383",
+    User: "@user001",
+    Level: 1
+}
+const userRequirement: number = 2
+
 export default function EventInformationMobile({eventInformation, form}:
                                                    { eventInformation: EventLookUp, form: fomrLink[] }) {
     let [venueDateList, setVenueDateList] = useState(EventPageEvent.eventPage.VenueDate)
@@ -60,6 +73,9 @@ export default function EventInformationMobile({eventInformation, form}:
     let [displayVenue, setDisplayVenue] = useState(false)
     const handleOpenVenue = () => setDisplayVenue(displayVenue = true)
     const handleCloseVenue = () => setDisplayVenue(displayVenue = false)
+    let [displayLevelUser, setDisplayLevelUser] = useState(false)
+    const handleOpenLevelUser = () => setDisplayLevelUser(displayLevelUser = true)
+    const handleCloseLevelUser = () => setDisplayLevelUser(displayLevelUser = false)
 
     const principalInfo: PrincipalInfoEventPropMob = {
         Title: eventInformation.EventName,
@@ -85,6 +101,12 @@ export default function EventInformationMobile({eventInformation, form}:
     const handleCloseSelected = () => {
         handleSetVenueDateSelected()
         handleCloseDate()
+    }
+
+    const handleClickBuy = () => {
+        if(user.Level < userRequirement) {
+            handleOpenLevelUser()
+        }
     }
 
     return (
@@ -220,9 +242,10 @@ export default function EventInformationMobile({eventInformation, form}:
                     }
                 </div>
 
-                <div className={style.gridButtons}>
-                    <ButtonBlue text={textButton}/>
-                </div>
+                <button onClick={handleClickBuy} className={style.gridButton}>
+                    <span>{textButton} </span>
+                    <Image width={18} height={16} src={GlobalConst.sourceImages.shieldIcon} alt={""}/>
+                </button>
             </div>
 
             <div className={`${style.paddingDescription} ${style.borderTopBottom}`}>
@@ -351,6 +374,12 @@ export default function EventInformationMobile({eventInformation, form}:
 
                         </div>
                     }
+                </PopUpContainerMob>
+            }
+            {
+                displayLevelUser &&
+                <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseLevelUser}>
+
                 </PopUpContainerMob>
             }
         </div>

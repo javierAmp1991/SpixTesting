@@ -79,7 +79,8 @@ export namespace GlobalConst{
         menuIcon: "/images/menu.png",
         ticketIcon: "/images/ticket.png",
         ticketIconWhite: "/images/ticketWhite.png",
-        timerIcon: "/images/timerIcon.png"
+        timerIcon: "/images/timerIcon.png",
+        shieldIcon: "/images/shieldIcon.png"
     }
 }
 

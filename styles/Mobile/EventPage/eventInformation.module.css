@@ -287,3 +287,18 @@
 .paddingGradient{
     padding: 2px;
 }
+
+.gridButton{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--gradientBlueButton);
+    color: white;
+    margin: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
