@@ -70,9 +70,11 @@
 
 .styleTag{
     color: white;
-    background: var(--purpleGradientTag);
-    padding: 4px 8px;
-    border-radius: 3px;
+    font-weight: 500;
+    background: linear-gradient(145deg, #E82E8AFF 0%, #fd419e 100%);
+    font-size: 16px;
+    border-radius: 16px;
+    padding: 4px 16px;
 }
 
 .imgBanner{
