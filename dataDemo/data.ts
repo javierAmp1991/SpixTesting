@@ -1080,7 +1080,7 @@ export namespace ListProducts {
             Name: "Producto 1.1",
             Price: 18990,
             DiscountPercent: 10,
-            Include: "Lleve 2 pague 1",
+            Include: null,
             ImagePath: "/images/product1.jpg",
             Tag: "Cerveza"
         },
@@ -1103,7 +1103,7 @@ export namespace ListProducts {
         {
             Name: "Producto 4.4",
             Price: 9990,
-            DiscountPercent: 20,
+            DiscountPercent: null,
             Include: "Dcto 2 Un.",
             ImagePath: "/images/product6.jpg",
             Tag: "Energetica"

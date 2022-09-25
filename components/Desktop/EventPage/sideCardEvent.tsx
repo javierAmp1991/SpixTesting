@@ -10,6 +10,7 @@ import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
+import LevelUserPopUp from "../Misc/levelUserPopUp";
 
 export class LevelUser {
     Id: string
@@ -275,19 +276,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             {
                 displayLevelUser &&
                 <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
-                    <div>
-                        <div>
-                            cuadro 1
-                        </div>
-                        <div>
-                            cuadro 2
-                        </div>
-                        <div>
-                            <button>Completar registro</button>
-                            <button>Cerrar</button>
-                        </div>
-                    </div>
-
+                        <LevelUserPopUp/>
                 </PopUpContainer>
             }
         </div>

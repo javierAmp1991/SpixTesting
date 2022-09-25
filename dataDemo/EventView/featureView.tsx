@@ -56,7 +56,7 @@ export namespace PrincipalFeaturedSearch{
                 {
                     Name: "Producto 4.4",
                     Price: 9990,
-                    DiscountPercent: 20,
+                    DiscountPercent: null,
                     Include: "Dcto 2 Un.",
                     ImagePath: "/images/product6.jpg",
                     Tag: "Energetica"
@@ -101,7 +101,7 @@ export namespace FeaturedListSearch {
                     Name: "Producto 1.1",
                     Price: 18990,
                     DiscountPercent: 10,
-                    Include: "Lleve 2 pague 1",
+                    Include: null,
                     ImagePath: "/images/product1.jpg",
                     Tag: "Cerveza"
                 },
@@ -162,14 +162,6 @@ export namespace FeaturedListSearch {
             PathLogo: "/images/cinemark.png",
             ListProducts: [
                 {
-                    Name: "Producto 1.1",
-                    Price: 18990,
-                    DiscountPercent: 10,
-                    Include: "Lleve 2 pague 1",
-                    ImagePath: "/images/product1.jpg",
-                    Tag: "Cerveza"
-                },
-                {
                     Name: "Producto 2.2",
                     Price: 2990,
                     DiscountPercent: 25,
@@ -177,6 +169,15 @@ export namespace FeaturedListSearch {
                     ImagePath: "/images/product4.jpg",
                     Tag: "Energetica"
                 },
+                {
+                    Name: "Producto 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product1.jpg",
+                    Tag: "Cerveza"
+                },
+
                 {
                     Name: "Producto 3.3",
                     Price: 990,
@@ -227,6 +228,14 @@ export namespace FeaturedListSearch {
             PathLogo: "/images/cinehoyts.png",
             ListProducts: [
                 {
+                    Name: "Producto 3.3",
+                    Price: 990,
+                    DiscountPercent: null,
+                    Include: "Lleve 2 pague 1",
+                    ImagePath: "/images/product5.jpg",
+                    Tag: "Snack"
+                },
+                {
                     Name: "Producto 1.1",
                     Price: 18990,
                     DiscountPercent: 10,
@@ -242,14 +251,7 @@ export namespace FeaturedListSearch {
                     ImagePath: "/images/product4.jpg",
                     Tag: "Energetica"
                 },
-                {
-                    Name: "Producto 3.3",
-                    Price: 990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product5.jpg",
-                    Tag: "Snack"
-                },
+
                 {
                     Name: "Producto 4.4",
                     Price: 9990,
@@ -528,20 +530,20 @@ export namespace FeaturedListHome {
             PathLogo: "/images/cinemark.png",
             ListProducts: [
                 {
-                    Name: "Producto 1.1",
-                    Price: 18990,
-                    DiscountPercent: 10,
-                    Include: "Lleve 2 pague 1",
-                    ImagePath: "/images/product1.jpg",
-                    Tag: "Cerveza"
-                },
-                {
                     Name: "Producto 2.2",
                     Price: 2990,
                     DiscountPercent: 25,
                     Include: null,
                     ImagePath: "/images/product4.jpg",
                     Tag: "Energetica"
+                },
+                {
+                    Name: "Producto 1.1",
+                    Price: 18990,
+                    DiscountPercent: 10,
+                    Include: null,
+                    ImagePath: "/images/product1.jpg",
+                    Tag: "Cerveza"
                 },
                 {
                     Name: "Producto 3.3",
@@ -569,9 +571,17 @@ export namespace FeaturedListHome {
             PathLogo: "/images/cinehoyts.png",
             ListProducts: [
                 {
+                    Name: "Producto 3.3",
+                    Price: 990,
+                    DiscountPercent: 30,
+                    Include: null,
+                    ImagePath: "/images/product5.jpg",
+                    Tag: "Snack"
+                },
+                {
                     Name: "Producto 1.1",
                     Price: 18990,
-                    DiscountPercent: 10,
+                    DiscountPercent: null,
                     Include: "Lleve 2 pague 1",
                     ImagePath: "/images/product1.jpg",
                     Tag: "Cerveza"
@@ -584,14 +594,7 @@ export namespace FeaturedListHome {
                     ImagePath: "/images/product4.jpg",
                     Tag: "Energetica"
                 },
-                {
-                    Name: "Producto 3.3",
-                    Price: 990,
-                    DiscountPercent: 30,
-                    Include: null,
-                    ImagePath: "/images/product5.jpg",
-                    Tag: "Snack"
-                },
+
             ],
             MinDate: new Date(2022, 1, 8),
             MaxDate: new Date(2022, 1, 8),
@@ -613,7 +616,7 @@ export namespace FeaturedListHome {
                     Name: "Producto 1.1",
                     Price: 18990,
                     DiscountPercent: 10,
-                    Include: "Lleve 2 pague 1",
+                    Include: null,
                     ImagePath: "/images/product1.jpg",
                     Tag: "Cerveza"
                 },
@@ -654,7 +657,7 @@ export namespace FeaturedListHome {
                     Name: "Producto 1.1",
                     Price: 18990,
                     DiscountPercent: 10,
-                    Include: "Lleve 2 pague 1",
+                    Include: null,
                     ImagePath: "/images/product1.jpg",
                     Tag: "Cerveza"
                 },
@@ -693,7 +696,7 @@ export namespace FeaturedListHome {
                 {
                     Name: "Producto 1.1",
                     Price: 18990,
-                    DiscountPercent: 10,
+                    DiscountPercent: null,
                     Include: "Lleve 2 pague 1",
                     ImagePath: "/images/product1.jpg",
                     Tag: "Cerveza"
