@@ -26,7 +26,7 @@ export default function SideCardNew({item}: { item: SideNewPop }) {
         Rating: item.Rating
     }
     return (
-        <div>
+        <div className={style.mainContSideCard}>
             <div className={style.bannerStyle}>
                 <Image layout={"fill"} objectFit={"cover"} src={item.PathBanner} alt={""}/>
             </div>

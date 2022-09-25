@@ -6,8 +6,12 @@
     --rotation: -360deg;
 }
 
+.mainContSideCard{
+    background: white;
+}
+
 .containerInputTitle {
-    --backgroundInput: #f8f8f8;
+    --backgroundInput: white;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
@@ -16,7 +20,7 @@
 }
 
 .containerInput {
-    --backgroundInput: #f8f8f8;
+    --backgroundInput: white;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
@@ -286,5 +290,6 @@
 
 .boxShadowUpload{
     box-shadow: var(--boxShadowCard);
+    background: white;
 }
 

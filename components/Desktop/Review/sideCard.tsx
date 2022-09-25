@@ -20,7 +20,7 @@ export default function SideCard() {
     const resumeReview = ResumeReviews.resumeReviews
     const productEvent: EventLookUp = EventPageEvent.eventPage
     return (
-        <div>
+        <div className={style.mainContSideCard}>
             <div className={style.bannerStyle}>
                 <Image layout={"fill"} src={productEvent.BannerPath} alt={""}/>
             </div>

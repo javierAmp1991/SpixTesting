@@ -9,7 +9,7 @@ import PopUpContainerMob from "../Misc/popUpContainerMob";
 const placeholderTitle: string = "Escribe un titulo";
 const placeholderReview: string = "Escribe tu noticia";
 const titleTitle: string = "Titulo";
-const titleWriteReview: string = "Cuentanos sobre el evento";
+const titleWriteReview: string = "Cuerpo de la noticia";
 const titleSection: string = "Tu Noticia";
 const portada: string = "Portada"
 const sendReview: string = "Publicar";
@@ -80,11 +80,11 @@ export default function WriteNewMobile() {
 
     return (
         <div className={style.mainCont}>
-            <div className={`${utilities.fontTitle}`}>
+            {/*<div className={`${utilities.fontTitle}`}>
                 {titleSection}
-            </div>
+            </div>*/}
             <div>
-                <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
+                <div className={`${utilities.fontTitle} ${style.paddingTitleInter}`}>
                     {portada}
                 </div>
                 <div className="relative">
@@ -105,7 +105,7 @@ export default function WriteNewMobile() {
                                 <div className={style.mainContPortada}>
                                     <label htmlFor={idUploadPortada}>
                                         <Image style={{background: "#f8f8f8"}} priority={true} layout={"fill"}
-                                               objectFit={"contain"} src="/images/placeholderImageSquare.png" alt={""}/>
+                                               objectFit={"contain"} src="/images/placeholderImageRec.png" alt={""}/>
                                     </label>
                                 </div>
                                 <input onChange={handleUploadPortada}
@@ -142,7 +142,7 @@ export default function WriteNewMobile() {
 
             <EmoticonsContainerMobile addEmoticon={handleAddEmoticon}/>
 
-            <div className={style.gridAddPhotos}>
+            {/*<div className={style.gridAddPhotos}>
                 {
                     uploadImages.map((item, index) =>
                         <div className={style.mainContaExtraImage}
@@ -170,7 +170,7 @@ export default function WriteNewMobile() {
                                type={"file"}/>
                     </div>
                 }
-            </div>
+            </div>*/}
             <div>
                 <button className={style.styleButton}>
                     {sendReview}

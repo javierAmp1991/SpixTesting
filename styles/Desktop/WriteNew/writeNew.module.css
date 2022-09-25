@@ -6,6 +6,10 @@
     --rotation: -360deg;
 }
 
+.mainContSideCard{
+    background: white;
+}
+
 .mainContPortada {
     width: 320px;
     height: 200px;
@@ -27,7 +31,7 @@
 
 
 .containerInputTitle {
-    --backgroundInput: #f8f8f8;
+    --backgroundInput: white;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);
@@ -36,7 +40,7 @@
 }
 
 .containerInput {
-    --backgroundInput: #f8f8f8;
+    --backgroundInput: white;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: var(--shadowUnderProducts);

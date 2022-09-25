@@ -9,7 +9,7 @@ import PopUpContainer from "../Misc/popUpContainer";
 const placeholderTitle: string = "Escribe un titulo";
 const placeholderReview: string = "Escribe tu noticia";
 const titleTitle: string = "Titulo";
-const titleWriteReview: string = "Cuentanos sobre el evento";
+const titleWriteReview: string = "Cuerpo de la noticia";
 const titleSection: string = "Tu Noticia";
 const portada: string = "Portada"
 const sendReview: string = "Publicar";
@@ -88,11 +88,11 @@ export default function WriteNewLeft({handlePreTitle, handlePrevSubtitle, handle
 
     return (
         <div className={style.mainCont}>
-            <div className={`${utilities.fontTitleDesktop}`}>
+            {/*<div className={`${utilities.fontTitleDesktop}`}>
                 {titleSection}
-            </div>
+            </div>*/}
             <div>
-                <div className={`${utilities.fontSubTitle} ${style.paddingTitleInter}`}>
+                <div className={`${utilities.fontTitle} ${style.paddingTitleInter}`}>
                     {portada}
                 </div>
                 <div className="relative">
@@ -112,7 +112,7 @@ export default function WriteNewLeft({handlePreTitle, handlePrevSubtitle, handle
                             <>
                                 <div className={style.mainContPortada}>
                                     <label htmlFor={idUploadPortada}>
-                                        <Image style={{background: "#f8f8f8"}} priority={true} layout={"fill"}
+                                        <Image priority={true} layout={"fill"}
                                                objectFit={"contain"} src="/images/placeholderImageRec.png" alt={""}/>
                                     </label>
                                 </div>
@@ -163,7 +163,7 @@ export default function WriteNewLeft({handlePreTitle, handlePrevSubtitle, handle
                         </div>
                     )
                 }
-                <div className={`${style.mainContaExtraImage} ${style.boxUploadInput}`}>
+                {/*<div className={`${style.mainContaExtraImage} ${style.boxUploadInput}`}>
                     <label className={style.labelStyle} htmlFor={uploadImages.length == 3 ? "" : idInputUpload}>
                         <Image priority={true} objectFit={"cover"} layout={"fill"}
                                src="/images/placeholderImageSquare.png" alt={""}/>
@@ -172,7 +172,7 @@ export default function WriteNewLeft({handlePreTitle, handlePrevSubtitle, handle
                            className="h-0 w-0 absolute overflow-hidden"
                            id={idInputUpload}
                            type={"file"}/>
-                </div>
+                </div>*/}
             </div>
             <div>
                 <button className={style.styleButton}>
