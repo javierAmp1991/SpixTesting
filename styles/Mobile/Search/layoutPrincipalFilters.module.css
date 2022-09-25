@@ -7,6 +7,12 @@
     border-bottom: 1px solid var(--separationLineColor);
 }
 
+.gridProductSelected{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+}
+
 .gridTitleIn{
     display: grid;
     grid-template-columns: repeat(2, max-content);

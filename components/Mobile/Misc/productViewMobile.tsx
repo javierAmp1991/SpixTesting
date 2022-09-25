@@ -15,17 +15,28 @@ export default function ProductViewMobile({item, size, isDisplayOffer}:
                     <Image layout={"fill"} objectFit={"cover"} loading="lazy" src={item.ImagePath} alt=""/>
                 </div>
             </div>
-
-            <div className={utilities.positionLastTicket}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-            </div>
+            {
+                item.Include != null && item.DiscountPercent != null &&
+                <div className={utilities.positionLastTicket}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                </div>
+            }
 
             <div className={style.gridInfoProduct}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
                     {item.Name}
                 </div>
-                <div className={`${utilities.fontPriceInclude}`}>
+                <div className={`${utilities.fontPriceInclude} ${style.gridPriceICon}`}>
                     ${getMoneyValue(item.Price)}
+                    {
+                        item.DiscountPercent != null &&
+                        <div className={style.discountBox}>
+                            <Image width={12} height={8} src={"/images/dollarUp.png"}/>
+                            <span className={style.discountStyle}>
+                            {item.DiscountPercent}%
+                        </span>
+                        </div>
+                    }
                 </div>
 
                 {
@@ -57,7 +68,7 @@ export default function ProductViewMobile({item, size, isDisplayOffer}:
 
     function getProductSize() {
         return {
-            widthContainer: size != null? {width: size} : {},
+            widthContainer: size != null ? {width: size} : {},
             sizeImage: size != null ? {height: (size - 10), width: (size - 10)} : {}
         }
     }

@@ -10,6 +10,7 @@ import {
     EventCardResale,
     EventCardType,
     EventCardWithDate,
+    EventCardWithOffer,
     EventCardWithPrice
 } from "../../../dataDemo/EventView/eventVerticalView";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
@@ -26,6 +27,7 @@ export default function EventHorizontalView({item, darkModeState}:
     let itemWithPrice: EventCardWithPrice;
     let itemWithDate: EventCardWithDate;
     let itemWithResale: EventCardResale;
+    let itemWithOffer: EventCardWithOffer;
 
     let priceIncludeInfoFull: PriceIncludeInfoPropMobile
     let dateInfoFull: DateInfoPropMobile
@@ -58,8 +60,11 @@ export default function EventHorizontalView({item, darkModeState}:
             MaxDate: itemWithDate.MaxDate,
             IsDarkMode: darkModeState
         }
-
-    }else{
+    }
+    else if(item.Type == EventCardType.EventCardWithOffer){
+        itemWithOffer = item as EventCardWithOffer
+    }
+    else{
         itemWithResale = item as EventCardResale
     }
 
@@ -80,7 +85,7 @@ export default function EventHorizontalView({item, darkModeState}:
 
     return (
         <div className={`${style.principalGridHorizontal}`}>
-            <Link href={item.Type == EventCardType.EventCardWithResale ? item.Link : ""}>
+            <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
                         item.SoldTickets >= item.TotalTickets * 0.90 &&
@@ -151,6 +156,23 @@ export default function EventHorizontalView({item, darkModeState}:
                         <div className={`${utilities.fontPrimaryText}`}>
                             {totalResaleText} {itemWithResale.TotalResale}
                         </div>
+                    }
+                    {
+                        item.Type == EventCardType.EventCardWithOffer &&
+                        <>
+                            <div className={style.gridTags}>
+                                {
+                                    itemWithOffer.ListTagsOffer.map(item =>
+                                        <div key={item} className={style.tagStyleDisc}>
+                                            {item}
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <div className={style.textResaleOffer}>
+                                Productos en oferta: {itemWithOffer.TotalOffers}
+                            </div>
+                        </>
                     }
                 </div>
             </div>

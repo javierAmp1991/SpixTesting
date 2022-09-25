@@ -88,7 +88,7 @@
 }
 
 .gridPriceNamePop {
-    padding: 8px 12px;
+    padding: 8px 0;
     display: grid;
     width: 100%;
     gap: 2px;
@@ -230,10 +230,11 @@
 
 .mainDivProdPop {
     display: grid;
+    width: 250px;
     margin: auto;
-    width: 200px;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
+    padding: 0 12px;
     overflow: hidden;
     scroll-snap-align: start;
     position: relative;
@@ -266,6 +267,11 @@
 .positionSeeMore {
     text-decoration: underline 1px var(--colorSecundaryText);
     z-index: 100000000;
+}
+
+.contImageProp{
+    padding: 12px 12px 0 12px;
+    width: 100%;
 }
 
 @media (min-width: 460px){

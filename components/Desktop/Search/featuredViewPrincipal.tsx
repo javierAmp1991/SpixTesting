@@ -60,7 +60,7 @@ export default function FeaturedViewPrincipal({item}: { item: BaseFeaturedView }
                         {
                             item.ListProducts.map((item, index) =>
                                 index >= 0 && index <= 4 &&
-                                <ProductViewDesk isDisplayOffer={false} item={item} size={140}/>
+                                <ProductViewDesk isDisplayOffer={true} item={item} size={150}/>
                             )
                         }
                     </div>

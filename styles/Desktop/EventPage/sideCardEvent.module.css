@@ -1,7 +1,7 @@
 .cardStyle{
     --spaceCard: 40px;
     box-shadow: var(--boxShadowCard);
-    padding: 0px 12px;
+    padding: 0 12px;
     border-radius: 8px;
     margin-top: var(--spaceCard);
     margin-bottom: var(--spaceCard);
@@ -18,7 +18,7 @@
 }
 
 .selectDateContainer{
-    padding: 16px 0px;
+    padding: 16px 0;
     display: grid;
     gap: 12px;
 }

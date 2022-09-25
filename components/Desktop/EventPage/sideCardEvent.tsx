@@ -9,7 +9,6 @@ import PopUpContainer from "../Misc/popUpContainer";
 import React, {useState} from "react";
 import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
-import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 
 const textButton: string = "Comprar Entradas"
@@ -67,8 +66,10 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             <div className={`${style.paddingMainConatiner} bg-white`}>
                 <div className={style.gridMainContainer}>
                     <div className={`${style.gridImageTitle} mb-1`}>
-                        <div className={`${style.sizeLogo}`}>
-                            <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                        <div className={`${style.paddingGradient} ${utilities.borderRadious50} ${utilities.bgFirstGradient}`}>
+                            <div className={`${style.sizeLogo}`}>
+                                <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                            </div>
                         </div>
                         <div>
                             {/*<PrincipalInfoEvent item={principalInfo}/>*/}
@@ -155,101 +156,101 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
 
             {
                 displayImage &&
-                    <PopUpContainer closePopUp={handleClose}
-                                    isBackground={false}
-                                    isButtonVisible={false}>
-                        {
-                            <div className={style.sizeImage}>
-                                <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
-                                       alt=""/>
-                            </div>
-                        }
-                    </PopUpContainer>
+                <PopUpContainer closePopUp={handleClose}
+                                isBackground={false}
+                                isButtonVisible={false}>
+                    {
+                        <div className={style.sizeImage}>
+                            <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage}
+                                   alt=""/>
+                        </div>
+                    }
+                </PopUpContainer>
             }
             {
                 displayDateSelector &&
-                    <PopUpContainer isButtonVisible={true}
-                                    isBackground={true}
-                                    closePopUp={handleCloseDate}>
-                        <div className={style.mainContSelecDate}>
-                            <div className={`${utilities.fontTitle} ${style.titleCont}`}>
-                                Seleccionar Fecha
-                            </div>
+                <PopUpContainer isButtonVisible={true}
+                                isBackground={true}
+                                closePopUp={handleCloseDate}>
+                    <div className={style.mainContSelecDate}>
+                        <div className={`${utilities.fontTitle} ${style.titleCont}`}>
+                            Seleccionar Fecha
+                        </div>
+                        <div className={style.paddingContInpu}>
                             <div className={style.paddingContInpu}>
-                                <div className={style.paddingContInpu}>
-                                    {
-                                        venueDateList.map((item: DateVenue, index) =>
-                                            <div onClick={() => handleClick(item)}
-                                                 className={item.IsSelected ? style.styleDateSelected : style.styleDate}
-                                                 key={index}>
-                                                <div className={utilities.fontPrimaryText}>
-                                                    <div>
-                                                        Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
-                                                    </div>
+                                {
+                                    venueDateList.map((item: DateVenue, index) =>
+                                        <div onClick={() => handleClick(item)}
+                                             className={item.IsSelected ? style.styleDateSelected : style.styleDate}
+                                             key={index}>
+                                            <div className={utilities.fontPrimaryText}>
+                                                <div>
+                                                    Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
                                                 </div>
-                                                <div
-                                                    className={item.IsSelected ? utilities.fontPrimaryText : utilities.fontSecundaryText}>
-                                                    {item.Venue}
-                                                </div>
-                                                {
-                                                    item.IsSelected ?
-                                                        <div className={style.positionChekcICon}>
-                                                            <div className={style.checkIconProp}>
-                                                                <Image layout={"fill"}
-                                                                       src={GlobalConst.sourceImages.checkIconYellow}
-                                                                       alt=""/>
-                                                            </div>
-                                                        </div> : <></>
-                                                }
                                             </div>
-                                        )
-                                    }
-                                </div>
-                            </div>
-                            <div onClick={handleCloseSelected}
-                                 className={style.buttonCont}>
-                                <ButtonBlue text={"Aceptar"}/>
+                                            <div
+                                                className={item.IsSelected ? utilities.fontPrimaryText : utilities.fontSecundaryText}>
+                                                {item.Venue}
+                                            </div>
+                                            {
+                                                item.IsSelected ?
+                                                    <div className={style.positionChekcICon}>
+                                                        <div className={style.checkIconProp}>
+                                                            <Image layout={"fill"}
+                                                                   src={GlobalConst.sourceImages.checkIconYellow}
+                                                                   alt=""/>
+                                                        </div>
+                                                    </div> : <></>
+                                            }
+                                        </div>
+                                    )
+                                }
                             </div>
                         </div>
-                    </PopUpContainer>
+                        <div onClick={handleCloseSelected}
+                             className={style.buttonCont}>
+                            <ButtonBlue text={"Aceptar"}/>
+                        </div>
+                    </div>
+                </PopUpContainer>
             }
 
             {
                 displayVenue &&
-                    <PopUpContainer closePopUp={handleCloseVenue}
-                                    isBackground={true}
-                                    isButtonVisible={true}>
-                        {
-                            <div className={style.mainContMap}>
-                                <div className={` ${style.titleCont}`}>
-                                    <div className={`${utilities.fontTitle} mb-2`}>
-                                        {venueDateSelected.Venue}
-                                    </div>
-                                    <div className={utilities.fontSecundaryText}>
-                                        Capacidad: {venueDateSelected.Capacity} personas
-                                    </div>
+                <PopUpContainer closePopUp={handleCloseVenue}
+                                isBackground={true}
+                                isButtonVisible={true}>
+                    {
+                        <div className={style.mainContMap}>
+                            <div className={` ${style.titleCont}`}>
+                                <div className={`${utilities.fontTitle} mb-2`}>
+                                    {venueDateSelected.Venue}
                                 </div>
-                                <div className={style.contMap}>
-                                    <div className={style.imgMap}>
-                                        <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div className={utilities.fontPrimaryText}>
-                                        {venueDateSelected.Venue}
-                                    </div>
-                                    <div className={style.gridLinkMap}>
-                                        <div className={style.sizeLogoMap}>
-                                            <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
-                                        </div>
-                                        <a href={venueDateSelected.LinkGoogleMap} className={utilities.styleLink}>
-                                            Ver en Google Maps
-                                        </a>
-                                    </div>
+                                <div className={utilities.fontSecundaryText}>
+                                    Capacidad: {venueDateSelected.Capacity} personas
                                 </div>
                             </div>
-                        }
-                    </PopUpContainer>
+                            <div className={style.contMap}>
+                                <div className={style.imgMap}>
+                                    <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
+                                </div>
+                            </div>
+                            <div>
+                                <div className={utilities.fontPrimaryText}>
+                                    {venueDateSelected.Venue}
+                                </div>
+                                <div className={style.gridLinkMap}>
+                                    <div className={style.sizeLogoMap}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt=""/>
+                                    </div>
+                                    <a href={venueDateSelected.LinkGoogleMap} className={utilities.styleLink}>
+                                        Ver en Google Maps
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </PopUpContainer>
             }
         </div>
     )

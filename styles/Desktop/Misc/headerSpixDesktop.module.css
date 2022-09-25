@@ -1,6 +1,6 @@
 .gridHeader {
     display: grid;
-    grid-template-columns: repeat(2, max-content) 1fr repeat(2, max-content);
+    grid-template-columns: repeat(2, max-content) 1fr repeat(1, max-content);
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     gap: 24px;

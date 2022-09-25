@@ -1,8 +1,9 @@
-import {EventCardFull, EventCardType} from "../../EventView/eventVerticalView";
+import {EventCardType} from "../../EventView/eventVerticalView";
 
 export enum EventCardTypeMobile {
     EventCardWithPrice,
     EventCardWithDate,
+    EventCardWithOffer,
     EventCardFull
 }
 
@@ -33,6 +34,81 @@ export class EventCardWithFullMobile extends BaseEventCardMobile {
     MaxPrice: number
     MinDate: Date
     MaxDate: Date
+}
+
+export class EventCardWithOffer extends BaseEventCardMobile{
+    ListTagsOffer: string[]
+    TotalOffers: number
+}
+
+export namespace DailyOfferMobile{
+    export const list: EventCardWithOffer[] = [
+        {
+            Title: "Tributo a Pet Shop Boys y A Ha",
+            Subtitle: "Lo mejor del Rock Internacional",
+            PathImage: "/images/inOffer1.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardTypeMobile.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["2 x 1", "Dcto 2da uni"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Star Wars Sinfonico",
+            Subtitle: "Orquesta Internacional",
+            PathImage: "/images/inOffer2.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 400,
+            Rating: 30,
+            Type: EventCardTypeMobile.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["50% dcto", "2 x 1"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Seafret, most of us",
+            Subtitle: "Latin American Tour",
+            PathImage: "/images/inOffer3.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardTypeMobile.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["50% dcto"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Nikkita Wild",
+            Subtitle: "Nikkita wild",
+            PathImage: "/images/inOffer4.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 990,
+            Rating: 30,
+            Type: EventCardTypeMobile.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["50% dcto", "Dcto 2da uni"],
+            TotalOffers: 10
+        },
+        {
+            Title: "Moonage Daydream",
+            Subtitle: "Pelicula de Brett Morgen",
+            PathImage: "/images/inOffer5.jpg",
+            TotalTickets: 1000,
+            SoldTickets: 500,
+            Rating: 30,
+            Type: EventCardTypeMobile.EventCardWithOffer,
+            Id: "12",
+            Link: "/eventPage",
+            ListTagsOffer: ["Dcto 2da uni"],
+            TotalOffers: 10
+        },
+    ]
 }
 
 export namespace TodayInValpoMobile {

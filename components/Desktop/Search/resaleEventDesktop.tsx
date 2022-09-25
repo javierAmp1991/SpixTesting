@@ -195,9 +195,11 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
                             {
                                 item.ListProducts.map((product, index) =>
                                     <div key={index} className={style.mainDivProdPop}>
-                                        <div className={style.sizeImageProp}>
-                                            <Image priority={true} layout={"fill"} src={"/images/cerveza1.jpg"}
-                                                   alt={""}/>
+                                        <div className={style.contImageProp}>
+                                            <div className={style.sizeImageProp}>
+                                                <Image priority={true} layout={"fill"} src={"/images/cerveza1.jpg"}
+                                                       alt={""}/>
+                                            </div>
                                         </div>
                                         <div className={style.gridPriceNameProp}>
                                             <div>x{product.Amount} {product.Name} </div>

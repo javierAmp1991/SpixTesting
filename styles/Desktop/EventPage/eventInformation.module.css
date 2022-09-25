@@ -339,3 +339,7 @@
     overflow: hidden;
     box-shadow: var(--boxShadowCard);
 }
+
+.paddingGradient{
+    padding: 2px;
+}

@@ -54,13 +54,14 @@ import EventWithBannerView from "../components/Desktop/EventsView/eventWithBanne
 import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
 import FormView from "../components/Mobile/Misc/formView";
 import LayoutPurpleContainer from "../components/Desktop/Layouts/layoutPurpleContainer";
+import ProductViewSquareMobile from "../components/Mobile/Misc/productViewSquare";
 //endregion
 
-const spaceComponentsMobileY = 24
+const spaceComponentsMobileY = 16
 const spaceComponentsDeskY = 25
 const spaceComponents = 25
 const noSpaceComponentsDesk = 0
-const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 12, pr: 12}
+const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 16, pr: 16}
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 2, pr: 2}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 2, pr: 2}
 const paddingDefaultSectionDeskCarrousel: paddingAsignation = {pt: 40, pb: 15, pl: 2, pr: 2}
@@ -150,7 +151,7 @@ export default function EventPage() {
 
     let newsMobile = <TitleSection titleLink={newsTitle}
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-        <LayoutCarrouselMobile gapLayout={24}>
+        <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
                 HomeNewsData.listNews.map((item) =>
                     <div key={item.Id} style={{width: 330}}>
@@ -161,24 +162,35 @@ export default function EventPage() {
         </LayoutCarrouselMobile>
     </TitleSection>
 
-    let moreOffert = <TitleSection titleLink={discountTitle}
+  /*  let moreOffert = <TitleSection titleLink={discountTitle}
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <EventWithBannerMobile displayLogoRating={false} darkModeState={false} item={ListOffertData.listOffert[0]}/>
+    </TitleSection>*/
+
+    let offerEvent = <TitleSection titleLink={discountTitle}
+                                 paddingTitle={spaceComponentsMobileY} darkModeState={false}>
+        <LayoutCarrouselMobile gapLayout={gapLayout}>
+            {
+                ListProducts.listProducts.map((item, index) =>
+                    <ProductViewSquareMobile isDisplayOffer={true} size={220} key={index} item={item}/>
+                )
+            }
+        </LayoutCarrouselMobile>
     </TitleSection>
 
     let products = <TitleSection titleLink={productstTitle}
                                  paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-        <LayoutCarrouselMobile gapLayout={20}>
+        <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
                 ListProducts.listProducts.map((item, index) =>
-                    <ProductViewMobile isDisplayOffer={true} size={180} key={index} item={item}/>
+                    <ProductViewSquareMobile isDisplayOffer={true} size={220} key={index} item={item}/>
                 )
             }
         </LayoutCarrouselMobile>
     </TitleSection>
     let eventExtra = <TitleSection titleLink={otherEventTitle}
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-        <LayoutCarrouselMobile gapLayout={24}>
+        <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
                 InOfferHomeMobile.list.map((item, index) =>
                     <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={false} key={index}/>
@@ -193,7 +205,7 @@ export default function EventPage() {
             padding: paddingDefaultSection
         },
         {
-            Component: moreOffert,
+            Component: offerEvent,
             padding: paddingDefaultSection
         },
         {

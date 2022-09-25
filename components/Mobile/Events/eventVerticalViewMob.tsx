@@ -8,12 +8,15 @@ import {
     EventCardTypeMobile,
     EventCardWithDateMobile,
     EventCardWithFullMobile,
+    EventCardWithOffer,
     EventCardWithPriceMobile
 } from "../../../dataDemo/Mobile/EventView/EventCard";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
 import DateInfoEvent from "../../Desktop/Misc/dateInfoEvent";
+import Link from "next/link";
+import {EventCardType} from "../../../dataDemo/EventView/eventVerticalView";
 
 export default function EventVerticalViewMob({item, darkModeState, isActiveSnap}:
                                                  { item: BaseEventCardMobile, darkModeState: boolean, isActiveSnap: boolean }) {
@@ -22,6 +25,7 @@ export default function EventVerticalViewMob({item, darkModeState, isActiveSnap}
     let itemFull: EventCardWithFullMobile;
     let itemWithPrice: EventCardWithPriceMobile;
     let itemWithDate: EventCardWithDateMobile;
+    let itemWithOffer: EventCardWithOffer;
 
     let priceIncludeInfoFull: PriceIncludeInfoPropMobile
     let dateInfoFull: DateInfoPropMobile
@@ -54,6 +58,8 @@ export default function EventVerticalViewMob({item, darkModeState, isActiveSnap}
             MaxDate: itemWithDate.MaxDate,
             IsDarkMode: darkModeState
         }
+    } else if (item.Type = EventCardTypeMobile.EventCardWithOffer) {
+        itemWithOffer = item as EventCardWithOffer
     }
 
     const principalInfoEventProp: PrincipalInfoEventPropMob = {
@@ -65,17 +71,19 @@ export default function EventVerticalViewMob({item, darkModeState, isActiveSnap}
 
     return (
         <div className={`${styles.principalGridVertical} ${cssStyles.isActiveSnapScroll}`}>
-            <a className={styles.containerImage}>
-                {
-                    item.SoldTickets >= item.TotalTickets * 0.90 &&
-                    <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+            <Link href={item.Type == EventCardTypeMobile.EventCardWithOffer ? item.Link : ""}>
+                <a className={styles.containerImage}>
+                    {
+                        item.SoldTickets >= item.TotalTickets * 0.90 &&
+                        <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+                        </div>
+                    }
+                    <div className={styles.sizeImage}>
+                        <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
                     </div>
-                }
-                <div className={styles.sizeImage}>
-                    <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
-                </div>
-            </a>
+                </a>
+            </Link>
 
             <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
                 <div className={styles.TopDivInfo}>
@@ -98,7 +106,23 @@ export default function EventVerticalViewMob({item, darkModeState, isActiveSnap}
                         item.Type == EventCardTypeMobile.EventCardWithDate &&
                         <DateInfoEvent item={dateInfo}/>
                     }
-
+                    {
+                        item.Type == EventCardTypeMobile.EventCardWithOffer &&
+                        <>
+                            <div className={styles.gridTags}>
+                                {
+                                    itemWithOffer.ListTagsOffer.map(item =>
+                                        <div key={item} className={styles.tagStyleDisc}>
+                                            {item}
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <div className={styles.textResaleOffer}>
+                                Productos en oferta: {itemWithOffer.TotalOffers}
+                            </div>
+                        </>
+                    }
                 </div>
             </div>
         </div>

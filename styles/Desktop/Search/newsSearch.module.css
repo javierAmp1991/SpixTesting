@@ -145,13 +145,13 @@
 }
 
 .fontTitle {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
     color: var(--colorName);
 }
 
 .fontTitleDarkMode {
-    font-size: 19px;
+    font-size: 17px;
     font-weight: 500;
     color: var(--colorDarkModeDesktop);
 }

@@ -54,7 +54,7 @@ export default function FeaturedViewPrincipalMobile({item}: { item: BaseFeatured
                         {
                             item.ListProducts.map((item, index) =>
                                     index == productSelected &&
-                                    <ProductViewMobile isDisplayOffer={false} item={item} size={120}/>
+                                    <ProductViewMobile isDisplayOffer={false} item={item} size={130}/>
                             )
                         }
                     </div>

@@ -167,7 +167,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode, l
                     </div>
                 </a>*/}
 
-                <button onClick={toggleDarkMode} className={styleGrid}>
+                {/*<button onClick={toggleDarkMode} className={styleGrid}>
                     <div className={paddingImage}>
                         <div className={style.sizeIconDarkMode}>
                             <Image layout={"fill"} src={darkModeIconInfo.icon} alt=""/>
@@ -177,7 +177,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode, l
                         <div className={fontFirstText}>{mode}</div>
                         <div className={fontSecondText}>{darkModeIconInfo.secondText}</div>
                     </div>
-                </button>
+                </button>*/}
             </div>
         </div>
     )

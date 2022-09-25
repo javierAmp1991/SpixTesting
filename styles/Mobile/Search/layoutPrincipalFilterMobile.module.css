@@ -7,6 +7,12 @@
     align-content: center;
 }
 
+.gridProductSelected{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
 .styleTags {
     justify-content: space-between;
     gap: 8px;

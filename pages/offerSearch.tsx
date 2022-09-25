@@ -21,7 +21,7 @@ import {
     CategoryPrincipalFilters,
     SuperCategoryFilter
 } from "../dataDemo/data";
-import {DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
+import {DailyOfferDeskOffer, DropDownSearch} from "../dataDemo/EventView/eventVerticalView";
 import {OfferSearch} from "../dataDemo/EventView/eventVerticalView";
 import ProductOfferSearch from "../components/Desktop/Search/productOfferSearch";
 import EventWithBannerView from "../components/Desktop/EventsView/eventWithBannerView";
@@ -73,7 +73,7 @@ export default function SearchRestaurant() {
     </LayoutButtonNavegation>
     //endregion
     //region mobile Components
-    let dropDownMobile = DropDownSearch.list.map((item) =>
+    let dropDownMobile = OfferSearch.list.map((item) =>
         <EventHorizontalView darkModeState={isDarkMode} item={item} key={item.Id}/>
     )
     let buttonsNavegationMobile =

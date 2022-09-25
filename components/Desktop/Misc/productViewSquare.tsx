@@ -12,10 +12,10 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
             {
-                item.Include != null || item.DiscountPercent != null &&
+                item.DiscountPercent != null || item.Include != null ?
                 <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-                </div>
+                </div> : <></>
             }
             <div className={style.contImage}>
                 <div className={style.aspectRatio}>
@@ -23,15 +23,13 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                 </div>
             </div>
             <div className={style.gridInfoProduct}>
-                <div>
-                    {item.Name}
-                </div>
+                {item.Name}
                 <div className={`${utilities.fontPriceIncludeDesktop} ${style.gridPriceICon}`}>
                     ${getMoneyValue(item.Price)}
                     {
                         item.DiscountPercent != null &&
                         <div className={style.discountBox}>
-                            <Image width={12} height={8} src={"/images/dollarUp.png"}/>
+                            <Image width={12} height={8} src={"/images/dollarUp.png"} alt={""}/>
                             <span className={style.discountStyle}>
                             {item.DiscountPercent}%
                         </span>
@@ -39,7 +37,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                     }
                 </div>
                 {
-                    item.Include != null || item.DiscountPercent != null &&
+                    item.DiscountPercent != null || item.Include != null ?
                     <div className={`${utilities.fontSecundaryText}`}>
                         {
                             item.Include != null ?
@@ -54,7 +52,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                                 </span>
                                 </>
                         }
-                    </div>
+                    </div> : <></>
                 }
 
             </div>
@@ -67,8 +65,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
 
     function getProductSize() {
         return {
-            widthContainer: size != null ? {height: size, width: size} : {},
-            sizeImage: size != null ? {width: size} : {}
+            widthContainer: size != null ? {width: size} : {},
         }
     }
 }

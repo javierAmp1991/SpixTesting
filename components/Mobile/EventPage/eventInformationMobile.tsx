@@ -12,7 +12,6 @@ import Image from "next/image";
 
 const textButton: string = "Comprar Entradas"
 import {EventPageEvent} from "../../../dataDemo/data";
-import {PrincipalInfoEventProp} from "../../Desktop/Misc/principalInfoEvent";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 /*let inputRadio: inputRadioProp[] = [
     {
@@ -93,12 +92,15 @@ export default function EventInformationMobile({eventInformation, form}:
             <div className={style.paddingMainConatiner}>
                 <div className={style.gridMainContainer}>
                     <div className={style.gridImageTitle}>
-                        <div className={`${style.sizeLogo}`}>
-                            <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                        <div
+                            className={`${style.paddingGradient} ${utilities.borderRadious50} ${utilities.bgFirstGradient}`}>
+                            <div className={`${style.sizeLogo}`}>
+                                <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                            </div>
                         </div>
                         <div>
                             <PrincipalInfoEventMobile item={principalInfo}/>
-                           {/* <div className={`${utilities.fontSubTitle} mb-1`}>
+                            {/* <div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}
                             </div>
                             <div className={utilities.fontPrimaryText}>
@@ -267,89 +269,89 @@ export default function EventInformationMobile({eventInformation, form}:
 
             {
                 displayDateSelector &&
-                    <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseDate}>
-                        <div className={style.mainContSelecDate}>
-                            <div className={`${utilities.fontTitle} ${style.titleCont}`}>
-                                Seleccionar Fecha
-                            </div>
-                            <div className={style.paddingContInpu}>
-                                {
-                                    venueDateList.map((item: DateVenue, index) =>
-                                        <div onClick={() => handleClick(item)}
-                                             className={item.IsSelected ? style.styleDateSelected : style.styleDate}
-                                             key={index}>
-                                            <div className={utilities.fontPrimaryText}>
-                                                <div className={utilities.clamp1}>
-                                                    Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
+                <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseDate}>
+                    <div className={style.mainContSelecDate}>
+                        <div className={`${utilities.fontTitle} ${style.titleCont}`}>
+                            Seleccionar Fecha
+                        </div>
+                        <div className={style.paddingContInpu}>
+                            {
+                                venueDateList.map((item: DateVenue, index) =>
+                                    <div onClick={() => handleClick(item)}
+                                         className={item.IsSelected ? style.styleDateSelected : style.styleDate}
+                                         key={index}>
+                                        <div className={utilities.fontPrimaryText}>
+                                            <div className={utilities.clamp1}>
+                                                Fecha: {item.Date.toLocaleString("es-US", {weekday: "long"})} {item.Date.getDate()} de {item.Date.toLocaleString("es-US", {month: "short"})} del {item.Date.getFullYear()}
+                                            </div>
+                                        </div>
+                                        <div
+                                            className={`${item.IsSelected ? utilities.fontPrimaryText : utilities.fontSecundaryText}
+                                                ${utilities.clamp1}`}>
+                                            {item.Venue}
+                                        </div>
+                                        {
+                                            item.IsSelected &&
+                                            <div className={style.positionChekcICon}>
+                                                <div className={style.checkIconProp}>
+                                                    <Image layout={"fill"}
+                                                           src={GlobalConst.sourceImages.checkIconYellow}
+                                                           alt=""/>
                                                 </div>
                                             </div>
-                                            <div
-                                                className={`${item.IsSelected ? utilities.fontPrimaryText : utilities.fontSecundaryText}
-                                                ${utilities.clamp1}`}>
-                                                {item.Venue}
-                                            </div>
-                                            {
-                                                item.IsSelected &&
-                                                    <div className={style.positionChekcICon}>
-                                                        <div className={style.checkIconProp}>
-                                                            <Image layout={"fill"}
-                                                                   src={GlobalConst.sourceImages.checkIconYellow}
-                                                                   alt=""/>
-                                                        </div>
-                                                    </div>
-                                            }
-                                        </div>
-                                    )
-                                }
-                            </div>
-                            <div onClick={handleCloseSelected}
-                                 className={style.buttonCont}>
-                                <ButtonBlue text={"aceptar"}/>
-                            </div>
+                                        }
+                                    </div>
+                                )
+                            }
                         </div>
-                    </PopUpContainerMob>
+                        <div onClick={handleCloseSelected}
+                             className={style.buttonCont}>
+                            <ButtonBlue text={"aceptar"}/>
+                        </div>
+                    </div>
+                </PopUpContainerMob>
             }
 
             {
                 displayVenue &&
-                    <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseVenue}>
-                        {
-                            <div className={style.mainContMap}>
-                                <div className={` ${style.titleCont}`}>
-                                    <div className={`${utilities.fontTitle} mb-2`}>
-                                        {venueDateSelected.NameVenue}
-                                    </div>
-                                    <div className={utilities.fontSecundaryText}>
-                                        Capacidad: {venueDateSelected.Capacity} personas
-                                    </div>
+                <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseVenue}>
+                    {
+                        <div className={style.mainContMap}>
+                            <div className={` ${style.titleCont}`}>
+                                <div className={`${utilities.fontTitle} mb-2`}>
+                                    {venueDateSelected.NameVenue}
                                 </div>
-                                <div className={style.contCenter}>
-                                    <div className={style.contMap}>
-                                        <div className={style.imgMap}>
-                                            <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
-                                        </div>
-                                    </div>
+                                <div className={utilities.fontSecundaryText}>
+                                    Capacidad: {venueDateSelected.Capacity} personas
                                 </div>
-                                <div>
-                                    <div className={`${utilities.fontPrimaryText} mb-2`}>
-                                        {venueDateSelected.Venue}
-                                    </div>
-
-                                    <div className={style.gridLinkMap}>
-                                        <div className={style.sizeLogoMap}>
-                                            <Image layout={"fill"}
-                                                   src={GlobalConst.sourceImages.googleMap} alt=""/>
-                                        </div>
-                                        <a href={venueDateSelected.LinkGoogleMap}
-                                           className={`${utilities.styleLink} ${utilities.clamp1} ${style.elipsisDirection}`}>
-                                            Ver en Google Maps
-                                        </a>
-                                    </div>
-                                </div>
-
                             </div>
-                        }
-                    </PopUpContainerMob>
+                            <div className={style.contCenter}>
+                                <div className={style.contMap}>
+                                    <div className={style.imgMap}>
+                                        <Image layout={"fill"} src={venueDateSelected.ImageMap} alt=""/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div className={`${utilities.fontPrimaryText} mb-2`}>
+                                    {venueDateSelected.Venue}
+                                </div>
+
+                                <div className={style.gridLinkMap}>
+                                    <div className={style.sizeLogoMap}>
+                                        <Image layout={"fill"}
+                                               src={GlobalConst.sourceImages.googleMap} alt=""/>
+                                    </div>
+                                    <a href={venueDateSelected.LinkGoogleMap}
+                                       className={`${utilities.styleLink} ${utilities.clamp1} ${style.elipsisDirection}`}>
+                                        Ver en Google Maps
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    }
+                </PopUpContainerMob>
             }
         </div>
     )

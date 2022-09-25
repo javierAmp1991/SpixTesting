@@ -27,6 +27,7 @@ import ResaleEventMobile from "../components/Mobile/Search/resaleEventMobile";
 import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 import OrderBy from "../components/Desktop/Search/orderBy";
+import OrderByMobile from "../components/Mobile/Search/orderBy";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -82,7 +83,20 @@ export default function ResaleTicketSearch() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
-                <div className={cssStyle.bg}>
+                <div className={`${utilities.maxWidthMobile} relative`}>
+                    <div className={style.paddingContainer}>
+                        <OrderByMobile listPrincipalFilter={principalFilterReview} isDarkMode={isDarkMode}/>
+                        <div className={styleMobile.gridResaleEventMobile}>
+                            {
+                                resaleSearchList.map((item) =>
+                                    <ResaleEventMobile key={item.Id} item={item}/>
+                                )
+                            }
+                        </div>
+                        {buttonsNavegationMobile}
+                    </div>
+                </div>
+                {/*<div className={cssStyle.bg}>
                     <div className={styleMobile.gridHeaderResult}>
                         <div className={styleMobile.sizeBanner}>
                             <Image layout={"fill"} src={resaleBanner} alt={""}/>
@@ -145,7 +159,7 @@ export default function ResaleTicketSearch() {
                                                          isDisplayAdvancedFilter={isDisplayAdvancedFilter}
                                                          isReturnActive={isReturnActive}/>
                     }
-                </div>
+                </div>*/}
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>

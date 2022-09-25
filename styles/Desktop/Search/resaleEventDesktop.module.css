@@ -55,6 +55,11 @@
     position: relative;
 }
 
+.contImageProp{
+    padding: 12px 12px 0 12px;
+    width: 100%;
+}
+
 .sizeImageProp {
     width: 100%;
     aspect-ratio: 1/1;
@@ -69,6 +74,7 @@
     display: grid;
     margin: auto;
     width: 100%;
+    padding: 0 12px;
     justify-items: center;
     box-shadow: var(--shadowUnderProducts);
     border-radius: 6px;
@@ -99,11 +105,11 @@
 .gridProductsPop {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 16px;
     overflow: scroll;
     scroll-snap-type: y mandatory;
     scroll-snap-stop: always;
-    padding: 8px 24px 12px 24px;
+    padding: 8px;
 }
 
 .mainDivPopUp {
@@ -121,10 +127,10 @@
 }
 
 .gridPriceNameProp {
-    padding: 8px 12px;
+    padding: 8px 0;
     display: grid;
     width: 100%;
-    gap: 4px;
+    gap: 2px;
 }
 
 .sizeArrow {

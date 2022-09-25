@@ -31,6 +31,8 @@ import RatingStarDesktop from "../components/Desktop/Misc/ratingStarDesktop";
 import LayoutSearchDesktop from "../components/Desktop/layoutSearchDesktop";
 import OrderBy from "../components/Desktop/Search/orderBy";
 import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
+import OrderByMobile from "../components/Mobile/Search/orderBy";
+import ProductViewSquareMobile from "../components/Mobile/Misc/productViewSquare";
 
 let AntSig: string[] = ["Anterior", "Siguiente"];
 
@@ -86,7 +88,19 @@ export default function ResaleTicketSearch() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
-                <div className={cssStyle.bg}>
+                <div className={`${utilities.maxWidthMobile} relative`}>
+                    <div className={style.paddingContainer}>
+                        <OrderByMobile listPrincipalFilter={principalFilterReview} isDarkMode={isDarkMode}/>
+                        <div className={styleMobile.gridProductSelected}>
+                            {
+                                ListProducts.listProducts.map((item) =>
+                                    <ProductViewSquareMobile size={null} key={item.Name} item={item} isDisplayOffer={true}/>
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+                {/*<div className={cssStyle.bg}>
                     <div className={styleMobile.gridHeaderResult}>
                         <div className={styleMobile.sizeBanner}>
                             <Image layout={"fill"} src={resaleBanner} alt={""}/>
@@ -149,7 +163,7 @@ export default function ResaleTicketSearch() {
                                                          isDisplayAdvancedFilter={isDisplayAdvancedFilter}
                                                          isReturnActive={isReturnActive}/>
                     }
-                </div>
+                </div>*/}
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={darkModeToggle}>
@@ -159,7 +173,7 @@ export default function ResaleTicketSearch() {
                         {
                             ListProducts.listProducts.map((item, index) =>
                                 <ProductViewSquare key={index} item={item} size={null}
-                                                 isDisplayOffer={true}/>)
+                                                   isDisplayOffer={true}/>)
                         }
                     </div>
                     {buttonsNavegation}

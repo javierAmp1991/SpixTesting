@@ -5,16 +5,22 @@
     align-items: center;
     justify-items: center;
     justify-content: center;
-    background: white;
     object-fit: cover;
+    background: white;
+}
+
+.sizeImageProduct {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
 }
 
 .boxShadowPro {
     box-shadow: var(--boxShadowCard);
-    border-radius: 8px;
-    overflow: hidden;
-    background: white;
+    border-radius: 12px;
     position: relative;
+    background: white;
+    padding: 0 8px;
 }
 
 .gridPriceWithDiscount {
@@ -24,20 +30,45 @@
 
 .gridInfoProduct {
     display: grid;
-    gap: 4px;
+    gap: 2px;
     padding: 8px;
 }
 
-.aspectRatio {
-    aspect-ratio: 1/1;
+.contImage {
     position: relative;
-    display: grid;
-    margin: auto;
-    background: white;
+    padding: 12px 32px 0 32px;
+}
+
+.gridInfoProductHorizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px 8px 8px;
+}
+
+.aspectRatio {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.zindexListon {
+    z-index: 6000000;
 }
 
 .image {
     object-fit: cover;
+}
+
+.gridHorizontalProduct {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px;
+    position: relative;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 4px;
 }
 
 .discountBox {

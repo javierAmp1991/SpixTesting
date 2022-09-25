@@ -35,11 +35,9 @@ import {FeaturedListSearch, FeaturedListHome} from "../dataDemo/EventView/featur
 //region importData
 import {DropDownNewSearch, HomeBannerData} from "../dataDemo/data";
 import {CarrouselAutoHome} from "../dataDemo/data";
-import {DailyOfferData, DailyOfferData2} from "../dataDemo/data";
 import {PublicityData} from "../dataDemo/data";
 import {Cines} from "../dataDemo/data";
 import {Restaurants} from "../dataDemo/data";
-import {AtributesFooter} from "../dataDemo/data";
 import {OwnPublicityData} from "../dataDemo/data";
 import {
     BaseEventCard,
@@ -48,7 +46,6 @@ import {
     DropDownHome,
     InOfferHomeBase, DailyOfferDeskOffer
 } from "../dataDemo/EventView/eventVerticalView";
-import Link from "next/link";
 import LayoutCarrouselLoop from "../components/Desktop/Layouts/layoutCarrouselLoop";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 import LayoutAutoCarrouselMobile from "../components/Mobile/Layouts/layoutAutoCarrouselMobile";
@@ -59,7 +56,12 @@ import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
 import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
-import {TodayInValpoMobile, InOfferHomeMobile, MostPopularDataHomeMobile} from "../dataDemo/Mobile/EventView/EventCard";
+import {
+    TodayInValpoMobile,
+    InOfferHomeMobile,
+    MostPopularDataHomeMobile,
+    DailyOfferMobile
+} from "../dataDemo/Mobile/EventView/EventCard";
 import EventVerticalViewMob from "../components/Mobile/Events/eventVerticalViewMob";
 import ImageGradientView from "../components/Desktop/EventsView/ImageGradientView";
 import {
@@ -70,6 +72,7 @@ import {
 import ImageGradientViewMobile from "../components/Mobile/Events/ImageGradientView";
 import Image from "next/image";
 import PublicityVertical, {VerticalPublicityProp} from "../components/Desktop/CRM/publicityVertical";
+import EventVerticalViewMobile from "../components/Mobile/Events/eventVerticalViewMobile";
 //endregion
 
 //region constantes
@@ -194,32 +197,37 @@ export default function Index() {
 
     let dailyOfferMobile = <TitleSection titleLink={dailyOfferHeaderTitleLink} darkModeState={isDarkMode}
                                          paddingTitle={spaceComponentsMobileY}>
-        <Link href={"/eventPage"}>
-            <EventWithBannerMobile displayLogoRating={true}
-                                   darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>
-        </Link>
+        <LayoutCarrouselMobile gapLayout={20}>
+            {
+                DailyOfferMobile.list.map(item =>
+                    <EventVerticalViewMob darkModeState={isDarkMode} item={item} key={item.Id} isActiveSnap={true}/>
+                )
+            }
+        </LayoutCarrouselMobile>
+        {/*<EventWithBannerMobile displayLogoRating={true}
+                               darkModeState={isDarkMode} item={DailyOfferData.dailyOffer}/>*/}
     </TitleSection>
     let mostPopularMobile = <TitleSection darkModeState={isDarkMode} paddingTitle={spaceComponentsMobileY}
                                           titleLink={mostPopularTleLink}>
         {
-            <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
+            <LayoutCarrouselMobile gapLayout={20}>
                 {
-                    /*MostPopularDataHomeMobile.list.map((item) =>
+                    MostPopularDataHomeMobile.list.map((item) =>
                         <div key={item.Id} className={utilities.mainDivCarrousel}>
                             <EventVerticalViewMob isActiveSnap={false} item={item} darkModeState={isDarkMode}/>
-                        </div>)*/
+                        </div>)
 
-                    MostPopularGradient.list.map((item) =>
+                    /*MostPopularGradient.list.map((item) =>
                         <div key={item.Id} className={`${utilities.snapScroll} px-10`}>
                             <ImageGradientViewMobile item={item} key={item.Id}/>
                         </div>
-                    )
+                    )*/
 
                     /*MostPopularData.listMostPopular.map((item, index) =>
                         <EventOnlyImageLogo key={index} darkMode={isDarkMode} item={item}/>
                     )*/
                 }
-            </LayoutWithNavCircleMobile>
+            </LayoutCarrouselMobile>
 
 
         }
@@ -240,13 +248,13 @@ export default function Index() {
                                          paddingTitle={spaceComponentsMobileY}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                /*TodayInValpoMobile.list.map(item =>
+                TodayInValpoMobile.list.map(item =>
                     <EventVerticalViewMob isActiveSnap={true} item={item} darkModeState={isDarkMode}
-                                          key={item.Id}/>)*/
-                TodayInValpoGradient.list.map(item =>
+                                          key={item.Id}/>)
+                /*TodayInValpoGradient.list.map(item =>
                     <div key={item.Id} className={"w-64"}>
                         <ImageGradientViewMobile item={item}/>
-                    </div>)
+                    </div>)*/
             }
         </LayoutCarrouselMobile>
     </TitleSection>
@@ -319,20 +327,9 @@ export default function Index() {
      </LayoutCategoryFooter>*/
 
     let listDefaultPageMobile: ComponentWithSpaceMobile[] = [
+
         {
             Component: carrouselAutoMobile,
-            padding: paddingGeneralMobile
-        },
-        /*{
-            Component: informationMobile,
-            padding: paddingGeneralMobile
-        },*/
-        {
-            Component: dailyOfferMobile,
-            padding: paddingGeneralMobile
-        },
-        {
-            Component: mostPopularMobile,
             padding: paddingGeneralMobile
         },
         {
@@ -344,9 +341,23 @@ export default function Index() {
             padding: paddingGeneralMobile
         },
         {
+            Component: mostPopularMobile,
+            padding: paddingGeneralMobile
+        },
+        {
             Component: publicity1Mobile,
             padding: paddingPublcity
         },
+        /*{
+            Component: informationMobile,
+            padding: paddingGeneralMobile
+        },*/
+        {
+            Component: dailyOfferMobile,
+            padding: paddingGeneralMobile
+        },
+
+
         {
             Component: carrouselRounded1Mobile,
             padding: paddingGeneralMobile

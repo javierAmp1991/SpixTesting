@@ -59,7 +59,7 @@
     padding: 10px 0 0 0;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
-    gap: 10px;
+    gap: 5px;
 }
 
 .bottomDivResale {
@@ -86,3 +86,28 @@
     gap: 4px;
     align-items: center;
 }
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px;
+    align-items: center;
+}
+
+.tagStyleDisc {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 3px 10px;
+    background: var(--colorTagDiscount);
+    color: white;
+}
+
+.textResaleOffer{
+    font-size: 15px;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 400;
+}
+

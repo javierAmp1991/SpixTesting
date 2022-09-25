@@ -1,9 +1,7 @@
-import utilities from "/styles/utilities.module.css"
 import style from "/styles/Mobile/Events/homeFeatured.module.css"
 import Image from "next/image";
 import React from "react";
 import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
-import {GlobalConst} from "../../../public/globalConst";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
@@ -26,7 +24,6 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
         MaxDate: item.MaxDate,
         IsDarkMode: false,
     }
-    let cssStyle = getCssStyles()
     return (
         <div className={style.shadowDivSpace}>
             <div className={style.mainDiv}>
@@ -49,20 +46,20 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                             <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
                         </div>
                     </div>
-                    {/*<div className={style.mainDivProductsSingle}>
+                    <div className={style.mainDivProductsSingle}>
                         {
                             item.ListProducts.map((item, index) =>
                                 index == 0 &&
-                                <ProductViewMobile isDisplayOffer={false} item={item} size={120}/>
+                                <ProductViewMobile isDisplayOffer={false} item={item} size={130}/>
                             )
                         }
-                    </div>*/}
+                    </div>
                 </div>
             </div>
         </div>
     )
 
-    function getCssStyles() {
+    /*function getCssStyles() {
         return {
             borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
             bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
@@ -73,5 +70,5 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
             fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude,
             styleTags: darkModeState ? utilities.styleSpixTagDarkMode : utilities.styleSpixTag
         }
-    }
+    }*/
 }

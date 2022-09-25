@@ -1,6 +1,5 @@
 .sizeImageRoundedCarrousel {
-    /*width:120px*/
-    width: 95px;
+    width:120px;
     aspect-ratio: 1/1;
     object-fit: cover;
     object-position: top;

@@ -6,7 +6,7 @@
     box-shadow: var(--boxShadowCard);
     border-radius: 6px;
     overflow: hidden;
-    width: 220px;
+    width: 240px;
     margin: auto;
 }
 
@@ -46,11 +46,11 @@
 .princiaplGridInfo {
     display: grid;
     align-content: start;
-    padding: 10px 0 0 0;
+    padding: 8px 0 0 0;
 }
 
 .TopDivInfo {
-    padding: 0 24px 12px 24px;
+    padding: 0 var(--paddinBottomDivX) 12px var(--paddinBottomDivX);
 }
 
 .gridRatingStar {
@@ -65,7 +65,7 @@
 }
 
 .bottomDivSearch {
-    padding: 8px 24px;
+    padding: 8px var(--paddinBottomDivX);
     border-top: 2px dashed #e7e7e7;
     display: grid;
     gap: 6px;
@@ -98,6 +98,32 @@
 .displayOut {
     height: 24px;
     transition: .2s;
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px;
+    align-items: center;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.tagStyleDisc {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 3px 10px;
+    background: var(--colorTagDiscount);
+    color: white;
+}
+
+.textResaleOffer{
+    font-size: 15px;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 400;
 }
 
 

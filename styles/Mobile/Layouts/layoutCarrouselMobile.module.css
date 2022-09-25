@@ -6,5 +6,5 @@
     overflow: scroll;
     scroll-snap-type: x mandatory;
     transition: 1s;
-    padding: 10px 6px;
+    padding: 8px;
 }
