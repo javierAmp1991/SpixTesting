@@ -22,7 +22,6 @@ import {FeaturedListSearch, BaseFeaturedView, PrincipalFeaturedSearch} from "../
 import FeaturedViewDesktop from "../components/Desktop/EventsView/featuredView";
 import PublicityView from "../components/Desktop/CRM/publicityView";
 import FeaturedViewPrincipal from "../components/Desktop/Search/featuredViewPrincipal";
-import PublicityNewsMobile from "../components/Mobile/CRM/publicityNewsMobile";
 import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import FeaturedViewMobile from "../components/Mobile/Events/featuredView";
 import FeaturedViewPrincipalMobile from "../components/Mobile/Search/featuredViewPrincipal";
@@ -42,10 +41,8 @@ export default function FeaturedSearch() {
     const handleClick = () => setIsDisplayResult(isDisplayResult = !isDisplayResult);
     const isSmallDown = useMediaQuery('(max-width: 1280px)');
     let cssStyle = getCssStyle();
-    const isVertical: boolean = false;
     const publicity: string = PublicityData.publicityList[0]
     const publicity1: string = PublicityData.publicityList[1]
-    const featuredText: string = "Destacados";
 
     const isCategory: boolean = true;
     const isDisplayCategory: boolean = true;
