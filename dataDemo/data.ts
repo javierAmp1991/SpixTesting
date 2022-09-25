@@ -3187,7 +3187,7 @@ export class DateVenue {
 export class Product {
     public Name: string
     public Price: number
-    public DiscountPercent: number
+    public DiscountPercent?: number
     public Include?: string
     public ImagePath?: string
     public Tag?: string
