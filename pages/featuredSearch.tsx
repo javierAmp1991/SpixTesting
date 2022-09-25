@@ -90,7 +90,7 @@ export default function FeaturedSearch() {
 
     let dropDownFeaturedMobile =
         FeaturedListSearch.list.map((item: BaseFeaturedView, index) =>
-            index == 0 &&
+            index >= 0 && index <= 1 &&
             <FeaturedViewMobile key={item.Id} darkModeState={isDarkMode} item={item}/>
         )
     let buttonsNavegationMobile =
@@ -145,8 +145,8 @@ export default function FeaturedSearch() {
 
                                 <div className={style.gridResult}>
                                     <FeaturedViewPrincipalMobile item={PrincipalFeaturedSearch.item}/>
-                                    {/*<PublicityViewMobile linkImage={publicity}/>
-                                    {dropDownFeaturedMobile}*/}
+                                    <PublicityViewMobile linkImage={publicity}/>
+                                    {dropDownFeaturedMobile}
                                     <PublicityViewMobile linkImage={publicity1}/>
                                     {dropDownMobile}
                                 </div>

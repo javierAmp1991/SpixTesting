@@ -95,7 +95,7 @@ export default function ReviewSearch() {
                         isDisplayResult &&
                         <div className={`${utilities.maxWidthMobile} relative`}>
                             <div className={style.paddingContainer}>
-                                <div className={styleMobile.gridResultFiltersOut}>
+                                {/*<div className={styleMobile.gridResultFiltersOut}>
                                     <div className={styleMobile.gridNewNext}>
                                         {
                                             displayNextEvent ?
@@ -120,10 +120,10 @@ export default function ReviewSearch() {
                                                 </button>
                                         }
                                     </div>
-                                </div>
+                                </div>*/}
                                 {
-                                    displayNextEvent ?
-                                        <>
+                                    displayNextEvent &&
+                                        <div className={"mt-5"}>
                                             <div className={style.gridResult}>
                                                 <div>
                                                     <NewSearcPrincipalMobile item={newSearchList[0]}/>
@@ -144,8 +144,8 @@ export default function ReviewSearch() {
                                                 </div>
                                             </div>
                                             {buttonsNavegationMobile}
-                                        </>
-                                        :
+                                        </div>
+                                        /*:
                                         <>
                                             <LayoutDropDownMobile gapLayout={10}>
                                                 {
@@ -155,7 +155,7 @@ export default function ReviewSearch() {
                                                     )
                                                 }
                                             </LayoutDropDownMobile>
-                                        </>
+                                        </>*/
                                 }
                             </div>
                         </div>
