@@ -78,7 +78,6 @@ export default function ReviewSearch() {
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={isDarkMode}>
                 <div className={cssStyle.bg}>
-
                     {/*<LayoutPrincipalFilterMobile listPrincipalFilter={principalFilterReview}
                                                  listCategoryFilter={categoryFilterRest}
                                                  handleOpenFilter={handleClick}
@@ -173,7 +172,7 @@ export default function ReviewSearch() {
                         <div className={style.PrincipalGridNews}>
                             <div className={style.gridPrinciaplNews}>
                                 <NewSearcPrincipalDesktop item={newSearchList[0]}/>
-                                <NewSearcPrincipalDesktop item={newSearchList[0]}/>
+                                <NewSearcPrincipalDesktop item={newSearchList[2]}/>
                             </div>
                             <PublicityView linkImage={publicity}/>
 

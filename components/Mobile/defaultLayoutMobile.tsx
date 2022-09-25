@@ -21,7 +21,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
     const cssStyle = getCssStyle()
     //endregion
     return (
-        <div className={cssStyle.background}>
+        <div className={utilities.bgBodyNormalMobile}>
             {
                 isDisplaySug?
                     <SuggHeaderMobile returnMet={handleDisplaySug}/>
@@ -42,7 +42,6 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
 
     function getCssStyle() {
         return {
-            background: isDarkMode? utilities.bgBodyDarkModeMobile : utilities.bgBodyNormalMobile,
             stopScroll: isOpenSideSetting && utilities.noScrollBody,
             desplegableCont: isOpenSideSetting ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn
         }
