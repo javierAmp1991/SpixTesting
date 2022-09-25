@@ -32,7 +32,7 @@
 }
 
 .gridInfo {
-    padding: 10px 12px 0 12px;
+    padding: 8px 6px 0 10px;
 }
 /*
 
@@ -90,23 +90,24 @@
 .gridTags {
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    gap: 8px;
+    gap: 4px;
     align-items: center;
+    overflow: scroll;
 }
 
 .tagStyleDisc {
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 12px;
+    line-height: 12px;
     font-weight: 500;
     border-radius: 3px;
     overflow: hidden;
-    padding: 3px 10px;
+    padding: 3px 6px;
     background: var(--colorTagDiscount);
     color: white;
 }
 
 .textResaleOffer{
-    font-size: 15px;
+    font-size: 14px;
     color: var(--colorPrimaryTextDesktop);
     font-weight: 400;
 }
