@@ -25,8 +25,6 @@ const disclaimer: string = "Esta verificacion fue solicitada por el adminsitrado
     "y generalmente es solicitado para asegurar la seguridad del cliente (ud), la exclusividad del evento o por aspectos legales."
 
 export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { levelVerfication: number, levelUser: number }) {
-    const mainText: string = `Este evento requiere de verificacion nivel ${levelVerfication} para comprar entradas. La verificacion nivel ${levelVerfication} consiste de los siguientes requisitos:`
-
     return (
         <div className={style.mainDiv}>
             <div className={style.logoSpix}>
@@ -51,7 +49,7 @@ export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { le
             </div>
 
             <p className={style.mainText}>
-                {mainText}
+                Este evento requiere de verificacion nivel <b>{levelVerfication}</b> para comprar entradas. La verificacion nivel <b>{levelVerfication}</b> consiste de los siguientes requisitos:`
             </p>
             <div className={style.req}>
                 {

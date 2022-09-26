@@ -6,7 +6,8 @@
     padding: 16px 24px;
     border-radius: 5px;
     scroll-snap-align: start;
-    border: 1px solid var(--separationLineColor)
+    border-bottom: 2px solid var(--separationLineColor);
+    border-top: 2px solid var(--separationLineColor);
 }
 
 .sizeIcon {
