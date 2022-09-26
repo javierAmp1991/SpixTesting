@@ -309,6 +309,13 @@
     margin: auto;
 }
 
+.buttonContPopUp {
+    border-top: 2px solid var(--separationLineColor);
+    padding: 24px 32px 0 32px;
+    width: 100%;
+    margin: auto;
+}
+
 .gridLinkMap {
     display: grid;
     grid-template-columns: max-content 1fr;

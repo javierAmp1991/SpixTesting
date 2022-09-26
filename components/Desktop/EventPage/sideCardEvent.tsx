@@ -141,7 +141,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                             </div>
                         </div>
                         <div onClick={handleCloseSelected}
-                             className={style.buttonCont}>
+                             className={style.buttonContPopUp}>
                             <ButtonBlue text={"Aceptar"}/>
                         </div>
                     </div>
