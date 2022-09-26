@@ -1,8 +1,8 @@
 .mainDiv {
     height: max-content;
-    width: 100%;
+    width: 600px;
     background: white;
-    padding: 48px;
+    padding: 20px 48px 48px 48px;
     color: var(--colorPrimaryTextDesktop);
 }
 
@@ -58,4 +58,35 @@
     grid-template-columns: repeat(2, max-content);
     gap: 6px;
     align-items: center;
+}
+
+.circle {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--gradientBlueButton);
+}
+
+.divRes {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.logoSpix {
+    width: 120px;
+    height: 35px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+.mainContorno {
+    border: 1px solid var(--separationLineColor);
+    box-shadow: var(--boxShadowCard);
+    padding: 24px 16px;
+    border-radius: 8px;
+    overflow: hidden;
 }

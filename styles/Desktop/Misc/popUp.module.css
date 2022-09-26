@@ -26,12 +26,12 @@
 .renderDiv {
     margin: auto;
     position: relative;
-    width: var(--widthModal);
     height: var(--heightModal);
     background: white;
     overflow: hidden;
     max-height: 700px;
-
+    max-width: 700px;
+    min-width: 500px;
     border-radius: 16px;
     box-shadow: var(--boxShadowModal);
     z-index: 100000000000;

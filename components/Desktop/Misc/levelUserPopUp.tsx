@@ -1,6 +1,7 @@
 import style from "/styles/Desktop/Misc/levelUserPopUp.module.css"
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
+import {GlobalConst} from "../../../public/globalConst";
 
 const buttonText: string = "Realizar Verificacion"
 const level1Req: string[] = [
@@ -29,57 +30,66 @@ export default function LevelUserPopUp({levelVerfication, levelUser}: { levelVer
 
     return (
         <div className={style.mainDiv}>
-            <div className={`${utilities.fontTitle} ${style.spaceTitle}`}>
-                Verificacion requerida
+            <div className={style.logoSpix}>
+                <Image layout={"fill"} src={"/images/spixBlue.png"}/>
             </div>
-
-            <div className={style.actualLevel}>
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={"/images/shieldBlack.png"}/>
+            <div className={style.mainContorno}>
+                <div className={`${utilities.fontTitle} ${style.spaceTitle}`}>
+                    Verificacion requerida
                 </div>
-                <div>
+
+                <div className={style.actualLevel}>
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} src={"/images/shieldIconColor.png"}/>
+                    </div>
+                    <div>
+                        {
+                            levelUser > 0 ?
+                                `Tu nivel de verificacion actual es ${levelUser}`
+                                :
+                                `Actualmente no estas registrado`
+                        }
+                    </div>
+                </div>
+
+                <p className={style.mainText}>
+                    {mainText}
+                </p>
+                <div className={style.req}>
                     {
-                        levelUser > 0 ?
-                            `Tu nivel de verificacion actual es ${levelUser}`
+                        levelVerfication == 1 && levelUser < 1 ?
+                            <>
+                                {
+
+                                    level1Req.map(item =>
+                                        <div className={style.divRes} key={item}><span className={style.circle}/> {item}
+                                        </div>)
+                                }
+                            </>
                             :
-                            `Actualmente no estas registrado`
+                            levelVerfication == 2 && levelUser == 1 ?
+                                <>
+                                    {level2ReqLvl1.map(item =>
+                                        <div className={style.divRes} key={item}><span className={style.circle}/> {item}
+                                        </div>)}
+                                </>
+                                :
+                                <>
+                                    {level2Req.map(item =>
+                                        <div className={style.divRes} key={item}>
+                                            <div className={style.circle}/>
+                                            {item}</div>)}
+                                </>
+
                     }
                 </div>
-            </div>
 
-            <p className={style.mainText}>
-                {mainText}
-            </p>
-            <div className={style.req}>
-                {
-                    levelVerfication == 1 && levelUser < 1 ?
-                        <>
-                            {
-
-                                level1Req.map(item =>
-                                    <span key={item}>- {item}</span>)
-                            }
-                        </>
-                        :
-                        levelVerfication == 2 && levelUser == 1 ?
-                            <>
-                                {level2ReqLvl1.map(item =>
-                                    <span key={item}>- {item}</span>)}
-                            </>
-                            :
-                            <>
-                                {level2Req.map(item =>
-                                    <span key={item}>- {item}</span>)}
-                            </>
-
-                }
-            </div>
-
-            <p className={style.disclaimer}>
-                {disclaimer}
-            </p>
-            <div className={style.gridButtons}>
-                <button className={style.buttonLevelUser}>{buttonText}</button>
+                <p className={style.disclaimer}>
+                    {disclaimer}
+                </p>
+                <div className={style.gridButtons}>
+                    <button className={style.buttonLevelUser}>{buttonText}</button>
+                </div>
             </div>
         </div>
     )
