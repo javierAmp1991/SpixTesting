@@ -19,6 +19,7 @@
     border-radius: 6px;
     overflow: hidden;
     box-shadow: var(--boxShadowCard);
+    background: white;
 }
 
 .mainContaExtraImage {
@@ -184,6 +185,7 @@
     width: 100%;
     aspect-ratio: 2/1;
     position: relative;
+    background: #f3f3f3;
 }
 
 .gridNew{

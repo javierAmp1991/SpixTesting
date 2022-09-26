@@ -105,7 +105,7 @@ export default function WriteNewMobile() {
                                 <div className={style.mainContPortada}>
                                     <label htmlFor={idUploadPortada}>
                                         <Image style={{background: "#f8f8f8"}} priority={true} layout={"fill"}
-                                               objectFit={"contain"} src="/images/placeholderImageRec.png" alt={""}/>
+                                               objectFit={"contain"} src="/images/placeholderSquare2.png" alt={""}/>
                                     </label>
                                 </div>
                                 <input onChange={handleUploadPortada}

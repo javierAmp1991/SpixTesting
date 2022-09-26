@@ -11,7 +11,7 @@ import LayoutSideCardNew from "../components/Desktop/Layouts/layoutSideCardNew";
 
 const defaulTitleNew: string = "Titulo de la noticas";
 const defaulSubTitleNew: string = "Cuerpo de la noticias";
-const defaulImageNew: string = "/images/placeholderImageRec.png";
+const defaulImageNew: string = "/images/placeholderSquare2.png";
 
 export default function WriteReview() {
     const isSmallDown = useMediaQuery('(max-width: 1281px)');
