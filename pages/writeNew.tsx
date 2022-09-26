@@ -7,6 +7,7 @@ import WriteNewLeft from "../components/Desktop/WriteNew/WriteNewLeft";
 import SideCardNew, {SideNewPop} from "../components/Desktop/WriteNew/sideCardNew";
 import WriteNewMobile from "../components/Mobile/WriteNew/WriteNewMobile";
 import {useState} from "react";
+import LayoutSideCardNew from "../components/Desktop/Layouts/layoutSideCardNew";
 
 const defaulTitleNew: string = "Titulo de la noticas";
 const defaulSubTitleNew: string = "Cuerpo de la noticias";
@@ -67,7 +68,7 @@ export default function WriteReview() {
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={null}>
                 <div className={`${utilities.maxWidthBodyContentSpix}`}>
-                    <LayoutSideCard childrens={childrens}/>
+                    <LayoutSideCardNew childrens={childrens}/>
                 </div>
             </DefaultLayoutDesktop>
     )

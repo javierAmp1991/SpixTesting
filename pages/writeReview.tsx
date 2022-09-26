@@ -6,6 +6,7 @@ import SideCard from "../components/Desktop/Review/sideCard";
 import WriteReviewMobile from "../components/Mobile/Review/writeReviewMobile";
 import DefaultLayoutMobile from "../components/Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../components/Desktop/defaultLayoutDesktop";
+import LayoutSideCardNew from "../components/Desktop/Layouts/layoutSideCardNew";
 
 export default function WriteReview() {
     const isSmallDown = useMediaQuery('(max-width: 1281px)');
@@ -29,7 +30,7 @@ export default function WriteReview() {
             :
             <DefaultLayoutDesktop isDarkMode={isDarkMode} isLogged={false} darkModeToggle={null}>
                 <div className={`${utilities.maxWidthBodyContentSpix}`}>
-                    <LayoutSideCard childrens={childrens}/>
+                    <LayoutSideCardNew childrens={childrens}/>
                 </div>
             </DefaultLayoutDesktop>
     )

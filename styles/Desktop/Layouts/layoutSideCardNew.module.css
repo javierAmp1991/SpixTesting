@@ -1,0 +1,31 @@
+.grid {
+    --margen: 40px;
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 24px;
+}
+
+.leftCardProp {
+    margin: 34px 0 0 0;
+    padding: 8px;
+    overflow: hidden;
+    z-index: 800;
+}
+
+.rightCardProp {
+    box-shadow: 0 5px 12px rgba(0, 0, 0, .1), 0 -1px 6px rgba(0, 0, 0, .1);
+    margin: var(--margen) 0;
+    top: var(--margen);
+    position: sticky;
+    height: max-content;
+    max-height: 630px;
+    border-radius: 8px;
+    z-index: 500;
+}
+
+@media (min-width: 1281px) {
+    .grid {
+        grid-template-columns: 1fr 370px;
+        gap: 40px;
+    }
+}
