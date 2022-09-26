@@ -56,12 +56,17 @@ import FormView from "../components/Mobile/Misc/formView";
 import LayoutPurpleContainer from "../components/Desktop/Layouts/layoutPurpleContainer";
 import ProductViewSquareMobile from "../components/Mobile/Misc/productViewSquare";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
+import FormViewMobile from "../components/Mobile/Misc/formViewMobile";
+import FormViewDesktop from "../components/Desktop/Misc/formView";
+import LayoutWithNavCircleMobileFull from "../components/Mobile/Layouts/layoutWithNavCircleMobileFull";
+import TitleSectionMobile from "../components/Mobile/Misc/titleSectionMobile";
 //endregion
 
 const spaceComponentsMobileY = 16
 const spaceComponentsDeskY = 25
 const spaceComponents = 25
 const noSpaceComponentsDesk = 0
+const paddingPublcity: paddingAsignation = {pt: 24, pb: 24, pl: 0, pr: 0}
 const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 16, pr: 16}
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 2, pr: 2}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 2, pr: 2}
@@ -163,18 +168,18 @@ export default function EventPage() {
         </LayoutCarrouselMobile>
     </TitleSection>
 
-    let inSearchMobile = <TitleSection titleLink={inSearchTitle} paddingTitle={spaceComponentsDeskY}
+    let inSearchMobile = <TitleSectionMobile titleLink={inSearchTitle} paddingTitle={spaceComponentsDeskY} paddingLeft={16}
                                        darkModeState={false}>
-        <LayoutWithNavCircleMobile isDarkMode={false}>
+        <LayoutWithNavCircleMobileFull isDarkMode={false}>
             {
                 FormList.listForm.map((item, index) =>
                     <div key={index}>
-                        <FormView item={item}/>
+                        <FormViewMobile item={item}/>
                     </div>)
             }
-        </LayoutWithNavCircleMobile>
+        </LayoutWithNavCircleMobileFull>
 
-    </TitleSection>
+    </TitleSectionMobile>
 
     /*  let moreOffert = <TitleSection titleLink={discountTitle}
                                      paddingTitle={spaceComponentsMobileY} darkModeState={false}>
@@ -220,7 +225,7 @@ export default function EventPage() {
         },
         {
             Component: inSearchMobile,
-            padding: paddingDefaultSection
+            padding: paddingPublcity
         },
         {
             Component: offerEvent,
@@ -332,7 +337,7 @@ export default function EventPage() {
                     {
                         FormList.listForm.map((item, index) =>
                             <div key={index}>
-                                <FormView item={item}/>
+                                <FormViewDesktop item={item}/>
                             </div>
                         )
                     }
@@ -374,7 +379,7 @@ export default function EventPage() {
             Component: eventInformationDesk,
             padding: paddingEventInformation
         },
-        {
+       {
             Component: inSearch,
             padding: paddingDefaultSectionDeskCarrousel
         },

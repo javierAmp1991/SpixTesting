@@ -11,6 +11,9 @@ import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 import LevelUserPopUp from "../Misc/levelUserPopUp";
+import {ReactDOM, ReactPortal} from "react";
+import {createPortal} from "react-dom";
+import {Portal} from "next/dist/client/portal";
 
 export class LevelUser {
     Id: string
@@ -79,7 +82,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
     }
 
     const handleClickBuy = () => {
-        if(user.Level < userRequirement) {
+        if (user.Level < userRequirement) {
             handleOpenLevelUser()
         }
     }
@@ -275,9 +278,11 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
             }
             {
                 displayLevelUser &&
+
                 <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
-                        <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
+                    <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
                 </PopUpContainer>
+
             }
         </div>
     )
