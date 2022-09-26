@@ -1156,7 +1156,7 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Ceveza 1.1",
                         Price: 18990,
-                        DiscountPercent: 10,
+                        DiscountPercent: null,
                         Include: "Lleve 2 pague 1",
                         ImagePath: "/images/cerveza1.jpg",
                         Tag: "Cerveza"
@@ -1167,7 +1167,7 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Cerveza 2.2",
                         Price: 18990,
-                        DiscountPercent: 10,
+                        DiscountPercent: null,
                         Include: "Lleve 2 pague 1",
                         ImagePath: "/images/cerveza2.jpg",
                         Tag: "Cerveza"
@@ -1199,7 +1199,7 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Cerveza 5.5",
                         Price: 9990,
-                        DiscountPercent: 20,
+                        DiscountPercent: null,
                         Include: "Dcto 2 Un.",
                         ImagePath: "/images/cerveza5.jpg",
                         Tag: "Energetica"
@@ -1214,7 +1214,7 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Hamburguesa 1.1",
                         Price: 18990,
-                        DiscountPercent: 10,
+                        DiscountPercent: null,
                         Include: "Lleve 2 pague 1",
                         ImagePath: "/images/hamb1.jpg",
                         Tag: "Cerveza"
@@ -1226,7 +1226,7 @@ export namespace ListProducts2 {
                         Name: "Hamburguesa 2.2",
                         Price: 18990,
                         DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
+                        Include: null,
                         ImagePath: "/images/hamb2.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
@@ -1258,7 +1258,7 @@ export namespace ListProducts2 {
                         Name: "Hamburguesa 5.5",
                         Price: 9990,
                         DiscountPercent: 20,
-                        Include: "Dcto 2 Un.",
+                        Include: null,
                         ImagePath: "/images/hamb5.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
@@ -1273,7 +1273,7 @@ export namespace ListProducts2 {
                         Name: "Energetica 1.1",
                         Price: 18990,
                         DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
+                        Include: null,
                         ImagePath: "/images/product6.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
@@ -1283,7 +1283,7 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Energetica 2.2",
                         Price: 18990,
-                        DiscountPercent: 10,
+                        DiscountPercent: null,
                         Include: "Lleve 2 pague 1",
                         ImagePath: "/images/product8.jpg",
                         Tag: "Cerveza"
@@ -1316,7 +1316,7 @@ export namespace ListProducts2 {
                         Name: "Energetica 5.5",
                         Price: 9990,
                         DiscountPercent: 20,
-                        Include: "Dcto 2 Un.",
+                        Include: null,
                         ImagePath: "/images/beb2.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
@@ -1330,7 +1330,7 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Snack 1.1",
                         Price: 18990,
-                        DiscountPercent: 10,
+                        DiscountPercent: null,
                         Include: "Lleve 2 pague 1",
                         ImagePath: "/images/product3.jpg",
                         Tag: "Cerveza"
@@ -1342,7 +1342,7 @@ export namespace ListProducts2 {
                         Name: "Snack 2.2",
                         Price: 18990,
                         DiscountPercent: 10,
-                        Include: "Lleve 2 pague 1",
+                        Include: null,
                         ImagePath: "/images/product5.jpg",
                         Tag: "Cerveza"
                     }, IsSelected: false
@@ -1373,8 +1373,8 @@ export namespace ListProducts2 {
                     Product: {
                         Name: "Snack 5.5",
                         Price: 9990,
-                        DiscountPercent: 20,
-                        Include: "Dcto 2 Un.",
+                        DiscountPercent: null,
+                        Include: "LLeve 2 pague 1",
                         ImagePath: "/images/snack3.jpg",
                         Tag: "Energetica"
                     }, IsSelected: false
