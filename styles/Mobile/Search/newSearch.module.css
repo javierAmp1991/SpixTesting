@@ -1,5 +1,4 @@
 .sizeImage {
-    width: 100%;
     aspect-ratio: 2/1;
     position: relative;
 }
@@ -19,6 +18,11 @@
 .mainCont {
     box-shadow: var(--boxShadowCard);
     transition: .4s;
+}
+
+.mainContShadow{
+    padding: 5px;
+    scroll-snap-align: start;
 }
 
 .absCont {

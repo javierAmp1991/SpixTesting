@@ -9,30 +9,32 @@ const goToEvent: string = "Ir al Evento"
 
 export default function NewsSearchMobile({item, isSubtitle}: { item: News, isSubtitle: boolean }) {
     return (
-        <div className={style.mainCont}>
-            <div className={style.sizeImage}>
-                <Image layout={"fill"} src={item.PathImage}/>
-            </div>
-            <div className={style.absCont}>
-                <div className={`${style.fontTitle} ${utilities.clamp2}`}>
-                    {item.Title}
+        <div className={style.mainContShadow}>
+            <div className={style.mainCont}>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={item.PathImage}/>
                 </div>
-                <div className={`${utilities.fontSecundaryText}`}>
-                    {item.Date}
-                </div>
-
-                {
-                    isSubtitle &&
-                    <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
-                        {item.SubTitle}
+                <div className={style.absCont}>
+                    <div className={`${style.fontTitle} ${utilities.clamp2}`}>
+                        {item.Title}
                     </div>
-                }
+                    <div className={`${utilities.fontSecundaryText}`}>
+                        {item.Date}
+                    </div>
 
-                <Link href={""}>
-                    <a className={`${utilities.styleLink} ${style.writeNew}`}>
-                        <span>{writeRNew}</span>
-                    </a>
-                </Link>
+                    {
+                        isSubtitle &&
+                        <div className={`${utilities.clamp2} ${style.fontSubTitle}`}>
+                            {item.SubTitle}
+                        </div>
+                    }
+
+                    <Link href={""}>
+                        <a className={`${utilities.styleLink} ${style.writeNew}`}>
+                            <span>{writeRNew}</span>
+                        </a>
+                    </Link>
+                </div>
             </div>
         </div>
     )

@@ -39,8 +39,8 @@
 
 .gridImageSection {
     display: grid;
-    grid-template-columns: calc(100vw - 24px);
-    grid-auto-columns: calc(100vw - 24px);
+    grid-template-columns: calc(100vw - 32px);
+    grid-auto-columns: calc(100vw - 32px);
     grid-auto-flow: column;
     gap: 20px;
     scroll-snap-type: x mandatory;

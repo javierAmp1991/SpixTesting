@@ -5,6 +5,7 @@
     gap: 16px;
     padding: 0 24px;
     border-radius: 5px;
+    scroll-snap-align: start;
 }
 
 .sizeIcon {

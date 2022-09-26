@@ -249,7 +249,7 @@ export default function EventInformationMobile({eventInformation, form}:
                 </button>
             </div>
 
-            <div className={`${style.paddingDescription} ${style.borderTopBottom}`}>
+            {/*<div className={`${style.paddingDescription} ${style.borderTopBottom}`}>
                 <LayoutWithNavCircleMobile isDarkMode={false}>
                     {
                         form.map((item, index) =>
@@ -261,7 +261,7 @@ export default function EventInformationMobile({eventInformation, form}:
                         )
                     }
                 </LayoutWithNavCircleMobile>
-            </div>
+            </div>*/}
 
             {/*<div className={style.paddingContInpu}>
                 {

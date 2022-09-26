@@ -9,8 +9,7 @@ import LayoutButtonNavegation from "../components/Desktop/Layouts/layoutButtonNa
 import ButtonNavegation from "../components/Desktop/Misc/buttonNavegation";
 import ButtonNavegationMobile from "../components/Mobile/Misc/buttonNavegationMobile";
 import {
-    DropDownNewSearch,
-    News,
+    DropDownNewSearch, DropDownNewSearchToday, News, DropDownNewPrincipal
 } from "../dataDemo/data";
 import NewsSearchDesktop from "../components/Desktop/Search/newsSearchDesktop";
 import NewsSearchMobile from "../components/Mobile/Search/newSearchMobile";
@@ -24,6 +23,7 @@ import {MoreOfferSearch} from "../dataDemo/EventView/eventVerticalView";
 import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
 import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
 import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
+import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
 
@@ -125,33 +125,37 @@ export default function ReviewSearch() {
                                 {
                                     displayNextEvent &&
                                     <div className={"mt-5"}>
-                                        <div className={style.gridResult}>
+                                        <div className={styleMobile.gridNews}>
                                             <div className={"w-full"}>
                                                 <div className={`${utilities.fontTitleDesktop} mb-5`}>
                                                     Noticias del dia
                                                 </div>
-                                                <div>
-                                                    <NewSearcPrincipalMobile item={newSearchList[0]}/>
-                                                </div>
+                                                <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
+                                                    {
+                                                        DropDownNewPrincipal.listNews.map((item, index) =>
+                                                            <NewSearcPrincipalMobile item={item} key={index}/>)
+                                                    }
+                                                </LayoutWithNavCircleMobile>
                                             </div>
+
                                             <PublicityViewMobile linkImage={publicity}/>
+
                                             <div className={"w-full"}>
                                                 <div className={`${utilities.fontTitleDesktop} mb-5`}>
                                                     Noticias Destacadas
                                                 </div>
-                                                {/*<LayoutCarrouselMobile gapLayout={16}>
+                                                <LayoutWithNavCircleMobile isDarkMode={isDarkMode}>
                                                     {
-                                                        newSearchList.map((item, index) =>
+                                                        DropDownNewSearchToday.listNews.map((item, index) =>
                                                             index >= 0 && index <= 2 &&
-                                                            <div className={"w-72"}>
-                                                                <NewsSearchMobile isSubtitle={true}
-                                                                                  item={item}/>
-                                                            </div>)
+                                                            <NewsSearchMobile isSubtitle={true}
+                                                                              item={item}/>)
                                                     }
-                                                </LayoutCarrouselMobile>*/}
-
+                                                </LayoutWithNavCircleMobile>
                                             </div>
+
                                             <PublicityViewMobile linkImage={publicity1}/>
+
                                             <div className={styleMobile.gridDropDownNew}>
                                                 {
                                                     newSearchList.map((item, index) =>

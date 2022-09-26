@@ -55,6 +55,7 @@ import ProductViewSquare from "../components/Desktop/Misc/productViewSquare";
 import FormView from "../components/Mobile/Misc/formView";
 import LayoutPurpleContainer from "../components/Desktop/Layouts/layoutPurpleContainer";
 import ProductViewSquareMobile from "../components/Mobile/Misc/productViewSquare";
+import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 //endregion
 
 const spaceComponentsMobileY = 16
@@ -72,7 +73,7 @@ const newsTitle: [string, string] = ["Noticias", "#"]
 const discountTitle: [string, string] = ["Ofertas", "#"]
 const productstTitle: [string, string] = ["Productos", "/eventProductsFull"]
 const otherEventTitle: [string, string] = ["Otros eventos", "#"]
-const inSearchTitle: [string, string] = ["Se busca", "#"]
+const inSearchTitle: [string, string] = ["Se busca", null]
 const gapLayout: number = 16
 const displayCarrousel = "grid"
 const gridTemplateColum2: string = "repeat(2,1fr)"
@@ -162,13 +163,26 @@ export default function EventPage() {
         </LayoutCarrouselMobile>
     </TitleSection>
 
-  /*  let moreOffert = <TitleSection titleLink={discountTitle}
-                                   paddingTitle={spaceComponentsMobileY} darkModeState={false}>
-        <EventWithBannerMobile displayLogoRating={false} darkModeState={false} item={ListOffertData.listOffert[0]}/>
-    </TitleSection>*/
+    let inSearchMobile = <TitleSection titleLink={inSearchTitle} paddingTitle={spaceComponentsDeskY}
+                                       darkModeState={false}>
+        <LayoutWithNavCircleMobile isDarkMode={false}>
+            {
+                FormList.listForm.map((item, index) =>
+                    <div key={index}>
+                        <FormView item={item}/>
+                    </div>)
+            }
+        </LayoutWithNavCircleMobile>
+
+    </TitleSection>
+
+    /*  let moreOffert = <TitleSection titleLink={discountTitle}
+                                     paddingTitle={spaceComponentsMobileY} darkModeState={false}>
+          <EventWithBannerMobile displayLogoRating={false} darkModeState={false} item={ListOffertData.listOffert[0]}/>
+      </TitleSection>*/
 
     let offerEvent = <TitleSection titleLink={discountTitle}
-                                 paddingTitle={spaceComponentsMobileY} darkModeState={false}>
+                                   paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
                 ListProducts.listProducts.map((item, index) =>
@@ -202,6 +216,10 @@ export default function EventPage() {
     let defaultList: ComponentWithSpaceMobile[] = [
         {
             Component: eventInformation,
+            padding: paddingDefaultSection
+        },
+        {
+            Component: inSearchMobile,
             padding: paddingDefaultSection
         },
         {

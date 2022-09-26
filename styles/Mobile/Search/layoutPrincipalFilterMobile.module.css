@@ -401,6 +401,22 @@
     align-items: center;
 }
 
+.gridNews{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.gridMobileNews{
+    display: grid;
+    grid-template-columns: 320px;
+    grid-auto-columns: 320px;
+    grid-auto-flow: column;
+    gap: 16px;
+    overflow: scroll;
+    padding: 6px;
+}
+
 @media (min-width: 500px) {
     .gridDropDownNew {
         display: grid;

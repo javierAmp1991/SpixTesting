@@ -6,6 +6,12 @@
     position: relative;
 }
 
+.mainContShadow{
+    padding: 5px;
+    scroll-snap-align: start;
+    width: 100%;
+}
+
 
 .sizeBanner {
     width: 100%;

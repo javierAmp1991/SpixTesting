@@ -2432,6 +2432,63 @@ export namespace DropDownNewSearch {
     ]
 }
 
+export namespace DropDownNewSearchToday {
+    export const listNews: News[] = [
+        {
+            Id: "12345",
+            Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+            SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+            PathImage: "/images/new1.webp",
+            Event: "Evento generico 1",
+            Date: "Ayer",
+            HasEvent: true
+        },
+        {
+            Id: "123456",
+            Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
+            SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+            PathImage: "/images/new2.webp",
+            Event: "Evento generico 1",
+            Date: "Hoy",
+            HasEvent: false
+        },
+        {
+            Id: "12sadl67dsadpp9388",
+            Title: "Queen anuncia los detalles de “Rhapsody Over London”, un concierto espectacular que se emitirá para todo el mundo",
+            SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
+            PathImage: "/images/new8.webp",
+            Event: "Evento generico 1",
+            Date: "Hace 1 Semana",
+            HasEvent: true
+        },
+    ]
+}
+
+export namespace DropDownNewPrincipal {
+    export const listNews: News[] = [
+        {
+            Id: "12345",
+            Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+            SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+            PathImage: "/images/daddy.jpg",
+            Event: "Daddy Yankee On Tour",
+            Date: "Hoy",
+            HasEvent: true
+        },
+        {
+            Id: "123456",
+            Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
+            SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+            PathImage: "/images/anuel.jpg",
+            Event: "Evento generico 1",
+            Date: "Hoy",
+            HasEvent: true
+        },
+    ]
+}
+
+
+
 export namespace Cines {
     export const listCines: EventLookUp[] = [
         {
