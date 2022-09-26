@@ -144,14 +144,14 @@
 .positionArrowLeft {
     position: absolute;
     top: calc(50% - 10px);
-    left: 0;
+    left: 10px;
     z-index: 5000;
 }
 
 .positionArrowRight {
     position: absolute;
     top: calc(50% - 10px);
-    right: 0;
+    right: 10px;
     z-index: 5000;
 }
 

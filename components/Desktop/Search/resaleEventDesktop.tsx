@@ -11,7 +11,7 @@ import {LayoutCarrouselDeskProp} from "../Layouts/layoutCarrousel";
 const buy: string = "Comprar";
 const displayCarrousel = "grid"
 const gridFullSpace = "100%"
-const positionArrowIn: string = "0"
+const positionArrowIn: string = "5px"
 const positionArrowY: string = "calc(50% - 16px)"
 const layoutPropBanner: LayoutCarrouselDeskProp = {
     Display: displayCarrousel,
@@ -44,7 +44,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     }
     const handleRight = () => {
         const firstElement = mainDivRef.current.children[0];
-        mainDivRef.current.style.transition = `500ms linear`;
+        mainDivRef.current.style.transition = `300ms linear`;
         mainDivRef.current.style.transform = `translateX(-${mainDivTranslate.current.offsetWidth}px)`;
         const transition = () => {
             mainDivRef.current.style.transition = `none`;
@@ -62,7 +62,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         mainDivRef.current.style.transform = `translateX(-${mainDivTranslate.current.offsetWidth}px)`;
 
         setTimeout(() => {
-            mainDivRef.current.style.transition = `500ms linear`;
+            mainDivRef.current.style.transition = `300ms linear`;
             mainDivRef.current.style.transform = `translateX(0px)`;
         }, 30)
     }

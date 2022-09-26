@@ -49,7 +49,7 @@ export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { le
             </div>
 
             <p className={style.mainText}>
-                Este evento requiere de verificacion <b>nivel {levelVerfication}</b> para comprar entradas. La verificacion nivel <b>{levelVerfication}</b> consiste de los siguientes requisitos:`
+                Este evento requiere de verificacion <b>nivel {levelVerfication}</b> para comprar entradas. La verificacion nivel <b>nivel {levelVerfication}</b> consiste de los siguientes requisitos:`
             </p>
             <div className={style.req}>
                 {
