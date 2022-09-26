@@ -113,7 +113,7 @@ export default function WriteNewLeft({handlePreTitle, handlePrevSubtitle, handle
                                 <div className={style.mainContPortada}>
                                     <label htmlFor={idUploadPortada}>
                                         <Image priority={true} layout={"fill"}
-                                               objectFit={"contain"} src="/images/placeholderImageRec.png" alt={""}/>
+                                               objectFit={"contain"} src="/images/placeholderSquare2.png" alt={""}/>
                                     </label>
                                 </div>
                                 <input onChange={handleUploadPortada}
