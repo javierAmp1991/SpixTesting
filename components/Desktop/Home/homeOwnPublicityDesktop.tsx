@@ -1,11 +1,13 @@
 import style from "/styles/Desktop/Home/homeOwnPublicity.module.css"
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
     let cssStyles = getCssStyles()
     return (
-        <div className={`${style.PrincipalGrid}`}>
+        <Link href={""}>
+        <a className={`${style.PrincipalGrid}`}>
             {
                 listItem.map((info, index) =>
                     <div key={index} className={`${style.gridOwnPublicity} 
@@ -30,7 +32,8 @@ export default function HomeOwnPublicityDesktop({listItem, darkMode}) {
                     </div>
                 )
             }
-        </div>
+        </a>
+        </Link>
     )
 
     function getCssStyles() {

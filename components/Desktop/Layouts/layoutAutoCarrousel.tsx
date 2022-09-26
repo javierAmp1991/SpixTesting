@@ -6,6 +6,7 @@ import {useMediaQuery} from "../../../pages";
 import {GlobalConst} from "../../../public/globalConst";
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
 import item = PrincipalFeaturedSearch.item;
+import Link from "next/link";
 
 const mediaQuery = '(max-width: 768px)';
 
@@ -181,16 +182,19 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
 
                 {
                     listImageNewW.map((image: cate, index) =>
-                        <div key={index} className={`${style.mainDiv} ${cssStyle.background}`}>
-                            <div style={{width: widthCat}} className={style.testImage}>
-                                <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
-                                       alt=""/>
-                            </div>
-                            <div className={style.mainDivName}>T</div>
-                            <div style={{width: padding + widthCat}} className={`${style.mainDivNameL} ${utilities.clamp1}`}>
-                                {image.Name}
-                            </div>
-                        </div>
+                        <Link key={index} href={""}>
+                            <a className={`${style.mainDiv} ${cssStyle.background}`}>
+                                <div style={{width: widthCat}} className={style.testImage}>
+                                    <Image priority={true} layout={"fill"} objectFit={"cover"} src={image.Image}
+                                           alt=""/>
+                                </div>
+                                <div className={style.mainDivName}>T</div>
+                                <div style={{width: padding + widthCat}}
+                                     className={`${style.mainDivNameL} ${utilities.clamp1}`}>
+                                    {image.Name}
+                                </div>
+                            </a>
+                        </Link>
                     )
                 }
             </div>
@@ -212,7 +216,7 @@ export default function LayoutAutoCarrousel({gapLayout, listImages, isDarkMode}:
 
     function getCssStyle() {
         return {
-            background: isDarkMode? style.backGroundDivDarkMode : style.backGroundDiv,
+            background: isDarkMode ? style.backGroundDivDarkMode : style.backGroundDiv,
             firstGradient: isDarkMode ? utilities.bgFirstGradientDarkMode : utilities.bgFirstGradient,
             secondGradient: isDarkMode ? utilities.bgSecondGradientDarkMode : utilities.bgSecondGradient
         }

@@ -8,6 +8,7 @@ import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeI
 import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
 import ProductViewSquare from "../Misc/productViewSquare";
 import ProductViewDesk from "../Misc/productViewDesk";
+import Link from "next/link";
 
 export default function FeaturedViewDesktop({item, darkModeState}:
                                                 { item: BaseFeaturedView, darkModeState: boolean, itemsShow: number }) {
@@ -30,32 +31,33 @@ export default function FeaturedViewDesktop({item, darkModeState}:
         IsDarkMode: darkModeState
     }
     return (
-
-        <div className={`${style.mainDiv} ${cssStyle.bgInfo} ${cssStyle.borderCard}`}>
-            <div className="relative">
-                <div className={style.bannerFeatureProperties}>
-                    <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
-                </div>
-            </div>
-
-            <div className={style.mainDivInfo}>
-                <div className={style.topDiv}>
-                    <PrincipalInfoEvent item={principalInfoEventProp}/>
-                    <div className={style.bottomDivSearch}>
-                        {/*<DateInfoEvent item={dateInfo}/>*/}
-                        <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+        <Link href={""}>
+            <a className={`${style.mainDiv} ${cssStyle.bgInfo} ${cssStyle.borderCard}`}>
+                <div className="relative">
+                    <div className={style.bannerFeatureProperties}>
+                        <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
                     </div>
                 </div>
-                <div className={style.mainDivProductsSingle}>
-                    {
-                        item.ListProducts.map((item, index) =>
-                            index == 0 &&
-                            <ProductViewSquare isDisplayOffer={false} item={item} size={150}/>
-                        )
-                    }
+
+                <div className={style.mainDivInfo}>
+                    <div className={style.topDiv}>
+                        <PrincipalInfoEvent item={principalInfoEventProp}/>
+                        <div className={style.bottomDivSearch}>
+                            {/*<DateInfoEvent item={dateInfo}/>*/}
+                            <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+                        </div>
+                    </div>
+                    <div className={style.mainDivProductsSingle}>
+                        {
+                            item.ListProducts.map((item, index) =>
+                                index == 0 &&
+                                <ProductViewSquare isDisplayOffer={false} item={item} size={150}/>
+                            )
+                        }
+                    </div>
                 </div>
-            </div>
-        </div>
+            </a>
+        </Link>
     )
 
     function getCssStyles() {

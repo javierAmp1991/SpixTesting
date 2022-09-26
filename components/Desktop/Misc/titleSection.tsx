@@ -13,9 +13,9 @@ export default function TitleSection({children, darkModeState, titleLink, paddin
                 {
                     titleLink[1] != null &&
                     <Link href={titleLink[1]}>
-                        <div className={`${cssStyles.styleLink} pt-0.5`}>
+                        <a className={`${cssStyles.styleLink} pt-0.5`}>
                             Ver mas
-                        </div>
+                        </a>
                     </Link>
                 }
 

@@ -242,7 +242,7 @@ div {
 }
 
 @media (min-width: 1281px){
-    body{
+    body, html{
         background: #EAEDED;
     }
 }

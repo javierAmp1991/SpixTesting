@@ -84,10 +84,10 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         }*/
 
     return (
-        <div className={`${styles.principalGridVertical} ${cssStyles.bgInfo} ${cssStyles.borderCard}`}>
-            <Link
-                href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
-                <a className={styles.containerImage}>
+        <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
+            <a className={`${styles.principalGridVertical} ${cssStyles.bgInfo} ${cssStyles.borderCard}`}>
+
+                <div className={styles.containerImage}>
                     {
                         item.SoldTickets >= item.TotalTickets * 0.90 &&
                         <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
@@ -97,63 +97,64 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     <div className={cssStyles.ImageProportion}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
                     </div>
-                </a>
-            </Link>
-
-            <div className={styles.princiaplGridInfo}>
-                <div className={styles.TopDivInfo}>
-                    <PrincipalInfoEvent item={principalInfoEventProp}/>
                 </div>
 
-                {
-                    item.Type != EventCardType.EventCardBase &&
-                    <div className={styles.bottomDivSearch}>
-                        {
-                            item.Type == EventCardType.EventCardWithDate &&
-                            <DateInfoEvent item={dateInfo}/>
-                        }
 
-                        {
-                            item.Type == EventCardType.EventCardWithPrice &&
-                            <PriceIncludeInfoEvent item={priceIncludeInfo}/>
-                        }
-
-                        {
-                            item.Type == EventCardType.EventCardFull &&
-                            <>
-                                <DateInfoEvent item={dateInfoFull}/>
-                                <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
-                            </>
-                        }
-
-                        {
-                            item.Type == EventCardType.EventCardWithResale &&
-                            <div className={styles.textResaleOffer}>
-                                {totalResaleText} {itemWithResale.TotalResale}
-                            </div>
-                        }
-
-                        {
-                            item.Type == EventCardType.EventCardWithOffer &&
-                            <>
-                                <div className={styles.gridTags}>
-                                    {
-                                        itemWithOffer.ListTagsOffer.map(item =>
-                                            <div key={item} className={styles.tagStyleDisc}>
-                                                {item}
-                                            </div>
-                                        )
-                                    }
-                                </div>
-                                <div className={styles.textResaleOffer}>
-                                    Productos en oferta: {itemWithOffer.TotalOffers}
-                                </div>
-                            </>
-                        }
+                <div className={styles.princiaplGridInfo}>
+                    <div className={styles.TopDivInfo}>
+                        <PrincipalInfoEvent item={principalInfoEventProp}/>
                     </div>
-                }
-            </div>
-        </div>
+
+                    {
+                        item.Type != EventCardType.EventCardBase &&
+                        <div className={styles.bottomDivSearch}>
+                            {
+                                item.Type == EventCardType.EventCardWithDate &&
+                                <DateInfoEvent item={dateInfo}/>
+                            }
+
+                            {
+                                item.Type == EventCardType.EventCardWithPrice &&
+                                <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+                            }
+
+                            {
+                                item.Type == EventCardType.EventCardFull &&
+                                <>
+                                    <DateInfoEvent item={dateInfoFull}/>
+                                    <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
+                                </>
+                            }
+
+                            {
+                                item.Type == EventCardType.EventCardWithResale &&
+                                <div className={styles.textResaleOffer}>
+                                    {totalResaleText} {itemWithResale.TotalResale}
+                                </div>
+                            }
+
+                            {
+                                item.Type == EventCardType.EventCardWithOffer &&
+                                <>
+                                    <div className={styles.gridTags}>
+                                        {
+                                            itemWithOffer.ListTagsOffer.map(item =>
+                                                <div key={item} className={styles.tagStyleDisc}>
+                                                    {item}
+                                                </div>
+                                            )
+                                        }
+                                    </div>
+                                    <div className={styles.textResaleOffer}>
+                                        Productos en oferta: {itemWithOffer.TotalOffers}
+                                    </div>
+                                </>
+                            }
+                        </div>
+                    }
+                </div>
+            </a>
+        </Link>
     )
 
     function getCssStyles() {

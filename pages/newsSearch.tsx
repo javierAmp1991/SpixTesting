@@ -20,9 +20,6 @@ import PublicityViewMobile from "../components/Mobile/CRM/publicityViewMobile";
 import NewSearcPrincipalMobile from "../components/Mobile/Search/newSearcPrincipalMobile";
 import {BaseEventCard} from "../dataDemo/EventView/eventVerticalView";
 import {MoreOfferSearch} from "../dataDemo/EventView/eventVerticalView";
-import LayoutDropDownMobile from "../components/Mobile/Layouts/layoutDropDownMobile";
-import EventHorizontalView from "../components/Mobile/Events/eventHorizontalView";
-import LayoutCarrouselMobile from "../components/Mobile/Layouts/layoutCarrousel.Mobile";
 import LayoutWithNavCircleMobile from "../components/Mobile/Layouts/layoutWithNavCircleMobile";
 
 let AntSig: string[] = ["Anterior", "Siguiente"]
