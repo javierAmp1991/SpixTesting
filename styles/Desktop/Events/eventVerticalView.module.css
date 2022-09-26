@@ -34,20 +34,23 @@
 .sizeImage {
     width: 100%;
     position: relative;
-    z-index: 20;
     aspect-ratio: 1/1;
 }
 
 .sizeImageBase{
     width: 100%;
     position: relative;
-    z-index: 0;
     aspect-ratio: 1/1;
+    z-index: 0;
 }
 
 .zIndexLastTicket {
     position: absolute;
-    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    z-index: 1;
 }
 
 .subTitleMargin {

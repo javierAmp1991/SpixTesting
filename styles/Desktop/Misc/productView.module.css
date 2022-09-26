@@ -74,7 +74,12 @@
 }
 
 .zindexListon {
-    z-index: 6000000;
+    z-index: 60;
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1/1;
+    top: 0;
+    left: 0;
 }
 
 

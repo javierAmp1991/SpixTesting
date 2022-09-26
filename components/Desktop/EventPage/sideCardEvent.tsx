@@ -30,7 +30,7 @@ const userRequirement: number = 2
 
 const textButton: string = "Comprar Entradas"
 
-export default function SideCardEvent({eventInformation}: { eventInformation: EventLookUp }) {
+export default function SideCardEvent({eventInformation, openLevel, openImage}: { eventInformation: EventLookUp, openLevel: any, openImage: any }) {
     let [displayImage, setDisplayImage] = useState(false)
     const handleOpen = () => setDisplayImage(displayImage = true)
     const handleClose = () => setDisplayImage(displayImage = false)
@@ -89,100 +89,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
 
     return (
         <div>
-            <div className={`${style.paddingMainConatiner} bg-white`}>
-                <div className={style.gridMainContainer}>
-                    <div className={`${style.gridImageTitle} mb-1`}>
-                        <div
-                            className={`${style.paddingGradient} ${utilities.borderRadious50} ${utilities.bgFirstGradient}`}>
-                            <div className={`${style.sizeLogo}`}>
-                                <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
-                            </div>
-                        </div>
-                        <div>
-                            {/*<PrincipalInfoEvent item={principalInfo}/>*/}
-                            <PrincipalInfoEventMobile item={principalInfo}/>
-                            {/*<div className={`${utilities.fontSubTitle} mb-1`}>
-                                {eventInformation.EventName}
-                            </div>
-
-                            <div className={`${utilities.fontPrimaryText} mb-1`}>
-                                {eventInformation.Subtitle}
-                            </div>
-
-                            <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1`}>
-                                <div className={utilities.ratingStarsProperties}>
-                                    <Image layout={"fill"} objectFit={"cover"}
-                                           src={eventInformation.Rating != null ?
-                                               GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull}
-                                           alt=""/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
-                                    ({eventInformation.Rating != null ?
-                                    eventInformation.Rating : 0})
-                                </div>
-                            </div>*/}
-
-                            {/*<div className={utilities.fontSecundaryText}>Bar restaurant</div>*/}
-                        </div>
-                    </div>
-
-                    <div className={style.gridrestrictions}>
-                        <div className={utilities.fontPrimaryText}>
-                            Restricciones:
-                        </div>
-                        {
-                            eventInformation.ListRestriction.map((item, index) =>
-                                <a className={style.sizeRestrictionIcon} key={index}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                </a>
-                            )
-                        }
-                    </div>
-
-                    <div>
-                        <SocialBar></SocialBar>
-                    </div>
-                </div>
-
-                <div className={styleCard.selectDateContainer}>
-                    <button className={styleCard.gridIconText}>
-                        <div className={styleCard.sizeIcon}>
-                            <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.calendarIcon}
-                                   alt=""/>
-                        </div>
-                        <div className={utilities.fontPrimaryText}>
-                            <span>Proxima fecha: </span>
-                            <span onClick={handleOpenDate}
-                                  className={utilities.styleLink}>
-                                {venueDateSelected.Date.getDate()} de {venueDateSelected.Date.toLocaleString("es-US", {month: "long"})} del {venueDateSelected.Date.getFullYear()}
-                            </span>
-                        </div>
-                    </button>
-                    <button className={styleCard.gridIconText}>
-                        <div className={styleCard.sizeIcon}>
-                            <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.googleMap} alt=""/>
-                        </div>
-                        <div className={utilities.fontPrimaryText}>
-                            <span>Direccion: </span>
-                            <span onClick={handleOpenVenue}
-                                  className={utilities.styleLink}>
-                                {venueDateSelected.Venue}</span>
-                        </div>
-                    </button>
-                </div>
-
-                <div onClick={handleOpen}
-                     className={styleCard.coverImageProperties}>
-                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
-                </div>
-
-                <button onClick={handleClickBuy} className={styleCard.gridButton}>
-                    <span>{textButton} </span>
-                    <Image width={18} height={16} src={GlobalConst.sourceImages.shieldIcon} alt={""}/>
-                </button>
-            </div>
-
-            {
+            {/*{
                 displayImage &&
                 <PopUpContainer closePopUp={handleClose}
                                 isBackground={false}
@@ -192,7 +99,7 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                                alt=""/>
                     </div>
                 </PopUpContainer>
-            }
+            }*/}
             {
                 displayDateSelector &&
                 <PopUpContainer isButtonVisible={true}
@@ -276,14 +183,107 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                     </div>
                 </PopUpContainer>
             }
-            {
+            <div className={`${style.paddingMainConatiner} bg-white`}>
+                <div className={style.gridMainContainer}>
+                    <div className={`${style.gridImageTitle} mb-1`}>
+                        <div
+                            className={`${style.paddingGradient} ${utilities.borderRadious50} ${utilities.bgFirstGradient}`}>
+                            <div className={`${style.sizeLogo}`}>
+                                <Image layout={"fill"} src={eventInformation.LogoPath} alt=""/>
+                            </div>
+                        </div>
+                        <div>
+                            {/*<PrincipalInfoEvent item={principalInfo}/>*/}
+                            <PrincipalInfoEventMobile item={principalInfo}/>
+                            {/*<div className={`${utilities.fontSubTitle} mb-1`}>
+                                {eventInformation.EventName}
+                            </div>
+
+                            <div className={`${utilities.fontPrimaryText} mb-1`}>
+                                {eventInformation.Subtitle}
+                            </div>
+
+                            <div className={`${utilities.gridMaxContent2} items-center gap-1.5 mb-1`}>
+                                <div className={utilities.ratingStarsProperties}>
+                                    <Image layout={"fill"} objectFit={"cover"}
+                                           src={eventInformation.Rating != null ?
+                                               GlobalConst.sourceImages.ratingNew : GlobalConst.sourceImages.ratingNull}
+                                           alt=""/>
+                                </div>
+                                <div className={`${utilities.fontSecundaryText} ${utilities.font12} pt-0.5`}>
+                                    ({eventInformation.Rating != null ?
+                                    eventInformation.Rating : 0})
+                                </div>
+                            </div>*/}
+
+                            {/*<div className={utilities.fontSecundaryText}>Bar restaurant</div>*/}
+                        </div>
+                    </div>
+
+                    <div className={style.gridrestrictions}>
+                        <div className={utilities.fontPrimaryText}>
+                            Restricciones:
+                        </div>
+                        {
+                            eventInformation.ListRestriction.map((item, index) =>
+                                <a className={style.sizeRestrictionIcon} key={index}>
+                                    <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                </a>
+                            )
+                        }
+                    </div>
+
+                    <div>
+                        <SocialBar></SocialBar>
+                    </div>
+                </div>
+
+                <div className={styleCard.selectDateContainer}>
+                    <button className={styleCard.gridIconText}>
+                        <div className={styleCard.sizeIcon}>
+                            <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.calendarIcon}
+                                   alt=""/>
+                        </div>
+                        <div className={utilities.fontPrimaryText}>
+                            <span>Proxima fecha: </span>
+                            <span onClick={handleOpenDate}
+                                  className={utilities.styleLink}>
+                                {venueDateSelected.Date.getDate()} de {venueDateSelected.Date.toLocaleString("es-US", {month: "long"})} del {venueDateSelected.Date.getFullYear()}
+                            </span>
+                        </div>
+                    </button>
+                    <button className={styleCard.gridIconText}>
+                        <div className={styleCard.sizeIcon}>
+                            <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.googleMap} alt=""/>
+                        </div>
+                        <div className={utilities.fontPrimaryText}>
+                            <span>Direccion: </span>
+                            <span onClick={handleOpenVenue}
+                                  className={utilities.styleLink}>
+                                {venueDateSelected.Venue}</span>
+                        </div>
+                    </button>
+                </div>
+
+                <div onClick={openImage}
+                     className={styleCard.coverImageProperties}>
+                    <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
+                </div>
+
+                <button onClick={openLevel} className={styleCard.gridButton}>
+                    <span>{textButton} </span>
+                    <Image width={18} height={16} src={GlobalConst.sourceImages.shieldIcon} alt={""}/>
+                </button>
+            </div>
+
+            {/*{
                 displayLevelUser &&
 
                 <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
                     <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
                 </PopUpContainer>
 
-            }
+            }*/}
         </div>
     )
 }

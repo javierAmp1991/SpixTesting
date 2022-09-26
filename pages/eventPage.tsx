@@ -60,6 +60,9 @@ import FormViewMobile from "../components/Mobile/Misc/formViewMobile";
 import FormViewDesktop from "../components/Desktop/Misc/formView";
 import LayoutWithNavCircleMobileFull from "../components/Mobile/Layouts/layoutWithNavCircleMobileFull";
 import TitleSectionMobile from "../components/Mobile/Misc/titleSectionMobile";
+import PopUpContainer from "../components/Desktop/Misc/popUpContainer";
+import LevelUserPopUp from "../components/Desktop/Misc/levelUserPopUp";
+import styleImage from "/styles/Desktop/EventPage/eventInformation.module.css";
 //endregion
 
 const spaceComponentsMobileY = 16
@@ -255,6 +258,15 @@ export default function EventPage() {
         }
     ]
     //endregion
+
+    let [displayLevelUser, setDisplayLevelUser] = useState(false)
+    const handleOpenLevelUser = () => setDisplayLevelUser(displayLevelUser = true)
+    const handleCloseLevelUser = () => setDisplayLevelUser(displayLevelUser = false)
+
+    let [displayImage, setDisplayImage] = useState(false)
+    const handleOpen = () => setDisplayImage(displayImage = true)
+    const handleClose = () => setDisplayImage(displayImage = false)
+
     //region componentsDesktop
     let eventInformationDesk = <EventInformationDesk formList={FormList.listForm}
                                                      eventInformation={EventPageEvent.eventPage}/>
@@ -420,11 +432,24 @@ export default function EventPage() {
 
     let childrens: ChildrenProp = {
         childrenLeft: <DefaultPage listItem={defaultListDesk}/>,
-        childrenRight: <SideCardEvent eventInformation={EventPageEvent.eventPage}/>
+        childrenRight: <SideCardEvent openLevel={handleOpenLevelUser} openImage={handleOpen}  eventInformation={EventPageEvent.eventPage}/>
     }
     //endregion
     let [isDiplaySug, setIsDisplaySug] = useState(false)
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
+
+    class LevelUser {
+        Id: string
+        User: string
+        Level: number
+    }
+
+    const user: LevelUser = {
+        Id: "iwewqndsaj2383",
+        User: "@user001",
+        Level: 0
+    }
+    const userRequirement: number = 2
 
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     const isLardeDown = useMediaQuery('(max-width: 1280px)');
@@ -464,16 +489,36 @@ export default function EventPage() {
             </div>*/
             :
             <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
-                <div>
+                <>
+                    {
+                        displayLevelUser &&
+
+                        <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
+                            <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
+                        </PopUpContainer>
+
+                    }
+                    {
+                        displayImage &&
+                        <PopUpContainer closePopUp={handleClose}
+                                        isBackground={false}
+                                        isButtonVisible={false}>
+                            <div className={styleImage.sizeImage}>
+                                <Image layout={"fill"} objectFit={"cover"} src={EventPageEvent.eventPage.CoverImage}
+                                       alt=""/>
+                            </div>
+                        </PopUpContainer>
+                    }
                     <div className={styleDesk.sizeBaner}>
                         <Image layout={"fill"} src={bannerPath} alt=""/>
                     </div>
                     <div className={`${utilities.maxWidthBodyContentSpix} z-50`}>
-                        <LayoutSideCard childrens={childrens}/>
+                        <>
+                            <LayoutSideCard childrens={childrens}/>
                             <FooterDesk/>
+                        </>
                     </div>
-                </div>
-
+                </>
             </DefaultLayoutDesktop>
         /* <div>
              <HeaderSpixDesktop darkMode={false} toggleDarkMode={null} isLogged={false}/>

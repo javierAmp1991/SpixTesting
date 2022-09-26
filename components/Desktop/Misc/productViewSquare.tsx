@@ -13,7 +13,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
             {
                 item.DiscountPercent != null || item.Include != null ?
-                <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
+                <div className={style.zindexListon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div> : <></>
             }
