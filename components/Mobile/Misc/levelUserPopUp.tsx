@@ -43,7 +43,7 @@ export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { le
                         levelUser > 0 ?
                             `Tu nivel de verificacion actual es ${levelUser}`
                             :
-                            `Actualmente no estas registrado`
+                            `Actualmente no estas verificado`
                     }
                 </div>
             </div>

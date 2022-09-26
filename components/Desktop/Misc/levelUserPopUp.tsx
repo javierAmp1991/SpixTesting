@@ -46,7 +46,7 @@ export default function LevelUserPopUp({levelVerfication, levelUser}: { levelVer
                             levelUser > 0 ?
                                 `Tu nivel de verificacion actual es ${levelUser}`
                                 :
-                                `Actualmente no estas registrado`
+                                `Actualmente no estas verificado`
                         }
                     </div>
                 </div>
