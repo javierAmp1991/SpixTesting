@@ -1,7 +1,7 @@
 .mainDiv {
     background: white;
     margin: 16px 0;
-    --colorTags: 0 solid rgba(173, 190, 204, 0.3);
+    --colorTags: 1 solid rgba(173, 190, 204, 0.3);
     --boxShadowT: 0 0 4px rgba(173, 190, 204, 1);
 }
 
