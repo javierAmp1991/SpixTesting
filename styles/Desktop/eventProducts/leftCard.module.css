@@ -71,7 +71,8 @@
 .styleTag{
     color: white;
     font-weight: 500;
-    background: linear-gradient(145deg, #E82E8AFF 0%, #fd419e 100%);
+    /*background: linear-gradient(145deg, #E82E8AFF 0%, #fd419e 100%);*/
+    background: linear-gradient(145deg, rgb(36, 129, 215) 0%, rgb(45, 141, 231) 100%);
     font-size: 16px;
     border-radius: 16px;
     padding: 4px 16px;
