@@ -379,7 +379,7 @@ export default function EventInformationMobile({eventInformation, form}:
             }
             {
                 displayLevelUser &&
-                <PopUpContainerMob isButtonVisible={false} isBackground={true} closePopUp={handleCloseLevelUser}>
+                <PopUpContainerMob isButtonVisible={true} isBackground={true} closePopUp={handleCloseLevelUser}>
                     <LevelUserPopUpMobile levelVerfication={userRequirement} levelUser={user.Level}/>
                 </PopUpContainerMob>
             }
