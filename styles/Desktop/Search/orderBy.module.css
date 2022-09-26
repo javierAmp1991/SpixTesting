@@ -4,7 +4,7 @@
     overflow: hidden;
     background: white;
     margin-bottom: 16px;
-    --colorTags: 1px solid rgba(173, 190, 204, 0.3);
+    --colorTags: 2px solid rgba(173, 190, 204, 0.3);
 }
 
 .gridOrderBy {
