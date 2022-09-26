@@ -29,13 +29,16 @@ export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { le
 
     return (
         <div className={style.mainDiv}>
+            <div className={style.logoSpix}>
+                <Image layout={"fill"} src={"/images/spixBlue.png"}/>
+            </div>
             <div className={`${utilities.fontTitle} ${style.spaceTitle}`}>
                 Verificacion requerida
             </div>
 
             <div className={style.actualLevel}>
                 <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={"/images/shieldBlack.png"}/>
+                    <Image layout={"fill"} src={"/images/shieldIconColor.png"}/>
                 </div>
                 <div>
                     {
@@ -57,19 +60,19 @@ export default function LevelUserPopUpMobile({levelVerfication, levelUser}: { le
                             {
 
                                 level1Req.map(item =>
-                                    <span key={item}>- {item}</span>)
+                                    <div className={style.divRes} key={item}><div className={style.circle}/> {item}</div>)
                             }
                         </>
                         :
                         levelVerfication == 2 && levelUser == 1 ?
                             <>
                                 {level2ReqLvl1.map(item =>
-                                    <span key={item}>- {item}</span>)}
+                                    <div className={style.divRes} key={item}><div className={style.circle}/> {item}</div>)}
                             </>
                             :
                             <>
                                 {level2Req.map(item =>
-                                    <span key={item}>- {item}</span>)}
+                                    <div className={style.divRes} key={item}><div className={style.circle}/> {item}</div>)}
                             </>
 
                 }

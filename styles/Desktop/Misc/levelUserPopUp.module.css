@@ -85,7 +85,7 @@
 
 .mainContorno {
     border: 1px solid var(--separationLineColor);
-    box-shadow: var(--boxShadowCard);
+    box-shadow: 0 0 6px rgba(0,0,0,.1);
     padding: 24px 16px;
     border-radius: 8px;
     overflow: hidden;

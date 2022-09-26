@@ -59,3 +59,34 @@
     gap: 6px;
     align-items: center;
 }
+
+.circle {
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--gradientBlueButton);
+}
+
+.divRes {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.logoSpix {
+    width: 120px;
+    height: 35px;
+    position: relative;
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+.mainContorno {
+    border: 1px solid var(--separationLineColor);
+    box-shadow: 0 0 6px rgba(0,0,0,.1);
+    padding: 24px 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
