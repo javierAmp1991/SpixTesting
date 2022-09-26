@@ -1,7 +1,8 @@
 .mainDiv {
     background: white;
     margin: 16px 0;
-    --colorTags: 1px solid rgba(173, 190, 204, 0.3);
+    --colorTags: 0 solid rgba(173, 190, 204, 0.3);
+    --boxShadowT: 0 0 4px rgba(173, 190, 204, 1);
 }
 
 .gridOrderBy {
@@ -21,6 +22,7 @@
     overflow: hidden;
     transition: .3s;
     border: var(--colorTags);
+    box-shadow: var(--boxShadowT);
 }
 
 .gridButtonSelected {
@@ -34,6 +36,7 @@
     overflow: hidden;
     transition: .3s;
     border: var(--colorTags);
+    box-shadow: var(--boxShadowT);
     transform: scale(1.03);
 }
 
@@ -41,4 +44,5 @@
     height: 20px;
     width: 24px;
     position: relative;
+
 }
