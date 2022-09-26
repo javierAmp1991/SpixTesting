@@ -69,6 +69,7 @@ const noSpaceComponentsDesk = 0
 const paddingPublcity: paddingAsignation = {pt: 24, pb: 24, pl: 0, pr: 0}
 const paddingDefaultSection: paddingAsignation = {pt: 24, pb: 24, pl: 16, pr: 16}
 const paddingDefaultSectionDesk: paddingAsignation = {pt: 40, pb: 40, pl: 2, pr: 2}
+const paddingFooter: paddingAsignation = {pt: 0, pb: 0, pl: 0, pr: 0}
 const paddingEventInformation: paddingAsignation = {pt: 0, pb: 40, pl: 2, pr: 2}
 const paddingDefaultSectionDeskCarrousel: paddingAsignation = {pt: 40, pb: 15, pl: 2, pr: 2}
 /*const commentTitle: [string, string] = ["Comentarios", "#"]*/
@@ -168,8 +169,9 @@ export default function EventPage() {
         </LayoutCarrouselMobile>
     </TitleSection>
 
-    let inSearchMobile = <TitleSectionMobile titleLink={inSearchTitle} paddingTitle={spaceComponentsDeskY} paddingLeft={16}
-                                       darkModeState={false}>
+    let inSearchMobile = <TitleSectionMobile titleLink={inSearchTitle} paddingTitle={spaceComponentsDeskY}
+                                             paddingLeft={16}
+                                             darkModeState={false}>
         <LayoutWithNavCircleMobileFull isDarkMode={false}>
             {
                 FormList.listForm.map((item, index) =>
@@ -374,12 +376,14 @@ export default function EventPage() {
             }
         </LayoutCarrousel>
     </TitleSection>
+
+    let footerDesk = <FooterDesk/>
     let defaultListDesk: ComponentWithSpace[] = [
         {
             Component: eventInformationDesk,
             padding: paddingEventInformation
         },
-       {
+        {
             Component: inSearch,
             padding: paddingDefaultSectionDeskCarrousel
         },
@@ -460,15 +464,15 @@ export default function EventPage() {
             </div>*/
             :
             <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
-                <>
+                <div>
                     <div className={styleDesk.sizeBaner}>
                         <Image layout={"fill"} src={bannerPath} alt=""/>
                     </div>
-                    <div className={`${utilities.maxWidthBodyContentSpix}`}>
+                    <div className={`${utilities.maxWidthBodyContentSpix} z-50`}>
                         <LayoutSideCard childrens={childrens}/>
-                        <FooterDesk/>
+                            <FooterDesk/>
                     </div>
-                </>
+                </div>
 
             </DefaultLayoutDesktop>
         /* <div>
