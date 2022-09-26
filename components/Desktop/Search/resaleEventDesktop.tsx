@@ -44,7 +44,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
     }
     const handleRight = () => {
         const firstElement = mainDivRef.current.children[0];
-        mainDivRef.current.style.transition = `1000ms linear`;
+        mainDivRef.current.style.transition = `500ms linear`;
         mainDivRef.current.style.transform = `translateX(-${mainDivTranslate.current.offsetWidth}px)`;
         const transition = () => {
             mainDivRef.current.style.transition = `none`;
@@ -62,7 +62,7 @@ export default function ResaleEventDesktop({item}: { item: ResaleProduct }) {
         mainDivRef.current.style.transform = `translateX(-${mainDivTranslate.current.offsetWidth}px)`;
 
         setTimeout(() => {
-            mainDivRef.current.style.transition = `1000ms linear`;
+            mainDivRef.current.style.transition = `500ms linear`;
             mainDivRef.current.style.transform = `translateX(0px)`;
         }, 30)
     }
