@@ -185,7 +185,7 @@ export default function EventPage() {
                                    paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                ListProducts.listProducts.map((item, index) =>
+                ListProductsExtraOffer.listProducts.map((item, index) =>
                     <ProductViewSquareMobile isDisplayOffer={true} size={220} key={index} item={item}/>
                 )
             }
@@ -196,7 +196,7 @@ export default function EventPage() {
                                  paddingTitle={spaceComponentsMobileY} darkModeState={false}>
         <LayoutCarrouselMobile gapLayout={gapLayout}>
             {
-                ListProducts.listProducts.map((item, index) =>
+                ListProductsExtra.listProducts.map((item, index) =>
                     <ProductViewSquareMobile isDisplayOffer={true} size={220} key={index} item={item}/>
                 )
             }
