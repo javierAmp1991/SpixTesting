@@ -258,13 +258,7 @@ export default function EventPage() {
     ]
     //endregion
 
-    let [displayLevelUser, setDisplayLevelUser] = useState(false)
-    const handleOpenLevelUser = () => setDisplayLevelUser(displayLevelUser = true)
-    const handleCloseLevelUser = () => setDisplayLevelUser(displayLevelUser = false)
 
-    let [displayImage, setDisplayImage] = useState(false)
-    const handleOpen = () => setDisplayImage(displayImage = true)
-    const handleClose = () => setDisplayImage(displayImage = false)
 
     //region componentsDesktop
     let eventInformationDesk = <EventInformationDesk formList={FormList.listForm}
@@ -436,19 +430,6 @@ export default function EventPage() {
     //endregion
     let [isDiplaySug, setIsDisplaySug] = useState(false)
     const handleIsDisplaySug = () => setIsDisplaySug(isDiplaySug = !isDiplaySug)
-
-    class LevelUser {
-        Id: string
-        User: string
-        Level: number
-    }
-
-    const user: LevelUser = {
-        Id: "iwewqndsaj2383",
-        User: "@user001",
-        Level: 0
-    }
-    const userRequirement: number = 2
 
     const isSmallDown = useMediaQuery('(max-width: 768px)');
     const isLardeDown = useMediaQuery('(max-width: 1280px)');
