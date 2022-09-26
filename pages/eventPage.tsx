@@ -62,7 +62,6 @@ import LayoutWithNavCircleMobileFull from "../components/Mobile/Layouts/layoutWi
 import TitleSectionMobile from "../components/Mobile/Misc/titleSectionMobile";
 import PopUpContainer from "../components/Desktop/Misc/popUpContainer";
 import LevelUserPopUp from "../components/Desktop/Misc/levelUserPopUp";
-import styleImage from "/styles/Desktop/EventPage/eventInformation.module.css";
 //endregion
 
 const spaceComponentsMobileY = 16
@@ -432,7 +431,7 @@ export default function EventPage() {
 
     let childrens: ChildrenProp = {
         childrenLeft: <DefaultPage listItem={defaultListDesk}/>,
-        childrenRight: <SideCardEvent openLevel={handleOpenLevelUser} openImage={handleOpen}  eventInformation={EventPageEvent.eventPage}/>
+        childrenRight: <SideCardEvent  eventInformation={EventPageEvent.eventPage}/>
     }
     //endregion
     let [isDiplaySug, setIsDisplaySug] = useState(false)
@@ -490,25 +489,6 @@ export default function EventPage() {
             :
             <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
                 <>
-                    {
-                        displayLevelUser &&
-
-                        <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
-                            <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
-                        </PopUpContainer>
-
-                    }
-                    {
-                        displayImage &&
-                        <PopUpContainer closePopUp={handleClose}
-                                        isBackground={false}
-                                        isButtonVisible={false}>
-                            <div className={styleImage.sizeImage}>
-                                <Image layout={"fill"} objectFit={"cover"} src={EventPageEvent.eventPage.CoverImage}
-                                       alt=""/>
-                            </div>
-                        </PopUpContainer>
-                    }
                     <div className={styleDesk.sizeBaner}>
                         <Image layout={"fill"} src={bannerPath} alt=""/>
                     </div>

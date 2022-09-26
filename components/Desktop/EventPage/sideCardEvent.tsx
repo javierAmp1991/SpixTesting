@@ -30,7 +30,7 @@ const userRequirement: number = 2
 
 const textButton: string = "Comprar Entradas"
 
-export default function SideCardEvent({eventInformation, openLevel, openImage}: { eventInformation: EventLookUp, openLevel: any, openImage: any }) {
+export default function SideCardEvent({eventInformation}: { eventInformation: EventLookUp }) {
     let [displayImage, setDisplayImage] = useState(false)
     const handleOpen = () => setDisplayImage(displayImage = true)
     const handleClose = () => setDisplayImage(displayImage = false)
@@ -89,7 +89,7 @@ export default function SideCardEvent({eventInformation, openLevel, openImage}: 
 
     return (
         <div>
-            {/*{
+            {
                 displayImage &&
                 <PopUpContainer closePopUp={handleClose}
                                 isBackground={false}
@@ -99,7 +99,7 @@ export default function SideCardEvent({eventInformation, openLevel, openImage}: 
                                alt=""/>
                     </div>
                 </PopUpContainer>
-            }*/}
+            }
             {
                 displayDateSelector &&
                 <PopUpContainer isButtonVisible={true}
@@ -265,25 +265,25 @@ export default function SideCardEvent({eventInformation, openLevel, openImage}: 
                     </button>
                 </div>
 
-                <div onClick={openImage}
+                <div onClick={handleOpen}
                      className={styleCard.coverImageProperties}>
                     <Image layout={"fill"} objectFit={"cover"} src={eventInformation.CoverImage} alt=""/>
                 </div>
 
-                <button onClick={openLevel} className={styleCard.gridButton}>
+                <button onClick={handleOpenLevelUser} className={styleCard.gridButton}>
                     <span>{textButton} </span>
                     <Image width={18} height={16} src={GlobalConst.sourceImages.shieldIcon} alt={""}/>
                 </button>
             </div>
 
-            {/*{
+            {
                 displayLevelUser &&
 
                 <PopUpContainer closePopUp={handleCloseLevelUser} isBackground={true} isButtonVisible={true}>
                     <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
                 </PopUpContainer>
 
-            }*/}
+            }
         </div>
     )
 }

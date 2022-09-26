@@ -12,10 +12,10 @@ export default function ProductViewDesk({item, size, isDisplayOffer}:
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
             {
-                item.DiscountPercent != null || item.Include != null &&
+                item.DiscountPercent != null || item.Include != null ?
                 <div className={`${utilities.positionLastTicket} ${style.zindexListon}`}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-                </div>
+                </div> : <></>
             }
 
             <div style={getSizeProduct.sizeImage} className={style.aspectRatio}>
