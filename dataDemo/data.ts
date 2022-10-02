@@ -2487,8 +2487,6 @@ export namespace DropDownNewPrincipal {
     ]
 }
 
-
-
 export namespace Cines {
     export const listCines: EventLookUp[] = [
         {

@@ -1,0 +1,174 @@
+.mainDiv {
+    border-right: 2px solid var(--separationLineColor);
+    --paddingX: 16px;
+    --paddingY: 16px;
+    --colorTags: 2px solid rgba(173, 190, 204, 0.3);
+    height: 100%;
+    overflow: scroll;
+}
+
+.contNumber {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 12px;
+    display: grid;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    transition: .3s;
+}
+
+.contNumber:hover {
+    background: #f1fbff;
+}
+
+.contNumberSelected {
+    border: 1px solid #dadada;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 12px;
+    display: grid;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    transition: .3s;
+    background: #caefff;
+}
+
+.gridNumberTickets {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+}
+
+.titleNumbers {
+    padding-bottom: 16px;
+}
+
+.mainDivNumbers {
+    padding: var(--paddingX) var(--paddingY);
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.mainDivOrderBy {
+    padding: var(--paddingX) var(--paddingY);
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.gridOrderBy {
+    display: grid;
+    gap: 6px;
+}
+
+.gridButton {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 8px;
+    justify-content: center;
+    padding: 6px 24px;
+    border-radius: 5px;
+    align-items: center;
+    overflow: hidden;
+    transition: .3s;
+    border: var(--colorTags);
+}
+
+
+.gridButtonSelected {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(19, 135, 215, .2);
+    padding: 6px 24px;
+    border-radius: 5px;
+    overflow: hidden;
+    align-items: center;
+    transition: .3s;
+    border: var(--colorTags);
+    transform: scale(1.03);
+}
+
+.imageSizeButton {
+    height: 20px;
+    width: 24px;
+    position: relative;
+}
+
+.imageSecundary {
+    height: 30px;
+    width: 30px;
+    position: relative;
+}
+
+.imageSize {
+    height: 24px;
+    width: 24px;
+    position: relative;
+}
+
+
+.mainDivSecundaryFilter {
+    padding: var(--paddingX) var(--paddingY);
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.gridSecundaryFilter {
+    display: grid;
+    gap: 12px;
+}
+
+.gridButtonSub {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.gridImageNameSub {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.mainDivAdvanced {
+    padding: var(--paddingX) var(--paddingY);
+}
+
+.gridInputs{
+    display: grid;
+    gap: 12px;
+}
+.mainDivInput{
+    position: relative;
+    width: 100%;
+}
+
+.positionDolar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.styleRangePriceInput {
+    box-shadow: var(--boxShadowCard);
+    height: 40px;
+    width: 100%;
+    border-radius: 2px;
+    text-indent: 28px;
+}

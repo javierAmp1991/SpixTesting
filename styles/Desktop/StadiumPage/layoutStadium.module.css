@@ -1,0 +1,9 @@
+.mainLayout {
+    width: 100vw;
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: 20% 1fr 23%;
+    background: white;
+    height: calc(100vh - 97px);
+    position: relative;
+}

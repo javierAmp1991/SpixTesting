@@ -1,0 +1,172 @@
+.principalGridOpen {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    overflow: scroll;
+    --fillSections: #ff8383;
+    --strokeWith: 1px;
+    --strokeWithBefore: 12px;
+    --transitionHover: .6s;
+    --transformOrigin: center center;
+    --scaleTransform: 1.07;
+}
+
+.principalGridOpen::-webkit-scrollbar{
+    display: grid;
+    -webkit-appearance: inherit;
+    height: 6px;
+    width: 6px;
+    background: var(--backgroundMatriz);
+}
+
+.principalGridOpen::-webkit-scrollbar-thumb{
+    background: #d0d0d0;
+    border-radius: 4px;
+}
+
+.sizeStadium {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.svgNormal {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    transform: scale(1);
+    transition: 1.5s;
+}
+
+.svgReduce {
+    transform: scale(0);
+    overflow: scroll;
+    transition: 1.5s;
+}
+
+
+.critic {
+    --colorStrokeRed: #ff6c6c;
+    stroke: var(--colorStrokeRed);
+    fill: var(--colorStrokeRed);
+    stroke-width: var(--strokeWith);
+    transition: var(--transitionHover);
+    transform-origin: var(--transformOrigin);
+    -webkit-transform-origin: var(--transformOrigin);;
+}
+
+.critic:hover {
+    stroke-width: var(--strokeWithBefore);
+    stroke: var(--colorStrokeRed);
+}
+
+.normal {
+    --colorStrokeGreen: #2eff51;
+    stroke: var(--colorStrokeGreen);
+    fill: var(--colorStrokeGreen);
+    stroke-width: var(--strokeWith);
+    transition: var(--transitionHover);
+    /*transform-origin: var(--transformOrigin);*/
+    -webkit-transform-origin: var(--transformOrigin);
+}
+
+.normal:hover {
+    stroke-width: var(--strokeWithBefore);
+    stroke: var(--colorStrokeGreen);
+}
+
+.noStock {
+    --colorStrokeGray: #efefef;
+    stroke: var(--colorStrokeGray);
+    fill: var(--colorStrokeGray);
+    stroke-width: var(--strokeWith);
+    transition: var(--transitionHover);
+    /*transform-origin: var(--transformOrigin);*/
+    -webkit-transform-origin: var(--transformOrigin);;
+}
+
+.noStock:hover {
+    stroke-width: var(--strokeWithBefore);
+    stroke: var(--colorStrokeGray);
+}
+
+.contSvg {
+    overflow: hidden;
+    object-fit: contain;
+
+}
+
+.mainContSvg {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+}
+
+.mainContSvg:hover {
+    transition: .4s;
+}
+
+.divTransition2 {
+    animation: animationZoomIn 1s linear;
+}
+
+.divTransition {
+    animation: animationZoom 1s linear;
+}
+
+.divZoom{
+    position: absolute;
+    bottom: 15%;
+    right: 25%;
+    display: grid;
+    background: white;
+    grid-template-rows: repeat(2, max-content);
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 9000;
+}
+.divLesMore{
+    --sizeZoomCont: 40px;
+    display: grid;
+    height: var(--sizeZoomCont);
+    width: var(--sizeZoomCont);
+    font-weight: 800;
+    font-size: 16px;
+    justify-items: center;
+    align-items: center;
+    color: gray;
+    transition: .4s;
+}
+
+.divLesMore:hover{
+    background: rgba(0,0,0,.1);
+}
+
+@keyframes animationZoom {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+@keyframes animationZoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

@@ -71,7 +71,7 @@
     --gradientSpix: linear-gradient(180deg, rgba(7, 99, 185, 1) 0%, rgba(6, 91, 172, 1) 100%);
     --purpleGradientTag: rgba(232, 46, 138, 1);
     --gradientBlueButton: linear-gradient(177deg, rgba(42, 120, 247, 1) 0%, rgba(52, 128, 251, 1) 100%);
-    --separationLineColor: #f0f0f0;
+    --separationLineColor: #f1f1f1;
     --separationLineColor2: #e0dfdf;
     --separationLineColorDarkMode: black;
     --spaceXMainContainerMobile: 12px;
@@ -237,12 +237,29 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.noTicket {
+    fill: #d2d2d2;
+    transition: 1s;
+}
+
+
+
+.critic:hover {
+    transform: scale(1.05);
+    fill: #a90606;
+}
+
+.full:hover {
+    transform: scaleX(1.05);
+    fill: #046c06;
+}
+
 div {
     scrollbar-width: none;
 }
 
-@media (min-width: 1281px){
-    body, html{
+@media (min-width: 1281px) {
+    body, html {
         background: #EAEDED;
     }
 }

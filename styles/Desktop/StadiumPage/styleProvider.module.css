@@ -1,0 +1,19 @@
+.mainDiv {
+    height: 650px;
+    width: 500px;
+    padding: 32px 40px;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+.title {
+    padding: 0 0 16px 8px;
+}
+
+.gridTickets {
+    display: grid;
+    width: 100%;
+    gap: 20px;
+    overflow: scroll;
+    padding: 8px;
+}

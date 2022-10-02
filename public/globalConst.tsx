@@ -80,7 +80,13 @@ export namespace GlobalConst{
         ticketIcon: "/images/ticket.png",
         ticketIconWhite: "/images/ticketWhite.png",
         timerIcon: "/images/timerIcon.png",
-        shieldIcon: "/images/shieldIcon.png"
+        shieldIcon: "/images/shieldIcon.png",
+        leftArrowExitBlue: "/images/leftArrowBlue.png",
+        toiletIcon: "/images/toiletIcon.png",
+        discIcon: "/images/discIcon.png",
+        crownIcon: "/images/crownIcon.png",
+        lowVisibility: "/images/lowVisIcon.png",
+        inOfferIcon: "/images/discountIcon.png",
     }
 }
 
