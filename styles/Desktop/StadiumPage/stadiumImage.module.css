@@ -9,7 +9,7 @@
     --fillSections: #ff8383;
     --strokeWith: 1px;
     --strokeWithBefore: 12px;
-    --transitionHover: .6s;
+    --transitionHover: .2s;
     --transformOrigin: center center;
     --scaleTransform: 1.07;
 }
@@ -65,6 +65,16 @@
     stroke: var(--colorStrokeBlue);
 }
 
+.svgClass{
+    transition: var(--transitionHover);
+    transform-origin: var(--transformOrigin);
+    -webkit-transform-origin: var(--transformOrigin);
+}
+
+.svgClass:hover{
+    stroke-width: var(--strokeWithBefore);
+}
+
 
 .critic {
     --colorStrokeRed: #ff6c6c;
@@ -73,7 +83,7 @@
     stroke-width: var(--strokeWith);
     transition: var(--transitionHover);
     transform-origin: var(--transformOrigin);
-    -webkit-transform-origin: var(--transformOrigin);;
+    -webkit-transform-origin: var(--transformOrigin);
 }
 
 .critic:hover {

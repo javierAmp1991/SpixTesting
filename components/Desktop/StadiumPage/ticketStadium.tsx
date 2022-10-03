@@ -1,5 +1,4 @@
 import {
-    AtributesArea,
     TicketStadium,
     TypeAtributesArea,
     TypeOffer
@@ -29,54 +28,33 @@ export default function TicketStadiumDesktop({item, styleDiv}:
                                                  { item: TicketStadium, styleDiv: boolean }) {
     let selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext)
     let selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
-    let nameArea: string
-    let atributes: AtributesArea[]
-    if (selectedAreaContext.SelectedArea != null) {
-        nameArea = selectedAreaContext.SelectedArea.Name
-        atributes = selectedAreaContext.SelectedArea.AtributesAreas
-    }
-
 
     const handleSelectTicket = () => {
-        selectedTicketContext.AddTickets(`${item.Row}${item.Seat}`)
+        selectedTicketContext.AddTickets(item)
     }
     const handleDeleteTickets = () => {
-        selectedTicketContext.DeleteTickets(`${item.Row}${item.Seat}`)
+        selectedTicketContext.DeleteTickets(item)
     }
     return (
         <div className={`${style.mainCont} ${styleDiv ? style.styleDiv1 : style.styleDiv2}`}>
             <div className={style.gridContPrice}>
                 <div className={style.leftCont}>
                     <div className={`${style.styleTitle} ${utilities.clamp1}`}>
-                        {nameTicketText}: {
-                        item.AreaName != null ? item.AreaName : nameArea
-                    }
+                        {nameTicketText}: {item.AreaName}
                     </div>
                     <div className={style.styleSubtitle}>
                         {rowNumberText}: {item.Row} | {seatNumber}: {item.Seat}
                     </div>
                     {
-                        item.Atributes != null ?
-                            item.Atributes.map((item, index) =>
-                                <div key={`${index}${item}`} className={style.atributesTicket}>
-                                    <div className={style.containerImageIcon}>
-                                        <Image layout={"fill"} src={getIcon(item.Type)} alt={""}/>
-                                    </div>
-                                    <div className={utilities.clamp1}>
-                                        {item.Description}
-                                    </div>
-                                </div>)
-                            :
-                            atributes.map((item) =>
-                                <div key={`${item}`} className={style.atributesTicket}>
-                                    <div className={style.containerImageIcon}>
-                                        <Image layout={"fill"} src={getIcon(item.Type)} alt={""}/>
-                                    </div>
-                                    <div className={utilities.clamp1}>
-                                        {item.Description}
-                                    </div>
+                        item.Atributes.map((item, index) =>
+                            <div key={`${index}${item}`} className={style.atributesTicket}>
+                                <div className={style.containerImageIcon}>
+                                    <Image layout={"fill"} src={getIcon(item.Type)} alt={""}/>
                                 </div>
-                            )
+                                <div className={utilities.clamp1}>
+                                    {item.Description}
+                                </div>
+                            </div>)
                     }
                 </div>
                 <div className={style.contPrice}>

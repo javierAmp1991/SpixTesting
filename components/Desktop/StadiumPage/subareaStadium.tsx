@@ -105,6 +105,7 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
     }
     const handleCloseSubArea = () => {
         selectdAreaContext.DeselectArea()
+        selectedSubAreaContext.DeSelectSubArea()
         closeSubAreaStadium()
     }
     const cssStyle = getCssStyle()
@@ -139,15 +140,6 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
                             )
                         }
                     </div>
-
-                    {/*<div className={style.divZoom}>
-                        <button onClick={handleClickZoomUp} className={style.divLesMore}>
-                            +
-                        </button>
-                        <button onClick={handleClickZoomDown} className={style.divLesMore}>
-                            -
-                        </button>
-                    </div>*/}
                 </div>
 
                 <div className={style.mainContRows}>

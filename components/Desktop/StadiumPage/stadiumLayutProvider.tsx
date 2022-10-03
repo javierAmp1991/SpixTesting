@@ -15,6 +15,8 @@ import styleProvider from "/styles/Desktop/StadiumPage/styleProvider.module.css"
 import utilities from "/styles/utilities.module.css";
 import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
+import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
+import item = PrincipalFeaturedSearch.item;
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
@@ -36,12 +38,6 @@ export class ProviderSelectedAreaProp {
     DeselectArea: Function;
 }
 
-export class ProviderSelectableTicketProp {
-    SelectableTickets: TicketStadium[];
-    AddTickets: Function;
-    DeleteTickets: Function;
-}
-
 export class LayoutSeats {
     Id?: number
     Type: RowType
@@ -60,6 +56,11 @@ export class ProviderFiltersPop {
     SelectSecundaryFilter: Function
 }
 
+export class TicketStateContextProp {
+    MainTickets: TicketStadium[]
+    AllAreasStadium: AreaStadium[]
+}
+
 const layoutStadium: LayoutStadium = LayoutStadiumData.layout;
 const stadiumData: StadiumData = StadiumDataInfo.data;
 export const LayoutStadiumContext = createContext(null);
@@ -67,11 +68,12 @@ export const SelectedAreaContext = createContext(null);
 export const SelectedSubAreaContext = createContext(null);
 export const SelectedTicketsContext = createContext(null);
 export const StadiumDataContext = createContext(null);
-export const SelectableTicketsContext = createContext(null);
 export const PopUpStadiumContext = createContext(null);
 export const PopUpSelectedTickets = createContext(null);
 export const LayoutSubAreaContext = createContext(null);
 export const FiltersContext = createContext(null);
+export const TicketsStateContext = createContext(null)
+
 
 const orderByFilters: CategoryFilter[] = [
     {
@@ -87,7 +89,6 @@ const orderByFilters: CategoryFilter[] = [
         IsSelected: false
     },
 ]
-
 const atributesFilters: CategoryFilter[] = [
     {
         Id: "inOffer",
@@ -123,6 +124,7 @@ const atributesFilters: CategoryFilter[] = [
 ]
 
 export default function StadiumLayutProvider({children}) {
+    //region hooks
     let [principalFilters, setPrincipalFilters] = useState(orderByFilters)
     const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
         const newListFilter = principalFilters.map(item => {
@@ -141,8 +143,6 @@ export default function StadiumLayutProvider({children}) {
         })
         setSecundaryFilters(secundaryFilters = newListFilter)
     }
-
-
     let providerFilters: ProviderFiltersPop = {
         OrderByFilters: principalFilters,
         AtributesFilters: secundaryFilters,
@@ -150,82 +150,75 @@ export default function StadiumLayutProvider({children}) {
         SelectSecundaryFilter: handleSecundaryFilters
     }
 
-
     let layoutRowSeatsSubArea: LayoutRowSeats[] = [];
-    //region hooks
+
     let [mainTickets, setMainTickets] = useState(layoutStadium.MainTickets)
     let [allAreasStadium, setAllAreasStdium] = useState(layoutStadium.AreasStadium)
 
-    let [areaStadium, setAreaStadium] = useState(null)
+    let ticketStateContext: TicketStateContextProp = {
+        MainTickets: mainTickets,
+        AllAreasStadium: allAreasStadium
+    }
+
+    let [areaStadiumSelected, setAreaStadiumSelected] = useState(null)
     const handleSelectArea = (id: string) => {
         allAreasStadium.forEach(item => {
             if (item.Id == id) {
-                setAreaStadium(areaStadium = item)
+                setAreaStadiumSelected(areaStadiumSelected = item)
             }
         })
     }
-    const handleDeselectArea = () => setAreaStadium(areaStadium = null)
+    const handleDeselectArea = () => setAreaStadiumSelected(areaStadiumSelected = null)
     let providerAreaSelected: ProviderSelectedAreaProp = {
-        SelectedArea: areaStadium,
+        SelectedArea: areaStadiumSelected,
         SelectArea: handleSelectArea,
         DeselectArea: handleDeselectArea
     }
 
-    let [selectableTickets, setSelectableTickets] = useState([])
-    const handleAddSelectableTickets = (idTicket: string) => {
-        /*allTicketsData.forEach(item => {
-            if (`${item.Row}${item.Seat}` == idTicket) {
-                setSelectableTickets(selectableTickets = [...selectableTickets, item])
-            }
-        })*/
-    }
-    const handleDeleteSelectableTickets = (idTicket: string) => {
-        let newListSelectionableTickets = selectableTickets.filter(item => `F${item.Row}A${item.Seat}` != idTicket)
-        setSelectableTickets(selectableTickets = newListSelectionableTickets)
-    }
-    let providerSelectableTickets: ProviderSelectableTicketProp = {
-        SelectableTickets: selectableTickets,
-        AddTickets: handleAddSelectableTickets,
-        DeleteTickets: handleDeleteSelectableTickets
-    }
-
     let [selectedTickets, setSelectedTickets] = useState([])
-    const handleSelectTickets = (id: string) => {
-        selectedTickets.length > 0 ?
-            !isSelectedTicket(id) &&
-            addTicket(id)
-            :
-            addTicket(id)
+    const handleSelectTickets = (ticket: TicketStadium) => {
+        setSelectedTickets(selectedTickets = [...selectedTickets, {...ticket, State: true}])
+        updateTicket(ticket, true)
+    }
+    const handleDeleteTickets = (ticket: TicketStadium) => {
+        let newListTickets = selectedTickets.filter(item => item.Id != ticket.Id)
+        setSelectedTickets(selectedTickets = newListTickets)
+        updateTicket(ticket, false)
     }
 
-    function isSelectedTicket(id: string): boolean {
+    function updateTicket(ticket: TicketStadium, isSelected: boolean) {
+        if (subAreaSelected == null) {
+            let newMainTickets = mainTickets.map(item => {
+                if (item.Id == ticket.Id) return {...item, State: isSelected}
+                else return item
+            })
+            setMainTickets(mainTickets = newMainTickets)
+        } else {
+            let newAreasStadium = allAreasStadium.map((item) => {
+                if (item.Name == areaStadiumSelected.Name) {
+                    let newRowTickets = item.SubAreaStadium.FirstRowTickets.map((subItem) => {
+                        if (subItem.Id == ticket.Id) {
+                            return {...subItem, State: isSelected}
+                        } else return subItem
+                    })
+                    let newSubAreaStadium = {...item.SubAreaStadium, FirstRowTickets: newRowTickets}
+                    return {...item, SubAreaStadium: newSubAreaStadium}
+                } else return item
+            })
+            setAllAreasStdium(allAreasStadium = newAreasStadium)
+        }
+    }
+
+    function isSelectedTicket(ticket: TicketStadium): boolean {
         let control: boolean = false
         selectedTickets.forEach((item: TicketStadium) => {
-            if (`${item.Row}${item.Seat}` == id) {
+            if (item.Id == ticket.Id) {
                 control = true
             }
         })
         return control
     }
 
-    function addTicket(id: string) {
-        layoutStadium.AreasStadium.forEach((item) => {
-            item.SubAreaStadium.FirstRowTickets.forEach(((subItem) => {
-                if (`${subItem.Row}${subItem.Seat}` == id) {
-                    setSelectedTickets(selectedTickets = [...selectedTickets, subItem])
-                }
-            }))
-        })
-        layoutStadium.MainTickets.forEach((item) => {
-            `${item.Row}${item.Seat}` == id &&
-            setSelectedTickets(selectedTickets = [...selectedTickets, item])
-        })
-    }/**/
-
-    const handleDeleteTickets = (id: string) => {
-        let newListTickets = selectedTickets.filter(item => `${item.Row}${item.Seat}` != id)
-        setSelectedTickets(selectedTickets = newListTickets)
-    }
     let providerTicketSelected: ProviderSelectedTicketProp = {
         SelectedTickets: selectedTickets,
         AddTickets: handleSelectTickets,
@@ -235,7 +228,7 @@ export default function StadiumLayutProvider({children}) {
 
     let [subAreaSelected, setSubAreaSelected] = useState(null)
     const handleSubAreaSelected = (id) => {
-        layoutStadium.AreasStadium.forEach((item) => {
+        allAreasStadium.forEach((item) => {
             if (item.SubAreaStadium.Id == id) {
                 setSubAreaSelected(subAreaSelected = item.SubAreaStadium)
             }
@@ -249,16 +242,28 @@ export default function StadiumLayutProvider({children}) {
     }
 
     let [layoutRowSeats, setLayoutRowSeats] = useState([])
+
     useEffect(() => {
         if (subAreaSelected != null) {
             getLayoutRowSeats()
             setLayoutRowSeats(layoutRowSeats = layoutRowSeatsSubArea)
         }
     }, [subAreaSelected])
+
+    function isInsideSelected(idSeatRow: string): boolean {
+        let control: boolean = false
+        selectedTickets.forEach((item: TicketStadium) => {
+            if (idSeatRow == `${item.Row}${item.Seat}`) {
+                control = true
+            }
+        })
+        return control
+    }
+
     useEffect(() => {
         let newLayoutRowSeat = layoutRowSeats.map((item) => {
             let newlayoutSeat = item.LayoutSeats.map((subItem) => {
-                if (isSelectedTicket(`${subItem.Id}`)) {
+                if (isInsideSelected(`${item.RowNumber}${subItem.Id}`)) {
                     return {...subItem, State: true}
                 } else return subItem
             })
@@ -296,8 +301,8 @@ export default function StadiumLayutProvider({children}) {
                 <SelectedSubAreaContext.Provider value={providerSubareaSelected}>
                     <SelectedTicketsContext.Provider value={providerTicketSelected}>
                         <SelectedAreaContext.Provider value={providerAreaSelected}>
-                            <SelectableTicketsContext.Provider value={providerSelectableTickets}>
-                                <FiltersContext.Provider value={providerFilters}>
+                            <FiltersContext.Provider value={providerFilters}>
+                                <TicketsStateContext.Provider value={ticketStateContext}>
                                     <LayoutSubAreaContext.Provider value={layoutRowSeats}>
                                         <PopUpStadiumContext.Provider value={handleOpenMap}>
                                             <PopUpSelectedTickets.Provider value={handleOpenSelectedTickets}>
@@ -340,8 +345,8 @@ export default function StadiumLayutProvider({children}) {
                                             </PopUpSelectedTickets.Provider>
                                         </PopUpStadiumContext.Provider>
                                     </LayoutSubAreaContext.Provider>
-                                </FiltersContext.Provider>
-                            </SelectableTicketsContext.Provider>
+                                </TicketsStateContext.Provider>
+                            </FiltersContext.Provider>
                         </SelectedAreaContext.Provider>
                     </SelectedTicketsContext.Provider>
                 </SelectedSubAreaContext.Provider>

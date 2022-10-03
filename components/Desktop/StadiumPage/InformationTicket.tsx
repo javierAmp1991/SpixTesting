@@ -7,12 +7,10 @@ import {
     SelectedTicketsContext,
     SelectedAreaContext,
     StadiumDataContext,
-    SelectableTicketsContext,
     ProviderSelectedTicketProp,
     ProviderSelectedSubAreaProp,
     ProviderSelectedAreaProp,
-    ProviderSelectableTicketProp,
-    PopUpStadiumContext, PopUpSelectedTickets,
+    PopUpStadiumContext, PopUpSelectedTickets, TicketsStateContext, TicketStateContextProp
 } from "./stadiumLayutProvider";
 import {StadiumData} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 
@@ -31,12 +29,12 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
 
     const stadiumDataContex: StadiumData = useContext(StadiumDataContext);
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
-    const selectableTicketsInformation: ProviderSelectableTicketProp = useContext(SelectableTicketsContext);
     const subAreaInformation: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
     const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
 
     const popUpStadiumContext: Function = useContext(PopUpStadiumContext)
     const popUpSelectedTickects: Function = useContext(PopUpSelectedTickets)
+    const ticketStateContext: TicketStateContextProp = useContext(TicketsStateContext)
     const handlePopUpInformation = () => popUpStadiumContext()
     const handlePopUpTickets = () => popUpSelectedTickects()
 
@@ -81,17 +79,16 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
             {
                 <div className={style.mainContTickets}>
                     {
-                        selectableTicketsInformation.SelectableTickets.length > 0 ?
-                            selectableTicketsInformation.SelectableTickets.map((ticket) =>
-                                <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
-                            :
-                            areaInformation.SelectedArea != null ?
-                                subAreaInformation.SelectedSubArea.FirstRowTickets.map((ticket) =>
+                        areaInformation.SelectedArea != null ?
+                            ticketStateContext.AllAreasStadium.map(item=>
+                            item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
+                                item.SubAreaStadium.FirstRowTickets.map(ticket =>
                                     <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
-                                :
-                                stadiumDataContex.MainTickets.map((ticket) =>
-                                    <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>
-                                )
+                            )
+                            :
+                            ticketStateContext.MainTickets.map((ticket) =>
+                                <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>
+                            )
                     }
                 </div>
             }
