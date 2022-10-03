@@ -6,6 +6,7 @@
     --paddingXInter: 24px;
     height: 100%;
     overflow: scroll;
+    max-width: 300px;
 }
 
 .contNumber {

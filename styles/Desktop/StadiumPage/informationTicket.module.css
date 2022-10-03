@@ -4,6 +4,7 @@
     --paddingSections: 12px;
     display: grid;
     grid-template-rows: max-content 1fr max-content;
+    max-width: 350px;
 }
 
 .mainContTickets {

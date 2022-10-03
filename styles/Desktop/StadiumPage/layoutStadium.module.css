@@ -2,7 +2,7 @@
     width: 100vw;
     max-width: 1920px;
     display: grid;
-    grid-template-columns: 20% 1fr 23%;
+    grid-template-columns: auto 1fr auto;
     background: white;
     height: calc(100vh - 97px);
     position: relative;

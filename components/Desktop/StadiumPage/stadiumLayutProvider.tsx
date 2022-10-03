@@ -1,11 +1,13 @@
 import {
+    AreaStadium,
     LayoutStadium,
     LayoutStadiumData,
-    TicketStadium,
-    AreaStadium,
-    SubAreaStadium,
+    RowType,
     StadiumData,
-    StadiumDataInfo, RowType, SubAreaSeats,
+    StadiumDataInfo,
+    SubAreaSeats,
+    SubAreaStadium,
+    TicketStadium,
 } from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import React, {createContext, useEffect, useState} from "react";
 import MapPopUp, {MapPopUpProp} from "../Misc/mapPopUp";
@@ -16,7 +18,6 @@ import utilities from "/styles/utilities.module.css";
 import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
@@ -357,7 +358,9 @@ export default function StadiumLayutProvider({children}) {
     function getLayoutRowSeats() {
         let seatControl: number = 1;
         let rowNumberControl = 1;
+        let rowControlNumber = 1;
         let layoutSeatTest: LayoutSeats[] = []
+        let controlLargeSeats = getLargeFile()
 
         function getSeatNumber(type: RowType): number {
             if (type != RowType.Empty) {
@@ -385,16 +388,56 @@ export default function StadiumLayutProvider({children}) {
             layoutRowSeatsSubArea = [...layoutRowSeatsSubArea, newRowSeat]
         }
 
-        function resetSeatControlLayoutSeat() {
-            rowNumberControl += 1
+        function createRowSeatEmpty(){
+            let newRowSeat: LayoutRowSeats = {
+                RowNumber: 0,
+                LayoutSeats: layoutSeatTest
+            }
+            layoutRowSeatsSubArea = [...layoutRowSeatsSubArea, newRowSeat]
+        }
+
+        function resetLayoutSeatTestt() {
             layoutSeatTest = []
         }
 
+        function resetRowNumberControl(){
+            rowNumberControl += 1
+        }
+
+        function resetControlFile(){
+            rowControlNumber += 1
+        }
+
+        function getLargeFile(): number {
+            let largeSeats = 0
+            subAreaSelected.Seats.forEach(item => {
+                if (item.RowNumber == 1) {
+                    largeSeats += item.SeatsAmount
+                }
+            })
+            return largeSeats
+        }
+
         subAreaSelected.Seats.forEach((item) => {
-            if (item.RowNumber == rowNumberControl) createSeat(item)
+            if (item.RowNumber == rowControlNumber) createSeat(item)
             else {
-                createRowSeat()
-                resetSeatControlLayoutSeat()
+                let counterEmpty: number = 0
+                layoutSeatTest.forEach(item => {
+                    if (item.Type == RowType.Empty) {
+                        counterEmpty += 1
+                    }
+                })
+
+                if (counterEmpty != controlLargeSeats) {
+                    createRowSeat()
+                    resetRowNumberControl()
+                }
+                else{
+                    createRowSeatEmpty()
+
+                }
+                resetControlFile()
+                resetLayoutSeatTestt()
                 createSeat(item)
             }
         })

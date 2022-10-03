@@ -144,14 +144,20 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
 
                 <div className={style.mainContRows}>
                     <div className={style.rowMatriz}>
-                        <div ref={divWheelRef}  className={style.divRows}
+                        <div ref={divWheelRef} className={style.divRows}
                              style={{gridTemplateColumns: cssStyle.grid, gap: cssStyle.gap}}>
                             {
                                 layoutSeatsState.map((item, index) =>
                                     <>
-                                        <div className={style.rowContent}>
-                                            F{item.RowNumber}
-                                        </div>
+                                        {
+                                            item.RowNumber != 0 ?
+                                                <div className={style.rowContent}>
+                                                    F{item.RowNumber}
+                                                </div>
+                                                :
+                                                <div/>
+                                        }
+
                                         {
                                             item.LayoutSeats.map((subItem) =>
                                                 subItem.Type == RowType.Empty ?

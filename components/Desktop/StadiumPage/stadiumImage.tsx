@@ -151,9 +151,9 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
                 /*getOnMouseOVer(item.Id)*/
             }
         )
-        for (let i = 1; i <= 22; i++){
+        /*for (let i = 1; i <= 22; i++){
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
-        }
+        }*/
     }
 
 

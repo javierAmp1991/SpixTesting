@@ -98,7 +98,6 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
                     {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberSelected}
                 </div>
 
-
                 <div className={style.totalPrice}>
                     {totalPriceText} ${getMoneyValue(getTotalPrice())}
                 </div>
