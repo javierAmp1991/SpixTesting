@@ -15,8 +15,6 @@ import {
     PopUpStadiumContext, PopUpSelectedTickets,
 } from "./stadiumLayutProvider";
 import {StadiumData} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
-import Image from "next/image";
-import {GlobalConst} from "../../../public/globalConst";
 
 const buyTextButton: string = "Comprar";
 const capacityText: string = "Capacidad";
@@ -24,9 +22,12 @@ const totalTicketsText: string = "Total entradas";
 const totalPriceText: string = "Total";
 const seeInformationVenueText: string = "Ver informacion del recinto";
 const capacityPeopleText: string = "personas";
+const reminingText: string = "Quedan"
+const ticketText: string = "Entradas"
+const seeTickets: string = "Ver Entradas"
 
 
-export default function InformationTicket({numberSelected} : {numberSelected:number}) {
+export default function InformationTicket({numberSelected}: { numberSelected: number }) {
 
     const stadiumDataContex: StadiumData = useContext(StadiumDataContext);
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
@@ -53,6 +54,11 @@ export default function InformationTicket({numberSelected} : {numberSelected:num
                             <div className={`${utilities.fontSubtitleDesktop} ${style.paddingCapacity}`}>
                                 {capacityText} {getMoneyValue(areaInformation.SelectedArea.Capacity)} {capacityPeopleText}
                             </div>
+                            <div
+                                className={areaInformation.SelectedArea.SoldTickets > areaInformation.SelectedArea.TotalTickets * 0.90 ?
+                                    style.reminingTicket : style.reminigTicketsCritic}>
+                                {reminingText} {areaInformation.SelectedArea.TotalTickets - areaInformation.SelectedArea.SoldTickets} {ticketText}
+                            </div>
                         </>
                         :
                         <>
@@ -62,16 +68,14 @@ export default function InformationTicket({numberSelected} : {numberSelected:num
                             <div className={`${utilities.fontSubtitleDesktop} ${style.paddingCapacity}`}>
                                 {capacityText} {getMoneyValue(stadiumDataContex.Capacity)} {capacityPeopleText}
                             </div>
+                            <button className={style.gridDirection}>
+                                <div onClick={handlePopUpInformation} className={utilities.styleLink}>
+                                    {seeInformationVenueText}
+                                </div>
+                            </button>
                         </>
                 }
-                <button className={style.gridDirection}>
-                    <div className={style.sizeMapIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>
-                    </div>
-                    <div onClick={handlePopUpInformation} className={utilities.styleLink}>
-                        {seeInformationVenueText}
-                    </div>
-                </button>
+
             </div>
 
             {
@@ -97,29 +101,31 @@ export default function InformationTicket({numberSelected} : {numberSelected:num
                     {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberSelected}
                 </div>
 
+
                 <div className={style.totalPrice}>
                     {totalPriceText} ${getMoneyValue(getTotalPrice())}
                 </div>
 
-                <button className={style.gridSeeTickets}>
-                    <div className={style.sizeTicketIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                    </div>
-                    <div onClick={handlePopUpTickets} className={utilities.styleLink}>
-                        Ver Entradas
-                    </div>
-                </button>
+                {
+                    ticketsInformation.SelectedTickets.length > 0 ?
+                        <button onClick={handlePopUpTickets} className={style.seeTickets}>
+                            {seeTickets}
+                        </button>
+                        :
+                        <div/>
+                }
 
-               <button className={cssStyle.styleButton}>
+
+                <button className={cssStyle.styleButton}>
                     {buyTextButton}
                 </button>
             </div>
         </div>
     )
 
-    function getCssStyle(){
-        return{
-            styleButton: ticketsInformation.SelectedTickets.length == numberSelected? style.button : style.buttonOff
+    function getCssStyle() {
+        return {
+            styleButton: ticketsInformation.SelectedTickets.length == numberSelected ? style.button : style.buttonOff
         }
     }
 

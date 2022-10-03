@@ -77,13 +77,13 @@ const orderByFilters: CategoryFilter[] = [
     {
         Id: "12345abcde",
         ImagePath: "/images/dollarUp.png",
-        Name: "Menor a Mayor",
+        Name: "Menor a mayor precio",
         IsSelected: false
     },
     {
         Id: "12345abcdedasdsw",
         ImagePath: "/images/dollarDown.png",
-        Name: "Mayor a Menor",
+        Name: "Mayor a menor precio",
         IsSelected: false
     },
 ]
@@ -98,7 +98,7 @@ const atributesFilters: CategoryFilter[] = [
     {
         Id: "vip",
         ImagePath: GlobalConst.sourceImages.crownIcon,
-        Name: "VIP",
+        Name: "Entradas VIP",
         IsSelected: false
     },
     {

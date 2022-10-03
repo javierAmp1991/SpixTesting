@@ -41,7 +41,7 @@
 .buttonSelection {
     display: grid;
     width: 100%;
-    padding: 4px 16px;
+    padding: 3px 16px;
     border-radius: 16px;
     overflow: hidden;
     color: white;
@@ -60,7 +60,7 @@
 
 .contButton {
     display: grid;
-    margin-top: 6px;
+    margin-top: 10px;
     width: 100%;
 }
 

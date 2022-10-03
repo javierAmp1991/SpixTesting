@@ -1,5 +1,5 @@
 import style from "/styles/Desktop/StadiumPage/stadiumImage.module.css"
-import React, {useRef, useState} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import SVG from 'react-inlinesvg';
 import {useContext} from "react";
 import {
@@ -9,6 +9,8 @@ import {
     ProviderSelectedAreaProp, ProviderSelectedSubAreaProp,
 } from "./stadiumLayutProvider";
 import {LayoutStadium, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
+import {UncontrolledReactSVGPanZoom} from 'react-svg-pan-zoom';
 
 export default function StadiumImage({stateSelectedInitialTicket, displaySubAreaSelected, stateAnimation}:
                                          {
@@ -32,10 +34,20 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
     const minScale: number = 1
     const maxScale: number = 4
 
+    let [positionCursorX, setPositionCursorX] = useState()
+    let [positionCursorY, setPositionCursorY] = useState()
+
+    const handleMoveMouse = (e) => {
+        setPositionCursorX(positionCursorX = e.pageX)
+        setPositionCursorY(positionCursorY = e.pageY)
+    }
+
     const handleWheelEvent = (e) => {
         if (e.deltaY < 0) {
+            divWheelRef.current.style.transformOrigin = `${positionCursorX} ${positionCursorY}`
             handleClickZoomUp()
         } else {
+            divWheelRef.current.style.transformOrigin = `${positionCursorX} ${positionCursorY}`
             handleClickZoomDown()
         }
     }
@@ -64,11 +76,13 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
     return (
         <>
             <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
-                <div ref={divWheelRef} onWheel={handleWheelEvent} className={cssStyle.stateTickets}>
-                    <SVG className={style.mainContSvg}
-                         title="React Svg"
-                         onLoad={postCss}
-                         src={layoutStadiumContext.UrlSvg}/>
+                <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
+                    <div ref={divWheelRef} onMouseMove={handleMoveMouse} onWheel={handleWheelEvent}
+                         className={cssStyle.stateTickets}>
+                        <SVG className={style.mainContSvg}
+                             onLoad={postCss}
+                             src={layoutStadiumContext.UrlSvg}/>
+                    </div>
                 </div>
             </div>
             {
@@ -94,10 +108,26 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
 
     function addClassToSvg(id: string, stateArea: StateArea) {
         if (stateArea == StateArea.Normal) {
-            document.getElementById(id).classList.add(style.normal)
+            let nodes = document.getElementsByClassName("topArea")
+            for (let i = 0; i < nodes.length; i++){
+                nodes[i].classList.add(style.normal)
+            }
+            /*document.getElementById(id).classList.add(style.normal)*/
+
         } else if (stateArea == StateArea.Critic) {
-            document.getElementById(id).classList.add(style.critic)
-        } else document.getElementById(id).classList.add(style.noStock)
+            let nodes = document.getElementsByClassName("rightArea")
+            for (let i = 0; i < nodes.length; i++){
+                nodes[i].classList.add(style.critic)
+            }
+            /*document.getElementById(id).classList.add(style.critic)*/
+        }
+        else {
+            let nodes = document.getElementsByClassName("leftArea")
+            for (let i = 0; i < nodes.length; i++){
+                nodes[i].classList.add(style.blue)
+            }
+            /*document.getElementById(id).classList.add(style.noStock)*/
+        }
     }
 
     function addOnClickEvent(id: string, subAresCode: string) {

@@ -17,8 +17,8 @@
 .principalGridOpen::-webkit-scrollbar{
     display: grid;
     -webkit-appearance: inherit;
-    height: 6px;
-    width: 6px;
+    height: 8px;
+    width: 8px;
     background: var(--backgroundMatriz);
 }
 
@@ -50,6 +50,21 @@
     transition: 1.5s;
 }
 
+.blue {
+    --colorStrokeBlue: #225fe0;
+    stroke: var(--colorStrokeBlue);
+    fill: var(--colorStrokeBlue);
+    stroke-width: var(--strokeWith);
+    transition: var(--transitionHover);
+    transform-origin: var(--transformOrigin);
+    -webkit-transform-origin: var(--transformOrigin);;
+}
+
+.blue:hover{
+    stroke-width: var(--strokeWithBefore);
+    stroke: var(--colorStrokeBlue);
+}
+
 
 .critic {
     --colorStrokeRed: #ff6c6c;
@@ -72,7 +87,6 @@
     fill: var(--colorStrokeGreen);
     stroke-width: var(--strokeWith);
     transition: var(--transitionHover);
-    /*transform-origin: var(--transformOrigin);*/
     -webkit-transform-origin: var(--transformOrigin);
 }
 
@@ -89,11 +103,6 @@
     transition: var(--transitionHover);
     /*transform-origin: var(--transformOrigin);*/
     -webkit-transform-origin: var(--transformOrigin);;
-}
-
-.noStock:hover {
-    stroke-width: var(--strokeWithBefore);
-    stroke: var(--colorStrokeGray);
 }
 
 .contSvg {

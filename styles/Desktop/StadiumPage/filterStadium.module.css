@@ -1,8 +1,9 @@
 .mainDiv {
     border-right: 2px solid var(--separationLineColor);
-    --paddingX: 16px;
+    --paddingX: 20px;
     --paddingY: 16px;
     --colorTags: 2px solid rgba(173, 190, 204, 0.3);
+    --paddingXInter: 24px;
     height: 100%;
     overflow: scroll;
 }
@@ -65,6 +66,7 @@
 .gridOrderBy {
     display: grid;
     gap: 6px;
+    padding: 0 var(--paddingXInter);
 }
 
 .gridButton {
@@ -72,7 +74,7 @@
     grid-template-columns: max-content max-content;
     gap: 8px;
     justify-content: center;
-    padding: 6px 24px;
+    padding: 8px 24px;
     border-radius: 5px;
     align-items: center;
     overflow: hidden;
@@ -87,7 +89,7 @@
     justify-content: center;
     gap: 8px;
     background: rgba(19, 135, 215, .2);
-    padding: 6px 24px;
+    padding: 8px 24px;
     border-radius: 5px;
     overflow: hidden;
     align-items: center;
@@ -121,6 +123,7 @@
 }
 
 .gridSecundaryFilter {
+    padding: 0 var(--paddingXInter);
     display: grid;
     gap: 12px;
 }
@@ -132,7 +135,7 @@
     align-items: center;
     gap: 6px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    padding: 12px 24px;
+    padding: 12px 16px;
     border-radius: 4px;
     transition: .3s;
     overflow: hidden;
@@ -150,6 +153,7 @@
 }
 
 .gridInputs{
+    padding: 0 var(--paddingXInter);
     display: grid;
     gap: 12px;
 }

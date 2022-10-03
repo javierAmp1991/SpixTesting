@@ -90,7 +90,17 @@
 
 .numberTickets {
     font-size: 16px;
+    display: grid;
+    align-items: center;
     font-weight: 400;
+}
+
+.seeTickets{
+    color: var(--linkColor);
+    display: grid;
+    align-items: center;
+    font-weight: 400;
+    text-align: left;
 }
 
 .titleArea{
@@ -126,6 +136,14 @@
 
 .paddingCapacity{
     padding-bottom: 8px;
+}
+
+.reminigTicketsCritic{
+    color: red;
+}
+
+.reminigTickets{
+    color: var(--colorPrimaryTextDesktop);
 }
 
 

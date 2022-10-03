@@ -53,10 +53,7 @@ export default function TicketStadiumDesktop({item, styleDiv}:
                     }
                     </div>
                     <div className={style.styleSubtitle}>
-                        {rowNumberText}: {item.Row}
-                    </div>
-                    <div className={style.styleSubtitle}>
-                        {seatNumber}: {item.Seat}
+                        {rowNumberText}: {item.Row} | {seatNumber}: {item.Seat}
                     </div>
                     {
                         item.Atributes != null ?

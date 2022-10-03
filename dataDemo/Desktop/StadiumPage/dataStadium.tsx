@@ -34,6 +34,7 @@ export class SubAreaStadium {
     Id: string
     Seats: SubAreaSeats[]
     FirstRowTickets: TicketStadium[]
+
 }
 
 export class LayoutStadium {
@@ -67,6 +68,8 @@ export class AreaStadium {
     StateArea: StateArea
     AtributesAreas: AtributesArea[]
     SubAreaStadium: SubAreaStadium
+    TotalTickets: number
+    SoldTickets: number
 }
 
 export class StadiumData {
@@ -805,19 +808,23 @@ const mainTickets: TicketStadium[] = [
 const subArea1: SubAreaStadium = {
     Id: "subAreaStadium1",
     Seats: subAreaSeats1,
-    FirstRowTickets: tickets1
+    FirstRowTickets: tickets1,
+
 }
 
 const subArea2: SubAreaStadium = {
     Id: "subAreaStadium2",
     Seats: subAreaSeats2,
-    FirstRowTickets: tickets2
+    FirstRowTickets: tickets2,
+
 }
 
 const subArea3: SubAreaStadium = {
     Id: "subAreaStadium3",
     Seats: subAreaSeats3,
-    FirstRowTickets: tickets3
+    FirstRowTickets: tickets3,
+
+
 }
 
 const atributesArea1: AtributesArea[] = [
@@ -846,7 +853,9 @@ const areaStadium: AreaStadium[] = [
         Capacity: 30,
         StateArea: StateArea.Critic,
         AtributesAreas: atributesArea1,
-        SubAreaStadium: subArea1
+        SubAreaStadium: subArea1,
+        TotalTickets: 100,
+        SoldTickets: 90,
     },
     {
         Id: "area2",
@@ -854,7 +863,9 @@ const areaStadium: AreaStadium[] = [
         Capacity: 20,
         StateArea: StateArea.NoStock,
         AtributesAreas: atributesArea2,
-        SubAreaStadium: subArea2
+        SubAreaStadium: subArea2,
+        TotalTickets: 100,
+        SoldTickets: 50
     },
     {
         Id: "area3",
@@ -862,7 +873,9 @@ const areaStadium: AreaStadium[] = [
         Capacity: 45,
         StateArea: StateArea.Normal,
         AtributesAreas: atributesArea3,
-        SubAreaStadium: subArea3
+        SubAreaStadium: subArea3,
+        TotalTickets: 100,
+        SoldTickets: 80
     }
 ]
 
