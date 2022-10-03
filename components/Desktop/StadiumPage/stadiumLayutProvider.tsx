@@ -12,12 +12,10 @@ import {
 import React, {createContext, useEffect, useState} from "react";
 import MapPopUp, {MapPopUpProp} from "../Misc/mapPopUp";
 import PopUpContainer from "../Misc/popUpContainer";
-import TicketStadiumDesktop from "./ticketStadium";
-import styleProvider from "/styles/Desktop/StadiumPage/styleProvider.module.css"
-import utilities from "/styles/utilities.module.css";
+
 import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
-import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
+import PopUpSelectedTicketsView from "./popUpSelectedTickets";
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
@@ -319,28 +317,8 @@ export default function StadiumLayutProvider({children}) {
                                                     displaySelectedTickets &&
                                                     <PopUpContainer isButtonVisible={true} isBackground={true}
                                                                     closePopUp={handleCloseSelectedTickets}>
-                                                        <div className={styleProvider.mainDiv}>
-                                                            <div
-                                                                className={`${utilities.fontTitleDesktop} ${styleProvider.title}`}>
-                                                                Entradas seleccionadas
-                                                            </div>
-                                                            {
-                                                                selectedTickets.length == 0 ?
-                                                                    <div>
-                                                                        No hay entradas seleccionadas
-                                                                    </div>
-                                                                    :
-                                                                    <div className={styleProvider.gridTickets}>
-                                                                        {
-                                                                            selectedTickets.map(item =>
-                                                                                <TicketStadiumDesktop styleDiv={false}
-                                                                                                      key={item.Id}
-                                                                                                      item={item}/>)
-                                                                        }
-                                                                    </div>
-                                                            }
+                                                        <PopUpSelectedTicketsView selectedTickets={selectedTickets}/>
 
-                                                        </div>
                                                     </PopUpContainer>
                                                 }
                                             </PopUpSelectedTickets.Provider>
@@ -388,7 +366,7 @@ export default function StadiumLayutProvider({children}) {
             layoutRowSeatsSubArea = [...layoutRowSeatsSubArea, newRowSeat]
         }
 
-        function createRowSeatEmpty(){
+        function createRowSeatEmpty() {
             let newRowSeat: LayoutRowSeats = {
                 RowNumber: 0,
                 LayoutSeats: layoutSeatTest
@@ -400,11 +378,11 @@ export default function StadiumLayutProvider({children}) {
             layoutSeatTest = []
         }
 
-        function resetRowNumberControl(){
+        function resetRowNumberControl() {
             rowNumberControl += 1
         }
 
-        function resetControlFile(){
+        function resetControlFile() {
             rowControlNumber += 1
         }
 
@@ -431,8 +409,7 @@ export default function StadiumLayutProvider({children}) {
                 if (counterEmpty != controlLargeSeats) {
                     createRowSeat()
                     resetRowNumberControl()
-                }
-                else{
+                } else {
                     createRowSeatEmpty()
 
                 }
