@@ -76,6 +76,7 @@
 }
 
 
+
 .critic {
     --colorStrokeRed: #ff6c6c;
     stroke: var(--colorStrokeRed);

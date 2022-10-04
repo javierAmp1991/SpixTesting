@@ -12,8 +12,8 @@
     </defs>
 <g id="Layer_2">
 	top area
-	<path id="idsvg1" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M65.2,64.7l6.9-6.2l10.8,13c0,0-2.4,1.5-3.8,2.6c-1.4,1-2.2,2.4-2.2,2.4L65.2,64.7z"/>
-	<path id="idsvg2" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M74.8,56.5c0,0,9.1-9.1,24-12.9c14.9-3.8,27.6-3.4,27.6-3.4L126,71.4h6.4l0.2,27.1c0,0-7-0.3-11.8,0.9
+	<path id="idsvg1" class="areaSvgStadium" stroke-width="1" fill="#119B49" stroke="#119B49" d="M65.2,64.7l6.9-6.2l10.8,13c0,0-2.4,1.5-3.8,2.6c-1.4,1-2.2,2.4-2.2,2.4L65.2,64.7z"/>
+	<path id="idsvg2" class="areaSvgStadium" stroke-width="1" fill="#119B49" stroke="#119B49" d="M74.8,56.5c0,0,9.1-9.1,24-12.9c14.9-3.8,27.6-3.4,27.6-3.4L126,71.4h6.4l0.2,27.1c0,0-7-0.3-11.8,0.9
 		c-4.8,1.2-11.3,5-11.3,5L89.6,85l4.4-3.6L74.8,56.5z"/>
 	<polygon id="idsvg3" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" points="128.9,40 138.2,40 138.4,56.5 128.8,56.1 	"/>
 	<polygon id="idsvg4" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" points="141.8,40.3 141.6,71.2 135.3,71.4 135.6,98.4 179.9,98 179.6,71.6 172.7,71.4 172.9,40.5 	"/>
@@ -189,12 +189,12 @@
 	<text transform="matrix(1 0 0 1 472.4269 359.6411)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">228</text>
 	<text transform="matrix(1 0 0 1 401.0129 408.0503)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">230</text>
 	<text transform="matrix(1 0 0 1 349.1691 409.0816)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">231</text>
-	
+
 		<text transform="matrix(0.8439 -0.5365 0.5365 0.8439 445.6269 397.195)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">229</text>
 	<text transform="matrix(1 0 0 1 145.2292 408.7378)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">203</text>
 	<text transform="matrix(1 0 0 1 97.5061 408.7388)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">204</text>
 	<text transform="matrix(1 0 0 1 107.8063 341.1021)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">105</text>
-	
+
 		<text transform="matrix(0.8702 0.4927 -0.4927 0.8702 55.4653 388.1672)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">205</text>
 	<text transform="matrix(1 0 0 1 60.0832 314.3218)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">106</text>
 	<text transform="matrix(1 0 0 1 59.0529 267.6284)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12.36">107</text>
@@ -209,7 +209,7 @@
 
 <g id="Layer_5">
 	<ellipse fill-rule="evenodd" clip-rule="evenodd" stroke="#231F20" stroke-width="0.2" cx="258.7" cy="208" rx="18.5" ry="30.6"/>
-	
+
 		<ellipse fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" stroke="#231F20" stroke-width="0.2" cx="258.7" cy="207.7" rx="17.6" ry="27.9"/>
 	<g>
 		<defs>
@@ -251,13 +251,13 @@
 			C244.7,199.6,244.7,194.9,244.7,194.9z"/>
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M246.8,194.2l1.3-0.4v5c0,0,0,0.3,0.4,0.4c0.4,0,0.4-0.2,0.4-0.4
 			c0-0.2,0-5.2,0-5.2l1.3-0.4v5.2c0,0,0,1.6-1.9,1.6c-0.6,0-1.4-0.3-1.4-1C246.8,198.3,246.8,194.2,246.8,194.2z"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" points="250.8,193.1 252.1,192.8 252.7,197.2 253.1,192.6 254.5,192.4 
+		<polygon fill-rule="evenodd" clip-rule="evenodd" points="250.8,193.1 252.1,192.8 252.7,197.2 253.1,192.6 254.5,192.4
 			253.8,198.7 251.6,199.1 		"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" points="255.1,192.4 257.5,192.3 257.5,193.4 256.4,193.4 256.4,194.8 
+		<polygon fill-rule="evenodd" clip-rule="evenodd" points="255.1,192.4 257.5,192.3 257.5,193.4 256.4,193.4 256.4,194.8
 			257.5,194.8 257.5,195.8 256.4,195.8 256.4,197.4 257.6,197.4 257.6,198.5 255.1,198.6 		"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" points="258.3,192.3 259.4,192.3 260.5,195.2 260.5,192.3 261.6,192.3 
+		<polygon fill-rule="evenodd" clip-rule="evenodd" points="258.3,192.3 259.4,192.3 260.5,195.2 260.5,192.3 261.6,192.3
 			261.6,198.5 260.4,198.5 259.4,195.7 259.4,198.5 258.3,198.5 		"/>
-		<polygon fill-rule="evenodd" clip-rule="evenodd" points="262.3,192.4 265.4,192.8 265.4,193.8 264.6,193.8 264.6,198.8 
+		<polygon fill-rule="evenodd" clip-rule="evenodd" points="262.3,192.4 265.4,192.8 265.4,193.8 264.6,193.8 264.6,198.8
 			263.2,198.6 263.2,193.5 262.2,193.4 		"/>
 		<path fill-rule="evenodd" clip-rule="evenodd" d="M266.1,192.9l1.3,0.3l0,4.7c0,0,0,0.9,0.5,0.9c0,0,0.3,0,0.4-0.4
 			c0-0.5,0-4.9,0-4.9l1.2,0.2l0,4.9c0,0,0,0.9-1.1,1c0,0-2.2,0.3-2.2-2.1L266.1,192.9z"/>

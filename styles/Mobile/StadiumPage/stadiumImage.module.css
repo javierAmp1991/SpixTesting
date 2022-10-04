@@ -5,7 +5,7 @@
     overflow: hidden;
     --fillSections: #ff8383;
     --strokeWith: 1px;
-    --strokeWithBefore: 12px;
+    --strokeWithBefore: 2px;
     --transitionHover: .2s;
     --transformOrigin: center center;
     --scaleTransform: 1.07;
@@ -51,9 +51,9 @@
 }
 
 .svgClass {
-    transition: var(--transitionHover);
-    transform-origin: var(--transformOrigin);
-    -webkit-transform-origin: var(--transformOrigin);
+    stroke-width: 1px;
+    stroke: black;
+    stroke-opacity: .3;
 }
 
 .critic {

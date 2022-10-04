@@ -67,7 +67,7 @@ export default function StadiumPage() {
     return (
         isSmallDown ?
             <StadiumLayoutProviderMobile>
-                <DefaultLayoutMobile isDarkMode={null}>
+                <DefaultLayoutMobile isDarkMode={false}>
                     <div className={"overflow-scroll m-auto"} style={{height: heightDiv}}>
                         {
                             initialSelectedTickets == 0 ?
