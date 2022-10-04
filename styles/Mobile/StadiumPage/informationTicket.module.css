@@ -74,7 +74,7 @@
     bottom: 0;
     width: 100%;
     height: max-content;
-    padding: 16px 16px 16px 16px;
+    padding: 12px 16px 8px 16px;
     display: grid;
     border-radius: 16px 16px 0 0;
     flex-direction: column;

@@ -11,7 +11,6 @@
     border: 1px solid #dadada;
     border-radius: 4px;
     overflow: hidden;
-    padding: 12px;
     display: grid;
     font-size: 16px;
     width: 100%;
@@ -32,7 +31,6 @@
     border: 1px solid #dadada;
     border-radius: 4px;
     overflow: hidden;
-    padding: 12px;
     display: grid;
     font-size: 16px;
     line-height: 16px;
@@ -45,7 +43,7 @@
 }
 
 .gridNumberTickets {
-    --sizeContNum: 40px;
+    --sizeContNum: 30px;
     display: grid;
     grid-template-columns: var(--sizeContNum);
     grid-auto-columns: var(--sizeContNum);
@@ -187,7 +185,7 @@
     display: grid;
     grid-template-columns: 1fr max-content;
     align-items: center;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
 }
 
 .sizeDisplayFilters{
