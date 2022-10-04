@@ -253,15 +253,7 @@ export default function StadiumLayutProvider({children}) {
     }
 
     const handleUpdateLayout = () => {
-        let newLayoutRowSeat = layoutRowSeats.map((item) => {
-            let newlayoutSeat = item.LayoutSeats.map((subItem) => {
-                if (isInsideSelected(`${item.RowNumber}${subItem.Id}`)) {
-                    return {...subItem, State: true}
-                } else return subItem
-            })
-            return {...item, LayoutSeats: newlayoutSeat}
-        })
-        setLayoutRowSeats(layoutRowSeats = newLayoutRowSeat)
+
     }
 
     useEffect(() => {
@@ -270,6 +262,17 @@ export default function StadiumLayutProvider({children}) {
             setLayoutRowSeats(layoutRowSeats = layoutRowSeatsSubArea)
         }
     }, [subAreaSelected])
+    useEffect(()=>{
+        let newLayoutRowSeat = layoutRowSeats.map((item) => {
+            let newlayoutSeat = item.LayoutSeats.map((subItem) => {
+                if (isInsideSelected(`${item.RowNumber}${subItem.Id}`)) {
+                    return {...subItem, State: true}
+                } else return {...subItem, State: false}
+            })
+            return {...item, LayoutSeats: newlayoutSeat}
+        })
+        setLayoutRowSeats(layoutRowSeats = newLayoutRowSeat)
+    },[selectedTickets])
 
     const popUp: MapPopUpProp = {
         Name: stadiumData.Name,

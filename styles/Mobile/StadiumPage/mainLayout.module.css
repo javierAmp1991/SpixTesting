@@ -1,0 +1,7 @@
+.mainDiv{
+    overflow: scroll;
+    max-width: 768px;
+    margin: auto;
+    position: relative;
+    height: 100%;
+}

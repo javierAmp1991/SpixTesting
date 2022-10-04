@@ -88,7 +88,7 @@ export default function SubareaStadiumMobile({closeSubAreaStadium}: { closeSubAr
                                                     :
                                                     subItem.Type == RowType.Available ?
                                                         <button key={index}
-                                                                className={selectedTicketContext.IsSelectedTicket(`${item.RowNumber}${subItem.Id}`) ?
+                                                                className={subItem.State?
                                                                     style.disponibleSeatClicked : style.disponibleSeat}>
                                                             {subItem.Id}
                                                         </button>

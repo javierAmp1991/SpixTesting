@@ -10,7 +10,7 @@ import {GlobalConst} from "../../../public/globalConst";
 const selectedTickets: string = "Entradas Seleccionadas"
 const noSelectedTickets: string = "No hay entradas seleccionadas"
 
-export default function SelectedTicketsMobile({isOpen}: { isOpen: boolean }) {
+export default function SelectedTicketsMobile() {
 
     const selectedTicketMobile: ProviderPopUpSelectedTicketsProp = useContext(SelectedTicketsMobileContext)
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
@@ -39,7 +39,7 @@ export default function SelectedTicketsMobile({isOpen}: { isOpen: boolean }) {
 
     function getCssStyle() {
         return {
-            mainDiv: isOpen ? style.mainDivOpen : style.mainDivClose
+            mainDiv: selectedTicketMobile.IsOpen? style.mainDivOpen : style.mainDivClose
         }
     }
 }

@@ -19,6 +19,7 @@ import SubareaStadiumMobile from "../components/Mobile/StadiumPage/subareaStadiu
 import ResumeTicketsMobile from "../components/Mobile/StadiumPage/resumeTickets";
 import StadiumLayoutProviderMobile from "../components/Mobile/StadiumPage/stadiumLayoutProviderMobile";
 import FilterStadiumSec from "../components/Mobile/StadiumPage/filterStadiumSec";
+import SelectedTicketsMobile from "../components/Mobile/StadiumPage/selectedTicketsMobile";
 
 const listNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -68,7 +69,7 @@ export default function StadiumPage() {
         isSmallDown ?
             <StadiumLayoutProviderMobile>
                 <DefaultLayoutMobile isDarkMode={false}>
-                    <div className={"overflow-scroll m-auto"} style={{height: heightDiv}}>
+                    <LayoutStadiumPageMobile>
                         {
                             initialSelectedTickets == 0 ?
                                 <SelectionNumber listNumbers={listNumbers} funcNumberTickets={handleNumberTickets}/>
@@ -105,7 +106,9 @@ export default function StadiumPage() {
                             initialSelectedTickets != 0 &&
                             <ResumeTicketsMobile numberSelected={initialSelectedTickets}/>
                         }
-                    </div>
+
+                        <SelectedTicketsMobile/>
+                    </LayoutStadiumPageMobile>
                 </DefaultLayoutMobile>
             </StadiumLayoutProviderMobile>
             :

@@ -61,6 +61,7 @@ export class ProviderTicketStateContextProp {
 }
 
 export class ProviderPopUpSelectedTicketsProp {
+    IsOpen: boolean
     OpenSelectedTickets: Function
     CloseSelectedTickets: Function
 }
@@ -277,6 +278,18 @@ export default function StadiumLayoutProviderMobile({children}) {
         }
     }, [subAreaSelected])
 
+    useEffect(()=>{
+        let newLayoutRowSeat = layoutRowSeats.map((item) => {
+            let newlayoutSeat = item.LayoutSeats.map((subItem) => {
+                if (isInsideSelected(`${item.RowNumber}${subItem.Id}`)) {
+                    return {...subItem, State: true}
+                } else return {...subItem, State: false}
+            })
+            return {...item, LayoutSeats: newlayoutSeat}
+        })
+        setLayoutRowSeats(layoutRowSeats = newLayoutRowSeat)
+    },[selectedTickets])
+
     const popUp: MapPopUpProp = {
         Name: stadiumData.Name,
         Venue: stadiumData.Venue,
@@ -306,6 +319,7 @@ export default function StadiumLayoutProviderMobile({children}) {
         setDisplaySelectedTicketsMobile(displaySelectedTicketsMobile = false)
     }
     let selectedTicketsMobileContext: ProviderPopUpSelectedTicketsProp = {
+        IsOpen: displaySelectedTicketsMobile,
         OpenSelectedTickets: handleOpenSelectedTicketsMobile,
         CloseSelectedTickets: handleCloseSelectedTicketsMobile
     }
@@ -325,7 +339,6 @@ export default function StadiumLayoutProviderMobile({children}) {
                                             <PopUpStadiumContext.Provider value={handleOpenMap}>
                                                 <PopUpStadiumContextMobile.Provider value={handleOpenMapMobile}>
                                                     {children}
-                                                    <SelectedTicketsMobile isOpen={displaySelectedTicketsMobile}/>
                                                     {
                                                         displayMapMobile &&
                                                         <PopUpContainerMob isButtonVisible={true}

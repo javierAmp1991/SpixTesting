@@ -90,7 +90,7 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
                                                     :
                                                     subItem.Type == RowType.Available ?
                                                         <button key={index}
-                                                                className={selectedTicketContext.IsSelectedTicket(`${item.RowNumber}${subItem.Id}`) ?
+                                                                className={subItem.State?
                                                                     style.disponibleSeatClicked : style.disponibleSeat}>
                                                             {subItem.Id}
                                                         </button>
