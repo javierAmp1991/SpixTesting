@@ -51,9 +51,8 @@
 }
 
 .svgClass {
-    stroke-width: 1px;
-    stroke: black;
-    stroke-opacity: .3;
+    stroke-width: 1.5px;
+    stroke: #ab000e;
 }
 
 .critic {
