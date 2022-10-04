@@ -14,7 +14,7 @@
     overflow: hidden;
     width: 100%;
     background: white;
-    transition: 2s;
+    transition: .7s;
     position: absolute;
     z-index: 9000;
 }
