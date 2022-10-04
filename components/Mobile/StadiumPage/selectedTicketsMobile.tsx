@@ -14,7 +14,7 @@ export default function SelectedTicketsMobile({isOpen}: { isOpen: boolean }) {
             <div className={style.mainContent}>
                 {
                     selectedTickeetsContext.SelectedTickets.map(item =>
-                        <TicketStadiumMobile item={item} styleDiv={false}/>
+                        <TicketStadiumMobile key={item.Id} item={item} styleDiv={false}/>
                     )
                 }
             </div>
