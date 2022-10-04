@@ -1,6 +1,6 @@
 .mainDiv {
     border-right: 2px solid var(--separationLineColor);
-    --paddingX: 20px;
+    --paddingX: 16px;
     --paddingY: 16px;
     --colorTags: 2px solid rgba(173, 190, 204, 0.3);
     --paddingXInter: 24px;
@@ -45,7 +45,7 @@
 }
 
 .gridNumberTickets {
-    --sizeContNum: 50px;
+    --sizeContNum: 40px;
     display: grid;
     grid-template-columns: var(--sizeContNum);
     grid-auto-columns: var(--sizeContNum);

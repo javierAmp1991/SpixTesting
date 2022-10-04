@@ -146,7 +146,7 @@
 .gridTypeSeat {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 8px;
+    gap: 6px;
     align-items: center;
     justify-content: center;
 }
@@ -154,7 +154,7 @@
 .gridTypeSeatCont {
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    gap: 16px;
+    gap: 12px;
     align-items: center;
     justify-content: center;
 }
