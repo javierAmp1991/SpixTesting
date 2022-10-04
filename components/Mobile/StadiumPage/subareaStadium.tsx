@@ -8,7 +8,7 @@ import {  ProviderSelectedAreaProp,
     SelectedAreaContext,
     SelectedSubAreaContext,
     SelectedTicketsContext,
-    LayoutSubAreaContext, LayoutRowSeats} from "../../Desktop/StadiumPage/stadiumLayutProvider";
+    LayoutSubAreaContext, LayoutRowSeats} from "./stadiumLayoutProviderMobile";
 import {useContext} from "react";
 
 const listStateSeat: RowType[] = [RowType.Available, RowType.Reserved, RowType.Selected]

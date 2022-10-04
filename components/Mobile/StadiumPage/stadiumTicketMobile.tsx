@@ -7,7 +7,7 @@ import style from "/styles/Mobile/StadiumPage/ticketStadium.module.css"
 import {ProviderSelectedAreaProp,
     ProviderSelectedTicketProp,
     SelectedAreaContext,
-    SelectedTicketsContext} from "../../Desktop/StadiumPage/stadiumLayutProvider";
+    SelectedTicketsContext} from "./stadiumLayoutProviderMobile";
 import {useContext} from "react";
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";

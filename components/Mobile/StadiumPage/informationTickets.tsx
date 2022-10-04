@@ -8,8 +8,8 @@ import {
     StadiumDataContext,
     ProviderSelectedSubAreaProp,
     ProviderSelectedAreaProp,
-    PopUpStadiumContextMobile, TicketsStateContext, TicketStateContextProp
-} from "../../Desktop/StadiumPage/stadiumLayutProvider";
+    PopUpStadiumContextMobile, TicketsStateContext, ProviderTicketStateContextProp
+} from "./stadiumLayoutProviderMobile";
 import {StadiumData} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 
 const capacityText: string = "Capacidad";
@@ -26,7 +26,7 @@ export default function InformationTicketMobile() {
     const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
 
     const popUpStadiumContext: Function = useContext(PopUpStadiumContextMobile)
-    const ticketStateContext: TicketStateContextProp = useContext(TicketsStateContext)
+    const ticketStateContext: ProviderTicketStateContextProp = useContext(TicketsStateContext)
     const handlePopUpInformation = () => popUpStadiumContext()
 
     return (

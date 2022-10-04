@@ -74,30 +74,31 @@
 }
 
 .resumeBuy {
-    padding: 10px 16px 16px 16px;
+    padding: 12px 16px ;
     display: grid;
     flex-direction: column;
     grid-template-columns: repeat(2, max-content);
-    gap: 4px;
+    gap: 8px;
     font-weight: 500;
     background: linear-gradient(180deg, #f4f7fa 0%, #eef2f6 100%);
     justify-content: space-between;
 }
 
 .totalPrice {
-    font-size: 20px;
-    width: 100%;
+    display: grid;
+    align-items: center;
+    font-size: 18px;
     text-align: right;
 }
 
 .numberTickets {
-    font-size: 16px;
+    font-size: 18px;
     display: grid;
     align-items: center;
-    font-weight: 400;
 }
 
 .seeTickets{
+    font-size: 16px;
     color: var(--linkColor);
     display: grid;
     align-items: center;

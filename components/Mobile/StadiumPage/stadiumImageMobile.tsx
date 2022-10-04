@@ -6,10 +6,8 @@ import {
     SelectedAreaContext,
     SelectedSubAreaContext,
     ProviderSelectedAreaProp, ProviderSelectedSubAreaProp,
-} from "../../Desktop/StadiumPage/stadiumLayutProvider";
+} from "./stadiumLayoutProviderMobile";
 import {LayoutStadium, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
-
-const listIds: string[] = ["idsvg1", "idsvg2", "idsvg3", "idsvg4", "idsvg5", "idsvg6", "idsvg7", "idsvg8", "idsvg9", "idsvg10", "idsvg"]
 
 export default function StadiumImageMobile({stateSelectedInitialTicket, displaySubAreaSelected, stateAnimation}:
                                                {

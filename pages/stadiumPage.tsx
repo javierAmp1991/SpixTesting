@@ -17,6 +17,8 @@ import FiltersStadiumMobile from "../components/Mobile/StadiumPage/filtersStadiu
 import StadiumImageMobile from "../components/Mobile/StadiumPage/stadiumImageMobile";
 import SubareaStadiumMobile from "../components/Mobile/StadiumPage/subareaStadium";
 import ResumeTicketsMobile from "../components/Mobile/StadiumPage/resumeTickets";
+import StadiumLayoutProviderMobile from "../components/Mobile/StadiumPage/stadiumLayoutProviderMobile";
+import FilterStadiumSec from "../components/Mobile/StadiumPage/filterStadiumSec";
 
 const listNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -27,6 +29,9 @@ export default function StadiumPage() {
     const handleNumberTickets = (num: number) => {
         setInitialSelectedTickets(initialSelectedTickets = num)
     }
+
+    let [isOpenFilter, setIsOpenFilter] = useState(false)
+    const handleOpenFilter = () => setIsOpenFilter(isOpenFilter = !isOpenFilter)
 
     let [displaySubArea, setDisplaySubArea] = useState(false)
     const handleOpenSubArea = () => setDisplaySubArea(displaySubArea = true)
@@ -61,7 +66,7 @@ export default function StadiumPage() {
 
     return (
         isSmallDown ?
-            <StadiumLayutProvider>
+            <StadiumLayoutProviderMobile>
                 <DefaultLayoutMobile isDarkMode={null}>
                     <div className={"overflow-scroll m-auto"} style={{height: heightDiv}}>
                         {
@@ -69,20 +74,31 @@ export default function StadiumPage() {
                                 <SelectionNumber listNumbers={listNumbers} funcNumberTickets={handleNumberTickets}/>
                                 :
                                 <LayoutStadiumPageMobile>
-                                    <FiltersStadiumMobile listNumber={listNumbers}
+                                    <FiltersStadiumMobile isOpenFilter={handleOpenFilter}
+                                                          listNumber={listNumbers}
                                                           numberSelected={initialSelectedTickets}
                                                           updateTickets={handleNumberTickets}/>
-                                    <div className={styleDesk.overFlowDivMobile}>
-                                        {
-                                            displaySubArea ?
-                                                <SubareaStadiumMobile closeSubAreaStadium={handleCloseSubArea}/>
-                                                :
-                                                <StadiumImageMobile stateSelectedInitialTicket={initialSelectedTickets}
-                                                                    displaySubAreaSelected={animationZoom}
-                                                                    stateAnimation={controlAnimation}/>
-                                        }
-                                    </div>
-                                    <InformationTicketMobile/>
+                                    {
+                                        isOpenFilter ?
+                                            <FilterStadiumSec/>
+                                            :
+                                            <>
+                                                <div className={styleDesk.overFlowDivMobile}>
+                                                    {
+                                                        displaySubArea ?
+                                                            <SubareaStadiumMobile
+                                                                closeSubAreaStadium={handleCloseSubArea}/>
+                                                            :
+                                                            <StadiumImageMobile
+                                                                stateSelectedInitialTicket={initialSelectedTickets}
+                                                                displaySubAreaSelected={animationZoom}
+                                                                stateAnimation={controlAnimation}/>
+                                                    }
+                                                </div>
+                                                <InformationTicketMobile/>
+                                            </>
+                                    }
+
                                 </LayoutStadiumPageMobile>
                         }
                         {
@@ -91,7 +107,7 @@ export default function StadiumPage() {
                         }
                     </div>
                 </DefaultLayoutMobile>
-            </StadiumLayutProvider>
+            </StadiumLayoutProviderMobile>
             :
             <StadiumLayutProvider>
                 <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>

@@ -1,19 +1,22 @@
 .mainDivOpen {
-    top: 97px;
+    top: 93px;
     height: 100%;
     width: 100%;
     position: absolute;
     background: white;
     transition: 1s;
+    z-index: 9000;
 }
 
 .mainDivClose {
     top: 100%;
     height: 0;
+    overflow: hidden;
     width: 100%;
     background: white;
     transition: 1s;
     position: absolute;
+    z-index: 9000;
 }
 
 .mainContent {
@@ -22,6 +25,16 @@
     gap: 24px;
 }
 
-.title{
-    padding: 16px 16px 24px 16px;
+.closeIcon{
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.gridSelectedIcon{
+    padding: 16px 16px 0 16px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
 }
