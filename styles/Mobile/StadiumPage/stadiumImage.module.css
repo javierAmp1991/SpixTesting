@@ -52,7 +52,7 @@
 
 .svgClass {
     stroke-width: 1.5px;
-    stroke: #ab000e;
+    fill-opacity: .8;
 }
 
 .critic {
