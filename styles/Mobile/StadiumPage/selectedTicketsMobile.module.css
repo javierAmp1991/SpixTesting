@@ -10,8 +10,6 @@
 
 .mainDivClose {
     top: 100%;
-    height: 0;
-    overflow: hidden;
     width: 100%;
     background: white;
     transition: 2s;
