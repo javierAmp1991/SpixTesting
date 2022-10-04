@@ -9,7 +9,9 @@
 }
 
 .mainDivClose {
-    top: 100%;
+    top: calc(100% - 84px);
+    height: 0;
+    overflow: hidden;
     width: 100%;
     background: white;
     transition: 2s;
