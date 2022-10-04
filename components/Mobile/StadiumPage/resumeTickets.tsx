@@ -1,9 +1,8 @@
 import style from "/styles/Mobile/StadiumPage/informationTicket.module.css"
 import React, {useContext} from "react";
 import {
-    PopUpSelectedTickets,
     ProviderSelectedTicketProp,
-    SelectedTicketsContext
+    SelectedTicketsContext, OpenSelectedTicketsMobileContext
 } from "../../Desktop/StadiumPage/stadiumLayutProvider";
 
 const seeTickets: string = "Ver Entradas"
@@ -13,8 +12,8 @@ const buyTextButton: string = "Comprar";
 
 export default function ResumeTicketsMobile({numberSelected} : {numberSelected: number}){
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
-    const popUpSelectedTickects: Function = useContext(PopUpSelectedTickets)
-    const handlePopUpTickets = () => popUpSelectedTickects()
+    const openSelectedTickets: Function = useContext(OpenSelectedTicketsMobileContext)
+    const handlePopUpTickets = () => openSelectedTickets()
     const cssStyle = getCssStyle()
     return(
         <div className={style.resumeBuy}>
@@ -34,7 +33,6 @@ export default function ResumeTicketsMobile({numberSelected} : {numberSelected: 
                     :
                     <div/>
             }
-
 
             <button className={cssStyle.styleButton}>
                 {buyTextButton}

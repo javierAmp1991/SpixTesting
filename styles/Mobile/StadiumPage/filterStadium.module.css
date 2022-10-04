@@ -59,7 +59,7 @@
 
 .mainDivNumbers {
     padding: var(--paddingX) var(--paddingY);
-    border-bottom: 1px solid var(--separationLineColor);
+    border-bottom: 2px solid var(--separationLineColor);
 }
 
 .mainDivOrderBy {

@@ -1,0 +1,27 @@
+.mainDivOpen {
+    top: 97px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: white;
+    transition: 1s;
+}
+
+.mainDivClose {
+    top: 100%;
+    height: 0;
+    width: 100%;
+    background: white;
+    transition: 1s;
+    position: absolute;
+}
+
+.mainContent {
+    padding: 16px;
+    display: grid;
+    gap: 24px;
+}
+
+.title{
+    padding: 16px 16px 24px 16px;
+}

@@ -6,7 +6,7 @@ import LayoutStadiumPage from "../components/Desktop/StadiumPage/layoutStadiumPa
 import StadiumImage from "../components/Desktop/StadiumPage/stadiumImage";
 import FiltersStadium from "../components/Desktop/StadiumPage/filtersStadium";
 import InformationTicket from "../components/Desktop/StadiumPage/InformationTicket";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Image from "next/image";
 import SubareaStadiumDesk from "../components/Desktop/StadiumPage/subareaStadium";
 import StadiumLayutProvider from "../components/Desktop/StadiumPage/stadiumLayutProvider";
@@ -40,36 +40,56 @@ export default function StadiumPage() {
         setControlAnimation(controlAnimation = true)
         setTimeout(handleOpenSubArea, 1000)
     }
+
+    let [heightDiv, setHeightDiv] = useState(0)
+    const numberMenos: number = 93;
+
+    useEffect(() => {
+        const handleSetH = (number: number) => {
+            setHeightDiv(heightDiv = number)
+        }
+
+        function resiveDiv() {
+            const sizeDiv = window.innerHeight
+            handleSetH(sizeDiv - numberMenos)
+        }
+
+        handleSetH(window.innerHeight - numberMenos)
+        window.addEventListener('resize', resiveDiv)
+    }, [heightDiv]);
     //endregion
 
     return (
         isSmallDown ?
             <StadiumLayutProvider>
                 <DefaultLayoutMobile isDarkMode={null}>
-                    <>
-                    {
-                        initialSelectedTickets == 0 ?
-                            <SelectionNumber listNumbers={listNumbers} funcNumberTickets={handleNumberTickets}/>
-                            :
-                            <LayoutStadiumPageMobile>
-                                <FiltersStadiumMobile listNumber={listNumbers}
-                                                      numberSelected={initialSelectedTickets}
-                                                      updateTickets={handleNumberTickets}/>
-                                <div className={styleDesk.overFlowDivMobile}>
-                                    {
-                                        displaySubArea ?
-                                            <SubareaStadiumMobile closeSubAreaStadium={handleCloseSubArea}/>
-                                            :
-                                            <StadiumImageMobile stateSelectedInitialTicket={initialSelectedTickets}
-                                                                displaySubAreaSelected={animationZoom}
-                                                                stateAnimation={controlAnimation}/>
-                                    }
-                                </div>
-                                <InformationTicketMobile numberSelected={initialSelectedTickets}/>
-                            </LayoutStadiumPageMobile>
-                    }
-                    <ResumeTicketsMobile numberSelected={initialSelectedTickets}/>
-                    </>
+                    <div className={"overflow-scroll m-auto"} style={{height: heightDiv}}>
+                        {
+                            initialSelectedTickets == 0 ?
+                                <SelectionNumber listNumbers={listNumbers} funcNumberTickets={handleNumberTickets}/>
+                                :
+                                <LayoutStadiumPageMobile>
+                                    <FiltersStadiumMobile listNumber={listNumbers}
+                                                          numberSelected={initialSelectedTickets}
+                                                          updateTickets={handleNumberTickets}/>
+                                    <div className={styleDesk.overFlowDivMobile}>
+                                        {
+                                            displaySubArea ?
+                                                <SubareaStadiumMobile closeSubAreaStadium={handleCloseSubArea}/>
+                                                :
+                                                <StadiumImageMobile stateSelectedInitialTicket={initialSelectedTickets}
+                                                                    displaySubAreaSelected={animationZoom}
+                                                                    stateAnimation={controlAnimation}/>
+                                        }
+                                    </div>
+                                    <InformationTicketMobile/>
+                                </LayoutStadiumPageMobile>
+                        }
+                        {
+                            initialSelectedTickets != 0 &&
+                            <ResumeTicketsMobile numberSelected={initialSelectedTickets}/>
+                        }
+                    </div>
                 </DefaultLayoutMobile>
             </StadiumLayutProvider>
             :

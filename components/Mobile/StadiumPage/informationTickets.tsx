@@ -4,41 +4,30 @@ import TicketStadiumMobile from "./stadiumTicketMobile";
 import React, {useContext} from "react";
 import {
     SelectedSubAreaContext,
-    SelectedTicketsContext,
     SelectedAreaContext,
     StadiumDataContext,
-    ProviderSelectedTicketProp,
     ProviderSelectedSubAreaProp,
     ProviderSelectedAreaProp,
-    PopUpStadiumContext, PopUpSelectedTickets, TicketsStateContext, TicketStateContextProp
+    PopUpStadiumContextMobile, TicketsStateContext, TicketStateContextProp
 } from "../../Desktop/StadiumPage/stadiumLayutProvider";
 import {StadiumData} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 
-const buyTextButton: string = "Comprar";
 const capacityText: string = "Capacidad";
-const totalTicketsText: string = "Total entradas";
-const totalPriceText: string = "Total";
 const seeInformationVenueText: string = "Ver informacion del recinto";
 const capacityPeopleText: string = "personas";
 const reminingText: string = "Quedan"
 const ticketText: string = "Entradas"
-const seeTickets: string = "Ver Entradas"
 
 
-export default function InformationTicketMobile({numberSelected}: { numberSelected: number }) {
+export default function InformationTicketMobile() {
 
     const stadiumDataContex: StadiumData = useContext(StadiumDataContext);
-    const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
     const subAreaInformation: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
     const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
 
-    const popUpStadiumContext: Function = useContext(PopUpStadiumContext)
-    const popUpSelectedTickects: Function = useContext(PopUpSelectedTickets)
+    const popUpStadiumContext: Function = useContext(PopUpStadiumContextMobile)
     const ticketStateContext: TicketStateContextProp = useContext(TicketsStateContext)
     const handlePopUpInformation = () => popUpStadiumContext()
-    const handlePopUpTickets = () => popUpSelectedTickects()
-
-    const cssStyle = getCssStyle()
 
     return (
         <div className={style.mainDiv}>
@@ -119,23 +108,9 @@ export default function InformationTicketMobile({numberSelected}: { numberSelect
         </div>
     )
 
-    function getCssStyle() {
-        return {
-            styleButton: ticketsInformation.SelectedTickets.length == numberSelected ? style.button : style.buttonOff
-        }
-    }
 
     function getMoneyValue(num: number): string {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))
     }
 
-    function getTotalPrice(): number {
-        let total: number = 0
-        if (ticketsInformation.SelectedTickets.length > 0) {
-            ticketsInformation.SelectedTickets.forEach(item => {
-                total += item.Price
-            })
-        }
-        return total
-    }
 }
