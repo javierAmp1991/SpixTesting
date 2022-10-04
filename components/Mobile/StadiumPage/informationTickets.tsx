@@ -93,7 +93,7 @@ export default function InformationTicketMobile({numberSelected}: { numberSelect
                 </div>
             }
 
-            <div className={style.resumeBuy}>
+           {/* <div className={style.resumeBuy}>
                 <div className={style.numberTickets}>
                     {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberSelected}
                 </div>
@@ -115,7 +115,7 @@ export default function InformationTicketMobile({numberSelected}: { numberSelect
                 <button className={cssStyle.styleButton}>
                     {buyTextButton}
                 </button>
-            </div>
+            </div>*/}
         </div>
     )
 

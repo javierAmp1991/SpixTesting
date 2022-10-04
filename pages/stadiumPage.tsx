@@ -16,6 +16,7 @@ import InformationTicketMobile from "../components/Mobile/StadiumPage/informatio
 import FiltersStadiumMobile from "../components/Mobile/StadiumPage/filtersStadium";
 import StadiumImageMobile from "../components/Mobile/StadiumPage/stadiumImageMobile";
 import SubareaStadiumMobile from "../components/Mobile/StadiumPage/subareaStadium";
+import ResumeTicketsMobile from "../components/Mobile/StadiumPage/resumeTickets";
 
 const listNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -45,6 +46,7 @@ export default function StadiumPage() {
         isSmallDown ?
             <StadiumLayutProvider>
                 <DefaultLayoutMobile isDarkMode={null}>
+                    <>
                     {
                         initialSelectedTickets == 0 ?
                             <SelectionNumber listNumbers={listNumbers} funcNumberTickets={handleNumberTickets}/>
@@ -66,6 +68,8 @@ export default function StadiumPage() {
                                 <InformationTicketMobile numberSelected={initialSelectedTickets}/>
                             </LayoutStadiumPageMobile>
                     }
+                    <ResumeTicketsMobile numberSelected={initialSelectedTickets}/>
+                    </>
                 </DefaultLayoutMobile>
             </StadiumLayutProvider>
             :
