@@ -111,7 +111,7 @@ export default function SubareaStadiumMobile({closeSubAreaStadium}: { closeSubAr
     function getCssStyle() {
         return {
             grid: `repeat(${numberColums}, minmax(30px, 1fr))`,
-            gap: "16px",
+            gap: "12px",
         }
     }
 
