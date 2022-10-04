@@ -4,9 +4,7 @@
     --paddingY: 16px;
     --colorTags: 2px solid rgba(173, 190, 204, 0.3);
     --paddingXInter: 24px;
-    height: 100%;
     overflow: scroll;
-    min-width: 310px;
 }
 
 .contNumber {
@@ -16,6 +14,8 @@
     padding: 12px;
     display: grid;
     font-size: 16px;
+    width: 100%;
+    aspect-ratio: 1/1;
     line-height: 16px;
     font-weight: 500;
     justify-items: center;
@@ -45,13 +45,18 @@
 }
 
 .gridNumberTickets {
+    --sizeContNum: 50px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: var(--sizeContNum);
+    grid-auto-columns: var(--sizeContNum);
+    grid-auto-flow: column;
+    overflow: scroll;
     gap: 8px;
+    padding: 2px;
 }
 
 .titleNumbers {
-    padding-bottom: 16px;
+  padding-bottom: 16px;
 }
 
 .mainDivNumbers {
@@ -66,8 +71,8 @@
 
 .gridOrderBy {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 6px;
-    padding: 0 var(--paddingXInter);
 }
 
 .gridButton {
@@ -100,20 +105,20 @@
 }
 
 .imageSizeButton {
-    height: 20px;
-    width: 24px;
+    height: 16px;
+    width: 20px;
     position: relative;
 }
 
 .imageSecundary {
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     position: relative;
 }
 
 .imageSize {
-    height: 24px;
-    width: 24px;
+    height: 20px;
+    width: 20px;
     position: relative;
 }
 
@@ -124,8 +129,8 @@
 }
 
 .gridSecundaryFilter {
-    padding: 0 var(--paddingXInter);
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 
@@ -136,7 +141,7 @@
     align-items: center;
     gap: 6px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    padding: 12px 16px;
+    padding: 12px 8px;
     border-radius: 4px;
     transition: .3s;
     overflow: hidden;
@@ -146,7 +151,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    gap: 8px;
+    gap: 4px;
 }
 
 .mainDivAdvanced {
@@ -154,8 +159,8 @@
 }
 
 .gridInputs{
-    padding: 0 var(--paddingXInter);
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
 .mainDivInput{
@@ -176,4 +181,24 @@
     width: 100%;
     border-radius: 2px;
     text-indent: 28px;
+}
+
+.gridNumbDisplay{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.sizeDisplayFilters{
+    height: 10px;
+    width: 14px;
+    position: relative;
+}
+
+.gridFilterButton{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px;
+    align-items: center;
 }

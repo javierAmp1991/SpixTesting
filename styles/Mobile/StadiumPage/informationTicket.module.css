@@ -1,11 +1,6 @@
 .mainDiv {
-    overflow: hidden;
-    border-left: 1px solid var(--separationLineColor);
-    --paddingSections: 12px;
+    --paddingSections: 16px;
     display: grid;
-    grid-template-rows: max-content 1fr max-content;
-    max-width: 400px;
-    min-width: 360px;
 }
 
 .mainContTickets {
@@ -56,6 +51,7 @@
     display: grid;
     padding: var(--paddingSections);
     border-bottom: 2px solid var(--separationLineColor);
+    border-top: 2px solid var(--separationLineColor);
 
 }
 

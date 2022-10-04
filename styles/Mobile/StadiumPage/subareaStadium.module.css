@@ -1,0 +1,217 @@
+.mainSpace {
+    width: 100%;
+    position: relative;
+}
+
+.mainDiv {
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px 24px 16px;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    position: relative;
+    --fontSizeText: 14px;
+    --paddingMainDivs: 16px;
+    --backgroundMatriz: #f5f5f5;
+    --sizeDivExa: 16px;
+    --borderLessMore: 1px solid red;
+    --sizeZoomCont: 30px;
+}
+
+.mainContRows {
+    display: grid;
+    height: 100%;
+}
+
+.rowMatriz {
+    display: grid;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+    background: var(--backgroundMatriz);
+    overflow: scroll;
+}
+
+.divRows {
+    display: grid;
+    height: max-content;
+    padding: var(--paddingMainDivs);
+    transition: 1s;
+}
+
+.divRowNumber {
+    display: grid;
+    align-items: center;
+    height: max-content;
+    padding: var(--paddingMainDivs);
+}
+
+.positionTop {
+    top: 500px;
+    transition: 5s;
+
+}
+
+.positionBottom {
+    top: 0;
+    transition: 5s;
+}
+
+.disponibleSeat {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: .4s;
+    font-size: var(--fontSizeText);
+    background: radial-gradient(circle, rgb(15, 116, 210) 0%, rgb(15, 108, 196) 100%) 100%;
+    color: white;
+    font-weight: 600;
+}
+
+.disponibleSeatClicked {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: .4s;
+    font-size: var(--fontSizeText);
+    background: radial-gradient(circle, rgb(255, 130, 44) 0%, rgb(255, 148, 41) 100%) 100%;
+    color: white;
+    font-weight: 600;
+    transform: scale(1.2);
+}
+
+.disponibleSeatClickedExa {
+    display: grid;
+    width: var(--sizeDivExa);
+    aspect-ratio: 1/1;
+    border-radius: 3px;
+    overflow: hidden;
+    background: radial-gradient(circle, rgb(255, 126, 36) 0%, rgb(241, 138, 32) 100%) 100%;
+}
+
+.disponibleSeat:hover {
+    transform: scale(1.1);
+}
+
+.disponibleSeatExa {
+    display: grid;
+    width: var(--sizeDivExa);
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: radial-gradient(circle, rgb(15, 116, 210) 0%, rgb(15, 108, 196) 100%) 100%;
+}
+
+.noDisponibleSear {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    font-size: var(--fontSizeText);
+    aspect-ratio: 1/1;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: .4s;
+    background: radial-gradient(circle, rgb(238, 238, 238) 0%, rgb(225, 225, 225) 100%);
+    color: var(--colorSecundaryTextDesktop);
+    font-weight: 600;
+}
+
+.noDisponibleSearExa {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: var(--sizeDivExa);
+    aspect-ratio: 1/1;
+    border-radius: 4px;
+    overflow: hidden;
+    background: radial-gradient(circle, rgb(238, 238, 238) 0%, rgb(225, 225, 225) 100%);
+}
+
+.emptySeat {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.gridTypeSeat {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridTypeSeatCont {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridDisponibleReturn {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+}
+
+.containerArrow {
+    padding: 6px;
+    border: 1px solid #d7d7d7;
+    border-radius: 50%;
+}
+
+.returnArrow {
+    display: grid;
+    width: 12px;
+    height: 12px;
+    position: relative;
+}
+
+.rowContent {
+    display: grid;
+    height: 100%;
+    border: 1px solid gray;
+    color: gray;
+    font-weight: 500;
+    align-items: center;
+    border-radius: 2px;
+    justify-items: center;
+}
+
+.divZoom{
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: grid;
+    background: white;
+    grid-template-rows: repeat(2, max-content);
+    box-shadow: 0 0 4px rgba(0,0,0,.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 9000000000000;
+}
+.divLesMore{
+    display: grid;
+    height: var(--sizeZoomCont);
+    width: var(--sizeZoomCont);
+    font-weight: 800;
+    font-size: 16px;
+    justify-items: center;
+    align-items: center;
+    color: gray;
+    transition: .4s;
+}

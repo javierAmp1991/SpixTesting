@@ -1,0 +1,5 @@
+.mainDiv{
+    position: relative;
+    display: grid;
+    grid-template-rows: max-content max-content 1fr;
+}

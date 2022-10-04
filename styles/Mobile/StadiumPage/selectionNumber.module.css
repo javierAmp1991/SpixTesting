@@ -1,22 +1,21 @@
 .mainDiv {
     display: grid;
-    position: absolute;
-    width: 100%;
     height: 100%;
     background: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, white 50%);
+    padding: 48px 12px;
 }
 
 .mainDivPopUp {
+    height: 450px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--boxShadowCard);
-    width: 32%;
-    height: 75%;
+    width: 95%;
     display: grid;
     grid-template-rows: max-content 1fr;
     margin: auto;
     background: white;
-    padding: 24px 32px;
+    padding: 24px;
 }
 
 .sizeLogo {
@@ -39,7 +38,7 @@
     height: max-content;
     width: 100%;
     grid-template-columns: repeat(5, 1fr);
-    gap: 16px;
+    gap: 8px;
 
 }
 
@@ -77,38 +76,4 @@
 
 .SubtitleInfo {
     color: var(--colorPrimaryTextDesktop);
-}
-
-.divTransition {
-    animation: animationZoom 1.5s linear;
-}
-
-.overFlowDiv{
-    height: calc(100vh - 97px);
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    overflow: hidden;
-}
-
-.overFlowDivMobile{
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    overflow: hidden;
-}
-
-@keyframes animationZoom {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    99% {
-        transform: scale(5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-    }
 }

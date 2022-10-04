@@ -37,6 +37,11 @@ export class ProviderSelectedAreaProp {
     DeselectArea: Function;
 }
 
+export class ProviderLayoutSubArea {
+    LayoutRowSeats: LayoutRowSeats[]
+    UpdateLayout: Function
+}
+
 export class LayoutSeats {
     Id?: number
     Type: RowType
@@ -241,14 +246,6 @@ export default function StadiumLayutProvider({children}) {
     }
 
     let [layoutRowSeats, setLayoutRowSeats] = useState([])
-
-    useEffect(() => {
-        if (subAreaSelected != null) {
-            getLayoutRowSeats()
-            setLayoutRowSeats(layoutRowSeats = layoutRowSeatsSubArea)
-        }
-    }, [subAreaSelected])
-
     function isInsideSelected(idSeatRow: string): boolean {
         let control: boolean = false
         selectedTickets.forEach((item: TicketStadium) => {
@@ -258,8 +255,7 @@ export default function StadiumLayutProvider({children}) {
         })
         return control
     }
-
-    useEffect(() => {
+    const handleUpdateLayout = () => {
         let newLayoutRowSeat = layoutRowSeats.map((item) => {
             let newlayoutSeat = item.LayoutSeats.map((subItem) => {
                 if (isInsideSelected(`${item.RowNumber}${subItem.Id}`)) {
@@ -269,7 +265,14 @@ export default function StadiumLayutProvider({children}) {
             return {...item, LayoutSeats: newlayoutSeat}
         })
         setLayoutRowSeats(layoutRowSeats = newLayoutRowSeat)
-    }, [selectedTickets])
+    }
+
+    useEffect(() => {
+        if (subAreaSelected != null) {
+            getLayoutRowSeats()
+            setLayoutRowSeats(layoutRowSeats = layoutRowSeatsSubArea)
+        }
+    }, [subAreaSelected])
 
     const popUp: MapPopUpProp = {
         Name: stadiumData.Name,

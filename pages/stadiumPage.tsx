@@ -10,6 +10,12 @@ import React, {useState} from "react";
 import Image from "next/image";
 import SubareaStadiumDesk from "../components/Desktop/StadiumPage/subareaStadium";
 import StadiumLayutProvider from "../components/Desktop/StadiumPage/stadiumLayutProvider";
+import SelectionNumber from "../components/Mobile/StadiumPage/selectionNumber";
+import LayoutStadiumPageMobile from "../components/Mobile/StadiumPage/layoutStadiumPage";
+import InformationTicketMobile from "../components/Mobile/StadiumPage/informationTickets";
+import FiltersStadiumMobile from "../components/Mobile/StadiumPage/filtersStadium";
+import StadiumImageMobile from "../components/Mobile/StadiumPage/stadiumImageMobile";
+import SubareaStadiumMobile from "../components/Mobile/StadiumPage/subareaStadium";
 
 const listNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -36,13 +42,32 @@ export default function StadiumPage() {
     //endregion
 
     return (
-
         isSmallDown ?
-            <DefaultLayoutMobile isDarkMode={null}>
-                <div>
-                    Test
-                </div>
-            </DefaultLayoutMobile>
+            <StadiumLayutProvider>
+                <DefaultLayoutMobile isDarkMode={null}>
+                    {
+                        initialSelectedTickets == 0 ?
+                            <SelectionNumber listNumbers={listNumbers} funcNumberTickets={handleNumberTickets}/>
+                            :
+                            <LayoutStadiumPageMobile>
+                                <FiltersStadiumMobile listNumber={listNumbers}
+                                                      numberSelected={initialSelectedTickets}
+                                                      updateTickets={handleNumberTickets}/>
+                                <div className={styleDesk.overFlowDivMobile}>
+                                    {
+                                        displaySubArea ?
+                                            <SubareaStadiumMobile closeSubAreaStadium={handleCloseSubArea}/>
+                                            :
+                                            <StadiumImageMobile stateSelectedInitialTicket={initialSelectedTickets}
+                                                                displaySubAreaSelected={animationZoom}
+                                                                stateAnimation={controlAnimation}/>
+                                    }
+                                </div>
+                                <InformationTicketMobile numberSelected={initialSelectedTickets}/>
+                            </LayoutStadiumPageMobile>
+                    }
+                </DefaultLayoutMobile>
+            </StadiumLayutProvider>
             :
             <StadiumLayutProvider>
                 <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>

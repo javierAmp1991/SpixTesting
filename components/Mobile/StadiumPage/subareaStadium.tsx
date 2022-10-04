@@ -1,21 +1,19 @@
-import style from "/styles/Desktop/StadiumPage/subareaStadium.module.css";
+import style from "/styles/Mobile/StadiumPage/subareaStadium.module.css";
 import {RowType} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
-import {
-    ProviderSelectedAreaProp,
+import {  ProviderSelectedAreaProp,
     ProviderSelectedSubAreaProp,
     ProviderSelectedTicketProp,
     SelectedAreaContext,
     SelectedSubAreaContext,
     SelectedTicketsContext,
-    LayoutSubAreaContext, LayoutRowSeats
-} from "./stadiumLayutProvider";
+    LayoutSubAreaContext, LayoutRowSeats} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 import {useContext} from "react";
 
 const listStateSeat: RowType[] = [RowType.Available, RowType.Reserved, RowType.Selected]
 
-export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubAreaStadium: Function }) {
+export default function SubareaStadiumMobile({closeSubAreaStadium}: { closeSubAreaStadium: Function }) {
 
     const selectedSubAreaContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
     const selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);

@@ -1,0 +1,117 @@
+.mainCont {
+    padding: 16px;
+    transition: .4s;
+    height: max-content;
+}
+
+.styleDiv1{
+    border-bottom: 2px solid var(--separationLineColor);
+
+}
+.styleDiv2{
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+    border-radius: 6px;
+}
+
+.gridPriceTag {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px;
+    align-items: center;
+}
+
+.discountBox {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(2, max-content);
+    gap: 3px;
+    background: rgba(0, 128, 0, .1);
+    padding: 3px 5px;
+    height: max-content;
+}
+
+.styleTag {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #06b906;
+}
+
+.buttonSelection {
+    display: grid;
+    width: 100%;
+    padding: 3px 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    color: white;
+    background: var(--gradientBlueButton);
+}
+
+.leftCont{
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+}
+
+.buttonSelection:hover {
+    /*background: rgba(45, 125, 255, .1);*/
+}
+
+.contButton {
+    display: grid;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.contPrice {
+    justify-content: left;
+    margin: auto;
+}
+
+.stylePrice {
+    font-size: 19px;
+    line-height: 22px;
+    font-weight: 500;
+}
+
+.styleSubtitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.styleTitle {
+    font-size: 17px;
+    color: var(--colorTitlesDesktop);
+}
+
+.gridContPrice {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 12px;
+}
+
+.beforePrice {
+    font-size: 12px;
+    width: 100%;
+    text-align: left;
+    color: var(--colorSecundaryTextDesktop);
+    margin-top: 4px;
+}
+
+.beforePriceLine {
+    text-decoration: line-through;
+}
+
+.containerImageIcon{
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.atributesTicket{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 4px;
+    color: var(--colorSecundaryTextDesktop);
+}
