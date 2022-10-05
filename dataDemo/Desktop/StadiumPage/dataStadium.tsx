@@ -48,6 +48,8 @@ export class Venue{
 }
 
 export class AreaLayout {
+    Id: string
+    Name: string
     UrlSvg: string
     IsContinuous: boolean
     MainTickets: TicketStadium[]
@@ -86,7 +88,6 @@ export class VenueInfo {
     Name: string
     Venue: string
     Capacity: number
-    MainTickets: TicketStadium[]
     GoogleMapPath: string
     GoogleMapLink: string
 }
@@ -688,7 +689,9 @@ const areaStadium: SectionStadium[] = [
 
 export namespace LayoutStadiumData {
     export const layout: AreaLayout = {
-        UrlSvg: "/images/juventusFinal.svg",
+        Id: "idAreaItem1",
+        Name: "Area Item 1",
+        UrlSvg: "/images/juventusUpdateNew.svg",
         MainTickets: mainTickets,
         IsContinuous: true,
         AreasStadium: areaStadium
@@ -702,236 +705,39 @@ export namespace StadiumDataInfo {
         Capacity: 10000,
         GoogleMapPath: "/images/mapEstadioNacional.png",
         GoogleMapLink: "https://goo.gl/maps/2YitxBpy1LUxEa4S6",
-        MainTickets: mainTickets
     }
 }
 
-/*export namespace SubAreasStadiumData {
-    export const list: SubareaStadium[] = [
-        subArea1, subArea2, subArea3
-    ]
-}*/
+const areaItemData: AreaItem[] = [
+    {
+        Name: "Area Item 1",
+        Id: "idAreaItem1"
+    },
+    {
+        Name: "Area Item 2",
+        Id: "idAreaItem2"
+    },
+    {
+        Name: "Area Item 3",
+        Id: "idAreaItem3"
+    },
+    {
+        Name: "Area Item 4",
+        Id: "idAreaItem4"
+    },
+    {
+        Name: "Area Item 5",
+        Id: "idAreaItem5"
+    }
+]
 
-/*export namespace AllTickets{
-    export const list: TicketStadium[] = [
-        {
-            Id: "id1",
-            AreaName: "Ticket Name 1",
-            Row: 1,
-            Seat: 1,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id2",
-            AreaName: "Ticket Name 2",
-            Row: 1,
-            Seat: 2,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id3",
-            AreaName: "Ticket Name 3",
-            Row: 1,
-            Seat: 3,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id4",
-            AreaName: "Ticket Name 4",
-            Row: 2,
-            Seat: 1,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id5",
-            AreaName: "Ticket Name 5",
-            Row: 2,
-            Seat: 2,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id6",
-            AreaName: "Ticket Name 6",
-            Row: 2,
-            Seat: 3,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id7",
-            AreaName: "Ticket Name 4",
-            Row: 2,
-            Seat: 1,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id8",
-            AreaName: "Ticket Name 5",
-            Row: 2,
-            Seat: 2,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id9",
-            AreaName: "Ticket Name 6",
-            Row: 2,
-            Seat: 3,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id10",
-            AreaName: "Ticket Name 4",
-            Row: 2,
-            Seat: 4,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id11",
-            AreaName: "Ticket Name 5",
-            Row: 2,
-            Seat: 5,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id12",
-            AreaName: "Ticket Name 6",
-            Row: 2,
-            Seat: 6,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id13",
-            AreaName: "Ticket Name 7",
-            Row: 3,
-            Seat: 1,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id14",
-            AreaName: "Ticket Name 8",
-            Row: 3,
-            Seat: 2,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id15",
-            AreaName: "Ticket Name 9",
-            Row: 3,
-            Seat: 3,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id16",
-            AreaName: "Ticket Name 4",
-            Row: 3,
-            Seat: 4,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id17",
-            AreaName: "Ticket Name 5",
-            Row: 3,
-            Seat: 5,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id18",
-            AreaName: "Ticket Name 6",
-            Row: 3,
-            Seat: 6,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id1main",
-            AreaName: "Ticket Name 1 Main",
-            Row: 4,
-            Seat: 1,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id2main",
-            AreaName: "Ticket Name 2 Main",
-            Row: 4,
-            Seat: 2,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id3main",
-            AreaName: "Ticket Name 3 Main",
-            Row: 4,
-            Seat: 3,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        },
-        {
-            Id: "id4main",
-            AreaName: "Ticket Name 4 Main",
-            Row: 4,
-            Seat: 4,
-            Price: 10000,
-            Type: TypeOffer.TwoXOne,
-            Discount: null,
-        },
-        {
-            Id: "id5main",
-            AreaName: "Ticket Name 5 Main",
-            Row: 4,
-            Seat: 5,
-            Price: 11000,
-            Type: TypeOffer.Discount2Uni,
-            Discount: 30,
-        },
-        {
-            Id: "id6main",
-            AreaName: "Ticket Name 6 Main",
-            Row: 4,
-            Seat: 6,
-            Price: 12000,
-            Type: TypeOffer.Discount,
-            Discount: 19000,
-        }
-    ]
-}*/
+export namespace VenueData{
+    export const venueData: Venue = {
+        FirstArea: LayoutStadiumData.layout,
+        ListAreaItem: areaItemData
+    }
+}
+
 
 
 

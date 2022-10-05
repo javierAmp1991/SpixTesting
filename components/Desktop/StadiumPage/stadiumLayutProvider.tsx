@@ -7,7 +7,7 @@ import {
     StadiumDataInfo,
     SubAreaSeats,
     SubAreaStadium,
-    TicketStadium,
+    TicketStadium, Venue, VenueData
 } from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import React, {createContext, useEffect, useState} from "react";
 import MapPopUp, {MapPopUpProp} from "../Misc/mapPopUp";
@@ -15,8 +15,7 @@ import PopUpContainer from "../Misc/popUpContainer";
 import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import PopUpSelectedTicketsView from "./popUpSelectedTickets";
-import {Simulate} from "react-dom/test-utils";
-import submit = Simulate.submit;
+
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
@@ -75,8 +74,7 @@ export const FiltersContext = createContext(null);
 export const TicketsStateContext = createContext(null)
 export const OpenSelectedTicketsMobileContext = createContext(null)
 export const SelectedTicketFromRowSeatsContext = createContext(null)
-
-
+export const VenueDataContext = createContext(null)
 const orderByFilters: CategoryFilter[] = [
     {
         Id: "12345abcde",
@@ -126,6 +124,7 @@ const atributesFilters: CategoryFilter[] = [
 ]
 
 export default function StadiumLayutProvider({children}) {
+    const venueDataInformation: Venue = VenueData.venueData
     //region hooks
     let [principalFilters, setPrincipalFilters] = useState(orderByFilters)
     const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
@@ -192,7 +191,7 @@ export default function StadiumLayutProvider({children}) {
         if (subAreaSelected != null) {
             subAreaSelected.FirstRowTickets.map((item: TicketStadium) => {
                 if (`${item.Row}${item.Seat}` == idRowSeat) {
-                    if(isSelected) handleDeleteTickets(item)
+                    if (isSelected) handleDeleteTickets(item)
                     else handleSelectTickets(item)
                 }
             })
@@ -314,49 +313,53 @@ export default function StadiumLayutProvider({children}) {
 
     //endregion
     return (
-        <StadiumDataContext.Provider value={stadiumData}>
-            <LayoutStadiumContext.Provider value={layoutStadium}>
-                <SelectedSubAreaContext.Provider value={providerSubareaSelected}>
-                    <SelectedTicketsContext.Provider value={providerTicketSelected}>
-                        <SelectedAreaContext.Provider value={providerAreaSelected}>
-                            <FiltersContext.Provider value={providerFilters}>
-                                <TicketsStateContext.Provider value={ticketStateContext}>
-                                    <LayoutSubAreaContext.Provider value={layoutRowSeats}>
-                                        <PopUpStadiumContext.Provider value={handleOpenMap}>
-                                            <PopUpSelectedTickets.Provider value={handleOpenSelectedTickets}>
-                                                <OpenSelectedTicketsMobileContext.Provider
-                                                    value={handleOpenSelectedTicketsMobile}>
-                                                    <SelectedTicketFromRowSeatsContext.Provider
-                                                        value={handleSelectTickectFromSeats}>
-                                                        {children}
-                                                        {
-                                                            displayMap &&
-                                                            <PopUpContainer isButtonVisible={true} isBackground={true}
-                                                                            closePopUp={handleCloseMap}>
-                                                                <MapPopUp item={popUp}/>
-                                                            </PopUpContainer>
-                                                        }
-                                                        {
-                                                            displaySelectedTickets &&
-                                                            <PopUpContainer isButtonVisible={true} isBackground={true}
-                                                                            closePopUp={handleCloseSelectedTickets}>
-                                                                <PopUpSelectedTicketsView
-                                                                    selectedTickets={selectedTickets}/>
+        <VenueDataContext.Provider value={venueDataInformation}>
+            <StadiumDataContext.Provider value={stadiumData}>
+                <LayoutStadiumContext.Provider value={layoutStadium}>
+                    <SelectedSubAreaContext.Provider value={providerSubareaSelected}>
+                        <SelectedTicketsContext.Provider value={providerTicketSelected}>
+                            <SelectedAreaContext.Provider value={providerAreaSelected}>
+                                <FiltersContext.Provider value={providerFilters}>
+                                    <TicketsStateContext.Provider value={ticketStateContext}>
+                                        <LayoutSubAreaContext.Provider value={layoutRowSeats}>
+                                            <PopUpStadiumContext.Provider value={handleOpenMap}>
+                                                <PopUpSelectedTickets.Provider value={handleOpenSelectedTickets}>
+                                                    <OpenSelectedTicketsMobileContext.Provider
+                                                        value={handleOpenSelectedTicketsMobile}>
+                                                        <SelectedTicketFromRowSeatsContext.Provider
+                                                            value={handleSelectTickectFromSeats}>
+                                                            {children}
+                                                            {
+                                                                displayMap &&
+                                                                <PopUpContainer isButtonVisible={true}
+                                                                                isBackground={true}
+                                                                                closePopUp={handleCloseMap}>
+                                                                    <MapPopUp item={popUp}/>
+                                                                </PopUpContainer>
+                                                            }
+                                                            {
+                                                                displaySelectedTickets &&
+                                                                <PopUpContainer isButtonVisible={true}
+                                                                                isBackground={true}
+                                                                                closePopUp={handleCloseSelectedTickets}>
+                                                                    <PopUpSelectedTicketsView
+                                                                        selectedTickets={selectedTickets}/>
 
-                                                            </PopUpContainer>
-                                                        }
-                                                    </SelectedTicketFromRowSeatsContext.Provider>
-                                                </OpenSelectedTicketsMobileContext.Provider>
-                                            </PopUpSelectedTickets.Provider>
-                                        </PopUpStadiumContext.Provider>
-                                    </LayoutSubAreaContext.Provider>
-                                </TicketsStateContext.Provider>
-                            </FiltersContext.Provider>
-                        </SelectedAreaContext.Provider>
-                    </SelectedTicketsContext.Provider>
-                </SelectedSubAreaContext.Provider>
-            </LayoutStadiumContext.Provider>
-        </StadiumDataContext.Provider>
+                                                                </PopUpContainer>
+                                                            }
+                                                        </SelectedTicketFromRowSeatsContext.Provider>
+                                                    </OpenSelectedTicketsMobileContext.Provider>
+                                                </PopUpSelectedTickets.Provider>
+                                            </PopUpStadiumContext.Provider>
+                                        </LayoutSubAreaContext.Provider>
+                                    </TicketsStateContext.Provider>
+                                </FiltersContext.Provider>
+                            </SelectedAreaContext.Provider>
+                        </SelectedTicketsContext.Provider>
+                    </SelectedSubAreaContext.Provider>
+                </LayoutStadiumContext.Provider>
+            </StadiumDataContext.Provider>
+        </VenueDataContext.Provider>
     )
 
     function getLayoutRowSeats() {

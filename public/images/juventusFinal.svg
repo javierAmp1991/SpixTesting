@@ -9,9 +9,15 @@
 </g>
 	<defs>
         <style>.disableSection{opacity:0.3;}</style>
+		<style type="text/css">
+			 <![CDATA[
+			areaSvgStadium{
+			fill:red;
+			}
+			]]>
+		</style>
     </defs>
-<g id="Layer_2">
-	top area
+<g id="Layer_2">	top area
 	<path id="idsvg1" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M65.2,64.7l6.9-6.2l10.8,13c0,0-2.4,1.5-3.8,2.6c-1.4,1-2.2,2.4-2.2,2.4L65.2,64.7z"/>
 	<path id="idsvg2" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M74.8,56.5c0,0,9.1-9.1,24-12.9c14.9-3.8,27.6-3.4,27.6-3.4L126,71.4h6.4l0.2,27.1c0,0-7-0.3-11.8,0.9
 		c-4.8,1.2-11.3,5-11.3,5L89.6,85l4.4-3.6L74.8,56.5z"/>

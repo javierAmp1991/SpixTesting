@@ -2,10 +2,12 @@
     height: 100%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     position: relative;
     overflow: scroll;
+    padding: 16px;
     --fillSections: #ff8383;
     --strokeWith: 1px;
     --strokeWithBefore: 12px;
@@ -60,18 +62,18 @@
     -webkit-transform-origin: var(--transformOrigin);;
 }
 
-.blue:hover{
+.blue:hover {
     stroke-width: var(--strokeWithBefore);
     stroke: var(--colorStrokeBlue);
 }
 
-.svgClass{
+.svgClass {
     transition: var(--transitionHover);
     transform-origin: var(--transformOrigin);
     -webkit-transform-origin: var(--transformOrigin);
 }
 
-.svgClass:hover{
+.svgClass:hover {
     stroke-width: var(--strokeWithBefore);
 }
 
@@ -138,19 +140,20 @@
     animation: animationZoom 1s linear;
 }
 
-.divZoom{
+.divZoom {
     position: absolute;
     bottom: 15%;
     right: 21%;
     display: grid;
     background: white;
     grid-template-rows: repeat(2, max-content);
-    box-shadow: 0 0 4px rgba(0,0,0,.1);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
     border-radius: 4px;
     overflow: hidden;
     z-index: 9000;
 }
-.divLesMore{
+
+.divLesMore {
     --sizeZoomCont: 40px;
     display: grid;
     height: var(--sizeZoomCont);
@@ -163,9 +166,67 @@
     transition: .4s;
 }
 
-.divLesMore:hover{
-    background: rgba(0,0,0,.1);
+.divLesMore:hover {
+    background: rgba(0, 0, 0, .1);
 }
+
+.mainDivSelectInput {
+    position: relative;
+    width: 180px;
+}
+
+.colorArea{
+    color: var(--colorPrimaryTextDesktop);
+    text-align: left;
+}
+
+.selectCss {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.styleOptions{
+    background: #ffffff;
+    padding: 8px;
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.styleOptions:hover{
+    background: #e7f1ff;
+}
+
+.optionOpen{
+    width: 100%;
+    position: absolute;
+    z-index: 90000;
+    overflow: scroll;
+    height: 200px;
+    display: grid;
+    transition: .2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3) ;
+}
+.optionClose{
+    width: 100%;
+    position: absolute;
+    display: grid;
+    height: 0;
+    overflow: hidden;
+    transition: .1s;
+}
+
+.sizeDownArrow {
+    height: 8px;
+    width: 14px;
+    position: relative;
+}
+
 
 @keyframes animationZoom {
     0% {

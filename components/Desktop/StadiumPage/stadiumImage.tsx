@@ -1,20 +1,17 @@
 import style from "/styles/Desktop/StadiumPage/stadiumImage.module.css"
-import React, {useRef, useEffect, useState} from "react";
+import React, {useRef, useState} from "react";
 import SVG from 'react-inlinesvg';
 import {useContext} from "react";
 import {
-    LayoutStadiumContext,
-    SelectedAreaContext,
-    SelectedSubAreaContext,
-    ProviderSelectedAreaProp, ProviderSelectedSubAreaProp,
+    LayoutStadiumContext, VenueDataContext,
+    SelectedAreaContext, SelectedSubAreaContext,
+    ProviderSelectedAreaProp, ProviderSelectedSubAreaProp
 } from "./stadiumLayutProvider";
-import {AreaLayout, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
-import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
-import {UncontrolledReactSVGPanZoom} from 'react-svg-pan-zoom';
-import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
+import {AreaItem, AreaLayout, StateArea, Venue} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import Image from "next/image";
+import {GlobalConst} from "../../../public/globalConst";
 
-const listIds: string[] = ["idsvg1", "idsvg2", "idsvg3", "idsvg4", "idsvg5", "idsvg6", "idsvg7", "idsvg8", "idsvg9", "idsvg10", "idsvg"]
+const noSelectedText: string = "Selecciona un area"
 
 export default function StadiumImage({stateSelectedInitialTicket, displaySubAreaSelected, stateAnimation}:
                                          {
@@ -24,10 +21,10 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
                                          }) {
     const divWheelRef = useRef(null)
     const containerSvg = useRef(null)
+    const venueInformationContext: Venue = useContext(VenueDataContext)
     const layoutStadiumContext: AreaLayout = useContext(LayoutStadiumContext)
     const selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
     const subAreaStadiumContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext)
-    const cssStyle = getCssStyle()
     const handleClickArea = (idArea: string, idSubArea: string) => {
         selectedAreaContext.SelectArea(idArea)
         subAreaStadiumContext.SelectSubArea(idSubArea)
@@ -41,12 +38,14 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
 
     let [positionCursorX, setPositionCursorX] = useState()
     let [positionCursorY, setPositionCursorY] = useState()
+    let [areaSelected, setAreaSelected] = useState(null)
+    let [displayOptions, setDisplayOptions] = useState(false)
+    const handleDisplayOptions = ()=> setDisplayOptions(displayOptions = !displayOptions)
 
     const handleMoveMouse = (e) => {
         setPositionCursorX(positionCursorX = e.pageX)
         setPositionCursorY(positionCursorY = e.pageY)
     }
-
     const handleWheelEvent = (e) => {
         /*if (e.deltaY < 0) {
             divWheelRef.current.style.transformOrigin = `${positionCursorX} ${positionCursorY}`
@@ -77,10 +76,39 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
             divWheelRef.current.style.transform = `scale(${scaleControl})`;
         }
     }
+    const handleOnChangeSelect = (item: AreaItem) => {
+        setAreaSelected(areaSelected = item.Name)
+        handleDisplayOptions()
+    }
+
+    const cssStyle = getCssStyle()
 
     return (
         <>
             <div ref={containerSvg} className={`${style.principalGridOpen} ${cssStyle.animation}`}>
+                <div className={style.mainDivSelectInput}>
+                    <button className={style.selectCss} onClick={handleDisplayOptions}>
+                        <div className={style.colorArea}>
+                            {
+                                areaSelected == null ?
+                                    noSelectedText : areaSelected
+                            }
+
+                        </div>
+                        <div className={style.sizeDownArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                        </div>
+                    </button>
+                    <div className={cssStyle.divOptions}>
+                    {
+                        venueInformationContext.ListAreaItem.map((item) =>
+                            <span className={style.styleOptions} onClick={()=>handleOnChangeSelect(item)} key={item.Name}>
+                                {item.Name}
+                            </span>)
+                    }
+                    </div>
+                </div>
+
                 <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
                     <div ref={divWheelRef} onMouseMove={handleMoveMouse} onWheel={handleWheelEvent}
                          className={cssStyle.stateTickets}>
@@ -108,7 +136,8 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
     function getCssStyle() {
         return {
             stateTickets: stateSelectedInitialTicket > 0 ? style.svgNormal : style.svgReduce,
-            animation: stateAnimation ? style.divTransition : style.divTransition2
+            animation: stateAnimation ? style.divTransition : style.divTransition2,
+            divOptions: displayOptions? style.optionOpen: style.optionClose
         }
     }
 

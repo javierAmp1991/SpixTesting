@@ -1,4 +1,5 @@
 .principalGridOpen {
+    padding-top: 12px;
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
@@ -146,6 +147,62 @@
 
 .divLesMore:hover {
     background: rgba(0, 0, 0, .1);
+}
+
+.mainDivSelectInput {
+    position: relative;
+    width: 180px;
+    margin-left: 12px;
+}
+
+.colorArea{
+    color: var(--colorPrimaryTextDesktop);
+    text-align: left;
+}
+
+.selectCss {
+    z-index: 9000000000;
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 4px 8px;
+}
+
+.styleOptions{
+    background: #ffffff;
+    padding: 4px 8px;
+    color: var(--colorSecundaryTextDesktop);
+    text-align: left;
+}
+
+.optionOpen{
+    width: 100%;
+    position: absolute;
+    z-index: 90000000;
+    overflow: scroll;
+    height: 200px;
+    display: grid;
+    transition: .2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3) ;
+}
+.optionClose{
+    width: 100%;
+    position: absolute;
+    display: grid;
+    height: 0;
+    overflow: hidden;
+    transition: .1s;
+}
+
+.sizeDownArrow {
+    height: 8px;
+    width: 14px;
+    position: relative;
 }
 
 @keyframes animationZoom {
