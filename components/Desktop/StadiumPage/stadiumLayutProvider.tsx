@@ -1,9 +1,9 @@
 import {
-    AreaStadium,
-    LayoutStadium,
+    SectionStadium,
+    AreaLayout,
     LayoutStadiumData,
     RowType,
-    StadiumData,
+    VenueInfo,
     StadiumDataInfo,
     SubAreaSeats,
     SubAreaStadium,
@@ -15,6 +15,8 @@ import PopUpContainer from "../Misc/popUpContainer";
 import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import PopUpSelectedTicketsView from "./popUpSelectedTickets";
+import {Simulate} from "react-dom/test-utils";
+import submit = Simulate.submit;
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
@@ -31,7 +33,7 @@ export class ProviderSelectedSubAreaProp {
 }
 
 export class ProviderSelectedAreaProp {
-    SelectedArea: AreaStadium;
+    SelectedArea: SectionStadium;
     SelectArea: Function;
     DeselectArea: Function;
 }
@@ -56,11 +58,11 @@ export class ProviderFiltersPop {
 
 export class TicketStateContextProp {
     MainTickets: TicketStadium[]
-    AllAreasStadium: AreaStadium[]
+    AllAreasStadium: SectionStadium[]
 }
 
-const layoutStadium: LayoutStadium = LayoutStadiumData.layout;
-const stadiumData: StadiumData = StadiumDataInfo.data;
+const layoutStadium: AreaLayout = LayoutStadiumData.layout;
+const stadiumData: VenueInfo = StadiumDataInfo.data;
 export const LayoutStadiumContext = createContext(null);
 export const SelectedAreaContext = createContext(null);
 export const SelectedSubAreaContext = createContext(null);
@@ -72,6 +74,7 @@ export const LayoutSubAreaContext = createContext(null);
 export const FiltersContext = createContext(null);
 export const TicketsStateContext = createContext(null)
 export const OpenSelectedTicketsMobileContext = createContext(null)
+export const SelectedTicketFromRowSeatsContext = createContext(null)
 
 
 const orderByFilters: CategoryFilter[] = [
@@ -185,6 +188,17 @@ export default function StadiumLayutProvider({children}) {
         updateTicket(ticket, false)
     }
 
+    const handleSelectTickectFromSeats = (idRowSeat: string, isSelected: boolean) => {
+        if (subAreaSelected != null) {
+            subAreaSelected.FirstRowTickets.map((item: TicketStadium) => {
+                if (`${item.Row}${item.Seat}` == idRowSeat) {
+                    if(isSelected) handleDeleteTickets(item)
+                    else handleSelectTickets(item)
+                }
+            })
+        }
+    }
+
     function updateTicket(ticket: TicketStadium, isSelected: boolean) {
         if (subAreaSelected == null) {
             let newMainTickets = mainTickets.map(item => {
@@ -242,27 +256,23 @@ export default function StadiumLayutProvider({children}) {
 
     let [layoutRowSeats, setLayoutRowSeats] = useState([])
 
-    function isInsideSelected(idSeatRow: string): boolean {
-        let control: boolean = false
-        selectedTickets.forEach((item: TicketStadium) => {
-            if (idSeatRow == `${item.Row}${item.Seat}`) {
-                control = true
-            }
-        })
-        return control
-    }
-
-    const handleUpdateLayout = () => {
-
-    }
-
     useEffect(() => {
         if (subAreaSelected != null) {
             getLayoutRowSeats()
             setLayoutRowSeats(layoutRowSeats = layoutRowSeatsSubArea)
         }
     }, [subAreaSelected])
-    useEffect(()=>{
+    useEffect(() => {
+        function isInsideSelected(idSeatRow: string): boolean {
+            let control: boolean = false
+            selectedTickets.forEach((item: TicketStadium) => {
+                if (idSeatRow == `${item.Row}${item.Seat}`) {
+                    control = true
+                }
+            })
+            return control
+        }
+
         let newLayoutRowSeat = layoutRowSeats.map((item) => {
             let newlayoutSeat = item.LayoutSeats.map((subItem) => {
                 if (isInsideSelected(`${item.RowNumber}${subItem.Id}`)) {
@@ -272,7 +282,7 @@ export default function StadiumLayutProvider({children}) {
             return {...item, LayoutSeats: newlayoutSeat}
         })
         setLayoutRowSeats(layoutRowSeats = newLayoutRowSeat)
-    },[selectedTickets])
+    }, [selectedTickets])
 
     const popUp: MapPopUpProp = {
         Name: stadiumData.Name,
@@ -313,27 +323,31 @@ export default function StadiumLayutProvider({children}) {
                                 <TicketsStateContext.Provider value={ticketStateContext}>
                                     <LayoutSubAreaContext.Provider value={layoutRowSeats}>
                                         <PopUpStadiumContext.Provider value={handleOpenMap}>
-                                                <PopUpSelectedTickets.Provider value={handleOpenSelectedTickets}>
-                                                    <OpenSelectedTicketsMobileContext.Provider value={handleOpenSelectedTicketsMobile}>
-                                                    {children}
-                                                    {
-                                                        displayMap &&
-                                                        <PopUpContainer isButtonVisible={true} isBackground={true}
-                                                                        closePopUp={handleCloseMap}>
-                                                            <MapPopUp item={popUp}/>
-                                                        </PopUpContainer>
-                                                    }
-                                                    {
-                                                        displaySelectedTickets &&
-                                                        <PopUpContainer isButtonVisible={true} isBackground={true}
-                                                                        closePopUp={handleCloseSelectedTickets}>
-                                                            <PopUpSelectedTicketsView
-                                                                selectedTickets={selectedTickets}/>
+                                            <PopUpSelectedTickets.Provider value={handleOpenSelectedTickets}>
+                                                <OpenSelectedTicketsMobileContext.Provider
+                                                    value={handleOpenSelectedTicketsMobile}>
+                                                    <SelectedTicketFromRowSeatsContext.Provider
+                                                        value={handleSelectTickectFromSeats}>
+                                                        {children}
+                                                        {
+                                                            displayMap &&
+                                                            <PopUpContainer isButtonVisible={true} isBackground={true}
+                                                                            closePopUp={handleCloseMap}>
+                                                                <MapPopUp item={popUp}/>
+                                                            </PopUpContainer>
+                                                        }
+                                                        {
+                                                            displaySelectedTickets &&
+                                                            <PopUpContainer isButtonVisible={true} isBackground={true}
+                                                                            closePopUp={handleCloseSelectedTickets}>
+                                                                <PopUpSelectedTicketsView
+                                                                    selectedTickets={selectedTickets}/>
 
-                                                        </PopUpContainer>
-                                                    }
-                                                    </OpenSelectedTicketsMobileContext.Provider>
-                                                </PopUpSelectedTickets.Provider>
+                                                            </PopUpContainer>
+                                                        }
+                                                    </SelectedTicketFromRowSeatsContext.Provider>
+                                                </OpenSelectedTicketsMobileContext.Provider>
+                                            </PopUpSelectedTickets.Provider>
                                         </PopUpStadiumContext.Provider>
                                     </LayoutSubAreaContext.Provider>
                                 </TicketsStateContext.Provider>

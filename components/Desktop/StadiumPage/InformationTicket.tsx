@@ -3,16 +3,14 @@ import utilities from "/styles/utilities.module.css";
 import TicketStadiumDesktop from "./ticketStadium";
 import React, {useContext} from "react";
 import {
-    SelectedSubAreaContext,
-    SelectedTicketsContext,
-    SelectedAreaContext,
-    StadiumDataContext,
-    ProviderSelectedTicketProp,
-    ProviderSelectedSubAreaProp,
-    ProviderSelectedAreaProp,
-    PopUpStadiumContext, PopUpSelectedTickets, TicketsStateContext, TicketStateContextProp
+    SelectedSubAreaContext, SelectedTicketsContext, SelectedAreaContext, StadiumDataContext,
+    ProviderSelectedTicketProp, ProviderSelectedSubAreaProp, ProviderSelectedAreaProp,
+    PopUpStadiumContext, PopUpSelectedTickets, TicketsStateContext, TicketStateContextProp,
+    LayoutSubAreaContext, LayoutRowSeats
 } from "./stadiumLayutProvider";
-import {StadiumData} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import {VenueInfo} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import Image from "next/image";
+import {GlobalConst} from "../../../public/globalConst";
 
 const buyTextButton: string = "Comprar";
 const capacityText: string = "Capacidad";
@@ -24,28 +22,26 @@ const reminingText: string = "Quedan"
 const ticketText: string = "Entradas"
 const seeTickets: string = "Ver Entradas"
 
-
 export default function InformationTicket({numberSelected}: { numberSelected: number }) {
-
-    const stadiumDataContex: StadiumData = useContext(StadiumDataContext);
+    const stadiumDataContex: VenueInfo = useContext(StadiumDataContext);
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
     const subAreaInformation: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
     const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
+    const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
 
     const popUpStadiumContext: Function = useContext(PopUpStadiumContext)
     const popUpSelectedTickects: Function = useContext(PopUpSelectedTickets)
     const ticketStateContext: TicketStateContextProp = useContext(TicketsStateContext)
     const handlePopUpInformation = () => popUpStadiumContext()
     const handlePopUpTickets = () => popUpSelectedTickects()
-
     const cssStyle = getCssStyle()
 
     return (
         <div className={style.mainDiv}>
-            <div className={style.mainContInfo}>
+            <div>
                 {
                     areaInformation.SelectedArea != null ?
-                        <>
+                        <div className={style.mainContInfo}>
                             <div className={style.titleArea}>
                                 {areaInformation.SelectedArea.Name}
                             </div>
@@ -57,9 +53,9 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
                                     style.reminingTicket : style.reminigTicketsCritic}>
                                 {reminingText} {areaInformation.SelectedArea.TotalTickets - areaInformation.SelectedArea.SoldTickets} {ticketText}
                             </div>
-                        </>
+                        </div>
                         :
-                        <>
+                        <div className={style.mainContInfo}>
                             <div className={style.titleArea}>
                                 {stadiumDataContex.Name}
                             </div>
@@ -71,17 +67,36 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
                                     {seeInformationVenueText}
                                 </div>
                             </button>
-                        </>
+                        </div>
                 }
-
+                {
+                    areaInformation.SelectedArea != null &&
+                    <div className={style.mainContRows}>
+                        <div className={style.sizeArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
+                        </div>
+                        <div className={style.gridRows}>
+                            {
+                                layoutSeatsState.map(item =>
+                                    item.RowNumber != 0 &&
+                                    <button className={style.rowContent}>
+                                        F{item.RowNumber}
+                                    </button>)
+                            }
+                        </div>
+                        <div className={style.sizeArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
+                        </div>
+                    </div>
+                }
             </div>
 
             {
                 <div className={style.mainContTickets}>
                     {
                         areaInformation.SelectedArea != null ?
-                            ticketStateContext.AllAreasStadium.map(item=>
-                            item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
+                            ticketStateContext.AllAreasStadium.map(item =>
+                                item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
                                 item.SubAreaStadium.FirstRowTickets.map(ticket =>
                                     <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
                             )

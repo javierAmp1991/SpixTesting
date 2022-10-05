@@ -14,7 +14,7 @@
     --scaleTransform: 1.07;
 }
 
-.principalGridOpen::-webkit-scrollbar{
+/*.principalGridOpen::-webkit-scrollbar{
     display: grid;
     -webkit-appearance: inherit;
     height: 8px;
@@ -25,7 +25,7 @@
 .principalGridOpen::-webkit-scrollbar-thumb{
     background: #d0d0d0;
     border-radius: 4px;
-}
+}*/
 
 .sizeStadium {
     width: 100%;
@@ -75,8 +75,6 @@
     stroke-width: var(--strokeWithBefore);
 }
 
-
-
 .critic {
     --colorStrokeRed: #ff6c6c;
     stroke: var(--colorStrokeRed);
@@ -123,8 +121,8 @@
 }
 
 .mainContSvg {
-    width: 80%;
-    height: 80%;
+    width: 95%;
+    height: 95%;
     margin: auto;
 }
 
@@ -143,7 +141,7 @@
 .divZoom{
     position: absolute;
     bottom: 15%;
-    right: 25%;
+    right: 21%;
     display: grid;
     background: white;
     grid-template-rows: repeat(2, max-content);

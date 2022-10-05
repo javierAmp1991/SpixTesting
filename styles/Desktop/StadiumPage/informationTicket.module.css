@@ -25,8 +25,7 @@
     display: grid;
     padding: 2px 6px;
     background: var(--gradientBlueButton);
-    min-width: 100px;
-    width: 100%;
+    width: 120px;
     height: max-content;
     color: whitesmoke;
     border-radius: 4px;
@@ -37,8 +36,7 @@
     display: grid;
     padding: 2px 6px;
     background: #e0e0e0;
-    min-width: 100px;
-    width: 100%;
+    width: 120px;
     height: max-content;
     color: whitesmoke;
     border-radius: 4px;
@@ -147,6 +145,60 @@
 
 .reminigTickets{
     color: var(--colorPrimaryTextDesktop);
+}
+
+.rowContent {
+    display: grid;
+    font-weight: 500;
+    height: 100%;
+    aspect-ratio: 1/1;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    background: white;
+    align-items: center;
+    justify-items: center;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.rowContent:hover{
+    background: #f1fbff;
+    transform: scale(1.1);
+}
+
+.rowContentSelected{
+    display: grid;
+    font-weight: 500;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    background: #caefff;
+    align-items: center;
+    border-radius: 2px;
+    justify-items: center;
+}
+
+.gridRows{
+    display: grid;
+    grid-template-columns: 40px;
+    grid-auto-columns: 40px;
+    grid-auto-flow: column;
+    overflow: hidden;
+    gap: 12px;
+    padding: 4px;
+}
+
+.mainContRows{
+    align-items: center;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    padding: 16px 12px;
+    border-bottom: 2px solid var(--separationLineColor);
+}
+
+.sizeArrow{
+    height: 20px;
+    width: 20px;
+    position: relative;
 }
 
 

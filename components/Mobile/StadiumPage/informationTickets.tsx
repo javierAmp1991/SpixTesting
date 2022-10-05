@@ -8,9 +8,9 @@ import {
     StadiumDataContext,
     ProviderSelectedSubAreaProp,
     ProviderSelectedAreaProp,
-    PopUpStadiumContextMobile, TicketsStateContext, ProviderTicketStateContextProp
+    PopUpStadiumContextMobile, TicketsStateContext, ProviderTicketStateContextProp, LayoutRowSeats, LayoutSubAreaContext
 } from "./stadiumLayoutProviderMobile";
-import {StadiumData} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import {VenueInfo} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 
 const capacityText: string = "Capacidad";
 const seeInformationVenueText: string = "Ver informacion del recinto";
@@ -21,10 +21,10 @@ const ticketText: string = "Entradas"
 
 export default function InformationTicketMobile() {
 
-    const stadiumDataContex: StadiumData = useContext(StadiumDataContext);
+    const stadiumDataContex: VenueInfo = useContext(StadiumDataContext);
     const subAreaInformation: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
     const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
-
+    const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
     const popUpStadiumContext: Function = useContext(PopUpStadiumContextMobile)
     const ticketStateContext: ProviderTicketStateContextProp = useContext(TicketsStateContext)
     const handlePopUpInformation = () => popUpStadiumContext()
@@ -62,14 +62,28 @@ export default function InformationTicketMobile() {
                             </button>
                         </>
                 }
-
             </div>
+
+            {
+                subAreaInformation.SelectedSubArea != null &&
+                <div className={style.mainContRows}>
+                    <div className={style.gridRows}>
+                        {
+                            layoutSeatsState.map(item =>
+                                item.RowNumber != 0 &&
+                                <div className={style.rowContent}>
+                                    F{item.RowNumber}
+                                </div>)
+                        }
+                    </div>
+                </div>
+            }
 
             {
                 <div className={style.mainContTickets}>
                     {
                         areaInformation.SelectedArea != null ?
-                            ticketStateContext.AllAreasStadium.map(item=>
+                            ticketStateContext.AllAreasStadium.map(item =>
                                 item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
                                 item.SubAreaStadium.FirstRowTickets.map(ticket =>
                                     <TicketStadiumMobile styleDiv={true} key={ticket.Id} item={ticket}/>)
@@ -81,30 +95,6 @@ export default function InformationTicketMobile() {
                     }
                 </div>
             }
-
-           {/* <div className={style.resumeBuy}>
-                <div className={style.numberTickets}>
-                    {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberSelected}
-                </div>
-
-                <div className={style.totalPrice}>
-                    {totalPriceText} ${getMoneyValue(getTotalPrice())}
-                </div>
-
-                {
-                    ticketsInformation.SelectedTickets.length > 0 ?
-                        <button onClick={handlePopUpTickets} className={style.seeTickets}>
-                            {seeTickets}
-                        </button>
-                        :
-                        <div/>
-                }
-
-
-                <button className={cssStyle.styleButton}>
-                    {buyTextButton}
-                </button>
-            </div>*/}
         </div>
     )
 

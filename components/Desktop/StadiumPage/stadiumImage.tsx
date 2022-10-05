@@ -8,7 +8,7 @@ import {
     SelectedSubAreaContext,
     ProviderSelectedAreaProp, ProviderSelectedSubAreaProp,
 } from "./stadiumLayutProvider";
-import {LayoutStadium, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import {AreaLayout, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import {ReactSVGPanZoom} from 'react-svg-pan-zoom';
 import {UncontrolledReactSVGPanZoom} from 'react-svg-pan-zoom';
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
@@ -24,7 +24,7 @@ export default function StadiumImage({stateSelectedInitialTicket, displaySubArea
                                          }) {
     const divWheelRef = useRef(null)
     const containerSvg = useRef(null)
-    const layoutStadiumContext: LayoutStadium = useContext(LayoutStadiumContext)
+    const layoutStadiumContext: AreaLayout = useContext(LayoutStadiumContext)
     const selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
     const subAreaStadiumContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext)
     const cssStyle = getCssStyle()

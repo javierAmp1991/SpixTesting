@@ -161,7 +161,7 @@
 .gridTypeSeat {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 16px;
+    gap: 8px;
     align-items: center;
     justify-content: center;
 }
@@ -169,7 +169,7 @@
 .gridTypeSeatCont {
     display: grid;
     grid-template-columns: repeat(3, max-content);
-    gap: 16px;
+    gap: 24px;
     align-items: center;
     justify-content: center;
 }
@@ -202,10 +202,28 @@
 
 .rowContent {
     display: grid;
-    height: 100%;
-    border: 1px solid gray;
-    color: gray;
     font-weight: 500;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    background: white;
+    align-items: center;
+    justify-items: center;
+    border-radius: 2px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.rowContent:hover{
+    background: #f1fbff;
+    transform: scale(1.1);
+}
+
+.rowContentSelected{
+    display: grid;
+    font-weight: 500;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    background: #caefff;
     align-items: center;
     border-radius: 2px;
     justify-items: center;

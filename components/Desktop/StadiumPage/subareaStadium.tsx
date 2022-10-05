@@ -9,22 +9,22 @@ import {
     SelectedAreaContext,
     SelectedSubAreaContext,
     SelectedTicketsContext,
-    LayoutSubAreaContext, LayoutRowSeats
+    LayoutSubAreaContext, LayoutRowSeats, SelectedTicketFromRowSeatsContext
 } from "./stadiumLayutProvider";
 import {useContext} from "react";
 
 const listStateSeat: RowType[] = [RowType.Available, RowType.Reserved, RowType.Selected]
 
 export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubAreaStadium: Function }) {
-
+    const selectedTicketFromRowSeatContext: Function = useContext(SelectedTicketFromRowSeatsContext)
     const selectedSubAreaContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
     const selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
     const selectdAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
     const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
     const numberColums: number = layoutSeatsState[0].LayoutSeats.length + 1;
 
-    const handleSelectedTicket = (idSeat: string) => {
-        selectedTicketContext.AddTickets(idSeat)
+    const handleClickSeat = (idSeat: string, isSelected: boolean) => {
+        selectedTicketFromRowSeatContext(idSeat, isSelected)
     }
     const handleDeleteTicket = (idSeat: string) => {
         selectedTicketContext.DeleteTickets(idSeat)
@@ -76,9 +76,9 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
                                     <>
                                         {
                                             item.RowNumber != 0 ?
-                                                <div className={style.rowContent}>
+                                                <button className={style.rowContent}>
                                                     F{item.RowNumber}
-                                                </div>
+                                                </button>
                                                 :
                                                 <div/>
                                         }
@@ -89,8 +89,8 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
                                                     <div className={style.emptySeat}/>
                                                     :
                                                     subItem.Type == RowType.Available ?
-                                                        <button key={index}
-                                                                className={subItem.State?
+                                                        <button onClick={()=>handleClickSeat(`${item.RowNumber}${subItem.Id}`, subItem.State)} key={index}
+                                                                className={subItem.State ?
                                                                     style.disponibleSeatClicked : style.disponibleSeat}>
                                                             {subItem.Id}
                                                         </button>

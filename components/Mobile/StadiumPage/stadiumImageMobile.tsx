@@ -7,7 +7,7 @@ import {
     SelectedSubAreaContext,
     ProviderSelectedAreaProp, ProviderSelectedSubAreaProp,
 } from "./stadiumLayoutProviderMobile";
-import {LayoutStadium, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import {AreaLayout, StateArea} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 
 export default function StadiumImageMobile({stateSelectedInitialTicket, displaySubAreaSelected, stateAnimation}:
                                                {
@@ -15,7 +15,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
                                                    displaySubAreaSelected: Function,
                                                    stateAnimation: boolean
                                                }) {
-    const layoutStadiumContext: LayoutStadium = useContext(LayoutStadiumContext)
+    const layoutStadiumContext: AreaLayout = useContext(LayoutStadiumContext)
     const selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
     const subAreaStadiumContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext)
     const cssStyle = getCssStyle()

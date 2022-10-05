@@ -37,11 +37,21 @@ export class SubAreaStadium {
 
 }
 
-export class LayoutStadium {
+export class AreaItem {
+    Id: string
+    Name: string
+}
+
+export class Venue{
+    FirstArea: AreaLayout
+    ListAreaItem: AreaItem[]
+}
+
+export class AreaLayout {
     UrlSvg: string
     IsContinuous: boolean
     MainTickets: TicketStadium[]
-    AreasStadium: AreaStadium[]
+    AreasStadium: SectionStadium[]
 }
 
 export class TicketStadium {
@@ -61,7 +71,7 @@ export class AtributesArea {
     Type: TypeAtributesArea
 }
 
-export class AreaStadium {
+export class SectionStadium {
     Id: string
     Name: string
     Capacity: number
@@ -72,7 +82,7 @@ export class AreaStadium {
     SoldTickets: number
 }
 
-export class StadiumData {
+export class VenueInfo {
     Name: string
     Venue: string
     Capacity: number
@@ -643,7 +653,7 @@ const subArea3: SubAreaStadium = {
 
 }
 
-const areaStadium: AreaStadium[] = [
+const areaStadium: SectionStadium[] = [
     {
         Id: "area1",
         Name: "Platea Norte",
@@ -677,7 +687,7 @@ const areaStadium: AreaStadium[] = [
 ]
 
 export namespace LayoutStadiumData {
-    export const layout: LayoutStadium = {
+    export const layout: AreaLayout = {
         UrlSvg: "/images/juventusFinal.svg",
         MainTickets: mainTickets,
         IsContinuous: true,
@@ -686,7 +696,7 @@ export namespace LayoutStadiumData {
 }
 
 export namespace StadiumDataInfo {
-    export const data: StadiumData = {
+    export const data: VenueInfo = {
         Name: "Estadio Nacional de Chile",
         Venue: "Av. Grecia 2001, Ñuñoa, Región Metropolitana",
         Capacity: 10000,

@@ -1,9 +1,9 @@
 import {
-    AreaStadium,
-    LayoutStadium,
+    SectionStadium,
+    AreaLayout,
     LayoutStadiumData,
     RowType,
-    StadiumData,
+    VenueInfo,
     StadiumDataInfo,
     SubAreaSeats,
     SubAreaStadium,
@@ -32,7 +32,7 @@ export class ProviderSelectedSubAreaProp {
 }
 
 export class ProviderSelectedAreaProp {
-    SelectedArea: AreaStadium;
+    SelectedArea: SectionStadium;
     SelectArea: Function;
     DeselectArea: Function;
 }
@@ -57,7 +57,7 @@ export class ProviderFiltersPop {
 
 export class ProviderTicketStateContextProp {
     MainTickets: TicketStadium[]
-    AllAreasStadium: AreaStadium[]
+    AllAreasStadium: SectionStadium[]
 }
 
 export class ProviderPopUpSelectedTicketsProp {
@@ -66,8 +66,8 @@ export class ProviderPopUpSelectedTicketsProp {
     CloseSelectedTickets: Function
 }
 
-const layoutStadium: LayoutStadium = LayoutStadiumData.layout;
-const stadiumData: StadiumData = StadiumDataInfo.data;
+const layoutStadium: AreaLayout = LayoutStadiumData.layout;
+const stadiumData: VenueInfo = StadiumDataInfo.data;
 export const LayoutStadiumContext = createContext(null);
 export const SelectedAreaContext = createContext(null);
 export const SelectedSubAreaContext = createContext(null);

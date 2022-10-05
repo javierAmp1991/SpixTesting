@@ -42,7 +42,7 @@
     stroke-width: var(--strokeWith);
     transition: var(--transitionHover);
     transform-origin: var(--transformOrigin);
-    -webkit-transform-origin: var(--transformOrigin);;
+    -webkit-transform-origin: var(--transformOrigin);
 }
 
 .blue:hover {
@@ -52,7 +52,8 @@
 
 .svgClass {
     stroke-width: 1px;
-    fill: #f3f7ff;
+    stroke: #ea2828;
+    fill-opacity: .8;
 }
 
 .critic {
