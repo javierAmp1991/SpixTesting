@@ -1,13 +1,13 @@
 import {
-    SectionStadium,
+    Section,
     AreaLayout,
     LayoutStadiumData,
     RowType,
     VenueInfo,
     StadiumDataInfo,
-    SubAreaSeats,
-    SubAreaStadium,
-    TicketStadium, Venue, VenueData,
+    Seats,
+    SectionDetails,
+    TicketStadium, Venue, VenueData, Zone, ListZones,
 } from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import React, {createContext, useEffect, useState} from "react";
 import {MapPopUpProp} from "../Misc/mapPopUp";
@@ -25,14 +25,14 @@ export class ProviderSelectedTicketProp {
 }
 
 export class ProviderSelectedSubAreaProp {
-    SelectedSubArea: SubAreaStadium;
+    SelectedSubArea: SectionDetails;
     SelectSubArea: Function;
     DeSelectSubArea: Function;
 
 }
 
 export class ProviderSelectedAreaProp {
-    SelectedArea: SectionStadium;
+    SelectedArea: Section;
     SelectArea: Function;
     DeselectArea: Function;
 }
@@ -57,7 +57,7 @@ export class ProviderFiltersPop {
 
 export class ProviderTicketStateContextProp {
     MainTickets: TicketStadium[]
-    AllAreasStadium: SectionStadium[]
+    AllAreasStadium: Section[]
 }
 
 export class ProviderPopUpSelectedTicketsProp {
@@ -80,6 +80,7 @@ export const FiltersContext = createContext(null);
 export const TicketsStateContext = createContext(null)
 export const SelectedTicketsMobileContext = createContext(null)
 export const VenueDataContextMobile = createContext(null)
+export const ListZonesContext = createContext(null)
 
 
 const orderByFilters: CategoryFilter[] = [
@@ -132,6 +133,7 @@ const atributesFilters: CategoryFilter[] = [
 
 export default function StadiumLayoutProviderMobile({children}) {
     const venueDataInformation: Venue = VenueData.venueData
+    const listZones: Zone[] = ListZones.list
     //region hooks
     let [principalFilters, setPrincipalFilters] = useState(orderByFilters)
     const handleClickPrincipalFilters = (idFilter: string, isClicked: boolean) => {
@@ -204,7 +206,7 @@ export default function StadiumLayoutProviderMobile({children}) {
         } else {
             let newAreasStadium = allAreasStadium.map((item) => {
                 if (item.Name == areaStadiumSelected.Name) {
-                    let newRowTickets = item.SubAreaStadium.FirstRowTickets.map((subItem) => {
+                    let newRowTickets = item.SubAreaStadium.RowTickets.map((subItem) => {
                         if (subItem.Id == ticket.Id) {
                             return {...subItem, State: isSelected}
                         } else return subItem
@@ -341,15 +343,17 @@ export default function StadiumLayoutProviderMobile({children}) {
                                             <SelectedTicketsMobileContext.Provider value={selectedTicketsMobileContext}>
                                                 <PopUpStadiumContext.Provider value={handleOpenMap}>
                                                     <PopUpStadiumContextMobile.Provider value={handleOpenMapMobile}>
-                                                        {children}
-                                                        {
-                                                            displayMapMobile &&
-                                                            <PopUpContainerMob isButtonVisible={true}
-                                                                               isBackground={true}
-                                                                               closePopUp={handleCloseMapMobile}>
-                                                                <MapPopUpMobile item={popUp}/>
-                                                            </PopUpContainerMob>
-                                                        }
+                                                        <ListZonesContext.Provider value={listZones}>
+                                                            {children}
+                                                            {
+                                                                displayMapMobile &&
+                                                                <PopUpContainerMob isButtonVisible={true}
+                                                                                   isBackground={true}
+                                                                                   closePopUp={handleCloseMapMobile}>
+                                                                    <MapPopUpMobile item={popUp}/>
+                                                                </PopUpContainerMob>
+                                                            }
+                                                        </ListZonesContext.Provider>
                                                     </PopUpStadiumContextMobile.Provider>
                                                 </PopUpStadiumContext.Provider>
                                             </SelectedTicketsMobileContext.Provider>
@@ -379,7 +383,7 @@ export default function StadiumLayoutProviderMobile({children}) {
             } else return null
         }
 
-        function createSeat(item: SubAreaSeats) {
+        function createSeat(item: Seats) {
             [...Array(item.SeatsAmount)].forEach(() => {
                 layoutSeatTest = [...layoutSeatTest, {
                     Id: getSeatNumber(item.Type),

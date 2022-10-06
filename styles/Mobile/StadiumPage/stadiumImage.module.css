@@ -1,7 +1,6 @@
 .principalGridOpen {
-    padding-top: 12px;
+    padding: 12px 0;
     width: 100%;
-    aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
     --fillSections: #ff8383;
@@ -204,6 +203,32 @@
     width: 14px;
     position: relative;
 }
+
+.mainDivZones {
+   padding: 0 16px;
+}
+
+.gridZones {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: auto;
+    padding-top: 16px;
+}
+
+.gridColorZone {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px;
+}
+
+.divColor {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
 
 @keyframes animationZoom {
     0% {

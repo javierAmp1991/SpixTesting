@@ -2,15 +2,14 @@ import style from "/styles/Mobile/StadiumPage/stadiumImage.module.css"
 import SVG from 'react-inlinesvg';
 import React, {useContext, useState} from "react";
 import {
-    LayoutStadiumContext,    SelectedAreaContext,
+    LayoutStadiumContext, SelectedAreaContext,
     SelectedSubAreaContext, VenueDataContextMobile,
-    ProviderSelectedAreaProp, ProviderSelectedSubAreaProp,
+    ProviderSelectedAreaProp, ProviderSelectedSubAreaProp, ListZonesContext
 } from "./stadiumLayoutProviderMobile";
-import {AreaItem, AreaLayout, StateArea, Venue} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
-import Image from "next/image";
-import {GlobalConst} from "../../../public/globalConst";
-
+import {AreaItem, AreaLayout, StateArea, Venue, Zone} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+import utilities from "/styles/utilities.module.css";
 const noSelectedText: string = "Selecciona un area"
+const zonesTitle: string = "Zonas"
 
 export default function StadiumImageMobile({stateSelectedInitialTicket, displaySubAreaSelected, stateAnimation}:
                                                {
@@ -21,6 +20,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
     const layoutStadiumContext: AreaLayout = useContext(LayoutStadiumContext)
     const selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
     const subAreaStadiumContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext)
+    const listZonesContext: Zone[] = useContext(ListZonesContext)
     const venueInformationContext: Venue = useContext(VenueDataContextMobile)
     const cssStyle = getCssStyle()
     const handleClickArea = (idArea: string, idSubArea: string) => {
@@ -31,7 +31,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
 
     let [areaSelected, setAreaSelected] = useState(null)
     let [displayOptions, setDisplayOptions] = useState(true)
-    const handleDisplayOptions = ()=> setDisplayOptions(displayOptions = !displayOptions)
+    const handleDisplayOptions = () => setDisplayOptions(displayOptions = !displayOptions)
     const handleOnChangeSelect = (item: AreaItem) => {
         setAreaSelected(areaSelected = item.Name)
         handleDisplayOptions()
@@ -66,6 +66,25 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
                     <SVG className={style.mainContSvg}
                          onLoad={postCss}
                          src={layoutStadiumContext.UrlSvg}/>
+                </div>
+            </div>
+            <div className={style.mainDivZones}>
+                <div className={utilities.fontTitleDesktop}>
+                    {zonesTitle}
+                </div>
+                <div className={style.gridZones}>
+                    {
+                        listZonesContext.map(item =>
+
+                            <div key={item.Id} className={style.gridColorZone}>
+                                <div className={style.divColor} style={{background: item.Color}}/>
+                                <div>
+                                    {item.Name}
+                                </div>
+                            </div>
+                        )
+
+                    }
                 </div>
             </div>
         </div>

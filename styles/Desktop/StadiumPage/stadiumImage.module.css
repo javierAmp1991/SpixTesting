@@ -1,13 +1,10 @@
 .principalGridOpen {
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
     position: relative;
     overflow: scroll;
-    padding: 16px;
+    padding: 16px 24px;
     --fillSections: #ff8383;
     --strokeWith: 1px;
     --strokeWithBefore: 12px;
@@ -123,8 +120,8 @@
 }
 
 .mainContSvg {
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 90%;
     margin: auto;
 }
 
@@ -175,7 +172,7 @@
     width: 180px;
 }
 
-.colorArea{
+.colorArea {
     color: var(--colorPrimaryTextDesktop);
     text-align: left;
 }
@@ -186,23 +183,23 @@
     grid-template-columns: 1fr max-content;
     align-items: center;
     gap: 12px;
-    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
     border-radius: 3px;
     overflow: hidden;
     padding: 8px;
 }
 
-.styleOptions{
+.styleOptions {
     background: #ffffff;
     padding: 8px;
     color: var(--colorSecundaryTextDesktop);
 }
 
-.styleOptions:hover{
+.styleOptions:hover {
     background: #e7f1ff;
 }
 
-.optionOpen{
+.optionOpen {
     width: 100%;
     position: absolute;
     z-index: 90000;
@@ -210,9 +207,10 @@
     height: 200px;
     display: grid;
     transition: .2s;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3) ;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
 }
-.optionClose{
+
+.optionClose {
     width: 100%;
     position: absolute;
     display: grid;
@@ -227,6 +225,54 @@
     position: relative;
 }
 
+.mainDivZones {
+    width: 80%;
+    margin: auto;
+}
+
+.gridZones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: auto;
+    padding-top: 16px;
+    justify-content: space-between;
+}
+
+.gridColorZone {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px;
+}
+
+.divColor {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.sizeArrow {
+    transform: rotate(270deg);
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    right: 5%;
+    top: 85%;
+    animation: moveArrow 1.5s infinite linear;
+}
+
+@keyframes moveArrow {
+    0% {
+        top: 85%;
+    }
+    50% {
+        top: 92%;
+    }
+    100% {
+        top: 85%;
+    }
+}
 
 @keyframes animationZoom {
     0% {

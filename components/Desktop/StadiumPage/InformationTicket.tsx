@@ -97,7 +97,7 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
                         areaInformation.SelectedArea != null ?
                             ticketStateContext.AllAreasStadium.map(item =>
                                 item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
-                                item.SubAreaStadium.FirstRowTickets.map(ticket =>
+                                item.SubAreaStadium.RowTickets.map(ticket =>
                                     <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
                             )
                             :

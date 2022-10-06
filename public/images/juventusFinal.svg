@@ -18,9 +18,10 @@
 		</style>
     </defs>
 <g id="Layer_2">	top area
-	<path id="idsvg1" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M65.2,64.7l6.9-6.2l10.8,13c0,0-2.4,1.5-3.8,2.6c-1.4,1-2.2,2.4-2.2,2.4L65.2,64.7z"/>
-	<path id="idsvg2" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M74.8,56.5c0,0,9.1-9.1,24-12.9c14.9-3.8,27.6-3.4,27.6-3.4L126,71.4h6.4l0.2,27.1c0,0-7-0.3-11.8,0.9
-		c-4.8,1.2-11.3,5-11.3,5L89.6,85l4.4-3.6L74.8,56.5z"/>
+	<g>
+		<path id="idsvg1" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M65.2,64.7l6.9-6.2l10.8,13c0,0-2.4,1.5-3.8,2.6c-1.4,1-2.2,2.4-2.2,2.4L65.2,64.7z"/>
+		<path id="idsvg2" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" d="M74.8,56.5c0,0,9.1-9.1,24-12.9c14.9-3.8,27.6-3.4,27.6-3.4L126,71.4h6.4l0.2,27.1c0,0-7-0.3-11.8,0.9c-4.8,1.2-11.3,5-11.3,5L89.6,85l4.4-3.6L74.8,56.5z"/>
+	</g>
 	<polygon id="idsvg3" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" points="128.9,40 138.2,40 138.4,56.5 128.8,56.1 	"/>
 	<polygon id="idsvg4" class="areaSvgStadium" stroke-width="0" fill="#119B49" stroke="#119B49" points="141.8,40.3 141.6,71.2 135.3,71.4 135.6,98.4 179.9,98 179.6,71.6 172.7,71.4 172.9,40.5 	"/>
 	<polygon id="idsvg5" class="areaSvgStadium" stroke-width="0" fill="#F3192B" stroke="#F3192B" points="176.6,39.8 177,56.5 185.6,56.6 185.4,40 	"/>
