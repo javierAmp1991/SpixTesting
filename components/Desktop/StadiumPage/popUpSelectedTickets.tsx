@@ -3,11 +3,10 @@ import {TicketStadium} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import styleProvider from "/styles/Desktop/StadiumPage/styleProvider.module.css"
 import utilities from "/styles/utilities.module.css"
 
-export default function PopUpSelectedTicketsView({selectedTickets} : {selectedTickets: TicketStadium[]}){
-    return(
+export default function PopUpSelectedTicketsView({selectedTickets}: { selectedTickets: TicketStadium[] }) {
+    return (
         <div className={styleProvider.mainDiv}>
-            <div
-                className={`${utilities.fontTitleDesktop} ${styleProvider.title}`}>
+            <div className={`${utilities.fontTitleDesktop} ${styleProvider.title}`}>
                 Entradas seleccionadas
             </div>
             {
@@ -19,7 +18,9 @@ export default function PopUpSelectedTicketsView({selectedTickets} : {selectedTi
                     <div className={styleProvider.gridTickets}>
                         {
                             selectedTickets.map(item =>
-                                <TicketStadiumDesktop styleDiv={false}
+                                <TicketStadiumDesktop isSelectSection={false}
+                                                      isDeleteSection={true}
+                                                      styleDiv={false}
                                                       key={item.Id}
                                                       item={item}/>)
                         }

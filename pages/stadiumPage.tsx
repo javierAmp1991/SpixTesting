@@ -67,8 +67,8 @@ export default function StadiumPage() {
 
     return (
         isSmallDown ?
-            <StadiumLayoutProviderMobile>
-                <DefaultLayoutMobile isDarkMode={false}>
+            <DefaultLayoutMobile isDarkMode={false}>
+                <StadiumLayoutProviderMobile>
                     <LayoutStadiumPageMobile>
                         {
                             initialSelectedTickets == 0 ?
@@ -109,11 +109,11 @@ export default function StadiumPage() {
 
                         <SelectedTicketsMobile/>
                     </LayoutStadiumPageMobile>
-                </DefaultLayoutMobile>
-            </StadiumLayoutProviderMobile>
+                </StadiumLayoutProviderMobile>
+            </DefaultLayoutMobile>
             :
-            <StadiumLayutProvider>
-                <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
+            <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
+                <StadiumLayutProvider>
                     <LayoutStadiumPage>
                         <>
                             <FiltersStadium/>
@@ -133,7 +133,7 @@ export default function StadiumPage() {
                             <InitialPage/>
                         </>
                     </LayoutStadiumPage>
-                </DefaultLayoutDesktop>
-            </StadiumLayutProvider>
+                </StadiumLayutProvider>
+            </DefaultLayoutDesktop>
     )
 }

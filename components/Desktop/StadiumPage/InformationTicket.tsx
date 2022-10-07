@@ -131,10 +131,10 @@ export default function InformationTicket() {
                     {
                         sectionInformation.SelectedSection != null ?
                             sectionInformation.SelectedSection.SectionDetail.RowTickets.map(ticket =>
-                                <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
+                                <TicketStadiumDesktop isSelectSection={true} isDeleteSection={true} styleDiv={true} key={ticket.Id} item={ticket}/>)
                             :
                             venueAreaContext.Area.MainTickets.map((ticket) =>
-                                <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>
+                                <TicketStadiumDesktop isSelectSection={true} isDeleteSection={true} styleDiv={true} key={ticket.Id} item={ticket}/>
                             )
                     }
                 </div>

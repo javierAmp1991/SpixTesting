@@ -22,8 +22,9 @@ const beforeText: string = "Antes"
 const discountSecondUni: string = "Dcto. 2 Uni"
 const twoXOne: string = "Lleve 2 pague 1"
 
-export default function TicketStadiumDesktop({item, styleDiv}:
-                                                 { item: TicketStadium, styleDiv: boolean }) {
+export default function TicketStadiumDesktop({item, styleDiv, isDeleteSection, isSelectSection}:
+                                                 { item: TicketStadium, styleDiv: boolean,
+                                                     isDeleteSection: boolean, isSelectSection: boolean }) {
     let selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext)
     const getStateTicket: boolean = selectedTicketContext.IsTicketSelected(`${item.Row}${item.Seat}`)
     const handleSelectTicket = () => {
@@ -32,9 +33,11 @@ export default function TicketStadiumDesktop({item, styleDiv}:
     const handleDeleteTickets = () => {
         selectedTicketContext.DeleteTickets(item)
     }
+    const cssStyle = getCssStyle()
 
     return (
-        <div id={`${item.Row}${item.Seat}TicketId`} className={`${style.mainCont} ${styleDiv ? style.styleDiv1 : style.styleDiv2}`}>
+        <div id={`${item.Row}${item.Seat}TicketId`}
+             className={`${style.mainCont} ${cssStyle.styleOutsideCont} ${cssStyle.styleInsideCont}`}>
             <div className={style.gridContPrice}>
                 <div className={style.leftCont}>
                     <div className={`${style.styleTitle} ${utilities.clamp1}`}>
@@ -84,22 +87,35 @@ export default function TicketStadiumDesktop({item, styleDiv}:
                         }
 
                     </div>
-                    <div className={style.contButton}>
-                        {
-                            getStateTicket ?
-                                <button onClick={handleDeleteTickets} className={style.buttonSelection}>
-                                    {deleteButtonText}
-                                </button>
-                                :
-                                <button onClick={handleSelectTicket} className={style.buttonSelection}>
-                                    {selectButtonText}
-                                </button>
-                        }
-                    </div>
+                    {
+                        isDeleteSection &&
+                        <div className={style.contButton}>
+                            {
+                                getStateTicket ?
+                                    <button onClick={handleDeleteTickets} className={style.buttonSelection}>
+                                        {deleteButtonText}
+                                    </button>
+                                    :
+                                    <button onClick={handleSelectTicket} className={style.buttonSelection}>
+                                        {selectButtonText}
+                                    </button>
+                            }
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
     )
+
+    function getCssStyle(){
+        return{
+            styleOutsideCont: styleDiv ? style.styleDiv1 : style.styleDiv2,
+            styleInsideCont: isSelectSection?
+                getStateTicket? style.backgroundTicketSelected : style.backgroundTicket
+                : style.backgroundTicket
+        }
+    }
 
     function getIcon(typeAtr: TypeAtributesArea): string {
         if (typeAtr == TypeAtributesArea.NearToilet) return GlobalConst.sourceImages.toiletIcon

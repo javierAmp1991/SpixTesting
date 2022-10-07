@@ -1,11 +1,11 @@
-import style from "/styles/Desktop/Misc/popUp.module.css"
+import style from "/styles/Desktop/Misc/popUpLogo.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import React from "react";
 
-export default function PopUpContainer({children, closePopUp, isBackground, isButtonVisible}) {
+export default function PopUpContainerLogo({children, closePopUp, isBackground, isButtonVisible}) {
     const cssStyle = getCssStyle()
-    return(
+    return (
         <div className={style.mainDiv}>
             <div onClick={closePopUp} className={style.blackScreen}/>
             <div className={cssStyle.modalBackground}>
@@ -18,7 +18,13 @@ export default function PopUpContainer({children, closePopUp, isBackground, isBu
                         </div>
                     </div>
                 }
-                {children}
+                <div className={style.logoSpix}>
+                    <Image layout={"fill"} src={"/images/spixBlue.png"}/>
+                </div>
+
+                <div className={style.mainContorno}>
+                    {children}
+                </div>
             </div>
         </div>
     )

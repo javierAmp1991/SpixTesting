@@ -397,7 +397,7 @@ const tickets1: TicketStadium[] = [
         State: false,
         Atributes: atributesArea1
     },
-    {
+ /*   {
         Id: "id4",
         AreaName: "Platea Norte",
         Row: 2,
@@ -429,7 +429,7 @@ const tickets1: TicketStadium[] = [
         Discount: 19000,
         State: false,
         Atributes: atributesArea1
-    }
+    }*/
 ]
 const subArea1: SectionDetails = {
     RowNumber: 1,
@@ -560,6 +560,50 @@ const tickets2: TicketStadium[] = [
         AreaName: "Galeria Sur",
         Row: 2,
         Seat: 16,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea2
+    },
+    {
+        Id: "id123",
+        AreaName: "Galeria Sur",
+        Row: 2,
+        Seat: 17,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea2
+    },
+    {
+        Id: "id124",
+        AreaName: "Galeria Sur",
+        Row: 2,
+        Seat: 18,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea2
+    },
+    {
+        Id: "id125",
+        AreaName: "Galeria Sur",
+        Row: 2,
+        Seat: 19,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea2
+    },
+    {
+        Id: "id126",
+        AreaName: "Galeria Sur",
+        Row: 2,
+        Seat: 20,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,

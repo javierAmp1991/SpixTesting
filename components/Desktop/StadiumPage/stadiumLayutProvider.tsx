@@ -10,7 +10,8 @@ import PopUpContainer from "../Misc/popUpContainer";
 import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import PopUpSelectedTicketsView from "./popUpSelectedTickets";
-import InitialPage from "./initialPage";
+import PopUpContainerLogo from "../Misc/popUpContainerLogo";
+import PopUpDeletedTicketsView from "./popUpDeleteTickets";
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
@@ -67,6 +68,11 @@ export class ProviderNumberWantProp {
     SelectNumber: Function
 }
 
+export class ProviderStateUserProp {
+    DateLastMove: Date
+    UpdateLastMove: Function
+}
+
 class ControlFromSeats {
     IdRowSeat: string
     IsSelected: boolean
@@ -85,7 +91,10 @@ export const VenueDataContext = createContext(null)
 export const VenueAreaContext = createContext(null)
 export const DetailsSectionContext = createContext(null)
 export const NumberTicketWant = createContext(null)
+export const StateUserContext = createContext(null)
 
+const controlTimeMiliSeg: number = 1000;
+const linkToRedirect: string = "http://localhost:3000/stadiumPage"
 const layoutStadium: AreaLayout = LayoutStadiumData.layout;
 const stadiumData: VenueInfo = StadiumDataInfo.data;
 const venueDataInformation: Venue = VenueData.venueData
@@ -175,6 +184,28 @@ export default function StadiumLayutProvider({children}) {
 
     //region hooks
 
+    let [dateLastMove, setDateLastMove] = useState(new Date())
+    const handleMovUser = () => {
+        setDateLastMove(dateLastMove = new Date())
+    }
+    let providerStateUser: ProviderStateUserProp = {
+        DateLastMove: dateLastMove,
+        UpdateLastMove: handleMovUser
+    }
+    useEffect(() => {
+        function isActive() {
+            let actualDate: Date = new Date()
+            var timePasses = actualDate.getTime() - dateLastMove.getTime()
+            if (timePasses > controlTimeMiliSeg) {
+                window.location.href = linkToRedirect
+            }
+
+        }
+
+        const timer = setInterval(isActive, 10000)
+        return () => clearInterval(timer)
+    })
+
     let [venueAreaSelected, setVenueAreaSelected] = useState(venueDataInformation.FirstArea)
     const handleSelectVenueArea = (id: string) => {
         let newVenueAreaSelected = venueDataInformation.FirstArea
@@ -220,8 +251,12 @@ export default function StadiumLayutProvider({children}) {
     let [controlFromSeats, setControlFromSeats] = useState(controlFromSeatsDefault)
     const handleSelectTickets = (ticket: TicketStadium) => {
         let numberTicketsSelected: number = selectedTickets.length
-        numberTicketsSelected < numberTicketWant &&
-        setSelectedTickets(selectedTickets = [...selectedTickets, ticket])
+        if (numberTicketsSelected < numberTicketWant) setSelectedTickets(selectedTickets = [...selectedTickets, ticket])
+        else {
+            let newListTickets = selectedTickets.filter((item, index) => index != 0)
+            newListTickets = [...newListTickets, ticket]
+            setSelectedTickets(selectedTickets = newListTickets)
+        }
     }
     const handleDeleteTickets = (ticket: TicketStadium) => {
         let newListTickets = selectedTickets.filter(item => item.Id != ticket.Id)
@@ -243,7 +278,7 @@ export default function StadiumLayutProvider({children}) {
         if (sectionSelected != null && selectedTickets.length > 0) {
             let numberControl: number = sectionSelected.SectionDetail.RowNumber
             selectedTickets.forEach((item: TicketStadium) => {
-                if (item.Row == numberControl) {
+                if (item.Row != numberControl) {
                     if (!sectionSelected.SectionDetail.RowTickets.includes(item)) {
                         handleAddTicketsDelete(item)
                         handleDeleteTickets(item)
@@ -377,6 +412,14 @@ export default function StadiumLayutProvider({children}) {
         SelectNumber: handleNumberTicketWant
     }
 
+    useEffect(() => {
+        if (selectedTickets.length > numberTicketWant) {
+            let dif: number = selectedTickets.length - numberTicketWant
+            let newListSelectedTickets = selectedTickets.filter((item, index) => index >= dif)
+            setSelectedTickets(selectedTickets = newListSelectedTickets)
+        }
+    }, [numberTicketWant])
+
     let [allAreasStadium, setAllAreasStdium] = useState(layoutStadium.AreasStadium)
 
 //endregion
@@ -396,35 +439,37 @@ export default function StadiumLayutProvider({children}) {
                                                     <PopUpVenueContext.Provider value={handleOpenMap}>
                                                         <PopUpSelectedTickets.Provider
                                                             value={handleOpenSelectedTickets}>
-                                                            {children}
-                                                            {
-                                                                displayMap &&
-                                                                <PopUpContainer isButtonVisible={true}
-                                                                                isBackground={true}
-                                                                                closePopUp={handleCloseMap}>
-                                                                    <MapPopUp item={popUp}/>
-                                                                </PopUpContainer>
-                                                            }
-                                                            {
-                                                                displaySelectedTickets &&
-                                                                <PopUpContainer isButtonVisible={true}
-                                                                                isBackground={true}
-                                                                                closePopUp={handleCloseSelectedTickets}>
-                                                                    <PopUpSelectedTicketsView
-                                                                        selectedTickets={selectedTickets}/>
+                                                            <StateUserContext.Provider value={providerStateUser}>
+                                                                {children}
+                                                                {
+                                                                    displayMap &&
+                                                                    <PopUpContainer isButtonVisible={true}
+                                                                                    isBackground={true}
+                                                                                    closePopUp={handleCloseMap}>
+                                                                        <MapPopUp item={popUp}/>
+                                                                    </PopUpContainer>
+                                                                }
+                                                                {
+                                                                    displaySelectedTickets &&
+                                                                    <PopUpContainerLogo isButtonVisible={true}
+                                                                                        isBackground={true}
+                                                                                        closePopUp={handleCloseSelectedTickets}>
+                                                                        <PopUpSelectedTicketsView
+                                                                            selectedTickets={selectedTickets}/>
 
-                                                                </PopUpContainer>
-                                                            }
-                                                            {
-                                                                popUpDeleteTicket &&
-                                                                <PopUpContainer isButtonVisible={true}
-                                                                                isBackground={true}
-                                                                                closePopUp={handleClosePopUpDeleteTickets}>
-                                                                    <PopUpSelectedTicketsView
-                                                                        selectedTickets={ticketsDeletes}/>
+                                                                    </PopUpContainerLogo>
+                                                                }
+                                                                {
+                                                                    popUpDeleteTicket &&
+                                                                    <PopUpContainerLogo isButtonVisible={true}
+                                                                                        isBackground={true}
+                                                                                        closePopUp={handleClosePopUpDeleteTickets}>
+                                                                        <PopUpDeletedTicketsView
+                                                                            selectedTickets={ticketsDeletes}/>
 
-                                                                </PopUpContainer>
-                                                            }
+                                                                    </PopUpContainerLogo>
+                                                                }
+                                                            </StateUserContext.Provider>
                                                         </PopUpSelectedTickets.Provider>
                                                     </PopUpVenueContext.Provider>
                                                 </NumberTicketWant.Provider>
