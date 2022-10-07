@@ -91,7 +91,52 @@ export class Zone {
     Color: string
 }
 
-const listZones: Zone[] = [
+export namespace ListZones{
+    export const list: Zone[] = [
+        {
+            Id: "idZone1",
+            Name: "Platea Sur",
+            Color: "#13e3b8"
+        },
+        {
+            Id: "idZone2",
+            Name: "Platea Norte",
+            Color: "#00b8ff"
+        },
+        {
+            Id: "idZone3",
+            Name: "Palco Sur",
+            Color: "#ff0000"
+        },
+        {
+            Id: "idZone4",
+            Name: "Palco Norte",
+            Color: "#ff9700"
+        },
+        {
+            Id: "idZone5",
+            Name: "Galeria Sur",
+            Color: "#fff900"
+        },
+        {
+            Id: "idZone6",
+            Name: "Galeria Norte",
+            Color: "#73ff00"
+        },
+        {
+            Id: "idZone7",
+            Name: "VIP Norte",
+            Color: "#0022ff"
+        },
+        {
+            Id: "idZone8",
+            Name: "VIP Sur",
+            Color: "#d300ff"
+        },
+    ]
+}
+
+export const listZones: Zone[] = [
     {
         Id: "idZone1",
         Name: "Platea Sur",

@@ -7,7 +7,7 @@ import {
     StadiumDataInfo,
     Seats,
     SectionDetails,
-    TicketStadium, Venue, VenueData, Zone, ListZones,
+    TicketStadium, Venue, VenueData, Zone, ListZones
 } from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import React, {createContext, useEffect, useState} from "react";
 import {MapPopUpProp} from "../Misc/mapPopUp";
