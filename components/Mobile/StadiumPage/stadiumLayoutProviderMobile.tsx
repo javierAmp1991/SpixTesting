@@ -206,12 +206,12 @@ export default function StadiumLayoutProviderMobile({children}) {
         } else {
             let newAreasStadium = allAreasStadium.map((item) => {
                 if (item.Name == areaStadiumSelected.Name) {
-                    let newRowTickets = item.SubAreaStadium.RowTickets.map((subItem) => {
+                    let newRowTickets = item.SectionDetail.RowTickets.map((subItem) => {
                         if (subItem.Id == ticket.Id) {
                             return {...subItem, State: isSelected}
                         } else return subItem
                     })
-                    let newSubAreaStadium = {...item.SubAreaStadium, FirstRowTickets: newRowTickets}
+                    let newSubAreaStadium = {...item.SectionDetail, FirstRowTickets: newRowTickets}
                     return {...item, SubAreaStadium: newSubAreaStadium}
                 } else return item
             })
@@ -239,8 +239,8 @@ export default function StadiumLayoutProviderMobile({children}) {
     let [subAreaSelected, setSubAreaSelected] = useState(null)
     const handleSubAreaSelected = (id) => {
         allAreasStadium.forEach((item) => {
-            if (item.SubAreaStadium.Id == id) {
-                setSubAreaSelected(subAreaSelected = item.SubAreaStadium)
+            if (item.SectionDetail.Id == id) {
+                setSubAreaSelected(subAreaSelected = item.SectionDetail)
             }
         })
     }

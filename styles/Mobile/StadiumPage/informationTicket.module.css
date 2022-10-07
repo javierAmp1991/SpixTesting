@@ -79,7 +79,8 @@
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
     font-weight: 500;
-    background: linear-gradient(180deg, #f4f7fa 0%, #eef2f6 100%);
+    /*background: linear-gradient(180deg, #f4f7fa 0%, #eef2f6 100%);*/
+    background: linear-gradient(180deg, #f7f9fc 0%, #f8fbff 100%);
     justify-content: space-between;
     z-index: 100000;
 }

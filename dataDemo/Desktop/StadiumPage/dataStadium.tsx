@@ -35,7 +35,6 @@ export class SectionDetails {
     Seats: Seats[]
     RowNumber: number
     RowTickets: TicketStadium[]
-
 }
 
 export class AreaItem {
@@ -81,7 +80,7 @@ export class Section {
     Capacity: number
     StateArea: StateArea
     AtributesAreas: AtributesArea[]
-    SubAreaStadium: SectionDetails
+    SectionDetail: SectionDetails
     TotalTickets: number
     SoldTickets: number
 }
@@ -92,50 +91,48 @@ export class Zone {
     Color: string
 }
 
-export namespace ListZones {
-    export const list: Zone[] = [
-        {
-            Id: "idZone1",
-            Name: "Platea Sur",
-            Color: "#13e3b8"
-        },
-        {
-            Id: "idZone2",
-            Name: "Platea Norte",
-            Color: "#00b8ff"
-        },
-        {
-            Id: "idZone3",
-            Name: "Palco Sur",
-            Color: "#ff0000"
-        },
-        {
-            Id: "idZone4",
-            Name: "Palco Norte",
-            Color: "#ff9700"
-        },
-        {
-            Id: "idZone5",
-            Name: "Galeria Sur",
-            Color: "#fff900"
-        },
-        {
-            Id: "idZone6",
-            Name: "Galeria Norte",
-            Color: "#73ff00"
-        },
-        {
-            Id: "idZone7",
-            Name: "VIP Norte",
-            Color: "#0022ff"
-        },
-        {
-            Id: "idZone8",
-            Name: "VIP Sur",
-            Color: "#d300ff"
-        },
-    ]
-}
+const listZones: Zone[] = [
+    {
+        Id: "idZone1",
+        Name: "Platea Sur",
+        Color: "#13e3b8"
+    },
+    {
+        Id: "idZone2",
+        Name: "Platea Norte",
+        Color: "#00b8ff"
+    },
+    {
+        Id: "idZone3",
+        Name: "Palco Sur",
+        Color: "#ff0000"
+    },
+    {
+        Id: "idZone4",
+        Name: "Palco Norte",
+        Color: "#ff9700"
+    },
+    {
+        Id: "idZone5",
+        Name: "Galeria Sur",
+        Color: "#fff900"
+    },
+    {
+        Id: "idZone6",
+        Name: "Galeria Norte",
+        Color: "#73ff00"
+    },
+    {
+        Id: "idZone7",
+        Name: "VIP Norte",
+        Color: "#0022ff"
+    },
+    {
+        Id: "idZone8",
+        Name: "VIP Sur",
+        Color: "#d300ff"
+    },
+]
 
 export class VenueInfo {
     Name: string
@@ -315,92 +312,12 @@ const subAreaSeats1: Seats[] = [
             SeatsAmount: 9
         },*/
 ]
-
-const subAreaSeats2: Seats[] = [
-    {
-        RowNumber: 1,
-        Type: RowType.Empty,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 1,
-        Type: RowType.Available,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 1,
-        Type: RowType.Reserved,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 2,
-        Type: RowType.Available,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 2,
-        Type: RowType.Reserved,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 2,
-        Type: RowType.Empty,
-        SeatsAmount: 3
-    }
-]
-
-const subAreaSeats3: Seats[] = [
-    {
-        RowNumber: 1,
-        Type: RowType.Empty,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 1,
-        Type: RowType.Available,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 1,
-        Type: RowType.Reserved,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 2,
-        Type: RowType.Available,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 2,
-        Type: RowType.Reserved,
-        SeatsAmount: 3
-    },
-    {
-        RowNumber: 2,
-        Type: RowType.Empty,
-        SeatsAmount: 3
-    }
-]
-
 const atributesArea1: AtributesArea[] = [
     {
         Description: "Poca Visibilidad",
         Type: TypeAtributesArea.LowVisibility
     },
 ]
-
-const atributesArea2: AtributesArea[] = [
-    {
-        Description: "Cerca del baño",
-        Type: TypeAtributesArea.NearToilet
-    },
-]
-
-const atributesArea3: AtributesArea[] = [{
-    Description: "Buena Visibilidad",
-    Type: TypeAtributesArea.VIP
-}]
-
 const tickets1: TicketStadium[] = [
     {
         Id: "id1",
@@ -469,13 +386,58 @@ const tickets1: TicketStadium[] = [
         Atributes: atributesArea1
     }
 ]
+const subArea1: SectionDetails = {
+    RowNumber: 1,
+    Id: "subAreaStadium1",
+    Seats: subAreaSeats1,
+    RowTickets: tickets1,
 
+}
+
+const subAreaSeats2: Seats[] = [
+    {
+        RowNumber: 1,
+        Type: RowType.Empty,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 1,
+        Type: RowType.Available,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 1,
+        Type: RowType.Reserved,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 2,
+        Type: RowType.Available,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 2,
+        Type: RowType.Reserved,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 2,
+        Type: RowType.Empty,
+        SeatsAmount: 3
+    }
+]
+const atributesArea2: AtributesArea[] = [
+    {
+        Description: "Cerca del baño",
+        Type: TypeAtributesArea.NearToilet
+    },
+]
 const tickets2: TicketStadium[] = [
     {
         Id: "id7",
-        AreaName: "Galeria Sur",
-        Row: 1,
-        Seat: 1,
+        AreaName: "Test Update",
+        Row: 2,
+        Seat: 9,
         Price: 10000,
         Type: TypeOffer.TwoXOne,
         Discount: null,
@@ -485,8 +447,8 @@ const tickets2: TicketStadium[] = [
     {
         Id: "id8",
         AreaName: "Galeria Sur",
-        Row: 1,
-        Seat: 2,
+        Row: 2,
+        Seat: 10,
         Price: 11000,
         Type: TypeOffer.Discount2Uni,
         Discount: 30,
@@ -496,8 +458,8 @@ const tickets2: TicketStadium[] = [
     {
         Id: "id9",
         AreaName: "Galeria Sur",
-        Row: 1,
-        Seat: 3,
+        Row: 2,
+        Seat: 11,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,
@@ -508,7 +470,7 @@ const tickets2: TicketStadium[] = [
         Id: "id10",
         AreaName: "Galeria Sur",
         Row: 2,
-        Seat: 1,
+        Seat: 12,
         Price: 10000,
         Type: TypeOffer.TwoXOne,
         Discount: null,
@@ -519,7 +481,7 @@ const tickets2: TicketStadium[] = [
         Id: "id11",
         AreaName: "Galeria Sur",
         Row: 2,
-        Seat: 2,
+        Seat: 13,
         Price: 11000,
         Type: TypeOffer.Discount2Uni,
         Discount: 30,
@@ -530,7 +492,29 @@ const tickets2: TicketStadium[] = [
         Id: "id12",
         AreaName: "Galeria Sur",
         Row: 2,
-        Seat: 3,
+        Seat: 14,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea2
+    },
+    {
+        Id: "id121",
+        AreaName: "Galeria Sur",
+        Row: 2,
+        Seat: 15,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea2
+    },
+    {
+        Id: "id122",
+        AreaName: "Galeria Sur",
+        Row: 2,
+        Seat: 16,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,
@@ -538,13 +522,24 @@ const tickets2: TicketStadium[] = [
         Atributes: atributesArea2
     }
 ]
+const subArea2: SectionDetails = {
+    RowNumber: 2,
+    Id: "subAreaStadium2",
+    Seats: subAreaSeats2,
+    RowTickets: tickets2,
 
+}
+
+const atributesArea3: AtributesArea[] = [{
+    Description: "Buena Visibilidad",
+    Type: TypeAtributesArea.VIP
+}]
 const tickets3: TicketStadium[] = [
     {
         Id: "id13",
         AreaName: "Palco VIP",
-        Row: 1,
-        Seat: 1,
+        Row: 3,
+        Seat: 40,
         Price: 10000,
         Type: TypeOffer.TwoXOne,
         Discount: null,
@@ -554,8 +549,8 @@ const tickets3: TicketStadium[] = [
     {
         Id: "id14",
         AreaName: "Palco VIP",
-        Row: 1,
-        Seat: 2,
+        Row: 3,
+        Seat: 41,
         Price: 11000,
         Type: TypeOffer.Discount2Uni,
         Discount: 30,
@@ -565,8 +560,8 @@ const tickets3: TicketStadium[] = [
     {
         Id: "id15",
         AreaName: "Palco VIP",
-        Row: 1,
-        Seat: 3,
+        Row: 3,
+        Seat: 42,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,
@@ -576,8 +571,8 @@ const tickets3: TicketStadium[] = [
     {
         Id: "id16",
         AreaName: "Palco VIP",
-        Row: 2,
-        Seat: 1,
+        Row: 3,
+        Seat: 43,
         Price: 10000,
         Type: TypeOffer.TwoXOne,
         Discount: null,
@@ -587,8 +582,8 @@ const tickets3: TicketStadium[] = [
     {
         Id: "id17",
         AreaName: "Palco VIP",
-        Row: 2,
-        Seat: 2,
+        Row: 3,
+        Seat: 44,
         Price: 11000,
         Type: TypeOffer.Discount2Uni,
         Discount: 30,
@@ -598,8 +593,30 @@ const tickets3: TicketStadium[] = [
     {
         Id: "id18",
         AreaName: "Palco VIP",
-        Row: 2,
-        Seat: 3,
+        Row: 3,
+        Seat: 45,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea3
+    },
+    {
+        Id: "id19",
+        AreaName: "Palco VIP",
+        Row: 3,
+        Seat: 46,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea3
+    },
+    {
+        Id: "id20",
+        AreaName: "Palco VIP",
+        Row: 3,
+        Seat: 47,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,
@@ -607,6 +624,52 @@ const tickets3: TicketStadium[] = [
         Atributes: atributesArea3
     }
 ]
+const subAreaSeats3: Seats[] = [
+    {
+        RowNumber: 1,
+        Type: RowType.Empty,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 1,
+        Type: RowType.Available,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 1,
+        Type: RowType.Reserved,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 2,
+        Type: RowType.Available,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 2,
+        Type: RowType.Reserved,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 2,
+        Type: RowType.Empty,
+        SeatsAmount: 3
+    }
+]
+const subArea3: SectionDetails = {
+    RowNumber: 3,
+    Id: "subAreaStadium3",
+    Seats: subAreaSeats3,
+    RowTickets: tickets3,
+
+
+}
+
+export namespace SectionsDetailData {
+    export const list: SectionDetails[] = [
+        subArea1, subArea2, subArea3
+    ]
+}
 
 const mainTickets: TicketStadium[] = [
     {
@@ -685,31 +748,6 @@ const mainTickets: TicketStadium[] = [
     }
 ]
 
-const subArea1: SectionDetails = {
-    RowNumber: 1,
-    Id: "subAreaStadium1",
-    Seats: subAreaSeats1,
-    RowTickets: tickets1,
-
-}
-
-const subArea2: SectionDetails = {
-    RowNumber: 2,
-    Id: "subAreaStadium2",
-    Seats: subAreaSeats2,
-    RowTickets: tickets2,
-
-}
-
-const subArea3: SectionDetails = {
-    RowNumber: 3,
-    Id: "subAreaStadium3",
-    Seats: subAreaSeats3,
-    RowTickets: tickets3,
-
-
-}
-
 const areaStadium: Section[] = [
     {
         Id: "area1",
@@ -717,7 +755,7 @@ const areaStadium: Section[] = [
         Capacity: 30,
         StateArea: StateArea.Critic,
         AtributesAreas: atributesArea1,
-        SubAreaStadium: subArea1,
+        SectionDetail: subArea1,
         TotalTickets: 100,
         SoldTickets: 90,
     },
@@ -750,6 +788,7 @@ export namespace LayoutStadiumData {
         UrlSvg: "/images/juventusFinal.svg",
         MainTickets: mainTickets,
         IsContinuous: true,
+        GroupSections: listZones,
         AreasStadium: areaStadium
     }
 }

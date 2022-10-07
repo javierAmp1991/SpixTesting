@@ -7,7 +7,6 @@ import StadiumImage from "../components/Desktop/StadiumPage/stadiumImage";
 import FiltersStadium from "../components/Desktop/StadiumPage/filtersStadium";
 import InformationTicket from "../components/Desktop/StadiumPage/InformationTicket";
 import React, {useEffect, useState} from "react";
-import Image from "next/image";
 import SubareaStadiumDesk from "../components/Desktop/StadiumPage/subareaStadium";
 import StadiumLayutProvider from "../components/Desktop/StadiumPage/stadiumLayutProvider";
 import SelectionNumber from "../components/Mobile/StadiumPage/selectionNumber";
@@ -20,6 +19,7 @@ import ResumeTicketsMobile from "../components/Mobile/StadiumPage/resumeTickets"
 import StadiumLayoutProviderMobile from "../components/Mobile/StadiumPage/stadiumLayoutProviderMobile";
 import FilterStadiumSec from "../components/Mobile/StadiumPage/filterStadiumSec";
 import SelectedTicketsMobile from "../components/Mobile/StadiumPage/selectedTicketsMobile";
+import InitialPage from "../components/Desktop/StadiumPage/initialPage";
 
 const listNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -116,9 +116,7 @@ export default function StadiumPage() {
                 <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
                     <LayoutStadiumPage>
                         <>
-                            <FiltersStadium numberSelected={initialSelectedTickets}
-                                            listNumber={listNumbers}
-                                            updateTickets={handleNumberTickets}/>
+                            <FiltersStadium/>
 
                             <div className={styleDesk.overFlowDiv}>
                                 {
@@ -126,45 +124,13 @@ export default function StadiumPage() {
                                         <SubareaStadiumDesk closeSubAreaStadium={handleCloseSubArea}/>
                                         :
                                         <StadiumImage stateAnimation={controlAnimation}
-                                                      displaySubAreaSelected={animationZoom}
-                                                      stateSelectedInitialTicket={initialSelectedTickets}/>
+                                                      displaySubAreaSelected={animationZoom}/>
                                 }
                             </div>
 
-                            <InformationTicket numberSelected={initialSelectedTickets}/>
+                            <InformationTicket/>
 
-                            {
-                                initialSelectedTickets == 0 &&
-                                <div className={styleDesk.mainDiv}>
-                                    <div className={styleDesk.mainDivPopUp}>
-                                        <div className={styleDesk.sizeLogo}>
-                                            <Image layout={"fill"} src={"/images/spixBlue.png"} alt={""}/>
-                                        </div>
-                                        <div className={styleDesk.mainDivSlectionZone}>
-                                            <div className={styleDesk.titleInfo}>
-                                                Selecciona el numero de entradas que quieres
-                                            </div>
-                                            <div className={styleDesk.SubtitleInfo}>
-                                                No tengo idea que iria aqui pero se que algo debe ir asi que por eso lo
-                                                pongo,
-                                                y si no va nada que me parta un rasho laser.
-                                            </div>
-                                            <div className={styleDesk.contGrid}>
-                                                <div className={styleDesk.gridSelectionZone}>
-                                                    {
-                                                        listNumbers.map((item, index) =>
-                                                            <button onClick={() => handleNumberTickets(item)}
-                                                                    className={styleDesk.contSelection} key={index}>
-                                                                {item}
-                                                            </button>
-                                                        )
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
+                            <InitialPage/>
                         </>
                     </LayoutStadiumPage>
                 </DefaultLayoutDesktop>

@@ -1,6 +1,7 @@
 .principalGridOpen {
     width: 100%;
-    display: flex;
+    display: grid;
+    align-content: start;
     flex-direction: column;
     position: relative;
     overflow: scroll;
@@ -261,6 +262,13 @@
     top: 85%;
     animation: moveArrow 1.5s infinite linear;
 }
+
+.titleZone{
+    color: var(--colorTitlesDesktop);
+    font-size: 21px;
+    font-weight: 500;
+}
+
 
 @keyframes moveArrow {
     0% {

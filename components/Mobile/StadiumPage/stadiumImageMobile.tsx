@@ -111,7 +111,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
     function postCss() {
         layoutStadiumContext.AreasStadium.forEach((item) => {
                 addClassToSvg(item.Id, item.StateArea)
-                addOnClickEvent(item.Id, item.SubAreaStadium.Id)
+                addOnClickEvent(item.Id, item.SectionDetail.Id)
                 /*getOnMouseOVer(item.Id)*/
             }
         )

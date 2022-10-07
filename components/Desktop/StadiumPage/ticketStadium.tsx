@@ -5,9 +5,7 @@ import {
 } from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import style from "/styles/Desktop/StadiumPage/ticketStadium.module.css"
 import {
-    ProviderSelectedAreaProp,
     ProviderSelectedTicketProp,
-    SelectedAreaContext,
     SelectedTicketsContext
 } from "./stadiumLayutProvider";
 import {useContext} from "react";
@@ -27,16 +25,16 @@ const twoXOne: string = "Lleve 2 pague 1"
 export default function TicketStadiumDesktop({item, styleDiv}:
                                                  { item: TicketStadium, styleDiv: boolean }) {
     let selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext)
-    let selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
-
+    const getStateTicket: boolean = selectedTicketContext.IsTicketSelected(`${item.Row}${item.Seat}`)
     const handleSelectTicket = () => {
         selectedTicketContext.AddTickets(item)
     }
     const handleDeleteTickets = () => {
         selectedTicketContext.DeleteTickets(item)
     }
+
     return (
-        <div className={`${style.mainCont} ${styleDiv ? style.styleDiv1 : style.styleDiv2}`}>
+        <div id={`${item.Row}${item.Seat}TicketId`} className={`${style.mainCont} ${styleDiv ? style.styleDiv1 : style.styleDiv2}`}>
             <div className={style.gridContPrice}>
                 <div className={style.leftCont}>
                     <div className={`${style.styleTitle} ${utilities.clamp1}`}>
@@ -88,7 +86,7 @@ export default function TicketStadiumDesktop({item, styleDiv}:
                     </div>
                     <div className={style.contButton}>
                         {
-                            item.State ?
+                            getStateTicket ?
                                 <button onClick={handleDeleteTickets} className={style.buttonSelection}>
                                     {deleteButtonText}
                                 </button>

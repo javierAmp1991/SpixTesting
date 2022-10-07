@@ -3,34 +3,28 @@ import {RowType} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import {
-    ProviderSelectedAreaProp,
-    ProviderSelectedSubAreaProp,
-    ProviderSelectedTicketProp,
-    SelectedAreaContext,
-    SelectedSubAreaContext,
-    SelectedTicketsContext,
-    LayoutSubAreaContext, LayoutRowSeats, SelectedTicketFromRowSeatsContext
+    ProviderSelectedSectionProp, ProviderSelectedSubAreaProp, SelectedSectionContext,
+    SelectedZoneContext, LayoutSubAreaContext, LayoutRowSeats,
+    DetailsSectionContext, ProviderDetailsSectionProp, SelectedTicketsContext, ProviderSelectedTicketProp
 } from "./stadiumLayutProvider";
 import {useContext} from "react";
 
 const listStateSeat: RowType[] = [RowType.Available, RowType.Reserved, RowType.Selected]
 
 export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubAreaStadium: Function }) {
-    const selectedTicketFromRowSeatContext: Function = useContext(SelectedTicketFromRowSeatsContext)
-    const selectedSubAreaContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
-    const selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
-    const selectdAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
-    const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
+    const selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext)
+    const selectedSubAreaContext: ProviderSelectedSubAreaProp = useContext(SelectedZoneContext);
+    const selectdSectionContext: ProviderSelectedSectionProp = useContext(SelectedSectionContext);
+    const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext);
+    const selectedSectionContext: ProviderSelectedSectionProp = useContext(SelectedSectionContext)
+    const detailSectionContext: ProviderDetailsSectionProp = useContext(DetailsSectionContext)
     const numberColums: number = layoutSeatsState[0].LayoutSeats.length + 1;
 
     const handleClickSeat = (idSeat: string, isSelected: boolean) => {
-        selectedTicketFromRowSeatContext(idSeat, isSelected)
-    }
-    const handleDeleteTicket = (idSeat: string) => {
-        selectedTicketContext.DeleteTickets(idSeat)
+        selectedTicketContext.AddTicketFromSeats(idSeat, isSelected)
     }
     const handleCloseSubArea = () => {
-        selectdAreaContext.DeselectArea()
+        selectdSectionContext.DeselectSection()
         selectedSubAreaContext.DeSelectSubArea()
         closeSubAreaStadium()
     }
@@ -76,7 +70,10 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
                                     <>
                                         {
                                             item.RowNumber != 0 ?
-                                                <button className={style.rowContent}>
+                                                <button
+                                                    onClick={() => detailSectionContext.SelectRowInformation(item.RowNumber)}
+                                                    className={selectedSectionContext.SelectedSection.SectionDetail.RowNumber == item.RowNumber ?
+                                                        style.rowContentSelected : style.rowContent}>
                                                     F{item.RowNumber}
                                                 </button>
                                                 :
@@ -89,9 +86,11 @@ export default function SubareaStadiumDesk({closeSubAreaStadium}: { closeSubArea
                                                     <div className={style.emptySeat}/>
                                                     :
                                                     subItem.Type == RowType.Available ?
-                                                        <button onClick={()=>handleClickSeat(`${item.RowNumber}${subItem.Id}`, subItem.State)} key={index}
-                                                                className={subItem.State ?
-                                                                    style.disponibleSeatClicked : style.disponibleSeat}>
+                                                        <button
+                                                            onClick={() => handleClickSeat(`${item.RowNumber}${subItem.Id}`, subItem.State)}
+                                                            key={index}
+                                                            className={subItem.State ?
+                                                                style.disponibleSeatClicked : style.disponibleSeat}>
                                                             {subItem.Id}
                                                         </button>
                                                         :

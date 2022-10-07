@@ -1,12 +1,21 @@
 import style from "/styles/Desktop/StadiumPage/informationTicket.module.css"
 import utilities from "/styles/utilities.module.css";
 import TicketStadiumDesktop from "./ticketStadium";
-import React, {useContext} from "react";
+import React, {useContext, useRef} from "react";
 import {
-    SelectedSubAreaContext, SelectedTicketsContext, SelectedAreaContext, StadiumDataContext,
-    ProviderSelectedTicketProp, ProviderSelectedSubAreaProp, ProviderSelectedAreaProp,
-    PopUpStadiumContext, PopUpSelectedTickets, TicketsStateContext, TicketStateContextProp,
-    LayoutSubAreaContext, LayoutRowSeats
+    SelectedTicketsContext,
+    SelectedSectionContext,
+    StadiumDataContext,
+    ProviderSelectedTicketProp,
+    ProviderSelectedSectionProp,
+    PopUpVenueContext,
+    PopUpSelectedTickets,
+    LayoutSubAreaContext,
+    LayoutRowSeats,
+    VenueAreaContext,
+    ProviderVenueAreaProp,
+    ProviderDetailsSectionProp,
+    DetailsSectionContext, ProviderNumberWantProp, NumberTicketWant
 } from "./stadiumLayutProvider";
 import {VenueInfo} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import Image from "next/image";
@@ -22,36 +31,53 @@ const reminingText: string = "Quedan"
 const ticketText: string = "Entradas"
 const seeTickets: string = "Ver Entradas"
 
-export default function InformationTicket({numberSelected}: { numberSelected: number }) {
+
+export default function InformationTicket() {
+    //region provider
+    const venueAreaContext: ProviderVenueAreaProp = useContext(VenueAreaContext)
     const stadiumDataContex: VenueInfo = useContext(StadiumDataContext);
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
-    const subAreaInformation: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
-    const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
+    const sectionInformation: ProviderSelectedSectionProp = useContext(SelectedSectionContext);
     const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
-
-    const popUpStadiumContext: Function = useContext(PopUpStadiumContext)
+    const detailSectionContext: ProviderDetailsSectionProp = useContext(DetailsSectionContext)
+    const popUpStadiumContext: Function = useContext(PopUpVenueContext)
     const popUpSelectedTickects: Function = useContext(PopUpSelectedTickets)
-    const ticketStateContext: TicketStateContextProp = useContext(TicketsStateContext)
+    const providerNumberWant: ProviderNumberWantProp = useContext(NumberTicketWant)
+    //endregion
+    const contTicketsRef = useRef(null)
+    const rowNumberRef = useRef(null)
+    const handleClickRight = () => {
+        rowNumberRef.current.scrollTo({
+            top: 30, behavior: "smooth"
+        })
+    }
+    const handleClickLeft = () => {
+        rowNumberRef.current.scrollLeft -= 52
+    }
+
     const handlePopUpInformation = () => popUpStadiumContext()
     const handlePopUpTickets = () => popUpSelectedTickects()
+    const handleUpdateRow = (num: number) => {
+        detailSectionContext.SelectRowInformation(num)
+    }
     const cssStyle = getCssStyle()
 
     return (
         <div className={style.mainDiv}>
             <div>
                 {
-                    areaInformation.SelectedArea != null ?
+                    sectionInformation.SelectedSection != null ?
                         <div className={style.mainContInfo}>
                             <div className={style.titleArea}>
-                                {areaInformation.SelectedArea.Name}
+                                {sectionInformation.SelectedSection.Name}
                             </div>
                             <div className={`${utilities.fontSubtitleDesktop} ${style.paddingCapacity}`}>
-                                {capacityText} {getMoneyValue(areaInformation.SelectedArea.Capacity)} {capacityPeopleText}
+                                {capacityText} {getMoneyValue(sectionInformation.SelectedSection.Capacity)} {capacityPeopleText}
                             </div>
                             <div
-                                className={areaInformation.SelectedArea.SoldTickets > areaInformation.SelectedArea.TotalTickets * 0.90 ?
+                                className={sectionInformation.SelectedSection.SoldTickets > sectionInformation.SelectedSection.TotalTickets * 0.90 ?
                                     style.reminingTicket : style.reminigTicketsCritic}>
-                                {reminingText} {areaInformation.SelectedArea.TotalTickets - areaInformation.SelectedArea.SoldTickets} {ticketText}
+                                {reminingText} {sectionInformation.SelectedSection.TotalTickets - sectionInformation.SelectedSection.SoldTickets} {ticketText}
                             </div>
                         </div>
                         :
@@ -70,38 +96,37 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
                         </div>
                 }
                 {
-                    areaInformation.SelectedArea != null &&
+                    sectionInformation.SelectedSection != null &&
                     <div className={style.mainContRows}>
-                        <div className={style.sizeArrow}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
-                        </div>
-                        <div className={style.gridRows}>
+                        <button onClick={handleClickLeft} className={style.sizeArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+                        </button>
+                        <div ref={rowNumberRef} className={style.gridRows}>
                             {
                                 layoutSeatsState.map(item =>
                                     item.RowNumber != 0 &&
-                                    <button className={style.rowContent}>
+                                    <button onClick={() => handleUpdateRow(item.RowNumber)}
+                                            className={item.RowNumber == sectionInformation.SelectedSection.SectionDetail.RowNumber ?
+                                                style.rowContentSelected : style.rowContent}>
                                         F{item.RowNumber}
                                     </button>)
                             }
                         </div>
-                        <div className={style.sizeArrow}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
-                        </div>
+                        <button onClick={handleClickRight} className={style.sizeArrow}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
+                        </button>
                     </div>
                 }
             </div>
 
             {
-                <div className={style.mainContTickets}>
+                <div ref={contTicketsRef} className={style.mainContTickets}>
                     {
-                        areaInformation.SelectedArea != null ?
-                            ticketStateContext.AllAreasStadium.map(item =>
-                                item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
-                                item.SubAreaStadium.RowTickets.map(ticket =>
-                                    <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
-                            )
+                        sectionInformation.SelectedSection != null ?
+                            sectionInformation.SelectedSection.SectionDetail.RowTickets.map(ticket =>
+                                <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>)
                             :
-                            ticketStateContext.MainTickets.map((ticket) =>
+                            venueAreaContext.Area.MainTickets.map((ticket) =>
                                 <TicketStadiumDesktop styleDiv={true} key={ticket.Id} item={ticket}/>
                             )
                     }
@@ -110,7 +135,7 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
 
             <div className={style.resumeBuy}>
                 <div className={style.numberTickets}>
-                    {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberSelected}
+                    {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{providerNumberWant.NumberWant}
                 </div>
 
                 <div className={style.totalPrice}>
@@ -125,8 +150,6 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
                         :
                         <div/>
                 }
-
-
                 <button className={cssStyle.styleButton}>
                     {buyTextButton}
                 </button>
@@ -136,7 +159,7 @@ export default function InformationTicket({numberSelected}: { numberSelected: nu
 
     function getCssStyle() {
         return {
-            styleButton: ticketsInformation.SelectedTickets.length == numberSelected ? style.button : style.buttonOff
+            styleButton: ticketsInformation.SelectedTickets.length == providerNumberWant.NumberWant ? style.button : style.buttonOff
         }
     }
 

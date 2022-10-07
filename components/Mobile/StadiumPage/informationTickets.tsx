@@ -84,8 +84,8 @@ export default function InformationTicketMobile() {
                     {
                         areaInformation.SelectedArea != null ?
                             ticketStateContext.AllAreasStadium.map(item =>
-                                item.SubAreaStadium.Id == subAreaInformation.SelectedSubArea.Id &&
-                                item.SubAreaStadium.RowTickets.map(ticket =>
+                                item.SectionDetail.Id == subAreaInformation.SelectedSubArea.Id &&
+                                item.SectionDetail.RowTickets.map(ticket =>
                                     <TicketStadiumMobile styleDiv={true} key={ticket.Id} item={ticket}/>)
                             )
                             :

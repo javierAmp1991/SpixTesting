@@ -10,8 +10,6 @@
 
 .mainContTickets {
     overflow: scroll;
-    display: flex;
-    flex-direction: column;
 }
 
 .sectionClose {
@@ -78,8 +76,9 @@
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
     font-weight: 500;
-    background: linear-gradient(180deg, #f4f7fa 0%, #eef2f6 100%);
+    background: linear-gradient(180deg, #f7f9fc 0%, #f8fbff 100%);
     justify-content: space-between;
+    border: 1px solid var(--separationLineColor);
 }
 
 .totalPrice {
@@ -93,6 +92,7 @@
     font-size: 18px;
     display: grid;
     align-items: center;
+    font-weight: 400;
 }
 
 .seeTickets{
@@ -105,6 +105,7 @@
 }
 
 .titleArea{
+    color: var(--colorTitlesDesktop);
     font-size: 21px;
     font-weight: 500;
 }
@@ -185,10 +186,13 @@
     overflow: hidden;
     gap: 12px;
     padding: 4px;
+    transition: 5s;
+    scroll-behavior: smooth;
 }
 
 .mainContRows{
     align-items: center;
+    height: max-content;
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     padding: 16px 12px;
