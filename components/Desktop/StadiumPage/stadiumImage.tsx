@@ -41,8 +41,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
 
     let [stateArrow, setStateArrow] = useState(true)
     const handleScrollArrow = (e) => {
-        if (e.target.scrollTop == 0) setStateArrow(stateArrow = true)
-        else setStateArrow(stateArrow = false)
+        if (e.target.scrollTop >= 0) setStateArrow(stateArrow = false )
     }
     //endregion
 
