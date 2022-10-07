@@ -46,10 +46,17 @@ export default function InformationTicket() {
     //endregion
     const contTicketsRef = useRef(null)
     const rowNumberRef = useRef(null)
+    const handleClickGoto = () => {
+        let containerPosition = contTicketsRef.current.getBoundingClientRect()
+        let ticketPosition = document.getElementById(`13TicketId`).getBoundingClientRect()
+        let number1 = containerPosition.top
+        let number2 = ticketPosition.top
+        let numberScroll = number2 - number1
+        contTicketsRef.current.scrollTop = numberScroll
+    }
     const handleClickRight = () => {
-        rowNumberRef.current.scrollTo({
-            top: 30, behavior: "smooth"
-        })
+
+        rowNumberRef.current.scrollLeft += 52
     }
     const handleClickLeft = () => {
         rowNumberRef.current.scrollLeft -= 52
@@ -68,7 +75,7 @@ export default function InformationTicket() {
                 {
                     sectionInformation.SelectedSection != null ?
                         <div className={style.mainContInfo}>
-                            <div className={style.titleArea}>
+                            <div onClick={handleClickGoto} className={style.titleArea}>
                                 {sectionInformation.SelectedSection.Name}
                             </div>
                             <div className={`${utilities.fontSubtitleDesktop} ${style.paddingCapacity}`}>
