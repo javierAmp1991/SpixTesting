@@ -42,7 +42,7 @@
 }
 
 .rowMatriz::-webkit-scrollbar-thumb{
-    background: #d0d0d0;
+    background: #c9c9c9;
     border-radius: 4px;
 }
 
@@ -63,7 +63,6 @@
 .positionTop {
     top: 500px;
     transition: 5s;
-
 }
 
 .positionBottom {
