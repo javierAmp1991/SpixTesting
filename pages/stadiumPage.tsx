@@ -48,13 +48,13 @@ export default function StadiumPage() {
     const providerSelectedTickets: ProviderPopUpTickets = useContext(PopUpSelectedTickets)
     const providerDeletedTickets: ProviderPopUpTickets = useContext(PopUpDeletedTickets)
 
-    const selectedTickets: TicketStadium[] = providerSelectedTickets.Tickets
+    /*const selectedTickets: TicketStadium[] = providerSelectedTickets.Tickets
     const isSelectedTicketsOpen: boolean = providerSelectedTickets.IsOpenPopUpTickets
     const handleCloseSelectedTickets = () => providerSelectedTickets.ClosePopUpTickets()
 
     const deletedTickets: TicketStadium[] = providerDeletedTickets.Tickets
     const isDeletedTicketsOpen: boolean = providerDeletedTickets.IsOpenPopUpTickets
-    const handleClosePopUpDeleteTickets = () => providerDeletedTickets.ClosePopUpTickets()
+    const handleClosePopUpDeleteTickets = () => providerDeletedTickets.ClosePopUpTickets()*/
 
     const mapPopUpInfo: MapPopUpProp = mapPopUpContext.MapPopUp
     const isPopUpMapOpen: boolean = mapPopUpContext.IsMapOpen
@@ -121,14 +121,14 @@ export default function StadiumPage() {
                             <MapPopUpMobile item={mapPopUpInfo}/>
                         </PopUpContainerMob>
                     }
-                    {
+                    {/*{
                         isDeletedTicketsOpen &&
                         <PopUpContainerMob closePopUp={handleClosePopUpDeleteTickets}
                                            isButtonVisible={isButtonVisible}
                                            isBackground={isBackGroundVisible}>
-                            {/*<PopUpDeletedTicketsViewMobile/>*/}
+                            <PopUpDeletedTicketsViewMobile/>
                         </PopUpContainerMob>
-                    }
+                    }*/}
                 </LayoutStadiumPageMobile>
             </DefaultLayoutMobile>
             :
@@ -160,7 +160,7 @@ export default function StadiumPage() {
                             <MapPopUp item={mapPopUpInfo}/>
                         </PopUpContainer>
                     }
-                    {
+                    {/*{
                         isSelectedTicketsOpen &&
                         <PopUpContainerLogo isButtonVisible={isButtonVisible}
                                             isBackground={isBackGroundVisible}
@@ -175,9 +175,9 @@ export default function StadiumPage() {
                         <PopUpContainerLogo isButtonVisible={isButtonVisible}
                                             isBackground={isBackGroundVisible}
                                             closePopUp={handleClosePopUpDeleteTickets}>
-                            {/*<PopUpDeletedTicketsView selectedTickets={deletedTickets}/>*/}
+                            <PopUpDeletedTicketsView selectedTickets={deletedTickets}/>
                         </PopUpContainerLogo>
-                    }
+                    }*/}
                 </LayoutStadiumPage>
             </DefaultLayoutDesktop>
     )

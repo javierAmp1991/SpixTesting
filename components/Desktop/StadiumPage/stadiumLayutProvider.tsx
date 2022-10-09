@@ -391,7 +391,6 @@ export default function StadiumLayutProvider({children}) {
         ticketsDeletes.length > 0 &&
         handleOpenPopUpDeleteTickets()
     }, [ticketsDeletes])
-
     let providerDeleteTickets: ProviderPopUpTickets = {
         IsOpenPopUpTickets: popUpDeleteTicket,
         Tickets: ticketsDeletes,
