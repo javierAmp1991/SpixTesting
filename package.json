@@ -11,6 +11,7 @@
   "dependencies": {
     "@svg-maps/usa": "^1.1.1",
     "@svg-maps/world.capitals": "^1.0.0",
+    "@use-gesture/react": "^10.2.20",
     "classnames": "^2.3.1",
     "next": "^12.2.2",
     "next-images": "^1.8.4",

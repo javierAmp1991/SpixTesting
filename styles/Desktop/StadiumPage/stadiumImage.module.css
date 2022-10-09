@@ -122,14 +122,19 @@
 .contSvg {
     overflow: hidden;
     object-fit: contain;
+}
 
+.cursorGrab {
+    cursor: grab;
+}
+
+.cursorGrabbing {
+    cursor: grabbing;
 }
 
 .mainContSvg {
-    width: 90%;
-    height: 90%;
-    transition: 1s;
-    margin: auto;
+    width: 517px;
+    height: 421px;
 }
 
 .mainContSvg:hover {

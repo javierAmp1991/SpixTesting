@@ -105,7 +105,7 @@ export const NumberTicketWant = createContext(null)
 export const StateUserContext = createContext(null)
 
 const controlTimeMiliSeg: number = 600000;
-const linkToRedirect: string = "http://localhost:3000/stadiumPage"
+const linkToRedirect: string = "http://localhost:3000/VenuePage"
 const layoutStadium: AreaLayout = LayoutStadiumData.layout;
 const stadiumData: VenueInfo = StadiumDataInfo.data;
 const venueDataInformation: Venue = VenueData.venueData

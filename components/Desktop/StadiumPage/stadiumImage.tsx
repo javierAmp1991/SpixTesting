@@ -1,5 +1,5 @@
 import style from "/styles/Desktop/StadiumPage/stadiumImage.module.css"
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import SVG from 'react-inlinesvg';
 import {useContext} from "react";
 import {
@@ -11,6 +11,7 @@ import {AreaItem, StateArea, Venue} from "../../../dataDemo/Desktop/StadiumPage/
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
+
 const noSelectedText: string = "Selecciona un area"
 const zonesTitle: string = "Zonas"
 
@@ -25,11 +26,18 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
     //endregion
 
     //region hooks
-    const svgImageRef = useRef(null)
-    const svgContainerRef = useRef(null)
+    const factorScroll: number = -0.05
+    const widthTest: number = 517
+    const heightTest: number = 421
+    let viewBox;
+    let svgSize = {w: widthTest, h: heightTest};
+    let endPoint = {x: 0, y: 0};
+    let scale = 1;
 
     let [zoneSelected, setZoneSelected] = useState(null)
     let [displayDropDown, setDisplayDropDown] = useState(false)
+    let [isPanningControl, setIsPanningControl] = useState(false)
+    let [viewBoxAt, setViewBoxAt] = useState({x: 0, y: 0, w: widthTest, h: heightTest})
 
     const handleDisplayOptions = () => setDisplayDropDown(displayDropDown = !displayDropDown)
     const handleOnChangeSelect = (item: AreaItem) => {
@@ -51,54 +59,69 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
 
     //region svg test
 
-    let svgImage;
-    let svgContainer;
-    let viewBox;
 
-    let [viewBoxAt, setViewBoxAt] = useState({x: 0, y: 0, w: 500, h: 500})
-    let [offset, setOffset] = useState({x: 0, y: 0})
+    let [startPoints, setStartPoints] = useState({x: 0, y: 0})
+    let [scalePoint, setScalePoint] = useState(1)
+    let [isGrabbing, setIsGrabbin] = useState(false)
 
-    /*    useEffect(() => {
-            svgImage = document.getElementById("svgImage");
-            svgContainer = document.getElementById("svgContainer");
-            viewBox = {x: 0, y: 0, w: 500, h: 500};
-            setViewBoxAt(viewBoxAt = {x: 0, y: 0, w: 500, h: 500})
-            /!*svgImage.setAttribute('viewBox', `${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`);*!/
-        })*/
-
-    /*    const svgImage = document.getElementById("svgImage");
-        const svgContainer = document.getElementById("svgContainer");*/
-
-
-    const svgSize = {w: 500, h: 500};
-    let scale = 1;
-    viewBox = {x: 0, y: 0, w: 500, h: 500};
-
-    const handleOnMouseMove = (e) => {
-        setViewBoxAt(viewBoxAt = {...viewBoxAt, x: e.clientX/-10, y: e.clientY/-10})
-    }
-
-    const handleOnWheel = (e) => {
-        let w = viewBox.w;
-        let h = viewBox.h;
-        let mx = e.clientX;
-        let my = e.clientY;
-        let dw = w * Math.sign(e.deltaY) * 0.05;
-        let dh = h * Math.sign(e.deltaY) * 0.05;
+    const handleZoomButton = (num: number) => {
+        let w = viewBoxAt.w;
+        let h = viewBoxAt.h;
+        let mx = widthTest / 2;
+        let my = heightTest / 2;
+        let dw = w * Math.sign(num) * factorScroll;
+        let dh = h * Math.sign(num) * factorScroll;
         let dx = dw * mx / svgSize.w;
         let dy = dh * my / svgSize.h;
-        viewBox = {x: viewBox.x + dx, y: viewBox.y + dy, w: viewBox.w - dw, h: viewBox.h - dh};
-        scale = svgSize.w / viewBox.w;
-        let zoomValue = 1
-        setOffset(offset = {x: mx, y: my})
+        viewBox = {x: viewBoxAt.x + dx, y: viewBoxAt.y + dy, w: viewBoxAt.w - dw, h: viewBoxAt.h - dh};
+        setScalePoint(scalePoint = svgSize.w / viewBox.w)
         setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})
     }
+    const handleOnWheel = (e) => {
+        let w = viewBoxAt.w;
+        let h = viewBoxAt.h;
+        let mx = e.nativeEvent.offsetX;
+        let my = e.nativeEvent.offsetY;
+        let dw = w * Math.sign(e.deltaY) * factorScroll;
+        let dh = h * Math.sign(e.deltaY) * factorScroll;
+        let dx = dw * mx / svgSize.w;
+        let dy = dh * my / svgSize.h;
+        viewBox = {x: viewBoxAt.x + dx, y: viewBoxAt.y + dy, w: viewBoxAt.w - dw, h: viewBoxAt.h - dh};
+        scale = svgSize.w / viewBox.w;
+        setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})
+    }
+    const handleOnMouseDown = (e) => {
+        setIsPanningControl(isPanningControl = true)
+        setIsGrabbin(isGrabbing = true)
+        setStartPoints(startPoints = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
+    }
+    const handleOnMouseMove = (e) => {
+        if (isPanningControl) {
+            endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY}
+            let dx = (startPoints.x - endPoint.x) / scale;
+            let dy = (startPoints.y - endPoint.y) / scale;
+            setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
+        }
+    }
+    const handleOnMouseUp = (e) => {
+        if (isPanningControl) {
+            endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY};
+            let dx = (startPoints.x - endPoint.x) / scale;
+            let dy = (startPoints.y - endPoint.y) / scale;
+            setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
+            setIsPanningControl(isPanningControl = false)
+            setIsGrabbin(isGrabbing = false)
+        }
+    }
+    const handleOnMouseLeave = () => {
+        setIsPanningControl(isPanningControl = false)
+    }
+    const handleReturn = () => setViewBoxAt({x: 0, y: 0, w: widthTest, h: heightTest})
     //endregion
 
     return (
         <>
             <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
-                <div>{offset.x} {offset.y}</div>
                 <div className={style.mainDivSelectInput}>
                     <div>
                         {
@@ -130,10 +153,14 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                 </div>
 
                 <div className={cssStyle.animation}>
-                    <div id={"svgContainer"} className={cssStyle.stateTickets} onMouseMove={handleOnMouseMove}>
-                        <SVG ref={contRef} height="500" width="500" onWheel={handleOnWheel}
-                             viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
-                             preserveAspectRatio={`xminYmin meet`} className={style.mainContSvg}
+                    <div ref={contRef} className={`${cssStyle.stateTickets} ${cssStyle.cursorStyle}`}>
+                        <SVG viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
+                             style={{width: widthTest, height: heightTest}}
+                             onWheel={handleOnWheel}
+                             onMouseLeave={handleOnMouseLeave}
+                             onMouseMove={handleOnMouseMove}
+                             onMouseDown={handleOnMouseDown}
+                             onMouseUp={handleOnMouseUp}
                              onLoad={postCss}
                              src={venuaAreaContext.Area.UrlSvg}/>
 
@@ -164,17 +191,20 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                     </div>
                 }
             </div>
-            {/*{
-                stateSelectedInitialTicket > 0 &&
+            {
+                numberTicketWant.NumberWant > 0 &&
                 <div className={style.divZoom}>
-                    <button onClick={handleClickZoomUp} className={style.divLesMore}>
+                    <button onClick={() => handleZoomButton(-1000)} className={style.divLesMore}>
                         +
                     </button>
-                    <button onClick={handleClickZoomDown} className={style.divLesMore}>
+                    <button onClick={handleReturn} className={style.divLesMore}>
+                        <Image width={18} height={18} src={GlobalConst.sourceImages.fitScaleIcon}/>
+                    </button>
+                    <button onClick={() => handleZoomButton(1000)} className={style.divLesMore}>
                         -
                     </button>
                 </div>
-            }*/}
+            }
         </>
     )
 
@@ -189,7 +219,8 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
         return {
             stateTickets: numberTicketWant.NumberWant > 0 ? style.svgNormal : style.svgReduce,
             animation: stateAnimation ? style.divTransition : style.divTransition2,
-            divOptions: displayDropDown ? style.optionOpen : style.optionClose
+            divOptions: displayDropDown ? style.optionOpen : style.optionClose,
+            cursorStyle: isGrabbing ? style.cursorGrabbing : style.cursorGrab
         }
     }
 
