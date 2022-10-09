@@ -2,7 +2,6 @@ import style from "/styles/Mobile/StadiumPage/subareaStadium.module.css";
 import {RowType} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
-import {ProviderSelectedAreaProp, SelectedAreaContext, SelectedSubAreaContext,} from "./stadiumLayoutProviderMobile";
 import {useContext} from "react";
 
 import {
