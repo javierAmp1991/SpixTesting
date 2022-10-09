@@ -15,7 +15,7 @@ import {
     VenueAreaContext,
     ProviderVenueAreaProp,
     ProviderDetailsSectionProp,
-    DetailsSectionContext, ProviderNumberWantProp, NumberTicketWant
+    DetailsSectionContext, ProviderNumberWantProp, NumberTicketWant, ProviderPopUpProp, ProviderPopUpTickets
 } from "./stadiumLayutProvider";
 import {VenueInfo} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import Image from "next/image";
@@ -40,10 +40,11 @@ export default function InformationTicket() {
     const sectionInformation: ProviderSelectedSectionProp = useContext(SelectedSectionContext);
     const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
     const detailSectionContext: ProviderDetailsSectionProp = useContext(DetailsSectionContext)
-    const popUpStadiumContext: Function = useContext(PopUpVenueContext)
-    const popUpSelectedTickects: Function = useContext(PopUpSelectedTickets)
     const providerNumberWant: ProviderNumberWantProp = useContext(NumberTicketWant)
+    const mapPopUpContext: ProviderPopUpProp = useContext(PopUpVenueContext)
+    const providerSelectedTickets: ProviderPopUpTickets = useContext(PopUpSelectedTickets)
     //endregion
+
     const contTicketsRef = useRef(null)
     const rowNumberRef = useRef(null)
     const handleClickGoto = () => {
@@ -51,22 +52,14 @@ export default function InformationTicket() {
         let ticketPosition = document.getElementById(`13TicketId`).getBoundingClientRect()
         let number1 = containerPosition.top
         let number2 = ticketPosition.top
-        let numberScroll = number2 - number1
-        contTicketsRef.current.scrollTop = numberScroll
+        contTicketsRef.current.scrollTop = number2 - number1
     }
-    const handleClickRight = () => {
+    const handleClickRight = () => rowNumberRef.current.scrollLeft += 52
+    const handleClickLeft = () => rowNumberRef.current.scrollLeft -= 52
 
-        rowNumberRef.current.scrollLeft += 52
-    }
-    const handleClickLeft = () => {
-        rowNumberRef.current.scrollLeft -= 52
-    }
-
-    const handlePopUpInformation = () => popUpStadiumContext()
-    const handlePopUpTickets = () => popUpSelectedTickects()
-    const handleUpdateRow = (num: number) => {
-        detailSectionContext.SelectRowInformation(num)
-    }
+    const handlePopUpInformation = () => mapPopUpContext.OpenMapPopUp()
+    const handlePopUpTickets = () => providerSelectedTickets.OpenPopUpTickets()
+    const handleUpdateRow = (num: number) => detailSectionContext.SelectRowInformation(num)
     const cssStyle = getCssStyle()
 
     return (

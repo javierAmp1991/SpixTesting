@@ -7,7 +7,7 @@
     overflow: scroll;
     display: flex;
     flex-direction: column;
-    padding-bottom: 83px;
+    padding-bottom: 84px;
 }
 
 .sectionClose {
@@ -180,5 +180,16 @@
     border-radius: 2px;
     overflow: hidden;
     transition: .2s;
+}
+
+.rowContentSelected{
+    display: grid;
+    font-weight: 500;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    background: #caefff;
+    align-items: center;
+    border-radius: 2px;
+    justify-items: center;
 }
 

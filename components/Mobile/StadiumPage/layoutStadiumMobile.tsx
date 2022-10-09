@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import style from "/styles/Mobile/StadiumPage/mainLayout.module.css"
-import SelectedTicketsMobile from "./selectedTicketsMobile";
 
 export default function LayoutStadiumMobile({children}) {
     let [heightDiv, setHeightDiv] = useState(0)

@@ -1,0 +1,30 @@
+.mainDiv {
+    height: 500px;
+    width: 460px;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+.mainDivDeleted{
+    height: 500px;
+    width: 460px;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+}
+
+.title {
+    padding: 0 0 16px 8px;
+}
+
+.disclaimer {
+    padding: 0 0 16px 8px;
+}
+
+.gridTickets {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    overflow: scroll;
+    padding: 8px;
+}

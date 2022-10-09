@@ -14,8 +14,12 @@
     border-bottom: 2px solid #c0e7ff;
 }
 
-.styleDiv2 {
-    box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+.styleDiv1{
+    border-bottom: 2px solid var(--separationLineColor);
+
+}
+.styleDiv2{
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
     border-radius: 6px;
 }
 

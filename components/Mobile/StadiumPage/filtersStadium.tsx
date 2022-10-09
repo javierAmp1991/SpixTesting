@@ -1,5 +1,5 @@
 import style from "/styles/Mobile/StadiumPage/filterStadium.module.css"
-import {ProviderFiltersPop, FiltersContext} from "./stadiumLayoutProviderMobile";
+import {NumberTicketWant, ProviderNumberWantProp} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 import React, {useContext} from "react";
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
@@ -8,11 +8,10 @@ import {GlobalConst} from "../../../public/globalConst";
 const howManyTickets: string = "Selecciona el numero de entradas"
 
 
-export default function FiltersStadiumMobile({listNumber, numberSelected, updateTickets, isOpenFilter}:
-                                                 { listNumber: number[], numberSelected: number,
-                                                     updateTickets: Function, isOpenFilter: Function }) {
+export default function FiltersStadiumMobile({isOpenFilter}: { isOpenFilter: Function }) {
+    const numberTicketWant: ProviderNumberWantProp = useContext(NumberTicketWant)
     const handleUpdateTickets = (num: number) => {
-        updateTickets(num)
+        numberTicketWant.SelectNumber(num)
     }
     const handleDisplayFilters = () => isOpenFilter()
     /*const handleMinPrice = (e) => {
@@ -41,9 +40,9 @@ export default function FiltersStadiumMobile({listNumber, numberSelected, update
                 </div>
                 <div className={style.gridNumberTickets}>
                     {
-                        listNumber.map((item, index) =>
+                        numberTicketWant.ListNumberWant.map((item, index) =>
                             <button onClick={() => handleUpdateTickets(item)} key={index}
-                                    className={item == numberSelected ? style.contNumberSelected : style.contNumber}>
+                                    className={item == numberTicketWant.NumberWant? style.contNumberSelected : style.contNumber}>
                                 {item}
                             </button>
                         )

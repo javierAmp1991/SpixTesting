@@ -2,7 +2,7 @@ import style from "/styles/Desktop/StadiumPage/layoutStadium.module.css"
 import {ProviderStateUserProp, StateUserContext} from "./stadiumLayutProvider";
 import {useContext} from "react";
 
-export default function LayoutStadiumPage({children}: { children: JSX.Element }) {
+export default function LayoutStadiumPage({children}) {
     const providerStateUser: ProviderStateUserProp = useContext(StateUserContext)
     const handleMouseMove = () => {
         providerStateUser.UpdateLastMove()

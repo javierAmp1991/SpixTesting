@@ -1,25 +1,30 @@
 import style from "/styles/Mobile/StadiumPage/informationTicket.module.css"
 import React, {useContext} from "react";
 import {
-    ProviderPopUpSelectedTicketsProp,
+    SelectedTicketsContext,
     ProviderSelectedTicketProp,
-    SelectedTicketsContext, SelectedTicketsMobileContext
-} from "./stadiumLayoutProviderMobile";
+    NumberTicketWant,
+    ProviderNumberWantProp,
+    ProviderPopUpTickets,
+    PopUpSelectedTickets
+} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 
 const seeTickets: string = "Ver Entradas"
 const totalTicketsText: string = "Total entradas";
 const totalPriceText: string = "Total";
 const buyTextButton: string = "Comprar";
 
-export default function ResumeTicketsMobile({numberSelected} : {numberSelected: number}){
+export default function ResumeTicketsMobile() {
     const ticketsInformation: ProviderSelectedTicketProp = useContext(SelectedTicketsContext);
-    const openSelectedTickets: ProviderPopUpSelectedTicketsProp = useContext(SelectedTicketsMobileContext)
-    const handlePopUpTickets = () => openSelectedTickets.OpenSelectedTickets()
+    const numberTicketWant: ProviderNumberWantProp = useContext(NumberTicketWant)
+    const providerSelectdTickets: ProviderPopUpTickets = useContext(PopUpSelectedTickets)
+
+    const handlePopUpTickets = () => providerSelectdTickets.OpenPopUpTickets()
     const cssStyle = getCssStyle()
-    return(
+    return (
         <div className={style.resumeBuy}>
             <div className={style.numberTickets}>
-                {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberSelected}
+                {totalTicketsText} {ticketsInformation.SelectedTickets.length}/{numberTicketWant.NumberWant}
             </div>
 
             <div className={style.totalPrice}>
@@ -43,7 +48,7 @@ export default function ResumeTicketsMobile({numberSelected} : {numberSelected: 
 
     function getCssStyle() {
         return {
-            styleButton: ticketsInformation.SelectedTickets.length == numberSelected ? style.button : style.buttonOff
+            styleButton: ticketsInformation.SelectedTickets.length == numberTicketWant.NumberWant ? style.button : style.buttonOff
         }
     }
 

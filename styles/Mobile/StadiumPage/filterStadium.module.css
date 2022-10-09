@@ -1,9 +1,17 @@
 .mainDiv {
-    border-right: 2px solid var(--separationLineColor);
+    overflow: scroll;
     --paddingX: 16px;
     --paddingY: 16px;
     --colorTags: 2px solid rgba(173, 190, 204, 0.3);
     --paddingXInter: 24px;
+}
+
+.mainDivSec {
+    --paddingX: 16px;
+    --paddingY: 16px;
+    --colorTags: 2px solid rgba(173, 190, 204, 0.3);
+    --paddingXInter: 24px;
+    padding-bottom: 84px;
     overflow: scroll;
 }
 
@@ -54,7 +62,7 @@
 }
 
 .titleNumbers {
-  padding-bottom: 16px;
+    padding-bottom: 16px;
 }
 
 .mainDivNumbers {
@@ -156,12 +164,13 @@
     padding: var(--paddingX) var(--paddingY);
 }
 
-.gridInputs{
+.gridInputs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
 }
-.mainDivInput{
+
+.mainDivInput {
     position: relative;
     width: 100%;
 }
@@ -181,20 +190,20 @@
     text-indent: 28px;
 }
 
-.gridNumbDisplay{
+.gridNumbDisplay {
     display: grid;
     grid-template-columns: 1fr max-content;
     align-items: center;
     padding-bottom: 12px;
 }
 
-.sizeDisplayFilters{
+.sizeDisplayFilters {
     height: 10px;
     width: 14px;
     position: relative;
 }
 
-.gridFilterButton{
+.gridFilterButton {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 6px;

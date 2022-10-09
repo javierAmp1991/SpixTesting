@@ -3,13 +3,17 @@ import utilities from "/styles/utilities.module.css";
 import TicketStadiumMobile from "./stadiumTicketMobile";
 import React, {useContext} from "react";
 import {
-    SelectedSubAreaContext,
-    SelectedAreaContext,
+    SelectedSectionContext,
     StadiumDataContext,
-    ProviderSelectedSubAreaProp,
-    ProviderSelectedAreaProp,
-    PopUpStadiumContextMobile, TicketsStateContext, ProviderTicketStateContextProp, LayoutRowSeats, LayoutSubAreaContext
-} from "./stadiumLayoutProviderMobile";
+    ProviderSelectedSectionProp,
+    PopUpVenueContext,
+    LayoutSubAreaContext,
+    LayoutRowSeats,
+    VenueAreaContext,
+    ProviderVenueAreaProp,
+    ProviderDetailsSectionProp,
+    DetailsSectionContext, ProviderPopUpProp
+} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 import {VenueInfo} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 
 const capacityText: string = "Capacidad";
@@ -18,33 +22,36 @@ const capacityPeopleText: string = "personas";
 const reminingText: string = "Quedan"
 const ticketText: string = "Entradas"
 
-
 export default function InformationTicketMobile() {
 
+    const venueAreaContext: ProviderVenueAreaProp = useContext(VenueAreaContext)
     const stadiumDataContex: VenueInfo = useContext(StadiumDataContext);
-    const subAreaInformation: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext);
-    const areaInformation: ProviderSelectedAreaProp = useContext(SelectedAreaContext);
+    const sectionInformation: ProviderSelectedSectionProp = useContext(SelectedSectionContext);
     const layoutSeatsState: LayoutRowSeats[] = useContext(LayoutSubAreaContext)
-    const popUpStadiumContext: Function = useContext(PopUpStadiumContextMobile)
-    const ticketStateContext: ProviderTicketStateContextProp = useContext(TicketsStateContext)
-    const handlePopUpInformation = () => popUpStadiumContext()
+    const detailSectionContext: ProviderDetailsSectionProp = useContext(DetailsSectionContext)
+    const popUpMapContext: ProviderPopUpProp = useContext(PopUpVenueContext)
+
+    const handlePopUpInformation = () => popUpMapContext.OpenMapPopUp()
+    const handleUpdateRow = (num: number) => {
+        detailSectionContext.SelectRowInformation(num)
+    }
 
     return (
         <div className={style.mainDiv}>
             <div className={style.mainContInfo}>
                 {
-                    areaInformation.SelectedArea != null ?
+                    sectionInformation.SelectedSection != null ?
                         <>
                             <div className={style.titleArea}>
-                                {areaInformation.SelectedArea.Name}
+                                {sectionInformation.SelectedSection.Name}
                             </div>
                             <div className={`${utilities.fontSubtitleDesktop} ${style.paddingCapacity}`}>
-                                {capacityText} {getMoneyValue(areaInformation.SelectedArea.Capacity)} {capacityPeopleText}
+                                {capacityText} {getMoneyValue(sectionInformation.SelectedSection.Capacity)} {capacityPeopleText}
                             </div>
                             <div
-                                className={areaInformation.SelectedArea.SoldTickets > areaInformation.SelectedArea.TotalTickets * 0.90 ?
+                                className={sectionInformation.SelectedSection.SoldTickets > sectionInformation.SelectedSection.TotalTickets * 0.90 ?
                                     style.reminingTicket : style.reminigTicketsCritic}>
-                                {reminingText} {areaInformation.SelectedArea.TotalTickets - areaInformation.SelectedArea.SoldTickets} {ticketText}
+                                {reminingText} {sectionInformation.SelectedSection.TotalTickets - sectionInformation.SelectedSection.SoldTickets} {ticketText}
                             </div>
                         </>
                         :
@@ -65,15 +72,17 @@ export default function InformationTicketMobile() {
             </div>
 
             {
-                subAreaInformation.SelectedSubArea != null &&
+                sectionInformation.SelectedSection != null &&
                 <div className={style.mainContRows}>
                     <div className={style.gridRows}>
                         {
                             layoutSeatsState.map(item =>
                                 item.RowNumber != 0 &&
-                                <div className={style.rowContent}>
+                                <button onClick={() => handleUpdateRow(item.RowNumber)}
+                                        className={item.RowNumber == sectionInformation.SelectedSection.SectionDetail.RowNumber ?
+                                            style.rowContentSelected : style.rowContent}>
                                     F{item.RowNumber}
-                                </div>)
+                                </button>)
                         }
                     </div>
                 </div>
@@ -82,22 +91,20 @@ export default function InformationTicketMobile() {
             {
                 <div className={style.mainContTickets}>
                     {
-                        areaInformation.SelectedArea != null ?
-                            ticketStateContext.AllAreasStadium.map(item =>
-                                item.SectionDetail.Id == subAreaInformation.SelectedSubArea.Id &&
-                                item.SectionDetail.RowTickets.map(ticket =>
-                                    <TicketStadiumMobile styleDiv={true} key={ticket.Id} item={ticket}/>)
-                            )
+                        sectionInformation.SelectedSection != null ?
+                            sectionInformation.SelectedSection.SectionDetail.RowTickets.map(ticket =>
+                                <TicketStadiumMobile isDeleteSection={true} isSelectSection={true}
+                                                     styleDiv={true} key={ticket.Id} item={ticket}/>)
                             :
-                            ticketStateContext.MainTickets.map((ticket) =>
-                                <TicketStadiumMobile styleDiv={true} key={ticket.Id} item={ticket}/>
+                            venueAreaContext.Area.MainTickets.map((ticket) =>
+                                <TicketStadiumMobile isDeleteSection={true} isSelectSection={true}
+                                                     styleDiv={true} key={ticket.Id} item={ticket}/>
                             )
                     }
                 </div>
             }
         </div>
     )
-
 
     function getMoneyValue(num: number): string {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))

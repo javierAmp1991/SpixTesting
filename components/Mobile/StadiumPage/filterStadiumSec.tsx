@@ -2,7 +2,7 @@ import style from "/styles/Mobile/StadiumPage/filterStadium.module.css"
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import React, {useContext} from "react";
-import {FiltersContext, ProviderFiltersPop} from "./stadiumLayoutProviderMobile";
+import {FiltersContext, ProviderFiltersPop} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 
 const orderByText: string = "Ordenar por:"
 const filterByText: string = "Filtrar por:"
@@ -17,7 +17,7 @@ export default function FilterStadiumSec(){
         filterContext.SelectSecundaryFilter(id, isSelected)
     }
     return(
-        <div className={style.mainDiv}>
+        <div className={style.mainDivSec}>
             <div className={style.mainDivOrderBy}>
                 <div className={style.titleNumbers}>
                     {orderByText}

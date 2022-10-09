@@ -4,10 +4,7 @@ import {
     TypeOffer
 } from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import style from "/styles/Mobile/StadiumPage/ticketStadium.module.css"
-import {ProviderSelectedAreaProp,
-    ProviderSelectedTicketProp,
-    SelectedAreaContext,
-    SelectedTicketsContext} from "./stadiumLayoutProviderMobile";
+import {ProviderSelectedTicketProp, SelectedTicketsContext} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 import {useContext} from "react";
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
@@ -22,19 +19,29 @@ const beforeText: string = "Antes"
 const discountSecondUni: string = "Dcto. 2 Uni"
 const twoXOne: string = "Lleve 2 pague 1"
 
-export default function TicketStadiumMobile({item, styleDiv}:
-                                                 { item: TicketStadium, styleDiv: boolean }) {
+export default function TicketStadiumMobile({item, styleDiv, isDeleteSection, isSelectSection}:
+                                                 { item: TicketStadium, styleDiv: boolean,
+                                                     isDeleteSection: boolean, isSelectSection: boolean}) {
     let selectedTicketContext: ProviderSelectedTicketProp = useContext(SelectedTicketsContext)
-    let selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
-
+    const getStateTicket: boolean = selectedTicketContext.IsTicketSelected(`${item.Row}${item.Seat}`)
     const handleSelectTicket = () => {
         selectedTicketContext.AddTickets(item)
     }
     const handleDeleteTickets = () => {
         selectedTicketContext.DeleteTickets(item)
     }
+    const cssStyle = getCssStyle()
+    function getCssStyle(){
+        return{
+            styleOutsideCont: styleDiv ? style.styleDiv1 : style.styleDiv2,
+            styleInsideCont: isSelectSection?
+                getStateTicket? style.backgroundTicketSelected : style.backgroundTicket
+                : style.backgroundTicket
+        }
+    }
+
     return (
-        <div className={`${style.mainCont} ${styleDiv ? style.styleDiv1 : style.styleDiv2}`}>
+        <div className={`${style.mainCont} ${cssStyle.styleOutsideCont} ${cssStyle.styleInsideCont}`}>
             <div className={style.gridContPrice}>
                 <div className={style.leftCont}>
                     <div className={`${style.styleTitle} ${utilities.clamp1}`}>
@@ -84,18 +91,21 @@ export default function TicketStadiumMobile({item, styleDiv}:
                         }
 
                     </div>
-                    <div className={style.contButton}>
-                        {
-                            item.State ?
-                                <button onClick={handleDeleteTickets} className={style.buttonSelection}>
-                                    {deleteButtonText}
-                                </button>
-                                :
-                                <button onClick={handleSelectTicket} className={style.buttonSelection}>
-                                    {selectButtonText}
-                                </button>
-                        }
-                    </div>
+                    {
+                        isDeleteSection &&
+                        <div className={style.contButton}>
+                            {
+                                getStateTicket?
+                                    <button onClick={handleDeleteTickets} className={style.buttonSelection}>
+                                        {deleteButtonText}
+                                    </button>
+                                    :
+                                    <button onClick={handleSelectTicket} className={style.buttonSelection}>
+                                        {selectButtonText}
+                                    </button>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         </div>

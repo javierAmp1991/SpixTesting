@@ -2,49 +2,53 @@ import style from "/styles/Mobile/StadiumPage/stadiumImage.module.css"
 import SVG from 'react-inlinesvg';
 import React, {useContext, useState} from "react";
 import {
-    LayoutStadiumContext, SelectedAreaContext,
-    SelectedSubAreaContext, VenueDataContextMobile,
-    ProviderSelectedAreaProp, ProviderSelectedSubAreaProp, ListZonesContext
-} from "./stadiumLayoutProviderMobile";
-import {AreaItem, AreaLayout, StateArea, Venue, Zone} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
+    VenueDataContext, SelectedSectionContext, SelectedZoneContext,
+    VenueAreaContext, ProviderVenueAreaProp, ProviderNumberWantProp,
+    NumberTicketWant, ProviderSelectedSectionProp, ProviderSelectedSubAreaProp
+} from "../../Desktop/StadiumPage/stadiumLayutProvider";
+
+import {AreaItem, StateArea, Venue} from "../../../dataDemo/Desktop/StadiumPage/dataStadium";
 import utilities from "/styles/utilities.module.css";
+import {GlobalConst} from "../../../public/globalConst";
+import Image from "next/image";
+
 const noSelectedText: string = "Selecciona un area"
 const zonesTitle: string = "Zonas"
 
-export default function StadiumImageMobile({stateSelectedInitialTicket, displaySubAreaSelected, stateAnimation}:
+export default function StadiumImageMobile({displaySubAreaSelected, stateAnimation}:
                                                {
-                                                   stateSelectedInitialTicket: number,
-                                                   displaySubAreaSelected: Function,
-                                                   stateAnimation: boolean
+                                                   displaySubAreaSelected: Function, stateAnimation: boolean
                                                }) {
-    const layoutStadiumContext: AreaLayout = useContext(LayoutStadiumContext)
-    const selectedAreaContext: ProviderSelectedAreaProp = useContext(SelectedAreaContext)
-    const subAreaStadiumContext: ProviderSelectedSubAreaProp = useContext(SelectedSubAreaContext)
-    const listZonesContext: Zone[] = useContext(ListZonesContext)
-    const venueInformationContext: Venue = useContext(VenueDataContextMobile)
+    const venuaAreaContext: ProviderVenueAreaProp = useContext(VenueAreaContext)
+    const venueAreasInfoContext: Venue = useContext(VenueDataContext)
+    const selectedAreaContext: ProviderSelectedSectionProp = useContext(SelectedSectionContext)
+    const subAreaStadiumContext: ProviderSelectedSubAreaProp = useContext(SelectedZoneContext)
+    const numberTicketWant: ProviderNumberWantProp = useContext(NumberTicketWant)
+
     const cssStyle = getCssStyle()
     const handleClickArea = (idArea: string, idSubArea: string) => {
-        selectedAreaContext.SelectArea(idArea)
+        selectedAreaContext.SelectSection(idArea)
         subAreaStadiumContext.SelectSubArea(idSubArea)
         displaySubAreaSelected()
     }
 
-    let [areaSelected, setAreaSelected] = useState(null)
-    let [displayOptions, setDisplayOptions] = useState(true)
+    let [zoneSelected, setZoneSelected] = useState(null)
+    let [displayOptions, setDisplayOptions] = useState(false)
     const handleDisplayOptions = () => setDisplayOptions(displayOptions = !displayOptions)
     const handleOnChangeSelect = (item: AreaItem) => {
-        setAreaSelected(areaSelected = item.Name)
+        setZoneSelected(zoneSelected = item.Name)
         handleDisplayOptions()
+        venuaAreaContext.SelectArea(item.Id)
     }
 
     return (
         <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
-            {/*<div className={style.mainDivSelectInput}>
-                <button className={style.selectCss} onBlur={handleDisplayOptions} onClick={handleDisplayOptions}>
+            <div className={style.mainDivSelectInput}>
+                <button className={style.selectCss} onClick={handleDisplayOptions}>
                     <div className={style.colorArea}>
                         {
-                            areaSelected == null ?
-                                noSelectedText : areaSelected
+                            zoneSelected == null ?
+                                noSelectedText : zoneSelected
                         }
 
                     </div>
@@ -52,20 +56,21 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
                         <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
                     </div>
                 </button>
-                <div className={displayOptions? style.optionOpen: style.optionClose }>
+                <div className={displayOptions ? style.optionOpen : style.optionClose}>
                     {
-                        venueInformationContext.ListAreaItem.map((item) =>
-                            <button className={style.styleOptions} onClick={()=>handleOnChangeSelect(item)} key={item.Name}>
+                        venueAreasInfoContext.ListAreaItem.map((item) =>
+                            <button className={style.styleOptions} onClick={() => handleOnChangeSelect(item)}
+                                    key={item.Name}>
                                 {item.Name}
                             </button>)
                     }
                 </div>
-            </div>*/}
+            </div>
             <div className={`${cssStyle.animation}`}>
                 <div className={cssStyle.stateTickets}>
                     <SVG className={style.mainContSvg}
                          onLoad={postCss}
-                         src={layoutStadiumContext.UrlSvg}/>
+                         src={venuaAreaContext.Area.UrlSvg}/>
                 </div>
             </div>
             <div className={style.mainDivZones}>
@@ -74,8 +79,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
                 </div>
                 <div className={style.gridZones}>
                     {
-                        listZonesContext.map(item =>
-
+                        venuaAreaContext.Area.GroupSections.map(item =>
                             <div key={item.Id} className={style.gridColorZone}>
                                 <div className={style.divColor} style={{background: item.Color}}/>
                                 <div>
@@ -92,7 +96,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
 
     function getCssStyle() {
         return {
-            stateTickets: stateSelectedInitialTicket > 0 ? style.svgNormal : style.svgReduce,
+            stateTickets: numberTicketWant.NumberWant > 0 ? style.svgNormal : style.svgReduce,
             animation: stateAnimation ? style.divTransition : style.divTransition2,
         }
     }
@@ -109,7 +113,7 @@ export default function StadiumImageMobile({stateSelectedInitialTicket, displayS
     }
 
     function postCss() {
-        layoutStadiumContext.AreasStadium.forEach((item) => {
+        venuaAreaContext.Area.AreasStadium.forEach((item) => {
                 addClassToSvg(item.Id, item.StateArea)
                 addOnClickEvent(item.Id, item.SectionDetail.Id)
                 /*getOnMouseOVer(item.Id)*/

@@ -70,11 +70,15 @@
     transition: var(--transitionHover);
     transform-origin: var(--transformOrigin);
     -webkit-transform-origin: var(--transformOrigin);
+    stroke-width: 1;
+    stroke: red;
+    transform-box: fill-box
 }
 
 .svgClass:hover {
-    stroke-width: var(--strokeWithBefore);
+    transform: scale(1.5);
 }
+
 
 .critic {
     --colorStrokeRed: #ff6c6c;
@@ -124,6 +128,7 @@
 .mainContSvg {
     width: 90%;
     height: 90%;
+    transition: 1s;
     margin: auto;
 }
 
@@ -264,7 +269,7 @@
     animation: moveArrow 1.5s infinite linear;
 }
 
-.titleZone{
+.titleZone {
     color: var(--colorTitlesDesktop);
     font-size: 21px;
     font-weight: 500;

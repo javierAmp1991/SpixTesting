@@ -3,15 +3,10 @@ import utilities from "../../../styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React from "react";
-export class MapPopUpProp{
-    Name: string
-    Venue: string
-    Capacity: number
-    ImageMap: string
-    LinkGoogleMap: string
-}
-export default function MapPopUpMobile({item} : {item: MapPopUpProp}){
-    return(
+import {MapPopUpProp} from "../../Desktop/Misc/mapPopUp";
+
+export default function MapPopUpMobile({item}: { item: MapPopUpProp }) {
+    return (
         <div className={style.mainContMap}>
             <div className={style.titleCont}>
                 <div className={`${utilities.fontTitle} mb-2`}>

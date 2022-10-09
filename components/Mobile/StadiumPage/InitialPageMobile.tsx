@@ -1,14 +1,15 @@
 import Image from "next/image";
 import style from "/styles/Mobile/StadiumPage/selectionNumber.module.css";
-import React from "react";
+import React, {useContext} from "react";
+import {NumberTicketWant, ProviderNumberWantProp} from "../../Desktop/StadiumPage/stadiumLayutProvider";
 
-export default function SelectionNumber({listNumbers, funcNumberTickets}:
-                                            { listNumbers: number[], funcNumberTickets: Function }) {
-    const handleNumberTickets = (num: number)=>{
-        funcNumberTickets(num)
+export default function InitialPageMobile() {
+    const numberTicketWantContext: ProviderNumberWantProp = useContext(NumberTicketWant)
+    const handleNumberTickets = (num: number) => {
+        numberTicketWantContext.SelectNumber(num)
     }
     return (
-        <div className={style.mainDiv}>
+        <div style={{display: numberTicketWantContext.NumberWant == 0 ? "grid" : "none"}} className={style.mainDiv}>
             <div className={style.mainDivPopUp}>
                 <div className={style.sizeLogo}>
                     <Image layout={"fill"} src={"/images/spixBlue.png"} alt={""}/>
@@ -25,7 +26,7 @@ export default function SelectionNumber({listNumbers, funcNumberTickets}:
                     <div className={style.contGrid}>
                         <div className={style.gridSelectionZone}>
                             {
-                                listNumbers.map((item, index) =>
+                                numberTicketWantContext.ListNumberWant.map((item, index) =>
                                     <button onClick={() => handleNumberTickets(item)}
                                             className={style.contSelection} key={index}>
                                         {item}

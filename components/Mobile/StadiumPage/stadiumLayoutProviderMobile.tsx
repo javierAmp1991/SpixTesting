@@ -15,7 +15,6 @@ import {CategoryFilter} from "../../../dataDemo/data";
 import {GlobalConst} from "../../../public/globalConst";
 import PopUpContainerMob from "../../Mobile/Misc/popUpContainerMob";
 import MapPopUpMobile from "../../Mobile/Misc/mapPopUp";
-import SelectedTicketsMobile from "../../Mobile/StadiumPage/selectedTicketsMobile";
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];

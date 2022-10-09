@@ -18,11 +18,8 @@ export default function PopUpSelectedTicketsView({selectedTickets}: { selectedTi
                     <div className={styleProvider.gridTickets}>
                         {
                             selectedTickets.map(item =>
-                                <TicketStadiumDesktop isSelectSection={false}
-                                                      isDeleteSection={true}
-                                                      styleDiv={false}
-                                                      key={item.Id}
-                                                      item={item}/>)
+                                <TicketStadiumDesktop isSelectSection={false} isDeleteSection={true}
+                                                      styleDiv={false} key={item.Id} item={item}/>)
                         }
                     </div>
             }

@@ -210,9 +210,9 @@
 
 .gridZones {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin: auto;
+    grid-template-columns: repeat(4, max-content);
+    gap: 16px;
+    overflow: scroll;
     padding-top: 16px;
 }
 
