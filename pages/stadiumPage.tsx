@@ -22,7 +22,8 @@ import MapPopUp, {MapPopUpProp} from "../components/Desktop/Misc/mapPopUp";
 import PopUpContainer from "../components/Desktop/Misc/popUpContainer";
 import MapPopUpMobile from "../components/Mobile/Misc/mapPopUp";
 import {
-    NumberTicketWant, PopUpDeletedTickets,
+    NumberTicketWant,
+    PopUpDeletedTickets,
     PopUpSelectedTickets,
     PopUpVenueContext,
     ProviderNumberWantProp,
@@ -125,7 +126,7 @@ export default function StadiumPage() {
                         <PopUpContainerMob closePopUp={handleClosePopUpDeleteTickets}
                                            isButtonVisible={isButtonVisible}
                                            isBackground={isBackGroundVisible}>
-                            <PopUpDeletedTicketsViewMobile/>
+                            {/*<PopUpDeletedTicketsViewMobile/>*/}
                         </PopUpContainerMob>
                     }
                 </LayoutStadiumPageMobile>
@@ -174,8 +175,7 @@ export default function StadiumPage() {
                         <PopUpContainerLogo isButtonVisible={isButtonVisible}
                                             isBackground={isBackGroundVisible}
                                             closePopUp={handleClosePopUpDeleteTickets}>
-                            <PopUpDeletedTicketsView
-                                selectedTickets={deletedTickets}/>
+                            {/*<PopUpDeletedTicketsView selectedTickets={deletedTickets}/>*/}
                         </PopUpContainerLogo>
                     }
                 </LayoutStadiumPage>
