@@ -143,9 +143,9 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                          preserveAspectRatio={"xMidYMid"}
                          onWheel={handleOnWheel}
                          onMouseLeave={handleOnMouseLeave}
-                         onTouchMove={handleOnMouseMove}
-                         onMouseDown={handleOnMouseDown}
-                         onMouseUp={handleOnMouseUp}
+                         onTouchMoveCapture={handleOnMouseMove}
+                         onMouseDownCapture={handleOnMouseDown}
+                         onTouchEndCapture={handleOnMouseUp}
                          onLoad={postCss}
                          src={venuaAreaContext.Area.UrlSvg}/>
                 </div>
