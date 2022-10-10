@@ -47,7 +47,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
     let scale = 1;
 
     const handleArrow = (e) => {
-            setStateArrow(stateArrow = false)
+        setStateArrow(stateArrow = false)
     }
 
     const handleDisplayOptions = () => setDisplayDropDown(displayDropDown = !displayDropDown)
@@ -156,11 +156,11 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                                  viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
                                  width={"auto"} height={"auto"}
                                  preserveAspectRatio={"xMidYMid"}
-                                 /*onWheel={handleOnWheel}
-                                 onMouseLeave={handleOnMouseLeave}
-                                 onMouseMove={handleOnMouseMove}
-                                 onMouseDown={handleOnMouseDown}
-                                 onMouseUp={handleOnMouseUp}*/
+                                /*onWheel={handleOnWheel}
+                                onMouseLeave={handleOnMouseLeave}
+                                onMouseMove={handleOnMouseMove}
+                                onMouseDown={handleOnMouseDown}
+                                onMouseUp={handleOnMouseUp}*/
                                  onLoad={postCss}
                                  src={venuaAreaContext.Area.UrlSvg}/>
 
@@ -236,15 +236,29 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
         document.getElementById(id).onclick = () => handleClickArea(id, subAresCode)
     }
 
+    function onMouseOverAction(id: string) {
+        let newElement = document.getElementById(id)
+        document.getElementById("svgMain").appendChild(newElement)
+
+    }
+
+    function addOnMouseOver(id: string) {
+        document.getElementById(id).onmouseover = () => onMouseOverAction(id)
+    }
+
     function postCss() {
         venuaAreaContext.Area.AreasStadium.forEach((item) => {
                 addClassToSvg(item.Id, item.StateArea)
                 addOnClickEvent(item.Id, item.SectionDetail.Id)
             }
         )
-        /*for (let i = 1; i <= 22; i++){
+        for (let i = 1; i <= 58; i++) {
+            addOnMouseOver(`idsvg${i}`)
+        }
+
+        for (let i = 1; i <= 58; i++) {
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
-        }*/
+        }
     }
 
     //endregion

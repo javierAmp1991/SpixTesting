@@ -197,14 +197,9 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                 /*getOnMouseOVer(item.Id)*/
             }
         )
+        for (let i = 1; i <= 58; i++) {
+            addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
+        }
     }
 
-    function getOnMouseOVer(id: string) {
-        document.getElementById(id).onmouseover = () => addHover(id)
-    }
-
-    function addHover(id: string) {
-        let newDiv = document.getElementById(id)
-        document.getElementById("idSvgStadium").appendChild(newDiv)
-    }
 }

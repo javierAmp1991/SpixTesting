@@ -91,6 +91,14 @@ export class Zone {
     Color: string
 }
 
+export class VenueInfo {
+    Name: string
+    Venue: string
+    Capacity: number
+    GoogleMapPath: string
+    GoogleMapLink: string
+}
+
 export namespace ListZones{
     export const list: Zone[] = [
         {
@@ -178,77 +186,6 @@ export const listZones: Zone[] = [
         Color: "#d300ff"
     },
 ]
-
-export class VenueInfo {
-    Name: string
-    Venue: string
-    Capacity: number
-    GoogleMapPath: string
-    GoogleMapLink: string
-}
-
-/*const seatAvabiles1: SeatsAvaibles[] = [
-    {
-        Empty: false,
-        RowNumber: 1,
-        From: 1,
-        Until: 2
-    },
-    {
-        Empty: true,
-        RowNumber: 1,
-        From: 3,
-        Until: null
-    },
-    {
-        Empty: false,
-        RowNumber: 1,
-        From: 4,
-        Until: 6
-    }
-]
-
-const seatAvabiles2: SeatsAvaibles[] = [
-    {
-        Empty: false,
-        RowNumber: 2,
-        From: 1,
-        Until: 6
-    },
-]
-
-const seatAvabiles3: SeatsAvaibles[] = [
-    {
-        Empty: true,
-        RowNumber: 3,
-        From: 1,
-        Until: 3
-    },
-    {
-        Empty: false,
-        RowNumber: 3,
-        From: 4,
-        Until: 6
-    }
-]
-
-const subAreaRow1: SubareaRow = {
-    SeatNumber: 3,
-    IsVirtual: false,
-    ListSeatAvaibles: seatAvabiles1
-}
-
-const subAreaRow2: SubareaRow = {
-    SeatNumber: 3,
-    IsVirtual: false,
-    ListSeatAvaibles: seatAvabiles2
-}
-
-const subAreaRow3: SubareaRow = {
-    SeatNumber: 3,
-    IsVirtual: false,
-    ListSeatAvaibles: seatAvabiles3
-}*/
 
 const subAreaSeats1: Seats[] = [
     {
@@ -750,13 +687,553 @@ const subArea3: SectionDetails = {
     Id: "subAreaStadium3",
     Seats: subAreaSeats3,
     RowTickets: tickets3,
+}
 
+const atributesArea4: AtributesArea[] = [{
+    Description: "Buena Visibilidad",
+    Type: TypeAtributesArea.VIP
+}]
+const tickets4: TicketStadium[] = [
+    {
+        Id: "id41",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 48,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id42",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 49,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id43",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 50,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id44",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 51,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id45",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 52,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id46",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 53,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id47",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 54,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id48",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 55,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id49",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 56,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id50",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 57,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id51",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 58,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea4
+    },
+    {
+        Id: "id52",
+        AreaName: "Palco VIP",
+        Row: 4,
+        Seat: 59,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea4
+    },
+]
+const subAreaSeats4: Seats[] = [
+    {
+        RowNumber: 4,
+        Type: RowType.Available,
+        SeatsAmount: 12
+    },
+    {
+        RowNumber: 4,
+        Type: RowType.Empty,
+        SeatsAmount: 3
+    },
+    {
+        RowNumber: 1,
+        Type: RowType.Reserved,
+        SeatsAmount: 5
+    },
+]
+const subArea4: SectionDetails = {
+    RowNumber: 4,
+    Id: "subAreaStadium4",
+    Seats: subAreaSeats4,
+    RowTickets: tickets4,
+}
 
+const atributesArea5: AtributesArea[] = [{
+    Description: "Buena Visibilidad",
+    Type: TypeAtributesArea.VIP
+}]
+const tickets5: TicketStadium[] = [
+    {
+        Id: "id51",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 65,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id52",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 66,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id53",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 67,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id54",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 68,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id55",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 69,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id56",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 70,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id57",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 71,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id58",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 72,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id59",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 73,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea5
+    },
+    {
+        Id: "id60",
+        AreaName: "Palco VIP",
+        Row: 5,
+        Seat: 74,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea5
+    },
+]
+const subAreaSeats5: Seats[] = [
+    {
+        RowNumber: 5,
+        Type: RowType.Available,
+        SeatsAmount: 10
+    },
+    {
+        RowNumber: 5,
+        Type: RowType.Reserved,
+        SeatsAmount: 10
+    },
+]
+const subArea5: SectionDetails = {
+    RowNumber: 5,
+    Id: "subAreaStadium5",
+    Seats: subAreaSeats5,
+    RowTickets: tickets5,
+}
+
+const atributesArea6: AtributesArea[] = [{
+    Description: "Baja Visibilidad",
+    Type: TypeAtributesArea.LowVisibility
+}]
+const tickets6: TicketStadium[] = [
+    {
+        Id: "id61",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 85,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id62",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 86,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id63",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 87,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id64",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 88,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id65",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 89,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id66",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 90,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id67",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 91,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id68",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 92,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id69",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 93,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id70",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 94,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id71",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 95,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id72",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 96,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id73",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 97,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id74",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 98,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id75",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 99,
+        Price: 11000,
+        Type: TypeOffer.Discount2Uni,
+        Discount: 30,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id76",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 100,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id77",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 101,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id78",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 102,
+        Price: 12000,
+        Type: TypeOffer.Discount,
+        Discount: 19000,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id79",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 103,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+    {
+        Id: "id80",
+        AreaName: "Palco VIP",
+        Row: 6,
+        Seat: 104,
+        Price: 10000,
+        Type: TypeOffer.TwoXOne,
+        Discount: null,
+        State: false,
+        Atributes: atributesArea6
+    },
+]
+const subAreaSeats6: Seats[] = [
+    {
+        RowNumber: 6,
+        Type: RowType.Available,
+        SeatsAmount: 10
+    },
+    {
+        RowNumber: 6,
+        Type: RowType.Reserved,
+        SeatsAmount: 10
+    },
+]
+const subArea6: SectionDetails = {
+    RowNumber: 6,
+    Id: "subAreaStadium6",
+    Seats: subAreaSeats6,
+    RowTickets: tickets6,
 }
 
 export namespace SectionsDetailData {
     export const list: SectionDetails[] = [
-        subArea1, subArea2, subArea3
+        subArea1, subArea2, subArea3, subArea4, subArea5, subArea6
     ]
 }
 
@@ -777,7 +1254,7 @@ const mainTickets: TicketStadium[] = [
         Id: "id2main",
         AreaName: "Galeria Norte",
         Row: 7,
-        Seat: 69,
+        Seat: 71,
         Price: 11000,
         Type: TypeOffer.Discount2Uni,
         Discount: 30,
@@ -790,7 +1267,7 @@ const mainTickets: TicketStadium[] = [
         Id: "id3main",
         AreaName: "Platea Sur",
         Row: 7,
-        Seat: 68,
+        Seat: 72,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,
@@ -801,8 +1278,8 @@ const mainTickets: TicketStadium[] = [
     {
         Id: "id4main",
         AreaName: "Galeria Sur",
-        Row: 4,
-        Seat: 35,
+        Row: 7,
+        Seat: 73,
         Price: 10000,
         Type: TypeOffer.TwoXOne,
         Discount: null,
@@ -813,8 +1290,8 @@ const mainTickets: TicketStadium[] = [
     {
         Id: "id5main",
         AreaName: "Palco VIP Norte",
-        Row: 4,
-        Seat: 34,
+        Row: 7,
+        Seat: 74,
         Price: 11000,
         Type: TypeOffer.Discount2Uni,
         Discount: 30,
@@ -827,8 +1304,8 @@ const mainTickets: TicketStadium[] = [
     {
         Id: "id6main",
         AreaName: "PLatea Norte",
-        Row: 4,
-        Seat: 33,
+        Row: 7,
+        Seat: 75,
         Price: 12000,
         Type: TypeOffer.Discount,
         Discount: 19000,
