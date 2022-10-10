@@ -88,32 +88,36 @@ export default function VenuePageDefault() {
                             <InitialPageMobile/>
                             :
                             <>
-                                <LayoutStadiumPageMobile>
-                                    <FiltersStadiumMobile isOpenFilter={handleOpenFilter}/>
-                                    {
-                                        isOpenFilter ?
-                                            <FilterStadiumSec/>
-                                            :
-                                            <>
-                                                <div className={styleDesk.overFlowDivMobile}>
-                                                    {
-                                                        displaySubArea ?
-                                                            <SubareaStadiumMobile
-                                                                closeSubAreaStadium={handleCloseSubArea}/>
-                                                            :
-                                                            <StadiumImageMobile
-                                                                displaySubAreaSelected={animationZoom}
-                                                                stateAnimation={controlAnimation}/>
-                                                    }
-                                                </div>
-                                                <InformationTicketMobile/>
-                                            </>
-                                    }
-                                </LayoutStadiumPageMobile>
+                                {
+                                    !isSelectedTicketsOpen &&
+                                    <LayoutStadiumPageMobile>
+                                        <FiltersStadiumMobile isOpenFilter={handleOpenFilter}/>
+                                        {
+                                            isOpenFilter ?
+                                                <FilterStadiumSec/>
+                                                :
+                                                <>
+                                                    <div className={styleDesk.overFlowDivMobile}>
+                                                        {
+                                                            displaySubArea ?
+                                                                <SubareaStadiumMobile
+                                                                    closeSubAreaStadium={handleCloseSubArea}/>
+                                                                :
+                                                                <StadiumImageMobile
+                                                                    displaySubAreaSelected={animationZoom}
+                                                                    stateAnimation={controlAnimation}/>
+                                                        }
+                                                    </div>
+                                                    <InformationTicketMobile/>
+                                                </>
+                                        }
+                                    </LayoutStadiumPageMobile>
+                                }
                                 <ResumeTicketsMobile/>
                                 <PopUpSelectedTicket/>
                             </>
                     }
+
                     {
                         isPopUpMapOpen &&
                         <PopUpContainerMob closePopUp={handleCloseMap} isBackground={isBackGroundVisible}
