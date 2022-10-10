@@ -17,7 +17,7 @@
     width: 100%;
     background: white;
     transition: .7s linear;
-    position: fixed;
+    position: absolute;
     z-index: 900;
 }
 
