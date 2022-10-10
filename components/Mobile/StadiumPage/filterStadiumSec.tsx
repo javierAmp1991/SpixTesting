@@ -30,7 +30,7 @@ export default function FilterStadiumSec(){
                                 <div className={style.imageSizeButton}>
                                     <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                                 </div>
-                                <div className={`${utilities.fontPrimarText} ${style.paddingText}`}>
+                                <div className={`${utilities.fontPrimaryText} ${style.paddingText}`}>
                                     {item.Name}
                                 </div>
                             </button>)
@@ -49,7 +49,7 @@ export default function FilterStadiumSec(){
                                 <div className={style.imageSize}>
                                     <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                                 </div>
-                                <div className={`${utilities.fontPrimarText} ${style.textFilterSub}`}>
+                                <div className={`${utilities.fontPrimaryText} ${style.textSubFilters} ${utilities.clamp1}`}>
                                     {item.Name}
                                 </div>
                             </div>

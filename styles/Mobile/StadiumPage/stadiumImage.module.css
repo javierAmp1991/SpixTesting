@@ -1,5 +1,5 @@
 .principalGridOpen {
-    padding: 12px 0;
+    padding: 16px 0;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -160,8 +160,9 @@
 }
 
 .selectCss {
-    z-index: 9000000000;
+    z-index: 9000000;
     display: grid;
+    margin-bottom: 12px;
     width: 100%;
     grid-template-columns: 1fr max-content;
     align-items: center;
@@ -205,7 +206,7 @@
 }
 
 .mainDivZones {
-   padding: 0 16px;
+   padding: 16px 12px 0 16px;
 }
 
 .gridZones {

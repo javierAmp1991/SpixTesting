@@ -20,7 +20,7 @@
     border-radius: 4px;
     overflow: hidden;
     display: grid;
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     aspect-ratio: 1/1;
     line-height: 16px;
@@ -84,9 +84,9 @@
 .gridButton {
     display: grid;
     grid-template-columns: max-content max-content;
-    gap: 8px;
+    gap: 4px;
     justify-content: center;
-    padding: 8px 24px;
+    padding: 8px 0;
     border-radius: 5px;
     align-items: center;
     overflow: hidden;
@@ -123,8 +123,8 @@
 }
 
 .imageSize {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     position: relative;
 }
 
@@ -137,17 +137,17 @@
 .gridSecundaryFilter {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 8px;
 }
 
 .gridButtonSub {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: 1fr max-content;
     justify-content: space-between;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
-    padding: 12px 8px;
+    padding: 12px 6px;
     border-radius: 4px;
     transition: .3s;
     overflow: hidden;
@@ -155,15 +155,23 @@
 
 .gridImageNameSub {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: max-content 1fr;
     align-items: center;
     gap: 4px;
+}
+
+.textSubFilters{
+    text-align: left;
+    font-size: 13px;
 }
 
 .mainDivAdvanced {
     padding: var(--paddingX) var(--paddingY);
 }
 
+.paddingText{
+    font-size: 13px;
+}
 .gridInputs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

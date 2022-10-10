@@ -41,6 +41,72 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         venuaAreaContext.SelectArea(item.Id)
     }
 
+    let [widthHeight, setWidthHeight] = useState({w: 517, h: 421})
+    let [viewBoxAt, setViewBoxAt] = useState({x: 0, y: 0, w: 517, h: 421})
+    let [startPoints, setStartPoints] = useState({x: 0, y: 0})
+    let [scalePoint, setScalePoint] = useState(1)
+    let [isPanningControl, setIsPanningControl] = useState(false)
+
+    const factorScroll: number = -0.05
+    let widthTest: number = 517
+    let heightTest: number = 421
+    let viewBox;
+    let svgSize = {w: 517, h: 421};
+    let endPoint = {x: 0, y: 0};
+    let scale = 1;
+
+    const handleZoomButton = (num: number) => {
+        let w = viewBoxAt.w;
+        let h = viewBoxAt.h;
+        let mx = widthTest / 2;
+        let my = heightTest / 2;
+        let dw = w * Math.sign(num) * factorScroll;
+        let dh = h * Math.sign(num) * factorScroll;
+        let dx = dw * mx / svgSize.w;
+        let dy = dh * my / svgSize.h;
+        viewBox = {x: viewBoxAt.x + dx, y: viewBoxAt.y + dy, w: viewBoxAt.w - dw, h: viewBoxAt.h - dh};
+        setScalePoint(scalePoint = svgSize.w / viewBox.w)
+        setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})
+    }
+    const handleOnWheel = (e) => {
+        let w = viewBoxAt.w;
+        let h = viewBoxAt.h;
+        let mx = e.nativeEvent.offsetX;
+        let my = e.nativeEvent.offsetY;
+        let dw = w * Math.sign(e.deltaY) * factorScroll;
+        let dh = h * Math.sign(e.deltaY) * factorScroll;
+        let dx = dw * mx / widthHeight.w;
+        let dy = dh * my / widthHeight.h;
+        viewBox = {x: viewBoxAt.x + dx, y: viewBoxAt.y + dy, w: viewBoxAt.w - dw, h: viewBoxAt.h - dh};
+        scale = svgSize.w / viewBox.w;
+        setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})
+    }
+    const handleOnMouseDown = (e) => {
+        setIsPanningControl(isPanningControl = true)
+        setStartPoints(startPoints = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
+    }
+    const handleOnMouseMove = (e) => {
+        if (isPanningControl) {
+            endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY}
+            let dx = (startPoints.x - endPoint.x) / scale;
+            let dy = (startPoints.y - endPoint.y) / scale;
+            setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
+        }
+    }
+    const handleOnMouseUp = (e) => {
+        if (isPanningControl) {
+            endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY};
+            let dx = (startPoints.x - endPoint.x) / scale;
+            let dy = (startPoints.y - endPoint.y) / scale;
+            setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
+            setIsPanningControl(isPanningControl = false)
+        }
+    }
+    const handleOnMouseLeave = () => {
+        setIsPanningControl(isPanningControl = false)
+    }
+    const handleReturn = () => setViewBoxAt({x: 0, y: 0, w: widthTest, h: heightTest})
+
     return (
         <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
             <div className={style.mainDivSelectInput}>
@@ -69,6 +135,14 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             <div className={`${cssStyle.animation}`}>
                 <div className={cssStyle.stateTickets}>
                     <SVG className={style.mainContSvg}
+                         viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
+                         width={"auto"} height={"auto"}
+                         preserveAspectRatio={"xMidYMid"}
+                         onWheel={handleOnWheel}
+                         onMouseLeave={handleOnMouseLeave}
+                         onMouseMove={handleOnMouseMove}
+                         onMouseDown={handleOnMouseDown}
+                         onMouseUp={handleOnMouseUp}
                          onLoad={postCss}
                          src={venuaAreaContext.Area.UrlSvg}/>
                 </div>
@@ -120,7 +194,6 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             }
         )
     }
-
 
     function getOnMouseOVer(id: string) {
         document.getElementById(id).onmouseover = () => addHover(id)
