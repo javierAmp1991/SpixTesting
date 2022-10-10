@@ -86,6 +86,8 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         setStartPoints(startPoints = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
     }
     const handleOnMouseMove = (e) => {
+        console.log(e.nativeEvent.offsetX)
+
         if (isPanningControl) {
             endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY}
             let dx = (startPoints.x - endPoint.x) / scale;
@@ -94,6 +96,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         }
     }
     const handleOnMouseUp = (e) => {
+
         if (isPanningControl) {
             endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY};
             let dx = (startPoints.x - endPoint.x) / scale;
@@ -141,8 +144,8 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                          onWheel={handleOnWheel}
                          onMouseLeave={handleOnMouseLeave}
                          onTouchMove={handleOnMouseMove}
-                         onTouchStart={handleOnMouseDown}
-                         onTouchEnd={handleOnMouseUp}
+                         onMouseDown={handleOnMouseDown}
+                         onMouseUp={handleOnMouseUp}
                          onLoad={postCss}
                          src={venuaAreaContext.Area.UrlSvg}/>
                 </div>
