@@ -55,6 +55,8 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     let endPoint = {x: 0, y: 0};
     let scale = 1;
 
+    let[touch, setTouch] = useState({x:0,y:0})
+
     const handleZoomButton = (num: number) => {
         let w = viewBoxAt.w;
         let h = viewBoxAt.h;
@@ -86,14 +88,14 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         setStartPoints(startPoints = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
     }
     const handleOnMouseMove = (e) => {
-        console.log(e.nativeEvent.offsetX)
+        setTouch(touch = {x:e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
 
-        if (isPanningControl) {
+       /* if (isPanningControl) {
             endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY}
             let dx = (startPoints.x - endPoint.x) / scale;
             let dy = (startPoints.y - endPoint.y) / scale;
             setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
-        }
+        }*/
     }
     const handleOnMouseUp = (e) => {
 
@@ -143,9 +145,9 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                          preserveAspectRatio={"xMidYMid"}
                          onWheel={handleOnWheel}
                          onMouseLeave={handleOnMouseLeave}
-                         onTouchMoveCapture={handleOnMouseMove}
-                         onMouseDownCapture={handleOnMouseDown}
-                         onTouchEndCapture={handleOnMouseUp}
+                         onTouchStartCapture={handleOnMouseMove}
+                         onTouchStart={handleOnMouseDown}
+                         onTouchEnd={handleOnMouseUp}
                          onLoad={postCss}
                          src={venuaAreaContext.Area.UrlSvg}/>
                 </div>
@@ -153,6 +155,9 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             <div className={style.mainDivZones}>
                 <div className={utilities.fontTitleDesktop}>
                     {zonesTitle}
+                </div>
+                <div>
+                    {touch.x}{touch.y}
                 </div>
                 <div className={style.gridZones}>
                     {
