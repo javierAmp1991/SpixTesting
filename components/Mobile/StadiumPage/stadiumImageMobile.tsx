@@ -55,7 +55,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     let endPoint = {x: 0, y: 0};
     let scale = 1;
 
-    let [touch, setTouch] = useState({x: 0, y: 0})
+    let [touch, setTouch] = useState(0)
 
     const handleZoomButton = (num: number) => {
         let w = viewBoxAt.w;
@@ -71,7 +71,8 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})
     }
     const handleOnWheel = (e) => {
-        let w = viewBoxAt.w;
+        setTouch(touch = e.targetTouches.length)
+        /*let w = viewBoxAt.w;
         let h = viewBoxAt.h;
         let mx = e.nativeEvent.offsetX;
         let my = e.nativeEvent.offsetY;
@@ -81,7 +82,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         let dy = dh * my / widthHeight.h;
         viewBox = {x: viewBoxAt.x + dx, y: viewBoxAt.y + dy, w: viewBoxAt.w - dw, h: viewBoxAt.h - dh};
         scale = svgSize.w / viewBox.w;
-        setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})
+        setViewBoxAt(viewBoxAt = {x: viewBox.x, y: viewBox.y, w: viewBox.w, h: viewBox.h})*/
     }
     const handleOnMouseDown = (e) => {
         setIsPanningControl(isPanningControl = true)
@@ -141,7 +142,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                          viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
                          width={"auto"} height={"auto"}
                          preserveAspectRatio={"xMidYMid"}
-                         onWheel={handleOnWheel}
+                         onClick={handleOnWheel}
                          onMouseLeave={handleOnMouseLeave}
                          onTouchMove={handleOnMouseMove}
                          onTouchEnd={handleOnMouseUp}
@@ -155,7 +156,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                     {zonesTitle}
                 </div>
                 <div>
-                    {touch.x}{touch.y}
+                    {touch}
                 </div>
                 <div className={style.gridZones}>
                     {
