@@ -118,6 +118,8 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     }
     const handleReturn = () => setViewBoxAt({x: 0, y: 0, w: widthTest, h: heightTest})
 
+    let [touchActionControl, setTouchActionControl] = useState(false)
+
     return (
         <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
             <div className={style.mainDivSelectInput}>
@@ -143,9 +145,9 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                     }
                 </div>
             </div>
-            <div className={`${cssStyle.animation}`}>
-                <div className={cssStyle.stateTickets}>
-                    <SVG className={style.mainContSvg} id={"svgIdPanZoom"}
+            <div className={`${cssStyle.animation} ${cssStyle.touchAction}`}>
+                <div className={`${cssStyle.stateTickets} ${cssStyle.touchAction}`}>
+                    <SVG className={`${style.mainContSvg} ${cssStyle.touchAction}`} id={"svgIdPanZoom"}
                          onLoad={postCss}
                          src={venuaAreaContext.Area.UrlSvg}
                         /*viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
@@ -183,6 +185,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         return {
             stateTickets: numberTicketWant.NumberWant > 0 ? style.svgNormal : style.svgReduce,
             animation: stateAnimation ? style.divTransition : style.divTransition2,
+            touchAction: touchActionControl && style.touchActionNone
         }
     }
 
@@ -214,6 +217,14 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                 return false; // tells the library to not preventDefault.
             }
         });
+        instance.on('pan', function(e) {
+            setTouchActionControl(touchActionControl = true)
+        });
+
+        instance.on('panend', function(e) {
+            setTouchActionControl(touchActionControl = false)
+        });
+        instance.dispose()
     }
 
 }

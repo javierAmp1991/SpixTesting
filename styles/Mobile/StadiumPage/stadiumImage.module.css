@@ -144,6 +144,11 @@
     transition: .4s;
 }
 
+.touchActionNone{
+    touch-action: none;
+    -ms-touch-action: none;
+}
+
 .divLesMore:hover {
     background: rgba(0, 0, 0, .1);
 }
