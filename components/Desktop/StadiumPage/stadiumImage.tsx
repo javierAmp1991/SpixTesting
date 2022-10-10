@@ -120,12 +120,13 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
     function handleClickZoom(id) {
         let container = document.getElementById('svgIdPanZoom');
         let rect = container.getBoundingClientRect();
-        let cx = rect.x + rect.width/2;
-        let cy = rect.y + rect.height/2;
+        let cx = rect.x + rect.width / 2;
+        let cy = rect.y + rect.height / 2;
         let isZoomIn = id === 'zoomIn';
         let zoomBy = isZoomIn ? 2 : 0.5;
         instance.zoomTo(0, 0, 0.5);
     }
+
     //endregion
 
     return (
@@ -272,10 +273,11 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
 
-        instance = panzoom(document.getElementById('svgIdPanZoom'),{
+        /*instance = panzoom(document.getElementById('svgIdPanZoom'), {
             maxZoom: 4,
             minZoom: 1,
-        });
+            smoothScroll: false
+        });*/
     }
 
     //endregion

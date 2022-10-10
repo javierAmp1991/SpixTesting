@@ -100,9 +100,10 @@
     overflow: hidden;
     object-fit: contain;
 }
-
-.mainContSvg {
+.spaceSvg{
     padding: 16px;
+}
+.mainContSvg {
     margin: auto;
 }
 

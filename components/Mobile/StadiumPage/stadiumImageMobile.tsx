@@ -118,7 +118,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     }
     const handleReturn = () => setViewBoxAt({x: 0, y: 0, w: widthTest, h: heightTest})
 
-    let [touchActionControl, setTouchActionControl] = useState(false)
+    let [touchActionControl, setTouchActionControl] = useState(true)
 
     return (
         <div className={`${style.principalGridOpen} ${cssStyle.animation}`}>
@@ -145,19 +145,21 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                     }
                 </div>
             </div>
-            <div className={`${cssStyle.animation} ${cssStyle.touchAction}`}>
-                <div className={`${cssStyle.stateTickets} ${cssStyle.touchAction}`}>
-                    <SVG className={`${style.mainContSvg} ${cssStyle.touchAction}`} id={"svgIdPanZoom"}
-                         onLoad={postCss}
-                         src={venuaAreaContext.Area.UrlSvg}
-                        /*viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
-                        width={"auto"} height={"auto"}
-                        preserveAspectRatio={"xMidYMid"}
-                        onClick={handleOnWheel}
-                        onMouseLeave={handleOnMouseLeave}
-                        onTouchMove={handleOnMouseMove}
-                        onTouchEnd={handleOnMouseUp}
-                        onTouchStart={handleOnMouseDown}*//>
+            <div className={style.spaceSvg}>
+                <div className={`${cssStyle.animation}`}>
+                    <div className={`${cssStyle.stateTickets}`}>
+                        <SVG className={`${style.mainContSvg}`} id={"svgIdPanZoom"}
+                             onLoad={postCss}
+                             src={venuaAreaContext.Area.UrlSvg}
+                            /*viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
+                            width={"auto"} height={"auto"}
+                            preserveAspectRatio={"xMidYMid"}
+                            onClick={handleOnWheel}
+                            onMouseLeave={handleOnMouseLeave}
+                            onTouchMove={handleOnMouseMove}
+                            onTouchEnd={handleOnMouseUp}
+                            onTouchStart={handleOnMouseDown}*//>
+                    </div>
                 </div>
             </div>
             <div className={style.mainDivZones}>
@@ -185,7 +187,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         return {
             stateTickets: numberTicketWant.NumberWant > 0 ? style.svgNormal : style.svgReduce,
             animation: stateAnimation ? style.divTransition : style.divTransition2,
-            touchAction: touchActionControl && style.touchActionNone
+            touchAction: touchActionControl ? style.touchActionNone : ""
         }
     }
 
@@ -210,11 +212,10 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
 
-        let instance = panzoom(document.getElementById('svgIdPanZoom'), {
+        /*let instance = panzoom(document.getElementById('svgIdPanZoom'), {
             maxZoom: 4,
             minZoom: 1,
             smoothScroll: false
-
         });
 
         instance.on('zoom', function (e) {
@@ -224,7 +225,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             } else {
                 setTouchActionControl(touchActionControl = true)
             }
-        });
+        });*/
     }
 
 }
