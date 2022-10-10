@@ -216,7 +216,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             smoothScroll: false
 
         });
-        instance.on('pan', function(e) {
+        instance.on('panstart', function(e) {
             if(instance.getTransform().scale > 1)
             setTouchActionControl(touchActionControl = true)
         });
