@@ -139,7 +139,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             </div>
             <div className={`${cssStyle.animation}`}>
                 <div className={cssStyle.stateTickets}>
-                    <SVG className={style.mainContSvg}
+                    <SVG className={style.mainContSvg} id={"svgIdPanZoom"}
                          viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
                          width={"auto"} height={"auto"}
                          preserveAspectRatio={"xMidYMid"}
