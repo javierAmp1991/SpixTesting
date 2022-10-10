@@ -214,6 +214,8 @@
 .styleOptions {
     background: #ffffff;
     padding: 8px;
+    display: grid;
+    align-items: center;
     color: var(--colorSecundaryTextDesktop);
 }
 
