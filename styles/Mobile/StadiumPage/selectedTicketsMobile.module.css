@@ -4,11 +4,11 @@
     height: 100%;
     position: fixed;
     display: flex;
+    flex-direction: column;
     background: white;
     transition: 1s;
     overflow: scroll;
     z-index: 900;
-    padding-bottom: 84px;
 }
 
 .mainDivClose {
@@ -23,7 +23,7 @@
 }
 
 .mainContent {
-    padding: 16px;
+    padding: 16px 16px 84px 16px;
     display: grid;
     gap: 24px;
 }
