@@ -1,8 +1,7 @@
 .mainDivOpen {
-    top: 93px;
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: column;
     background: white;

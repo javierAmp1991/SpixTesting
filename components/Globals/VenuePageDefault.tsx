@@ -36,6 +36,7 @@ import PopUpDeletedTicketsView from "../Desktop/StadiumPage/popUpDeleteTickets";
 import PopUpSelectedTicket from "../Mobile/StadiumPage/popUpSelectedTicket";
 import PopUpDeletedTicketsViewMobile from "../Mobile/StadiumPage/popUpDeleteTickets";
 import {TicketStadium} from "../../dataDemo/Desktop/StadiumPage/dataStadium";
+import LayoutStadiumMobile from "../Mobile/StadiumPage/layoutStadiumMobile";
 
 const isButtonVisible: boolean = true
 const isBackGroundVisible: boolean = true
@@ -82,7 +83,7 @@ export default function VenuePageDefault() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>
-                <LayoutStadiumPageMobile>
+                <LayoutStadiumMobile>
                     {
                         numberTicketWant.NumberWant == 0 ?
                             <InitialPageMobile/>
@@ -133,7 +134,7 @@ export default function VenuePageDefault() {
                             <PopUpDeletedTicketsViewMobile/>
                         </PopUpContainerMob>
                     }
-                </LayoutStadiumPageMobile>
+                </LayoutStadiumMobile>
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
