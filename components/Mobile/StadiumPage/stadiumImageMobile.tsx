@@ -88,7 +88,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         setStartPoints(startPoints = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
     }
     const handleOnMouseMove = (e) => {
-        setTouch(touch = {x:e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
+        setTouch(touch = {x:e.changedTouches[e.changedTouches.length-1], y: e.changedTouches[e.changedTouches.length-1]})
 
        /* if (isPanningControl) {
             endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY}
