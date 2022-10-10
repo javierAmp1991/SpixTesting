@@ -3,6 +3,8 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+    touch-action: none;
+    -ms-touch-action: none;
     --fillSections: #ff8383;
     --strokeWith: 1px;
     --strokeWithBefore: 2px;
@@ -104,6 +106,8 @@
 .mainContSvg {
     padding: 16px;
     margin: auto;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .mainContSvg:hover {

@@ -155,9 +155,6 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                 <div className={utilities.fontTitleDesktop}>
                     {zonesTitle}
                 </div>
-                <div>
-                    {touch}
-                </div>
                 <div className={style.gridZones}>
                     {
                         venuaAreaContext.Area.GroupSections.map(item =>
