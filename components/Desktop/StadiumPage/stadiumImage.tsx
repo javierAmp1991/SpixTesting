@@ -239,7 +239,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
     function addClassToSvg(id: string, stateArea: StateArea) {
         let nodes = document.getElementsByClassName("areaSvgStadium")
         for (let i = 0; i < nodes.length; i++) {
-            nodes[i].classList.add(style.svgClass)
+            nodes[i].classList.add(style.svgClassTest)
         }
     }
 
@@ -263,9 +263,10 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                 addOnClickEvent(item.Id, item.SectionDetail.Id)
             }
         )
-        for (let i = 1; i <= 58; i++) {
+
+        /*for (let i = 1; i <= 58; i++) {
             addOnMouseOver(`idsvg${i}`)
-        }
+        }*/
 
         for (let i = 1; i <= 58; i++) {
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")

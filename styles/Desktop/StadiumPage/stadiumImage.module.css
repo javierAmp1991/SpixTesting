@@ -82,7 +82,7 @@
     stroke: var(--colorStrokeBlue);
 }
 
-.svgClass {
+.svgClassTest {
     transition: var(--transitionHover);
     transform-origin: var(--transformOrigin);
     -webkit-transform-origin: var(--transformOrigin);
@@ -91,7 +91,7 @@
     transform-box: fill-box
 }
 
-.svgClass:hover {
+.svgClassTest:hover {
     transform: scale(1.5);
     -ms-transform: scale(1.5);
 }
