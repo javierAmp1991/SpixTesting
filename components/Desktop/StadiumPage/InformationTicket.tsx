@@ -48,11 +48,14 @@ export default function InformationTicket() {
     const contTicketsRef = useRef(null)
     const rowNumberRef = useRef(null)
     useEffect(() => {
-        if (ticketsInformation.LastTicketAdd != null) {
-            let containerPosition = contTicketsRef.current.getBoundingClientRect()
-            let ticketPosition = document.getElementById(ticketsInformation.LastTicketAdd.Id).getBoundingClientRect()
-            contTicketsRef.current.scrollTop = ticketPosition.top - containerPosition.top
+        const timerFunction = () => {
+            if (ticketsInformation.LastTicketAdd != null) {
+                let containerPosition = contTicketsRef.current.getBoundingClientRect()
+                let ticketPosition = document.getElementById(ticketsInformation.LastTicketAdd.Id).getBoundingClientRect()
+                contTicketsRef.current.scrollTop = ticketPosition.top - containerPosition.top
+            }
         }
+        setTimeout(timerFunction, 500)
     }, [ticketsInformation.LastTicketAdd])
     const handleClickRight = () => rowNumberRef.current.scrollLeft += 52
     const handleClickLeft = () => rowNumberRef.current.scrollLeft -= 52

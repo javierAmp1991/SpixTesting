@@ -11,6 +11,7 @@ import {AreaItem, StateArea, Venue} from "../../../dataDemo/Desktop/StadiumPage/
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import panzoom from "panzoom";
 
 const noSelectedText: string = "Selecciona un area"
 const zonesTitle: string = "Zonas"
@@ -200,6 +201,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         for (let i = 1; i <= 58; i++) {
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
+        let instance = panzoom(document.getElementById('svgIdPanZoom'));
     }
 
 }

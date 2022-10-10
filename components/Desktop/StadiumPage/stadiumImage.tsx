@@ -1,5 +1,5 @@
 import style from "/styles/Desktop/StadiumPage/stadiumImage.module.css"
-import React, {useEffect, useRef, useState} from "react";
+import React, {useRef, useState} from "react";
 import SVG from 'react-inlinesvg';
 import {useContext} from "react";
 import {
@@ -11,7 +11,7 @@ import {AreaItem, StateArea, Venue} from "../../../dataDemo/Desktop/StadiumPage/
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
-
+import panzoom from "panzoom";
 const noSelectedText: string = "Selecciona un area"
 const zonesTitle: string = "Zonas"
 
@@ -152,7 +152,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                 <div className={cssStyle.animation}>
                     <div className={style.spaceSvg}>
                         <div ref={contRef} className={`${cssStyle.stateTickets} ${cssStyle.cursorStyle}`}>
-                            <SVG className={style.touchAction}
+                            <SVG className={style.touchAction} id={"svgIdPanZoom"}
                                  viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
                                  width={"auto"} height={"auto"}
                                  preserveAspectRatio={"xMidYMid"}
@@ -238,7 +238,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
 
     function onMouseOverAction(id: string) {
         let newElement = document.getElementById(id)
-        document.getElementById("svgMain").appendChild(newElement)
+        document.getElementById("svgIdPanZoom").appendChild(newElement)
 
     }
 
@@ -259,6 +259,9 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
         for (let i = 1; i <= 58; i++) {
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
+
+        let instance = panzoom(document.getElementById('svgIdPanZoom'));
+
     }
 
     //endregion
