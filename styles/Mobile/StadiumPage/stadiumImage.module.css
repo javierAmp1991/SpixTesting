@@ -175,7 +175,6 @@
 .selectCss {
     z-index: 9000000;
     display: grid;
-    margin-bottom: 12px;
     width: 100%;
     grid-template-columns: 1fr max-content;
     align-items: center;

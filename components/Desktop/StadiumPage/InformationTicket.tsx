@@ -47,7 +47,7 @@ export default function InformationTicket() {
 
     const contTicketsRef = useRef(null)
     const rowNumberRef = useRef(null)
-    useEffect(() => {
+    /*useEffect(() => {
         const timerFunction = () => {
             if (ticketsInformation.LastTicketAdd != null) {
                 let containerPosition = contTicketsRef.current.getBoundingClientRect()
@@ -56,7 +56,7 @@ export default function InformationTicket() {
             }
         }
         setTimeout(timerFunction, 500)
-    }, [ticketsInformation.LastTicketAdd])
+    }, [ticketsInformation.LastTicketAdd])*/
     const handleClickRight = () => rowNumberRef.current.scrollLeft += 52
     const handleClickLeft = () => rowNumberRef.current.scrollLeft -= 52
 

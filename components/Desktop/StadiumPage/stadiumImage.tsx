@@ -46,6 +46,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
     let svgSize = {w: 517, h: 421};
     let endPoint = {x: 0, y: 0};
     let scale = 1;
+    let instance;
 
     const handleArrow = (e) => {
         setStateArrow(stateArrow = false)
@@ -115,6 +116,16 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
         setIsPanningControl(isPanningControl = false)
     }
     const handleReturn = () => setViewBoxAt({x: 0, y: 0, w: widthTest, h: heightTest})
+
+    function handleClickZoom(id) {
+        let container = document.getElementById('svgIdPanZoom');
+        let rect = container.getBoundingClientRect();
+        let cx = rect.x + rect.width/2;
+        let cy = rect.y + rect.height/2;
+        let isZoomIn = id === 'zoomIn';
+        let zoomBy = isZoomIn ? 2 : 0.5;
+        instance.zoomTo(0, 0, 0.5);
+    }
     //endregion
 
     return (
@@ -192,18 +203,18 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                     </div>
                 }
                 {
-                    /*numberTicketWant.NumberWant > 0 &&
+                    numberTicketWant.NumberWant > 0 &&
                     <div className={style.divZoom}>
-                        <button onClick={() => handleZoomButton(-1000)} className={style.divLesMore}>
+                        <button className={style.divLesMore}>
                             +
                         </button>
-                        <button onClick={handleReturn} className={style.divLesMore}>
+                        <button className={style.divLesMore}>
                             <Image width={18} height={18} src={GlobalConst.sourceImages.fitScaleIcon}/>
                         </button>
-                        <button onClick={() => handleZoomButton(1000)} className={style.divLesMore}>
+                        <button className={style.divLesMore}>
                             -
                         </button>
-                    </div>*/
+                    </div>
                 }
             </div>
         </>
@@ -260,8 +271,8 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
 
-        let instance = panzoom(document.getElementById('svgIdPanZoom'),{
-            maxZoom: 3,
+        instance = panzoom(document.getElementById('svgIdPanZoom'),{
+            maxZoom: 4,
             minZoom: 1,
         });
     }

@@ -87,18 +87,24 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     }
     const handleOnMouseDown = (e) => {
         setIsPanningControl(isPanningControl = true)
-        setStartPoints(startPoints = {x: e.targetTouches[e.targetTouches.length - 1].clientX, y: e.targetTouches[e.targetTouches.length - 1].clientY})
+        setStartPoints(startPoints = {
+            x: e.targetTouches[e.targetTouches.length - 1].clientX,
+            y: e.targetTouches[e.targetTouches.length - 1].clientY
+        })
     }
     const handleOnMouseMove = (e) => {
         if (isPanningControl) {
-             endPoint = {x: e.targetTouches[e.targetTouches.length - 1].clientX, y: e.targetTouches[e.targetTouches.length - 1].clientY}
-             let dx = (startPoints.x - endPoint.x) / scale;
-             let dy = (startPoints.y - endPoint.y) / scale;
-             setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
-         }
+            endPoint = {
+                x: e.targetTouches[e.targetTouches.length - 1].clientX,
+                y: e.targetTouches[e.targetTouches.length - 1].clientY
+            }
+            let dx = (startPoints.x - endPoint.x) / scale;
+            let dy = (startPoints.y - endPoint.y) / scale;
+            setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
+        }
     }
     const handleOnMouseUp = (e) => {
-       /* console.log(e.targetTouches[e.targetTouches.length - 1].clientX)*/
+        /* console.log(e.targetTouches[e.targetTouches.length - 1].clientX)*/
         /*if (isPanningControl) {
             endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY};
             let dx = (startPoints.x - endPoint.x) / scale;
@@ -201,10 +207,10 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
 
-        let instance = panzoom(document.getElementById('svgIdPanZoom'),{
+        let instance = panzoom(document.getElementById('svgIdPanZoom'), {
             maxZoom: 3,
             minZoom: 1,
-            onTouch: function(e) {
+            onTouch: function (e) {
                 return false; // tells the library to not preventDefault.
             }
         });
