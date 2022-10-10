@@ -6,7 +6,7 @@
 }
 
 .mainDivPopUp {
-    height: 450px;
+    height: max-content;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: var(--boxShadowCard);
@@ -26,8 +26,8 @@
 }
 
 .mainDivSlectionZone {
-    padding-top: 24px;
-    margin-top: 24px;
+    padding-top: 16px;
+    margin-top: 16px;
     border-top: 2px solid var(--separationLineColor);
     display: grid;
     grid-template-rows: repeat(2, max-content) 1fr;
@@ -69,11 +69,12 @@
 }
 
 .titleInfo {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 500;
     padding-bottom: 12px;
 }
 
 .SubtitleInfo {
     color: var(--colorPrimaryTextDesktop);
+    padding-bottom: 16px;
 }

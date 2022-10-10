@@ -19,9 +19,9 @@ export default function InitialPageMobile() {
                         Selecciona el numero de entradas que quieres
                     </div>
                     <div className={style.SubtitleInfo}>
-                        No tengo idea que iria aqui pero se que algo debe ir asi que por eso lo
-                        pongo,
-                        y si no va nada que me parta un rasho laser.
+                        El numero de entradas representa con cuantos acompañantes quieres ir. Al momento de elegir productos o servicios
+                        ofrecidos en este evento puedes crear un carro de compra personalizado para cada acompañante asi tienes un mayor
+                        control de que cosas son para ti y que cosas son para tus invitados.
                     </div>
                     <div className={style.contGrid}>
                         <div className={style.gridSelectionZone}>

@@ -202,7 +202,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                         <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowRed} alt={""}/>
                     </div>
                 }
-                {
+                {/*{
                     numberTicketWant.NumberWant > 0 &&
                     <div className={style.divZoom}>
                         <button className={style.divLesMore}>
@@ -215,7 +215,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                             -
                         </button>
                     </div>
-                }
+                }*/}
             </div>
         </>
     )
