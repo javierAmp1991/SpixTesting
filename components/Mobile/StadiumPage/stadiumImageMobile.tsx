@@ -140,16 +140,16 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             <div className={`${cssStyle.animation}`}>
                 <div className={cssStyle.stateTickets}>
                     <SVG className={style.mainContSvg} id={"svgIdPanZoom"}
-                         viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
-                         width={"auto"} height={"auto"}
-                         preserveAspectRatio={"xMidYMid"}
-                         /*onClick={handleOnWheel}
-                         onMouseLeave={handleOnMouseLeave}
-                         onTouchMove={handleOnMouseMove}
-                         onTouchEnd={handleOnMouseUp}
-                         onTouchStart={handleOnMouseDown}*/
                          onLoad={postCss}
-                         src={venuaAreaContext.Area.UrlSvg}/>
+                         src={venuaAreaContext.Area.UrlSvg}
+                        /*viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
+                        width={"auto"} height={"auto"}
+                        preserveAspectRatio={"xMidYMid"}
+                        onClick={handleOnWheel}
+                        onMouseLeave={handleOnMouseLeave}
+                        onTouchMove={handleOnMouseMove}
+                        onTouchEnd={handleOnMouseUp}
+                        onTouchStart={handleOnMouseDown}*//>
                 </div>
             </div>
             <div className={style.mainDivZones}>
@@ -195,13 +195,19 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         venuaAreaContext.Area.AreasStadium.forEach((item) => {
                 addClassToSvg(item.Id, item.StateArea)
                 addOnClickEvent(item.Id, item.SectionDetail.Id)
-                /*getOnMouseOVer(item.Id)*/
             }
         )
         for (let i = 1; i <= 58; i++) {
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
-        let instance = panzoom(document.getElementById('svgIdPanZoom'));
+
+        let instance = panzoom(document.getElementById('svgIdPanZoom'),{
+            maxZoom: 3,
+            minZoom: 1,
+            onTouch: function(e) {
+                return false; // tells the library to not preventDefault.
+            }
+        });
     }
 
 }

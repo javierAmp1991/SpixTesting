@@ -12,6 +12,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
 import panzoom from "panzoom";
+
 const noSelectedText: string = "Selecciona un area"
 const zonesTitle: string = "Zonas"
 
@@ -153,16 +154,15 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                     <div className={style.spaceSvg}>
                         <div ref={contRef} className={`${cssStyle.stateTickets} ${cssStyle.cursorStyle}`}>
                             <SVG className={style.touchAction} id={"svgIdPanZoom"}
-                                 viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
-                                 width={"auto"} height={"auto"}
-                                 preserveAspectRatio={"xMidYMid"}
-                                /*onWheel={handleOnWheel}
-                                onMouseLeave={handleOnMouseLeave}
-                                onMouseMove={handleOnMouseMove}
-                                onMouseDown={handleOnMouseDown}
-                                onMouseUp={handleOnMouseUp}*/
-                                 onLoad={postCss}
-                                 src={venuaAreaContext.Area.UrlSvg}/>
+                                 onLoad={postCss} src={venuaAreaContext.Area.UrlSvg}
+                                /*viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
+                                width={"auto"} height={"auto"}
+                                preserveAspectRatio={"xMidYMid"}
+                               onWheel={handleOnWheel}
+                               onMouseLeave={handleOnMouseLeave}
+                               onMouseMove={handleOnMouseMove}
+                               onMouseDown={handleOnMouseDown}
+                               onMouseUp={handleOnMouseUp}*//>
 
                         </div>
                     </div>
@@ -260,8 +260,10 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
             addOnClickEvent(`idsvg${i}`, "subAreaStadium1")
         }
 
-        let instance = panzoom(document.getElementById('svgIdPanZoom'));
-
+        let instance = panzoom(document.getElementById('svgIdPanZoom'),{
+            maxZoom: 3,
+            minZoom: 1,
+        });
     }
 
     //endregion
