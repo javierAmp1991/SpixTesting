@@ -211,7 +211,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         }
 
         let instance = panzoom(document.getElementById('svgIdPanZoom'), {
-            maxZoom: 3,
+            maxZoom: 4,
             minZoom: 1,
             onTouch: function (e) {
                 return false; // tells the library to not preventDefault.
@@ -224,7 +224,6 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
         instance.on('panend', function(e) {
             setTouchActionControl(touchActionControl = false)
         });
-        instance.dispose()
     }
 
 }
