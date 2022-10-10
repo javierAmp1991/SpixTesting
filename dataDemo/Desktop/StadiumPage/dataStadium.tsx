@@ -1386,10 +1386,6 @@ const areaItemData: AreaItem[] = [
         Name: "Area Item 4",
         Id: "idAreaItem4"
     },
-    {
-        Name: "Area Item 5",
-        Id: "idAreaItem5"
-    }
 ]
 
 export namespace VenueData {

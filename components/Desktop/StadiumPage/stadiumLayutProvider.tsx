@@ -11,6 +11,7 @@ import {GlobalConst} from "../../../public/globalConst";
 
 export class ProviderSelectedTicketProp {
     SelectedTickets: TicketStadium[];
+    LastTicketAdd: TicketStadium
     AddTickets: Function;
     DeleteTickets: Function;
     IsTicketSelected: Function;
@@ -260,6 +261,7 @@ export default function StadiumLayutProvider({children}) {
 
     let [selectedTickets, setSelectedTickets] = useState([])
     let [controlFromSeats, setControlFromSeats] = useState(controlFromSeatsDefault)
+    let [ticketGoTo, setTicketGoTo] = useState(null)
     const handleSelectTickets = (ticket: TicketStadium) => {
         let numberTicketsSelected: number = selectedTickets.length
         if (numberTicketsSelected < numberTicketWant) setSelectedTickets(selectedTickets = [...selectedTickets, ticket])
@@ -268,6 +270,7 @@ export default function StadiumLayutProvider({children}) {
             newListTickets = [...newListTickets, ticket]
             setSelectedTickets(selectedTickets = newListTickets)
         }
+        setTicketGoTo(ticketGoTo = ticket)
     }
     const handleDeleteTickets = (ticket: TicketStadium) => {
         let newListTickets = selectedTickets.filter(item => item.Id != ticket.Id)
@@ -281,7 +284,6 @@ export default function StadiumLayutProvider({children}) {
         })
         return control
     }
-
     useEffect(() => {
         handleSelectTickectFromSeats(controlFromSeats.IdRowSeat, controlFromSeats.IsSelected)
     }, [controlFromSeats])
@@ -324,6 +326,7 @@ export default function StadiumLayutProvider({children}) {
     }
     const providerTicketSelected: ProviderSelectedTicketProp = {
         SelectedTickets: selectedTickets,
+        LastTicketAdd: ticketGoTo,
         AddTickets: handleSelectTickets,
         DeleteTickets: handleDeleteTickets,
         IsTicketSelected: isTicketSelected,

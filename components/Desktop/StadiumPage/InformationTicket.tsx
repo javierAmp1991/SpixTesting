@@ -1,7 +1,7 @@
 import style from "/styles/Desktop/StadiumPage/informationTicket.module.css"
 import utilities from "/styles/utilities.module.css";
 import TicketStadiumDesktop from "./ticketStadium";
-import React, {useContext, useRef} from "react";
+import React, {useContext, useEffect, useRef} from "react";
 import {
     SelectedTicketsContext,
     SelectedSectionContext,
@@ -47,13 +47,13 @@ export default function InformationTicket() {
 
     const contTicketsRef = useRef(null)
     const rowNumberRef = useRef(null)
-    const handleClickGoto = () => {
-        let containerPosition = contTicketsRef.current.getBoundingClientRect()
-        let ticketPosition = document.getElementById(`13TicketId`).getBoundingClientRect()
-        let number1 = containerPosition.top
-        let number2 = ticketPosition.top
-        contTicketsRef.current.scrollTop = number2 - number1
-    }
+    useEffect(() => {
+        if (ticketsInformation.LastTicketAdd != null) {
+            let containerPosition = contTicketsRef.current.getBoundingClientRect()
+            let ticketPosition = document.getElementById(ticketsInformation.LastTicketAdd.Id).getBoundingClientRect()
+            contTicketsRef.current.scrollTop = ticketPosition.top - containerPosition.top
+        }
+    }, [ticketsInformation.LastTicketAdd])
     const handleClickRight = () => rowNumberRef.current.scrollLeft += 52
     const handleClickLeft = () => rowNumberRef.current.scrollLeft -= 52
 
@@ -68,7 +68,7 @@ export default function InformationTicket() {
                 {
                     sectionInformation.SelectedSection != null ?
                         <div className={style.mainContInfo}>
-                            <div onClick={handleClickGoto} className={style.titleArea}>
+                            <div className={style.titleArea}>
                                 {sectionInformation.SelectedSection.Name}
                             </div>
                             <div className={`${utilities.fontSubtitleDesktop} ${style.paddingCapacity}`}>
@@ -124,10 +124,12 @@ export default function InformationTicket() {
                     {
                         sectionInformation.SelectedSection != null ?
                             sectionInformation.SelectedSection.SectionDetail.RowTickets.map(ticket =>
-                                <TicketStadiumDesktop isSelectSection={true} isDeleteSection={true} styleDiv={true} key={ticket.Id} item={ticket}/>)
+                                <TicketStadiumDesktop isSelectSection={true} isDeleteSection={true} styleDiv={true}
+                                                      key={ticket.Id} item={ticket}/>)
                             :
                             venueAreaContext.Area.MainTickets.map((ticket) =>
-                                <TicketStadiumDesktop isSelectSection={true} isDeleteSection={true} styleDiv={true} key={ticket.Id} item={ticket}/>
+                                <TicketStadiumDesktop isSelectSection={true} isDeleteSection={true} styleDiv={true}
+                                                      key={ticket.Id} item={ticket}/>
                             )
                     }
                 </div>

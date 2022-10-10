@@ -36,7 +36,7 @@ export default function TicketStadiumDesktop({item, styleDiv, isDeleteSection, i
     const cssStyle = getCssStyle()
 
     return (
-        <div id={`${item.Row}${item.Seat}TicketId`}
+        <div id={item.Id}
              className={`${style.mainCont} ${cssStyle.styleOutsideCont} ${cssStyle.styleInsideCont}`}>
             <div className={style.gridContPrice}>
                 <div className={style.leftCont}>
