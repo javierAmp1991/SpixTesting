@@ -216,13 +216,14 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
             smoothScroll: false
 
         });
-        instance.on('panstart', function(e) {
-            if(instance.getTransform().scale > 1)
-            setTouchActionControl(touchActionControl = true)
-        });
 
-        instance.on('panend', function(e) {
-            setTouchActionControl(touchActionControl = false)
+        instance.on('zoom', function (e) {
+            console.log(instance.getTransform().scale)
+            if (instance.getTransform().scale > 1) {
+                setTouchActionControl(touchActionControl = false)
+            } else {
+                setTouchActionControl(touchActionControl = true)
+            }
         });
     }
 
