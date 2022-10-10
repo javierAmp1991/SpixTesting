@@ -55,7 +55,7 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     let endPoint = {x: 0, y: 0};
     let scale = 1;
 
-    let[touch, setTouch] = useState({x:0,y:0})
+    let [touch, setTouch] = useState({x: 0, y: 0})
 
     const handleZoomButton = (num: number) => {
         let w = viewBoxAt.w;
@@ -85,30 +85,28 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
     }
     const handleOnMouseDown = (e) => {
         setIsPanningControl(isPanningControl = true)
-        setStartPoints(startPoints = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY})
+        setStartPoints(startPoints = {x: e.targetTouches[e.targetTouches.length - 1].clientX, y: e.targetTouches[e.targetTouches.length - 1].clientY})
     }
     const handleOnMouseMove = (e) => {
-        setTouch(touch = {x:e.changedTouches[0], y: e.changedTouches[0]})
-
-       /* if (isPanningControl) {
-            endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY}
-            let dx = (startPoints.x - endPoint.x) / scale;
-            let dy = (startPoints.y - endPoint.y) / scale;
-            setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
-        }*/
+        if (isPanningControl) {
+             endPoint = {x: e.targetTouches[e.targetTouches.length - 1].clientX, y: e.targetTouches[e.targetTouches.length - 1].clientY}
+             let dx = (startPoints.x - endPoint.x) / scale;
+             let dy = (startPoints.y - endPoint.y) / scale;
+             setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
+         }
     }
     const handleOnMouseUp = (e) => {
-
-        if (isPanningControl) {
+       /* console.log(e.targetTouches[e.targetTouches.length - 1].clientX)*/
+        /*if (isPanningControl) {
             endPoint = {x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY};
             let dx = (startPoints.x - endPoint.x) / scale;
             let dy = (startPoints.y - endPoint.y) / scale;
             setViewBoxAt(viewBoxAt = {...viewBoxAt, x: dx, y: dy})
             setIsPanningControl(isPanningControl = false)
-        }
+        }*/
     }
     const handleOnMouseLeave = () => {
-        setIsPanningControl(isPanningControl = false)
+        /*setIsPanningControl(isPanningControl = false)*/
     }
     const handleReturn = () => setViewBoxAt({x: 0, y: 0, w: widthTest, h: heightTest})
 
@@ -146,8 +144,8 @@ export default function StadiumImageMobile({displaySubAreaSelected, stateAnimati
                          onWheel={handleOnWheel}
                          onMouseLeave={handleOnMouseLeave}
                          onTouchMove={handleOnMouseMove}
-                         onTouchEnd={handleOnMouseDown}
-                         onTouchStart={handleOnMouseUp}
+                         onTouchEnd={handleOnMouseUp}
+                         onTouchStart={handleOnMouseDown}
                          onLoad={postCss}
                          src={venuaAreaContext.Area.UrlSvg}/>
                 </div>
