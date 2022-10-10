@@ -42,7 +42,7 @@ const isButtonVisible: boolean = true
 const isBackGroundVisible: boolean = true
 
 export default function VenuePageDefault() {
-    const isSmallDown = useMediaQuery('(max-width: 1280px)');
+    const isSmallDown = useMediaQuery('(max-width: 1501px)');
 
     const numberTicketWant: ProviderNumberWantProp = useContext(NumberTicketWant)
     const mapPopUpContext: ProviderPopUpProp = useContext(PopUpVenueContext)
