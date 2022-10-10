@@ -13,7 +13,6 @@
     --scaleTransform: 1.07;
 }
 
-
 .sizeStadium {
     width: 100%;
     height: 100%;
@@ -29,6 +28,8 @@
     overflow: scroll;
     transform: scale(1);
     transition: 1.5s;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .svgReduce {
@@ -100,6 +101,8 @@
 .contSvg {
     overflow: hidden;
     object-fit: contain;
+    touch-action: none;
+    -ms-touch-action: none;
 
 }
 
@@ -116,10 +119,14 @@
 
 .divTransition2 {
     animation: animationZoomIn 1s linear;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .divTransition {
     animation: animationZoom 1s linear;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .divZoom {
@@ -133,6 +140,8 @@
     border-radius: 4px;
     overflow: hidden;
     z-index: 9000;
+    touch-action: none;
+    -ms-touch-action: none;
 }
 
 .divLesMore {

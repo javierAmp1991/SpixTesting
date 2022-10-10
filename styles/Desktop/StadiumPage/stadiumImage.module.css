@@ -6,6 +6,8 @@
     position: relative;
     overflow: scroll;
     padding: 16px 24px;
+    touch-action: none;
+    -ms-touch-action: none;
     --fillSections: #ff8383;
     --strokeWith: 1px;
     --strokeWithBefore: 12px;
@@ -43,12 +45,14 @@
     transform: scale(1);
     transition: 1.5s;
     touch-action: none;
+    -ms-touch-action: none;
 }
 
 .spaceSvg {
     width: 100%;
     padding: 5% 15%;
     touch-action: none;
+    -ms-touch-action: none;
 }
 
 .svgReduce {

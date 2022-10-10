@@ -156,11 +156,11 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                                  viewBox={`${viewBoxAt.x} ${viewBoxAt.y} ${viewBoxAt.w} ${viewBoxAt.h}`}
                                  width={"auto"} height={"auto"}
                                  preserveAspectRatio={"xMidYMid"}
-                                 onWheel={handleOnWheel}
+                                 /*onWheel={handleOnWheel}
                                  onMouseLeave={handleOnMouseLeave}
                                  onMouseMove={handleOnMouseMove}
                                  onMouseDown={handleOnMouseDown}
-                                 onMouseUp={handleOnMouseUp}
+                                 onMouseUp={handleOnMouseUp}*/
                                  onLoad={postCss}
                                  src={venuaAreaContext.Area.UrlSvg}/>
 
@@ -192,7 +192,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                     </div>
                 }
                 {
-                    numberTicketWant.NumberWant > 0 &&
+                    /*numberTicketWant.NumberWant > 0 &&
                     <div className={style.divZoom}>
                         <button onClick={() => handleZoomButton(-1000)} className={style.divLesMore}>
                             +
@@ -203,7 +203,7 @@ export default function StadiumImage({displaySubAreaSelected, stateAnimation}:
                         <button onClick={() => handleZoomButton(1000)} className={style.divLesMore}>
                             -
                         </button>
-                    </div>
+                    </div>*/
                 }
             </div>
         </>
