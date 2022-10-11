@@ -87,7 +87,9 @@ export namespace GlobalConst{
         crownIcon: "/images/crownIcon.png",
         lowVisibility: "/images/lowVisIcon.png",
         inOfferIcon: "/images/discountIcon.png",
-        fitScaleIcon: "/images/fitScaleIcon.png"
+        fitScaleIcon: "/images/fitScaleIcon.png",
+        leftArrowTriangle: "/images/leftArrowTriangle.png",
+        rightArrowTriangle: "/images/rightArrowTriangle.png"
     }
 }
 

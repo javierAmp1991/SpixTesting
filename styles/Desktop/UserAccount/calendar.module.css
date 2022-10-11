@@ -1,0 +1,129 @@
+.mainDiv {
+    --colorLines: #e8e8e8;
+    --borderLine: 1px solid var(--colorLines);
+}
+
+.mainDivMonth {
+    font-size: 22px;
+    font-weight: 400;
+    padding: 8px 0;
+    text-align: center;
+    display: grid;
+    color: white;
+}
+
+.divMonthArrow {
+    border-radius: 10px 10px 0 0;
+    padding: 2px 0;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    grid-template-columns: max-content max-content max-content;
+    background: var(--gradientBlueButton);
+
+}
+
+.mainDivCalendar {
+    background: var(--colorLines);
+    border-left: var(--borderLine);
+    border-right: var(--borderLine);
+    border-bottom: var(--borderLine);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+}
+
+.divDate {
+    display: grid;
+    width: 100%;
+    background: white;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+}
+
+.divDateEmpty {
+    display: grid;
+    width: 100%;
+    background: #f3f3f3;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.dayOfWeek {
+    display: grid;
+    text-align: center;
+    color: var(--colorSecundaryTextDesktop);
+    background: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 4px 0;
+}
+
+.positionNumber {
+    position: absolute;
+    color: var(--colorSecundaryTextDesktop);
+    top: 6px;
+    left: 6px;
+}
+
+.positionNumberWhite {
+    position: absolute;
+    color: white;
+    top: 6px;
+    left: 6px;
+    z-index: 900;
+}
+
+.NumberActivity {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 26px;
+    height: 26px;
+    font-weight: 500;
+    background: white;
+    color: var(--linkColor);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.sizeArrowMonth {
+    height: 12px;
+    width: 12px;
+    position: relative;
+}
+
+/*.gradient2 {
+    position: absolute;
+    height: 60%;
+    width: 100%;
+    opacity: .8;
+    background: radial-gradient(circle at top, transparent 20%, black 100%);
+    transform: scaleX(3.5);
+    bottom: 0;
+    z-index: 800;
+    transition: .4s;
+}*/
+
+.blackGradient {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    opacity: 1;
+    background: radial-gradient(circle at top, transparent 20%, black 100%);
+    transform: rotate(180deg);
+    top: 0;
+    z-index: 800;
+    transition: .4s;
+}
