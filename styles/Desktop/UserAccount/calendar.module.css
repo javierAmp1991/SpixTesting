@@ -67,6 +67,7 @@
     color: var(--colorSecundaryTextDesktop);
     top: 6px;
     left: 6px;
+    font-weight: 500;
 }
 
 .positionNumberWhite {
@@ -74,6 +75,7 @@
     color: white;
     top: 6px;
     left: 6px;
+    font-weight: 500;
     z-index: 900;
 }
 
