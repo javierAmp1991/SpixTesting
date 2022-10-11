@@ -4,16 +4,15 @@
     align-items: center;
     background: white;
     border-radius: 4px;
-    border: 2px solid var(--separationLineColor);
     padding: 4px 12px;
-    width: 230px;
+    width: 240px;
     transition: .4s;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
 }
 
 .mainDiv:hover {
-    transform: scale(1.1);
-    background: #eeeeee;
-    border: 2px solid #e3e3e3;
+    transform: scale(1.05);
+    background: #e9ecf3;
 }
 
 .sizeImage {

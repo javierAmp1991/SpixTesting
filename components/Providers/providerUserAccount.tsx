@@ -275,6 +275,13 @@ const listItems: Item[] = [
 
 const listConfigSection: AccountSections[] = [
     {
+        Id: "idConfigSection7",
+        Link: "/",
+        Name: "Mi Negocio",
+        PathImage: "",
+        Description: "descripcion para Mi negocio"
+    },
+    {
         Id: "idConfigSection1",
         Link: "/editProfile",
         Name: "Editar Perfil",
@@ -312,17 +319,10 @@ const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection6",
         Link: "/",
-        Name: "Wish List",
+        Name: "Wishlist",
         PathImage: "",
         Description: "descripcion para whish list"
     },
-    {
-        Id: "idConfigSection7",
-        Link: "/",
-        Name: "Mi Negocio",
-        PathImage: "",
-        Description: "descripcion para Mi negocio"
-    }
 ]
 
 export const AccountSectionContext = createContext(null)
