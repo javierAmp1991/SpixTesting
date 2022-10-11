@@ -118,12 +118,10 @@
 
 .blackGradient {
     position: absolute;
-    height: 20%;
+    height: 100%;
     width: 100%;
     opacity: 1;
     background: radial-gradient(circle at top, transparent 20%, black 100%);
-    transform: rotate(180deg);
-    top: 0;
     z-index: 800;
     transition: .4s;
 }
