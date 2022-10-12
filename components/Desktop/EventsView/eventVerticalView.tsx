@@ -10,7 +10,8 @@ import {
     EventCardType,
     EventCardWithDate,
     EventCardWithOffer,
-    EventCardWithPrice
+    EventCardWithPrice,
+    EventCardWithVenue
 } from "../../../dataDemo/EventView/eventVerticalView";
 import Link from "next/link";
 import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
@@ -27,6 +28,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
     let itemWithDate: EventCardWithDate;
     let itemWithResale: EventCardResale;
     let itemWithOffer: EventCardWithOffer;
+    let itemWithVenue: EventCardWithVenue
 
     let priceIncludeInfoFull: PriceIncludeInfoProp;
     let dateInfoFull: DateInfoProp;
@@ -61,8 +63,10 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         }
     } else if (item.Type == EventCardType.EventCardWithOffer) {
         itemWithOffer = item as EventCardWithOffer
-    } else {
+    } else if (item.Type == EventCardType.EventCardWithResale) {
         itemWithResale = item as EventCardResale
+    } else {
+        itemWithVenue = item as EventCardWithVenue
     }
 
     const principalInfoEventProp: PrincipalInfoEventProp = {
@@ -84,7 +88,8 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         }*/
 
     return (
-        <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
+        <Link
+            href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
             <a className={`${styles.principalGridVertical} ${cssStyles.bgInfo} ${cssStyles.borderCard}`}>
 
                 <div className={styles.containerImage}>
@@ -108,6 +113,14 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     {
                         item.Type != EventCardType.EventCardBase &&
                         <div className={styles.bottomDivSearch}>
+                            {
+                                item.Type == EventCardType.EventCardWithVenue &&
+                                <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
+                                    {
+                                        itemWithVenue.Venue
+                                    }
+                                </div>
+                            }
                             {
                                 item.Type == EventCardType.EventCardWithDate &&
                                 <DateInfoEvent item={dateInfo}/>

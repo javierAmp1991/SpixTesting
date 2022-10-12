@@ -2,17 +2,25 @@
     display: grid;
     grid-template-columns: max-content 1fr;
     align-items: center;
-    background: white;
     border-radius: 4px;
     padding: 4px 12px;
-    width: 240px;
     transition: .4s;
-    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    margin: 12px 0;
+}
+
+.mainDivSelected {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    border-radius: 4px;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, .4);
+    transition: .4s;
+    transform: scale(1.05);
 }
 
 .mainDiv:hover {
     transform: scale(1.05);
-    background: #e9ecf3;
 }
 
 .sizeImage {
@@ -22,14 +30,54 @@
 }
 
 .infoDiv {
+    text-align: left;
     padding: 12px;
 }
 
 .name {
-    font-size: 16px;
-    color: var(--colorTitlesDesktop);
+    font-size: 14px;
+    color: white;
 }
 
 .description {
-    color: var(--colorPrimaryTextDesktop);
+    color: white;
+}
+
+.gridSubItemsOpen {
+    overflow: hidden;
+    height: 144px;
+    gap: 12px;
+    display: grid;
+    animation: animationInit .3s ease-in;
+}
+
+@keyframes animationInit {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 144px;
+    }
+}
+
+.gridSubItemsClose {
+    overflow: hidden;
+    height: 0;
+    gap: 12px;
+    display: grid;
+    transition: .4s;
+}
+
+.subItemGrid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px;
+    padding: 4px 12px;
+    align-items: center;
+    color: white;
+    margin-left: 12px;
+}
+
+.subItemName {
+    text-align: left;
 }

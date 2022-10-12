@@ -1,25 +1,79 @@
 import style from "/styles/Desktop/UserAccount/accountSectionOption.module.css"
-import {AccountSections} from "../../Providers/providerUserAccount";
+import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerUserAccount";
 import Image from "next/image";
-import Link from "next/link";
 import {GlobalConst} from "../../../public/globalConst";
+import {useContext, useEffect, useState} from "react";
 
 export default function AccountSectionOption({item}: { item: AccountSections }) {
+    const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
+    const handleSelectSection = (id: string, stateSection: boolean) => {
+        accountSectionContext.SelectSection(id, stateSection)
+    }
+    let [stateMyBussines, setStateMyBussines] = useState(false)
+    useEffect(() => {
+        accountSectionContext.ListAccountSection.forEach(item => {
+            if (item.Name == "Mi Negocio") {
+                if (item.State) setStateMyBussines(stateMyBussines = true)
+                else setStateMyBussines(stateMyBussines = false)
+            }
+        })
+    }, [accountSectionContext.ListAccountSection])
     return (
-        <Link href={item.Link}>
-            <div className={style.mainDiv}>
+        item.Name == "Mi Negocio" ?
+            <>
+                <button onClick={() => handleSelectSection(item.Id, !item.State)}
+                        className={item.State ? style.mainDivSelected : style.mainDiv}>
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} src={item.PathImage}/>
+                    </div>
+                    <div className={style.infoDiv}>
+                        <div className={style.name}>
+                            {item.Name}
+                        </div>
+                    </div>
+                </button>
+                {
+                   /* stateMyBussines &&
+                    <div className={style.gridSubItemsOpen}>
+                        <button className={style.subItemGrid}>
+                            <div className={style.sizeImage}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.wishListIcon}/>
+                            </div>
+                            <div className={style.subItemName}>
+                                SubItem 5
+                            </div>
+                        </button>
+                        <button className={style.subItemGrid}>
+                            <div className={style.sizeImage}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.myBuys}/>
+                            </div>
+                            <div className={style.subItemName}>
+                                SubItem 4
+                            </div>
+                        </button>
+                        <button className={style.subItemGrid}>
+                            <div className={style.sizeImage}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon}/>
+                            </div>
+                            <div className={style.subItemName}>
+                                SubItem 3
+                            </div>
+                        </button>
+                    </div>*/
+                }
+
+            </>
+            :
+            <button onClick={() => handleSelectSection(item.Id, !item.State)}
+                    className={item.State ? style.mainDivSelected : style.mainDiv}>
                 <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferIcon}/>
+                    <Image layout={"fill"} src={item.PathImage}/>
                 </div>
                 <div className={style.infoDiv}>
                     <div className={style.name}>
                         {item.Name}
                     </div>
-                    <div className={style.description}>
-                        {item.Description}
-                    </div>
                 </div>
-            </div>
-        </Link>
+            </button>
     )
 }

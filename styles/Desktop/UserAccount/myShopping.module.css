@@ -1,0 +1,217 @@
+.mainDiv {
+    display: grid;
+    height: 100%;
+    padding: 24px 5% 53px 5%;
+    --colorLines: #efefef;
+    --borderLine: 1px solid var(--colorLines);
+    --paddingXItems: 12px;
+    --paddingYItems: 10px;
+}
+
+.scrollDiv {
+    overflow: scroll;
+}
+
+.mainDivCeldas {
+    display: grid;
+    overflow: scroll;
+    height: 100%;
+    border-bottom: var(--borderLine);
+    border-left: var(--borderLine);
+    border-right: var(--borderLine);
+    border-radius: 0 0 8px 8px;
+    /*  box-shadow: 0 2px 6px rgba(0,0,0,.2);*/
+}
+
+.mainDivHeader {
+    border-radius: 8px 8px 0 0;
+    border-top: var(--borderLine);
+    border-left: var(--borderLine);
+    border-right: var(--borderLine);
+    /*box-shadow: 0 -2px 6px rgba(0,0,0,.1);*/
+    overflow: hidden;
+}
+
+.gridHeader1 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background: var(--colorLines);
+    border-bottom: var(--borderLine);
+    gap: 1px;
+}
+
+.inptSelect {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    width: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    outline: none;
+    padding: 8px 12px;
+    margin-left: 4px;
+}
+
+
+.gridHeader {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+    background: var(--colorLines);
+    gap: 1px;
+    overflow: scroll;
+}
+
+
+.mainDivTitle {
+    padding-bottom: 24px;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.leftDiv {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    overflow: scroll;
+    height: 100%;
+    padding: 12px;
+}
+
+.date {
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    height: max-content;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.page {
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    height: max-content;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.name {
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    height: max-content;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.amount {
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    height: max-content;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 500;
+}
+
+.price {
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    height: max-content;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 500;
+}
+
+.gridOption {
+    padding: var(--paddingYItems) var(--paddingXItems);
+    background: #fcfcfc;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.sizeBottomArrow {
+    height: 7px;
+    width: 12px;
+    position: relative;
+}
+
+.gridImageExport {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.sizeImageExport {
+    width: 16px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.dropDown {
+    padding: 12px;
+    border: 1px solid gray;
+}
+
+.gridExport {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 8px;
+    justify-content: right;
+}
+
+.gridExportTest {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 8px;
+    justify-content: right;
+    padding: 10px 12px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    width: max-content;
+}
+
+.gridInputExport{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, max-content);
+    margin-bottom: 24px;
+    justify-content: space-between;
+}
+
+.gridHeaderExport {
+    background: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--colorLines);
+    color: white;
+    font-weight: 500;
+}
+
+.mainDivMonth {
+    /*color: var(--colorTitlesDesktop);*/
+    font-size: 18px;
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 0;
+    text-align: center;
+    display: grid;
+}
+
+.divMonthArrow {
+    padding: 2px 0;
+    display: grid;
+    align-items: center;
+    gap: 32px;
+    justify-content: center;
+    grid-template-columns: max-content max-content max-content;
+}
+
+.sizeArrowMonth {
+    height: 10px;
+    width: 10px;
+    position: relative;
+}

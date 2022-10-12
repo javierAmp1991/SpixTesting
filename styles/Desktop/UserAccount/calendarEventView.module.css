@@ -1,0 +1,59 @@
+.mainGrid {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    transition: .4s;
+    background: white;
+}
+
+.mainGrid:hover{
+    transform: scale(1.03);
+}
+
+.sizeImage {
+    width: 100px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.title {
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.subTitle {
+    color: var(--colorSubtitleDesktop);
+}
+
+.date {
+    font-weight: 400;
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.mainDivInfo {
+    padding: 12px 12px 12px 8px;
+    display: grid;
+}
+
+.hours {
+    font-size: 12px;
+    color: var(--colorSecundaryTextDesktop);
+    font-weight: 500;
+}
+
+.gridCircleHour {
+    padding: 14px 8px 12px 0;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 3px;
+    align-items: center;
+}
+
+.circle {
+    width: 6px;
+    height: 6px;
+    background: orange;
+    border-radius: 50%;
+}

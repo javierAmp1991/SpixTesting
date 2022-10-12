@@ -1,38 +1,61 @@
-.mainDiv {
-    --colorLines: #e8e8e8;
+.principalGrid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    height: 100%;
+    --colorLines: #efefef;
     --borderLine: 1px solid var(--colorLines);
-    box-shadow: var(--boxShadowCard);
-    border-radius: 10px;
-    height: max-content;
+    --sizeCircle: 8px;
+    --paddingXTitle: 40px;
+    --paddingYTitle: 24px;
+}
+
+.mainDiv {
+    height: 100%;
+    overflow: scroll;
+}
+
+.mainDivSpace {
+    padding: var(--paddingYTitle) var(--paddingXTitle) 53px var(--paddingXTitle);
+    overflow: scroll;
+
 }
 
 .mainDivMonth {
-    font-size: 22px;
+    /*color: var(--colorTitlesDesktop);*/
+    font-size: 18px;
+    width: 100%;
     font-weight: 400;
     padding: 8px 0;
     text-align: center;
     display: grid;
-    color: white;
 }
 
 .divMonthArrow {
-    border-radius: 10px 10px 0 0;
     padding: 2px 0;
-    overflow: hidden;
     display: grid;
     align-items: center;
-    justify-content: center;
     gap: 32px;
+    justify-content: center;
     grid-template-columns: max-content max-content max-content;
-    background: var(--gradientBlueButton);
+}
 
+.headrTitle {
+    padding-bottom: var(--paddingYTitle);
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
 }
 
 .mainDivCalendar {
     background: var(--colorLines);
-    border-left: var(--borderLine);
-    border-right: var(--borderLine);
     border-bottom: var(--borderLine);
+    border-right: var(--borderLine);
+    border-left: var(--borderLine);
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 1px;
@@ -40,41 +63,62 @@
 
 .divDate {
     display: grid;
+    padding: 20% 30%;
     width: 100%;
     background: white;
     aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, .1);
+    background: white;
+}
+
+.divDateSelected {
+    display: grid;
+    padding: 20% 30%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    background: rgb(215, 242, 255);
 }
 
 .divDateEmpty {
     display: grid;
     width: 100%;
-    background: #f3f3f3;
     aspect-ratio: 1/1;
+    background: white;
     position: relative;
 }
 
 .dayOfWeek {
     display: grid;
-    text-align: center;
+    text-align: left;
     color: var(--colorSecundaryTextDesktop);
-    background: #ffffff;
     font-size: 15px;
     font-weight: 500;
-    padding: 4px 0;
+    padding: 8px 30%;
+    background: #fafafa;
 }
 
 .positionNumber {
-    position: absolute;
     color: var(--colorSecundaryTextDesktop);
-    top: 6px;
-    left: 6px;
     font-weight: 500;
+    text-align: left;
+    font-size: 16px;
+}
+
+.mainDivMonthGrid {
+    background: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    padding: 2px 32px;
+    border-bottom: 1px solid var(--colorLines);
+    color: white;
+    border-radius: 8px 8px 0 0;
 }
 
 .positionNumberWhite {
-    position: absolute;
     color: white;
     top: 6px;
     left: 6px;
@@ -90,12 +134,12 @@
     width: var(--sizeNumber);
     height: var(--sizeNumber);
     font-weight: 500;
-    background: white;
+    background: rgba(255, 255, 255, 1);
     color: var(--linkColor);
     border-radius: 50%;
     position: absolute;
-    bottom: calc(50% - (var(--sizeNumber)/2));
-    right: calc(50% - (var(--sizeNumber)/2));
+    bottom: calc(50% - (var(--sizeNumber) / 2));
+    right: calc(50% - (var(--sizeNumber) / 2));
 }
 
 .sizeImage {
@@ -105,8 +149,8 @@
 }
 
 .sizeArrowMonth {
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
     position: relative;
 }
 
@@ -130,4 +174,99 @@
     background: radial-gradient(circle at bottom, transparent 50%, black 100%);
     z-index: 800;
     transition: .4s;
+}
+
+.mainDivEvents {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    background: #fcfcfc;
+    border-left: var(--borderLine);
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    padding-bottom: 53px;
+}
+
+.mainContSec {
+    display: grid;
+    gap: 12px;
+    overflow: scroll;
+    padding: 24px 16px 16px 16px;
+}
+
+.gridEvents {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.titleDate {
+    font-size: 15px;
+    color: var(--colorTitlesDesktop);
+    padding-bottom: 12px;
+}
+
+.circle {
+    width: var(--sizeCircle);
+    height: var(--sizeCircle);
+    background: orange;
+    border-radius: 50%;
+}
+
+.plusCircle {
+    width: var(--sizeCircle);
+    height: var(--sizeCircle);
+    position: relative;
+}
+
+.gridCircle {
+    display: grid;
+    grid-template-columns: var(--sizeCircle);
+    grid-auto-flow: column;
+    grid-auto-columns: var(--sizeCircle);
+    gap: 4px;
+    align-items: center;
+}
+
+.divEventCircle {
+    justify-content: right;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.titleCalendr {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.subTitleCalendar {
+    color: var(--colorPrimaryTextDesktop);
+    padding-bottom: 4px;
+}
+
+.gridIconHeader {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid var(--separationLineColor);
+    border-bottom: 1px solid #efefef;
+    margin: 16px 16px 0 16px;
+    padding-bottom: 14px;
+}
+
+.sizeImageCalendar {
+    width: 44px;
+    height: 44px;
+    position: relative;
+}
+
+.underDiv {
+    padding: 20px 4px 16px 4px;
+    border-top: 1px solid var(--separationLineColor);
+    border-top: 1px solid #efefef;
+
 }

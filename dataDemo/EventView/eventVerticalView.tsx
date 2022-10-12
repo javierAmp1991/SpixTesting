@@ -4,7 +4,8 @@ export enum EventCardType {
     EventCardWithDate,
     EventCardWithResale,
     EventCardWithOffer,
-    EventCardFull
+    EventCardWithVenue,
+    EventCardFull,
 }
 
 export abstract class BaseEventCard {
@@ -36,6 +37,10 @@ export class EventCardResale extends BaseEventCard {
 export class EventCardWithOffer extends BaseEventCard {
     ListTagsOffer: string[]
     TotalOffers: number
+}
+
+export class EventCardWithVenue extends BaseEventCard{
+    Venue: string
 }
 
 export class EventCardFull extends BaseEventCard {

@@ -89,7 +89,17 @@ export namespace GlobalConst{
         inOfferIcon: "/images/discountIcon.png",
         fitScaleIcon: "/images/fitScaleIcon.png",
         leftArrowTriangle: "/images/leftArrowTriangle.png",
-        rightArrowTriangle: "/images/rightArrowTriangle.png"
+        rightArrowTriangle: "/images/rightArrowTriangle.png",
+        bussinesIconAccount: "/images/bussinesIcon.png",
+        profileAccount: "/images/profileConfigIcon.png",
+        wishListIcon: "/images/wishListIcon.png",
+        refundIcon: "/images/reembolsoIcon.png",
+        myBuys: "/images/misComprasIcon.png",
+        securityAccountIcon: "/images/securityAccountIcon.png",
+        plusIconBlue: "/images/plusIconBlue.png",
+        calendarSection: "/images/calendarSection.png",
+        pdfIcon: "/images/pdfIcon.png",
+        excellIcon: "/images/exellIcon.png"
     }
 }
 

@@ -1,29 +1,29 @@
 .mainDiv {
+    --marginMainDiv: 16px;
     background: white;
-    margin: auto;
-    max-width: 1000px;
-    padding: 12px 24px;
+    margin: var(--marginMainDiv) auto;
+    border-radius: 16px;
+    width: 100%;
+    max-width: var(--maxWidthBodyContent);
+    height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    box-shadow: var(--boxShadowCard);
+    overflow: hidden;
 }
 
-.divTitle{
-    font-size: 21px;
-    font-weight: 500;
-    padding-bottom: 12px;
+.mainDivLeftArea {
+    height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    background: linear-gradient(145deg, rgb(21, 74, 189) 0%, rgb(18, 125, 196) 100.2%);
+    background: linear-gradient(145deg, #3151e3 0%, #2f49d0 100.2%);
 }
+
+.mainDivRightArea {
+    height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    overflow: hidden;
+}
+
 .mainDivGrid {
     display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 40px;
-    /*width: 90%;
-    margin: 40px auto;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--boxShadowCard);
-    height: 80vh;*/
+    grid-template-columns: 230px 1fr;
+    background: white;
 }
 
-.gridSections {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
