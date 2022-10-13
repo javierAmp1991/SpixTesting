@@ -177,8 +177,8 @@
 }
 
 .gridHeaderExport {
-    background: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
     background: linear-gradient(145deg, rgb(255, 113, 52) 0%, rgb(255, 104, 38) 100%);
+    background: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     padding: 8px 32px;
@@ -210,4 +210,13 @@
     height: 10px;
     width: 10px;
     position: relative;
+}
+
+.styleItem {
+    display: grid;
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    color: var(--colorPrimaryTextDesktop);
+    justify-items: center;
+    align-items: center;
 }

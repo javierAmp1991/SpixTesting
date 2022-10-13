@@ -148,19 +148,19 @@ export default function MyShopping() {
                         {
                             providerMyShopping.ListMyShopping.map(item =>
                                 <>
-                                    <div className={style.date}>
+                                    <div className={style.styleItem}>
                                         {item.Date.toLocaleDateString()}
                                     </div>
-                                    <div className={style.page}>
+                                    <div className={style.styleItem}>
                                         {item.Sites}
                                     </div>
-                                    <div className={style.name}>
+                                    <div className={style.styleItem}>
                                         {item.Name}
                                     </div>
-                                    <div className={style.amount}>
+                                    <div className={style.styleItem}>
                                         {item.Amount}
                                     </div>
-                                    <div className={style.price}>
+                                    <div className={style.styleItem}>
                                         ${item.Amount > 1 ? getMoneyValue(item.Amount * item.Price) : getMoneyValue(item.Price)}
                                     </div>
                                 </>

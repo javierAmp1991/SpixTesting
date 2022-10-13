@@ -63,7 +63,7 @@ export namespace GlobalConst{
         leftArrowClean: "/images/leftArrowBanner.png",
         checkIconYellow: "/images/checkIconYellow.png",
         leftArrowRed: "/images/leftArrowRed.png",
-        placeHolderImageUpload: "images/placeholderImageUpload.png",
+        placeHolderImageUpload: "/images/placeholderImageUpload.png",
         ratingIndFull: "/images/ratingNewIndFull.png",
         ratingIndVoid: "/images/ratingNewIndVoid.png",
         emoticonButton: "/images/emoticon.png",
@@ -99,7 +99,10 @@ export namespace GlobalConst{
         plusIconBlue: "/images/plusIconBlue.png",
         calendarSection: "/images/calendarSection.png",
         pdfIcon: "/images/pdfIcon.png",
-        excellIcon: "/images/exellIcon.png"
+        excellIcon: "/images/exellIcon.png",
+        editProfilePic: "/images/editProfileWhite.png",
+        editProfileBlue: "/images/editProfileBlue.png",
+        cameraIcon: "/images/cameraIcon.png"
     }
 }
 

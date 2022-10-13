@@ -7,7 +7,7 @@
 }
 
 .mainDivTitle {
-    padding-bottom: 16px;
+    padding-bottom: 24px;
 }
 
 .title {
@@ -20,12 +20,6 @@
 
 .spaceOtherGender {
     margin-top: 12px;
-}
-
-.mainDivEdit {
-    padding: 20px 32px;
-    height: 100%;
-    overflow: scroll;
 }
 
 .sizeLogo {
@@ -41,10 +35,11 @@
 }
 
 .mainDivEdit {
-    width: 480px;
-    margin: auto;
-    box-shadow: var(--boxShadowCard);
-    border-radius: 12px;
+    height: 100%;
+    width: 500px;
+    padding-right: 4px;
+    margin-right: auto;
+    overflow: scroll;
 }
 
 .titleInputs {
@@ -70,13 +65,14 @@
     background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
     border-radius: 50%;
     width: max-content;
-    margin: auto;
+    position: relative;
 }
 
 .labelPhoto {
     width: max-content;
     margin: auto;
     color: var(--linkColor);
+    cursor: pointer;
 }
 
 .gridOptions {
@@ -86,7 +82,7 @@
 
 .gridNameInput {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 85px 1fr;
     gap: 16px;
     align-items: center;
 }
@@ -102,7 +98,31 @@
 
 .gridImageName {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: 85px 1fr;
     align-items: center;
-    gap: 8px;
+    gap: 16px;
+    justify-items: left;
 }
+
+.editProfilePic {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--gradientBlueButton);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.styleInputFile {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+

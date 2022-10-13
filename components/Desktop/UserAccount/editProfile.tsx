@@ -1,16 +1,45 @@
 import style from "/styles/Desktop/UserAccount/editProfile.module.css"
 import Image from "next/image";
+import {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-import {useState} from "react";
 
 const titleSection: string = "Editar perfil"
-const subtitleSection: string = "edita tus datos"
+const subtitleSection: string = "Edita tus datos"
+const inputFilteProfile: string = "inputFilteProfile001234"
 
 export default function EditProfile() {
     let [otherGender, setOtherGender] = useState(false)
-    const handleGender = (e) => {
-        setOtherGender(otherGender = e.target.value == "Otro" ? true : false)
+    let [displayOtherGender, setDisplayOtherGender] = useState(false)
+    let [gender, setGender] = useState("")
+    let [name, setName] = useState("")
+    let [nationality, setNationality] = useState("")
+    let [date, setDate] = useState("Fecha de nacimiento")
+    let [profileImage, setProfileImage] = useState("")
+
+    const handleOtherGender = (e) => {
+        setOtherGender(otherGender = e.target.value)
     }
+
+    const handleGender = (e) => {
+        setGender(gender = e.target.value)
+    }
+
+    useEffect(() => {
+        setDisplayOtherGender(displayOtherGender = gender == "Otro")
+    }, [gender])
+
+    const handleDate = (e) => {
+        setDate(date = e.target.value)
+    }
+
+    const handleNationality = (e) => {
+        setNationality(nationality = e.target.value)
+    }
+
+    const handleName = (e) => {
+        setName(name = e.target.value)
+    }
+
     return (
         <div className={style.mainDiv}>
             <div className={style.mainDivTitle}>
@@ -23,39 +52,38 @@ export default function EditProfile() {
             </div>
             <div className={style.mainDivEdit}>
                 <div className={style.gridOptions}>
-                    <div className={style.line}>
-                        <div className={style.sizeLogo}>
-                            <Image layout={"fill"} src={"/images/spixBlue.png"}/>
-                        </div>
-                    </div>
                     <div className={style.gridImageName}>
                         <div className={style.paddingGradient}>
                             <div className={style.sizeProfilePic}>
                                 <Image layout={"fill"} objectFit={"cover"} src={"/images/fotoperfil1.png"}/>
                             </div>
+                            <label htmlFor={inputFilteProfile} className={style.editProfilePic}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic}/>
+                            </label>
                         </div>
                         <div>
-                            <div>
+                            <div className={style.user}>
                                 @kujojotaro
                             </div>
-                            <div className={style.labelPhoto}>
-                                cambiar foto
-                            </div>
+                            <label htmlFor={inputFilteProfile} className={style.labelPhoto}>
+                                cambiar foto de perfil
+                            </label>
+                            <input className={style.styleInputFile} id={inputFilteProfile} type={"file"}/>
                         </div>
                     </div>
                     <div className={style.gridNameInput}>
                         <div className={style.titleInputs}>
                             Nombre
                         </div>
-                        <input className={style.styleInput} placeholder={"nombre"} type={"text"}/>
+                        <input onChange={handleName} className={style.styleInput} placeholder={"nombre"} type={"text"}/>
                     </div>
                     <div className={style.gridNameInput}>
                         <div className={style.titleInputs}>
                             Fecha nacimiento
                         </div>
-                        <input className={style.styleInput} placeholder={"selecciona una fecha"} type={"date"}/>
+                        <input onChange={handleDate} className={style.styleInput} placeholder={"selecciona una fecha"} type={"date"}/>
                     </div>
-                    <div>
+                    <div className={style.divGender}>
                         <div className={style.gridNameInput}>
                             <div className={style.titleInputs}>
                                 Genero
@@ -71,15 +99,14 @@ export default function EditProfile() {
                                     Otro
                                 </option>
                             </select>
-
                         </div>
                         {
-                            otherGender &&
+                            displayOtherGender &&
                             <div className={`${style.gridNameInput} ${style.spaceOtherGender}`}>
                                 <div/>
-                                <div className={style.styleInput}>
-                                    <input width={"100%"} placeholder={"especifique si es otro"} type={"text"}/>
-                                </div>
+                                <input onChange={handleOtherGender} className={style.styleInput}
+                                       placeholder={"especifique si es otro"}
+                                       type={"text"}/>
                             </div>
                         }
                     </div>
@@ -93,9 +120,9 @@ export default function EditProfile() {
                             <option>Colombiano</option>
                         </select>
                     </div>
-                    <div className={style.buttonConfirm}>
+                    <button className={style.buttonConfirm}>
                         Confirmar
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>

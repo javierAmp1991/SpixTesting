@@ -6,6 +6,7 @@ import Calendar from "./calendar";
 import MyRefunds from "./myRefunds";
 import NavMenuUserAccount from "./navMenu";
 import EditProfile from "./editProfile";
+import AccountAndSecurity from "./accountAndSecurity";
 
 
 export default function InitialPageUserAccount() {
@@ -32,6 +33,10 @@ export default function InitialPageUserAccount() {
                     {
                         providerSection.SectionSelected == MenuUserAccount.EditProfile &&
                         <EditProfile/>
+                    }
+                    {
+                        providerSection.SectionSelected == MenuUserAccount.AccountSecurity &&
+                        <AccountAndSecurity/>
                     }
                 </div>
             </div>
