@@ -6,8 +6,8 @@ import {useContext, useEffect, useState} from "react";
 
 export default function AccountSectionOption({item}: { item: AccountSections }) {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
-    const handleSelectSection = (id: string, stateSection: boolean) => {
-        accountSectionContext.SelectSection(id, stateSection)
+    const handleSelectSection = (id: string) => {
+        accountSectionContext.SelectSection(id)
     }
     let [stateMyBussines, setStateMyBussines] = useState(false)
     useEffect(() => {
@@ -21,7 +21,7 @@ export default function AccountSectionOption({item}: { item: AccountSections }) 
     return (
         item.Name == "Mi Negocio" ?
             <>
-                <button onClick={() => handleSelectSection(item.Id, !item.State)}
+                <button onClick={() => handleSelectSection(item.Id)}
                         className={item.State ? style.mainDivSelected : style.mainDiv}>
                     <div className={style.sizeImage}>
                         <Image layout={"fill"} src={item.PathImage}/>
@@ -64,7 +64,7 @@ export default function AccountSectionOption({item}: { item: AccountSections }) 
 
             </>
             :
-            <button onClick={() => handleSelectSection(item.Id, !item.State)}
+            <button onClick={() => handleSelectSection(item.Id)}
                     className={item.State ? style.mainDivSelected : style.mainDiv}>
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} src={item.PathImage}/>

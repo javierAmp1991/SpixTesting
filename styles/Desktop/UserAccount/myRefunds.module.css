@@ -20,7 +20,7 @@
     border-left: var(--borderLine);
     border-right: var(--borderLine);*/
     border-radius: 0 0 8px 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    box-shadow: 0 3px 6px rgba(0,0,0,.2);
 }
 
 .mainDivHeader {
@@ -34,7 +34,7 @@
 
 .gridHeader1 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     background: var(--colorLines);
     gap: 1px;
 }
@@ -52,7 +52,7 @@
 
 .gridHeader {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: max-content;
     grid-auto-rows: max-content;
     background: var(--colorLines);
@@ -81,39 +81,13 @@
     padding: 12px;
 }
 
-.date {
+.styleItem {
+    display: grid;
     background: white;
     padding: var(--paddingYItems) var(--paddingXItems);
-    height: max-content;
     color: var(--colorPrimaryTextDesktop);
-}
-
-.page {
-    background: white;
-    padding: var(--paddingYItems) var(--paddingXItems);
-    height: max-content;
-    color: var(--colorPrimaryTextDesktop);
-}
-
-.name {
-    background: white;
-    padding: var(--paddingYItems) var(--paddingXItems);
-    height: max-content;
-    color: var(--colorPrimaryTextDesktop);
-}
-
-.amount {
-    background: white;
-    padding: var(--paddingYItems) var(--paddingXItems);
-    height: max-content;
-    color: var(--colorPrimaryTextDesktop);
-}
-
-.price {
-    background: white;
-    padding: var(--paddingYItems) var(--paddingXItems);
-    height: max-content;
-    color: var(--colorPrimaryTextDesktop);
+    justify-items: center;
+    align-items: center;
 }
 
 .gridOption {
@@ -169,11 +143,27 @@
     width: max-content;
 }
 
-.gridInputExport{
+.gridInputExport {
     display: grid;
     gap: 12px;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(3, max-content);
     margin-bottom: 24px;
+}
+
+.refundButton {
+    display: grid;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    width: 160px;
+    outline: none;
+    padding: 0 12px;
+    transition: .4s;
+}
+
+.refundButton:hover {
+    background: #f5f5f5;
 }
 
 .gridHeaderExport {
@@ -188,7 +178,6 @@
 }
 
 .mainDivMonth {
-    /*color: var(--colorTitlesDesktop);*/
     font-size: 18px;
     width: 100%;
     font-weight: 400;
@@ -210,4 +199,37 @@
     height: 10px;
     width: 10px;
     position: relative;
+}
+
+.waiting {
+    background: #0066ff;
+    width: 90px;
+    text-align: center;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.aproved {
+    background: #0ac40a;
+    width: 90px;
+    text-align: center;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.refused {
+    background: #ff2727;
+    text-align: center;
+    width: 90px;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
 }

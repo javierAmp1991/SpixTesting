@@ -146,9 +146,6 @@ export default function Calendar() {
 
                             }
                         </div>
-                        <button onClick={handleViewAll} className={utilities.styleLink}>
-                            Ver todos
-                        </button>
                     </div>
                 </div>
                 <div className={style.mainContSec}>

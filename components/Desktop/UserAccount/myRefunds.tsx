@@ -1,15 +1,24 @@
-import style from "/styles/Desktop/UserAccount/myShopping.module.css"
+import style from "/styles/Desktop/UserAccount/myRefunds.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {MyShoppingContext, ProviderMyShopping} from "../../Providers/providerUserAccount";
+import {
+    MyRefundsContext,
+    MyShoppingContext,
+    ProviderMyRefunds,
+    ProviderMyShopping,
+    StateMyRefund
+} from "../../Providers/providerUserAccount";
 import {useContext, useState} from "react";
+import Link from "next/link";
 
 const exportText: string = "Exportar:"
-const titleSection: string = "Mis Comras"
-const subtitleSection: string = "Resumen de mis compras"
+const titleSection: string = "Reembolsos"
+const subtitleSection: string = "Resumen de mis reembolsos"
+const refundText: string = "Solicitar reembolso"
 
-export default function MyShopping() {
+export default function MyRefunds() {
     const providerMyShopping: ProviderMyShopping = useContext(MyShoppingContext)
+    const providerMyRefunds: ProviderMyRefunds = useContext(MyRefundsContext)
 
     let [orderByPrice, setOrderByPrice] = useState(false)
     let [orderByName, setOrderByName] = useState(false)
@@ -57,24 +66,27 @@ export default function MyShopping() {
                     <div className={style.gridInputExport}>
                         <select onChange={handleChangeSelect} className={style.inptSelect}>
                             {
-                                providerMyShopping.ListMoths.map(item =>
+                                providerMyRefunds.ListMoths.map(item =>
                                     <option key={item}>{item}</option>
                                 )
                             }
-
                         </select>
-                        <select onChange={handleChangeSelect} className={style.inptSelect}>
+                        <select className={style.inptSelect}>
                             {
-                                providerMyShopping.ListYears.map(item =>
+                                providerMyRefunds.ListYears.map(item =>
                                     <option key={item}>{item}</option>
                                 )
                             }
-
                         </select>
+                        <Link href={""}>
+                            <a className={style.refundButton}>
+                                {refundText}
+                            </a>
+                        </Link>
                     </div>
                     <div className={style.mainDivHeader}>
                         <div className={style.gridHeaderExport}>
-                            <div></div>
+                            <div/>
                             <div className={style.divMonthArrow}>
                                 <button className={style.sizeArrowMonth}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowTriangle} alt={""}/>
@@ -117,7 +129,7 @@ export default function MyShopping() {
                             </button>
                             <button onClick={handleSortByName} className={style.gridOption}>
                                 <div>
-                                    Nombre
+                                    Producto
                                 </div>
                                 <div className={style.sizeBottomArrow}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
@@ -125,7 +137,7 @@ export default function MyShopping() {
                             </button>
                             <button onClick={handleSortByAmount} className={style.gridOption}>
                                 <div>
-                                    Cantidad
+                                    Monto
                                 </div>
                                 <div className={style.sizeBottomArrow}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
@@ -133,7 +145,15 @@ export default function MyShopping() {
                             </button>
                             <button onClick={handleSortByPrice} className={style.gridOption}>
                                 <div>
-                                    Valor
+                                    Estado
+                                </div>
+                                <div className={style.sizeBottomArrow}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                                </div>
+                            </button>
+                            <button onClick={handleSortByPrice} className={style.gridOption}>
+                                <div>
+                                    Motivo
                                 </div>
                                 <div className={style.sizeBottomArrow}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
@@ -146,22 +166,46 @@ export default function MyShopping() {
                 <div className={style.mainDivCeldas}>
                     <div className={style.gridHeader}>
                         {
-                            providerMyShopping.ListMyShopping.map(item =>
+                            providerMyRefunds.ListMyRefunds.map(item =>
                                 <>
-                                    <div className={style.date}>
+                                    <div className={style.styleItem}>
                                         {item.Date.toLocaleDateString()}
                                     </div>
-                                    <div className={style.page}>
-                                        {item.Sites}
+                                    <div className={style.styleItem}>
+                                        {item.Site}
                                     </div>
-                                    <div className={style.name}>
-                                        {item.Name}
+                                    <div className={style.styleItem}>
+                                        {item.Product}
                                     </div>
-                                    <div className={style.amount}>
-                                        {item.Amount}
+                                    <div className={style.styleItem}>
+                                        ${getMoneyValue(item.Amount)}
                                     </div>
-                                    <div className={style.price}>
-                                        ${item.Amount > 1 ? getMoneyValue(item.Amount * item.Price) : getMoneyValue(item.Price)}
+                                    <div className={style.styleItem}>
+                                        {
+                                            item.State == StateMyRefund.Aprobed &&
+                                            <div className={style.aproved}>
+                                                Aprobado
+                                            </div>
+                                        }
+                                        {
+                                            item.State == StateMyRefund.Refused &&
+                                            <div className={style.refused}>
+                                                Rechazado
+                                            </div>
+                                        }
+                                        {
+                                            item.State == StateMyRefund.Waiting &&
+                                            <div className={style.waiting}>
+                                                En espera
+                                            </div>
+                                        }
+
+                                    </div>
+                                    <div className={style.styleItem}>
+                                        {
+                                            item.Motive != null ? item.Motive :
+                                                item.State == StateMyRefund.Aprobed? "-" : "..."
+                                        }
                                     </div>
                                 </>
                             )

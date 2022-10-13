@@ -1,16 +1,14 @@
 import {createContext, useEffect, useState} from "react";
-import {EventCardType, EventCardWithVenue} from "../../dataDemo/EventView/eventVerticalView";
 import {GlobalConst} from "../../public/globalConst";
-import globby from "globby";
-import {PrincipalFeaturedSearch} from "../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
+import exp from "constants";
+import MyRefunds from "../Desktop/UserAccount/myRefunds";
 
 export class AccountSections {
     Id: string
     State: boolean
+    Type: MenuUserAccount
     Name: string
     PathImage: string
-    Description: string
 }
 
 export class CalendarDay {
@@ -113,6 +111,7 @@ const dailyActivitie4: CalendarEventViewProp[] = [
 
 export class ProviderAccountSections {
     ListAccountSection: AccountSections[]
+    SectionSelected: MenuUserAccount
     SelectSection: Function
 }
 
@@ -123,6 +122,839 @@ export class ProviderCalendarInformation {
     SelectDate: Function
     DeselectItems: Function
 }
+
+export class ProviderMyShopping {
+    ListMyShopping: MyShoppingItem[]
+    SortByPrice: Function
+    SortByName: Function
+    SortByDate: Function
+    SortBySite: Function
+    SortByAmount: Function
+    SelectDate: Function
+    ListMoths: string[]
+    ListYears: string[]
+}
+
+export class ProviderMyRefunds {
+    ListMyRefunds: MyRefundsItem[]
+    ListMoths: string[]
+    ListYears: string[]
+}
+
+export class MyShoppingItem {
+    Id: string
+    Date: Date
+    Name: string
+    Sites: string
+    Amount: number
+    Price: number
+}
+
+export class MyRefundsItem {
+    Id: string
+    Date: Date
+    Site: string
+    Product: string
+    Amount: number
+    State: StateMyRefund
+    Motive?: string
+}
+
+export enum StateMyRefund {
+    Aprobed,
+    Waiting,
+    Refused
+}
+
+export enum MenuUserAccount {
+    MyBussines,
+    EditProfile,
+    Calendar,
+    MyShoppings,
+    AccountSecurity,
+    Refund,
+    WishList,
+    MyCollection
+}
+
+const listMyShoppingItem: MyShoppingItem[] = [
+    {
+        Id: "myShoppingItem1",
+        Date: new Date(2022, 10, 20),
+        Name: "Six Pack Corona",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem2",
+        Date: new Date(2022, 10, 20),
+        Name: "Hamburguesa",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem3",
+        Date: new Date(2022, 10, 20),
+        Name: "Cheese Burger",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Name: "Mojito Frambuesa",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Name: "Entrada Top Gun",
+        Sites: "Top Gun Maverick",
+        Amount: 1,
+        Price: 19990
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Minions",
+        Sites: "Minions nace un villano",
+        Amount: 1,
+        Price: 4990
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Name: "Tabla de Sushi",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 21990
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Name: "Jugo de naranja",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Vip",
+        Sites: "Tributo a PetShop Boys",
+        Amount: 1,
+        Price: 8990
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Name: "Mani Japones",
+        Sites: "El huevo",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Name: "Coca-Cola",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 1990
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Name: "Curso Trading",
+        Sites: "Franco SA",
+        Amount: 1,
+        Price: 120000
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Name: "Entrada Palco Sur",
+        Sites: "Tributo a PetShop Boys",
+        Amount: 1,
+        Price: 15990
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Name: "Papas Lays",
+        Sites: "El huevo",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Name: "Cerveza Escudo",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 7990
+    },
+]
+const listMyShoppingItem2: MyShoppingItem[] = [
+    {
+        Id: "myShoppingItem1",
+        Date: new Date(2022, 10, 20),
+        Name: "TestChange1",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem2",
+        Date: new Date(2022, 10, 20),
+        Name: "Hamburguesa",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem3",
+        Date: new Date(2022, 10, 20),
+        Name: "Cheese Burger",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Name: "Mojito Frambuesa",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Name: "Entrada Top Gun",
+        Sites: "Top Gun Maverick",
+        Amount: 1,
+        Price: 19990
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Minions",
+        Sites: "Minions nace un villano",
+        Amount: 1,
+        Price: 4990
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Name: "Tabla de Sushi",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 21990
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Name: "Jugo de naranja",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Vip",
+        Sites: "Tributo a PetShop Boys",
+        Amount: 1,
+        Price: 8990
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Name: "Mani Japones",
+        Sites: "El huevo",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Name: "Coca-Cola",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 1990
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Name: "Curso Trading",
+        Sites: "Franco SA",
+        Amount: 1,
+        Price: 120000
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Name: "Entrada Palco Sur",
+        Sites: "Tributo a PetShop Boys",
+        Amount: 1,
+        Price: 15990
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Name: "Papas Lays",
+        Sites: "El huevo",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Name: "Cerveza Escudo",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 7990
+    },
+]
+const listMyShoppingItem3: MyShoppingItem[] = [
+    {
+        Id: "myShoppingItem1",
+        Date: new Date(2022, 10, 20),
+        Name: "testChange2",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem2",
+        Date: new Date(2022, 10, 20),
+        Name: "Hamburguesa",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem3",
+        Date: new Date(2022, 10, 20),
+        Name: "Cheese Burger",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Name: "Mojito Frambuesa",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Name: "Entrada Top Gun",
+        Sites: "Top Gun Maverick",
+        Amount: 1,
+        Price: 19990
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Minions",
+        Sites: "Minions nace un villano",
+        Amount: 1,
+        Price: 4990
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Name: "Tabla de Sushi",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 21990
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Name: "Jugo de naranja",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Vip",
+        Sites: "Tributo a PetShop Boys",
+        Amount: 1,
+        Price: 8990
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Name: "Mani Japones",
+        Sites: "El huevo",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Name: "Coca-Cola",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 1990
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Name: "Curso Trading",
+        Sites: "Franco SA",
+        Amount: 1,
+        Price: 120000
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Name: "Entrada Palco Sur",
+        Sites: "Tributo a PetShop Boys",
+        Amount: 1,
+        Price: 15990
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Name: "Papas Lays",
+        Sites: "El huevo",
+        Amount: 1,
+        Price: 3990
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Name: "Cerveza Escudo",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 7990
+    },
+]
+
+const listMyRefunds: MyRefundsItem[] = [
+    {
+        Id: "myRefundItem1",
+        Date: new Date(2022, 10, 20),
+        Product: "Six Pack Corona",
+        Site: "SabaWoo",
+        Amount: 9990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myRefundItem2",
+        Date: new Date(2022, 10, 20),
+        Product: "Hamburguesa",
+        Site: "SabaWoo",
+        Amount: 12990,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myRefundItem3",
+        Date: new Date(2022, 10, 20),
+        Product: "Cheese Burger",
+        Site: "Cinzano",
+        Amount: 9990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Product: "Mojito Frambuesa",
+        Site: "Cinzano",
+        Amount: 12990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Product: "Entrada Top Gun",
+        Site: "Top Gun Maverick",
+        Amount: 19990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Minions",
+        Site: "Minions nace un villano",
+        Amount: 4990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Product: "Tabla de Sushi",
+        Site: "Terraza",
+        Amount: 21990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Product: "Jugo de naranja",
+        Site: "Terraza",
+        Amount: 3990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Vip",
+        Site: "Tributo a PetShop Boys",
+        Amount: 8990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Product: "Mani Japones",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Product: "Coca-Cola",
+        Site: "Terraza",
+        Amount: 1990,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Product: "Curso Trading",
+        Site: "Franco SA",
+        Amount: 120000,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Product: "Entrada Palco Sur",
+        Site: "Tributo a PetShop Boys",
+        Amount: 15990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Product: "Papas Lays",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Product: "Cerveza Escudo",
+        Site: "Cinzano",
+        Amount: 7990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+]
+const listMyRefunds1: MyRefundsItem[] = [
+    {
+        Id: "myRefundItem1",
+        Date: new Date(2022, 10, 20),
+        Product: "Change Test 1",
+        Site: "SabaWoo",
+        Amount: 9990,
+        Motive: "nose",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myRefundItem2",
+        Date: new Date(2022, 10, 20),
+        Product: "Hamburguesa",
+        Site: "SabaWoo",
+        Amount: 12990,
+        Motive: "nose",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myRefundItem3",
+        Date: new Date(2022, 10, 20),
+        Product: "Cheese Burger",
+        Site: "Cinzano",
+        Amount: 9990,
+        Motive: "nose",
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Product: "Mojito Frambuesa",
+        Site: "Cinzano",
+        Amount: 12990,
+        Motive: "cualquiera",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Product: "Entrada Top Gun",
+        Site: "Top Gun Maverick",
+        Amount: 19990,
+        Motive: "cualquiera",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Minions",
+        Site: "Minions nace un villano",
+        Amount: 4990,
+        Motive: "cualquiera",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Product: "Tabla de Sushi",
+        Site: "Terraza",
+        Amount: 21990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Product: "Jugo de naranja",
+        Site: "Terraza",
+        Amount: 3990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Vip",
+        Site: "Tributo a PetShop Boys",
+        Amount: 8990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Product: "Mani Japones",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: "otros",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Product: "Coca-Cola",
+        Site: "Terraza",
+        Amount: 1990,
+        Motive: "otros",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Product: "Curso Trading",
+        Site: "Franco SA",
+        Amount: 120000,
+        Motive: "otros",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Product: "Entrada Palco Sur",
+        Site: "Tributo a PetShop Boys",
+        Amount: 15990,
+        Motive: "dldjldj",
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Product: "Papas Lays",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: "dldjldj",
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Product: "Cerveza Escudo",
+        Site: "Cinzano",
+        Amount: 7990,
+        Motive: "dldjldj",
+        State: StateMyRefund.Waiting
+    },
+]
+const listMyRefunds2: MyRefundsItem[] = [
+    {
+        Id: "myRefundItem1",
+        Date: new Date(2022, 10, 20),
+        Product: "Six Pack Corona",
+        Site: "Change Test 2",
+        Amount: 9990,
+        Motive: "nose",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myRefundItem2",
+        Date: new Date(2022, 10, 20),
+        Product: "Hamburguesa",
+        Site: "SabaWoo",
+        Amount: 12990,
+        Motive: "nose",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myRefundItem3",
+        Date: new Date(2022, 10, 20),
+        Product: "Cheese Burger",
+        Site: "Cinzano",
+        Amount: 9990,
+        Motive: "nose",
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Product: "Mojito Frambuesa",
+        Site: "Cinzano",
+        Amount: 12990,
+        Motive: "cualquiera",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Product: "Entrada Top Gun",
+        Site: "Top Gun Maverick",
+        Amount: 19990,
+        Motive: "cualquiera",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Minions",
+        Site: "Minions nace un villano",
+        Amount: 4990,
+        Motive: "cualquiera",
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Product: "Tabla de Sushi",
+        Site: "Terraza",
+        Amount: 21990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Product: "Jugo de naranja",
+        Site: "Terraza",
+        Amount: 3990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Vip",
+        Site: "Tributo a PetShop Boys",
+        Amount: 8990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Product: "Mani Japones",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: "otros",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Product: "Coca-Cola",
+        Site: "Terraza",
+        Amount: 1990,
+        Motive: "otros",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Product: "Curso Trading",
+        Site: "Franco SA",
+        Amount: 120000,
+        Motive: "otros",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Product: "Entrada Palco Sur",
+        Site: "Tributo a PetShop Boys",
+        Amount: 15990,
+        Motive: "dldjldj",
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Product: "Papas Lays",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: "dldjldj",
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Product: "Cerveza Escudo",
+        Site: "Cinzano",
+        Amount: 7990,
+        Motive: "dldjldj",
+        State: StateMyRefund.Waiting
+    },
+]
 
 const listItems: CalendarDay[] = [
     {
@@ -309,58 +1141,73 @@ const listItems: CalendarDay[] = [
     }
 ]
 
-
 const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection7",
+        Type: MenuUserAccount.MyBussines,
         State: false,
         Name: "Mi Negocio",
         PathImage: GlobalConst.sourceImages.bussinesIconAccount,
-        Description: "descripcion para Mi negocio"
     },
     {
         Id: "idConfigSection1",
+        Type: MenuUserAccount.EditProfile,
         State: false,
         Name: "Editar Perfil",
         PathImage: GlobalConst.sourceImages.profileAccount,
-        Description: "descripcion para editar perfil"
     },
     {
         Id: "idConfigSection2",
+        Type: MenuUserAccount.Calendar,
         State: true,
         Name: "Calendario",
         PathImage: GlobalConst.sourceImages.calendarIcon,
-        Description: "descripcion para calendario"
     },
     {
         Id: "idConfigSection3",
+        Type: MenuUserAccount.MyShoppings,
         State: false,
         Name: "Mis Compras",
         PathImage: GlobalConst.sourceImages.myBuys,
-        Description: "descripcion para mis compras"
     },
     {
         Id: "idConfigSection4",
+        Type: MenuUserAccount.AccountSecurity,
         State: false,
         Name: "Cuenta y Seguridad",
         PathImage: GlobalConst.sourceImages.securityAccountIcon,
-        Description: "descripcion para cuenta y seguridad"
     },
     {
         Id: "idConfigSection5",
+        Type: MenuUserAccount.Refund,
         State: false,
         Name: "Reembolsos",
         PathImage: GlobalConst.sourceImages.refundIcon,
-        Description: "descripcion para mis reembolsos"
     },
     {
         Id: "idConfigSection6",
+        Type: MenuUserAccount.WishList,
         State: false,
         Name: "Wishlist",
         PathImage: GlobalConst.sourceImages.wishListIcon,
-        Description: "descripcion para whish list"
     },
+    {
+        Id: "idConfigSection8",
+        Type: MenuUserAccount.MyCollection,
+        State: false,
+        Name: "Mi Coleccion",
+        PathImage: GlobalConst.sourceImages.spixAloneWhite,
+    },
+
 ]
+
+const listMonth: string[] = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+]
+const listYears: string[] = [
+    "2020", "2021", "2022"
+]
+
 
 /*const listEventsMonth: CalendarEventViewProp[] = [
     {
@@ -433,11 +1280,37 @@ const listConfigSection: AccountSections[] = [
 
 export const AccountSectionContext = createContext(null)
 export const CalendarContext = createContext(null)
+export const MyShoppingContext = createContext(null)
+export const MyRefundsContext = createContext(null)
+export const DateSelectedContext = createContext(null)
 
 export default function ProviderUserAccount({children}) {
-    let listItemSelected: CalendarDay[] = listItems.filter(item => item.Activities != null)
 
+    //region hooks
+    let listItemSelected: CalendarDay[] = listItems.filter(item => item.Activities != null)
     let [listCalendarDays, setListCalendarDay] = useState(listItems)
+    let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
+    let [eventsDisplayCalendar, setEventsDisplayCalendar] = useState(listItemSelected)
+    let [listMyShopping, setListMyShopping] = useState(listMyShoppingItem)
+    let [myRefunds, setMyRefunds] = useState(listMyRefunds)
+    let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Refund)
+
+
+    const handleSectionSelected = (id: string) => {
+        let newSectionSelected = sectionSelected.map(item => {
+            if (item.Id == id) {
+                setSectionSelectedNavMenu(sectionSelectedNavMenu = item.Type)
+                return {...item, State: true}
+            } else return {...item, State: false}
+        })
+        setSectoinSelected(sectionSelected = newSectionSelected)
+    }
+    let providerConfigSections: ProviderAccountSections = {
+        ListAccountSection: sectionSelected,
+        SelectSection: handleSectionSelected,
+        SectionSelected: sectionSelectedNavMenu
+    }
+
     const handleClickCalendarDay = (id: string, state: boolean) => {
         let newListCalendarDays = listCalendarDays.map(item => {
             if (item.Id == id) return {...item, State: state}
@@ -445,32 +1318,6 @@ export default function ProviderUserAccount({children}) {
         })
         setListCalendarDay(listCalendarDays = newListCalendarDays)
     }
-
-    useEffect(() => {
-        let control: boolean = true
-        listCalendarDays.forEach(item=>{
-            if (item.State){
-                setEventsDisplayCalendar(eventsDisplayCalendar = [item])
-                control = false
-            }
-        })
-        if (control) setEventsDisplayCalendar(eventsDisplayCalendar = listItemSelected)
-    }, [listCalendarDays])
-
-    let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
-    const handleSectionSelected = (id: string, stateSection: boolean) => {
-        let newSectionSelected = sectionSelected.map(item => {
-            if (item.Id == id) return {...item, State: stateSection}
-            else return {...item, State: false}
-        })
-        setSectoinSelected(sectionSelected = newSectionSelected)
-    }
-    let providerConfigSections: ProviderAccountSections = {
-        ListAccountSection: sectionSelected,
-        SelectSection: handleSectionSelected
-    }
-
-    let [eventsDisplayCalendar, setEventsDisplayCalendar] = useState(listItemSelected)
     const handleSelectDate = (id: string) => {
         listItems.forEach((item) => {
             if (item.Id == id) {
@@ -485,6 +1332,16 @@ export default function ProviderUserAccount({children}) {
         setEventsDisplayCalendar(eventsDisplayCalendar = listItemSelected)
         setListCalendarDay(listCalendarDays = newListItems)
     }
+    useEffect(() => {
+        let control: boolean = true
+        listCalendarDays.forEach(item => {
+            if (item.State) {
+                setEventsDisplayCalendar(eventsDisplayCalendar = [item])
+                control = false
+            }
+        })
+        if (control) setEventsDisplayCalendar(eventsDisplayCalendar = listItemSelected)
+    }, [listCalendarDays])
     let providerCalendarInformation: ProviderCalendarInformation = {
         ListItems: listCalendarDays,
         SelectedItems: eventsDisplayCalendar,
@@ -494,10 +1351,125 @@ export default function ProviderUserAccount({children}) {
 
     }
 
+    const handleSortByPrice = (orderBy: boolean) => {
+        if (orderBy) {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Price < b.Price) return 1
+                else if (a.Price > b.Price) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        } else {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Price > b.Price) return 1
+                else if (a.Price < b.Price) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        }
+    }
+    const handleSortByName = (orderBy: boolean) => {
+        if (orderBy) {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Name < b.Name) return 1
+                else if (a.Name > b.Name) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        } else {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Name > b.Name) return 1
+                else if (a.Name < b.Name) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        }
+    }
+    const handleSortByDate = (orderBy: boolean) => {
+        if (orderBy) {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Date < b.Date) return 1
+                else if (a.Date > b.Date) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        } else {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Date > b.Date) return 1
+                else if (a.Date < b.Date) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        }
+
+    }
+    const handleSortBySite = (orderBy: boolean) => {
+        if (orderBy) {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Sites < b.Sites) return 1
+                else if (a.Sites > b.Sites) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        } else {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Sites > b.Sites) return 1
+                else if (a.Sites < b.Sites) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        }
+
+    }
+    const handleSortByAmount = (orderBy: boolean) => {
+        if (orderBy) {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Amount < b.Amount) return 1
+                else if (a.Amount > b.Amount) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        } else {
+            let newListMyShopping = listMyShoppingItem.sort((a, b) => {
+                if (a.Amount > b.Amount) return 1
+                else if (a.Amount < b.Amount) return -1
+                else return 0
+            })
+            setListMyShopping(listMyShopping = newListMyShopping)
+        }
+    }
+    const handleDateSelected = (month: string) => {
+        if (month == listMonth[0]) setListMyShopping(listMyShopping = listMyShoppingItem)
+        else if (month == listMonth[1]) setListMyShopping(listMyShopping = listMyShoppingItem2)
+        else setListMyShopping(listMyShopping = listMyShoppingItem3)
+    }
+    let providerMyShopping: ProviderMyShopping = {
+        ListMyShopping: listMyShopping,
+        SortByPrice: handleSortByPrice,
+        SortByName: handleSortByName,
+        SortByDate: handleSortByDate,
+        SortBySite: handleSortBySite,
+        SortByAmount: handleSortByAmount,
+        SelectDate: handleDateSelected,
+        ListMoths: listMonth,
+        ListYears: listYears
+    }
+
+    let providerMyRefunds: ProviderMyRefunds = {
+        ListMyRefunds: myRefunds,
+        ListMoths: listMonth,
+        ListYears: listYears
+    }
+    //endregion
+
     return (
         <AccountSectionContext.Provider value={providerConfigSections}>
             <CalendarContext.Provider value={providerCalendarInformation}>
-                {children}
+                <MyShoppingContext.Provider value={providerMyShopping}>
+                    <MyRefundsContext.Provider value={providerMyRefunds}>
+                        {children}
+                    </MyRefundsContext.Provider>
+                </MyShoppingContext.Provider>
             </CalendarContext.Provider>
         </AccountSectionContext.Provider>
     )

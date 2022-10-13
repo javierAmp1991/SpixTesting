@@ -1,0 +1,108 @@
+.mainDiv {
+    height: 100%;
+    padding: 24px 5% 53px 5%;
+    overflow: scroll;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+.mainDivTitle {
+    padding-bottom: 16px;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.spaceOtherGender {
+    margin-top: 12px;
+}
+
+.mainDivEdit {
+    padding: 20px 32px;
+    height: 100%;
+    overflow: scroll;
+}
+
+.sizeLogo {
+    height: 35px;
+    width: 120px;
+    position: relative;
+    margin: auto;
+}
+
+.line {
+    border-bottom: 2px solid var(--separationLineColor);
+    padding-bottom: 20px;
+}
+
+.mainDivEdit {
+    width: 480px;
+    margin: auto;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 12px;
+}
+
+.titleInputs {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.styleInput {
+    padding: 6px 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    outline: none;
+}
+
+.sizeProfilePic {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.paddingGradient {
+    padding: 4px;
+    background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
+    border-radius: 50%;
+    width: max-content;
+    margin: auto;
+}
+
+.labelPhoto {
+    width: max-content;
+    margin: auto;
+    color: var(--linkColor);
+}
+
+.gridOptions {
+    display: grid;
+    gap: 24px;
+}
+
+.gridNameInput {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.buttonConfirm {
+    background: var(--gradientBlueButton);
+    margin-left: auto;
+    padding: 6px 24px;
+    color: white;
+    width: max-content;
+    border-radius: 4px;
+}
+
+.gridImageName {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}

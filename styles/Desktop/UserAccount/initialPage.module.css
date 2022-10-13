@@ -12,8 +12,8 @@
 
 .mainDivLeftArea {
     height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
-    background: linear-gradient(145deg, rgb(21, 74, 189) 0%, rgb(18, 125, 196) 100.2%);
     background: linear-gradient(145deg, #3151e3 0%, #2f49d0 100.2%);
+    box-shadow: 2px 0 6px rgba(0,0,0,.3);
 }
 
 .mainDivRightArea {
