@@ -40,7 +40,7 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
                         }
                     </div>
                     <div className={style.paddingRating}>
-                        <div className={`${style.fontRatingStar} ${utilities.fontMiniDesktop}`}>
+                        <div className={`${style.fontRatingStar} ${style.fontTextReviews}`}>
                             ({item.Rating != null ? item.Rating : 0})
                         </div>
                     </div>

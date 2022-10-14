@@ -1,7 +1,7 @@
 .mainDiv {
     display: grid;
     height: 100%;
-    padding: 12px 5% 53px 5%;
+    padding: 12px var(--paddingXMainContent) 53px var(--paddingXMainContent);
     --colorLines: #efefef;
     --borderLine: 1px solid var(--colorLines);
     --paddingXItems: 12px;
