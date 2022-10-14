@@ -5,7 +5,6 @@
     --colorLines: #efefef;
     --borderLine: 1px solid var(--colorLines);
     --sizeCircle: 8px;
-    --paddingXTitle: 40px;
     --paddingYTitle: 24px;
 }
 
@@ -15,7 +14,7 @@
 }
 
 .mainDivSpace {
-    padding: var(--paddingYTitle) var(--paddingXTitle) 53px var(--paddingXTitle);
+    padding: var(--paddingYTitle) var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
     overflow: scroll;
 
 }
@@ -109,7 +108,7 @@
 }
 
 .mainDivMonthGrid {
-    background: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+    background: var(--gradientHeaderSections);
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     padding: 2px 32px;

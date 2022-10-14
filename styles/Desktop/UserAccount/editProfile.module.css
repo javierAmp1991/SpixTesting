@@ -1,6 +1,6 @@
 .mainDiv {
     height: 100%;
-    padding: 24px 5% 53px 5%;
+    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
     overflow: scroll;
     display: grid;
     grid-template-rows: max-content 1fr;

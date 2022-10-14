@@ -1,0 +1,50 @@
+.mainCont {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .4s;
+    box-shadow: var(--boxShadowCard);
+}
+
+.transformScaleUp {
+    transform: scale(1.13);
+    box-shadow: var(--boxShadowCard);
+}
+
+.transformScaleDown {
+    transform: scale(.8);
+    box-shadow: var(--boxShadowCard);
+}
+
+.containerImage {
+    position: relative;
+    width: 100%;
+}
+
+.mainDivInfo {
+    display: grid;
+    gap: 4px;
+    padding: 8px 8px 12px 8px;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.wishListLogo {
+    top: 4px;
+    left: 4px;
+    width: 20%;
+    aspect-ratio: 1/1;
+    position: absolute;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 500;
+    padding-bottom: 1px;
+}
+
+.price {
+    padding-bottom: 4px;
+}

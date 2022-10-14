@@ -1,0 +1,45 @@
+.mainDiv {
+    height: 100%;
+    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    overflow: scroll;
+}
+
+.mainDivTitle {
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.gridButtonWishLis {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+}
+
+.sizeArrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+
+.containerCArrousel {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    padding: 0 32px;
+}
+
+.gridItemsWishList {
+    --gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(4,calc((100% - (var(--gap) * 3)) / 4));
+    gap: var(--gap);
+    transition: .6s;
+}

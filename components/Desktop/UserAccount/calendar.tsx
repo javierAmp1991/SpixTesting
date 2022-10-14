@@ -4,10 +4,10 @@ import {GlobalConst} from "../../../public/globalConst";
 import {ProviderCalendarInformation, CalendarContext} from "../../Providers/providerUserAccount";
 import {useContext} from "react";
 import CalendarEventView from "./calendarEventView";
-import utilities from "/styles/utilities.module.css";
 
 const titleZone: string = "Mi Itinerario"
-const subTitlezone: string = "Encuentra y administra tus eventos"
+const activitiesText: string = "Actividades"
+const subTitlezone: string = "Encuentra y administra tus actividades"
 const dayOfWeek: string[] = ["L", "M", "M", "J", "V", "S", "D"]
 const allDays: string = "Todos los dias"
 
@@ -135,7 +135,7 @@ export default function Calendar() {
                     </div>
                     <div className={style.borderHeader}>
                         <div className={style.titleCalendr}>
-                            Eventos
+                            {activitiesText}
                         </div>
                         <div>
                             {

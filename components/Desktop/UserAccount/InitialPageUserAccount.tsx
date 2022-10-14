@@ -7,6 +7,7 @@ import MyRefunds from "./myRefunds";
 import NavMenuUserAccount from "./navMenu";
 import EditProfile from "./editProfile";
 import AccountAndSecurity from "./accountAndSecurity";
+import WishList from "./WishList";
 
 
 export default function InitialPageUserAccount() {
@@ -37,6 +38,10 @@ export default function InitialPageUserAccount() {
                     {
                         providerSection.SectionSelected == MenuUserAccount.AccountSecurity &&
                         <AccountAndSecurity/>
+                    }
+                    {
+                        providerSection.SectionSelected == MenuUserAccount.WishList &&
+                        <WishList/>
                     }
                 </div>
             </div>

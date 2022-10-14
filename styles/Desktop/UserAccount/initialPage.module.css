@@ -1,23 +1,32 @@
 .mainDiv {
     --marginMainDiv: 16px;
+    --gradientHeaderSections: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+    --paddingXMainContent: 50px;
+    --paddingBottomAllContent: 53px;
     background: white;
-    margin: var(--marginMainDiv) auto;
-    border-radius: 16px;
+    margin: auto;
     width: 100%;
     max-width: var(--maxWidthBodyContent);
-    height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    height: calc(100vh - 97px);
     box-shadow: var(--boxShadowCard);
+    /*
+    border-radius: 16px;
+    margin: var(--marginMainDiv) auto;
+    height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    */
     overflow: hidden;
 }
 
 .mainDivLeftArea {
     height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    height: calc(100vh - 97px);
     background: linear-gradient(145deg, #3151e3 0%, #2f49d0 100.2%);
     box-shadow: 2px 0 6px rgba(0,0,0,.3);
 }
 
 .mainDivRightArea {
     height: calc(100vh - 97px - (var(--marginMainDiv) * 2));
+    height: calc(100vh - 97px);
     overflow: hidden;
 }
 

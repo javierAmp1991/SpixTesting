@@ -104,7 +104,8 @@ export namespace GlobalConst{
         editProfileBlue: "/images/editProfileBlue.png",
         cameraIcon: "/images/cameraIcon.png",
         relojIcon: "/images/relojIcon.png",
-        carnetIcon: "/images/carnetIcon.png"
+        carnetIcon: "/images/carnetIcon.png",
+        wishList: "/images/wishList.png"
     }
 }
 

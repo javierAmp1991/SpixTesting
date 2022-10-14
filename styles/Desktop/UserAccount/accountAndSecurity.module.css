@@ -1,9 +1,8 @@
 .mainDiv {
     height: 100%;
-    padding: 24px 5% 53px 5%;
+    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
     overflow: scroll;
     display: grid;
-    grid-template-rows: max-content 1fr;
 }
 
 .mainDivTitle {
@@ -25,17 +24,21 @@
     margin: auto;
 }
 
+.overflowScroll{
+    overflow: scroll;
+    padding: 4px 4px 4px 0;
+    height: 100%;
+    width: 480px;
+    margin-right: auto;
+}
+
 .line {
     border-bottom: 2px solid var(--separationLineColor);
     padding-bottom: 20px;
 }
 
 .mainDivEdit {
-    padding: 4px 4px 4px 0;
-    height: 100%;
-    overflow: scroll;
-    width: 480px;
-    margin-right: auto;
+
 }
 
 .gridInput {
@@ -73,6 +76,7 @@
     width: 100%;
     aspect-ratio: 4/3;
     position: relative;
+    cursor: pointer;
 }
 
 .gridVerLvl2 {
@@ -103,10 +107,11 @@
 .editCont {
     display: grid;
     background: linear-gradient(360deg, rgba(214, 214, 213, 1) 0%, rgba(245, 245, 245, 1) 100%);
-    color: gray;
-    padding: 6px 16px;
+    color: #383838;
+    padding: 4px 12px;
     font-size: 12px;
     border-radius: 4px;
+    border: 1px solid #a8a8a8;
 }
 
 .titleVer2 {
@@ -115,7 +120,7 @@
 
 .gridVerificacion {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(3, max-content);
     align-items: center;
     gap: 6px;
 }
@@ -127,7 +132,7 @@
 }
 
 .failedVerificacion {
-    box-shadow: 0 0 3px rgba(255, 0, 0, 0.8);
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
 /*    background: #fafafa;*/
     border-radius: 6px;
     overflow: hidden;

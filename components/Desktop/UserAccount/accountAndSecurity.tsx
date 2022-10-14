@@ -2,38 +2,46 @@ import style from "/styles/Desktop/UserAccount/accountAndSecurity.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import Link from "next/link";
-import {AccountSecurityContext, AccountSecurityEdit} from "../../Providers/providerUserAccount";
+import {AccountSecurityContext, ProviderAcctounSecurityEdit} from "../../Providers/providerUserAccount";
 import {useContext} from "react";
+
+class UploadImageCarnet {
+    FileImage: File
+    Id: string
+    ProvisoryUrl: string
+}
 
 const titleSection: string = "Cuenta y Seguridad"
 const subtitleSection: string = "Manten tu cuenta segura"
 const editText: string = "Editar"
+const activeTxt: string = "Activar"
 const idFronView: string = "idFrontView001"
 const idBackView: string = "idBackView001"
 const idSelfieView: string = "idSelfieView001"
 const verificationLevel1: string = "Verificacion Nivel 1:"
 const verificationLevel2: string = "Verificacion Nivel 2:"
+const verification2Step: string = "Verificacion de 2 pasos:"
 const failedText: string = "La verificación nivel 2 ha fallado debido a que en el archivo de\n" +
     "Carnet frontal no se ve de forma clara el n° de documento.\n" +
     "Te pedimos volver a subir la imagen sin sombras ni borrosa (consejo:\n" +
     "toma la foto en un lugar con bastante luz para que no se formen sombras)."
 
 export default function AccountAndSecurity() {
-    const accountSecurityContext: AccountSecurityEdit[] = useContext(AccountSecurityContext)
+    const accountSecurityContext: ProviderAcctounSecurityEdit = useContext(AccountSecurityContext)
     return (
         <div className={style.mainDiv}>
-            <div className={style.mainDivTitle}>
-                <div className={style.title}>
-                    {titleSection}
+            <div className={style.overflowScroll}>
+                <div className={style.mainDivTitle}>
+                    <div className={style.title}>
+                        {titleSection}
+                    </div>
+                    <div className={style.subtitle}>
+                        {subtitleSection}
+                    </div>
                 </div>
-                <div className={style.subtitle}>
-                    {subtitleSection}
-                </div>
-            </div>
-            <div className={style.mainDivEdit}>
                 <div className={style.gridOptions}>
                     {
-                        accountSecurityContext.map(item =>
+                        accountSecurityContext.ListEditItems.map(item =>
                             <div key={item.Id} className={style.gridInput}>
                                 <div className={style.titleInputs}>
                                     {item.Name}
@@ -47,24 +55,33 @@ export default function AccountAndSecurity() {
                             </div>
                         )
                     }
-                    <div className={style.gridVerificacion}>
-                        <div className={style.titleVer2}>
-                            {verificationLevel1}
-                        </div>
-                        <div className={style.sizeCheckIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.checkIcon} alt={""}/>
-                        </div>
-                    </div>
-                    <div className={style.gridVerificacion}>
-                        <div className={style.titleVer2}>
-                            {verificationLevel2}
-                        </div>
-                        <div className={style.sizeCheckIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.relojIcon} alt={""}/>
-                        </div>
-                    </div>
+                    {
+                        accountSecurityContext.ListVerificacionItems.map(item =>
+                            <div key={item.Id} className={style.gridVerificacion}>
+                                <div className={style.titleVer2}>
+                                    {item.Name}
+                                </div>
+                                <div className={style.sizeCheckIcon}>
+                                    {
+                                        item.State == true &&
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.checkIcon} alt={""}/>
+                                    }
+                                </div>
+                                <div>
+                                    {
+                                        item.State != true &&
+                                        <Link href={item.Link}>
+                                            <a className={style.editCont}>
+                                                {activeTxt}
+                                            </a>
+                                        </Link>
+                                    }
+                                </div>
+                            </div>
+                        )
+                    }
 
-                    <div className={style.failedVerificacion}>
+                    {/*<div className={style.failedVerificacion}>
                         {failedText}
                     </div>
                     {
@@ -117,7 +134,7 @@ export default function AccountAndSecurity() {
                                 <input className={style.InputImage} id={idSelfieView} type={"file"}/>
                             </div>
                         </div>
-                    }
+                    }*/}
                     <button className={style.buttonSend}>
                         Confirmar
                     </button>

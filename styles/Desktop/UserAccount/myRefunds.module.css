@@ -167,7 +167,7 @@
 }
 
 .gridHeaderExport {
-    background: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+    background: var(--gradientHeaderSections);
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     padding: 8px 32px;

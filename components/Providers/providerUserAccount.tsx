@@ -177,21 +177,19 @@ export enum MenuUserAccount {
     MyCollection
 }
 
-export enum TypeInput {
-    Text, Password, Number, Email
-}
-
 export class AccountSecurityEdit {
     Id: string
     Link: string
     Name: string
-    TypeInput: TypeInput
 }
 
-export class VerificationLevel {
-    Id: string
-    Name: string
-    PlaceHolderImage: string
+export class VerificationAccountEdit extends AccountSecurityEdit {
+    State?: boolean
+}
+
+export class ProviderAcctounSecurityEdit {
+    ListEditItems: AccountSecurityEdit[]
+    ListVerificacionItems: VerificationAccountEdit[]
 }
 
 const listAccountSecurity: AccountSecurityEdit[] = [
@@ -199,33 +197,49 @@ const listAccountSecurity: AccountSecurityEdit[] = [
         Id: "accountSecurity01",
         Link: "",
         Name: "Nombre",
-        TypeInput: TypeInput.Text
     },
     {
         Id: "accountSecurity02",
         Link: "",
         Name: "Correo",
-        TypeInput: TypeInput.Email
     },
     {
         Id: "accountSecurity03",
         Link: "",
         Name: "Numero Celular",
-        TypeInput: TypeInput.Number
     },
     {
         Id: "accountSecurity04",
         Link: "",
         Name: "Contraseña",
-        TypeInput: TypeInput.Password
+    },
+]
+
+const verificationAccoutnList: VerificationAccountEdit[] = [
+    {
+        Id: "verificationAccount03",
+        Name: "Verificacion 2 pasos: ",
+        Link: "",
+        State: null
     },
     {
-        Id: "accountSecurity05",
+        Id: "verificationAccount01",
+        Name: "Verificacion Nivel 1: ",
         Link: "",
-        Name: "Verificacion en dos pasos",
-        TypeInput: TypeInput.Text
+        State: true
+    },
+    {
+        Id: "verificationAccount02",
+        Name: "Verificacion Nivel 2: ",
+        Link: "",
+        State: false
     }
 ]
+
+let providerAccountSecurityEdit: ProviderAcctounSecurityEdit = {
+    ListEditItems: listAccountSecurity,
+    ListVerificacionItems: verificationAccoutnList
+}
 
 const listMyShoppingItem: MyShoppingItem[] = [
     {
@@ -1200,18 +1214,32 @@ const listConfigSection: AccountSections[] = [
         PathImage: GlobalConst.sourceImages.bussinesIconAccount,
     },
     {
-        Id: "idConfigSection1",
-        Type: MenuUserAccount.EditProfile,
-        State: false,
-        Name: "Editar Perfil",
-        PathImage: GlobalConst.sourceImages.profileAccount,
-    },
-    {
         Id: "idConfigSection2",
         Type: MenuUserAccount.Calendar,
         State: true,
         Name: "Calendario",
         PathImage: GlobalConst.sourceImages.calendarIcon,
+    },
+    {
+        Id: "idConfigSection8",
+        Type: MenuUserAccount.MyCollection,
+        State: false,
+        Name: "Mi Coleccion",
+        PathImage: GlobalConst.sourceImages.spixAloneWhite,
+    },
+    {
+        Id: "idConfigSection6",
+        Type: MenuUserAccount.WishList,
+        State: false,
+        Name: "Wishlist",
+        PathImage: GlobalConst.sourceImages.wishListIcon,
+    },
+    {
+        Id: "idConfigSection1",
+        Type: MenuUserAccount.EditProfile,
+        State: false,
+        Name: "Editar Perfil",
+        PathImage: GlobalConst.sourceImages.profileAccount,
     },
     {
         Id: "idConfigSection3",
@@ -1234,21 +1262,6 @@ const listConfigSection: AccountSections[] = [
         Name: "Reembolsos",
         PathImage: GlobalConst.sourceImages.refundIcon,
     },
-    {
-        Id: "idConfigSection6",
-        Type: MenuUserAccount.WishList,
-        State: false,
-        Name: "Wishlist",
-        PathImage: GlobalConst.sourceImages.wishListIcon,
-    },
-    {
-        Id: "idConfigSection8",
-        Type: MenuUserAccount.MyCollection,
-        State: false,
-        Name: "Mi Coleccion",
-        PathImage: GlobalConst.sourceImages.spixAloneWhite,
-    },
-
 ]
 
 const listMonth: string[] = [
@@ -1518,7 +1531,7 @@ export default function ProviderUserAccount({children}) {
             <CalendarContext.Provider value={providerCalendarInformation}>
                 <MyShoppingContext.Provider value={providerMyShopping}>
                     <MyRefundsContext.Provider value={providerMyRefunds}>
-                        <AccountSecurityContext.Provider value={listAccountSecurity}>
+                        <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
                             {children}
                         </AccountSecurityContext.Provider>
                     </MyRefundsContext.Provider>
