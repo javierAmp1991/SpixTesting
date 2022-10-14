@@ -33,10 +33,6 @@
     align-items: center;
 }
 
-.fontRatingStar {
-    color: #007185;
-}
-
 .styleStar{
     fill: #ffa41c;
     stroke-width: 1px;
@@ -46,5 +42,9 @@
 }
 
 .fontTextReviews{
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    color: #007185;
 }
 
