@@ -177,6 +177,56 @@ export enum MenuUserAccount {
     MyCollection
 }
 
+export enum TypeInput {
+    Text, Password, Number, Email
+}
+
+export class AccountSecurityEdit {
+    Id: string
+    Link: string
+    Name: string
+    TypeInput: TypeInput
+}
+
+export class VerificationLevel {
+    Id: string
+    Name: string
+    PlaceHolderImage: string
+}
+
+const listAccountSecurity: AccountSecurityEdit[] = [
+    {
+        Id: "accountSecurity01",
+        Link: "",
+        Name: "Nombre",
+        TypeInput: TypeInput.Text
+    },
+    {
+        Id: "accountSecurity02",
+        Link: "",
+        Name: "Correo",
+        TypeInput: TypeInput.Email
+    },
+    {
+        Id: "accountSecurity03",
+        Link: "",
+        Name: "Numero Celular",
+        TypeInput: TypeInput.Number
+    },
+    {
+        Id: "accountSecurity04",
+        Link: "",
+        Name: "Contraseña",
+        TypeInput: TypeInput.Password
+    },
+    {
+        Id: "accountSecurity05",
+        Link: "",
+        Name: "Verificacion en dos pasos",
+        TypeInput: TypeInput.Text
+    }
+]
+
 const listMyShoppingItem: MyShoppingItem[] = [
     {
         Id: "myShoppingItem1",
@@ -1282,6 +1332,7 @@ export const AccountSectionContext = createContext(null)
 export const CalendarContext = createContext(null)
 export const MyShoppingContext = createContext(null)
 export const MyRefundsContext = createContext(null)
+export const AccountSecurityContext = createContext(null)
 export const DateSelectedContext = createContext(null)
 
 export default function ProviderUserAccount({children}) {
@@ -1467,7 +1518,9 @@ export default function ProviderUserAccount({children}) {
             <CalendarContext.Provider value={providerCalendarInformation}>
                 <MyShoppingContext.Provider value={providerMyShopping}>
                     <MyRefundsContext.Provider value={providerMyRefunds}>
-                        {children}
+                        <AccountSecurityContext.Provider value={listAccountSecurity}>
+                            {children}
+                        </AccountSecurityContext.Provider>
                     </MyRefundsContext.Provider>
                 </MyShoppingContext.Provider>
             </CalendarContext.Provider>

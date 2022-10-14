@@ -7,7 +7,7 @@
 }
 
 .mainDivTitle {
-    padding-bottom: 24px;
+    padding-bottom: 32px;
 }
 
 .title {
@@ -59,6 +59,7 @@
 }
 
 .gridOptions {
+    padding-left: 4px;
     display: grid;
     gap: 32px;
 }
@@ -68,8 +69,9 @@
 }
 
 .contImage {
+    display: grid;
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/3;
     position: relative;
 }
 
@@ -111,7 +113,7 @@
     font-size: 16px;
 }
 
-.gridVerificacion{
+.gridVerificacion {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
@@ -124,20 +126,26 @@
     position: relative;
 }
 
-.failedVerificacion{
-    box-shadow: 0 0 3px rgba(0,0,0,.2);
-    background: #f5f5f5;
+.failedVerificacion {
+    box-shadow: 0 0 3px rgba(255, 0, 0, 0.8);
+/*    background: #fafafa;*/
     border-radius: 6px;
     overflow: hidden;
     padding: 16px;
     color: var(--colorPrimaryTextDesktop);
 }
 
-.buttonSend{
+.buttonSend {
     background: var(--gradientBlueButton);
     margin-left: auto;
     padding: 6px 24px;
     color: white;
     width: max-content;
     border-radius: 4px;
+}
+
+.InputImage {
+    height: 0;
+    width: 0;
+    overflow: hidden;
 }

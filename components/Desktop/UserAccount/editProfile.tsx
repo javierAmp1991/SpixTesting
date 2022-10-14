@@ -81,7 +81,7 @@ export default function EditProfile() {
                         <div className={style.titleInputs}>
                             Fecha nacimiento
                         </div>
-                        <input onChange={handleDate} className={style.styleInput} placeholder={"selecciona una fecha"} type={"date"}/>
+                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`} type={"date"}/>
                     </div>
                     <div className={style.divGender}>
                         <div className={style.gridNameInput}>

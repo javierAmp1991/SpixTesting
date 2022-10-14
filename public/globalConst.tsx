@@ -102,7 +102,9 @@ export namespace GlobalConst{
         excellIcon: "/images/exellIcon.png",
         editProfilePic: "/images/editProfileWhite.png",
         editProfileBlue: "/images/editProfileBlue.png",
-        cameraIcon: "/images/cameraIcon.png"
+        cameraIcon: "/images/cameraIcon.png",
+        relojIcon: "/images/relojIcon.png",
+        carnetIcon: "/images/carnetIcon.png"
     }
 }
 

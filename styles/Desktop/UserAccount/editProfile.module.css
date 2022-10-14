@@ -7,7 +7,7 @@
 }
 
 .mainDivTitle {
-    padding-bottom: 24px;
+    padding-bottom: 32px;
 }
 
 .title {
@@ -50,6 +50,7 @@
     padding: 6px 12px;
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     outline: none;
+    position: relative;
 }
 
 .sizeProfilePic {
@@ -123,6 +124,12 @@
     height: 0;
     width: 0;
     overflow: hidden;
+}
+
+.datePicker::-webkit-calendar-picker-indicator{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
 }
 
 
