@@ -201,8 +201,8 @@ export default function WishList() {
                 </button>*/}
                 <div className={style.gridPages}>
                     {
-                        [...Array(4)].map(e =>
-                            <div className={style.containerCarrousel}>
+                        [...Array(4)].map((e, index) =>
+                            <div key={index} className={style.containerCarrousel}>
                                 <div ref={divCarrouselRef} className={style.gridItemsWishList}>
                                     {
                                         list.map((e, index) =>
