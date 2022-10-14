@@ -12,7 +12,7 @@ const price: PriceIncludeInfoProp = {
     IsDarkMode: false
 }
 
-export default function WishListView({isUp}: { isUp: boolean }) {
+export default function WishListView() {
     return (
         <div className={`${style.mainCont}`}>
             <div className={style.containerImage}>
@@ -23,7 +23,7 @@ export default function WishListView({isUp}: { isUp: boolean }) {
                     <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
                 </div>
             </div>
-            {/*<div className={style.mainDivInfo}>
+            <div className={style.mainDivInfo}>
                 <div className={`${utilities.clamp2} ${style.title}`}>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, temporibus.
                 </div>
@@ -31,7 +31,7 @@ export default function WishListView({isUp}: { isUp: boolean }) {
                     <PriceIncludeInfoEvent item={price}/>
                 </div>
                 <RatingStarDesktop item={5}/>
-            </div>*/}
+            </div>
         </div>
 
     )

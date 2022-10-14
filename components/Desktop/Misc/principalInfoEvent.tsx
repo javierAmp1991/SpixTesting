@@ -17,13 +17,13 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
     const cssStyle = getCssStyle()
     return (
         <>
-            <div className={`${utilities.clamp1} ${cssStyle.Title} ${style.titleMargin}`}>
+            <div className={`${utilities.clamp2} ${style.titleMargin}`}>
                 {item.Title}
             </div>
 
-            <div className={`${cssStyle.Subtitle} ${utilities.clamp1}`}>
+{/*            <div className={`${cssStyle.Subtitle} ${utilities.clamp1}`}>
                 {item.Subtitle}
-            </div>
+            </div>*/}
 
             {
                 item.Rating != null &&
@@ -32,6 +32,7 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
                         {
                             listRating.map((item, index) =>
                                 <div key={index} className={style.sizeStar}>
+
                                     <Image layout={"fill"}
                                            src={index < numRating ? GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
                                 </div>
@@ -39,7 +40,7 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
                         }
                     </div>
                     <div className={style.paddingRating}>
-                        <div className={`${cssStyle.RatingText} ${utilities.fontMiniDesktop}`}>
+                        <div className={`${style.fontRatingStar} ${utilities.fontMiniDesktop}`}>
                             ({item.Rating != null ? item.Rating : 0})
                         </div>
                     </div>

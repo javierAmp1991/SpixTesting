@@ -5,6 +5,7 @@
 }
 
 .mainDivTitle {
+    padding-bottom: 24px;
 }
 
 .title {
@@ -29,17 +30,31 @@
     box-shadow: 0 0 3px rgba(0, 0, 0, .3);
 }
 
-.containerCArrousel {
+.containerCarrousel {
     width: 100%;
+    box-shadow: var(--boxShadowCard);
+    height: max-content;
+    padding: 32px 48px;
     overflow: hidden;
-    height: 100%;
-    padding: 0 32px;
+    border-radius: 12px;
 }
 
 .gridItemsWishList {
-    --gap: 32px;
+    --gap: 48px;
     display: grid;
-    grid-template-columns: repeat(4,calc((100% - (var(--gap) * 3)) / 4));
+    grid-template-columns: repeat(3,calc((100% - (var(--gap) * 2)) / 3));
     gap: var(--gap);
     transition: .6s;
+}
+
+.gridPages{
+    display: grid;
+    gap: 24px;
+    overflow: scroll;
+    padding: 6px;
+}
+
+.overFlow{
+    height: 100%;
+    overflow: scroll;
 }

@@ -104,8 +104,7 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     </div>
                 </div>
 
-
-                <div className={styles.princiaplGridInfo}>
+                {/*<div className={styles.princiaplGridInfo}>
                     <div className={styles.TopDivInfo}>
                         <PrincipalInfoEvent item={principalInfoEventProp}/>
                     </div>
@@ -164,6 +163,60 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                                 </>
                             }
                         </div>
+                    }
+                </div>*/}
+
+                <div className={styles.princiaplGridInfo}>
+                    <PrincipalInfoEvent item={principalInfoEventProp}/>
+                    {
+                        item.Type == EventCardType.EventCardWithVenue &&
+                        <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
+                            {
+                                itemWithVenue.Venue
+                            }
+                        </div>
+                    }
+                    {
+                        item.Type == EventCardType.EventCardWithDate &&
+                        <DateInfoEvent item={dateInfo}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithPrice &&
+                        <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardFull &&
+                        <>
+                            <DateInfoEvent item={dateInfoFull}/>
+                            <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
+                        </>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithResale &&
+                        <div className={styles.textResaleOffer}>
+                            {totalResaleText} {itemWithResale.TotalResale}
+                        </div>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWithOffer &&
+                        <>
+                            <div className={styles.gridTags}>
+                                {
+                                    itemWithOffer.ListTagsOffer.map(item =>
+                                        <div key={item} className={styles.tagStyleDisc}>
+                                            {item}
+                                        </div>
+                                    )
+                                }
+                            </div>
+                            <div className={styles.textResaleOffer}>
+                                Productos en oferta: {itemWithOffer.TotalOffers}
+                            </div>
+                        </>
                     }
                 </div>
             </a>
