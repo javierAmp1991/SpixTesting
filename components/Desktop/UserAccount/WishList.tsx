@@ -4,12 +4,14 @@ import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
 import WishListView from "./wishListView";
 import EventVerticalView from "../EventsView/eventVerticalView";
-import {EventCardType, EventCardWithPrice} from "../../../dataDemo/EventView/eventVerticalView";
+import {EventCardType, EventCardWishList, EventCardWithPrice} from "../../../dataDemo/EventView/eventVerticalView";
+import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
+import item = PrincipalFeaturedSearch.item;
 
-const list: EventCardWithPrice[] = [
+const list: EventCardWishList[] = [
     {
         Id: "123456",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Title: "Restaurant Cinzano para cada momento del dia entonces",
         Subtitle: "Cinzano",
         Rating: 30,
@@ -26,7 +28,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 9990,
         PathImage: "/images/Woo.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "WOO! Club",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -39,7 +41,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 5000,
         PathImage: "/images/blackphone.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Black Phone",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -52,7 +54,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 9990,
         PathImage: "/images/terrraza1.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Terraza Bellavista",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -65,7 +67,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 3000,
         PathImage: "/images/marcoPolo.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Marco Polo",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -78,7 +80,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 5000,
         PathImage: "/images/Civico.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Bar Civico",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -91,7 +93,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 5000,
         PathImage: "/images/cinzano.jpg",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Restaurant Cinzano",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -104,7 +106,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 9990,
         PathImage: "/images/Woo.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "WOO! Club",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -117,7 +119,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 5000,
         PathImage: "/images/blackphone.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Black Phone",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -130,7 +132,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 9990,
         PathImage: "/images/terrraza1.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Terraza Bellavista",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -143,7 +145,7 @@ const list: EventCardWithPrice[] = [
         TotalTickets: 10000,
         SoldTickets: 3000,
         PathImage: "/images/marcoPolo.png",
-        Type: EventCardType.EventCardWithPrice,
+        Type: EventCardType.EventCardWishList,
         Subtitle: "Marco Polo",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -200,20 +202,15 @@ export default function WishList() {
                     <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
                 </button>*/}
                 <div className={style.gridPages}>
-                    {
-                        [...Array(4)].map((e, index) =>
-                            <div key={index} className={style.containerCarrousel}>
-                                <div ref={divCarrouselRef} className={style.gridItemsWishList}>
-                                    {
-                                        list.map((e, index) =>
-                                            index >= 0 && index <= 2 &&
-                                            <EventVerticalView item={e} darkModeState={false}/>
-                                        )
-                                    }
-                                </div>
-                            </div>
-                        )
-                    }
+                    <div className={style.containerCarrousel}>
+                        <div ref={divCarrouselRef} className={style.gridItemsWishList}>
+                            {
+                                list.map((e, index) =>
+                                    <EventVerticalView key={item.Id} item={e} darkModeState={false}/>
+                                )
+                            }
+                        </div>
+                    </div>
                 </div>
                 {/* <button onClick={handleClickRight} className={style.sizeArrow}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>

@@ -8,6 +8,7 @@ import {
     EventCardFull,
     EventCardResale,
     EventCardType,
+    EventCardWishList,
     EventCardWithDate,
     EventCardWithOffer,
     EventCardWithPrice,
@@ -28,12 +29,14 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
     let itemWithDate: EventCardWithDate;
     let itemWithResale: EventCardResale;
     let itemWithOffer: EventCardWithOffer;
-    let itemWithVenue: EventCardWithVenue
+    let itemWithVenue: EventCardWithVenue;
+    let itemWishList: EventCardWishList
 
     let priceIncludeInfoFull: PriceIncludeInfoProp;
     let dateInfoFull: DateInfoProp;
     let priceIncludeInfo: PriceIncludeInfoProp;
     let dateInfo: DateInfoProp;
+    let priceIncludeWishList: PriceIncludeInfoProp
 
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
@@ -65,6 +68,13 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
         itemWithOffer = item as EventCardWithOffer
     } else if (item.Type == EventCardType.EventCardWithResale) {
         itemWithResale = item as EventCardResale
+    } else if (item.Type == EventCardType.EventCardWishList) {
+        itemWishList = item as EventCardWishList
+        priceIncludeWishList = {
+            MinPrice: itemWishList.MinPrice,
+            MaxPrice: itemWishList.MaxPrice,
+            IsDarkMode: false
+        }
     } else {
         itemWithVenue = item as EventCardWithVenue
     }
@@ -94,10 +104,15 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
 
                 <div className={styles.containerImage}>
                     {
-                        item.SoldTickets >= item.TotalTickets * 0.90 &&
-                        <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
-                        </div>
+                        item.Type == EventCardType.EventCardWishList ?
+                            <div className={styles.positionWishList}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
+                            </div>
+                            :
+                            item.SoldTickets >= item.TotalTickets * 0.90 &&
+                            <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+                            </div>
                     }
                     <div className={cssStyles.ImageProportion}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
@@ -184,6 +199,11 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     {
                         item.Type == EventCardType.EventCardWithPrice &&
                         <PriceIncludeInfoEvent item={priceIncludeInfo}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWishList &&
+                        <PriceIncludeInfoEvent item={priceIncludeWishList}/>
                     }
 
                     {

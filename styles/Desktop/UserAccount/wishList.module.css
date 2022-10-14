@@ -43,6 +43,7 @@
     --gap: 48px;
     display: grid;
     grid-template-columns: repeat(3,calc((100% - (var(--gap) * 2)) / 3));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--gap);
     transition: .6s;
 }

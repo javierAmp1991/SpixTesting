@@ -5,6 +5,7 @@ export enum EventCardType {
     EventCardWithResale,
     EventCardWithOffer,
     EventCardWithVenue,
+    EventCardWishList,
     EventCardFull,
 }
 
@@ -39,7 +40,7 @@ export class EventCardWithOffer extends BaseEventCard {
     TotalOffers: number
 }
 
-export class EventCardWithVenue extends BaseEventCard{
+export class EventCardWithVenue extends BaseEventCard {
     Venue: string
 }
 
@@ -48,6 +49,11 @@ export class EventCardFull extends BaseEventCard {
     MaxPrice: number
     MinDate: Date
     MaxDate: Date
+}
+
+export class EventCardWishList extends BaseEventCard{
+    MinPrice: number
+    MaxPrice: number
 }
 
 export namespace TodayInValpoFull {

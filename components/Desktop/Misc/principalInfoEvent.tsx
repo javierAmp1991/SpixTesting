@@ -17,7 +17,7 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
     const cssStyle = getCssStyle()
     return (
         <>
-            <div className={`${utilities.clamp2} ${style.titleMargin}`}>
+            <div className={`${utilities.clamp1} ${style.titleMargin}`}>
                 {item.Title}
             </div>
 

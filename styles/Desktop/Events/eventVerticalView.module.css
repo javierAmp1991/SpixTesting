@@ -144,6 +144,15 @@
     font-weight: 400;
 }
 
+.positionWishList{
+    bottom: 4px;
+    right: 4px;
+    width: 20%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: 500;
+}
+
 
 
 
