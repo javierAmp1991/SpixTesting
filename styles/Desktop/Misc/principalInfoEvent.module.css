@@ -9,7 +9,8 @@
 .gridRatingStar {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 2px;
+    align-items: center;
+    gap: 4px;
     padding: 2px 0 8px 0;
 }
 
@@ -45,7 +46,5 @@
 }
 
 .fontTextReviews{
-    font-size: 13px;
-    line-height: 13px;
 }
 
