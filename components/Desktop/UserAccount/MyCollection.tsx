@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/UserAccount/wishList.module.css"
+import style from "/styles/Desktop/UserAccount/myCollection.module.css"
 import {useRef, useState} from "react";
 import EventVerticalView from "../EventsView/eventVerticalView";
 import {EventCardType, EventCardWishList} from "../../../dataDemo/EventView/eventVerticalView";
@@ -8,7 +8,7 @@ import item = PrincipalFeaturedSearch.item;
 const tesetAdd: EventCardWishList[] = [
     {
         Id: "123456",
-        Type: EventCardType.EventCardWishList,
+        Type: EventCardType.EventCardMyCollection,
         Title: "Restaurant Cinzano para cada momento del dia entonces",
         Subtitle: "Cinzano",
         Rating: 30,
@@ -25,7 +25,7 @@ const tesetAdd: EventCardWishList[] = [
         TotalTickets: 10000,
         SoldTickets: 9990,
         PathImage: "/images/Woo.png",
-        Type: EventCardType.EventCardWishList,
+        Type: EventCardType.EventCardMyCollection,
         Subtitle: "WOO! Club",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -38,7 +38,7 @@ const tesetAdd: EventCardWishList[] = [
         TotalTickets: 10000,
         SoldTickets: 5000,
         PathImage: "/images/blackphone.png",
-        Type: EventCardType.EventCardWishList,
+        Type: EventCardType.EventCardMyCollection,
         Subtitle: "Black Phone",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -51,7 +51,7 @@ const tesetAdd: EventCardWishList[] = [
         TotalTickets: 10000,
         SoldTickets: 9990,
         PathImage: "/images/terrraza1.png",
-        Type: EventCardType.EventCardWishList,
+        Type: EventCardType.EventCardMyCollection,
         Subtitle: "Terraza Bellavista",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -64,7 +64,7 @@ const tesetAdd: EventCardWishList[] = [
         TotalTickets: 10000,
         SoldTickets: 3000,
         PathImage: "/images/marcoPolo.png",
-        Type: EventCardType.EventCardWishList,
+        Type: EventCardType.EventCardMyCollection,
         Subtitle: "Marco Polo",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -77,7 +77,7 @@ const tesetAdd: EventCardWishList[] = [
         TotalTickets: 10000,
         SoldTickets: 5000,
         PathImage: "/images/Civico.png",
-        Type: EventCardType.EventCardWishList,
+        Type: EventCardType.EventCardMyCollection,
         Subtitle: "Bar Civico",
         MinPrice: 2990,
         MaxPrice: 9990,
@@ -230,9 +230,9 @@ const list: EventCardWishList[] = [
     },
 ]
 
-const titleSection: string = "WishList"
-const subtitleSection: string = "tu lista de deseos"
-export default function WishList() {
+const titleSection: string = "Mi coleccion"
+const subtitleSection: string = "El coleccionista que le vende a rick harrison"
+export default function MyCollection() {
     let [controlScroll, setControlScroll] = useState(1)
     let [listWishList, setListWishList] = useState(tesetAdd)
     const divCarrouselRef = useRef(null)

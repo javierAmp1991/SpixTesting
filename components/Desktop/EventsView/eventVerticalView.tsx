@@ -6,6 +6,7 @@ import Image from "next/image";
 import {
     BaseEventCard,
     EventCardFull,
+    EventCArdMyCollection,
     EventCardResale,
     EventCardType,
     EventCardWishList,
@@ -30,13 +31,15 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
     let itemWithResale: EventCardResale;
     let itemWithOffer: EventCardWithOffer;
     let itemWithVenue: EventCardWithVenue;
-    let itemWishList: EventCardWishList
+    let itemWishList: EventCardWishList;
+    let itemMyCollection: EventCArdMyCollection
 
     let priceIncludeInfoFull: PriceIncludeInfoProp;
     let dateInfoFull: DateInfoProp;
     let priceIncludeInfo: PriceIncludeInfoProp;
     let dateInfo: DateInfoProp;
     let priceIncludeWishList: PriceIncludeInfoProp
+    let priceIncludeMyCollection: PriceIncludeInfoProp
 
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
@@ -75,6 +78,13 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
             MaxPrice: itemWishList.MaxPrice,
             IsDarkMode: false
         }
+    } else if (item.Type == EventCardType.EventCardMyCollection) {
+        itemWishList = item as EventCArdMyCollection
+        priceIncludeMyCollection = {
+            MinPrice: itemWishList.MinPrice,
+            MaxPrice: itemWishList.MaxPrice,
+            IsDarkMode: false
+        }
     } else {
         itemWithVenue = item as EventCardWithVenue
     }
@@ -104,15 +114,23 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
 
                 <div className={styles.containerImage}>
                     {
-                        item.Type == EventCardType.EventCardWishList ?
-                            <div className={styles.positionWishList}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
-                            </div>
-                            :
-                            item.SoldTickets >= item.TotalTickets * 0.90 &&
-                            <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
-                            </div>
+                        item.Type == EventCardType.EventCardWishList &&
+                        <div className={styles.positionWishList}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
+                        </div>
+                    }
+                    {
+                        item.Type == EventCardType.EventCardMyCollection &&
+                        <div className={styles.positionMedal}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.medal}/>
+                        </div>
+                    }
+                    {
+                        item.Type != EventCardType.EventCardMyCollection && item.Type != EventCardType.EventCardWishList &&
+                        item.SoldTickets >= item.TotalTickets * 0.90 &&
+                        <div className={`${utilities.positionLastTicket} ${styles.zIndexLastTicket}`}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt={""}/>
+                        </div>
                     }
                     <div className={cssStyles.ImageProportion}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
@@ -204,6 +222,11 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     {
                         item.Type == EventCardType.EventCardWishList &&
                         <PriceIncludeInfoEvent item={priceIncludeWishList}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardMyCollection &&
+                        <PriceIncludeInfoEvent item={priceIncludeMyCollection}/>
                     }
 
                     {

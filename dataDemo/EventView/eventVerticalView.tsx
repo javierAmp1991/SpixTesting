@@ -6,6 +6,7 @@ export enum EventCardType {
     EventCardWithOffer,
     EventCardWithVenue,
     EventCardWishList,
+    EventCardMyCollection,
     EventCardFull,
 }
 
@@ -52,6 +53,11 @@ export class EventCardFull extends BaseEventCard {
 }
 
 export class EventCardWishList extends BaseEventCard{
+    MinPrice: number
+    MaxPrice: number
+}
+
+export class EventCArdMyCollection extends BaseEventCard{
     MinPrice: number
     MaxPrice: number
 }

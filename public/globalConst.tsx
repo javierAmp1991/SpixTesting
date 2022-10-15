@@ -105,7 +105,8 @@ export namespace GlobalConst{
         cameraIcon: "/images/cameraIcon.png",
         relojIcon: "/images/relojIcon.png",
         carnetIcon: "/images/carnetIcon.png",
-        wishList: "/images/wishList.png"
+        wishList: "/images/wishList.png",
+        medal: "/images/medal.png"
     }
 }
 

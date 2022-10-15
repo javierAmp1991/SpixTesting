@@ -8,6 +8,7 @@ import NavMenuUserAccount from "./navMenu";
 import EditProfile from "./editProfile";
 import AccountAndSecurity from "./accountAndSecurity";
 import WishList from "./WishList";
+import MyCollection from "./MyCollection";
 
 
 export default function InitialPageUserAccount() {
@@ -42,6 +43,10 @@ export default function InitialPageUserAccount() {
                     {
                         providerSection.SectionSelected == MenuUserAccount.WishList &&
                         <WishList/>
+                    }
+                    {
+                        providerSection.SectionSelected == MenuUserAccount.MyCollection &&
+                        <MyCollection/>
                     }
                 </div>
             </div>
