@@ -1357,7 +1357,7 @@ export default function ProviderUserAccount({children}) {
     let [eventsDisplayCalendar, setEventsDisplayCalendar] = useState(listItemSelected)
     let [listMyShopping, setListMyShopping] = useState(listMyShoppingItem)
     let [myRefunds, setMyRefunds] = useState(listMyRefunds)
-    let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Refund)
+    let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Calendar)
 
 
     const handleSectionSelected = (id: string) => {

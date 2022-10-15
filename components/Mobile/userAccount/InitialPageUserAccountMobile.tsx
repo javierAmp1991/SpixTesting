@@ -6,14 +6,6 @@ import EditProfileMobile from "./editProfileMobile";
 import AccountAndSecurityMobile from "./accountAndSecurityMobile";
 import WishListMobile from "./WishListMobile";
 import MyCollectionMobile from "./MyCollectionMobile";
-/*import MyShopping from "./myShopping";
-import MyRefunds from "./myRefunds";
-import NavMenuUserAccount from "./navMenu";
-import EditProfile from "./editProfile";
-import AccountAndSecurity from "./accountAndSecurity";
-import WishListMobile from "./WishListMobile";
-import MyCollectionMobile from "./MyCollectionMobile";*/
-
 
 export default function InitialPageUserAccountMobile() {
     const providerSection: ProviderAccountSections = useContext(AccountSectionContext)
