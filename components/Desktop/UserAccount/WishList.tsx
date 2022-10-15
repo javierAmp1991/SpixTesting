@@ -161,7 +161,19 @@ const padding: number = 32
 const numberItems: number = 4
 export default function WishList() {
     let [control, setControl] = useState(1)
+    let [controlScroll, setControlScroll] = useState(1)
     const divCarrouselRef = useRef(null)
+    let [heightDiv, setHeightDiv] = useState(0)
+    const handleScroll = (e) => {
+        if (divCarrouselRef.current.offsetHeight + divCarrouselRef.current.scrollTop + 1 >= divCarrouselRef.current.scrollHeight) {
+            setControlScroll(controlScroll += 1)
+            alert("Llegamos al final del bloque");
+        }
+        if (e.target.scrollTop > controlScroll * 200) {
+            /*
+            setHeightDiv(heightDiv = divCarrouselRef.current.scrollHeight)*/
+        }
+    }
     const handleClickRight = () => {
         let newControl = control + 1
         if (newControl < (largo - 1)) {
@@ -188,7 +200,7 @@ export default function WishList() {
     }
     return (
         <div className={style.mainDiv}>
-            <div className={style.overFlow}>
+            <div ref={divCarrouselRef} onScroll={handleScroll} className={style.overFlow}>
                 <div className={style.mainDivTitle}>
                     <div className={style.title}>
                         {titleSection}
@@ -203,12 +215,19 @@ export default function WishList() {
                 </button>*/}
                 <div className={style.gridPages}>
                     <div className={style.containerCarrousel}>
-                        <div ref={divCarrouselRef} className={style.gridItemsWishList}>
+                        <div className={style.gridItemsWishList}>
                             {
                                 list.map((e, index) =>
+                                    index >= controlScroll * 1 && index <= controlScroll * 6 &&
                                     <EventVerticalView key={item.Id} item={e} darkModeState={false}/>
                                 )
                             }
+                        </div>
+                        <div>
+                            {controlScroll}
+                        </div>
+                        <div>
+                            {heightDiv}
                         </div>
                     </div>
                 </div>

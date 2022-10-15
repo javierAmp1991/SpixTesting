@@ -142,6 +142,7 @@
     font-size: 15px;
     color: var(--colorPrimaryTextDesktop);
     font-weight: 400;
+    padding-top: 2px;
 }
 
 .positionWishList{

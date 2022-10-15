@@ -1218,7 +1218,7 @@ const listConfigSection: AccountSections[] = [
         Type: MenuUserAccount.Calendar,
         State: true,
         Name: "Calendario",
-        PathImage: GlobalConst.sourceImages.calendarIcon,
+        PathImage: GlobalConst.sourceImages.calendarIconWhite,
     },
     {
         Id: "idConfigSection8",
