@@ -42,7 +42,6 @@ export default function InitialPageUserAccountMobile() {
                     providerSection.SectionSelected == MenuUserAccount.Refund &&
                     <MyRefundsMobile/>
                 }
-
             </div>
         </div>
     )
