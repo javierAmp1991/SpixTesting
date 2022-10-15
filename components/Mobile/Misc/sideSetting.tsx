@@ -7,12 +7,13 @@ import AccountSectionOptionMobile from "../userAccount/AccountSectionOptionMobil
 
 export default function SideSetting({closeDesplegable}: { closeDesplegable: Function }) {
     const providerAccountSection: ProviderAccountSections = useContext(AccountSectionContext)
+    const handleClose = () => closeDesplegable()
     return (
         <div className={style.mainDiv}>
             <div className={style.gridUser}>
                 <div className={style.paddingGradient}>
                     <div className={style.paddingGradient2}>
-                        <div className={style.sizeProfileUser}>
+                        <div onClick={handleClose} className={style.sizeProfileUser}>
                             <Image layout={"fill"} src={"/images/fotoperfil1.png"}/>
                         </div>
                     </div>

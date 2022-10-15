@@ -18,7 +18,6 @@ export default function Calendar() {
         calendarContext.SelectDate(id)
         calendarContext.UpdateState(id, state)
     }
-    const handleViewAll = () => calendarContext.DeselectItems()
     const daySelected = calendarContext.SelectedItems
     return (
         <div className={style.principalGrid}>

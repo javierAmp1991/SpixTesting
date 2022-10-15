@@ -2,6 +2,7 @@ import style from "/styles/Desktop/UserAccount/accountSectionOption.module.css"
 import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerUserAccount";
 import Image from "next/image";
 import {useContext, useEffect, useState} from "react";
+import Link from "next/link";
 
 export default function AccountSectionOptionMobile({item}: { item: AccountSections }) {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
@@ -20,6 +21,22 @@ export default function AccountSectionOptionMobile({item}: { item: AccountSectio
     return (
         item.Name == "Mi Negocio" ?
             <>
+                <Link href={"/userAccount"}>
+                    <button onClick={() => handleSelectSection(item.Id)}
+                            className={item.State ? style.mainDivSelected : style.mainDiv}>
+                        <div className={style.sizeImage}>
+                            <Image layout={"fill"} src={item.PathImage}/>
+                        </div>
+                        <div className={style.infoDiv}>
+                            <div className={style.name}>
+                                {item.Name}
+                            </div>
+                        </div>
+                    </button>
+                </Link>
+            </>
+            :
+            <Link href={"/userAccount"}>
                 <button onClick={() => handleSelectSection(item.Id)}
                         className={item.State ? style.mainDivSelected : style.mainDiv}>
                     <div className={style.sizeImage}>
@@ -31,18 +48,7 @@ export default function AccountSectionOptionMobile({item}: { item: AccountSectio
                         </div>
                     </div>
                 </button>
-            </>
-            :
-            <button onClick={() => handleSelectSection(item.Id)}
-                    className={item.State ? style.mainDivSelected : style.mainDiv}>
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={item.PathImage}/>
-                </div>
-                <div className={style.infoDiv}>
-                    <div className={style.name}>
-                        {item.Name}
-                    </div>
-                </div>
-            </button>
+            </Link>
+
     )
 }

@@ -1,0 +1,10 @@
+.mainDiv {
+    --marginMainDiv: 16px;
+    --gradientHeaderSections: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+    background: white;
+    width: 100%;
+    overflow: scroll;
+    padding: 16px;
+}
+
+
