@@ -12,6 +12,7 @@
     left: -100vw;
     transition: .6s linear;
     overflow: scroll;
+    z-index: 900000000000000;
 }
 
 .menuDesplegableOut {
@@ -24,4 +25,5 @@
     left: 0;
     transition: .6s linear;
     overflow: scroll;
+    z-index: 900000000000000;
 }

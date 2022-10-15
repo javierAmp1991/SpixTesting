@@ -112,7 +112,7 @@
     width: 20%;
     aspect-ratio: 1/1;
     position: absolute;
-    z-index: 500;
+    z-index: 50;
 }
 
 .positionMedal{

@@ -42,6 +42,7 @@
     display: grid;
     gap: var(--gap);
     transition: .6s;
+    padding: 4px 4px 4px 0;
 }
 
 .gridPages{
