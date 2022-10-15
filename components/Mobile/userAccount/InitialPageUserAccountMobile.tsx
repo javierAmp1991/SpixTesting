@@ -6,6 +6,8 @@ import EditProfileMobile from "./editProfileMobile";
 import AccountAndSecurityMobile from "./accountAndSecurityMobile";
 import WishListMobile from "./WishListMobile";
 import MyCollectionMobile from "./MyCollectionMobile";
+import MyShoppingMobile from "./myShoppingMobile";
+import MyRefundsMobile from "./myRefundsMobile";
 
 export default function InitialPageUserAccountMobile() {
     const providerSection: ProviderAccountSections = useContext(AccountSectionContext)
@@ -32,17 +34,15 @@ export default function InitialPageUserAccountMobile() {
                     providerSection.SectionSelected == MenuUserAccount.MyCollection &&
                     <MyCollectionMobile/>
                 }
-                {/* {
+                {
                     providerSection.SectionSelected == MenuUserAccount.MyShoppings &&
-                    <MyShopping/>
+                    <MyShoppingMobile/>
                 }
                 {
                     providerSection.SectionSelected == MenuUserAccount.Refund &&
-                    <MyRefunds/>
+                    <MyRefundsMobile/>
                 }
 
-
-               */}
             </div>
         </div>
     )

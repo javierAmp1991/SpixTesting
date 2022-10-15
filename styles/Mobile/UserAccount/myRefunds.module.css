@@ -1,0 +1,229 @@
+.mainDiv {
+    display: grid;
+    height: 100%;
+    padding: 12px var(--paddingXMainContent) 53px var(--paddingXMainContent);
+    --colorLines: #efefef;
+    --borderLine: 1px solid var(--colorLines);
+    --paddingXItems: 12px;
+    --paddingYItems: 10px;
+}
+
+.scrollDiv {
+    overflow: scroll;
+}
+
+.mainDivCeldas {
+    display: grid;
+    overflow: scroll;
+    height: 100%;
+    border-radius: 8px;
+/*    border-bottom: var(--borderLine);
+    border-left: var(--borderLine);
+    border-right: var(--borderLine);*/
+    border: 1px solid rgba(0,0,0,.2);
+}
+
+.mainDivHeader {
+/*    border-top: var(--borderLine);
+    border-left: var(--borderLine);
+    border-right: var(--borderLine);*/
+    overflow: hidden;
+}
+
+.gridHeader1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--colorLines);
+    gap: 1px;
+}
+
+.inptSelect {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    width: 160px;
+    border-radius: 4px;
+    overflow: hidden;
+    outline: none;
+    padding: 8px 12px;
+    margin-left: 4px;
+}
+
+
+.gridHeader {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: max-content;
+    grid-auto-rows: max-content;
+    background: var(--colorLines);
+    gap: 1px;
+    overflow: scroll;
+}
+
+
+.mainDivTitle {
+    padding-bottom: 24px;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.leftDiv {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    overflow: scroll;
+    height: 100%;
+}
+
+.styleItem {
+    display: grid;
+    background: white;
+    padding: var(--paddingYItems) var(--paddingXItems);
+    color: var(--colorPrimaryTextDesktop);
+    justify-items: center;
+    align-items: center;
+}
+
+.gridOption {
+    padding: var(--paddingYItems) var(--paddingXItems);
+    background: #fdfdfd;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.sizeBottomArrow {
+    height: 7px;
+    width: 12px;
+    position: relative;
+}
+
+.gridImageExport {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.sizeImageExport {
+    width: 16px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.dropDown {
+    padding: 12px;
+    border: 1px solid gray;
+}
+
+.gridExport {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 8px;
+    justify-content: right;
+}
+
+.gridExportTest {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 8px;
+    justify-content: right;
+    padding: 10px 12px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    width: max-content;
+}
+
+.gridInputExport {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 20px;
+    padding: 4px;
+}
+
+.refundButton {
+    display: grid;
+    align-items: center;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    outline: none;
+    padding: 6px 12px;
+    transition: .4s;
+}
+
+
+.gridHeaderExport {
+    background: var(--gradientHeaderSections);
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--colorLines);
+    justify-content: space-between;
+    color: white;
+    font-weight: 500;
+}
+
+.mainDivMonth {
+    font-size: 18px;
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 0;
+    text-align: center;
+    display: grid;
+}
+
+.divMonthArrow {
+    padding: 2px 0;
+    display: grid;
+    align-items: center;
+    gap: 16px;
+    justify-content: center;
+    grid-template-columns: max-content max-content max-content;
+}
+
+.sizeArrowMonth {
+    height: 10px;
+    width: 10px;
+    position: relative;
+}
+
+.waiting {
+    background: #0066ff;
+    width: 90px;
+    text-align: center;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.aproved {
+    background: #0ac40a;
+    width: 90px;
+    text-align: center;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.refused {
+    background: #ff2727;
+    text-align: center;
+    width: 90px;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
