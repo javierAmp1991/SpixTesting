@@ -2,13 +2,17 @@ import style from "/styles/Mobile/UserAccount/initialPage.module.css"
 import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerUserAccount";
 import {useContext} from "react";
 import CalendarMobile from "./calendarMobile";
+import EditProfileMobile from "./editProfileMobile";
+import AccountAndSecurityMobile from "./accountAndSecurityMobile";
+import WishListMobile from "./WishListMobile";
+import MyCollectionMobile from "./MyCollectionMobile";
 /*import MyShopping from "./myShopping";
 import MyRefunds from "./myRefunds";
 import NavMenuUserAccount from "./navMenu";
 import EditProfile from "./editProfile";
 import AccountAndSecurity from "./accountAndSecurity";
-import WishList from "./WishList";
-import MyCollection from "./MyCollection";*/
+import WishListMobile from "./WishListMobile";
+import MyCollectionMobile from "./MyCollectionMobile";*/
 
 
 export default function InitialPageUserAccountMobile() {
@@ -20,7 +24,23 @@ export default function InitialPageUserAccountMobile() {
                     providerSection.SectionSelected == MenuUserAccount.Calendar &&
                     <CalendarMobile/>
                 }
-               {/* {
+                {
+                    providerSection.SectionSelected == MenuUserAccount.EditProfile &&
+                    <EditProfileMobile/>
+                }
+                {
+                    providerSection.SectionSelected == MenuUserAccount.AccountSecurity &&
+                    <AccountAndSecurityMobile/>
+                }
+                {
+                    providerSection.SectionSelected == MenuUserAccount.WishList &&
+                    <WishListMobile/>
+                }
+                {
+                    providerSection.SectionSelected == MenuUserAccount.MyCollection &&
+                    <MyCollectionMobile/>
+                }
+                {/* {
                     providerSection.SectionSelected == MenuUserAccount.MyShoppings &&
                     <MyShopping/>
                 }
@@ -28,22 +48,9 @@ export default function InitialPageUserAccountMobile() {
                     providerSection.SectionSelected == MenuUserAccount.Refund &&
                     <MyRefunds/>
                 }
-                {
-                    providerSection.SectionSelected == MenuUserAccount.EditProfile &&
-                    <EditProfile/>
-                }
-                {
-                    providerSection.SectionSelected == MenuUserAccount.AccountSecurity &&
-                    <AccountAndSecurity/>
-                }
-                {
-                    providerSection.SectionSelected == MenuUserAccount.WishList &&
-                    <WishList/>
-                }
-                {
-                    providerSection.SectionSelected == MenuUserAccount.MyCollection &&
-                    <MyCollection/>
-                }*/}
+
+
+               */}
             </div>
         </div>
     )

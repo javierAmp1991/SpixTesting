@@ -17,13 +17,13 @@ export default function PrincipalInfoEventMobile({item}: { item: PrincipalInfoEv
     const cssStyle = getCssStyle()
     return (
         <>
-            <div className={`${utilities.clamp1} ${cssStyle.Title} ${style.titleMargin} `}>
+            <div className={`${utilities.clamp2} ${cssStyle.Title} ${style.titleMargin} `}>
                 {item.Title}
             </div>
 
-            <div className={`${cssStyle.Subtitle} ${style.subTitleMargin} ${utilities.clamp1}`}>
+            {/*<div className={`${cssStyle.Subtitle} ${style.subTitleMargin} ${utilities.clamp1}`}>
                 {item.Subtitle}
-            </div>
+            </div>*/}
 
             {
                 item.Rating != null &&

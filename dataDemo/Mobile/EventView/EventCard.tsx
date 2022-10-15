@@ -4,6 +4,8 @@ export enum EventCardTypeMobile {
     EventCardWithPrice,
     EventCardWithDate,
     EventCardWithOffer,
+    EventCardWishList,
+    EventCardMyColeection,
     EventCardFull
 }
 
@@ -35,6 +37,17 @@ export class EventCardWithFullMobile extends BaseEventCardMobile {
     MinDate: Date
     MaxDate: Date
 }
+
+export class EventCardWishListMobile extends BaseEventCardMobile{
+    MinPrice: number
+    MaxPrice: number
+}
+
+export class EventCardMyCollectionMobile extends BaseEventCardMobile{
+    MinPrice: number
+    MaxPrice: number
+}
+
 
 export class EventCardWithOffer extends BaseEventCardMobile{
     ListTagsOffer: string[]

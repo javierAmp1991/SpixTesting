@@ -7,8 +7,10 @@ import Link from "next/link";
 import {
     BaseEventCard,
     EventCardFull,
+    EventCArdMyCollection,
     EventCardResale,
     EventCardType,
+    EventCardWishList,
     EventCardWithDate,
     EventCardWithOffer,
     EventCardWithPrice
@@ -17,6 +19,7 @@ import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/princ
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import DateInfoEvent from "../../Desktop/Misc/dateInfoEvent";
+import PriceIncludeInfoEvent from "../../Desktop/Misc/priceIncludeInfoEvent";
 
 const totalResaleText = "Total reventas: "
 
@@ -28,11 +31,15 @@ export default function EventHorizontalView({item, darkModeState}:
     let itemWithDate: EventCardWithDate;
     let itemWithResale: EventCardResale;
     let itemWithOffer: EventCardWithOffer;
+    let itemMyCollection: EventCArdMyCollection
+    let itemWishList: EventCardWishList
 
     let priceIncludeInfoFull: PriceIncludeInfoPropMobile
     let dateInfoFull: DateInfoPropMobile
     let priceIncludeInfo: PriceIncludeInfoPropMobile;
     let dateInfo: DateInfoPropMobile;
+    let priceIncludeWishList: PriceIncludeInfoPropMobile
+    let priceIncludeMyCollection: PriceIncludeInfoPropMobile
 
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
@@ -64,6 +71,22 @@ export default function EventHorizontalView({item, darkModeState}:
     else if(item.Type == EventCardType.EventCardWithOffer){
         itemWithOffer = item as EventCardWithOffer
     }
+    else if(item.Type == EventCardType.EventCardMyCollection){
+        itemMyCollection = item as EventCArdMyCollection
+        priceIncludeMyCollection = {
+            MinPrice: itemMyCollection.MinPrice,
+            MaxPrice: itemMyCollection.MaxPrice,
+            IsDarkMode: false
+        }
+    }
+    else if(item.Type == EventCardType.EventCardWishList){
+        itemWishList = item as EventCardWishList
+        priceIncludeWishList = {
+            MinPrice: itemWishList.MinPrice,
+            MaxPrice: itemWishList.MaxPrice,
+            IsDarkMode: false
+        }
+    }
     else{
         itemWithResale = item as EventCardResale
     }
@@ -88,6 +111,19 @@ export default function EventHorizontalView({item, darkModeState}:
             <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
+                        item.Type == EventCardType.EventCardWishList &&
+                        <div className={style.positionWishList}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
+                        </div>
+                    }
+                    {
+                        item.Type == EventCardType.EventCardMyCollection &&
+                        <div className={style.positionMedal}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.medal}/>
+                        </div>
+                    }
+                    {
+                        item.Type != EventCardType.EventCardMyCollection && item.Type != EventCardType.EventCardWishList &&
                         item.SoldTickets >= item.TotalTickets * 0.90 &&
                         <div className={`${utilities.positionLastTicket} ${style.zIndexLastTicket}`}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
@@ -144,6 +180,16 @@ export default function EventHorizontalView({item, darkModeState}:
                     {
                         item.Type == EventCardType.EventCardWithDate &&
                         <DateInfoEvent item={dateInfo}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardWishList &&
+                        <PriceIncludeInfoEventMobile item={priceIncludeWishList}/>
+                    }
+
+                    {
+                        item.Type == EventCardType.EventCardMyCollection &&
+                        <PriceIncludeInfoEventMobile item={priceIncludeMyCollection}/>
                     }
 
                     {

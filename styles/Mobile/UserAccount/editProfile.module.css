@@ -1,0 +1,135 @@
+.mainDiv {
+    height: 100%;
+    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    overflow: scroll;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+.mainDivTitle {
+    padding-bottom: 32px;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.spaceOtherGender {
+    margin-top: 12px;
+}
+
+.sizeLogo {
+    height: 35px;
+    width: 120px;
+    position: relative;
+    margin: auto;
+}
+
+.line {
+    border-bottom: 2px solid var(--separationLineColor);
+    padding-bottom: 20px;
+}
+
+.mainDivEdit {
+    height: 100%;
+    width: 100%;
+    padding-right: 4px;
+    margin-right: auto;
+    overflow: scroll;
+}
+
+.titleInputs {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.styleInput {
+    padding: 6px 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    outline: none;
+    position: relative;
+}
+
+.sizeProfilePic {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.paddingGradient {
+    padding: 4px;
+    background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
+    border-radius: 50%;
+    width: max-content;
+    position: relative;
+}
+
+.labelPhoto {
+    width: max-content;
+    margin: auto;
+    color: var(--linkColor);
+    cursor: pointer;
+}
+
+.gridOptions {
+    display: grid;
+    gap: 24px;
+}
+
+.gridNameInput {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.buttonConfirm {
+    background: var(--gradientBlueButton);
+    margin-left: auto;
+    padding: 6px 24px;
+    color: white;
+    width: max-content;
+    border-radius: 4px;
+}
+
+.gridImageName {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    gap: 16px;
+    justify-items: left;
+}
+
+.editProfilePic {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--gradientBlueButton);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.user {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.styleInputFile {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.datePicker::-webkit-calendar-picker-indicator{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+}
+
+
