@@ -33,10 +33,11 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                                               displaySug={handleDisplaySug}/>
                             <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
                             {children}
+                            <div className={cssStyle.desplegableCont}>
+                                <SideSetting closeDesplegable={handleSideSetting}/>
+                            </div>
                         </div>
-                        <div className={cssStyle.desplegableCont}>
-                            <SideSetting closeDesplegable={handleSideSetting}/>
-                        </div>
+
                     </>
             }
         </div>
