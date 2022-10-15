@@ -1,7 +1,7 @@
 .mainDiv {
     --marginMainDiv: 16px;
     --gradientHeaderSections: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
-    --paddingXMainContent: 64px;
+    --paddingXMainContent: 32px;
     --paddingBottomAllContent: 53px;
     background: white;
     margin: auto;

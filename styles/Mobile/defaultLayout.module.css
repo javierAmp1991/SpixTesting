@@ -1,18 +1,17 @@
 .mainCont {
     position: relative;
-    overflow-x: hidden;
+    overflow: scroll;
+    height: 100vh;
 }
 
 .menuDesplegableIn {
     position: absolute;
     height: 100vh;
-    border-radius: 8px 0 0 8px;
     width: 250px;
-    z-index: 5000;
     top: 0;
-    overflow: hidden;
-    right: -100vw;
+    left: -100vw;
     transition: .6s linear;
+    overflow: scroll;
 }
 
 .menuDesplegableOut {
@@ -20,11 +19,9 @@
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, .5);
-    z-index: 5000;
-    padding-left: 20vw;
-    border-radius: 8px 0 0 8px;
-    overflow: hidden;
+    padding-right: 20vw;
     top: 0;
-    right: 0;
+    left: 0;
     transition: .6s linear;
+    overflow: scroll;
 }

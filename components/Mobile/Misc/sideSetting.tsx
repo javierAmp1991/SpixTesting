@@ -1,74 +1,38 @@
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import React from "react";
+import React, {useContext} from "react";
 import style from "/styles/Mobile/Misc/sideSettings.module.css"
+import {ProviderAccountSections, AccountSectionContext} from "../../Providers/providerUserAccount";
+import AccountSectionOptionMobile from "../userAccount/AccountSectionOptionMobile";
 
-export default function SideSetting({closeDesplegable}) {
+export default function SideSetting({closeDesplegable}: { closeDesplegable: Function }) {
+    const providerAccountSection: ProviderAccountSections = useContext(AccountSectionContext)
     return (
-        <div className={style.widthDashBoard}>
-            <div className={style.bgHeader}>
-                <div className={style.header}>
-                    <div className={style.contDesplegable}>
-                        <div onClick={closeDesplegable} className={style.sizeCloseDesplegable}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.menuIcon}/>
+        <div className={style.mainDiv}>
+            <div className={style.gridUser}>
+                <div className={style.paddingGradient}>
+                    <div className={style.paddingGradient2}>
+                        <div className={style.sizeProfileUser}>
+                            <Image layout={"fill"} src={"/images/fotoperfil1.png"}/>
                         </div>
                     </div>
-                    <div className={style.contLogoSpix}>
-                        <div className={style.sizeLogoSpix}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk}/>
-                        </div>
-                    </div>
+                </div>
+                <div className={style.userNick}>
+                    @kujojotaro
                 </div>
             </div>
-
-            <div className={style.buttonSection}>
-               {/* <div className={style.profileProp}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.logginIconNormal}/>
-                </div>*/}
-                <div className={style.styleSections}>
-                    <div className={style.gridMax2}>
-                        <div className={style.sizeLogginIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.logginIconNormal}/>
-                        </div>
-                        <div>
-                            Iniciar Sesion
-                        </div>
-                    </div>
-                    <div className={style.arrowRight}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
-                    </div>
-                </div>
-
-                <div className={style.styleSections}>
-                    <div className={style.gridMax2}>
-                        <div className={style.sizeLogginIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.lightModeNavMenu}/>
-                        </div>
-                        <div>
-                            ModoNocturno
-                        </div>
-                    </div>
-                    <div className={style.arrowRight}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
-                    </div>
-                </div>
-
-                <div className={style.styleSections}>
-                    <div className={style.gridMax2}>
-                        <div className={style.sizeLogginIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.homeNavMenuNormal}/>
-                        </div>
-                        <div>
-                            Home
-                        </div>
-                    </div>
-                    <div className={style.arrowRight}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
-                    </div>
+            <div className={style.gridSections}>
+                {
+                    providerAccountSection.ListAccountSection.map((item) =>
+                        <AccountSectionOptionMobile key={item.Id} item={item}/>
+                    )
+                }
+            </div>
+            <div className={style.underDiv}>
+                <div className={style.sizeLogoSpix}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk}/>
                 </div>
             </div>
-
-
         </div>
     )
 }

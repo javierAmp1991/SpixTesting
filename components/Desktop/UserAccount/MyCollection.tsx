@@ -4,6 +4,8 @@ import EventVerticalView from "../EventsView/eventVerticalView";
 import {EventCardType, EventCardWishList} from "../../../dataDemo/EventView/eventVerticalView";
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
 import item = PrincipalFeaturedSearch.item;
+import Image from "next/image";
+import {GlobalConst} from "../../../public/globalConst";
 
 const tesetAdd: EventCardWishList[] = [
     {
@@ -269,6 +271,21 @@ export default function MyCollection() {
                     </div>
                 </div>
             </div>
+            {/*<div className={style.gridCategorias}>
+                <div>
+                    Categorias
+                </div>
+                <div className={style.gridItems}>
+                    {
+                        [...Array(20)].map(e =>
+
+                            <div className={style.sizeImageCat}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>*/}
         </div>
     )
 }
