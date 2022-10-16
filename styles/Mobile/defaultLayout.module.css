@@ -4,24 +4,39 @@
 }
 
 .menuDesplegableIn {
-    position: absolute;
+    /*position: absolute;
     height: 100vh;
-    width: 250px;
     top: 0;
     left: -100vw;
     transition: .6s linear;
     overflow: scroll;
-    z-index: 90000000000000;
+    z-index: 90000000000000;*/
+    position: absolute;
+    height: 100vh;
+    top: 0;
+    transform: translate(-100vw);
+    transition: .6s linear;
+    overflow: scroll;
+    z-index: 90000000000000
 }
 
 .menuDesplegableOut {
-    position: absolute;
+    /*position: absolute;
     height: 100vh;
     width: 100vw;
     background: rgba(0, 0, 0, .5);
     padding-right: 20vw;
     top: 0;
     left: 0;
+    transition: .6s linear;
+    overflow: scroll;
+    z-index: 90000000000000;*/
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, .5);
+    padding-right: 20vw;
+    top: 0;
     transition: .6s linear;
     overflow: scroll;
     z-index: 90000000000000;
