@@ -10,6 +10,8 @@ import {
 } from "../../Providers/providerUserAccount";
 import {useContext, useState} from "react";
 import Link from "next/link";
+import PopUpContainerMob from "../Misc/popUpContainerMob";
+import PopUpContainerLogo from "../../Desktop/Misc/popUpContainerLogo";
 
 const exportText: string = "Exportar:"
 const titleSection: string = "Reembolsos"
@@ -20,11 +22,19 @@ export default function MyRefundsMobile() {
     const providerMyShopping: ProviderMyShopping = useContext(MyShoppingContext)
     const providerMyRefunds: ProviderMyRefunds = useContext(MyRefundsContext)
 
+    let [displayMotive, setDisplayMotive] = useState(false)
+    let [motiveSelected, setMotiveSelected] = useState("")
     let [orderByPrice, setOrderByPrice] = useState(false)
     let [orderByName, setOrderByName] = useState(false)
     let [orderByDate, setOrderByDate] = useState(false)
     let [orderBySite, setOrderBySite] = useState(false)
     let [orderByAmount, setOrderByAmount] = useState(false)
+
+    const handleOpenPopUp = (mot: string) => {
+        setMotiveSelected(motiveSelected = mot)
+        setDisplayMotive(displayMotive = true)
+    }
+    const handleClosePopUp = () => setDisplayMotive(displayMotive = false)
 
     const handleSortByPrice = () => {
         providerMyShopping.SortByPrice(orderByPrice)
@@ -163,7 +173,7 @@ export default function MyRefundsMobile() {
                                         }
                                         {
                                             item.State == StateMyRefund.Refused &&
-                                            <div className={style.refused}>
+                                            <div onClick={() => handleOpenPopUp(item.Motive)} className={style.refused}>
                                                 Rechazado
                                             </div>
                                         }
@@ -181,6 +191,26 @@ export default function MyRefundsMobile() {
                     </div>
                 </div>
             </div>
+            {
+                displayMotive &&
+                <PopUpContainerMob closePopUp={handleClosePopUp} isBackground={true} isButtonVisible={true}>
+                    <div className={style.mainDivMotivePopUp}>
+                        <div className={style.divLog}>
+                            <div className={style.sizeLogSpix}>
+                                <Image layout={"fill"} src={"/images/spixBlue.png"}/>
+                            </div>
+                        </div>
+                        <div className={style.divUnder}>
+                            <div>
+                                Su reembolso se ha rechazado por:
+                            </div>
+                            <div className={style.motivo}>
+                                {motiveSelected}
+                            </div>
+                        </div>
+                    </div>
+                </PopUpContainerMob>
+            }
         </div>
     )
 

@@ -17,16 +17,16 @@
     overflow: scroll;
     height: 100%;
     border-radius: 8px;
-/*    border-bottom: var(--borderLine);
-    border-left: var(--borderLine);
-    border-right: var(--borderLine);*/
-    border: 1px solid rgba(0,0,0,.2);
+    /*    border-bottom: var(--borderLine);
+        border-left: var(--borderLine);
+        border-right: var(--borderLine);*/
+    border: 1px solid rgba(0, 0, 0, .2);
 }
 
 .mainDivHeader {
-/*    border-top: var(--borderLine);
-    border-left: var(--borderLine);
-    border-right: var(--borderLine);*/
+    /*    border-top: var(--borderLine);
+        border-left: var(--borderLine);
+        border-right: var(--borderLine);*/
     overflow: hidden;
 }
 
@@ -226,4 +226,32 @@
     color: white;
     padding: 2px 12px;
     font-size: 12px;
+}
+
+.divLog {
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--separationLineColor);
+}
+
+.sizeLogSpix {
+    width: 120px;
+    height: 35px;
+    position: relative;
+    margin: auto;
+}
+
+.motivo{
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.divUnder{
+    display: grid;
+    gap: 12px;
+    padding-top:16px;
+}
+
+.mainDivMotivePopUp {
+    width: 100%;
+    padding: 16px 32px;
 }
