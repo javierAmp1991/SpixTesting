@@ -38,7 +38,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                                               displaySug={handleDisplaySug}/>
                             <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
                             {children}
-                            <div onClick={handleSideSetting} className={cssStyle.desplegableCont}>
+                            <div onClick={handleSideSetting} style={{transform: `translate(${cssStyle.desp})`}} className={styleMobile.menuDesplegable}>
                                 <SideSetting closeDesplegable={handleSideSetting}/>
                             </div>
                         </div>
@@ -49,6 +49,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
 
     function getCssStyle() {
         return {
+            desp: isOpenSideSetting? "0vw" : "-100vw",
             stopScroll: isOpenSideSetting && utilities.noScrollBody,
             desplegableCont: isOpenSideSetting ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn
         }

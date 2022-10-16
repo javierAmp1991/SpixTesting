@@ -3,6 +3,18 @@
     height: 100vh;
 }
 
+.menuDesplegable {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, .5);
+    padding-right: 20vw;
+    top: 0;
+    transition: .5s;
+    overflow: scroll;
+    z-index: 90000000000000;
+}
+
 .menuDesplegableIn {
     /*position: absolute;
     height: 100vh;
