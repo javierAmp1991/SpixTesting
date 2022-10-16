@@ -20,7 +20,7 @@ export default function AccountSectionOptionMobile({item}: { item: AccountSectio
     }, [accountSectionContext.ListAccountSection])*/
 
     return (
-        <Link href={"userAccount"}>
+        <Link href={"/userAccount"}>
             <button onClick={() => handleSelectSection(item.Id)}
                     className={item.State ? style.mainDivSelected : style.mainDiv}>
                 <div className={style.sizeImage}>
