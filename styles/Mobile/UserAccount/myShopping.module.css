@@ -21,7 +21,6 @@
 /*    border-bottom: var(--borderLine);
     border-left: var(--borderLine);
     border-right: var(--borderLine);*/
-    box-shadow: 0 3px 8px rgba(0,0,0,.2);
 }
 
 .mainDivHeader {
