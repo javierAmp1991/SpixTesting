@@ -62,7 +62,7 @@
 
 
 .mainDivTitle {
-    padding-bottom: 24px;
+    padding-bottom: 20px;
 }
 
 .title {
@@ -173,6 +173,7 @@
     display: grid;
     gap: 12px;
     grid-template-columns: repeat(2, 1fr);
+    padding: 4px;
     margin-bottom: 24px;
 }
 
