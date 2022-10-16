@@ -26,19 +26,16 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                 isDisplaySug ?
                     <SuggHeaderMobile returnMet={handleDisplaySug}/>
                     :
-                    <>
-                        <div className={`${cssStyle.stopScroll} ${styleMobile.mainCont}`}>
-                            <HeaderSpixMobile isDarkMode={isDarkMode}
-                                              isDesplegable={handleSideSetting}
-                                              displaySug={handleDisplaySug}/>
-                            <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
-                            {children}
-                            <div className={cssStyle.desplegableCont}>
-                                <SideSetting closeDesplegable={handleSideSetting}/>
-                            </div>
+                    <div className={`${cssStyle.stopScroll} ${styleMobile.mainCont}`}>
+                        <HeaderSpixMobile isDarkMode={isDarkMode}
+                                          isDesplegable={handleSideSetting}
+                                          displaySug={handleDisplaySug}/>
+                        <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
+                        {children}
+                        <div className={cssStyle.desplegableCont}>
+                            <SideSetting closeDesplegable={handleSideSetting}/>
                         </div>
-
-                    </>
+                    </div>
             }
         </div>
     )
