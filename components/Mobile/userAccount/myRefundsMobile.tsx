@@ -17,6 +17,7 @@ const exportText: string = "Exportar:"
 const titleSection: string = "Reembolsos"
 const subtitleSection: string = "Resumen de mis reembolsos"
 const refundText: string = "Solicitar reembolso"
+const refundReject: string = "Su reembolso se ha rechazado por:"
 
 export default function MyRefundsMobile() {
     const providerMyShopping: ProviderMyShopping = useContext(MyShoppingContext)
@@ -202,7 +203,7 @@ export default function MyRefundsMobile() {
                         </div>
                         <div className={style.divUnder}>
                             <div>
-                                Su reembolso se ha rechazado por:
+                                {refundReject}
                             </div>
                             <div className={style.motivo}>
                                 {motiveSelected}
