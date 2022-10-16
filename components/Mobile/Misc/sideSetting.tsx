@@ -2,7 +2,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useContext} from "react";
 import style from "/styles/Mobile/Misc/sideSettings.module.css"
-import {ProviderAccountSections, AccountSectionContext} from "../../Providers/providerUserAccount";
+import {ProviderAccountSections, AccountSectionContext} from "../../Providers/providerGlobal";
 import AccountSectionOptionMobile from "../userAccount/AccountSectionOptionMobile";
 
 export default function SideSetting({closeDesplegable}: { closeDesplegable: Function }) {

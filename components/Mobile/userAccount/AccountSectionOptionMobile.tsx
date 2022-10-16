@@ -1,7 +1,7 @@
 import style from "/styles/Desktop/UserAccount/accountSectionOption.module.css"
-import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerUserAccount";
+import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerGlobal";
 import Image from "next/image";
-import {useContext, useEffect, useState} from "react";
+import {useContext, useState} from "react";
 
 export default function AccountSectionOptionMobile({item}: { item: AccountSections }) {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)

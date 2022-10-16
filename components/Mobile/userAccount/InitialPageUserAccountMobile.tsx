@@ -1,5 +1,5 @@
 import style from "/styles/Mobile/UserAccount/initialPage.module.css"
-import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerUserAccount";
+import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import CalendarMobile from "./calendarMobile";
 import EditProfileMobile from "./editProfileMobile";
