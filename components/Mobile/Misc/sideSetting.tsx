@@ -22,13 +22,13 @@ export default function SideSetting({closeDesplegable}: { closeDesplegable: Func
                     @kujojotaro
                 </div>
             </div>
-            <div className={style.gridSections}>
+            {/*<div className={style.gridSections}>
                 {
                     providerAccountSection.ListAccountSection.map((item) =>
                         <AccountSectionOptionMobile key={item.Id} item={item}/>
                     )
                 }
-            </div>
+            </div>*/}
             <div className={style.underDiv}>
                 <div className={style.sizeLogoSpix}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk}/>
