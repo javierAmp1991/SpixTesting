@@ -34,7 +34,9 @@
 
 .mainDivInfo {
     padding: 12px 12px 12px 8px;
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .hours {

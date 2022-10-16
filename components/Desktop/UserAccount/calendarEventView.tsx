@@ -13,12 +13,12 @@ export default function CalendarEventView({item}: { item: CalendarEventViewProp 
                     <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt={""}/>
                 </div>
                 <div className={style.mainDivInfo}>
-                    <div className={`${style.title} ${utilities.clamp1}`}>
+                    <div className={`${style.title} ${utilities.clamp2}`}>
                         {item.Title}
                     </div>
-                    <div className={`${style.subTitle} ${utilities.clamp1}`}>
+                    {/*<div className={`${style.subTitle} ${utilities.clamp1}`}>
                         {item.Subtitle}
-                    </div>
+                    </div>*/}
                     <div className={style.date}>
                         {getDate(item.ThisDate)}
                     </div>
