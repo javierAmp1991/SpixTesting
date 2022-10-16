@@ -9,46 +9,30 @@ export default function AccountSectionOptionMobile({item}: { item: AccountSectio
     const handleSelectSection = (id: string) => {
         accountSectionContext.SelectSection(id)
     }
+
     let [stateMyBussines, setStateMyBussines] = useState(false)
-    useEffect(() => {
+    /*useEffect(() => {
         accountSectionContext.ListAccountSection.forEach(item => {
             if (item.Name == "Mi Negocio") {
                 if (item.State) setStateMyBussines(stateMyBussines = true)
                 else setStateMyBussines(stateMyBussines = false)
             }
         })
-    }, [accountSectionContext.ListAccountSection])
-    return (
-        item.Name == "Mi Negocio" ?
-            <>
-                <Link href={"/userAccount"}>
-                    <button onClick={() => handleSelectSection(item.Id)}
-                            className={item.State ? style.mainDivSelected : style.mainDiv}>
-                        <div className={style.sizeImage}>
-                            <Image layout={"fill"} src={item.PathImage}/>
-                        </div>
-                        <div className={style.infoDiv}>
-                            <div className={style.name}>
-                                {item.Name}
-                            </div>
-                        </div>
-                    </button>
-                </Link>
-            </>
-            :
-            <Link href={"/userAccount"}>
-                <button onClick={() => handleSelectSection(item.Id)}
-                        className={item.State ? style.mainDivSelected : style.mainDiv}>
-                    <div className={style.sizeImage}>
-                        <Image layout={"fill"} src={item.PathImage}/>
-                    </div>
-                    <div className={style.infoDiv}>
-                        <div className={style.name}>
-                            {item.Name}
-                        </div>
-                    </div>
-                </button>
-            </Link>
+    }, [accountSectionContext.ListAccountSection])*/
 
+    return (
+        <Link href={"/accountSection"}>
+            <button onClick={() => handleSelectSection(item.Id)}
+                    className={item.State ? style.mainDivSelected : style.mainDiv}>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={item.PathImage}/>
+                </div>
+                <div className={style.infoDiv}>
+                    <div className={style.name}>
+                        {item.Name}
+                    </div>
+                </div>
+            </button>
+        </Link>
     )
 }
