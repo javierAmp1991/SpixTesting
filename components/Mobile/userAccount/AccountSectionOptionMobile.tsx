@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/UserAccount/accountSectionOption.module.css"
+import style from "/styles/Mobile/UserAccount/accountSectionOption.module.css"
 import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerGlobal";
 import Image from "next/image";
 import {useContext, useState} from "react";

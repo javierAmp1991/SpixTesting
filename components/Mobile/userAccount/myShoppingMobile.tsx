@@ -138,7 +138,7 @@ export default function MyShoppingMobile() {
                         </button>
                         <button onClick={handleSortByAmount} className={style.gridOption}>
                             <div>
-                                N°
+                                Cantidad
                             </div>
                             <div className={style.sizeBottomArrow}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>

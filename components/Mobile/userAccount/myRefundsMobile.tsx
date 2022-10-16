@@ -64,6 +64,12 @@ export default function MyRefundsMobile() {
                         </div>
                     </div>
                     <div className={style.gridInputExport}>
+                        <Link href={""}>
+                            <a className={style.refundButton}>
+                                {refundText}
+                            </a>
+                        </Link>
+                        <div/>
                         <select onChange={handleChangeSelect} className={style.inptSelect}>
                             {
                                 providerMyRefunds.ListMoths.map(item =>
@@ -78,11 +84,6 @@ export default function MyRefundsMobile() {
                                 )
                             }
                         </select>
-                        <Link href={""}>
-                            <a className={style.refundButton}>
-                                {refundText}
-                            </a>
-                        </Link>
                     </div>
 
                 </div>
