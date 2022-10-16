@@ -50,10 +50,10 @@
 }
 
 .bottomDivSearch {
-    padding: 10px 0 0 0;
-    border-top: 2px dashed var(--separationLineColor);
+    /*padding: 10px 0 0 0;*/
+/*    border-top: 2px dashed var(--separationLineColor);*/
     display: grid;
-    gap: 5px;
+    gap: 8px;
 }
 
 .bottomDivResale {
@@ -65,7 +65,7 @@
 }
 
 .TopDivInfo {
-    padding: 0 0 14px 0;
+    padding: 0 0 8px 0;
 }
 
 .sizeIcon {
