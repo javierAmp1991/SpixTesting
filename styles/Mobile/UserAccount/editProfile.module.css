@@ -1,9 +1,7 @@
 .mainDiv {
-    height: 100%;
+    height: auto;
     padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
-    overflow: scroll;
     display: grid;
-    grid-template-rows: max-content 1fr;
 }
 
 .mainDivTitle {

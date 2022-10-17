@@ -42,6 +42,12 @@ export default function InitialPageUserAccountMobile() {
                     providerSection.SectionSelected == MenuUserAccount.Refund &&
                     <MyRefundsMobile/>
                 }
+                {
+                    providerSection.SectionSelected == MenuUserAccount.MyBussines &&
+                    <div>
+                        En construccion
+                    </div>
+                }
             </div>
         </div>
     )

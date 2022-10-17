@@ -48,6 +48,12 @@ export default function InitialPageUserAccount() {
                         providerSection.SectionSelected == MenuUserAccount.MyCollection &&
                         <MyCollection/>
                     }
+                    {
+                        providerSection.SectionSelected == MenuUserAccount.MyBussines &&
+                        <div>
+                            En construccion
+                        </div>
+                    }
                 </div>
             </div>
         </div>
