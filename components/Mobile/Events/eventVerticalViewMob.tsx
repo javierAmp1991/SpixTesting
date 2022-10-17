@@ -86,44 +86,40 @@ export default function EventVerticalViewMob({item, darkModeState, isActiveSnap}
             </Link>
 
             <div className={`${cssStyles.bgInfo} ${styles.princiaplGridInfo}`}>
-                <div className={styles.TopDivInfo}>
-                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
-                </div>
+                <PrincipalInfoEventMobile item={principalInfoEventProp}/>
 
-                <div className={styles.bottomDivSearch}>
-                    {
-                        item.Type == EventCardTypeMobile.EventCardFull &&
-                        <>
-                            <DateInfoEventMobile item={dateInfoFull}/>
-                            <PriceIncludeInfoEventMobile item={priceIncludeInfoFull}/>
-                        </>
-                    }
-                    {
-                        item.Type == EventCardTypeMobile.EventCardWithPrice &&
-                        <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
-                    }
-                    {
-                        item.Type == EventCardTypeMobile.EventCardWithDate &&
-                        <DateInfoEvent item={dateInfo}/>
-                    }
-                    {
-                        item.Type == EventCardTypeMobile.EventCardWithOffer &&
-                        <>
-                            <div className={styles.gridTags}>
-                                {
-                                    itemWithOffer.ListTagsOffer.map(item =>
-                                        <div key={item} className={styles.tagStyleDisc}>
-                                            {item}
-                                        </div>
-                                    )
-                                }
-                            </div>
-                            <div className={styles.textResaleOffer}>
-                                Productos en oferta: {itemWithOffer.TotalOffers}
-                            </div>
-                        </>
-                    }
-                </div>
+                {
+                    item.Type == EventCardTypeMobile.EventCardFull &&
+                    <>
+                        <DateInfoEventMobile item={dateInfoFull}/>
+                        <PriceIncludeInfoEventMobile item={priceIncludeInfoFull}/>
+                    </>
+                }
+                {
+                    item.Type == EventCardTypeMobile.EventCardWithPrice &&
+                    <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
+                }
+                {
+                    item.Type == EventCardTypeMobile.EventCardWithDate &&
+                    <DateInfoEvent item={dateInfo}/>
+                }
+                {
+                    item.Type == EventCardTypeMobile.EventCardWithOffer &&
+                    <>
+                        <div className={styles.gridTags}>
+                            {
+                                itemWithOffer.ListTagsOffer.map(item =>
+                                    <div key={item} className={styles.tagStyleDisc}>
+                                        {item}
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <div className={styles.textResaleOffer}>
+                            Productos en oferta: {itemWithOffer.TotalOffers}
+                        </div>
+                    </>
+                }
             </div>
         </div>
     )

@@ -38,7 +38,7 @@
     aspect-ratio: 1/1;
 }
 
-.sizeImageBase{
+.sizeImageBase {
     width: 100%;
     position: relative;
     aspect-ratio: 1/1;
@@ -86,7 +86,7 @@
     display: grid;
     gap: 2px;
     position: relative;
-/*    border-top: 2px dashed #e7e7e7;*/
+    /*    border-top: 2px dashed #e7e7e7;*/
 }
 
 .bottomDivResale {
@@ -121,8 +121,7 @@
     grid-template-columns: repeat(3, max-content);
     gap: 8px;
     align-items: center;
-    padding-bottom: 3px;
-    padding-top: 3px;
+    padding: 5px 0;
 }
 
 .tagStyleDisc {
@@ -136,14 +135,14 @@
     color: white;
 }
 
-.textResaleOffer{
+.textResaleOffer {
     font-size: 15px;
     color: var(--colorPrimaryTextDesktop);
     font-weight: 400;
     padding-top: 2px;
 }
 
-.positionWishList{
+.positionWishList {
     bottom: 4px;
     right: 4px;
     width: 20%;
@@ -152,7 +151,7 @@
     z-index: 500;
 }
 
-.positionMedal{
+.positionMedal {
     bottom: 4px;
     right: 4px;
     width: 20%;

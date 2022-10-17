@@ -41,7 +41,6 @@
 .fontPriceIncludeMobile {
     --fontSizeLineHeightMob: 15px;
     font-size: var(--fontSizeLineHeightMob);
-    line-height: var(--fontSizeLineHeightMob);
     font-weight: 500;
     color: var(--colorPriceIncludeMobile);
 }
@@ -403,7 +402,6 @@
 
 .fontPriceInclude {
     font-size: 16px;
-    line-height: 16px;
     font-weight: 500;
     color: var(--colorPriceInclude);
     transition: var(--transitionTimeDarkMode);

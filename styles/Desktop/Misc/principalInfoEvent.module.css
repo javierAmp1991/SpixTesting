@@ -11,7 +11,7 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 4px;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 .gridStars {
