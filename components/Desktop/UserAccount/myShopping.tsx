@@ -5,7 +5,7 @@ import {MyShoppingContext, ProviderMyShopping} from "../../Providers/providerUse
 import {useContext, useState} from "react";
 
 const exportText: string = "Exportar:"
-const titleSection: string = "Mis Comras"
+const titleSection: string = "Mis Compras"
 const subtitleSection: string = "Resumen de mis compras"
 
 export default function MyShopping() {

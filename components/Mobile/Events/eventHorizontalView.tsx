@@ -60,44 +60,40 @@ export default function EventHorizontalView({item, darkModeState}:
             MinPrice: itemWithPrice.MinPrice,
             IsDarkMode: darkModeState
         }
-    } else if(item.Type == EventCardType.EventCardWithDate){
+    } else if (item.Type == EventCardType.EventCardWithDate) {
         itemWithDate = item as EventCardWithDate
         dateInfo = {
             MinDate: itemWithDate.MinDate,
             MaxDate: itemWithDate.MaxDate,
             IsDarkMode: darkModeState
         }
-    }
-    else if(item.Type == EventCardType.EventCardWithOffer){
+    } else if (item.Type == EventCardType.EventCardWithOffer) {
         itemWithOffer = item as EventCardWithOffer
-    }
-    else if(item.Type == EventCardType.EventCardMyCollection){
+    } else if (item.Type == EventCardType.EventCardMyCollection) {
         itemMyCollection = item as EventCArdMyCollection
         priceIncludeMyCollection = {
             MinPrice: itemMyCollection.MinPrice,
             MaxPrice: itemMyCollection.MaxPrice,
             IsDarkMode: false
         }
-    }
-    else if(item.Type == EventCardType.EventCardWishList){
+    } else if (item.Type == EventCardType.EventCardWishList) {
         itemWishList = item as EventCardWishList
         priceIncludeWishList = {
             MinPrice: itemWishList.MinPrice,
             MaxPrice: itemWishList.MaxPrice,
             IsDarkMode: false
         }
-    }
-    else{
+    } else {
         itemWithResale = item as EventCardResale
     }
 
-/*    function getNumber(num: number): string {
-        let newNum: string = `${num}`
-        if (num >= 0 && num <= 9) {
-            newNum = `0${num}`
-        }
-        return newNum
-    }*/
+    /*    function getNumber(num: number): string {
+            let newNum: string = `${num}`
+            if (num >= 0 && num <= 9) {
+                newNum = `0${num}`
+            }
+            return newNum
+        }*/
 
     const principalInfoEventProp: PrincipalInfoEventPropMob = {
         Title: item.Title,
@@ -108,7 +104,8 @@ export default function EventHorizontalView({item, darkModeState}:
 
     return (
         <div className={`${style.principalGridHorizontal}`}>
-            <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
+            <Link
+                href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
                         item.Type == EventCardType.EventCardWishList &&
@@ -138,42 +135,11 @@ export default function EventHorizontalView({item, darkModeState}:
             <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
                 <div className={style.TopDivInfo}>
                     <PrincipalInfoEventMobile item={principalInfoEventProp}/>
-                </div>
-                <div className={style.bottomDivSearch}>
                     {
                         item.Type == EventCardType.EventCardFull &&
                         <>
                             <DateInfoEventMobile item={dateInfoFull}/>
                             <PriceIncludeInfoEventMobile item={priceIncludeInfoFull}/>
-                           {/* <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon} alt={""}/>
-                                </div>
-                                <div className={`${utilities.fontSecundaryText}`}>
-                                    {itemFull.MinDate.getDate()} de {itemFull.MinDate.toLocaleString("es-US", {month: "short"})} del {itemFull.MinDate.getFullYear()}
-                                </div>
-                            </div>
-
-                            <div className={`${style.gridIconInfo}`}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.ticketIcon} alt={""}/>
-                                </div>
-                                {
-                                    itemFull.MinPrice ==itemFull.MaxPrice ?
-                                        <>
-                                            {
-                                                getNumber(itemFull.MinPrice)
-                                            }
-                                        </>
-                                        :
-                                        <>
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(itemFull.MinPrice))} -
-                                            ${Intl.NumberFormat("ES-CL"
-                                        ).format(Math.round(itemFull.MaxPrice))}
-                                        </>
-                                }
-                            </div>*/}
                         </>
                     }
 

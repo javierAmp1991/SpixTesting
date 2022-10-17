@@ -73,14 +73,13 @@ export default function MyRefundsMobile() {
                         <div className={style.subtitle}>
                             {subtitleSection}
                         </div>
-                    </div>
-                    <div className={style.gridInputExport}>
                         <Link href={""}>
                             <a className={style.refundButton}>
                                 {refundText}
                             </a>
                         </Link>
-                        <div/>
+                    </div>
+                    <div className={style.gridInputExport}>
                         <select onChange={handleChangeSelect} className={style.inptSelect}>
                             {
                                 providerMyRefunds.ListMoths.map(item =>
@@ -196,10 +195,8 @@ export default function MyRefundsMobile() {
                 displayMotive &&
                 <PopUpContainerMob closePopUp={handleClosePopUp} isBackground={true} isButtonVisible={true}>
                     <div className={style.mainDivMotivePopUp}>
-                        <div className={style.divLog}>
-                            <div className={style.sizeLogSpix}>
-                                <Image layout={"fill"} src={"/images/spixBlue.png"}/>
-                            </div>
+                        <div className={style.titlePopUP}>
+                            Mi reembolso
                         </div>
                         <div className={style.divUnder}>
                             <div>

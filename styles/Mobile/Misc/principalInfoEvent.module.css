@@ -31,3 +31,10 @@
     display: grid;
     align-items: end;
 }
+
+.fontTextReviews{
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    color: #007185;
+}

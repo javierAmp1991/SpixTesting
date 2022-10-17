@@ -20,9 +20,9 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
     let [isDisplaySug, setIsDisplaySug] = useState(false)
     const handleDisplaySug = () => setIsDisplaySug(isDisplaySug = !isDisplaySug)
     useEffect(() => {
-        if(isOpenSideSetting) document.body.classList.add(utilities.noScrollBody)
+        if (isOpenSideSetting) document.body.classList.add(utilities.noScrollBody)
         else document.body.classList.remove(utilities.noScrollBody)
-    },[isOpenSideSetting])
+    }, [isOpenSideSetting])
     const cssStyle = getCssStyle()
     //endregion
     return (
@@ -38,9 +38,12 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                                               displaySug={handleDisplaySug}/>
                             <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
                             {children}
-                            <div onClick={handleSideSetting} style={{transform: `translate(${cssStyle.desp})`}} className={styleMobile.menuDesplegable}>
+                            <div onClick={handleSideSetting} style={{transform: `translate(${cssStyle.desp})`}}
+                                 className={styleMobile.menuDesplegable}>
                                 <SideSetting closeDesplegable={handleSideSetting}/>
                             </div>
+                            <div style={{opacity: cssStyle.opa}} className={styleMobile.blackScreen}
+                                 onClick={handleSideSetting}/>
                         </div>
                 }
             </div>
@@ -49,7 +52,8 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
 
     function getCssStyle() {
         return {
-            desp: isOpenSideSetting? "0vw" : "-100vw",
+            desp: isOpenSideSetting ? "0vw" : "-100vw",
+            opa: isOpenSideSetting ? "1" : "0",
             stopScroll: isOpenSideSetting && utilities.noScrollBody,
             desplegableCont: isOpenSideSetting ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn
         }

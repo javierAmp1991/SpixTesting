@@ -8,10 +8,10 @@
 }
 
 .fontTitleMobile {
-    --sizeTitleMobile: 17px;
+    --sizeTitleMobile: 16px;
     font-size: var(--sizeTitleMobile);
     /*    line-height: var(--sizeTitleMobile);*/
-    font-weight: 500;
+    font-weight: 400;
     color: var(--colorTitleMobile);
     font-family: Helvetica, sans-serif, Arial;
 }

@@ -19,6 +19,9 @@ export default function CalendarMobile() {
         calendarContext.UpdateState(id, state)
     }
     const daySelected = calendarContext.SelectedItems
+    const handleDeselectAll = ()=>{
+        calendarContext.DeselectItems()
+    }
     return (
         <div className={style.principalGrid}>
             <div className={style.mainDiv}>
@@ -45,7 +48,7 @@ export default function CalendarMobile() {
                     </div>
                     <div className={style.divEventCircle}>
                         <div className={style.circle}/>
-                        <span>Eventos</span>
+                        <button onClick={handleDeselectAll} className={style.eventsButton}>Eventos</button>
                     </div>
                 </div>
                 <div className={style.mainDivCalendar}>

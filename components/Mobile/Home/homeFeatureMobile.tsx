@@ -34,20 +34,6 @@ export default function HomeFeaturedMobile({item, isDarkMode}:
                         ({item.Rating != null ? item.Rating : 0})
                     </div>
                 </div>
-                {/* {
-                    item.Tags != null ?
-                        <div className={`${utilities.gridMaxContent3} justify-center gap-1 mb-3`}>
-                            {
-                                item.Tags.map((tag, index) =>
-                                    <a key={index} className={cssStyle.styleTags}>
-                                        {tag}
-                                    </a>
-                                )
-                            }
-                        </div>
-                        :
-                        <></>
-                }*/}
 
                 <div className={`${cssStyle.fontPriceInclude}`}>
                     {

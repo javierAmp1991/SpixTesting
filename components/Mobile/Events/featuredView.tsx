@@ -5,7 +5,6 @@ import {BaseFeaturedView} from "../../../dataDemo/EventView/featureView";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
 import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
 import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
-import ProductViewMobile from "../Misc/productViewMobile";
 import ProductViewSquareMobile from "../Misc/productViewSquare";
 
 export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFeaturedView, darkModeState: boolean }) {
@@ -32,20 +31,13 @@ export default function FeaturedViewMobile({item, darkModeState}: { item: BaseFe
                     <div className={style.bannerFeatureProperties}>
                         <Image layout={"fill"} objectFit={"cover"} objectPosition={"top"} src={item.PathImage} alt=""/>
                     </div>
-                    {/*<div className={style.borderLogo}>
-                    <div className={style.logoFeaturePropertiesv2}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.PathLogo} alt=""/>
-                    </div>
-                </div>*/}
                 </div>
 
                 <div className={style.mainDivInfo}>
-                    <div className={style.topDiv}>
+                    <div className={style.bottomDivSearch}>
                         <PrincipalInfoEventMobile item={principalInfoEvent}/>
-                        <div className={style.bottomDivSearch}>
-                            <DateInfoEventMobile item={dateInfo}/>
-                            <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
-                        </div>
+                        <DateInfoEventMobile item={dateInfo}/>
+                        <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
                     </div>
                     <div className={style.mainDivProductsSingle}>
                         {

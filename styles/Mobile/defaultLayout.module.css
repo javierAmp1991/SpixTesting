@@ -3,11 +3,22 @@
     height: 100vh;
 }
 
-.menuDesplegable {
+.blackScreen {
     position: absolute;
     height: 100%;
     width: 100vw;
     background: rgba(0, 0, 0, .5);
+    top: 0;
+    left: 0;
+    transition: .3s;
+    overflow: scroll;
+    z-index: 90000000;
+}
+
+.menuDesplegable {
+    position: absolute;
+    height: 100%;
+    width: 100vw;
     padding-right: 20vw;
     top: 0;
     left: 0;

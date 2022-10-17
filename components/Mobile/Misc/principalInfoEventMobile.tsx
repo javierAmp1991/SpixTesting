@@ -41,7 +41,7 @@ export default function PrincipalInfoEventMobile({item}: { item: PrincipalInfoEv
                     </div>
 
                     <div className={style.paddingRating}>
-                        <div className={`${cssStyle.RatingText} ${utilities.fontMiniMobile}`}>
+                        <div className={style.fontTextReviews}>
                             ({item.Rating != null ? item.Rating : 0})
                         </div>
                     </div>

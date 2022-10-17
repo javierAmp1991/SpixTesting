@@ -50,15 +50,18 @@
     padding: 6px 12px;
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     outline: none;
+    text-align: left;
     position: relative;
 }
 
 .sizeProfilePic {
+    display: grid;
     width: 60px;
     height: 60px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .paddingGradient {
@@ -127,10 +130,60 @@
     overflow: hidden;
 }
 
-.datePicker::-webkit-calendar-picker-indicator{
+.datePicker::-webkit-calendar-picker-indicator {
     position: absolute;
     opacity: 0;
     width: 100%;
 }
 
+.optionGrid {
+    padding: 6px 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.optionGridPopUp {
+    padding: 6px 0;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.option {
+    background-repeat: no-repeat;
+    display: grid;
+}
+
+.mainDivPopUp {
+    padding: 24px 32px;
+    overflow: scroll;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    height: 80vh;
+}
+
+.gridOptionsFlag {
+    height: 100%;
+    display: grid;
+    gap: 8px;
+    overflow: scroll;
+}
+
+.titlePopUp {
+    font-size: 16px;
+    padding-bottom: 12px;
+}
+
+.buttonAccept {
+    padding: 6px 32px;
+    background: var(--gradientBlueButton);
+    width: max-content;
+    margin: auto;
+    color: white;
+    border-radius: 4px;
+}
 

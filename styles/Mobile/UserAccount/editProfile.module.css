@@ -53,6 +53,7 @@
 }
 
 .sizeProfilePic {
+    display: grid;
     width: 60px;
     height: 60px;
     position: relative;

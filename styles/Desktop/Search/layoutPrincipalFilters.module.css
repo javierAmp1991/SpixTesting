@@ -3,6 +3,7 @@
     --paddingYFilter: 24px;
     background: white;
     border-radius: 6px;
+    box-shadow: var(--boxShadowCard);
 }
 
 .paddingTitle {

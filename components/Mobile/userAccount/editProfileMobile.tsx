@@ -57,10 +57,10 @@ export default function EditProfileMobile() {
                 <div className={style.gridOptions}>
                     <div className={style.gridImageName}>
                         <div className={style.paddingGradient}>
-                            <div className={style.sizeProfilePic}>
+                            <label htmlFor={inputFilteProfile} className={style.sizeProfilePic}>
                                 <Image layout={"fill"} objectFit={"cover"} src={"/images/fotoperfil1.png"}/>
-                            </div>
-                            <label htmlFor={inputFilteProfile} className={style.editProfilePic}>
+                            </label>
+                            <label  className={style.editProfilePic}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic}/>
                             </label>
                         </div>

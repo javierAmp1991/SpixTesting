@@ -59,7 +59,7 @@
 
 
 .mainDivTitle {
-    padding-bottom: 20px;
+    padding: 0 0 24px 4px;
 }
 
 .title {
@@ -144,7 +144,7 @@
     display: grid;
     gap: 12px;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     padding: 4px;
 }
 
@@ -152,9 +152,13 @@
     display: grid;
     align-items: center;
     border-radius: 4px;
+    margin-top: 12px;
+    width: max-content;
     overflow: hidden;
-    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     outline: none;
+    background: var(--gradientBlueButton);
+    color: white;
+    text-align: center;
     padding: 6px 12px;
     transition: .4s;
 }
@@ -254,4 +258,10 @@
 .mainDivMotivePopUp {
     width: 100%;
     padding: 16px 32px;
+}
+
+.titlePopUP{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
 }
