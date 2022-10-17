@@ -33,7 +33,7 @@
 .containerCarrousel {
     width: 100%;
     height: max-content;
-    padding: 0 48px;
+    padding: 4px;
     overflow: hidden;
     border-radius: 12px;
 }

@@ -259,8 +259,3 @@ div {
     scrollbar-width: none;
 }
 
-@media (min-width: 1281px) {
-    body, html {
-        background: #EAEDED;
-    }
-}

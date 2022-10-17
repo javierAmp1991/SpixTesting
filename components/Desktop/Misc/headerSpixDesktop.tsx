@@ -7,6 +7,7 @@ import ResultEventSugDesk from "./ResultEventSugDesk";
 import {useState} from "react";
 import Image from "next/image";
 import Link from "next/link";
+import {Li} from "react-flags-select";
 
 const styleGrid: string = `${utilities.gridMaxContent2} gap-3`
 const paddingImage: string = "pt-1.5"
@@ -130,28 +131,32 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode, l
 
                 {
                     isLogged ?
-                        <a className={styleGrid}>
-                            <div className={style.containerAccountImage}>
-                            </div>
-                            <div className={styleSideText}>
-                                <div className={fontFirstText}>Bienvenida</div>
-                                <div className={fontSecondText}>Maria Jose</div>
-                            </div>
-                        </a>
-                        :
-                        <a className={styleGrid}>
-                            <div className={paddingImage}>
-                                <div className={style.sizeIconLoggin}>
-                                    <Image layout={"fill"}
-                                           src={GlobalConst.sourceImages.logginHeaderDesktop}
-                                           alt=""/>
+                        <Link href={"/userAccount"}>
+                            <a className={styleGrid}>
+                                <div className={style.containerAccountImage}>
                                 </div>
-                            </div>
-                            <div className={style.colorTextHeader}>
-                                <div className={fontFirstText}>Iniciar</div>
-                                <div className={fontSecondText}>Sesion</div>
-                            </div>
-                        </a>
+                                <div className={styleSideText}>
+                                    <div className={fontFirstText}>Bienvenida</div>
+                                    <div className={fontSecondText}>Maria Jose</div>
+                                </div>
+                            </a>
+                        </Link>
+                        :
+                        <Link href={"/userAccount"}>
+                            <a className={styleGrid}>
+                                <div className={paddingImage}>
+                                    <div className={style.sizeIconLoggin}>
+                                        <Image layout={"fill"}
+                                               src={GlobalConst.sourceImages.logginHeaderDesktop}
+                                               alt=""/>
+                                    </div>
+                                </div>
+                                <div className={style.colorTextHeader}>
+                                    <div className={fontFirstText}>Iniciar</div>
+                                    <div className={fontSecondText}>Sesion</div>
+                                </div>
+                            </a>
+                        </Link>
                 }
 
                 {/*<a className={styleGrid}>
@@ -193,7 +198,7 @@ export default function HeaderSpixDesktop({darkMode, isLogged, toggleDarkMode, l
         return {
             backgroundColor: darkMode ? style.bgHeaderSpixDarkMode : style.bgHeaderSpix,
             limitDiv: limit && utilities.maxWidthBodyContentSpix,
-            gridHeader: limit? style.gridHeaderLimit : style.gridHeader
+            gridHeader: limit ? style.gridHeaderLimit : style.gridHeader
         }
     }
 }

@@ -52,6 +52,7 @@
     outline: none;
     text-align: left;
     position: relative;
+    background: white;
 }
 
 .sizeProfilePic {
@@ -140,9 +141,23 @@
     padding: 6px 12px;
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(2, max-content) 1fr;
     align-items: center;
     gap: 8px;
+}
+
+.optionGridNat {
+    padding: 6px 0 6px 16px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    display: grid;
+    grid-template-columns: repeat(2, max-content) 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.divArrow{
+    display: grid;
+    justify-content: right;
 }
 
 .optionGridPopUp {
@@ -164,6 +179,7 @@
     display: grid;
     grid-template-rows: max-content 1fr;
     height: 80vh;
+    max-height: 600px;
 }
 
 .gridOptionsFlag {

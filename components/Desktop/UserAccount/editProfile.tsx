@@ -2,14 +2,7 @@ import style from "/styles/Desktop/UserAccount/editProfile.module.css"
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-import SVG from "react-inlinesvg";
 import PopUpContainer from "../Misc/popUpContainer";
-
-class CountryList {
-    Name: string
-    Code: string
-    State: boolean
-}
 
 const countriesList = [
     {name: 'Afghanistan', code: 'AF'},
@@ -254,9 +247,6 @@ const countriesList = [
     {name: 'Zambia', code: 'ZM'},
     {name: 'Zimbabwe', code: 'ZW'}
 ]
-
-let countriesList1 = require("countries-list")
-
 const titleSection: string = "Editar perfil"
 const subtitleSection: string = "Edita tus datos"
 const inputFilteProfile: string = "inputFilteProfile001234"
@@ -280,27 +270,21 @@ export default function EditProfile() {
         setDisplayPopUp(displayPopUp = !displayPopUp)
     }
     const [selected, setSelected] = useState("");
-
     const handleOtherGender = (e) => {
         setOtherGender(otherGender = e.target.value)
     }
-
     const handleGender = (e) => {
         setGender(gender = e.target.value)
     }
-
     useEffect(() => {
         setDisplayOtherGender(displayOtherGender = gender == "Otro")
     }, [gender])
-
     const handleDate = (e) => {
         setDate(date = e.target.value)
     }
-
     const handleNationality = (e) => {
         setNationality(nationality = e.target.value)
     }
-
     const handleName = (e) => {
         setName(name = e.target.value)
     }
@@ -382,11 +366,14 @@ export default function EditProfile() {
                         </div>
                         {
                             countrySelected != null ?
-                                <button onClick={handlePopUp} key={countrySelected.code} className={style.optionGrid}>
+                                <button onClick={handlePopUp} key={countrySelected.code} className={style.optionGridNat}>
                                     <Image width={20} height={15}
                                            src={`/images/4x3/${countrySelected.code.toLowerCase()}.svg`}/>
                                     <div>
                                         {countrySelected.name}
+                                    </div>
+                                    <div className={style.divArrow}>
+                                        <Image width={16} height={14} src={GlobalConst.sourceImages.bottomArrow}/>
                                     </div>
                                 </button>
                                 :
@@ -420,9 +407,6 @@ export default function EditProfile() {
                                     </button>
                                 )
                             }
-                        </div>
-                        <div className={style.buttonAccept}>
-                            Aceptar
                         </div>
                     </div>
                 </PopUpContainer>
