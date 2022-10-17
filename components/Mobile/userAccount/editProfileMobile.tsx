@@ -7,6 +7,7 @@ import ReactFlagsSelect from "react-flags-select";
 const titleSection: string = "Editar perfil"
 const subtitleSection: string = "Edita tus datos"
 const inputFilteProfile: string = "inputFilteProfile001234"
+const placeHolderSelect: string = "Selecciona un pais"
 
 export default function EditProfileMobile() {
     let [otherGender, setOtherGender] = useState(false)
@@ -83,7 +84,8 @@ export default function EditProfileMobile() {
                         <div className={style.titleInputs}>
                             Fecha nacimiento
                         </div>
-                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`} type={"date"}/>
+                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`}
+                               type={"date"}/>
                     </div>
                     <div className={style.divGender}>
                         <div className={style.gridNameInput}>
@@ -123,7 +125,9 @@ export default function EditProfileMobile() {
                         </select>*/}
                         <ReactFlagsSelect
                             selected={selected}
-                            onSelect={(code) => setSelected(code)}/>
+                            onSelect={(code) => setSelected(code)}
+                            placeholder={placeHolderSelect}
+                        selectedSize={14}/>
                     </div>
                     <button className={style.buttonConfirm}>
                         Confirmar
