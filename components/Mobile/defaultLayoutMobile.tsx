@@ -42,8 +42,12 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                                  className={styleMobile.menuDesplegable}>
                                 <SideSetting closeDesplegable={handleSideSetting}/>
                             </div>
-                            <div style={{opacity: cssStyle.opa}} className={styleMobile.blackScreen}
-                                 onClick={handleSideSetting}/>
+                            {
+                                isOpenSideSetting &&
+                                <div className={styleMobile.blackScreen}
+                                     onClick={handleSideSetting}/>
+                            }
+
                         </div>
                 }
             </div>
@@ -53,7 +57,6 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
     function getCssStyle() {
         return {
             desp: isOpenSideSetting ? "0vw" : "-100vw",
-            opa: isOpenSideSetting ? "1" : "0",
             stopScroll: isOpenSideSetting && utilities.noScrollBody,
             desplegableCont: isOpenSideSetting ? styleMobile.menuDesplegableOut : styleMobile.menuDesplegableIn
         }

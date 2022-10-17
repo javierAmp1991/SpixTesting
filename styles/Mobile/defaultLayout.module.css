@@ -10,9 +10,19 @@
     background: rgba(0, 0, 0, .5);
     top: 0;
     left: 0;
-    transition: .3s;
-    overflow: scroll;
     z-index: 90000000;
+    animation: animationBlackScrren .4s linear;
+
+}
+
+@keyframes animationBlackScrren {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+
 }
 
 .menuDesplegable {
@@ -22,7 +32,7 @@
     padding-right: 20vw;
     top: 0;
     left: 0;
-    transition: .5s;
+    transition: .4s;
     overflow: scroll;
     z-index: 90000000000000;
 }
