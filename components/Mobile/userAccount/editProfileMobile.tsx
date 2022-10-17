@@ -2,6 +2,7 @@ import style from "/styles/Mobile/UserAccount/editProfile.module.css"
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+import ReactFlagsSelect from "react-flags-select";
 
 const titleSection: string = "Editar perfil"
 const subtitleSection: string = "Edita tus datos"
@@ -15,6 +16,7 @@ export default function EditProfileMobile() {
     let [nationality, setNationality] = useState("")
     let [date, setDate] = useState("Fecha de nacimiento")
     let [profileImage, setProfileImage] = useState("")
+    const [selected, setSelected] = useState("");
 
     const handleOtherGender = (e) => {
         setOtherGender(otherGender = e.target.value)
@@ -114,11 +116,14 @@ export default function EditProfileMobile() {
                         <div className={style.titleInputs}>
                             Nacionalidad
                         </div>
-                        <select className={style.styleInput}>
+                        {/*<select className={style.styleInput}>
                             <option>Chileno</option>
                             <option>Venezolano</option>
                             <option>Colombiano</option>
-                        </select>
+                        </select>*/}
+                        <ReactFlagsSelect
+                            selected={selected}
+                            onSelect={(code) => setSelected(code)}/>
                     </div>
                     <button className={style.buttonConfirm}>
                         Confirmar

@@ -2,6 +2,7 @@ import style from "/styles/Desktop/UserAccount/editProfile.module.css"
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+import ReactFlagsSelect from "react-flags-select";
 
 const titleSection: string = "Editar perfil"
 const subtitleSection: string = "Edita tus datos"
@@ -15,6 +16,7 @@ export default function EditProfile() {
     let [nationality, setNationality] = useState("")
     let [date, setDate] = useState("Fecha de nacimiento")
     let [profileImage, setProfileImage] = useState("")
+    const [selected, setSelected] = useState("");
 
     const handleOtherGender = (e) => {
         setOtherGender(otherGender = e.target.value)
@@ -81,7 +83,8 @@ export default function EditProfile() {
                         <div className={style.titleInputs}>
                             Fecha nacimiento
                         </div>
-                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`} type={"date"}/>
+                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`}
+                               type={"date"}/>
                     </div>
                     <div className={style.divGender}>
                         <div className={style.gridNameInput}>
@@ -114,11 +117,9 @@ export default function EditProfile() {
                         <div className={style.titleInputs}>
                             Nacionalidad
                         </div>
-                        <select className={style.styleInput}>
-                            <option>Chileno</option>
-                            <option>Venezolano</option>
-                            <option>Colombiano</option>
-                        </select>
+                        <ReactFlagsSelect
+                            selected={selected}
+                            onSelect={(code) => setSelected(code)}/>
                     </div>
                     <button className={style.buttonConfirm}>
                         Confirmar
