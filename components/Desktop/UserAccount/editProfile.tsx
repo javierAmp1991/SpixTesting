@@ -10,7 +10,7 @@ const countriesList = [
     {name: 'Albania', code: 'AL'},
     {name: 'Algeria', code: 'DZ'},
     {name: 'American Samoa', code: 'AS'},
-    {name: 'AndorrA', code: 'AD'},
+    {name: 'Andorra', code: 'AD'},
     {name: 'Angola', code: 'AO'},
     {name: 'Anguilla', code: 'AI'},
     {name: 'Antarctica', code: 'AQ'},
@@ -372,9 +372,9 @@ export default function EditProfile() {
                                     <div>
                                         {countrySelected.name}
                                     </div>
-                                    <div className={style.divArrow}>
+                                    {/*<div className={style.divArrow}>
                                         <Image width={16} height={14} src={GlobalConst.sourceImages.bottomArrow}/>
-                                    </div>
+                                    </div>*/}
                                 </button>
                                 :
                                 <button onClick={handlePopUp} className={style.styleInput}>
@@ -399,7 +399,7 @@ export default function EditProfile() {
                                 countriesList.map(item =>
                                     <button onClick={() => handleCountry(item)} key={item.code}
                                             className={style.optionGridPopUp}>
-                                        <Image width={20} height={15}
+                                        <Image width={20} height={14}
                                                src={`/images/4x3/${item.code.toLowerCase()}.svg`}/>
                                         <div>
                                             {item.name}
