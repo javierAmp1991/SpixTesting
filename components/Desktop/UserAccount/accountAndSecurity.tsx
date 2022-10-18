@@ -135,9 +135,9 @@ export default function AccountAndSecurity() {
                             </div>
                         </div>
                     }*/}
-                    <button className={style.buttonSend}>
+                   {/* <button className={style.buttonSend}>
                         Confirmar
-                    </button>
+                    </button>*/}
                 </div>
             </div>
         </div>

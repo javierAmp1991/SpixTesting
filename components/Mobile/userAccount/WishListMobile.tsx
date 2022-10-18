@@ -230,7 +230,7 @@ const list: EventCardWishList[] = [
     },
 ]
 
-const titleSection: string = "WishListMobile"
+const titleSection: string = "WishList"
 const subtitleSection: string = "tu lista de deseos"
 export default function WishListMobile() {
     let [controlScroll, setControlScroll] = useState(1)

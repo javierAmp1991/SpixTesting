@@ -10,11 +10,14 @@ import {
 } from "../../Providers/providerUserAccount";
 import {useContext, useState} from "react";
 import Link from "next/link";
+import PopUpContainerMob from "../../Mobile/Misc/popUpContainerMob";
+import PopUpContainer from "../Misc/popUpContainer";
 
 const exportText: string = "Exportar:"
 const titleSection: string = "Reembolsos"
 const subtitleSection: string = "Resumen de mis reembolsos"
 const refundText: string = "Solicitar reembolso"
+const refundReject: string = "Su reembolso se ha rechazado por:"
 
 export default function MyRefunds() {
     const providerMyShopping: ProviderMyShopping = useContext(MyShoppingContext)
@@ -25,6 +28,14 @@ export default function MyRefunds() {
     let [orderByDate, setOrderByDate] = useState(false)
     let [orderBySite, setOrderBySite] = useState(false)
     let [orderByAmount, setOrderByAmount] = useState(false)
+    let [displayMotive, setDisplayMotive] = useState(false)
+    let [motiveSelected, setMotiveSelected] = useState("")
+
+    const handleOpenPopUp = (mot: string) => {
+        setMotiveSelected(motiveSelected = mot)
+        setDisplayMotive(displayMotive = true)
+    }
+    const handleClosePopUp = () => setDisplayMotive(displayMotive = false)
 
     const handleSortByPrice = () => {
         providerMyShopping.SortByPrice(orderByPrice)
@@ -150,14 +161,14 @@ export default function MyRefunds() {
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
                             </div>
                         </button>
-                        <button onClick={handleSortByPrice} className={style.gridOption}>
+                        {/*<button onClick={handleSortByPrice} className={style.gridOption}>
                             <div>
                                 Motivo
                             </div>
                             <div className={style.sizeBottomArrow}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
                             </div>
-                        </button>
+                        </button>*/}
                     </div>
                 </div>
             </div>
@@ -188,9 +199,9 @@ export default function MyRefunds() {
                                     }
                                     {
                                         item.State == StateMyRefund.Refused &&
-                                        <div className={style.refused}>
+                                        <button onClick={()=> handleOpenPopUp(item.Motive)} className={style.refused}>
                                             Rechazado
-                                        </div>
+                                        </button>
                                     }
                                     {
                                         item.State == StateMyRefund.Waiting &&
@@ -199,17 +210,36 @@ export default function MyRefunds() {
                                         </div>
                                     }
                                 </div>
-                                <div className={style.styleItem}>
+                                {/*<div className={style.styleItem}>
                                     {
                                         item.Motive != null ? item.Motive :
                                             item.State == StateMyRefund.Aprobed ? "-" : "..."
                                     }
-                                </div>
+                                </div>*/}
                             </>
                         )
                     }
                 </div>
             </div>
+
+            {
+                displayMotive &&
+                <PopUpContainer closePopUp={handleClosePopUp} isBackground={true} isButtonVisible={true}>
+                    <div className={style.mainDivMotivePopUp}>
+                        <div className={style.titlePopUP}>
+                            Mi reembolso
+                        </div>
+                        <div className={style.divUnder}>
+                            <div>
+                                {refundReject}
+                            </div>
+                            <div className={style.motivo}>
+                                {motiveSelected}
+                            </div>
+                        </div>
+                    </div>
+                </PopUpContainer>
+            }
         </div>
     )
 

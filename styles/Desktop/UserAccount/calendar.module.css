@@ -264,5 +264,8 @@
     padding: 20px 4px 16px 4px;
     border-top: 1px solid var(--separationLineColor);
     border-top: 1px solid #efefef;
+}
 
+.eventsButton{
+    border-bottom: 1px solid white;
 }

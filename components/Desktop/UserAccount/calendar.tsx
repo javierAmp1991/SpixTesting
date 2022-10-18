@@ -46,7 +46,7 @@ export default function Calendar() {
                         </div>
                         <div className={style.divEventCircle}>
                             <div className={style.circle}/>
-                            <span>Eventos</span>
+                            <span className={style.eventsButton}>Eventos</span>
                         </div>
                     </div>
                     <div className={style.mainDivCalendar}>
