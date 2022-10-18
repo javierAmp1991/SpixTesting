@@ -29,7 +29,7 @@ const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection9",
         Type: MenuUserAccount.Dashboard,
-        State: false,
+        State: true,
         Name: "Dashboard",
         PathImage: GlobalConst.sourceImages.dashboardIcon,
     },
@@ -43,7 +43,7 @@ const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection2",
         Type: MenuUserAccount.Calendar,
-        State: true,
+        State: false,
         Name: "Calendario",
         PathImage: GlobalConst.sourceImages.calendarIconWhite,
     },
