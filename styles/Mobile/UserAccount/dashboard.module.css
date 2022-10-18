@@ -114,7 +114,7 @@
 }
 
 .headerSection {
-    background: var(--backgroundGradient);
+    background: var(--gradientHeaderUserAccount);
     padding: 14px;
     display: grid;
     grid-template-columns: repeat(2, max-content);

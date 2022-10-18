@@ -79,7 +79,8 @@
     --yellowButtonColor: #FFD814;
     --yellowButtonColorHover: #ffc800;
     --gradientBuy: linear-gradient(45deg, #54e2f3 0%, #66eeb7 100%);
-    --shadowUnderProducts: 0px 3px 12px rgba(0, 0, 0, .2)
+    --shadowUnderProducts: 0px 3px 12px rgba(0, 0, 0, .2);
+    --gradientHeaderUserAccount: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
 
 }
 
@@ -111,9 +112,6 @@
 
 /*new DesktopRoot*/
 :root {
-    --colorBackGroundDesktopNormal: white;
-    --colorBackGroundDesktopNormal: #F1F2F3;
-    --colorBackGroundDesktopNormal: #fdfdfd;
     --colorBackGroundDesktopNormal: white;
     --colorBackGroundDesktopDarkMode: #121212;
     --bgNormalInfoDesktop: white;

@@ -166,7 +166,7 @@
 }
 
 .gridHeaderExport {
-    background: var(--gradientHeaderSections);
+    background: var(--gradientHeaderUserAccount);
     display: grid;
     grid-template-columns: 1fr max-content 1fr;
     padding: 8px 32px;
