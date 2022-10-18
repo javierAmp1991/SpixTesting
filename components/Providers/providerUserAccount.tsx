@@ -1680,7 +1680,6 @@ const listYears: string[] = [
     "2020", "2021", "2022"
 ]
 
-
 /*const listEventsMonth: CalendarEventViewProp[] = [
     {
         Id: "123456",
