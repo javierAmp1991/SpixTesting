@@ -91,12 +91,11 @@
 
 .buttonConfirm {
     background: var(--gradientBlueButton);
-    margin-left: auto;
+    margin: 24px auto auto auto;
     padding: 6px 24px;
     color: white;
     width: max-content;
     border-radius: 4px;
-    margin-top: 32px;
 }
 
 .gridImageName {

@@ -105,7 +105,12 @@ export default function DashboardMobile() {
             </div>
 
             <div className={style.myEditSection}>
-                <EditProfileSectionMobile/>
+                <div className={style.headerSection}>
+                    Editar Perfil
+                </div>
+                <div className={style.spaceMy}>
+                    <EditProfileSectionMobile/>
+                </div>
             </div>
 
             <div className={style.mainDivWishList}>
@@ -141,15 +146,20 @@ export default function DashboardMobile() {
             </div>
 
             <div className={style.myShoppingSection}>
-                <div className={style.titleLeft}>
-                    Ultimas compras
+                <div className={style.headerSection}>
+                    <div>
+                        Ultimas compras
+                    </div>
+                    <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.seeMore}>
+                        Ver compras
+                    </button>
                 </div>
                 <div className={style.gridItems}>
                     {
                         dashboardContext.MyShoppingItems.map(item =>
                             <div className={style.colorDiv} key={item.Id}>
                                 <div className={style.name}>
-                                    {item.Name}
+                                    {item.Name} X {item.Amount}
                                 </div>
                                 <div className={style.price}>
                                     ${getMoneyValue(item.Price)}
@@ -158,9 +168,7 @@ export default function DashboardMobile() {
                         )
                     }
                 </div>
-                <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.styleLink}>
-                    Todas mis compras
-                </button>
+
             </div>
         </div>
     )

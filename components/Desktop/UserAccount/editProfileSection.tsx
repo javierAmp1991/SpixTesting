@@ -1,10 +1,13 @@
 import style from "/styles/Desktop/UserAccount/editProfile.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
+import {Countries, UserData, UserDataContext} from "../../Providers/providerUserAccount";
 
-const countriesList = [
+
+
+const countriesList: Countries[] = [
     {name: 'Afghanistan', code: 'AF'},
     {name: 'Åland Islands', code: 'AX'},
     {name: 'Albania', code: 'AL'},
@@ -251,13 +254,13 @@ const inputFilteProfile: string = "inputFilteProfile001234"
 const placeHolderSelect: string = "Selecciona un pais"
 
 export default function EditProfileSection({isInDashboard}: { isInDashboard: boolean }) {
+    const userData: UserData = useContext(UserDataContext)
     let [otherGender, setOtherGender] = useState(false)
     let [displayOtherGender, setDisplayOtherGender] = useState(false)
     let [gender, setGender] = useState("")
     let [name, setName] = useState("")
     let [nationality, setNationality] = useState("")
-    let [date, setDate] = useState("Fecha de nacimiento")
-    let [profileImage, setProfileImage] = useState("")
+    let [date, setDate] = useState(userData.Date)
     let [countrySelected, setCountrySelected] = useState(null)
     let [displayPopUp, setDisplayPopUp] = useState(false)
     const handleCountry = (item) => {
@@ -278,7 +281,7 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
         setDisplayOtherGender(displayOtherGender = gender == "Otro")
     }, [gender])
     const handleDate = (e) => {
-        setDate(date = e.target.value)
+        setDate(date = new Date(e.target.value))
     }
     const handleNationality = (e) => {
         setNationality(nationality = e.target.value)
@@ -287,12 +290,12 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
         setName(name = e.target.value)
     }
     return (
-        <div className={isInDashboard? style.mainDivEditDashboard : style.mainDivEdit }>
+        <div className={isInDashboard ? style.mainDivEditDashboard : style.mainDivEdit}>
             <div className={style.gridOptions}>
                 <div className={style.gridImageName}>
                     <div className={style.paddingGradient}>
                         <label htmlFor={inputFilteProfile} className={style.sizeProfilePic}>
-                            <Image layout={"fill"} objectFit={"cover"} src={"/images/fotoperfil1.png"} alt={""}/>
+                            <Image layout={"fill"} objectFit={"cover"} src={userData.ProfilePath} alt={""}/>
                         </label>
                         <label htmlFor={inputFilteProfile} className={style.editProfilePic}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic} alt={""}/>
@@ -300,7 +303,7 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
                     </div>
                     <div>
                         <div className={style.user}>
-                            @kujojotaro
+                            {userData.NickName}
                         </div>
                         <label htmlFor={inputFilteProfile} className={style.labelPhoto}>
                             cambiar foto de perfil
@@ -312,14 +315,19 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
                     <div className={style.titleInputs}>
                         Nombre
                     </div>
-                    <input onChange={handleName} className={style.styleInput} placeholder={"kujo jotaro"} type={"text"}/>
+                    <input onChange={handleName} className={style.styleInput} placeholder={userData.Name}
+                           type={"text"}/>
                 </div>
                 <div className={style.gridNameInput}>
                     <div className={style.titleInputs}>
                         Fecha nacimiento
                     </div>
-                    <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`}
-                           type={"date"}/>
+                    <div className={style.styleInput}>
+                        <div className={style.placeholderDate}>
+                            {date.toLocaleDateString()}
+                        </div>
+                        <input onChange={handleDate} className={style.datePicker} type={"date"}/>
+                    </div>
                 </div>
                 <div className={style.divGender}>
                     <div className={style.gridNameInput}>

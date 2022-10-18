@@ -46,9 +46,9 @@ export default function Dashboard() {
                             {
                                 dashboardContext.CalendarItem.map((item, index) =>
                                     item.Activities != null ?
-                                        <div  key={item.Id}
-                                                className={item.ThisDate.getMonth() == actualDate.getMonth() ?
-                                                    item.State ? style.divDateSelected : style.divDate : style.divDateEmpty}>
+                                        <div key={item.Id}
+                                             className={item.ThisDate.getMonth() == actualDate.getMonth() ?
+                                                 item.State ? style.divDateSelected : style.divDate : style.divDateEmpty}>
                                             {
                                                 item.ThisDate.getMonth() == actualDate.getMonth() &&
                                                 <>
@@ -117,7 +117,9 @@ export default function Dashboard() {
                     <div className={style.mainDivWishList}>
                         <div className={style.headerSection}>
                             <div>Wishlist</div>
-                            <button onClick={() => handleOption(MenuUserAccount.WishList)} className={style.seeMore}>Ver lista</button>
+                            <button onClick={() => handleOption(MenuUserAccount.WishList)} className={style.seeMore}>Ver
+                                lista
+                            </button>
                         </div>
                         <div className={style.wishListSection}>
                             {
@@ -131,7 +133,9 @@ export default function Dashboard() {
                     <div className={style.mainDivCollection}>
                         <div className={style.headerSection}>
                             <div>Mi Coleccion</div>
-                            <button onClick={() => handleOption(MenuUserAccount.MyCollection)} className={style.seeMore}>Ver coleccion</button>
+                            <button onClick={() => handleOption(MenuUserAccount.MyCollection)}
+                                    className={style.seeMore}>Ver coleccion
+                            </button>
                         </div>
                         <div className={style.collectionSection}>
                             {
@@ -145,18 +149,26 @@ export default function Dashboard() {
 
                 <div className={style.gridLeft}>
                     <div className={style.myEditSection}>
-                        <EditProfileSection isInDashboard={true}/>
+                        <div className={style.headerSection}>
+                            Edita tu perfil
+                        </div>
+                        <div className={style.spaceMyEdit}>
+                            <EditProfileSection isInDashboard={true}/>
+                        </div>
                     </div>
                     <div className={style.myShoppingSection}>
-                        <div className={style.titleLeft}>
-                            Ultimas compras
+                        <div className={style.headerSection}>
+                            <div> Ultimas compras</div>
+                            <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.seeMore}>
+                                Ver compras
+                            </button>
                         </div>
                         <div className={style.gridItems}>
                             {
                                 dashboardContext.MyShoppingItems.map(item =>
                                     <div className={style.colorDiv} key={item.Id}>
                                         <div className={style.name}>
-                                            {item.Name}
+                                            {item.Name} X {item.Amount}
                                         </div>
                                         <div className={style.price}>
                                             ${getMoneyValue(item.Price)}
@@ -165,9 +177,6 @@ export default function Dashboard() {
                                 )
                             }
                         </div>
-                        <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.styleLink}>
-                            Todas mis compras
-                        </button>
                     </div>
                     {/* <div className={style.refundSection}>
                         <div className={style.titleLeft}>

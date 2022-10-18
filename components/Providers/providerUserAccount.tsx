@@ -177,10 +177,41 @@ export enum MenuUserAccount {
     MyCollection
 }
 
+export enum GenderUser {
+    Hombre,
+    Mujer,
+    Otro
+}
+
+export class Countries {
+    name: string
+    code: string
+}
+
 export class AccountSecurityEdit {
     Id: string
     Link: string
     Name: string
+}
+
+export class UserData {
+    Id: string
+    ProfilePath: string
+    Name: string
+    NickName: string
+    Gender: string
+    Nationality: Countries
+    Date: Date
+}
+
+const userInfo: UserData = {
+    Id: "user0001",
+    ProfilePath: "/images/fotoperfil1.png",
+    Name: "Pedro Fernandez",
+    NickName: "@pedroFer1990",
+    Gender: "Hombre",
+    Nationality: {name: 'Afghanistan', code: 'AF'},
+    Date: new Date(1990, 8, 20)
 }
 
 export class VerificationAccountEdit extends AccountSecurityEdit {
@@ -224,6 +255,12 @@ const listAccountSecurity: AccountSecurityEdit[] = [
 ]
 
 const verificationAccoutnList: VerificationAccountEdit[] = [
+    {
+        Id: "ActivateBussines",
+        Name: "Mi Negocio:",
+        Link: "",
+        State: null
+    },
     {
         Id: "verificationAccount03",
         Name: "Verificacion 2 pasos: ",
@@ -1291,85 +1328,85 @@ const listWishLostDashBoard: EventCardWishList[] = [
         MaxPrice: 9990,
 
     },
-/*    {
-        Id: "123456789",
-        Title: "Terraza Bellavista",
-        Rating: 300,
-        TotalTickets: 10000,
-        SoldTickets: 9990,
-        PathImage: "/images/terrraza1.png",
-        Type: EventCardType.EventCardWishList,
-        Subtitle: "Terraza Bellavista",
-        MinPrice: 2990,
-        MaxPrice: 9990,
+    /*    {
+            Id: "123456789",
+            Title: "Terraza Bellavista",
+            Rating: 300,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/terrraza1.png",
+            Type: EventCardType.EventCardWishList,
+            Subtitle: "Terraza Bellavista",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
-    },
-    {
-        Id: "1234567890",
-        Title: "Marco Polo",
-        Rating: 30,
-        TotalTickets: 10000,
-        SoldTickets: 3000,
-        PathImage: "/images/marcoPolo.png",
-        Type: EventCardType.EventCardWishList,
-        Subtitle: "Marco Polo",
-        MinPrice: 2990,
-        MaxPrice: 9990,
+        },
+        {
+            Id: "1234567890",
+            Title: "Marco Polo",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 3000,
+            PathImage: "/images/marcoPolo.png",
+            Type: EventCardType.EventCardWishList,
+            Subtitle: "Marco Polo",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
-    },
-    {
-        Id: "12345678901",
-        Title: "Bar Civico",
-        Rating: 300,
-        TotalTickets: 10000,
-        SoldTickets: 5000,
-        PathImage: "/images/Civico.png",
-        Type: EventCardType.EventCardWishList,
-        Subtitle: "Bar Civico",
-        MinPrice: 2990,
-        MaxPrice: 9990,
+        },
+        {
+            Id: "12345678901",
+            Title: "Bar Civico",
+            Rating: 300,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/Civico.png",
+            Type: EventCardType.EventCardWishList,
+            Subtitle: "Bar Civico",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
-    },*/
+        },*/
 ]
 const listMyCollectionDashBoard: EventCArdMyCollection[] = [
-/*    {
-        Id: "123456",
-        Type: EventCardType.EventCardMyCollection,
-        Title: "Restaurant Cinzano para cada momento del dia entonces",
-        Subtitle: "Cinzano",
-        Rating: 30,
-        TotalTickets: 10000,
-        SoldTickets: 5000,
-        PathImage: "/images/cinzano.jpg",
-        MinPrice: 2990,
-        MaxPrice: 9990,
-    },
-    {
-        Id: "1234567",
-        Title: "WOO! Club",
-        Rating: 30,
-        TotalTickets: 10000,
-        SoldTickets: 9990,
-        PathImage: "/images/Woo.png",
-        Type: EventCardType.EventCardMyCollection,
-        Subtitle: "WOO! Club",
-        MinPrice: 2990,
-        MaxPrice: 9990,
+    /*    {
+            Id: "123456",
+            Type: EventCardType.EventCardMyCollection,
+            Title: "Restaurant Cinzano para cada momento del dia entonces",
+            Subtitle: "Cinzano",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/cinzano.jpg",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+        },
+        {
+            Id: "1234567",
+            Title: "WOO! Club",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 9990,
+            PathImage: "/images/Woo.png",
+            Type: EventCardType.EventCardMyCollection,
+            Subtitle: "WOO! Club",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
-    },
-    {
-        Id: "12345678",
-        Title: "Black Phone",
-        Rating: 30,
-        TotalTickets: 10000,
-        SoldTickets: 5000,
-        PathImage: "/images/blackphone.png",
-        Type: EventCardType.EventCardMyCollection,
-        Subtitle: "Black Phone",
-        MinPrice: 2990,
-        MaxPrice: 9990,
+        },
+        {
+            Id: "12345678",
+            Title: "Black Phone",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/blackphone.png",
+            Type: EventCardType.EventCardMyCollection,
+            Subtitle: "Black Phone",
+            MinPrice: 2990,
+            MaxPrice: 9990,
 
-    },*/
+        },*/
     {
         Id: "123456789",
         Title: "Terraza Bellavista",
@@ -1549,69 +1586,69 @@ const listMyRefundsDashBoard: MyRefundsItem[] = [
         Motive: null,
         State: StateMyRefund.Aprobed
     },
-/*    {
-        Id: "myShoppingItem9",
-        Date: new Date(2022, 10, 26),
-        Product: "Entrada Vip",
-        Site: "Tributo a PetShop Boys",
-        Amount: 8990,
-        Motive: null,
-        State: StateMyRefund.Aprobed
-    },
-    {
-        Id: "myShoppingItem10",
-        Date: new Date(2022, 10, 26),
-        Product: "Mani Japones",
-        Site: "El huevo",
-        Amount: 3990,
-        Motive: "motivo para rechazar",
-        State: StateMyRefund.Refused
-    },
-    {
-        Id: "myShoppingItem11",
-        Date: new Date(2022, 10, 28),
-        Product: "Coca-Cola",
-        Site: "Terraza",
-        Amount: 1990,
-        Motive: "motivo para rechazar",
-        State: StateMyRefund.Refused
-    },
-    {
-        Id: "myShoppingItem12",
-        Date: new Date(2022, 10, 28),
-        Product: "Curso Trading",
-        Site: "Franco SA",
-        Amount: 120000,
-        Motive: "motivo para rechazar",
-        State: StateMyRefund.Refused
-    },
-    {
-        Id: "myShoppingItem13",
-        Date: new Date(2022, 10, 28),
-        Product: "Entrada Palco Sur",
-        Site: "Tributo a PetShop Boys",
-        Amount: 15990,
-        Motive: null,
-        State: StateMyRefund.Waiting
-    },
-    {
-        Id: "myShoppingItem14",
-        Date: new Date(2022, 10, 28),
-        Product: "Papas Lays",
-        Site: "El huevo",
-        Amount: 3990,
-        Motive: null,
-        State: StateMyRefund.Waiting
-    },
-    {
-        Id: "myShoppingItem15",
-        Date: new Date(2022, 10, 28),
-        Product: "Cerveza Escudo",
-        Site: "Cinzano",
-        Amount: 7990,
-        Motive: null,
-        State: StateMyRefund.Waiting
-    },*/
+    /*    {
+            Id: "myShoppingItem9",
+            Date: new Date(2022, 10, 26),
+            Product: "Entrada Vip",
+            Site: "Tributo a PetShop Boys",
+            Amount: 8990,
+            Motive: null,
+            State: StateMyRefund.Aprobed
+        },
+        {
+            Id: "myShoppingItem10",
+            Date: new Date(2022, 10, 26),
+            Product: "Mani Japones",
+            Site: "El huevo",
+            Amount: 3990,
+            Motive: "motivo para rechazar",
+            State: StateMyRefund.Refused
+        },
+        {
+            Id: "myShoppingItem11",
+            Date: new Date(2022, 10, 28),
+            Product: "Coca-Cola",
+            Site: "Terraza",
+            Amount: 1990,
+            Motive: "motivo para rechazar",
+            State: StateMyRefund.Refused
+        },
+        {
+            Id: "myShoppingItem12",
+            Date: new Date(2022, 10, 28),
+            Product: "Curso Trading",
+            Site: "Franco SA",
+            Amount: 120000,
+            Motive: "motivo para rechazar",
+            State: StateMyRefund.Refused
+        },
+        {
+            Id: "myShoppingItem13",
+            Date: new Date(2022, 10, 28),
+            Product: "Entrada Palco Sur",
+            Site: "Tributo a PetShop Boys",
+            Amount: 15990,
+            Motive: null,
+            State: StateMyRefund.Waiting
+        },
+        {
+            Id: "myShoppingItem14",
+            Date: new Date(2022, 10, 28),
+            Product: "Papas Lays",
+            Site: "El huevo",
+            Amount: 3990,
+            Motive: null,
+            State: StateMyRefund.Waiting
+        },
+        {
+            Id: "myShoppingItem15",
+            Date: new Date(2022, 10, 28),
+            Product: "Cerveza Escudo",
+            Site: "Cinzano",
+            Amount: 7990,
+            Motive: null,
+            State: StateMyRefund.Waiting
+        },*/
 ]
 
 const listConfigSection: AccountSections[] = [
@@ -1755,6 +1792,7 @@ export const MyShoppingContext = createContext(null)
 export const MyRefundsContext = createContext(null)
 export const AccountSecurityContext = createContext(null)
 export const DashBoardContext = createContext(null)
+export const UserDataContext = createContext(null)
 
 export default function ProviderUserAccount({children}) {
 
@@ -1766,6 +1804,7 @@ export default function ProviderUserAccount({children}) {
     let [listMyShopping, setListMyShopping] = useState(listMyShoppingItem)
     let [myRefunds, setMyRefunds] = useState(listMyRefunds)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Calendar)
+    let [userDataState, setUserDateState] = useState(userInfo)
 
 
     const handleSectionSelected = (id: string) => {
@@ -1949,7 +1988,9 @@ export default function ProviderUserAccount({children}) {
                     <MyRefundsContext.Provider value={providerMyRefunds}>
                         <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
                             <DashBoardContext.Provider value={providerDashBoard}>
-                                {children}
+                                <UserDataContext.Provider value={userDataState}>
+                                    {children}
+                                </UserDataContext.Provider>
                             </DashBoardContext.Provider>
                         </AccountSecurityContext.Provider>
                     </MyRefundsContext.Provider>
