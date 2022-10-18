@@ -42,6 +42,13 @@
     overflow: scroll;
 }
 
+.mainDivEditDashboard {
+    height: 100%;
+    padding-right: 4px;
+    margin-right: auto;
+    overflow: scroll;
+}
+
 .titleInputs {
     color: var(--colorPrimaryTextDesktop);
 }

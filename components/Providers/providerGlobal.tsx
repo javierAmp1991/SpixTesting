@@ -27,6 +27,13 @@ export class ProviderAccountSections {
 
 const listConfigSection: AccountSections[] = [
     {
+        Id: "idConfigSection9",
+        Type: MenuUserAccount.Dashboard,
+        State: false,
+        Name: "Dashboard",
+        PathImage: GlobalConst.sourceImages.refundIcon,
+    },
+    {
         Id: "idConfigSection7",
         Type: MenuUserAccount.MyBussines,
         State: false,
@@ -82,13 +89,6 @@ const listConfigSection: AccountSections[] = [
         Name: "Reembolsos",
         PathImage: GlobalConst.sourceImages.refundIcon,
     },
-    {
-        Id: "idConfigSection9",
-        Type: MenuUserAccount.Dashboard,
-        State: false,
-        Name: "Dashboard",
-        PathImage: GlobalConst.sourceImages.refundIcon,
-    }
 ]
 
 export const AccountSectionContext = createContext(null)

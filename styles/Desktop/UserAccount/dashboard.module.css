@@ -15,7 +15,7 @@
 
 .gridLeftRighSpace {
     display: grid;
-    grid-template-columns: 1fr 2.5fr;
+    grid-template-columns: 2.5fr 1fr;
     gap: 32px;
     height: 100%;
     overflow: scroll;
@@ -112,7 +112,7 @@
 
 .headerSection {
     background: var(--backgroundGradient);
-    padding: 12px 16px;
+    padding: 14px 16px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
@@ -150,8 +150,9 @@
 
 .gridLeft {
     display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-rows: repeat(2, max-content);
+    align-content: space-between;
+    gap: 24px;
 }
 
 .myShoppingSection {
@@ -161,6 +162,12 @@
     box-shadow: 0 0 6px rgba(0, 0, 0, .2);
     border-radius: 8px;
     overflow: hidden;
+}
+
+.myEditSection {
+    padding: 16px 12px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
 }
 
 .refundSection {
@@ -191,7 +198,9 @@
 }
 
 .styleLink {
+    border-top: 1px solid var(--colorLines);
     text-align: center;
+    padding-top: 12px;
     color: var(--linkColor);
     font-weight: 500;
 }
@@ -248,3 +257,4 @@
 .seeMore {
     font-size: 14px;
 }
+

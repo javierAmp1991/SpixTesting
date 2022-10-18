@@ -8,6 +8,7 @@ import utilities from "/styles/utilities.module.css";
 import EventVerticalView from "../EventsView/eventVerticalView";
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
 import item = PrincipalFeaturedSearch.item;
+import EditProfileSection from "./editProfileSection";
 
 const titleSection: string = "Dashboard"
 const subtitleSection: string = "resumen"
@@ -28,74 +29,6 @@ export default function Dashboard() {
                 </div>
             </div>*/}
             <div className={style.gridLeftRighSpace}>
-                <div className={style.gridLeft}>
-                    <div className={style.myShoppingSection}>
-                        <div className={style.titleLeft}>
-                            Ultimas compras
-                        </div>
-                        <div className={style.gridItems}>
-                            {
-                                dashboardContext.MyShoppingItems.map(item =>
-                                    <div className={style.colorDiv} key={item.Id}>
-                                        <div className={style.name}>
-                                            {item.Name}
-                                        </div>
-                                        <div className={style.price}>
-                                            ${getMoneyValue(item.Price)}
-                                        </div>
-                                    </div>
-                                )
-                            }
-                        </div>
-                        <div className={style.styleLink}>
-                            Todas mis compras
-                        </div>
-                    </div>
-                    <div className={style.refundSection}>
-                        <div className={style.titleLeft}>
-                            Todos mis reembolsos
-                        </div>
-                        <div className={style.gridItems}>
-                            {
-                                dashboardContext.MyRefundsItems.map(item =>
-                                    <div className={style.colorDiv} key={item.Id}>
-                                        <div>
-                                            {item.Product}
-                                        </div>
-                                        <div className={style.gridPriceState}>
-                                            <div className={style.price}>
-                                                ${getMoneyValue(item.Amount)}
-                                            </div>
-                                            <div>
-                                                {
-                                                    item.State == StateMyRefund.Aprobed &&
-                                                    <div className={style.aproved}>
-                                                        Aprobado
-                                                    </div>
-                                                }
-                                                {
-                                                    item.State == StateMyRefund.Refused &&
-                                                    <div className={style.refused}>
-                                                        Rechazado
-                                                    </div>
-                                                }
-                                                {
-                                                    item.State == StateMyRefund.Waiting &&
-                                                    <div className={style.waiting}>
-                                                        En espera
-                                                    </div>
-                                                }
-                                            </div>
-                                        </div>
-                                    </div>)
-                            }
-
-                        </div>
-                        <div className={style.styleLink}>
-                            Todos mis reembolsos
-                        </div>
-                    </div>
-                </div>
                 <div className={style.gridRight}>
                     <div className={style.calendarSection}>
                         <div className={style.headerSection}>
@@ -184,7 +117,7 @@ export default function Dashboard() {
                     <div className={style.mainDivWishList}>
                         <div className={style.headerSection}>
                             <div>Wishlist</div>
-                            <div className={style.seeMore}>Ver lista</div>
+                            <button className={style.seeMore}>Ver lista</button>
                         </div>
                         <div className={style.wishListSection}>
                             {
@@ -198,7 +131,7 @@ export default function Dashboard() {
                     <div className={style.mainDivCollection}>
                         <div className={style.headerSection}>
                             <div>Mi Coleccion</div>
-                            <div className={style.seeMore}>Ver coleccion</div>
+                            <button className={style.seeMore}>Ver coleccion</button>
                         </div>
                         <div className={style.collectionSection}>
                             {
@@ -208,6 +141,78 @@ export default function Dashboard() {
                             }
                         </div>
                     </div>
+                </div>
+
+                <div className={style.gridLeft}>
+                    <div className={style.myEditSection}>
+                        <EditProfileSection isInDashboard={true}/>
+                    </div>
+                    <div className={style.myShoppingSection}>
+                        <div className={style.titleLeft}>
+                            Ultimas compras
+                        </div>
+                        <div className={style.gridItems}>
+                            {
+                                dashboardContext.MyShoppingItems.map(item =>
+                                    <div className={style.colorDiv} key={item.Id}>
+                                        <div className={style.name}>
+                                            {item.Name}
+                                        </div>
+                                        <div className={style.price}>
+                                            ${getMoneyValue(item.Price)}
+                                        </div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                        <div className={style.styleLink}>
+                            Todas mis compras
+                        </div>
+                    </div>
+                    {/* <div className={style.refundSection}>
+                        <div className={style.titleLeft}>
+                            Todos mis reembolsos
+                        </div>
+                        <div className={style.gridItems}>
+                            {
+                                dashboardContext.MyRefundsItems.map(item =>
+                                    <div className={style.colorDiv} key={item.Id}>
+                                        <div>
+                                            {item.Product}
+                                        </div>
+                                        <div className={style.gridPriceState}>
+                                            <div className={style.price}>
+                                                ${getMoneyValue(item.Amount)}
+                                            </div>
+                                            <div>
+                                                {
+                                                    item.State == StateMyRefund.Aprobed &&
+                                                    <div className={style.aproved}>
+                                                        Aprobado
+                                                    </div>
+                                                }
+                                                {
+                                                    item.State == StateMyRefund.Refused &&
+                                                    <div className={style.refused}>
+                                                        Rechazado
+                                                    </div>
+                                                }
+                                                {
+                                                    item.State == StateMyRefund.Waiting &&
+                                                    <div className={style.waiting}>
+                                                        En espera
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>)
+                            }
+
+                        </div>
+                        <div className={style.styleLink}>
+                            Todos mis reembolsos
+                        </div>
+                    </div>*/}
                 </div>
             </div>
         </div>

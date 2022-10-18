@@ -1,9 +1,8 @@
-import style from "/styles/Desktop/UserAccount/editProfile.module.css"
+import style from "/styles/Desktop/UserAccount/editProfile.module.css";
 import Image from "next/image";
-import {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+import {useEffect, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
-import EditProfileSection from "./editProfileSection";
 
 const countriesList = [
     {name: 'Afghanistan', code: 'AF'},
@@ -248,12 +247,10 @@ const countriesList = [
     {name: 'Zambia', code: 'ZM'},
     {name: 'Zimbabwe', code: 'ZW'}
 ]
-const titleSection: string = "Editar perfil"
-const subtitleSection: string = "Edita tus datos"
 const inputFilteProfile: string = "inputFilteProfile001234"
 const placeHolderSelect: string = "Selecciona un pais"
 
-export default function EditProfile() {
+export default function EditProfileSection({isInDashboard}: { isInDashboard: boolean }) {
     let [otherGender, setOtherGender] = useState(false)
     let [displayOtherGender, setDisplayOtherGender] = useState(false)
     let [gender, setGender] = useState("")
@@ -289,102 +286,90 @@ export default function EditProfile() {
     const handleName = (e) => {
         setName(name = e.target.value)
     }
-
     return (
-        <div className={style.mainDiv}>
-            <div className={style.mainDivTitle}>
-                <div className={style.title}>
-                    {titleSection}
-                </div>
-                <div className={style.subtitle}>
-                    {subtitleSection}
-                </div>
-            </div>
-            <EditProfileSection isInDashboard={false}/>
-            {/*<div className={style.mainDivEdit}>
-                <div className={style.gridOptions}>
-                    <div className={style.gridImageName}>
-                        <div className={style.paddingGradient}>
-                            <label htmlFor={inputFilteProfile} className={style.sizeProfilePic}>
-                                <Image layout={"fill"} objectFit={"cover"} src={"/images/fotoperfil1.png"} alt={""}/>
-                            </label>
-                            <label htmlFor={inputFilteProfile} className={style.editProfilePic}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic} alt={""}/>
-                            </label>
-                        </div>
-                        <div>
-                            <div className={style.user}>
-                                @kujojotaro
-                            </div>
-                            <label htmlFor={inputFilteProfile} className={style.labelPhoto}>
-                                cambiar foto de perfil
-                            </label>
-                            <input className={style.styleInputFile} id={inputFilteProfile} type={"file"}/>
-                        </div>
+        <div className={isInDashboard? style.mainDivEditDashboard : style.mainDivEdit }>
+            <div className={style.gridOptions}>
+                <div className={style.gridImageName}>
+                    <div className={style.paddingGradient}>
+                        <label htmlFor={inputFilteProfile} className={style.sizeProfilePic}>
+                            <Image layout={"fill"} objectFit={"cover"} src={"/images/fotoperfil1.png"} alt={""}/>
+                        </label>
+                        <label htmlFor={inputFilteProfile} className={style.editProfilePic}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic} alt={""}/>
+                        </label>
                     </div>
+                    <div>
+                        <div className={style.user}>
+                            @kujojotaro
+                        </div>
+                        <label htmlFor={inputFilteProfile} className={style.labelPhoto}>
+                            cambiar foto de perfil
+                        </label>
+                        <input className={style.styleInputFile} id={inputFilteProfile} type={"file"}/>
+                    </div>
+                </div>
+                <div className={style.gridNameInput}>
+                    <div className={style.titleInputs}>
+                        Nombre
+                    </div>
+                    <input onChange={handleName} className={style.styleInput} placeholder={"nombre"} type={"text"}/>
+                </div>
+                <div className={style.gridNameInput}>
+                    <div className={style.titleInputs}>
+                        Fecha nacimiento
+                    </div>
+                    <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`}
+                           type={"date"}/>
+                </div>
+                <div className={style.divGender}>
                     <div className={style.gridNameInput}>
                         <div className={style.titleInputs}>
-                            Nombre
+                            Genero
                         </div>
-                        <input onChange={handleName} className={style.styleInput} placeholder={"nombre"} type={"text"}/>
+                        <select onChange={handleGender} className={style.styleInput}>
+                            <option>
+                                Hombre
+                            </option>
+                            <option>
+                                Mujer
+                            </option>
+                            <option>
+                                Otro
+                            </option>
+                        </select>
                     </div>
-                    <div className={style.gridNameInput}>
-                        <div className={style.titleInputs}>
-                            Fecha nacimiento
+                    {
+                        displayOtherGender &&
+                        <div className={`${style.gridNameInput} ${style.spaceOtherGender}`}>
+                            <div/>
+                            <input onChange={handleOtherGender} className={style.styleInput}
+                                   placeholder={"especifique si es otro"}
+                                   type={"text"}/>
                         </div>
-                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`}
-                               type={"date"}/>
-                    </div>
-                    <div className={style.divGender}>
-                        <div className={style.gridNameInput}>
-                            <div className={style.titleInputs}>
-                                Genero
-                            </div>
-                            <select onChange={handleGender} className={style.styleInput}>
-                                <option>
-                                    Hombre
-                                </option>
-                                <option>
-                                    Mujer
-                                </option>
-                                <option>
-                                    Otro
-                                </option>
-                            </select>
-                        </div>
-                        {
-                            displayOtherGender &&
-                            <div className={`${style.gridNameInput} ${style.spaceOtherGender}`}>
-                                <div/>
-                                <input onChange={handleOtherGender} className={style.styleInput}
-                                       placeholder={"especifique si es otro"}
-                                       type={"text"}/>
-                            </div>
-                        }
-                    </div>
-                    <div className={style.gridNameInput}>
-                        <div className={style.titleInputs}>
-                            Nacionalidad
-                        </div>
-                        {
-                            countrySelected != null ?
-                                <button onClick={handlePopUp} key={countrySelected.code} className={style.optionGridNat}>
-                                    <Image width={20} height={15}
-                                           src={`/images/4x3/${countrySelected.code.toLowerCase()}.svg`}/>
-                                    <div>
-                                        {countrySelected.name}
-                                    </div>
-                                </button>
-                                :
-                                <button onClick={handlePopUp} className={style.styleInput}>
-                                    {placeHolderSelect}
-                                </button>
-                        }
-                    </div>
-                    <button className={style.buttonConfirm}>
-                        Confirmar
-                    </button>
+                    }
                 </div>
+                <div className={style.gridNameInput}>
+                    <div className={style.titleInputs}>
+                        Nacionalidad
+                    </div>
+                    {
+                        countrySelected != null ?
+                            <button onClick={handlePopUp} key={countrySelected.code} className={style.optionGridNat}>
+                                <Image width={20} height={15}
+                                       src={`/images/4x3/${countrySelected.code.toLowerCase()}.svg`}/>
+                                <div>
+                                    {countrySelected.name}
+                                </div>
+                            </button>
+                            :
+                            <button onClick={handlePopUp} className={style.styleInput}>
+                                {placeHolderSelect}
+                            </button>
+                    }
+                </div>
+                <button className={style.buttonConfirm}>
+                    Confirmar
+                </button>
             </div>
             {
                 displayPopUp &&
@@ -409,7 +394,7 @@ export default function EditProfile() {
                         </div>
                     </div>
                 </PopUpContainer>
-            }*/}
+            }
         </div>
     )
 }
