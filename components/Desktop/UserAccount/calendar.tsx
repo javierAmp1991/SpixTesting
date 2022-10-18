@@ -18,6 +18,9 @@ export default function Calendar() {
         calendarContext.SelectDate(id)
         calendarContext.UpdateState(id, state)
     }
+    const handleDeselectAll = ()=>{
+        calendarContext.DeselectItems()
+    }
     const daySelected = calendarContext.SelectedItems
     return (
         <div className={style.principalGrid}>
@@ -46,7 +49,7 @@ export default function Calendar() {
                         </div>
                         <div className={style.divEventCircle}>
                             <div className={style.circle}/>
-                            <span className={style.eventsButton}>Eventos</span>
+                            <button onClick={handleDeselectAll} className={style.eventsButton}>Eventos</button>
                         </div>
                     </div>
                     <div className={style.mainDivCalendar}>
