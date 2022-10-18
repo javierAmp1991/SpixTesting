@@ -2,10 +2,7 @@ import style from "/styles/Mobile/UserAccount/editProfile.module.css"
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-import ReactFlagsSelect from "react-flags-select";
-import PopUpContainer from "../../Desktop/Misc/popUpContainer";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
-import EditProfileSectionMobile from "./editProfileSectionMobile";
 
 const countriesList = [
     {name: 'Afghanistan', code: 'AF'},
@@ -256,7 +253,7 @@ const subtitleSection: string = "Edita tus datos"
 const inputFilteProfile: string = "inputFilteProfile001234"
 const placeHolderSelect: string = "Selecciona un pais"
 
-export default function EditProfileMobile() {
+export default function EditProfileSectionMobile() {
     let [otherGender, setOtherGender] = useState(false)
     let [displayOtherGender, setDisplayOtherGender] = useState(false)
     let [gender, setGender] = useState("")
@@ -302,16 +299,7 @@ export default function EditProfileMobile() {
 
     return (
         <div className={style.mainDiv}>
-            <div className={style.mainDivTitle}>
-                <div className={style.title}>
-                    {titleSection}
-                </div>
-                <div className={style.subtitle}>
-                    {subtitleSection}
-                </div>
-            </div>
-            <EditProfileSectionMobile/>
-           {/* <div className={style.mainDivEdit}>
+            <div className={style.mainDivEdit}>
                 <div className={style.gridOptions}>
                     <div className={style.gridImageName}>
                         <div className={style.paddingGradient}>
@@ -384,9 +372,9 @@ export default function EditProfileMobile() {
                                     <div>
                                         {countrySelected.name}
                                     </div>
-                                    <div className={style.divArrow}>
+                                    {/*<div className={style.divArrow}>
                                         <Image width={16} height={14} src={GlobalConst.sourceImages.bottomArrow}/>
-                                    </div>
+                                    </div>*/}
                                 </button>
                                 :
                                 <button onClick={handlePopUp} className={style.styleInput}>
@@ -422,7 +410,7 @@ export default function EditProfileMobile() {
                         </div>
                     </div>
                 </PopUpContainerMob>
-            }*/}
+            }
         </div>
     )
 }

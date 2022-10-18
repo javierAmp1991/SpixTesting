@@ -6,6 +6,7 @@ import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from ".
 import {useContext} from "react";
 import EventHorizontalView from "../Events/eventHorizontalView";
 import EditProfileSection from "../../Desktop/UserAccount/editProfileSection";
+import EditProfileSectionMobile from "./editProfileSectionMobile";
 
 const titleSection: string = "Dashboard"
 const subtitleSection: string = "resumen"
@@ -104,7 +105,7 @@ export default function DashboardMobile() {
             </div>
 
             <div className={style.myEditSection}>
-                <EditProfileSection isInDashboard={true}/>
+                <EditProfileSectionMobile/>
             </div>
 
             <div className={style.mainDivWishList}>

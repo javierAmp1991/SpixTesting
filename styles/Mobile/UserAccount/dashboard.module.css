@@ -115,14 +115,14 @@
 
 .headerSection {
     background: var(--backgroundGradient);
-    padding: 14px 16px;
+    padding: 14px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: space-between;
     align-items: center;
     color: white;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 15px;
 }
 
 .wishListSection {
