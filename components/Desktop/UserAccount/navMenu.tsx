@@ -4,21 +4,23 @@ import {AccountSectionContext, ProviderAccountSections} from "../../Providers/pr
 import {useContext} from "react";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
+import {UserData, UserDataContext} from "../../Providers/providerGlobal";
 
 export default function NavMenuUserAccount() {
     const providerAccountSection: ProviderAccountSections = useContext(AccountSectionContext)
+    const userData: UserData = useContext(UserDataContext)
     return (
         <div className={style.mainDiv}>
             <div className={style.gridUser}>
                 <div className={style.paddingGradient}>
                     <div className={style.paddingGradient2}>
                         <div className={style.sizeProfileUser}>
-                            <Image layout={"fill"} src={"/images/fotoperfil1.png"}/>
+                            <Image layout={"fill"} src={userData.ProfilePath}/>
                         </div>
                     </div>
                 </div>
                 <div className={style.userNick}>
-                    @kujojotaro
+                    {userData.NickName}
                 </div>
             </div>
             <div className={style.gridSections}>

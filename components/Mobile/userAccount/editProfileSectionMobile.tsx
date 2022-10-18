@@ -1,10 +1,12 @@
 import style from "/styles/Mobile/UserAccount/editProfile.module.css"
 import Image from "next/image";
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
 import PopUpContainerMob from "../Misc/popUpContainerMob";
+import {Countries, UserData, UserDataContext} from "../../Providers/providerGlobal";
 
-const countriesList = [
+
+const countriesList: Countries[] = [
     {name: 'Afghanistan', code: 'AF'},
     {name: 'Åland Islands', code: 'AX'},
     {name: 'Albania', code: 'AL'},
@@ -247,23 +249,19 @@ const countriesList = [
     {name: 'Zambia', code: 'ZM'},
     {name: 'Zimbabwe', code: 'ZW'}
 ]
-
-const titleSection: string = "Editar perfil"
-const subtitleSection: string = "Edita tus datos"
 const inputFilteProfile: string = "inputFilteProfile001234"
 const placeHolderSelect: string = "Selecciona un pais"
 
 export default function EditProfileSectionMobile() {
+    const userData: UserData = useContext(UserDataContext)
     let [otherGender, setOtherGender] = useState(false)
     let [displayOtherGender, setDisplayOtherGender] = useState(false)
     let [gender, setGender] = useState("")
     let [name, setName] = useState("")
     let [nationality, setNationality] = useState("")
-    let [date, setDate] = useState("Fecha de nacimiento")
-    let [profileImage, setProfileImage] = useState("")
-    const [selected, setSelected] = useState("");
+    let [date, setDate] = useState(userData.Date)
 
-    let [countrySelected, setCountrySelected] = useState(null)
+    let [countrySelected, setCountrySelected] = useState(userData.Nationality)
     let [displayPopUp, setDisplayPopUp] = useState(false)
     const handleCountry = (item) => {
         setCountrySelected(countrySelected = item)
@@ -289,10 +287,6 @@ export default function EditProfileSectionMobile() {
         setDate(date = e.target.value)
     }
 
-    const handleNationality = (e) => {
-        setNationality(nationality = e.target.value)
-    }
-
     const handleName = (e) => {
         setName(name = e.target.value)
     }
@@ -304,15 +298,15 @@ export default function EditProfileSectionMobile() {
                     <div className={style.gridImageName}>
                         <div className={style.paddingGradient}>
                             <label htmlFor={inputFilteProfile} className={style.sizeProfilePic}>
-                                <Image layout={"fill"} objectFit={"cover"} src={"/images/fotoperfil1.png"}/>
+                                <Image layout={"fill"} objectFit={"cover"} src={userData.ProfilePath}/>
                             </label>
-                            <label  className={style.editProfilePic}>
+                            <label className={style.editProfilePic}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic}/>
                             </label>
                         </div>
                         <div>
                             <div className={style.user}>
-                                @kujojotaro
+                                {userData.NickName}
                             </div>
                             <label htmlFor={inputFilteProfile} className={style.labelPhoto}>
                                 cambiar foto de perfil
@@ -324,14 +318,19 @@ export default function EditProfileSectionMobile() {
                         <div className={style.titleInputs}>
                             Nombre
                         </div>
-                        <input onChange={handleName} className={style.styleInput} placeholder={"nombre"} type={"text"}/>
+                        <input onChange={handleName} className={style.styleInput} placeholder={userData.Name} type={"text"}/>
                     </div>
                     <div className={style.gridNameInput}>
                         <div className={style.titleInputs}>
                             Fecha nacimiento
                         </div>
-                        <input onChange={handleDate} className={`${style.styleInput} ${style.datePicker}`}
-                               type={"date"}/>
+                        <div className={style.styleInput}>
+                            <div className={style.placeHolderDate}>
+                                {date.toLocaleDateString()}
+                            </div>
+                            <input onChange={handleDate} className={style.datePicker}
+                                   type={"date"}/>
+                        </div>
                     </div>
                     <div className={style.divGender}>
                         <div className={style.gridNameInput}>
@@ -366,7 +365,8 @@ export default function EditProfileSectionMobile() {
                         </div>
                         {
                             countrySelected != null ?
-                                <button onClick={handlePopUp} key={countrySelected.code} className={style.optionGridNat}>
+                                <button onClick={handlePopUp} key={countrySelected.code}
+                                        className={style.optionGridNat}>
                                     <Image width={20} height={15}
                                            src={`/images/4x3/${countrySelected.code.toLowerCase()}.svg`}/>
                                     <div>

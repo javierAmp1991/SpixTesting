@@ -3,9 +3,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useEffect, useState} from "react";
 import PopUpContainer from "../Misc/popUpContainer";
-import {Countries, UserData, UserDataContext} from "../../Providers/providerUserAccount";
-
-
+import {Countries, UserData, UserDataContext} from "../../Providers/providerGlobal";
 
 const countriesList: Countries[] = [
     {name: 'Afghanistan', code: 'AF'},
@@ -261,8 +259,9 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
     let [name, setName] = useState("")
     let [nationality, setNationality] = useState("")
     let [date, setDate] = useState(userData.Date)
-    let [countrySelected, setCountrySelected] = useState(null)
+    let [countrySelected, setCountrySelected] = useState(userData.Nationality)
     let [displayPopUp, setDisplayPopUp] = useState(false)
+
     const handleCountry = (item) => {
         setCountrySelected(countrySelected = item)
         handlePopUp()

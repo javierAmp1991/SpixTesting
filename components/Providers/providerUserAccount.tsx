@@ -183,35 +183,10 @@ export enum GenderUser {
     Otro
 }
 
-export class Countries {
-    name: string
-    code: string
-}
-
 export class AccountSecurityEdit {
     Id: string
     Link: string
     Name: string
-}
-
-export class UserData {
-    Id: string
-    ProfilePath: string
-    Name: string
-    NickName: string
-    Gender: string
-    Nationality: Countries
-    Date: Date
-}
-
-const userInfo: UserData = {
-    Id: "user0001",
-    ProfilePath: "/images/fotoperfil1.png",
-    Name: "Pedro Fernandez",
-    NickName: "@pedroFer1990",
-    Gender: "Hombre",
-    Nationality: {name: 'Afghanistan', code: 'AF'},
-    Date: new Date(1990, 8, 20)
 }
 
 export class VerificationAccountEdit extends AccountSecurityEdit {
@@ -1792,7 +1767,6 @@ export const MyShoppingContext = createContext(null)
 export const MyRefundsContext = createContext(null)
 export const AccountSecurityContext = createContext(null)
 export const DashBoardContext = createContext(null)
-export const UserDataContext = createContext(null)
 
 export default function ProviderUserAccount({children}) {
 
@@ -1804,7 +1778,6 @@ export default function ProviderUserAccount({children}) {
     let [listMyShopping, setListMyShopping] = useState(listMyShoppingItem)
     let [myRefunds, setMyRefunds] = useState(listMyRefunds)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Calendar)
-    let [userDataState, setUserDateState] = useState(userInfo)
 
 
     const handleSectionSelected = (id: string) => {
@@ -1988,9 +1961,7 @@ export default function ProviderUserAccount({children}) {
                     <MyRefundsContext.Provider value={providerMyRefunds}>
                         <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
                             <DashBoardContext.Provider value={providerDashBoard}>
-                                <UserDataContext.Provider value={userDataState}>
-                                    {children}
-                                </UserDataContext.Provider>
+                                {children}
                             </DashBoardContext.Provider>
                         </AccountSecurityContext.Provider>
                     </MyRefundsContext.Provider>

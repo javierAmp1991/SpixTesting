@@ -24,6 +24,29 @@ export class ProviderAccountSections {
     SectionSelected: MenuUserAccount
     SelectSection: Function
 }
+export class UserData {
+    Id: string
+    ProfilePath: string
+    Name: string
+    NickName: string
+    Gender: string
+    Nationality: Countries
+    Date: Date
+}
+export class Countries {
+    name: string
+    code: string
+}
+
+const userInfo: UserData = {
+    Id: "user0001",
+    ProfilePath: "/images/fotoperfil1.png",
+    Name: "Pedro Fernandez",
+    NickName: "@pedroFer1990",
+    Gender: "Hombre",
+    Nationality: {name: 'Chile', code: 'CL'},
+    Date: new Date(1990, 8, 20)
+}
 
 const listConfigSection: AccountSections[] = [
     {
@@ -92,10 +115,12 @@ const listConfigSection: AccountSections[] = [
 ]
 
 export const AccountSectionContext = createContext(null)
+export const UserDataContext = createContext(null)
 
 export default function ProviderGlobal({children}) {
     let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Dashboard)
+    let [userDataState, setUserDateState] = useState(userInfo)
     const handleSectionSelected = (menuType: MenuUserAccount) => {
         let newSectionSelected = sectionSelected.map(item => {
             if (item.Type == menuType) {
@@ -112,7 +137,9 @@ export default function ProviderGlobal({children}) {
     }
     return (
        <AccountSectionContext.Provider value={providerConfigSections}>
+           <UserDataContext.Provider value={userDataState}>
            {children}
+           </UserDataContext.Provider>
        </AccountSectionContext.Provider>
     )
 }

@@ -2,11 +2,17 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useContext} from "react";
 import style from "/styles/Mobile/Misc/sideSettings.module.css"
-import {ProviderAccountSections, AccountSectionContext} from "../../Providers/providerGlobal";
+import {
+    ProviderAccountSections,
+    AccountSectionContext,
+    UserData,
+    UserDataContext
+} from "../../Providers/providerGlobal";
 import AccountSectionOptionMobile from "../userAccount/AccountSectionOptionMobile";
 
 export default function SideSetting({closeDesplegable}: { closeDesplegable: Function }) {
     const providerAccountSection: ProviderAccountSections = useContext(AccountSectionContext)
+    const userData: UserData = useContext(UserDataContext)
     const handleClose = () => closeDesplegable()
     return (
         <div className={style.mainDiv}>
@@ -14,12 +20,12 @@ export default function SideSetting({closeDesplegable}: { closeDesplegable: Func
                 <div className={style.paddingGradient}>
                     <div className={style.paddingGradient2}>
                         <div onClick={handleClose} className={style.sizeProfileUser}>
-                            <Image layout={"fill"} src={"/images/fotoperfil1.png"}/>
+                            <Image layout={"fill"} src={userData.ProfilePath}/>
                         </div>
                     </div>
                 </div>
                 <div className={style.userNick}>
-                    @kujojotaro
+                    {userData.NickName}
                 </div>
             </div>
             <div className={style.gridSections}>
