@@ -312,7 +312,7 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
                     <div className={style.titleInputs}>
                         Nombre
                     </div>
-                    <input onChange={handleName} className={style.styleInput} placeholder={"nombre"} type={"text"}/>
+                    <input onChange={handleName} className={style.styleInput} placeholder={"kujo jotaro"} type={"text"}/>
                 </div>
                 <div className={style.gridNameInput}>
                     <div className={style.titleInputs}>
