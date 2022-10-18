@@ -17,13 +17,9 @@ export default function PrincipalInfoEvent({item}: { item: PrincipalInfoEventPro
     const cssStyle = getCssStyle()
     return (
         <>
-            <div className={`${utilities.clamp1} ${style.titleMargin}`}>
+            <div className={`${utilities.clamp2} ${style.titleMargin}`}>
                 {item.Title}
             </div>
-
-{/*            <div className={`${cssStyle.Subtitle} ${utilities.clamp1}`}>
-                {item.Subtitle}
-            </div>*/}
 
             {
                 item.Rating != null &&

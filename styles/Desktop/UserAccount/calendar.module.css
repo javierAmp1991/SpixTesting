@@ -16,7 +16,6 @@
 .mainDivSpace {
     padding: var(--paddingYTitle) var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
     overflow: scroll;
-
 }
 
 .mainDivMonth {
@@ -64,11 +63,9 @@
     display: grid;
     padding: 20% 30%;
     width: 100%;
-    background: white;
     aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
-    background: rgba(255, 255, 255, .1);
     background: white;
 }
 

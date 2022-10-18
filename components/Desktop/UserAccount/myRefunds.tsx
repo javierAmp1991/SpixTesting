@@ -53,164 +53,161 @@ export default function MyRefunds() {
 
     return (
         <div className={style.mainDiv}>
-            <div className={style.leftDiv}>
-                <div className={style.scrolDiv}>
-                    <div className={style.mainDivTitle}>
-                        <div className={style.title}>
-                            {titleSection}
-                        </div>
-                        <div className={style.subtitle}>
-                            {subtitleSection}
-                        </div>
+            <div className={style.scrolDiv}>
+                <div className={style.mainDivTitle}>
+                    <div className={style.title}>
+                        {titleSection}
                     </div>
-                    <div className={style.gridInputExport}>
-                        <select onChange={handleChangeSelect} className={style.inptSelect}>
-                            {
-                                providerMyRefunds.ListMoths.map(item =>
-                                    <option key={item}>{item}</option>
-                                )
-                            }
-                        </select>
-                        <select className={style.inptSelect}>
-                            {
-                                providerMyRefunds.ListYears.map(item =>
-                                    <option key={item}>{item}</option>
-                                )
-                            }
-                        </select>
-                        <Link href={""}>
-                            <a className={style.refundButton}>
-                                {refundText}
-                            </a>
-                        </Link>
-                    </div>
-                    <div className={style.mainDivHeader}>
-                        <div className={style.gridHeaderExport}>
-                            <div/>
-                            <div className={style.divMonthArrow}>
-                                <button className={style.sizeArrowMonth}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowTriangle} alt={""}/>
-                                </button>
-                                <div className={style.mainDivMonth}>
-                                    Pagina 1
-                                </div>
-                                <button className={style.sizeArrowMonth}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrowTriangle} alt={""}/>
-                                </button>
-                            </div>
-                            <div className={style.gridExport}>
-                                <div className={style.exporText}>
-                                    {exportText}
-                                </div>
-                                <button className={style.sizeImageExport}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.pdfIcon} alt={""}/>
-                                </button>
-                                <button className={style.sizeImageExport}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.excellIcon} alt={""}/>
-                                </button>
-                            </div>
-                        </div>
-                        <div className={style.gridHeader1}>
-                            <button onClick={handleSortByDate} className={style.gridOption}>
-                                <div>
-                                    Fecha
-                                </div>
-                                <div className={style.sizeBottomArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
-                                </div>
-                            </button>
-                            <button onClick={handleSortBySite} className={style.gridOption}>
-                                <div>
-                                    Sitio
-                                </div>
-                                <div className={style.sizeBottomArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
-                                </div>
-                            </button>
-                            <button onClick={handleSortByName} className={style.gridOption}>
-                                <div>
-                                    Producto
-                                </div>
-                                <div className={style.sizeBottomArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
-                                </div>
-                            </button>
-                            <button onClick={handleSortByAmount} className={style.gridOption}>
-                                <div>
-                                    Monto
-                                </div>
-                                <div className={style.sizeBottomArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
-                                </div>
-                            </button>
-                            <button onClick={handleSortByPrice} className={style.gridOption}>
-                                <div>
-                                    Estado
-                                </div>
-                                <div className={style.sizeBottomArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
-                                </div>
-                            </button>
-                            <button onClick={handleSortByPrice} className={style.gridOption}>
-                                <div>
-                                    Motivo
-                                </div>
-                                <div className={style.sizeBottomArrow}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
-                                </div>
-                            </button>
-                        </div>
+                    <div className={style.subtitle}>
+                        {subtitleSection}
                     </div>
                 </div>
-
-                <div className={style.mainDivCeldas}>
-                    <div className={style.gridHeader}>
+                <div className={style.gridInputExport}>
+                    <select onChange={handleChangeSelect} className={style.inptSelect}>
                         {
-                            providerMyRefunds.ListMyRefunds.map(item =>
-                                <>
-                                    <div className={style.styleItem}>
-                                        {item.Date.toLocaleDateString()}
-                                    </div>
-                                    <div className={style.styleItem}>
-                                        {item.Site}
-                                    </div>
-                                    <div className={style.styleItem}>
-                                        {item.Product}
-                                    </div>
-                                    <div className={style.styleItem}>
-                                        ${getMoneyValue(item.Amount)}
-                                    </div>
-                                    <div className={style.styleItem}>
-                                        {
-                                            item.State == StateMyRefund.Aprobed &&
-                                            <div className={style.aproved}>
-                                                Aprobado
-                                            </div>
-                                        }
-                                        {
-                                            item.State == StateMyRefund.Refused &&
-                                            <div className={style.refused}>
-                                                Rechazado
-                                            </div>
-                                        }
-                                        {
-                                            item.State == StateMyRefund.Waiting &&
-                                            <div className={style.waiting}>
-                                                En espera
-                                            </div>
-                                        }
-
-                                    </div>
-                                    <div className={style.styleItem}>
-                                        {
-                                            item.Motive != null ? item.Motive :
-                                                item.State == StateMyRefund.Aprobed? "-" : "..."
-                                        }
-                                    </div>
-                                </>
+                            providerMyRefunds.ListMoths.map(item =>
+                                <option key={item}>{item}</option>
                             )
                         }
+                    </select>
+                    <select className={style.inptSelect}>
+                        {
+                            providerMyRefunds.ListYears.map(item =>
+                                <option key={item}>{item}</option>
+                            )
+                        }
+                    </select>
+                    <Link href={""}>
+                        <a className={style.refundButton}>
+                            {refundText}
+                        </a>
+                    </Link>
+                </div>
+                <div className={style.mainDivHeader}>
+                    <div className={style.gridHeaderExport}>
+                        <div/>
+                        <div className={style.divMonthArrow}>
+                            <button className={style.sizeArrowMonth}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowTriangle} alt={""}/>
+                            </button>
+                            <div className={style.mainDivMonth}>
+                                Pagina 1
+                            </div>
+                            <button className={style.sizeArrowMonth}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrowTriangle} alt={""}/>
+                            </button>
+                        </div>
+                        <div className={style.gridExport}>
+                            <div className={style.exporText}>
+                                {exportText}
+                            </div>
+                            <button className={style.sizeImageExport}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.pdfIcon} alt={""}/>
+                            </button>
+                            <button className={style.sizeImageExport}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.excellIcon} alt={""}/>
+                            </button>
+                        </div>
                     </div>
+                    <div className={style.gridHeader1}>
+                        <button onClick={handleSortByDate} className={style.gridOption}>
+                            <div>
+                                Fecha
+                            </div>
+                            <div className={style.sizeBottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                            </div>
+                        </button>
+                        <button onClick={handleSortBySite} className={style.gridOption}>
+                            <div>
+                                Sitio
+                            </div>
+                            <div className={style.sizeBottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                            </div>
+                        </button>
+                        <button onClick={handleSortByName} className={style.gridOption}>
+                            <div>
+                                Producto
+                            </div>
+                            <div className={style.sizeBottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                            </div>
+                        </button>
+                        <button onClick={handleSortByAmount} className={style.gridOption}>
+                            <div>
+                                Monto
+                            </div>
+                            <div className={style.sizeBottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                            </div>
+                        </button>
+                        <button onClick={handleSortByPrice} className={style.gridOption}>
+                            <div>
+                                Estado
+                            </div>
+                            <div className={style.sizeBottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                            </div>
+                        </button>
+                        <button onClick={handleSortByPrice} className={style.gridOption}>
+                            <div>
+                                Motivo
+                            </div>
+                            <div className={style.sizeBottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.downArrow} alt={""}/>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div className={style.mainDivCeldas}>
+                <div className={style.gridHeader}>
+                    {
+                        providerMyRefunds.ListMyRefunds.map(item =>
+                            <>
+                                <div className={style.styleItem}>
+                                    {item.Date.toLocaleDateString()}
+                                </div>
+                                <div className={style.styleItem}>
+                                    {item.Site}
+                                </div>
+                                <div className={style.styleItem}>
+                                    {item.Product}
+                                </div>
+                                <div className={style.styleItem}>
+                                    ${getMoneyValue(item.Amount)}
+                                </div>
+                                <div className={style.styleItem}>
+                                    {
+                                        item.State == StateMyRefund.Aprobed &&
+                                        <div className={style.aproved}>
+                                            Aprobado
+                                        </div>
+                                    }
+                                    {
+                                        item.State == StateMyRefund.Refused &&
+                                        <div className={style.refused}>
+                                            Rechazado
+                                        </div>
+                                    }
+                                    {
+                                        item.State == StateMyRefund.Waiting &&
+                                        <div className={style.waiting}>
+                                            En espera
+                                        </div>
+                                    }
+                                </div>
+                                <div className={style.styleItem}>
+                                    {
+                                        item.Motive != null ? item.Motive :
+                                            item.State == StateMyRefund.Aprobed ? "-" : "..."
+                                    }
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
             </div>
         </div>

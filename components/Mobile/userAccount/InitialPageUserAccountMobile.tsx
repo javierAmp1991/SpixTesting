@@ -8,6 +8,7 @@ import WishListMobile from "./WishListMobile";
 import MyCollectionMobile from "./MyCollectionMobile";
 import MyShoppingMobile from "./myShoppingMobile";
 import MyRefundsMobile from "./myRefundsMobile";
+import Dashboard from "../../Desktop/UserAccount/dashboard";
 
 export default function InitialPageUserAccountMobile() {
     const providerSection: ProviderAccountSections = useContext(AccountSectionContext)
@@ -47,6 +48,10 @@ export default function InitialPageUserAccountMobile() {
                     <div>
                         En construccion
                     </div>
+                }
+                {
+                    providerSection.SectionSelected == MenuUserAccount.Dashboard &&
+                    <Dashboard/>
                 }
             </div>
         </div>

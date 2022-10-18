@@ -26,32 +26,30 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
     const cssStyle = getCssStyle()
     //endregion
     return (
-        <ProviderGlobal>
-            <div className={utilities.bgBodyNormalMobile}>
-                {
-                    isDisplaySug ?
-                        <SuggHeaderMobile returnMet={handleDisplaySug}/>
-                        :
-                        <div className={styleMobile.mainCont}>
-                            <HeaderSpixMobile isDarkMode={isDarkMode}
-                                              isDesplegable={handleSideSetting}
-                                              displaySug={handleDisplaySug}/>
-                            <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
-                            {children}
-                            <div onClick={handleSideSetting} style={{transform: `translate(${cssStyle.desp})`}}
-                                 className={styleMobile.menuDesplegable}>
-                                <SideSetting closeDesplegable={handleSideSetting}/>
-                            </div>
-                            {
-                                isOpenSideSetting &&
-                                <div className={styleMobile.blackScreen}
-                                     onClick={handleSideSetting}/>
-                            }
-
+        <div className={utilities.bgBodyNormalMobile}>
+            {
+                isDisplaySug ?
+                    <SuggHeaderMobile returnMet={handleDisplaySug}/>
+                    :
+                    <div className={styleMobile.mainCont}>
+                        <HeaderSpixMobile isDarkMode={isDarkMode}
+                                          isDesplegable={handleSideSetting}
+                                          displaySug={handleDisplaySug}/>
+                        <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
+                        {children}
+                        <div onClick={handleSideSetting} style={{transform: `translate(${cssStyle.desp})`}}
+                             className={styleMobile.menuDesplegable}>
+                            <SideSetting closeDesplegable={handleSideSetting}/>
                         </div>
-                }
-            </div>
-        </ProviderGlobal>
+                        {
+                            isOpenSideSetting &&
+                            <div className={styleMobile.blackScreen}
+                                 onClick={handleSideSetting}/>
+                        }
+
+                    </div>
+            }
+        </div>
     )
 
     function getCssStyle() {

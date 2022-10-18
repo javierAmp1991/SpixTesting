@@ -1,6 +1,6 @@
 import style from "/styles/Desktop/UserAccount/navMenu.module.css";
 import AccountSectionOption from "./AccountSectionOption";
-import {AccountSectionContext, ProviderAccountSections} from "../../Providers/providerUserAccount";
+import {AccountSectionContext, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";

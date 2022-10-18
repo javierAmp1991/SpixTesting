@@ -1,5 +1,5 @@
 import style from "/styles/Desktop/UserAccount/accountSectionOption.module.css"
-import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerUserAccount";
+import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerGlobal";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useEffect, useState} from "react";

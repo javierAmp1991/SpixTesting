@@ -3,7 +3,6 @@
     font-weight: 400;
     color: var(--colorTitlesDesktop);
     margin-bottom: 3px;
-    display: grid;
 }
 
 .gridRatingStar {

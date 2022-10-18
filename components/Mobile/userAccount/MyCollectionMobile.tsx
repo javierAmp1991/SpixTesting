@@ -231,7 +231,7 @@ const list: EventCardWishList[] = [
 ]
 
 const titleSection: string = "Mi coleccion"
-const subtitleSection: string = "El coleccionista que le vende a rick harrison"
+const subtitleSection: string = "Estos son los eventos a los que haz asistido"
 export default function MyCollectionMobile() {
     let [controlScroll, setControlScroll] = useState(1)
     let [listWishList, setListWishList] = useState(tesetAdd)

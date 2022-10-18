@@ -1,5 +1,7 @@
 import {createContext, useEffect, useState} from "react";
 import {GlobalConst} from "../../public/globalConst";
+import {Ca} from "react-flags-select";
+import {EventCArdMyCollection, EventCardType, EventCardWishList} from "../../dataDemo/EventView/eventVerticalView";
 
 export class AccountSections {
     Id: string
@@ -188,6 +190,14 @@ export class VerificationAccountEdit extends AccountSecurityEdit {
 export class ProviderAcctounSecurityEdit {
     ListEditItems: AccountSecurityEdit[]
     ListVerificacionItems: VerificationAccountEdit[]
+}
+
+export class ProviderDashBoard {
+    CalendarItem: CalendarDay[]
+    WishListItems: EventCardWishList[]
+    MyCollectionItems: EventCArdMyCollection[]
+    MyShoppingItems: MyShoppingItem[]
+    MyRefundsItems: MyRefundsItem[]
 }
 
 const listAccountSecurity: AccountSecurityEdit[] = [
@@ -1203,6 +1213,407 @@ const listItems: CalendarDay[] = [
     }
 ]
 
+const listCalendarDashBoard: CalendarDay[] = [
+    {
+        Id: "item8",
+        ThisDate: new Date(2022, 9, 3),
+        Activities: null
+    },
+    {
+        Id: "item9",
+        ThisDate: new Date(2022, 9, 4),
+        Activities: null
+    },
+    {
+        Id: "item10",
+        ThisDate: new Date(2022, 9, 5),
+        Activities: null
+    },
+    {
+        Id: "item11",
+        ThisDate: new Date(2022, 9, 6),
+        Activities: dailyActivitie3,
+        State: false
+    },
+    {
+        Id: "item12",
+        ThisDate: new Date(2022, 9, 7),
+        Activities: null
+    },
+    {
+        Id: "item13",
+        ThisDate: new Date(2022, 9, 8),
+        Activities: null
+    },
+    {
+        Id: "item14",
+        ThisDate: new Date(2022, 9, 28),
+        Activities: dailyActivitie4,
+        State: false
+    },
+]
+const listWishLostDashBoard: EventCardWishList[] = [
+    {
+        Id: "123456",
+        Type: EventCardType.EventCardWishList,
+        Title: "Restaurant Cinzano para cada momento del dia entonces",
+        Subtitle: "Cinzano",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/cinzano.jpg",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+    },
+    {
+        Id: "1234567",
+        Title: "WOO! Club",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 9990,
+        PathImage: "/images/Woo.png",
+        Type: EventCardType.EventCardWishList,
+        Subtitle: "WOO! Club",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+    {
+        Id: "12345678",
+        Title: "Black Phone",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/blackphone.png",
+        Type: EventCardType.EventCardWishList,
+        Subtitle: "Black Phone",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+/*    {
+        Id: "123456789",
+        Title: "Terraza Bellavista",
+        Rating: 300,
+        TotalTickets: 10000,
+        SoldTickets: 9990,
+        PathImage: "/images/terrraza1.png",
+        Type: EventCardType.EventCardWishList,
+        Subtitle: "Terraza Bellavista",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+    {
+        Id: "1234567890",
+        Title: "Marco Polo",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 3000,
+        PathImage: "/images/marcoPolo.png",
+        Type: EventCardType.EventCardWishList,
+        Subtitle: "Marco Polo",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+    {
+        Id: "12345678901",
+        Title: "Bar Civico",
+        Rating: 300,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/Civico.png",
+        Type: EventCardType.EventCardWishList,
+        Subtitle: "Bar Civico",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },*/
+]
+const listMyCollectionDashBoard: EventCArdMyCollection[] = [
+/*    {
+        Id: "123456",
+        Type: EventCardType.EventCardMyCollection,
+        Title: "Restaurant Cinzano para cada momento del dia entonces",
+        Subtitle: "Cinzano",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/cinzano.jpg",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+    },
+    {
+        Id: "1234567",
+        Title: "WOO! Club",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 9990,
+        PathImage: "/images/Woo.png",
+        Type: EventCardType.EventCardMyCollection,
+        Subtitle: "WOO! Club",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+    {
+        Id: "12345678",
+        Title: "Black Phone",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/blackphone.png",
+        Type: EventCardType.EventCardMyCollection,
+        Subtitle: "Black Phone",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },*/
+    {
+        Id: "123456789",
+        Title: "Terraza Bellavista",
+        Rating: 300,
+        TotalTickets: 10000,
+        SoldTickets: 9990,
+        PathImage: "/images/terrraza1.png",
+        Type: EventCardType.EventCardMyCollection,
+        Subtitle: "Terraza Bellavista",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+    {
+        Id: "1234567890",
+        Title: "Marco Polo",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 3000,
+        PathImage: "/images/marcoPolo.png",
+        Type: EventCardType.EventCardMyCollection,
+        Subtitle: "Marco Polo",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+    {
+        Id: "12345678901",
+        Title: "Bar Civico",
+        Rating: 300,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/Civico.png",
+        Type: EventCardType.EventCardMyCollection,
+        Subtitle: "Bar Civico",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+
+    },
+]
+const listMyShoppingDashBoard: MyShoppingItem[] = [
+    {
+        Id: "myShoppingItem1",
+        Date: new Date(2022, 10, 20),
+        Name: "Six Pack Corona",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem2",
+        Date: new Date(2022, 10, 20),
+        Name: "Hamburguesa",
+        Sites: "SabaWoo",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem3",
+        Date: new Date(2022, 10, 20),
+        Name: "Cheese Burger",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 9990
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Name: "Mojito Frambuesa",
+        Sites: "Cinzano",
+        Amount: 1,
+        Price: 12990
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Name: "Entrada Top Gun",
+        Sites: "Top Gun Maverick",
+        Amount: 1,
+        Price: 19990
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Name: "Entrada Minions",
+        Sites: "Minions nace un villano",
+        Amount: 1,
+        Price: 4990
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Name: "Tabla de Sushi",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 21990
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Name: "Jugo de naranja",
+        Sites: "Terraza",
+        Amount: 1,
+        Price: 3990
+    },
+]
+const listMyRefundsDashBoard: MyRefundsItem[] = [
+    {
+        Id: "myRefundItem1",
+        Date: new Date(2022, 10, 20),
+        Product: "Six Pack Corona",
+        Site: "SabaWoo",
+        Amount: 9990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myRefundItem2",
+        Date: new Date(2022, 10, 20),
+        Product: "Hamburguesa",
+        Site: "SabaWoo",
+        Amount: 12990,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myRefundItem3",
+        Date: new Date(2022, 10, 20),
+        Product: "Cheese Burger",
+        Site: "Cinzano",
+        Amount: 9990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem4",
+        Date: new Date(2022, 10, 20),
+        Product: "Mojito Frambuesa",
+        Site: "Cinzano",
+        Amount: 12990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem5",
+        Date: new Date(2022, 10, 20),
+        Product: "Entrada Top Gun",
+        Site: "Top Gun Maverick",
+        Amount: 19990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem6",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Minions",
+        Site: "Minions nace un villano",
+        Amount: 4990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem7",
+        Date: new Date(2022, 10, 26),
+        Product: "Tabla de Sushi",
+        Site: "Terraza",
+        Amount: 21990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem8",
+        Date: new Date(2022, 10, 26),
+        Product: "Jugo de naranja",
+        Site: "Terraza",
+        Amount: 3990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+/*    {
+        Id: "myShoppingItem9",
+        Date: new Date(2022, 10, 26),
+        Product: "Entrada Vip",
+        Site: "Tributo a PetShop Boys",
+        Amount: 8990,
+        Motive: null,
+        State: StateMyRefund.Aprobed
+    },
+    {
+        Id: "myShoppingItem10",
+        Date: new Date(2022, 10, 26),
+        Product: "Mani Japones",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem11",
+        Date: new Date(2022, 10, 28),
+        Product: "Coca-Cola",
+        Site: "Terraza",
+        Amount: 1990,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem12",
+        Date: new Date(2022, 10, 28),
+        Product: "Curso Trading",
+        Site: "Franco SA",
+        Amount: 120000,
+        Motive: "motivo para rechazar",
+        State: StateMyRefund.Refused
+    },
+    {
+        Id: "myShoppingItem13",
+        Date: new Date(2022, 10, 28),
+        Product: "Entrada Palco Sur",
+        Site: "Tributo a PetShop Boys",
+        Amount: 15990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem14",
+        Date: new Date(2022, 10, 28),
+        Product: "Papas Lays",
+        Site: "El huevo",
+        Amount: 3990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },
+    {
+        Id: "myShoppingItem15",
+        Date: new Date(2022, 10, 28),
+        Product: "Cerveza Escudo",
+        Site: "Cinzano",
+        Amount: 7990,
+        Motive: null,
+        State: StateMyRefund.Waiting
+    },*/
+]
+
 const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection7",
@@ -1344,7 +1755,7 @@ export const CalendarContext = createContext(null)
 export const MyShoppingContext = createContext(null)
 export const MyRefundsContext = createContext(null)
 export const AccountSecurityContext = createContext(null)
-export const DateSelectedContext = createContext(null)
+export const DashBoardContext = createContext(null)
 
 export default function ProviderUserAccount({children}) {
 
@@ -1522,6 +1933,14 @@ export default function ProviderUserAccount({children}) {
         ListMoths: listMonth,
         ListYears: listYears
     }
+
+    let providerDashBoard: ProviderDashBoard = {
+        CalendarItem: listCalendarDashBoard,
+        WishListItems: listWishLostDashBoard,
+        MyCollectionItems: listMyCollectionDashBoard,
+        MyShoppingItems: listMyShoppingDashBoard,
+        MyRefundsItems: listMyRefundsDashBoard
+    }
     //endregion
 
     return (
@@ -1530,7 +1949,9 @@ export default function ProviderUserAccount({children}) {
                 <MyShoppingContext.Provider value={providerMyShopping}>
                     <MyRefundsContext.Provider value={providerMyRefunds}>
                         <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
-                            {children}
+                            <DashBoardContext.Provider value={providerDashBoard}>
+                                {children}
+                            </DashBoardContext.Provider>
                         </AccountSecurityContext.Provider>
                     </MyRefundsContext.Provider>
                 </MyShoppingContext.Provider>

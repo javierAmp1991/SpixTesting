@@ -1,13 +1,13 @@
 import style from "/styles/Desktop/UserAccount/myCollection.module.css"
 import {useRef, useState} from "react";
 import EventVerticalView from "../EventsView/eventVerticalView";
-import {EventCardType, EventCardWishList} from "../../../dataDemo/EventView/eventVerticalView";
+import {EventCArdMyCollection, EventCardType, EventCardWishList} from "../../../dataDemo/EventView/eventVerticalView";
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
 import item = PrincipalFeaturedSearch.item;
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 
-const tesetAdd: EventCardWishList[] = [
+const tesetAdd: EventCArdMyCollection[] = [
     {
         Id: "123456",
         Type: EventCardType.EventCardMyCollection,
@@ -233,7 +233,7 @@ const list: EventCardWishList[] = [
 ]
 
 const titleSection: string = "Mi coleccion"
-const subtitleSection: string = "El coleccionista que le vende a rick harrison"
+const subtitleSection: string = "Estos son los eventos a los que haz asistido"
 export default function MyCollection() {
     let [controlScroll, setControlScroll] = useState(1)
     let [listWishList, setListWishList] = useState(tesetAdd)

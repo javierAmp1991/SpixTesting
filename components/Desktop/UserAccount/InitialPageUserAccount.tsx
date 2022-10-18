@@ -1,6 +1,6 @@
 import style from "/styles/Desktop/UserAccount/initialPage.module.css"
 import MyShopping from "./myShopping";
-import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerUserAccount";
+import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import Calendar from "./calendar";
 import MyRefunds from "./myRefunds";
@@ -9,6 +9,7 @@ import EditProfile from "./editProfile";
 import AccountAndSecurity from "./accountAndSecurity";
 import WishList from "./WishList";
 import MyCollection from "./MyCollection";
+import Dashboard from "./dashboard";
 
 
 export default function InitialPageUserAccount() {
@@ -53,6 +54,10 @@ export default function InitialPageUserAccount() {
                         <div>
                             En construccion
                         </div>
+                    }
+                    {
+                        providerSection.SectionSelected == MenuUserAccount.Dashboard &&
+                        <Dashboard/>
                     }
                 </div>
             </div>

@@ -9,7 +9,8 @@ export enum MenuUserAccount {
     AccountSecurity,
     Refund,
     WishList,
-    MyCollection
+    Dashboard,
+    MyCollection,
 }
 export class AccountSections {
     Id: string
@@ -23,6 +24,7 @@ export class ProviderAccountSections {
     SectionSelected: MenuUserAccount
     SelectSection: Function
 }
+
 const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection7",
@@ -80,13 +82,20 @@ const listConfigSection: AccountSections[] = [
         Name: "Reembolsos",
         PathImage: GlobalConst.sourceImages.refundIcon,
     },
+    {
+        Id: "idConfigSection9",
+        Type: MenuUserAccount.Dashboard,
+        State: false,
+        Name: "Dashboard",
+        PathImage: GlobalConst.sourceImages.refundIcon,
+    }
 ]
 
 export const AccountSectionContext = createContext(null)
 
 export default function ProviderGlobal({children}) {
     let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
-    let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Calendar)
+    let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Dashboard)
     const handleSectionSelected = (id: string) => {
         let newSectionSelected = sectionSelected.map(item => {
             if (item.Id == id) {
