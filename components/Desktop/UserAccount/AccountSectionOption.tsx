@@ -1,12 +1,17 @@
 import style from "/styles/Desktop/UserAccount/accountSectionOption.module.css"
-import {AccountSections, ProviderAccountSections, AccountSectionContext} from "../../Providers/providerGlobal";
+import {
+    AccountSections,
+    ProviderAccountSections,
+    AccountSectionContext,
+    MenuUserAccount
+} from "../../Providers/providerGlobal";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useEffect, useState} from "react";
 
 export default function AccountSectionOption({item}: { item: AccountSections }) {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
-    const handleSelectSection = (id: string) => {
+    const handleSelectSection = (id: MenuUserAccount) => {
         accountSectionContext.SelectSection(id)
     }
     let [stateMyBussines, setStateMyBussines] = useState(false)
@@ -21,7 +26,7 @@ export default function AccountSectionOption({item}: { item: AccountSections }) 
     return (
         item.Name == "Mi Negocio" ?
             <>
-                <button onClick={() => handleSelectSection(item.Id)}
+                <button onClick={() => handleSelectSection(item.Type)}
                         className={item.State ? style.mainDivSelected : style.mainDiv}>
                     <div className={style.sizeImage}>
                         <Image layout={"fill"} src={item.PathImage}/>
@@ -64,7 +69,7 @@ export default function AccountSectionOption({item}: { item: AccountSections }) 
 
             </>
             :
-            <button onClick={() => handleSelectSection(item.Id)}
+            <button onClick={() => handleSelectSection(item.Type)}
                     className={item.State ? style.mainDivSelected : style.mainDiv}>
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} src={item.PathImage}/>

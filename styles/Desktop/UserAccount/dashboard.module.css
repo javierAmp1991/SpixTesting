@@ -16,7 +16,7 @@
 .gridLeftRighSpace {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
-    gap: 32px;
+    gap: 16px;
     height: 100%;
     overflow: scroll;
     padding: 12px;
@@ -52,6 +52,7 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 1px;
+    width: 100%;
 }
 
 .dayOfWeek {

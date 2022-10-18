@@ -1,13 +1,11 @@
 import style from "/styles/Desktop/UserAccount/dashboard.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {DashBoardContext, ProviderDashBoard, StateMyRefund} from "../../Providers/providerUserAccount";
-import {ProviderAccountSections, AccountSectionContext, MenuUserAccount} from "../../Providers/providerGlobal";
+import {DashBoardContext, ProviderDashBoard} from "../../Providers/providerUserAccount";
+import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
-import utilities from "/styles/utilities.module.css";
 import EventVerticalView from "../EventsView/eventVerticalView";
 import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
 import EditProfileSection from "./editProfileSection";
 
 const titleSection: string = "Dashboard"
@@ -17,7 +15,7 @@ export default function Dashboard() {
     const actualDate: Date = new Date()
     const dashboardContext: ProviderDashBoard = useContext(DashBoardContext)
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
-    const handleCalendar = () => accountSectionContext.SelectSection(MenuUserAccount.Calendar)
+    const handleOption = (type: MenuUserAccount) => accountSectionContext.SelectSection(type)
     return (
         <div className={style.mainDiv}>
             {/*            <div className={style.mainDivTitle}>
@@ -33,9 +31,11 @@ export default function Dashboard() {
                     <div className={style.calendarSection}>
                         <div className={style.headerSection}>
                             <div>Tienes <b>{getActivities()} actividades </b> esta semana!</div>
-                            <button className={style.seeMore}>Ver todas</button>
+                            <button onClick={() => handleOption(MenuUserAccount.Calendar)} className={style.seeMore}>Ver
+                                todas
+                            </button>
                         </div>
-                        <div className={style.gridCalendar}>
+                        <button onClick={() => handleOption(MenuUserAccount.Calendar)} className={style.gridCalendar}>
                             {
                                 dayOfWeek.map(item =>
                                     <div key={item} className={style.dayOfWeek}>
@@ -46,7 +46,7 @@ export default function Dashboard() {
                             {
                                 dashboardContext.CalendarItem.map((item, index) =>
                                     item.Activities != null ?
-                                        <button key={item.Id}
+                                        <div  key={item.Id}
                                                 className={item.ThisDate.getMonth() == actualDate.getMonth() ?
                                                     item.State ? style.divDateSelected : style.divDate : style.divDateEmpty}>
                                             {
@@ -76,7 +76,7 @@ export default function Dashboard() {
                                                     }
                                                 </>
                                             }
-                                        </button>
+                                        </div>
                                         :
                                         <div key={item.Id}
                                              className={item.ThisDate.getMonth() == actualDate.getMonth() ? style.divDate : style.divDateEmpty}>
@@ -111,13 +111,13 @@ export default function Dashboard() {
                                 )
                             }
 
-                        </div>
+                        </button>
                     </div>
 
                     <div className={style.mainDivWishList}>
                         <div className={style.headerSection}>
                             <div>Wishlist</div>
-                            <button className={style.seeMore}>Ver lista</button>
+                            <button onClick={() => handleOption(MenuUserAccount.WishList)} className={style.seeMore}>Ver lista</button>
                         </div>
                         <div className={style.wishListSection}>
                             {
@@ -131,7 +131,7 @@ export default function Dashboard() {
                     <div className={style.mainDivCollection}>
                         <div className={style.headerSection}>
                             <div>Mi Coleccion</div>
-                            <button className={style.seeMore}>Ver coleccion</button>
+                            <button onClick={() => handleOption(MenuUserAccount.MyCollection)} className={style.seeMore}>Ver coleccion</button>
                         </div>
                         <div className={style.collectionSection}>
                             {
@@ -165,9 +165,9 @@ export default function Dashboard() {
                                 )
                             }
                         </div>
-                        <div className={style.styleLink}>
+                        <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.styleLink}>
                             Todas mis compras
-                        </div>
+                        </button>
                     </div>
                     {/* <div className={style.refundSection}>
                         <div className={style.titleLeft}>

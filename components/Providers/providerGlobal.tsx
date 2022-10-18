@@ -31,7 +31,7 @@ const listConfigSection: AccountSections[] = [
         Type: MenuUserAccount.Dashboard,
         State: false,
         Name: "Dashboard",
-        PathImage: GlobalConst.sourceImages.refundIcon,
+        PathImage: GlobalConst.sourceImages.dashboardIcon,
     },
     {
         Id: "idConfigSection7",
@@ -96,9 +96,9 @@ export const AccountSectionContext = createContext(null)
 export default function ProviderGlobal({children}) {
     let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Dashboard)
-    const handleSectionSelected = (id: string) => {
+    const handleSectionSelected = (menuType: MenuUserAccount) => {
         let newSectionSelected = sectionSelected.map(item => {
-            if (item.Id == id) {
+            if (item.Type == menuType) {
                 setSectionSelectedNavMenu(sectionSelectedNavMenu = item.Type)
                 return {...item, State: true}
             } else return {...item, State: false}
