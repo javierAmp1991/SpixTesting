@@ -43,7 +43,7 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                         delay={1000}
                         onScan={handleScanning}
                         onError={handleError}
-                        facingMode={facingMode}/>
+                        facingMode={"Front"}/>
                 </div>
                 <button onClick={handleVista}>
                     {facingMode}

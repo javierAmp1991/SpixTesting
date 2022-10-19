@@ -3,7 +3,6 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useState} from 'react'
 import QrReader from 'react-qr-scanner'
-import Link from "next/link";
 
 const titleSection: string = "Escanear Codigo QR"
 
@@ -43,7 +42,7 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
                     <QrReader delay={1000}
                               onScan={handleScanning}
                               onError={handleError}
-                              facingMode={facingMode}/>
+                              facingMode={"Front"}/>
                 </div>
 
                 <button onClick={handleVista}>
