@@ -34,17 +34,10 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                     <div className={style.title}>
                         {titleSection}
                     </div>
-                    {
-                        isOpenScanning ?
-                            <QrReader
-                                delay={1000}
-                                onScan={handleScanning}
-                                onError={handleError}/>
-                            :
-                            <button onClick={handleOpenScanning} className={style.sizePlaceholderImage}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.codigoQr}/>
-                            </button>
-                    }
+                    <QrReader
+                        delay={1000}
+                        onScan={handleScanning}
+                        onError={handleError}/>
                 </div>
             </div>
         </div>

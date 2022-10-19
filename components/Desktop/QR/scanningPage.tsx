@@ -35,19 +35,9 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
                     <div className={style.title}>
                         {titleSection}
                     </div>
-                    <Link href={resultScanning}>
-                        <a>{resultScanning}</a>
-                    </Link>
-                    {
-                        isOpenScanning ?
-                            <QrReader delay={1000}
-                                      onScan={handleScanning}
-                                      onError={handleError}/>
-                            :
-                            <button onClick={handleOpenScanning} className={style.sizePlaceholderImage}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.codigoQr}/>
-                            </button>
-                    }
+                    <QrReader delay={1000}
+                              onScan={handleScanning}
+                              onError={handleError}/>
                 </div>
             </div>
         </div>

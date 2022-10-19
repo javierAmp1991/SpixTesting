@@ -4,17 +4,20 @@ import {ShoppingData, ShoppingDataContext} from "../../Providers/providerQrPage"
 import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ProductViewSquare from "../Misc/productViewSquare";
 import {Product} from "../../../dataDemo/data";
+import utilities from "/styles/utilities.module.css";
 
 const titleSection: string = "Datos de la compra"
-const sections: string[] = ["Producto", "Cantidad", "Valor", "Ver Producto"]
+const sections: string[] = ["Producto/Cantidad", "Valor", "Imagen"]
 const numberShopping: string = "Numero de compra: N°"
 const payMethod: string = "Metodo de Pago:"
 const userName: string = "Nombre de usuario:"
 const dateShopping: string = "Fecha de compra:"
 const siteShopping: string = "Sito:"
 const total: string = "Total: $"
+const returnButton: string = "Volver"
 
-export default function ScanningDataMobile() {
+
+export default function ScanningDataMobile({returnFunction} : {returnFunction: Function}) {
     const shoppingData: ShoppingData = useContext(ShoppingDataContext)
     let [productSelected, setProductSelected] = useState(null)
     let [displayPopUp, setDisplayPopUp] = useState(false)
@@ -23,10 +26,11 @@ export default function ScanningDataMobile() {
         setProductSelected(productSelected = item)
         handlePopUp()
     }
+    const handleReturn = ()=> returnFunction()
     return (
         <div className={style.backGroundBlue}>
             <div className={style.mainDiv}>
-               {/* <div className={style.divLogo}>
+                {/* <div className={style.divLogo}>
                     <div className={style.sizeLogo}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.spixBlue} alt={""}/>
                     </div>
@@ -43,14 +47,14 @@ export default function ScanningDataMobile() {
                             {shoppingData.Number}
                         </div>
                     </div>
-                    <div className={style.apartInfo}>
+                   {/* <div className={style.apartInfo}>
                         <div className={style.apart}>
                             {payMethod}
                         </div>
                         <div className={style.info}>
                             {shoppingData.TypePay}
                         </div>
-                    </div>
+                    </div>*/}
                     <div className={style.apartInfo}>
                         <div className={style.apart}>
                             {userName}
@@ -64,7 +68,7 @@ export default function ScanningDataMobile() {
                             {dateShopping}
                         </div>
                         <div className={style.info}>
-                            {shoppingData.Date.toDateString()}
+                            {shoppingData.Date.toLocaleDateString()}
                         </div>
                     </div>
                     <div className={style.apartInfo}>
@@ -74,6 +78,9 @@ export default function ScanningDataMobile() {
                         <div className={style.info}>
                             {shoppingData.Site}
                         </div>
+                    </div>
+                    <div className={style.total}>
+                        {total}{getMoneyValue(getTotal())}
                     </div>
                     <div className={style.mainDivTable}>
                         <div className={style.headerTable}>
@@ -88,8 +95,10 @@ export default function ScanningDataMobile() {
                             {
                                 shoppingData.Products.map(item =>
                                     <>
-                                        <div className={style.item}>{item.Product.Name}</div>
-                                        <div className={style.item}>{item.Amount}</div>
+                                        <div className={style.gridProAmount}>
+                                            <div className={`${style.item} ${utilities.clamp1}`}>{item.Product.Name}</div>
+                                            <div className={style.item}>X {item.Amount}</div>
+                                        </div>
                                         <div className={style.item}>
                                             ${getMoneyValue(item.Amount * item.Product.Price)}
                                         </div>
@@ -101,15 +110,16 @@ export default function ScanningDataMobile() {
                             }
                         </div>
                     </div>
-                    <div className={style.total}>
-                        {total}{getMoneyValue(getTotal())}
-                    </div>
+
                 </div>
+                <button onClick={handleReturn} className={style.buttonReturn}>
+                    {returnButton}
+                </button>
             </div>
             {
                 displayPopUp &&
                 <PopUpContainerMob closePopUp={handlePopUp} isButtonVisible={false} isBackground={true}>
-                        <ProductViewSquare item={productSelected} size={null} isDisplayOffer={true}/>
+                    <ProductViewSquare item={productSelected} size={null} isDisplayOffer={true}/>
                 </PopUpContainerMob>
             }
         </div>

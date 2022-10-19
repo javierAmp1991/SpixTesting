@@ -61,7 +61,7 @@
 
 .gridTable{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr repeat(2, max-content);
     background: #dcdcdc;
     gap: 1px;
 }
@@ -81,16 +81,15 @@
 }
 
 .section{
-    padding: 4px 0;
+    padding: 4px 10px;
     text-align: center;
     background: #fafafa;
     color: var(--colorTitlesDesktop);
 }
 
 .item{
-    padding: 4px 0;
+    padding: 4px 10px;
     background: white;
-    text-align: center;
     color: var(--colorPrimaryTextDesktop);
 }
 
@@ -102,4 +101,19 @@
 .styleLink{
     color: var(--linkColor);
     background: white;
+}
+
+.gridProAmount{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+}
+
+.buttonReturn{
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 8px 32px;
+    margin: auto;
+    border-radius: 4px;
+    overflow: hidden;
 }

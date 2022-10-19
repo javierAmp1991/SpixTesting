@@ -8,15 +8,16 @@ import ProductViewSquare from "../Misc/productViewSquare";
 import {Product} from "../../../dataDemo/data";
 
 const titleSection: string = "Datos de la compra"
-const sections: string[] = ["Producto", "Cantidad", "Valor", "Ver Producto"]
+const sections: string[] = ["Producto", "Cantidad", "Valor", "Imagen"]
 const numberShopping: string = "Numero de compra: N°"
 const payMethod: string = "Metodo de Pago:"
 const userName: string = "Nombre de usuario:"
 const dateShopping: string = "Fecha de compra:"
 const siteShopping: string = "Sito:"
 const total: string = "Total: $"
+const returnButton: string = "Volver"
 
-export default function ScanningData() {
+export default function ScanningData({returnFunction} : {returnFunction: Function}) {
     const shoppingData: ShoppingData = useContext(ShoppingDataContext)
     let [productSelected, setProductSelected] = useState(null)
     let [displayPopUp, setDisplayPopUp] = useState(false)
@@ -25,6 +26,7 @@ export default function ScanningData() {
         setProductSelected(productSelected = item)
         handlePopUp()
     }
+    const handleReturn = ()=> returnFunction()
     return (
         <div className={style.backGroundBlue}>
             <div className={style.mainDiv}>
@@ -45,14 +47,14 @@ export default function ScanningData() {
                             {shoppingData.Number}
                         </div>
                     </div>
-                    <div className={style.apartInfo}>
+                    {/*<div className={style.apartInfo}>
                         <div className={style.apart}>
                             {payMethod}
                         </div>
                         <div className={style.info}>
                             {shoppingData.TypePay}
                         </div>
-                    </div>
+                    </div>*/}
                     <div className={style.apartInfo}>
                         <div className={style.apart}>
                             {userName}
@@ -66,7 +68,7 @@ export default function ScanningData() {
                             {dateShopping}
                         </div>
                         <div className={style.info}>
-                            {shoppingData.Date.toDateString()}
+                            {shoppingData.Date.toLocaleDateString()}
                         </div>
                     </div>
                     <div className={style.apartInfo}>
@@ -106,6 +108,9 @@ export default function ScanningData() {
                             }
                         </div>
                     </div>
+                    <button onClick={handleReturn} className={style.buttonReturn}>
+                        {returnButton}
+                    </button>
                 </div>
             </div>
             {
