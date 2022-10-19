@@ -28,11 +28,11 @@ export default function ScanningData() {
     return (
         <div className={style.backGroundBlue}>
             <div className={style.mainDiv}>
-               {/* <div className={style.divLogo}>
+                <div className={style.divLogo}>
                     <div className={style.sizeLogo}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.spixBlue} alt={""}/>
                     </div>
-                </div>*/}
+                </div>
                 <div className={style.mainDivInfo}>
                     <div className={style.title}>
                         {titleSection}
@@ -77,6 +77,9 @@ export default function ScanningData() {
                             {shoppingData.Site}
                         </div>
                     </div>
+                    <div className={style.total}>
+                        {total}{getMoneyValue(getTotal())}
+                    </div>
                     <div className={style.mainDivTable}>
                         <div className={style.headerTable}>
                             Productos:
@@ -103,15 +106,12 @@ export default function ScanningData() {
                             }
                         </div>
                     </div>
-                    <div className={style.total}>
-                        {total}{getMoneyValue(getTotal())}
-                    </div>
                 </div>
             </div>
             {
                 displayPopUp &&
                 <PopUpContainer closePopUp={handlePopUp} isButtonVisible={false} isBackground={true}>
-                        <ProductViewSquare item={productSelected} size={null} isDisplayOffer={true}/>
+                    <ProductViewSquare item={productSelected} size={null} isDisplayOffer={true}/>
                 </PopUpContainer>
             }
         </div>
