@@ -9,7 +9,18 @@ const titleSection: string = "Escanear Codigo QR"
 export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Function }) {
     let [isOpenScanning, setIsOpenScanning] = useState(false)
     const handleOpenScanning = () => setIsOpenScanning(isOpenScanning = !isOpenScanning)
-    const handleScanning = () => scanningFunc()
+    let [resultScanning, setResultScanning] = useState(null)
+    const handleScanning = (e) => {
+        if (e != null) {
+            handleOpenScanning()
+            setResultScanning(resultScanning = e.text)
+            scanningFunc()
+        }
+    }
+    const handleError = ()=>{
+        handleOpenScanning()
+        setResultScanning("Error")
+    }
 
     return (
         <div className={style.backGroundBlue}>
@@ -25,7 +36,10 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                     </div>
                     {
                         isOpenScanning ?
-                            <QrReader/>
+                            <QrReader
+                                delay={1000}
+                                onScan={handleScanning}
+                                onError={handleError}/>
                             :
                             <button onClick={handleOpenScanning} className={style.sizePlaceholderImage}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.codigoQr}/>
