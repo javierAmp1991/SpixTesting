@@ -11,6 +11,11 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
     let [isOpenScanning, setIsOpenScanning] = useState(false)
     const handleOpenScanning = () => setIsOpenScanning(isOpenScanning = !isOpenScanning)
     let [resultScanning, setResultScanning] = useState(null)
+    let [facingMode, setFacingMode] = useState("front")
+    const handleVista = () => {
+        if (facingMode == "front") setFacingMode(facingMode = "rear")
+        else setFacingMode(facingMode = "front")
+    }
     const handleScanning = (e) => {
         if (e != null) {
             handleOpenScanning()
@@ -37,8 +42,13 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
                     </div>
                     <QrReader delay={1000}
                               onScan={handleScanning}
-                              onError={handleError}/>
+                              onError={handleError}
+                              facingMode={facingMode}/>
                 </div>
+
+                <button onClick={handleVista}>
+                    {facingMode}
+                </button>
             </div>
         </div>
     )
