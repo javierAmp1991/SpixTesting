@@ -61,20 +61,20 @@
     color: var(--colorPrimaryTextDesktop);
 }
 
-.gridTable{
+.gridTable {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr repeat(2, max-content);
     background: #dcdcdc;
     gap: 1px;
 }
 
-.mainDivTable{
-    box-shadow: 0 0 3px rgba(0,0,0,.2);
+.mainDivTable {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     border-radius: 8px;
     overflow: scroll;
 }
 
-.headerTable{
+.headerTable {
     background: var(--gradientHeaderUserAccount);
     padding: 8px;
     color: white;
@@ -82,31 +82,43 @@
     font-weight: 500;
 }
 
-.section{
-    padding: 4px 0;
+.section {
     text-align: center;
+    padding: 4px 10px;
     background: #fafafa;
     color: var(--colorTitlesDesktop);
 }
 
-.item{
-    padding: 4px 0;
-    background: white;
+.item {
     text-align: center;
+    padding: 4px 10px;
+    background: white;
     color: var(--colorPrimaryTextDesktop);
 }
 
-.total{
+.itemProdAmount {
+    padding: 4px 10px;
+    background: white;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.total {
     font-size: 18px;
     font-weight: 500;
 }
 
-.styleLink{
+.gridProAmount {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+}
+
+.styleLink {
     color: var(--linkColor);
     background: white;
 }
 
-.buttonReturn{
+.buttonReturn {
     background: var(--gradientBlueButton);
     color: white;
     padding: 8px 32px;

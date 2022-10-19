@@ -96,7 +96,7 @@ export default function ScanningDataMobile({returnFunction} : {returnFunction: F
                                 shoppingData.Products.map(item =>
                                     <>
                                         <div className={style.gridProAmount}>
-                                            <div className={`${style.item} ${utilities.clamp1}`}>{item.Product.Name}</div>
+                                            <div className={`${style.itemProdAmount} ${utilities.clamp1}`}>{item.Product.Name}</div>
                                             <div className={style.item}>X {item.Amount}</div>
                                         </div>
                                         <div className={style.item}>

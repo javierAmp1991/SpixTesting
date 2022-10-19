@@ -88,6 +88,13 @@
 }
 
 .item{
+    text-align: center;
+    padding: 4px 10px;
+    background: white;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.itemProdAmount {
     padding: 4px 10px;
     background: white;
     color: var(--colorPrimaryTextDesktop);

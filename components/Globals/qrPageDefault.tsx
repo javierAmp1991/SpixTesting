@@ -24,7 +24,7 @@ export default function QrPageDefault() {
                         <PasswordScanPageMobile passwordFunc={handleStatePassword}/>
                         :
                         isScanDone ?
-                            <ScanningDataMobile/>
+                            <ScanningDataMobile returnFunction={handleIsScanDonw}/>
                             :
                             <ScanningPageMobile scanningFunc={handleIsScanDonw}/>
                 }
