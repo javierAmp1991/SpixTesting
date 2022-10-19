@@ -43,7 +43,9 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
                             <QrReader delay={1000}
                                       onScan={handleScanning}
                                       onError={handleError}
-                                      facingMode={"front"}/>
+                                      constraints={{
+                                          facingMode: "rear"
+                                      }}/>
                             :
                             <button onClick={handleOpenScanning} className={style.sizePlaceholderImage}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.codigoQr}/>
