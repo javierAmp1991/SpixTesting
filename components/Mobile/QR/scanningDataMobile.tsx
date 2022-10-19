@@ -1,9 +1,7 @@
-import style from "/styles/Desktop/QR/scanningData.module.css";
-import Image from "next/image";
-import {GlobalConst} from "../../../public/globalConst";
+import style from "/styles/Mobile/QR/scanningData.module.css";
 import {useContext, useState} from "react";
 import {ShoppingData, ShoppingDataContext} from "../../Providers/providerQrPage";
-import PopUpContainer from "../Misc/popUpContainer";
+import PopUpContainerMob from "../Misc/popUpContainerMob";
 import ProductViewSquare from "../Misc/productViewSquare";
 import {Product} from "../../../dataDemo/data";
 
@@ -16,7 +14,7 @@ const dateShopping: string = "Fecha de compra:"
 const siteShopping: string = "Sito:"
 const total: string = "Total: $"
 
-export default function ScanningData() {
+export default function ScanningDataMobile() {
     const shoppingData: ShoppingData = useContext(ShoppingDataContext)
     let [productSelected, setProductSelected] = useState(null)
     let [displayPopUp, setDisplayPopUp] = useState(false)
@@ -110,9 +108,9 @@ export default function ScanningData() {
             </div>
             {
                 displayPopUp &&
-                <PopUpContainer closePopUp={handlePopUp} isButtonVisible={false} isBackground={true}>
+                <PopUpContainerMob closePopUp={handlePopUp} isButtonVisible={false} isBackground={true}>
                         <ProductViewSquare item={productSelected} size={null} isDisplayOffer={true}/>
-                </PopUpContainer>
+                </PopUpContainerMob>
             }
         </div>
     )

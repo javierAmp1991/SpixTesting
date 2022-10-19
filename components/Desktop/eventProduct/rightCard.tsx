@@ -5,7 +5,6 @@ import style from "../../../styles/Desktop/eventProducts/rightCard.module.css"
 import utilities from "../../../styles/utilities.module.css";
 import {Guest} from "../../../pages/eventProducts";
 import PayPageProductSelectedView from "./payPageProductSelectedView";
-import ButtonBlueDesk from "../../Mobile/Misc/buttonBlue";
 import PopUpContainer from "../Misc/popUpContainer";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,7 +12,6 @@ import Link from "next/link";
 const referenceDiv = "referenceDiv"
 const textButton: string = "Comprar"
 const newGuestText: string = "Invitado"
-const idTranslateMobile: string = "idTranslateDiv007asb"
 const initialValue: number = -99999999
 const numDiv = 103
 export default function RightCard({

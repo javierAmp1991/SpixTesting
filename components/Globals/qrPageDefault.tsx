@@ -5,6 +5,9 @@ import PasswordScanPage from "../Desktop/QR/passwordScanPage";
 import {useState} from "react";
 import ScanningPage from "../Desktop/QR/scanningPage";
 import ScanningData from "../Desktop/QR/scanningData";
+import PasswordScanPageMobile from "../Mobile/QR/passwordScanPageMobile";
+import ScanningDataMobile from "../Mobile/QR/scanningDataMobile";
+import ScanningPageMobile from "../Mobile/QR/scanningPageMobile";
 
 export default function QrPageDefault() {
     const isSmallDown = useMediaQuery('(max-width: 1501px)');
@@ -16,9 +19,15 @@ export default function QrPageDefault() {
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>
-                <div>
-
-                </div>
+                {
+                    statePassword ?
+                        <PasswordScanPageMobile passwordFunc={handleStatePassword}/>
+                        :
+                        isScanDone ?
+                            <ScanningDataMobile/>
+                            :
+                            <ScanningPageMobile scanningFunc={handleIsScanDonw}/>
+                }
             </DefaultLayoutMobile>
             :
             <DefaultLayoutDesktop isDarkMode={false} isLogged={false} darkModeToggle={null}>
