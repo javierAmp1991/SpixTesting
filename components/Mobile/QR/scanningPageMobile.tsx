@@ -17,7 +17,7 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
             scanningFunc()
         }
     }
-    const handleError = ()=>{
+    const handleError = () => {
         handleOpenScanning()
         setResultScanning("Error")
     }
@@ -39,7 +39,8 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                             <QrReader
                                 delay={1000}
                                 onScan={handleScanning}
-                                onError={handleError}/>
+                                onError={handleError}
+                                facingMode={"rear"}/>
                             :
                             <button onClick={handleOpenScanning} className={style.sizePlaceholderImage}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.codigoQr}/>
