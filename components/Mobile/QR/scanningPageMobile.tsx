@@ -10,7 +10,7 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
     let [isOpenScanning, setIsOpenScanning] = useState(false)
     const handleOpenScanning = () => setIsOpenScanning(isOpenScanning = !isOpenScanning)
     let [resultScanning, setResultScanning] = useState(null)
-    let [facingMode, setFacingMode] = useState("environment")
+    let [facingMode, setFacingMode] = useState("front")
     const handleVista = () => {
         if (facingMode == "front") setFacingMode(facingMode = "rear")
         else setFacingMode(facingMode = "front")
