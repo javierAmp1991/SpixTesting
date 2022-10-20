@@ -44,7 +44,14 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                         delay={1000}
                         onScan={handleScanning}
                         onError={handleError}
-                        facingMode="rear"/>
+                        facingMode={facingMode}
+                        constraints={
+                            {
+                                video: {
+                                    facingMode: {exact: facingMode}
+                                }
+                            }
+                        }/>
                 </div>
                 <button onClick={handleVista}>
                     {facingMode}
