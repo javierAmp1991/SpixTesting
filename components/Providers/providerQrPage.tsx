@@ -12,6 +12,7 @@ export class ShoppingData {
     User: string
     Date: Date
     Site: string
+    NumberScan: number
     Products: ProductAmount[]
 }
 
@@ -21,6 +22,7 @@ const shoppingData: ShoppingData = {
     User: "Pedro Paulo Perez Paez",
     Date: new Date(2022, 9, 10),
     Site: "Woo Club",
+    NumberScan: 2,
     Products: [
         {
             Amount: 1,

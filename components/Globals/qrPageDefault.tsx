@@ -12,7 +12,7 @@ import ScanningPageMobile from "../Mobile/QR/scanningPageMobile";
 export default function QrPageDefault() {
     const isSmallDown = useMediaQuery('(max-width: 1501px)');
     let [statePassword, setStatePassword] = useState(true)
-    let [isScanDone, setIsScanDone] = useState(false)
+    let [isScanDone, setIsScanDone] = useState(true)
 
     const handleStatePassword = ()=> setStatePassword(statePassword = false)
     const handleIsScanDonw = ()=> setIsScanDone(isScanDone = !isScanDone)

@@ -10,14 +10,16 @@ const titleSection: string = "Datos de la compra"
 const sections: string[] = ["Producto/Cantidad", "Valor", "Imagen"]
 const numberShopping: string = "Numero de compra: N°"
 const payMethod: string = "Metodo de Pago:"
-const userName: string = "Nombre de usuario:"
+const userName: string = "Cliente:"
 const dateShopping: string = "Fecha de compra:"
 const siteShopping: string = "Sito:"
 const total: string = "Total: $"
 const returnButton: string = "Volver"
+const firstScan: string = "Este codigo ha sido escaneado por primera vez"
+const moreScan: string = "Este codigo ya sido escaneado"
 
 
-export default function ScanningDataMobile({returnFunction} : {returnFunction: Function}) {
+export default function ScanningDataMobile({returnFunction}: { returnFunction: Function }) {
     const shoppingData: ShoppingData = useContext(ShoppingDataContext)
     let [productSelected, setProductSelected] = useState(null)
     let [displayPopUp, setDisplayPopUp] = useState(false)
@@ -26,7 +28,7 @@ export default function ScanningDataMobile({returnFunction} : {returnFunction: F
         setProductSelected(productSelected = item)
         handlePopUp()
     }
-    const handleReturn = ()=> returnFunction()
+    const handleReturn = () => returnFunction()
     return (
         <div className={style.backGroundBlue}>
             <div className={style.mainDiv}>
@@ -47,7 +49,7 @@ export default function ScanningDataMobile({returnFunction} : {returnFunction: F
                             {shoppingData.Number}
                         </div>
                     </div>
-                   {/* <div className={style.apartInfo}>
+                    {/* <div className={style.apartInfo}>
                         <div className={style.apart}>
                             {payMethod}
                         </div>
@@ -71,17 +73,15 @@ export default function ScanningDataMobile({returnFunction} : {returnFunction: F
                             {shoppingData.Date.toLocaleDateString()}
                         </div>
                     </div>
-                    <div className={style.apartInfo}>
+                    {/*<div className={style.apartInfo}>
                         <div className={style.apart}>
                             {siteShopping}
                         </div>
                         <div className={style.info}>
                             {shoppingData.Site}
                         </div>
-                    </div>
-                    <div className={style.total}>
-                        {total}{getMoneyValue(getTotal())}
-                    </div>
+                    </div>*/}
+
                     <div className={style.mainDivTable}>
                         <div className={style.headerTable}>
                             Productos:
@@ -96,7 +96,8 @@ export default function ScanningDataMobile({returnFunction} : {returnFunction: F
                                 shoppingData.Products.map(item =>
                                     <>
                                         <div className={style.gridProAmount}>
-                                            <div className={`${style.itemProdAmount} ${utilities.clamp1}`}>{item.Product.Name}</div>
+                                            <div
+                                                className={`${style.itemProdAmount} ${utilities.clamp1}`}>{item.Product.Name}</div>
                                             <div className={style.item}>X {item.Amount}</div>
                                         </div>
                                         <div className={style.item}>
@@ -111,6 +112,15 @@ export default function ScanningDataMobile({returnFunction} : {returnFunction: F
                         </div>
                     </div>
 
+                    <div className={style.total}>
+                        {total}{getMoneyValue(getTotal())}
+                    </div>
+
+                    <div className={shoppingData.NumberScan > 1 ? style.ScanNumberPlus : style.ScanNumber}>
+                        {
+                            shoppingData.NumberScan > 1 ? moreScan : firstScan
+                        }
+                    </div>
                 </div>
                 <button onClick={handleReturn} className={style.buttonReturn}>
                     {returnButton}

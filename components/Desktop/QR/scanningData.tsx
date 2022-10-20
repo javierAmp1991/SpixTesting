@@ -12,11 +12,13 @@ const titleSection: string = "Datos de la compra"
 const sections: string[] = ["Producto/Cantidad", "Valor", "Imagen"]
 const numberShopping: string = "Numero de compra: N°"
 const payMethod: string = "Metodo de Pago:"
-const userName: string = "Nombre de usuario:"
+const userName: string = "Cliente:"
 const dateShopping: string = "Fecha de compra:"
 const siteShopping: string = "Sito:"
 const total: string = "Total: $"
 const returnButton: string = "Volver"
+const firstScan: string = "Este codigo ha sido escaneado por primera vez"
+const moreScan: string = "Este codigo ya sido escaneado"
 
 export default function ScanningData({returnFunction}: { returnFunction: Function }) {
     const shoppingData: ShoppingData = useContext(ShoppingDataContext)
@@ -80,9 +82,7 @@ export default function ScanningData({returnFunction}: { returnFunction: Functio
                             {shoppingData.Site}
                         </div>
                     </div>
-                    <div className={style.total}>
-                        {total}{getMoneyValue(getTotal())}
-                    </div>
+
                     <div className={style.mainDivTable}>
                         <div className={style.headerTable}>
                             Productos:
@@ -111,6 +111,17 @@ export default function ScanningData({returnFunction}: { returnFunction: Functio
                             }
                         </div>
                     </div>
+
+                    <div className={shoppingData.NumberScan > 1 ? style.ScanNumberPlus : style.ScanNumber}>
+                        {
+                            shoppingData.NumberScan > 1 ? moreScan : firstScan
+                        }
+                    </div>
+
+                    <div className={style.total}>
+                        {total}{getMoneyValue(getTotal())}
+                    </div>
+
                     <button onClick={handleReturn} className={style.buttonReturn}>
                         {returnButton}
                     </button>
