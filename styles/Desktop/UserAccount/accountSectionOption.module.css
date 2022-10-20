@@ -47,14 +47,16 @@
     overflow: hidden;
     height: 100%;
     display: grid;
-    transition: .4s;
+    transition: .6s;
+    padding-left: 12px;
 }
 
 .gridSubItemsClose {
     overflow: hidden;
     height: 0;
     display: grid;
-    transition: .4s;
+    transition: .6s;
+    padding-left: 12px ;
 }
 
 @keyframes animationInit {

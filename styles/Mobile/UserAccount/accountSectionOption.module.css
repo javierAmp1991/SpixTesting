@@ -44,6 +44,7 @@
     height: 100%;
     display: grid;
     transition: .4s;
+    padding-left: 12px;
 }
 
 .gridSubItemsClose {
@@ -51,6 +52,7 @@
     height: 0;
     display: grid;
     transition: .4s;
+    padding-left: 12px;
 }
 
 .subItemGrid {
