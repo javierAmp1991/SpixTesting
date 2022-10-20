@@ -4,9 +4,7 @@ import style from "/styles/Desktop/EventPage/eventInformation.module.css"
 import FormView from "../Misc/formView";
 import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
-import LayoutPurpleContainer from "../Layouts/layoutPurpleContainer";
 import Image from "next/image";
-import ButtonBlue from "../Misc/buttonBlue";
 
 const textButton: string = "Comprar Entradas"
 

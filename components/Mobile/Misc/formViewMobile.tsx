@@ -3,23 +3,26 @@ import utilities from "../../../styles/utilities.module.css";
 import style from "/styles/Mobile/Misc/formView.module.css"
 import {fomrLink} from "../../../dataDemo/data";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FormViewMobile({item}: { item: fomrLink }) {
     return (
-        <div className={style.gridForm}>
-            <div className={utilities.gridContentCenter}>
-                <div className={style.sizeIcon}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.formIcon} alt=""/>
+        <Link href={item.link}>
+            <a className={style.gridForm}>
+                <div className={utilities.gridContentCenter}>
+                    <div className={style.sizeIcon}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.formIcon} alt=""/>
+                    </div>
                 </div>
-            </div>
-            <div className={style.gridInfoForm}>
-                <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
-                    {
-                        item.text
-                    }
+                <div className={style.gridInfoForm}>
+                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
+                        {
+                            item.text
+                        }
+                    </div>
+                    <a className={utilities.styleLink}>Rellenar el formulario</a>
                 </div>
-                <a className={utilities.styleLink}>Rellenar el formulario</a>
-            </div>
-        </div>
+            </a>
+        </Link>
     )
 }

@@ -134,7 +134,7 @@ const listConfigMyBussines: SubSectionMyBussiness[] = [
         Id: "idMyBussines001",
         SubType: MyBussinesMenu.CreateForm,
         Type: MenuUserAccount.MyBussines,
-        State: false,
+        State: true,
         Name: "Crear Formulario",
         PathImage: GlobalConst.sourceImages.formIcon,
     },
