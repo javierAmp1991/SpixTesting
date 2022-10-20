@@ -3,7 +3,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useState} from "react";
 import {Component} from 'react'
-import QrReader from 'react-qr-scanner'
+import { QrReader } from 'react-qr-reader';
 
 const titleSection: string = "Escanear Codigo QR"
 
@@ -11,10 +11,10 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
     let [isOpenScanning, setIsOpenScanning] = useState(false)
     const handleOpenScanning = () => setIsOpenScanning(isOpenScanning = !isOpenScanning)
     let [resultScanning, setResultScanning] = useState(null)
-    let [facingMode, setFacingMode] = useState("front")
+    let [facingModeOpt, setFacingModeOpt] = useState("user")
     const handleVista = () => {
-        if (facingMode == "front") setFacingMode(facingMode = "rear")
-        else setFacingMode(facingMode = "front")
+        if (facingModeOpt == "user") setFacingModeOpt(facingModeOpt = "environment")
+        else setFacingModeOpt(facingModeOpt = "user")
     }
     const handleScanning = (e) => {
         if (e != null) {
@@ -41,14 +41,12 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                         {titleSection}
                     </div>
                     <QrReader
-                        delay={1000}
-                        onScan={handleScanning}
-                        onError={handleError}
-                        legacyMode={true}
-                        facingMode={facingMode}/>
+                        scanDelay={1000}
+                        onResult={handleScanning}
+                        constraints={{facingMode:facingModeOpt}}/>
                 </div>
                 <button onClick={handleVista}>
-                    {facingMode}
+                    {facingModeOpt}
                 </button>
             </div>
         </div>
