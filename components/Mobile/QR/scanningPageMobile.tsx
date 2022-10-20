@@ -45,9 +45,6 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                         onResult={handleScanning}
                         constraints={{facingMode:`environment`}}/>
                 </div>
-                <button onClick={handleVista}>
-                    {facingModeOpt}
-                </button>
             </div>
         </div>
     )
