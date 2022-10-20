@@ -1,19 +1,16 @@
-import HeaderSpixMobile from "./Misc/headerSpixMobile";
-import MenuSpixMobile from "./Misc/menuSpixMobile";
-import React, {useEffect, useState} from "react";
-import {Menu} from "../../dataDemo/data";
-import SuggHeaderMobile from "./Misc/suggHeaderMobile";
 import utilities from "/styles/utilities.module.css";
 import styleMobile from "/styles/Mobile/defaultLayout.module.css"
+import HeaderSpixMobile from "./Misc/headerSpixMobile";
+import MenuSpixMobile from "./Misc/menuSpixMobile";
+import SuggHeaderMobile from "./Misc/suggHeaderMobile";
 import SideSetting from "./Misc/sideSetting";
 import ProviderGlobal from "../Providers/providerGlobal";
+import React, {useEffect, useState} from "react";
+import {Menu} from "../../dataDemo/data";
 
 export default function DefaultLayoutMobile({children, isDarkMode}:
                                                 { isDarkMode: boolean, children: JSX.Element }) {
-    //region
     const listMenuMobile = Menu.listMenu
-    //endregion
-
     //region hooks
     let [isOpenSideSetting, setIsOppenSideSettings] = useState(false)
     const handleSideSetting = () => setIsOppenSideSettings(isOpenSideSetting = !isOpenSideSetting)
@@ -47,7 +44,6 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
                                 <div className={styleMobile.blackScreen}
                                      onClick={handleSideSetting}/>
                             }
-
                         </div>
                 }
             </div>

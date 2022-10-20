@@ -109,7 +109,9 @@ export namespace GlobalConst{
         medal: "/images/medal.png",
         dashboardIcon: "/images/dashboardIcon.png",
         spixBlue: "/images/spixBlue.png",
-        codigoQr: "/images/codigoQr.png"
+        codigoQr: "/images/codigoQr.png",
+        users: "/images/users.png",
+        visibilityICon: "/images/visibility.png"
     }
 }
 

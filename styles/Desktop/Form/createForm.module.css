@@ -1,0 +1,74 @@
+.mainDiv {
+    padding: 24px 4px;
+    margin: auto;
+    display: grid;
+    width: 500px;
+    gap: 24px;
+    --boxShadowInt: 0 0 3px rgba(0, 0, 0, .2);
+}
+
+.title {
+     font-size: 19px;
+     font-weight: 500;
+     color: var(--colorTitlesDesktop);
+ }
+
+.grid {
+    display: grid;
+    gap: 16px;
+}
+
+.textInput {
+    width: 100%;
+    box-shadow: var(--boxShadowInt);
+    padding: 12px;
+}
+
+.textArea {
+    width: 100%;
+    height: 200px;
+    box-shadow: var(--boxShadowInt);
+    border-radius: 8px;
+    overflow: hidden;
+    resize: none;
+    padding: 12px;
+}
+
+.buttonCreate {
+    padding: 4px 32px;
+    background: var(--gradientBlueButton);
+    color: white;
+    width: max-content;
+    border-radius: 4px;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.gridMyForms {
+    display: grid;
+    gap: 16px;
+}
+
+.mainDivForm {
+    box-shadow: var(--boxShadowInt);
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+}
+
+.gridIcon {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px;
+    align-items: center;
+}
+
+.sizeIcon {
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.textIcon{
+    color: var(--colorPrimaryTextDesktop);
+}
