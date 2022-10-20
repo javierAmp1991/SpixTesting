@@ -42,8 +42,7 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                     <QrReader
                         delay={1000}
                         onScan={handleScanning}
-                        onError={handleError}
-                        facingMode={facingMode}/>
+                        onError={handleError}/>
                 </div>
                 <button onClick={handleVista}>
                     {facingMode}
