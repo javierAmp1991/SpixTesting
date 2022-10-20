@@ -31,7 +31,7 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
             <div className={style.mainDiv}>
                 <div className={style.divLogo}>
                     <div className={style.sizeLogo}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.spixBlue}/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.spixBlue} alt={""}/>
                     </div>
                 </div>
                 <div className={style.mainDivInfo}>
