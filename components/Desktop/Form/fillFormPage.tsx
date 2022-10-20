@@ -90,9 +90,9 @@ export default function FillFormPage() {
                         {
                             uploadImages.length == 0 ?
                                 <Image layout={"fill"} objectFit={"cover"}
-                                       src={GlobalConst.sourceImages.placeHolderImageUpload}/>
+                                       src={GlobalConst.sourceImages.placeHolderImageUpload} alt={""}/>
                                 :
-                                <Image layout={"fill"} objectFit={"cover"} src={uploadImages[0].ProvisoryUrl}/>
+                                <Image layout={"fill"} objectFit={"cover"} src={uploadImages[0].ProvisoryUrl} alt={""}/>
                         }
                     </label>
                     <input onChange={handleUploadImages} className={style.inputFile} id={idHtmlInput} type={"file"}/>
