@@ -1,6 +1,9 @@
 import LayoutSquare, {LayoutSquareProp} from "../Layouts/layoutSquare";
 import style from "/styles/Desktop/Form/fillForm.module.css"
-import {useRef} from "react";
+import {useRef, useState} from "react";
+import Image from "next/image";
+import {GlobalConst} from "../../../public/globalConst";
+import {UploadImageProvisory} from "../../../Class/Misc/GlobalClass";
 
 const layoutProp: LayoutSquareProp = {
     HeightExact: null,
@@ -16,15 +19,14 @@ class InputZone {
 
 
 const titleSection: string = "Rellenar Formulario"
-const nameText: string = "Nombre"
-const emailText: string = "Email"
-const phoneText: string = "Telefono"
-const directionText: string = "Direccion"
+const uploadProfilePic: string = "Subir foto de perfil"
 const aboutYouText: string = "Cuentanos Sobre ti"
 const aboutYouPlaceholderText: string = "Agrega una descripcion sobre ti"
 const buttonText: string = "Enviar"
+const idHtmlInput: string = "idInputFileFillForm007"
 
 export default function FillFormPage() {
+    let [uploadImages, setUploadImages] = useState([])
     const inputName = useRef(null)
     const inputEmail = useRef(null)
     const inputZones: InputZone[] = [
@@ -53,6 +55,17 @@ export default function FillFormPage() {
             Ref: inputEmail
         },
     ]
+    const handleUploadImages = (e) => {
+        if (e != null) {
+            let newUploadImage: UploadImageProvisory = {
+                FileImage: e.target.files[0],
+                Id: `${e.target.files[0]}`,
+                ProvisoryUrl: URL.createObjectURL(e.target.files[0])
+            }
+            setUploadImages(uploadImages = [newUploadImage])
+        }
+    }
+
     return (
         <LayoutSquare LayoutProp={layoutProp}>
             <div className={style.mainDiv}>
@@ -68,13 +81,31 @@ export default function FillFormPage() {
                         est incidunt laboriosam optio quisquam saepe sequi ullam voluptatem!
                     </div>
                 </div>
+
+                <div className={style.contLabelInput}>
+                    <div>
+                        {uploadProfilePic}
+                    </div>
+                    <label htmlFor={idHtmlInput} className={style.sizeProfilePic}>
+                        {
+                            uploadImages.length == 0 ?
+                                <Image layout={"fill"} objectFit={"cover"}
+                                       src={GlobalConst.sourceImages.placeHolderImageUpload}/>
+                                :
+                                <Image layout={"fill"} objectFit={"cover"} src={uploadImages[0].ProvisoryUrl}/>
+                        }
+                    </label>
+                    <input onChange={handleUploadImages} className={style.inputFile} id={idHtmlInput} type={"file"}/>
+                </div>
+
                 {
                     inputZones.map(item =>
                         <div key={item.Name} className={style.grid}>
                             <div>
                                 {item.Name}
                             </div>
-                            <input ref={item.Ref} placeholder={item.PlaceHolder} className={style.textInput} type={item.TypeInput}/>
+                            <input ref={item.Ref} placeholder={item.PlaceHolder} className={style.textInput}
+                                   type={item.TypeInput}/>
                         </div>
                     )
                 }
