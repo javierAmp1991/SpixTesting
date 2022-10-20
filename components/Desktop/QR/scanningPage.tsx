@@ -10,10 +10,10 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
     let [isOpenScanning, setIsOpenScanning] = useState(false)
     const handleOpenScanning = () => setIsOpenScanning(isOpenScanning = !isOpenScanning)
     let [resultScanning, setResultScanning] = useState(null)
-    let [facingMode, setFacingMode] = useState("front")
+    let [facingModeOpt, setFacingModeOpt] = useState(`user`)
     const handleVista = () => {
-        if (facingMode == "front") setFacingMode(facingMode = "rear")
-        else setFacingMode(facingMode = "front")
+        if (facingModeOpt == `user`) setFacingModeOpt(facingModeOpt = `environment`)
+        else setFacingModeOpt(facingModeOpt = `user`)
     }
     const handleScanning = (e) => {
         if (e != null) {
@@ -39,13 +39,13 @@ export default function ScanningPage({scanningFunc}: { scanningFunc: Function })
                     <div className={style.title}>
                         {titleSection}
                     </div>
-                    <QrReader delay={1000}
-                              onScan={handleScanning}
-                              onError={handleError}/>
+                    <QrReader scanDelay={1000}
+                              onResult={handleScanning}
+                              constraints={{facingMode:facingModeOpt}}/>
                 </div>
 
                 <button onClick={handleVista}>
-                    {facingMode}
+                    {facingModeOpt}
                 </button>
             </div>
         </div>
