@@ -7,8 +7,13 @@ export class AccountSections {
     Id: string
     State: boolean
     Type: MenuUserAccount
+    HasSubMenu: boolean
     Name: string
     PathImage: string
+}
+
+export class SubSectionAccount extends AccountSections {
+    SubType: MyBussinesMenu
 }
 
 export class CalendarDay {
@@ -113,6 +118,8 @@ export class ProviderAccountSections {
     ListAccountSection: AccountSections[]
     SectionSelected: MenuUserAccount
     SelectSection: Function
+    ListMyBusinessSection: SubSectionAccount[]
+    SelectMyBussinesSection
 }
 
 export class ProviderCalendarInformation {
@@ -174,7 +181,13 @@ export enum MenuUserAccount {
     AccountSecurity,
     Refund,
     WishList,
-    MyCollection
+    MyCollection,
+    DashBoard
+}
+
+export enum MyBussinesMenu {
+    CreateForm,
+    AsnwerToForm
 }
 
 export enum GenderUser {
@@ -182,6 +195,34 @@ export enum GenderUser {
     Mujer,
     Otro
 }
+
+export class MyForm {
+    Id: string
+    Reason: string
+    Views: number
+    Answers: number
+}
+
+const listMyForms: MyForm[] = [
+    {
+        Id: "myForm001",
+        Reason: "Se busca mesero a tiempo parcial",
+        Views: 30,
+        Answers: 15
+    },
+    {
+        Id: "myForm002",
+        Reason: "Se necesita guardia de seguridad para 2 noches",
+        Views: 100,
+        Answers: 20
+    },
+    {
+        Id: "myForm003",
+        Reason: "Se busca contador auditor",
+        Views: 10,
+        Answers: 3
+    }
+]
 
 export class AccountSecurityEdit {
     Id: string
@@ -1630,12 +1671,14 @@ const listConfigSection: AccountSections[] = [
     {
         Id: "idConfigSection7",
         Type: MenuUserAccount.MyBussines,
+        HasSubMenu: true,
         State: false,
         Name: "Mi Negocio",
         PathImage: GlobalConst.sourceImages.bussinesIconAccount,
     },
     {
         Id: "idConfigSection2",
+        HasSubMenu: false,
         Type: MenuUserAccount.Calendar,
         State: true,
         Name: "Calendario",
@@ -1643,6 +1686,7 @@ const listConfigSection: AccountSections[] = [
     },
     {
         Id: "idConfigSection8",
+        HasSubMenu: false,
         Type: MenuUserAccount.MyCollection,
         State: false,
         Name: "Mi Coleccion",
@@ -1650,6 +1694,7 @@ const listConfigSection: AccountSections[] = [
     },
     {
         Id: "idConfigSection6",
+        HasSubMenu: false,
         Type: MenuUserAccount.WishList,
         State: false,
         Name: "Wishlist",
@@ -1657,6 +1702,7 @@ const listConfigSection: AccountSections[] = [
     },
     {
         Id: "idConfigSection1",
+        HasSubMenu: false,
         Type: MenuUserAccount.EditProfile,
         State: false,
         Name: "Editar Perfil",
@@ -1664,6 +1710,7 @@ const listConfigSection: AccountSections[] = [
     },
     {
         Id: "idConfigSection3",
+        HasSubMenu: false,
         Type: MenuUserAccount.MyShoppings,
         State: false,
         Name: "Mis Compras",
@@ -1671,6 +1718,7 @@ const listConfigSection: AccountSections[] = [
     },
     {
         Id: "idConfigSection4",
+        HasSubMenu: false,
         Type: MenuUserAccount.AccountSecurity,
         State: false,
         Name: "Cuenta y Seguridad",
@@ -1678,11 +1726,33 @@ const listConfigSection: AccountSections[] = [
     },
     {
         Id: "idConfigSection5",
+        HasSubMenu: false,
         Type: MenuUserAccount.Refund,
         State: false,
         Name: "Reembolsos",
         PathImage: GlobalConst.sourceImages.refundIcon,
     },
+]
+
+const listConfigMyBussines: SubSectionAccount[] = [
+    {
+        Id: "idMyBussines001",
+        HasSubMenu: false,
+        Type: MenuUserAccount.MyBussines,
+        SubType: MyBussinesMenu.CreateForm,
+        State: false,
+        Name: "Crear Formulario",
+        PathImage: GlobalConst.sourceImages.formIcon,
+    },
+    {
+        Id: "idMyBussines002",
+        HasSubMenu: false,
+        Type: MenuUserAccount.MyBussines,
+        SubType: MyBussinesMenu.AsnwerToForm,
+        State: false,
+        Name: "Respuestas Formulario",
+        PathImage: GlobalConst.sourceImages.formIcon,
+    }
 ]
 
 const listMonth: string[] = [
@@ -1767,6 +1837,8 @@ export const MyShoppingContext = createContext(null)
 export const MyRefundsContext = createContext(null)
 export const AccountSecurityContext = createContext(null)
 export const DashBoardContext = createContext(null)
+export const MyFormsContext = createContext(null)
+
 
 export default function ProviderUserAccount({children}) {
 
@@ -1774,11 +1846,22 @@ export default function ProviderUserAccount({children}) {
     let listItemSelected: CalendarDay[] = listItems.filter(item => item.Activities != null)
     let [listCalendarDays, setListCalendarDay] = useState(listItems)
     let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
+    let [myBussinesSection, setMyBussinesSection] = useState(listConfigMyBussines)
     let [eventsDisplayCalendar, setEventsDisplayCalendar] = useState(listItemSelected)
     let [listMyShopping, setListMyShopping] = useState(listMyShoppingItem)
     let [myRefunds, setMyRefunds] = useState(listMyRefunds)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Calendar)
+    let [sectionMyBussinesSelected, setSectionMyBussinesSelected] = useState(MyBussinesMenu.CreateForm)
 
+    const handleMyBussinesSelected = (id: string) => {
+        let newMyBussinesSelected = myBussinesSection.map(item => {
+            if (item.Id == id) {
+                setSectionMyBussinesSelected(sectionMyBussinesSelected = item.SubType)
+                return {...item, State: true}
+            } else return {...item, State: false}
+        })
+        setMyBussinesSection(myBussinesSection = newMyBussinesSelected)
+    }
 
     const handleSectionSelected = (id: string) => {
         let newSectionSelected = sectionSelected.map(item => {
@@ -1792,7 +1875,9 @@ export default function ProviderUserAccount({children}) {
     let providerConfigSections: ProviderAccountSections = {
         ListAccountSection: sectionSelected,
         SelectSection: handleSectionSelected,
-        SectionSelected: sectionSelectedNavMenu
+        SectionSelected: sectionSelectedNavMenu,
+        ListMyBusinessSection: myBussinesSection,
+        SelectMyBussinesSection: handleMyBussinesSelected
     }
 
     const handleClickCalendarDay = (id: string, state: boolean) => {
@@ -1961,7 +2046,9 @@ export default function ProviderUserAccount({children}) {
                     <MyRefundsContext.Provider value={providerMyRefunds}>
                         <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
                             <DashBoardContext.Provider value={providerDashBoard}>
-                                {children}
+                                <MyFormsContext.Provider value={listMyForms}>
+                                    {children}
+                                </MyFormsContext.Provider>
                             </DashBoardContext.Provider>
                         </AccountSecurityContext.Provider>
                     </MyRefundsContext.Provider>

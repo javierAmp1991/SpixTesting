@@ -1,17 +1,28 @@
 .mainDiv {
-    padding: 24px 4px;
+    padding: 4px;
     margin: auto;
-    display: grid;
     width: 100%;
-    gap: 24px;
     --boxShadowInt: 0 0 3px rgba(0, 0, 0, .2);
 }
 
+.mainDivInfo{
+    display: grid;
+    gap: 24px;
+}
+
 .title {
-     font-size: 21px;
-     font-weight: 500;
-     color: var(--colorTitlesDesktop);
- }
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.subtitle{
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.mainDivTitle {
+    padding-bottom: 24px;
+}
 
 .grid {
     display: grid;

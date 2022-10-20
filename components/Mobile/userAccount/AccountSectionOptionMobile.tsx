@@ -11,32 +11,48 @@ import Link from "next/link";
 
 export default function AccountSectionOptionMobile({item}: { item: AccountSections }) {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
-    const handleSelectSection = (id: MenuUserAccount) => {
+    const handleSelectSection = (id: string) => {
         accountSectionContext.SelectSection(id)
     }
-    /*let [stateMyBussines, setStateMyBussines] = useState(false)*/
-    /*useEffect(() => {
-        accountSectionContext.ListAccountSection.forEach(item => {
-            if (item.Name == "Mi Negocio") {
-                if (item.State) setStateMyBussines(stateMyBussines = true)
-                else setStateMyBussines(stateMyBussines = false)
-            }
-        })
-    }, [accountSectionContext.ListAccountSection])*/
+    const handleSelectMyBussines = (id: string) => {
+        accountSectionContext.SelectMyBussinesSection(id)
+    }
 
     return (
-        <Link href={"/userAccount"}>
-            <button onClick={() => handleSelectSection(item.Type)}
-                    className={item.State ? style.mainDivSelected : style.mainDiv}>
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={item.PathImage} alt={""}/>
-                </div>
-                <div className={style.infoDiv}>
-                    <div className={style.name}>
-                        {item.Name}
+        <>
+            <Link href={"/userAccount"}>
+                <button onClick={() => handleSelectSection(item.Id)}
+                        className={item.State ? style.mainDivSelected : style.mainDiv}>
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} src={item.PathImage} alt={""}/>
                     </div>
+                    <div className={style.infoDiv}>
+                        <div className={style.name}>
+                            {item.Name}
+                        </div>
+                    </div>
+                </button>
+            </Link>
+            {
+                item.Type == MenuUserAccount.MyBussines &&
+                <div className={item.State ? style.gridSubItemsOpen : style.gridSubItemsClose}>
+                    {
+                        accountSectionContext.ListMyBussiness.map((item2) =>
+                            <button key={item2.Id} onClick={() => handleSelectMyBussines(item2.Id)}
+                                    className={item2.State ? style.mainDivSelected : style.mainDiv}>
+                                <div className={style.sizeImage}>
+                                    <Image layout={"fill"} src={item2.PathImage} alt={""}/>
+                                </div>
+                                <div className={style.infoDiv}>
+                                    <div className={style.name}>
+                                        {item2.Name}
+                                    </div>
+                                </div>
+                            </button>
+                        )
+                    }
                 </div>
-            </button>
-        </Link>
+            }
+        </>
     )
 }

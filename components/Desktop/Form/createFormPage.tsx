@@ -3,9 +3,10 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useRef} from "react";
 import LayoutSquare, {LayoutSquareProp} from "../Layouts/layoutSquare";
-import {MyForm, MyFormsContext} from "../../Providers/providerCreateForm";
+import {MyForm, MyFormsContext} from "../../Providers/providerUserAccount";
 
 const titleSection: string = "Crear Formulario"
+const subtitleSection: string = "Anuncia tus ofertas de trabajo"
 const myForms: string = "Tus formularios"
 const placeholderTextArea: string = "Descripcion del formulario"
 const buttonText: string = "Crear"
@@ -21,16 +22,20 @@ export default function CreateFormPage() {
     const listMyForms: MyForm[] = useContext(MyFormsContext)
 
     return (
-        <LayoutSquare LayoutProp={layoutProp}>
-            <div className={style.mainDiv}>
-                <div className={style.gridTitleButton}>
+        <div className={style.mainDiv}>
+            <div className={style.overflowDiv}>
+                <div className={style.mainDivTitle}>
                     <div className={style.title}>
                         {titleSection}
                     </div>
-                    <button className={style.buttonCreate}>
-                        {buttonText}
-                    </button>
+                    <div>
+                        {subtitleSection}
+                    </div>
                 </div>
+                {/*<button className={style.buttonCreate}>
+                        {buttonText}
+                    </button>*/}
+                <div className={style.mainDivInfo}>
                 <div className={style.grid}>
                     <div>
                         {motiveTitle}
@@ -39,8 +44,6 @@ export default function CreateFormPage() {
                            type={"text"}/>
                 </div>
                 <textarea ref={inputDescriptionRef} placeholder={placeholderTextArea} className={style.textArea}/>
-
-
                 <div className={style.title}>
                     {myForms}
                 </div>
@@ -71,7 +74,8 @@ export default function CreateFormPage() {
                         )
                     }
                 </div>
+                </div>
             </div>
-        </LayoutSquare>
+        </div>
     )
 }

@@ -12,6 +12,12 @@ export enum MenuUserAccount {
     Dashboard,
     MyCollection,
 }
+
+export enum MyBussinesMenu {
+    CreateForm,
+    AsnwerToForm
+}
+
 export class AccountSections {
     Id: string
     State: boolean
@@ -19,11 +25,20 @@ export class AccountSections {
     Name: string
     PathImage: string
 }
+
+export class SubSectionMyBussiness extends AccountSections {
+    SubType: MyBussinesMenu
+}
+
 export class ProviderAccountSections {
     ListAccountSection: AccountSections[]
     SectionSelected: MenuUserAccount
     SelectSection: Function
+    ListMyBussiness: SubSectionMyBussiness[]
+    SectionMyBussinesSelected: MyBussinesMenu
+    SelectMyBussinesSection: Function
 }
+
 export class UserData {
     Id: string
     ProfilePath: string
@@ -33,6 +48,7 @@ export class UserData {
     Nationality: Countries
     Date: Date
 }
+
 export class Countries {
     name: string
     code: string
@@ -113,33 +129,67 @@ const listConfigSection: AccountSections[] = [
         PathImage: GlobalConst.sourceImages.refundIcon,
     },
 ]
+const listConfigMyBussines: SubSectionMyBussiness[] = [
+    {
+        Id: "idMyBussines001",
+        SubType: MyBussinesMenu.CreateForm,
+        Type: MenuUserAccount.MyBussines,
+        State: false,
+        Name: "Crear Formulario",
+        PathImage: GlobalConst.sourceImages.formIcon,
+    },
+    {
+        Id: "idMyBussines002",
+        SubType: MyBussinesMenu.AsnwerToForm,
+        Type: MenuUserAccount.MyBussines,
+        State: false,
+        Name: "Respuestas Formulario",
+        PathImage: GlobalConst.sourceImages.formIcon,
+    }
+]
 
 export const AccountSectionContext = createContext(null)
 export const UserDataContext = createContext(null)
 
 export default function ProviderGlobal({children}) {
+
     let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
+    let [myBussinesSection, setMyBussinesSection] = useState(listConfigMyBussines)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Dashboard)
+    let [sectionMyBussinesSelected, setSectionMyBussinesSelected] = useState(MyBussinesMenu.CreateForm)
     let [userDataState, setUserDateState] = useState(userInfo)
-    const handleSectionSelected = (menuType: MenuUserAccount) => {
+    const handleSectionSelected = (id:string) => {
         let newSectionSelected = sectionSelected.map(item => {
-            if (item.Type == menuType) {
+            if (item.Id == id) {
                 setSectionSelectedNavMenu(sectionSelectedNavMenu = item.Type)
                 return {...item, State: true}
             } else return {...item, State: false}
         })
         setSectoinSelected(sectionSelected = newSectionSelected)
     }
+    const handleMyBussinesSelected = (id: string) => {
+        let newMyBussinesSelected = myBussinesSection.map(item => {
+            if (item.Id == id) {
+                setSectionMyBussinesSelected(sectionMyBussinesSelected = item.SubType)
+                return {...item, State: true}
+            } else return {...item, State: false}
+        })
+        setMyBussinesSection(myBussinesSection = newMyBussinesSelected)
+    }
     let providerConfigSections: ProviderAccountSections = {
         ListAccountSection: sectionSelected,
+        SectionSelected: sectionSelectedNavMenu,
         SelectSection: handleSectionSelected,
-        SectionSelected: sectionSelectedNavMenu
+        ListMyBussiness: myBussinesSection,
+        SectionMyBussinesSelected: sectionMyBussinesSelected,
+        SelectMyBussinesSection: handleMyBussinesSelected
     }
+
     return (
-       <AccountSectionContext.Provider value={providerConfigSections}>
-           <UserDataContext.Provider value={userDataState}>
-           {children}
-           </UserDataContext.Provider>
-       </AccountSectionContext.Provider>
+        <AccountSectionContext.Provider value={providerConfigSections}>
+            <UserDataContext.Provider value={userDataState}>
+                {children}
+            </UserDataContext.Provider>
+        </AccountSectionContext.Provider>
     )
 }

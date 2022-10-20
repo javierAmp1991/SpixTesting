@@ -2,10 +2,11 @@ import style from "/styles/Mobile/Form/createForm.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useRef} from "react";
-import {MyForm, MyFormsContext} from "../../Providers/providerCreateForm";
-import LayoutSquareMobile, {LayoutSquareProp } from "../Layouts/layoutSquareMobile";
+import {MyForm, MyFormsContext} from "../../Providers/providerUserAccount";
+import LayoutSquareMobile, {LayoutSquareProp} from "../Layouts/layoutSquareMobile";
 
 const titleSection: string = "Crear Formulario"
+const subtitleSection: string = "Anuncia tus ofertas de trabajo"
 const myForms: string = "Tus formularios"
 const placeholderTextArea: string = "Descripcion del formulario"
 const buttonText: string = "Crear"
@@ -21,16 +22,19 @@ export default function CreateFormPageMobile() {
     const listMyForms: MyForm[] = useContext(MyFormsContext)
 
     return (
-        <LayoutSquareMobile LayoutProp={layoutProp}>
-            <div className={style.mainDiv}>
-                <div className={style.gridTitleButton}>
-                    <div className={style.title}>
-                        {titleSection}
-                    </div>
-                    <button className={style.buttonCreate}>
-                        {buttonText}
-                    </button>
+        <div className={style.mainDiv}>
+            <div className={style.mainDivTitle}>
+                <div className={style.title}>
+                    {titleSection}
                 </div>
+                <div>
+                    {subtitleSection}
+                </div>
+                {/*<button className={style.buttonCreate}>
+                        {buttonText}
+                    </button>*/}
+            </div>
+            <div className={style.mainDivInfo}>
                 <div className={style.grid}>
                     <div>
                         {motiveTitle}
@@ -72,6 +76,6 @@ export default function CreateFormPageMobile() {
                     }
                 </div>
             </div>
-        </LayoutSquareMobile>
+        </div>
     )
 }

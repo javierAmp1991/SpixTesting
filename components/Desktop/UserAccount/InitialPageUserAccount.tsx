@@ -10,6 +10,7 @@ import AccountAndSecurity from "./accountAndSecurity";
 import WishList from "./WishList";
 import MyCollection from "./MyCollection";
 import Dashboard from "./dashboard";
+import MyBussines from "./MyBussines";
 
 
 export default function InitialPageUserAccount() {
@@ -51,9 +52,7 @@ export default function InitialPageUserAccount() {
                     }
                     {
                         providerSection.SectionSelected == MenuUserAccount.MyBussines &&
-                        <div>
-                            En construccion
-                        </div>
+                        <MyBussines/>
                     }
                     {
                         providerSection.SectionSelected == MenuUserAccount.Dashboard &&

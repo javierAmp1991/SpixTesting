@@ -45,10 +45,16 @@
 
 .gridSubItemsOpen {
     overflow: hidden;
-    height: 144px;
-    gap: 12px;
+    height: 100%;
     display: grid;
-    animation: animationInit .3s ease-in;
+    transition: .4s;
+}
+
+.gridSubItemsClose {
+    overflow: hidden;
+    height: 0;
+    display: grid;
+    transition: .4s;
 }
 
 @keyframes animationInit {
@@ -56,17 +62,11 @@
         height: 0;
     }
     100% {
-        height: 144px;
+        height: 10%;
     }
 }
 
-.gridSubItemsClose {
-    overflow: hidden;
-    height: 0;
-    gap: 12px;
-    display: grid;
-    transition: .4s;
-}
+
 
 .subItemGrid {
     display: grid;
