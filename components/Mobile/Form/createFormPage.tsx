@@ -1,9 +1,9 @@
-import style from "/styles/Desktop/Form/createForm.module.css"
+import style from "/styles/Mobile/Form/createForm.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useRef} from "react";
-import LayoutSquare, {LayoutSquareProp} from "../Layouts/layoutSquare";
 import {MyForm, MyFormsContext} from "../../Providers/providerCreateForm";
+import LayoutSquareMobile, {LayoutSquareProp } from "../Layouts/layoutSquareMobile";
 
 const titleSection: string = "Crear Formulario"
 const myForms: string = "Tus formularios"
@@ -13,15 +13,15 @@ const motiveTitle: string = "Motivo"
 const placeHolderMotive: string = "Describa el motivo"
 const layoutProp: LayoutSquareProp = {
     HeightExact: null,
-    HeightRelative: `90%`
+    HeightRelative: `80%`
 }
-export default function CreateFormPage() {
+export default function CreateFormPageMobile() {
     const inputMotiveRef = useRef(null)
     const inputDescriptionRef = useRef(null)
     const listMyForms: MyForm[] = useContext(MyFormsContext)
 
     return (
-        <LayoutSquare LayoutProp={layoutProp}>
+        <LayoutSquareMobile LayoutProp={layoutProp}>
             <div className={style.mainDiv}>
                 <div className={style.gridTitleButton}>
                     <div className={style.title}>
@@ -72,6 +72,6 @@ export default function CreateFormPage() {
                     }
                 </div>
             </div>
-        </LayoutSquare>
+        </LayoutSquareMobile>
     )
 }

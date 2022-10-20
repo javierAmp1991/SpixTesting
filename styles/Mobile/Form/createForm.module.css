@@ -2,7 +2,7 @@
     padding: 24px 4px;
     margin: auto;
     display: grid;
-    width: 500px;
+    width: 100%;
     gap: 24px;
     --boxShadowInt: 0 0 3px rgba(0, 0, 0, .2);
 }
