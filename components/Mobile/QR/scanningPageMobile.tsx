@@ -2,8 +2,9 @@ import style from "/styles/Mobile/QR/scanningPage.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useState} from "react";
-import { Component } from 'react'
+import {Component} from 'react'
 import QrReader from 'react-qr-scanner'
+
 const titleSection: string = "Escanear Codigo QR"
 
 export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Function }) {
@@ -42,7 +43,8 @@ export default function ScanningPageMobile({scanningFunc}: { scanningFunc: Funct
                     <QrReader
                         delay={1000}
                         onScan={handleScanning}
-                        onError={handleError}/>
+                        onError={handleError}
+                        facingMode="rear"/>
                 </div>
                 <button onClick={handleVista}>
                     {facingMode}
