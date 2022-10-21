@@ -25,6 +25,7 @@ export default function CreateFormPage() {
     let [displayPopUp, setDisplayPopUp] = useState(false)
     let [selectedFormAnswer, setSelectedFormAnswer] = useState(null)
     let [selectedSol, setSelectedSol] = useState(null)
+    const handleDisplayFomr = () => setDisplayForm(displayForms = !displayForms)
     const handleDeleteForm = (id: string) => {
         listMyForms.DeleteForm(id)
     }
@@ -32,7 +33,7 @@ export default function CreateFormPage() {
         listMyForms.ResumeForm.forEach(item => {
             if (item.Id == id) setSelectedFormAnswer(selectedFormAnswer = item)
         })
-        setDisplayForm(displayForms = true)
+        handleDisplayFomr()
     }
     const handleSelectSol = (id: string) => {
         selectedFormAnswer.ListForms.forEach((item: UserFormData) => {
@@ -56,6 +57,12 @@ export default function CreateFormPage() {
                     <div>
                         {displayForms ? subtitleSectionForm : subtitleSection}
                     </div>
+                    {
+                        displayForms &&
+                        <button className={style.retunrButton} onClick={handleDisplayFomr}>
+                            Volver
+                        </button>
+                    }
                 </div>
                 {/*<button className={style.buttonCreate}>
                         {buttonText}
@@ -69,7 +76,8 @@ export default function CreateFormPage() {
                                     <div className={style.gridImageNameUser}>
                                         <div className={style.sizeProfile}>
                                             <Image layout={"fill"}
-                                                   src={item.ProfilePath != null? item.ProfilePath : GlobalConst.sourceImages.placeHolderUser} alt={""}/>
+                                                   src={item.ProfilePath != null ? item.ProfilePath : GlobalConst.sourceImages.placeHolderUser}
+                                                   alt={""}/>
                                         </div>
                                         <div className={style.name}>
                                             {item.Name}
@@ -161,7 +169,8 @@ export default function CreateFormPage() {
                         <div className={style.gridPopUp}>
                             <div className={style.sizeProfilePopUp}>
                                 <Image layout={"fill"}
-                                       src={selectedSol.ProfilePath != null? selectedSol.ProfilePath : GlobalConst.sourceImages.placeHolderUser} alt={""}/>
+                                       src={selectedSol.ProfilePath != null ? selectedSol.ProfilePath : GlobalConst.sourceImages.placeHolderUser}
+                                       alt={""}/>
                             </div>
                             <div>
                                 <b>Nombre: </b>

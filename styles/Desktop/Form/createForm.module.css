@@ -77,14 +77,16 @@
     gap: 8px;
     padding: 12px;
     width: 70%;
+    transform-origin: 0;
+    transition: .4s;
 }
 
 .mainDivFormUser:hover {
-    background: #f5f5f5;
+    transform: scale(1.05);
 }
 
 .mainDivForm:hover {
-    background: #f5f5f5;
+    transform: scale(1.05);
 }
 
 .mainDivFormUser {
@@ -96,6 +98,9 @@
     padding: 12px;
     height: max-content;
     cursor: pointer;
+    transform-origin: 0;
+    width: 90%;
+    transition: .4s;
 }
 
 .gridIcon {
@@ -217,4 +222,10 @@
 
 .email {
     color: var(--colorSecundaryTextDesktop);
+}
+
+.retunrButton{
+    padding-top: 4px;
+    color: var(--linkColor);
+    text-decoration: underline;
 }
