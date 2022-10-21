@@ -61,10 +61,23 @@
 }
 
 .mainDivForm {
-    box-shadow: var(--boxShadowInt);
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
     display: grid;
     gap: 8px;
     padding: 12px;
+}
+
+.mainDivFormUser {
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    height: max-content;
+    cursor: pointer;
 }
 
 .gridIcon {
@@ -89,4 +102,82 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     justify-content: space-between;
+}
+
+.titleForm{
+    font-weight: 500;
+    color: var(--colorPrimaryText);
+}
+
+.sizeDeleteIcon{
+    width: 14px;
+    height: 14px;
+    position: relative;
+    margin: auto;
+}
+
+.bordeClose{
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 4px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+.gridFormClose{
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr max-content;
+}
+
+.gridIntForm{
+    display: grid;
+    gap: 8px;
+}
+
+.sizeProfile {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mainDivPopUp{
+    width: 80%;
+    padding: 24px 0;
+    margin: auto;
+}
+
+.sizeImagePath{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    margin: auto;
+}
+
+.gridImageNameUser {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px;
+    align-items: center;
+}
+
+.gridPopUp{
+    display: grid;
+    gap: 12px;
+    color: var(--colorPrimaryText);
+}
+
+.name{
+    font-weight: 500;
+}
+
+.aboutMe{
+    color: var(--colorPrimaryText);
+}
+
+.email{
+    color: var(--colorSecundaryTextDesktop);
 }

@@ -2,6 +2,8 @@ import {createContext, useEffect, useState} from "react";
 import {GlobalConst} from "../../public/globalConst";
 import {Ca} from "react-flags-select";
 import {EventCArdMyCollection, EventCardType, EventCardWishList} from "../../dataDemo/EventView/eventVerticalView";
+import {PrincipalFeaturedSearch} from "../../dataDemo/EventView/featureView";
+import item = PrincipalFeaturedSearch.item;
 
 export class AccountSections {
     Id: string
@@ -196,38 +198,34 @@ export enum GenderUser {
     Otro
 }
 
-export class MyForm {
+export class ResumeForm {
     Id: string
     Reason: string
     Views: number
     Answers: number
+    ListForms: UserFormData[]
 }
 
-const listMyForms: MyForm[] = [
-    {
-        Id: "myForm001",
-        Reason: "Se busca mesero a tiempo parcial",
-        Views: 30,
-        Answers: 15
-    },
-    {
-        Id: "myForm002",
-        Reason: "Se necesita guardia de seguridad para 2 noches",
-        Views: 100,
-        Answers: 20
-    },
-    {
-        Id: "myForm003",
-        Reason: "Se busca contador auditor",
-        Views: 10,
-        Answers: 3
-    }
-]
+export class UserFormData {
+    FormId: string
+    Id: string
+    ProfilePath: string
+    Name: string
+    Email: string
+    Phone: number
+    Venue: string
+    AboutMe: string
+}
 
 export class AccountSecurityEdit {
     Id: string
     Link: string
     Name: string
+}
+
+export class ProviderForm {
+    ResumeForm: ResumeForm[]
+    DeleteForm: Function
 }
 
 export class VerificationAccountEdit extends AccountSecurityEdit {
@@ -246,6 +244,73 @@ export class ProviderDashBoard {
     MyShoppingItems: MyShoppingItem[]
     MyRefundsItems: MyRefundsItem[]
 }
+
+const listUserForm: UserFormData[] = [
+    {
+        FormId: "myForm001",
+        Id: "userForm01",
+        ProfilePath: "/images/fotoperfil4.png",
+        Name: "Juan Perez",
+        Email: "juanPerez@gmail.com",
+        Phone: 941269007,
+        Venue: "Calle 21, Av Italia, Valparaiso",
+        AboutMe: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis deleniti earum est eum molestiae nostrum odio suscipit temporibus voluptates!"
+    },
+    {
+        FormId: "myForm002",
+        Id: "userForm02",
+        ProfilePath: "/images/fotoperfil1.png",
+        Name: "Mario Nieto",
+        Email: "marioNieto@gmail.com",
+        Phone: 941269007,
+        Venue: "Calle 21, Av Italia, Valparaiso",
+        AboutMe: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis deleniti earum est eum molestiae nostrum odio suscipit temporibus voluptates!"
+    },
+    {
+        FormId: "myForm003",
+        Id: "userForm03",
+        ProfilePath: "/images/fotoperfil2.png",
+        Name: "Pedro Gonzalez",
+        Email: "pedroGonzalez@gmail.com",
+        Phone: 941269007,
+        Venue: "Calle 21, Av Italia, Valparaiso",
+        AboutMe: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis deleniti earum est eum molestiae nostrum odio suscipit temporibus voluptates!"
+    },
+    {
+        FormId: "myForm004",
+        Id: "userForm04",
+        ProfilePath: "/images/fotoperfil3.png",
+        Name: "Alma Rebolledo",
+        Email: "alma rebolledo@gmail.com",
+        Phone: 941269007,
+        Venue: "Calle 21, Av Italia, Valparaiso",
+        AboutMe: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis deleniti earum est eum molestiae nostrum odio suscipit temporibus voluptates!"
+    }
+]
+
+const listMyForms: ResumeForm[] = [
+    {
+        Id: "myForm001",
+        Reason: "Se busca mesero a tiempo parcial",
+        Views: 30,
+        Answers: 15,
+        ListForms: listUserForm
+    },
+    {
+        Id: "myForm002",
+        Reason: "Se necesita guardia de seguridad para 2 noches",
+        Views: 100,
+        Answers: 20,
+        ListForms: listUserForm
+    },
+    {
+        Id: "myForm003",
+        Reason: "Se busca contador auditor",
+        Views: 10,
+        Answers: 3,
+        ListForms: listUserForm
+    }
+]
 
 const listAccountSecurity: AccountSecurityEdit[] = [
     {
@@ -1852,6 +1917,16 @@ export default function ProviderUserAccount({children}) {
     let [myRefunds, setMyRefunds] = useState(listMyRefunds)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Calendar)
     let [sectionMyBussinesSelected, setSectionMyBussinesSelected] = useState(MyBussinesMenu.CreateForm)
+    let [listResumeMyForm, setListResumeMyForm] = useState(listMyForms)
+
+    const handleDeleteForm = (id: string) => {
+        let newResumeMyFomr = listResumeMyForm.filter(item => item.Id != id)
+        setListResumeMyForm(listResumeMyForm = newResumeMyFomr)
+    }
+    let providerResumeForm: ProviderForm = {
+        ResumeForm: listResumeMyForm,
+        DeleteForm: handleDeleteForm
+    }
 
     const handleMyBussinesSelected = (id: string) => {
         let newMyBussinesSelected = myBussinesSection.map(item => {
@@ -2046,7 +2121,7 @@ export default function ProviderUserAccount({children}) {
                     <MyRefundsContext.Provider value={providerMyRefunds}>
                         <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
                             <DashBoardContext.Provider value={providerDashBoard}>
-                                <MyFormsContext.Provider value={listMyForms}>
+                                <MyFormsContext.Provider value={providerResumeForm}>
                                     {children}
                                 </MyFormsContext.Provider>
                             </DashBoardContext.Provider>

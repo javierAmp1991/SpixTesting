@@ -9,23 +9,23 @@
     --boxShadowInt: 0 0 3px rgba(0, 0, 0, .2);
 }
 
-.overflowDiv{
+.overflowDiv {
     overflow: scroll;
-    padding: 4px;
+    padding: 0 8px 8px 8px;
 }
 
-.mainDivInfo{
+.mainDivInfo {
     display: grid;
     gap: 24px;
 }
 
 .title {
-     font-size: 28px;
-     font-weight: 500;
-     color: var(--colorTitlesDesktop);
- }
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
 
-.subtitle{
+.subtitle {
     color: var(--colorPrimaryTextDesktop);
 }
 
@@ -66,14 +66,28 @@
 
 .gridMyForms {
     display: grid;
-    gap: 16px;
+    gap: 24px;
 }
 
 .mainDivForm {
-    box-shadow: var(--boxShadowInt);
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
     display: grid;
     gap: 8px;
     padding: 12px;
+    width: 70%;
+}
+
+.mainDivFormUser {
+    box-shadow: var(--boxShadowCard);
+    border-radius: 6px;
+    overflow: hidden;
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    height: max-content;
+    cursor: pointer;
 }
 
 .gridIcon {
@@ -89,13 +103,93 @@
     position: relative;
 }
 
-.textIcon{
+.textIcon {
     color: var(--colorPrimaryTextDesktop);
 }
 
-.gridTitleButton{
+.gridTitleButton {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     justify-content: space-between;
+}
+
+.titleForm {
+    font-weight: 500;
+    color: var(--colorPrimaryText);
+}
+
+.sizeDeleteIcon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    margin: auto;
+    opacity: .5;
+}
+
+.bordeClose {
+    border: 1px solid gray;
+    border-radius: 50%;
+    padding: 4px;
+    margin: auto;
+    height: max-content;
+    width: max-content;
+}
+
+.gridFormClose {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr max-content;
+}
+
+.gridIntForm {
+    display: grid;
+    cursor: pointer;
+    gap: 8px;
+}
+
+.gridImageNameUser {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px;
+    align-items: center;
+}
+
+.sizeProfile {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.mainDivPopUp{
+    width: 80%;
+    padding: 24px 0;
+    margin: auto;
+}
+
+.sizeImagePath{
+    height: 60px;
+    width: 60px;
+    position: relative;
+    margin: auto;
+}
+
+.gridPopUp{
+    display: grid;
+    gap: 12px;
+    color: var(--colorPrimaryText);
+}
+
+.name{
+    font-weight: 500;
+}
+
+.aboutMe{
+    color: var(--colorPrimaryText);
+}
+
+.email{
+    color: var(--colorSecundaryTextDesktop);
 }
