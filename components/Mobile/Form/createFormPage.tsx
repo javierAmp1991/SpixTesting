@@ -3,8 +3,9 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useRef, useState} from "react";
 import {MyFormsContext, ProviderForm, UserFormData} from "../../Providers/providerUserAccount";
-import PopUpContainerMob from "../Misc/popUpContainerMob";
 import utilities from "/styles/utilities.module.css";
+import PopUpContainerLogo from "../../Desktop/Misc/popUpContainerLogo";
+import PopUpContainerLogoMobile from "../Misc/popUpContainerLogoMobile";
 
 const titleSection: string = "Crear Formulario"
 const subtitleSection: string = "Recibe solicitudes de lo que tu quieras"
@@ -64,7 +65,8 @@ export default function CreateFormPageMobile() {
                                  className={style.mainDivFormUser}>
                                 <div className={style.gridImageNameUser}>
                                     <div className={style.sizeProfile}>
-                                        <Image layout={"fill"} src={item.ProfilePath} alt={""}/>
+                                        <Image layout={"fill"}
+                                               src={item.ProfilePath != null? item.ProfilePath : GlobalConst.sourceImages.placeHolderUser} alt={""}/>
                                     </div>
                                     <div className={style.name}>
                                         {item.Name}
@@ -149,30 +151,46 @@ export default function CreateFormPageMobile() {
             </div>
             {
                 displayPopUp &&
-                    <PopUpContainerMob isButtonVisible={true} closePopUp={handlePopUp} isBackground={true}>
-                        <div className={style.mainDivPopUp}>
-                            <div className={style.gridPopUp}>
-                                <div className={style.sizeProfile}>
-                                    <Image layout={"fill"} src={selectedSol.ProfilePath} alt={""}/>
-                                </div>
+                <PopUpContainerLogoMobile isButtonVisible={true} closePopUp={handlePopUp} isBackground={true}>
+                    <div className={style.mainDivPopUp}>
+                        <div className={style.gridPopUp}>
+                            <div className={style.sizeProfilePopUp}>
+                                <Image layout={"fill"}
+                                       src={selectedSol.ProfilePath != null? selectedSol.ProfilePath : GlobalConst.sourceImages.placeHolderUser} alt={""}/>
+                            </div>
+                            <div>
+                                <b>Nombre: </b>
                                 <div>
-                                    <b>Nombre: </b> {selectedSol.Name}
+                                    {selectedSol.Name}
                                 </div>
-                                <div className={utilities.clamp3}>
-                                    <b>Sobre Mi: </b> {selectedSol.AboutMe}
-                                </div>
+                            </div>
+                            <div className={utilities.clamp3}>
+                                <b>Sobre Mi: </b>
                                 <div>
-                                    <b>Email: </b> {selectedSol.Email}
+                                    {selectedSol.AboutMe}
                                 </div>
+                            </div>
+                            <div>
+                                <b>Email: </b>
                                 <div>
-                                    <b>Telefono: </b> {selectedSol.Phone}
+                                    {selectedSol.Email}
                                 </div>
+                            </div>
+                            <div>
+                                <b>Telefono: </b>
                                 <div>
-                                    <b>Direccion: </b> {selectedSol.Venue}
+                                    {selectedSol.Phone}
+                                </div>
+                            </div>
+                            <div>
+                                <b>Direccion: </b>
+                                <div>
+                                    {selectedSol.Venue}
                                 </div>
                             </div>
                         </div>
-                    </PopUpContainerMob>
+                    </div>
+                </PopUpContainerLogoMobile>
             }
         </div>
     )

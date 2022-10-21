@@ -33,6 +33,8 @@
     width: 100%;
     box-shadow: var(--boxShadowInt);
     padding: 12px;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
 .textArea {
@@ -110,17 +112,17 @@
 }
 
 .sizeDeleteIcon{
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     position: relative;
     margin: auto;
+    opacity: .5;
 }
 
 .bordeClose{
-    border: 1px solid gray;
+    box-shadow: 0 0 2px rgba(0,0,0,.8);
     border-radius: 50%;
-    padding: 4px;
-    margin: auto;
+    padding: 6px;
     height: max-content;
     width: max-content;
 }
@@ -144,10 +146,20 @@
     overflow: hidden;
 }
 
-.mainDivPopUp{
-    width: 80%;
-    padding: 24px 0;
+.sizeProfilePopUp {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
     margin: auto;
+}
+
+.mainDivPopUp{
+    width: 100%;
+    padding-top: 20px;
+    margin: auto;
+    border-top: 1px solid var(--separationLineColor);
 }
 
 .sizeImagePath{

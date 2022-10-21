@@ -111,7 +111,8 @@ export namespace GlobalConst{
         spixBlue: "/images/spixBlue.png",
         codigoQr: "/images/codigoQr.png",
         users: "/images/users.png",
-        visibilityICon: "/images/visibility.png"
+        visibilityICon: "/images/visibility.png",
+        placeHolderUser: "/images/placeHolderUser.svg"
     }
 }
 

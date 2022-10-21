@@ -5,6 +5,7 @@ import {useContext, useRef, useState} from "react";
 import {MyFormsContext, ProviderForm, UserFormData} from "../../Providers/providerUserAccount";
 import utilities from "/styles/utilities.module.css";
 import PopUpContainer from "../Misc/popUpContainer";
+import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 
 const titleSection: string = "Crear Formulario"
 const titleSectionForm: string = "Respuestas"
@@ -67,7 +68,8 @@ export default function CreateFormPage() {
                                      className={style.mainDivFormUser}>
                                     <div className={style.gridImageNameUser}>
                                         <div className={style.sizeProfile}>
-                                            <Image layout={"fill"} src={item.ProfilePath} alt={""}/>
+                                            <Image layout={"fill"}
+                                                   src={item.ProfilePath != null? item.ProfilePath : GlobalConst.sourceImages.placeHolderUser} alt={""}/>
                                         </div>
                                         <div className={style.name}>
                                             {item.Name}
@@ -154,30 +156,44 @@ export default function CreateFormPage() {
             </div>
             {
                 displayPopUp &&
-                <PopUpContainer closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
+                <PopUpContainerLogo closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
                     <div className={style.mainDivPopUp}>
                         <div className={style.gridPopUp}>
-                            <div className={style.sizeProfile}>
-                                <Image layout={"fill"} src={selectedSol.ProfilePath} alt={""}/>
+                            <div className={style.sizeProfilePopUp}>
+                                <Image layout={"fill"}
+                                       src={selectedSol.ProfilePath != null? selectedSol.ProfilePath : GlobalConst.sourceImages.placeHolderUser} alt={""}/>
                             </div>
                             <div>
-                                <b>Nombre: </b> {selectedSol.Name}
+                                <b>Nombre: </b>
+                                <div>{selectedSol.Name}</div>
                             </div>
                             <div className={utilities.clamp3}>
-                                <b>Sobre Mi: </b> {selectedSol.AboutMe}
+                                <b>Sobre Mi: </b>
+                                <div>
+                                    {selectedSol.AboutMe}
+                                </div>
                             </div>
                             <div>
-                                <b>Email: </b> {selectedSol.Email}
+                                <b>Email: </b>
+                                <div>
+                                    {selectedSol.Email}
+                                </div>
                             </div>
                             <div>
-                                <b>Telefono: </b> {selectedSol.Phone}
+                                <b>Telefono: </b>
+                                <div>
+                                    {selectedSol.Phone}
+                                </div>
                             </div>
                             <div>
-                                <b>Direccion: </b> {selectedSol.Venue}
+                                <b>Direccion: </b>
+                                <div>
+                                    {selectedSol.Venue}
+                                </div>
                             </div>
                         </div>
                     </div>
-                </PopUpContainer>
+                </PopUpContainerLogo>
             }
         </div>
     )

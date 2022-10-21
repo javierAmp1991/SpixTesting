@@ -259,7 +259,7 @@ const listUserForm: UserFormData[] = [
     {
         FormId: "myForm002",
         Id: "userForm02",
-        ProfilePath: "/images/fotoperfil1.png",
+        ProfilePath: null,
         Name: "Mario Nieto",
         Email: "marioNieto@gmail.com",
         Phone: 941269007,
