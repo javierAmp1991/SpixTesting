@@ -7,6 +7,10 @@
     overflow: scroll;
 }
 
+.checkBoxStyle{
+    transform: scale(1.5);
+}
+
 .upInput {
     color: var(--colorTitlesDesktop);
     font-weight: 500;

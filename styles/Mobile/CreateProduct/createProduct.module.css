@@ -48,6 +48,10 @@
     resize: none;
 }
 
+.checkBoxStyle{
+    transform: scale(1.5);
+}
+
 .sizeImage {
     width: 100%;
     aspect-ratio: 1/1;
