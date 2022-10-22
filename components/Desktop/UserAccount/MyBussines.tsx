@@ -1,7 +1,7 @@
 import CreateFormPage from "../Form/createFormPage";
 import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
-import AnswerToForm from "../Form/answerToForm";
+import CreateProductPage from "../CreateProduct/createProductPage";
 
 export default function MyBussines() {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
@@ -12,8 +12,8 @@ export default function MyBussines() {
                 <CreateFormPage/>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.AsnwerToForm &&
-                <AnswerToForm/>
+                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
+                <CreateProductPage/>
             }
         </>
     )

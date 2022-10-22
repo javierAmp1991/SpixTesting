@@ -1,0 +1,93 @@
+.mainDiv {
+    display: grid;
+    gap: 24px;
+    padding: 0 3px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.upInput {
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.grid {
+    display: grid;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.gridChk {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+    align-items: center;
+}
+
+.styleLabel {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.inputStyle {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    padding: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.textAreaStyle {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    padding: 10px;
+    height: 200px;
+    border-radius: 6px;
+    overflow: hidden;
+    resize: none;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    background: rgba(0, 0, 0, .1);
+}
+
+.deleteImageCont {
+    top: 4px;
+    right: 4px;
+    padding: 6px;
+    z-index: 10;
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.sizeDeleteImage {
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
+.buttonConfirm {
+    color: white;
+    background: var(--gradientBlueButton);
+    padding: 4px 32px;
+    width: max-content;
+    margin: auto;
+}
+
+.gridImagesUpload {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.mainDivImage {
+    position: relative;
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    border-radius: 8px;
+    overflow: hidden;
+}

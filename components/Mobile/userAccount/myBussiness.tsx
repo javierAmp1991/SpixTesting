@@ -2,6 +2,7 @@ import CreateFormPageMobile from "../Form/createFormPage";
 import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import AnswerToFormMobile from "../Form/answerToFormMobile";
+import CreateProductPageMobile from "../CreateProduct/createProductPageMobile";
 
 export default function MyBussinessMobile() {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
@@ -12,8 +13,8 @@ export default function MyBussinessMobile() {
                 <CreateFormPageMobile/>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.AsnwerToForm &&
-                <AnswerToFormMobile/>
+                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
+                <CreateProductPageMobile/>
             }
         </>
     )
