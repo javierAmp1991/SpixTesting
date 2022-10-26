@@ -2,8 +2,7 @@ import style from "/styles/Mobile/QR/scanningPage.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import React, {useState} from "react";
-import {Component} from 'react'
-import { QrReader } from 'react-qr-reader';
+import QrReader from 'react-qr-scanner'
 
 const titleSection: string = "Escanear Codigo QR"
 
