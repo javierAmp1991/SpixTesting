@@ -16,7 +16,7 @@
 }
 
 .boxShadowPro {
-    box-shadow: var(--boxShadowCard);
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
     border-radius: 12px;
     position: relative;
     background: white;
@@ -99,5 +99,5 @@
     font-size: 12px;
     line-height: 12px;
     font-weight: 500;
-    color: #06b906;
+    color: #4b704b;
 }

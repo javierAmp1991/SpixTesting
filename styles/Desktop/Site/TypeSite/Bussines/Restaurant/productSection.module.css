@@ -1,0 +1,17 @@
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 16px;
+}
+
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+}
+
+.gridProducts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}

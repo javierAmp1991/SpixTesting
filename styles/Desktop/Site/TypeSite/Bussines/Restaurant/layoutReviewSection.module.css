@@ -1,0 +1,17 @@
+.mainDiv{
+    padding-bottom: 16px;
+}
+.gridStars {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 8px;
+    justify-content: center;
+    padding-bottom: 32px ;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+    text-align: center;
+}

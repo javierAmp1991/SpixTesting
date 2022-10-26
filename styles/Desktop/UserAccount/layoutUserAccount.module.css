@@ -6,6 +6,14 @@
 
 .overflowDiv {
     overflow: scroll;
+    display: grid;
+    grid-template-rows: max-content 1fr;
+}
+
+.underDiv{
+    display: grid;
+    height: 100%;
+    overflow: scroll;
 }
 
 .contTitle {

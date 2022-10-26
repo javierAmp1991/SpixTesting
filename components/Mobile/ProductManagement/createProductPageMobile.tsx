@@ -1,5 +1,5 @@
 import Image from "next/image";
-import style from "/styles/Mobile/CreateProduct/createProduct.module.css";
+import style from "/styles/Mobile/ProductManagement/createProduct.module.css";
 import {UploadImageProvisory} from "../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
@@ -20,6 +20,8 @@ const layoutProp: LayoutUserAccountProp = {
     Title: titleSection,
     SubTitle: subtitleSection
 }
+const isThisService: string = "Este producto es un servicio"
+const confirmButton: string = "Confirmar"
 
 
 export default function CreateProductPageMobile() {
@@ -99,12 +101,12 @@ export default function CreateProductPageMobile() {
                 </div>
                 <div className={style.gridChk}>
                     <div className={style.upInput}>
-                        Este producto es un servicio
+                        {isThisService}
                     </div>
                     <input onChange={handleCheckBox} className={style.checkBoxStyle} type={"checkbox"}/>
                 </div>
                 <button className={style.buttonConfirm}>
-                    Confirmar
+                    {confirmButton}
                 </button>
             </div>
         </LayoutUserAccountMobile>

@@ -1,0 +1,141 @@
+.mainDiv {
+    gap: 32px;
+    padding: 0 3px;
+    width: 700px;
+    display: grid;
+    height: 100%;
+    overflow: hidden;
+    grid-template-rows: max-content 1fr;
+}
+
+.upInput {
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.upInputAdd {
+    font-size: 16px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.grid {
+    display: grid;
+    gap: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.gridAddProduct {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.sizeImagePlace {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    background: rgba(0, 0, 0, .1);
+}
+
+.inputStyle {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    padding: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.buttonConfirm {
+    position: relative;
+    bottom: 0;
+    color: white;
+    background: var(--gradientBlueButton);
+    padding: 6px 32px;
+    width: max-content;
+    margin: auto;
+    border-radius: 4px;
+}
+
+.gridPopUpProducts {
+    display: grid;
+    padding: 6px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    overflow: scroll;
+}
+
+.gridProductSelected {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-content: start;
+    gap: 12px;
+    padding: 4px;
+    overflow: scroll;
+}
+
+.contPopUpProducts {
+    padding: 16px 0;
+    overflow: scroll;
+}
+
+.sizeIconAdd {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.gridAdd {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.containerProduct {
+    position: relative;
+    transition: .4s;
+}
+
+.sizeCheckIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 200;
+}
+
+.sizeTrashIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.mainDivPopUp {
+    display: grid;
+    height: 500px;
+    width: 600px;
+    grid-template-rows: max-content 1fr max-content;
+    padding: 4px;
+}
+
+.mainDivCreate {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    overflow: hidden;
+    gap: 12px;
+    padding: 0 4px;
+}
+
+.contHeader{
+    display: grid;
+    gap: 8px;
+}

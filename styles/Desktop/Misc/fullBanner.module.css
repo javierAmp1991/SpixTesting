@@ -8,3 +8,14 @@
     position: relative;
     display: grid;
 }
+
+.sizeBannerRestaurant{
+    height: 500px;
+    width: 100vw;
+    max-width: var(--maxWidthBanner);
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+    display: grid;
+}

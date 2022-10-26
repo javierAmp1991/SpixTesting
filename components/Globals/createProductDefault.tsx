@@ -1,8 +1,8 @@
 import {useMediaQuery} from "../../pages";
 import DefaultLayoutMobile from "../Mobile/defaultLayoutMobile";
 import DefaultLayoutDesktop from "../Desktop/defaultLayoutDesktop";
-import CreateProductPage from "../Desktop/CreateProduct/createProductPage";
-import CreateProductPageMobile from "../Mobile/CreateProduct/createProductPageMobile";
+import CreateProductPage from "../Desktop/ProductManagement/createProductPage";
+import CreateProductPageMobile from "../Mobile/ProductManagement/createProductPageMobile";
 
 export default function CreateProductDefault() {
     const isSmallDown = useMediaQuery('(max-width: 1501px)');

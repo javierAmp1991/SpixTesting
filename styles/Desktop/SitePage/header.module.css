@@ -1,0 +1,17 @@
+.mainGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 0 5%;
+    color: white;
+}
+
+.Name {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.gridInfo {
+    display: grid;
+    gap: 12px;
+}

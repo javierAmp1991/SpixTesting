@@ -112,7 +112,15 @@ export namespace GlobalConst{
         codigoQr: "/images/codigoQr.png",
         users: "/images/users.png",
         visibilityICon: "/images/visibility.png",
-        placeHolderUser: "/images/placeHolderUser.svg"
+        placeHolderUser: "/images/placeHolderUser.svg",
+        addIconBlue: "/images/addIconBlue.png",
+        trashIcon: "/images/trashIcon.png",
+        trashIconWhite: "/images/trashIconWhite.png",
+        addIconEmpty: "/images/addIconEmpty.png",
+        instagramICon: "/images/instagram.png",
+        tiktokIcon: "/images/tiktok.png",
+        facebookIcon: "/images/facebook.png",
+        whatsaapIcon: "/images/whatssap.png"
     }
 }
 

@@ -1,0 +1,59 @@
+.mainDiv {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    align-items: center;
+    gap: 12px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.mainDivWithSug {
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, .1);
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    gap: 12px;
+    align-items: center;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+.sizeGlass {
+    width: 18px;
+    height: 18px;
+    position: relative;
+}
+
+.sizeClose {
+    width: 12px;
+    height: 12px;
+    position: relative;
+    opacity: .6;
+}
+
+.ContSug {
+    position: absolute;
+    display: grid;
+    top: 100%;
+    height: max-content;
+    max-height: 300px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    width: 100%;
+    background: white;
+    border-radius: 6px;
+    overflow: scroll;
+    z-index: 999999;
+}
+
+.buttonSug {
+    padding: 4px;
+    display: grid;
+    text-align: left;
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.buttonSug:hover {
+    background: #eeeeee;
+}

@@ -1,9 +1,7 @@
 import {createContext, useEffect, useState} from "react";
 import {GlobalConst} from "../../public/globalConst";
-import {Ca} from "react-flags-select";
 import {EventCArdMyCollection, EventCardType, EventCardWishList} from "../../dataDemo/EventView/eventVerticalView";
-import {PrincipalFeaturedSearch} from "../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
+import ProductManagementProvider from "./UserAccount/ProductManagementProvider";
 
 export class AccountSections {
     Id: string
@@ -33,6 +31,129 @@ export class CalendarEventViewProp {
     Subtitle: string
     ThisDate: Date
     Venue: string
+}
+
+export class ProviderAccountSections {
+    ListAccountSection: AccountSections[]
+    SectionSelected: MenuUserAccount
+    SelectSection: Function
+    ListMyBusinessSection: SubSectionAccount[]
+    SelectMyBussinesSection
+}
+
+export class ProviderCalendarInformation {
+    ListItems: CalendarDay[]
+    SelectedItems: CalendarDay[]
+    UpdateState: Function
+    SelectDate: Function
+    DeselectItems: Function
+}
+
+export class ProviderMyShopping {
+    ListMyShopping: MyShoppingItem[]
+    SortByPrice: Function
+    SortByName: Function
+    SortByDate: Function
+    SortBySite: Function
+    SortByAmount: Function
+    SelectDate: Function
+    ListMoths: string[]
+    ListYears: string[]
+}
+
+export class ProviderMyRefunds {
+    ListMyRefunds: MyRefundsItem[]
+    ListMoths: string[]
+    ListYears: string[]
+}
+
+export class MyShoppingItem {
+    Id: string
+    Date: Date
+    Name: string
+    Sites: string
+    Amount: number
+    Price: number
+}
+
+export class MyRefundsItem {
+    Id: string
+    Date: Date
+    Site: string
+    Product: string
+    Amount: number
+    State: StateMyRefund
+    Motive?: string
+}
+
+export enum StateMyRefund {
+    Aprobed,
+    Waiting,
+    Refused
+}
+
+export enum MenuUserAccount {
+    MyBussines,
+    EditProfile,
+    Calendar,
+    MyShoppings,
+    AccountSecurity,
+    Refund,
+    WishList,
+    MyCollection,
+    DashBoard
+}
+
+export enum MyBussinesMenu {
+    CreateForm,
+    AsnwerToForm
+}
+
+export class ResumeForm {
+    Id: string
+    Reason: string
+    Views: number
+    Answers: number
+    ListForms: UserFormData[]
+}
+
+export class UserFormData {
+    FormId: string
+    Id: string
+    ProfilePath: string
+    Name: string
+    Email: string
+    Phone: number
+    Venue: string
+    AboutMe: string
+}
+
+export class AccountSecurityEdit {
+    Id: string
+    Link: string
+    Name: string
+}
+
+export class ProviderForm {
+    ResumeForm: ResumeForm[]
+    DeleteForm: Function
+}
+
+export class VerificationAccountEdit extends AccountSecurityEdit {
+    State?: boolean
+}
+
+export class ProviderAcctounSecurityEdit {
+    ListEditItems: AccountSecurityEdit[]
+    ListVerificacionItems: VerificationAccountEdit[]
+}
+
+export class ProviderDashBoard {
+    CalendarItem: CalendarDay[]
+    WishListItems: EventCardWishList[]
+    MyCollectionItems: EventCArdMyCollection[]
+    MyShoppingItems: MyShoppingItem[]
+    MyRefundsItems: MyRefundsItem[]
 }
 
 const dailyActivitie2: CalendarEventViewProp[] = [
@@ -115,135 +236,6 @@ const dailyActivitie4: CalendarEventViewProp[] = [
         ThisDate: new Date(2022, 9, 1, 23, 0, 0)
     },
 ]
-
-export class ProviderAccountSections {
-    ListAccountSection: AccountSections[]
-    SectionSelected: MenuUserAccount
-    SelectSection: Function
-    ListMyBusinessSection: SubSectionAccount[]
-    SelectMyBussinesSection
-}
-
-export class ProviderCalendarInformation {
-    ListItems: CalendarDay[]
-    SelectedItems: CalendarDay[]
-    UpdateState: Function
-    SelectDate: Function
-    DeselectItems: Function
-}
-
-export class ProviderMyShopping {
-    ListMyShopping: MyShoppingItem[]
-    SortByPrice: Function
-    SortByName: Function
-    SortByDate: Function
-    SortBySite: Function
-    SortByAmount: Function
-    SelectDate: Function
-    ListMoths: string[]
-    ListYears: string[]
-}
-
-export class ProviderMyRefunds {
-    ListMyRefunds: MyRefundsItem[]
-    ListMoths: string[]
-    ListYears: string[]
-}
-
-export class MyShoppingItem {
-    Id: string
-    Date: Date
-    Name: string
-    Sites: string
-    Amount: number
-    Price: number
-}
-
-export class MyRefundsItem {
-    Id: string
-    Date: Date
-    Site: string
-    Product: string
-    Amount: number
-    State: StateMyRefund
-    Motive?: string
-}
-
-export enum StateMyRefund {
-    Aprobed,
-    Waiting,
-    Refused
-}
-
-export enum MenuUserAccount {
-    MyBussines,
-    EditProfile,
-    Calendar,
-    MyShoppings,
-    AccountSecurity,
-    Refund,
-    WishList,
-    MyCollection,
-    DashBoard
-}
-
-export enum MyBussinesMenu {
-    CreateForm,
-    AsnwerToForm
-}
-
-export enum GenderUser {
-    Hombre,
-    Mujer,
-    Otro
-}
-
-export class ResumeForm {
-    Id: string
-    Reason: string
-    Views: number
-    Answers: number
-    ListForms: UserFormData[]
-}
-
-export class UserFormData {
-    FormId: string
-    Id: string
-    ProfilePath: string
-    Name: string
-    Email: string
-    Phone: number
-    Venue: string
-    AboutMe: string
-}
-
-export class AccountSecurityEdit {
-    Id: string
-    Link: string
-    Name: string
-}
-
-export class ProviderForm {
-    ResumeForm: ResumeForm[]
-    DeleteForm: Function
-}
-
-export class VerificationAccountEdit extends AccountSecurityEdit {
-    State?: boolean
-}
-
-export class ProviderAcctounSecurityEdit {
-    ListEditItems: AccountSecurityEdit[]
-    ListVerificacionItems: VerificationAccountEdit[]
-}
-
-export class ProviderDashBoard {
-    CalendarItem: CalendarDay[]
-    WishListItems: EventCardWishList[]
-    MyCollectionItems: EventCArdMyCollection[]
-    MyShoppingItems: MyShoppingItem[]
-    MyRefundsItems: MyRefundsItem[]
-}
 
 const listUserForm: UserFormData[] = [
     {
@@ -2122,7 +2114,9 @@ export default function ProviderUserAccount({children}) {
                         <AccountSecurityContext.Provider value={providerAccountSecurityEdit}>
                             <DashBoardContext.Provider value={providerDashBoard}>
                                 <MyFormsContext.Provider value={providerResumeForm}>
-                                    {children}
+                                    <ProductManagementProvider>
+                                        {children}
+                                    </ProductManagementProvider>
                                 </MyFormsContext.Provider>
                             </DashBoardContext.Provider>
                         </AccountSecurityContext.Provider>

@@ -1,0 +1,56 @@
+.mainDiv {
+    width: var(--maxWidthBodyContent);
+    margin: auto;
+    padding: 48px 4px;
+    display: grid;
+    gap: 40px;
+}
+
+.mainGradient{
+    background: linear-gradient(180deg, rgb(4, 90, 169) 0%, rgb(16, 107, 192) 70%, white 100%);
+    background: linear-gradient(180deg, black 0%, #595959 70%, white 100%);
+    background: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, rgb(26, 125, 218) 70%, white 100%);
+    padding-bottom: 200px;
+    position: relative;
+}
+
+.main{
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: grid;
+    align-content: center;
+}
+
+.gridPpalProducts{
+    padding: 0 10%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 32px;
+}
+
+.mainDivHeader{
+    position: relative;
+}
+
+.gridReviews{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.gridQuestions{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.separationLine{
+    height: 2px;
+    background: var(--separationLineColor);
+    width: 100%;
+}

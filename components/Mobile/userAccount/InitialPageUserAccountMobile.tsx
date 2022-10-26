@@ -9,7 +9,7 @@ import MyCollectionMobile from "./MyCollectionMobile";
 import MyShoppingMobile from "./myShoppingMobile";
 import MyRefundsMobile from "./myRefundsMobile";
 import DashboardMobile from "./dashboardMobile";
-import MyBussinessMobile from "./myBussiness";
+import MyBussinessMobile from "./myBussinessMobile";
 
 export default function InitialPageUserAccountMobile() {
     const providerSection: ProviderAccountSections = useContext(AccountSectionContext)

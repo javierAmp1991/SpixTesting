@@ -1,0 +1,70 @@
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.buttonCreateProduct {
+    display: grid;
+    padding: 4px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+    font-weight: 500;
+    width: max-content;
+    color: white;
+    background: var(--gradientBlueButton);
+    align-items: center;
+    margin-bottom: 24px ;
+
+}
+
+.sizeAddIcon {
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+
+.gridProducts {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+    padding: 4px;
+}
+
+.mainDivCont {
+    display: grid;
+    position: relative;
+}
+
+.contIcon {
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sizeIcon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+
+.gridIcons {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    z-index: 100;
+}

@@ -14,7 +14,9 @@ export default function LayoutUserAccount({children, layoutProp}:
                         {layoutProp.SubTitle}
                     </div>
                 </div>
+                <div className={style.underDiv}>
                 {children}
+                </div>
             </div>
         </div>
     )

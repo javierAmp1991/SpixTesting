@@ -1,7 +1,7 @@
 .mainDiv{
     display: grid;
     gap: 8px;
-    box-shadow: var(--boxShadowCard);
+    box-shadow: 0 0 6px rgba(0,0,0,.25);
     border-radius: 6px;
     overflow: hidden;
     padding: 12px;

@@ -1,0 +1,11 @@
+.mainDiv {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.sizeArrow {
+    width: 20px;
+    height: 20px;
+    position: relative;
+}

@@ -1,0 +1,71 @@
+.mainDiv {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    --fontSizeTab: 17px;
+    --paddingTab: 8px 32px;
+    --paddingTabSelected: 12px 36px;
+    --borderRadiousTab: 8px 8px 0 0;
+    --fontWeightTab: 500;
+    --colorTabs: var(--colorTitlesDesktop);
+}
+
+.overflowDiv {
+    display: grid;
+    overflow: scroll;
+}
+
+.gridTabs {
+    padding-top: 12px;
+    padding-left: 12px;
+    display: grid;
+    align-items: end;
+    height: 70px;
+    grid-template-columns: repeat(2, max-content);
+    background: linear-gradient(90deg, #3962f3  0%,  #2d55e3 100%);
+}
+
+.tab {
+    display: grid;
+    font-size: var(--fontSizeTab);
+    padding: var(--paddingTab);
+    background: #f6f6f6;
+    align-items: center;
+    transform-origin: bottom left;
+    border-radius: var(--borderRadiousTab);
+    font-weight: var(--fontWeightTab);
+    color: var(--colorTabs);
+    height: max-content;
+}
+
+.tabSelected {
+    display: grid;
+    font-size: var(--fontSizeTab);
+    padding: var(--paddingTabSelected);
+    height: max-content;
+    background: white;
+    align-items: center;
+    border-radius: var(--borderRadiousTab);
+    font-weight: var(--fontWeightTab);
+    color: var(--colorTabs);
+    box-shadow: 0 -4px 4px rgba(0, 0, 0, .2);
+    z-index: 90;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    overflow: hidden;
+}
+
+.mainDivRender{
+    height: 100%;
+    overflow: hidden;
+    padding: 24px 32px 53px 32px;
+}
+
+.contRender{
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
