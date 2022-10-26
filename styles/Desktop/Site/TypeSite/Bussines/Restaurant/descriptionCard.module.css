@@ -1,13 +1,16 @@
 .mainDiv{
+    --widthCard: 750px;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    box-shadow: 0 0 6px rgba(0,0,0,.2);
     padding: 16px;
-    width: 700px;
+    width: var(--widthCard);
     position: absolute;
     bottom: 0;
-    left: calc(50vw - 350px);
+    left: calc(50vw - (var(--widthCard)/2));
     background: white;
+    box-shadow: 0 0 20px rgba(0,0,0,.5) ;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .sizeImage{
@@ -17,10 +20,56 @@
 }
 
 .mainDivInfo{
-    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 16px;
 }
 
 .title{
     font-size: 28px;
     font-weight: 500;
 }
+
+.gridImageName{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 8px;
+}
+
+.Name {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.gridInfoNew {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sizeIcon {
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.firstGradient {
+    padding: 3px;
+    width: 100%;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
+}
+
+.sizeLogo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+

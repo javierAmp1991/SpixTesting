@@ -16,7 +16,7 @@ export default function ReviewDesk({item}: { item: review }) {
                 </div>
 
                 <div>
-                    <a className={utilities.fontName}>{item.ByWho}</a>
+
                     <div className={`${utilities.gridMaxContent2} gap-1`}>
                         <div className={utilities.fontSecundaryText}>
                             Compra verificada

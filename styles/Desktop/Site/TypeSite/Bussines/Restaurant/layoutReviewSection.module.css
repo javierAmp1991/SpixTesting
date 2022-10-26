@@ -1,12 +1,11 @@
 .mainDiv{
-    padding-bottom: 16px;
 }
 .gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
     gap: 8px;
     justify-content: center;
-    padding-bottom: 32px ;
+    align-items: center;
 }
 
 .title {
@@ -14,4 +13,32 @@
     font-weight: 500;
     color: var(--colorTitlesDesktop);
     text-align: center;
+}
+
+.gridRating{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    padding-bottom: 32px;
+    justify-content: center;
+    gap: 12px;
+}
+
+.rating{
+    font-size: 54px;
+    font-weight: 500;
+}
+
+.sizeStar{
+    height: 40px;
+    width: 40px;
+    position: relative;
+}
+
+.seeMore{
+    padding-top: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--linkColor);
+    cursor: pointer;
+    text-decoration: underline;
 }

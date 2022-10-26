@@ -10,7 +10,8 @@
 }
 
 .sizeBannerRestaurant{
-    height: 500px;
+    height: 550px;
+    height: 400px;
     width: 100vw;
     max-width: var(--maxWidthBanner);
     margin: auto;

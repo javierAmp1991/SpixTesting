@@ -3,8 +3,9 @@
     grid-template-columns: max-content 1fr;
     gap: 32px;
     align-items: center;
-    padding: 16px 32px;
+    padding: 16px 5%;
     color: white;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .8) 100%);
 }
 
 .Name {
@@ -24,15 +25,29 @@
     font-size: 16px;
 }
 
-.sizeIcon{
+.sizeIcon {
     height: 18px;
     width: 18px;
     position: relative;
 }
 
-.gridWhatssap{
+.gridWhatssap {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 8px;
+}
+
+.firstGradient {
+    padding: 3px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
+}
+
+.sizeLogo {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
 }

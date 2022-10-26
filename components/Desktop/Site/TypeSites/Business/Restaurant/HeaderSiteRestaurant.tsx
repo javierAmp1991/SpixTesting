@@ -6,6 +6,13 @@ export default function HeaderSiteRestaurant() {
     return (
         <div className={style.mainGrid}>
             <div className={style.gridInfo}>
+                <div className={style.secondGradient}>
+                    <div className={style.firstGradient}>
+                        <div className={style.sizeLogo}>
+                            <Image layout={"fill"} src={"/images/hellsKitchen.jpeg"}/>
+                        </div>
+                    </div>
+                </div>
                 <div className={style.Name}>
                     HellsKitchen Nightmare
                 </div>

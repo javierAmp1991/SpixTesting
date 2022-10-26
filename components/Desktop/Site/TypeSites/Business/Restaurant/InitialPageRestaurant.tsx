@@ -1,15 +1,20 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
 import HeaderSiteRestaurant from "./HeaderSiteRestaurant";
 import {ProductItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {Product} from "../../../../../../dataDemo/data";
+import {TodayInValpoFull} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {ReviewsSectionData, QuestionSectionData} from "../../../../../../dataDemo/data";
 import FullBannerRestaurant from "../../../../Misc/fullBannerRestaurant";
-import ProductViewHor from "../../../../Misc/ProductViewHor";
 import DescriptionCard from "./DescriptionCard";
 import ReviewDesk from "../../../../EventPage/reviewDesk";
 import LayoutReviewSection from "./layoutReviewSection";
 import ProductSection from "./ProductSection";
 import QuestionDesk from "../../../../EventPage/questionDesk";
 import LayoutTitle from "./layoutTitle";
+import ProductViewSquare from "../../../../Misc/productViewSquare";
+import EventVerticalView from "../../../../EventsView/eventVerticalView";
+import PublicityView from "../../../../CRM/publicityView";
+import ReviewViewShort from "../../../../Misc/ReviewViewShort";
 
 const listProducts: ProductItem[] = [
     {
@@ -38,6 +43,43 @@ const listProducts: ProductItem[] = [
         DiscountPercent: null,
         Include: null,
         ImagePath: "/images/product5.jpg",
+    },
+]
+const listProducts1: Product[] = [
+    {
+        Name: "Producto 1.1",
+        Price: 18990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product1.jpg",
+    },
+    {
+        Name: "Producto 2.2",
+        Price: 2990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product4.jpg",
+    },
+    {
+        Name: "Producto 3.3",
+        Price: 990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product5.jpg",
+    },
+    {
+        Name: "Producto 4.4",
+        Price: 9990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product6.jpg",
+    },
+    {
+        Name: "Producto 5.5",
+        Price: 10990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product7.jpg",
     },
 ]
 const listProductsOffer: ProductItem[] = [
@@ -106,50 +148,60 @@ const sectionProductTest: SectionProductItem = {
 export default function InitialPageRestaurant() {
     return (
         <>
-        <div className={style.mainGradient}>
-            <HeaderSiteRestaurant/>
-            <div className={style.mainDivHeader}>
-                <FullBannerRestaurant item={"/images/sushiBanner.jpg"}/>
-                <div className={style.main}>
-                    <div className={style.gridPpalProducts}>
+            <div className={style.mainGradient}>
+                {/*<HeaderSiteRestaurant/>*/}
+                <div className={style.mainDivHeader}>
+                    <FullBannerRestaurant item={"/images/sushiBanner.jpg"}/>
+                    {/*<div className={style.main}>
+                        <div className={style.gridPpalProducts}>
+                            {
+                                listProducts1.map(item =>
+                                    <ProductViewSquare key={item.Name} size={null} item={item} isDisplayOffer={true}/>
+                                )
+                            }
+                        </div>
+                    </div>*/}
+                </div>
+                <DescriptionCard/>
+            </div>
+
+            <div className={style.mainDiv}>
+                <LayoutReviewSection>
+                    <div className={style.gridReviews}>
                         {
-                            listProducts.map(item =>
-                                <ProductViewHor key={item.Id} item={item} isDisplayOffer={true}/>
+                            ReviewsSectionData.listReviews.map((item, index) =>
+                                index <= 2 &&
+                                <ReviewViewShort item={item}/>
                             )
                         }
                     </div>
-                </div>
+                </LayoutReviewSection>
+                <div className={style.separationLine}/>
+                <LayoutTitle title={"Recomendados"}>
+                    <div className={style.gridRecomendados}>
+                        {
+                            TodayInValpoFull.list.map((item, index) =>
+                                index <= 4 &&
+                                <EventVerticalView key={item.Id} item={item} darkModeState={false}/>)
+                        }
+                    </div>
+                </LayoutTitle>
+                <div className={style.separationLine}/>
+                <ProductSection sectionProducts={sectionProductTest}/>
+                <div className={style.separationLine}/>
+                <ProductSection sectionProducts={sectionProductTest}/>
+                <div className={style.separationLine}/>
+                <ProductSection sectionProducts={sectionProductTest}/>
+                <div className={style.separationLine}/>
+                <LayoutTitle title={"Preguntas"}>
+                    <div className={style.gridQuestions}>
+                        {
+                            QuestionSectionData.listQuestions.map((item) =>
+                                <QuestionDesk key={item.Question} item={item}/>)
+                        }
+                    </div>
+                </LayoutTitle>
             </div>
-            <DescriptionCard/>
-        </div>
-
-        <div className={style.mainDiv}>
-            <LayoutReviewSection>
-                <div className={style.gridReviews}>
-                    {
-                        ReviewsSectionData.listReviews.map((item, index) =>
-                            index <= 2 &&
-                            <ReviewDesk item={item}/>
-                        )
-                    }
-                </div>
-            </LayoutReviewSection>
-            <div className={style.separationLine}/>
-            <ProductSection sectionProducts={sectionProductTest}/>
-            <div className={style.separationLine}/>
-            <ProductSection sectionProducts={sectionProductTest}/>
-            <div className={style.separationLine}/>
-            <ProductSection sectionProducts={sectionProductTest}/>
-            <div className={style.separationLine}/>
-            <LayoutTitle title={"Preguntas"}>
-                <div className={style.gridQuestions}>
-                    {
-                        QuestionSectionData.listQuestions.map((item) =>
-                            <QuestionDesk key={item.Question} item={item}/>)
-                    }
-                </div>
-            </LayoutTitle>
-        </div>
-</>
-)
+        </>
+    )
 }

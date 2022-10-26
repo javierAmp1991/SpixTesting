@@ -3,7 +3,7 @@ import {GlobalConst} from "../../../../../../public/globalConst";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/layoutReviewSection.module.css"
 
 const title: string = "Que opinan nuestros clientes"
-const sizeStar: number = 30
+const sizeStar: number = 36
 
 export default function LayoutReviewSection({children}) {
     return (
@@ -11,13 +11,25 @@ export default function LayoutReviewSection({children}) {
             <div className={style.title}>
                 {title}
             </div>
-            <div className={style.gridStars}>
-                {
-                    [...Array(5)].map((e, index) =>
-                        <Image key={index} width={sizeStar} height={sizeStar} src={GlobalConst.sourceImages.ratingIndFull} alt={""}/>)
-                }
+            <div className={style.gridRating}>
+                <div className={style.rating}>
+                    5 de 5
+                </div>
+                <div className={style.gridStars}>
+                    {
+                        [...Array(5)].map((e, index) =>
+                            <div key={index} className={style.sizeStar}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.ratingIndFull}
+                                       alt={""}/>
+                            </div>
+                        )
+                    }
+                </div>
             </div>
             {children}
+            <div className={style.seeMore}>
+                Ver mas reseñas
+            </div>
         </div>
     )
 }
