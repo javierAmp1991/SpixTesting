@@ -1,26 +1,15 @@
-.containerProductProp {
+.boxShadowPro {
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    border-radius: 12px;
     position: relative;
-    display: grid;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
-    object-fit: cover;
     background: white;
+    padding: 0 12px;
 }
 
 .sizeImageProduct {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
-}
-
-.boxShadowPro {
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
-    border-radius: 12px;
-    position: relative;
-    background: white;
-    padding: 0 12px;
 }
 
 .gridPriceWithDiscount {
@@ -35,14 +24,12 @@
 }
 
 .contImage {
-    padding: 12px 32px 0 32px;
+    padding: 12px 48px 12px 48px;
 }
 
 .gridInfoProductHorizontal {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    padding: 8px 12px 8px 8px;
 }
 
 .aspectRatio {
@@ -55,7 +42,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 90%;
     aspect-ratio: 1/1;
     z-index: 1;
 }
@@ -95,6 +82,12 @@
     gap: 8px;
 }
 
+.price{
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
 .discountStyle {
     font-size: 12px;
     line-height: 12px;
@@ -102,6 +95,6 @@
     color: #4b704b;
 }
 
-.paddingStar{
-    padding-bottom: 2px;
+.paddingStar {
+    padding: 4px 0;
 }

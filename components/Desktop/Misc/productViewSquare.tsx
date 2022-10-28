@@ -5,9 +5,8 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import RatingStarDesk from "./ratingStarDesk";
 
-export default function ProductViewSquare({item, size, isDisplayOffer}:
+export default function ProductViewSquare({item, size}:
                                               { item: Product, size: number, isDisplayOffer: boolean }) {
-
 
     let getSizeProduct = getProductSize()
     return (
@@ -31,7 +30,7 @@ export default function ProductViewSquare({item, size, isDisplayOffer}:
                         <RatingStarDesk item={item.Rating}/>
                     </div>
                 }
-                <div className={`${utilities.fontPriceIncludeDesktop} ${style.gridPriceICon}`}>
+                <div className={`${style.price} ${style.gridPriceICon}`}>
                     ${getMoneyValue(item.Price)}
                     {
                         item.DiscountPercent != null &&
