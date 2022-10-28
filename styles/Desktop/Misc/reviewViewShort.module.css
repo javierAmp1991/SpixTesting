@@ -39,3 +39,7 @@
 .byWho{
     color: var(--colorSecundaryTextDesktop);
 }
+
+.gridOpt{
+    align-items: center; gap: 8px;
+}

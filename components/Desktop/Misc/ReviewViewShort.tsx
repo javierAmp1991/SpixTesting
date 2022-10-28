@@ -34,7 +34,7 @@ export default function ReviewViewShort({item}: { item: review }) {
                         </div>
                     </div>
                 </div>
-                <div className={`${utilities.gridMaxContent2} justify-between`}>
+                <div className={`${utilities.gridMaxContent2} ${style.gridOpt}`}>
                     <div className={style.byWho}>{item.ByWho}</div>
                     <OptionBar/>
                 </div>
