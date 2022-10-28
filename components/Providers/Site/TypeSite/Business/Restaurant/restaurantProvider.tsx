@@ -275,6 +275,18 @@ const listInitialRecommended: EventCardWithPrice[] = [
         MinPrice: 2990,
         MaxPrice: 9990,
     },
+    /*{
+        Id: "1234sdsadw56",
+        Type: EventCardType.EventCardWithPrice,
+        Title: "Restaurant Cinzano",
+        Subtitle: "Cinzano",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/cinzano.jpg",
+        MinPrice: 2990,
+        MaxPrice: 9990,
+    },*/
 ]
 const listReview: review[] = ReviewsSectionData.listReviews
 const listQuestions: question[] = [

@@ -1,7 +1,9 @@
 .mainDiv {
+    --gapSection: 20px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--gapSection);
+    padding: 40px 0 52px 0;
 }
 
 .title {
@@ -12,7 +14,7 @@
 .gridProducts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: var(--gapSection);
 }
 
 .seeMore{

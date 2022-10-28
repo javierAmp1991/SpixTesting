@@ -5,7 +5,7 @@ const seeMenu: string = "Ver Carta"
 
 export default function ProductSectionMobile({sectionProducts}: { sectionProducts: SectionProductItem }) {
     return (
-        <div className={style.mainDiv}>
+        <div id={sectionProducts.Id} className={style.mainDiv}>
             <div className={style.title}>
                 {sectionProducts.Name}
             </div>
@@ -14,9 +14,6 @@ export default function ProductSectionMobile({sectionProducts}: { sectionProduct
                     sectionProducts.ListProducts.map((item: ProductItem) =>
                         <ProductViewHor key={item.Id} item={item} isDisplayOffer={true}/>)
                 }
-            </div>
-            <div className={style.seeMore}>
-                {seeMenu}
             </div>
         </div>
     )

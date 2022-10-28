@@ -32,8 +32,10 @@ export default function ProductViewHor({item, isDisplayOffer}:
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
                     {item.Description}
                 </div>
-                <div className={`${utilities.fontPriceInclude} ${style.gridPriceICon}`}>
-                    ${getMoneyValue(item.Price)}
+                <div className={style.gridPriceICon}>
+                    <div className={utilities.fontPriceInclude}>
+                        ${getMoneyValue(item.Price)}
+                    </div>
                     {
                         item.DiscountPercent != null &&
                         <div className={style.discountBox}>
@@ -43,26 +45,29 @@ export default function ProductViewHor({item, isDisplayOffer}:
                         </span>
                         </div>
                     }
+
+                    {
+                        isDisplayOffer &&
+                        item.DiscountPercent != null || item.Include != null ?
+                            <div className={`${utilities.fontSecundaryText}`}>
+                                {
+                                    item.Include != null ?
+                                        <>
+                                            {item.Include}
+                                        </>
+                                        :
+                                        <>
+                                            {/*<span>Antes: </span>*/}
+                                            <span className="line-through">
+                                    ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}
+                                            </span>
+                                        </>
+                                }
+                            </div> : <></>
+                    }
                 </div>
 
-                {
-                    isDisplayOffer &&
-                    item.DiscountPercent != null || item.Include != null ?
-                        <div className={`${utilities.fontSecundaryText}`}>
-                            {
-                                item.Include != null ?
-                                    <>
-                                        {item.Include}
-                                    </>
-                                    :
-                                    <>
-                                        <span>Antes: </span>
-                                        <span className="line-through">
-                                    ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}</span>
-                                    </>
-                            }
-                        </div> : <></>
-                }
+
             </div>
         </div>
     )

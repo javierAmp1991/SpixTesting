@@ -20,6 +20,7 @@ import {
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import ProductViewSquare from "../../../../Misc/productViewSquare";
 import DescriptionCardFull from "./DescriptionCardFull";
+import NavProductsSection from "./navProductsSection";
 
 export default function InitialPageRestaurant() {
 
@@ -73,14 +74,19 @@ export default function InitialPageRestaurant() {
                 </LayoutTitle>
                 <div className={style.separationLine}/>
 
-                {
-                    infoSectionProducts.map(item =>
-                        <>
-                            <ProductSection sectionProducts={item}/>
-                            <div className={style.separationLine}/>
-                        </>
-                    )
-                }
+                <div>
+                    <NavProductsSection/>
+                    <div>
+                        {
+                            infoSectionProducts.map(item =>
+                                <>
+                                    <ProductSection sectionProducts={item}/>
+                                    <div className={style.separationLine}/>
+                                </>
+                            )
+                        }
+                    </div>
+                </div>
 
                 <LayoutTitle title={"Preguntas"}>
                     <div className={style.gridQuestions}>

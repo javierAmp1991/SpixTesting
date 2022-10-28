@@ -3,6 +3,7 @@ import style from "/styles/Desktop/Misc/reviewViewShort.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import {review} from "../../../dataDemo/data";
 import Image from "next/image";
+import OptionBar from "./optionBar";
 
 export default function ReviewViewShort({item}: { item: review }) {
     return (
@@ -33,7 +34,10 @@ export default function ReviewViewShort({item}: { item: review }) {
                         </div>
                     </div>
                 </div>
-                <div className={style.byWho}>{item.ByWho}</div>
+                <div className={`${utilities.gridMaxContent2} justify-between`}>
+                    <div className={style.byWho}>{item.ByWho}</div>
+                    <OptionBar/>
+                </div>
             </div>
         </div>
     )

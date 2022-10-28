@@ -2,13 +2,11 @@
     --widthCard: 800px;
     display: grid;
     padding: 8px;
-    position: absolute;
-    bottom: 0;
-    margin: 0 12px;
     background: white;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     border-radius: 8px;
     overflow: hidden;
+    margin-bottom: 32px;
 }
 
 .gridLeft {
@@ -108,6 +106,7 @@
 }
 
 .sizeSideImage {
+    scroll-snap-align: start;
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
@@ -117,5 +116,11 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+}
+
+.seeGalery{
+    display: grid;
+    text-align: left;
+    color: var(--linkColor);
 }
 

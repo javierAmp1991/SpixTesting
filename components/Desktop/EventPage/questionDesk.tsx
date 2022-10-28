@@ -17,8 +17,8 @@ export default function QuestionDesk({item}: { item: question }) {
                     <span className={utilities.fontPrimaryText}>{item.Answer}</span>
                 </div>
                 <div>
-                    <span className={utilities.fontSecundaryText}>Por </span>
-                    <a className={utilities.styleLink}>{item.ByWho}</a>
+                    <span className={utilities.fontPrimaryText}>Por </span>
+                    <a className={utilities.fontSecundaryText}>{item.ByWho}</a>
                 </div>
                 <OptionBar/>
             </div>

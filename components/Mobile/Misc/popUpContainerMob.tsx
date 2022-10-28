@@ -1,6 +1,7 @@
 import style from "/styles/Mobile/Misc/popUpMobile.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
+import utilities from "/styles/utilities.module.css";
 
 export default function PopUpContainerMob({children, closePopUp, isBackground, isButtonVisible}) {
     const cssStyle = getCssStyle()
@@ -10,9 +11,9 @@ export default function PopUpContainerMob({children, closePopUp, isBackground, i
             <div className={cssStyle.modalBackground}>
                 {
                     isButtonVisible &&
-                    <div className={style.positionDeleteIcon}>
+                    <div className={`${style.positionDeleteIcon} ${cssStyle.opacityButton} `}>
                         <div onClick={closePopUp}
-                             className={style.sizeDeleteIcon}>
+                             className={`${style.sizeDeleteIcon} `}>
                             <Image layout={"fill"}
                                    src={GlobalConst.sourceImages.closeX} alt=""/>
                         </div>
@@ -25,7 +26,8 @@ export default function PopUpContainerMob({children, closePopUp, isBackground, i
 
     function getCssStyle() {
         return {
-            modalBackground: isBackground ? style.renderDiv : style.renderDivTransparent
+            modalBackground: isBackground ? style.renderDiv : style.renderDivTransparent,
+            opacityButton: !isBackground &&  utilities.opacity7
         }
     }
 }

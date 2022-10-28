@@ -46,14 +46,14 @@ export default function OptionBar() {
                     {initialLike}
                 </div>
             </button>
-            <a className={`${utilities.gridMaxContent2} ${style.gridItems}`}>
+            {/*<a className={`${utilities.gridMaxContent2} ${style.gridItems}`}>
                 <div className={utilities.gridContentCenter}>
                     <div className={style.sizeIcon}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>
                     </div>
                 </div>
                 <div>58</div>
-            </a>
+            </a>*/}
             <a>{reporttext}</a>
         </div>
     )

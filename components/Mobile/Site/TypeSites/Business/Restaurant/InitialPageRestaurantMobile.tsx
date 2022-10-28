@@ -23,6 +23,7 @@ import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMo
 import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
 import DescriptionCardFullData from "./DescriptionCardFullData";
 import EventVerticalViewNewMob from "../../../../Events/eventVerticalViewNewMob";
+import NavProductsSectionMobile from "./navProductsSectionMobile";
 
 export default function InitialPageRestaurantMobile() {
 
@@ -38,11 +39,11 @@ export default function InitialPageRestaurantMobile() {
                 <div className={style.mainDivHeader}>
                     <FullBannerMobile item={infoHeader.Banner}/>
                 </div>
-                <DescriptionCardFullMobile/>
+                <DescriptionCardFullData/>
             </div>
 
             <div className={style.mainDiv}>
-                <DescriptionCardFullData/>
+                <DescriptionCardFullMobile/>
                 <LayoutReviewSectionMobile>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
                         {
@@ -75,14 +76,18 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutTitleMobile>
                 <div className={style.separationLine}/>
 
-                {
-                    infoSectionProducts.map(item =>
-                        <>
-                            <ProductSectionMobile sectionProducts={item}/>
-                            <div className={style.separationLine}/>
-                        </>
-                    )
-                }
+                <div>
+                    <NavProductsSectionMobile/>
+                    {
+                        infoSectionProducts.map(item =>
+                            <div key={item.Id}>
+                                <ProductSectionMobile sectionProducts={item}/>
+                                <div className={style.separationLine}/>
+                            </div>
+                        )
+                    }
+                </div>
+
 
                 <LayoutTitleMobile isOverflow={false} title={"Preguntas"}>
                     <div className={style.gridQuestions}>

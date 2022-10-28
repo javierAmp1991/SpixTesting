@@ -34,9 +34,6 @@ export default function DescriptionCardFullData() {
                         <SocialBar/>
                     </div>
                 </div>
-               {/* <div className={utilities.clamp4}>
-                    {info.Description}
-                </div>*/}
                 <div className={style.gridInfoNew}>
                     <span>{directionText}</span>
                     <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>

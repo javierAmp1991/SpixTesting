@@ -31,10 +31,6 @@
     overflow: hidden;
 }
 
-.gridSideImage {
-
-}
-
 
 .gridRight {
     display: grid;
@@ -50,8 +46,6 @@
 }
 
 .mainDivInfo {
-    display: grid;
-    grid-template-rows: 1fr max-content;
     padding: 0 48px 0 24px;
 }
 
@@ -125,6 +119,7 @@
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
     justify-content: left;
+    padding-top: 24px;
 }
 
 .sizeSideImage {

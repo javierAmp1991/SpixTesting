@@ -279,6 +279,15 @@
     opacity: .5;
 }
 
+.opacity8 {
+    opacity: .8;
+}
+
+.opacity7 {
+    opacity: .7;
+}
+
+
 .maxWidthMobile {
     max-width: 768px;
     margin: auto;
@@ -545,6 +554,22 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     line-clamp: 5;
+    overflow: hidden;
+}
+
+.clamp6 {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    line-clamp: 6;
+    overflow: hidden;
+}
+
+.clamp7 {
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+    line-clamp: 7;
     overflow: hidden;
 }
 
