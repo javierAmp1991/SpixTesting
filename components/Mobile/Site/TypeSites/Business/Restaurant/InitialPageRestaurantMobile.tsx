@@ -25,6 +25,7 @@ import FullBanner from "../../../../../Desktop/Misc/fullBanner";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
 import DescriptionCardFullData from "./DescriptionCardFullData";
+import EventVerticalViewNewMob from "../../../../Events/eventVerticalViewNewMob";
 
 export default function InitialPageRestaurantMobile() {
 
@@ -71,7 +72,7 @@ export default function InitialPageRestaurantMobile() {
                     <LayoutCarrouselMobile gapLayout={16}>
                         {
                             infoRecomended.InitialItems.map((item, index) =>
-                                <EventVerticalView key={item.Id} item={item} darkModeState={false}/>)
+                                <EventVerticalViewNewMob key={item.Id} item={item} darkModeState={false}/>)
                         }
                     </LayoutCarrouselMobile>
                 </LayoutTitleMobile>

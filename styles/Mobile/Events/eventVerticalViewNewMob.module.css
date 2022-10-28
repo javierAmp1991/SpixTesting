@@ -1,0 +1,165 @@
+.principalGridVertical {
+    --paddinBottomDivX: 12px;
+    --sizeCir: 16px;
+    --sizeCirLat: 16px;
+    --botTomCircle: 24px;
+    --boxShadowCircle: 0 0 0 inset rgba(0, 0, 0, .2);
+    /* border: 2px solid #eeeeee;*/
+    /*border-bottom: 1px solid #dedcdc;*/
+    display: grid;
+    grid-template-rows: max-content 1fr;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .4s;
+    position: relative;
+}
+
+.principalGridVertical:hover {
+    transform: scale(1.03);
+}
+
+.containerImage {
+    width: 220px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.fontSize {
+    /*    color: var(--colorSecundaryTextDesktop);*/
+    /*color: #ababab;*/
+    font-size: 16px;
+    font-weight: 300;
+    /*font-family: Helvetica, sans-serif, Arial;*/
+}
+
+.sizeImage {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.sizeImageBase {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+    z-index: 0;
+}
+
+.zIndexLastTicket {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    z-index: 1;
+}
+
+.subTitleMargin {
+    margin-bottom: 6px;
+}
+
+.princiaplGridInfo {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+}
+
+.TopDivInfo {
+    padding: 4px 12px 10px 12px;
+    position: relative;
+
+}
+
+.gridRatingStar {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+}
+
+.contRating {
+    margin-top: 3px;
+}
+
+.bottomDivSearch {
+    padding: 6px 12px;
+    display: grid;
+    gap: 2px;
+    position: relative;
+    /*    border-top: 2px dashed #e7e7e7;*/
+}
+
+.bottomDivResale {
+    padding: 0 var(--paddinBottomDivX) var(--paddinBottomDivX) var(--paddinBottomDivX);
+}
+
+.sizeIcon {
+    height: 12px;
+    width: 12px;
+    position: relative;
+}
+
+.gridIconInfo {
+    display: grid;
+    gap: 4px;
+    align-items: center;
+}
+
+.displayIn {
+    height: 0;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.displayOut {
+    height: 24px;
+    transition: .2s;
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 8px;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.tagStyleDisc {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 500;
+    border-radius: 3px;
+    overflow: hidden;
+    padding: 3px 10px;
+    background: var(--colorTagDiscount);
+    color: white;
+}
+
+.textResaleOffer {
+    font-size: 15px;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 400;
+    padding-top: 2px;
+}
+
+.positionWishList {
+    bottom: 4px;
+    right: 4px;
+    width: 20%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: 500;
+}
+
+.positionMedal {
+    bottom: 4px;
+    right: 4px;
+    width: 20%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: 500;
+}
+
+
+
+
