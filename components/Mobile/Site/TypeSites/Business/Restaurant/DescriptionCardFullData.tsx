@@ -10,7 +10,6 @@ import SocialBar from "../../../../Misc/socialBar";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 
-
 const directionText: string = "Direccion:"
 const contactText: string = "Contactos:"
 export default function DescriptionCardFullData() {

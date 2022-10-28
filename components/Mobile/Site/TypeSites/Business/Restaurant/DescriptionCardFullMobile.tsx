@@ -16,13 +16,20 @@ const contactText: string = "Contactos:"
 export default function DescriptionCardFullMobile() {
     const info: PresentationCard = useContext(HeaderContext)
     let [displayMap, setDisplayMap] = useState(false)
+    let [imageDisplay, setImageDisplay] = useState("")
+    let [displayImage, setDisplayImage] = useState(false)
     const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
+    const handlePopUpImage = () => setDisplayImage(displayImage = !displayImage)
+    const handleClickImage = (path: string) => {
+        setImageDisplay(imageDisplay = path)
+        handlePopUpImage()
+    }
     return (
         <div className={style.mainDiv}>
             <div className={style.gridLeft}>
-                <div className={style.sizeImage}>
+                <button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
                     <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
-                </div>
+                </button>
                 <div className={style.mainDivInfo}>
                     {/*<div className={style.gridImageName}>
                         <div className={style.secondGradient}>
@@ -45,68 +52,21 @@ export default function DescriptionCardFullMobile() {
                     <div className={style.gridSideImage}>
                         {
                             info.SideImages.map((e, index) =>
-                                <div key={e} className={style.sizeSideImage}>
+                                <button onClick={() => handleClickImage(e)} key={e} className={style.sizeSideImage}>
                                     <Image layout={"fill"} src={e}/>
-                                </div>
+                                </button>
                             )
                         }
                     </div>
-                    {/*<div>
-                        <span>{directionText}</span>
-                        <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
-                    </div>*/}
-                    {/*
-                    <div className={style.gridInfoNew}>
-                        <div>{contactText}</div>
-                        <Link href={info.WebPage}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
-                            </div>
-                        </Link>
-                        <div className={style.sizeIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.whatsaapIcon}/>
-                        </div>
-                        <Link href={info.Instagram}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.instagramICon}/>
-                            </div>
-                        </Link>
-                        <Link href={info.TikTok}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.tiktokIcon}/>
-                            </div>
-                        </Link>
-                        <Link href={info.Facebook}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
-                            </div>
-                        </Link>
-                    </div>
-*/}
-                   {/* <div className={style.gridButtons}>
-                        <div className={style.button}>
-                            Ver carta
-                        </div>
-                        <div className={style.button}>
-                            Reservar Mesa
-                        </div>
-                    </div>*/}
                 </div>
             </div>
 
-           {/* <div className={style.gridSideImage}>
-                {
-                    [...Array(3)].map((e, index) =>
-                        <div className={style.sizeSideImage}>
-                            <Image layout={"fill"} src={"/images/hellsKitchen.jpg"}/>
-                        </div>
-                    )
-                }
-            </div>*/}
             {
-                displayMap &&
-                <PopUpContainerMob closePopUp={handlePopUp} isButtonVisible={true} isBackground={true}>
-                    <MapPopUp item={info.Venue}/>
+                displayImage &&
+                <PopUpContainerMob closePopUp={handlePopUpImage} isButtonVisible={true} isBackground={false}>
+                    <div className={style.imagePopUp}>
+                        <Image layout={"fill"} objectFit={"cover"} src={imageDisplay}/>
+                    </div>
                 </PopUpContainerMob>
             }
         </div>

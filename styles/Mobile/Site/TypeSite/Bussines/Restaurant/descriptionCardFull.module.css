@@ -113,3 +113,9 @@
     position: relative;
 }
 
+.imagePopUp{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
