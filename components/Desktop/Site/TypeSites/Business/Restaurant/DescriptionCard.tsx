@@ -68,7 +68,7 @@ export default function DescriptionCard() {
                 </div>
                 <div>
                     <span>{directionText}</span>
-                    <button className={utilities.styleLink}>{info.Venue}</button>
+                    {/*<button className={utilities.styleLink}>{info.Venue}</button>*/}
                 </div>
                 <div className={style.gridInfoNew}>
                     <div>{contactText}</div>
