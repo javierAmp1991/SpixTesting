@@ -24,7 +24,7 @@ const listProductsOffer: ProductItem[] = [
         DiscountPercent: null,
         Include: null,
         ImagePath: "/images/product1.jpg",
-        Rating: null
+        Rating: 4
     },
     {
         Id: "idProduct02",
@@ -64,7 +64,7 @@ const listProductsOffer: ProductItem[] = [
         DiscountPercent: 30,
         Include: null,
         ImagePath: "/images/product7.jpg",
-        Rating: null
+        Rating: 0
     },
     {
         Id: "idProduct06",
@@ -364,7 +364,7 @@ const listOfferProducts: Product[] = [
         Include: null,
         ImagePath: "/images/product8.jpg",
         Tag: "Energeticas",
-        Rating: null
+        Rating: 0
     },
 ]
 

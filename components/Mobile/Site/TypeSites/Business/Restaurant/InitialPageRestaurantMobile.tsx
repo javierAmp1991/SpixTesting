@@ -11,7 +11,6 @@ import {
     HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import ProductViewSquare from "../../../../Misc/productViewSquare";
 import DescriptionCardFullMobile from "./DescriptionCardFullMobile";
 import LayoutTitleMobile from "./layoutTitleMobile";
 import LayoutReviewSectionMobile from "./layoutReviewSectionMobile";
@@ -24,6 +23,7 @@ import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
 import DescriptionCardFullData from "./DescriptionCardFullData";
 import EventVerticalViewNewMob from "../../../../Events/eventVerticalViewNewMob";
 import NavProductsSectionMobile from "./navProductsSectionMobile";
+import ProductViewSquare from "../../../../../Desktop/Misc/productViewSquare";
 
 export default function InitialPageRestaurantMobile() {
 

@@ -11,11 +11,11 @@ export default function ProductViewSquare({item, size}:
     let getSizeProduct = getProductSize()
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
-            {
-                item.DiscountPercent != null || item.Include != null ?
+           {
+                (item.DiscountPercent != null || item.Include != null) &&
                     <div className={style.zindexListon}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-                    </div> : <></>
+                    </div>
             }
             <div className={style.contImage}>
                 <div className={style.aspectRatio}>
