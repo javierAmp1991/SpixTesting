@@ -21,7 +21,7 @@
 }
 
 .sizeStar {
-    height: 16px;
+    height: 14px;
     aspect-ratio: 1/1;
     position: relative;
 }
@@ -41,8 +41,8 @@
 }
 
 .fontTextReviews{
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 12px;
+    line-height: 12px;
     font-weight: 500;
     color: #007185;
 }

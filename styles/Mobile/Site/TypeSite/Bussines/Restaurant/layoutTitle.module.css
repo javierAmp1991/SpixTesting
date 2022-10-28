@@ -1,0 +1,16 @@
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow: scroll;
+}
+
+.title{
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.overflow{
+    overflow: scroll;
+}

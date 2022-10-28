@@ -1,37 +1,46 @@
-.mainDiv{
+.mainDiv {
     --widthCard: 800px;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    padding: 16px;
-    width: var(--widthCard);
+    padding: 8px;
     position: absolute;
     bottom: 0;
-    left: calc(50vw - (var(--widthCard)/2));
+    margin: 0 12px;
     background: white;
-    box-shadow: 0 0 20px rgba(0,0,0,.5) ;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     border-radius: 8px;
     overflow: hidden;
 }
 
-.sizeImage{
+.gridLeft {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+}
+
+.gridRight {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.sizeImage {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
 }
 
-.mainDivInfo{
+.mainDivInfo {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 0 16px;
+    gap: 8px;
+    padding: 0 8px;
 }
 
-.title{
+.title {
     font-size: 28px;
     font-weight: 500;
 }
 
-.gridImageName{
+.gridImageName {
     display: grid;
     grid-template-columns: max-content 1fr;
     align-items: center;
@@ -73,7 +82,7 @@
     overflow: hidden;
 }
 
-.button{
+.button {
     padding: 3px 0;
     text-align: center;
     width: 120px;
@@ -84,11 +93,23 @@
     overflow: hidden;
 }
 
-.gridButtons{
+.gridButtons {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
     justify-content: right;
 }
 
+.gridSideImage {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    align-content: center;
+}
+
+.sizeSideImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
 

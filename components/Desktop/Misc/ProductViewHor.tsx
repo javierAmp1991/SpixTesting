@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../public/globalConst";
+import RatingStarDesk from "./ratingStarDesk";
 
 export default function ProductViewHor({item, isDisplayOffer}:
                                            { item: ProductItem, isDisplayOffer: boolean }) {
@@ -13,10 +14,10 @@ export default function ProductViewHor({item, isDisplayOffer}:
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
                 {
-                    item.Include != null || item.DiscountPercent != null &&
-                    < div className={utilities.positionLastTicket}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-                    </div>
+                    item.DiscountPercent != null || item.Include != null ?
+                        < div className={utilities.positionLastTicket}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                        </div> : <></>
                 }
             </div>
 
@@ -24,6 +25,10 @@ export default function ProductViewHor({item, isDisplayOffer}:
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}
                 </div>
+                {
+                    item.Rating != null &&
+                    <RatingStarDesk item={item.Rating}/>
+                }
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
                     {item.Description}
                 </div>

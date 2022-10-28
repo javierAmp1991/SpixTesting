@@ -1,9 +1,9 @@
-import ProductViewHor from "../../../../Misc/ProductViewHor";
+import ProductViewHor from "../../../../../Desktop/Misc/ProductViewHor";
 import {ProductItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/productSection.module.css"
+import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/productSection.module.css"
 const seeMenu: string = "Ver Carta"
 
-export default function ProductSection({sectionProducts}: { sectionProducts: SectionProductItem }) {
+export default function ProductSectionMobile({sectionProducts}: { sectionProducts: SectionProductItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>

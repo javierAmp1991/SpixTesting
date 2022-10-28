@@ -1,12 +1,11 @@
 import Image from "next/image";
 import {GlobalConst} from "../../../../../../public/globalConst";
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/layoutReviewSection.module.css"
+import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/layoutReviewSection.module.css"
 
 const title: string = "Que opinan nuestros clientes"
-const qualificationText: string = "Calificacion:"
-const seeMoreReview: string = "Ver mas reseñas"
+const sizeStar: number = 36
 
-export default function LayoutReviewSection({children}) {
+export default function LayoutReviewSectionMobile({children}) {
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
@@ -14,7 +13,7 @@ export default function LayoutReviewSection({children}) {
             </div>
             <div className={style.gridRating}>
                 <div className={style.rating}>
-                    {qualificationText} 5/5
+                    5/5
                 </div>
                 <div className={style.gridStars}>
                     {
@@ -29,7 +28,7 @@ export default function LayoutReviewSection({children}) {
             </div>
             {children}
             <div className={style.seeMore}>
-                {seeMoreReview}
+                Ver mas reseñas
             </div>
         </div>
     )

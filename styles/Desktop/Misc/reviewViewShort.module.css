@@ -1,3 +1,7 @@
+.mainPadding{
+    padding: 6px;
+    scroll-snap-align: start;
+}
 .mainDiv {
     display: grid;
     gap: 8px;

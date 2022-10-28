@@ -1,36 +1,26 @@
 .gridRatingStar {
     display: grid;
     grid-template-columns: repeat(2, max-content);
+    align-items: center;
     gap: 4px;
 }
 
 .gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
-    gap: 4px;
+    gap: 2px;
     align-items: center;
 }
 
-.sizeStar {
-    height: 13px;
-    width: 13px;
-    position: relative;
-}
-
-.sizeStarDesktop{
-    height: 19px;
-    width: 19px;
-    position: relative;
-}
-
-.paddingRating {
-    display: grid;
-    align-items: end;
-}
-
-.fontTextReviews{
+.fontTextReviews {
     font-size: 12px;
     line-height: 12px;
     font-weight: 500;
     color: #007185;
+}
+
+.sizeStar{
+    height: 14px;
+    aspect-ratio: 1/1;
+    position: relative;
 }

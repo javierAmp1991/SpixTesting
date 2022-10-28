@@ -1,52 +1,24 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/descriptionCard.module.css"
+import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/descriptionCardData.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import Link from "next/link";
 import utilities from "/styles/utilities.module.css";
 import SocialBar from "../../../../Misc/socialBar";
+import MapPopUp from "../../../../Misc/mapPopUp";
+import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 
 
 const directionText: string = "Direccion:"
 const contactText: string = "Contactos:"
-export default function DescriptionCard() {
+export default function DescriptionCardFullData() {
     const info: PresentationCard = useContext(HeaderContext)
+    let [displayMap, setDisplayMap] = useState(false)
+    const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
     return (
-        /*<div className={style.mainDiv}>
-            <div className={style.sizeImage}>
-                <Image layout={"fill"} objectFit={"cover"} src={"/images/hellsKitchen.jpg"} alt={""}/>
-            </div>
-            <div className={style.mainDivInfo}>
-                <div className={style.gridInfoNew}>
-                    <div className={style.secondGradient}>
-                        <div className={style.firstGradient}>
-                            <div className={style.sizeLogo}>
-                                <Image layout={"fill"} src={"/images/hellsKitchen.jpeg"}/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.Name}>
-                        HellsKitchen Nightmare
-                    </div>
-                </div>
-                <div className={style.title}>
-                    Nuestro Local
-                </div>
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Corporis culpa dicta libero minima molestiae nihil odio officia
-                    quo totam. Alias cum eveniet inventore ipsam necessitatibus,
-                    nemo nobis omnis reprehenderit ut voluptatem! Adipisci atque, culpa
-                    cum deleniti dignissimos dolores eos eveniet iste iusto laboriosam
-                </div>
-            </div>
-        </div>*/
         <div className={style.mainDiv}>
-            <div className={style.sizeImage}>
-                <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
-            </div>
             <div className={style.mainDivInfo}>
                 <div className={style.gridImageName}>
                     <div className={style.secondGradient}>
@@ -63,12 +35,12 @@ export default function DescriptionCard() {
                         <SocialBar/>
                     </div>
                 </div>
-                <div>
+                <div className={utilities.clamp4}>
                     {info.Description}
                 </div>
-                <div>
+                <div className={style.gridInfoNew}>
                     <span>{directionText}</span>
-                    <button className={utilities.styleLink}>{info.Venue}</button>
+                    <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
                 </div>
                 <div className={style.gridInfoNew}>
                     <div>{contactText}</div>
@@ -96,15 +68,22 @@ export default function DescriptionCard() {
                         </div>
                     </Link>
                 </div>
-                <div className={style.gridButtons}>
-                    <div className={style.button}>
-                        Ver carta
-                    </div>
-                    <div className={style.button}>
-                        Reservar Mesa
-                    </div>
+            </div>
+            <div className={style.gridButtons}>
+                <div className={style.button}>
+                    Ver carta
+                </div>
+                <div className={style.button}>
+                    Reservar Mesa
                 </div>
             </div>
+
+            {
+                displayMap &&
+                <PopUpContainerMob closePopUp={handlePopUp} isButtonVisible={true} isBackground={true}>
+                    <MapPopUp item={info.Venue}/>
+                </PopUpContainerMob>
+            }
         </div>
     )
 }

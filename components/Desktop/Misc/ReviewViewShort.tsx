@@ -6,33 +6,35 @@ import Image from "next/image";
 
 export default function ReviewViewShort({item}: { item: review }) {
     return (
-        <div className={style.mainDiv}>
-            <div className={`${utilities.gridMaxContent2} gap-3`}>
-                <div className={utilities.gridContentCenter}>
-                    <div className={style.sizeReviewImage}>
-                        <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt=""/>
+        <div className={style.mainPadding}>
+            <div className={style.mainDiv}>
+                <div className={`${utilities.gridMaxContent2} gap-3`}>
+                    <div className={utilities.gridContentCenter}>
+                        <div className={style.sizeReviewImage}>
+                            <Image layout={"fill"} objectFit={"cover"} src={item.ProfileImage} alt=""/>
+                        </div>
                     </div>
-                </div>
-                <div className="grid">
-                    <div className={utilities.fontTitleDesktop}>
-                        {item.Title}
-                    </div>
-                    <div className="grid pb-0.5">
-                        <div className={style.sizeReviewStar}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                    <div className="grid">
+                        <div className={utilities.fontTitleDesktop}>
+                            {item.Title}
+                        </div>
+                        <div className="grid pb-0.5">
+                            <div className={style.sizeReviewStar}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.reviewStars} alt=""/>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div className="grid gap-0.5">
-                <div className={utilities.fontPrimaryText}>
-                    <div className={`${style.maxWidthtextReview} ${utilities.clamp2}`}>
-                        {item.Review}
+                <div className="grid gap-0.5">
+                    <div className={utilities.fontPrimaryText}>
+                        <div className={`${style.maxWidthtextReview} ${utilities.clamp3}`}>
+                            {item.Review}
+                        </div>
                     </div>
                 </div>
+                <div className={style.byWho}>{item.ByWho}</div>
             </div>
-            <div className={style.byWho}>{item.ByWho}</div>
         </div>
     )
 }

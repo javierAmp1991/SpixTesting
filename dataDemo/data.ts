@@ -3246,6 +3246,7 @@ export class Product {
     public Include?: string
     public ImagePath?: string
     public Tag?: string
+    public Rating?: number
 }
 
 class OwnPublicity {

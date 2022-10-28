@@ -185,7 +185,7 @@ export default function Index() {
     let carrouselBannerMobile = <LayoutCarrouselMobileBanner gapLayout={noGapLayout}>
         {
             HomeBannerData.listBanners.map(item =>
-                <FullBannerMobile linkImage={item} key={item}/>
+                <FullBannerMobile item={item} key={item}/>
             )
         }
     </LayoutCarrouselMobileBanner>
