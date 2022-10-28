@@ -6,7 +6,7 @@ import {
     ProviderOfferProducts,
     ProviderRecommended
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {
     HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
@@ -47,7 +47,7 @@ export default function InitialPageRestaurantMobile() {
                 <LayoutReviewSectionMobile>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
                         {
-                            listReview.map((item, index) =>
+                            listReview.map((item) =>
                                 <ReviewViewShort key={item.ByWho} item={item}/>
                             )
                         }
@@ -58,7 +58,7 @@ export default function InitialPageRestaurantMobile() {
                 <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>
                     <LayoutCarrouselMobile gapLayout={16}>
                         {
-                            listOfferProducts.InitialItems.map((item, index) =>
+                            listOfferProducts.InitialItems.map((item) =>
                                 <ProductViewSquare key={item.Name} item={item} size={220} isDisplayOffer={true}/>
                             )
                         }
@@ -69,7 +69,7 @@ export default function InitialPageRestaurantMobile() {
                 <LayoutTitleMobile isOverflow={true} title={"Recomendados"}>
                     <LayoutCarrouselMobile gapLayout={16}>
                         {
-                            infoRecomended.InitialItems.map((item, index) =>
+                            infoRecomended.InitialItems.map((item) =>
                                 <EventVerticalViewNewMob key={item.Id} item={item} darkModeState={false}/>)
                         }
                     </LayoutCarrouselMobile>
