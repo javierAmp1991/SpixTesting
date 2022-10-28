@@ -14,14 +14,11 @@ import {
 import ProductViewSquare from "../../../../Misc/productViewSquare";
 import DescriptionCardFullMobile from "./DescriptionCardFullMobile";
 import LayoutTitleMobile from "./layoutTitleMobile";
-import FullBannerRestaurant from "../../../../../Desktop/Misc/fullBannerRestaurant";
 import LayoutReviewSectionMobile from "./layoutReviewSectionMobile";
 import ReviewViewShort from "../../../../../Desktop/Misc/ReviewViewShort";
-import EventVerticalView from "../../../../../Desktop/EventsView/eventVerticalView";
 import ProductSectionMobile from "./ProductSectionMobile";
 import QuestionDesk from "../../../../../Desktop/EventPage/questionDesk";
 import FullBannerMobile from "../../../../Misc/fullBannerMobile";
-import FullBanner from "../../../../../Desktop/Misc/fullBanner";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
 import DescriptionCardFullData from "./DescriptionCardFullData";
