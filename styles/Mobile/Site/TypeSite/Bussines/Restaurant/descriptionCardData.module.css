@@ -1,12 +1,12 @@
 .mainDiv {
     --widthCard: 800px;
     display: grid;
-    position: absolute;
-    padding: 8px 16px;
+    padding: 16px;
     bottom: 0;
     margin: auto;
-    left: 16px;
-    width: calc(100% - 32px);
+/*    left: 16px;
+    position: absolute;
+    width: calc(100% - 32px);*/
     background: white;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     border-radius: 8px;
@@ -15,8 +15,9 @@
 
 .gridLeft {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1.5fr;
     align-items: center;
+    padding: 8px 0;
 }
 
 .gridRight {
@@ -33,7 +34,7 @@
 .mainDivInfo {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 4px;
 }
 
 .title {
@@ -98,7 +99,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
-    padding-top: 24px;
+    padding-top: 8px;
     justify-content: left;
 }
 
@@ -113,5 +114,18 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+}
+
+.seeGalery{
+    display: grid;
+    text-align: left;
+    color: var(--linkColor);
+}
+
+.mainDivInfoDes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 0 0 8px;
 }
 

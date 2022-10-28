@@ -39,11 +39,12 @@ export default function InitialPageRestaurantMobile() {
                 <div className={style.mainDivHeader}>
                     <FullBannerMobile item={infoHeader.Banner}/>
                 </div>
-                <DescriptionCardFullData/>
+               {/* <DescriptionCardFullData/>*/}
             </div>
 
             <div className={style.mainDiv}>
-                <DescriptionCardFullMobile/>
+                <DescriptionCardFullData/>
+                {/*<DescriptionCardFullMobile/>*/}
                 <LayoutReviewSectionMobile>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
                         {

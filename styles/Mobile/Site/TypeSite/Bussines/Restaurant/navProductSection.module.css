@@ -1,12 +1,12 @@
 .mainDiv {
     width: calc(100vw - 32px);
     overflow: scroll;
-    height: 30px;
+    height: 50px;
     position: sticky;
     top: 0;
     display: grid;
-    grid-template-columns: 100px;
-    grid-auto-columns: 100px;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
     grid-auto-flow: column;
     align-items: center;
     gap: 12px;

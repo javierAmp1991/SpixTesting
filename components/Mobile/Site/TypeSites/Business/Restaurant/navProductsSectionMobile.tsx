@@ -2,25 +2,30 @@ import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/navProductSe
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import Link from "next/link";
 
 export default function NavProductsSectionMobile() {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
-    const handleTagSelected = (id: string) => setTagSelected(tagSelected = id)
-
+    let [styleNav, setStyleNav] = useState(true)
+    const handleStyleNav = () => setStyleNav(styleNav = true)
+    const handleTagSelected = (id: string) => {
+        let data = document.getElementById(id)
+        data.scrollIntoView({behavior: "smooth"})
+        setTagSelected(tagSelected = id)
+    }
+    const cssStyle = {
+        main: styleNav ? style.mainDiv : style.mainDivStiky
+    }
     return (
-        <div className={style.mainDiv}>
-            {
-                infoSectionProducts.map(item =>
-                    <Link key={item.Id} href={`#${item.Id}`}>
-                        <button onClick={() => handleTagSelected(item.Id)}
+            <div className={style.mainDiv}>
+                {
+                    infoSectionProducts.map(item =>
+                        <button key={item.Id} onClick={() => handleTagSelected(item.Id)}
                                 className={item.Id == tagSelected ? style.tagSelected : style.tag}>
                             {item.Name}
                         </button>
-                    </Link>
-                )
-            }
-        </div>
+                    )
+                }
+            </div>
     )
 }
