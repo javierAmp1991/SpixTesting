@@ -1,10 +1,11 @@
-.mainDiv{
+.mainDiv {
     overflow: scroll;
 }
 
-.mainPadding{
+.mainPadding {
     padding: 6px;
 }
+
 .gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
@@ -19,27 +20,27 @@
     color: var(--colorTitlesDesktop);
 }
 
-.gridRating{
+.gridRating {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    padding-bottom: 32px;
+    padding-bottom: 16px;
     align-items: center;
     gap: 12px;
 }
 
-.rating{
+.rating {
     font-size: 27px;
     font-weight: 500;
 }
 
-.sizeStar{
+.sizeStar {
     height: 18px;
     width: 18px;
     position: relative;
 }
 
-.seeMore{
-    padding-top: 32px;
+.seeMore {
+    padding-top: 24px;
     font-size: 16px;
     font-weight: 500;
     color: var(--linkColor);
@@ -47,6 +48,6 @@
     text-decoration: underline;
 }
 
-.overflow{
+.overflow {
     overflow: scroll;
 }

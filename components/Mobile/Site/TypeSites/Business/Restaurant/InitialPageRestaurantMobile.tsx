@@ -56,7 +56,7 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutReviewSectionMobile>
                 <div className={style.separationLine}/>
 
-                <LayoutTitleMobile title={"Happy Hour"}>
+                <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>
                     <LayoutCarrouselMobile gapLayout={16}>
                         {
                             listOfferProducts.InitialItems.map((item, index) =>
@@ -67,7 +67,7 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutTitleMobile>
                 <div className={style.separationLine}/>
 
-                <LayoutTitleMobile title={"Recomendados"}>
+                <LayoutTitleMobile isOverflow={true} title={"Recomendados"}>
                     <LayoutCarrouselMobile gapLayout={16}>
                         {
                             infoRecomended.InitialItems.map((item, index) =>
@@ -86,7 +86,7 @@ export default function InitialPageRestaurantMobile() {
                     )
                 }
 
-                <LayoutTitleMobile title={"Preguntas"}>
+                <LayoutTitleMobile isOverflow={false} title={"Preguntas"}>
                     <div className={style.gridQuestions}>
                         {
                             listQuestion.map((item) =>
