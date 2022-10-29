@@ -3,7 +3,7 @@ import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext, useEffect, useRef, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 
-export default function NavProductsSectionMobile({isStikcy}: { isStikcy: boolean }) {
+export default function NavProductsSectionMobile() {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
     let [styleNav, setStyleNav] = useState(true)
