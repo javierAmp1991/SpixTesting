@@ -2,8 +2,8 @@
     width: 100vw;
     left: 0;
     overflow: scroll;
-    height: 44px;
-    position: absolute;
+    height: 50px;
+    position: fixed;
     display: grid;
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
@@ -13,6 +13,7 @@
     padding: 0 4px;
     z-index: 900;
     background: white;
+    transition: .4s;
 }
 
 

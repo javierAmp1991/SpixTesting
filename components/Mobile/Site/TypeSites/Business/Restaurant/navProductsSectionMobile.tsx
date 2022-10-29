@@ -11,11 +11,14 @@ export default function NavProductsSectionMobile() {
     let [topPX, setTopPX] = useState("-50px")
     let [control, setControl] = useState(0)
     let [firUbication, setFirstUbication] = useState(0)
+    let [scrollNumber, setScrollNumber] = useState(0)
+    let isSticky: boolean = true
 
     useEffect(() => {
             const functionScroll = () => {
+                setScrollNumber(scrollNumber = window.scrollY)
                 if (window.scrollY > firUbication) setTopPX(topPX = "-50px")
-                else setTopPX(topPX = "15px")
+                else setTopPX(topPX = "0")
             }
 
             window.addEventListener(`scroll`, functionScroll)
@@ -23,7 +26,7 @@ export default function NavProductsSectionMobile() {
         }
     )
 
-    const [isSticky, setIsSticky] = useState(false)
+    /*const [isSticky, setIsSticky] = useState(false)
     const refMobile = useRef()
     useEffect(() => {
         const cachedRef = refMobile.current,
@@ -43,18 +46,15 @@ export default function NavProductsSectionMobile() {
         return function () {
             observer.unobserve(cachedRef)
         }
-    }, [])
+    }, [])*/
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id)
         data.scrollIntoView({behavior: "smooth"})
         setTagSelected(tagSelected = id)
     }
 
-    const cssStyle = {
-        main: isSticky && style.mainDivStiky
-    }
     return (
-        <div style={{top: topPX}} className={`${style.mainDiv} ${cssStyle.main}`}>
+        <div style={{top: topPX}} className={`${style.mainDiv}`}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}
