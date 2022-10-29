@@ -1,8 +1,7 @@
 .mainDiv {
-    width: 100%;
     overflow: hidden;
-    height: 40px;
-    top: 0;
+    height: 44px;
+    top: -1px;
     position: sticky;
     display: grid;
     grid-template-columns: max-content;
@@ -16,20 +15,9 @@
 }
 
 .mainDivStiky {
-    width: 100%;
+    box-shadow: 0 0 6px rgba(0,0,0,.3);
+    border-radius: 6px;
     overflow: hidden;
-    height: 40px;
-    top: 0;
-    position: sticky;
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 12px;
-    padding: 0 4px;
-    z-index: 900;
-    background: red;
 }
 
 

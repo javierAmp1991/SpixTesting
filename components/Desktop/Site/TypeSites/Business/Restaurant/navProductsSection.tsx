@@ -2,9 +2,6 @@ import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/navProductS
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext, useEffect, useRef, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import {InView, useInView} from "react-intersection-observer";
-
-const idNav: string = "idNav0018237"
 
 export default function NavProductsSection() {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
@@ -17,12 +14,33 @@ export default function NavProductsSection() {
         setTagSelected(tagSelected = id)
     }
 
+
+    const [isSticky, setIsSticky] = useState(false)
+    const refDesktop = useRef()
+    useEffect(() => {
+        const cachedRef = refDesktop.current,
+            observer = new IntersectionObserver(
+                ([e]) => setIsSticky(e.intersectionRatio < 1),
+                {
+                    threshold: [1],
+                    rootMargin: '-1px 0px 0px 0px'
+                }
+            )
+
+        observer.observe(cachedRef)
+
+        // unmount
+        return function () {
+            observer.unobserve(cachedRef)
+        }
+    }, [])
+
     const cssStyle = {
-        main: styleNav ? style.mainDiv : style.mainDivStiky
+        main: isSticky && style.mainDivStiky
     }
 
     return (
-        <div className={cssStyle.main}>
+        <div ref={refDesktop} className={`${style.mainDiv} ${cssStyle.main}`}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}
