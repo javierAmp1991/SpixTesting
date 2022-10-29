@@ -14,12 +14,12 @@ export default function NavProductsSectionMobile() {
 
     useEffect(() => {
             const functionScroll = () => {
-                if (window.pageYOffset > firUbication) setTopPX(topPX = "-50px")
+                if (window.scrollY > firUbication) setTopPX(topPX = "-50px")
                 else setTopPX(topPX = "15px")
             }
 
             window.addEventListener(`scroll`, functionScroll)
-            setFirstUbication(firUbication = window.pageYOffset)
+            setFirstUbication(firUbication = window.scrollY)
         }
     )
 

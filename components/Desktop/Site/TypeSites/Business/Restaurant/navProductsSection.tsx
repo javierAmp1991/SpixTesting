@@ -44,8 +44,8 @@ export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
     useEffect(() => {
             const functionScroll = () => {
                 if (isSticky) {
-                    setScrollNumber(scrollNumber = window.pageYOffset)
-                    if (window.pageYOffset > firUbication) setTopPX(topPX = "-50px")
+                    setScrollNumber(scrollNumber = window.scrollY)
+                    if (window.scrollY > firUbication) setTopPX(topPX = "-50px")
                     else setTopPX(topPX = "15px")
                 } else {
                     setTopPX(topPX = "-50px")
@@ -53,7 +53,7 @@ export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
             }
 
             window.addEventListener(`scroll`, functionScroll)
-            setFirstUbication(firUbication = window.pageYOffset)
+            setFirstUbication(firUbication = window.scrollY)
         }
     )
 
