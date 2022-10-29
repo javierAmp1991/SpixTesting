@@ -1,9 +1,9 @@
 .mainDiv {
-    width: calc(100vw - 32px);
+    width: 100vw;
+    left: 0;
     overflow: scroll;
     height: 44px;
-    position: sticky;
-    top: -1px;
+    position: absolute;
     display: grid;
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
@@ -15,12 +15,6 @@
     background: white;
 }
 
-.mainDivStiky {
-    box-shadow: 0 0 6px rgba(0,0,0,.3);
-    border-radius: 6px;
-    overflow: hidden;
-    background: red;
-}
 
 .tag {
     border: 1px solid rgba(0, 0, 0, .5);

@@ -1,23 +1,20 @@
 .mainDiv {
     overflow: hidden;
-    height: 44px;
-    top: -1px;
-    position: sticky;
+    height: 50px;
+    position: fixed;
+    width: var(--maxWidthBodyContent);
     display: grid;
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     align-items: center;
     gap: 12px;
-    padding: 0 4px;
-    z-index: 900;
+    padding: 0 12px;
+    z-index: 9000000;
     background: white;
-}
-
-.mainDivStiky {
-    box-shadow: 0 0 6px rgba(0,0,0,.3);
-    border-radius: 6px;
-    overflow: hidden;
+    border-radius: 30px;
+    transition: .4s;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
 
 
@@ -25,7 +22,7 @@
     border: 1px solid rgba(0,0,0,.5);
     border-radius: 16px;
     height: max-content;
-    padding: 2px 12px;
+    padding: 4px 12px;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 500;

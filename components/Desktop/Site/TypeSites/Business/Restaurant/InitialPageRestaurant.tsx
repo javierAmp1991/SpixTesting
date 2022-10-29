@@ -13,7 +13,7 @@ import {
     ProviderOfferProducts,
     ProviderRecommended
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext} from "react";
+import {useContext, useEffect, useRef, useState} from "react";
 import {
     HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
@@ -23,6 +23,28 @@ import DescriptionCardFull from "./DescriptionCardFull";
 import NavProductsSection from "./navProductsSection";
 
 export default function InitialPageRestaurant() {
+
+    const [isSticky, setIsSticky] = useState(false)
+    const refMobile = useRef()
+    useEffect(() => {
+        const cachedRef = refMobile.current,
+            observer = new IntersectionObserver(
+                ([e]) => {
+                    setIsSticky(e.intersectionRatio < 1)
+                },
+                {
+                    threshold: [1],
+                    rootMargin: '0px 0px 0px 0px'
+                }
+            )
+
+        observer.observe(cachedRef)
+
+        // unmount
+        return function () {
+            observer.unobserve(cachedRef)
+        }
+    }, [])
 
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
@@ -37,7 +59,6 @@ export default function InitialPageRestaurant() {
                     <FullBannerRestaurant item={infoHeader.Banner}/>
                 </div>
                 <DescriptionCardFull/>
-                {/*<DescriptionCard/>*/}
             </div>
             <div className={style.mainDiv}>
 
@@ -74,8 +95,9 @@ export default function InitialPageRestaurant() {
                 </LayoutTitle>
                 <div className={style.separationLine}/>
 
+                <NavProductsSection isSticky={isSticky}/>
+
                 <div>
-                    <NavProductsSection/>
                     <div>
                         {
                             infoSectionProducts.map(item =>
@@ -96,6 +118,9 @@ export default function InitialPageRestaurant() {
                         }
                     </div>
                 </LayoutTitle>
+            </div>
+            <div ref={refMobile}>
+                divTest
             </div>
 
         </>

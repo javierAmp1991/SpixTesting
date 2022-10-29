@@ -39,11 +39,11 @@ export default function InitialPageRestaurantMobile() {
                 <div className={style.mainDivHeader}>
                     <FullBannerMobile item={infoHeader.Banner}/>
                 </div>
-               {/* <DescriptionCardFullData/>*/}
             </div>
 
             <div className={style.mainDiv}>
                 <DescriptionCardFullData/>
+                <div className={style.separationLine}/>
                 {/*<DescriptionCardFullMobile/>*/}
                 <LayoutReviewSectionMobile>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
@@ -78,7 +78,7 @@ export default function InitialPageRestaurantMobile() {
                 <div className={style.separationLine}/>
 
                 <div>
-                    <NavProductsSectionMobile/>
+                <NavProductsSectionMobile/>
                     {
                         infoSectionProducts.map(item =>
                             <div key={item.Id}>

@@ -2,8 +2,9 @@ import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/navProductS
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext, useEffect, useRef, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
+import {is} from "immutable";
 
-export default function NavProductsSection() {
+export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
     let [styleNav, setStyleNav] = useState(true)
@@ -13,34 +14,55 @@ export default function NavProductsSection() {
         data.scrollIntoView({behavior: "smooth"})
         setTagSelected(tagSelected = id)
     }
+    let [topPX, setTopPX] = useState("-50px")
+    let [scrollNumber, setScrollNumber] = useState(0)
+    let [firUbication, setFirstUbication] = useState(0)
+    let [secondUbication, seSecondUbication] = useState(0)
 
+    const asdasds: boolean = false
 
-    const [isSticky, setIsSticky] = useState(false)
-    const refDesktop = useRef()
+    /* const [isSticky, setIsSticky] = useState(false)
+     const refDesktop = useRef()
+     useEffect(() => {
+         const cachedRef = refDesktop.current,
+             observer = new IntersectionObserver(
+                 ([e]) => setIsSticky(e.intersectionRatio < 1),
+                 {
+                     threshold: [1],
+                     rootMargin: '-1px 0px 0px 0px'
+                 }
+             )
+
+         observer.observe(cachedRef)
+
+         // unmount
+         return function () {
+             observer.unobserve(cachedRef)
+         }
+     }, [])*/
+
     useEffect(() => {
-        const cachedRef = refDesktop.current,
-            observer = new IntersectionObserver(
-                ([e]) => setIsSticky(e.intersectionRatio < 1),
-                {
-                    threshold: [1],
-                    rootMargin: '-1px 0px 0px 0px'
+            const functionScroll = () => {
+                if (isSticky) {
+                    setScrollNumber(scrollNumber = window.pageYOffset)
+                    if (window.pageYOffset > firUbication) setTopPX(topPX = "-50px")
+                    else setTopPX(topPX = "15px")
+                } else {
+                    setTopPX(topPX = "-50px")
                 }
-            )
+            }
 
-        observer.observe(cachedRef)
-
-        // unmount
-        return function () {
-            observer.unobserve(cachedRef)
+            window.addEventListener(`scroll`, functionScroll)
+            setFirstUbication(firUbication = window.pageYOffset)
         }
-    }, [])
+    )
 
     const cssStyle = {
         main: isSticky && style.mainDivStiky
     }
 
     return (
-        <div ref={refDesktop} className={`${style.mainDiv} ${cssStyle.main}`}>
+        <div style={{top: topPX}} className={`${style.mainDiv} ${cssStyle.main}`}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}
@@ -49,6 +71,7 @@ export default function NavProductsSection() {
                     </button>
                 )
             }
+            <div>{scrollNumber}</div>
         </div>
     )
 }

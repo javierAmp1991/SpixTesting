@@ -1,14 +1,13 @@
 .mainDiv {
     --widthCard: 800px;
     display: grid;
-    padding: 16px;
     bottom: 0;
     margin: auto;
 /*    left: 16px;
     position: absolute;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     width: calc(100% - 32px);*/
     background: white;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     border-radius: 8px;
     overflow: hidden;
 }
