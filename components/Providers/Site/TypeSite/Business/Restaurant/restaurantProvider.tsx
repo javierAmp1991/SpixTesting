@@ -4,7 +4,7 @@ import {
     ProviderOfferProducts,
     ProviderRecommended
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {ProductItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {Product, question, review, reviewSearch, ReviewsSectionData} from "../../../../../../dataDemo/data";
 
@@ -288,24 +288,70 @@ const listInitialRecommended: EventCardWithPrice[] = [
         MaxPrice: 9990,
     },*/
 ]
-const listReview: review[] = ReviewsSectionData.listReviews
-const listQuestions: question[] = [
+const listReview: ReviewItem[] = [
     {
+        Id: "idReview001",
+        Rating: 5,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Javiera Perez",
+        Title: "Buena la tocata",
+        ProfileImage: "/images/fotoperfil2.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+    {
+        Id: "idReview002",
+        Rating: 4,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Oscar Castillo",
+        Title: "Gran Tributo",
+        ProfileImage: "/images/fotoperfil1.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+    {
+        Id: "idReview003",
+        Rating: 3,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Paulo Andrade",
+        Title: "Se nota la pasion",
+        ProfileImage: "/images/fotoperfil3.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+]
+const listQuestions: QuestionItem[] = [
+    {
+        Id: "idQuestion001",
+        Rating: 5,
+        Date: new Date(2022, 9, 23),
         Question: "Se puede llevar comida desde el exterior ?",
         Answer: "No, no se puede",
         ByWho: "Maria Gonzalez"
     },
     {
+        Id: "idQuestion002",
+        Rating: 4,
+        Date: new Date(2022, 9, 23),
         Question: "Hasta que hora se pueden comprar ?",
         Answer: "Hasta las 20:00 hrs, horarios Chile",
         ByWho: "Felipe Perez"
     },
     {
+        Id: "idQuestion003",
+        Rating: 3,
+        Date: new Date(2022, 9, 23),
         Question: "Donde puedo ver devoluciones?",
         Answer: "Inbox",
         ByWho: "Juan Castillo"
     },
     {
+        Id: "idQuestion004",
+        Rating: 5,
+        Date: new Date(2022, 9, 23),
         Question: "Se puede pagar con cuenta rut?",
         Answer: "Si se puede",
         ByWho: "Alberto Fernandez"

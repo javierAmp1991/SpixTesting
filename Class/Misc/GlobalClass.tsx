@@ -29,3 +29,23 @@ export class SectionProductItem {
     Name: string
     ListProducts: ProductItem[]
 }
+
+export class ReviewItem {
+    Id: string
+    Rating: number
+    ByWho: string
+    Title: string
+    ProfileImage: string
+    Review: string
+    Date: Date
+    Likes: number
+}
+
+export class QuestionItem {
+    Id: string
+    Date: Date
+    Rating: number
+    ByWho: string;
+    Question: string;
+    Answer: string;
+}

@@ -1,6 +1,6 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
-import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {question, review} from "../../../../../../dataDemo/data";
+import {QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {question} from "../../../../../../dataDemo/data";
 import FullBannerRestaurant from "../../../../Misc/fullBannerRestaurant";
 import LayoutReviewSection from "./layoutReviewSection";
 import ProductSection from "./ProductSection";
@@ -21,11 +21,11 @@ import {
 import ProductViewSquare from "../../../../Misc/productViewSquare";
 import DescriptionCardFull from "./DescriptionCardFull";
 import NavProductsSection from "./navProductsSection";
+import QuestionShortDesk from "../../../../Misc/questionShortDesk";
 
 const idTest: string = "isTestDesktopScrolControl"
 
 export default function InitialPageRestaurant() {
-
     /*useEffect(() => {
         const cachedRef = refMobile.current,
             observer = new IntersectionObserver(
@@ -47,17 +47,15 @@ export default function InitialPageRestaurant() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
-    const listReview: review[] = useContext(ReviewsSectionContext)
-    const listQuestion: question[] = useContext(QuestionSectionContext)
+    const listReview: ReviewItem[] = useContext(ReviewsSectionContext)
+    const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
     let [startSectionProduct, setStartSectionProduct] = useState(0)
-
     useEffect(() => {
         let scrollControl = document.getElementById(idTest).getBoundingClientRect()
         setStartSectionProduct(startSectionProduct = scrollControl.y)
     }, [])
-
     useEffect(() => {
         const functionScroll = () => {
             setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
@@ -74,12 +72,13 @@ export default function InitialPageRestaurant() {
                 <DescriptionCardFull/>
             </div>
             <div className={style.mainDiv}>
+                <NavProductsSection hasBeenReached={hasBeenReached}/>
+
                 <LayoutReviewSection>
                     <div className={style.gridReviews}>
                         {
-                            listReview.map((item, index) =>
-                                index <= 2 &&
-                                <ReviewViewShort item={item}/>
+                            listReview.map((item) =>
+                                <ReviewViewShort key={item.Id} item={item}/>
                             )
                         }
                     </div>
@@ -107,8 +106,6 @@ export default function InitialPageRestaurant() {
                 </LayoutTitle>
                 <div className={style.separationLine}/>
 
-                <NavProductsSection hasBeenReached={hasBeenReached}/>
-
                 <div id={idTest}>
                     {
                         infoSectionProducts.map(item =>
@@ -124,7 +121,7 @@ export default function InitialPageRestaurant() {
                     <div className={style.gridQuestions}>
                         {
                             listQuestion.map((item) =>
-                                <QuestionDesk key={item.Question} item={item}/>)
+                                <QuestionShortDesk key={item.Question} item={item}/>)
                         }
                     </div>
                 </LayoutTitle>

@@ -1,12 +1,11 @@
-.mainPadding {
+.mainPadding{
     padding: 6px;
     scroll-snap-align: start;
 }
-
 .mainDiv {
     display: grid;
     gap: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 6px rgba(0,0,0,.25);
     border-radius: 6px;
     overflow: hidden;
     padding: 12px;
@@ -37,17 +36,11 @@
     position: relative;
 }
 
-.byWho {
+.byWho{
     color: var(--colorSecundaryTextDesktop);
 }
 
-.gridOpt {
+.gridOpt{
     align-items: center;
     gap: 16px;
-}
-
-.gridImageName {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 12px;
 }

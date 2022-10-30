@@ -1,6 +1,5 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
-import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {question, review} from "../../../../../../dataDemo/data";
+import {QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {
     PresentationCard,
     ProviderOfferProducts,
@@ -11,12 +10,9 @@ import {
     HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import DescriptionCardFullMobile from "./DescriptionCardFullMobile";
 import LayoutTitleMobile from "./layoutTitleMobile";
 import LayoutReviewSectionMobile from "./layoutReviewSectionMobile";
-import ReviewViewShort from "../../../../../Desktop/Misc/ReviewViewShort";
 import ProductSectionMobile from "./ProductSectionMobile";
-import QuestionDesk from "../../../../../Desktop/EventPage/questionDesk";
 import FullBannerMobile from "../../../../Misc/fullBannerMobile";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
@@ -24,6 +20,8 @@ import DescriptionCardFullData from "./DescriptionCardFullData";
 import EventVerticalViewNewMob from "../../../../Events/eventVerticalViewNewMob";
 import NavProductsSectionMobile from "./navProductsSectionMobile";
 import ProductViewSquare from "../../../../../Desktop/Misc/productViewSquare";
+import ReviewViewShortMobile from "../../../../Misc/ReviewViewShortMobile";
+import QuestionShortMob from "../../../../Misc/questionShortMob";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -32,12 +30,11 @@ export default function InitialPageRestaurantMobile() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
-    const listReview: review[] = useContext(ReviewsSectionContext)
-    const listQuestion: question[] = useContext(QuestionSectionContext)
+    const listReview: ReviewItem[] = useContext(ReviewsSectionContext)
+    const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
     let [startSectionProduct, setStartSectionProduct] = useState(0)
-    let[scrollY, setScrollY] = useState(0)
 
     useEffect(() => {
         let scrollControl = document.getElementById(idTest).getBoundingClientRect()
@@ -62,14 +59,16 @@ export default function InitialPageRestaurantMobile() {
             </div>
 
             <div className={style.mainDiv}>
+                <NavProductsSectionMobile isSticky={hasBeenReached}/>
+
                 <DescriptionCardFullData/>
                 <div className={style.separationLine}/>
-                {/*<DescriptionCardFullMobile/>*/}
+
                 <LayoutReviewSectionMobile>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
                         {
                             listReview.map((item) =>
-                                <ReviewViewShort key={item.ByWho} item={item}/>
+                                <ReviewViewShortMobile key={item.ByWho} item={item}/>
                             )
                         }
                     </LayoutWithNavCircleMobile>
@@ -97,8 +96,6 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutTitleMobile>
                 <div className={style.separationLine}/>
 
-                <NavProductsSectionMobile isSticky={hasBeenReached}/>
-
                 <div id={idTest}>
                     {
                         infoSectionProducts.map(item =>
@@ -114,12 +111,11 @@ export default function InitialPageRestaurantMobile() {
                     <div className={style.gridQuestions}>
                         {
                             listQuestion.map((item) =>
-                                <QuestionDesk key={item.Question} item={item}/>)
+                                <QuestionShortMob key={item.Question} item={item}/>)
                         }
                     </div>
                 </LayoutTitleMobile>
             </div>
-
         </div>
     )
 }
