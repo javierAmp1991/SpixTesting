@@ -120,7 +120,9 @@ export namespace GlobalConst{
         instagramICon: "/images/instagram.png",
         tiktokIcon: "/images/tiktok.png",
         facebookIcon: "/images/facebook.png",
-        whatsaapIcon: "/images/whatssap.png"
+        whatsaapIcon: "/images/whatssap.png",
+        activeWishList: "/images/wishList.png",
+        noActiveWishList: "/images/wishListDisable.png"
     }
 }
 
