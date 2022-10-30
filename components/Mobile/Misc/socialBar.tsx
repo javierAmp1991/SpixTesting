@@ -29,7 +29,7 @@ export default function SocialBar() {
             circleClass12: style.circleClass12
         })
     let [bellIcon, setBellIcon] = useState({
-        bellIcon: GlobalConst.sourceImages.noActivateBell,
+        bellIcon: GlobalConst.sourceImages.noActiveWishList,
         animationBell: ""
     })
 
@@ -84,14 +84,14 @@ export default function SocialBar() {
         if (isLike) {
             setBellIcon({
                 ...bellIcon,
-                bellIcon: GlobalConst.sourceImages.activateBell,
+                bellIcon: GlobalConst.sourceImages.activeWishList,
                 animationBell: style.animationBell
             })
             setInitialBell(initialBell += 1)
         } else {
             setBellIcon({
                 ...bellIcon,
-                bellIcon: GlobalConst.sourceImages.noActivateBell,
+                bellIcon: GlobalConst.sourceImages.noActiveWishList,
                 animationBell: style.animationDislike
             })
             setInitialBell(initialBell -= 1)
