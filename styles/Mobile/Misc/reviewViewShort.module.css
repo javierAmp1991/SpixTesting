@@ -12,10 +12,6 @@
     transition: .4s;
 }
 
-.mainDiv:hover {
-    transform: scale(1.03);
-}
-
 .sizeReviewImage {
     --sizeReviewImage: 42px;
     height: var(--sizeReviewImage);

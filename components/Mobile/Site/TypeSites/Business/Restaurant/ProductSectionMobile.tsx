@@ -1,7 +1,6 @@
-import ProductViewHor from "../../../../../Desktop/Misc/ProductViewHor";
 import {ProductItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/productSection.module.css"
-const seeMenu: string = "Ver Carta"
+import ProductViewHorMobile from "../../../../Misc/ProductViewHorMobile";
 
 export default function ProductSectionMobile({sectionProducts}: { sectionProducts: SectionProductItem }) {
     return (
@@ -12,7 +11,7 @@ export default function ProductSectionMobile({sectionProducts}: { sectionProduct
             <div className={style.gridProducts}>
                 {
                     sectionProducts.ListProducts.map((item: ProductItem) =>
-                        <ProductViewHor key={item.Id} item={item} isDisplayOffer={true}/>)
+                        <ProductViewHorMobile key={item.Id} item={item} isDisplayOffer={true}/>)
                 }
             </div>
         </div>

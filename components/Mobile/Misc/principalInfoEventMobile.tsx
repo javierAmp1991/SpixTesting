@@ -3,6 +3,7 @@ import style from "/styles/Mobile/Misc/principalInfoEvent.module.css";
 import Image from "next/image";
 import React, {useState} from "react";
 import {GlobalConst} from "../../../public/globalConst";
+import RatingStarMob from "./ratingStarMob";
 
 export class PrincipalInfoEventPropMob {
     Title: string
@@ -28,23 +29,7 @@ export default function PrincipalInfoEventMobile({item}: { item: PrincipalInfoEv
             {
                 item.Rating != null &&
                 <div className={style.gridRatingStar}>
-                    <div className={style.gridStars}>
-                        {
-                            listRating.map((item, index) =>
-                                <div key={index} className={style.sizeStar}>
-                                    <Image layout={"fill"}
-                                           src={index < numRating ? GlobalConst.sourceImages.ratingIndFull
-                                               : GlobalConst.sourceImages.ratingIndVoid}/>
-                                </div>
-                            )
-                        }
-                    </div>
-
-                    <div className={style.paddingRating}>
-                        <div className={style.fontTextReviews}>
-                            ({item.Rating != null ? item.Rating : 0})
-                        </div>
-                    </div>
+                    <RatingStarMob item={item.Rating}/>
                 </div>
             }
 

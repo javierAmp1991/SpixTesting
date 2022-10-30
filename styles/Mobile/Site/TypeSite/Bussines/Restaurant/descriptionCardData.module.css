@@ -3,10 +3,10 @@
     display: grid;
     bottom: 0;
     margin: auto;
-/*    left: 16px;
-    position: absolute;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    width: calc(100% - 32px);*/
+    /*    left: 16px;
+        position: absolute;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+        width: calc(100% - 32px);*/
     background: white;
     border-radius: 8px;
     overflow: hidden;
@@ -113,9 +113,10 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+    scroll-snap-align: start;
 }
 
-.seeGalery{
+.seeGalery {
     display: grid;
     text-align: left;
     color: var(--linkColor);
