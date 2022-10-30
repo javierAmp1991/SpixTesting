@@ -3,6 +3,7 @@ import style from "/styles/Mobile/Misc/optionBar.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import {useState} from "react";
+import Link from "next/link";
 
 const reporttext = "Reportar"
 export default function OptionBar() {
@@ -43,19 +44,13 @@ export default function OptionBar() {
                         <Image priority={true} layout={"fill"} src={likeStyle.sourceLike} alt=""/>
                     </div>
                 </div>
-                <div className={likeStyle.isLike? style.colorLike : style.colorNoLike}>
+                <div className={likeStyle.isLike ? style.colorLike : style.colorNoLike}>
                     {initialLike}
                 </div>
             </button>
-           {/* <a className={`${utilities.gridMaxContent2} ${style.gridItems}`}>
-                <div className={utilities.gridContentCenter}>
-                    <div className={style.sizeIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.totalCommentsIcon} alt=""/>
-                    </div>
-                </div>
-                <span>58</span>
-            </a>*/}
-            <a>{reporttext}</a>
+            <Link href={"/"}>
+                <a>{reporttext}</a>
+            </Link>
         </div>
     )
 }
