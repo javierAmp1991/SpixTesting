@@ -3,7 +3,7 @@ import {QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Cl
 import {
     PresentationCard,
     ProviderOfferProducts,
-    ProviderRecommended
+    ProviderRecommended, ProviderReview
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
@@ -30,7 +30,7 @@ export default function InitialPageRestaurantMobile() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
-    const listReview: ReviewItem[] = useContext(ReviewsSectionContext)
+    const listReview: ProviderReview = useContext(ReviewsSectionContext)
     const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
@@ -67,7 +67,7 @@ export default function InitialPageRestaurantMobile() {
                 <LayoutReviewSectionMobile>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
                         {
-                            listReview.map((item) =>
+                            listReview.InitialReview.map((item) =>
                                 <ReviewViewShortMobile key={item.ByWho} item={item}/>
                             )
                         }

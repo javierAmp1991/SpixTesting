@@ -9,7 +9,7 @@ import ReviewViewShort from "../../../../Misc/ReviewViewShort";
 import {
     PresentationCard,
     ProviderOfferProducts,
-    ProviderRecommended
+    ProviderRecommended, ProviderReview
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
@@ -48,7 +48,7 @@ export default function InitialPageRestaurant() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
-    const listReview: ReviewItem[] = useContext(ReviewsSectionContext)
+    const listReview: ProviderReview = useContext(ReviewsSectionContext)
     const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
@@ -56,7 +56,7 @@ export default function InitialPageRestaurant() {
     const layoutPropRecomended: PropCarrousel = {
         PositionArrowY: "calc(50% - 16px)",
         PositionArrowX: "-40px",
-        Padding: 20,
+        Padding: 0,
         Gap: 16,
         Grid: 6,
         LeftArrow: () => infoRecomended.LeftClick(),
@@ -65,11 +65,20 @@ export default function InitialPageRestaurant() {
     const layoutPropOffer: PropCarrousel = {
         PositionArrowY: "calc(50% - 16px)",
         PositionArrowX: "-40px",
-        Padding: 20,
+        Padding: 0,
         Gap: 16,
         Grid: 6,
         LeftArrow: () => listOfferProducts.LeftClick(),
         RightArrow: () => listOfferProducts.RightClick()
+    }
+    const layoutPropReview: PropCarrousel = {
+        PositionArrowY: "calc(50% - 16px)",
+        PositionArrowX: "-40px",
+        Padding: 0,
+        Gap: 16,
+        Grid: 3,
+        LeftArrow: () => listReview.LeftClick(),
+        RightArrow: () => listReview.RightClick()
     }
 
     useEffect(() => {
@@ -95,13 +104,20 @@ export default function InitialPageRestaurant() {
                 <NavProductsSection hasBeenReached={hasBeenReached}/>
 
                 <LayoutReviewSection>
-                    <div className={style.gridReviews}>
+                    <LayoutCarrouselDesktop layoutProp={layoutPropReview}>
+                        {
+                            listReview.InitialReview.map((item) =>
+                                <ReviewViewShort key={item.Id} item={item}/>
+                            )
+                        }
+                    </LayoutCarrouselDesktop>
+                   {/* <div className={style.gridReviews}>
                         {
                             listReview.map((item) =>
                                 <ReviewViewShort key={item.Id} item={item}/>
                             )
                         }
-                    </div>
+                    </div>*/}
                 </LayoutReviewSection>
                 <div className={style.separationLine}/>
 

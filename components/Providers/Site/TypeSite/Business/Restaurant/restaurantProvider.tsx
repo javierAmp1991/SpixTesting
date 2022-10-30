@@ -2,7 +2,7 @@ import {createContext, useState} from "react";
 import {
     PresentationCard,
     ProviderOfferProducts,
-    ProviderRecommended
+    ProviderRecommended, ProviderReview
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
@@ -198,6 +198,41 @@ const listOfferProductsAdd: Product[] = [
         ImagePath: "/images/product1.jpg",
         Tag: "Cerveza",
         Rating: 2
+    },
+]
+const listReviewAdd: ReviewItem[] = [
+    {
+        Id: "idReview002",
+        Rating: 4,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Oscar Castillo",
+        Title: "Gran Tributo",
+        ProfileImage: "/images/fotoperfil1.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+    {
+        Id: "idReview003",
+        Rating: 3,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Paulo Andrade",
+        Title: "Se nota la pasion",
+        ProfileImage: "/images/fotoperfil3.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+    {
+        Id: "idReview001",
+        Rating: 5,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Javiera Perez",
+        Title: "Buena la tocata",
+        ProfileImage: "/images/fotoperfil2.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
     },
 ]
 
@@ -461,11 +496,15 @@ const listOfferProducts: Product[] = [
 export default function RestaurantProvider({children}) {
     let [recommendedItems, setRecommendedItems] = useState(listInitialRecommended)
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
+    let[reviewItems, setReviewItems] = useState(listReview)
     const handleRightClickRecomended = () => setRecommendedItems(recommendedItems = listRecomendedAdd)
     const handleLeftClickRecomended = () => setRecommendedItems(recommendedItems = listInitialRecommended)
 
     const handleRightClickProducts = () => setOfferProducts(offerProducts = listOfferProductsAdd)
     const handleLeftClickProducts = () => setOfferProducts(offerProducts = listOfferProducts)
+
+    const handleRightClickReview = ()=> setReviewItems(reviewItems = listReviewAdd)
+    const handleLeftClickReview = ()=> setReviewItems(reviewItems = listReview)
 
     let providerRecommended: ProviderRecommended = {
         InitialItems: recommendedItems,
@@ -477,11 +516,16 @@ export default function RestaurantProvider({children}) {
         RightClick: handleRightClickProducts,
         LeftClick: handleLeftClickProducts
     }
+    let providerReview: ProviderReview = {
+        InitialReview: reviewItems,
+        RightClick: handleRightClickReview,
+        LeftClick: handleLeftClickReview
+    }
     return (
         <HeaderContext.Provider value={headerData}>
             <SectionProductsContext.Provider value={listSectionProducst}>
                 <RecommendedContext.Provider value={providerRecommended}>
-                    <ReviewsSectionContext.Provider value={listReview}>
+                    <ReviewsSectionContext.Provider value={providerReview}>
                         <QuestionSectionContext.Provider value={listQuestions}>
                             <OfferProductsContext.Provider value={providerOfferProducts}>
                                 {children}
