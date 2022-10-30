@@ -116,13 +116,13 @@ export default function EventVerticalView({item, darkModeState}: { item: BaseEve
                     {
                         item.Type == EventCardType.EventCardWishList &&
                         <div className={styles.positionWishList}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.wishList}/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.wishList} alt={""}/>
                         </div>
                     }
                     {
                         item.Type == EventCardType.EventCardMyCollection &&
                         <div className={styles.positionMedal}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.medal}/>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.medal} alt={""}/>
                         </div>
                     }
                     {
