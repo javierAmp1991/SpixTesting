@@ -2,7 +2,6 @@
     font-size: 16px;
     font-weight: 400;
     color: var(--colorTitlesDesktop);
-    margin-bottom: 3px;
 }
 
 .gridRatingStar {
@@ -27,9 +26,7 @@
 }
 
 .paddingRating {
-    display: grid;
-    padding-top: 3px;
-    align-items: center;
+    margin-bottom: 5px;
 }
 
 .styleStar{

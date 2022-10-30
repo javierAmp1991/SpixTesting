@@ -6,7 +6,7 @@ import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Bus
 const hidePositionNav: string = `translateY(-50px)`
 const showPositionNav: string = `translateY(15px)`
 
-export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
+export default function NavProductsSection({hasBeenReached}: { hasBeenReached: boolean }) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
     const handleTagSelected = (id: string) => {
@@ -15,42 +15,20 @@ export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
         setTagSelected(tagSelected = id)
     }
     let [topPX, setTopPX] = useState(hidePositionNav)
-    let [scrollNumber, setScrollNumber] = useState(0)
     let [firUbication, setFirstUbication] = useState(0)
 
-
-    /* const [isSticky, setIsSticky] = useState(false)
-     const refDesktop = useRef()
-     useEffect(() => {
-         const cachedRef = refDesktop.current,
-             observer = new IntersectionObserver(
-                 ([e]) => setIsSticky(e.intersectionRatio < 1),
-                 {
-                     threshold: [1],
-                     rootMargin: '-1px 0px 0px 0px'
-                 }
-             )
-
-         observer.observe(cachedRef)
-
-         // unmount
-         return function () {
-             observer.unobserve(cachedRef)
-         }
-     }, [])*/
-
     useEffect(() => {
-            const functionScroll = () => {
-                if (isSticky) {
-                    setScrollNumber(scrollNumber = window.scrollY)
-                    if (window.scrollY > firUbication) setTopPX(topPX = hidePositionNav)
-                    else setTopPX(topPX = showPositionNav)
-                } else setTopPX(topPX = hidePositionNav)
-            }
-            window.addEventListener(`scroll`, functionScroll)
+        const functionScroll = () => {
+            if (hasBeenReached) {
+                if (window.scrollY > firUbication) setTopPX(topPX = hidePositionNav)
+                else setTopPX(topPX = showPositionNav)
+            } else setTopPX(topPX = hidePositionNav)
+
             setFirstUbication(firUbication = window.scrollY)
         }
-    )
+        window.addEventListener(`scroll`, functionScroll)
+        return () => window.removeEventListener(`scroll`, functionScroll);
+    })
 
     return (
         <div style={{transform: topPX}} className={style.mainDiv}>
@@ -62,7 +40,6 @@ export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
                     </button>
                 )
             }
-            <div>{scrollNumber}</div>
         </div>
     )
 }

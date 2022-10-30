@@ -6,47 +6,26 @@ import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Bus
 const hidePositionNav: string = `translateY(-50px)`
 const showPositionNav: string = `translateY(0)`
 
-export default function NavProductsSectionMobile({isSticky} : {isSticky: boolean}) {
+export default function NavProductsSectionMobile({isSticky}: { isSticky: boolean }) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
     let [topPX, setTopPX] = useState(hidePositionNav)
     let [firUbication, setFirstUbication] = useState(0)
-    let [scrollNumber, setScrollNumber] = useState(0)
 
     useEffect(() => {
             const functionScroll = () => {
-                if (isSticky){
-                    setScrollNumber(scrollNumber = window.scrollY)
+                if (isSticky) {
                     if (window.scrollY > firUbication) setTopPX(topPX = hidePositionNav)
                     else setTopPX(topPX = showPositionNav)
                 } else setTopPX(topPX = hidePositionNav)
+
+                setFirstUbication(firUbication = window.scrollY)
             }
             window.addEventListener(`scroll`, functionScroll)
-            setFirstUbication(firUbication = window.scrollY)
+            return () => window.removeEventListener(`scroll`, functionScroll);
         }
     )
 
-    /*const [isSticky, setIsSticky] = useState(false)
-    const refMobile = useRef()
-    useEffect(() => {
-        const cachedRef = refMobile.current,
-            observer = new IntersectionObserver(
-                ([e]) => {
-                    setIsSticky(e.intersectionRatio < 1)
-                },
-                {
-                    threshold: [1],
-                    rootMargin: '-1px 0px 0px 0px'
-                }
-            )
-
-        observer.observe(cachedRef)
-
-        // unmount
-        return function () {
-            observer.unobserve(cachedRef)
-        }
-    }, [])*/
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id)
         data.scrollIntoView({behavior: "smooth"})

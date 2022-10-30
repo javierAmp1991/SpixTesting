@@ -35,17 +35,25 @@ export default function InitialPageRestaurantMobile() {
     const listReview: review[] = useContext(ReviewsSectionContext)
     const listQuestion: question[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
-    let [isSticky, setIsSticky] = useState(false)
+    let [hasBeenReached, setHasBeenReached] = useState(false)
+    let [startSectionProduct, setStartSectionProduct] = useState(0)
+    let[scrollY, setScrollY] = useState(0)
+
+    useEffect(() => {
+        let scrollControl = document.getElementById(idTest).getBoundingClientRect()
+        setStartSectionProduct(startSectionProduct = scrollControl.y)
+    }, [])
 
     useEffect(() => {
         const functionScroll = () => {
-            let scrollControl = document.getElementById(idTest).getBoundingClientRect()
-             setIsSticky(isSticky = window.scrollY >= scrollControl.y)
+             setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
         }
         window.addEventListener(`scroll`, functionScroll)
+        return () => window.removeEventListener(`scroll`, functionScroll);
     })
 
     return (
+
         <div className={style.mainDivMobile}>
             <div className={style.mainGradient}>
                 <div className={style.mainDivHeader}>
@@ -89,7 +97,7 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutTitleMobile>
                 <div className={style.separationLine}/>
 
-                <NavProductsSectionMobile isSticky={isSticky}/>
+                <NavProductsSectionMobile isSticky={hasBeenReached}/>
 
                 <div id={idTest}>
                     {

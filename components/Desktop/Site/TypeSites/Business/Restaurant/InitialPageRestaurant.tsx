@@ -13,7 +13,7 @@ import {
     ProviderOfferProducts,
     ProviderRecommended
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useEffect, useRef, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {
     HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
@@ -50,13 +50,20 @@ export default function InitialPageRestaurant() {
     const listReview: review[] = useContext(ReviewsSectionContext)
     const listQuestion: question[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
-    let [isSticky, setIsSticky] = useState(false)
+    let [hasBeenReached, setHasBeenReached] = useState(false)
+    let [startSectionProduct, setStartSectionProduct] = useState(0)
+
+    useEffect(() => {
+        let scrollControl = document.getElementById(idTest).getBoundingClientRect()
+        setStartSectionProduct(startSectionProduct = scrollControl.y)
+    }, [])
+
     useEffect(() => {
         const functionScroll = () => {
-            let scrollControl = document.getElementById(idTest).getBoundingClientRect()
-            setIsSticky(isSticky = window.scrollY >= scrollControl.y)
+            setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
         }
         window.addEventListener(`scroll`, functionScroll)
+        return () => window.removeEventListener(`scroll`, functionScroll);
     })
     return (
         <>
@@ -100,7 +107,7 @@ export default function InitialPageRestaurant() {
                 </LayoutTitle>
                 <div className={style.separationLine}/>
 
-                <NavProductsSection isSticky={isSticky}/>
+                <NavProductsSection hasBeenReached={hasBeenReached}/>
 
                 <div id={idTest}>
                     {
