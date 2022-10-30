@@ -48,7 +48,7 @@ export default function DescriptionCardFullData() {
                 </div>
                 <div className={style.gridInfoNew}>
                     <span>{directionText}</span>
-                    <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
+                    <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
                 </div>
                 <div className={style.gridInfoNew}>
                     <div>{contactText}</div>
