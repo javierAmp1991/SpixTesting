@@ -8,10 +8,6 @@
     transition: .4s;
 }
 
-.mainDiv:hover {
-    transform: scale(1.03);
-}
-
 .containerButton {
     display: grid;
     justify-content: right;

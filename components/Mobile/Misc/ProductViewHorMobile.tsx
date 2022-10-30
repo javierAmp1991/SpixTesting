@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/Misc/productViewHor.module.css"
+import style from "/styles/Mobile/Misc/productViewHor.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
