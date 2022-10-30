@@ -1,21 +1,18 @@
 import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst"
-import React, {ReactNode, useEffect, useState} from "react"
+import React, {ReactNode, useState} from "react"
 import Image from "next/image";
 import {PropCarrousel} from "../../../Class/Layouts/layoutClass";
 
-
 export default function LayoutCarrouselDesktop({children, layoutProp}:
-                                                   { children: ReactNode, layoutProp: PropCarrousel}) {
-    let [firstRender, setFirstRender] = useState(false)
+                                                   {children: ReactNode, layoutProp: PropCarrousel }) {
     let [visibility, setVisibility] = useState(true);
-    let [counter, setCounter] = useState(0)
     const handleRight = () => {
-
+        layoutProp.RightArrow()
     }
     const handleLeft = () => {
-
+        layoutProp.LeftArrow()
     }
     let cssStyle = getCssStyle()
 
@@ -31,14 +28,13 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
             </button>
 
             <div style={cssStyle.paddingCarr}>
-                <div
-                    style={{
-                        gridTemplateColumns: `repeat(${layoutProp.Grid},1fr)`,
-                        gap: layoutProp.Gap
-                    }}
-                    onPointerOver={showArrow}
-                    onPointerOut={hiddeArrow}
-                    className={styles.gridHomeCarrouselLayout}>
+                <div style={{
+                    gridTemplateColumns: `repeat(${layoutProp.Grid},1fr)`,
+                    gap: layoutProp.Gap
+                }}
+                     onPointerOver={showArrow}
+                     onPointerOut={hiddeArrow}
+                     className={styles.gridHomeCarrouselLayout}>
                     {children}
                 </div>
             </div>

@@ -1,10 +1,8 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
 import {QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {question} from "../../../../../../dataDemo/data";
 import FullBannerRestaurant from "../../../../Misc/fullBannerRestaurant";
 import LayoutReviewSection from "./layoutReviewSection";
 import ProductSection from "./ProductSection";
-import QuestionDesk from "../../../../EventPage/questionDesk";
 import LayoutTitle from "./layoutTitle";
 import EventVerticalView from "../../../../EventsView/eventVerticalView";
 import ReviewViewShort from "../../../../Misc/ReviewViewShort";
@@ -22,8 +20,11 @@ import ProductViewSquare from "../../../../Misc/productViewSquare";
 import DescriptionCardFull from "./DescriptionCardFull";
 import NavProductsSection from "./navProductsSection";
 import QuestionShortDesk from "../../../../Misc/questionShortDesk";
+import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
+import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 
 const idTest: string = "isTestDesktopScrolControl"
+
 
 export default function InitialPageRestaurant() {
     /*useEffect(() => {
@@ -52,6 +53,25 @@ export default function InitialPageRestaurant() {
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
     let [startSectionProduct, setStartSectionProduct] = useState(0)
+    const layoutPropRecomended: PropCarrousel = {
+        PositionArrowY: "calc(50% - 16px)",
+        PositionArrowX: "-40px",
+        Padding: 20,
+        Gap: 16,
+        Grid: 6,
+        LeftArrow: () => infoRecomended.LeftClick(),
+        RightArrow: () => infoRecomended.RightClick()
+    }
+    const layoutPropOffer: PropCarrousel = {
+        PositionArrowY: "calc(50% - 16px)",
+        PositionArrowX: "-40px",
+        Padding: 20,
+        Gap: 16,
+        Grid: 6,
+        LeftArrow: () => listOfferProducts.LeftClick(),
+        RightArrow: () => listOfferProducts.RightClick()
+    }
+
     useEffect(() => {
         let scrollControl = document.getElementById(idTest).getBoundingClientRect()
         setStartSectionProduct(startSectionProduct = scrollControl.y)
@@ -86,23 +106,36 @@ export default function InitialPageRestaurant() {
                 <div className={style.separationLine}/>
 
                 <LayoutTitle title={"Happy Hour"}>
-                    <div className={style.gridOffer}>
+                    <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                         {
                             listOfferProducts.InitialItems.map(item =>
                                 <ProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
                             )
                         }
-                    </div>
+                    </LayoutCarrouselDesktop>
+                    {/*<div className={style.gridOffer}>
+                        {
+                            listOfferProducts.InitialItems.map(item =>
+                                <ProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                            )
+                        }
+                    </div>*/}
                 </LayoutTitle>
                 <div className={style.separationLine}/>
 
                 <LayoutTitle title={"Recomendados"}>
-                    <div className={style.gridRecomendados}>
+                    <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
                         {
                             infoRecomended.InitialItems.map((item) =>
                                 <EventVerticalView key={item.Id} item={item} darkModeState={false}/>)
                         }
-                    </div>
+                    </LayoutCarrouselDesktop>
+                    {/*<div className={style.gridRecomendados}>
+                        {
+                            infoRecomended.InitialItems.map((item) =>
+                                <EventVerticalView key={item.Id} item={item} darkModeState={false}/>)
+                        }
+                    </div>*/}
                 </LayoutTitle>
                 <div className={style.separationLine}/>
 

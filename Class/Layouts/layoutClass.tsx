@@ -4,4 +4,6 @@ export class PropCarrousel {
     Padding: number
     PositionArrowY: string
     PositionArrowX: string
+    RightArrow: Function
+    LeftArrow: Function
 }

@@ -20,10 +20,12 @@ export class PresentationCard {
 
 export class ProviderRecommended{
     InitialItems: EventCardWithPrice[]
-    AddItems: Function
+    RightClick: Function
+    LeftClick: Function
 }
 
 export class ProviderOfferProducts{
     InitialItems: Product[]
-    AddItems: Function
+    RightClick: Function
+    LeftClick: Function
 }
