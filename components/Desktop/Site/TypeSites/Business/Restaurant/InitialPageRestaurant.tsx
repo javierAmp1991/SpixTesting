@@ -22,19 +22,18 @@ import ProductViewSquare from "../../../../Misc/productViewSquare";
 import DescriptionCardFull from "./DescriptionCardFull";
 import NavProductsSection from "./navProductsSection";
 
+const idTest: string = "isTestDesktopScrolControl"
+
 export default function InitialPageRestaurant() {
 
-    const [isSticky, setIsSticky] = useState(false)
-    const refMobile = useRef()
-    useEffect(() => {
+    /*useEffect(() => {
         const cachedRef = refMobile.current,
             observer = new IntersectionObserver(
                 ([e]) => {
                     setIsSticky(e.intersectionRatio < 1)
                 },
                 {
-                    threshold: [1],
-                    rootMargin: '0px 0px 0px 0px'
+                    threshold: [0.1],
                 }
             )
 
@@ -44,14 +43,21 @@ export default function InitialPageRestaurant() {
         return function () {
             observer.unobserve(cachedRef)
         }
-    }, [])
-
+    }, [])*/
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
     const listReview: review[] = useContext(ReviewsSectionContext)
     const listQuestion: question[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
+    let [isSticky, setIsSticky] = useState(false)
+    useEffect(() => {
+        const functionScroll = () => {
+            let scrollControl = document.getElementById(idTest).getBoundingClientRect()
+            setIsSticky(isSticky = window.scrollY >= scrollControl.y)
+        }
+        window.addEventListener(`scroll`, functionScroll)
+    })
     return (
         <>
             <div className={style.mainGradient}>
@@ -61,7 +67,6 @@ export default function InitialPageRestaurant() {
                 <DescriptionCardFull/>
             </div>
             <div className={style.mainDiv}>
-
                 <LayoutReviewSection>
                     <div className={style.gridReviews}>
                         {
@@ -97,17 +102,15 @@ export default function InitialPageRestaurant() {
 
                 <NavProductsSection isSticky={isSticky}/>
 
-                <div>
-                    <div>
-                        {
-                            infoSectionProducts.map(item =>
-                                <>
-                                    <ProductSection sectionProducts={item}/>
-                                    <div className={style.separationLine}/>
-                                </>
-                            )
-                        }
-                    </div>
+                <div id={idTest}>
+                    {
+                        infoSectionProducts.map(item =>
+                            <>
+                                <ProductSection sectionProducts={item}/>
+                                <div className={style.separationLine}/>
+                            </>
+                        )
+                    }
                 </div>
 
                 <LayoutTitle title={"Preguntas"}>
@@ -119,10 +122,6 @@ export default function InitialPageRestaurant() {
                     </div>
                 </LayoutTitle>
             </div>
-            <div ref={refMobile}>
-                divTest
-            </div>
-
         </>
     )
 }

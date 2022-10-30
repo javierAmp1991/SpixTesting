@@ -6,7 +6,7 @@ import {
     ProviderOfferProducts,
     ProviderRecommended
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {
     HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
@@ -25,6 +25,8 @@ import EventVerticalViewNewMob from "../../../../Events/eventVerticalViewNewMob"
 import NavProductsSectionMobile from "./navProductsSectionMobile";
 import ProductViewSquare from "../../../../../Desktop/Misc/productViewSquare";
 
+const idTest: string = "isTestMobileScrolControl"
+
 export default function InitialPageRestaurantMobile() {
 
     const infoHeader: PresentationCard = useContext(HeaderContext)
@@ -33,6 +35,16 @@ export default function InitialPageRestaurantMobile() {
     const listReview: review[] = useContext(ReviewsSectionContext)
     const listQuestion: question[] = useContext(QuestionSectionContext)
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
+    let [isSticky, setIsSticky] = useState(false)
+
+    useEffect(() => {
+        const functionScroll = () => {
+            let scrollControl = document.getElementById(idTest).getBoundingClientRect()
+             setIsSticky(isSticky = window.scrollY >= scrollControl.y)
+        }
+        window.addEventListener(`scroll`, functionScroll)
+    })
+
     return (
         <div className={style.mainDivMobile}>
             <div className={style.mainGradient}>
@@ -77,8 +89,9 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutTitleMobile>
                 <div className={style.separationLine}/>
 
-                <div>
-                <NavProductsSectionMobile/>
+                <NavProductsSectionMobile isSticky={isSticky}/>
+
+                <div id={idTest}>
                     {
                         infoSectionProducts.map(item =>
                             <div key={item.Id}>
@@ -88,7 +101,6 @@ export default function InitialPageRestaurantMobile() {
                         )
                     }
                 </div>
-
 
                 <LayoutTitleMobile isOverflow={false} title={"Preguntas"}>
                     <div className={style.gridQuestions}>

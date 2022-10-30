@@ -1,26 +1,26 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/navProductSection.module.css"
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {useContext, useEffect, useRef, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 
-export default function NavProductsSectionMobile() {
+const hidePositionNav: string = `translateY(-50px)`
+const showPositionNav: string = `translateY(0)`
+
+export default function NavProductsSectionMobile({isSticky} : {isSticky: boolean}) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
-    let [styleNav, setStyleNav] = useState(true)
-    const handleStyleNav = () => setStyleNav(styleNav = true)
-    let [topPX, setTopPX] = useState("-50px")
-    let [control, setControl] = useState(0)
+    let [topPX, setTopPX] = useState(hidePositionNav)
     let [firUbication, setFirstUbication] = useState(0)
     let [scrollNumber, setScrollNumber] = useState(0)
-    let isSticky: boolean = true
 
     useEffect(() => {
             const functionScroll = () => {
-                setScrollNumber(scrollNumber = window.scrollY)
-                if (window.scrollY > firUbication) setTopPX(topPX = "-50px")
-                else setTopPX(topPX = "0")
+                if (isSticky){
+                    setScrollNumber(scrollNumber = window.scrollY)
+                    if (window.scrollY > firUbication) setTopPX(topPX = hidePositionNav)
+                    else setTopPX(topPX = showPositionNav)
+                } else setTopPX(topPX = hidePositionNav)
             }
-
             window.addEventListener(`scroll`, functionScroll)
             setFirstUbication(firUbication = window.scrollY)
         }
@@ -54,7 +54,7 @@ export default function NavProductsSectionMobile() {
     }
 
     return (
-        <div style={{top: topPX}} className={`${style.mainDiv}`}>
+        <div style={{transform: topPX}} className={`${style.mainDiv}`}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}

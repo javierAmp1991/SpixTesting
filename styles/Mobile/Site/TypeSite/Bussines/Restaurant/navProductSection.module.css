@@ -3,6 +3,7 @@
     left: 0;
     overflow: scroll;
     height: 50px;
+    top: 0;
     position: fixed;
     display: grid;
     grid-template-columns: max-content;

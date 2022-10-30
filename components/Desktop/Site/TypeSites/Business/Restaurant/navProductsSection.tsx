@@ -1,25 +1,23 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/navProductSection.module.css"
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {useContext, useEffect, useRef, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import {is} from "immutable";
+
+const hidePositionNav: string = `translateY(-50px)`
+const showPositionNav: string = `translateY(15px)`
 
 export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
-    let [styleNav, setStyleNav] = useState(true)
-    const handleStyleNav = () => setStyleNav(styleNav = true)
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id)
         data.scrollIntoView({behavior: "smooth"})
         setTagSelected(tagSelected = id)
     }
-    let [topPX, setTopPX] = useState("-50px")
+    let [topPX, setTopPX] = useState(hidePositionNav)
     let [scrollNumber, setScrollNumber] = useState(0)
     let [firUbication, setFirstUbication] = useState(0)
-    let [secondUbication, seSecondUbication] = useState(0)
 
-    const asdasds: boolean = false
 
     /* const [isSticky, setIsSticky] = useState(false)
      const refDesktop = useRef()
@@ -45,24 +43,17 @@ export default function NavProductsSection({isSticky}: { isSticky: boolean }) {
             const functionScroll = () => {
                 if (isSticky) {
                     setScrollNumber(scrollNumber = window.scrollY)
-                    if (window.scrollY > firUbication) setTopPX(topPX = "-50px")
-                    else setTopPX(topPX = "15px")
-                } else {
-                    setTopPX(topPX = "-50px")
-                }
+                    if (window.scrollY > firUbication) setTopPX(topPX = hidePositionNav)
+                    else setTopPX(topPX = showPositionNav)
+                } else setTopPX(topPX = hidePositionNav)
             }
-
             window.addEventListener(`scroll`, functionScroll)
             setFirstUbication(firUbication = window.scrollY)
         }
     )
 
-    const cssStyle = {
-        main: isSticky && style.mainDivStiky
-    }
-
     return (
-        <div style={{top: topPX}} className={`${style.mainDiv} ${cssStyle.main}`}>
+        <div style={{transform: topPX}} className={style.mainDiv}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}

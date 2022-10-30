@@ -2,6 +2,7 @@
     overflow: hidden;
     height: 50px;
     position: fixed;
+    top: 0;
     width: var(--maxWidthBodyContent);
     display: grid;
     grid-template-columns: max-content;
