@@ -6,7 +6,7 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
-import {Product, question, review, reviewSearch, ReviewsSectionData} from "../../../../../../dataDemo/data";
+import {Product} from "../../../../../../dataDemo/data";
 
 export const HeaderContext = createContext(null)
 export const SectionProductsContext = createContext(null)
