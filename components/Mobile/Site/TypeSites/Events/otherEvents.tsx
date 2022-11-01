@@ -1,7 +1,6 @@
 import {ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {OtherEventsContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import EventVerticalView from "../../../../Desktop/EventsView/eventVerticalView";
 import style from "/styles/Mobile/Site/TypeSite/Events/mainPage.module.css";
 import LayoutCarrouselMobile from "../../../Layouts/layoutCarrousel.Mobile";
 import LayoutTitleMobile from "../Business/Restaurant/layoutTitleMobile";

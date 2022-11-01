@@ -1,0 +1,92 @@
+.mainDiv {
+    --heighBreakdown: 12px;
+    --borderRadious: 6px;
+    padding: 16px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gridReview {
+    display: grid;
+    gap: 16px;
+    padding: 32px 0;
+}
+
+.gridHeader {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    border-bottom: 1px solid var(--separationLineColor);
+    padding-bottom: 32px;
+    justify-content: space-between;
+}
+
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.totalReview {
+    padding-top: 8px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.gridInfo {
+    display: grid;
+    align-content: space-between;
+}
+
+.fontRating {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.gridStars {
+    display: grid;
+    grid-template-columns: repeat(5, max-content);
+    gap: 8px;
+}
+
+.sizeStar {
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+
+.bgGray {
+    height: var(--heighBreakdown);
+    border-radius: var(--borderRadious);
+    overflow: hidden;
+    background: rgba(0, 0, 0, .1);
+}
+
+.bgBlue {
+    background: #2d7dff;
+    height: var(--heighBreakdown);
+    border-radius: var(--borderRadious);
+    overflow: hidden;
+}
+
+.gridBrekdown {
+    display: grid;
+    gap: 8px;
+}
+
+.gridBreakDownAll {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 8px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.wirteReview{
+    width: max-content;
+    padding: 6px 32px;
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    margin-right: auto;
+    display: grid;
+    border-radius: 4px;
+    overflow: hidden;
+}
+

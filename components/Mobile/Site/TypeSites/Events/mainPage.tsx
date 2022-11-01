@@ -8,6 +8,9 @@ import InSearch from "./inSearch";
 import OfferEventsMobile from "./offerEvents";
 import ProductsEventMobile from "./productsEventMobile";
 import OtherEvents from "./otherEvents";
+import ReviewSectionMobile from "./reviewSection";
+import QuestionSection from "../../../../Desktop/Site/TypeSites/Events/questionSection";
+import QuestionSectionMobile from "./questionSection";
 
 export default function MainPageMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -20,6 +23,8 @@ export default function MainPageMobile() {
                 <OfferEventsMobile/>
                 <ProductsEventMobile/>
                 <OtherEvents/>
+                <ReviewSectionMobile/>
+                <QuestionSectionMobile/>
             </div>
         </>
     )
