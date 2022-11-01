@@ -1,6 +1,6 @@
 .mainDiv {
     overflow: hidden;
-    height: 50px;
+    height: 44px;
     position: fixed;
     top: 0;
     width: calc(var(--maxWidthBodyContent) - 8px);
@@ -10,18 +10,20 @@
     grid-auto-flow: column;
     align-items: center;
     gap: 12px;
-    padding: 0 12px;
+    padding: 0 32px;
     z-index: 9000000;
     background: white;
-    border-radius: 30px;
+    border-radius: 6px;
     transition: .4s;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+    background: linear-gradient(145deg, #2a2828 0%, #1f1e1e 100%);
+    background: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .4);
 }
 
 
 .tag {
-    border: 1px solid rgba(0, 0, 0, .5);
-    border-radius: 16px;
+    /*border: 1px solid rgba(0, 0, 0, .5);*/
+    border-radius: 6px;
     height: max-content;
     padding: 4px 12px;
     overflow: hidden;
@@ -29,18 +31,28 @@
     font-weight: 500;
     text-align: center;
     background: white;
+    background: transparent;
     color: var(--colorPrimaryTextDesktop);
+    color: white;
+}
+
+.tag:hover{
+    background: white;
+    color: var(--colorTitlesDesktop);
 }
 
 .tagSelected {
-    border: 1px solid rgba(0, 0, 0, .5);
-    border-radius: 16px;
+    /*border: 1px solid rgba(0, 0, 0, .5);*/
+    border-radius: 6px;
     height: max-content;
     padding: 4px 12px;
     font-weight: 500;
     overflow: hidden;
-    background: black;
     text-overflow: ellipsis;
     text-align: center;
+    background: white;
     color: white;
+    color: orange;
+    color: white;
+    color: var(--colorTitlesDesktop);
 }

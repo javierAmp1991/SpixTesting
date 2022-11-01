@@ -1,0 +1,72 @@
+.mainDiv {
+    display: grid;
+    gap: 32px;
+}
+
+.gridImageName {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.gradient {
+    background: var(--gradientProfileBlue);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.gridInfo {
+    display: grid;
+    gap: 8px;
+}
+
+.sizeRestrictionIcon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+}
+
+.sizeLogo {
+    width: 52px;
+    height: 52px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.gridrestrictions {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    align-items: center;
+    gap: 4px;
+    font-size: 16px;
+}
+
+.gridResSocial{
+    display: grid;
+    gap: 6px;
+    align-content: center;
+}
+
+.name {
+    font-size: 18px;
+    color: var(--colorTitlesDesktop);
+}
+
+.description {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.atr {
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.category{
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.gridLogoSocial{
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}

@@ -1,4 +1,4 @@
-import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css"
+import styles from "/styles/Desktop/Layouts/layoutCarrouselDesktop.module.css"
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst"
 import React, {ReactNode, useState} from "react"
@@ -23,7 +23,7 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
                     style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    ${visibility && utilities.opacity0}`}>
+                    /*${visibility && utilities.opacity0}*/`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
             </button>
 
@@ -43,7 +43,7 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
                     style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    ${visibility && utilities.opacity0}`}>
+                    /*${visibility && utilities.opacity0}*/`}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
             </button>
         </div>

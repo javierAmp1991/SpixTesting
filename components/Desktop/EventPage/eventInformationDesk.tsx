@@ -1,4 +1,4 @@
-import {EventLookUp, fomrLink} from "../../../dataDemo/data";
+import {EventLookUp, FormLink} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import style from "/styles/Desktop/EventPage/eventInformation.module.css"
 import FormView from "../Misc/formView";
@@ -11,7 +11,7 @@ const textButton: string = "Comprar Entradas"
 export default function EventInformationDesk({
                                                  eventInformation,
                                                  formList
-                                             }: { eventInformation: EventLookUp, formList: fomrLink[] }) {
+                                             }: { eventInformation: EventLookUp, formList: FormLink[] }) {
     let [selectedShow, setSelectedShow] = useState(true)
     let [targetImage, setTargetImage] = useState("")
     const handleVideo = () => {

@@ -1,0 +1,18 @@
+.mainDiv {
+    width: var(--maxWidthBodyContent);
+    margin: 40px auto 0 auto;
+    display: grid;
+    gap: 40px;
+}
+
+.mainCard {
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+    overflow: scroll;
+    padding: 24px 32px;
+    display: grid;
+    gap: 72px;
+    z-index: 700;
+}
+
+

@@ -1,10 +1,10 @@
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
 import style from "/styles/Mobile/Misc/formView.module.css"
-import {fomrLink} from "../../../dataDemo/data";
+import {FormLink} from "../../../dataDemo/data";
 import Image from "next/image";
 
-export default function FormView({item}: { item: fomrLink }) {
+export default function FormView({item}: { item: FormLink }) {
     return (
         <div className={style.gridForm}>
             <div className={utilities.gridContentCenter}>

@@ -1,7 +1,7 @@
 .gridSocialBar{
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 16px;
+    gap: 12px;
 }
 
 .sizeIconH{
@@ -19,7 +19,7 @@
 .gridIcon{
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 8px;
+    gap: 6px;
     align-content: center;
     align-items: center;
     -webkit-tap-highlight-color: transparent;

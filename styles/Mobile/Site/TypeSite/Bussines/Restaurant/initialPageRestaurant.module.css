@@ -1,6 +1,6 @@
 .mainDiv {
     margin: auto;
-    padding: 40px 16px;
+    padding: 16px 16px 40px 16px;
     display: grid;
     gap: 32px;
 }

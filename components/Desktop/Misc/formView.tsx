@@ -1,11 +1,11 @@
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "../../../styles/utilities.module.css";
 import style from "/styles/Desktop/Misc/formView.module.css"
-import {fomrLink} from "../../../dataDemo/data";
+import {FormLink} from "../../../dataDemo/data";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function FormViewDesktop({item}: { item: fomrLink }) {
+export default function FormViewDesktop({item}: { item: FormLink }) {
     return (
         <Link href={item.link}>
             <a className={style.gridForm}>

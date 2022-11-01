@@ -4,7 +4,7 @@ import {useContext, useEffect, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 
 const hidePositionNav: string = `translateY(-50px)`
-const showPositionNav: string = `translateY(15px)`
+const showPositionNav: string = `translateY(5px)`
 
 export default function NavProductsSection({hasBeenReached}: { hasBeenReached: boolean }) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)

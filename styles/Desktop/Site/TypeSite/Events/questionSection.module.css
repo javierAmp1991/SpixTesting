@@ -1,0 +1,21 @@
+.writeQuestion{
+    width: max-content;
+    padding: 6px 32px;
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    margin-left: auto;
+    display: grid;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.gridQuestions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 8px 0;
+}
+
+.title{
+    color: var(--colorTitlesDesktop);
+    font-size: 21px;
+}

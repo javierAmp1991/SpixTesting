@@ -11,9 +11,6 @@ import Image from "next/image";
 import {DateVenue} from "../../../dataDemo/data";
 import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../../Mobile/Misc/principalInfoEventMobile";
 import LevelUserPopUp from "../Misc/levelUserPopUp";
-import {ReactDOM, ReactPortal} from "react";
-import {createPortal} from "react-dom";
-import {Portal} from "next/dist/client/portal";
 
 export class LevelUser {
     Id: string
@@ -193,7 +190,6 @@ export default function SideCardEvent({eventInformation}: { eventInformation: Ev
                             </div>
                         </div>
                         <div>
-                            {/*<PrincipalInfoEvent item={principalInfo}/>*/}
                             <PrincipalInfoEventMobile item={principalInfo}/>
                             {/*<div className={`${utilities.fontSubTitle} mb-1`}>
                                 {eventInformation.EventName}

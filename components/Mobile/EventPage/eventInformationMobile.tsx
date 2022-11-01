@@ -1,4 +1,4 @@
-import {DateVenue, EventLookUp, fomrLink} from "../../../dataDemo/data";
+import {DateVenue, EventLookUp, FormLink} from "../../../dataDemo/data";
 import utilities from "/styles/utilities.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import style from "/styles/Mobile/EventPage/eventInformation.module.css"
@@ -56,7 +56,7 @@ const user: LevelUser = {
 const userRequirement: number = 2
 
 export default function EventInformationMobile({eventInformation, form}:
-                                                   { eventInformation: EventLookUp, form: fomrLink[] }) {
+                                                   { eventInformation: EventLookUp, form: FormLink[] }) {
     let [venueDateList, setVenueDateList] = useState(EventPageEvent.eventPage.VenueDate)
     const handleVenueList = (itemNew: DateVenue) => {
         const newVenueDateList: DateVenue[] = venueDateList.map((item) => {

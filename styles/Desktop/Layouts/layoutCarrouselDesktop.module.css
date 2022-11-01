@@ -1,0 +1,55 @@
+.containerArrow {
+    display: grid;
+    align-items: center;
+    position: absolute;
+    height: var(--sizeArrowLayoutHome);
+    width: var(--sizeArrowLayoutHome);
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    border-radius: 4px;
+    z-index: 900000000000000;
+    background: white;
+}
+
+.mainDivCarrouselProperties {
+    position: relative;
+    width: 100%;
+    max-width: var(--maxWidthBanner);
+    margin: auto;
+    overflow: scroll;
+}
+
+.overflowCarrouselHome {
+    overflow: scroll;
+}
+
+.gridHomeCarrouselLayout{
+    display: grid;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: .4s;
+}
+
+.gridHomeCarrouselLayoutMaxContent{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin: auto;
+}
+
+.propertiesArrowCarrousel{
+    transition: var(--transitionCarrouselHome);
+    z-index: var(--arrowHomeLayoutZIndex);
+}
+
+@media (min-width: 1281px) {
+    .mainDivCarrouselProperties {
+        overflow: visible;
+    }
+
+    .overflowCarrouselHome {
+        overflow: scroll;
+    }
+}

@@ -3296,13 +3296,13 @@ export class question {
     Answer: string;
 }
 
-export class fomrLink {
+export class FormLink {
     text: string;
     link?: string;
 }
 
 export namespace FormList {
-    export const listForm: fomrLink[] = [
+    export const listForm: FormLink[] = [
         {
             text: "Se necesita camarero o camarera por el fin de semana.",
             link: "/fillForm"
