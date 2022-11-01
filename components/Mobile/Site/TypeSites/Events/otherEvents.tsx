@@ -5,6 +5,7 @@ import EventVerticalView from "../../../../Desktop/EventsView/eventVerticalView"
 import style from "/styles/Mobile/Site/TypeSite/Events/mainPage.module.css";
 import LayoutCarrouselMobile from "../../../Layouts/layoutCarrousel.Mobile";
 import LayoutTitleMobile from "../Business/Restaurant/layoutTitleMobile";
+import EventVerticalViewNewMob from "../../../Events/eventVerticalViewNewMob";
 
 const title: string = "Otros Eventos"
 export default function OtherEvents() {
@@ -15,7 +16,7 @@ export default function OtherEvents() {
                 <LayoutCarrouselMobile gapLayout={16}>
                     {
                         otherEvents.InitialItems.map(item =>
-                            <EventVerticalView key={item.Id} item={item} darkModeState={false}/>
+                            <EventVerticalViewNewMob key={item.Id} item={item} darkModeState={false}/>
                         )
                     }
                 </LayoutCarrouselMobile>
