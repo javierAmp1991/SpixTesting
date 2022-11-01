@@ -7,8 +7,8 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
-    HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
-    SectionProductsContext
+    FormContext, HeaderContext, OfferProductsContext, QuestionSectionContext,
+    RecommendedContext, ReviewsSectionContext, SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import LayoutTitleMobile from "./layoutTitleMobile";
 import LayoutReviewSectionMobile from "./layoutReviewSectionMobile";
@@ -22,11 +22,13 @@ import NavProductsSectionMobile from "./navProductsSectionMobile";
 import ProductViewSquare from "../../../../../Desktop/Misc/productViewSquare";
 import ReviewViewShortMobile from "../../../../Misc/ReviewViewShortMobile";
 import QuestionShortMob from "../../../../Misc/questionShortMob";
+import {FormLink} from "../../../../../../dataDemo/data";
+import FormViewMobile from "../../../../Misc/formViewMobile";
 
 const idTest: string = "isTestMobileScrolControl"
 
 export default function InitialPageRestaurantMobile() {
-
+    const form: FormLink[] = useContext(FormContext)
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
@@ -43,7 +45,7 @@ export default function InitialPageRestaurantMobile() {
 
     useEffect(() => {
         const functionScroll = () => {
-             setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
+            setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
         }
         window.addEventListener(`scroll`, functionScroll)
         return () => window.removeEventListener(`scroll`, functionScroll);
@@ -73,7 +75,15 @@ export default function InitialPageRestaurantMobile() {
                         }
                     </LayoutWithNavCircleMobile>
                 </LayoutReviewSectionMobile>
-                <div className={style.separationLine}/>
+
+                <LayoutTitleMobile title={"Se busca"} isOverflow={true}>
+                    <LayoutWithNavCircleMobile isDarkMode={false}>
+                        {
+                            form.map(item =>
+                                <FormViewMobile key={item.text} item={item}/>)
+                        }
+                    </LayoutWithNavCircleMobile>
+                </LayoutTitleMobile>
 
                 <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>
                     <LayoutCarrouselMobile gapLayout={16}>

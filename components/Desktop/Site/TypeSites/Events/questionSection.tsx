@@ -15,25 +15,29 @@ export default function QuestionSection() {
     let [displayQuestion, setDisplayQuestion] = useState(false)
     const handleDisplayQuestion = () => setDisplayQuestion(displayQuestion = !displayQuestion)
     return (
-        <LayoutTitle title={title}>
-            <>
-                <div className={style.gridQuestions}>
+        <div className={style.mainDiv}>
+
+            <LayoutTitle title={title}>
+                <>
+                    <div className={style.gridQuestions}>
+                        {
+                            questions.map(item =>
+                                <QuestionShortDesk key={item.Id} item={item}/>
+                            )
+                        }
+                    </div>
+                    <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
+                        {writeQuestion}
+                    </button>
                     {
-                        questions.map(item =>
-                            <QuestionShortDesk key={item.Id} item={item}/>
-                        )
+                        displayQuestion &&
+                        <PopUpContainer closePopUp={handleDisplayQuestion} isButtonVisible={true} isBackground={true}>
+                            <WriteQuestion/>
+                        </PopUpContainer>
                     }
-                </div>
-                <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
-                    {writeQuestion}
-                </button>
-                {
-                    displayQuestion &&
-                    <PopUpContainer closePopUp={handleDisplayQuestion} isButtonVisible={true} isBackground={true}>
-                        <WriteQuestion/>
-                    </PopUpContainer>
-                }
-            </>
-        </LayoutTitle>
+                </>
+            </LayoutTitle>
+        </div>
+
     )
 }

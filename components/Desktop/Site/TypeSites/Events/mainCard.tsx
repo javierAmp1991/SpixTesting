@@ -18,9 +18,7 @@ export default function MainCard() {
             <OtherEvents/>
             <Products/>
             <News/>
-            <div className={style.separationLine}/>
             <SectionReview/>
-            <div className={style.separationLine}/>
             <QuestionSection/>
         </div>
     )

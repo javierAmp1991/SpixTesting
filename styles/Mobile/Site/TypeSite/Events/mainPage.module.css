@@ -1,0 +1,11 @@
+.mainDiv {
+    display: grid;
+    gap: 32px;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.paddingGeneral{
+    padding: 0 16px;
+    overflow: scroll;
+}

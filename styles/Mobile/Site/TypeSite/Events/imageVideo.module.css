@@ -1,0 +1,18 @@
+.sizeContainer {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    background: black;
+    display: grid;
+    align-items: center;
+}
+
+.sizeVideo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overflowDiv{
+    overflow: scroll;
+}

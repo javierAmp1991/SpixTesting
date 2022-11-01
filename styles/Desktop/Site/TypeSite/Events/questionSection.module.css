@@ -1,7 +1,14 @@
-.writeQuestion{
+.mainDiv {
+    padding: 24px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.writeQuestion {
     width: max-content;
     padding: 6px 32px;
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     margin-right: auto;
     display: grid;
     border-radius: 4px;
@@ -15,7 +22,7 @@
     padding: 8px 0;
 }
 
-.title{
+.title {
     color: var(--colorTitlesDesktop);
     font-size: 21px;
 }

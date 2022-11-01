@@ -1,7 +1,14 @@
 .mainDiv {
     display: grid;
-    gap: 32px;
-    padding-bottom: 12px;
+    gap: 24px;
+    padding: 16px;
+}
+
+.mainCont {
+    display: grid;
+    gap: 8px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding-bottom: 24px;
 }
 
 .gridImageName {
@@ -19,7 +26,12 @@
 
 .gridInfo {
     display: grid;
-    gap: 8px;
+    gap: 2px;
+}
+
+.gridInfoUnder{
+    display: grid;
+    gap: 12px;
 }
 
 .sizeRestrictionIcon {
@@ -45,14 +57,14 @@
     padding-top: 4px;
 }
 
-.gridResSocial{
+.gridResSocial {
     display: grid;
     gap: 6px;
     align-content: center;
 }
 
 .name {
-    font-size: 18px;
+    font-size: 16px;
     color: var(--colorTitlesDesktop);
 }
 
@@ -64,11 +76,11 @@
     color: var(--colorSecundaryTextDesktop);
 }
 
-.category{
+.category {
     color: var(--colorSecundaryTextDesktop);
 }
 
-.gridLogoSocial{
+.gridLogoSocial {
     display: grid;
     grid-template-columns: 1fr max-content;
     align-items: start;

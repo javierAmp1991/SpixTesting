@@ -7,8 +7,9 @@ import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Eve
 import PopUpContainer from "../../../Misc/popUpContainer";
 import MapPopUp, {MapPopUpProp} from "../../../Misc/mapPopUp";
 import LevelUserPopUp from "../../../Misc/levelUserPopUp";
+import SocialBar from "../../../Misc/socialBar";
 
-const nextDates: string = "Proximas Fechas:"
+const nextDates: string = "Proximas Fechas"
 const directionText: string = "Direccion:"
 const dateText: string = "Fecha:"
 const buyTickets: string = "Comprar Entradas"
@@ -57,8 +58,11 @@ export default function SideCard() {
     return (
         <div className={style.mainDiv}>
             <div className={style.gridInfo}>
-                <div className={style.titleNextDates}>
-                    {nextDates}
+                <div className={style.gridNexDateSocial}>
+                    <div className={style.titleNextDates}>
+                        {nextDates}
+                    </div>
+                    <SocialBar/>
                 </div>
                 <div className={style.gridDates}>
                     {

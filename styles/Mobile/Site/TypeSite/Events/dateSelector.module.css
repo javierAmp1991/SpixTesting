@@ -122,11 +122,3 @@
     z-index: 90;
     width: max-content;
 }
-
-.gridNexDateSocial{
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 2px;
-}

@@ -41,17 +41,14 @@ export default function InformationImages() {
                             </div>
                         </div>
                     </div>
-                    <SocialBar/>
                 </div>
-
-            </div>
-
-            <ImageVideo/>
-
-            <div className={style.gridInfo}>
                 <div className={style.description}>
                     {info.Description}
                 </div>
+            </div>
+
+            <ImageVideo/>
+            {/*<div className={style.gridInfo}>
                 <div>
                     {categoryText} <span className={style.category}>{info.Category}</span>
                 </div>
@@ -65,7 +62,7 @@ export default function InformationImages() {
                         </span>
                     )}
                 </div>
-            </div>
+            </div>*/}
         </div>
     )
 }
