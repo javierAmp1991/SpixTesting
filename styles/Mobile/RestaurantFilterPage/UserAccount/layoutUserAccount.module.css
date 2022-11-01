@@ -1,0 +1,13 @@
+.contTitle {
+    padding-bottom: 24px;
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.subtitle {
+    color: var(--colorPrimaryText);
+}

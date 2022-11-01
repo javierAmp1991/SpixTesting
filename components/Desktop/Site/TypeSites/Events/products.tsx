@@ -16,6 +16,7 @@ export default function Products() {
         Padding: 0,
         Gap: 16,
         Grid: 4,
+        IsButtonVisible: true,
         LeftArrow: () => products.LeftClick(),
         RightArrow: () => products.RightClick()
     }

@@ -5,7 +5,7 @@ import CreateProductPage from "../Desktop/ProductManagement/createProductPage";
 import CreateProductPageMobile from "../Mobile/ProductManagement/createProductPageMobile";
 
 export default function CreateProductDefault() {
-    const isSmallDown = useMediaQuery('(max-width: 1501px)');
+    const isSmallDown = useMediaQuery('(max-width: 1360px)');
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>

@@ -12,12 +12,15 @@ export default function MainCard() {
     return (
         <div className={style.mainCard}>
             <InformationImages/>
+            <div className={style.separationLine}/>
             <InSearch/>
             <OfferProducts/>
             <OtherEvents/>
             <Products/>
             <News/>
+            <div className={style.separationLine}/>
             <SectionReview/>
+            <div className={style.separationLine}/>
             <QuestionSection/>
         </div>
     )

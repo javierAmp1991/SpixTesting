@@ -1,0 +1,154 @@
+.mainDiv {
+    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    overflow: scroll;
+    display: grid;
+}
+
+.mainDivTitle {
+    padding-bottom: 32px;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.sizeLogo {
+    height: 35px;
+    width: 120px;
+    position: relative;
+    margin: auto;
+}
+
+.overflowScroll{
+    overflow: scroll;
+}
+
+.line {
+    border-bottom: 2px solid var(--separationLineColor);
+    padding-bottom: 20px;
+}
+
+.mainDivEdit {
+
+}
+
+.gridInput {
+    display: grid;
+    grid-template-columns: 85px 1fr max-content;
+    align-items: center;
+    gap: 8px;
+}
+
+.styleInput {
+    padding: 8px 12px;
+    width: 100%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    outline: none;
+    background: white;
+}
+
+.sizeEdirProfile {
+    height: 24px;
+    width: 24px;
+    position: relative;
+    margin-left: 12px;
+}
+
+.gridOptions {
+    display: grid;
+    gap: 32px;
+    width: 100%;
+}
+
+.titleInputs {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.contImage {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 4/3;
+    position: relative;
+    cursor: pointer;
+}
+
+.gridVerLvl2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.gridTextCamera {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.upImage {
+    color: var(--colorPrimaryTextDesktop);
+    text-align: center;
+}
+
+.sizeCamera {
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.editCont {
+    display: grid;
+    background: linear-gradient(360deg, rgba(214, 214, 213, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    color: #383838;
+    padding: 4px 12px;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid #a8a8a8;
+    width: max-content;
+}
+
+.titleVer2 {
+    font-size: 16px;
+}
+
+.gridVerificacion {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 6px;
+}
+
+.sizeCheckIcon {
+    height: 14px;
+    width: 14px;
+    position: relative;
+}
+
+.failedVerificacion {
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+/*    background: #fafafa;*/
+    border-radius: 6px;
+    overflow: hidden;
+    padding: 16px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.buttonSend {
+    background: var(--gradientBlueButton);
+    margin-left: auto;
+    padding: 6px 24px;
+    color: white;
+    width: max-content;
+    border-radius: 4px;
+}
+
+.InputImage {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}

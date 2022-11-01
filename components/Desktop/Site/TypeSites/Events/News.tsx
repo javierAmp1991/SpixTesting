@@ -16,6 +16,7 @@ export default function News() {
         Padding: 0,
         Gap: 16,
         Grid: 3,
+        IsButtonVisible: true,
         LeftArrow: () => news.LeftClick(),
         RightArrow: () => news.RightClick()
     }

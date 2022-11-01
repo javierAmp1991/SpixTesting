@@ -18,7 +18,7 @@ export default function AllProducts() {
             </div>
             <Link href={"/"}>
                 <div className={style.buttonCreateProduct}>
-                    <div>Crear Producto </div>
+                    <div>Crear Producto</div>
                     <div className={style.sizeAddIcon}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.addIconEmpty}/>
                     </div>
@@ -35,9 +35,7 @@ export default function AllProducts() {
                                 </button>
                             </div>
                             <Link key={item.Name} href={"/"}>
-                                <a>
-                                    <ProductViewSquare item={item} size={null} isDisplayOffer={true}/>
-                                </a>
+                                <ProductViewSquare item={item} size={null} isDisplayOffer={true}/>
                             </Link>
                         </div>
                     )

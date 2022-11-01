@@ -5,8 +5,8 @@ import Link from "next/link";
 import {MyProductProviderProp} from "../../../Class/UserAccount/userAccount";
 import {useContext} from "react";
 import {ProductsContext} from "../../Providers/UserAccount/MyProductsProvider";
-import ProductViewSquare from "../Misc/productViewSquare";
 import {Product} from "../../../dataDemo/data";
+import ProductViewSquare from "../../Desktop/Misc/productViewSquare";
 
 export default function AllProductsMobile() {
     const myProductContext: MyProductProviderProp = useContext(ProductsContext)
@@ -35,9 +35,7 @@ export default function AllProductsMobile() {
                                 </button>
                             </div>
                             <Link key={item.Name} href={"/"}>
-                                <a>
                                     <ProductViewSquare item={item} size={null} isDisplayOffer={true}/>
-                                </a>
                             </Link>
                         </div>
                     )

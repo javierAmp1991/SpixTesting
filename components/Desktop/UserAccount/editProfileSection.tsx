@@ -296,8 +296,10 @@ export default function EditProfileSection({isInDashboard}: { isInDashboard: boo
                         <label htmlFor={inputFilteProfile} className={style.sizeProfilePic}>
                             <Image layout={"fill"} objectFit={"cover"} src={userData.ProfilePath} alt={""}/>
                         </label>
-                        <label htmlFor={inputFilteProfile} className={style.editProfilePic}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.editProfilePic} alt={""}/>
+                        <label htmlFor={inputFilteProfile} className={style.paddingEditProfile}>
+                            <div className={style.editProfilePic}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileAlone} alt={""}/>
+                            </div>
                         </label>
                     </div>
                     <div>

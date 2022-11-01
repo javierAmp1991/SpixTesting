@@ -4,10 +4,10 @@ export default function LayoutPurpleContainer({children, isDarkMode}) {
     const cssStyles = getCssStyle()
     return (
         <div className={cssStyles.borderCard}>
-            <div className={`${cssStyles.gridForm} py-4`}>
+            <div className={cssStyles.gridForm}>
                 {children}
             </div>
-            <div className={`${style.bgLineDown} w-full h-1`}></div>
+            <div className={style.bgLineDown}></div>
         </div>
     )
 

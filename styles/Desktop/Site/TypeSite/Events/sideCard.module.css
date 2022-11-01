@@ -11,7 +11,7 @@
 
 .gridInfo {
     display: grid;
-    gap: 12px;
+    gap: 16px;
     align-content: space-between;
 }
 
@@ -31,7 +31,7 @@
 .gridDates {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .buttonDate {
@@ -43,10 +43,13 @@
     overflow: hidden;
     transition: .4s;
     position: relative;
+    border: 1px solid transparent;
 }
 
-.buttonDate:hover {
-    background: rgba(0, 0, 0, .03);
+.buttonSelected {
+    box-shadow: 0 0 3px rgba(25, 100, 239, 0.2);
+    border: 1px solid rgba(19, 135, 215, .2);
+    background: rgba(19, 135, 215, .2);
 }
 
 
@@ -107,4 +110,15 @@
     position: absolute;
     right: 8px;
     top: calc(50% - 8px);
+}
+
+.seeMap {
+    font-size: 12px;
+    position: absolute;
+    right: 8px;
+    top: calc(50% - 8px);
+    color: var(--linkColor);
+    text-decoration: underline;
+    z-index: 90;
+    width: max-content;
 }

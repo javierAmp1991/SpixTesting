@@ -1,15 +1,13 @@
 .containerArrow {
     display: grid;
     align-items: center;
-    position: relative;
-    height: var(--sizeArrowLayoutHome);
     height: 32px;
-    width: var(--sizeArrowLayoutHome);
     width: 32px;
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     border-radius: 4px;
     z-index: 90000000;
     background: white;
+    transition: var(--transitionCarrouselHome);
 }
 
 .mainDivCarrouselProperties {
@@ -18,23 +16,34 @@
     max-width: var(--maxWidthBanner);
     display: grid;
     gap: 16px;
-    grid-template-columns: max-content 1fr max-content;
     margin: auto;
     overflow: scroll;
+}
+
+.isButtonVisible {
+    grid-template-columns: max-content 1fr max-content;
+}
+
+.posAbsolute{
+    position: absolute;
+}
+
+.posRelative{
+    position: relative;
 }
 
 .overflowCarrouselHome {
     overflow: scroll;
 }
 
-.gridHomeCarrouselLayout{
+.gridHomeCarrouselLayout {
     display: grid;
     padding-left: 2px;
     padding-right: 2px;
     transition: .4s;
 }
 
-.gridHomeCarrouselLayoutMaxContent{
+.gridHomeCarrouselLayoutMaxContent {
     display: grid;
     grid-template-columns: 100%;
     grid-auto-flow: column;
@@ -44,9 +53,8 @@
     margin: auto;
 }
 
-.propertiesArrowCarrousel{
-    transition: var(--transitionCarrouselHome);
-    z-index: var(--arrowHomeLayoutZIndex);
+.propertiesArrowCarrousel {
+
 }
 
 @media (min-width: 1281px) {

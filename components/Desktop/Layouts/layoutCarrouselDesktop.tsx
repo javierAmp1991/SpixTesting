@@ -6,7 +6,7 @@ import Image from "next/image";
 import {PropCarrousel} from "../../../Class/Layouts/layoutClass";
 
 export default function LayoutCarrouselDesktop({children, layoutProp}:
-                                                   {children: ReactNode, layoutProp: PropCarrousel }) {
+                                                   { children: ReactNode, layoutProp: PropCarrousel }) {
     let [visibility, setVisibility] = useState(true);
     const handleRight = () => {
         layoutProp.RightArrow()
@@ -18,14 +18,25 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
 
 
     return (
-        <div className={styles.mainDivCarrouselProperties}>
-            <button onClick={handleLeft}
-                    style={{top: layoutProp.PositionArrowY, /*left: layoutProp.PositionArrowX*/}}
-                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                    className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    /*${visibility && utilities.opacity0}*/`}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
-            </button>
+        <div className={`${styles.mainDivCarrouselProperties} ${cssStyle.mainGraid}`}>
+            {
+                layoutProp.IsButtonVisible ?
+                    <button onClick={handleLeft}
+                            style={{top: layoutProp.PositionArrowY}}
+                            className={`${styles.containerArrow} ${cssStyle.positionArrow}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                    </button>
+                    :
+                    <button onClick={handleLeft}
+                            style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${styles.containerArrow} ${cssStyle.positionArrow}
+                            ${visibility && utilities.opacity0}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                    </button>
+
+            }
+
 
             <div style={cssStyle.paddingCarr}>
                 <div style={{
@@ -39,18 +50,31 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
                 </div>
             </div>
 
-            <button onClick={handleRight}
-                    style={{top: layoutProp.PositionArrowY, /*right: layoutProp.PositionArrowX*/}}
-                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                    className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
-                    /*${visibility && utilities.opacity0}*/`}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
-            </button>
+            {
+                layoutProp.IsButtonVisible ?
+                    <button onClick={handleRight}
+                            style={{top: layoutProp.PositionArrowY}}
+                            className={`${styles.containerArrow} ${cssStyle.positionArrow}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                    </button>
+                    :
+                    <button onClick={handleRight}
+                            style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${styles.containerArrow} ${cssStyle.positionArrow}
+                    ${visibility && utilities.opacity0}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                    </button>
+            }
+
+
         </div>
     )
 
     function getCssStyle() {
         return {
+            positionArrow: layoutProp.IsButtonVisible? styles.posRelative : styles.posAbsolute,
+            mainGraid: layoutProp.IsButtonVisible && styles.isButtonVisible,
             paddingCarr: layoutProp.Padding != null ?
                 {paddingBottom: layoutProp.Padding, paddingTop: layoutProp.Padding} : {}
         }

@@ -5,7 +5,7 @@ import InitialPageRestaurant from "../Desktop/Site/TypeSites/Business/Restaurant
 import InitialPageRestaurantMobile from "../Mobile/Site/TypeSites/Business/Restaurant/InitialPageRestaurantMobile";
 
 export default function SiteRestaurantDefault() {
-    const isSmallDown = useMediaQuery('(max-width: 1280px)');
+    const isSmallDown = useMediaQuery('(max-width: 1360px)');
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>

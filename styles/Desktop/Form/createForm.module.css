@@ -3,7 +3,7 @@
     overflow: scroll;
     height: 100%;
     display: grid;
-    width: 600px;
+    width: 100%;
     margin-right: auto;
     gap: 24px;
     --boxShadowInt: 0 0 3px rgba(0, 0, 0, .2);
@@ -12,6 +12,12 @@
 .overflowDiv {
     overflow: scroll;
     padding: 0 8px 8px 8px;
+}
+
+.mainDivInfoAnswer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
 
 .mainDivInfo {
@@ -39,13 +45,13 @@
 }
 
 .textInput {
-    width: 100%;
+    width: 50%;
     box-shadow: var(--boxShadowInt);
     padding: 12px;
 }
 
 .textArea {
-    width: 100%;
+    width: 50%;
     height: 200px;
     box-shadow: var(--boxShadowInt);
     border-radius: 8px;
@@ -66,7 +72,8 @@
 
 .gridMyForms {
     display: grid;
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
 .mainDivForm {
@@ -76,18 +83,17 @@
     display: grid;
     gap: 8px;
     padding: 12px;
-    width: 70%;
     transform-origin: 0;
     transition: .4s;
 }
 
-.mainDivFormUser:hover {
+/*.mainDivFormUser:hover {
     transform: scale(1.05);
 }
 
 .mainDivForm:hover {
     transform: scale(1.05);
-}
+}*/
 
 .mainDivFormUser {
     box-shadow: var(--boxShadowCard);
@@ -99,7 +105,7 @@
     height: max-content;
     cursor: pointer;
     transform-origin: 0;
-    width: 90%;
+    width: 100%;
     transition: .4s;
 }
 
@@ -133,8 +139,8 @@
 }
 
 .sizeDeleteIcon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     position: relative;
     margin: auto;
     opacity: .5;
@@ -143,7 +149,7 @@
 .bordeClose {
     box-shadow: 0 0 2px rgba(0, 0, 0, .8);
     border-radius: 50%;
-    padding: 6px;
+    padding: 4px;
     height: max-content;
     width: max-content;
     background: white;

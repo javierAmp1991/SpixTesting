@@ -16,6 +16,7 @@ export default function OtherEvents() {
         Padding: 0,
         Gap: 16,
         Grid: 4,
+        IsButtonVisible: true,
         LeftArrow: () => otherEvents.LeftClick(),
         RightArrow: () => otherEvents.RightClick()
     }

@@ -4,6 +4,7 @@ export class PropCarrousel {
     Padding: number
     PositionArrowY: string
     PositionArrowX: string
+    IsButtonVisible: boolean
     RightArrow: Function
     LeftArrow: Function
 }

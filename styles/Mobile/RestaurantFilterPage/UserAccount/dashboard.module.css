@@ -1,0 +1,265 @@
+.mainDiv {
+    display: grid;
+    gap: 32px;
+    height: 100%;
+    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    --colorLines: #efefef;
+    --borderLine: 1px solid var(--colorLines);
+    --paddingXItems: 12px;
+    --paddingYItems: 10px;
+    --sizeCircle: 6px;
+    --backgroundGradient: linear-gradient(145deg, rgb(75, 75, 75) 0%, rgb(80, 80, 80) 100%);
+}
+
+.mainDivTitle {
+    padding-bottom: 24px;
+}
+
+.gridLeftRighSpace {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 16px;
+    height: 100%;
+    overflow: scroll;
+    padding: 12px;
+}
+
+.title {
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.calendarSection {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.positionNumber {
+    color: var(--colorSecundaryTextDesktop);
+    font-weight: 500;
+    text-align: left;
+    font-size: 16px;
+}
+
+.gridCalendar {
+    background: var(--colorLines);
+    border-bottom: var(--borderLine);
+    border-right: var(--borderLine);
+    border-left: var(--borderLine);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    width: 100%;
+}
+
+.dayOfWeek {
+    display: grid;
+    text-align: left;
+    color: var(--colorSecundaryTextDesktop);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 25%;
+    background: #fafafa;
+}
+
+.divDate {
+    display: grid;
+    padding: 15% 25%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.circle {
+    width: var(--sizeCircle);
+    height: var(--sizeCircle);
+    background: orange;
+    border-radius: 50%;
+}
+
+.plusCircle {
+    width: var(--sizeCircle);
+    height: var(--sizeCircle);
+    position: relative;
+}
+
+.gridCircle {
+    display: grid;
+    grid-template-columns: var(--sizeCircle);
+    grid-auto-flow: column;
+    grid-auto-columns: var(--sizeCircle);
+    gap: 4px;
+    align-items: center;
+}
+
+.gridHeader {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.mainDivWishList {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.headerSection {
+    background: var(--gradientHeaderUserAccount);
+    padding: 14px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.wishListSection {
+    display: grid;
+    gap: 16px;
+    padding: 12px;
+}
+
+.mainDivCollection {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.collectionSection {
+    display: grid;
+    gap: 16px;
+    padding: 12px;
+}
+
+.gridRight {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.gridLeft {
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    align-content: space-between;
+    gap: 24px;
+}
+
+.myShoppingSection {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.myEditSection {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.spaceMy{
+    padding: 12px 16px;
+}
+
+.refundSection {
+    padding: 12px;
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.titleLeft {
+    color: var(--colorTitlesDesktop);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.gridItems {
+    display: grid;
+    background: #efefef;
+    gap: 1px;
+}
+
+.colorDiv {
+    padding: 8px 16px;
+    background: white;
+}
+
+.styleLink {
+    border-top: 1px solid var(--colorLines);
+    text-align: center;
+    padding-top: 12px;
+    color: var(--linkColor);
+    font-weight: 500;
+}
+
+.name {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.price {
+    font-size: 16px;
+    color: var(--colorPriceInclude);
+    font-weight: 500;
+}
+
+.gridPriceState {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.waiting {
+    background: #0066ff;
+    width: 90px;
+    text-align: center;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.aproved {
+    background: #0ac40a;
+    width: 90px;
+    text-align: center;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.refused {
+    background: #ff2727;
+    text-align: center;
+    width: 90px;
+    border-radius: 11px;
+    overflow: hidden;
+    color: white;
+    padding: 2px 12px;
+    font-size: 12px;
+}
+
+.seeMore {
+    font-size: 14px;
+    text-decoration: underline;
+}
+

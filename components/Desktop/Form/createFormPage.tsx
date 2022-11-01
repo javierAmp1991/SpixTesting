@@ -4,7 +4,6 @@ import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useRef, useState} from "react";
 import {MyFormsContext, ProviderForm, UserFormData} from "../../Providers/providerUserAccount";
 import utilities from "/styles/utilities.module.css";
-import PopUpContainer from "../Misc/popUpContainer";
 import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 
 const titleSection: string = "Crear Formulario"
@@ -18,6 +17,7 @@ const motiveTitle: string = "Motivo"
 const placeHolderMotive: string = "Describa el motivo"
 
 export default function CreateFormPage() {
+    const mainDivRef = useRef(null)
     const inputMotiveRef = useRef(null)
     const inputDescriptionRef = useRef(null)
     const listMyForms: ProviderForm = useContext(MyFormsContext)
@@ -25,7 +25,10 @@ export default function CreateFormPage() {
     let [displayPopUp, setDisplayPopUp] = useState(false)
     let [selectedFormAnswer, setSelectedFormAnswer] = useState(null)
     let [selectedSol, setSelectedSol] = useState(null)
-    const handleDisplayFomr = () => setDisplayForm(displayForms = !displayForms)
+    const handleDisplayFomr = () => {
+        mainDivRef.current.scrollTop = 0
+        setDisplayForm(displayForms = !displayForms)
+    }
     const handleDeleteForm = (id: string) => {
         listMyForms.DeleteForm(id)
     }
@@ -49,7 +52,7 @@ export default function CreateFormPage() {
 
     return (
         <div className={style.mainDiv}>
-            <div className={style.overflowDiv}>
+            <div ref={mainDivRef} className={style.overflowDiv}>
                 <div className={style.mainDivTitle}>
                     <div className={style.title}>
                         {displayForms ? titleSectionForm : titleSection}
@@ -64,103 +67,101 @@ export default function CreateFormPage() {
                         </button>
                     }
                 </div>
-                {/*<button className={style.buttonCreate}>
-                        {buttonText}
-                    </button>*/}
-                <div className={style.mainDivInfo}>
-                    {
-                        displayForms ?
-                            selectedFormAnswer.ListForms.map((item: UserFormData) =>
-                                <div key={item.Id} onClick={() => handleSelectSol(item.Id)}
-                                     className={style.mainDivFormUser}>
-                                    <div className={style.gridImageNameUser}>
-                                        <div className={style.sizeProfile}>
-                                            <Image layout={"fill"}
-                                                   src={item.ProfilePath != null ? item.ProfilePath : GlobalConst.sourceImages.placeHolderUser}
-                                                   alt={""}/>
+                {
+                    displayForms ?
+                        <div className={style.mainDivInfoAnswer}>
+                            {
+                                selectedFormAnswer.ListForms.map((item: UserFormData) =>
+                                    <div key={item.Id} onClick={() => handleSelectSol(item.Id)}
+                                         className={style.mainDivFormUser}>
+                                        <div className={style.gridImageNameUser}>
+                                            <div className={style.sizeProfile}>
+                                                <Image layout={"fill"}
+                                                       src={item.ProfilePath != null ? item.ProfilePath : GlobalConst.sourceImages.placeHolderUser}
+                                                       alt={""}/>
+                                            </div>
+                                            <div className={style.name}>
+                                                {item.Name}
+                                            </div>
                                         </div>
-                                        <div className={style.name}>
-                                            {item.Name}
+                                        <div className={`${utilities.clamp3} ${style.aboutMe}`}>
+                                            {item.AboutMe}
+                                        </div>
+                                        <div className={style.email}>
+                                            {item.Email}
                                         </div>
                                     </div>
-                                    <div className={`${utilities.clamp3} ${style.aboutMe}`}>
-                                        {item.AboutMe}
-                                    </div>
-                                    <div className={style.email}>
-                                        {item.Email}
-                                    </div>
+                                )
+                            }
+                        </div>
+                        :
+                        <div className={style.mainDivInfo}>
+                            <div className={style.grid}>
+                                <div className={style.titleForm}>
+                                    {motiveTitle}
                                 </div>
-                            )
-                            :
-                            <>
-                                <div className={style.grid}>
-                                    <div className={style.titleForm}>
-                                        {motiveTitle}
-                                    </div>
-                                    <input ref={inputMotiveRef} placeholder={placeHolderMotive}
-                                           className={style.textInput}
-                                           type={"text"}/>
-                                </div>
-                                <textarea ref={inputDescriptionRef} placeholder={placeholderTextArea}
-                                          className={style.textArea}/>
-                                <div className={style.title}>
-                                    {myForms}
-                                </div>
-                                {
-                                    listMyForms.ResumeForm.length > 0 ?
-                                        <div className={style.gridMyForms}>
-                                            {
-                                                listMyForms.ResumeForm.map((e) =>
-                                                    <div className={style.mainDivForm} key={e.Id}>
-                                                        <div className={style.gridFormClose}>
-                                                            <div onClick={() => handleSelectForm(e.Id)}
-                                                                 className={style.gridIntForm}>
-                                                                <div className={style.titleForm}>
-                                                                    {e.Reason}
-                                                                </div>
-                                                                <div className={style.gridIcon}>
-                                                                    <div className={style.sizeIcon}>
-                                                                        <Image layout={"fill"}
-                                                                               src={GlobalConst.sourceImages.visibilityICon}
-                                                                               alt={""}/>
-                                                                    </div>
-                                                                    <div className={style.textIcon}>
-                                                                        {e.Views} Vistas
-                                                                    </div>
-                                                                </div>
-                                                                <div className={style.gridIcon}>
-                                                                    <div className={style.sizeIcon}>
-                                                                        <Image layout={"fill"}
-                                                                               src={GlobalConst.sourceImages.users}
-                                                                               alt={""}/>
-                                                                    </div>
-                                                                    <div className={style.textIcon}>
-                                                                        {e.Answers} Solicitudes
-                                                                    </div>
-                                                                </div>
+                                <input ref={inputMotiveRef} placeholder={placeHolderMotive}
+                                       className={style.textInput}
+                                       type={"text"}/>
+                            </div>
+                            <textarea ref={inputDescriptionRef} placeholder={placeholderTextArea}
+                                      className={style.textArea}/>
+                            <div className={style.title}>
+                                {myForms}
+                            </div>
+                            {
+                                listMyForms.ResumeForm.length > 0 ?
+                                    <div className={style.gridMyForms}>
+                                        {
+                                            listMyForms.ResumeForm.map((e) =>
+                                                <div className={style.mainDivForm} key={e.Id}>
+                                                    <div className={style.gridFormClose}>
+                                                        <div onClick={() => handleSelectForm(e.Id)}
+                                                             className={style.gridIntForm}>
+                                                            <div className={style.titleForm}>
+                                                                {e.Reason}
                                                             </div>
-                                                            <button onClick={() => handleDeleteForm(e.Id)}
-                                                                    className={style.bordeClose}>
-                                                                <div className={style.sizeDeleteIcon}>
+                                                            <div className={style.gridIcon}>
+                                                                <div className={style.sizeIcon}>
                                                                     <Image layout={"fill"}
-                                                                           src={GlobalConst.sourceImages.closeLoggin}
+                                                                           src={GlobalConst.sourceImages.visibilityICon}
                                                                            alt={""}/>
                                                                 </div>
-                                                            </button>
+                                                                <div className={style.textIcon}>
+                                                                    {e.Views} Vistas
+                                                                </div>
+                                                            </div>
+                                                            <div className={style.gridIcon}>
+                                                                <div className={style.sizeIcon}>
+                                                                    <Image layout={"fill"}
+                                                                           src={GlobalConst.sourceImages.users}
+                                                                           alt={""}/>
+                                                                </div>
+                                                                <div className={style.textIcon}>
+                                                                    {e.Answers} Solicitudes
+                                                                </div>
+                                                            </div>
                                                         </div>
+                                                        <button onClick={() => handleDeleteForm(e.Id)}
+                                                                className={style.bordeClose}>
+                                                            <div className={style.sizeDeleteIcon}>
+                                                                <Image layout={"fill"}
+                                                                       src={GlobalConst.sourceImages.closeLoggin}
+                                                                       alt={""}/>
+                                                            </div>
+                                                        </button>
                                                     </div>
-                                                )
-                                            }
-                                        </div>
-                                        :
-                                        <div>
-                                            No tienes formularios activos
-                                        </div>
-                                }
-                            </>
-                    }
-
-                </div>
+                                                </div>
+                                            )
+                                        }
+                                    </div>
+                                    :
+                                    <div>
+                                        No tienes formularios activos
+                                    </div>
+                            }
+                        </div>
+                }
             </div>
             {
                 displayPopUp &&

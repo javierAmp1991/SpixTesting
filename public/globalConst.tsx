@@ -122,7 +122,8 @@ export namespace GlobalConst{
         facebookIcon: "/images/facebook.png",
         whatsaapIcon: "/images/whatssap.png",
         activeWishList: "/images/wishList.png",
-        noActiveWishList: "/images/wishListDisable.png"
+        noActiveWishList: "/images/wishListDisable.png",
+        editProfileAlone: "/images/editProfileAlone.png"
     }
 }
 

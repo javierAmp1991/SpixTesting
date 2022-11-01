@@ -52,10 +52,8 @@ export default function AllGroupsProducts() {
                                 {
                                     item.Products.map(item2 =>
                                         <Link key={item2.Name} href={"/"}>
-                                            <a>
-                                                <ProductViewSquare item={item2} size={null}
-                                                                   isDisplayOffer={true}/>
-                                            </a>
+                                            <ProductViewSquare item={item2} size={null}
+                                                               isDisplayOffer={true}/>
                                         </Link>
                                     )
                                 }

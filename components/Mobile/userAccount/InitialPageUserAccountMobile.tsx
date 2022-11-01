@@ -14,7 +14,8 @@ import MyBussinessMobile from "./myBussinessMobile";
 export default function InitialPageUserAccountMobile() {
     const providerSection: ProviderAccountSections = useContext(AccountSectionContext)
     return (
-        <div className={style.mainDiv}>
+        <div className={`${style.mainDiv}
+            ${providerSection.SectionSelected != MenuUserAccount.MyBussines && style.padding}`}>
             <div className={style.mainDivRightArea}>
                 {
                     providerSection.SectionSelected == MenuUserAccount.Calendar &&

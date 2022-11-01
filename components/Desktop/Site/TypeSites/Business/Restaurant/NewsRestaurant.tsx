@@ -16,6 +16,7 @@ export default function NewsRestaurant() {
         Padding: 0,
         Gap: 16,
         Grid: 4,
+        IsButtonVisible: true,
         LeftArrow: () => news.LeftClick(),
         RightArrow: () => news.RightClick()
     }

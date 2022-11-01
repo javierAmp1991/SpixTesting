@@ -5,7 +5,7 @@ import FillFormPage from "../Desktop/Form/fillFormPage";
 import FillFormPageMobile from "../Mobile/Form/fillFormPage";
 
 export default function FillFormDefault() {
-    const isSmallDown = useMediaQuery('(max-width: 1501px)');
+    const isSmallDown = useMediaQuery('(max-width: 1360px)');
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>

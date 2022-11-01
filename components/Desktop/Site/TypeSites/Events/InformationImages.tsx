@@ -27,23 +27,21 @@ export default function InformationImages() {
                         <div className={style.name}>
                             {info.Name}
                             <RatingStarVar item={info.Rating} size={16}/>
-                        </div>
-                    </div>
-                    <div className={style.gridResSocial}>
-                        <div className={style.gridrestrictions}>
-                            <div className={style.colorRestriction}>
-                                {restrictionText}
+                            <div className={style.gridrestrictions}>
+                                <div className={style.colorRestriction}>
+                                    {restrictionText}
+                                </div>
+                                {
+                                    info.Restrictions.map((item, index) =>
+                                        <a className={style.sizeRestrictionIcon} key={index}>
+                                            <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                        </a>
+                                    )
+                                }
                             </div>
-                            {
-                                info.Restrictions.map((item, index) =>
-                                    <a className={style.sizeRestrictionIcon} key={index}>
-                                        <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                    </a>
-                                )
-                            }
                         </div>
-                        <SocialBar/>
                     </div>
+                    <SocialBar/>
                 </div>
 
             </div>

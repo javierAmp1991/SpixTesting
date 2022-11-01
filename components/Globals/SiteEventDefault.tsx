@@ -4,7 +4,7 @@ import DefaultLayoutDesktop from "../Desktop/defaultLayoutDesktop";
 import MainPage from "../Desktop/Site/TypeSites/Events/MainPage";
 
 export default function SiteEventDefault() {
-    const isSmallDown = useMediaQuery('(max-width: 1280px)');
+    const isSmallDown = useMediaQuery('(max-width: 1360px)');
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>

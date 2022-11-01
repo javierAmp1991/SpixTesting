@@ -5,7 +5,7 @@ import CreateFormPage from "../Desktop/Form/createFormPage";
 import CreateFormPageMobile from "../Mobile/Form/createFormPage";
 
 export default function CreateFormDefault() {
-    const isSmallDown = useMediaQuery('(max-width: 1501px)');
+    const isSmallDown = useMediaQuery('(max-width: 1360px)');
     return (
         isSmallDown ?
             <DefaultLayoutMobile isDarkMode={false}>

@@ -1,0 +1,70 @@
+.mainDiv {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    border-radius: 4px;
+    padding: 4px 12px;
+    transition: .4s;
+    margin: 12px 0;
+}
+
+.mainDivSelected {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    border-radius: 4px;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, .4);
+    transition: .4s;
+    margin: 12px 0;
+}
+
+.sizeImage {
+    height: 32px;
+    width: 32px;
+    position: relative;
+}
+
+.infoDiv {
+    text-align: left;
+    padding: 12px;
+}
+
+.name {
+    font-size: 14px;
+    color: white;
+}
+
+.description {
+    color: white;
+}
+
+.gridSubItemsOpen {
+    overflow: hidden;
+    height: 100%;
+    display: grid;
+    transition: .4s;
+    padding-left: 12px;
+}
+
+.gridSubItemsClose {
+    overflow: hidden;
+    height: 0;
+    display: grid;
+    transition: .4s;
+    padding-left: 12px;
+}
+
+.subItemGrid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px;
+    padding: 4px 12px;
+    align-items: center;
+    color: white;
+    margin-left: 12px;
+}
+
+.subItemName {
+    text-align: left;
+}
