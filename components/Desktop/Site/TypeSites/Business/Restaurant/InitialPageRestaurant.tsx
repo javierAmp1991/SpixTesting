@@ -1,5 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
-import {QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {QuestionItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import FullBannerRestaurant from "../../../../Misc/fullBannerRestaurant";
 import LayoutReviewSection from "./layoutReviewSection";
 import ProductSection from "./ProductSection";
@@ -13,7 +13,7 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
-    HeaderContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
+    HeaderContext, NewsContext, OfferProductsContext, QuestionSectionContext, RecommendedContext, ReviewsSectionContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import ProductViewSquare from "../../../../Misc/productViewSquare";
@@ -22,6 +22,8 @@ import NavProductsSection from "./navProductsSection";
 import QuestionShortDesk from "../../../../Misc/questionShortDesk";
 import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
+import NewsRestaurant from "./NewsRestaurant";
+import InSearchRestaurant from "./inSearch";
 
 const idTest: string = "isTestDesktopScrolControl"
 
@@ -111,7 +113,7 @@ export default function InitialPageRestaurant() {
                             )
                         }
                     </LayoutCarrouselDesktop>
-                   {/* <div className={style.gridReviews}>
+                    {/* <div className={style.gridReviews}>
                         {
                             listReview.map((item) =>
                                 <ReviewViewShort key={item.Id} item={item}/>
@@ -119,6 +121,9 @@ export default function InitialPageRestaurant() {
                         }
                     </div>*/}
                 </LayoutReviewSection>
+                <div className={style.separationLine}/>
+
+                <InSearchRestaurant/>
                 <div className={style.separationLine}/>
 
                 <LayoutTitle title={"Happy Hour"}>
@@ -153,6 +158,9 @@ export default function InitialPageRestaurant() {
                         }
                     </div>*/}
                 </LayoutTitle>
+                <div className={style.separationLine}/>
+
+                <NewsRestaurant/>
                 <div className={style.separationLine}/>
 
                 <div id={idTest}>

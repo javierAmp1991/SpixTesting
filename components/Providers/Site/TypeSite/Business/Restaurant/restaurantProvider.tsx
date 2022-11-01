@@ -6,7 +6,8 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
-import {Product} from "../../../../../../dataDemo/data";
+import {FormLink, News, Product} from "../../../../../../dataDemo/data";
+import {ProviderNewsEvents} from "../../../../../../Class/Site/TypeSite/Events/events";
 
 export const HeaderContext = createContext(null)
 export const SectionProductsContext = createContext(null)
@@ -14,6 +15,8 @@ export const RecommendedContext = createContext(null)
 export const ReviewsSectionContext = createContext(null)
 export const QuestionSectionContext = createContext(null)
 export const OfferProductsContext = createContext(null)
+export const FormContext = createContext(null)
+export const NewsContext = createContext(null)
 
 const listProductsOffer: ProductItem[] = [
     {
@@ -235,7 +238,6 @@ const listReviewAdd: ReviewItem[] = [
 
     },
 ]
-
 const headerData: PresentationCard = {
     Banner: "/images/sushiBanner.jpg",
     LogoPath: "/images/hellsKitchen.jpeg",
@@ -492,19 +494,114 @@ const listOfferProducts: Product[] = [
         Rating: 0
     },
 ]
+const listForm: FormLink[] = [
+    {
+        text: "Se necesita camarero o camarera por el fin de semana.",
+        link: "/fillForm"
+    },
+    {
+        text: "Se necesita barman, guardia de seguridad y camareros modalidad part-time ",
+        link: "/fillForm"
+    },
+    {
+        text: "Se busca banda de rock, metal y cumbia para reemplazo ",
+        link: "/fillForm"
+    },
+]
+const listInitialNews: News[] = [
+    {
+        Id: "12345",
+        Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+        SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+        PathImage: "/images/daddy.jpg",
+        Event: "Daddy Yankee On Tour",
+        Date: "Hoy",
+        HasEvent: true
+    },
+    {
+        Id: "123456",
+        Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
+        SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+        PathImage: "/images/anuel.jpg",
+        Event: "Evento generico 1",
+        Date: "Hoy",
+        HasEvent: true
+    },
+    {
+        Id: "1234567",
+        Title: "Ozzy Osbourne rompe nuevo récord: Número 1 del rock con su single «Patient Number 9»",
+        SubTitle: "El single «Patient Number 9» de Ozzy Osbourne es todo un éxito porque en la primera semana de estreno, llegó al puesto 1 del rock en cuanto a la lista Billboard.En la semana del 24 al 30 de junio, «Patient Number 9» obtuvo 2,2 millones de impresiones de audiencia de radio, 1,4 millones de impresiones oficiales de EE. UU. en streams y 1.800 descargas vendidas, según Luminate.",
+        PathImage: "/images/ossy.jpg",
+        Event: "Evento generico 1",
+        Date: "Ayer",
+        HasEvent: true
+    },
+    {
+        Id: "12345dsadw3",
+        Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+        SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+        PathImage: "/images/new1.webp",
+        Event: "Daddy Yankee On Tour",
+        Date: "Hoy",
+        HasEvent: true
+    },
+]
+const listNewsAdd: News[] = [
+    {
+        Id: "12345678",
+        Title: "Queen anuncia los detalles de “Rhapsody Over London”, un concierto espectacular que se emitirá para todo el mundo",
+        SubTitle: "El elemento que intentas copiar se encuentra protegido mediante derechos de autor y pertenece a mariskalrock.com. Si deseas utilizar este medio para fines no comerciales, contacta con mariskalrock.com para solicitar autorizacion.MariskalRock.com, el portal de musica mas heavy",
+        PathImage: "/images/queen.jpg",
+        Event: "Evento generico 1",
+        Date: "Hace 2 dias",
+        HasEvent: false
+    },
+    {
+        Id: "12345",
+        Title: "Daddy Yankee graba un nuevo vídeo en Boqueron, Cabo Rojo",
+        SubTitle: "Desde tempranas horas de la noche de ayer sábado, el pegajoso ritmo de la canción “Rumbatón”, del cantante Daddy Yankee, se apoderó del poblado de Boquerón, en Cabo Rojo, debido a que se llevó a cabo la grabación de su vídeo. Como se puede apreciar en varios vídeos y fotografías publicadas en las redes sociales, el artista filmó sobre una pantalla en forma de tarima donde aparecían imágenes color",
+        PathImage: "/images/new1.webp",
+        Event: "Evento generico 1",
+        Date: "Ayer",
+        HasEvent: true
+    },
+    {
+        Id: "123456",
+        Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
+        SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+        PathImage: "/images/new2.webp",
+        Event: "Evento generico 1",
+        Date: "Hoy",
+        HasEvent: false
+    },
+    {
+        Id: "123456dsadsa",
+        Title: "Trap latino de primera para inaugurar el Share Festival de Republica Dominicana",
+        SubTitle: "El sábado abre la cita musical Anuel AA, uno de los mayores exponentes actuales del trap latino, en el Poble Espanyol. El cartel de actuaciones se completa hasta el próximo 17 de julio con las de Morad, Natalia Lacunza, Oques Grasses, Miki Núñez, Fernando Costa, Miriam Rodríguez y Doctor Prats. ",
+        PathImage: "/images/new3.webp",
+        Event: "Evento generico 1",
+        Date: "Hoy",
+        HasEvent: false
+    },
+]
 
 export default function RestaurantProvider({children}) {
     let [recommendedItems, setRecommendedItems] = useState(listInitialRecommended)
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
-    let[reviewItems, setReviewItems] = useState(listReview)
+    let [reviewItems, setReviewItems] = useState(listReview)
+    let [news, setNews] = useState(listInitialNews)
+
     const handleRightClickRecomended = () => setRecommendedItems(recommendedItems = listRecomendedAdd)
     const handleLeftClickRecomended = () => setRecommendedItems(recommendedItems = listInitialRecommended)
 
     const handleRightClickProducts = () => setOfferProducts(offerProducts = listOfferProductsAdd)
     const handleLeftClickProducts = () => setOfferProducts(offerProducts = listOfferProducts)
 
-    const handleRightClickReview = ()=> setReviewItems(reviewItems = listReviewAdd)
-    const handleLeftClickReview = ()=> setReviewItems(reviewItems = listReview)
+    const handleRightClickReview = () => setReviewItems(reviewItems = listReviewAdd)
+    const handleLeftClickReview = () => setReviewItems(reviewItems = listReview)
+
+    const handleRightClickNews = () => setNews(news = listNewsAdd)
+    const handleLeftClickNews = () => setNews(news = listInitialNews)
 
     let providerRecommended: ProviderRecommended = {
         InitialItems: recommendedItems,
@@ -521,6 +618,11 @@ export default function RestaurantProvider({children}) {
         RightClick: handleRightClickReview,
         LeftClick: handleLeftClickReview
     }
+    let providerNews: ProviderNewsEvents = {
+        InitialItems: news,
+        RightClick: handleRightClickNews,
+        LeftClick: handleLeftClickNews
+    }
     return (
         <HeaderContext.Provider value={headerData}>
             <SectionProductsContext.Provider value={listSectionProducst}>
@@ -528,7 +630,11 @@ export default function RestaurantProvider({children}) {
                     <ReviewsSectionContext.Provider value={providerReview}>
                         <QuestionSectionContext.Provider value={listQuestions}>
                             <OfferProductsContext.Provider value={providerOfferProducts}>
-                                {children}
+                                <FormContext.Provider value={listForm}>
+                                    <NewsContext.Provider value={providerNews}>
+                                        {children}
+                                    </NewsContext.Provider>
+                                </FormContext.Provider>
                             </OfferProductsContext.Provider>
                         </QuestionSectionContext.Provider>
                     </ReviewsSectionContext.Provider>
