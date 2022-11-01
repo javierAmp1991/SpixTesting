@@ -1,12 +1,14 @@
 .containerArrow {
     display: grid;
     align-items: center;
-    position: absolute;
+    position: relative;
     height: var(--sizeArrowLayoutHome);
+    height: 32px;
     width: var(--sizeArrowLayoutHome);
+    width: 32px;
     box-shadow: 0 0 4px rgba(0,0,0,.2);
     border-radius: 4px;
-    z-index: 900000000000000;
+    z-index: 90000000;
     background: white;
 }
 
@@ -14,6 +16,9 @@
     position: relative;
     width: 100%;
     max-width: var(--maxWidthBanner);
+    display: grid;
+    gap: 16px;
+    grid-template-columns: max-content 1fr max-content;
     margin: auto;
     overflow: scroll;
 }

@@ -20,7 +20,7 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
     return (
         <div className={styles.mainDivCarrouselProperties}>
             <button onClick={handleLeft}
-                    style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
+                    style={{top: layoutProp.PositionArrowY, /*left: layoutProp.PositionArrowX*/}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     /*${visibility && utilities.opacity0}*/`}>
@@ -40,7 +40,7 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
             </div>
 
             <button onClick={handleRight}
-                    style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
+                    style={{top: layoutProp.PositionArrowY, /*right: layoutProp.PositionArrowX*/}}
                     onPointerOver={showArrow} onPointerOut={hiddeArrow}
                     className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     /*${visibility && utilities.opacity0}*/`}>
