@@ -9,7 +9,7 @@
     box-shadow: 0 0 8px rgba(0, 0, 0, .2);
     border-radius: 12px;
     overflow: scroll;
-    padding: 24px 32px;
+    padding: 24px;
     display: grid;
     gap: 72px;
     z-index: 700;

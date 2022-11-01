@@ -60,9 +60,8 @@
 }
 
 .sizeImage {
-    width: 95%;
+    width: 100%;
     aspect-ratio: 1/1;
-    margin: auto;
     position: relative;
     border-radius: 8px;
     overflow: hidden;
