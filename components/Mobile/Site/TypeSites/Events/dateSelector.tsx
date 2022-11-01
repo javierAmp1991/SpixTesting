@@ -2,6 +2,9 @@ import React, {useContext, useState} from "react";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import style from "/styles/Mobile/Site/TypeSite/Events/dateSelector.module.css"
+import SocialBar from "../../../../Desktop/Misc/socialBar";
+import PopUpContainerMob from "../../../Misc/popUpContainerMob";
+import MapPopUp, {MapPopUpProp} from "../../../../Desktop/Misc/mapPopUp";
 
 const nextDates: string = "Proximas Fechas:"
 const dateText: string = "Fecha:"
@@ -21,12 +24,21 @@ export default function DateSelector() {
         })
         setDatesEvents(datesEvents = newList)
     }
+    const mapInfo: MapPopUpProp = {
+        LinkGoogleMap: dateVenueSelected.LinkGoogleMap,
+        ImageMap: dateVenueSelected.ImageMap,
+        Venue: dateVenueSelected.Venue,
+        Name: dateVenueSelected.NameVenue,
+        Capacity: dateVenueSelected.Capacity
+    }
     return (
         <div className={style.gridPrinDates}>
-
             <div className={style.gridDates}>
-                <div className={style.titleNextDates}>
-                    {nextDates}
+                <div className={style.gridNexDateSocial}>
+                    <div className={style.titleNextDates}>
+                        {nextDates}
+                    </div>
+                    <SocialBar/>
                 </div>
                 {
                     datesEvents.map(item =>
@@ -51,6 +63,12 @@ export default function DateSelector() {
                     )
                 }
             </div>
+            {
+                displayMap &&
+                <PopUpContainerMob closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
+                    <MapPopUp item={mapInfo}/>
+                </PopUpContainerMob>
+            }
         </div>
     )
 

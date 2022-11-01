@@ -1,19 +1,32 @@
 import Image from "next/image";
-import SocialBar from "../../../../Desktop/Misc/socialBar";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
-import {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import RatingStarVar from "../../../../Desktop/Misc/ratingStarVar";
 import style from "/styles/Mobile/Site/TypeSite/Events/informationImages.module.css"
 import ImageVideoMobile from "./imageVideo";
 import DateSelector from "./dateSelector";
+import {GlobalConst} from "../../../../../public/globalConst";
+import PopUpContainerMob from "../../../Misc/popUpContainerMob";
+import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
+import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
 
 const restrictionText: string = "Restricciones: "
 const attributesText: string = "Restricciones: "
 const categoryText: string = "Categoria: "
+const buyTickets: string = "Comprar Entradas"
+
+const user: LevelUser = {
+    Id: "iwewqndsaj2383",
+    User: "@user001",
+    Level: 0
+}
+const userRequirement: number = 2
 
 export default function InformationImages() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
+    let [displayLevelUser, setDisplayLevelUser] = useState(false)
+    const handleLevelUser = () => setDisplayLevelUser(displayLevelUser = !displayLevelUser)
     return (
         <div className={style.mainDiv}>
             <div className={style.mainCont}>
@@ -40,8 +53,10 @@ export default function InformationImages() {
                                 )
                             }
                         </div>
-                        <SocialBar/>
                     </div>
+                </div>
+                <div className={style.description}>
+                    {info.Description}
                 </div>
             </div>
 
@@ -49,7 +64,21 @@ export default function InformationImages() {
 
             <ImageVideoMobile/>
 
-            <div className={style.gridInfoUnder}>
+            <button onClick={handleLevelUser} className={style.buttonStyle}>
+                {buyTickets}
+                <div className={style.sizeIconButton}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
+                </div>
+            </button>
+
+            {
+                displayLevelUser &&
+                <PopUpContainerMob closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
+                    <LevelUserPopUpMobile levelUser={user.Level} levelVerfication={userRequirement}/>
+                </PopUpContainerMob>
+            }
+
+            {/*<div className={style.gridInfoUnder}>
                 <div className={style.description}>
                     {info.Description}
                 </div>
@@ -66,7 +95,7 @@ export default function InformationImages() {
                         </span>
                     )}
                 </div>
-            </div>
+            </div>*/}
         </div>
     )
 }

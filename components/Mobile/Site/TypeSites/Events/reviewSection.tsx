@@ -11,7 +11,7 @@ const limitReview: string = "de 5"
 const reviewtext: string = "Reseñas"
 const title: string = "Reseñas"
 const limitReviewNumber: number = 5
-const widthDiv: number = 120
+const widthDiv: number = 100
 const starstText: string = "estrellas"
 const writeYourReview: string = "Escribe tu reseña"
 

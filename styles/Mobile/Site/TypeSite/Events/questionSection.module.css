@@ -15,7 +15,6 @@
 .gridQuestions {
     display: grid;
     gap: 16px;
-    padding: 8px 0;
 }
 
 .title {
