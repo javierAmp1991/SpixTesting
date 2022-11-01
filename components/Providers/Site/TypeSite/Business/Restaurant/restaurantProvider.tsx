@@ -506,7 +506,7 @@ const listForm: FormLink[] = [
     {
         text: "Se busca banda de rock, metal y cumbia para reemplazo ",
         link: "/fillForm"
-    },
+    }
 ]
 const listInitialNews: News[] = [
     {

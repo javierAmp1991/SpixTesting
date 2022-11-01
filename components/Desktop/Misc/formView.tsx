@@ -5,6 +5,8 @@ import {FormLink} from "../../../dataDemo/data";
 import Image from "next/image";
 import Link from "next/link";
 
+const goToForm: string = "Rellenar el formulario"
+
 export default function FormViewDesktop({item}: { item: FormLink }) {
     return (
         <Link href={item.link}>
@@ -20,7 +22,7 @@ export default function FormViewDesktop({item}: { item: FormLink }) {
                             item.text
                         }
                     </div>
-                    <a className={utilities.styleLink}>Rellenar el formulario</a>
+                    <div className={utilities.styleLink}>{goToForm}</div>
                 </div>
             </a>
         </Link>
