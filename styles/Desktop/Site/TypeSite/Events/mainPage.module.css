@@ -2,7 +2,7 @@
     width: var(--maxWidthBodyContent);
     margin: 40px auto 0 auto;
     display: grid;
-    gap: 40px;
+    gap: 52px;
 }
 
 .mainCard {
@@ -11,7 +11,7 @@
     overflow: scroll;
     border-radius: 12px;*/
     display: grid;
-    gap: 40px;
+    gap: 52px;
 }
 
 .separationLine {

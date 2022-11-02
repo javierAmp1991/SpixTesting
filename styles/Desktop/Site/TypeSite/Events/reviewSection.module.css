@@ -1,5 +1,5 @@
 .mainDiv {
-    --heighBreakdown: 12px;
+    --heighBreakdown: 10px;
     --borderRadious: 6px;
     padding: 24px;
     box-shadow: 0 0 6px rgba(0, 0, 0, .2);
@@ -19,7 +19,7 @@
     grid-template-columns: max-content 1fr;
     gap: 48px;
     border-bottom: 1px solid var(--separationLineColor);
-    padding-bottom: 32px;
+    padding-bottom: 24px;
 }
 
 .title {
@@ -29,15 +29,14 @@
 }
 
 .totalReview {
-    padding-top: 8px;
-    color: var(--colorPrimaryTextDesktop);
-    font-size: 14px;
+    color: var(--colorTitlesDesktop);
+    font-size: 16px;
 }
 
 .gridInfo {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
 }
 
 .calStar{
@@ -80,7 +79,7 @@
 
 .gridBrekdown {
     display: grid;
-    gap: 8px;
+    gap: 6px;
 }
 
 .gridBreakDownAll {

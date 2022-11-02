@@ -1,0 +1,25 @@
+.mainDiv{
+    padding: 24px 32px 53px 24px ;
+    display: grid;
+    gap: 32px;
+}
+
+.gridNameInput{
+    display: grid;
+    gap: 8px;
+}
+
+.input{
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    padding: 6px 12px;
+    width: 70%;
+}
+
+.title{
+    color: var(--colorTitlesDesktop);
+    font-size: 28px;
+}
+
+.subTitle {
+    color: var(--colorPrimaryTextDesktop);
+}

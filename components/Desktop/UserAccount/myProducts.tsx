@@ -4,7 +4,6 @@ import {useState} from "react";
 import MyProductsProvider from "../../Providers/UserAccount/MyProductsProvider";
 import AllGroupsProducts from "../ProductManagement/allGroups";
 import MyGroupProductsProvider from "../../Providers/UserAccount/MyGroupProductsProvider";
-import {BrowserRouter, Route, Link, Routes} from "react-router-dom";
 
 enum MyProductPage {
     Products,

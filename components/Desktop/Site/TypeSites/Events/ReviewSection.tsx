@@ -26,11 +26,11 @@ export default function SectionReview() {
             <div className={style.gridHeader}>
                 <div className={style.gridInfo}>
                     <div className={style.title}>
-                        {title} <span className={style.totalReview}>({review.TotalReview} {reviewtext})</span>
+                        {title}
                     </div>
                     <div className={style.calStar}>
                         <div className={style.fontRating}>
-                            Calificacion: {review.Rating} {limitReview}
+                            {review.Rating} {limitReview}
                         </div>
                         <div className={style.gridStars}>
                             {
@@ -44,13 +44,31 @@ export default function SectionReview() {
                             }
                         </div>
                     </div>
-                    {/*<div className={style.totalReview}>
-                        {review.TotalReview} {reviewtext}
-                    </div>*/}
 
+                    <div className={style.gridBrekdown}>
+                        {
+                            review.ReviewBreakDown.map((item, index) =>
+                                <div key={item} className={style.gridBreakDownAll}>
+                                    <div>
+                                        {limitReviewNumber - index} {starstText}
+                                    </div>
+                                    <div style={{width: widthDiv}} className={style.bgGray}>
+                                        <div style={{width: getLarge(item)}} className={style.bgBlue}/>
+                                    </div>
+                                    <div>
+                                        {getPercetage(item)}%
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+
+                    <div className={style.totalReview}>
+                        Total: {review.TotalReview} {reviewtext}
+                    </div>
                 </div>
 
-                <div className={style.gridBrekdown}>
+               {/* <div className={style.gridBrekdown}>
                     {
                         review.ReviewBreakDown.map((item, index) =>
                             <div key={item} className={style.gridBreakDownAll}>
@@ -66,7 +84,7 @@ export default function SectionReview() {
                             </div>
                         )
                     }
-                </div>
+                </div>*/}
             </div>
 
             <div className={style.gridReview}>

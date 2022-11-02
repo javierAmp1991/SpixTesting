@@ -29,6 +29,12 @@
     position: relative;
 }
 
+.sizeImageCreateSite{
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
 .infoDiv {
     text-align: left;
     padding: 12px;

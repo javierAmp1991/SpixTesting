@@ -3,10 +3,12 @@ import {
     AccountSectionContext,
     AccountSections,
     MenuUserAccount,
+    MyBussinesMenu,
     ProviderAccountSections
 } from "../../Providers/providerGlobal";
 import Image from "next/image";
 import {useContext} from "react";
+import {GlobalConst} from "../../../public/globalConst";
 
 export default function AccountSectionOption({item}: { item: AccountSections }) {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
@@ -36,15 +38,25 @@ export default function AccountSectionOption({item}: { item: AccountSections }) 
                         accountSectionContext.ListMyBussiness.map((item2) =>
                             <button key={item2.Id} onClick={() => handleSelectMyBussines(item2.Id)}
                                     className={item2.State ? style.mainDivSelected : style.mainDiv}>
-                                <div className={style.sizeImage}>
-                                    <Image layout={"fill"} src={item2.PathImage}/>
-                                </div>
+                                {
+                                    item2.SubType != MyBussinesMenu.CreateSite &&
+                                    <div className={style.sizeImage}>
+                                        <Image layout={"fill"} src={item2.PathImage}/>
+                                    </div>
+                                }
                                 <div className={style.infoDiv}>
                                     <div className={style.name}>
                                         {item2.Name}
                                     </div>
                                 </div>
-                            </button>)
+                                {
+                                    item2.SubType == MyBussinesMenu.CreateSite &&
+                                    <div className={style.sizeImageCreateSite}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIconEmpty}/>
+                                    </div>
+                                }
+                            </button>
+                        )
                     }
                 </div>
             }
