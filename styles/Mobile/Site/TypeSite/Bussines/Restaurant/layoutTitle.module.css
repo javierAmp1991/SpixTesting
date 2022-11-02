@@ -5,6 +5,13 @@
     padding: 0 16px;
 }
 
+.mainDivNoSpace {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow: scroll;
+}
+
 .mainDivOverFlow {
     display: flex;
     flex-direction: column;

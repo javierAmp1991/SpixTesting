@@ -5,8 +5,23 @@
     padding-bottom: 12px;
 }
 
+.mainDivNoSpace {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 12px;
+    overflow: scroll;
+}
+
 .title{
     font-size: 21px;
     color: var(--colorTitlesDesktop);
     font-weight: 500;
+}
+
+.titleWithSpace{
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+    padding-left: 16px;
 }
