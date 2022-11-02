@@ -3,7 +3,7 @@ import {GlobalConst} from "../../../public/globalConst";
 import style from "/styles/Desktop/Misc/ratingStarDesk.module.css";
 
 export default function RatingStarVar({item, size}: { item: number, size: number }) {
-    const newArray = Array(5)
+    const newArray = new Array(5)
     return (
         <div className={style.gridRatingStar}>
             <div className={style.gridStars}>
