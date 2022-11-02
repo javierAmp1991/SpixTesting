@@ -3,11 +3,11 @@ import {QuestionItem} from "../../../../../Class/Misc/GlobalClass";
 import {useContext, useState} from "react";
 import {QuestionContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import QuestionShortMob from "../../../Misc/questionShortMob";
-import LayoutTitleMobile from "../Business/Restaurant/layoutTitleMobile";
 import WriteQuestion from "../../../../Desktop/Misc/writeQuestion";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../public/globalConst";
+import LayoutTitle from "../../../../Desktop/Site/TypeSites/Business/Restaurant/layoutTitle";
 
 const writeQuestion: string = "Escribe una pregunta"
 const title: string = "Preguntas"
@@ -20,7 +20,7 @@ export default function QuestionSectionMobile() {
     return (
         <div className={style.mainDiv}>
 
-            <LayoutTitleMobile isOverflow={false} title={title}>
+            <LayoutTitle title={title}>
                 <>
                     <div className={style.gridQuestions}>
                         {
@@ -42,7 +42,7 @@ export default function QuestionSectionMobile() {
                         )
                     }
                 </>
-            </LayoutTitleMobile>
+            </LayoutTitle>
         </div>
 
     )
