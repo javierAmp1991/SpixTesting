@@ -7,7 +7,6 @@ import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoE
 import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
 import DateInfoEvent, {DateInfoProp} from "../Misc/dateInfoEvent";
 import ProductViewSquare from "../Misc/productViewSquare";
-import ProductViewDesk from "../Misc/productViewDesk";
 import Link from "next/link";
 
 export default function FeaturedViewDesktop({item, darkModeState}:
@@ -51,7 +50,7 @@ export default function FeaturedViewDesktop({item, darkModeState}:
                         {
                             item.ListProducts.map((item, index) =>
                                 index == 0 &&
-                                <ProductViewSquare isDisplayOffer={false} item={item} size={150}/>
+                                <ProductViewSquare isDisplayOffer={false} item={item} size={170}/>
                             )
                         }
                     </div>

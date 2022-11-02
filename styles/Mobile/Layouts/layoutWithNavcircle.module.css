@@ -34,7 +34,7 @@
     grid-auto-columns: max-content;
     gap: 8px;
     justify-content: center;
-    padding: 12px 0;
+    padding-top: 12px;
 }
 
 .gridImageSection {
