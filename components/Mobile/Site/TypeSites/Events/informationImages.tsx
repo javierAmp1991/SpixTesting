@@ -10,6 +10,7 @@ import {GlobalConst} from "../../../../../public/globalConst";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
+import ModalLevelUser from "./modalLevelUser";
 
 const restrictionText: string = "Restricciones: "
 const attributesText: string = "Restricciones: "
@@ -73,9 +74,10 @@ export default function InformationImages() {
 
             {
                 displayLevelUser &&
-                <PopUpContainerMob closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
-                    <LevelUserPopUpMobile levelUser={user.Level} levelVerfication={userRequirement}/>
-                </PopUpContainerMob>
+                <ModalLevelUser closePopUp={handleLevelUser}/>
+                /* <PopUpContainerMob closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
+                     <LevelUserPopUpMobile levelUser={user.Level} levelVerfication={userRequirement}/>
+                 </PopUpContainerMob>*/
             }
 
             {/*<div className={style.gridInfoUnder}>

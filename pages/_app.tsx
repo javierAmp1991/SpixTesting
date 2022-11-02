@@ -4,7 +4,10 @@ const idPortal: string = "idPortal"
 
 function MyApp({Component, pageProps}) {
     return (
-        <Component {...pageProps} />
+        <>
+            <Component {...pageProps} />
+            <div id={idPortal}></div>
+        </>
     )
 }
 

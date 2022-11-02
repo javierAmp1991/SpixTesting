@@ -58,6 +58,7 @@
 
 .description {
     color: var(--colorPrimaryTextDesktop);
+    width: 80%;
 }
 
 .atr {

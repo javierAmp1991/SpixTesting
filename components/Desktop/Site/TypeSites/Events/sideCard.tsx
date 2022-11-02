@@ -8,6 +8,7 @@ import PopUpContainer from "../../../Misc/popUpContainer";
 import MapPopUp, {MapPopUpProp} from "../../../Misc/mapPopUp";
 import LevelUserPopUp from "../../../Misc/levelUserPopUp";
 import SocialBar from "../../../Misc/socialBar";
+import {createPortal} from "react-dom";
 
 const nextDates: string = "Proximas Fechas"
 const directionText: string = "Direccion:"
@@ -120,23 +121,30 @@ export default function SideCard() {
 
             {
                 displayMap &&
-                <PopUpContainer closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
-                    <MapPopUp item={mapInfo}/>
-                </PopUpContainer>
+                createPortal(
+                    <PopUpContainer closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
+                        <MapPopUp item={mapInfo}/>
+                    </PopUpContainer>, document.getElementById("idPortal")
+                )
+
             }
             {
                 displayImage &&
-                <PopUpContainer closePopUp={handleDisplayImage} isBackground={false} isButtonVisible={true}>
-                    <div className={style.sizeImage}>
-                        <Image layout={"fill"} src={info.PathPoster} alt={""}/>
-                    </div>
-                </PopUpContainer>
+                createPortal(
+                    <PopUpContainer closePopUp={handleDisplayImage} isBackground={false} isButtonVisible={true}>
+                        <div className={style.sizeImage}>
+                            <Image layout={"fill"} src={info.PathPoster} alt={""}/>
+                        </div>
+                    </PopUpContainer>, document.getElementById("idPortal")
+                )
             }
             {
                 displayLevelUser &&
+                createPortal(
                 <PopUpContainer closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
                     <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
-                </PopUpContainer>
+                </PopUpContainer> , document.getElementById("idPortal")
+                )
             }
         </div>
     )
