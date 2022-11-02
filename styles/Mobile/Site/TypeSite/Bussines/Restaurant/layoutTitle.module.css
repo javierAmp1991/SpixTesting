@@ -9,6 +9,8 @@
     flex-direction: column;
     gap: 24px;
     overflow: scroll;
+    padding-bottom: 12px;
+
 }
 
 .title{
