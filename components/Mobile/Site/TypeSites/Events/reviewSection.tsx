@@ -23,7 +23,7 @@ export default function ReviewSectionMobile() {
             <div className={style.gridHeader}>
                 <div className={style.gridInfo}>
                     <div className={style.title}>
-                        {title} <span className={style.totalReview}>({review.TotalReview})</span>
+                        {title}
                     </div>
                     <div className={style.gridCalRating}>
                         <div className={style.fontRating}>
@@ -41,9 +41,28 @@ export default function ReviewSectionMobile() {
                             }
                         </div>
                     </div>
+                    <div className={style.gridBrekdown}>
+                        {
+                            review.ReviewBreakDown.map((item, index) =>
+                                <div key={item} className={style.gridBreakDownAll}>
+                                    <div>
+                                        {limitReviewNumber - index} {starstText}
+                                    </div>
+                                    <div style={{width: widthDiv}} className={style.bgGray}>
+                                        <div style={{width: getLarge(item)}} className={style.bgBlue}/>
+                                    </div>
+                                    <div>
+                                        {getPercetage(item)}%
+                                    </div>
+                                </div>
+                            )
+                        }
+                    </div>
+                    <div className={style.totalReview}>
+                        Total reseñas: {review.TotalReview}
+                    </div>
                 </div>
-
-                <div className={style.gridBrekdown}>
+                {/* <div className={style.gridBrekdown}>
                     {
                         review.ReviewBreakDown.map((item, index) =>
                             <div key={item} className={style.gridBreakDownAll}>
@@ -59,7 +78,7 @@ export default function ReviewSectionMobile() {
                             </div>
                         )
                     }
-                </div>
+                </div>*/}
             </div>
 
             <div className={style.gridReview}>

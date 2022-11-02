@@ -52,9 +52,9 @@
     display: grid;
     grid-template-columns: repeat(6, max-content);
     align-items: center;
-    gap: 6px;
-    font-size: 14px;
+    gap: 8px;
     padding-top: 4px;
+    font-size: 16px;
 }
 
 .gridResSocial {
@@ -108,7 +108,7 @@
 }
 
 .sizeIcon {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     position: relative;
 }

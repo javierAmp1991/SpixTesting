@@ -1,5 +1,5 @@
 .mainDiv {
-    --heighBreakdown: 12px;
+    --heighBreakdown: 10px;
     --borderRadious: 6px;
     padding: 0 16px 12px 16px;
 }
@@ -24,8 +24,9 @@
 }
 
 .totalReview {
-    color: var(--colorPrimaryTextDesktop);
-    font-size: 14px;
+    color: var(--colorTitlesDesktop);
+    font-size: 16px;
+    padding-top: 8px;
 }
 
 .gridInfo {
@@ -72,9 +73,8 @@
 }
 
 .gridBrekdown {
-    padding-top: 8px;
     display: grid;
-    gap: 8px;
+    gap: 6px;
 }
 
 .gridBreakDownAll {
