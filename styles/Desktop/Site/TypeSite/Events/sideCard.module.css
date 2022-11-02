@@ -1,11 +1,11 @@
 .mainDiv {
-    height: 640px;
+    height: 650px;
     box-shadow: 0 0 8px rgba(0, 0, 0, .2);
     border-radius: 12px;
     overflow: scroll;
     position: sticky;
     top: 40px;
-    padding: 16px;
+    padding: 24px 16px;
     z-index: 800;
 }
 
