@@ -24,6 +24,7 @@ import ReviewViewShortMobile from "../../../../Misc/ReviewViewShortMobile";
 import QuestionShortMob from "../../../../Misc/questionShortMob";
 import {FormLink} from "../../../../../../dataDemo/data";
 import FormViewMobile from "../../../../Misc/formViewMobile";
+import LayoutWithNavCircleMobileFull from "../../../../Layouts/layoutWithNavCircleMobileFull";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -76,34 +77,36 @@ export default function InitialPageRestaurantMobile() {
                     </LayoutWithNavCircleMobile>
                 </LayoutReviewSectionMobile>
 
-                <LayoutTitleMobile title={"Se busca"} isOverflow={true}>
-                    <LayoutWithNavCircleMobile isDarkMode={false}>
-                        {
-                            form.map(item =>
-                                <FormViewMobile key={item.text} item={item}/>)
-                        }
-                    </LayoutWithNavCircleMobile>
-                </LayoutTitleMobile>
+                <LayoutWithNavCircleMobileFull isDarkMode={false}>
+                    {
+                        form.map(item =>
+                            <FormViewMobile key={item.text} item={item}/>)
+                    }
+                </LayoutWithNavCircleMobileFull>
 
-                <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>
-                    <LayoutCarrouselMobile gapLayout={16}>
-                        {
-                            listOfferProducts.InitialItems.map((item) =>
-                                <ProductViewSquare key={item.Name} item={item} size={220} isDisplayOffer={true}/>
-                            )
-                        }
-                    </LayoutCarrouselMobile>
-                </LayoutTitleMobile>
+                <div className={style.paddingGeneral}>
+                    <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>
+                        <LayoutCarrouselMobile gapLayout={16}>
+                            {
+                                listOfferProducts.InitialItems.map((item) =>
+                                    <ProductViewSquare key={item.Name} item={item} size={220} isDisplayOffer={true}/>
+                                )
+                            }
+                        </LayoutCarrouselMobile>
+                    </LayoutTitleMobile>
+                </div>
                 <div className={style.separationLine}/>
 
-                <LayoutTitleMobile isOverflow={true} title={"Recomendados"}>
-                    <LayoutCarrouselMobile gapLayout={16}>
-                        {
-                            infoRecomended.InitialItems.map((item) =>
-                                <EventVerticalViewNewMob key={item.Id} item={item} darkModeState={false}/>)
-                        }
-                    </LayoutCarrouselMobile>
-                </LayoutTitleMobile>
+                <div className={style.paddingGeneral}>
+                    <LayoutTitleMobile isOverflow={true} title={"Recomendados"}>
+                        <LayoutCarrouselMobile gapLayout={16}>
+                            {
+                                infoRecomended.InitialItems.map((item) =>
+                                    <EventVerticalViewNewMob key={item.Id} item={item} darkModeState={false}/>)
+                            }
+                        </LayoutCarrouselMobile>
+                    </LayoutTitleMobile>
+                </div>
                 <div className={style.separationLine}/>
 
                 <div id={idTest}>

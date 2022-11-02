@@ -28,6 +28,11 @@ export class PrincipalInfoEvent {
     Restrictions: string[]
     Images: string[]
     Video: string
+    Whatssapp: number
+    Instagram: string
+    TikTok: string
+    Facebook: string
+    WebPage: string
 }
 
 export class ProviderNewsEvents {

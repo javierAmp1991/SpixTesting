@@ -10,12 +10,11 @@ import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
-import ModalLevelUser from "./modalLevelUser";
 import {createPortal} from "react-dom";
+import SocialBar from "../../../../Desktop/Misc/socialBar";
+import Link from "next/link";
 
-const restrictionText: string = "Restricciones: "
-const attributesText: string = "Restricciones: "
-const categoryText: string = "Categoria: "
+const contactText: string = "Contacto:"
 const buyTickets: string = "Comprar Entradas"
 
 const user: LevelUser = {
@@ -47,21 +46,45 @@ export default function InformationImages() {
                         <RatingStarVar item={info.Rating} size={16}/>
                         <div className={style.gridrestrictions}>
                             <div className={style.colorRestriction}>
-                                {restrictionText}
+                                {contactText}
                             </div>
-                            {
+                            <Link href={info.WebPage}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
+                                </div>
+                            </Link>
+                            <div className={style.sizeIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.whatsaapIcon}/>
+                            </div>
+                            <Link href={info.Instagram}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.instagramICon}/>
+                                </div>
+                            </Link>
+                            <Link href={info.TikTok}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.tiktokIcon}/>
+                                </div>
+                            </Link>
+                            <Link href={info.Facebook}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
+                                </div>
+                            </Link>
+                           {/* {
                                 info.Restrictions.map((item, index) =>
                                     <a className={style.sizeRestrictionIcon} key={index}>
                                         <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                     </a>
                                 )
-                            }
+                            }*/}
                         </div>
                     </div>
                 </div>
                 <div className={style.description}>
                     {info.Description}
                 </div>
+                <SocialBar/>
             </div>
 
             <DateSelector/>

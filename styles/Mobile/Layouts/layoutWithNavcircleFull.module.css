@@ -2,6 +2,13 @@
     border: 1px solid #2d7dff;
 }
 
+.mainCont {
+    border-bottom: 2px solid var(--separationLineColor);
+    border-top: 2px solid var(--separationLineColor);
+    padding-bottom: 16px;
+    overflow: scroll;
+}
+
 .borderDarkMode {
     border: 1px solid #15dae6;
 }
@@ -12,6 +19,7 @@
     border-radius: 50%;
     background: var(--linkColor);
 }
+
 .styleNavCircleDarkMode {
     width: 6px;
     height: 6px;
@@ -34,7 +42,6 @@
     grid-auto-columns: max-content;
     gap: 8px;
     justify-content: center;
-    padding: 12px 0;
 }
 
 .gridImageSection {
@@ -45,7 +52,6 @@
     gap: 20px;
     scroll-snap-type: x mandatory;
     overflow: scroll;
-    padding: 8px 0;
 }
 
 .snapScroll {

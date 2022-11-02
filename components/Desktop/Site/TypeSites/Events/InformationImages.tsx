@@ -2,13 +2,15 @@ import style from "/styles/Desktop/Site/TypeSite/Events/informationImages.module
 import Image from "next/image";
 import SocialBar from "../../../Misc/socialBar";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
-import {useContext} from "react";
+import React, {useContext} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import RatingStarDesk from "../../../Misc/ratingStarDesk";
 import ImageVideo from "./imageVideo";
 import RatingStarVar from "../../../Misc/ratingStarVar";
+import Link from "next/link";
+import {GlobalConst} from "../../../../../public/globalConst";
 
-const restrictionText: string = "Restricciones: "
+const contactText: string = "Contacto:"
 const attributesText: string = "Restricciones: "
 const categoryText: string = "Categoria: "
 
@@ -29,15 +31,38 @@ export default function InformationImages() {
                             <RatingStarVar item={info.Rating} size={16}/>
                             <div className={style.gridrestrictions}>
                                 <div className={style.colorRestriction}>
-                                    {restrictionText}
+                                    {contactText}
                                 </div>
-                                {
+                                <Link href={info.WebPage}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
+                                    </div>
+                                </Link>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.whatsaapIcon}/>
+                                </div>
+                                <Link href={info.Instagram}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.instagramICon}/>
+                                    </div>
+                                </Link>
+                                <Link href={info.TikTok}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.tiktokIcon}/>
+                                    </div>
+                                </Link>
+                                <Link href={info.Facebook}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
+                                    </div>
+                                </Link>
+                                {/*{
                                     info.Restrictions.map((item, index) =>
                                         <a className={style.sizeRestrictionIcon} key={index}>
                                             <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </a>
                                     )
-                                }
+                                }*/}
                             </div>
                         </div>
                     </div>
@@ -45,6 +70,7 @@ export default function InformationImages() {
                 <div className={style.description}>
                     {info.Description}
                 </div>
+                <SocialBar/>
             </div>
 
             <ImageVideo/>

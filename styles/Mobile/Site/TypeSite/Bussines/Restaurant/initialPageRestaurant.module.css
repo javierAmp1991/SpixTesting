@@ -1,6 +1,6 @@
 .mainDiv {
     margin: auto;
-    padding: 16px 16px 40px 16px;
+    padding: 16px 0 40px 0;
     display: grid;
     gap: 32px;
 }
@@ -64,6 +64,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+}
+
+.paddingGeneral {
+    padding: 0 16px;
+    overflow: scroll;
 }
 
 

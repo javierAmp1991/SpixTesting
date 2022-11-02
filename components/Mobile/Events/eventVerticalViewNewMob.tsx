@@ -109,7 +109,7 @@ export default function EventVerticalViewNewMob({item, darkModeState}: { item: B
     return (
         <Link
             href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
-            <a className={`${styles.principalGridVertical} ${cssStyles.bgInfo} ${cssStyles.borderCard}`}>
+            <a className={styles.principalGridVertical}>
 
                 <div className={styles.containerImage}>
                     {
@@ -267,7 +267,6 @@ export default function EventVerticalViewNewMob({item, darkModeState}: { item: B
 
     function getCssStyles() {
         return {
-            borderCard: darkModeState ? utilities.borderCardDesktopDarkMode : utilities.borderCardDesktop,
             bgInfo: darkModeState ? utilities.bgDarkModeInfoDesktop : utilities.bgNormalInfoDesktop,
             ImageProportion: item.Type == EventCardType.EventCardBase ? styles.sizeImageBase : styles.sizeImage
         }

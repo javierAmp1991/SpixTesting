@@ -6,10 +6,10 @@
 }
 
 .mainCard {
-    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-    border-radius: 12px;
-    overflow: scroll;
+/*    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
     padding: 24px;
+    overflow: scroll;
+    border-radius: 12px;*/
     display: grid;
     gap: 40px;
 }

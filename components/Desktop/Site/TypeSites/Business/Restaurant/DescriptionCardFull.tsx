@@ -12,7 +12,7 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 
 
 const directionText: string = "Direccion:"
-const contactText: string = "Contactos:"
+const contactText: string = "Contactos"
 export default function DescriptionCardFull() {
     const info: PresentationCard = useContext(HeaderContext)
     let [displayMap, setDisplayMap] = useState(false)

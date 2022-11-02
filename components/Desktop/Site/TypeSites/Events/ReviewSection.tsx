@@ -9,13 +9,14 @@ import {PrincipalFeaturedSearch} from "../../../../../dataDemo/EventView/feature
 import item = PrincipalFeaturedSearch.item;
 import Link from "next/link";
 
-const limitReview: string = "de 5"
+const limitReview: string = "/5"
 const reviewtext: string = "Reseñas"
 const title: string = "Reseñas"
 const limitReviewNumber: number = 5
 const widthDiv: number = 120
 const starstText: string = "estrellas"
 const writeYourReview: string = "Escribe tu reseña"
+const newArray = [1, 2, 3, 4, 5]
 
 
 export default function SectionReview() {
@@ -25,25 +26,27 @@ export default function SectionReview() {
             <div className={style.gridHeader}>
                 <div className={style.gridInfo}>
                     <div className={style.title}>
-                        {title}
+                        {title} <span className={style.totalReview}>({review.TotalReview} {reviewtext})</span>
                     </div>
-                    <div className={style.fontRating}>
-                        {review.Rating} {limitReview}
+                    <div className={style.calStar}>
+                        <div className={style.fontRating}>
+                            Calificacion: {review.Rating} {limitReview}
+                        </div>
+                        <div className={style.gridStars}>
+                            {
+                                newArray.map((e, index) =>
+                                    <div key={index} className={style.sizeStar}>
+                                        <Image layout={"fill"}
+                                               src={e <= limitReviewNumber ?
+                                                   GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
-                    <div className={style.gridStars}>
-                        {
-                            [...Array(limitReviewNumber)].map((e, index) =>
-                                <div key={index} className={style.sizeStar}>
-                                    <Image layout={"fill"}
-                                           src={(index + 1) <= limitReviewNumber ?
-                                               GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
-                                </div>
-                            )
-                        }
-                    </div>
-                    <div className={style.totalReview}>
+                    {/*<div className={style.totalReview}>
                         {review.TotalReview} {reviewtext}
-                    </div>
+                    </div>*/}
 
                 </div>
 

@@ -12,7 +12,7 @@ export default function MainCard() {
     return (
         <div className={style.mainCard}>
             <InformationImages/>
-            <div className={style.separationLine}/>
+            {/*<div className={style.separationLine}/>*/}
             <InSearch/>
             <OfferProducts/>
             <OtherEvents/>

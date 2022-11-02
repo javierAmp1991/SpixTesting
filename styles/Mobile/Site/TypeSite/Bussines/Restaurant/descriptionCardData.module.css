@@ -8,8 +8,7 @@
         box-shadow: 0 0 12px rgba(0, 0, 0, .2);
         width: calc(100% - 32px);*/
     background: white;
-    border-radius: 8px;
-    overflow: hidden;
+    padding: 0 16px;
 }
 
 .gridLeft {
@@ -99,7 +98,7 @@
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
     padding-top: 8px;
-    justify-content: left;
+    justify-content: center;
 }
 
 .gridSideImage {

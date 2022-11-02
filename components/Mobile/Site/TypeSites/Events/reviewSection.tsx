@@ -14,34 +14,33 @@ const limitReviewNumber: number = 5
 const widthDiv: number = 100
 const starstText: string = "estrellas"
 const writeYourReview: string = "Escribe tu reseña"
+const newArray = [1, 2, 3, 4, 5]
 
 export default function ReviewSectionMobile() {
     const review: ReviewSection = useContext(ReviewContext)
-    return(
+    return (
         <div className={style.mainDiv}>
             <div className={style.gridHeader}>
                 <div className={style.gridInfo}>
                     <div className={style.title}>
-                        {title}
+                        {title} <span className={style.totalReview}>({review.TotalReview})</span>
                     </div>
-                    <div className={style.fontRating}>
-                        {review.Rating} {limitReview}
+                    <div className={style.gridCalRating}>
+                        <div className={style.fontRating}>
+                            {review.Rating} {limitReview}
+                        </div>
+                        <div className={style.gridStars}>
+                            {
+                                newArray.map((e, index) =>
+                                    <div key={index} className={style.sizeStar}>
+                                        <Image layout={"fill"}
+                                               src={(index + 1) <= limitReviewNumber ?
+                                                   GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
+                                    </div>
+                                )
+                            }
+                        </div>
                     </div>
-                    <div className={style.gridStars}>
-                        {
-                            [...Array(limitReviewNumber)].map((e, index) =>
-                                <div key={index} className={style.sizeStar}>
-                                    <Image layout={"fill"}
-                                           src={(index + 1) <= limitReviewNumber ?
-                                               GlobalConst.sourceImages.ratingIndFull : GlobalConst.sourceImages.ratingIndVoid}/>
-                                </div>
-                            )
-                        }
-                    </div>
-                    <div className={style.totalReview}>
-                        {review.TotalReview} {reviewtext}
-                    </div>
-
                 </div>
 
                 <div className={style.gridBrekdown}>

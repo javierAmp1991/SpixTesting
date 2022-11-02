@@ -65,7 +65,6 @@ export default function SideCard() {
                     <div className={style.titleNextDates}>
                         {nextDates}
                     </div>
-                    <SocialBar/>
                 </div>
                 <div className={style.gridDates}>
                     {

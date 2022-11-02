@@ -12,7 +12,6 @@
 
 .gridHeader {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
     border-bottom: 1px solid var(--separationLineColor);
     padding-bottom: 32px;
     justify-content: space-between;
@@ -25,8 +24,8 @@
 }
 
 .totalReview {
-    padding-top: 8px;
     color: var(--colorPrimaryTextDesktop);
+    font-size: 14px;
 }
 
 .gridInfo {
@@ -34,8 +33,15 @@
     align-content: space-between;
 }
 
+.gridCalRating{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
 .fontRating {
-    font-size: 21px;
+    font-size: 28px;
     font-weight: 500;
 }
 
@@ -66,6 +72,7 @@
 }
 
 .gridBrekdown {
+    padding-top: 8px;
     display: grid;
     gap: 8px;
 }

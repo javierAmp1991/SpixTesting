@@ -12,7 +12,7 @@ import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 
 const directionText: string = "Direccion:"
-const contactText: string = "Contactos:"
+const contactText: string = "Contacto:"
 const seeGalery: string = "Ver galeria"
 
 export default function DescriptionCardFullData() {

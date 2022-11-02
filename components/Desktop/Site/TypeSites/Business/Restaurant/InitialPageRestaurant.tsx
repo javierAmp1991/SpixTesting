@@ -78,7 +78,7 @@ export default function InitialPageRestaurant() {
                 <NewsRestaurant/>
                 <div className={style.separationLine}/>
 
-                <div id={idTest}>
+                <div className={style.gridSectionProducts} id={idTest}>
                     {
                         infoSectionProducts.map(item =>
                             <>

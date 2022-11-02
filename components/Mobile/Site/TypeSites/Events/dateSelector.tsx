@@ -8,7 +8,7 @@ import MapPopUp, {MapPopUpProp} from "../../../../Desktop/Misc/mapPopUp";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../public/globalConst";
 
-const nextDates: string = "Proximas Fechas:"
+const nextDates: string = "Proximas Fechas"
 const dateText: string = "Fecha:"
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -42,7 +42,6 @@ export default function DateSelector() {
                     <div className={style.titleNextDates}>
                         {nextDates}
                     </div>
-                    <SocialBar/>
                 </div>
                 {
                     datesEvents.map(item =>

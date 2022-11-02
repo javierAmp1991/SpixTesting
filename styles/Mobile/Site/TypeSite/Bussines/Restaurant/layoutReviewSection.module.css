@@ -1,5 +1,6 @@
 .mainDiv {
     overflow: scroll;
+    padding: 0 16px;
 }
 
 .mainPadding {

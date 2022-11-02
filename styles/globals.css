@@ -36,7 +36,7 @@
     --colorShadow: #eeeeee;
     --colorShadowBlue: #2d7dff;
     /*--boxShadowCard: 1px 1px 2px var(--colorShadow), -1px -1px 2px var(--colorShadow), 1px -1px 2px var(--colorShadow), -1px 1px 2px var(--colorShadow);*/
-    --boxShadowCard: 0 0 10px rgba(0, 0, 0, .20);
+    --boxShadowCard: 0 0 6px rgba(0, 0, 0, .20);
     --boxShadowCardDarkMode: 0 0 10px #ff7f23;
     /*    --boxShadowCard: 0 0 4px rgba(0, 0, 0, .30);*/
     --boxShadowCardHover: 0 0 10px rgba(0, 0, 0, .4);

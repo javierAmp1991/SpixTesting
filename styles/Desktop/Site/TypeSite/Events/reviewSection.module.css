@@ -2,7 +2,7 @@
     --heighBreakdown: 12px;
     --borderRadious: 6px;
     padding: 24px;
-    box-shadow: 0 0 6px rgba(0,0,0,.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
     border-radius: 12px;
     overflow: hidden;
 }
@@ -31,22 +31,31 @@
 .totalReview {
     padding-top: 8px;
     color: var(--colorPrimaryTextDesktop);
+    font-size: 14px;
 }
 
 .gridInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.calStar{
     display: grid;
-    align-content: space-between;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
 }
 
 .fontRating {
-    font-size: 21px;
+    font-size: 24px;
+    line-height: 24px;
     font-weight: 500;
 }
 
 .gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
-    gap: 8px;
+    gap: 4px;
 }
 
 .sizeStar {
@@ -82,10 +91,10 @@
     color: var(--colorPrimaryTextDesktop);
 }
 
-.wirteReview{
+.wirteReview {
     width: max-content;
     padding: 6px 32px;
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     margin-right: auto;
     display: grid;
     border-radius: 4px;

@@ -1,7 +1,10 @@
 .mainDiv {
     display: grid;
-    gap: 32px;
-    padding-bottom: 12px;
+    gap: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0,0,.2);
+    padding: 24px;
 }
 
 .gridImageName {
@@ -38,7 +41,7 @@
 
 .gridrestrictions {
     display: grid;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(6, max-content);
     align-items: center;
     gap: 4px;
     font-size: 14px;
@@ -73,4 +76,10 @@
     display: grid;
     grid-template-columns: 1fr max-content;
     align-items: start;
+}
+
+.sizeIcon {
+    width: 12px;
+    height: 12px;
+    position: relative;
 }
