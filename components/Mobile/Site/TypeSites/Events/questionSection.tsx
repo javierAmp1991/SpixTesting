@@ -6,6 +6,7 @@ import QuestionShortMob from "../../../Misc/questionShortMob";
 import LayoutTitleMobile from "../Business/Restaurant/layoutTitleMobile";
 import WriteQuestion from "../../../../Desktop/Misc/writeQuestion";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
+import {createPortal} from "react-dom";
 
 const writeQuestion: string = "Escribe una pregunta"
 const title: string = "Preguntas"
@@ -31,9 +32,12 @@ export default function QuestionSectionMobile() {
                     </button>
                     {
                         displayQuestion &&
-                        <PopUpContainerMob closePopUp={handleDisplayQuestion} isButtonVisible={true} isBackground={true}>
-                            <WriteQuestion/>
-                        </PopUpContainerMob>
+                        createPortal(
+                            <PopUpContainerMob closePopUp={handleDisplayQuestion} isButtonVisible={true}
+                                               isBackground={true}>
+                                <WriteQuestion/>
+                            </PopUpContainerMob>, document.getElementById("idPortal")
+                        )
                     }
                 </>
             </LayoutTitleMobile>

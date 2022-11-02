@@ -5,6 +5,7 @@ import style from "/styles/Mobile/Site/TypeSite/Events/dateSelector.module.css"
 import SocialBar from "../../../../Desktop/Misc/socialBar";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import MapPopUp, {MapPopUpProp} from "../../../../Desktop/Misc/mapPopUp";
+import {createPortal} from "react-dom";
 
 const nextDates: string = "Proximas Fechas:"
 const dateText: string = "Fecha:"
@@ -65,9 +66,11 @@ export default function DateSelector() {
             </div>
             {
                 displayMap &&
-                <PopUpContainerMob closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
-                    <MapPopUp item={mapInfo}/>
-                </PopUpContainerMob>
+                createPortal(
+                    <PopUpContainerMob closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
+                        <MapPopUp item={mapInfo}/>
+                    </PopUpContainerMob> , document.getElementById("idPortal")
+                )
             }
         </div>
     )

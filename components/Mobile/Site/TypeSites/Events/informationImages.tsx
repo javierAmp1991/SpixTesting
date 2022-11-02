@@ -11,6 +11,7 @@ import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
 import ModalLevelUser from "./modalLevelUser";
+import {createPortal} from "react-dom";
 
 const restrictionText: string = "Restricciones: "
 const attributesText: string = "Restricciones: "
@@ -74,10 +75,11 @@ export default function InformationImages() {
 
             {
                 displayLevelUser &&
-                <ModalLevelUser closePopUp={handleLevelUser}/>
-                /* <PopUpContainerMob closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
-                     <LevelUserPopUpMobile levelUser={user.Level} levelVerfication={userRequirement}/>
-                 </PopUpContainerMob>*/
+                createPortal(
+                    <PopUpContainerMob closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
+                        <LevelUserPopUpMobile levelUser={user.Level} levelVerfication={userRequirement}/>
+                    </PopUpContainerMob>, document.getElementById("idPortal")
+                )
             }
 
             {/*<div className={style.gridInfoUnder}>

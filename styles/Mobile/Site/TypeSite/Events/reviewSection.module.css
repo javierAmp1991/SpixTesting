@@ -1,7 +1,7 @@
 .mainDiv {
     --heighBreakdown: 12px;
     --borderRadious: 6px;
-    padding: 16px;
+    padding: 0 16px;
     border-radius: 12px;
     overflow: hidden;
 }

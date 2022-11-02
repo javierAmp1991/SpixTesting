@@ -6,6 +6,7 @@ import QuestionShortDesk from "../../../Misc/questionShortDesk";
 import LayoutTitle from "../Business/Restaurant/layoutTitle";
 import WriteQuestion from "../../../Misc/writeQuestion";
 import PopUpContainer from "../../../Misc/popUpContainer";
+import {createPortal} from "react-dom";
 
 const writeQuestion: string = "Escribe una pregunta"
 const title: string = "Preguntas"
@@ -31,9 +32,12 @@ export default function QuestionSection() {
                     </button>
                     {
                         displayQuestion &&
-                        <PopUpContainer closePopUp={handleDisplayQuestion} isButtonVisible={true} isBackground={true}>
-                            <WriteQuestion/>
-                        </PopUpContainer>
+                        createPortal(
+                            <PopUpContainer closePopUp={handleDisplayQuestion} isButtonVisible={true}
+                                            isBackground={true}>
+                                <WriteQuestion/>
+                            </PopUpContainer>, document.getElementById("idPortal")
+                        )
                     }
                 </>
             </LayoutTitle>
