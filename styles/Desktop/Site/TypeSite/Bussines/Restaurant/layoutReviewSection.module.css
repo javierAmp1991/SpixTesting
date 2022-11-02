@@ -18,6 +18,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     padding-bottom: 32px;
+    padding-top: 4px;
     gap: 12px;
 }
 
