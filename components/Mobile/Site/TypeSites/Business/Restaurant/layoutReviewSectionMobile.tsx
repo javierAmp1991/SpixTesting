@@ -4,6 +4,7 @@ import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/layoutReview
 
 const title: string = "Que opinan nuestros clientes"
 const sizeStar: number = 36
+const newArray = [1,2,3,4,5]
 
 export default function LayoutReviewSectionMobile({children}) {
     return (
@@ -17,7 +18,7 @@ export default function LayoutReviewSectionMobile({children}) {
                 </div>
                 <div className={style.gridStars}>
                     {
-                        [...Array(5)].map((e, index) =>
+                        newArray.map((e, index) =>
                             <div key={index} className={style.sizeStar}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ratingIndFull}
                                        alt={""}/>

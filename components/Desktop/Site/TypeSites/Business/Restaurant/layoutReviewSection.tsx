@@ -5,6 +5,7 @@ import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/layoutRevie
 const title: string = "Que opinan nuestros clientes"
 const qualificationText: string = "Calificacion:"
 const seeMoreReview: string = "Ver mas reseñas"
+const newArray = [1,2,3,4,5]
 
 export default function LayoutReviewSection({children}) {
     return (
@@ -18,7 +19,7 @@ export default function LayoutReviewSection({children}) {
                 </div>
                 <div className={style.gridStars}>
                     {
-                        [...Array(5)].map((e, index) =>
+                        newArray.map((e, index) =>
                             <div key={index} className={style.sizeStar}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.ratingIndFull}
                                        alt={""}/>

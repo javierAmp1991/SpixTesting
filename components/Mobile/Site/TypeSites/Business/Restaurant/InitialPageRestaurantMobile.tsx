@@ -109,10 +109,10 @@ export default function InitialPageRestaurantMobile() {
                 </div>
                 <div className={style.separationLine}/>
 
-                <div id={idTest}>
+                <div className={style.gridSectionProducts} id={idTest}>
                     {
                         infoSectionProducts.map(item =>
-                            <div key={item.Id}>
+                            <div className={style.gridTeset} key={item.Id}>
                                 <ProductSectionMobile sectionProducts={item}/>
                                 <div className={style.separationLine}/>
                             </div>

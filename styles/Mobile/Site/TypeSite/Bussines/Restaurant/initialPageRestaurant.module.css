@@ -5,16 +5,16 @@
     gap: 32px;
 }
 
-.mainGradient{
-/*    background: linear-gradient(180deg, rgb(4, 90, 169) 0%, rgb(16, 107, 192) 70%, white 100%);
-    background: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, rgb(26, 125, 218) 70%, white 100%);
-    background: linear-gradient(180deg, black 0%, #131313 70%, transparent 85%);
-    background: linear-gradient(180deg, black 0%, #131313 50%, transparent 60%);
-    padding-bottom: 140px;*/
+.mainGradient {
+    /*    background: linear-gradient(180deg, rgb(4, 90, 169) 0%, rgb(16, 107, 192) 70%, white 100%);
+        background: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, rgb(26, 125, 218) 70%, white 100%);
+        background: linear-gradient(180deg, black 0%, #131313 70%, transparent 85%);
+        background: linear-gradient(180deg, black 0%, #131313 50%, transparent 60%);
+        padding-bottom: 140px;*/
     position: relative;
 }
 
-.main{
+.main {
     width: 100%;
     background: transparent;
     position: absolute;
@@ -25,7 +25,7 @@
     align-content: center;
 }
 
-.gridPpalProducts{
+.gridPpalProducts {
     padding: 0 20%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -33,34 +33,34 @@
     gap: 16px;
 }
 
-.mainDivHeader{
+.mainDivHeader {
     position: relative;
 }
 
-.gridReviews{
+.gridReviews {
     display: grid;
     gap: 24px;
 }
 
-.gridQuestions{
+.gridQuestions {
     display: grid;
     gap: 24px;
     width: 100%;
 }
 
-.separationLine{
+.separationLine {
     height: 2px;
     background: var(--separationLineColor);
     width: 100%;
 }
 
-.gridOffer{
+.gridOffer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 
-.gridRecomendados{
+.gridRecomendados {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -69,6 +69,16 @@
 .paddingGeneral {
     padding: 0 16px;
     overflow: scroll;
+}
+
+.gridSectionProducts {
+    display: grid;
+    gap: 32px;
+}
+
+.gridTeset{
+    display: grid;
+    gap: 48px;
 }
 
 
