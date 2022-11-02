@@ -1,7 +1,6 @@
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import style from "/styles/Mobile/Misc/ratingStarMob.module.css";
-const scaleRating: number = 5
 
 export default function RatingStarMob({item}: { item: number }) {
     const newArray = [1, 2, 3, 4, 5]
