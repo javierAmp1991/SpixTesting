@@ -5,6 +5,7 @@
     grid-template-columns: repeat(5, max-content);
     gap: 6px;
     justify-content: center;
+    padding-top: 2px;
 }
 
 .title {
@@ -22,7 +23,7 @@
 
 .rating{
     font-size: 21px;
-    line-height: 25px;
+    line-height: 27px;
     font-weight: 500;
 }
 
