@@ -1,0 +1,26 @@
+.mainDiv {
+    --gapSection: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gapSection);
+    padding-bottom: 16px;
+}
+
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+}
+
+.gridProducts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gapSection);
+}
+
+.seeMore{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--linkColor);
+    cursor: pointer;
+    text-decoration: underline;
+}
