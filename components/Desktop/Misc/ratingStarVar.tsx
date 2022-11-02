@@ -2,7 +2,7 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import style from "/styles/Desktop/Misc/ratingStarDesk.module.css";
 
-const scaleRating: number = 6;
+const scaleRating: number = 5;
 
 export default function RatingStarVar({item, size}: { item: number, size: number }) {
     return (
