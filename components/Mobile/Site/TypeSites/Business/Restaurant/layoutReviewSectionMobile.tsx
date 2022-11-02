@@ -25,11 +25,12 @@ export default function LayoutReviewSectionMobile({children}) {
                         )
                     }
                 </div>
+
             </div>
-            {children}
             <div className={style.seeMore}>
                 Ver mas reseñas
             </div>
+            {children}
         </div>
     )
 }
