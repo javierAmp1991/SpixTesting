@@ -4,21 +4,20 @@
     gap: 24px;
 }
 
-.mainDivOverFlow{
+.mainDivOverFlow {
     display: flex;
     flex-direction: column;
     gap: 24px;
     overflow: scroll;
     padding-bottom: 12px;
-
 }
 
-.title{
+.title {
     font-size: 21px;
     color: var(--colorTitlesDesktop);
     font-weight: 500;
 }
 
-.overflow{
+.overflow {
     overflow: scroll;
 }

@@ -7,9 +7,11 @@ import LayoutTitleMobile from "../Business/Restaurant/layoutTitleMobile";
 import WriteQuestion from "../../../../Desktop/Misc/writeQuestion";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import {createPortal} from "react-dom";
+import {GlobalId} from "../../../../../public/globalConst";
 
 const writeQuestion: string = "Escribe una pregunta"
 const title: string = "Preguntas"
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function QuestionSectionMobile() {
     const questions: QuestionItem[] = useContext(QuestionContext)
@@ -36,7 +38,7 @@ export default function QuestionSectionMobile() {
                             <PopUpContainerMob closePopUp={handleDisplayQuestion} isButtonVisible={true}
                                                isBackground={true}>
                                 <WriteQuestion/>
-                            </PopUpContainerMob>, document.getElementById("idPortal")
+                            </PopUpContainerMob>, document.getElementById(idPortal)
                         )
                     }
                 </>

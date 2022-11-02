@@ -6,7 +6,7 @@ import RatingStarVar from "../../../../Desktop/Misc/ratingStarVar";
 import style from "/styles/Mobile/Site/TypeSite/Events/informationImages.module.css"
 import ImageVideoMobile from "./imageVideo";
 import DateSelector from "./dateSelector";
-import {GlobalConst} from "../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
@@ -24,6 +24,8 @@ const user: LevelUser = {
     Level: 0
 }
 const userRequirement: number = 2
+
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function InformationImages() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -78,7 +80,7 @@ export default function InformationImages() {
                 createPortal(
                     <PopUpContainerMob closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
                         <LevelUserPopUpMobile levelUser={user.Level} levelVerfication={userRequirement}/>
-                    </PopUpContainerMob>, document.getElementById("idPortal")
+                    </PopUpContainerMob>, document.getElementById(idPortal)
                 )
             }
 

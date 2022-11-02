@@ -127,3 +127,9 @@ export namespace GlobalConst{
     }
 }
 
+export namespace GlobalId{
+    export const globalIds = {
+        idPortal: "idPortalPopUp007"
+    }
+}
+

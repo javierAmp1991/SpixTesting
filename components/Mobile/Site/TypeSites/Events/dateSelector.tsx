@@ -6,9 +6,12 @@ import SocialBar from "../../../../Desktop/Misc/socialBar";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import MapPopUp, {MapPopUpProp} from "../../../../Desktop/Misc/mapPopUp";
 import {createPortal} from "react-dom";
+import {GlobalId} from "../../../../../public/globalConst";
 
 const nextDates: string = "Proximas Fechas:"
 const dateText: string = "Fecha:"
+const idPortal: string = GlobalId.globalIds.idPortal
+
 export default function DateSelector() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     let [dateVenueSelected, setDateVenueSelected] = useState(info.DateVenue[0])
@@ -69,7 +72,7 @@ export default function DateSelector() {
                 createPortal(
                     <PopUpContainerMob closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
                         <MapPopUp item={mapInfo}/>
-                    </PopUpContainerMob> , document.getElementById("idPortal")
+                    </PopUpContainerMob> , document.getElementById(idPortal)
                 )
             }
         </div>

@@ -1,6 +1,6 @@
 import style from "/styles/Desktop/Site/TypeSite/Events/sideCard.module.css"
 import Image from "next/image";
-import {GlobalConst} from "../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
@@ -27,6 +27,8 @@ const user: LevelUser = {
     Level: 0
 }
 const userRequirement: number = 2
+
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function SideCard() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -124,7 +126,7 @@ export default function SideCard() {
                 createPortal(
                     <PopUpContainer closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
                         <MapPopUp item={mapInfo}/>
-                    </PopUpContainer>, document.getElementById("idPortal")
+                    </PopUpContainer>, document.getElementById(idPortal)
                 )
 
             }
@@ -135,7 +137,7 @@ export default function SideCard() {
                         <div className={style.sizeImage}>
                             <Image layout={"fill"} src={info.PathPoster} alt={""}/>
                         </div>
-                    </PopUpContainer>, document.getElementById("idPortal")
+                    </PopUpContainer>, document.getElementById(idPortal)
                 )
             }
             {
@@ -143,7 +145,7 @@ export default function SideCard() {
                 createPortal(
                 <PopUpContainer closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
                     <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
-                </PopUpContainer> , document.getElementById("idPortal")
+                </PopUpContainer> , document.getElementById(idPortal)
                 )
             }
         </div>

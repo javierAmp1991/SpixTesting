@@ -7,9 +7,11 @@ import LayoutTitle from "../Business/Restaurant/layoutTitle";
 import WriteQuestion from "../../../Misc/writeQuestion";
 import PopUpContainer from "../../../Misc/popUpContainer";
 import {createPortal} from "react-dom";
+import {GlobalId} from "../../../../../public/globalConst";
 
 const writeQuestion: string = "Escribe una pregunta"
 const title: string = "Preguntas"
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function QuestionSection() {
     const questions: QuestionItem[] = useContext(QuestionContext)
@@ -36,7 +38,7 @@ export default function QuestionSection() {
                             <PopUpContainer closePopUp={handleDisplayQuestion} isButtonVisible={true}
                                             isBackground={true}>
                                 <WriteQuestion/>
-                            </PopUpContainer>, document.getElementById("idPortal")
+                            </PopUpContainer>, document.getElementById(idPortal)
                         )
                     }
                 </>
