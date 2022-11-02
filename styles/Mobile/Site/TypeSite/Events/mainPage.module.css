@@ -1,11 +1,18 @@
 .mainDiv {
     display: grid;
-    gap: 32px;
+    gap: 40px;
     width: 100%;
     padding: 24px 0;
 }
 
-.paddingGeneral{
+.paddingGeneral {
     padding: 0 16px;
     overflow: scroll;
+}
+
+.separationLine {
+    width: calc(100% - 32px);
+    margin: auto;
+    height: 1px;
+    background: var(--separationLineColor);
 }

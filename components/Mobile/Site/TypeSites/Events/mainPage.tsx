@@ -9,7 +9,6 @@ import OfferEventsMobile from "./offerEvents";
 import ProductsEventMobile from "./productsEventMobile";
 import OtherEvents from "./otherEvents";
 import ReviewSectionMobile from "./reviewSection";
-import QuestionSection from "../../../../Desktop/Site/TypeSites/Events/questionSection";
 import QuestionSectionMobile from "./questionSection";
 import FooterMobile from "../../../EventPage/footerMobile";
 
@@ -24,7 +23,9 @@ export default function MainPageMobile() {
                 <OfferEventsMobile/>
                 <OtherEvents/>
                 <ProductsEventMobile/>
+                <div className={style.separationLine}/>
                 <ReviewSectionMobile/>
+                <div className={style.separationLine}/>
                 <QuestionSectionMobile/>
             </div>
             <FooterMobile/>
