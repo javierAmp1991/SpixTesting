@@ -1,10 +1,12 @@
 .sizeContainer {
     width: 100%;
+    max-width: 736px;
     aspect-ratio: 1/1;
     position: relative;
     background: black;
     display: grid;
     align-items: center;
+    justify-items: center;
 }
 
 .sizeVideo{

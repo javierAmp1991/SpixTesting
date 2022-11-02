@@ -25,6 +25,7 @@ import QuestionShortMob from "../../../../Misc/questionShortMob";
 import {FormLink} from "../../../../../../dataDemo/data";
 import FormViewMobile from "../../../../Misc/formViewMobile";
 import LayoutWithNavCircleMobileFull from "../../../../Layouts/layoutWithNavCircleMobileFull";
+import utilities from "/styles/utilities.module.css";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -61,7 +62,7 @@ export default function InitialPageRestaurantMobile() {
                 </div>
             </div>
 
-            <div className={style.mainDiv}>
+            <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <NavProductsSectionMobile isSticky={hasBeenReached}/>
 
                 <DescriptionCardFullData/>

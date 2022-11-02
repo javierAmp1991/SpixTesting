@@ -11,13 +11,13 @@ import OtherEvents from "./otherEvents";
 import ReviewSectionMobile from "./reviewSection";
 import QuestionSectionMobile from "./questionSection";
 import FooterMobile from "../../../EventPage/footerMobile";
-
+import utilities from "/styles/utilities.module.css";
 export default function MainPageMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     return (
         <>
             <FullBannerMobile item={info.PathBanner}/>
-            <div className={style.mainDiv}>
+            <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <InformationImages/>
                 <InSearch/>
                 <OfferEventsMobile/>
