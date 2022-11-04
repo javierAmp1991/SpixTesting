@@ -12,6 +12,12 @@ export class DateVenueEvent {
     LinkGoogleMap: string
 }
 
+export class ContactItems {
+    Id: string
+    Icon: string
+    Link: string
+}
+
 export class PrincipalInfoEvent {
     Id: string
     Name: string
@@ -28,6 +34,7 @@ export class PrincipalInfoEvent {
     Restrictions: string[]
     Images: string[]
     Video: string
+    Contact: ContactItems[]
     Whatssapp: number
     Instagram: string
     TikTok: string

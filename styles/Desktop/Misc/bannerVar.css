@@ -1,0 +1,9 @@
+.sizeImageBanner {
+    width: 100vw;
+    max-width: var(--maxWidthBanner);
+    margin: auto;
+    object-position: center;
+    position: relative;
+    display: grid;
+}
+

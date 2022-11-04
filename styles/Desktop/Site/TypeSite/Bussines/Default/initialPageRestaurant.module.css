@@ -47,8 +47,7 @@
 .gridQuestions {
     display: grid;
     gap: 24px;
-    grid-template-columns: repeat(2, 1fr);
-    width: 70%;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .separationLine {
@@ -78,4 +77,22 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+}
+
+.gridInSearch {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.bannerContainer{
+    position: relative;
+    box-shadow: 0 5px 21px rgba(0,0,0,.2);
+}
+
+.mainContInSearch{
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    border-radius: 8px;
+    overflow: hidden;
 }

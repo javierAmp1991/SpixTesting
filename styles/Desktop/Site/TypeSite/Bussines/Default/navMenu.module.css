@@ -1,0 +1,23 @@
+.mainDiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:  0 5% 32px 5%;
+    display: grid;
+    grid-template-columns: repeat(7, max-content);
+    gap: 16px;
+    height: 100%;
+    align-items: center;
+    align-content: start;
+    background:  linear-gradient(180deg, rgba(0,0,0,.5) 0%, transparent 100%);
+    font-weight: 600;
+    color: white;
+    font-size: 17px;
+}
+
+.sizeLogo{
+    width: 120px;
+    height: 120px;
+    position: relative;
+}

@@ -1,0 +1,67 @@
+.mainDiv {
+    padding: 24px 32px;
+}
+
+.sizeCheckIcon {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    right: 8px;
+    top: calc(50% - 8px);
+    z-index: 90;
+}
+
+.buttonDate {
+    display: grid;
+    padding: 5px 8px;
+    text-align: left;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .4s;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.buttonSelected {
+    box-shadow: 0 0 3px rgba(25, 100, 239, 0.2);
+    border: 1px solid rgba(19, 135, 215, .2);
+    background: rgba(19, 135, 215, .2);
+}
+
+.venueColor {
+    font-size: 12px;
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.dateColor {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.title {
+    font-size: 16px;
+    text-align: center;
+    color: var(--colorTitlesDesktop);
+}
+
+.gridDates {
+    display: grid;
+    gap: 12px;
+}
+
+.buttonStyle {
+    gap: 6px;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    width: max-content;
+    margin: auto;
+}
+
+.gridMainDiv {
+    display: grid;
+    grid-template-rows: max-content 1fr max-content;
+    gap: 16px;
+}

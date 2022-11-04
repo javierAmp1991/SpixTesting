@@ -1,0 +1,92 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 20px;
+}
+
+.first {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 32px;
+    padding-top: 48px;
+    align-content: start;
+    transition: .4s;
+    display: grid;
+    border-radius: 12px;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .1);
+    background: linear-gradient(90deg, rgba(0, 0, 0, .01)  30%,  white 100%);
+    overflow: hidden;
+}
+
+.first:hover {
+    transform: scale(1.05);
+}
+
+.all {
+    height: 150px;
+    border-radius: 10px;
+    align-items: center;
+    justify-items: center;
+    transition: .4s;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .1);
+    overflow: hidden;
+    background: linear-gradient(90deg, white 30%, rgba(0, 0, 0, .02) 100%);
+    text-align: right;
+    padding-right: 32px;
+}
+
+.sizeImage {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    bottom: -50px;
+    left: 16px;
+    opacity: .7;
+}
+
+.sizeImage2 {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    bottom: -20px;
+    right: 15px;
+    opacity: .8;
+}
+
+.all:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, white 30%, rgba(0, 0, 0, .05) 100%);
+}
+
+.nameSection {
+    font-size: 21px;
+}
+
+.nameSectionFirst {
+    font-size: 28px;
+}
+
+.totalProducts {
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.sizePromo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .1;
+    top: 0;
+    bottom: 0;
+}
+
+.sizePromo:hover {
+    opacity: .2;
+}

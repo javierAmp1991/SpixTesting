@@ -1,0 +1,252 @@
+.mainDiv {
+    display: grid;
+    gap: 24px;
+    border-radius: 12px;
+    align-items: center;
+    padding-bottom: 12px;
+}
+
+.mainDiv2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.gridImageName {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.gradient {
+    background: var(--gradientProfileBlue);
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.gridInfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    padding-right: 32px;
+    /*    background: #fff4f4;
+        background: linear-gradient(270deg, transparent 0%, rgba(0,0,0,.05) 100%);
+        background: rgba(0,0,0,.02);*/
+    position: relative;
+    font-size: 16px;
+}
+
+.separationLine {
+    height: 1px;
+    background: var(--separationLineColor);
+    width: 85%;
+}
+
+.sizeRestrictionIcon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+}
+
+.sizeLogo {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.divPopUpContact {
+    padding: 32px;
+}
+
+.gridrestrictions {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    padding-top: 4px;
+    font-weight: 400;
+}
+
+.gridResSocial {
+    display: grid;
+    gap: 6px;
+    align-content: center;
+}
+
+.name {
+    font-size: 32px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 600;
+}
+
+.description {
+    color: var(--colorPrimaryTextDesktop);
+    width: 90%;
+    font-size: 16px;
+}
+
+.atr {
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.category {
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.gridLogoSocial {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: start;
+}
+
+.sizeIcon {
+    width: 14px;
+    height: 16px;
+    position: relative;
+}
+
+.buttonStyle {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 6px;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    width: max-content;
+    font-size: 14px;
+    margin: auto;
+    justify-content: center;
+}
+
+.sizeIconButton {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.buttonDate {
+    display: grid;
+    padding: 5px 8px;
+    text-align: left;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .4s;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.buttonSelected {
+    box-shadow: 0 0 3px rgba(25, 100, 239, 0.2);
+    border: 1px solid rgba(19, 135, 215, .2);
+    background: rgba(19, 135, 215, .2);
+}
+
+
+.venueColor {
+    font-size: 12px;
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.dateColor {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+
+.gridDates {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 90%;
+}
+
+.firstDiv {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.seeMap {
+    font-size: 12px;
+    position: absolute;
+    right: 8px;
+    top: calc(50% - 8px);
+    color: var(--linkColor);
+    text-decoration: underline;
+    z-index: 90;
+    width: max-content;
+}
+
+.gridImages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 24px;
+}
+
+.sizeImage123 {
+    width: 100%;
+    aspect-ratio: 4/3;
+    position: relative;
+    transition: .4s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.sizeImage123:hover {
+    scale: 1.05;
+}
+
+.socialBarAbsolute {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+}
+
+.gridButtons {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 16px;
+}
+
+.colorRestriction {
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 12px;
+}
+
+.gridIconLink {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.linkContact {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.seeAllDates {
+    color: var(--linkColor);
+    text-align: left;
+    text-decoration: underline;
+}
+
+.gridContact {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 8px;
+    align-items: center;
+}
+
+

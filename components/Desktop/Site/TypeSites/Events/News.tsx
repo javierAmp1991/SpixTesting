@@ -15,7 +15,7 @@ export default function News() {
         PositionArrowX: "-16px",
         Padding: 0,
         Gap: 16,
-        Grid: 3,
+        Grid: 4,
         IsButtonVisible: true,
         LeftArrow: () => news.LeftClick(),
         RightArrow: () => news.RightClick()

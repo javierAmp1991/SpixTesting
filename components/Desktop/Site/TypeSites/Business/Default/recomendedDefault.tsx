@@ -13,7 +13,7 @@ export default function RecomendedDefault() {
         PositionArrowX: "-40px",
         Padding: 0,
         Gap: 16,
-        Grid: 6,
+        Grid: 5,
         IsButtonVisible: true,
         LeftArrow: () => infoRecomended.LeftClick(),
         RightArrow: () => infoRecomended.RightClick()

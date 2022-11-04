@@ -16,6 +16,14 @@
     position: relative;
 }
 
+.sizeIconHVar{
+    position: relative;
+}
+
+.sizeIconBVar{
+    position: relative;
+}
+
 .gridIcon{
     display: grid;
     grid-template-columns: repeat(2, max-content);

@@ -13,13 +13,13 @@ export default function InOfferDefault(){
         PositionArrowX: "-40px",
         Padding: 0,
         Gap: 16,
-        Grid: 6,
+        Grid: 5,
         IsButtonVisible: true,
         LeftArrow: () => listOfferProducts.LeftClick(),
         RightArrow: () => listOfferProducts.RightClick()
     }
     return(
-        <LayoutTitle title={"Happy Hour"}>
+        <LayoutTitle title={"Promo Navidad"}>
             <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                 {
                     listOfferProducts.InitialItems.map(item =>

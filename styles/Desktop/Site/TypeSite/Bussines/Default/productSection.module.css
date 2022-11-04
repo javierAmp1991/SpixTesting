@@ -9,6 +9,7 @@
 .title {
     font-size: 21px;
     color: var(--colorTitlesDesktop);
+    text-align: center;
 }
 
 .gridProducts {

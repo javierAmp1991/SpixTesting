@@ -123,7 +123,8 @@ export namespace GlobalConst{
         whatsaapIcon: "/images/whatssap.png",
         activeWishList: "/images/wishList.png",
         noActiveWishList: "/images/wishListDisable.png",
-        editProfileAlone: "/images/editProfileAlone.png"
+        editProfileAlone: "/images/editProfileAlone.png",
+        formIconALone: "/images/form.png"
     }
 }
 

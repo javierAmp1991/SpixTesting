@@ -18,7 +18,17 @@ export default function ImageVideo() {
     }
     return (
         <div className={style.gridImageSelection}>
-            <div className={style.gridSelectionZone}>
+            <div className={style.contShowImage}>
+                {
+                    isVideo ?
+                        <video muted={true} poster={info.Images[0]} className={style.contShowImage} controls src={info.Video}/>
+                        :
+                        <div className={style.contShowImage}>
+                            <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
+                        </div>
+                }
+            </div>
+           <div className={style.gridSelectionZone}>
                 {
                     info.Images.map((item, index) =>
                         index == 0 ?
@@ -41,16 +51,6 @@ export default function ImageVideo() {
                                 </div>
                             </button>
                     )
-                }
-            </div>
-            <div className={style.contShowImage}>
-                {
-                    isVideo ?
-                        <video className={style.contShowImage} controls src={info.Video}/>
-                        :
-                        <div className={style.contShowImage}>
-                            <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
-                        </div>
                 }
             </div>
         </div>

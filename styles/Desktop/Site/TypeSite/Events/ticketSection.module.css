@@ -1,0 +1,279 @@
+.mainDiv {
+    --sizeSection: 495px;
+    display: grid;
+}
+
+.gridImageTickets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: var(--sizeSection);
+}
+
+.sizeImage {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.title {
+    font-size: 21px;
+}
+
+.gridTickets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    overflow: scroll;
+    height: var(--sizeSection);
+    padding: 4px;
+    align-content: start;
+}
+
+.ticketCont {
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 16px 12px;
+    gap: 6px;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    height: max-content;
+    position: relative;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background: purple;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.circle2 {
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.gridColorName {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.rightDiv {
+    display: grid;
+    align-content: center;
+}
+
+.leftDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name {
+    font-size: 16px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.fileSeat {
+    font-size: 12px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.atr {
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.discount {
+    font-size: 12px;
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.buttonStyle {
+    background: var(--gradientBlueButton);
+    width: max-content;
+    padding: 2px 12px;
+    border-radius: 2px;
+    overflow: hidden;
+    color: white;
+}
+
+
+.gridOptions {
+    position: absolute;
+    display: grid;
+    gap: 12px;
+    width: 300px;
+    overflow: hidden;
+    transition: .4s;
+    background: white;
+    z-index: 100;
+}
+
+.select {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 12px;
+    overflow: scroll;
+}
+
+.overflow {
+    overflow: scroll;
+    width: 100%;
+}
+
+.arrowStyle {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+}
+
+.gridArrowsTags {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    width: 50%;
+    padding-bottom: 12px;
+}
+
+.positionBottomArrow {
+    --sizeArrow: 24px;
+    padding: 8px;
+    width: max-content;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    position: absolute;
+    background: white;
+    left: calc(50% - (var(--sizeArrow) / 2) - 8px);
+    top: calc(100% - var(--sizeArrow));
+    z-index: 1000;
+}
+
+.sizeBottomArrow {
+    height: var(--sizeArrow);
+    width: var(--sizeArrow);
+    position: relative;
+}
+
+.relative {
+    position: relative;
+}
+
+.gridDirection {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+    width: max-content;
+    margin: auto;
+    padding-top: 24px;
+}
+
+.seeMap {
+    color: var(--linkColor);
+}
+
+.sizeGoogleMap {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.nameVenue {
+    font-size: 21px;
+    width: max-content;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.bottomArrowDate {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    transition: .4s;
+}
+
+.option {
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 3px 12px;
+    border-radius: 16px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.optionSelected {
+    border: 1px solid black;
+    padding: 3px 12px;
+    border-radius: 16px;
+    color: white;
+    background: black;
+}
+
+.contDates {
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.gridDates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*    grid-template-columns: max-content;
+        position: absolute;
+        grid-auto-columns: max-content;
+        left: 0;
+        top: 32px;
+        grid-auto-flow: column;*/
+    width: 50%;
+    gap: 12px;
+    background: white;
+    z-index: 1000;
+    padding-top: 12px;
+}
+
+.buttonDate {
+    display: grid;
+    padding: 5px 8px;
+    text-align: left;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .4s;
+    position: relative;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.buttonSelected {
+    box-shadow: 0 0 3px rgba(25, 100, 239, 0.2);
+    border: 1px solid rgba(19, 135, 215, .2);
+    background: rgba(19, 135, 215, .2);
+}

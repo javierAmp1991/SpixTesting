@@ -256,15 +256,15 @@ const listOfferProductsAdd: Product[] = [
         Tag: "Bebida",
         Rating: 4
     },
-    {
-        Name: "Producto 6.6",
-        Price: 10990,
-        DiscountPercent: 30,
-        Include: null,
-        ImagePath: "/images/product8.jpg",
-        Tag: "Energeticas",
-        Rating: 0
-    },
+    /*    {
+            Name: "Producto 6.6",
+            Price: 10990,
+            DiscountPercent: 30,
+            Include: null,
+            ImagePath: "/images/product8.jpg",
+            Tag: "Energeticas",
+            Rating: 0
+        },*/
 ]
 const listReviewAdd: ReviewItem[] = [
     {
@@ -303,7 +303,7 @@ const listReviewAdd: ReviewItem[] = [
 ]
 const headerData: PresentationCard = {
     Banner: "/images/galleteriaBanner.webp",
-    LogoPath: "/images/galleteriaLogo.jpg",
+    LogoPath: "/images/logoCookies.png",
     ImagePath: "/images/hellsKitchen.jpg",
     VideoPath: null,
     Name: "La Galleteria Dulce",
@@ -348,11 +348,11 @@ const listSectionProducst: SectionProductItem[] = [
         Name: "Galletas sin azucar",
         ListProducts: listProducts
     },
-/*    {
+    {
         Id: "sectinProduct005",
-        Name: "Pastas",
+        Name: "Galletas de menta",
         ListProducts: listProducts
-    }*/
+    }
 ]
 const listInitialRecommended: EventCardWithPrice[] = [
     {
@@ -419,18 +419,18 @@ const listInitialRecommended: EventCardWithPrice[] = [
         MaxPrice: 9990,
 
     },
-    {
-        Id: "1234sdsadw56",
-        Type: EventCardType.EventCardWithPrice,
-        Title: "Restaurant Cinzano",
-        Subtitle: "Cinzano",
-        Rating: 30,
-        TotalTickets: 10000,
-        SoldTickets: 5000,
-        PathImage: "/images/cinzano.jpg",
-        MinPrice: 2990,
-        MaxPrice: 9990,
-    },
+    /*    {
+            Id: "1234sdsadw56",
+            Type: EventCardType.EventCardWithPrice,
+            Title: "Restaurant Cinzano",
+            Subtitle: "Cinzano",
+            Rating: 30,
+            TotalTickets: 10000,
+            SoldTickets: 5000,
+            PathImage: "/images/cinzano.jpg",
+            MinPrice: 2990,
+            MaxPrice: 9990,
+        },*/
 ]
 const listReview: ReviewItem[] = [
     {
@@ -547,7 +547,7 @@ const listOfferProducts: Product[] = [
         Tag: "Energetica",
         Rating: 3
     },
-    {
+    /*{
         Name: "Producto 1.1",
         Price: 18990,
         DiscountPercent: 10,
@@ -555,7 +555,7 @@ const listOfferProducts: Product[] = [
         ImagePath: "/images/galletas12.jpg",
         Tag: "Cerveza",
         Rating: 2
-    },
+    },*/
 ]
 const listForm: FormLink[] = [
     {

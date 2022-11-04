@@ -49,3 +49,9 @@ export class QuestionItem {
     Question: string;
     Answer: string;
 }
+
+export class NavBarEventsSections {
+    Id: string
+    IdToGo: string
+    Name: string
+}

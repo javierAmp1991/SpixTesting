@@ -4,6 +4,7 @@ import {FormLink, News, Product} from "../../../../../dataDemo/data";
 import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../dataDemo/EventView/eventVerticalView";
 import {QuestionItem} from "../../../../../Class/Misc/GlobalClass";
+import {GlobalConst} from "../../../../../public/globalConst";
 
 const principalInfo: PrincipalInfoEvent = {
     Id: "12345abcde",
@@ -29,7 +30,7 @@ const principalInfo: PrincipalInfoEvent = {
         {
             Id: "12345abc",
             Date: new Date(2022, 9, 19),
-            Venue: "Plaza Anibal Pinto 1182, Valparaíso",
+            Venue: "Plz Anibal Pinto 1182, Valparaíso",
             IsSelected: false,
             Capacity: 50,
             NameVenue: "Cinzano",
@@ -46,6 +47,26 @@ const principalInfo: PrincipalInfoEvent = {
             ImageMap: "/images/googleMapWooClub.jpg",
             LinkGoogleMap: "https://goo.gl/maps/mPvXV5ZbCja19kQo7"
         },
+        {
+            Id: "12345abcfhjkjkde12",
+            Date: new Date(2022, 10, 25),
+            Venue: "Blanco 889, Valparaíso",
+            IsSelected: false,
+            Capacity: 150,
+            NameVenue: "Woo Club",
+            ImageMap: "/images/googleMapWooClub.jpg",
+            LinkGoogleMap: "https://goo.gl/maps/mPvXV5ZbCja19kQo7"
+        },
+        {
+            Id: "12345abcdesas212",
+            Date: new Date(2022, 11, 7),
+            Venue: "Blanco 889, Valparaíso",
+            IsSelected: false,
+            Capacity: 150,
+            NameVenue: "Woo Club",
+            ImageMap: "/images/googleMapWooClub.jpg",
+            LinkGoogleMap: "https://goo.gl/maps/mPvXV5ZbCja19kQo7"
+        },
     ],
     Attributes: ["Rock", "Conciertos", "Festivales"],
     Category: "Bar Restaurant",
@@ -53,6 +74,33 @@ const principalInfo: PrincipalInfoEvent = {
     WishList: 50,
     Images: ["/images/thedoor1.jpg", "/images/thedoor2.jpg", "/images/thedoor3.jpg", "/images/thedoor4.jpg"/*, "/images/thedoor5.jpg"*/],
     Video: "images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
+    Contact: [
+        {
+            Id: "contact000",
+            Icon: GlobalConst.sourceImages.googleMap,
+            Link: "www.elhuevo.cl"
+        },
+        {
+            Id: "contact001",
+            Icon: GlobalConst.sourceImages.tiktokIcon,
+            Link: "www.tiktok.com/test"
+        },
+        {
+            Id: "contact002",
+            Icon: GlobalConst.sourceImages.whatsaapIcon,
+            Link: "+56934579283"
+        },
+        {
+            Id: "contact003",
+            Icon: GlobalConst.sourceImages.instagramICon,
+            Link: "www.instagram.com/test"
+        },
+        {
+            Id: "contact004",
+            Icon: GlobalConst.sourceImages.facebookIcon,
+            Link: "www.facebook.com/test"
+        }
+    ],
     Whatssapp: 987347654,
     Instagram: "/",
     TikTok: "/",

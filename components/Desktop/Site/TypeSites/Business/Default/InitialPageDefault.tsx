@@ -1,71 +1,107 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Default/initialPageRestaurant.module.css"
-import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import ProductSection from "../Restaurant/ProductSection";
+import {NavBarEventsSections, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import {
     HeaderContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Default/defaultProvider";
-import FullBanner from "../../../../Misc/fullBanner";
-import DescriptionCardDefault from "./DescriptionCardDefault";
 import InOfferDefault from "./inOfferDefault";
 import RecomendedDefault from "./recomendedDefault";
 import QuestionDefault from "./questionDefault";
 import InSearchDefault from "./inSearchDefault";
 import ReviewDefault from "./reviewDefault";
+import ProductSectionDefault from "./ProductSectionDefault";
+import BannerVar from "../../../../Misc/bannerVar";
+import NavSectionProducts from "./NavSectionProducts";
+import DescriptionCardFooterDefault from "./DescriptionCardFooterDefault";
+import NavMenu from "./navMenu";
 
-const idTest: string = "isTestDesktopScrollControl"
+const idSections = {
+    Offer: "idOfferDefault",
+    Recommended: "idRecommendedDefault",
+    Products: "idProductsDefault",
+    Review: "idReviewDefault",
+    Question: "idQuestionDefault",
+    AboutUs: "idAboutUsDefault"
+}
+
+const idSectionsNew: NavBarEventsSections[] = [
+    {
+        Id: "idOfferDefault",
+        IdToGo: "idOfferDefaultToGo",
+        Name: "Ofertas"
+    },
+    {
+        Id: "idRecommendedDefault",
+        IdToGo: "idRecommendedDefaultToGo",
+        Name: "Ofertas"
+    },
+    {
+        Id: "idProductsDefault",
+        IdToGo: "idProductsDefaultToGo",
+        Name: "Ofertas"
+    },
+    {
+        Id: "idReviewDefault",
+        IdToGo: "idReviewDefaultToGo",
+        Name: "Ofertas"
+    },
+    {
+        Id: "idQuestionDefault",
+        IdToGo: "idQuestionDefaultToGo",
+        Name: "Ofertas"
+    },
+    {
+        Id: "idAboutUsDefault",
+        IdToGo: "idAboutUsDefaultToGo",
+        Name: "Ofertas"
+    }
+]
 
 export default function InitialPageDefault() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
-    let [hasBeenReached, setHasBeenReached] = useState(false)
-    let [startSectionProduct, setStartSectionProduct] = useState(0)
 
-    useEffect(() => {
-        let scrollControl = document.getElementById(idTest).getBoundingClientRect()
-        setStartSectionProduct(startSectionProduct = scrollControl.y)
-    }, [])
-    useEffect(() => {
-        const functionScroll = () => {
-            setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
-        }
-        window.addEventListener(`scroll`, functionScroll)
-        return () => window.removeEventListener(`scroll`, functionScroll);
-    })
     return (
         <>
-            <FullBanner item={infoHeader.Banner}/>
+            <div className={style.bannerContainer}>
+                <BannerVar size={`75vh`} item={infoHeader.Banner}/>
+                <NavMenu idItems={idSections}/>
+            </div>
             <div className={style.mainDiv}>
-                <DescriptionCardDefault/>
-
-
+                <NavSectionProducts/>
                 <InSearchDefault/>
                 <div className={style.separationLine}/>
 
-                <InOfferDefault/>
+                <div id={idSections.Offer}>
+                    <InOfferDefault/>
+                </div>
+                <div className={style.separationLine}/>
+                <div id={idSections.Recommended}>
+                    <RecomendedDefault/>
+                </div>
                 <div className={style.separationLine}/>
 
-                <RecomendedDefault/>
-                <div className={style.separationLine}/>
-
-                {/*<NewsRestaurant/>
-                <div className={style.separationLine}/>*/}
-
-                <div className={style.gridSectionProducts} id={idTest}>
+                <div className={style.gridSectionProducts} id={idSections.Products}>
                     {
                         infoSectionProducts.map(item =>
                             <>
-                                <ProductSection sectionProducts={item}/>
+                                <ProductSectionDefault sectionProducts={item}/>
                                 <div className={style.separationLine}/>
                             </>
                         )
                     }
                 </div>
-
-                <ReviewDefault/>
-                <QuestionDefault/>
+                <div id={idSections.Review}>
+                    <ReviewDefault/>
+                </div>
+                <div id={idSections.Question}>
+                    <QuestionDefault/>
+                </div>
+            </div>
+            <div id={idSections.AboutUs}>
+                <DescriptionCardFooterDefault/>
             </div>
         </>
     )
