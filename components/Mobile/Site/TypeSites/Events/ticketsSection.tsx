@@ -89,7 +89,9 @@ export default function TicketsSectionMobile() {
                                      className={style.ticketCont}>
                                     <div className={style.leftDiv}>
                                         <div className={style.gridColorName}>
-                                            <div style={{background: item.Color}} className={style.circle2}/>
+                                            <div className={style.contCircle}>
+                                                <div style={{background: item.Color}} className={style.circle2}/>
+                                            </div>
                                             <div className={style.name}>
                                                 {item.Name}
                                             </div>
@@ -100,7 +102,8 @@ export default function TicketsSectionMobile() {
                                         {
                                             item.Discount != null &&
                                             <div className={style.discountBox}>
-                                                <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
+                                                <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp}
+                                                       alt={""}/>
                                                 <span
                                                     className={style.discountStyle}>{item.Discount}% Dcto.</span>
                                             </div>
@@ -138,6 +141,7 @@ export default function TicketsSectionMobile() {
     function getMoneyValue(num: number): string {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))
     }
+
     function getDateFormat(item: Date) {
         return `${item.toLocaleString("es-US", {weekday: "long"})} ${item.getDate()} ${item.toLocaleString("es-US", {month: "short"})} ${item.getFullYear()}`
     }
