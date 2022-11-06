@@ -239,10 +239,7 @@
     text-decoration: underline;
 }
 
-.gridContact {
-    display: grid;
-    gap: 8px;
-}
+
 
 .tagCategory {
     --colorTag: rgba(255, 60, 0, 0.7);
@@ -278,5 +275,10 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 8px;
-    color: var(--colorSecundaryTextDesktop);
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.gridContact {
+    display: grid;
+    gap: 8px;
 }
