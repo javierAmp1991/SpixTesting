@@ -79,17 +79,20 @@
     top: 0;
 }
 
+.contCircle{
+    padding-top: 5px;
+}
+
 .circle2 {
-    width: 14px;
-    height: 14px;
-    border-radius: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
     overflow: hidden;
 }
 
 .gridColorName {
     display: grid;
     grid-template-columns: max-content 1fr;
-    align-items: center;
     gap: 6px;
 }
 
@@ -145,12 +148,12 @@
 }
 
 .buttonStyle {
-    background: var(--gradientBlueButton);
     width: max-content;
     padding: 2px 12px;
     border-radius: 2px;
     overflow: hidden;
-    color: white;
+    color: var(--linkColor);
+    text-decoration: underline;
 }
 
 /*.buttonStyle {

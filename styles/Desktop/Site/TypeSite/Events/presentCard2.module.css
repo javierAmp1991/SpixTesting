@@ -242,9 +242,9 @@
 
 
 .tagCategory {
-    --colorTag: rgba(255, 60, 0, 0.7);
+    --colorTag: rgba(255, 30, 0, 0.7);
     border: 1px solid var(--colorTag);
-    background: rgba(255, 60, 0, 0.1);
+    background: rgba(255, 30, 0, 0.08);
     color: var(--colorTag);
     padding: 2px 12px;
     border-radius: 16px;

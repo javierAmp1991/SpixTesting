@@ -115,12 +115,11 @@
 }
 
 .buttonStyle {
-    background: var(--gradientBlueButton);
     width: max-content;
     padding: 2px 12px;
     border-radius: 2px;
     overflow: hidden;
-    color: white;
+    color: var(--linkColor);
 }
 
 .gridOptions {

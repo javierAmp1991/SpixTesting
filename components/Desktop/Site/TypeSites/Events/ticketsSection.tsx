@@ -63,7 +63,7 @@ export default function TicketsSection() {
                         </div>
                     </div>
                     <div className={style.relative}>
-                        <div className={isOverflow? style.gridTickets : style.gridTicketsNoScroll}>
+                        <div className={isOverflow ? style.gridTickets : style.gridTicketsNoScroll}>
                             {
                                 info.DateSelected.Area.map((itemP, index) =>
                                     itemP.IsSelected &&
@@ -72,7 +72,10 @@ export default function TicketsSection() {
                                              className={style.ticketCont}>
                                             <div className={style.leftDiv}>
                                                 <div className={style.gridColorName}>
-                                                    <div style={{background: item.Color}} className={style.circle2}/>
+                                                    <div className={style.contCircle}>
+                                                        <div style={{background: item.Color}}
+                                                             className={style.circle2}/>
+                                                    </div>
                                                     <div className={style.name}>
                                                         {item.Name}
                                                     </div>
@@ -98,11 +101,11 @@ export default function TicketsSection() {
                                                 }
 
                                             </div>
-                                            <div className={style.rightDiv}>
+                                            <button className={style.rightDiv}>
                                                 <div className={style.buttonStyle}>
                                                     Comprar
                                                 </div>
-                                            </div>
+                                            </button>
                                         </div>
                                     )
                                 )
