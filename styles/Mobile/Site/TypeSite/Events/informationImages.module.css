@@ -7,7 +7,6 @@
 .mainCont {
     display: grid;
     gap: 8px;
-    border-bottom: 1px solid var(--separationLineColor);
     padding-bottom: 16px;
 }
 
@@ -64,8 +63,9 @@
 }
 
 .name {
-    font-size: 16px;
+    font-size: 18px;
     color: var(--colorTitlesDesktop);
+    font-weight: 500;
 }
 
 .description {
@@ -98,7 +98,7 @@
     border-radius: 4px;
     margin: auto;
     font-weight: 500;
-    margin-top: 20px ;
+    margin-top: 20px;
 }
 
 .sizeIconButton {
@@ -109,6 +109,45 @@
 
 .sizeIcon {
     width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.tagCategory {
+    border: 1px solid rgba(0, 0, 0, .7);
+    padding: 2px 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    width: max-content;
+}
+
+.gridAtr {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 12px;
+}
+
+.separationLine {
+    height: 1px;
+    background: var(--separationLineColor);
+    width: 100%;
+}
+
+.gridContact {
+    display: grid;
+    gap: 8px;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+    color: var(--linkColor);
+}
+
+.sizeIcon {
+    width: 14px;
     height: 16px;
     position: relative;
 }

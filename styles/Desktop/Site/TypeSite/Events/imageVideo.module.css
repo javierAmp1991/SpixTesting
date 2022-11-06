@@ -12,7 +12,7 @@
 
 .contImage {
     position: relative;
-    width: 40px;
+    width: 50px;
     aspect-ratio: 1/1;
     border-radius: 4px;
     overflow: hidden;
@@ -29,7 +29,7 @@
 
 .contShowImage {
     width: 100%;
-    height: 430px;
+    height: 450px;
     position: relative;
     object-fit: cover;
 }

@@ -21,7 +21,7 @@ export default function MainCard() {
             <OtherEvents/>
             <Products/>
             <News/>
-            <SectionReview/>
+            {/*            <SectionReview/>*/}
             <QuestionSection/>
         </div>
     )

@@ -73,6 +73,14 @@
     background: rgba(0, 128, 0, .1);
     padding: 3px 5px;
     height: max-content;
+
+}
+
+.discountStyle {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #4b704b;
 }
 
 .gridPriceICon {
@@ -88,12 +96,7 @@
     font-weight: 500;
 }
 
-.discountStyle {
-    font-size: 12px;
-    line-height: 12px;
-    font-weight: 500;
-    color: #4b704b;
-}
+
 
 .paddingStar {
     padding: 2px 0 4px 0;

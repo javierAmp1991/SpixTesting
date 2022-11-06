@@ -2,10 +2,8 @@ import Image from "next/image";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import RatingStarVar from "../../../../Desktop/Misc/ratingStarVar";
 import style from "/styles/Mobile/Site/TypeSite/Events/informationImages.module.css"
 import ImageVideoMobile from "./imageVideo";
-import DateSelector from "./dateSelector";
 import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
@@ -14,7 +12,7 @@ import {createPortal} from "react-dom";
 import SocialBar from "../../../../Desktop/Misc/socialBar";
 import Link from "next/link";
 
-const contactText: string = "Contacto:"
+const contactText: string = "Nuestras redes sociales"
 const buyTickets: string = "Comprar Entradas"
 
 const user: LevelUser = {
@@ -33,18 +31,25 @@ export default function InformationImages() {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainCont}>
+                <div className={style.gridAtr}>
+                    {info.Attributes.map((item, index) =>
+                        <div key={item} className={style.tagCategory}>
+                            {item}
+                        </div>
+                    )}
+                </div>
                 <div className={style.gridImageName}>
-                    <div className={style.gradient}>
+                    {/* <div className={style.gradient}>
                         <div className={style.sizeLogo}>
                             <Image layout={"fill"} src={info.PathLogo}/>
                         </div>
-                    </div>
+                    </div>*/}
                     <div className={style.gridInfo}>
                         <div className={style.name}>
                             {info.Name}
                         </div>
-                        <RatingStarVar item={info.Rating} size={16}/>
-                        <div className={style.gridrestrictions}>
+                        {/*<RatingStarVar item={info.Rating} size={16}/>*/}
+                        {/*<div className={style.gridrestrictions}>
                             <div className={style.colorRestriction}>
                                 {contactText}
                             </div>
@@ -71,23 +76,37 @@ export default function InformationImages() {
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
                                 </div>
                             </Link>
-                           {/* {
+                            {
                                 info.Restrictions.map((item, index) =>
                                     <a className={style.sizeRestrictionIcon} key={index}>
                                         <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                     </a>
                                 )
-                            }*/}
-                        </div>
+                            }
+                        </div>*/}
                     </div>
                 </div>
                 <div className={style.description}>
                     {info.Description}
                 </div>
                 <SocialBar/>
+                <div className={style.separationLine}/>
+                <div className={style.gridContact}>
+                    {contactText}
+                    {
+                        info.Contact.map(item =>
+                            <Link key={item.Id} href={item.Link}>
+                                <a className={style.grid2}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                    </div>
+                                    {item.Link}
+                                </a>
+                            </Link>
+                        )
+                    }
+                </div>
             </div>
-
-            <DateSelector/>
 
             <ImageVideoMobile/>
 

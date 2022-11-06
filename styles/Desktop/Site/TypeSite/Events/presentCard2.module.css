@@ -3,13 +3,11 @@
     gap: 24px;
     border-radius: 12px;
     align-items: center;
-    padding-bottom: 12px;
 }
 
 .mainDiv2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
 }
 
 .gridImageName {
@@ -30,12 +28,12 @@
     flex-direction: column;
     width: 100%;
     gap: 12px;
-    padding-right: 32px;
     /*    background: #fff4f4;
         background: linear-gradient(270deg, transparent 0%, rgba(0,0,0,.05) 100%);
         background: rgba(0,0,0,.02);*/
     position: relative;
     font-size: 16px;
+    padding: 16px 32px 0 16px;
 }
 
 .separationLine {
@@ -242,11 +240,39 @@
 
 .gridContact {
     display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
     gap: 8px;
-    align-items: center;
 }
 
+.tagCategory {
+    border: 1px solid rgba(0, 0, 0, .7);
+    padding: 2px 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    width: max-content;
+}
 
+.gridAtr {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 12px;
+}
+
+.sizeLogo {
+    width: 24px;
+    height: 24px;
+}
+
+.gridProduceLogo {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+    color: var(--linkColor);
+}

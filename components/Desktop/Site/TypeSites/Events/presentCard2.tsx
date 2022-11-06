@@ -14,7 +14,7 @@ import MapPopUp, {MapPopUpProp} from "../../../Misc/mapPopUp";
 import SocialBarVar from "../../../Misc/socialBarVar";
 import DateSelectorPopUp from "./dateSelectorPopUp";
 
-const contactText: string = "Contacto"
+const contactText: string = "Nuestras redes Sociales"
 const buyTickets: string = "Comprar Entradas"
 const seeContact: string = "Ver Contacto"
 const seeAllDates: string = "Ver todas las fechas"
@@ -26,6 +26,7 @@ const user: LevelUser = {
 const userRequirement: number = 2
 const idPortal: string = GlobalId.globalIds.idPortal
 const dateText: string = "Fecha:"
+const categoryText: string = "Categorias"
 
 export default function PresentCard2() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -60,6 +61,14 @@ export default function PresentCard2() {
         <div className={style.mainDiv}>
             <div className={style.mainDiv2}>
                 <div className={style.gridInfo}>
+                    <div className={style.gridAtr}>
+                        {info.Attributes.map((item, index) =>
+                            <div key={item} className={style.tagCategory}>
+                                {item}
+                            </div>
+                        )}
+                    </div>
+
                     <div className={style.divNameSocial}>
                         <div className={style.name}>
                             {info.Name}
@@ -71,6 +80,15 @@ export default function PresentCard2() {
                     </div>
 
                     <SocialBarVar sizeIcon={16}/>
+
+                    {/*<div className={style.gridProduceLogo}>
+                        <div>
+                            Produce
+                        </div>
+                        <div className={style.sizeLogo}>
+                            <Image layout={"fill"} src={info.PathLogo}/>
+                        </div>
+                    </div>*/}
 
                     <div className={style.separationLine}/>
 
@@ -111,8 +129,11 @@ export default function PresentCard2() {
                         {
                             info.Contact.map(item =>
                                 <Link key={item.Id} href={item.Link}>
-                                    <a className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                    <a className={style.grid2}>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                        </div>
+                                        {item.Link}
                                     </a>
                                 </Link>
                             )
@@ -147,7 +168,7 @@ export default function PresentCard2() {
                     </PopUpContainer>, document.getElementById(idPortal)
                 )
             }
-{/*            {
+            {/*            {
                 displayContact &&
                 createPortal(
                     <PopUpContainer closePopUp={handleDisplayContact} isBackground={true} isButtonVisible={true}>

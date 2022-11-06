@@ -1,19 +1,29 @@
 import style from "/styles/Desktop/Site/TypeSite/Events/ticketSection.module.css"
 import Image from "next/image";
-import {useState} from "react";
-import {GlobalConst} from "../../../../../public/globalConst";
+import {useContext, useState} from "react";
+import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
+import utilities from "/styles/utilities.module.css";
+import {ProviderSectionTicket} from "../../../../../Class/Site/TypeSite/Events/events";
+import {TicketSectionContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
+import MapPopUp, {MapPopUpProp} from "../../../Misc/mapPopUp";
+import {createPortal} from "react-dom";
+import PopUpContainer from "../../../Misc/popUpContainer";
 
-const option0: string = "0px"
-const option100: string = "120px"
-const seeMap: string = "Ver Mapa"
-const dateText: string = "Seleccionar Fecha"
-const listColor: string[] = ["red", "blue", "green", "purple", "yellow", "orange", "black", "gray"]
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function TicketsSection() {
-    let [heightOptions, setHeightOptions] = useState(option0)
-    let [displayDates, setDisplayDates] = useState(false)
-    const handleDisplayDates = () => setDisplayDates(displayDates = !displayDates)
-    const handleHeightOption = () => setHeightOptions(heightOptions = heightOptions == option0 ? option100 : option0)
+    const info: ProviderSectionTicket = useContext(TicketSectionContext)
+    let [displayMap, setDisplayMap] = useState(false)
+    const handleDisplayMap = () => setDisplayMap(displayMap = !displayMap)
+    const handleDateSelected = (id: string) => info.SelectDate(id)
+    const handleAreaSelected = (id: string) => info.SelectArea(id)
+    const mapPopUp: MapPopUpProp = {
+        Venue: info.DateSelected.Date.Venue,
+        Capacity: info.DateSelected.Date.Capacity,
+        ImageMap: info.DateSelected.Date.ImageMap,
+        LinkGoogleMap: info.DateSelected.Date.LinkGoogleMap,
+        Name: info.DateSelected.Date.NameVenue,
+    }
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
@@ -21,45 +31,20 @@ export default function TicketsSection() {
             </div>
 
             <div className={style.contDates}>
-                <button onClick={handleDisplayDates} className={style.subtitle}>
-                    {dateText}
-                    <div style={{transform: displayDates && "rotate(180deg)"}} className={style.bottomArrowDate}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow}/>
-                    </div>
-                </button>
-                {
-                    displayDates &&
-                    <div className={style.gridDates}>
-                        {
-                            [...Array(3)].map((e, index) =>
-                                <button key={index} className={`${index == 0 && style.buttonSelected} ${style.buttonDate}`}>
-                                    Domingo 24 oct 2022
-                                </button>
-                            )
-                        }
-
-                    </div>
-                }
-            </div>
-
-
-            <div>
-                <div className={style.gridArrowsTags}>
-                    <button style={{marginRight: 16}} className={style.arrowStyle}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
-                    </button>
-                    <div className={style.select}>
-                        {
-                            [...Array(12)].map((e, index) =>
-                                <button key={index} className={index == 0? style.optionSelected : style.option}>
-                                    Area Opcion {index}
-                                </button>
-                            )
-                        }
-                    </div>
-                    <button style={{marginLeft: 16}} className={style.arrowStyle}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
-                    </button>
+                <div className={style.gridDates}>
+                    {
+                        info.AllDates.map((item, index) =>
+                            <button onClick={() => handleDateSelected(item.Id)} key={index}
+                                    className={`${item.IsSelected && style.buttonSelected} ${style.buttonDate}`}>
+                                <div>
+                                    {item.Date.toDateString()}
+                                </div>
+                                <div className={`${style.directionDate} ${utilities.clamp1}`}>
+                                    {item.Venue}
+                                </div>
+                            </button>
+                        )
+                    }
                 </div>
             </div>
 
@@ -67,55 +52,104 @@ export default function TicketsSection() {
                 <div className={style.relative}>
                     <div className={style.gridTickets}>
                         {
-                            [...Array(8)].map((e, index) =>
-                                <div style={{borderBottom: `2px solid ${listColor[index]}`}} key={index} className={style.ticketCont}>
-                                    <div className={style.leftDiv}>
-                                        <div className={style.gridColorName}>
-                                            <div style={{background: listColor[index]}} className={style.circle2}/>
-                                            <div className={style.name}>
-                                                Zona Palco Vip Sur
+                            info.DateSelected.Area.map((itemP, index) =>
+                                itemP.IsSelected &&
+                                itemP.Zones.map(item =>
+                                    <button style={{borderBottom: `2px solid ${item.Color}`}} key={index}
+                                         className={style.ticketCont}>
+                                        <div className={style.leftDiv}>
+                                            <div className={style.gridColorName}>
+                                                <div style={{background: item.Color}} className={style.circle2}/>
+                                                <div className={style.name}>
+                                                    {item.Name}
+                                                </div>
+                                            </div>
+                                            <div className={style.price}>
+                                                ${getMoneyValue(item.MinPrice)} - ${getMoneyValue(item.MaxPrice)}
+                                            </div>
+                                            {
+                                                item.Discount != null &&
+                                                <div className={style.discountBox}>
+                                                    <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
+                                                    <span
+                                                        className={style.discountStyle}>{item.Discount}% Dcto.</span>
+                                                </div>
+                                            }
+                                            {
+                                                item.Include != null &&
+                                                <div className={style.discountBox}>
+                                                    {item.Include}
+                                                </div>
+                                            }
+
+                                        </div>
+                                        <div className={style.rightDiv}>
+                                            <div className={style.buttonStyle}>
+                                                Comprar
                                             </div>
                                         </div>
-                                        <div className={style.price}>
-                                            $ 9.990 - $57.990
-                                        </div>
-                                        <div className={style.discount}>
-                                            Dcto 2da Unidad
-                                        </div>
-                                    </div>
-                                    <div className={style.rightDiv}>
-                                        <div className={style.buttonStyle}>
-                                            Comprar
-                                        </div>
-                                    </div>
-                                </div>
+                                    </button>
+                                )
                             )
                         }
 
-                        <div className={style.positionBottomArrow}>
+                       {/* <div className={style.positionBottomArrow}>
                             <div className={style.sizeBottomArrow}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow}/>
                             </div>
-                        </div>
+                        </div>*/}
                     </div>
                 </div>
-                <div>
-                    <div className={style.nameVenue}>
-                        Nombre Recinto
+                <div className={style.gridRightDiv}>
+                    <div className={style.gridArrowsTags}>
+                        <button style={{marginRight: 16}} className={style.arrowStyle}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
+                        </button>
+                        <div className={style.select}>
+                            {
+                                info.DateSelected.Area.map((item, index) =>
+                                    <button key={index} onClick={() => handleAreaSelected(item.Id)}
+                                            className={item.IsSelected ? style.optionSelected : style.option}>
+                                        {item.Name}
+                                    </button>
+                                )
+                            }
+                        </div>
+                        <button style={{marginLeft: 16}} className={style.arrowStyle}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
+                        </button>
                     </div>
                     <div className={style.sizeImage}>
-                        <Image layout={"fill"} objectFit={"contain"} src={"/images/juventusFinal.svg"}/>
+                        <Image layout={"fill"} objectFit={"contain"} src={info.DateSelected.MapImage}/>
                     </div>
-                    <div className={style.gridDirection}>
-                        <div className={style.sizeGoogleMap}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
+                    <div>
+                        <div className={style.nameVenue}>
+                            {info.DateSelected.NameVenue}
                         </div>
-                        <div className={style.seeMap}>
-                            {seeMap}
-                        </div>
+                        <button onClick={handleDisplayMap} className={style.gridDirection}>
+                            <div className={style.sizeGoogleMap}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>
+                            </div>
+                            <div className={style.seeMap}>
+                                {info.DateSelected.Date.Venue}
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
+
+            {
+                displayMap &&
+                createPortal(
+                    <PopUpContainer closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
+                        <MapPopUp item={mapPopUp}/>
+                    </PopUpContainer>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
+
+    function getMoneyValue(num: number): string {
+        return Intl.NumberFormat("ES-CL").format(Math.round(num))
+    }
 }

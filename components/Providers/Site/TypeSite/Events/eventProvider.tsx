@@ -1,10 +1,20 @@
 import {createContext, useState} from "react";
-import {PrincipalInfoEvent, ProviderNewsEvents, ReviewSection} from "../../../../../Class/Site/TypeSite/Events/events";
+import {
+    DateAreaSelected,
+    PrincipalInfoEvent,
+    ProviderNewsEvents, ProviderSectionTicket,
+    ReviewSection,
+    TicketSectionSiteEvents
+} from "../../../../../Class/Site/TypeSite/Events/events";
 import {FormLink, News, Product} from "../../../../../dataDemo/data";
 import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../dataDemo/EventView/eventVerticalView";
 import {QuestionItem} from "../../../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../../../public/globalConst";
+import {Id} from "react-flags-select";
+import {PrincipalFeaturedSearch} from "../../../../../dataDemo/EventView/featureView";
+import item = PrincipalFeaturedSearch.item;
+import {set} from "immutable";
 
 const principalInfo: PrincipalInfoEvent = {
     Id: "12345abcde",
@@ -561,6 +571,701 @@ const listForm: FormLink[] = [
         link: "/fillForm"
     }
 ]
+const allDateToFind: DateAreaSelected[] = [
+    {
+        Id: "dateAreaSelected001",
+        NameVenue: "Estadio Nacional de Chile",
+        Date: {
+            Id: "12345",
+            Date: new Date(2022, 8, 18),
+            Venue: "Blanco 1386, Punta Arenas",
+            IsSelected: false,
+            Capacity: 200,
+            NameVenue: "El Huevo",
+            ImageMap: "/images/googleMapHuevo.jpg",
+            LinkGoogleMap: "https://goo.gl/maps/skWcW2X6YkEyhL7S6"
+
+        },
+        Area: [
+            {
+                Id: "dateSelected001",
+                Name: "Area 001.1",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                    {
+                        Id: "Zona 005",
+                        Name: "Zona 005.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Yellow"
+                    },
+                    {
+                        Id: "Zona 006",
+                        Name: "Zona 006.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Purple"
+                    }
+                ],
+                IsSelected: true
+            },
+            {
+                Id: "dateSelected002",
+                Name: "Area 002.1",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                ],
+                IsSelected: false
+            },
+            {
+                Id: "dateSelected003",
+                Name: "Area 003.1",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    }
+                ],
+                IsSelected: false
+            }
+        ],
+        MapImage: `/images/juventusFinal.svg`
+    },
+    {
+        Id: "dateAreaSelected002",
+        NameVenue: "Estadio Monumental de Chile",
+        Date: {
+            Id: "12345",
+            Date: new Date(2022, 8, 18),
+            Venue: "Blanco 1386, Santiago",
+            IsSelected: false,
+            Capacity: 200,
+            NameVenue: "El Huevo",
+            ImageMap: "/images/googleMapHuevo.jpg",
+            LinkGoogleMap: "https://goo.gl/maps/skWcW2X6YkEyhL7S6"
+
+        },
+        Area: [
+            {
+                Id: "dateSelected001",
+                Name: "Area 001.2",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                    {
+                        Id: "Zona 005",
+                        Name: "Zona 005.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Yellow"
+                    },
+                    {
+                        Id: "Zona 006",
+                        Name: "Zona 006.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Purple"
+                    }
+                ],
+                IsSelected: true
+            },
+            {
+                Id: "dateSelected002",
+                Name: "Area 002.2",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    }
+                ],
+                IsSelected: false
+            },
+            {
+                Id: "dateSelected003",
+                Name: "Area 003.2",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.2.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                ],
+                IsSelected: false
+            }
+        ],
+        MapImage: `/images/juventusFinal.svg`
+    },
+    {
+        Id: "dateAreaSelected003",
+        NameVenue: "Estadio Universidad de Chile",
+        Date: {
+            Id: "12345",
+            Date: new Date(2022, 8, 18),
+            Venue: "Blanco 1386, Valparaiso",
+            IsSelected: false,
+            Capacity: 200,
+            NameVenue: "El Huevo",
+            ImageMap: "/images/googleMapHuevo.jpg",
+            LinkGoogleMap: "https://goo.gl/maps/skWcW2X6YkEyhL7S6"
+
+        },
+        Area: [
+            {
+                Id: "dateSelected001",
+                Name: "Area 001.3",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                    {
+                        Id: "Zona 005",
+                        Name: "Zona 005.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Yellow"
+                    },
+                    {
+                        Id: "Zona 006",
+                        Name: "Zona 006.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Purple"
+                    }
+                ],
+                IsSelected: true
+            },
+            {
+                Id: "dateSelected002",
+                Name: "Area 002.3",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    }
+                ],
+                IsSelected: false
+            },
+            {
+                Id: "dateSelected003",
+                Name: "Area 003.3",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.3.3",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    }
+                ],
+                IsSelected: false
+            }
+        ],
+        MapImage: `/images/juventusFinal.svg`
+    }
+]
+const sectionTickets: TicketSectionSiteEvents = {
+    Id: "idSectionTickets09823093",
+    AllDates: [
+        {
+            Id: "dateAreaSelected001",
+            Venue: "Direction 001",
+            Date: new Date(2022, 11, 20),
+            IsSelected: true
+        },
+        {
+            Id: "dateAreaSelected002",
+            Venue: "Direction 001",
+            Date: new Date(2022, 11, 22),
+            IsSelected: false
+        },
+        {
+            Id: "dateAreaSelected003",
+            Venue: "Direction 001",
+            Date: new Date(2022, 11, 24),
+            IsSelected: false
+        }
+    ],
+    FirstDateSelected: allDateToFind[0]
+    /* {
+        Id: "dateAreaSelected001",
+        NameVenue: "Estadio Nacional de Chile",
+        Date: {
+            Id: "12345",
+            Date: new Date(2022, 8, 18),
+            Venue: "Blanco 1386, Punta Arenas",
+            IsSelected: false,
+            Capacity: 200,
+            NameVenue: "El Huevo",
+            ImageMap: "/images/googleMapHuevo.jpg",
+            LinkGoogleMap: "https://goo.gl/maps/skWcW2X6YkEyhL7S6"
+
+        },
+        Area: [
+            {
+                Id: "dateSelected001",
+                Name: "Area 001",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                    {
+                        Id: "Zona 005",
+                        Name: "Zona 005",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Yellow"
+                    },
+                    {
+                        Id: "Zona 006",
+                        Name: "Zona 006",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Purple"
+                    }
+                ],
+                IsSelected: true
+            },
+            {
+                Id: "dateSelected002",
+                Name: "Area 002",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                    {
+                        Id: "Zona 005",
+                        Name: "Zona 005.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Yellow"
+                    },
+                    {
+                        Id: "Zona 006",
+                        Name: "Zona 006.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Purple"
+                    }
+                ],
+                IsSelected: false
+            },
+            {
+                Id: "dateSelected003",
+                Name: "Area 003",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    },
+                    {
+                        Id: "Zona 004",
+                        Name: "Zona 004.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Green"
+                    },
+                    {
+                        Id: "Zona 005",
+                        Name: "Zona 005.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Yellow"
+                    },
+                    {
+                        Id: "Zona 006",
+                        Name: "Zona 006.2",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Purple"
+                    }
+                ],
+                IsSelected: false
+            }
+        ],
+        MapImage: `/images/juventusFinal.svg`
+    }*/
+}
 
 export const OfferProductsContext = createContext(null)
 export const ProductsContext = createContext(null)
@@ -570,12 +1275,15 @@ export const ReviewContext = createContext(null)
 export const QuestionContext = createContext(null)
 export const InSearchContext = createContext(null)
 export const PrincipalInfoEventContext = createContext(null)
+export const TicketSectionContext = createContext(null)
 
 export default function EventProvider({children}) {
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
     let [products, setProducts] = useState(listProducts)
     let [otherEvents, setOtherEvents] = useState(listInitialRecommended)
     let [news, setNews] = useState(listInitialNews)
+    let [dateArea, setDateArea] = useState(sectionTickets.FirstDateSelected)
+    let [allDates, setAllDates] = useState(sectionTickets.AllDates)
     const handleRightClickProductsOffer = () => setOfferProducts(offerProducts = listOfferProductsAdd)
     const handleLeftClickProductsOffer = () => setOfferProducts(offerProducts = listOfferProducts)
     const handleRightClickProducts = () => setProducts(products = listProductsAdd)
@@ -584,6 +1292,27 @@ export default function EventProvider({children}) {
     const handleLeftClickRecomended = () => setOtherEvents(otherEvents = listInitialRecommended)
     const handleRightClickNews = () => setNews(news = listNewsAdd)
     const handleLeftClickNews = () => setNews(news = listInitialNews)
+    const handleDateSelected = (id: string) => {
+        let newDates = allDates.map(item => {
+            if (item.Id == id) return {...item, IsSelected: true}
+            else return {...item, IsSelected: false}
+        })
+        setAllDates(allDates = newDates)
+
+        allDateToFind.forEach(item => {
+            if (item.Id == id) setDateArea(dateArea = item)
+        })
+    }
+    const handleAreaSelected = (id: string) => {
+        let newAreaSelected = dateArea.Area.map(item => {
+            if (item.Id == id) return {...item, IsSelected: true}
+            else return {...item, IsSelected: false}
+        })
+        let newDateArea: DateAreaSelected = {...dateArea, Area: newAreaSelected}
+        setDateArea(dateArea = newDateArea)
+
+    }
+
     let providerOfferProducts: ProviderOfferProducts = {
         InitialItems: offerProducts,
         RightClick: handleRightClickProductsOffer,
@@ -604,23 +1333,32 @@ export default function EventProvider({children}) {
         RightClick: handleRightClickNews,
         LeftClick: handleLeftClickNews
     }
+    let providerSectionTicket: ProviderSectionTicket = {
+        MainInfo: sectionTickets,
+        AllDates: allDates,
+        DateSelected: dateArea,
+        SelectDate: handleDateSelected,
+        SelectArea: handleAreaSelected
+    }
     return (
         <PrincipalInfoEventContext.Provider value={principalInfo}>
-            <OfferProductsContext.Provider value={providerOfferProducts}>
-                <ProductsContext.Provider value={providerProducts}>
-                    <NewsContext.Provider value={providerNews}>
-                        <OtherEventsContext.Provider value={providerOtherEvents}>
-                            <ReviewContext.Provider value={reviewSection}>
-                                <QuestionContext.Provider value={listQuestions}>
-                                    <InSearchContext.Provider value={listForm}>
-                                        {children}
-                                    </InSearchContext.Provider>
-                                </QuestionContext.Provider>
-                            </ReviewContext.Provider>
-                        </OtherEventsContext.Provider>
-                    </NewsContext.Provider>
-                </ProductsContext.Provider>
-            </OfferProductsContext.Provider>
+            <TicketSectionContext.Provider value={providerSectionTicket}>
+                <OfferProductsContext.Provider value={providerOfferProducts}>
+                    <ProductsContext.Provider value={providerProducts}>
+                        <NewsContext.Provider value={providerNews}>
+                            <OtherEventsContext.Provider value={providerOtherEvents}>
+                                <ReviewContext.Provider value={reviewSection}>
+                                    <QuestionContext.Provider value={listQuestions}>
+                                        <InSearchContext.Provider value={listForm}>
+                                            {children}
+                                        </InSearchContext.Provider>
+                                    </QuestionContext.Provider>
+                                </ReviewContext.Provider>
+                            </OtherEventsContext.Provider>
+                        </NewsContext.Provider>
+                    </ProductsContext.Provider>
+                </OfferProductsContext.Provider>
+            </TicketSectionContext.Provider>
         </PrincipalInfoEventContext.Provider>
     )
 }
