@@ -37,7 +37,7 @@ export default function TicketsSection() {
                             <button onClick={() => handleDateSelected(item.Id)} key={index}
                                     className={`${item.IsSelected && style.buttonSelected} ${style.buttonDate}`}>
                                 <div>
-                                    {item.Date.toDateString()}
+                                    {getDateFormat(item.Date)}
                                 </div>
                                 <div className={`${style.directionDate} ${utilities.clamp1}`}>
                                     {item.Venue}
@@ -55,7 +55,7 @@ export default function TicketsSection() {
                             info.DateSelected.Area.map((itemP, index) =>
                                 itemP.IsSelected &&
                                 itemP.Zones.map(item =>
-                                    <button style={{borderBottom: `2px solid ${item.Color}`}} key={index}
+                                    <div style={{borderBottom: `2px solid ${item.Color}`}} key={index}
                                          className={style.ticketCont}>
                                         <div className={style.leftDiv}>
                                             <div className={style.gridColorName}>
@@ -88,7 +88,7 @@ export default function TicketsSection() {
                                                 Comprar
                                             </div>
                                         </div>
-                                    </button>
+                                    </div>
                                 )
                             )
                         }
@@ -151,5 +151,8 @@ export default function TicketsSection() {
 
     function getMoneyValue(num: number): string {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))
+    }
+    function getDateFormat(item: Date) {
+        return `${item.toLocaleString("es-US", {weekday: "long"})} ${item.getDate()} ${item.toLocaleString("es-US", {month: "short"})} ${item.getFullYear()}`
     }
 }

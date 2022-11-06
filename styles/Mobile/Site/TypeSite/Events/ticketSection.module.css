@@ -256,6 +256,7 @@
     transition: .4s;
     position: relative;
     text-align: center;
+    min-width: 200px;
 }
 
 .buttonSelected {

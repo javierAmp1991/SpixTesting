@@ -7,7 +7,6 @@
 .mainCont {
     display: grid;
     gap: 8px;
-    padding-bottom: 16px;
 }
 
 .gridImageName {

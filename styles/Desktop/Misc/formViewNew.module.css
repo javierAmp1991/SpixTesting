@@ -1,22 +1,40 @@
 .gridForm {
-    overflow: hidden;
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 16px;
     padding: 12px 24px;
     height: 100%;
-    background: rgba(211, 97, 255, 0.8);
-    background: rgb(244, 182, 97) ;
-    background: linear-gradient(45deg, rgb(241, 95, 96) 0%, rgb(244, 182, 97) 100%);
-    background: var(--purpleGradientBackground);
-    background: rgb(241, 95, 96) ;
-    color: white;
+    /*    background: rgba(211, 97, 255, 0.8);
+        background: rgb(244, 182, 97);
+        background: linear-gradient(45deg, rgb(241, 95, 96) 0%, rgb(244, 182, 97) 100%);
+        background: var(--purpleGradientBackground);
+        background: rgb(241, 95, 96);*/
+    color: var(--linkColor);
+    background: white;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .15);
+    transition: .4s;
+}
+
+.gridForm:hover {
+    transform: scale(1.05);
+}
+
+.contIcon {
+    padding: 4px;
+    background: white;
+    position: absolute;
+    top: -20px;
+    left: 20px;
 }
 
 .sizeIcon {
     width: 40px;
     height: 40px;
     position: relative;
+
 }
 
 .gridInfoForm {
@@ -25,8 +43,8 @@
     padding: 24px 0;
 }
 
-.text{
-    color: white;
+.text {
+    color: var(--colorPrimaryTextDesktop);
     font-size: 15px;
     font-weight: 500;
 }

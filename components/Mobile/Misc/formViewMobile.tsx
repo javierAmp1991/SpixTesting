@@ -11,7 +11,7 @@ export default function FormViewMobile({item}: { item: FormLink }) {
             <a className={style.gridForm}>
                 <div className={utilities.gridContentCenter}>
                     <div className={style.sizeIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.formIcon} alt=""/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.formIconGray} alt=""/>
                     </div>
                 </div>
                 <div className={style.gridInfoForm}>

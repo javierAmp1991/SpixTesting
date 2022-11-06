@@ -125,7 +125,8 @@ export namespace GlobalConst{
         noActiveWishList: "/images/wishListDisable.png",
         editProfileAlone: "/images/editProfileAlone.png",
         formIconALone: "/images/form.png",
-        dollarUp: "/images/dollarUp.png"
+        dollarUp: "/images/dollarUp.png",
+        formIconGray: "/images/formIconGray.png"
     }
 }
 

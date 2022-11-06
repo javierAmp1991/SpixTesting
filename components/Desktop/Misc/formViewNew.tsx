@@ -12,8 +12,10 @@ export default function FormViewDesktopNew({item}: { item: FormLink }) {
         <Link href={item.link}>
             <a className={style.gridForm}>
                 <div className={utilities.gridContentCenter}>
-                    <div className={style.sizeIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.formIconALone} alt=""/>
+                    <div className={style.contIcon}>
+                        <div className={style.sizeIcon}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.formIconGray} alt=""/>
+                        </div>
                     </div>
                 </div>
                 <div className={style.gridInfoForm}>

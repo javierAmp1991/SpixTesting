@@ -26,8 +26,6 @@ export default function MainPageMobile() {
                 <OfferEventsMobile/>
                 <OtherEvents/>
                 <ProductsEventMobile/>
-                <ReviewSectionMobile/>
-                <div className={style.separationLine}/>
                 <QuestionSectionMobile/>
             </div>
             <FooterMobile/>
