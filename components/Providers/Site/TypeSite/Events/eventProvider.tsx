@@ -93,7 +93,7 @@ const principalInfo: PrincipalInfoEvent = {
         {
             Id: "contact001",
             Icon: GlobalConst.sourceImages.tiktokIcon,
-            Link: "www.tiktok.com/test"
+            Link: "/test"
         },
         {
             Id: "contact002",
@@ -103,12 +103,12 @@ const principalInfo: PrincipalInfoEvent = {
         {
             Id: "contact003",
             Icon: GlobalConst.sourceImages.instagramICon,
-            Link: "www.instagram.com/test"
+            Link: "/test2"
         },
         {
             Id: "contact004",
             Icon: GlobalConst.sourceImages.facebookIcon,
-            Link: "www.facebook.com/test"
+            Link: "/test3"
         }
     ],
     Whatssapp: 987347654,
@@ -644,6 +644,24 @@ const allDateToFind: DateAreaSelected[] = [
                         Discount: null,
                         Include: "Lleve 2 pague 1",
                         Color: "Purple"
+                    },
+                    {
+                        Id: "Zona 007",
+                        Name: "Zona 007.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 70,
+                        Include: null,
+                        Color: "Gray"
+                    },
+                    {
+                        Id: "Zona 008",
+                        Name: "Zona 008.1.1",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: null,
+                        Include: "Lleve 2 pague 1",
+                        Color: "Black"
                     }
                 ],
                 IsSelected: true
@@ -804,83 +822,6 @@ const allDateToFind: DateAreaSelected[] = [
                 ],
                 IsSelected: true
             },
-            {
-                Id: "dateSelected002",
-                Name: "Area 002.2",
-                Zones: [
-                    {
-                        Id: "Zona 001",
-                        Name: "Zona 001.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 20,
-                        Include: null,
-                        Color: "Red"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 002.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 10,
-                        Include: null,
-                        Color: "Blue"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 003.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 25,
-                        Include: null,
-                        Color: "Orange"
-                    },
-                    {
-                        Id: "Zona 004",
-                        Name: "Zona 004.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 20,
-                        Include: null,
-                        Color: "Green"
-                    }
-                ],
-                IsSelected: false
-            },
-            {
-                Id: "dateSelected003",
-                Name: "Area 003.2",
-                Zones: [
-                    {
-                        Id: "Zona 001",
-                        Name: "Zona 001.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 20,
-                        Include: null,
-                        Color: "Red"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 002.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 10,
-                        Include: null,
-                        Color: "Blue"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 003.2.2",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 25,
-                        Include: null,
-                        Color: "Orange"
-                    },
-                ],
-                IsSelected: false
-            }
         ],
         MapImage: `/images/juventusFinal.svg`
     },
@@ -1036,7 +977,42 @@ const allDateToFind: DateAreaSelected[] = [
                     }
                 ],
                 IsSelected: false
-            }
+            },
+            {
+                Id: "dateSelected004",
+                Name: "Area 004.3",
+                Zones: [
+                    {
+                        Id: "Zona 001",
+                        Name: "Zona 001.4.4",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 20,
+                        Include: null,
+                        Color: "Red"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 002.4.4",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 10,
+                        Include: null,
+                        Color: "Blue"
+                    },
+                    {
+                        Id: "Zona 003",
+                        Name: "Zona 003.4.4",
+                        MinPrice: 9990,
+                        MaxPrice: 21990,
+                        Discount: 25,
+                        Include: null,
+                        Color: "Orange"
+                    }
+                ],
+                IsSelected: false
+            },
+
         ],
         MapImage: `/images/juventusFinal.svg`
     }

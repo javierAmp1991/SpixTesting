@@ -245,7 +245,10 @@
 }
 
 .tagCategory {
-    border: 1px solid rgba(0, 0, 0, .7);
+    --colorTag: rgba(255, 60, 0, 0.7);
+    border: 1px solid var(--colorTag);
+    background: rgba(255, 60, 0, 0.1);
+    color: var(--colorTag);
     padding: 2px 12px;
     border-radius: 16px;
     overflow: hidden;
@@ -275,5 +278,5 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 8px;
-    color: var(--linkColor);
+    color: var(--colorSecundaryTextDesktop);
 }
