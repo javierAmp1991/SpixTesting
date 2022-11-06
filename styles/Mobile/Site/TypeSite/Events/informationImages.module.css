@@ -101,7 +101,8 @@
 }
 
 .sizeIconButton {
-    width: 16px;
+    width: 24px;
+    height: 24px;
     position: relative;
     padding-top: 16px;
 }
