@@ -5,6 +5,7 @@ import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/res
 import {useContext} from "react";
 import {ReviewsSectionContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
+import ReviewViewVertical from "../../../../Misc/ReviewViewVertical";
 
 export default function ReviewRestaurant(){
     const listReview: ProviderReview = useContext(ReviewsSectionContext)
@@ -13,7 +14,7 @@ export default function ReviewRestaurant(){
         PositionArrowX: "-40px",
         Padding: 0,
         Gap: 16,
-        Grid: 3,
+        Grid: 4,
         IsButtonVisible: false,
         LeftArrow: () => listReview.LeftClick(),
         RightArrow: () => listReview.RightClick()
@@ -23,7 +24,7 @@ export default function ReviewRestaurant(){
             <LayoutCarrouselDesktop layoutProp={layoutPropReview}>
                 {
                     listReview.InitialReview.map((item) =>
-                        <ReviewViewShort key={item.Id} item={item}/>
+                        <ReviewViewVertical key={item.Id} item={item}/>
                     )
                 }
             </LayoutCarrouselDesktop>

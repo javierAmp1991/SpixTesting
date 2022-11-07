@@ -11,6 +11,7 @@ import PopUpContainer from "../../../Misc/popUpContainer";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const title: string = "Tickets"
+const buyTickets: string = "Comprar Entradas"
 
 export default function TicketsSection() {
     const info: ProviderSectionTicket = useContext(TicketSectionContext)
@@ -26,6 +27,13 @@ export default function TicketsSection() {
         Name: info.DateSelected.Date.NameVenue,
     }
     const isOverflow: boolean = getIsOverFlow()
+    const isMoreThanOne: boolean = getLargeArea()
+
+    function getLargeArea(): boolean {
+        let control = false
+        if (info.DateSelected.Area.length > 1) control = true
+        return control
+    }
 
     function getIsOverFlow(): boolean {
         let control: boolean = false
@@ -81,7 +89,8 @@ export default function TicketsSection() {
                                                     </div>
                                                 </div>
                                                 <div className={style.price}>
-                                                    ${getMoneyValue(item.MinPrice)} - ${getMoneyValue(item.MaxPrice)}
+                                                    ${getMoneyValue(item.MinPrice)} -
+                                                    ${getMoneyValue(item.MaxPrice)}
                                                 </div>
                                                 {
                                                     item.Discount != null &&
@@ -101,43 +110,56 @@ export default function TicketsSection() {
                                                 }
 
                                             </div>
-                                            <button className={style.rightDiv}>
+                                            {/*<button className={style.rightDiv}>
                                                 <div className={style.buttonStyle}>
                                                     Comprar
                                                 </div>
-                                            </button>
+                                            </button>*/}
                                         </div>
                                     )
                                 )
                             }
                         </div>
                     </div>
+                    <button className={style.buttonStyle}>
+                        {buyTickets}
+                        <div className={style.sizeIconButton}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
+                        </div>
+                    </button>
                 </div>
 
                 <div className={style.gridRightDiv}>
                     <div>
-                        <div className={style.gridArrowsTags}>
-                            <button style={{marginRight: 16}} className={style.arrowStyle}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
-                            </button>
-                            <div className={style.select}>
-                                {
-                                    info.DateSelected.Area.map((item, index) =>
-                                        <button key={index} onClick={() => handleAreaSelected(item.Id)}
-                                                className={item.IsSelected ? style.optionSelected : style.option}>
-                                            {item.Name}
-                                        </button>
-                                    )
-                                }
-                            </div>
-                            <button style={{marginLeft: 16}} className={style.arrowStyle}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
-                            </button>
-                        </div>
+                        {
+                            isMoreThanOne ?
+                                <div className={style.gridArrowsTags}>
+                                    <button style={{marginRight: 16}} className={style.arrowStyle}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
+                                    </button>
+                                    <div className={style.select}>
+                                        {
+                                            info.DateSelected.Area.map((item, index) =>
+                                                <button key={index} onClick={() => handleAreaSelected(item.Id)}
+                                                        className={item.IsSelected ? style.optionSelected : style.option}>
+                                                    {item.Name}
+                                                </button>
+                                            )
+                                        }
+                                    </div>
+                                    <button style={{marginLeft: 16}} className={style.arrowStyle}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
+                                    </button>
+                                </div>
+                                :
+                                <div className={style.nameVenue}>
+                                    {info.DateSelected.NameVenue},
+                                </div>
+                        }
                         <div className={style.gridVenueDirecton}>
-                        <span className={style.nameVenue}>
-                            {info.DateSelected.NameVenue},
-                        </span>
+                       {/* <span className={style.nameVenue}>
+                            {info.DateSelected.NameVenue}
+                        </span>*/}
                             <button onClick={handleDisplayMap} className={style.gridDirection}>
                                 <div className={style.sizeGoogleMap}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>

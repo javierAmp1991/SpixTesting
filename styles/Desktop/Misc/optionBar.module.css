@@ -1,27 +1,30 @@
-.sizeIcon{
+.sizeIcon {
     height: 12px;
     width: 12px;
     position: relative;
 }
-.gridOptionBar{
+
+.gridOptionBar {
     display: grid;
-    grid-template-columns: repeat(4, max-content);
+    grid-template-columns: repeat(3, max-content);
     gap: 16px;
 }
-.fontOptionBar{
+
+.fontOptionBar {
     font-size: 13px;
     line-height: 13px;
     color: #8e8e8e;
 }
 
-.colorLike{
+.colorLike {
     color: var(--linkColor);
 }
-.colorNoLike{
+
+.colorNoLike {
     color: #8e8e8e;
 }
 
-.gridItems{
+.gridItems {
     gap: 4px;
 }
 

@@ -17,6 +17,7 @@
 
 .sizeImage {
     width: 100%;
+    height: var(--sizeSection);
     position: relative;
 }
 
@@ -29,7 +30,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     overflow: scroll;
-    height: var(--sizeSection);
+    height: max-content;
+    max-height: var(--sizeSection);
     align-content: start;
     padding-right: 8px;
     overflow-x: hidden;
@@ -39,9 +41,10 @@
 .gridTicketsNoScroll {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    height: max-content;
+    max-height: var(--sizeSection);
     gap: 16px;
     overflow: scroll;
-    height: var(--sizeSection);
     align-content: start;
     overflow-x: hidden;
 }
@@ -58,10 +61,10 @@
 }
 
 .ticketCont {
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid rgba(0, 0, 0, .1);
     border-radius: 4px;
     overflow: hidden;
-    padding: 16px 12px;
+    padding: 16px;
     gap: 6px;
     display: grid;
     grid-template-columns: 1fr max-content;
@@ -79,7 +82,7 @@
     top: 0;
 }
 
-.contCircle{
+.contCircle {
     padding-top: 5px;
 }
 
@@ -108,9 +111,8 @@
 }
 
 .name {
-    font-size: 16px;
-    color: var(--colorTitlesDesktop);
-    font-weight: 500;
+    font-size: 14px;
+    color: var(--colorPrimaryTextDesktop);
 }
 
 .fileSeat {
@@ -153,7 +155,6 @@
     border-radius: 2px;
     overflow: hidden;
     color: var(--linkColor);
-    text-decoration: underline;
 }
 
 /*.buttonStyle {
@@ -257,8 +258,11 @@
 }
 
 .nameVenue {
+    font-size: 18px;
     width: max-content;
     margin: auto;
+    font-weight: 500;
+    padding-bottom: 8px;
 }
 
 .bottomArrowDate {
@@ -350,4 +354,28 @@
     line-height: 12px;
     font-weight: 500;
     color: #309630;
+}
+
+.buttonStyle {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 6px;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    width: max-content;
+    font-size: 14px;
+    margin: auto;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+
+.sizeIconButton {
+    width: 24px;
+    height: 24px;
+    position: relative;
 }

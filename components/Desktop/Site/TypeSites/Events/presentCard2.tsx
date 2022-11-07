@@ -81,7 +81,8 @@ export default function PresentCard2() {
 
                     <SocialBarVar sizeIcon={16}/>
 
-                    {/*<div className={style.gridProduceLogo}>
+
+                   {/* <div className={style.gridProduceLogo}>
                         <div>
                             Produce
                         </div>
@@ -90,7 +91,7 @@ export default function PresentCard2() {
                         </div>
                     </div>*/}
 
-                    <div className={style.separationLine}/>
+                    {/*<div className={style.separationLine}/>*/}
 
                     {/* <div className={style.gridDates}>
                         {
@@ -124,36 +125,38 @@ export default function PresentCard2() {
                         }
                     </div>*/}
 
-                    <div className={style.gridContact}>
+                    <div className={style.styleRedes}>
                         {contactText}
-                        {
-                            info.Contact.map(item =>
-                                <Link key={item.Id} href={item.Link}>
-                                    <a className={style.grid2}>
-                                        <div className={style.sizeIcon}>
-                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                        </div>
-                                        {item.Link}
-                                    </a>
-                                </Link>
-                            )
-                        }
+                        <div className={style.gridContact}>
+                            {
+                                info.Contact.map(item =>
+                                    <Link key={item.Id} href={item.Link}>
+                                        <a className={style.grid2}>
+                                            <div className={style.sizeIcon}>
+                                                <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                            </div>
+                                            {item.Link}
+                                        </a>
+                                    </Link>
+                                )
+                            }
+                        </div>
                     </div>
 
-                    <div className={style.gridButtons}>
+                    {/* <div className={style.gridButtons}>
                         <button onClick={handleLevelUser} className={style.buttonStyle}>
                             {buyTickets}
                             <div className={style.sizeIconButton}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
                             </div>
                         </button>
-                        {/* <button onClick={handleDisplayContact} className={style.buttonStyle}>
+                         <button onClick={handleDisplayContact} className={style.buttonStyle}>
                             {seeContact}
                             <div className={style.sizeIconButton}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
                             </div>
-                        </button>*/}
-                    </div>
+                        </button>
+                    </div>*/}
                 </div>
                 <ImageVideo/>
             </div>

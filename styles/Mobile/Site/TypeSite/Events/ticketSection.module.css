@@ -258,7 +258,7 @@
     overflow: hidden;
     transition: .4s;
     position: relative;
-    text-align: center;
+    text-align: left;
     min-width: 200px;
 }
 

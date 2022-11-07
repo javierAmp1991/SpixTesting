@@ -1,0 +1,85 @@
+.mainPadding {
+    padding: 6px;
+    scroll-snap-align: start;
+}
+
+.mainDiv {
+    display: grid;
+    gap: 8px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    border-radius: 6px;
+    padding: 12px 24px;
+    transition: .4s;
+    position: relative;
+}
+
+.title{
+    text-align: center;
+    font-size: 18px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
+
+.contImage {
+    --sizeReviewImage: 80px;
+    height: var(--sizeReviewImage);
+    width: var(--sizeReviewImage);
+    top: calc(var(--sizeReviewImage) / 2 * -1);
+    left: calc(50% - (var(--sizeReviewImage) / 2));
+    position: absolute;
+    padding: 4px;
+    background: var(--gradientProfileBlue);
+    border-radius: 50%;
+
+}
+
+.gradient{
+    padding: 4px;
+    background: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.sizeReviewImage {
+
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.maxWidthtextReview {
+    max-width: 500px;
+}
+
+.sizeReviewStar {
+    --sizeReviewStar: 15px;
+    height: var(--sizeReviewStar);
+    width: 85px;
+    position: relative;
+}
+
+.byWho {
+    color: var(--colorSecundaryTextDesktop);
+    text-align: center;
+}
+
+.gridOpt {
+    align-items: center;
+}
+
+.gridImageName {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+}
+
+.principalDiv{
+    display: grid;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 40px;
+    justify-items: center;
+}
