@@ -6,7 +6,7 @@ import {PropCarrousel} from "../../../../../Class/Layouts/layoutClass";
 import EventVerticalView from "../../../EventsView/eventVerticalView";
 import LayoutTitle from "../Business/Restaurant/layoutTitle";
 
-const title: string = "Mas eventos"
+const title: string = "Spix te recomienda"
 
 export default function OtherEvents() {
     const otherEvents: ProviderRecommended = useContext(OtherEventsContext)

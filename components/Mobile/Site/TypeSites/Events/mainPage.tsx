@@ -21,6 +21,7 @@ export default function MainPageMobile() {
             <FullBannerMobile item={info.PathBanner}/>
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <InformationImages/>
+                <div className={style.separationLine}/>
                 <TicketsSectionMobile/>
                 <InSearch/>
                 <OfferEventsMobile/>

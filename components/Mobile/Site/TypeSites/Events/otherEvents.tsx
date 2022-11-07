@@ -6,7 +6,7 @@ import LayoutCarrouselMobile from "../../../Layouts/layoutCarrousel.Mobile";
 import LayoutTitleMobile from "../Business/Restaurant/layoutTitleMobile";
 import EventVerticalViewNewMob from "../../../Events/eventVerticalViewNewMob";
 
-const title: string = "Otros Eventos"
+const title: string = "Spix te recomienda"
 export default function OtherEvents() {
     const otherEvents: ProviderRecommended = useContext(OtherEventsContext)
     return (

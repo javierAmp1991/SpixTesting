@@ -25,6 +25,7 @@ export default function TicketsSectionMobile() {
         LinkGoogleMap: info.DateSelected.Date.LinkGoogleMap,
         Name: info.DateSelected.Date.NameVenue,
     }
+    const isMoreThanOne: boolean = getLargeArea()
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
@@ -50,25 +51,30 @@ export default function TicketsSectionMobile() {
             </div>
 
             <div className={style.gridRightDiv}>
-                <div className={style.gridArrowsTags}>
-                    <div className={style.select}>
-                        {
-                            info.DateSelected.Area.map((item, index) =>
-                                <button key={index} onClick={() => handleAreaSelected(item.Id)}
-                                        className={item.IsSelected ? style.optionSelected : style.option}>
-                                    {item.Name}
-                                </button>
-                            )
-                        }
-                    </div>
-                </div>
+                {
+                    isMoreThanOne ?
+                        <div className={style.gridArrowsTags}>
+                            <div className={style.select}>
+                                {
+                                    info.DateSelected.Area.map((item, index) =>
+                                        <button key={index} onClick={() => handleAreaSelected(item.Id)}
+                                                className={item.IsSelected ? style.optionSelected : style.option}>
+                                            {item.Name}
+                                        </button>
+                                    )
+                                }
+                            </div>
+                        </div>
+                        :
+                        <div className={style.nameVenue}>
+                            {info.DateSelected.NameVenue}
+                        </div>
+                }
+
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} objectFit={"contain"} src={"/images/juventusFinal.svg"}/>
                 </div>
                 <div>
-                    <div className={style.nameVenue}>
-                        {info.DateSelected.NameVenue}
-                    </div>
                     <button onClick={handleDisplayMap} className={style.gridDirection}>
                         <div className={style.sizeGoogleMap}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>
@@ -93,34 +99,31 @@ export default function TicketsSectionMobile() {
                                             <div className={style.contCircle}>
                                                 <div style={{background: item.Color}} className={style.circle2}/>
                                             </div>
-                                            <div className={style.name}>
-                                                {item.Name}
+                                            <div>
+                                                <div className={style.name}>
+                                                    {item.Name}
+                                                </div>
+                                                <div className={style.price}>
+                                                    ${getMoneyValue(item.MinPrice)} - ${getMoneyValue(item.MaxPrice)}
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className={style.price}>
-                                            ${getMoneyValue(item.MinPrice)} - ${getMoneyValue(item.MaxPrice)}
-                                        </div>
-                                        {
-                                            item.Discount != null &&
-                                            <div className={style.discountBox}>
-                                                <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp}
-                                                       alt={""}/>
-                                                <span
-                                                    className={style.discountStyle}>{item.Discount}% Dcto.</span>
-                                            </div>
-                                        }
-                                        {
-                                            item.Include != null &&
-                                            <div className={style.discountBox}>
-                                                {item.Include}
-                                            </div>
-                                        }
                                     </div>
-                                   {/* <div className={style.rightDiv}>
-                                        <div className={style.buttonStyle}>
-                                            Comprar
+                                    {
+                                        item.Discount != null &&
+                                        <div className={style.discountBox}>
+                                            <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp}
+                                                   alt={""}/>
+                                            <span
+                                                className={style.discountStyle}>{item.Discount}% Dcto.</span>
                                         </div>
-                                    </div>*/}
+                                    }
+                                    {
+                                        item.Include != null &&
+                                        <div className={style.discountBox}>
+                                            {item.Include}
+                                        </div>
+                                    }
                                 </div>
                             )
                         )
@@ -152,5 +155,11 @@ export default function TicketsSectionMobile() {
 
     function getDateFormat(item: Date) {
         return `${item.toLocaleString("es-US", {weekday: "long"})} ${item.getDate()} ${item.toLocaleString("es-US", {month: "short"})} ${item.getFullYear()}`
+    }
+
+    function getLargeArea(): boolean {
+        let control = false
+        if (info.DateSelected.Area.length > 1) control = true
+        return control
     }
 }

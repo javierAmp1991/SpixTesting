@@ -126,7 +126,8 @@ export namespace GlobalConst{
         editProfileAlone: "/images/editProfileAlone.png",
         formIconALone: "/images/form.png",
         dollarUp: "/images/dollarUp.png",
-        formIconGray: "/images/formIconGray.png"
+        formIconGray: "/images/formIconGray.png",
+        emailIcon: "/images/emailIcon.png"
     }
 }
 

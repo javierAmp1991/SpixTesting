@@ -23,7 +23,6 @@
 .gridTickets {
     display: grid;
     gap: 16px;
-    padding: 4px;
 }
 
 .ticketCont {
@@ -36,6 +35,7 @@
     grid-template-columns: 1fr max-content;
     height: max-content;
     position: relative;
+    align-items: center;
 }
 
 .circle {
@@ -74,9 +74,8 @@
 }
 
 .name {
-    font-size: 16px;
     color: var(--colorTitlesDesktop);
-    font-weight: 500;
+    padding-bottom: 4px;
 }
 
 .fileSeat {
@@ -134,11 +133,13 @@
 
 .select {
     display: grid;
+    width: 80%;
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     gap: 12px;
     overflow: scroll;
+    margin: auto;
 }
 
 .overflow {
@@ -157,7 +158,7 @@
     display: grid;
     align-items: center;
     width: 100%;
-    padding-bottom: 12px;
+    padding-bottom: 3px;
 }
 
 .contCircle{
@@ -207,8 +208,7 @@
 
 .nameVenue {
     font-size: 21px;
-    width: max-content;
-    margin: auto;
+    text-align: center;
 }
 
 .bottomArrowDate {

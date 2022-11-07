@@ -20,7 +20,7 @@ export default function MainCard() {
             <OfferProducts/>
             <OtherEvents/>
             <Products/>
-            <News/>
+            {/*<News/>*/}
             {/*            <SectionReview/>*/}
             <QuestionSection/>
         </div>

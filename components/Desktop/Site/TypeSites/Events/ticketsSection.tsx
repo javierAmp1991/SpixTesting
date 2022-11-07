@@ -29,22 +29,6 @@ export default function TicketsSection() {
     const isOverflow: boolean = getIsOverFlow()
     const isMoreThanOne: boolean = getLargeArea()
 
-    function getLargeArea(): boolean {
-        let control = false
-        if (info.DateSelected.Area.length > 1) control = true
-        return control
-    }
-
-    function getIsOverFlow(): boolean {
-        let control: boolean = false
-        info.DateSelected.Area.forEach(item => {
-            if (item.IsSelected) {
-                if (item.Zones.length >= 7) control = true
-            }
-        })
-        return control
-    }
-
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
@@ -84,37 +68,33 @@ export default function TicketsSection() {
                                                         <div style={{background: item.Color}}
                                                              className={style.circle2}/>
                                                     </div>
-                                                    <div className={style.name}>
-                                                        {item.Name}
+                                                    <div>
+                                                        <div className={style.name}>
+                                                            {item.Name}
+                                                        </div>
+                                                        <div className={style.price}>
+                                                            ${getMoneyValue(item.MinPrice)} -
+                                                            ${getMoneyValue(item.MaxPrice)}
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div className={style.price}>
-                                                    ${getMoneyValue(item.MinPrice)} -
-                                                    ${getMoneyValue(item.MaxPrice)}
-                                                </div>
-                                                {
-                                                    item.Discount != null &&
-                                                    <div className={style.discountBox}>
-                                                        <Image width={12} height={8}
-                                                               src={GlobalConst.sourceImages.dollarUp}
-                                                               alt={""}/>
-                                                        <span
-                                                            className={style.discountStyle}>{item.Discount}% Dcto.</span>
-                                                    </div>
-                                                }
-                                                {
-                                                    item.Include != null &&
-                                                    <div className={style.discountBox}>
-                                                        {item.Include}
-                                                    </div>
-                                                }
-
                                             </div>
-                                            {/*<button className={style.rightDiv}>
-                                                <div className={style.buttonStyle}>
-                                                    Comprar
+                                            {
+                                                item.Discount != null &&
+                                                <div className={style.discountBox}>
+                                                    <Image width={12} height={8}
+                                                           src={GlobalConst.sourceImages.dollarUp}
+                                                           alt={""}/>
+                                                    <span
+                                                        className={style.discountStyle}>{item.Discount}% Dcto.</span>
                                                 </div>
-                                            </button>*/}
+                                            }
+                                            {
+                                                item.Include != null &&
+                                                <div className={style.discountBox}>
+                                                    {item.Include}
+                                                </div>
+                                            }
                                         </div>
                                     )
                                 )
@@ -156,37 +136,20 @@ export default function TicketsSection() {
                                     {info.DateSelected.NameVenue},
                                 </div>
                         }
-                        <div className={style.gridVenueDirecton}>
-                       {/* <span className={style.nameVenue}>
-                            {info.DateSelected.NameVenue}
-                        </span>*/}
-                            <button onClick={handleDisplayMap} className={style.gridDirection}>
-                                <div className={style.sizeGoogleMap}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>
-                                </div>
-                                <div className={style.seeMap}>
-                                    {info.DateSelected.Date.Venue}
-                                </div>
-                            </button>
-                        </div>
                     </div>
 
                     <div className={style.sizeImage}>
                         <Image layout={"fill"} objectFit={"contain"} src={info.DateSelected.MapImage}/>
                     </div>
-                    {/*           <div>
-                        <div className={style.nameVenue}>
-                            {info.DateSelected.NameVenue}
+
+                    <button onClick={handleDisplayMap} className={style.gridDirection}>
+                        <div className={style.sizeGoogleMap}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>
                         </div>
-                        <button onClick={handleDisplayMap} className={style.gridDirection}>
-                            <div className={style.sizeGoogleMap}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap} alt={""}/>
-                            </div>
-                            <div className={style.seeMap}>
-                                {info.DateSelected.Date.Venue}
-                            </div>
-                        </button>
-                    </div>*/}
+                        <div className={style.seeMap}>
+                            {info.DateSelected.Date.Venue}
+                        </div>
+                    </button>
                 </div>
             </div>
 
@@ -207,5 +170,21 @@ export default function TicketsSection() {
 
     function getDateFormat(item: Date) {
         return `${item.toLocaleString("es-US", {weekday: "long"})} ${item.getDate()} ${item.toLocaleString("es-US", {month: "short"})} ${item.getFullYear()}`
+    }
+
+    function getLargeArea(): boolean {
+        let control = false
+        if (info.DateSelected.Area.length > 1) control = true
+        return control
+    }
+
+    function getIsOverFlow(): boolean {
+        let control: boolean = false
+        info.DateSelected.Area.forEach(item => {
+            if (item.IsSelected) {
+                if (item.Zones.length >= 9) control = true
+            }
+        })
+        return control
     }
 }

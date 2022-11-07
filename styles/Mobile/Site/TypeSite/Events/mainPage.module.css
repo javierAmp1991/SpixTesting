@@ -12,6 +12,7 @@
 
 .separationLine {
     width: calc(100% - 32px);
+    width: 100%;
     margin: auto;
     height: 1px;
     background: var(--separationLineColor);

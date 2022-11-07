@@ -86,6 +86,11 @@ const principalInfo: PrincipalInfoEvent = {
     Video: "images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
     Contact: [
         {
+            Id: "contact005",
+            Icon: GlobalConst.sourceImages.emailIcon,
+            Link: "elhuevo@hotmail.com"
+        },
+        {
             Id: "contact000",
             Icon: GlobalConst.sourceImages.googleMap,
             Link: "www.elhuevo.cl"

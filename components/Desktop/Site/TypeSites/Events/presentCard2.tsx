@@ -79,10 +79,25 @@ export default function PresentCard2() {
                         {info.Description}
                     </div>
 
-                    <SocialBarVar sizeIcon={16}/>
+                    <div className={style.gridSocialRedes}>
+                        <SocialBarVar sizeIcon={16}/>
+                        <div className={style.gridContact}>
+                            {
+                                info.Contact.map(item =>
+                                    <Link key={item.Id} href={item.Link}>
+                                        <a className={style.grid2}>
+                                            <div className={style.sizeIcon}>
+                                                <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                            </div>
+                                        </a>
+                                    </Link>
+                                )
+                            }
+                        </div>
+                    </div>
 
 
-                   {/* <div className={style.gridProduceLogo}>
+                    {/* <div className={style.gridProduceLogo}>
                         <div>
                             Produce
                         </div>
@@ -91,7 +106,7 @@ export default function PresentCard2() {
                         </div>
                     </div>*/}
 
-                    {/*<div className={style.separationLine}/>*/}
+                    <div className={style.separationLine}/>
 
                     {/* <div className={style.gridDates}>
                         {
@@ -125,7 +140,7 @@ export default function PresentCard2() {
                         }
                     </div>*/}
 
-                    <div className={style.styleRedes}>
+                    {/*<div className={style.styleRedes}>
                         {contactText}
                         <div className={style.gridContact}>
                             {
@@ -141,7 +156,7 @@ export default function PresentCard2() {
                                 )
                             }
                         </div>
-                    </div>
+                    </div>*/}
 
                     {/* <div className={style.gridButtons}>
                         <button onClick={handleLevelUser} className={style.buttonStyle}>

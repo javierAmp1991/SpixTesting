@@ -89,42 +89,23 @@ export default function InformationImages() {
                 <div className={style.description}>
                     {info.Description}
                 </div>
-                <SocialBar/>
-                <div className={style.separationLine}/>
-                <div className={style.contContact}>
-                    {contactText}
+                <div className={style.gridSocialRedes}>
+                    <SocialBar/>
                     <div className={style.gridContact}>
                         {
                             info.Contact.map((item, index) =>
-                                index <= 1 &&
                                 <Link key={item.Id} href={item.Link}>
-                                    <a className={style.grid2}>
+                                    <a>
                                         <div className={style.sizeIcon}>
                                             <Image layout={"fill"} src={item.Icon} alt={""}/>
                                         </div>
-                                        {item.Link}
-                                    </a>
-                                </Link>
-                            )
-                        }
-                    </div>
-                    <div className={style.gridContact}>
-                        {
-                            info.Contact.map((item, index) =>
-                                index > 1 &&
-                                <Link key={item.Id} href={item.Link}>
-                                    <a className={style.grid2}>
-                                        <div className={style.sizeIcon}>
-                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                        </div>
-                                        {item.Link}
                                     </a>
                                 </Link>
                             )
                         }
                     </div>
                 </div>
-
+                <div className={style.separationLine}/>
             </div>
 
             <ImageVideoMobile/>
