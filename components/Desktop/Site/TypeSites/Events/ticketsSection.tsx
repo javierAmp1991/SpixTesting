@@ -182,7 +182,7 @@ export default function TicketsSection() {
         let control: boolean = false
         info.DateSelected.Area.forEach(item => {
             if (item.IsSelected) {
-                if (item.Zones.length >= 9) control = true
+                if (item.Zones.length >= 6) control = true
             }
         })
         return control

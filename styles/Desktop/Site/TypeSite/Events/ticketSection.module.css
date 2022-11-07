@@ -1,5 +1,5 @@
 .mainDiv {
-    --sizeSection: 400px;
+    --sizeSection: 360px;
 
 }
 
@@ -33,6 +33,7 @@
     align-content: start;
     padding-right: 8px;
     overflow-x: hidden;
+    border-radius: 0 0 0 12px;
 }
 
 
@@ -236,6 +237,8 @@
     width: max-content;
     align-items: center;
     margin: auto;
+    padding: 4px 0;
+    font-size: 16px;
 }
 
 .gridVenueDirecton {
@@ -251,8 +254,8 @@
 }
 
 .sizeGoogleMap {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
     position: relative;
 }
 
@@ -362,12 +365,13 @@
     gap: 6px;
     background: var(--gradientBlueButton);
     color: white;
-    padding: 6px 12px;
+    padding: 4px 12px;
     border-radius: 4px;
     font-weight: 500;
     width: max-content;
     font-size: 14px;
     margin: auto;
+    margin-top: 16px;
     justify-content: center;
 }
 

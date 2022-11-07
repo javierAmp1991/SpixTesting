@@ -127,7 +127,8 @@ export namespace GlobalConst{
         formIconALone: "/images/form.png",
         dollarUp: "/images/dollarUp.png",
         formIconGray: "/images/formIconGray.png",
-        emailIcon: "/images/emailIcon.png"
+        emailIcon: "/images/emailIcon.png",
+        webPageIcon: "/images/webPageIcon.png"
     }
 }
 

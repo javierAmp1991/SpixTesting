@@ -92,7 +92,7 @@ const principalInfo: PrincipalInfoEvent = {
         },
         {
             Id: "contact000",
-            Icon: GlobalConst.sourceImages.googleMap,
+            Icon: GlobalConst.sourceImages.webPageIcon,
             Link: "www.elhuevo.cl"
         },
         {
@@ -156,6 +156,15 @@ const listOfferProducts: Product[] = [
         DiscountPercent: 20,
         Include: null,
         ImagePath: "/images/product6.jpg",
+        Tag: "Energetica",
+        Rating: 5
+    },
+    {
+        Name: "Producto 5.5",
+        Price: 9990,
+        DiscountPercent: 15,
+        Include: null,
+        ImagePath: "/images/product7.jpg",
         Tag: "Energetica",
         Rating: 5
     },
@@ -250,31 +259,19 @@ const listInitialRecommended: EventCardWithPrice[] = [
         MaxPrice: 9990,
 
     },
-    /*    {
-            Id: "1234567890",
-            Title: "Marco Polo",
-            Rating: 30,
-            TotalTickets: 10000,
-            SoldTickets: 3000,
-            PathImage: "/images/marcoPolo.png",
-            Type: EventCardType.EventCardWithPrice,
-            Subtitle: "Marco Polo",
-            MinPrice: 2990,
-            MaxPrice: 9990,
+    {
+        Id: "1234567890",
+        Title: "Marco Polo",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 3000,
+        PathImage: "/images/marcoPolo.png",
+        Type: EventCardType.EventCardWithPrice,
+        Subtitle: "Marco Polo",
+        MinPrice: 2990,
+        MaxPrice: 9990,
 
-        },
-        {
-            Id: "1234sdsadw56",
-            Type: EventCardType.EventCardWithPrice,
-            Title: "Restaurant Cinzano",
-            Subtitle: "Cinzano",
-            Rating: 30,
-            TotalTickets: 10000,
-            SoldTickets: 5000,
-            PathImage: "/images/cinzano.jpg",
-            MinPrice: 2990,
-            MaxPrice: 9990,
-        },*/
+    },
 ]
 const listRecomendedAdd: EventCardWithPrice[] = [
     {
@@ -316,32 +313,32 @@ const listRecomendedAdd: EventCardWithPrice[] = [
         MaxPrice: 9990,
 
     },
-    /*    {
-            Id: "1123456",
-            Title: "Restaurant Cinzano",
-            Rating: 30,
-            TotalTickets: 10000,
-            SoldTickets: 5000,
-            PathImage: "/images/cinzano.jpg",
-            Type: EventCardType.EventCardWithPrice,
-            Subtitle: "Restaurant Cinzano",
-            MinPrice: 2990,
-            MaxPrice: 9990,
+    {
+        Id: "1123456",
+        Title: "Restaurant Cinzano",
+        Rating: 30,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/cinzano.jpg",
+        Type: EventCardType.EventCardWithPrice,
+        Subtitle: "Restaurant Cinzano",
+        MinPrice: 2990,
+        MaxPrice: 9990,
 
-        },
-        {
-            Id: "12345678901",
-            Title: "Bar Civico",
-            Rating: 300,
-            TotalTickets: 10000,
-            SoldTickets: 5000,
-            PathImage: "/images/Civico.png",
-            Type: EventCardType.EventCardWithPrice,
-            Subtitle: "Bar Civico",
-            MinPrice: 2990,
-            MaxPrice: 9990,
+    },
+    {
+        Id: "12345678901",
+        Title: "Bar Civico",
+        Rating: 300,
+        TotalTickets: 10000,
+        SoldTickets: 5000,
+        PathImage: "/images/Civico.png",
+        Type: EventCardType.EventCardWithPrice,
+        Subtitle: "Bar Civico",
+        MinPrice: 2990,
+        MaxPrice: 9990,
 
-        },*/
+    },
 ]
 const listProducts: Product[] = [
     {
@@ -377,6 +374,15 @@ const listProducts: Product[] = [
         DiscountPercent: null,
         Include: null,
         ImagePath: "/images/product6.jpg",
+        Tag: "Energetica",
+        Rating: 5
+    },
+    {
+        Name: "Producto 5.5",
+        Price: 9990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product8.jpg",
         Tag: "Energetica",
         Rating: 5
     },
