@@ -52,30 +52,17 @@ export default function DescriptionCardFullData() {
                 </div>
                 <div className={style.gridInfoNew}>
                     <div>{contactText}</div>
-                    <Link href={info.WebPage}>
-                        <div className={style.sizeIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
-                        </div>
-                    </Link>
-                    <div className={style.sizeIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.whatsaapIcon}/>
-                    </div>
-                    <Link href={info.Instagram}>
-                        <div className={style.sizeIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.instagramICon}/>
-                        </div>
-                    </Link>
-                    <Link href={info.TikTok}>
-                        <div className={style.sizeIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.tiktokIcon}/>
-                        </div>
-                    </Link>
-                    <Link href={info.Facebook}>
-                        <div className={style.sizeIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
-                        </div>
-                    </Link>
+                    {
+                        info.Contact.map(item =>
+                            <Link key={item.Id} href={item.Link}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={item.Icon}/>
+                                </div>
+                            </Link>
+                        )
+                    }
                 </div>
+
                 <div className={style.gridLeft}>
                     <button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
                         <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
@@ -93,9 +80,9 @@ export default function DescriptionCardFullData() {
                     <div className={style.button}>
                         Ver carta
                     </div>
-                    <div className={style.button}>
+                   {/* <div className={style.button}>
                         Reservar Mesa
-                    </div>
+                    </div>*/}
                 </div>
             </div>
 

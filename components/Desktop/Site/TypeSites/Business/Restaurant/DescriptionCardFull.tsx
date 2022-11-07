@@ -12,7 +12,6 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 
 
 const directionText: string = "Direccion:"
-const contactText: string = "Contactos"
 export default function DescriptionCardFull() {
     const info: PresentationCard = useContext(HeaderContext)
     let [displayMap, setDisplayMap] = useState(false)
@@ -54,51 +53,36 @@ export default function DescriptionCardFull() {
                             <span>{directionText}</span>
                             <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
                         </div>
-                        <div className={style.gridInfoNew}>
-                            <div>{contactText}</div>
-                            <Link href={info.WebPage}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
-                                </div>
-                            </Link>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.whatsaapIcon}/>
-                            </div>
-                            <Link href={info.Instagram}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.instagramICon}/>
-                                </div>
-                            </Link>
-                            <Link href={info.TikTok}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.tiktokIcon}/>
-                                </div>
-                            </Link>
-                            <Link href={info.Facebook}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
-                                </div>
-                            </Link>
-                        </div>
                     </div>
 
                     <div className={style.gridButtons}>
                         <button className={style.button}>
                             Ver carta
                         </button>
-                        <button className={style.button}>
+                       {/* <button className={style.button}>
                             Reservar Mesa
-                        </button>
+                        </button>*/}
                     </div>
                 </div>
             </div>
             <div className={style.gridImageButton}>
+                <div className={style.gridContact}>
+                    {
+                        info.Contact.map(item =>
+                            <Link key={item.Id} href={item.Link}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={item.Icon}/>
+                                </div>
+                            </Link>
+                        )
+                    }
+                </div>
+
                 <div className={style.gridSideImage}>
                     {
                         info.SideImages.map((e, index) =>
                             <button key={index} onClick={() => handleClickImage(e)} className={
-                                index == 0 ? style.top : index == 1 ? style.center : style.bottom
-                            }>
+                                index == 0 ? style.top : index == 1 ? style.center : style.bottom}>
                                 <div className={style.sizeSideImage}>
                                     <Image layout={"fill"} src={e}/>
                                 </div>
@@ -106,14 +90,6 @@ export default function DescriptionCardFull() {
                         )
                     }
                 </div>
-                {/* <div className={style.gridButtons}>
-                    <button className={style.button}>
-                        Ver carta
-                    </button>
-                    <button className={style.button}>
-                        Reservar Mesa
-                    </button>
-                </div>*/}
             </div>
             {
                 displayMap &&

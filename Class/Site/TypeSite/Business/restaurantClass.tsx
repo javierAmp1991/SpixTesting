@@ -2,6 +2,7 @@ import {EventCardWithPrice} from "../../../../dataDemo/EventView/eventVerticalVi
 import {Product} from "../../../../dataDemo/data";
 import {MapPopUpProp} from "../../../../components/Desktop/Misc/mapPopUp";
 import {ReviewItem} from "../../../Misc/GlobalClass";
+import {ContactItems} from "../Events/events";
 
 export class PresentationCard {
     Banner: string
@@ -11,6 +12,7 @@ export class PresentationCard {
     Name: string
     Description: string
     Venue: MapPopUpProp
+    Contact: ContactItems[]
     Instagram: string
     WebPage: string
     Whatssapp: number

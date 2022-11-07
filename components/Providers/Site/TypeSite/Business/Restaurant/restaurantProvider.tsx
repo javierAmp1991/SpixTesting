@@ -8,6 +8,7 @@ import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../.
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {FormLink, News, Product} from "../../../../../../dataDemo/data";
 import {ProviderNewsEvents} from "../../../../../../Class/Site/TypeSite/Events/events";
+import {GlobalConst} from "../../../../../../public/globalConst";
 
 export const HeaderContext = createContext(null)
 export const SectionProductsContext = createContext(null)
@@ -256,6 +257,38 @@ const headerData: PresentationCard = {
         ImageMap: "/images/googleMapHuevo.jpg",
         LinkGoogleMap: "https://goo.gl/maps/GdriuQJvA4vEFnK48"
     },
+    Contact: [
+        {
+            Id: "contact005",
+            Icon: GlobalConst.sourceImages.emailIcon,
+            Link: "elhuevo@hotmail.com"
+        },
+        {
+            Id: "contact000",
+            Icon: GlobalConst.sourceImages.webPageIcon,
+            Link: "www.elhuevo.cl"
+        },
+        {
+            Id: "contact002",
+            Icon: GlobalConst.sourceImages.whatsaapIcon,
+            Link: "+56934579283"
+        },
+        {
+            Id: "contact001",
+            Icon: GlobalConst.sourceImages.tiktokIcon,
+            Link: "/test"
+        },
+        {
+            Id: "contact003",
+            Icon: GlobalConst.sourceImages.instagramICon,
+            Link: "/test2"
+        },
+        {
+            Id: "contact004",
+            Icon: GlobalConst.sourceImages.facebookIcon,
+            Link: "/test3"
+        }
+    ],
     Whatssapp: 987347654,
     Instagram: "/",
     TikTok: "/",
