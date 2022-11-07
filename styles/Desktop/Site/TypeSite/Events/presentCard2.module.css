@@ -240,7 +240,7 @@
 }
 
 .tagCategory {
-    --colorTag: orange;
+    --colorTag: #ff8000;
     border: 1px solid var(--colorTag);
     color: var(--colorTag);
     padding: 2px 12px;

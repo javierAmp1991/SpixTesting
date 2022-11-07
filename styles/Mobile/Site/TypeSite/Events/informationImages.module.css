@@ -114,9 +114,8 @@
 }
 
 .tagCategory {
-    --colorTag: rgba(96, 34, 154, 0.7);
+    --colorTag:  #ff8000;
     border: 1px solid var(--colorTag);
-    background: rgba(96, 34, 154, 0.08);
     color: var(--colorTag);
     padding: 2px 12px;
     border-radius: 16px;
