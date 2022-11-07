@@ -1,6 +1,6 @@
 import style from "/styles/Mobile/Site/TypeSite/Events/ticketSection.module.css"
 import Image from "next/image";
-import {useContext, useState} from "react";
+import React, {useContext, useState} from "react";
 import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
 import {ProviderSectionTicket} from "../../../../../Class/Site/TypeSite/Events/events";
@@ -10,6 +10,7 @@ import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import {createPortal} from "react-dom";
 
 const idPortal: string = GlobalId.globalIds.idPortal
+const buyTickets: string = "Comprar Entrada"
 
 export default function TicketsSectionMobile() {
     const info: ProviderSectionTicket = useContext(TicketSectionContext)
@@ -115,17 +116,24 @@ export default function TicketsSectionMobile() {
                                             </div>
                                         }
                                     </div>
-                                    <div className={style.rightDiv}>
+                                   {/* <div className={style.rightDiv}>
                                         <div className={style.buttonStyle}>
                                             Comprar
                                         </div>
-                                    </div>
+                                    </div>*/}
                                 </div>
                             )
                         )
                     }
                 </div>
             </div>
+
+            <button className={style.buttonStyle}>
+                {buyTickets}
+                <div className={style.sizeIconButton}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
+                </div>
+            </button>
 
             {
                 displayMap &&

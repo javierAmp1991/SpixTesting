@@ -91,14 +91,14 @@ const principalInfo: PrincipalInfoEvent = {
             Link: "www.elhuevo.cl"
         },
         {
-            Id: "contact001",
-            Icon: GlobalConst.sourceImages.tiktokIcon,
-            Link: "/test"
-        },
-        {
             Id: "contact002",
             Icon: GlobalConst.sourceImages.whatsaapIcon,
             Link: "+56934579283"
+        },
+        {
+            Id: "contact001",
+            Icon: GlobalConst.sourceImages.tiktokIcon,
+            Link: "/test"
         },
         {
             Id: "contact003",

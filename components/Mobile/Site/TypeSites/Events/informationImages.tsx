@@ -91,31 +91,50 @@ export default function InformationImages() {
                 </div>
                 <SocialBar/>
                 <div className={style.separationLine}/>
-                <div className={style.gridContact}>
+                <div className={style.contContact}>
                     {contactText}
-                    {
-                        info.Contact.map(item =>
-                            <Link key={item.Id} href={item.Link}>
-                                <a className={style.grid2}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                    </div>
-                                    {item.Link}
-                                </a>
-                            </Link>
-                        )
-                    }
+                    <div className={style.gridContact}>
+                        {
+                            info.Contact.map((item, index) =>
+                                index <= 1 &&
+                                <Link key={item.Id} href={item.Link}>
+                                    <a className={style.grid2}>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                        </div>
+                                        {item.Link}
+                                    </a>
+                                </Link>
+                            )
+                        }
+                    </div>
+                    <div className={style.gridContact}>
+                        {
+                            info.Contact.map((item, index) =>
+                                index > 1 &&
+                                <Link key={item.Id} href={item.Link}>
+                                    <a className={style.grid2}>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                        </div>
+                                        {item.Link}
+                                    </a>
+                                </Link>
+                            )
+                        }
+                    </div>
                 </div>
+
             </div>
 
             <ImageVideoMobile/>
 
-            <button onClick={handleLevelUser} className={style.buttonStyle}>
+            {/*<button onClick={handleLevelUser} className={style.buttonStyle}>
                 {buyTickets}
                 <div className={style.sizeIconButton}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
                 </div>
-            </button>
+            </button>*/}
 
             {
                 displayLevelUser &&
