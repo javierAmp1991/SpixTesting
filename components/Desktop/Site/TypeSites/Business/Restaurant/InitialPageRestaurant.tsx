@@ -16,6 +16,7 @@ import ReviewRestaurant from "./reviewRestaurant";
 import InOfferRestaurant from "./inOfferRestaurant";
 import RecomendedRestarant from "./recomendedRestarant";
 import QuestionRestaurant from "./questionRestaurant";
+import NavSectionProducts from "../Default/NavSectionProducts";
 
 const idTest: string = "isTestDesktopScrollControl"
 
@@ -69,14 +70,17 @@ export default function InitialPageRestaurant() {
                 <InSearchRestaurant/>
                 <div className={style.separationLine}/>
 
+                <NavSectionProducts item={infoSectionProducts}/>
+                <div className={style.separationLine}/>
+
                 <InOfferRestaurant/>
                 <div className={style.separationLine}/>
 
                 <RecomendedRestarant/>
                 <div className={style.separationLine}/>
 
-                <NewsRestaurant/>
-                <div className={style.separationLine}/>
+{/*                <NewsRestaurant/>
+                <div className={style.separationLine}/>*/}
 
                 <div className={style.gridSectionProducts} id={idTest}>
                     {

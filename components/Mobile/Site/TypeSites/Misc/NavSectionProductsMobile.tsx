@@ -1,10 +1,8 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Default/navSectionProducts.module.css"
-import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {useContext} from "react";
-import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Default/defaultProvider";
+import style from "/styles/Mobile/Site/TypeSite/Misc/navSectionProducts.module.css"
 import Image from "next/image";
+import {SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 
-export default function NavSectionProducts({item} : {item: SectionProductItem[]}) {
+export default function NavSectionProductsMobile({item}: { item: SectionProductItem[] }) {
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id)
         data.scrollIntoView({behavior: "smooth"})
@@ -21,7 +19,7 @@ export default function NavSectionProducts({item} : {item: SectionProductItem[]}
                         <div className={style.totalProducts}>
                             ({item.ListProducts.length} productos)
                         </div>
-                        <div className={index == 0? style.sizeImage2 : style.sizeImage}>
+                        <div className={index == 0 ? style.sizeImage2 : style.sizeImage}>
                             <Image layout={"fill"} src={item.ListProducts[index].ImagePath}/>
                         </div>
 

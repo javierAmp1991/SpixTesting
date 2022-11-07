@@ -73,3 +73,9 @@
     display: grid;
     gap: 40px;
 }
+
+.gridForm{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

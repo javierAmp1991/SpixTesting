@@ -26,6 +26,7 @@ import {FormLink} from "../../../../../../dataDemo/data";
 import FormViewMobile from "../../../../Misc/formViewMobile";
 import LayoutWithNavCircleMobileFull from "../../../../Layouts/layoutWithNavCircleMobileFull";
 import utilities from "/styles/utilities.module.css";
+import NavSectionProductsRestaurantMobile from "./NavSectionProducts";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -84,6 +85,9 @@ export default function InitialPageRestaurantMobile() {
                             <FormViewMobile key={item.text} item={item}/>)
                     }
                 </LayoutWithNavCircleMobileFull>
+
+                <NavSectionProductsRestaurantMobile/>
+                <div className={style.separationLine}/>
 
                 <div className={style.paddingGeneral}>
                     <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>

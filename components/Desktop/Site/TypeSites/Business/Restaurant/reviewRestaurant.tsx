@@ -14,7 +14,7 @@ export default function ReviewRestaurant(){
         PositionArrowX: "-40px",
         Padding: 0,
         Gap: 16,
-        Grid: 4,
+        Grid: 3,
         IsButtonVisible: false,
         LeftArrow: () => listReview.LeftClick(),
         RightArrow: () => listReview.RightClick()
@@ -24,7 +24,7 @@ export default function ReviewRestaurant(){
             <LayoutCarrouselDesktop layoutProp={layoutPropReview}>
                 {
                     listReview.InitialReview.map((item) =>
-                        <ReviewViewVertical key={item.Id} item={item}/>
+                        <ReviewViewShort key={item.Id} item={item}/>
                     )
                 }
             </LayoutCarrouselDesktop>

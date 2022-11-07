@@ -63,6 +63,7 @@ export default function InitialPageDefault() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
 
+
     return (
         <>
             <div className={style.bannerContainer}>
@@ -70,7 +71,7 @@ export default function InitialPageDefault() {
                 <NavMenu idItems={idSections}/>
             </div>
             <div className={style.mainDiv}>
-                <NavSectionProducts/>
+                <NavSectionProducts item={infoSectionProducts}/>
                 <InSearchDefault/>
                 <div className={style.separationLine}/>
 
