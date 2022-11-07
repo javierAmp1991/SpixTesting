@@ -5,6 +5,7 @@ import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import {ProviderRecommended} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {RecommendedContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
+const title: string = "Spix te recomienda"
 
 export default function RecomendedRestarant() {
     const infoRecomended: ProviderRecommended = useContext(RecommendedContext)
@@ -19,7 +20,7 @@ export default function RecomendedRestarant() {
         RightArrow: () => infoRecomended.RightClick()
     }
     return (
-        <LayoutTitle title={"Recomendados"}>
+        <LayoutTitle title={title}>
             <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
                 {
                     infoRecomended.InitialItems.map((item) =>

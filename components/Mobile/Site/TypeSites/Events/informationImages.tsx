@@ -39,55 +39,22 @@ export default function InformationImages() {
                     )}
                 </div>
                 <div className={style.gridImageName}>
-                    {/* <div className={style.gradient}>
-                        <div className={style.sizeLogo}>
-                            <Image layout={"fill"} src={info.PathLogo}/>
-                        </div>
-                    </div>*/}
                     <div className={style.gridInfo}>
                         <div className={style.name}>
                             {info.Name}
                         </div>
-                        {/*<RatingStarVar item={info.Rating} size={16}/>*/}
-                        {/*<div className={style.gridrestrictions}>
-                            <div className={style.colorRestriction}>
-                                {contactText}
-                            </div>
-                            <Link href={info.WebPage}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.googleMap}/>
-                                </div>
-                            </Link>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.whatsaapIcon}/>
-                            </div>
-                            <Link href={info.Instagram}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.instagramICon}/>
-                                </div>
-                            </Link>
-                            <Link href={info.TikTok}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.tiktokIcon}/>
-                                </div>
-                            </Link>
-                            <Link href={info.Facebook}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
-                                </div>
-                            </Link>
-                            {
-                                info.Restrictions.map((item, index) =>
-                                    <a className={style.sizeRestrictionIcon} key={index}>
-                                        <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                    </a>
-                                )
-                            }
-                        </div>*/}
                     </div>
                 </div>
                 <div className={style.description}>
                     {info.Description}
+                </div>
+                <div className={style.gridProduceLogo}>
+                    <div>
+                        <span className={style.produce}>Produce:</span> El Huevo
+                    </div>
+                    <div className={style.sizeLogo}>
+                        <Image layout={"fill"} src={info.PathLogo}/>
+                    </div>
                 </div>
                 <div className={style.gridSocialRedes}>
                     <SocialBar/>

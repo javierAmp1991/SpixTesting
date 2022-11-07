@@ -10,7 +10,7 @@ import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import {createPortal} from "react-dom";
 
 const idPortal: string = GlobalId.globalIds.idPortal
-const buyTickets: string = "Comprar Entrada"
+const buyTickets: string = "Comprar Entradas"
 
 export default function TicketsSectionMobile() {
     const info: ProviderSectionTicket = useContext(TicketSectionContext)

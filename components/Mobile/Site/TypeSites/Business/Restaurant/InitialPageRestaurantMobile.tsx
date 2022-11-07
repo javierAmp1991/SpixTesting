@@ -103,7 +103,7 @@ export default function InitialPageRestaurantMobile() {
                 <div className={style.separationLine}/>
 
                 <div className={style.paddingGeneral}>
-                    <LayoutTitleMobile isOverflow={true} title={"Recomendados"}>
+                    <LayoutTitleMobile isOverflow={true} title={"Spix te recomienda"}>
                         <LayoutCarrouselMobile gapLayout={16}>
                             {
                                 infoRecomended.InitialItems.map((item) =>

@@ -5,7 +5,6 @@ import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/res
 import {useContext} from "react";
 import {ReviewsSectionContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
-import ReviewViewVertical from "../../../../Misc/ReviewViewVertical";
 
 export default function ReviewRestaurant(){
     const listReview: ProviderReview = useContext(ReviewsSectionContext)

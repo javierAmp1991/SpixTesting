@@ -79,6 +79,15 @@ export default function PresentCard2() {
                         {info.Description}
                     </div>
 
+                    <div className={style.gridProduceLogo}>
+                        <div>
+                            <span className={style.produce}>Produce:</span> El Huevo
+                        </div>
+                        <div className={style.sizeLogo}>
+                            <Image layout={"fill"} src={info.PathLogo}/>
+                        </div>
+                    </div>
+
                     <div className={style.gridSocialRedes}>
                         <SocialBarVar sizeIcon={16}/>
                         <div className={style.gridContact}>
@@ -95,16 +104,6 @@ export default function PresentCard2() {
                             }
                         </div>
                     </div>
-
-
-                    {/* <div className={style.gridProduceLogo}>
-                        <div>
-                            Produce
-                        </div>
-                        <div className={style.sizeLogo}>
-                            <Image layout={"fill"} src={info.PathLogo}/>
-                        </div>
-                    </div>*/}
 
                     <div className={style.separationLine}/>
 
