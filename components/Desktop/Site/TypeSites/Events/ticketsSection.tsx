@@ -26,8 +26,8 @@ export default function TicketsSection() {
         LinkGoogleMap: info.DateSelected.Date.LinkGoogleMap,
         Name: info.DateSelected.Date.NameVenue,
     }
-    const isOverflow: boolean = getIsOverFlow()
     const isMoreThanOne: boolean = getLargeArea()
+    const isOverflow: boolean = getIsOverFlow()
 
     return (
         <div className={style.mainDiv}>
@@ -99,7 +99,16 @@ export default function TicketsSection() {
                                     )
                                 )
                             }
+
                         </div>
+                        {
+                            isOverflow &&
+                            <div className={style.lineUnder}/>
+                        }
+                        {
+                            isOverflow &&
+                            <div className={style.arrowUnder}>v</div>
+                        }
                     </div>
                     <button className={style.buttonStyle}>
                         {buyTickets}
@@ -182,7 +191,7 @@ export default function TicketsSection() {
         let control: boolean = false
         info.DateSelected.Area.forEach(item => {
             if (item.IsSelected) {
-                if (item.Zones.length >= 6) control = true
+                if (item.Zones.length >= 7) control = true
             }
         })
         return control
