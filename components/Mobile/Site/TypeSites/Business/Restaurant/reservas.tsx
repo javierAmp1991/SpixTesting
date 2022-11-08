@@ -22,7 +22,7 @@ export default function ReservasMobile() {
                     <div className={style.gridDates}>
                         <div className={style.gridHoursLapse}>
                             {
-                                [...Array(24)].map((e, index) =>
+                                [...Array(18)].map((e, index) =>
 
                                     <div key={index} className={index % 2 == 0 ? style.disponibleLapse : style.noDisponibleLapse}>
                                         <div>0{index}:00 hrs.</div>
