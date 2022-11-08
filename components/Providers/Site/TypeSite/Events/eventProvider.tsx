@@ -600,7 +600,7 @@ const allDateToFind: DateAreaSelected[] = [
         Area: [
             {
                 Id: "dateSelected001",
-                Name: "Area 001.1",
+                Name: "Primer piso",
                 Zones: [
                     {
                         Id: "Zona 001",
@@ -679,7 +679,7 @@ const allDateToFind: DateAreaSelected[] = [
             },
             {
                 Id: "dateSelected002",
-                Name: "Area 002.1",
+                Name: "Segundo piso",
                 Zones: [
                     {
                         Id: "Zona 001",
@@ -722,7 +722,7 @@ const allDateToFind: DateAreaSelected[] = [
             },
             {
                 Id: "dateSelected003",
-                Name: "Area 003.1",
+                Name: "VIP",
                 Zones: [
                     {
                         Id: "Zona 001",
@@ -774,7 +774,7 @@ const allDateToFind: DateAreaSelected[] = [
         Area: [
             {
                 Id: "dateSelected001",
-                Name: "Area 001.2",
+                Name: "Primer Piso",
                 Zones: [
                     {
                         Id: "Zona 001",
@@ -853,7 +853,7 @@ const allDateToFind: DateAreaSelected[] = [
         Area: [
             {
                 Id: "dateSelected001",
-                Name: "Area 001.3",
+                Name: "Primer piso",
                 Zones: [
                     {
                         Id: "Zona 001",
@@ -914,7 +914,7 @@ const allDateToFind: DateAreaSelected[] = [
             },
             {
                 Id: "dateSelected002",
-                Name: "Area 002.3",
+                Name: "Segundo piso",
                 Zones: [
                     {
                         Id: "Zona 001",
@@ -955,7 +955,7 @@ const allDateToFind: DateAreaSelected[] = [
                 ],
                 IsSelected: false
             },
-            {
+ /*           {
                 Id: "dateSelected003",
                 Name: "Area 003.3",
                 Zones: [
@@ -1022,7 +1022,7 @@ const allDateToFind: DateAreaSelected[] = [
                     }
                 ],
                 IsSelected: false
-            },
+            },*/
 
         ],
         MapImage: `/images/juventusFinal.svg`

@@ -131,6 +131,7 @@
     grid-template-columns: repeat(3, 148px);
     padding-bottom: 20px;
     gap: 6px;
+    justify-content: center;
 }
 
 .hour {
