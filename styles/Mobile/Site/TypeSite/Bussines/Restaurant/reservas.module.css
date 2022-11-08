@@ -98,7 +98,7 @@
     border: 2px solid green;
     background: white;
     position: absolute;
-    left: -28px;
+    left: -24px;
     border-radius: 50%;
 }
 
@@ -124,7 +124,7 @@
     border: 2px solid red;
     background: white;
     position: absolute;
-    right: -28px;
+    right: -24px;
     border-radius: 50%;
 }
 
