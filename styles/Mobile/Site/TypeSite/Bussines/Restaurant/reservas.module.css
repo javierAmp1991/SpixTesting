@@ -85,7 +85,7 @@
     font-size: 14px;
     position: relative;
     border-bottom: 2px solid #10c010;
-    width: 70%;
+    width: 40%;
     color: var(--colorPrimaryTextDesktop);
     margin-left: auto;
     margin-right: 16px;
@@ -98,7 +98,7 @@
     border: 2px solid green;
     background: white;
     position: absolute;
-    right: -16px;
+    left: -26px;
     border-radius: 50%;
 }
 
@@ -112,7 +112,7 @@
     position: relative;
     border-bottom: 2px solid #ff4a4a;
     color: var(--colorPrimaryTextDesktop);
-    width: 70%;
+    width: 40%;
     margin-right: auto;
     margin-left: 16px;
 }
@@ -124,7 +124,7 @@
     border: 2px solid red;
     background: white;
     position: absolute;
-    left: -16px;
+    right: -26px;
     border-radius: 50%;
 }
 
@@ -195,8 +195,6 @@
 
 .gridHoursLapse {
     display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(2, 1fr);
     position: relative;
     padding: 0 12px;
 }
