@@ -21,7 +21,6 @@
     border-radius: 12px;
     position: relative;
     border: 1px solid rgba(0, 0, 0, .1);
-    background: linear-gradient(90deg, rgba(0, 0, 0, .01) 30%, white 100%);
     overflow: hidden;
 }
 
@@ -35,27 +34,26 @@
     position: relative;
     border: 1px solid rgba(0, 0, 0, .1);
     overflow: hidden;
-    background: linear-gradient(90deg, white 30%, rgba(0, 0, 0, .02) 100%);
     text-align: right;
     padding-right: 16px;
     padding-top: 12px;
 }
 
 .sizeImage {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     position: absolute;
-    bottom: -25px;
-    left: -10px;
+    bottom: 8px;
+    left: 8px;
     opacity: .7;
 }
 
 .sizeImage2 {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     position: absolute;
-    bottom: -45px;
-    right: 0;
+    bottom: 8px;
+    right: 8px;
     opacity: .8;
 }
 

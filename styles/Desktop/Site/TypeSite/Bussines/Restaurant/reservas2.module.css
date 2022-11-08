@@ -1,0 +1,138 @@
+.mainCont {
+    --firstMargin: 52%;
+    --secondMargin: 40%;
+    width: 100%;
+}
+
+.mainDiv {
+    display: grid;
+}
+
+.gridHours {
+    display: grid;
+    gap: 12px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+
+.styleButton {
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: var(--gradientBlueButton);
+    color: white;
+    width: max-content;
+    margin: 24px auto auto auto;
+    display: grid;
+}
+
+.tagDisponible1 {
+    color: white;
+    background: #10c010;
+    padding: 2px 12px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    margin-right: 12px;
+}
+
+.tagReservado1 {
+    color: white;
+    background: #ff4a4a;
+    padding: 2px 12px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tagDisponible2 {
+    background: #10c010;
+    height: 2px;
+    border-radius: 1px;
+    margin-right: 12px;
+}
+
+.tagReservado2 {
+    background: #ff4a4a;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.gridHoursLapse {
+    display: grid;
+    position: relative;
+    padding: 16px 12px;
+}
+
+.gridHoursLapse:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    position: absolute;
+    left: calc(50% - 1px);
+}
+
+.lineCircle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    margin: auto;
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    padding-bottom: 32px;
+    gap: 2px;
+}
+
+.hour {
+    padding-bottom: 16px;
+    font-size: 16px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.title {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.baseTag {
+    padding: 6px 8px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.leftSide {
+    margin-right: var(--firstMargin);
+    margin-left: var(--secondMargin);
+}
+
+.rightSide {
+    margin-left: var(--firstMargin);
+    margin-right: var(--secondMargin);
+}
+
+.baseCircle {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+}
+
+

@@ -235,4 +235,10 @@
     gap: 24px;
 }
 
+.title{
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
 
