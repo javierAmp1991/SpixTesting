@@ -8,7 +8,7 @@
 .gridSelectionZone {
     display: grid;
     gap: 10px;
-    align-content: start;
+    align-content: end;
 }
 
 .contImage {

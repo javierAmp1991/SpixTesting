@@ -27,6 +27,7 @@ import FormViewMobile from "../../../../Misc/formViewMobile";
 import LayoutWithNavCircleMobileFull from "../../../../Layouts/layoutWithNavCircleMobileFull";
 import utilities from "/styles/utilities.module.css";
 import NavSectionProductsRestaurantMobile from "./NavSectionProducts";
+import ReservasMobile from "./reservas";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -85,6 +86,8 @@ export default function InitialPageRestaurantMobile() {
                             <FormViewMobile key={item.text} item={item}/>)
                     }
                 </LayoutWithNavCircleMobileFull>
+
+                <ReservasMobile/>
 
                 <NavSectionProductsRestaurantMobile/>
                 <div className={style.separationLine}/>

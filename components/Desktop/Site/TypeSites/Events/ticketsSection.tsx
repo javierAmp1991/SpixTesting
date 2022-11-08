@@ -105,10 +105,6 @@ export default function TicketsSection() {
                             isOverflow &&
                             <div className={style.lineUnder}/>
                         }
-                        {
-                            isOverflow &&
-                            <div className={style.arrowUnder}>v</div>
-                        }
                     </div>
                     <button className={style.buttonStyle}>
                         {buyTickets}

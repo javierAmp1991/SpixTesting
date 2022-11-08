@@ -10,13 +10,13 @@ import {
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import DescriptionCardFull from "./DescriptionCardFull";
 import NavProductsSection from "./navProductsSection";
-import NewsRestaurant from "./NewsRestaurant";
 import InSearchRestaurant from "./inSearch";
 import ReviewRestaurant from "./reviewRestaurant";
 import InOfferRestaurant from "./inOfferRestaurant";
 import RecomendedRestarant from "./recomendedRestarant";
 import QuestionRestaurant from "./questionRestaurant";
 import NavSectionProducts from "../Default/NavSectionProducts";
+import Reservas from "./reservas";
 
 const idTest: string = "isTestDesktopScrollControl"
 
@@ -65,6 +65,9 @@ export default function InitialPageRestaurant() {
                 <NavProductsSection hasBeenReached={hasBeenReached}/>
 
                 <ReviewRestaurant/>
+                <div className={style.separationLine}/>
+
+                <Reservas/>
                 <div className={style.separationLine}/>
 
                 <InSearchRestaurant/>

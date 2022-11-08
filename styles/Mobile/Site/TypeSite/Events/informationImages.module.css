@@ -44,6 +44,7 @@
     position: relative;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
 }
 
 .gridrestrictions {
@@ -173,6 +174,7 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 8px;
+    color: var(--colorSecundaryTextDesktop);
 }
 
 .produce{
