@@ -120,7 +120,7 @@ export default function TicketsSection() {
                             isMoreThanOne ?
                                 <div className={style.gridArrowsTags}>
                                     <button style={{marginRight: 16}} className={style.arrowStyle}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow}/>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                                     </button>
                                     <div className={style.select}>
                                         {
@@ -133,7 +133,7 @@ export default function TicketsSection() {
                                         }
                                     </div>
                                     <button style={{marginLeft: 16}} className={style.arrowStyle}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow}/>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                                     </button>
                                 </div>
                                 :
@@ -144,7 +144,7 @@ export default function TicketsSection() {
                     </div>
 
                     <div className={style.sizeImage}>
-                        <Image layout={"fill"} objectFit={"contain"} src={info.DateSelected.MapImage}/>
+                        <Image layout={"fill"} objectFit={"contain"} src={info.DateSelected.MapImage} alt={""}/>
                     </div>
 
                     <button onClick={handleDisplayMap} className={style.gridDirection}>

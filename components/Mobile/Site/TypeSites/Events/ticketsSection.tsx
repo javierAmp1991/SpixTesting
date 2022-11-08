@@ -72,7 +72,7 @@ export default function TicketsSectionMobile() {
                 }
 
                 <div className={style.sizeImage}>
-                    <Image layout={"fill"} objectFit={"contain"} src={"/images/juventusFinal.svg"}/>
+                    <Image layout={"fill"} objectFit={"contain"} src={"/images/juventusFinal.svg"} alt={""}/>
                 </div>
                 <div>
                     <button onClick={handleDisplayMap} className={style.gridDirection}>
