@@ -88,6 +88,7 @@ export default function InitialPageRestaurantMobile() {
                 </LayoutWithNavCircleMobileFull>
 
                 <ReservasMobile/>
+                <div className={style.separationLine}/>
 
                 <NavSectionProductsRestaurantMobile/>
                 <div className={style.separationLine}/>
