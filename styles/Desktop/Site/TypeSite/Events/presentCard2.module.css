@@ -21,12 +21,14 @@
     background: var(--gradientProfileBlue);
     border-radius: 50%;
     padding: 3px;
+    width: max-content;
+    height: max-content;
 }
 
 .gridInfo {
     display: grid;
     width: 100%;
-    gap: 12px;
+    gap: 16px;
     align-content: center;
     /*    background: #fff4f4;
         background: linear-gradient(270deg, transparent 0%, rgba(0,0,0,.05) 100%);
@@ -49,8 +51,8 @@
 }
 
 .sizeLogo {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
@@ -76,7 +78,8 @@
 }
 
 .name {
-    font-size: 36px;
+    font-size: 28px;
+    line-height: 34px;
     color: var(--colorTitlesDesktop);
     font-weight: 600;
 }
@@ -161,7 +164,6 @@
 
 .gridDates {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     width: 90%;
@@ -255,12 +257,6 @@
     gap: 12px;
 }
 
-.sizeLogo {
-    width: 20px;
-    height: 20px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
-}
-
 .gridProduceLogo {
     display: grid;
     grid-template-columns: repeat(2, max-content);
@@ -269,7 +265,7 @@
     color: var(--colorSecundaryTextDesktop);;
 }
 
-.produce{
+.produce {
     color: var(--colorSecundaryTextDesktop);
 }
 
@@ -305,4 +301,40 @@
     justify-content: space-between;
     width: 85%;
     padding-bottom: 8px;
+}
+
+.gridSelectionZone {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 10px;
+    align-content: end;
+    justify-content: end;
+    width: 85%;
+    padding-top: 12px;
+}
+
+.contImage {
+    position: relative;
+    width: 50px;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.playIconProperties {
+    --sizePlay: 10px;
+    width: var(--sizePlay);
+    height: var(--sizePlay);
+    position: absolute;
+    top: calc(50% - (var(--sizePlay) / 2));
+    left: calc(50% - (var(--sizePlay) / 2));
+}
+
+.gridLogoName{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+    width: 60%;
 }

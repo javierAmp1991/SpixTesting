@@ -18,7 +18,8 @@ export default function ImageVideo() {
     }
     return (
         <div className={style.gridImageSelection}>
-           <div className={style.gridSelectionZone}>
+            <div/>
+          {/* <div className={style.gridSelectionZone}>
                 {
                     info.Images.map((item, index) =>
                         index == 0 ?
@@ -42,7 +43,7 @@ export default function ImageVideo() {
                             </button>
                     )
                 }
-            </div>
+            </div>*/}
             <div className={style.contShowImage}>
                 {
                     isVideo ?
