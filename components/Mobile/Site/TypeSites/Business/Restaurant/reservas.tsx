@@ -19,18 +19,21 @@ export default function ReservasMobile() {
                             Reservado
                         </div>
                     </div>
+                    <div className={style.beforeAfterUp}/>
                     <div className={style.gridDates}>
                         <div className={style.gridHoursLapse}>
                             {
                                 [...Array(24)].map((e, index) =>
 
-                                    <div key={index} className={index % 2 == 0 ? style.disponibleLapse : style.noDisponibleLapse}>
+                                    <div key={index}
+                                         className={index % 2 == 0 ? style.disponibleLapse : style.noDisponibleLapse}>
                                         <div>0{index}:00 hrs.</div>
                                     </div>
                                 )
                             }
                         </div>
                     </div>
+                    <div className={style.beforeAfterDown}/>
                 </div>
                 <button className={style.styleButton}>
                     Reservar tu Mesa

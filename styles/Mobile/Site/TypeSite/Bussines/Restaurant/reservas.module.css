@@ -196,15 +196,14 @@
 .gridHoursLapse {
     display: grid;
     position: relative;
-    padding: 0 12px;
+    padding: 8px 12px;
 }
-
 
 .gridHoursLapse:before {
     content: "";
     width: 2px;
     height: 100%;
-    background: rgba(0,0,0,.1);
+    background: rgba(0, 0, 0, .1);
     position: absolute;
     top: 0;
     left: calc(50% - 1px);
@@ -223,11 +222,26 @@
     color: var(--colorPrimaryTextDesktop);
 }
 
-.gridDates {
-    display: grid;
-    gap: 24px;
+.gridDates
+.beforeAfter {
+    position: relative;
 }
 
+.beforeAfterUp {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    margin: auto;
+}
+
+.beforeAfterDown {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    margin: auto;
+}
 
 
 
