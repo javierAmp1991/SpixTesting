@@ -324,7 +324,8 @@ const headerData: PresentationCard = {
     TikTok: "/",
     Facebook: "/",
     WebPage: "/",
-    SideImages: ["/images/galleteria1.jpg", "/images/galleteria2.jpg", "/images/galleteria3.jpg"]
+    SideImages: ["/images/galleteria1.jpg", "/images/galleteria2.jpg", "/images/galleteria3.jpg"],
+    Contact:[]
 
 }
 const listSectionProducst: SectionProductItem[] = [

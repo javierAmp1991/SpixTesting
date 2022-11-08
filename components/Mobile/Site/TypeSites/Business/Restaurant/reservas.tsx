@@ -24,7 +24,7 @@ export default function ReservasMobile() {
                             {
                                 [...Array(24)].map((e, index) =>
 
-                                    <div className={index % 2 == 0 ? style.disponibleLapse : style.noDisponibleLapse}>
+                                    <div key={index} className={index % 2 == 0 ? style.disponibleLapse : style.noDisponibleLapse}>
                                         <div>0{index}:00 hrs.</div>
                                     </div>
                                 )
