@@ -23,7 +23,9 @@ export default function MainPageMobile() {
                 <InformationImages/>
                 <div className={style.separationLine}/>
                 <TicketsSectionMobile/>
+                <div className={style.separationLine}/>
                 <InSearch/>
+                <div className={style.separationLine}/>
                 <OfferEventsMobile/>
                 <OtherEvents/>
                 <ProductsEventMobile/>

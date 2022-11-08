@@ -23,25 +23,9 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
         const newPointControl = Math.round(scrollEvent / sizeContainer);
         setCircleSelected(circleSelected = newPointControl)
 
-        /*if (scrollEvent > newPointControl) {
-            let test1 = scrollEvent > sizeContainer * (pointControl + 1) * 0.7
-            if (test1) {
-                setPointControl(pointControl + 1 > (children.length - 1) ?
-                    pointControl = (children.length - 1) : pointControl += 1)
-                handleRight()
-            }
-        } else {
-            let test3 = scrollEvent < sizeContainer * (pointControl * 0.4)
-            if (test3) {
-                setPointControl(pointControl - 1 < 0 ?
-                    pointControl = 0 : pointControl -= 1)
-                handleLeft()
-            }
-        }*/
-
     }
     return (
-        <>
+        <div>
             <div onScroll={handleScroll} ref={divRef} className={style.gridImageSection}>
                 {children}
             </div>
@@ -52,7 +36,7 @@ export default function LayoutWithNavCircleMobile({children, isDarkMode}:
                              ${index == circleSelected ? cssStyle.navCircleColor : style.styleNavCircleNoSelected}`}/>)
                 }
             </div>
-        </>
+        </div>
     )
 
     function getCssStyle() {

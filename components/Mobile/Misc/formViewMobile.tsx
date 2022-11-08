@@ -8,21 +8,23 @@ import Link from "next/link";
 export default function FormViewMobile({item}: { item: FormLink }) {
     return (
         <Link href={item.link}>
-            <a className={style.gridForm}>
-                <div className={utilities.gridContentCenter}>
-                    <div className={style.sizeIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.formIconGray} alt=""/>
+            <div className={style.mainPadding}>
+                <a className={style.gridForm}>
+                    <div className={utilities.gridContentCenter}>
+                        <div className={style.sizeIcon}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.formIconGray} alt=""/>
+                        </div>
                     </div>
-                </div>
-                <div className={style.gridInfoForm}>
-                    <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
-                        {
-                            item.text
-                        }
+                    <div className={style.gridInfoForm}>
+                        <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
+                            {
+                                item.text
+                            }
+                        </div>
+                        <a className={utilities.styleLink}>Rellenar el formulario</a>
                     </div>
-                    <a className={utilities.styleLink}>Rellenar el formulario</a>
-                </div>
-            </a>
+                </a>
+            </div>
         </Link>
     )
 }

@@ -14,7 +14,7 @@ export default function LayoutReviewSectionMobile({children}) {
             </div>
             <div className={style.gridRating}>
                 <div className={style.rating}>
-                    5/5
+                    Calificacion: 5/5
                 </div>
                 <div className={style.gridStars}>
                     {

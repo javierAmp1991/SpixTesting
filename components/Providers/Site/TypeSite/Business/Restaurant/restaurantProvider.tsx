@@ -9,6 +9,7 @@ import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/Even
 import {FormLink, News, Product} from "../../../../../../dataDemo/data";
 import {ProviderNewsEvents} from "../../../../../../Class/Site/TypeSite/Events/events";
 import {GlobalConst} from "../../../../../../public/globalConst";
+import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
 export const HeaderContext = createContext(null)
 export const SectionProductsContext = createContext(null)
@@ -18,6 +19,7 @@ export const QuestionSectionContext = createContext(null)
 export const OfferProductsContext = createContext(null)
 export const FormContext = createContext(null)
 export const NewsContext = createContext(null)
+export const ScheduleContext = createContext(null)
 
 const listProductsOffer: ProductItem[] = [
     {
@@ -617,6 +619,129 @@ const listNewsAdd: News[] = [
         HasEvent: false
     },
 ]
+const scheduleLis: Schedule[] = [
+    {
+        Id: "horario001",
+        Hour: "00:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario002",
+        Hour: "01:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario003",
+        Hour: "02:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario004",
+        Hour: "03:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario005",
+        Hour: "04:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario006",
+        Hour: "05:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario007",
+        Hour: "06:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario008",
+        Hour: "07:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario009",
+        Hour: "08:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario0010",
+        Hour: "09:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario0011",
+        Hour: "10:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario0012",
+        Hour: "11:00",
+        IsDisponible: false,
+    },
+    {
+        Id: "horario001",
+        Hour: "12:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario002",
+        Hour: "13:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario003",
+        Hour: "14:00",
+        IsDisponible: false,
+    },
+    {
+        Id: "horario004",
+        Hour: "15:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario005",
+        Hour: "16:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario006",
+        Hour: "17:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario007",
+        Hour: "18:00",
+        IsDisponible: false,
+    },
+    {
+        Id: "horario008",
+        Hour: "19:00",
+        IsDisponible: true,
+    },
+    {
+        Id: "horario009",
+        Hour: "20:00",
+        IsDisponible: true
+    },
+    {
+        Id: "horario0010",
+        Hour: "21:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario0011",
+        Hour: "22:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario0012",
+        Hour: "23:00",
+        IsDisponible: null
+    },
+]
+
 
 export default function RestaurantProvider({children}) {
     let [recommendedItems, setRecommendedItems] = useState(listInitialRecommended)
@@ -665,7 +790,9 @@ export default function RestaurantProvider({children}) {
                             <OfferProductsContext.Provider value={providerOfferProducts}>
                                 <FormContext.Provider value={listForm}>
                                     <NewsContext.Provider value={providerNews}>
-                                        {children}
+                                        <ScheduleContext.Provider value={scheduleLis}>
+                                            {children}
+                                        </ScheduleContext.Provider>
                                     </NewsContext.Provider>
                                 </FormContext.Provider>
                             </OfferProductsContext.Provider>

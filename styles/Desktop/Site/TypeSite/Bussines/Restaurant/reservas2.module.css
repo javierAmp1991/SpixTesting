@@ -26,7 +26,7 @@
     background: var(--gradientBlueButton);
     color: white;
     width: max-content;
-    margin: 24px auto auto auto;
+    margin: 20px auto auto auto;
     display: grid;
 }
 
@@ -37,7 +37,7 @@
     border-radius: 24px;
     font-size: 13px;
     font-weight: 500;
-    margin-right: 12px;
+    text-align: center;
 }
 
 .tagReservado1 {
@@ -47,35 +47,75 @@
     border-radius: 24px;
     font-size: 13px;
     font-weight: 500;
+    text-align: center;
+}
+
+.tagNoAtention1 {
+    color: white;
+    background: rgba(0, 0, 0, .2);
+    padding: 2px 12px;
+    border-radius: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.tagNoAtention2 {
+    background: rgba(0, 0, 0, .2);
+    height: 2px;
+    border-radius: 1px;
+    width: 90%;
+    margin: auto;
 }
 
 .tagDisponible2 {
     background: #10c010;
     height: 2px;
     border-radius: 1px;
-    margin-right: 12px;
+    width: 90%;
+    margin: auto;
 }
 
 .tagReservado2 {
     background: #ff4a4a;
     height: 2px;
     border-radius: 1px;
+    width: 90%;
+    margin: auto;
 }
 
 .gridHoursLapse {
     display: grid;
     position: relative;
-    padding: 16px 12px;
+    padding: 16px 24px;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    gap: 12px;
+}
+
+.gridHoursLapse:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    position: absolute;
+    top: -20px;
+    left: -11px;
 }
 
 .gridHoursLapse:before {
     content: "";
-    width: 2px;
-    height: 100%;
-    background: rgba(0, 0, 0, .1);
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .1);
     position: absolute;
-    left: calc(50% - 1px);
+    bottom: -20px;
+    left: -11px;
 }
+
 
 .lineCircle {
     width: 20px;
@@ -88,9 +128,9 @@
 
 .gridTags {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    padding-bottom: 32px;
-    gap: 2px;
+    grid-template-columns: repeat(3, 148px);
+    padding-bottom: 20px;
+    gap: 6px;
 }
 
 .hour {
@@ -106,7 +146,7 @@
 }
 
 .baseTag {
-    padding: 6px 8px;
+    padding: 6px 16px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     display: grid;
     align-items: center;
@@ -114,6 +154,7 @@
     font-size: 14px;
     position: relative;
     color: var(--colorPrimaryTextDesktop);
+    width: max-content;
 }
 
 .leftSide {
@@ -133,6 +174,17 @@
     height: 16px;
     background: white;
     border-radius: 50%;
+    left: -33px;
 }
 
+.gridTimeLapse {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.gridInfo {
+    display: grid;
+    gap: 28px;
+}
 

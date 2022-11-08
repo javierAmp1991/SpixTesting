@@ -31,39 +31,51 @@ export default function DescriptionCardFullData() {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainDivInfo}>
-                <div className={style.gridImageName}>
-                    <div className={style.secondGradient}>
-                        <div className={style.firstGradient}>
-                            <div className={style.sizeLogo}>
-                                <Image layout={"fill"} src={info.LogoPath}/>
+                <div className={style.gridInfoGap}>
+                    <div className={style.gridImageName}>
+                        <div className={style.secondGradient}>
+                            <div className={style.firstGradient}>
+                                <div className={style.sizeLogo}>
+                                    <Image layout={"fill"} src={info.LogoPath}/>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div className={style.Name}>
-                            {info.Name}
+                        <div>
+                            <div className={style.Name}>
+                                {info.Name}
+                            </div>
+                            <SocialBar/>
                         </div>
-                        <SocialBar/>
                     </div>
-                </div>
-                <div className={style.gridInfoNew}>
-                    <span>{directionText}</span>
-                    <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
-                </div>
-                <div className={style.gridInfoNew}>
-                    <div>{contactText}</div>
-                    {
-                        info.Contact.map(item =>
-                            <Link key={item.Id} href={item.Link}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={item.Icon}/>
-                                </div>
-                            </Link>
-                        )
-                    }
+                    <div className={style.gridInfoNew}>
+                        <span>{directionText}</span>
+                        <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
+                    </div>
+                    <div className={style.gridInfoNew}>
+                        <div>{contactText}</div>
+                        {
+                            info.Contact.map(item =>
+                                <Link key={item.Id} href={item.Link}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={item.Icon}/>
+                                    </div>
+                                </Link>
+                            )
+                        }
+                    </div>
                 </div>
 
-                <div className={style.gridLeft}>
+                <LayoutWithNavCircleMobile isDarkMode={false}>
+                    {
+                        info.SideImages.map((e, index) =>
+                            <div key={e} className={style.sizeSideImage}>
+                                <Image layout={"fill"} src={e}/>
+                            </div>
+                        )
+                    }
+                </LayoutWithNavCircleMobile>
+
+                {/* <div className={style.gridLeft}>
                     <button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
                         <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
                     </button>
@@ -75,14 +87,13 @@ export default function DescriptionCardFullData() {
                             {seeGalery}
                         </button>
                     </div>
+                </div>*/}
+
+                <div className={utilities.clamp5}>
+                    {info.Description}
                 </div>
-                <div className={style.gridButtons}>
-                    <div className={style.button}>
-                        Ver carta
-                    </div>
-                   {/* <div className={style.button}>
-                        Reservar Mesa
-                    </div>*/}
+                <div className={style.button}>
+                    Ver carta
                 </div>
             </div>
 
@@ -96,7 +107,7 @@ export default function DescriptionCardFullData() {
                 </PopUpContainerMob>
             }
 
-            {
+            {/*  {
                 displayGalery &&
                 <PopUpContainerMob closePopUp={handlePopUp} isButtonVisible={true} isBackground={false}>
                     <LayoutWithNavCircleMobile isDarkMode={false}>
@@ -109,7 +120,7 @@ export default function DescriptionCardFullData() {
                         }
                     </LayoutWithNavCircleMobile>
                 </PopUpContainerMob>
-            }
+            }*/}
 
             {
                 displayMap &&

@@ -42,10 +42,10 @@
 }
 
 .sizeImage {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     position: absolute;
-    bottom: -50px;
+    bottom: 0;
     left: 16px;
     opacity: .7;
 }
@@ -54,8 +54,8 @@
     width: 220px;
     height: 220px;
     position: absolute;
-    bottom: -20px;
-    right: 15px;
+    bottom: 12px;
+    right: 16px;
     opacity: .8;
 }
 

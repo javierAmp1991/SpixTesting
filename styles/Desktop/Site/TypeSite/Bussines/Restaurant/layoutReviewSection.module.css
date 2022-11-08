@@ -37,8 +37,6 @@
 .seeMore{
     padding-top: 32px;
     font-size: 16px;
-    font-weight: 500;
     color: var(--linkColor);
     cursor: pointer;
-    text-decoration: underline;
 }

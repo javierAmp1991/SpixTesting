@@ -38,7 +38,6 @@
     border-radius: 24px;
     font-size: 13px;
     font-weight: 500;
-    margin-right: 12px;
 }
 
 .tagReservado1 {
@@ -48,25 +47,29 @@
     border-radius: 24px;
     font-size: 13px;
     font-weight: 500;
+    text-align: center;
 }
 
 .tagDisponible2 {
     background: #10c010;
     height: 2px;
     border-radius: 1px;
-    margin-right: 12px;
+    width: 90%;
+    margin: auto;
 }
 
 .tagReservado2 {
     background: #ff4a4a;
     height: 2px;
     border-radius: 1px;
+    width: 90%;
+    margin: auto;
 }
 
 .gridHoursLapse {
     display: grid;
     position: relative;
-    padding: 16px 12px;
+    padding: 12px;
 }
 
 .gridHoursLapse:before {
@@ -89,9 +92,10 @@
 
 .gridTags {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
-    padding-bottom: 32px;
-    gap: 2px;
+    grid-template-columns: repeat(2, 148px);
+    padding-bottom: 28px;
+    gap: 6px;
+    justify-content: center;
 }
 
 .hour {
@@ -107,7 +111,7 @@
 }
 
 .baseTag {
-    padding: 6px 8px;
+    padding: 2px 8px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     display: grid;
     align-items: center;
@@ -130,8 +134,8 @@
 .baseCircle {
     position: absolute;
     content: "";
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     background: white;
     border-radius: 50%;
 }

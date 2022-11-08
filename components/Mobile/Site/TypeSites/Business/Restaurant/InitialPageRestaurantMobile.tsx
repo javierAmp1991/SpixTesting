@@ -79,13 +79,19 @@ export default function InitialPageRestaurantMobile() {
                         }
                     </LayoutWithNavCircleMobile>
                 </LayoutReviewSectionMobile>
+                <div className={style.separationLine}/>
 
-                <LayoutWithNavCircleMobileFull isDarkMode={false}>
-                    {
-                        form.map(item =>
-                            <FormViewMobile key={item.text} item={item}/>)
-                    }
-                </LayoutWithNavCircleMobileFull>
+                <div className={style.paddingGeneral}>
+                    <LayoutTitleMobile title={"Se Busca"} isOverflow={true}>
+                        <LayoutWithNavCircleMobile isDarkMode={false}>
+                            {
+                                form.map(item =>
+                                    <FormViewMobile key={item.text} item={item}/>)
+                            }
+                        </LayoutWithNavCircleMobile>
+                    </LayoutTitleMobile>
+                </div>
+                <div className={style.separationLine}/>
 
                 <ReservasMobile/>
                 <div className={style.separationLine}/>

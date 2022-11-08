@@ -39,50 +39,47 @@ export default function InformationImages() {
                     )}
                 </div>
                 <div className={style.gridImageName}>
+                    <div className={style.gradient}>
+                        <div className={style.sizeLogo}>
+                            <Image layout={"fill"} src={info.PathLogo}/>
+                        </div>
+                    </div>
                     <div className={style.gridInfo}>
                         <div className={style.name}>
                             {info.Name}
                         </div>
                     </div>
                 </div>
-                <div className={style.description}>
-                    {info.Description}
-                </div>
-                <div className={style.gridProduceLogo}>
-                    <div>
-                        <span className={style.produce}>Produce:</span> El Huevo
-                    </div>
-                    <div className={style.sizeLogo}>
-                        <Image layout={"fill"} src={info.PathLogo}/>
-                    </div>
-                </div>
-                <div className={style.gridSocialRedes}>
-                    <SocialBar/>
-                    <div className={style.gridContact}>
-                        {
-                            info.Contact.map((item, index) =>
-                                <Link key={item.Id} href={item.Link}>
-                                    <a>
-                                        <div className={style.sizeIcon}>
-                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                        </div>
-                                    </a>
-                                </Link>
-                            )
-                        }
-                    </div>
-                </div>
-                <div className={style.separationLine}/>
             </div>
 
             <ImageVideoMobile/>
 
-            {/*<button onClick={handleLevelUser} className={style.buttonStyle}>
-                {buyTickets}
-                <div className={style.sizeIconButton}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.securityAccountIcon} alt={""}/>
+            <div className={style.gridSocialRedes}>
+                <SocialBar/>
+                <div className={style.gridContact}>
+                    {
+                        info.Contact.map((item, index) =>
+                            <Link key={item.Id} href={item.Link}>
+                                <a>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                    </div>
+                                </a>
+                            </Link>
+                        )
+                    }
                 </div>
-            </button>*/}
+            </div>
+
+            <div>
+                <div className={style.description}>
+                    {info.Description}
+                </div>
+                <div className={style.gridProduceLogo}>
+                    <span className={style.produce}>Produce:</span> El Huevo
+                </div>
+            </div>
+
 
             {
                 displayLevelUser &&
@@ -92,25 +89,6 @@ export default function InformationImages() {
                     </PopUpContainerMob>, document.getElementById(idPortal)
                 )
             }
-
-            {/*<div className={style.gridInfoUnder}>
-                <div className={style.description}>
-                    {info.Description}
-                </div>
-                <div>
-                    {categoryText} <span className={style.category}>{info.Category}</span>
-                </div>
-                <div className={style.gridAtr}>
-                    {attributesText}
-                    {info.Attributes.map((item, index) =>
-                        <span key={item} className={style.atr}>{item}
-                            {
-                                index == info.Attributes.length - 1 ? "." : ", "
-                            }
-                        </span>
-                    )}
-                </div>
-            </div>*/}
         </div>
     )
 }

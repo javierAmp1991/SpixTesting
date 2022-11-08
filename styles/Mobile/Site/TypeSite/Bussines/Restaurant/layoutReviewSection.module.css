@@ -12,7 +12,7 @@
     grid-template-columns: repeat(5, max-content);
     gap: 8px;
     justify-content: center;
-    align-items: center;
+    padding-top: 4px;
 }
 
 .title {
@@ -24,27 +24,23 @@
 .gridRating {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .rating {
-    font-size: 27px;
+    font-size: 18px;
     font-weight: 500;
 }
 
 .sizeStar {
-    height: 18px;
-    width: 18px;
+    height: 16px;
+    width: 16px;
     position: relative;
 }
 
 .seeMore {
-    font-size: 16px;
-    font-weight: 500;
     color: var(--linkColor);
     cursor: pointer;
-    text-decoration: underline;
     padding-bottom: 16px;
 }
 

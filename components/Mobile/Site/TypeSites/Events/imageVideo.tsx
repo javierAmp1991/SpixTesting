@@ -15,7 +15,7 @@ export default function ImageVideoMobile() {
                     info.Images.map((item, index) =>
                         index == 0 ?
                             <div className={`${style.sizeContainer} ${utilities.snapScroll}`}>
-                                <video className={style.sizeVideo} controls src={info.Video}/>
+                                <video poster={info.Images[0]} className={style.sizeVideo} controls src={info.Video}/>
                             </div>
                             :
                             <div className={utilities.snapScroll} key={index}>
