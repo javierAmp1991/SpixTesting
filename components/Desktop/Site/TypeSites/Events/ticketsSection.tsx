@@ -138,7 +138,7 @@ export default function TicketsSection() {
                                 </div>
                                 :
                                 <div className={style.nameVenue}>
-                                    {info.DateSelected.NameVenue},
+                                    {info.DateSelected.Area[0].Name}
                                 </div>
                         }
                     </div>

@@ -67,7 +67,7 @@ export default function TicketsSectionMobile() {
                         </div>
                         :
                         <div className={style.nameVenue}>
-                            {info.DateSelected.NameVenue}
+                            {info.DateSelected.Area[0].Name}
                         </div>
                 }
 
