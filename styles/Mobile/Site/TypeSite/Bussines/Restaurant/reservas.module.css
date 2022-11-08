@@ -77,12 +77,12 @@
 }
 
 .disponibleLapse {
-    padding: 4px 12px;
+    padding: 2px 12px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     display: grid;
     align-items: center;
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
     border-bottom: 2px solid #10c010;
     width: 40%;
@@ -103,8 +103,8 @@
 }
 
 .noDisponibleLapse {
-    font-size: 14px;
-    padding: 4px 12px;
+    font-size: 12px;
+    padding: 2px 12px;
     text-align: center;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
     display: grid;
