@@ -8,6 +8,7 @@
 .mainDiv2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
 .gridImageName {
@@ -337,4 +338,10 @@
     gap: 12px;
     align-items: center;
     width: 60%;
+}
+
+.sizePopUpImage {
+    width: 500px;
+    aspect-ratio: 4/3;
+    position: relative;
 }

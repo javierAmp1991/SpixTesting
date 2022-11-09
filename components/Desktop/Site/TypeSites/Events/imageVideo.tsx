@@ -1,6 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Events/imageVideo.module.css";
 import Image from "next/image";
-import {GlobalConst} from "../../../../../public/globalConst";
 import React, {useContext, useState} from "react";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
@@ -17,43 +16,39 @@ export default function ImageVideo() {
         setIsVideo(isVideo = false)
     }
     return (
-        <div className={style.gridImageSelection}>
-            <div/>
-          {/* <div className={style.gridSelectionZone}>
-                {
-                    info.Images.map((item, index) =>
-                        index == 0 ?
-                            <button onClick={handleSelectVideo} key={index} className={style.contImage}>
-                                <div className={style.sizeImageSelection}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                </div>
+        info.Video == null ?
+            <div className={style.gridImageSelection}>
+                <div className={style.gridSelectionZone}>
+                    {
+                        info.Images.map((item, index) =>
+                              /*  <button onClick={handleSelectVideo} key={index} className={style.contImage}>
+                                    <div className={style.sizeImageSelection}>
+                                        <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                    </div>
 
-                                <div className={style.playIconProperties}>
-                                    <Image layout={"fill"} objectFit={"cover"}
-                                           src={GlobalConst.sourceImages.playIcon}
-                                           alt=""/>
-                                </div>
+                                    <div className={style.playIconProperties}>
+                                        <Image layout={"fill"} objectFit={"cover"}
+                                               src={GlobalConst.sourceImages.playIcon}
+                                               alt=""/>
+                                    </div>
 
-                            </button>
-                            :
-                            <button onClick={() => handleSelectImage(item)} key={index} className={style.contImage}>
-                                <div className={style.sizeImageSelection}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                </div>
-                            </button>
-                    )
-                }
-            </div>*/}
-            <div className={style.contShowImage}>
-                {
-                    isVideo ?
-                        <video muted={true} poster={info.Images[0]} className={style.contShowImage} controls src={info.Video}/>
-                        :
-                        <div className={style.contShowImage}>
-                            <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
-                        </div>
-                }
+                                </button>*/
+                                <button onClick={() => handleSelectImage(item)} key={index} className={style.contImage}>
+                                    <div className={style.sizeImageSelection}>
+                                        <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                    </div>
+                                </button>
+                        )
+                    }
+                </div>
+                <div className={style.contShowImage}>
+
+                    <div className={style.contShowImage}>
+                        <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
+                    </div>
+                </div>
             </div>
-        </div>
+            :
+            <video muted={true} poster={info.Images[0]} className={style.contShowVideo} controls src={info.Video}/>
     )
 }

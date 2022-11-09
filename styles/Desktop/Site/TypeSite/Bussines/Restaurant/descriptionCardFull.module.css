@@ -147,8 +147,15 @@
 
 .gridImageButton {
     display: grid;
+    height: auto;
     /*    grid-template-rows: 1fr max-content;
         gap: 16px;*/
+}
+
+.mainContSide{
+    display: grid;
+    height: 100%;
+    grid-template-rows: max-content 1fr;
 }
 
 .top {
@@ -183,5 +190,24 @@
     position: relative;
 }
 
+.tag {
+    padding: 1px 12px;
+    background: linear-gradient(145deg, #a220ec 0%, #930bc0 100%);
+    background: linear-gradient(145deg, #e62e8c 0%, #c43ac0 100%);
+    background: linear-gradient(145deg, #e62e8c 0%, #da45d6 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    width: max-content;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+}
 
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 8px;
+}
 

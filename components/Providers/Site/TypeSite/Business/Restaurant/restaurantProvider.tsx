@@ -291,11 +291,7 @@ const headerData: PresentationCard = {
             Link: "/test3"
         }
     ],
-    Whatssapp: 987347654,
-    Instagram: "/",
-    TikTok: "/",
-    Facebook: "/",
-    WebPage: "/",
+    Tags: ["Restaurant", "Sushi", "Bebidas"],
     SideImages: ["/images/hellkitchen1.jpg", "/images/hellkitchen2.jpg", "/images/hellkitchen3.jpg"]
 
 }

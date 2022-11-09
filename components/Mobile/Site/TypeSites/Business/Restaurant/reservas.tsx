@@ -1,12 +1,12 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/reservas2.module.css"
-import LayoutTitleMobile from "./layoutTitleMobile";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {ScheduleContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import {PrincipalFeaturedSearch} from "../../../../../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
 import Image from "next/image";
 import {GlobalConst} from "../../../../../../public/globalConst";
+import PopUpContainer from "../../../../../Desktop/Misc/popUpContainer";
+import {DatePicker} from "@material-ui/pickers";
+import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 
 const greenColor: string = "#10c010"
 const redColor: string = "#ff4a4a"
@@ -19,6 +19,17 @@ const scheduleText: string = "Reservar para: "
 
 export default function ReservasMobile() {
     const newSchedule: Schedule[] = useContext(ScheduleContext)
+    let [dateSelected, setDateSelected] = useState(new Date)
+    let [oficialDate, setOficialDate] = useState(new Date)
+    let [displayDate, setDisplayDate] = useState(false)
+    const handleDisplayDate = () => setDisplayDate(displayDate = !displayDate)
+    const handleConfirmDate = () => {
+        setOficialDate(oficialDate = dateSelected)
+        handleDisplayDate()
+    }
+    const handleDateChange = (e) => {
+        setDateSelected(dateSelected = e)
+    }
 
     return (
         <div className={style.mainCont}>
@@ -30,26 +41,25 @@ export default function ReservasMobile() {
                     <div>
                         {scheduleText}
                     </div>
-                    <div className={style.contDate}>
-                        Hoy
-                    </div>
-                    <button className={style.sizeCalendar}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon}/>
+                    <button onClick={handleDisplayDate} className={style.contDateButton}>
+                        <div>
+                            {oficialDate.toLocaleDateString()}
+                        </div>
+                        <div className={style.sizeCalendar}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon}/>
+                        </div>
                     </button>
                 </div>
                 <div className={style.gridTags}>
-                    <div className={style.tagDisponible1}>
-                        {disponibleTagText}
+                    <div className={style.gridSquareTag}>
+                        <span className={`${style.disp} ${style.baseSquare}`}/>{disponibleTagText}
                     </div>
-                    <div className={style.tagReservado1}>
-                        {noDisponibleTagText}
+                    <div className={style.gridSquareTag}>
+                        <span className={`${style.res} ${style.baseSquare}`}/>{noDisponibleTagText}
                     </div>
-                    <div className={style.tagNoAtention1}>
-                        {closeLocalText}
+                    <div className={style.gridSquareTag}>
+                        <span className={`${style.close} ${style.baseSquare}`}/>{closeLocalText}
                     </div>
-                    <div className={style.tagDisponible2}/>
-                    <div className={style.tagReservado2}/>
-                    <div className={style.tagNoAtention2}/>
                 </div>
                 <div className={style.lineCircle}/>
                 <div className={style.gridHoursLapse}>
@@ -72,9 +82,28 @@ export default function ReservasMobile() {
                 </div>
                 <div className={style.lineCircle}/>
             </div>
-          {/*  <button className={style.styleButton}>
-                Reservar tu Mesa
-            </button>*/}
+            {
+                displayDate &&
+                <PopUpContainerMob closePopUp={handleDisplayDate} isBackground={true} isButtonVisible={true}>
+                    <div className={style.mainDivPopUp}>
+                        <div className={style.titlePopUp}>
+                            Seleccionar Fecha
+                        </div>
+                        <DatePicker variant={"static"}
+                                    value={dateSelected}
+                                    className={style.dataPicker}
+                                    onChange={handleDateChange}/>
+                        <div className={style.gridButtonPopUp}>
+                            <button onClick={handleConfirmDate} className={style.styleButtonPopUp}>
+                                Aceptar
+                            </button>
+                            <button onClick={handleDisplayDate} className={style.styleButtonPopUp}>
+                                Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </PopUpContainerMob>
+            }
         </div>
     )
 

@@ -1,14 +1,14 @@
 .gridImageSelection {
     display: grid;
     gap: 8px;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: max-content 1fr 50px;
     width: 100%;
 }
 
 .gridSelectionZone {
     display: grid;
-    gap: 10px;
-    align-content: end;
+    gap: 12px;
+    align-content: start;
 }
 
 .contImage {
@@ -32,6 +32,12 @@
     aspect-ratio: 4/3;
     position: relative;
     object-fit: cover;
-    /*box-shadow: -8px 8px 0 rgba(0,0,0,.15), -16px 16px 0 rgba(0,0,0,.15) ;*/
+}
+
+.contShowVideo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
 }
 

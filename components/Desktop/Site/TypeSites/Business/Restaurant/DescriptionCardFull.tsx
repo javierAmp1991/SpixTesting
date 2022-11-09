@@ -1,6 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/descriptionCardFull.module.css"
 import Image from "next/image";
-import {GlobalConst} from "../../../../../../public/globalConst";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useState} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
@@ -12,8 +11,8 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 
 
 const directionText: string = "Direccion: "
-const contactText: string = "Contacto: "
-const socialMediaText: string = "Siguenos en: "
+const contactText: string = "Redes y Contacto: "
+
 export default function DescriptionCardFull() {
     const info: PresentationCard = useContext(HeaderContext)
     let [displayMap, setDisplayMap] = useState(false)
@@ -37,7 +36,7 @@ export default function DescriptionCardFull() {
                             <div className={style.secondGradient}>
                                 <div className={style.firstGradient}>
                                     <div className={style.sizeLogo}>
-                                        <Image layout={"fill"} src={info.LogoPath}/>
+                                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
                                     </div>
                                 </div>
                             </div>
@@ -59,26 +58,10 @@ export default function DescriptionCardFull() {
                             <span>{contactText}</span>
                             <div className={style.gridContact}>
                                 {
-                                    info.Contact.map((item, index) =>
-                                        index <= 2 &&
+                                    info.Contact.map((item) =>
                                         <Link key={item.Id} href={item.Link}>
                                             <div className={style.sizeIcon}>
-                                                <Image layout={"fill"} src={item.Icon}/>
-                                            </div>
-                                        </Link>
-                                    )
-                                }
-                            </div>
-                        </div>
-                        <div className={style.gridInfoNew}>
-                            <span>{socialMediaText}</span>
-                            <div className={style.gridContact}>
-                                {
-                                    info.Contact.map((item, index) =>
-                                        index > 2 &&
-                                        <Link key={item.Id} href={item.Link}>
-                                            <div className={style.sizeIcon}>
-                                                <Image layout={"fill"} src={item.Icon}/>
+                                                <Image layout={"fill"} src={item.Icon} alt={""}/>
                                             </div>
                                         </Link>
                                     )
@@ -91,18 +74,28 @@ export default function DescriptionCardFull() {
                     </div>
                 </div>
             </div>
-            <div className={style.gridImageButton}>
-                <div className={style.gridSideImage}>
+            <div className={style.mainContSide}>
+                <div className={style.gridTags}>
                     {
-                        info.SideImages.map((e, index) =>
-                            <button key={index} onClick={() => handleClickImage(e)} className={
-                                index == 0 ? style.top : index == 1 ? style.center : style.bottom}>
-                                <div className={style.sizeSideImage}>
-                                    <Image layout={"fill"} src={e}/>
-                                </div>
-                            </button>
-                        )
+                        info.Tags.map(item =>
+                            <div key={item} className={style.tag}>
+                                {item}
+                            </div>)
                     }
+                </div>
+                <div className={style.gridImageButton}>
+                    <div className={style.gridSideImage}>
+                        {
+                            info.SideImages.map((e, index) =>
+                                <div key={index} className={
+                                    index == 0 ? style.top : index == 1 ? style.center : style.bottom}>
+                                    <button onClick={() => handleClickImage(e)} className={style.sizeSideImage}>
+                                        <Image layout={"fill"} src={e} alt={""}/>
+                                    </button>
+                                </div>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
             {
@@ -115,7 +108,7 @@ export default function DescriptionCardFull() {
                 displayImage &&
                 <PopUpContainer closePopUp={handlePopUpImage} isButtonVisible={true} isBackground={false}>
                     <div className={style.imagePopUp}>
-                        <Image layout={"fill"} objectFit={"cover"} src={imageDisplay}/>
+                        <Image layout={"fill"} objectFit={"cover"} src={imageDisplay} alt={""}/>
                     </div>
                 </PopUpContainer>
             }

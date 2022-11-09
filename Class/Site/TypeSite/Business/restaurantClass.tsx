@@ -13,11 +13,7 @@ export class PresentationCard {
     Description: string
     Venue: MapPopUpProp
     Contact: ContactItems[]
-    Instagram: string
-    WebPage: string
-    Whatssapp: number
-    TikTok: string
-    Facebook: string
+    Tags: string[]
     SideImages: string[]
 }
 
