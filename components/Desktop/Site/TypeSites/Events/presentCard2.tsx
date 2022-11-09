@@ -13,6 +13,7 @@ import SocialBarVar from "../../../Misc/socialBarVar";
 import LayoutCarrouselLoop from "../../../Layouts/layoutCarrouselLoop";
 import PopUpContainer from "../../../Misc/popUpContainer";
 import {LayoutCarrouselDeskProp} from "../../../Layouts/layoutCarrousel";
+import PopUpContainerFull from "../../../Misc/popUpContainerFull";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -21,21 +22,25 @@ const user: LevelUser = {
 }
 const userRequirement: number = 2
 const idPortal: string = GlobalId.globalIds.idPortal
-const positionArrowIn: string = "0"
+const positionArrowIn: string = "16px"
 const positionArrowY: string = "calc(50% - 16px)"
 
 export default function PresentCard2() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     let [displayLevelUser, setDisplayLevelUser] = useState(false)
     let [displayCarrouselImages, setDisplayCarrouselImages] = useState(false)
-    const handleDisplayImages = () => setDisplayCarrouselImages(displayCarrouselImages = !displayCarrouselImages)
+    let [phothoSelected, setPhotoSelected] = useState(info.Images[0])
     let [carrouselImages, setCarrouselImages] = useState([])
+    const handleDisplayImages = () => setDisplayCarrouselImages(displayCarrouselImages = !displayCarrouselImages)
     const handleClickImage = (image: string) => {
-        let newList: string[] = [image]
-        let secondList = info.Images.filter(item => item != image)
-        let finalList = newList.concat(secondList)
-        setCarrouselImages(carrouselImages = finalList)
-        handleDisplayImages()
+        if (info.Video == null) setPhotoSelected(phothoSelected = image)
+        else {
+            let newList: string[] = [image]
+            let secondList = info.Images.filter(item => item != image)
+            let finalList = newList.concat(secondList)
+            setCarrouselImages(carrouselImages = finalList)
+            handleDisplayImages()
+        }
     }
     const handleLevelUser = () => setDisplayLevelUser(displayLevelUser = !displayLevelUser)
     const layoutPropBanner: LayoutCarrouselDeskProp = {
@@ -46,7 +51,6 @@ export default function PresentCard2() {
         PositionArrowX: positionArrowIn,
         PositionArrowY: positionArrowY
     }
-
 
     return (
         <div className={style.mainDiv}>
@@ -94,7 +98,6 @@ export default function PresentCard2() {
                     <div className={style.separationLine}/>
 
                     {
-                        info.Video != null &&
                         <div className={style.gridSelectionZone}>
                             {
                                 info.Images.map((item, index) =>
@@ -109,13 +112,24 @@ export default function PresentCard2() {
                         </div>
                     }
                 </div>
-                <ImageVideo/>
+
+                {
+                    info.Video == null ?
+                        <div className={style.paddingContImage}>
+                            <div className={style.contShowImage}>
+                                <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
+                            </div>
+                        </div>
+                        :
+                        <video muted={true} poster={info.Images[0]} className={style.contShowVideo} controls
+                               src={info.Video}/>
+                }
             </div>
 
             {
                 displayCarrouselImages &&
                 createPortal(
-                    <PopUpContainer closePopUp={handleDisplayImages} isButtonVisible={false} isBackground={false}>
+                    <PopUpContainerFull closePopUp={handleDisplayImages} isButtonVisible={true} isBackground={false}>
                         <LayoutCarrouselLoop isAuto={false} layoutProp={layoutPropBanner}>
                             {
                                 carrouselImages.map(item =>
@@ -125,7 +139,7 @@ export default function PresentCard2() {
                                 )
                             }
                         </LayoutCarrouselLoop>
-                    </PopUpContainer>, document.getElementById(idPortal)
+                    </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
 

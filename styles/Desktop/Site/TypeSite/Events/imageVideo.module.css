@@ -34,6 +34,11 @@
     object-fit: cover;
 }
 
+.paddingContImage {
+    padding: 0 50px;
+
+}
+
 .contShowVideo {
     width: 100%;
     aspect-ratio: 16/9;

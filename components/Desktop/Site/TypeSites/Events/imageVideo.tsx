@@ -17,35 +17,39 @@ export default function ImageVideo() {
     }
     return (
         info.Video == null ?
-            <div className={style.gridImageSelection}>
-                <div className={style.gridSelectionZone}>
-                    {
-                        info.Images.map((item, index) =>
-                              /*  <button onClick={handleSelectVideo} key={index} className={style.contImage}>
-                                    <div className={style.sizeImageSelection}>
-                                        <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                    </div>
+            /* <div className={style.gridImageSelection}>
+                 <div className={style.gridSelectionZone}>
+                    {/!* {
+                         info.Images.map((item, index) =>
+                               /!*  <button onClick={handleSelectVideo} key={index} className={style.contImage}>
+                                     <div className={style.sizeImageSelection}>
+                                         <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                     </div>
 
-                                    <div className={style.playIconProperties}>
-                                        <Image layout={"fill"} objectFit={"cover"}
-                                               src={GlobalConst.sourceImages.playIcon}
-                                               alt=""/>
-                                    </div>
+                                     <div className={style.playIconProperties}>
+                                         <Image layout={"fill"} objectFit={"cover"}
+                                                src={GlobalConst.sourceImages.playIcon}
+                                                alt=""/>
+                                     </div>
 
-                                </button>*/
-                                <button onClick={() => handleSelectImage(item)} key={index} className={style.contImage}>
-                                    <div className={style.sizeImageSelection}>
-                                        <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                    </div>
-                                </button>
-                        )
-                    }
-                </div>
+                                 </button>*!/
+                                 <button onClick={() => handleSelectImage(item)} key={index} className={style.contImage}>
+                                     <div className={style.sizeImageSelection}>
+                                         <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                     </div>
+                                 </button>
+                         )
+                     }*!/}
+                 </div>
+                 <div className={style.contShowImage}>
+                     <div className={style.contShowImage}>
+                         <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
+                     </div>
+                 </div>
+             </div>*/
+            <div className={style.paddingContImage}>
                 <div className={style.contShowImage}>
-
-                    <div className={style.contShowImage}>
-                        <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
-                    </div>
+                    <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
                 </div>
             </div>
             :

@@ -342,7 +342,26 @@
 }
 
 .sizePopUpImage {
-    width: 500px;
+    width: 50vw;
     aspect-ratio: 4/3;
     position: relative;
+}
+
+.contShowImage {
+    width: 100%;
+    aspect-ratio: 4/3;
+    position: relative;
+    object-fit: cover;
+}
+
+.paddingContImage {
+    padding: 0 50px;
+
+}
+
+.contShowVideo {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+
 }
