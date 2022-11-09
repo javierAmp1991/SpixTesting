@@ -5,7 +5,7 @@ import {SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 export default function NavSectionProductsMobile({item}: { item: SectionProductItem[] }) {
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id)
-        data.scrollIntoView({behavior: "smooth"})
+        data.scrollIntoView({behavior: "smooth", block: "nearest"})
     }
     return (
         <div className={style.grid}>
@@ -20,7 +20,7 @@ export default function NavSectionProductsMobile({item}: { item: SectionProductI
                             ({item.ListProducts.length} productos)
                         </div>
                         <div className={index == 0 ? style.sizeImage2 : style.sizeImage}>
-                            <Image layout={"fill"} src={item.ListProducts[index].ImagePath}/>
+                            <Image layout={"fill"} src={item.ListProducts[index].ImagePath} alt={""}/>
                         </div>
 
                     </button>

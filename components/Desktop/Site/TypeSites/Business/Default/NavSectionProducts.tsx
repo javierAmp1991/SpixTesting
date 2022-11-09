@@ -1,13 +1,11 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Default/navSectionProducts.module.css"
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
-import {useContext} from "react";
-import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Default/defaultProvider";
 import Image from "next/image";
 
 export default function NavSectionProducts({item} : {item: SectionProductItem[]}) {
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id)
-        data.scrollIntoView({behavior: "smooth"})
+       data.scrollIntoView({behavior: "smooth", block: "nearest"})
     }
     return (
         <div className={style.grid}>
@@ -22,7 +20,7 @@ export default function NavSectionProducts({item} : {item: SectionProductItem[]}
                             ({item.ListProducts.length} productos)
                         </div>
                         <div className={index == 0? style.sizeImage2 : style.sizeImage}>
-                            <Image layout={"fill"} src={item.ListProducts[index].ImagePath}/>
+                            <Image layout={"fill"} src={item.ListProducts[index].ImagePath} alt={""}/>
                         </div>
 
                     </button>
