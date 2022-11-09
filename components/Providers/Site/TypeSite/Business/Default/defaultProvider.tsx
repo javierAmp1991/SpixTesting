@@ -319,13 +319,9 @@ const headerData: PresentationCard = {
         ImageMap: "/images/googleMapHuevo.jpg",
         LinkGoogleMap: "https://goo.gl/maps/GdriuQJvA4vEFnK48"
     },
-    Whatssapp: 987347654,
-    Instagram: "/",
-    TikTok: "/",
-    Facebook: "/",
-    WebPage: "/",
     SideImages: ["/images/galleteria1.jpg", "/images/galleteria2.jpg", "/images/galleteria3.jpg"],
-    Contact:[]
+    Contact:[],
+    Tags:[]
 
 }
 const listSectionProducst: SectionProductItem[] = [
