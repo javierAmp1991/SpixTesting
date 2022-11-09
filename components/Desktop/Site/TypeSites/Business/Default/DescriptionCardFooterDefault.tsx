@@ -1,18 +1,12 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Default/descriptionCardFooter.module.css"
 import Image from "next/image";
-import {GlobalConst} from "../../../../../../public/globalConst";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useState} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Default/defaultProvider";
-import Link from "next/link";
-import utilities from "/styles/utilities.module.css";
-import SocialBar from "../../../../Misc/socialBar";
 import PopUpContainer from "../../../../Misc/popUpContainer";
 import MapPopUp from "../../../../Misc/mapPopUp";
 
 
-const directionText: string = "Direccion:"
-const contactText: string = "Contactate con nosotros:"
 export default function DescriptionCardFooterDefault() {
     const info: PresentationCard = useContext(HeaderContext)
     let [displayMap, setDisplayMap] = useState(false)

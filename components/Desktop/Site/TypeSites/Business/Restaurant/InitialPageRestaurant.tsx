@@ -62,8 +62,6 @@ export default function InitialPageRestaurant() {
                 <DescriptionCardFull/>
             </div>
             <div className={style.mainDiv}>
-                <NavProductsSection hasBeenReached={hasBeenReached}/>
-
                 <ReviewRestaurant/>
                 <div className={style.separationLine}/>
 
@@ -82,6 +80,8 @@ export default function InitialPageRestaurant() {
                 <RecomendedRestarant/>
                 <div className={style.separationLine}/>
 
+                <NavProductsSection hasBeenReached={hasBeenReached}/>
+
                 <div className={style.gridSectionProducts} id={idTest}>
                     {
                         infoSectionProducts.map(item =>
@@ -92,6 +92,7 @@ export default function InitialPageRestaurant() {
                         )
                     }
                 </div>
+
                 <QuestionRestaurant/>
             </div>
         </>

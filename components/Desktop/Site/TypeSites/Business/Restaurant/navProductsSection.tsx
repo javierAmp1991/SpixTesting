@@ -10,8 +10,10 @@ export default function NavProductsSection({hasBeenReached}: { hasBeenReached: b
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
     const handleTagSelected = (id: string) => {
-        let data = document.getElementById(id)
-        data.scrollIntoView({behavior: "smooth"})
+       /* let data = document.getElementById(id)
+        data.scrollIntoView({behavior: "smooth"})*/
+        let data = document.getElementById(id).getBoundingClientRect()
+        window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
         setTagSelected(tagSelected = id)
     }
     let [topPX, setTopPX] = useState(hidePositionNav)
@@ -31,7 +33,7 @@ export default function NavProductsSection({hasBeenReached}: { hasBeenReached: b
     })
 
     return (
-        <div style={{transform: topPX}} className={style.mainDiv}>
+        <div /*style={{transform: topPX}}*/ className={style.mainDiv}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}

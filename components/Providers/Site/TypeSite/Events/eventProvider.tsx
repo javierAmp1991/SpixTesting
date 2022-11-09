@@ -11,10 +11,6 @@ import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/S
 import {EventCardType, EventCardWithPrice} from "../../../../../dataDemo/EventView/eventVerticalView";
 import {QuestionItem} from "../../../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../../../public/globalConst";
-import {Id} from "react-flags-select";
-import {PrincipalFeaturedSearch} from "../../../../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
-import {set} from "immutable";
 
 const principalInfo: PrincipalInfoEvent = {
     Id: "12345abcde",
@@ -83,7 +79,7 @@ const principalInfo: PrincipalInfoEvent = {
     Likes: 400,
     WishList: 50,
     Images: ["/images/thedoor1.jpg", "/images/thedoor2.jpg", "/images/thedoor3.jpg", "/images/thedoor4.jpg"/*, "/images/thedoor5.jpg"*/],
-    Video: "images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
+    Video: null,
     Contact: [
         {
             Id: "contact005",
@@ -582,6 +578,7 @@ const listForm: FormLink[] = [
         link: "/fillForm"
     }
 ]
+const twoOne: string = "2 X 1"
 const allDateToFind: DateAreaSelected[] = [
     {
         Id: "dateAreaSelected001",
@@ -653,7 +650,7 @@ const allDateToFind: DateAreaSelected[] = [
                         MinPrice: 9990,
                         MaxPrice: 21990,
                         Discount: null,
-                        Include: "Lleve 2 pague 1",
+                        Include: twoOne,
                         Color: "Purple"
                     },
                     {
@@ -671,7 +668,7 @@ const allDateToFind: DateAreaSelected[] = [
                         MinPrice: 9990,
                         MaxPrice: 21990,
                         Discount: null,
-                        Include: "Lleve 2 pague 1",
+                        Include: twoOne,
                         Color: "Black"
                     }
                 ],
@@ -827,7 +824,7 @@ const allDateToFind: DateAreaSelected[] = [
                         MinPrice: 9990,
                         MaxPrice: 21990,
                         Discount: null,
-                        Include: "Lleve 2 pague 1",
+                        Include: twoOne,
                         Color: "Purple"
                     }
                 ],
@@ -906,7 +903,7 @@ const allDateToFind: DateAreaSelected[] = [
                         MinPrice: 9990,
                         MaxPrice: 21990,
                         Discount: null,
-                        Include: "Lleve 2 pague 1",
+                        Include: twoOne,
                         Color: "Purple"
                     }
                 ],

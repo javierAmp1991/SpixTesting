@@ -65,6 +65,7 @@
     font-size: 21px;
     color: var(--colorTitlesDesktop);
     font-weight: 500;
+    padding-bottom: 2px;
 }
 
 .description {
@@ -137,7 +138,7 @@
 
 .gridContact {
     display: grid;
-    grid-template-columns: repeat(6, max-content);
+    grid-template-columns: repeat(7, max-content);
     gap: 8px;
 }
 

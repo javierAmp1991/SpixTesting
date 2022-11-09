@@ -10,7 +10,7 @@
 .gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
-    gap: 8px;
+    gap: 4px;
     justify-content: center;
     padding-top: 4px;
 }

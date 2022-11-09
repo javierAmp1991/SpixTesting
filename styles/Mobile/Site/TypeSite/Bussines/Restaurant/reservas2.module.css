@@ -170,12 +170,12 @@
     display: grid;
     width: 100%;
     padding: 32px 0 ;
+    gap: 24px;
 }
 
 .titlePopUp {
     font-size: 16px;
     font-weight: 500;
-    padding-bottom: 24px;
 }
 
 .styleButtonPopUp {
@@ -191,6 +191,12 @@
     grid-template-columns: repeat(2, 120px);
     align-items: center;
     gap: 12px;
+}
+
+.borderDataPicker{
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 

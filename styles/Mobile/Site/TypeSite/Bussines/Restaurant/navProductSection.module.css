@@ -5,6 +5,7 @@
     height: 42px;
     top: 0;
     position: fixed;
+    position: sticky;
     display: grid;
     grid-template-columns: max-content;
     grid-auto-columns: max-content;
@@ -14,10 +15,9 @@
     padding: 0 16px;
     z-index: 900;
     background: white;
-    background: linear-gradient(145deg, #2a2828 0%, #1f1e1e 100%);
     background: linear-gradient(180deg, rgba(25, 26, 27, 1) 0%, rgba(38, 40, 41, 1) 100%);
     transition: .4s;
-    box-shadow: 0 0px 8px rgba(0,0,0,.4);
+    box-shadow: 0 4px 4px rgba(0,0,0,.3);
 }
 
 .tag {
@@ -29,9 +29,7 @@
     text-overflow: ellipsis;
     font-weight: 500;
     text-align: center;
-    background: white;
     background: transparent;
-    color: var(--colorPrimaryTextDesktop);
     color: white;
 }
 
@@ -41,13 +39,9 @@
     padding: 4px 12px;
     font-weight: 600;
     overflow: hidden;
-    background: black;
     background: white;
     text-overflow: ellipsis;
     text-align: center;
-    color: white;
-    color: orange;
-    color: var(--colorPrimaryTextDesktop);
     color: var(--colorTitlesDesktop);
 
 }

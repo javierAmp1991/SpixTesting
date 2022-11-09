@@ -1,8 +1,5 @@
 .mainDiv {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding: 0 16px;
+    padding-bottom: 12px;
 }
 
 .mainDivNoSpace {

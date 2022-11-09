@@ -18,7 +18,7 @@ const user: LevelUser = {
     Level: 0
 }
 const userRequirement: number = 2
-
+const contactText: string = "Redes y Contacto: "
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function InformationImages() {
@@ -39,23 +39,23 @@ export default function InformationImages() {
                     <div className={style.name}>
                         {info.Name}
                     </div>
-                </div>
-                <div className={style.gridSocialRedes}>
                     <SocialBar/>
-                    <div className={style.gridContact}>
-                        {
-                            info.Contact.map((item) =>
-                                <Link key={item.Id} href={item.Link}>
-                                    <a>
-                                        <div className={style.sizeIcon}>
-                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                        </div>
-                                    </a>
-                                </Link>
-                            )
-                        }
-                    </div>
                 </div>
+                <div className={style.gridContact}>
+                    {contactText}
+                    {
+                        info.Contact.map((item) =>
+                            <Link key={item.Id} href={item.Link}>
+                                <a>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                    </div>
+                                </a>
+                            </Link>
+                        )
+                    }
+                </div>
+
             </div>
 
             <ImageVideoMobile/>

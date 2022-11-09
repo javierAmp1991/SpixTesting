@@ -1,5 +1,5 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
-import {QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {QuestionItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {
     PresentationCard,
     ProviderOfferProducts,
@@ -24,7 +24,6 @@ import ReviewViewShortMobile from "../../../../Misc/ReviewViewShortMobile";
 import QuestionShortMob from "../../../../Misc/questionShortMob";
 import {FormLink} from "../../../../../../dataDemo/data";
 import FormViewMobile from "../../../../Misc/formViewMobile";
-import LayoutWithNavCircleMobileFull from "../../../../Layouts/layoutWithNavCircleMobileFull";
 import utilities from "/styles/utilities.module.css";
 import NavSectionProductsRestaurantMobile from "./NavSectionProducts";
 import ReservasMobile from "./reservas";
@@ -65,8 +64,6 @@ export default function InitialPageRestaurantMobile() {
             </div>
 
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
-                <NavProductsSectionMobile isSticky={hasBeenReached}/>
-
                 <DescriptionCardFullData/>
                 <div className={style.separationLine}/>
 
@@ -79,7 +76,6 @@ export default function InitialPageRestaurantMobile() {
                         }
                     </LayoutWithNavCircleMobile>
                 </LayoutReviewSectionMobile>
-                <div className={style.separationLine}/>
 
                 <div className={style.paddingGeneral}>
                     <LayoutTitleMobile title={"Se Busca"} isOverflow={true}>
@@ -91,13 +87,10 @@ export default function InitialPageRestaurantMobile() {
                         </LayoutWithNavCircleMobile>
                     </LayoutTitleMobile>
                 </div>
-                <div className={style.separationLine}/>
 
                 <ReservasMobile/>
-                <div className={style.separationLine}/>
 
                 <NavSectionProductsRestaurantMobile/>
-                <div className={style.separationLine}/>
 
                 <div className={style.paddingGeneral}>
                     <LayoutTitleMobile isOverflow={true} title={"Happy Hour"}>
@@ -110,7 +103,6 @@ export default function InitialPageRestaurantMobile() {
                         </LayoutCarrouselMobile>
                     </LayoutTitleMobile>
                 </div>
-                <div className={style.separationLine}/>
 
                 <div className={style.paddingGeneral}>
                     <LayoutTitleMobile isOverflow={true} title={"Spix te recomienda"}>
@@ -122,27 +114,29 @@ export default function InitialPageRestaurantMobile() {
                         </LayoutCarrouselMobile>
                     </LayoutTitleMobile>
                 </div>
-                <div className={style.separationLine}/>
+
+                <NavProductsSectionMobile isSticky={hasBeenReached}/>
 
                 <div className={style.gridSectionProducts} id={idTest}>
                     {
                         infoSectionProducts.map(item =>
                             <div className={style.gridTeset} key={item.Id}>
                                 <ProductSectionMobile sectionProducts={item}/>
-                                <div className={style.separationLine}/>
                             </div>
                         )
                     }
                 </div>
 
-                <LayoutTitleMobile isOverflow={false} title={"Preguntas"}>
-                    <div className={style.gridQuestions}>
-                        {
-                            listQuestion.map((item) =>
-                                <QuestionShortMob key={item.Question} item={item}/>)
-                        }
-                    </div>
-                </LayoutTitleMobile>
+                <div className={style.paddingGeneral}>
+                    <LayoutTitleMobile isOverflow={false} title={"Preguntas"}>
+                        <div className={style.gridQuestions}>
+                            {
+                                listQuestion.map((item) =>
+                                    <QuestionShortMob key={item.Question} item={item}/>)
+                            }
+                        </div>
+                    </LayoutTitleMobile>
+                </div>
             </div>
         </div>
     )

@@ -246,3 +246,9 @@
     gap: 16px;
 }
 
+.borderDataPicker{
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+

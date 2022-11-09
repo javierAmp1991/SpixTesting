@@ -88,16 +88,18 @@ export default function ReservasMobile() {
                         <div className={style.titlePopUp}>
                             Seleccionar Fecha
                         </div>
-                        <DatePicker variant={"static"}
-                                    value={dateSelected}
-                                    className={style.dataPicker}
-                                    onChange={handleDateChange}/>
+                        <div className={style.borderDataPicker}>
+                            <DatePicker variant={"static"}
+                                        value={dateSelected}
+                                        className={style.dataPicker}
+                                        onChange={handleDateChange}/>
+                        </div>
                         <div className={style.gridButtonPopUp}>
-                            <button onClick={handleConfirmDate} className={style.styleButtonPopUp}>
-                                Aceptar
-                            </button>
                             <button onClick={handleDisplayDate} className={style.styleButtonPopUp}>
                                 Cancelar
+                            </button>
+                            <button onClick={handleConfirmDate} className={style.styleButtonPopUp}>
+                                Aceptar
                             </button>
                         </div>
                     </div>

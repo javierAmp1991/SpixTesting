@@ -33,7 +33,7 @@ export default function NavProductsSectionMobile({isSticky}: { isSticky: boolean
     }
 
     return (
-        <div style={{transform: topPX}} className={`${style.mainDiv}`}>
+        <div /*style={{transform: topPX}}*/ className={`${style.mainDiv}`}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}
