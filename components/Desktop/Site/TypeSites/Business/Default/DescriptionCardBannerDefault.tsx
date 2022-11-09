@@ -30,15 +30,15 @@ export default function DescriptionCardBannerDefault() {
                 {info.Name}
             </div>
             <div className={style.mainDiv2}>
-                <div className={style.subGrid}>
+              {/*  <div className={style.subGrid}>
                     <div>
                         <div className={style.gridImageName}>
                             <div className={style.secondGradient}>
-                                {/*<div className={style.firstGradient}>
+                                <div className={style.firstGradient}>
                                     <div className={style.sizeLogo}>
                                         <Image layout={"fill"} src={info.LogoPath}/>
                                     </div>
-                                </div>*/}
+                                </div>
                             </div>
                             <div>
                                 <div className={style.Name}>
@@ -100,7 +100,7 @@ export default function DescriptionCardBannerDefault() {
                             </div>
                         </Link>
                     </div>
-                </div>
+                </div>*/}
                 {
                     displayMap &&
                     <PopUpContainer closePopUp={handlePopUp} isButtonVisible={true} isBackground={true}>

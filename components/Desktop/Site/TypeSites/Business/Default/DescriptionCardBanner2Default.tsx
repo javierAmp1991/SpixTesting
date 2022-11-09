@@ -38,7 +38,7 @@ export default function DescriptionCardBanner2Default() {
                         </div>*/}
                 </button>
                 {info.Name}
-                <div>
+               {/* <div>
                     <div className={style.Name}>{contactText}</div>
                     <div className={style.gridContact}>
                         <Link href={info.WebPage}>
@@ -75,7 +75,7 @@ export default function DescriptionCardBanner2Default() {
                             </div>
                         </Link>
                     </div>
-                </div>
+                </div>*/}
             </div>
             <div className={style.aboutUs}>
                 <div className={style.sobreNosotros}>

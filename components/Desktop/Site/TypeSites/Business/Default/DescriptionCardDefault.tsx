@@ -30,7 +30,7 @@ export default function DescriptionCardDefault() {
                 {/*<button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
                     <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
                 </button>*/}
-                <div className={style.mainDivInfo}>
+               {/* <div className={style.mainDivInfo}>
                     <div className={style.subGrid}>
                         <div className={style.gridImageName}>
                             <div className={style.secondGradient}>
@@ -82,15 +82,15 @@ export default function DescriptionCardDefault() {
                         </div>
                     </div>
 
-                    {/* <div className={style.gridButtons}>
+                     <div className={style.gridButtons}>
                         <button className={style.button}>
                             Ver carta
                         </button>
                         <button className={style.button}>
                             Reservar Mesa
                         </button>
-                    </div>*/}
-                </div>
+                    </div>
+                </div>*/}
             </div>
             <div className={style.gridImageButton}>
                 <div className={style.gridSideImage}>
