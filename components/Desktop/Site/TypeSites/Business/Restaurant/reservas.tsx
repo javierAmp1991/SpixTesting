@@ -5,8 +5,6 @@ import {ScheduleContext} from "../../../../../Providers/Site/TypeSite/Business/R
 import Image from "next/image";
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {DatePicker} from "@material-ui/pickers";
-import {MuiPickersUtilsProvider} from "@material-ui/pickers";
-import DateFnsUtils from "@date-io/date-fns";
 import PopUpContainer from "../../../../Misc/popUpContainer";
 
 const greenColor: string = "#10c010"
@@ -66,42 +64,87 @@ export default function Reservas() {
                         <div className={style.gridHoursLapse}>
                             {
                                 schedule.map((item, index) =>
-                                    index <= 7 &&
-                                    <div key={item.Id}
-                                         style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
-                                         className={`${style.baseTag}`}>
-                                        <div>{item.Hour} hrs.</div>
-                                        <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
-                                              className={style.baseCircle}/>
-                                    </div>
+                                    index <= 7 ?
+                                        item.IsDisponible ?
+                                            <button className={style.contH}>
+                                                <div key={item.Id}
+                                                     style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                     className={`${style.baseTag}`}>
+                                                    <div>{item.Hour} hrs.</div>
+                                                </div>
+                                                <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                      className={style.baseCircle}/>
+                                            </button>
+                                            :
+                                            <div className={style.contH}>
+                                                <div key={item.Id}
+                                                     style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                     className={`${style.baseTagNoHover}`}>
+                                                    <div>{item.Hour} hrs.</div>
+                                                </div>
+                                                <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                      className={style.baseCircle}/>
+                                            </div>
+                                        :
+                                        <></>
                                 )
                             }
                         </div>
                         <div className={style.gridHoursLapse}>
                             {
                                 schedule.map((item, index) =>
-                                    index > 7 && index <= 15 &&
-                                    <div key={item.Id}
-                                         style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
-                                         className={`${style.baseTag}`}>
-                                        <div>{item.Hour} hrs.</div>
-                                        <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
-                                              className={style.baseCircle}/>
-                                    </div>
+                                    index > 7 && index <= 15 ?
+                                        item.IsDisponible ?
+                                            <button className={style.contH}>
+                                                <div key={item.Id}
+                                                     style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                     className={`${style.baseTag}`}>
+                                                    <div>{item.Hour} hrs.</div>
+                                                </div>
+                                                <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                      className={style.baseCircle}/>
+                                            </button>
+                                            :
+                                            <div className={style.contH}>
+                                                <div key={item.Id}
+                                                     style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                     className={`${style.baseTagNoHover}`}>
+                                                    <div>{item.Hour} hrs.</div>
+                                                </div>
+                                                <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                      className={style.baseCircle}/>
+                                            </div>
+                                        :
+                                        <></>
                                 )
                             }
                         </div>
                         <div className={style.gridHoursLapse}>
                             {
                                 schedule.map((item, index) =>
-                                    index > 15 && index <= 23 &&
-                                    <div key={item.Id}
-                                         style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
-                                         className={`${style.baseTag}`}>
-                                        <div>{item.Hour} hrs.</div>
-                                        <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
-                                              className={style.baseCircle}/>
-                                    </div>
+                                    index > 15 && index <= 23 ?
+                                        item.IsDisponible ?
+                                            <button className={style.contH}>
+                                                <div key={item.Id}
+                                                     style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                     className={`${style.baseTag}`}>
+                                                    <div>{item.Hour} hrs.</div>
+                                                </div>
+                                                <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                      className={style.baseCircle}/>
+                                            </button>
+                                            :
+                                            <div className={style.contH}>
+                                                <div key={item.Id}
+                                                     style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                     className={`${style.baseTagNoHover}`}>
+                                                    <div>{item.Hour} hrs.</div>
+                                                </div>
+                                                <span style={{border: `2px solid ${getColor(item.IsDisponible)}`}}
+                                                      className={style.baseCircle}/>
+                                            </div>
+                                        :
+                                        <></>
                                 )
                             }
                         </div>

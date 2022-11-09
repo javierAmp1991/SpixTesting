@@ -65,7 +65,6 @@ export default function ReservasMobile() {
                 <div className={style.gridHoursLapse}>
                     {
                         newSchedule.map((item, index) =>
-
                             <div key={item.Id}
                                  style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
                                  className={`${style.baseTag} 

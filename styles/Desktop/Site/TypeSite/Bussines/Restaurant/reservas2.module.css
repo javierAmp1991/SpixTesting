@@ -108,6 +108,10 @@
     color: var(--colorTitlesDesktop);
 }
 
+.contH {
+    position: relative;
+}
+
 .baseTag {
     padding: 6px 16px;
     box-shadow: 0 0 2px rgba(0, 0, 0, .2);
@@ -115,9 +119,27 @@
     align-items: center;
     text-align: center;
     font-size: 14px;
-    position: relative;
     color: var(--colorPrimaryTextDesktop);
     width: max-content;
+    transform-origin: 0;
+    transition: .2s;
+    font-weight: 500;
+}
+
+.baseTag:hover {
+    transform: scale(1.1);
+}
+
+.baseTagNoHover {
+    padding: 6px 16px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: var(--colorPrimaryTextDesktop);
+    width: max-content;
+    transition: .4s;
 }
 
 .leftSide {
@@ -138,6 +160,7 @@
     background: white;
     border-radius: 50%;
     left: -33px;
+    top: calc(50% - 8px);
 }
 
 .gridTimeLapse {
@@ -192,7 +215,7 @@
 }
 
 .styleButtonPopUp {
-    padding: 8px 24px;
+    padding: 6px 24px;
     border-radius: 4px;
     background: var(--gradientBlueButton);
     color: white;
