@@ -2,10 +2,10 @@ import style from "/styles/Desktop/Site/TypeSite/Bussines/Default/navSectionProd
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 
-export default function NavSectionProducts({item} : {item: SectionProductItem[]}) {
+export default function NavSectionProducts({item}: { item: SectionProductItem[] }) {
     const handleTagSelected = (id: string) => {
-        let data = document.getElementById(id)
-       data.scrollIntoView({behavior: "smooth", block: "nearest"})
+        let data = document.getElementById(id).getBoundingClientRect()
+        window.scrollTo({top: (data.top + window.scrollY - 40), behavior: "smooth"})
     }
     return (
         <div className={style.grid}>
@@ -19,7 +19,7 @@ export default function NavSectionProducts({item} : {item: SectionProductItem[]}
                         <div className={style.totalProducts}>
                             ({item.ListProducts.length} productos)
                         </div>
-                        <div className={index == 0? style.sizeImage2 : style.sizeImage}>
+                        <div className={index == 0 ? style.sizeImage2 : style.sizeImage}>
                             <Image layout={"fill"} src={item.ListProducts[index].ImagePath} alt={""}/>
                         </div>
 
