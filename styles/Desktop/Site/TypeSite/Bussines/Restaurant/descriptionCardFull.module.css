@@ -89,9 +89,6 @@
     grid-auto-flow: column;
     align-items: center;
     gap: 8px;
-    position: absolute;
-    right: 36px;
-
 }
 
 .sizeIcon {
@@ -176,9 +173,8 @@
 }
 
 .button {
-    height: 100%;
     display: grid;
-    align-content: end;
+    margin-top: 12px;
 }
 
 .imagePopUp {
@@ -186,4 +182,6 @@
     aspect-ratio: 1/1;
     position: relative;
 }
+
+
 

@@ -1,28 +1,40 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/reservas2.module.css"
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {ScheduleContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
+import Image from "next/image";
+import {GlobalConst} from "../../../../../../public/globalConst";
 
 const greenColor: string = "#10c010"
 const redColor: string = "#ff4a4a"
-const grayColor: string = "rgba(0,0,0,.2)"
+const grayColor: string = "rgba(0,0,0,.4)"
 const title: string = "Reservas"
 const horarioText: string = "Horario:"
-const disponibleTagText = "Reservas Disponibles"
-const noDisponibleTagText = "Reservas agotadas"
-const closeLocalText: string = "Local cerrado"
+const disponibleTagText = "Disponibles"
+const noDisponibleTagText = "Agotadas"
+const closeLocalText: string = "Cerrado"
 const reserveTable: string = " Reservar tu Mesa"
+const scheduleText: string = "Reservar para: "
 
 export default function Reservas() {
     const schedule: Schedule[] = useContext(ScheduleContext)
+    let[dateSelected, setDateSelected] = useState("")
     return (
         <div className={style.mainCont}>
             <div className={style.mainDiv}>
                 <div className={style.title}>
                     {title}
                 </div>
-                <div className={style.hour}>
-                    {horarioText} de 08:00 a 20:00
+                <div className={style.gridSelectDate}>
+                    <div>
+                        {scheduleText}
+                    </div>
+                    <div className={style.contDate}>
+                        Hoy
+                    </div>
+                    <button className={style.sizeCalendar}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon}/>
+                    </button>
                 </div>
                 <div className={style.gridInfo}>
                     <div className={style.gridTags}>
@@ -83,9 +95,9 @@ export default function Reservas() {
                             }
                         </div>
                     </div>
-                    <button className={style.styleButton}>
+                  {/*  <button className={style.styleButton}>
                         {reserveTable}
-                    </button>
+                    </button>*/}
                 </div>
             </div>
         </div>

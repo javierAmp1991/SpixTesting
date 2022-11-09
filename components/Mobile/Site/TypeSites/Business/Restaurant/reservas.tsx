@@ -5,21 +5,20 @@ import {useContext} from "react";
 import {ScheduleContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import {PrincipalFeaturedSearch} from "../../../../../../dataDemo/EventView/featureView";
 import item = PrincipalFeaturedSearch.item;
+import Image from "next/image";
+import {GlobalConst} from "../../../../../../public/globalConst";
 
 const greenColor: string = "#10c010"
 const redColor: string = "#ff4a4a"
+const grayColor: string = "rgba(0,0,0,.4)"
 const title: string = "Reservas"
-const horarioText: string = "Horario:"
-const disponibleTagText = "Reservas Disponibles"
-const noDisponibleTagText = "Reservas agotadas"
+const disponibleTagText = "Disponibles"
+const noDisponibleTagText = "Agotadas"
+const closeLocalText: string = "Cerrado"
+const scheduleText: string = "Reservar para: "
 
 export default function ReservasMobile() {
-    const schedule: Schedule[] = useContext(ScheduleContext)
-    const newSchedule: Schedule[] = getSchedule()
-
-    function getSchedule(): Schedule[] {
-        return schedule.filter(item => item.IsDisponible != null)
-    }
+    const newSchedule: Schedule[] = useContext(ScheduleContext)
 
     return (
         <div className={style.mainCont}>
@@ -27,8 +26,16 @@ export default function ReservasMobile() {
                 <div className={style.title}>
                     {title}
                 </div>
-                <div className={style.hour}>
-                    {horarioText} de 08:00 a 20:00
+                <div className={style.gridSelectDate}>
+                    <div>
+                        {scheduleText}
+                    </div>
+                    <div className={style.contDate}>
+                        Hoy
+                    </div>
+                    <button className={style.sizeCalendar}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.calendarIcon}/>
+                    </button>
                 </div>
                 <div className={style.gridTags}>
                     <div className={style.tagDisponible1}>
@@ -37,8 +44,12 @@ export default function ReservasMobile() {
                     <div className={style.tagReservado1}>
                         {noDisponibleTagText}
                     </div>
+                    <div className={style.tagNoAtention1}>
+                        {closeLocalText}
+                    </div>
                     <div className={style.tagDisponible2}/>
                     <div className={style.tagReservado2}/>
+                    <div className={style.tagNoAtention2}/>
                 </div>
                 <div className={style.lineCircle}/>
                 <div className={style.gridHoursLapse}>
@@ -46,12 +57,12 @@ export default function ReservasMobile() {
                         newSchedule.map((item, index) =>
 
                             <div key={item.Id}
-                                 style={{borderBottom: `2px solid ${item.IsDisponible ? greenColor : redColor}`}}
+                                 style={{borderBottom: `2px solid ${getColor(item.IsDisponible)}`}}
                                  className={`${style.baseTag} 
                                      ${(index + 1) % 2 == 0 ? style.leftSide : style.rightSide}`}>
                                 <div>{item.Hour} hrs.</div>
                                 <span style={{
-                                    border: `2px solid ${item.IsDisponible ? greenColor : redColor}`,
+                                    border: `2px solid ${getColor(item.IsDisponible)}`,
                                     left: (index + 1) % 2 == 0 ? "calc(100% + 10px)" : "-22px"
                                 }}
                                       className={style.baseCircle}/>
@@ -61,9 +72,13 @@ export default function ReservasMobile() {
                 </div>
                 <div className={style.lineCircle}/>
             </div>
-            <button className={style.styleButton}>
+          {/*  <button className={style.styleButton}>
                 Reservar tu Mesa
-            </button>
+            </button>*/}
         </div>
     )
+
+    function getColor(isDisponible: boolean): string {
+        return isDisponible == null ? grayColor : isDisponible ? greenColor : redColor
+    }
 }

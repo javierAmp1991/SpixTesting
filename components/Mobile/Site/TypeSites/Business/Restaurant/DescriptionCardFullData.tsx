@@ -12,8 +12,9 @@ import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 
 const directionText: string = "Direccion:"
-const contactText: string = "Contacto:"
-const seeGalery: string = "Ver galeria"
+const seeCard: string = "Ver carta"
+const contactText: string = "Contacto: "
+const socialMediaText: string = "Siguenos en: "
 
 export default function DescriptionCardFullData() {
     const info: PresentationCard = useContext(HeaderContext)
@@ -52,6 +53,36 @@ export default function DescriptionCardFullData() {
                         <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
                     </div>
                     <div className={style.gridInfoNew}>
+                        <span>{contactText}</span>
+                        <div className={style.gridContact}>
+                            {
+                                info.Contact.map((item, index) =>
+                                    index <= 2 &&
+                                    <Link key={item.Id} href={item.Link}>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon}/>
+                                        </div>
+                                    </Link>
+                                )
+                            }
+                        </div>
+                    </div>
+                    <div className={style.gridInfoNew}>
+                        <span>{socialMediaText}</span>
+                        <div className={style.gridContact}>
+                            {
+                                info.Contact.map((item, index) =>
+                                    index > 2 &&
+                                    <Link key={item.Id} href={item.Link}>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon}/>
+                                        </div>
+                                    </Link>
+                                )
+                            }
+                        </div>
+                    </div>
+                 {/*   <div className={style.gridInfoNew}>
                         <div>{contactText}</div>
                         {
                             info.Contact.map(item =>
@@ -62,7 +93,7 @@ export default function DescriptionCardFullData() {
                                 </Link>
                             )
                         }
-                    </div>
+                    </div>*/}
                 </div>
 
                 <LayoutWithNavCircleMobile isDarkMode={false}>
@@ -89,11 +120,13 @@ export default function DescriptionCardFullData() {
                     </div>
                 </div>*/}
 
+                <div className={style.separationLine}/>
+
                 <div className={utilities.clamp5}>
                     {info.Description}
                 </div>
                 <div className={style.button}>
-                    Ver carta
+                    {seeCard}
                 </div>
             </div>
 

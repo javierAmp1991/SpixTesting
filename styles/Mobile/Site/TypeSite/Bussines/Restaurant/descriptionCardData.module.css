@@ -134,3 +134,18 @@
     padding: 0 0 0 8px;
 }
 
+.gridContact {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.separationLine{
+    height: 1px;
+    width: 100%;
+    background: var(--separationLineColor);
+}
+

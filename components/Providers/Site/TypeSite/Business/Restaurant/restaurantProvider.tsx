@@ -621,11 +621,6 @@ const listNewsAdd: News[] = [
 ]
 const scheduleLis: Schedule[] = [
     {
-        Id: "horario001",
-        Hour: "00:00",
-        IsDisponible: null
-    },
-    {
         Id: "horario002",
         Hour: "01:00",
         IsDisponible: null
@@ -738,6 +733,11 @@ const scheduleLis: Schedule[] = [
     {
         Id: "horario0012",
         Hour: "23:00",
+        IsDisponible: null
+    },
+    {
+        Id: "horario001",
+        Hour: "00:00",
         IsDisponible: null
     },
 ]

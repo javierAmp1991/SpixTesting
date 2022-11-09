@@ -4,16 +4,13 @@ import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import style from "/styles/Mobile/Site/TypeSite/Events/informationImages.module.css"
 import ImageVideoMobile from "./imageVideo";
-import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
+import {GlobalId} from "../../../../../public/globalConst";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
 import {createPortal} from "react-dom";
 import SocialBar from "../../../../Desktop/Misc/socialBar";
 import Link from "next/link";
-
-const contactText: string = "Nuestras redes sociales"
-const buyTickets: string = "Comprar Entradas"
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -32,44 +29,36 @@ export default function InformationImages() {
         <div className={style.mainDiv}>
             <div className={style.mainCont}>
                 <div className={style.gridAtr}>
-                    {info.Attributes.map((item, index) =>
+                    {info.Attributes.map((item) =>
                         <div key={item} className={style.tagCategory}>
                             {item}
                         </div>
                     )}
                 </div>
-                <div className={style.gridImageName}>
-                    <div className={style.gradient}>
-                        <div className={style.sizeLogo}>
-                            <Image layout={"fill"} src={info.PathLogo}/>
-                        </div>
+                <div className={style.gridInfo}>
+                    <div className={style.name}>
+                        {info.Name}
                     </div>
-                    <div className={style.gridInfo}>
-                        <div className={style.name}>
-                            {info.Name}
-                        </div>
+                </div>
+                <div className={style.gridSocialRedes}>
+                    <SocialBar/>
+                    <div className={style.gridContact}>
+                        {
+                            info.Contact.map((item) =>
+                                <Link key={item.Id} href={item.Link}>
+                                    <a>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                        </div>
+                                    </a>
+                                </Link>
+                            )
+                        }
                     </div>
                 </div>
             </div>
 
             <ImageVideoMobile/>
-
-            <div className={style.gridSocialRedes}>
-                <SocialBar/>
-                <div className={style.gridContact}>
-                    {
-                        info.Contact.map((item, index) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <a>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                    </div>
-                                </a>
-                            </Link>
-                        )
-                    }
-                </div>
-            </div>
 
             <div>
                 <div className={style.description}>
@@ -79,7 +68,6 @@ export default function InformationImages() {
                     <span className={style.produce}>Produce:</span> El Huevo
                 </div>
             </div>
-
 
             {
                 displayLevelUser &&

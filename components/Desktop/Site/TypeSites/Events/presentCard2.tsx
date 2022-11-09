@@ -36,15 +36,8 @@ export default function PresentCard2() {
                         )}
                     </div>
 
-                    <div className={style.gridLogoName}>
-                        <div className={style.gradient}>
-                            <div className={style.sizeLogo}>
-                                <Image layout={"fill"} src={info.PathLogo}/>
-                            </div>
-                        </div>
-                        <div className={style.name}>
-                            {info.Name}
-                        </div>
+                    <div className={style.name}>
+                        {info.Name}
                     </div>
                     <div>
                         <div className={style.description}>
