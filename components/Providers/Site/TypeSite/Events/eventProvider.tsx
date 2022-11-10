@@ -79,7 +79,8 @@ const principalInfo: PrincipalInfoEvent = {
     Likes: 400,
     WishList: 50,
     Images: ["/images/thedoor1.jpg", "/images/thedoor2.jpg", "/images/thedoor3.jpg", "/images/thedoor4.jpg"/*, "/images/thedoor5.jpg"*/],
-    Video: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
+    Video: null,
+    /*Video: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",*/
     Contact: [
         {
             Id: "contact005",

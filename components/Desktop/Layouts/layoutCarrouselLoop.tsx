@@ -5,7 +5,7 @@ import React, {useEffect, useRef, useState} from "react";
 import styles from "/styles/Desktop/Layouts/layoutCarrousel.module.css";
 import styleCarrouselLoop from "/styles/Desktop/Layouts/layoutCarrouselLoop.module.css"
 
-export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
+export default function LayoutCarrouselLoop({children, layoutProp, isArrowVisible}) {
     const mainDivRef = useRef(null)
     const sizeDivRef = useRef(null)
     let [visibility, setVisibility] = useState(true);
@@ -56,13 +56,23 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
 
     return (
         <div className={styles.mainDivCarrouselProperties}>
-            <button onClick={handleLeft}
-                    style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
-                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                    className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
+            {
+                isArrowVisible ?
+                    <button onClick={handleLeft}
+                            style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                    </button>
+                    :
+                    <button onClick={handleLeft}
+                            style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility && utilities.opacity0}`}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
-            </button>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                    </button>
+            }
 
             <div ref={sizeDivRef} className={styleCarrouselLoop.mainContCar}>
                 <div ref={mainDivRef} onPointerOver={showArrow}
@@ -72,13 +82,23 @@ export default function LayoutCarrouselLoop({children, layoutProp, isAuto}) {
                 </div>
             </div>
 
-            <button onClick={handleRight}
-                    style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
-                    onPointerOver={showArrow} onPointerOut={hiddeArrow}
-                    className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
+            {
+                isArrowVisible ?
+                    <button onClick={handleRight}
+                            style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}`}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                    </button>
+                    :
+                    <button onClick={handleRight}
+                            style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
+                            onPointerOver={showArrow} onPointerOut={hiddeArrow}
+                            className={`${styles.containerArrow} ${styles.propertiesArrowCarrousel}
                     ${visibility && utilities.opacity0}`}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
-            </button>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                    </button>
+            }
         </div>
     )
 

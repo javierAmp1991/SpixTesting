@@ -1,11 +1,11 @@
 .mainDiv {
     overflow: hidden;
     height: 48px;
-    position: fixed;
+    /*position: fixed;*/
     position: sticky;
     top: 10px;
     display: grid;
-    width: calc(var(--maxWidthBodyContent) - 8px);
+    width: 100%;
     grid-auto-columns: max-content;
     grid-auto-flow: column;
     align-items: center;

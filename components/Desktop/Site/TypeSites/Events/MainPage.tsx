@@ -1,14 +1,17 @@
-import NewLayoutSideCard from "../../../Layouts/newLayoutSideCard";
-import SideCard from "./sideCard";
 import style from "/styles/Desktop/Site/TypeSite/Events/mainPage.module.css"
-import MainCard from "./mainCard";
-import FooterDesk from "../../../EventPage/footerDesk";
+import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import {useContext} from "react";
-import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import BannerVar from "../../../Misc/bannerVar";
-import NavMenuScrollTo from "../../../Misc/navMenuScrollTo";
 import {NavBarEventsSections} from "../../../../../Class/Misc/GlobalClass";
+import BannerVar from "../../../Misc/bannerVar";
+import FooterDesk from "../../../EventPage/footerDesk";
+import PresentCard2 from "./presentCard2";
+import TicketsSection from "./ticketsSection";
+import InSearch from "./inSearch";
+import OfferProducts from "./offerProducts";
+import OtherEvents from "./otherEvents";
+import Products from "./products";
+import QuestionSection from "./questionSection";
 
 const idSectionsNew: NavBarEventsSections[] = [
     {
@@ -47,17 +50,28 @@ const idSectionsNew: NavBarEventsSections[] = [
         Name: "Noticias"
     }
 ]
+const sizeBanner: string = `40vh`
 
 export default function MainPage() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     return (
         <>
-            <div className={"relative"}>
-                <BannerVar item={info.PathBanner} size={`40vh`}/>
-                {/*<NavMenuScrollTo idItems={idSectionsNew}/>*/}
-            </div>
+            <BannerVar item={info.PathBanner} size={sizeBanner}/>
             <div className={style.mainDiv}>
-                <MainCard/>
+                <div className={style.mainCard}>
+                    <PresentCard2/>
+                    <TicketsSection/>
+                    <div className={style.separationLine}/>
+                    <InSearch/>
+                    <div className={style.separationLine}/>
+                    <OfferProducts/>
+                    <div className={style.separationLine}/>
+                    <OtherEvents/>
+                    <div className={style.separationLine}/>
+                    <Products/>
+                    <div className={style.separationLine}/>
+                    <QuestionSection/>
+                </div>
                 <FooterDesk/>
             </div>
         </>

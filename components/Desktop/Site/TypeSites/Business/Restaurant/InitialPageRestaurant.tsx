@@ -71,7 +71,9 @@ export default function InitialPageRestaurant() {
                 <InSearchRestaurant/>
                 <div className={style.separationLine}/>
 
-                <NavSectionProducts item={infoSectionProducts}/>
+                <div className={style.spaceNavSectionProducts}>
+                    <NavSectionProducts item={infoSectionProducts}/>
+                </div>
                 <div className={style.separationLine}/>
 
                 <InOfferRestaurant/>

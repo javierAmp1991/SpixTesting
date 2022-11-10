@@ -394,7 +394,7 @@ export default function Index() {
 //endregion
 
     //region desktop components
-    let carrouselBanner = <LayoutCarrouselLoop isAuto={false} layoutProp={layoutPropBanner}>
+    let carrouselBanner = <LayoutCarrouselLoop isArrowVisible={false} layoutProp={layoutPropBanner}>
         {
             HomeBannerData.listBanners.map((item, index) =>
                 <FullBanner item={item} key={index}/>

@@ -130,7 +130,7 @@ export default function PresentCard2() {
                 displayCarrouselImages &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handleDisplayImages} isButtonVisible={true} isBackground={false}>
-                        <LayoutCarrouselLoop isAuto={false} layoutProp={layoutPropBanner}>
+                        <LayoutCarrouselLoop isArrowVisible={true} layoutProp={layoutPropBanner}>
                             {
                                 carrouselImages.map(item =>
                                     <div key={item} className={style.sizePopUpImage}>

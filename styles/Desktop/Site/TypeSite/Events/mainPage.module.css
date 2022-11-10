@@ -1,17 +1,18 @@
 .mainDiv {
     width: var(--maxWidthBodyContent);
-    margin: 40px auto 0 auto;
+    margin: 40px auto auto auto;
     display: grid;
-    gap: 52px;
 }
 
 .mainCard {
-/*    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-    padding: 24px;
-    overflow: scroll;
-    border-radius: 12px;*/
     display: grid;
-    gap: 52px;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.mainHeader {
+    display: grid;
+    gap: 40px;
 }
 
 .separationLine {
@@ -20,12 +21,10 @@
     background: var(--separationLineColor);
 }
 
-.gridInSearch{
+.gridInSearch {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
-;
 }
 
 
