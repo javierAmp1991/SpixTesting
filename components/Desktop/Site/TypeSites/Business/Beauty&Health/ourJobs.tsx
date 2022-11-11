@@ -1,6 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/ourJobs.module.css"
 import Image from "next/image"
-import {func} from "prop-types";
 
 const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
 export default function OurJobs() {
@@ -15,7 +14,7 @@ export default function OurJobs() {
                     {
                         listCortes.map((item, index) =>
                             <div key={index} className={`${style.sizeImage} ${getStyle(index)}`}>
-                                <Image layout={"fill"} src={item}/>
+                                <Image layout={"fill"} src={item} alt={""}/>
                             </div>
                         )
                     }
