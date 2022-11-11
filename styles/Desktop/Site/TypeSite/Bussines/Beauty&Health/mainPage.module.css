@@ -1,0 +1,40 @@
+.mainDiv {
+    width: var(--maxWidthBodyContent);
+    margin: 40px auto;
+    display: grid;
+    gap: 40px;
+}
+
+.separationLine {
+    height: 2px;
+    background: var(--separationLineColor);
+    width: 100%;
+}
+
+.gridSectionProducts {
+    display: grid;
+    gap: 40px;
+}
+
+.gridForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.title {
+    font-size: 21px;
+    padding-bottom: 50px;
+    font-weight: 500;
+}
+
+.mainDivOurServices{
+    padding-bottom: 12px;
+}
+
+.gridQuestions{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 66%;
+}

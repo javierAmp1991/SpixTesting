@@ -8,12 +8,17 @@
     gap: 8px;
     box-shadow: 0 0 6px rgba(0, 0, 0, .25);
     border-radius: 6px;
-    padding: 12px 24px;
+    padding: 12px 32px 24px 32px;
     transition: .4s;
     position: relative;
 }
 
-.title{
+.contInfo {
+    display: grid;
+    justify-items: center;
+}
+
+.title {
     text-align: center;
     font-size: 18px;
     color: var(--colorTitlesDesktop);
@@ -21,7 +26,7 @@
 }
 
 .contImage {
-    --sizeReviewImage: 80px;
+    --sizeReviewImage: 86px;
     height: var(--sizeReviewImage);
     width: var(--sizeReviewImage);
     top: calc(var(--sizeReviewImage) / 2 * -1);
@@ -33,7 +38,7 @@
 
 }
 
-.gradient{
+.gradient {
     padding: 4px;
     background: white;
     width: 100%;
@@ -64,6 +69,8 @@
 .byWho {
     color: var(--colorSecundaryTextDesktop);
     text-align: center;
+    padding-bottom: 4px;
+    font-size: 16px;
 }
 
 .gridOpt {
@@ -76,10 +83,16 @@
     gap: 12px;
 }
 
-.principalDiv{
+.principalDiv {
     display: grid;
     justify-content: center;
     gap: 12px;
     padding-top: 40px;
     justify-items: center;
+}
+
+.contOptionBar{
+    display: grid;
+    justify-content: left;
+    width: 100%;
 }

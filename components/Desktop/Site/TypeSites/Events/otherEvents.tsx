@@ -15,7 +15,7 @@ export default function OtherEvents() {
         PositionArrowX: "-16px",
         Padding: 0,
         Gap: 16,
-        Grid: 5,
+        Grid: 6,
         IsButtonVisible: true,
         LeftArrow: () => otherEvents.LeftClick(),
         RightArrow: () => otherEvents.RightClick()

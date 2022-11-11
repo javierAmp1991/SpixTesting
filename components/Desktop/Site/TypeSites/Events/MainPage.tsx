@@ -60,6 +60,7 @@ export default function MainPage() {
             <div className={style.mainDiv}>
                 <div className={style.mainCard}>
                     <PresentCard2/>
+                    <div className={style.separationLine}/>
                     <TicketsSection/>
                     <div className={style.separationLine}/>
                     <InSearch/>

@@ -18,8 +18,8 @@ export default function DescriptionCardFull() {
     let [displayMap, setDisplayMap] = useState(false)
     let [imageDisplay, setImageDisplay] = useState("")
     let [displayImage, setDisplayImage] = useState(false)
-    const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
     const handlePopUpImage = () => setDisplayImage(displayImage = !displayImage)
+    const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
     const handleClickImage = (path: string) => {
         setImageDisplay(imageDisplay = path)
         handlePopUpImage()

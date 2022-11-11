@@ -3,7 +3,6 @@ import style from "/styles/Desktop/Misc/reviewViewVertical.module.css"
 import Image from "next/image";
 import OptionBar from "./optionBar";
 import {ReviewItem} from "../../../Class/Misc/GlobalClass";
-import RatingStarDesk from "./ratingStarDesk";
 import RatingStarVar from "./ratingStarVar";
 
 export default function ReviewViewVertical({item}: { item: ReviewItem }) {
@@ -18,12 +17,12 @@ export default function ReviewViewVertical({item}: { item: ReviewItem }) {
             </div>
 
             <div className={style.principalDiv}>
-                <div>
+                <div className={style.contInfo}>
                     <div className={style.title}>
                         {item.Title}
                     </div>
                     <div className={style.byWho}>{item.ByWho}</div>
-                    <RatingStarVar size={20} item={item.Rating}/>
+                    <RatingStarVar size={14} item={item.Rating}/>
                 </div>
 
                 <div className={utilities.fontPrimaryText}>
@@ -32,7 +31,7 @@ export default function ReviewViewVertical({item}: { item: ReviewItem }) {
                     </div>
                 </div>
 
-                <div className={`${utilities.gridMaxContent2} ${style.gridOpt}`}>
+                <div className={style.contOptionBar}>
                     <OptionBar/>
                 </div>
             </div>

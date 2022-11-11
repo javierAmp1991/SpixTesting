@@ -15,7 +15,7 @@ export default function Products() {
         PositionArrowX: "-16px",
         Padding: 0,
         Gap: 16,
-        Grid: 5,
+        Grid: 6,
         IsButtonVisible: true,
         LeftArrow: () => products.LeftClick(),
         RightArrow: () => products.RightClick()

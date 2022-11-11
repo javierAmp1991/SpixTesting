@@ -3,7 +3,7 @@
     height: 48px;
     /*position: fixed;*/
     position: sticky;
-    top: 10px;
+    top: 0;
     display: grid;
     width: 100%;
     grid-auto-columns: max-content;

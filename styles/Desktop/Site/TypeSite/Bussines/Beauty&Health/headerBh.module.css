@@ -1,0 +1,142 @@
+.mainDiv {
+    position: relative;
+}
+
+.blackScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .8);
+    width: 100%;
+    height: 100%;
+}
+
+.blackScreen2 {
+    /*    background: linear-gradient(180deg, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .1) 50%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, .3) 0%, rgba(255, 255, 255, .1) 50%);*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5% 10%;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    color: black;
+    color: #0f1316;
+    text-align: center;
+    animation: animationTitle 1s linear;
+}
+
+.description {
+    color: white;
+    color: black;
+    color: var(--colorPrimaryTextDesktop);
+    color: #0f1316;
+    width: 50%;
+    margin: auto;
+    font-size: 14px;
+    animation: animationDescription 1s linear;
+    padding-bottom: 12px;
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 10px;
+    justify-content: center;
+    padding: 12px 0;
+    animation: animationDescription 1s linear;
+}
+
+.tag {
+    padding: 2px 12px;
+    background: linear-gradient(145deg, rgb(138, 215, 92), rgb(109, 190, 60));
+    border-radius: 16px;
+    color: white;
+    font-weight: 500;
+}
+
+.sizeLogo {
+    width: 200px;
+    aspect-ratio: 1/1;
+    position: relative;
+    animation: animationLogo 1s linear;
+    margin: auto;
+}
+
+.gridSocialContact {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 32px;
+    margin: auto;
+    padding-bottom: 20px;
+    animation: animationDescription 1s linear;
+}
+
+.gridContact {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sizeIcon {
+    height: 16px;
+    width: 16px;
+    position: relative;
+}
+
+.contDirection{
+    width: 50%;
+    margin: auto;
+    color: #0f1316;
+}
+
+@keyframes animationTitle {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes animationDescription {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+@keyframes animationLogo {
+    0% {
+        transform: scale(0);
+    }
+    70% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}

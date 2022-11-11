@@ -1,5 +1,6 @@
 .mainDiv {
     --sizeSection: 360px;
+    padding-top: 12px;
 }
 
 .gridPrincipal {
@@ -80,7 +81,6 @@
     bottom: -14px;
     left: calc(50% - 15px);
 }*/
-
 
 .gridTicketsNoScroll {
     display: grid;

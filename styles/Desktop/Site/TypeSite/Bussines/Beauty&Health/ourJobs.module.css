@@ -1,0 +1,70 @@
+.mainDiv {
+    padding-bottom: 220px;
+    padding-top: 100px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+.gridCarrousel {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: 20px;
+    align-items: center;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gridImages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.focus {
+    transform: scale(1.2);
+    z-index: 100;
+    position: relative;
+    top: 80px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    transition: .4s;
+}
+
+.focus:hover {
+    transform: scale(1.3);
+}
+
+.noFocus {
+    transform: scale(1.1);
+    z-index: 90;
+    position: relative;
+    top: 40px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+    transition: .4s;
+}
+
+.noFocus:hover {
+    transform: scale(1.2);
+}
+
+.noFocus2 {
+    transform: scale(1);
+    z-index: 80;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .2);
+    transition: .4s;
+}
+
+.noFocus2:hover {
+    transform: scale(1.1);
+}

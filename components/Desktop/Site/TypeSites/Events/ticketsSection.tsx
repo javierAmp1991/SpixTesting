@@ -31,12 +31,8 @@ export default function TicketsSection() {
     const isOverflow: boolean = getIsOverFlow()
 
     return (
-        <LayoutTitle title={"Tickets"}>
-            <div className={style.mainDiv}>
-                {/*<div className={style.title}>
-                {title}
-            </div>*/}
-
+        <div className={style.mainDiv}>
+            <LayoutTitle title={"Tickets"}>
                 <div className={style.gridPrincipal}>
                     <div className={style.gridRightDiv}>
                         <div>
@@ -159,17 +155,17 @@ export default function TicketsSection() {
                         </button>
                     </div>
                 </div>
+            </LayoutTitle>
+            {
+                displayMap &&
+                createPortal(
+                    <PopUpContainer closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
+                        <MapPopUp item={mapPopUp}/>
+                    </PopUpContainer>, document.getElementById(idPortal)
+                )
+            }
+        </div>
 
-                {
-                    displayMap &&
-                    createPortal(
-                        <PopUpContainer closePopUp={handleDisplayMap} isBackground={true} isButtonVisible={true}>
-                            <MapPopUp item={mapPopUp}/>
-                        </PopUpContainer>, document.getElementById(idPortal)
-                    )
-                }
-            </div>
-        </LayoutTitle>
     )
 
     function getMoneyValue(num: number): string {
