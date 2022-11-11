@@ -1,0 +1,141 @@
+.mainGrid {
+    display: grid;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .20);
+    position: relative;
+    border-radius: 6px;
+    background: white;
+    transition: .4s;
+    width: 300px;
+}
+
+/*.mainGrid:hover {
+    transform: scale(1.05);
+}*/
+
+.contImage {
+    padding: 2px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .1) 50%, white 50%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .1) 50%);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 130px;
+    left: calc(50% - 65px);
+    top: -20px;
+    z-index: 500;
+
+}
+
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    background: white;
+}
+
+.mainDivImage {
+    display: grid;
+    align-items: center;
+    position: relative;
+    padding: 12px 12px 0 12px;
+}
+
+.sizeImageProduct {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.gridPriceWithDiscount {
+    display: grid;
+    align-content: center;
+}
+
+.gridInfoProduct {
+    display: grid;
+    gap: 4px;
+    padding: 8px;
+}
+
+.separationLine {
+    width: 100%;
+    height: 2px;
+    background: var(--separationLineColor);
+}
+
+.gridInfoProductHorizontal {
+    display: grid;
+    gap: 16px;
+    padding: 130px 24px 32px 24px;
+    align-items: start;
+}
+
+.discountBox {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 3px;
+    background: rgba(0, 128, 0, .1);
+    padding: 3px 5px;
+    height: max-content;
+    align-items: center;
+}
+
+.gridPriceICon {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.discountStyle {
+    font-weight: 500;
+    color: #06b906;
+    font-size: 12px;
+}
+
+.sizeDollarUp {
+    height: 12px;
+    width: 12px;
+    position: relative;
+}
+
+.description {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.name {
+    font-size: 16px;
+}
+
+.price {
+    color: var(--colorTitlesDesktop);
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.positionLastTicket {
+    position: absolute;
+    width: 70%;
+    aspect-ratio: 1/1;
+    top: 0;
+    left: 0;
+}
+
+.button {
+    padding: 6px 16px;
+    text-align: center;
+    width: 100%;
+    margin: 16px auto auto auto;
+    /*background: var(--gradientBlueButton);*/
+    background: #3195ff;
+    color: white;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.button:hover {
+    background: #3179ff;
+}

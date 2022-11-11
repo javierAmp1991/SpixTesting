@@ -47,6 +47,8 @@
 
 .mainDivInfo {
     padding: 0 48px 0 24px;
+    display: grid;
+    align-content: center;
 }
 
 .subGrid {
@@ -155,7 +157,7 @@
 .mainContSide{
     display: grid;
     height: 100%;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: 1fr;
 }
 
 .top {
@@ -208,6 +210,6 @@
     grid-template-columns: repeat(3, max-content);
     justify-content: start;
     gap: 8px;
-    padding: 0 16px 8px 16px;
+    padding-bottom: 8px;
 }
 

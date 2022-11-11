@@ -413,16 +413,13 @@ const listOfferProductsAdd: Product[] = [
     },
 ]
 const headerData: PresentationCard = {
-    Banner: "/images/bannerBH.png",
+    Banner: "/images/newBannerBH.png",
     LogoPath: "/images/logoBH.png",
     ImagePath: "/images/hellsKitchen.jpg",
     VideoPath: null,
     Name: " Centro de belleza SunFlower",
-    Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores beatae\n" +
+    Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit asperiores beatae\n" +
         "                    commodi distinctio eos esse et harum impedit inventore iste iure iusto, laudantium\n" +
-        "                    magni maiores molestiae nostrum numquam quaerat quam quibusdam quos ratione reiciendis\n" +
-        "                    rem repellendus saepe sapiente sed similique tempora tempore temporibus unde vel?\n" +
-        "                    Accusamus asperiores assumenda aut consectetur corporis cupiditate deserunt ducimus explicabo,\n" +
         "                    maxime, nesciunt porro praesentium, rerum saepe tempore unde?",
     Venue: {
         Venue: "San Francisco 657, California",

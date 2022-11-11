@@ -120,9 +120,7 @@ export default function InitialPageRestaurantMobile() {
                 <div className={style.gridSectionProducts} id={idTest}>
                     {
                         infoSectionProducts.map(item =>
-                            <div className={style.gridTeset} key={item.Id}>
-                                <ProductSectionMobile sectionProducts={item}/>
-                            </div>
+                            <ProductSectionMobile key={item.Id} sectionProducts={item}/>
                         )
                     }
                 </div>

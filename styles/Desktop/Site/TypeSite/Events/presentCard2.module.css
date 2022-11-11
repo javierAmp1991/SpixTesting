@@ -9,8 +9,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    padding-bottom: 32px;
-    /*box-shadow: var(--boxShadowCard);*/
+    padding-bottom: 12px;
+    /*border-bottom: 2px solid var(--separationLineColor);*/
 }
 
 .gridImageName {
@@ -335,7 +335,7 @@
     left: calc(50% - (var(--sizePlay) / 2));
 }
 
-.gridLogoName{
+.gridLogoName {
     display: grid;
     grid-template-columns: max-content 1fr;
     gap: 12px;
@@ -354,11 +354,18 @@
     aspect-ratio: 4/3;
     position: relative;
     object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
 }
 
 .paddingContImage {
-    padding-right: 100px;
-
+    --sizeShadow: 6px;
+    --sizeShadow2: calc(var(--sizeShadow) * 2);
+    /*padding: 8px;*/
+    box-shadow: 0 0 8px rgba(0,0,0,.2);
+    box-shadow: var(--sizeShadow) var(--sizeShadow) 0 rgba(0, 0, 0, .2), var(--sizeShadow2) var(--sizeShadow2) 0 rgba(0, 0, 0, .2);
+    margin-left: 70px;
+    margin-right: 30px;
 }
 
 .contShowVideo {

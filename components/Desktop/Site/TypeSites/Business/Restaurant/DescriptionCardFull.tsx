@@ -32,6 +32,14 @@ export default function DescriptionCardFull() {
                 </button>
                 <div className={style.mainDivInfo}>
                     <div className={style.subGrid}>
+                        <div className={style.gridTags}>
+                            {
+                                info.Tags.map(item =>
+                                    <div key={item} className={style.tag}>
+                                        {item}
+                                    </div>)
+                            }
+                        </div>
                         <div className={style.gridImageName}>
                             <div className={style.secondGradient}>
                                 <div className={style.firstGradient}>
@@ -68,21 +76,21 @@ export default function DescriptionCardFull() {
                                 }
                             </div>
                         </div>
-                        <button className={style.button}>
+                       {/* <button className={style.button}>
                             Ver carta
-                        </button>
+                        </button>*/}
                     </div>
                 </div>
             </div>
             <div className={style.mainContSide}>
-                <div className={style.gridTags}>
+               {/* <div className={style.gridTags}>
                     {
                         info.Tags.map(item =>
                             <div key={item} className={style.tag}>
                                 {item}
                             </div>)
                     }
-                </div>
+                </div>*/}
                 <div className={style.gridImageButton}>
                     <div className={style.gridSideImage}>
                         {

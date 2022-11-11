@@ -97,7 +97,7 @@ export default function PresentCard2() {
 
                     <div className={style.separationLine}/>
 
-                    {
+                    {/*{
                         <div className={style.gridSelectionZone}>
                             {
                                 info.Images.map((item, index) =>
@@ -110,10 +110,11 @@ export default function PresentCard2() {
                                 )
                             }
                         </div>
-                    }
+                    }*/}
                 </div>
+                <ImageVideo/>
 
-                {
+               {/* {
                     info.Video == null ?
                         <div className={style.paddingContImage}>
                             <div className={style.contShowImage}>
@@ -123,7 +124,7 @@ export default function PresentCard2() {
                         :
                         <video muted={true} poster={info.Images[0]} className={style.contShowVideo} controls
                                src={info.Video}/>
-                }
+                }*/}
             </div>
 
             {

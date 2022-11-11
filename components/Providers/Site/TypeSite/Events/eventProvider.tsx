@@ -9,9 +9,71 @@ import {
 import {FormLink, News, Product} from "../../../../../dataDemo/data";
 import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../dataDemo/EventView/eventVerticalView";
-import {QuestionItem} from "../../../../../Class/Misc/GlobalClass";
+import {ProductItem, QuestionItem, SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../../../public/globalConst";
 
+const listProductsOffer: ProductItem[] = [
+    {
+        Id: "idProduct01",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Name: "Producto 1.1",
+        Price: 18990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product1.jpg",
+        Rating: 4
+    },
+    {
+        Id: "idProduct02",
+        Name: "Producto 2.2",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 2990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product4.jpg",
+        Rating: 5
+    },
+    {
+        Id: "idProduct03",
+        Name: "Producto 3.3",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 990,
+        DiscountPercent: 40,
+        Include: null,
+        ImagePath: "/images/product5.jpg",
+        Rating: 4
+    },
+    {
+        Id: "idProduct04",
+        Name: "Producto 4.4",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 9990,
+        DiscountPercent: null,
+        Include: "Dcto 2da Uni.",
+        ImagePath: "/images/product6.jpg",
+        Rating: 3
+    },
+    {
+        Id: "idProduct05",
+        Name: "Producto 5.5",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 10990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product7.jpg",
+        Rating: 0
+    },
+    {
+        Id: "idProduct06",
+        Name: "Producto 6.6",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 10990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product8.jpg",
+        Rating: 5
+    }
+]
 const principalInfo: PrincipalInfoEvent = {
     Id: "12345abcde",
     Name: "Tributo a Pet Shop Boys y A Ha",
@@ -974,74 +1036,74 @@ const allDateToFind: DateAreaSelected[] = [
                 ],
                 IsSelected: false
             },
- /*           {
-                Id: "dateSelected003",
-                Name: "Area 003.3",
-                Zones: [
-                    {
-                        Id: "Zona 001",
-                        Name: "Zona 001.3.3",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 20,
-                        Include: null,
-                        Color: "Red"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 002.3.3",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 10,
-                        Include: null,
-                        Color: "Blue"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 003.3.3",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 25,
-                        Include: null,
-                        Color: "Orange"
-                    }
-                ],
-                IsSelected: false
-            },
-            {
-                Id: "dateSelected004",
-                Name: "Area 004.3",
-                Zones: [
-                    {
-                        Id: "Zona 001",
-                        Name: "Zona 001.4.4",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 20,
-                        Include: null,
-                        Color: "Red"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 002.4.4",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 10,
-                        Include: null,
-                        Color: "Blue"
-                    },
-                    {
-                        Id: "Zona 003",
-                        Name: "Zona 003.4.4",
-                        MinPrice: 9990,
-                        MaxPrice: 21990,
-                        Discount: 25,
-                        Include: null,
-                        Color: "Orange"
-                    }
-                ],
-                IsSelected: false
-            },*/
+            /*           {
+                           Id: "dateSelected003",
+                           Name: "Area 003.3",
+                           Zones: [
+                               {
+                                   Id: "Zona 001",
+                                   Name: "Zona 001.3.3",
+                                   MinPrice: 9990,
+                                   MaxPrice: 21990,
+                                   Discount: 20,
+                                   Include: null,
+                                   Color: "Red"
+                               },
+                               {
+                                   Id: "Zona 003",
+                                   Name: "Zona 002.3.3",
+                                   MinPrice: 9990,
+                                   MaxPrice: 21990,
+                                   Discount: 10,
+                                   Include: null,
+                                   Color: "Blue"
+                               },
+                               {
+                                   Id: "Zona 003",
+                                   Name: "Zona 003.3.3",
+                                   MinPrice: 9990,
+                                   MaxPrice: 21990,
+                                   Discount: 25,
+                                   Include: null,
+                                   Color: "Orange"
+                               }
+                           ],
+                           IsSelected: false
+                       },
+                       {
+                           Id: "dateSelected004",
+                           Name: "Area 004.3",
+                           Zones: [
+                               {
+                                   Id: "Zona 001",
+                                   Name: "Zona 001.4.4",
+                                   MinPrice: 9990,
+                                   MaxPrice: 21990,
+                                   Discount: 20,
+                                   Include: null,
+                                   Color: "Red"
+                               },
+                               {
+                                   Id: "Zona 003",
+                                   Name: "Zona 002.4.4",
+                                   MinPrice: 9990,
+                                   MaxPrice: 21990,
+                                   Discount: 10,
+                                   Include: null,
+                                   Color: "Blue"
+                               },
+                               {
+                                   Id: "Zona 003",
+                                   Name: "Zona 003.4.4",
+                                   MinPrice: 9990,
+                                   MaxPrice: 21990,
+                                   Discount: 25,
+                                   Include: null,
+                                   Color: "Orange"
+                               }
+                           ],
+                           IsSelected: false
+                       },*/
 
         ],
         MapImage: `/images/juventusFinal.svg`
@@ -1272,6 +1334,33 @@ const sectionTickets: TicketSectionSiteEvents = {
         MapImage: `/images/juventusFinal.svg`
     }*/
 }
+const listSectionProducst: SectionProductItem[] = [
+    {
+        Id: "sectinProduct001",
+        Name: "Whisky",
+        ListProducts: listProductsOffer
+    },
+    {
+        Id: "sectinProduct002",
+        Name: "Cervezas",
+        ListProducts: listProductsOffer
+    },
+    /*{
+        Id: "sectinProduct003",
+        Name: "Bebidas",
+        ListProducts: listProductsOffer
+    },
+    {
+        Id: "sectinProduct004",
+        Name: "Snacks",
+        ListProducts: listProductsOffer
+    },
+    {
+        Id: "sectinProduct005",
+        Name: "Pastas",
+        ListProducts: listProductsOffer
+    }*/
+]
 
 export const OfferProductsContext = createContext(null)
 export const ProductsContext = createContext(null)
@@ -1282,6 +1371,7 @@ export const QuestionContext = createContext(null)
 export const InSearchContext = createContext(null)
 export const PrincipalInfoEventContext = createContext(null)
 export const TicketSectionContext = createContext(null)
+export const SectionProductsEventContext = createContext(null)
 
 export default function EventProvider({children}) {
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
@@ -1348,23 +1438,25 @@ export default function EventProvider({children}) {
     }
     return (
         <PrincipalInfoEventContext.Provider value={principalInfo}>
-            <TicketSectionContext.Provider value={providerSectionTicket}>
-                <OfferProductsContext.Provider value={providerOfferProducts}>
-                    <ProductsContext.Provider value={providerProducts}>
-                        <NewsContext.Provider value={providerNews}>
-                            <OtherEventsContext.Provider value={providerOtherEvents}>
-                                <ReviewContext.Provider value={reviewSection}>
-                                    <QuestionContext.Provider value={listQuestions}>
-                                        <InSearchContext.Provider value={listForm}>
-                                            {children}
-                                        </InSearchContext.Provider>
-                                    </QuestionContext.Provider>
-                                </ReviewContext.Provider>
-                            </OtherEventsContext.Provider>
-                        </NewsContext.Provider>
-                    </ProductsContext.Provider>
-                </OfferProductsContext.Provider>
-            </TicketSectionContext.Provider>
+            <SectionProductsEventContext.Provider value={listSectionProducst}>
+                <TicketSectionContext.Provider value={providerSectionTicket}>
+                    <OfferProductsContext.Provider value={providerOfferProducts}>
+                        <ProductsContext.Provider value={providerProducts}>
+                            <NewsContext.Provider value={providerNews}>
+                                <OtherEventsContext.Provider value={providerOtherEvents}>
+                                    <ReviewContext.Provider value={reviewSection}>
+                                        <QuestionContext.Provider value={listQuestions}>
+                                            <InSearchContext.Provider value={listForm}>
+                                                {children}
+                                            </InSearchContext.Provider>
+                                        </QuestionContext.Provider>
+                                    </ReviewContext.Provider>
+                                </OtherEventsContext.Provider>
+                            </NewsContext.Provider>
+                        </ProductsContext.Provider>
+                    </OfferProductsContext.Provider>
+                </TicketSectionContext.Provider>
+            </SectionProductsEventContext.Provider>
         </PrincipalInfoEventContext.Provider>
     )
 }

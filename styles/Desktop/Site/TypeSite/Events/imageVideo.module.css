@@ -1,7 +1,7 @@
 .gridImageSelection {
     display: grid;
     gap: 8px;
-    grid-template-columns: max-content 1fr 50px;
+    grid-template-columns: max-content 1fr;
     width: 100%;
 }
 
@@ -31,7 +31,9 @@
     width: 100%;
     aspect-ratio: 4/3;
     position: relative;
-    object-fit: cover;
+    display: grid;
+    align-items: center;
+    background: black;
 }
 
 .paddingContImage {
@@ -43,6 +45,7 @@
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
-
+    display: grid;
+    height: 100%;
 }
 

@@ -1,6 +1,10 @@
 .mainDiv {
-    padding-bottom: 60px;
-    padding-top: 60px;
+    display: grid;
+    grid-template-columns: 1.8fr 3fr;
+    background: linear-gradient(145deg, #efd8ff 0%, #ffd9ce 50%, #f4d1ff 100%);
+    border-radius: 16px;
+    padding: 0 4%;
+
 }
 
 .title {
@@ -8,7 +12,7 @@
     font-weight: 600;
     margin: auto;
     width: 100%;
-    text-align: center;
+    border-radius: 16px;
 }
 
 .gridCarrousel {
@@ -35,27 +39,24 @@
     gap: 48px;
 }
 
-.focus {
-    z-index: 100;
-    position: relative;
+
+.noFocus {
+    transform: scale(.7);
     transition: .4s;
 }
 
-.focus:hover {
-    transform: scale(1.15);
-}
-
-.noFocus {
-    opacity: .5;
-    transform: scale(.8);
+.focus {
+    transform: scale(.9);
     transition: .4s;
 }
 
 
 .contSlider {
     width: var(--maxWidthBodyContent);
-    width: 1000px;
+    width: 920px;
     margin: auto;
+    padding: 4px 16px;
+    border-radius: 16px;
 }
 
 .noFocus2 {
@@ -101,9 +102,11 @@
 }
 
 .up {
-    padding-bottom: 60px;
     display: grid;
     justify-items: center;
+    width: 80%;
+    padding: 24px 0;
+    border-radius: 16px;
 }
 
 .description {

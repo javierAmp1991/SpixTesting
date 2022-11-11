@@ -11,7 +11,7 @@ export default function OtherEvents() {
     const otherEvents: ProviderRecommended = useContext(OtherEventsContext)
     return (
         <div className={style.paddingGeneral}>
-            <LayoutTitleMobile title={title} isOverflow={true}>
+           <LayoutTitleMobile title={title} isOverflow={true}>
                 <LayoutCarrouselMobile gapLayout={16}>
                     {
                         otherEvents.InitialItems.map(item =>

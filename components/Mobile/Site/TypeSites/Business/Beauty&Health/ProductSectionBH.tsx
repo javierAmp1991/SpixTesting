@@ -2,7 +2,7 @@ import {ProductItem, SectionProductItem} from "../../../../../../Class/Misc/Glob
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/productSection.module.css"
 import ProductViewHorMobile from "../../../../Misc/ProductViewHorMobile";
 
-export default function ProductSectionBHMobile({sectionProducts}: { sectionProducts: SectionProductItem }) {
+export default function ProductSectionMobile({sectionProducts}: { sectionProducts: SectionProductItem }) {
     return (
         <div id={sectionProducts.Id} className={style.mainDiv}>
             <div className={style.title}>

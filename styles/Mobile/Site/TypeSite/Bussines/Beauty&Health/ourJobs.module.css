@@ -1,6 +1,5 @@
 .mainDiv {
-    padding-bottom: 60px;
-    padding-top: 60px;
+    padding: 16px;
 }
 
 .title {
@@ -25,14 +24,13 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 0 8px rgba(0, 0, 0, .5);
-    transition: .4s;
 }
 
 .gridImages {
     display: grid;
     grid-template-columns: 0.7fr 1fr 1.5fr 1fr 0.7fr;
     align-items: center;
-    gap: 48px;
+    gap: 12px;
 }
 
 .focus {
@@ -46,16 +44,13 @@
 }
 
 .noFocus {
-    opacity: .5;
-    transform: scale(.8);
+    z-index: 90;
+    position: relative;
     transition: .4s;
 }
 
-
-.contSlider {
-    width: var(--maxWidthBodyContent);
-    width: 1000px;
-    margin: auto;
+.noFocus:hover {
+    transform: scale(1.1);
 }
 
 .noFocus2 {
@@ -71,9 +66,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     justify-content: center;
-    width: 50%;
     gap: 32px;
-    justify-content: space-between;
     margin: auto;
     padding-bottom: 20px;
     animation: animationDescription 1s linear;
@@ -94,30 +87,23 @@
     position: relative;
 }
 
-.contDirection {
+.contDirection{
     width: max-content;
     margin: auto;
     color: #0f1316;
 }
 
-.up {
-    padding-bottom: 60px;
+.up{
+    padding-bottom: 24px;
     display: grid;
     justify-items: center;
 }
 
 .description {
     color: #0f1316;
-    width: 50%;
+    width: 100%;
     margin: auto;
     font-size: 14px;
     animation: animationDescription 1s linear;
     padding: 12px 0;
-}
-
-.sizeArrow {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    border: 1px solid red;
 }

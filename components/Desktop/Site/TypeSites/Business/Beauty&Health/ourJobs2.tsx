@@ -1,8 +1,5 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/ourJobs.module.css"
+import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/ourJobs2.module.css"
 import Image from "next/image"
-import SocialBar from "../../../../Misc/socialBar";
-import Link from "next/link";
-import utilities from "/styles/utilities.module.css";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useState} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
@@ -20,7 +17,7 @@ const contactText: string = "Redes y contacto:"
 const directionText: string = "Direccion: "
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function OurJobs() {
+export default function OurJobs2() {
     const NextA = () => {
         return (
             <button className={style.sizeArrow}>
@@ -49,40 +46,20 @@ export default function OurJobs() {
         speed: 600,
         slidesToShow: 3,
         centerPadding: 20,
-        nextArrow: <NextA/>,
-        prevArrow: <PrevA/>,
-        beforeChange: (current, next) => setIdx(idx = next == 4 ? 5 : next + 1)
+        beforeChange: (current, next) => setIdx(idx = next == 4 ? 5 : next + 1),
+        arrows: false
     };
     return (
         <div className={style.mainDiv}>
             <div className={style.up}>
                 <div className={style.title}>
-                    {title} {idx}
+                    {title}
                 </div>
-                {/*   <SocialBar/>
-
-                <div className={style.description}>
-                    {info.Description}
+                <div>
+                    {
+                        info.Description
+                    }
                 </div>
-                <div className={style.gridSocialContact}>
-                    <div className={style.contDirection}>
-                        <span>{directionText}</span>
-                        <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
-                    </div>
-                    <div className={style.gridContact}>
-                        <span>{contactText}</span>
-                        {
-                            info.Contact.map((item) =>
-                                <Link key={item.Id} href={item.Link}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                    </div>
-                                </Link>
-                            )
-                        }
-                    </div>
-                </div>*/}
-
             </div>
 
             <div className={style.contSlider}>
@@ -90,7 +67,7 @@ export default function OurJobs() {
                     {
                         listCortes.map((item, index) =>
                             <div key={index} className={`${style.sizeImage} 
-                            ${index === idx ? "" : style.noFocus}`}>
+                            ${index === idx ? style.focus : style.noFocus}`}>
                                 <Image layout={"fill"} src={item} alt={""}/>
                             </div>
                         )
