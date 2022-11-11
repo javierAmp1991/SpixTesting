@@ -8,7 +8,7 @@ import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import ServiceView from "./serviceView";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 
-const title: string= "Galeria de trabajos"
+const title: string= "Nuestros servicios"
 
 export default function OurServices() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)

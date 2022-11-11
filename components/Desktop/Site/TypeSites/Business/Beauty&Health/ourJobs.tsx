@@ -1,12 +1,12 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/ourJobs.module.css"
 import Image from "next/image"
-
+const title: string= "Galeria de trabajos"
 const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
 export default function OurJobs() {
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
-                Nuestros Trabajos
+                {title}
             </div>
             <div className={style.gridCarrousel}>
                 <div/>
