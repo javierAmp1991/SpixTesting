@@ -7,6 +7,14 @@
 .mainCont {
     display: grid;
     gap: 10px;
+    padding-top: 24px;
+    position: relative;
+}
+
+.contLike{
+    position: absolute;
+    top: 20px;
+    right: 12px;
 }
 
 .gridImageName {

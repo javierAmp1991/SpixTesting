@@ -1,0 +1,21 @@
+.mainDiv{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    border: 1px solid #c20000;
+    padding: 3px 8px;
+    width: max-content;
+    gap: 6px;
+    color: red;
+    font-weight: 600;
+}
+
+.mainDiv:hover{
+    background: rgb(255, 0, 0, .1);
+}
+
+.sizeIcon{
+    width: 16px;
+    height: 16px;
+    position: relative;
+}

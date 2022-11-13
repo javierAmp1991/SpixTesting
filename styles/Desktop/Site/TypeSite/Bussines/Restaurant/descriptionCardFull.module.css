@@ -8,7 +8,6 @@
     background: white;
     box-shadow: 0 0 21px rgba(0, 0, 0, .3);
     border-radius: 8px;
-    overflow: hidden;
     position: absolute;
     bottom: 0;
 }
@@ -48,7 +47,6 @@
 .mainDivInfo {
     padding: 0 48px 0 24px;
     display: grid;
-    align-content: center;
 }
 
 .subGrid {
@@ -216,12 +214,11 @@
     grid-template-columns: repeat(3, max-content);
     justify-content: start;
     gap: 8px;
-    padding-bottom: 8px;
 }
 
 .contLike{
     position: absolute;
-    top: 20px;
+    top: 16px;
     right: 40px;
 }
 

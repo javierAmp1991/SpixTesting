@@ -10,6 +10,9 @@ export default function ImageVideoMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     return (
         <div className={style.overflowDiv}>
+            <div className={style.sizeLogo}>
+                <Image layout={"fill"} src={info.PathLogo}/>
+            </div>
             <LayoutWithNavCircleMobile isDarkMode={false}>
                 {
                     info.Images.map((item, index) =>

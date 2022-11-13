@@ -3,11 +3,14 @@ import {useContext} from "react";
 import {
     SectionProductsBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
+import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 import ServiceViewMobile from "./serviceViewMobile";
-import LayoutCarrouselMobileCustom from "../../../../Layouts/layoutCarrouselMobileCustom";
-import {LayoutCarrouselMobileProp, LayoutTitleLinkProps} from "../../../../../../Class/Layouts/layoutClass";
+import {
+    LayoutTitleLinkProps,
+    LayoutWithNavCircleProp
+} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
+import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 
 const title: string = "Nuestros servicios"
 
@@ -17,26 +20,25 @@ export default function OurServicesMobile() {
         Title: title,
         Link: "/",
     }
-    const propsCarrousel: LayoutCarrouselMobileProp = {
-        Top: 20,
+    const propCarrousel: LayoutWithNavCircleProp = {
+        Top: 24,
         Bottom: 4,
         Left: 4,
-        Right: 4,
-        Gap: 16
+        Right: 4
     }
 
     return (
         <LayoutTitleCustomMobile item={propLayoutTitle}>
-            <LayoutCarrouselMobileCustom item={propsCarrousel}>
-                <>
-                    {
-                        sectionProducst[0].ListProducts.map((item, index) =>
-                            index <= 3 &&
+            <LayoutNavCircleMobileCustom item={propCarrousel}>
+                {
+                    sectionProducst[0].ListProducts.map((item, index) =>
+                        <div key={item.Id} className={style.contCarrousel}>
                             <ServiceViewMobile item={item}/>
-                        )
-                    }
-                </>
-            </LayoutCarrouselMobileCustom>
+                        </div>
+                    )
+                }
+
+            </LayoutNavCircleMobileCustom>
         </LayoutTitleCustomMobile>
     )
 }

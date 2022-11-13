@@ -44,3 +44,10 @@
     padding: 0 16px;
     overflow: scroll;
 }
+
+.contCarrousel {
+    width: 100%;
+    scroll-snap-align: start;
+    display: grid;
+    justify-content: center;
+}

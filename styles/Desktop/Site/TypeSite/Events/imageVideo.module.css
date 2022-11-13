@@ -54,8 +54,8 @@
 
 .contLike{
     position: absolute;
-    top: 24px;
-    right: 24px;
+    top: 8px;
+    right: 12px;
     z-index: 100;
 }
 

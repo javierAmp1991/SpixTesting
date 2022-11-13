@@ -9,13 +9,17 @@ import SocialBar from "../../../../Misc/socialBar";
 import PopUpContainer from "../../../../Misc/popUpContainer";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import LikeButton from "../../../../Misc/likeButton";
-import {LikeButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import WishlistButton from "../../../../Misc/wishlistButton";
 
 
 const directionText: string = "Direccion: "
 const contactText: string = "Redes y Contacto: "
 const likeButton: LikeButtonProps = {
     Like: 75
+}
+const wishlistButton: wishlistButtonProps = {
+    Like: 45
 }
 
 export default function DescriptionCardFull() {
@@ -50,14 +54,11 @@ export default function DescriptionCardFull() {
                                     </div>)
                             }
                         </div>
-                        <div className={style.gridImageName}>
-                            <div>
-                                <div className={style.Name}>
-                                    {info.Name}
-                                </div>
-                                <SocialBar/>
-                            </div>
+                        <div className={style.Name}>
+                            {info.Name}
                         </div>
+                        <WishlistButton item={wishlistButton}/>
+
                         <div className={`${utilities.clamp5} ${utilities.fontPrimaryText}`}>
                             {info.Description}
                         </div>
@@ -66,7 +67,7 @@ export default function DescriptionCardFull() {
                             <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
                         </div>
                         <div className={style.gridInfoNew}>
-                            <span>{contactText}</span>
+                           {/* <span>{contactText}</span>*/}
                             <div className={style.gridContact}>
                                 {
                                     info.Contact.map((item) =>

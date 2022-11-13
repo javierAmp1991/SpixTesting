@@ -1,0 +1,53 @@
+.borderNormal {
+    border: 1px solid #2d7dff;
+}
+
+.borderDarkMode {
+    border: 1px solid #15dae6;
+}
+
+.styleNavCircle {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--linkColor);
+}
+.styleNavCircleDarkMode {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--linkColorDarkMode);
+}
+
+.styleNavCircleNoSelected {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #cbcbcb;
+    /*border: 1px solid var(--linkColor);*/
+}
+
+.gridNavItems {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 8px;
+    justify-content: center;
+    padding-top: 12px;
+}
+
+.gridImageSection {
+    display: grid;
+    grid-template-columns: calc(100vw - 32px);
+    grid-auto-columns: calc(100vw - 32px);
+    grid-auto-flow: column;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    overflow: scroll;
+}
+
+.snapScroll {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}

@@ -1,6 +1,6 @@
 .mainDiv {
     margin: auto;
-    padding: 24px 0 40px 0;
+    padding: 0 0 40px 0;
     display: grid;
     gap: 28px;
 }
@@ -71,12 +71,16 @@
     overflow: scroll;
 }
 
+.paddingGeneralNoOverflow {
+    padding: 0 16px;
+}
+
 .gridSectionProducts {
     display: grid;
     gap: 32px;
 }
 
-.gridTeset{
+.gridTeset {
     display: grid;
     gap: 48px;
 }

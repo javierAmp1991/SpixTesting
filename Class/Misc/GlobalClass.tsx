@@ -60,3 +60,7 @@ export class LikeButtonProps {
     Like: number
     Size?: number
 }
+
+export class wishlistButtonProps {
+    Like: number
+}

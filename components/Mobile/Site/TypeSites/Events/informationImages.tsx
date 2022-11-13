@@ -11,6 +11,8 @@ import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
 import {createPortal} from "react-dom";
 import SocialBar from "../../../../Desktop/Misc/socialBar";
 import Link from "next/link";
+import LikeButton from "../../../../Desktop/Misc/likeButton";
+import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -20,6 +22,12 @@ const user: LevelUser = {
 const userRequirement: number = 2
 const contactText: string = "Redes y Contacto: "
 const idPortal: string = GlobalId.globalIds.idPortal
+const likeButton: LikeButtonProps = {
+    Like: 75
+}
+const wishlistButton: wishlistButtonProps = {
+    Like: 45
+}
 
 export default function InformationImages() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -39,7 +47,6 @@ export default function InformationImages() {
                     <div className={style.name}>
                         {info.Name}
                     </div>
-                    <SocialBar/>
                 </div>
                 <div className={style.gridContact}>
                     {contactText}
@@ -55,7 +62,9 @@ export default function InformationImages() {
                         )
                     }
                 </div>
-
+                <div className={style.contLike}>
+                    <LikeButton item={likeButton}/>
+                </div>
             </div>
 
             <ImageVideoMobile/>

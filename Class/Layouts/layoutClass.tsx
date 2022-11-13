@@ -25,10 +25,18 @@ export class LayoutTitleLinkProps {
     AlignTitle?: TypeAlignTitle
 }
 
+
 export class LayoutCarrouselMobileProp {
     Top: number
     Bottom: number
     Left: number
     Right: number
     Gap: number
+}
+
+export class LayoutWithNavCircleProp{
+    Top?: number
+    Bottom?: number
+    Left?: number
+    Right?: number
 }

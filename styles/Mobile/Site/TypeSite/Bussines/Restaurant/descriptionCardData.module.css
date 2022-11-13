@@ -43,6 +43,14 @@
 .gridInfoGap{
     display: grid;
     gap: 4px;
+    position: relative;
+    padding-top: 24px;
+}
+
+.contLike{
+    position: absolute;
+    top: 20px;
+    right: 12px;
 }
 
 .title {

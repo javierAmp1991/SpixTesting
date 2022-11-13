@@ -9,10 +9,19 @@ import SocialBar from "../../../../Misc/socialBar";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
+import WishlistButton from "../../../../../Desktop/Misc/wishlistButton";
+import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import LikeButton from "../../../../../Desktop/Misc/likeButton";
 
 const directionText: string = "Direccion:"
 const seeCard: string = "Ver carta"
 const contactText: string = "Redes y Contacto: "
+const likeButton: LikeButtonProps = {
+    Like: 75
+}
+const wishlistButton: wishlistButtonProps = {
+    Like: 45
+}
 
 export default function DescriptionCardFullData() {
     const info: PresentationCard = useContext(HeaderContext)
@@ -31,14 +40,11 @@ export default function DescriptionCardFullData() {
                         }
                     </div>
                     <div className={style.gridImageName}>
-
-                        <div>
-                            <div className={style.Name}>
-                                {info.Name}
-                            </div>
-                            <SocialBar/>
+                        <div className={style.Name}>
+                            {info.Name}
                         </div>
                     </div>
+                    <WishlistButton item={wishlistButton}/>
                     <div className={style.gridInfoNew}>
                         <span>{directionText}</span>
                         <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
@@ -56,6 +62,9 @@ export default function DescriptionCardFullData() {
                                 )
                             }
                         </div>
+                    </div>
+                    <div className={style.contLike}>
+                        <LikeButton item={likeButton}/>
                     </div>
                 </div>
                 <div className={style.contCarrousel}>
