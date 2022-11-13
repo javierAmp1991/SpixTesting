@@ -7,10 +7,8 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
+import Link from "next/link";
 
-const sizeBanner: string = `calc(100vh - 97px)`
-const contactText: string = "Redes y contacto:"
-const directionText: string = "Direccion: "
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function HeaderBhMobile() {
@@ -34,6 +32,20 @@ export default function HeaderBhMobile() {
                 </div>
                 <div className={style.title}>
                     {info.Name}
+                </div>
+                <div className={style.contDirection}>
+                    <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
+                </div>
+                <div className={style.gridContact}>
+                    {
+                        info.Contact.map((item) =>
+                            <Link key={item.Id} href={item.Link}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                </div>
+                            </Link>
+                        )
+                    }
                 </div>
             </div>
             <div className={style.contBanner}>

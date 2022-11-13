@@ -1,6 +1,5 @@
 .mainDiv {
     position: relative;
-    width: 100%;
     background: linear-gradient(145deg, #ceffc3 0%, #ffc4b3 50%, #b3f1ac 100%);
     background: linear-gradient(145deg, #c3fdff 0%, #ffc4b3 50%, #ace9f1 100%);
     background: linear-gradient(145deg, #c3c8ff 0%, #ffc4b3 50%, #acbcf1 100%);
@@ -9,13 +8,14 @@
     background: linear-gradient(145deg, #ffc3c3 0%, #ffc4b3 50%, #f1acac 100%);
     background: linear-gradient(145deg, #c3fff1 0%, #ffc4b3 50%, #acf1d7 100%);
     background: linear-gradient(145deg, #ffc3e1 0%, #ffc4b3 50%, #f1acc1 100%);
-    margin: auto;
+    background: #ffebec;
+    margin: 16px 16px 0 16px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1fr;
     overflow: hidden;
-    padding: 24px;
+    padding: 0 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
-    align-items: center;
+    border-radius: 16px;
 }
 
 .blackScreen {
@@ -39,25 +39,24 @@
     width: 100%;
     height: 100%;
     display: grid;
+    gap: 6px;
     align-content: center;
+    padding: 16px 0;
 }
 
 .contBanner {
     width: 100%;
-    aspect-ratio: 1/1;
-    padding: 8% 0;
     display: grid;
-    justify-items: right;
+    align-items: center;
 }
 
 .title {
-    font-size: 16px;
     font-weight: 600;
     color: #360101;
 }
 
 .sizeNewBanner {
-    height: 100%;
+    width: 100%;
     aspect-ratio: 1/1;
     position: relative;
 }
@@ -66,12 +65,13 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     gap: 6px;
-    padding: 6px 0;
+    padding-top: 6px;
 }
 
 .tag {
-    padding: 1px 8px;
+    padding: 0 6px;
     background: linear-gradient(145deg, rgb(138, 215, 92), rgb(109, 190, 60));
+    background: linear-gradient(145deg, rgba(128, 0, 128, .5) 0%, rgba(96, 0, 96, 0.5) 100%);
     border-radius: 12px;
     color: white;
     font-weight: 500;
@@ -79,7 +79,7 @@
 }
 
 .sizeLogo {
-    width: 60px;
+    width: 50px;
     aspect-ratio: 1/1;
     position: relative;
 }
@@ -101,18 +101,21 @@
     grid-auto-flow: column;
     align-items: center;
     gap: 8px;
+    padding-top: 6px;
 }
 
 .sizeIcon {
-    height: 16px;
-    width: 16px;
+    height: 12px;
+    width: 12px;
     position: relative;
 }
 
 .contDirection {
-    width: 50%;
-    margin: auto;
-    color: #0f1316;
+    color: purple;
+    border: 1px solid purple;
+    font-size: 10px;
+    width: max-content;
+    padding: 0 12px;
 }
 
 

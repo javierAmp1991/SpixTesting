@@ -1,20 +1,19 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css";
 import QuestionShortDesk from "../../../../Misc/questionShortDesk";
-import LayoutTitle from "./layoutTitle";
 import {QuestionItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {QuestionSectionContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
+import LayoutSectionQuestion from "../../Misc/LayoutSectionQuestion";
 
-export default function QuestionRestaurant(){
+export default function QuestionRestaurant() {
     const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
-    return(
-        <LayoutTitle title={"Preguntas"}>
-            <div className={style.gridQuestions}>
+    return (
+        <LayoutSectionQuestion link={"/"}>
+            <>
                 {
                     listQuestion.map((item) =>
                         <QuestionShortDesk key={item.Question} item={item}/>)
                 }
-            </div>
-        </LayoutTitle>
+            </>
+        </LayoutSectionQuestion>
     )
 }

@@ -10,6 +10,9 @@ import {GlobalId} from "../../../../../../public/globalConst";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import {createPortal} from "react-dom";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const title: string = "Sobre nosotros"
 const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
@@ -20,38 +23,41 @@ const idPortal: string = GlobalId.globalIds.idPortal
 export default function OurJobsMobile() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
     let [displayMap, setDisplayMap] = useState(false)
+    let [idx, setIdx] = useState(1)
     const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
+    var settings = {
+        infinite: true,
+        speed: 600,
+        slidesToShow: 3,
+        centerPadding: 20,
+        arrows: false,
+        beforeChange: (current, next) => setIdx(idx = next == 4 ? 5 : next + 1),
+    };
     return (
         <div className={style.mainDiv}>
             <div className={style.up}>
                 <div className={style.title}>
                     {title}
                 </div>
-                <SocialBar/>
 
                 <div className={style.description}>
                     {info.Description}
                 </div>
-                <div className={style.gridContact}>
-                    <span>{contactText}</span>
+
+            </div>
+            <div className={style.contSlider}>
+                <Slider {...settings}>
                     {
-                        info.Contact.map((item) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                </div>
-                            </Link>
+                        listCortes.map((item, index) =>
+                            <div key={index} className={`${style.sizeImage} ${index === idx ? style.focus : style.noFocus}`}>
+                                <Image layout={"fill"} src={item} alt={""}/>
+                            </div>
                         )
                     }
-                </div>
-
-                <div className={style.contDirection}>
-                    <span>{directionText}</span>
-                    <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
-                </div>
+                </Slider>
             </div>
 
-            <div className={style.gridCarrousel}>
+            {/* <div className={style.gridCarrousel}>
                 <div/>
                 <div className={style.gridImages}>
                     {
@@ -63,7 +69,7 @@ export default function OurJobsMobile() {
                     }
                 </div>
                 <div/>
-            </div>
+            </div>*/}
             {
                 displayMap &&
                 createPortal(

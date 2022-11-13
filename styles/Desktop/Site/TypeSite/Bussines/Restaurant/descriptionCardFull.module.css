@@ -106,10 +106,16 @@
     background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
 }
 
+.contImageLogo{
+    position: relative;
+}
+
 .sizeLogo {
     width: 60px;
     height: 60px;
-    position: relative;
+    position: absolute;
+    bottom: 15px;
+    right: 16px;
     border-radius: 50%;
     overflow: hidden;
 }
@@ -211,5 +217,11 @@
     justify-content: start;
     gap: 8px;
     padding-bottom: 8px;
+}
+
+.contLike{
+    position: absolute;
+    top: 20px;
+    right: 40px;
 }
 

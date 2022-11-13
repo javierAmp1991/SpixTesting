@@ -1,4 +1,6 @@
 .mainDiv {
+    display: grid;
+    gap: 30px;
 }
 
 .writeQuestion {
@@ -13,11 +15,8 @@
 
 .gridQuestions {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    width: 66%;
     gap: 24px;
 }
 
-.title {
-    color: var(--colorTitlesDesktop);
-    font-size: 21px;
-}

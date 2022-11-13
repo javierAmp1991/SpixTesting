@@ -19,7 +19,7 @@ export default function ReviewSectionBH() {
         PositionArrowY: "calc(50% - 16px)",
         PositionArrowX: "-40px",
         Padding: 0,
-        Gap: 20,
+        Gap: 48,
         Grid: 3,
         IsButtonVisible: false,
         LeftArrow: null,

@@ -24,20 +24,14 @@ export default function DescriptionCardFullData() {
                 <div className={style.gridInfoGap}>
                     <div className={style.gridTags}>
                         {
-                            info.Tags.map(item=>
-                            <div key={item} className={style.tag}>
-                                {item}
-                            </div>)
+                            info.Tags.map(item =>
+                                <div key={item} className={style.tag}>
+                                    {item}
+                                </div>)
                         }
                     </div>
                     <div className={style.gridImageName}>
-                        <div className={style.secondGradient}>
-                            <div className={style.firstGradient}>
-                                <div className={style.sizeLogo}>
-                                    <Image layout={"fill"} src={info.LogoPath} alt={""}/>
-                                </div>
-                            </div>
-                        </div>
+
                         <div>
                             <div className={style.Name}>
                                 {info.Name}
@@ -64,16 +58,20 @@ export default function DescriptionCardFullData() {
                         </div>
                     </div>
                 </div>
-
-                <LayoutWithNavCircleMobile isDarkMode={false}>
-                    {
-                        info.SideImages.map((e) =>
-                            <div key={e} className={style.sizeSideImage}>
-                                <Image layout={"fill"} src={e} alt={""}/>
-                            </div>
-                        )
-                    }
-                </LayoutWithNavCircleMobile>
+                <div className={style.contCarrousel}>
+                    <div className={style.sizeLogo}>
+                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
+                    </div>
+                    <LayoutWithNavCircleMobile isDarkMode={false}>
+                        {
+                            info.SideImages.map((e) =>
+                                <div key={e} className={style.sizeSideImage}>
+                                    <Image layout={"fill"} src={e} alt={""}/>
+                                </div>
+                            )
+                        }
+                    </LayoutWithNavCircleMobile>
+                </div>
 
                 <div className={style.separationLine}/>
 

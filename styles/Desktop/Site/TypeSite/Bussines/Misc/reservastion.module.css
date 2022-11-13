@@ -1,0 +1,254 @@
+.mainCont {
+    --firstMargin: 52%;
+    --secondMargin: 40%;
+    width: 100%;
+}
+
+.mainDiv {
+    display: grid;
+}
+
+.gridHours {
+    display: grid;
+    gap: 12px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+    padding-bottom: 24px;
+}
+
+.styleButton {
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: var(--gradientBlueButton);
+    color: white;
+    width: max-content;
+    margin: 20px auto auto auto;
+    display: grid;
+}
+
+.baseSquare {
+    width: 12px;
+    height: 12px;
+}
+
+.disp {
+    background: #10c010;
+}
+
+.res {
+    background: #ff4a4a;
+}
+
+.close {
+    background: rgba(0, 0, 0, .4);
+}
+
+.gridHoursLapse {
+    display: grid;
+    position: relative;
+    padding: 16px 24px;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    gap: 12px;
+}
+
+.gridHoursLapse:after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    position: absolute;
+    top: -20px;
+    left: -11px;
+}
+
+.gridHoursLapse:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    position: absolute;
+    bottom: -20px;
+    left: -11px;
+}
+
+.lineCircle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, .1);
+    margin: auto;
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    padding-bottom: 20px;
+    gap: 12px;
+    justify-content: center;
+}
+
+.hour {
+    padding-bottom: 16px;
+    font-size: 16px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.title {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.contH {
+    position: relative;
+}
+
+.baseTag {
+    padding: 6px 16px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: var(--colorPrimaryTextDesktop);
+    width: max-content;
+    transform-origin: 0;
+    transition: .2s;
+    font-weight: 500;
+}
+
+.baseTag:hover {
+    transform: scale(1.1);
+}
+
+.baseTagNoHover {
+    padding: 6px 16px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    display: grid;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: var(--colorPrimaryTextDesktop);
+    width: max-content;
+    transition: .4s;
+}
+
+.leftSide {
+    margin-right: var(--firstMargin);
+    margin-left: var(--secondMargin);
+}
+
+.rightSide {
+    margin-left: var(--firstMargin);
+    margin-right: var(--secondMargin);
+}
+
+.baseCircle {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    left: -33px;
+    top: calc(50% - 8px);
+}
+
+.gridTimeLapse {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.gridInfo {
+    display: grid;
+    gap: 28px;
+}
+
+.sizeCalendar {
+    width: 13px;
+    height: 13px;
+    position: relative;
+    cursor: pointer;
+}
+
+.gridSelectDate {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+}
+
+.contDate {
+    font-size: 12px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 2px 12px;
+}
+
+.dataPicker {
+}
+
+.gridSquareTag {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+}
+
+.mainDivPopUp {
+    width: max-content;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    padding: 32px 48px;
+    gap: 24px;
+}
+
+.styleButtonPopUp {
+    padding: 6px 24px;
+    border-radius: 4px;
+    background: var(--gradientBlueButton);
+    color: white;
+    display: grid;
+}
+
+.titlePopUp {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.gridButtonPopUp {
+    display: grid;
+    grid-template-columns: repeat(2, 120px);
+    align-items: center;
+    gap: 12px;
+}
+
+.contDateButton {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    border-radius: 4px;
+    overflow: hidden;
+    color: var(--colorSecundaryTextDesktop);
+    padding: 4px 16px;
+    gap: 16px;
+}
+
+.borderDataPicker{
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+

@@ -5,26 +5,38 @@ import {
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 import ServiceViewMobile from "./serviceViewMobile";
-import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
+import LayoutCarrouselMobileCustom from "../../../../Layouts/layoutCarrouselMobileCustom";
+import {LayoutCarrouselMobileProp, LayoutTitleLinkProps} from "../../../../../../Class/Layouts/layoutClass";
+import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
 
-const title: string= "Nuestros servicios"
+const title: string = "Nuestros servicios"
 
 export default function OurServicesMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
-    return (
-        <div className={style.mainDivOurServices}>
-            <div className={style.title}>
-                {title}
-            </div>
-            <LayoutCarrouselMobile gapLayout={16}>
-                {
-                    sectionProducst[0].ListProducts.map((item, index) =>
-                        index <= 3 &&
-                        <ServiceViewMobile item={item}/>
-                    )
-                }
-            </LayoutCarrouselMobile>
-        </div>
+    const propLayoutTitle: LayoutTitleLinkProps = {
+        Title: title,
+        Link: "/",
+    }
+    const propsCarrousel: LayoutCarrouselMobileProp = {
+        Top: 20,
+        Bottom: 4,
+        Left: 4,
+        Right: 4,
+        Gap: 16
+    }
 
+    return (
+        <LayoutTitleCustomMobile item={propLayoutTitle}>
+            <LayoutCarrouselMobileCustom item={propsCarrousel}>
+                <>
+                    {
+                        sectionProducst[0].ListProducts.map((item, index) =>
+                            index <= 3 &&
+                            <ServiceViewMobile item={item}/>
+                        )
+                    }
+                </>
+            </LayoutCarrouselMobileCustom>
+        </LayoutTitleCustomMobile>
     )
 }

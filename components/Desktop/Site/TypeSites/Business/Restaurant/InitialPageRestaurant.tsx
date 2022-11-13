@@ -5,7 +5,7 @@ import ProductSection from "./ProductSection";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
-    HeaderContext,
+    HeaderContext, ScheduleContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import DescriptionCardFull from "./DescriptionCardFull";
@@ -16,7 +16,8 @@ import InOfferRestaurant from "./inOfferRestaurant";
 import RecomendedRestarant from "./recomendedRestarant";
 import QuestionRestaurant from "./questionRestaurant";
 import NavSectionProducts from "../Default/NavSectionProducts";
-import Reservas from "./reservas";
+import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import Reservation from "../Misc/reservation";
 
 const idTest: string = "isTestDesktopScrollControl"
 
@@ -41,6 +42,7 @@ export default function InitialPageRestaurant() {
     }, [])*/
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
+    const schedule: Schedule[] = useContext(ScheduleContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
     let [startSectionProduct, setStartSectionProduct] = useState(0)
 
@@ -65,7 +67,7 @@ export default function InitialPageRestaurant() {
                 <ReviewRestaurant/>
                 <div className={style.separationLine}/>
 
-                <Reservas/>
+                <Reservation item={schedule}/>
                 <div className={style.separationLine}/>
 
                 <InSearchRestaurant/>

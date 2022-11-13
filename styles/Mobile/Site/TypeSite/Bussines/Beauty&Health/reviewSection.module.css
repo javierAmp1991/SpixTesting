@@ -34,7 +34,7 @@
 .gridRating {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    padding-bottom: 70px;
+    padding-bottom: 24px;
     justify-content: center;
     padding-top: 4px;
     gap: 12px;

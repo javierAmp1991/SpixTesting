@@ -14,7 +14,7 @@
     margin: auto;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    border-radius: 12px;
+    border-radius: 42px;
     overflow: hidden;
     padding: 2% 4% 2% 4%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
@@ -74,6 +74,7 @@
 .tag {
     padding: 2px 12px;
     background: linear-gradient(145deg, rgb(138, 215, 92), rgb(109, 190, 60));
+    background: linear-gradient(145deg, rgba(128, 0, 128, .5) 0%, rgba(96, 0, 96, 0.5) 100%);
     border-radius: 16px;
     color: white;
     font-weight: 500;
@@ -99,8 +100,7 @@
     grid-auto-flow: column;
     align-items: center;
     gap: 8px;
-    position: absolute;
-    bottom: 16px;
+    padding-top: 16px;
 }
 
 .sizeIcon {
@@ -111,14 +111,66 @@
 
 .contDirection {
     color: #0f1316;
+    color: purple;
+    text-decoration: underline;
+    text-decoration: none;
+    border: 1px solid purple;
+    width: max-content;
+    padding: 4px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+    align-items: center;
+    /* background: rgba(128, 0, 128, .5);
+     color: white;
+     padding: 4px 16px;
+     width: max-content;
+     border-radius: 0 16px 16px 0;*/
 }
 
-.description{
+
+.description {
     width: 70%;
 }
 
-.gridNew{
+.gridNew {
     padding-top: 8px;
     display: grid;
     gap: 8px;
+}
+
+.contLike {
+    width: 40px;
+    height: 38px;
+    border-radius: 50%;
+    padding: 9px;
+    background: rgba(255, 255, 255, .9);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    transition: .2s;
+}
+
+.contLike:hover{
+    transform: scale(1.2);
+}
+
+.sizeICon {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.gridLikeWishlist {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 16px;
+    position: absolute;
+    top: 24px;
+    right: 0;
+    z-index: 500;
+}
+
+.direction {
+    text-decoration: underline;
+    text-decoration: none;
 }

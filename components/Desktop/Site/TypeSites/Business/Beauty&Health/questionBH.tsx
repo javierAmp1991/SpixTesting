@@ -1,20 +1,21 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css";
 import QuestionShortDesk from "../../../../Misc/questionShortDesk";
 import {QuestionItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
-import LayoutTitle from "../Restaurant/layoutTitle";
 import {QuestionsBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
+import LayoutSectionQuestion from "../../Misc/LayoutSectionQuestion";
 
-export default function QuestionBH(){
+const title: string = "Preguntas"
+
+export default function QuestionBH() {
     const listQuestion: QuestionItem[] = useContext(QuestionsBHContext)
-    return(
-        <LayoutTitle title={"Preguntas"}>
-            <div className={style.gridQuestions}>
+    return (
+        <LayoutSectionQuestion link={"/"}>
+            <>
                 {
                     listQuestion.map((item) =>
                         <QuestionShortDesk key={item.Question} item={item}/>)
                 }
-            </div>
-        </LayoutTitle>
+            </>
+        </LayoutSectionQuestion>
     )
 }

@@ -4,11 +4,12 @@ import {useContext} from "react";
 import {
     SectionProductsBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
-import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
+import {LayoutTitleLinkProps, PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import ServiceView from "./serviceView";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
+import LayoutTitleCustom from "../Misc/layoutTitleCustom";
 
-const title: string= "Nuestros servicios"
+const title: string = "Nuestros servicios"
 
 export default function OurServices() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
@@ -22,11 +23,12 @@ export default function OurServices() {
         LeftArrow: null,
         RightArrow: null
     }
+    const propLayoutTitle: LayoutTitleLinkProps = {
+        Title: title,
+        PaddingUnderHeader: 50
+    }
     return (
-        <div className={style.mainDivOurServices}>
-            <div className={style.title}>
-                {title}
-            </div>
+        <LayoutTitleCustom item={propLayoutTitle}>
             <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
                 {
                     sectionProducst[0].ListProducts.map((item, index) =>
@@ -35,7 +37,6 @@ export default function OurServices() {
                     )
                 }
             </LayoutCarrouselDesktop>
-        </div>
-
+        </LayoutTitleCustom>
     )
 }

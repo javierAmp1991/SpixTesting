@@ -1,0 +1,21 @@
+.mainDiv {
+    display: grid;
+    gap: 24px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 66%;
+    gap: 20px;
+}
+
+.writeQuestion {
+    width: max-content;
+    padding: 6px 32px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    margin-right: auto;
+    display: grid;
+    border-radius: 4px;
+    overflow: hidden;
+}

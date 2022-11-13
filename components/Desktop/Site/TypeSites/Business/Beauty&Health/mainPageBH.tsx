@@ -4,7 +4,7 @@ import OurJobs from "./ourJobs";
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
-    SectionProductsBHContext
+    SectionProductsBHContext, ShceduleBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import ProductSectionBh from "./productSectionBh";
 import InSearchBH from "./inSearchBH";
@@ -14,13 +14,16 @@ import OurServices from "./ourServices";
 import QuestionBH from "./questionBH";
 import HeaderBh2 from "./headerBh2";
 import OurJobs2 from "./ourJobs2";
+import Reservation from "../Misc/reservation";
+import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
 export default function MainPageBH() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
+    const schedule: Schedule[] = useContext(ShceduleBHContext)
     return (
         <div className={style.mainDiv}>
             <HeaderBh2/>
-           {/* <OurJobs/>*/}
+            {/* <OurJobs/>*/}
             <OurJobs2/>
             <div className={style.separationLine}/>
 
@@ -31,6 +34,9 @@ export default function MainPageBH() {
             <div className={style.separationLine}/>
 
             <OurServices/>
+            <div className={style.separationLine}/>
+
+            <Reservation item={schedule}/>
             <div className={style.separationLine}/>
 
             <InOfferBH/>

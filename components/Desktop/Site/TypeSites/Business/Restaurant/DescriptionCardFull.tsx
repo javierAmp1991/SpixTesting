@@ -8,10 +8,15 @@ import utilities from "/styles/utilities.module.css";
 import SocialBar from "../../../../Misc/socialBar";
 import PopUpContainer from "../../../../Misc/popUpContainer";
 import MapPopUp from "../../../../Misc/mapPopUp";
+import LikeButton from "../../../../Misc/likeButton";
+import {LikeButtonProps} from "../../../../../../Class/Misc/GlobalClass";
 
 
 const directionText: string = "Direccion: "
 const contactText: string = "Redes y Contacto: "
+const likeButton: LikeButtonProps = {
+    Like: 75
+}
 
 export default function DescriptionCardFull() {
     const info: PresentationCard = useContext(HeaderContext)
@@ -27,9 +32,14 @@ export default function DescriptionCardFull() {
     return (
         <div className={style.mainDiv}>
             <div className={style.gridLeft}>
-                <button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
-                    <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
-                </button>
+                <div className={style.contImageLogo}>
+                    <button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
+                        <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
+                    </button>
+                    <div className={style.sizeLogo}>
+                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
+                    </div>
+                </div>
                 <div className={style.mainDivInfo}>
                     <div className={style.subGrid}>
                         <div className={style.gridTags}>
@@ -41,13 +51,6 @@ export default function DescriptionCardFull() {
                             }
                         </div>
                         <div className={style.gridImageName}>
-                            <div className={style.secondGradient}>
-                                <div className={style.firstGradient}>
-                                    <div className={style.sizeLogo}>
-                                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
-                                    </div>
-                                </div>
-                            </div>
                             <div>
                                 <div className={style.Name}>
                                     {info.Name}
@@ -76,14 +79,14 @@ export default function DescriptionCardFull() {
                                 }
                             </div>
                         </div>
-                       {/* <button className={style.button}>
+                        {/* <button className={style.button}>
                             Ver carta
                         </button>*/}
                     </div>
                 </div>
             </div>
             <div className={style.mainContSide}>
-               {/* <div className={style.gridTags}>
+                {/* <div className={style.gridTags}>
                     {
                         info.Tags.map(item =>
                             <div key={item} className={style.tag}>
@@ -104,6 +107,9 @@ export default function DescriptionCardFull() {
                             )
                         }
                     </div>
+                </div>
+                <div className={style.contLike}>
+                    <LikeButton item={likeButton}/>
                 </div>
             </div>
             {

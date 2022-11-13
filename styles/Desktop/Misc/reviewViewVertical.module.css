@@ -26,15 +26,17 @@
 }
 
 .contImage {
-    --sizeReviewImage: 86px;
+    --sizeReviewImage: 72px;
     height: var(--sizeReviewImage);
     width: var(--sizeReviewImage);
     top: calc(var(--sizeReviewImage) / 2 * -1);
     left: calc(50% - (var(--sizeReviewImage) / 2));
     position: absolute;
-    padding: 4px;
-    background: var(--gradientProfileBlue);
+    /*background: var(--gradientProfileBlue);*/
     border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0,0,0,.5);
+    padding: 2px;
+    background: white;
 
 }
 
@@ -47,7 +49,6 @@
 }
 
 .sizeReviewImage {
-
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -68,9 +69,9 @@
 
 .byWho {
     color: var(--colorSecundaryTextDesktop);
-    text-align: center;
+    text-align: left;
     padding-bottom: 4px;
-    font-size: 16px;
+    width: 100%;
 }
 
 .gridOpt {

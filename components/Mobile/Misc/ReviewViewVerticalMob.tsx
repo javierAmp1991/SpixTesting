@@ -5,6 +5,8 @@ import OptionBar from "./optionBar";
 import {ReviewItem} from "../../../Class/Misc/GlobalClass";
 import RatingStarVar from "../../Desktop/Misc/ratingStarVar";
 
+const byText: string = "Por: "
+
 export default function ReviewViewVerticalMob({item}: { item: ReviewItem }) {
     return (
         <div className={style.mainDiv}>
@@ -21,7 +23,6 @@ export default function ReviewViewVerticalMob({item}: { item: ReviewItem }) {
                     <div className={style.title}>
                         {item.Title}
                     </div>
-                    <div className={style.byWho}>{item.ByWho}</div>
                     <RatingStarVar size={14} item={item.Rating}/>
                 </div>
 
@@ -29,6 +30,7 @@ export default function ReviewViewVerticalMob({item}: { item: ReviewItem }) {
                     <div className={`${style.maxWidthtextReview} ${utilities.clamp7}`}>
                         {item.Review}
                     </div>
+                    <div className={style.byWho}>{byText} {item.ByWho}</div>
                 </div>
 
                 <div className={style.contOptionBar}>

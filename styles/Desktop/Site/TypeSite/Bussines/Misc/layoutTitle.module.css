@@ -1,0 +1,19 @@
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+    text-align: left;
+}
+
+.link {
+    color: var(--linkColor);
+    font-weight: 500;
+}
+
+.titleCenter {
+    text-align: center;
+}
+
+.titleRight {
+    text-align: right;
+}

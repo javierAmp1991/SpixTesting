@@ -55,3 +55,8 @@ export class NavBarEventsSections {
     IdToGo: string
     Name: string
 }
+
+export class LikeButtonProps {
+    Like: number
+    Size?: number
+}
