@@ -14,6 +14,8 @@ import LayoutCarrouselLoop from "../../../Layouts/layoutCarrouselLoop";
 import PopUpContainer from "../../../Misc/popUpContainer";
 import {LayoutCarrouselDeskProp} from "../../../Layouts/layoutCarrousel";
 import PopUpContainerFull from "../../../Misc/popUpContainerFull";
+import WishlistButton from "../../../Misc/wishlistButton";
+import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -51,6 +53,12 @@ export default function PresentCard2() {
         PositionArrowX: positionArrowIn,
         PositionArrowY: positionArrowY
     }
+    const likeButton: LikeButtonProps = {
+        Like: 75
+    }
+    const wishlistButton: wishlistButtonProps = {
+        Like: 45
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -79,7 +87,7 @@ export default function PresentCard2() {
 
 
                     <div className={style.gridSocialRedes}>
-                        <SocialBarVar sizeIcon={16}/>
+                        <WishlistButton item={wishlistButton}/>
                         <div className={style.gridContact}>
                             {
                                 info.Contact.map(item =>

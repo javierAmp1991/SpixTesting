@@ -104,7 +104,7 @@
     background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
 }
 
-.contImageLogo{
+.contImageLogo {
     position: relative;
 }
 
@@ -112,7 +112,7 @@
     width: 60px;
     height: 60px;
     position: absolute;
-    bottom: 15px;
+    top: 15px;
     right: 16px;
     border-radius: 50%;
     overflow: hidden;
@@ -154,11 +154,18 @@
 .gridImageButton {
     display: grid;
     height: auto;
-    /*    grid-template-rows: 1fr max-content;
-        gap: 16px;*/
+    grid-template-rows: 1fr max-content;
 }
 
-.mainContSide{
+.seeGalery {
+    position: absolute;
+    bottom: 20px;
+    right: 36px;
+    color: var(--linkColor);
+    text-decoration: underline;
+}
+
+.mainContSide {
     display: grid;
     height: 100%;
     grid-template-rows: 1fr;
@@ -216,9 +223,24 @@
     gap: 8px;
 }
 
-.contLike{
+.contLike {
+    background: rgba(255,255,255,.5);
+    height: 80px;
+    width: 80px;
     position: absolute;
-    top: 16px;
-    right: 40px;
+    left: calc(50% - 40px);
+    top: calc(50% - 40px);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    border-radius: 50%;
+}
+
+.gridWishContact {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 16px;
+    width: 95%;
 }
 

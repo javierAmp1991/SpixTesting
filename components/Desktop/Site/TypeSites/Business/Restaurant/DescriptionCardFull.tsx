@@ -37,11 +37,14 @@ export default function DescriptionCardFull() {
         <div className={style.mainDiv}>
             <div className={style.gridLeft}>
                 <div className={style.contImageLogo}>
-                    <button onClick={() => handleClickImage(info.ImagePath)} className={style.sizeImage}>
+                    <div className={style.sizeImage}>
                         <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
-                    </button>
+                    </div>
                     <div className={style.sizeLogo}>
                         <Image layout={"fill"} src={info.LogoPath} alt={""}/>
+                    </div>
+                    <div className={style.contLike}>
+                        <LikeButton item={likeButton}/>
                     </div>
                 </div>
                 <div className={style.mainDivInfo}>
@@ -57,7 +60,6 @@ export default function DescriptionCardFull() {
                         <div className={style.Name}>
                             {info.Name}
                         </div>
-                        <WishlistButton item={wishlistButton}/>
 
                         <div className={`${utilities.clamp5} ${utilities.fontPrimaryText}`}>
                             {info.Description}
@@ -66,23 +68,22 @@ export default function DescriptionCardFull() {
                             <span>{directionText}</span>
                             <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
                         </div>
-                        <div className={style.gridInfoNew}>
-                           {/* <span>{contactText}</span>*/}
-                            <div className={style.gridContact}>
-                                {
-                                    info.Contact.map((item) =>
-                                        <Link key={item.Id} href={item.Link}>
-                                            <div className={style.sizeIcon}>
-                                                <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                            </div>
-                                        </Link>
-                                    )
-                                }
+                        <div className={style.gridWishContact}>
+                            <WishlistButton item={wishlistButton}/>
+                            <div className={style.gridInfoNew}>
+                                <div className={style.gridContact}>
+                                    {
+                                        info.Contact.map((item) =>
+                                            <Link key={item.Id} href={item.Link}>
+                                                <div className={style.sizeIcon}>
+                                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                                </div>
+                                            </Link>
+                                        )
+                                    }
+                                </div>
                             </div>
                         </div>
-                        {/* <button className={style.button}>
-                            Ver carta
-                        </button>*/}
                     </div>
                 </div>
             </div>
@@ -108,9 +109,9 @@ export default function DescriptionCardFull() {
                             )
                         }
                     </div>
-                </div>
-                <div className={style.contLike}>
-                    <LikeButton item={likeButton}/>
+                    <button className={style.seeGalery}>
+                        Ver galeria
+                    </button>
                 </div>
             </div>
             {

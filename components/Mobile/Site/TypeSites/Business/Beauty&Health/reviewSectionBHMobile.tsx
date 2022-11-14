@@ -3,9 +3,7 @@ import {ReviewItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {ReviewBhContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import ReviewViewVerticalMob from "../../../../Misc/ReviewViewVerticalMob";
-import {LayoutCarrouselMobileProp, LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
-import LayoutCarrouselMobileCustom from "../../../../Layouts/layoutCarrouselMobileCustom";
-import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
+import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 
 const title: string = "Testimonios de nuestros clientes"
@@ -15,7 +13,7 @@ const seeMoreReview: string = "Ver mas reseñas"
 export default function ReviewSectionBHMobile() {
     const review: ReviewItem[] = useContext(ReviewBhContext)
     const propsCarrousel: LayoutWithNavCircleProp = {
-        Top: 32,
+        Top: 36,
     }
     return (
         <div className={style.mainDiv}>

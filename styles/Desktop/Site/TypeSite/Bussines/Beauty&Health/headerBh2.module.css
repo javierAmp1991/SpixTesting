@@ -13,10 +13,10 @@
     background: #ffebec;
     margin: auto;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.8fr 1fr;
     border-radius: 42px;
     overflow: hidden;
-    padding: 2% 4% 2% 4%;
+    padding: 2% 8% 2% 4%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
 }
 
@@ -50,6 +50,7 @@
     aspect-ratio: 1/1;
     display: grid;
     justify-items: right;
+    position: relative;
 }
 
 .title {
@@ -100,7 +101,6 @@
     grid-auto-flow: column;
     align-items: center;
     gap: 8px;
-    padding-top: 16px;
 }
 
 .sizeIcon {
@@ -134,9 +134,11 @@
 }
 
 .gridNew {
-    padding-top: 8px;
     display: grid;
     gap: 8px;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    padding-top: 16px;
 }
 
 .contLike {
@@ -149,7 +151,7 @@
     transition: .2s;
 }
 
-.contLike:hover{
+.contLike:hover {
     transform: scale(1.2);
 }
 
@@ -165,8 +167,8 @@
     align-items: center;
     gap: 16px;
     position: absolute;
-    top: 24px;
-    right: 0;
+    bottom: 32px;
+    left: 16px;
     z-index: 500;
 }
 

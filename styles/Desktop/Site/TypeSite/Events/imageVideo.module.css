@@ -35,10 +35,10 @@
     display: grid;
     align-items: center;
     background: black;
-    background: linear-gradient(180deg, rgba(0,0,0,.7) 0%,  rgba(0,0,0,.3) 50%, rgba(0,0,0,.7) 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .7) 100%);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 6px rgba(0,0,0,.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .2);
 }
 
 .paddingContImage {
@@ -52,10 +52,21 @@
     display: grid;
 }
 
-.contLike{
+.contLike {
     position: absolute;
-    top: 8px;
-    right: 12px;
+    bottom: 32px;
+    left: 20px;
     z-index: 100;
+}
+
+.playIconBig {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(255,255,255);
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
 }
 

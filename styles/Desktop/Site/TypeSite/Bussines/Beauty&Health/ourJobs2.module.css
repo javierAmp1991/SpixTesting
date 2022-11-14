@@ -3,7 +3,7 @@
     grid-template-columns: 1.8fr 3fr;
     background: linear-gradient(145deg, #f2e0ff 0%, #ffd9ce 50%, #f4d1ff 100%);
     border-radius: 32px;
-    padding: 0 4%;
+    padding: 12px 4%;
 }
 
 .title {
@@ -122,4 +122,10 @@
     height: 30px;
     position: relative;
     border: 1px solid red;
+}
+
+.seeGalery {
+    text-decoration: underline;
+    text-align: left;
+    width: 100%;
 }

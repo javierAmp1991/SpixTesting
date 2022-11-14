@@ -15,8 +15,9 @@ export default function ImageVideo() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     let [isVideo, setIsVideo] = useState(true)
     let [phothoSelected, setPhotoSelected] = useState(info.Images[0])
-    const handleSelectVideo = () => {
+    const handleSelectVideo = (image: string) => {
         setIsVideo(isVideo = true)
+        setPhotoSelected(phothoSelected = image)
     }
     const handleSelectImage = (image: string) => {
         setPhotoSelected(phothoSelected = image)
@@ -28,11 +29,10 @@ export default function ImageVideo() {
                 {
                     info.Images.map((item, index) =>
                         index == 0 ?
-                            <button onClick={handleSelectVideo} key={index} className={style.contImage}>
+                            <button onClick={() => handleSelectVideo(item)} key={index} className={style.contImage}>
                                 <div className={style.sizeImageSelection}>
                                     <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                 </div>
-
                                 <div className={style.playIconProperties}>
                                     <Image layout={"fill"} objectFit={"cover"}
                                            src={GlobalConst.sourceImages.playIcon}
@@ -51,13 +51,15 @@ export default function ImageVideo() {
             <div className={style.contShowImage}>
                 <div className={style.contShowImage}>
                     {
-                        isVideo ?
-                            <video autoPlay={true} poster={info.Images[0]} className={style.contShowVideo} controls
-                                   src={info.Video}/>
-                            :
-                            <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
+                        <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
                     }
                 </div>
+                {
+                    isVideo &&
+                    <button className={style.playIconBig}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon}/>
+                    </button>
+                }
                 <div className={style.contLike}>
                     <LikeButton item={likeButton}/>
                 </div>

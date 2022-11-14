@@ -12,7 +12,8 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 import {createPortal} from "react-dom";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import LikeButton from "../../../../Misc/likeButton";
-import {LikeButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import WishlistButton from "../../../../Misc/wishlistButton";
 
 const sizeBanner: string = `calc(100vh - 97px)`
 const contactText: string = "Redes y contacto:"
@@ -25,6 +26,9 @@ export default function HeaderBh2() {
     const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
     const like: LikeButtonProps = {
         Like: 90
+    }
+    const wishlistButton: wishlistButtonProps = {
+        Like: 45
     }
     return (
         <div className={style.mainDiv}>
@@ -44,22 +48,17 @@ export default function HeaderBh2() {
                 <div className={style.title}>
                     {info.Name}
                 </div>
-                <div className={style.gridLikeWishlist}>
-                   <LikeButton item={like}/>
-                   {/* <div className={style.contLike}>
-                        <div className={style.sizeICon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.noActiveWishList}/>
-                        </div>
-                    </div>*/}
+                {/*  <div className={style.gridLikeWishlist}>
+                    <LikeButton item={like}/>
+                </div>*/}
 
+                <div className={style.contDirection}>
+                    <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
                 </div>
 
                 <div className={style.gridNew}>
-                    {/* <div className={style.description}>
-                        {info.Description}
-                    </div>*/}
-                  {/*  <div className={style.gridContact}>
-                         <span>{contactText}</span>
+                    <WishlistButton item={wishlistButton}/>
+                    <div className={style.gridContact}>
                         {
                             info.Contact.map((item) =>
                                 <Link key={item.Id} href={item.Link}>
@@ -69,28 +68,17 @@ export default function HeaderBh2() {
                                 </Link>
                             )
                         }
-                    </div>*/}
-
-                    <div className={style.contDirection}>
-                        <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
                     </div>
                 </div>
-                <div className={style.gridContact}>
-                    {
-                        info.Contact.map((item) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                </div>
-                            </Link>
-                        )
-                    }
-                </div>
+
             </div>
 
             <div className={style.contBanner}>
                 <div className={style.sizeNewBanner}>
                     <Image priority={true} layout={"fill"} src={info.Banner}/>
+                </div>
+                <div className={style.gridLikeWishlist}>
+                    <LikeButton item={like}/>
                 </div>
             </div>
             {

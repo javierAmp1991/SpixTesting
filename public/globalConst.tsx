@@ -128,7 +128,8 @@ export namespace GlobalConst{
         dollarUp: "/images/dollarUp.png",
         formIconGray: "/images/formIconGray.png",
         emailIcon: "/images/emailIcon.png",
-        webPageIcon: "/images/webPageIcon.png"
+        webPageIcon: "/images/webPageIcon.png",
+        activateWishList: "/images/activateWishList.png"
     }
 }
 

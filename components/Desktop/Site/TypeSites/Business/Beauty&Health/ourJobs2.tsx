@@ -56,10 +56,11 @@ export default function OurJobs2() {
                     {title}
                 </div>
                 <div>
-                    {
-                        info.Description
-                    }
+                    {info.Description}
                 </div>
+                <button className={style.seeGalery}>
+                    Ver galeria
+                </button>
             </div>
 
             <div className={style.contSlider}>
