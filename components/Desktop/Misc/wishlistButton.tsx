@@ -32,8 +32,8 @@ export default function WishlistButton({item}: { item: wishlistButtonProps }) {
     }
     return (
         <button onClick={() => handleBell(!isLikeBell)}
-                className={`${style.mainDiv} ${isLikeBell ? style.active : style.noActive}`}>
-            <div className={style.sizeIcon}>
+                className={`${style.mainDiv} ${isLikeBell ? style.active : style.noActive} `}>
+            <div className={`${style.sizeIcon}  `}>
                 <Image layout={"fill"} src={bellIcon.bellIcon}/>
             </div>
             <div className={style.like}>

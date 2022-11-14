@@ -28,6 +28,8 @@ export default function MainPageMobile() {
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <InformationImages/>
                 <div className={style.separationLine}/>
+                <QuestionSectionMobile/>
+                <div className={style.separationLine}/>
                 <TicketsSectionMobile/>
                 <div className={style.separationLine}/>
                 <InSearch/>
@@ -41,7 +43,6 @@ export default function MainPageMobile() {
                         )
                     }
                 </div>
-                <QuestionSectionMobile/>
             </div>
             <FooterMobile/>
         </>

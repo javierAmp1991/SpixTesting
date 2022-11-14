@@ -1,6 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 import ReviewSectionBH from "./reviewSectionBH";
-import OurJobs from "./ourJobs";
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
@@ -16,6 +15,8 @@ import HeaderBh2 from "./headerBh2";
 import OurJobs2 from "./ourJobs2";
 import Reservation from "../Misc/reservation";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+
+const idQuestionSection: string = "idQuestionSectionBeautyAndHelath"
 
 export default function MainPageBH() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
@@ -33,7 +34,7 @@ export default function MainPageBH() {
             <InSearchBH/>
             <div className={style.separationLine}/>
 
-            <OurServices/>
+            <OurServices id={idQuestionSection}/>
             <div className={style.separationLine}/>
 
             <Reservation item={schedule}/>
@@ -54,7 +55,7 @@ export default function MainPageBH() {
             </div>
             <div className={style.separationLine}/>
 
-            <QuestionBH/>
+            <QuestionBH id={idQuestionSection}/>
         </div>
     )
 }

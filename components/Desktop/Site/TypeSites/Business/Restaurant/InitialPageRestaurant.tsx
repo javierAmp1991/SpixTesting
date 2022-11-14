@@ -67,10 +67,13 @@ export default function InitialPageRestaurant() {
                 <ReviewRestaurant/>
                 <div className={style.separationLine}/>
 
+                <InSearchRestaurant/>
+                <div className={style.separationLine}/>
+
                 <Reservation item={schedule}/>
                 <div className={style.separationLine}/>
 
-                <InSearchRestaurant/>
+                <QuestionRestaurant/>
                 <div className={style.separationLine}/>
 
                 <div className={style.spaceNavSectionProducts}>
@@ -96,8 +99,6 @@ export default function InitialPageRestaurant() {
                         )
                     }
                 </div>
-
-                <QuestionRestaurant/>
             </div>
         </>
     )

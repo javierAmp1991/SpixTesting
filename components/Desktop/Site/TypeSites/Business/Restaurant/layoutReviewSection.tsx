@@ -17,7 +17,7 @@ export default function LayoutReviewSection({children}) {
                 <div className={style.rating}>
                     {qualificationText} 5/5
                 </div>
-                <div className={style.gridStars}>
+               {/* <div className={style.gridStars}>
                     {
                         newArray.map((e, index) =>
                             <div key={index} className={style.sizeStar}>
@@ -26,7 +26,7 @@ export default function LayoutReviewSection({children}) {
                             </div>
                         )
                     }
-                </div>
+                </div>*/}
             </div>
             {children}
             <div className={style.seeMore}>

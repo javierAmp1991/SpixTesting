@@ -2,21 +2,22 @@ import style from "/styles/Desktop/Site/TypeSite/Events/presentCard2.module.css"
 import Image from "next/image";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import React, {useContext, useEffect, useState} from "react";
-import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
+import {PrincipalInfoEventContext, QuestionContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import ImageVideo from "./imageVideo";
 import Link from "next/link";
 import {GlobalId} from "../../../../../public/globalConst";
-import LevelUserPopUp from "../../../Misc/levelUserPopUp";
 import {createPortal} from "react-dom";
 import {LevelUser} from "./sideCard";
-import SocialBarVar from "../../../Misc/socialBarVar";
 import LayoutCarrouselLoop from "../../../Layouts/layoutCarrouselLoop";
-import PopUpContainer from "../../../Misc/popUpContainer";
 import {LayoutCarrouselDeskProp} from "../../../Layouts/layoutCarrousel";
 import PopUpContainerFull from "../../../Misc/popUpContainerFull";
 import WishlistButton from "../../../Misc/wishlistButton";
-import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
-import WishlistButtonMobile from "../../../../Mobile/Misc/wishlistButtonMobile";
+import {LikeButtonProps, QuestionItem, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
+import LikeButton from "../../../Misc/likeButton";
+import LikeButton2 from "../../../Misc/likeButton2";
+import LayoutCarrouselDesktop from "../../../Layouts/layoutCarrouselDesktop";
+import QuestionShortDesk from "../../../Misc/questionShortDesk";
+import {PropCarrousel} from "../../../../../Class/Layouts/layoutClass";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -30,6 +31,7 @@ const positionArrowY: string = "calc(50% - 16px)"
 
 export default function PresentCard2() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
+    const questions: QuestionItem[] = useContext(QuestionContext)
     let [displayLevelUser, setDisplayLevelUser] = useState(false)
     let [displayCarrouselImages, setDisplayCarrouselImages] = useState(false)
     let [phothoSelected, setPhotoSelected] = useState(info.Images[0])
@@ -60,6 +62,16 @@ export default function PresentCard2() {
     const wishlistButton: wishlistButtonProps = {
         Like: 45
     }
+    const layoutPropNews: PropCarrousel = {
+        PositionArrowY: "calc(50% - 16px)",
+        PositionArrowX: "-16px",
+        Padding: 0,
+        Gap: 16,
+        Grid: 1,
+        IsButtonVisible: true,
+        LeftArrow: () => null,
+        RightArrow: () => null
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -76,6 +88,7 @@ export default function PresentCard2() {
                     <div className={style.name}>
                         {info.Name}
                     </div>
+
                     <div>
                         <div className={style.description}>
                             {info.Description}
@@ -86,54 +99,40 @@ export default function PresentCard2() {
                         </div>
                     </div>
 
-
                     <div className={style.gridSocialRedes}>
-                        <WishlistButtonMobile item={wishlistButton}/>
-                        <div className={style.gridContact}>
-                            {
-                                info.Contact.map(item =>
-                                    <Link key={item.Id} href={item.Link}>
-                                        <a className={style.grid2}>
-                                            <div className={style.sizeIcon}>
-                                                <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                            </div>
-                                        </a>
-                                    </Link>
-                                )
-                            }
-                        </div>
+                        <WishlistButton item={wishlistButton}/>
+                        <LikeButton2 item={likeButton}/>
+                    </div>
+
+                    <div className={style.gridContact}>
+                        {
+                            info.Contact.map(item =>
+                                <Link key={item.Id} href={item.Link}>
+                                    <a className={style.grid2}>
+                                        <div className={style.sizeIcon}>
+                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                        </div>
+                                    </a>
+                                </Link>
+                            )
+                        }
                     </div>
 
                     <div className={style.separationLine}/>
 
-                    {/*{
-                        <div className={style.gridSelectionZone}>
+                    <div>
+                        <LayoutCarrouselDesktop layoutProp={layoutPropNews}>
                             {
-                                info.Images.map((item, index) =>
-                                    <button onClick={() => handleClickImage(item)} key={index}
-                                            className={style.contImage}>
-                                        <div className={style.sizeImageSelection}>
-                                            <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
-                                        </div>
-                                    </button>
+                                questions.map((item, index) =>
+                                    index == 0 &&
+                                    <QuestionShortDesk key={item.Id} item={item}/>
                                 )
                             }
-                        </div>
-                    }*/}
+                        </LayoutCarrouselDesktop>
+                    </div>
+
                 </div>
                 <ImageVideo/>
-
-               {/* {
-                    info.Video == null ?
-                        <div className={style.paddingContImage}>
-                            <div className={style.contShowImage}>
-                                <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
-                            </div>
-                        </div>
-                        :
-                        <video muted={true} poster={info.Images[0]} className={style.contShowVideo} controls
-                               src={info.Video}/>
-                }*/}
             </div>
 
             {
@@ -152,15 +151,6 @@ export default function PresentCard2() {
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
-
-            {/* {
-                displayLevelUser &&
-                createPortal(
-                    <PopUpContainer closePopUp={handleLevelUser} isBackground={true} isButtonVisible={true}>
-                        <LevelUserPopUp levelUser={user.Level} levelVerfication={userRequirement}/>
-                    </PopUpContainer>, document.getElementById(idPortal)
-                )
-            }*/}
 
         </div>
     )

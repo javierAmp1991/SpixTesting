@@ -10,8 +10,9 @@ import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage
 import LayoutTitleCustom from "../Misc/layoutTitleCustom";
 
 const title: string = "Nuestros servicios"
+const goToQuestion: string = "Tienes reguntas respecto a estos servicios?"
 
-export default function OurServices() {
+export default function OurServices({id}: { id: string }) {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const layoutPropRecomended: PropCarrousel = {
         PositionArrowY: "calc(50% - 16px)",
@@ -27,16 +28,25 @@ export default function OurServices() {
         Title: title,
         PaddingUnderHeader: 50
     }
+    const handleGoTo = () => {
+        let data = document.getElementById(id).getBoundingClientRect()
+        window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
+    }
     return (
         <LayoutTitleCustom item={propLayoutTitle}>
-            <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
-                {
-                    sectionProducst[0].ListProducts.map((item, index) =>
-                        index <= 3 &&
-                        <ServiceView item={item}/>
-                    )
-                }
-            </LayoutCarrouselDesktop>
+            <>
+                <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
+                    {
+                        sectionProducst[0].ListProducts.map((item, index) =>
+                            index <= 3 &&
+                            <ServiceView item={item}/>
+                        )
+                    }
+                </LayoutCarrouselDesktop>
+                <button onClick={handleGoTo} className={style.goToQuestion}>
+                    {goToQuestion}
+                </button>
+            </>
         </LayoutTitleCustom>
     )
 }

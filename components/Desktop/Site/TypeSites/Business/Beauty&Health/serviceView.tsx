@@ -23,13 +23,15 @@ export default function ServiceView({item}: { item: ProductItem }) {
             }
 
             <div className={style.gridInfoProductHorizontal}>
-                <div className={`${style.name} ${utilities.clamp3}`}>
-                    {item.Name}
+                <div>
+                    <div className={`${style.name} ${utilities.clamp3}`}>
+                        {item.Name}
+                    </div>
+                    {
+                        item.Rating != null &&
+                        <RatingStarVar size={16} item={item.Rating}/>
+                    }
                 </div>
-                {
-                    item.Rating != null &&
-                    <RatingStarVar size={16} item={item.Rating}/>
-                }
                 <div className={`${style.description} ${utilities.clamp6}`}>
                     {item.Description}
                 </div>

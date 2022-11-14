@@ -9,6 +9,8 @@
     margin-bottom: 32px;
 }
 
+
+
 .gridLeft {
     display: grid;
     grid-template-columns: 1fr 1.3fr;

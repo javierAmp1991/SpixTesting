@@ -40,3 +40,13 @@
     gap: 24px;
     width: 66%;
 }
+
+.goToQuestion{
+    padding-top: 52px;
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}

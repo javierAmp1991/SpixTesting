@@ -129,7 +129,8 @@ export namespace GlobalConst{
         formIconGray: "/images/formIconGray.png",
         emailIcon: "/images/emailIcon.png",
         webPageIcon: "/images/webPageIcon.png",
-        activateWishList: "/images/activateWishList.png"
+        activateWishList: "/images/activateWishList.png",
+        activateHeartWhite: "/images/hearticonColorWhite.png"
     }
 }
 

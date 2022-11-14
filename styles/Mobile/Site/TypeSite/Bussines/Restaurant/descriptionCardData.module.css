@@ -11,6 +11,13 @@
     padding: 0 16px;
 }
 
+.gridWishLike{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+    padding-bottom: 4px;
+}
+
 .contCarrousel{
     position: relative;
 }

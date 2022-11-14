@@ -16,6 +16,9 @@ import ReservationMobile from "../Misc/reservationMobile";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import QuestionBHMobile from "./questionBHMobile";
 
+const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
+
+
 export default function MainPageBHMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const schedule: Schedule[] = useContext(ShceduleBHContext)
@@ -37,7 +40,7 @@ export default function MainPageBHMobile() {
             <div className={style.separationLine}/>
 
             <div className={style.paddingGeneral}>
-                <OurServicesMobile/>
+                <OurServicesMobile id={idQuestionSection}/>
             </div>
             <div className={style.separationLine}/>
 
@@ -61,7 +64,7 @@ export default function MainPageBHMobile() {
             </div>
             <div className={style.separationLine}/>
 
-            <QuestionBHMobile/>
+            <QuestionBHMobile id={idQuestionSection}/>
         </div>
     )
 }

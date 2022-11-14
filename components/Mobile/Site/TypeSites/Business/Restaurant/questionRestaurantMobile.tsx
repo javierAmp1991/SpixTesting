@@ -6,6 +6,8 @@ import {QuestionSectionContext} from "../../../../../Providers/Site/TypeSite/Bus
 import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
 import {LayoutTitleLinkProps} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutQuestionSectionMobile from "../../Misc/layoutQuestionSectionMobile";
+import LayoutCarrouselMobileCustom from "../../../../Layouts/layoutCarrouselMobileCustom";
+import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
 
 const title: string = "Preguntas"
 
@@ -17,14 +19,16 @@ export default function QuestionRestaurantMobile() {
     }
     return (
         <div className={style.paddingGeneral}>
-            <LayoutQuestionSectionMobile link={"/"}>
-                <>
-                    {
-                        listQuestion.map((item) =>
-                            <QuestionShortMob key={item.Question} item={item}/>)
-                    }
-                </>
-            </LayoutQuestionSectionMobile>
+            <LayoutTitleCustomMobile item={propLayoutTitle}>
+                <LayoutCarrouselMobile gapLayout={16}>
+                    <>
+                        {
+                            listQuestion.map((item) =>
+                                <QuestionShortMob key={item.Question} item={item}/>)
+                        }
+                    </>
+                </LayoutCarrouselMobile>
+            </LayoutTitleCustomMobile>
         </div>
     )
 }

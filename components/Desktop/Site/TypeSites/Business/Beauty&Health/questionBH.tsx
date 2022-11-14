@@ -6,16 +6,18 @@ import LayoutSectionQuestion from "../../Misc/LayoutSectionQuestion";
 
 const title: string = "Preguntas"
 
-export default function QuestionBH() {
+export default function QuestionBH({id}: { id: string }) {
     const listQuestion: QuestionItem[] = useContext(QuestionsBHContext)
     return (
-        <LayoutSectionQuestion link={"/"}>
-            <>
-                {
-                    listQuestion.map((item) =>
-                        <QuestionShortDesk key={item.Question} item={item}/>)
-                }
-            </>
-        </LayoutSectionQuestion>
+        <div id={id}>
+            <LayoutSectionQuestion link={"/"}>
+                <>
+                    {
+                        listQuestion.map((item) =>
+                            <QuestionShortDesk key={item.Question} item={item}/>)
+                    }
+                </>
+            </LayoutSectionQuestion>
+        </div>
     )
 }

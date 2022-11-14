@@ -84,7 +84,7 @@ export default function MainPage() {
                             )
                         }
                     </div>
-                    <QuestionSection/>
+                    {/*<QuestionSection/>*/}
                 </div>
                 <FooterDesk/>
             </div>

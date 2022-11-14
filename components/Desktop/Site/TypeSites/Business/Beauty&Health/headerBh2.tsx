@@ -14,6 +14,7 @@ import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import LikeButton from "../../../../Misc/likeButton";
 import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
 import WishlistButton from "../../../../Misc/wishlistButton";
+import LikeButton2 from "../../../../Misc/likeButton2";
 
 const sizeBanner: string = `calc(100vh - 97px)`
 const contactText: string = "Redes y contacto:"
@@ -45,12 +46,10 @@ export default function HeaderBh2() {
                         )
                     }
                 </div>
+
                 <div className={style.title}>
                     {info.Name}
                 </div>
-                {/*  <div className={style.gridLikeWishlist}>
-                    <LikeButton item={like}/>
-                </div>*/}
 
                 <div className={style.contDirection}>
                     <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
@@ -58,27 +57,25 @@ export default function HeaderBh2() {
 
                 <div className={style.gridNew}>
                     <WishlistButton item={wishlistButton}/>
-                    <div className={style.gridContact}>
-                        {
-                            info.Contact.map((item) =>
-                                <Link key={item.Id} href={item.Link}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                    </div>
-                                </Link>
-                            )
-                        }
-                    </div>
+                    <LikeButton2 item={like}/>
                 </div>
 
+                <div className={style.gridContact}>
+                    {
+                        info.Contact.map((item) =>
+                            <Link key={item.Id} href={item.Link}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                </div>
+                            </Link>
+                        )
+                    }
+                </div>
             </div>
 
             <div className={style.contBanner}>
                 <div className={style.sizeNewBanner}>
                     <Image priority={true} layout={"fill"} src={info.Banner}/>
-                </div>
-                <div className={style.gridLikeWishlist}>
-                    <LikeButton item={like}/>
                 </div>
             </div>
             {

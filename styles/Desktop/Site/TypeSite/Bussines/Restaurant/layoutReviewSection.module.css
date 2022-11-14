@@ -12,6 +12,7 @@
     font-size: 28px;
     font-weight: 500;
     color: var(--colorTitlesDesktop);
+    text-align: center;
 }
 
 .gridRating{
@@ -20,6 +21,7 @@
     padding-bottom: 64px;
     padding-top: 4px;
     gap: 12px;
+    justify-content: center;
 }
 
 .rating{

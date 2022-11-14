@@ -1,15 +1,14 @@
-import style from "/styles/Desktop/Misc/likeButton.module.css"
+import style from "/styles/Mobile/Misc/likeButton2.module.css"
 import {LikeButtonProps} from "../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useState} from "react";
 
 const defaultProp = {
-    Size: 40
+    Size: 30
 }
 
-export default function LikeButton({item}: { item: LikeButtonProps }) {
-    const cssStyle = getCssStyle()
+export default function LikeButton2Mobile({item}: { item: LikeButtonProps }) {
     let [isLikeHeart, setIsLikeHeart] = useState(false)
     let [initialLike, setInitialLike] = useState(item.Like)
     let [likeAnimation, setLikeAnimation] = useState(
@@ -35,7 +34,7 @@ export default function LikeButton({item}: { item: LikeButtonProps }) {
         if (isLike) {
             setLikeAnimation({
                 ...likeAnimation,
-                heartIcon: GlobalConst.sourceImages.activateHeart,
+                heartIcon: GlobalConst.sourceImages.activateHeartWhite,
                 mainContainerCircle: style.mainContainerCircleBefore,
                 animationClassLike: style.animationLike,
                 animatedCircle: style.animatedCircle,
@@ -79,56 +78,58 @@ export default function LikeButton({item}: { item: LikeButtonProps }) {
     }
 
     return (
-        <div style={{width: cssStyle.Size}} className={style.mainDiv}>
+        <div className={style.main}>
             <button onClick={() => handleClick(!isLikeHeart)}
-                    className={`${style.prinCont} ${likeAnimation.animationClassLike}`}>
-                <div className={style.mainCont}>
-                    <div className={style.sizeIcon}>
-                        <Image layout={"fill"} src={likeAnimation.heartIcon}/>
+                    className={`${style.gridimagetext} ${isLikeHeart ? style.active : style.noActive}`}>
+                <div className={style.mainDiv}>
+                    <div className={`${style.prinCont} ${likeAnimation.animationClassLike}`}>
+                        <div className={style.mainCont}>
+                            <div className={style.sizeIcon}>
+                                <Image layout={"fill"} src={likeAnimation.heartIcon}/>
+                            </div>
+                        </div>
                     </div>
-                    <div className={style.sizeLikes}>
-                        {initialLike}
+
+                    <div className={likeAnimation.mainContainerCircle}>
+                        <span className={`${likeAnimation.circleClass1} ${style.circleClass} absolute`}/>
+                        <span className={`${likeAnimation.circleClass2} ${style.circleClass} absolute`}/>
                     </div>
+
+                    <div className={likeAnimation.mainContainerCircle}>
+                        <span className={`${likeAnimation.circleClass3} ${style.circleClass} absolute`}/>
+                        <span className={`${likeAnimation.circleClass4} ${style.circleClass} absolute`}/>
+                    </div>
+
+                    <div className={likeAnimation.mainContainerCircle}>
+                        <span className={`${likeAnimation.circleClass5} ${style.circleClass} absolute`}/>
+                        <span className={`${likeAnimation.circleClass6} ${style.circleClass} absolute`}/>
+                    </div>
+
+                    <div className={likeAnimation.mainContainerCircle}>
+                        <span className={`${likeAnimation.circleClass7} ${style.circleClass} absolute`}/>
+                        <span className={`${likeAnimation.circleClass8} ${style.circleClass} absolute`}/>
+                    </div>
+
+                    <div className={likeAnimation.mainContainerCircle}>
+                        <span className={`${likeAnimation.circleClass9} ${style.circleClass} absolute`}/>
+                        <span className={`${likeAnimation.circleClass10} ${style.circleClass} absolute`}/>
+                    </div>
+
+                    <div className={likeAnimation.mainContainerCircle}>
+                        <span className={`${likeAnimation.circleClass11} ${style.circleClass} absolute`}/>
+                        <span className={`${likeAnimation.circleClass12} ${style.circleClass} absolute`}/>
+                    </div>
+
+                    <div className={likeAnimation.animatedCircle}/>
+                </div>
+                <div className={isLikeHeart? style.iLikeColor : style.iLike}>
+                    Me gusta
                 </div>
             </button>
-            <div className={likeAnimation.mainContainerCircle}>
-                <span className={`${likeAnimation.circleClass1} ${style.circleClass} absolute`}/>
-                <span className={`${likeAnimation.circleClass2} ${style.circleClass} absolute`}/>
-            </div>
-
-            <div className={likeAnimation.mainContainerCircle}>
-                <span className={`${likeAnimation.circleClass3} ${style.circleClass} absolute`}/>
-                <span className={`${likeAnimation.circleClass4} ${style.circleClass} absolute`}/>
-            </div>
-
-            <div className={likeAnimation.mainContainerCircle}>
-                <span className={`${likeAnimation.circleClass5} ${style.circleClass} absolute`}/>
-                <span className={`${likeAnimation.circleClass6} ${style.circleClass} absolute`}/>
-            </div>
-
-            <div className={likeAnimation.mainContainerCircle}>
-                <span className={`${likeAnimation.circleClass7} ${style.circleClass} absolute`}/>
-                <span className={`${likeAnimation.circleClass8} ${style.circleClass} absolute`}/>
-            </div>
-
-            <div className={likeAnimation.mainContainerCircle}>
-                <span className={`${likeAnimation.circleClass9} ${style.circleClass} absolute`}/>
-                <span className={`${likeAnimation.circleClass10} ${style.circleClass} absolute`}/>
-            </div>
-
-            <div className={likeAnimation.mainContainerCircle}>
-                <span className={`${likeAnimation.circleClass11} ${style.circleClass} absolute`}/>
-                <span className={`${likeAnimation.circleClass12} ${style.circleClass} absolute`}/>
-            </div>
-
-            <div className={likeAnimation.animatedCircle}/>
+            {/*<div className={style.sizeLikes}>
+                {initialLike}
+            </div>*/}
         </div>
+
     )
-
-    function getCssStyle() {
-        return {
-            Size: item.Size == null ? defaultProp.Size : item.Size
-        }
-    }
-
 }

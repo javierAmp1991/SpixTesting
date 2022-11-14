@@ -15,6 +15,7 @@ export enum TypeAlignTitle {
 }
 
 export class LayoutTitleLinkProps {
+    Id?: string
     Title: string
     Link?: string
     PaddingTop?: number

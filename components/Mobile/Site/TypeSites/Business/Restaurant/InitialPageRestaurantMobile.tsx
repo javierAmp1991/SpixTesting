@@ -83,6 +83,8 @@ export default function InitialPageRestaurantMobile() {
 
                 <ReservasMobile/>
 
+                <QuestionRestaurantMobile/>
+
                 <NavSectionProductsRestaurantMobile/>
 
                 <OfferRestaurantMobile/>
@@ -99,7 +101,6 @@ export default function InitialPageRestaurantMobile() {
                     }
                 </div>
 
-                <QuestionRestaurantMobile/>
             </div>
         </div>
     )

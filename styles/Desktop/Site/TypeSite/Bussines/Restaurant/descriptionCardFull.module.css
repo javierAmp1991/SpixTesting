@@ -53,6 +53,7 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    justify-content: center;
 }
 
 .title {
@@ -89,6 +90,7 @@
     grid-auto-flow: column;
     align-items: center;
     gap: 8px;
+    padding-top: 4px;
 }
 
 .sizeIcon {
@@ -113,9 +115,10 @@
     height: 60px;
     position: absolute;
     top: 15px;
-    right: 16px;
+    right: 40px;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 0 6px rgba(0,0,0,.8);
 }
 
 .button {
@@ -239,7 +242,6 @@
 .gridWishContact {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    align-items: center;
     gap: 16px;
     width: 95%;
 }

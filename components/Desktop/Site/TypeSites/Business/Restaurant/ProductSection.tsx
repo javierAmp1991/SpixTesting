@@ -6,7 +6,8 @@ import {LayoutTitleLinkProps} from "../../../../../../Class/Layouts/layoutClass"
 
 export default function ProductSection({sectionProducts}: { sectionProducts: SectionProductItem }) {
     const propLayoutTitle: LayoutTitleLinkProps = {
-        Title: sectionProducts.Name
+        Title: sectionProducts.Name,
+        Id: sectionProducts.Id
     }
     return (
         <LayoutTitleCustom item={propLayoutTitle}>

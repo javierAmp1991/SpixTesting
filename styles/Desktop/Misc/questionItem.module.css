@@ -1,6 +1,5 @@
 .mainDiv {
     display: grid;
-    gap: 8px;
     box-shadow: 0 0 6px rgba(0, 0, 0, .25);
     border-radius: 6px;
     overflow: hidden;
@@ -20,5 +19,5 @@
 .gridQuestion {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }

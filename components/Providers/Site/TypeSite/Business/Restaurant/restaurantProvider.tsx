@@ -460,14 +460,14 @@ const listQuestions: QuestionItem[] = [
         Answer: "Inbox",
         ByWho: "Juan Castillo"
     },
-    {
+/*    {
         Id: "idQuestion004",
         Rating: 5,
         Date: new Date(2022, 9, 23),
         Question: "Se puede pagar con cuenta rut?",
         Answer: "Si se puede",
         ByWho: "Alberto Fernandez"
-    }
+    }*/
 ]
 const listOfferProducts: Product[] = [
     {

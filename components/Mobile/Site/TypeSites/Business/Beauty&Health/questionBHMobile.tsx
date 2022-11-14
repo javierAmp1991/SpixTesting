@@ -5,10 +5,10 @@ import {QuestionsBHContext} from "../../../../../Providers/Site/TypeSite/Busines
 import QuestionShortMob from "../../../../Misc/questionShortMob";
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
 
-export default function QuestionBHMobile() {
+export default function QuestionBHMobile({id}: { id: string }) {
     const question: QuestionItem[] = useContext(QuestionsBHContext)
     return (
-        <div className={style.paddingGeneral}>
+        <div id={id} className={style.paddingGeneral}>
             <LayoutQuestionSectionMobile link={"/"}>
                 <>
                     {

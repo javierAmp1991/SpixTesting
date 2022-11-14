@@ -14,6 +14,8 @@ import Link from "next/link";
 import LikeButton from "../../../../Desktop/Misc/likeButton";
 import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
 import WishlistButton from "../../../../Desktop/Misc/wishlistButton";
+import WishlistButtonMobile from "../../../Misc/wishlistButtonMobile";
+import LikeButton2Mobile from "../../../Misc/likeButton2";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -49,7 +51,10 @@ export default function InformationImages() {
                         {info.Name}
                     </div>
                 </div>
-                <WishlistButton item={wishlistButton}/>
+                <div className={style.gridWishLike}>
+                    <WishlistButtonMobile item={wishlistButton}/>
+                    <LikeButton2Mobile item={likeButton}/>
+                </div>
                 <div className={style.gridContact}>
                     {contactText}
                     {
@@ -64,9 +69,9 @@ export default function InformationImages() {
                         )
                     }
                 </div>
-                <div className={style.contLike}>
+               {/* <div className={style.contLike}>
                     <LikeButton item={likeButton}/>
-                </div>
+                </div>*/}
             </div>
 
             <ImageVideoMobile/>

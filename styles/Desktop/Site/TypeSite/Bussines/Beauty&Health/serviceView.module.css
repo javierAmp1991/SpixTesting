@@ -87,6 +87,7 @@
     grid-template-columns: repeat(3, max-content);
     align-items: center;
     gap: 8px;
+    padding-top: 12px;
 }
 
 .discountStyle {
@@ -103,10 +104,12 @@
 
 .description {
     color: var(--colorPrimaryTextDesktop);
+    padding-bottom: 12px;
 }
 
 .name {
     font-size: 16px;
+    padding-bottom: 4px;
 }
 
 .price {
@@ -124,7 +127,7 @@
 }
 
 .button {
-    padding: 6px 16px;
+    padding: 8px 16px;
     text-align: center;
     width: 100%;
     margin: 16px auto auto auto;

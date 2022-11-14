@@ -31,8 +31,7 @@
 .gridInfo {
     display: grid;
     width: 100%;
-    gap: 16px;
-    align-content: center;
+    align-content: space-between;
     /*    background: #fff4f4;
         background: linear-gradient(270deg, transparent 0%, rgba(0,0,0,.05) 100%);
         background: rgba(0,0,0,.02);*/
@@ -44,7 +43,6 @@
 .separationLine {
     height: 2px;
     background: var(--separationLineColor);
-    width: 85%;
 }
 
 .sizeRestrictionIcon {
@@ -302,8 +300,8 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    justify-content: space-between;
     width: 85%;
+    gap: 16px;
     padding-bottom: 8px;
 }
 

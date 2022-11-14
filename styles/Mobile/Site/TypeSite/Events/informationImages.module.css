@@ -11,6 +11,13 @@
     position: relative;
 }
 
+.gridWishLike{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+    padding-bottom: 4px;
+}
+
 .contLike{
     position: absolute;
     top: 20px;

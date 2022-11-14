@@ -1,22 +1,24 @@
 .gridImageSelection {
     display: grid;
-    gap: 8px;
+    gap: 5px;
     grid-template-columns: max-content 1fr;
     width: 100%;
 }
 
 .gridSelectionZone {
     display: grid;
-    gap: 12px;
+    gap: 5px;
     align-content: start;
 }
 
 .contImage {
     position: relative;
-    width: 50px;
+    width: 60px;
     aspect-ratio: 1/1;
     overflow: hidden;
     border-radius: 4px;
+    border: 1px solid black;
+    box-shadow: 0 0 2px rgba(0,0,0, .8);
 }
 
 .playIconProperties {
@@ -36,7 +38,7 @@
     align-items: center;
     background: black;
     background: linear-gradient(180deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .7) 100%);
-    border-radius: 12px;
+    border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 0 6px rgba(0, 0, 0, .2);
 }

@@ -8,7 +8,7 @@ const defaultValues = {
     PaddingBottom: 12,
     PaddingLeft: 0,
     PaddingRight: 0,
-    PaddingUnderHeader: 30
+    PaddingUnderHeader: 30,
 }
 
 export default function LayoutTitleCustom({children, item}: { children: JSX.Element, item: LayoutTitleLinkProps }) {
@@ -20,7 +20,7 @@ export default function LayoutTitleCustom({children, item}: { children: JSX.Elem
             paddingLeft: cssStyle.Left,
             paddingRight: cssStyle.Right
         }}>
-            <div style={{paddingBottom: cssStyle.UnderHeader}}
+            <div id={cssStyle.Id} style={{paddingBottom: cssStyle.UnderHeader}}
                  className={style.contTitleLink}>
                 <div className={`${style.title} ${cssStyle.Align}`}>
                     {item.Title}
@@ -45,7 +45,8 @@ export default function LayoutTitleCustom({children, item}: { children: JSX.Elem
             Left: item.PaddingLeft == null ? defaultValues.PaddingLeft : item.PaddingLeft,
             Right: item.PaddingRight == null ? defaultValues.PaddingRight : item.PaddingRight,
             UnderHeader: item.PaddingUnderHeader == null ? defaultValues.PaddingUnderHeader : item.PaddingUnderHeader,
-            Align: item.AlignTitle == null ? "" : item.AlignTitle == TypeAlignTitle.Center ? style.titleCenter : style.titleRight
+            Align: item.AlignTitle == null ? "" : item.AlignTitle == TypeAlignTitle.Center ? style.titleCenter : style.titleRight,
+            Id: item.Id == null ? "" : item.Id
         }
     }
 }

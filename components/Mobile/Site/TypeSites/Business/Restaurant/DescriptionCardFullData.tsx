@@ -12,6 +12,8 @@ import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMo
 import WishlistButton from "../../../../../Desktop/Misc/wishlistButton";
 import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
 import LikeButton from "../../../../../Desktop/Misc/likeButton";
+import WishlistButtonMobile from "../../../../Misc/wishlistButtonMobile";
+import LikeButton2Mobile from "../../../../Misc/likeButton2";
 
 const directionText: string = "Direccion:"
 const seeCard: string = "Ver carta"
@@ -44,7 +46,10 @@ export default function DescriptionCardFullData() {
                             {info.Name}
                         </div>
                     </div>
-                    <WishlistButton item={wishlistButton}/>
+                    <div className={style.gridWishLike}>
+                        <WishlistButtonMobile item={wishlistButton}/>
+                        <LikeButton2Mobile item={likeButton}/>
+                    </div>
                     <div className={style.gridInfoNew}>
                         <span>{directionText}</span>
                         <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
@@ -63,9 +68,9 @@ export default function DescriptionCardFullData() {
                             }
                         </div>
                     </div>
-                    <div className={style.contLike}>
+                  {/*  <div className={style.contLike}>
                         <LikeButton item={likeButton}/>
-                    </div>
+                    </div>*/}
                 </div>
                 <div className={style.contCarrousel}>
                     <div className={style.sizeLogo}>

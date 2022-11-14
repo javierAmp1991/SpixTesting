@@ -13,12 +13,17 @@ import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 
 const title: string = "Nuestros servicios"
+const goToQuestion: string = "Tienes reguntas respecto a estos servicios?"
 
-export default function OurServicesMobile() {
+
+export default function OurServicesMobile({id} : {id: string}) {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const propLayoutTitle: LayoutTitleLinkProps = {
         Title: title,
-        Link: "/",
+    }
+    const handleGoTo = () => {
+        let data = document.getElementById(id).getBoundingClientRect()
+        window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
     }
     const propCarrousel: LayoutWithNavCircleProp = {
         Top: 24,
@@ -29,16 +34,21 @@ export default function OurServicesMobile() {
 
     return (
         <LayoutTitleCustomMobile item={propLayoutTitle}>
-            <LayoutNavCircleMobileCustom item={propCarrousel}>
-                {
-                    sectionProducst[0].ListProducts.map((item, index) =>
-                        <div key={item.Id} className={style.contCarrousel}>
-                            <ServiceViewMobile item={item}/>
-                        </div>
-                    )
-                }
+            <>
+                <LayoutNavCircleMobileCustom item={propCarrousel}>
+                    {
+                        sectionProducst[0].ListProducts.map((item, index) =>
+                            <div key={item.Id} className={style.contCarrousel}>
+                                <ServiceViewMobile item={item}/>
+                            </div>
+                        )
+                    }
 
-            </LayoutNavCircleMobileCustom>
+                </LayoutNavCircleMobileCustom>
+                <button onClick={handleGoTo} className={style.goToQuestion}>
+                    {goToQuestion}
+                </button>
+            </>
         </LayoutTitleCustomMobile>
     )
 }
