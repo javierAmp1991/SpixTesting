@@ -43,27 +43,28 @@ export default function HeaderBhMobile() {
                 <div className={style.title}>
                     {info.Name}
                 </div>
-                <div className={style.contDirection}>
-                    <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
-                </div>
-                <div>
-                    <WishlistButtonMobile item={wishlistButton}/>
-                    <div className={style.gridContact}>
-                        {
-                            info.Contact.map((item) =>
-                                <Link key={item.Id} href={item.Link}>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                    </div>
-                                </Link>
-                            )
-                        }
-                    </div>
+                <button onClick={handlePopUp} className={style.contDirection}>
+                    {info.Venue.Venue}
+                </button>
+                <WishlistButtonMobile item={wishlistButton}/>
+                <div className={style.gridContact}>
+                    {
+                        info.Contact.map((item) =>
+                            <Link key={item.Id} href={item.Link}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                </div>
+                            </Link>
+                        )
+                    }
                 </div>
             </div>
             <div className={style.contBanner}>
                 <div className={style.sizeNewBanner}>
                     <Image priority={true} layout={"fill"} src={info.Banner}/>
+                </div>
+                <div className={style.contLike}>
+                    <LikeButton item={likeButton}/>
                 </div>
             </div>
             {
