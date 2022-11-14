@@ -11,6 +11,7 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 import LikeButton from "../../../../Misc/likeButton";
 import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
 import WishlistButton from "../../../../Misc/wishlistButton";
+import WishlistButtonMobile from "../../../../../Mobile/Misc/wishlistButtonMobile";
 
 
 const directionText: string = "Direccion: "
@@ -69,7 +70,7 @@ export default function DescriptionCardFull() {
                             <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
                         </div>
                         <div className={style.gridWishContact}>
-                            <WishlistButton item={wishlistButton}/>
+                            <WishlistButtonMobile item={wishlistButton}/>
                             <div className={style.gridInfoNew}>
                                 <div className={style.gridContact}>
                                     {

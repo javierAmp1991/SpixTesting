@@ -43,6 +43,9 @@ export default function OurJobsMobile() {
                 <div className={style.description}>
                     {info.Description}
                 </div>
+                <div className={style.seeGalery}>
+                    Ver Galeria
+                </div>
 
             </div>
             <div className={style.contSlider}>

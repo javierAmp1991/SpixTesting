@@ -16,6 +16,7 @@ import {LayoutCarrouselDeskProp} from "../../../Layouts/layoutCarrousel";
 import PopUpContainerFull from "../../../Misc/popUpContainerFull";
 import WishlistButton from "../../../Misc/wishlistButton";
 import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
+import WishlistButtonMobile from "../../../../Mobile/Misc/wishlistButtonMobile";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -87,7 +88,7 @@ export default function PresentCard2() {
 
 
                     <div className={style.gridSocialRedes}>
-                        <WishlistButton item={wishlistButton}/>
+                        <WishlistButtonMobile item={wishlistButton}/>
                         <div className={style.gridContact}>
                             {
                                 info.Contact.map(item =>

@@ -13,6 +13,7 @@ import SocialBar from "../../../../Desktop/Misc/socialBar";
 import Link from "next/link";
 import LikeButton from "../../../../Desktop/Misc/likeButton";
 import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
+import WishlistButton from "../../../../Desktop/Misc/wishlistButton";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -48,6 +49,7 @@ export default function InformationImages() {
                         {info.Name}
                     </div>
                 </div>
+                <WishlistButton item={wishlistButton}/>
                 <div className={style.gridContact}>
                     {contactText}
                     {

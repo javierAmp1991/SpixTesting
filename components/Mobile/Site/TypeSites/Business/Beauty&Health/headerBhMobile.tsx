@@ -8,8 +8,18 @@ import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import Link from "next/link";
+import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import LikeButton from "../../../../../Desktop/Misc/likeButton";
+import WishlistButton from "../../../../../Desktop/Misc/wishlistButton";
+import WishlistButtonMobile from "../../../../Misc/wishlistButtonMobile";
 
 const idPortal: string = GlobalId.globalIds.idPortal
+const likeButton: LikeButtonProps = {
+    Like: 75
+}
+const wishlistButton: wishlistButtonProps = {
+    Like: 45
+}
 
 export default function HeaderBhMobile() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
@@ -36,16 +46,19 @@ export default function HeaderBhMobile() {
                 <div className={style.contDirection}>
                     <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
                 </div>
-                <div className={style.gridContact}>
-                    {
-                        info.Contact.map((item) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                </div>
-                            </Link>
-                        )
-                    }
+                <div>
+                    <WishlistButtonMobile item={wishlistButton}/>
+                    <div className={style.gridContact}>
+                        {
+                            info.Contact.map((item) =>
+                                <Link key={item.Id} href={item.Link}>
+                                    <div className={style.sizeIcon}>
+                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                    </div>
+                                </Link>
+                            )
+                        }
+                    </div>
                 </div>
             </div>
             <div className={style.contBanner}>
