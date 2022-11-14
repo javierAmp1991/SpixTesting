@@ -65,7 +65,7 @@ export default function MainPage() {
             <div className={style.mainDiv}>
                 <div className={style.mainCard}>
                     <PresentCard2/>
-                   <div className={style.separationLine}/>
+                    <div className={style.separationLine}/>
                     <InSearch/>
                     <div className={style.separationLine}/>
                     <TicketsSection/>
@@ -74,17 +74,15 @@ export default function MainPage() {
                     <div className={style.separationLine}/>
                     <OtherEvents/>
                     <div className={style.separationLine}/>
+                    <QuestionSection/>
+                    <div className={style.separationLine}/>
                     <div className={style.gridSectionProducts}>
                         {
                             infoSectionProducts.map(item =>
-                                <>
-                                    <ProductSection sectionProducts={item}/>
-                                    <div className={style.separationLine}/>
-                                </>
+                                <ProductSection key={item.Id} sectionProducts={item}/>
                             )
                         }
                     </div>
-                    {/*<QuestionSection/>*/}
                 </div>
                 <FooterDesk/>
             </div>

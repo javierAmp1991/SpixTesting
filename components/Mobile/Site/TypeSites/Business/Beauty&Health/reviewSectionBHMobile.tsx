@@ -5,13 +5,14 @@ import {ReviewBhContext} from "../../../../../Providers/Site/TypeSite/Business/B
 import ReviewViewVerticalMob from "../../../../Misc/ReviewViewVerticalMob";
 import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
+import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const title: string = "Testimonios de nuestros clientes"
 const qualificationText: string = "Calificacion:"
 const seeMoreReview: string = "Ver mas reseñas"
 
 export default function ReviewSectionBHMobile() {
-    const review: ReviewItem[] = useContext(ReviewBhContext)
+    const review: ProviderReview = useContext(ReviewBhContext)
     const propsCarrousel: LayoutWithNavCircleProp = {
         Top: 36,
     }
@@ -27,7 +28,7 @@ export default function ReviewSectionBHMobile() {
             </div>
             <LayoutNavCircleMobileCustom item={propsCarrousel}>
                     {
-                        review.map(item =>
+                        review.InitialReview.map(item =>
                             <div key={item.Id} className={style.contCarrousel}>
                                 <ReviewViewVerticalMob  item={item}/>
                             </div>

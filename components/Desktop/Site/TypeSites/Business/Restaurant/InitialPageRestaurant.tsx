@@ -92,10 +92,7 @@ export default function InitialPageRestaurant() {
                 <div className={style.gridSectionProducts} id={idTest}>
                     {
                         infoSectionProducts.map(item =>
-                            <>
-                                <ProductSection sectionProducts={item}/>
-                                <div className={style.separationLine}/>
-                            </>
+                            <ProductSection key={item.Id} sectionProducts={item}/>
                         )
                     }
                 </div>

@@ -1,7 +1,7 @@
 import {EventCardWithPrice} from "../../../../dataDemo/EventView/eventVerticalView";
 import {Product} from "../../../../dataDemo/data";
 import {MapPopUpProp} from "../../../../components/Desktop/Misc/mapPopUp";
-import {ReviewItem} from "../../../Misc/GlobalClass";
+import {ProductItem, ReviewItem} from "../../../Misc/GlobalClass";
 import {ContactItems} from "../Events/events";
 
 export class PresentationCard {
@@ -31,6 +31,12 @@ export class ProviderOfferProducts{
 
 export class ProviderReview{
     InitialReview: ReviewItem[]
+    RightClick: Function
+    LeftClick: Function
+}
+
+export class ProviderServicesProducts{
+    InitialItems: ProductItem[]
     RightClick: Function
     LeftClick: Function
 }

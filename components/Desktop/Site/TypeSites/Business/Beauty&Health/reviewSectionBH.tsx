@@ -7,6 +7,7 @@ import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
 import Image from "next/image";
 import {GlobalConst} from "../../../../../../public/globalConst";
+import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const title: string = "Testimonios de nuestros clientes"
 const qualificationText: string = "Calificacion:"
@@ -14,7 +15,7 @@ const seeMoreReview: string = "Ver mas reseñas"
 const newArray = [1,2,3,4,5]
 
 export default function ReviewSectionBH() {
-    const review: ReviewItem[] = useContext(ReviewBhContext)
+    const review: ProviderReview = useContext(ReviewBhContext)
     const layoutPropReview: PropCarrousel = {
         PositionArrowY: "calc(50% - 16px)",
         PositionArrowX: "-40px",
@@ -22,8 +23,8 @@ export default function ReviewSectionBH() {
         Gap: 48,
         Grid: 3,
         IsButtonVisible: false,
-        LeftArrow: null,
-        RightArrow: null
+        LeftArrow: review.RightClick,
+        RightArrow: review.LeftClick
         /*        LeftArrow: () => listReview.LeftClick(),
                 RightArrow: () => listReview.RightClick()*/
     }
@@ -49,7 +50,7 @@ export default function ReviewSectionBH() {
             </div>
             <LayoutCarrouselDesktop layoutProp={layoutPropReview}>
                 {
-                    review.map(item =>
+                    review.InitialReview.map(item =>
                         <ReviewViewVertical key={item.Id} item={item}/>
                     )
                 }

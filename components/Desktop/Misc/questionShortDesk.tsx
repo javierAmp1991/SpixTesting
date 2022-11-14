@@ -7,13 +7,13 @@ export default function QuestionShortDesk({item}: { item: QuestionItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.gridQuestion}>
-                <div className={utilities.fontSubTitle}>
+                <div>
                     <span>P : </span>
                     <span>{item.Question}</span>
 
                 </div>
                 <div>
-                    <span className={utilities.fontSubTitle}>R : </span>
+                    <span>R : </span>
                     <span className={utilities.fontPrimaryText}>{item.Answer}</span>
                 </div>
                 <div>

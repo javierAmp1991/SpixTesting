@@ -1,11 +1,16 @@
+.mainPadding{
+    padding: 4px;
+    scroll-snap-align: start;
+}
 .mainDiv {
     display: grid;
     gap: 8px;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
     border-radius: 6px;
     overflow: hidden;
     padding: 12px;
     transition: .4s;
+    width: 100%;
 }
 
 .containerButton {

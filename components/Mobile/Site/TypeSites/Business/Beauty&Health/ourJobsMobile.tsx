@@ -43,10 +43,12 @@ export default function OurJobsMobile() {
                 <div className={style.description}>
                     {info.Description}
                 </div>
+                <button onClick={handlePopUp} className={style.contDirection}>
+                    {info.Venue.Venue}
+                </button>
                 <div className={style.seeGalery}>
                     Ver Galeria
                 </div>
-
             </div>
             <div className={style.contSlider}>
                 <Slider {...settings}>
@@ -60,19 +62,6 @@ export default function OurJobsMobile() {
                 </Slider>
             </div>
 
-            {/* <div className={style.gridCarrousel}>
-                <div/>
-                <div className={style.gridImages}>
-                    {
-                        listCortes.map((item, index) =>
-                            <div key={index} className={`${style.sizeImage} ${getStyle(index)}`}>
-                                <Image layout={"fill"} src={item} alt={""}/>
-                            </div>
-                        )
-                    }
-                </div>
-                <div/>
-            </div>*/}
             {
                 displayMap &&
                 createPortal(

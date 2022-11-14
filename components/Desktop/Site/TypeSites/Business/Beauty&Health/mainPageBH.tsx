@@ -46,6 +46,9 @@ export default function MainPageBH() {
             <RecomendedBH/>
             <div className={style.separationLine}/>
 
+            <QuestionBH id={idQuestionSection}/>
+            <div className={style.separationLine}/>
+
             <div className={style.gridSectionProducts}>
                 {
                     sectionProducst.map(item =>
@@ -54,8 +57,6 @@ export default function MainPageBH() {
                 }
             </div>
             <div className={style.separationLine}/>
-
-            <QuestionBH id={idQuestionSection}/>
         </div>
     )
 }

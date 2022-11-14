@@ -4,13 +4,7 @@ import React, {useContext, useState} from "react";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import {GlobalConst} from "../../../../../public/globalConst";
-import LikeButton from "../../../Misc/likeButton";
-import {LikeButtonProps} from "../../../../../Class/Misc/GlobalClass";
 import utilities from "/styles/utilities.module.css";
-
-const likeButton: LikeButtonProps = {
-    Like: 87
-}
 
 export default function ImageVideo() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -51,15 +45,15 @@ export default function ImageVideo() {
                 }
             </div>
             <div className={style.contShowImage}>
-                <div className={style.contShowImage}>
+                <button className={style.contShowImage}>
                     {
                         <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
                     }
-                </div>
+                </button>
                 {
                     isVideo &&
                     <button className={style.playIconBig}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon}/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon} alt={""}/>
                     </button>
                 }
             </div>

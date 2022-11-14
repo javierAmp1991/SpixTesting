@@ -3,32 +3,23 @@ import QuestionShortMob from "../../../../Misc/questionShortMob";
 import {QuestionItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {QuestionSectionContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
-import {LayoutTitleLinkProps} from "../../../../../../Class/Layouts/layoutClass";
+import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
+import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 import LayoutQuestionSectionMobile from "../../Misc/layoutQuestionSectionMobile";
-import LayoutCarrouselMobileCustom from "../../../../Layouts/layoutCarrouselMobileCustom";
-import LayoutCarrouselMobile from "../../../../Layouts/layoutCarrousel.Mobile";
-
-const title: string = "Preguntas"
 
 export default function QuestionRestaurantMobile() {
     const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
-    const propLayoutTitle: LayoutTitleLinkProps = {
-        Title: title,
-        Link: "/",
-    }
+    const layout: LayoutWithNavCircleProp = {}
     return (
         <div className={style.paddingGeneral}>
-            <LayoutTitleCustomMobile item={propLayoutTitle}>
-                <LayoutCarrouselMobile gapLayout={16}>
-                    <>
-                        {
-                            listQuestion.map((item) =>
-                                <QuestionShortMob key={item.Question} item={item}/>)
-                        }
-                    </>
-                </LayoutCarrouselMobile>
-            </LayoutTitleCustomMobile>
+            <LayoutQuestionSectionMobile link={"/"}>
+                <LayoutNavCircleMobileCustom item={layout}>
+                    {
+                        listQuestion.map((item) =>
+                            <QuestionShortMob key={item.Question} item={item}/>)
+                    }
+                </LayoutNavCircleMobileCustom>
+            </LayoutQuestionSectionMobile>
         </div>
     )
 }

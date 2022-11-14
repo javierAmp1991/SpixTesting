@@ -6,6 +6,7 @@
 .grid {
     display: grid;
     gap: 16px;
+    overflow: scroll;
 }
 
 .writeQuestion {
@@ -16,4 +17,8 @@
     display: grid;
     border-radius: 4px;
     overflow: hidden;
+}
+
+.overflow{
+    overflow: scroll;
 }

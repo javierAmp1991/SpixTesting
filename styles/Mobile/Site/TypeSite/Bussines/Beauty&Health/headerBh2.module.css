@@ -9,13 +9,12 @@
     background: linear-gradient(145deg, #c3fff1 0%, #ffc4b3 50%, #acf1d7 100%);
     background: linear-gradient(145deg, #ffc3e1 0%, #ffc4b3 50%, #f1acc1 100%);
     background: #ffebec;
-    margin: 16px 16px 0 16px;
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.6fr 1fr;
     overflow: hidden;
     padding: 0 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
-    border-radius: 16px;
+    box-shadow: 0 4px 8px #e5c2c4;
+    border-radius: 0 0 16px 16px;
 }
 
 .blackScreen {
@@ -54,6 +53,7 @@
 .title {
     font-weight: 600;
     color: #360101;
+    font-size: 16px;
 }
 
 .sizeNewBanner {

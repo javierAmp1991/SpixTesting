@@ -9,9 +9,7 @@ import {
 import InformationImages from "./informationImages";
 import InSearch from "./inSearch";
 import OfferEventsMobile from "./offerEvents";
-import ProductsEventMobile from "./productsEventMobile";
 import OtherEvents from "./otherEvents";
-import ReviewSectionMobile from "./reviewSection";
 import QuestionSectionMobile from "./questionSection";
 import FooterMobile from "../../../EventPage/footerMobile";
 import utilities from "/styles/utilities.module.css";
@@ -28,14 +26,13 @@ export default function MainPageMobile() {
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <InformationImages/>
                 <div className={style.separationLine}/>
-                <QuestionSectionMobile/>
-                <div className={style.separationLine}/>
                 <TicketsSectionMobile/>
                 <div className={style.separationLine}/>
                 <InSearch/>
                 <div className={style.separationLine}/>
                 <OfferEventsMobile/>
                 <OtherEvents/>
+                <QuestionSectionMobile/>
                 <div className={style.gridSectionProducts}>
                     {
                         infoSectionProducts.map(item =>

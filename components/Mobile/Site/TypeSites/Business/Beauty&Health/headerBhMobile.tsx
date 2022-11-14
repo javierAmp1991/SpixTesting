@@ -43,9 +43,9 @@ export default function HeaderBhMobile() {
                 <div className={style.title}>
                     {info.Name}
                 </div>
-                <button onClick={handlePopUp} className={style.contDirection}>
+               {/* <button onClick={handlePopUp} className={style.contDirection}>
                     {info.Venue.Venue}
-                </button>
+                </button>*/}
                 <WishlistButtonMobile item={wishlistButton}/>
                 <div className={style.gridContact}>
                     {

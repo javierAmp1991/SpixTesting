@@ -83,13 +83,14 @@ export default function InitialPageRestaurantMobile() {
 
                 <ReservasMobile/>
 
-                <QuestionRestaurantMobile/>
 
                 <NavSectionProductsRestaurantMobile/>
 
                 <OfferRestaurantMobile/>
 
                 <RecommendedRestaurantMobile/>
+
+                <QuestionRestaurantMobile/>
 
                 <NavProductsSectionMobile isSticky={hasBeenReached}/>
 

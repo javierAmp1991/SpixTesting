@@ -28,14 +28,18 @@
     height: max-content;
 }
 
+.seeMoreQuestion{
+    color: var(--linkColor);
+    width: 100%;
+    text-align: center;
+}
+
 .gridInfo {
     display: grid;
     width: 100%;
-    align-content: space-between;
-    /*    background: #fff4f4;
-        background: linear-gradient(270deg, transparent 0%, rgba(0,0,0,.05) 100%);
-        background: rgba(0,0,0,.02);*/
+    gap: 16px;
     position: relative;
+    align-content: center;
     font-size: 16px;
     padding: 0 32px 0 16px;
 }
@@ -264,7 +268,8 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 8px;
-    color: var(--colorSecundaryTextDesktop);;
+    color: var(--colorSecundaryTextDesktop);
+    padding-top: 2px;
 }
 
 .produce {

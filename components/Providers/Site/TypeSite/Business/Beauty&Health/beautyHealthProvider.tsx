@@ -5,11 +5,10 @@ import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/Even
 import {
     PresentationCard,
     ProviderOfferProducts,
-    ProviderRecommended
+    ProviderRecommended, ProviderReview, ProviderServicesProducts
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
-import {ScheduleContext} from "../Restaurant/restaurantProvider";
 
 export const ReviewBhContext = createContext(null)
 export const SectionProductsBHContext = createContext(null)
@@ -19,6 +18,7 @@ export const OfferBHContext = createContext(null)
 export const HeaderDataBHContext = createContext(null)
 export const QuestionsBHContext = createContext(null)
 export const ShceduleBHContext = createContext(null)
+export const ServicesBHContext = createContext(null)
 
 const listReview: ReviewItem[] = [
     {
@@ -55,6 +55,41 @@ const listReview: ReviewItem[] = [
 
     },
 ]
+const listReviewAdd: ReviewItem[] = [
+    {
+        Id: "idReview003",
+        Rating: 3,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Paulo Andrade",
+        Title: "Se nota la pasion",
+        ProfileImage: "/images/fotoperfil3.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+    {
+        Id: "idReview002",
+        Rating: 4,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Oscar Castillo",
+        Title: "Gran Tributo",
+        ProfileImage: "/images/fotoperfil1.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+    {
+        Id: "idReview001",
+        Rating: 5,
+        Date: new Date(2022, 9, 23),
+        Likes: 120,
+        ByWho: "Javiera Perez",
+        Title: "Buena la tocata",
+        ProfileImage: "/images/fotoperfil2.png",
+        Review: "Laoreet ac, aliquam sit amet justo nunc tempor, metus vel placerat suscipit, orci nisl iaculis eros, a tincidunt nisi odio eget lorem nulla condimentum tempor mattis ut vitae feugiat augue cras ut metus a risus iaculis scelerisque eu ac ante fusce non varius purus aenean nec magna felis fusce vestibulum."
+
+    },
+]
 const listProductsOffer: ProductItem[] = [
     {
         Id: "idProduct01",
@@ -76,6 +111,90 @@ const listProductsOffer: ProductItem[] = [
         ImagePath: "/images/bh4.png",
         Rating: 5
     },
+    {
+        Id: "idProduct03",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 3.3",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 990,
+        DiscountPercent: 40,
+        Include: null,
+        ImagePath: "/images/bh1.jpg",
+        Rating: 4
+    },
+    {
+        Id: "idProduct04",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 4.4",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 9990,
+        DiscountPercent: null,
+        Include: "2 x 1",
+        ImagePath: "/images/bh3.jpg",
+        Rating: 3
+    },
+    {
+        Id: "idProduct05",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 5.5",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 10990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/bh5.png",
+        Rating: 0
+    },
+    {
+        Id: "idProduct06",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 6.6",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 10990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/bh6.png",
+        Rating: 5
+    }
+]
+const listServices: ProductItem[] = [
+    {
+        Id: "idProduct01",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit  1.1",
+        Price: 18990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/bh2.jpg",
+        Rating: 4
+    },
+    {
+        Id: "idProduct02",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 2.2",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 2990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/bh4.png",
+        Rating: 5
+    },
+    {
+        Id: "idProduct03",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 3.3",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 990,
+        DiscountPercent: 40,
+        Include: null,
+        ImagePath: "/images/bh1.jpg",
+        Rating: 4
+    },
+    {
+        Id: "idProduct04",
+        Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 4.4",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 9990,
+        DiscountPercent: null,
+        Include: "2 x 1",
+        ImagePath: "/images/bh3.jpg",
+        Rating: 3
+    },
+]
+const listServicesAdd: ProductItem[] = [
     {
         Id: "idProduct03",
         Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 3.3",
@@ -627,10 +746,16 @@ const scheduleLis: Schedule[] = [
 export default function BeautyHealthProvider({children}) {
     let [recommendedItems, setRecommendedItems] = useState(listInitialRecommended)
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
+    let [services, setServices] = useState(listServices)
+    let[reviews, setReviews] = useState(listReview)
     const handleRightClickRecomended = () => setRecommendedItems(recommendedItems = listRecomendedAdd)
     const handleLeftClickRecomended = () => setRecommendedItems(recommendedItems = listInitialRecommended)
     const handleRightClickProducts = () => setOfferProducts(offerProducts = listOfferProductsAdd)
     const handleLeftClickProducts = () => setOfferProducts(offerProducts = listOfferProducts)
+    const handleRightClickServices = () => setServices(services = listServicesAdd)
+    const handleLeftClickServices = () => setServices(services = listServices)
+    const handleRightClickReviews = () => setReviews(reviews = listReviewAdd)
+    const handleLeftClickReviews = () => setReviews(reviews = listReview)
     let providerRecommended: ProviderRecommended = {
         InitialItems: recommendedItems,
         RightClick: handleRightClickRecomended,
@@ -641,17 +766,29 @@ export default function BeautyHealthProvider({children}) {
         RightClick: handleRightClickProducts,
         LeftClick: handleLeftClickProducts
     }
+    let providerServices: ProviderServicesProducts = {
+        InitialItems: services,
+        RightClick: handleRightClickServices,
+        LeftClick: handleLeftClickServices
+    }
+    let providerReview: ProviderReview = {
+        InitialReview: reviews,
+        RightClick: handleRightClickReviews,
+        LeftClick: handleLeftClickReviews
+    }
 
     return (
         <HeaderDataBHContext.Provider value={headerData}>
             <ShceduleBHContext.Provider value={scheduleLis}>
-                <ReviewBhContext.Provider value={listReview}>
+                <ReviewBhContext.Provider value={providerReview}>
                     <SectionProductsBHContext.Provider value={listSectionProducst}>
                         <FormBHContext.Provider value={listForm}>
                             <RecommendedBHContext.Provider value={providerRecommended}>
                                 <OfferBHContext.Provider value={providerOfferProducts}>
                                     <QuestionsBHContext.Provider value={listQuestions}>
-                                        {children}
+                                        <ServicesBHContext.Provider value={providerServices}>
+                                            {children}
+                                        </ServicesBHContext.Provider>
                                     </QuestionsBHContext.Provider>
                                 </OfferBHContext.Provider>
                             </RecommendedBHContext.Provider>

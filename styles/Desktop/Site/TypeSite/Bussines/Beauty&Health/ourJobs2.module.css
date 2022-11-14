@@ -96,13 +96,16 @@
 
 .contDirection {
     width: max-content;
-    margin: auto;
-    color: #0f1316;
+    margin-right: auto;
+    color: purple;
+    text-decoration: underline;
 }
 
 .up {
     display: grid;
+    gap: 8px;
     justify-items: center;
+    align-content: center;
     width: 80%;
     padding: 48px 0;
     border-radius: 16px;

@@ -16,8 +16,18 @@
     transition: .4s;
 }
 
+.contDirection {
+    color: purple;
+    display: grid;
+    width: max-content;
+    margin-right: auto;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+
 .title {
-    font-size: 21px;
+    font-size: 16px;
     font-weight: 600;
     margin: auto;
     width: 100%;
@@ -105,16 +115,11 @@
     position: relative;
 }
 
-.contDirection {
-    width: max-content;
-    margin: auto;
-    color: #0f1316;
-}
 
 .up {
     padding-bottom: 16px;
     display: grid;
-    justify-items: center;
+    gap: 12px;
 }
 
 .description {

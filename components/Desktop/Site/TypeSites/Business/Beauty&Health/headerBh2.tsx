@@ -51,10 +51,6 @@ export default function HeaderBh2() {
                     {info.Name}
                 </div>
 
-                <div className={style.contDirection}>
-                    <button onClick={handlePopUp} className={style.direction}>{info.Venue.Venue}</button>
-                </div>
-
                 <div className={style.gridNew}>
                     <WishlistButton item={wishlistButton}/>
                     <LikeButton2 item={like}/>

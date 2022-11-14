@@ -2,18 +2,22 @@ import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
-    SectionProductsBHContext
+    SectionProductsBHContext, ServicesBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import {LayoutTitleLinkProps, PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import ServiceView from "./serviceView";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 import LayoutTitleCustom from "../Misc/layoutTitleCustom";
+import {
+    ProviderOfferProducts,
+    ProviderServicesProducts
+} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const title: string = "Nuestros servicios"
 const goToQuestion: string = "Tienes reguntas respecto a estos servicios?"
 
 export default function OurServices({id}: { id: string }) {
-    const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
+    const services: ProviderServicesProducts = useContext(ServicesBHContext)
     const layoutPropRecomended: PropCarrousel = {
         PositionArrowY: "calc(50% - 16px)",
         PositionArrowX: "-40px",
@@ -21,8 +25,8 @@ export default function OurServices({id}: { id: string }) {
         Gap: 24,
         Grid: 4,
         IsButtonVisible: true,
-        LeftArrow: null,
-        RightArrow: null
+        LeftArrow: services.RightClick,
+        RightArrow: services.LeftClick
     }
     const propLayoutTitle: LayoutTitleLinkProps = {
         Title: title,
@@ -37,7 +41,7 @@ export default function OurServices({id}: { id: string }) {
             <>
                 <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
                     {
-                        sectionProducst[0].ListProducts.map((item, index) =>
+                        services.InitialItems.map((item, index) =>
                             index <= 3 &&
                             <ServiceView item={item}/>
                         )

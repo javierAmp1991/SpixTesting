@@ -18,6 +18,7 @@ import LikeButton2 from "../../../Misc/likeButton2";
 import LayoutCarrouselDesktop from "../../../Layouts/layoutCarrouselDesktop";
 import QuestionShortDesk from "../../../Misc/questionShortDesk";
 import {PropCarrousel} from "../../../../../Class/Layouts/layoutClass";
+import utilities from "/styles/utilities.module.css";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -120,7 +121,7 @@ export default function PresentCard2() {
 
                     <div className={style.separationLine}/>
 
-                    <div>
+                    {/*<div>
                         <LayoutCarrouselDesktop layoutProp={layoutPropNews}>
                             {
                                 questions.map((item, index) =>
@@ -129,7 +130,12 @@ export default function PresentCard2() {
                                 )
                             }
                         </LayoutCarrouselDesktop>
-                    </div>
+                    </div>*/}
+                   {/* <Link href={"/"}>
+                        <a>
+                        <div className={style.seeMoreQuestion}> ver mas preguntas</div>
+                        </a>
+                    </Link>*/}
 
                 </div>
                 <ImageVideo/>

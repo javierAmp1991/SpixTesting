@@ -5,7 +5,9 @@ import {QuestionContext} from "../../../../Providers/Site/TypeSite/Events/eventP
 import QuestionShortMob from "../../../Misc/questionShortMob";
 import LayoutTitleCustomMobile from "../Business/Misc/layoutTitleCustomMobile";
 import LayoutCarrouselMobile from "../../../Layouts/layoutCarrousel.Mobile";
-import {LayoutTitleLinkProps} from "../../../../../Class/Layouts/layoutClass";
+import {LayoutTitleLinkProps, LayoutWithNavCircleProp} from "../../../../../Class/Layouts/layoutClass";
+import LayoutNavCircleMobileCustom from "../../../Layouts/layoutNavCircleMobileCustom";
+import LayoutQuestionSectionMobile from "../Misc/layoutQuestionSectionMobile";
 
 const title: string = "Preguntas"
 
@@ -15,19 +17,19 @@ export default function QuestionSectionMobile() {
         Title: title,
         Link: "/",
     }
+    const layout: LayoutWithNavCircleProp = {}
     return (
         <div className={style.paddingGeneral}>
-                <LayoutTitleCustomMobile item={propLayoutTitle}>
-                    <LayoutCarrouselMobile gapLayout={16}>
-                        <>
-                            {
-                                questions.map((item) =>
-                                    <QuestionShortMob key={item.Question} item={item}/>)
-                            }
-                        </>
-                    </LayoutCarrouselMobile>
-                </LayoutTitleCustomMobile>
-           {/* <LayoutQuestionSectionMobile link={""}>
+            <LayoutQuestionSectionMobile link={"/"}>
+
+                <LayoutNavCircleMobileCustom item={layout}>
+                    {
+                        questions.map((item) =>
+                            <QuestionShortMob key={item.Question} item={item}/>)
+                    }
+                </LayoutNavCircleMobileCustom>
+            </LayoutQuestionSectionMobile>
+            {/* <LayoutQuestionSectionMobile link={""}>
                 <>
                     {
                         questions.map(item =>

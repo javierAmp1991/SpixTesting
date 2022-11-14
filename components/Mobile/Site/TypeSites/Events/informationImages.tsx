@@ -56,7 +56,6 @@ export default function InformationImages() {
                     <LikeButton2Mobile item={likeButton}/>
                 </div>
                 <div className={style.gridContact}>
-                    {contactText}
                     {
                         info.Contact.map((item) =>
                             <Link key={item.Id} href={item.Link}>
@@ -69,9 +68,6 @@ export default function InformationImages() {
                         )
                     }
                 </div>
-               {/* <div className={style.contLike}>
-                    <LikeButton item={likeButton}/>
-                </div>*/}
             </div>
 
             <ImageVideoMobile/>

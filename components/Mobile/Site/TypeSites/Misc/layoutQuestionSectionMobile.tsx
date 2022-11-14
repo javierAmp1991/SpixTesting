@@ -21,12 +21,13 @@ export default function LayoutQuestionSectionMobile({link, children}: { link: st
     return (
         <LayoutTitleCustomMobile item={propLayoutTitle}>
             <div className={style.mainDiv}>
-                <div className={style.grid}>
+                <div className={style.overflow}>
                     {children}
                 </div>
                 <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
                     {writeQuestion}
                 </button>
+
                 {
                     displayQuestion &&
                     createPortal(
