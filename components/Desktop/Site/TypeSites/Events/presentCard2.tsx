@@ -29,6 +29,7 @@ const userRequirement: number = 2
 const idPortal: string = GlobalId.globalIds.idPortal
 const positionArrowIn: string = "16px"
 const positionArrowY: string = "calc(50% - 16px)"
+const contactText: string = "Redes y contacto: "
 
 export default function PresentCard2() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -106,6 +107,7 @@ export default function PresentCard2() {
                     </div>
 
                     <div className={style.gridContact}>
+                        {contactText}
                         {
                             info.Contact.map(item =>
                                 <Link key={item.Id} href={item.Link}>
