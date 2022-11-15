@@ -123,7 +123,7 @@ export default function LikeButton2({item}: { item: LikeButtonProps }) {
                 <div>
 
                     <div className={isLikeHeart ? style.iLikeColor : style.iLike}>
-                        Me gusta
+                        ¡Me gusta!
                     </div>
                     <div className={style.sizeLikes}>
                         {initialLike}

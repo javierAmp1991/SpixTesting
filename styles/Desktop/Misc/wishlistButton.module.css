@@ -19,7 +19,7 @@
 .active {
     color: white;
     /*background: linear-gradient(145deg, #DB3445 0%, #F71735 100%);*/
-    animation: scaleLike .3s;
+    animation: moveBell .3s 4 linear .1s;
 }
 
 .noActive {
@@ -34,6 +34,52 @@
 }
 
 .like {
+}
+
+@keyframes moveBell {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(10deg);
+    }
+
+    20% {
+        transform: rotate(20deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    70% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(-20deg);
+    }
+
+    90% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 @keyframes scaleLike {
