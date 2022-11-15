@@ -25,15 +25,18 @@ import RecommendedRestaurantMobile from "./recommendedRestaurantMobile";
 import OfferRestaurantMobile from "./offerRestaurantMobile";
 import ReviewViewVerticalMob from "../../../../Misc/ReviewViewVerticalMob";
 import ReviewSectionRestaurantMobile from "./reviewSectionRestaurant";
+import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
+import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
+import InSearchRestaurantMobile from "./inSearchRestaurantMobile";
 
 const idTest: string = "isTestMobileScrolControl"
 
 export default function InitialPageRestaurantMobile() {
-    const form: FormLink[] = useContext(FormContext)
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
     let [startSectionProduct, setStartSectionProduct] = useState(0)
+
 
     useEffect(() => {
         let scrollControl = document.getElementById(idTest).getBoundingClientRect()
@@ -63,19 +66,9 @@ export default function InitialPageRestaurantMobile() {
 
                 <ReviewSectionRestaurantMobile/>
 
-                <div className={style.paddingGeneral}>
-                    <LayoutTitleMobile title={"Se Busca"} isOverflow={true}>
-                        <LayoutWithNavCircleMobile isDarkMode={false}>
-                            {
-                                form.map(item =>
-                                    <FormViewMobile key={item.text} item={item}/>)
-                            }
-                        </LayoutWithNavCircleMobile>
-                    </LayoutTitleMobile>
-                </div>
-
                 <ReservasMobile/>
 
+                <InSearchRestaurantMobile/>
 
                 <NavSectionProductsRestaurantMobile/>
 

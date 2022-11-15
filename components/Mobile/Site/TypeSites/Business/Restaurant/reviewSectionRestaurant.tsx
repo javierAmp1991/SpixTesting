@@ -10,7 +10,8 @@ import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/initialPageR
 export default function ReviewSectionRestaurantMobile() {
     const listReview: ProviderReview = useContext(ReviewsSectionContext)
     const propsCarrousel: LayoutWithNavCircleProp = {
-        Top: 36,
+        IsWithBorder: true,
+        Top: 36
     }
     return (
         <LayoutReviewSectionMobile>

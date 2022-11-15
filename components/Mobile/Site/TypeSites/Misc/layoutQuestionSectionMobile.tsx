@@ -19,11 +19,13 @@ export default function LayoutQuestionSectionMobile({link, children}: { link: st
         Link: "/",
     }
     return (
-        <LayoutTitleCustomMobile item={propLayoutTitle}>
             <div className={style.mainDiv}>
-                <div className={style.overflow}>
-                    {children}
+                <div className={style.title}>
+                    Preguntas
                 </div>
+
+                {children}
+
                 <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
                     {writeQuestion}
                 </button>
@@ -38,6 +40,5 @@ export default function LayoutQuestionSectionMobile({link, children}: { link: st
                     )
                 }
             </div>
-        </LayoutTitleCustomMobile>
     )
 }

@@ -1,5 +1,5 @@
 .mainDiv {
-    overflow: scroll;
+    overflow-x: scroll;
     padding: 0 16px;
 }
 
@@ -49,5 +49,5 @@
 }
 
 .overflow {
-    overflow: scroll;
+    overflow-x: scroll;
 }

@@ -9,9 +9,11 @@ import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutCla
 
 export default function QuestionBHMobile({id}: { id: string }) {
     const question: QuestionItem[] = useContext(QuestionsBHContext)
-    const layout: LayoutWithNavCircleProp = {}
+    const layout: LayoutWithNavCircleProp = {
+        IsWithBorder: true
+    }
     return (
-        <div id={id} className={style.paddingGeneral}>
+        <div id={id} className={style.mainDivInSearch}>
             <LayoutQuestionSectionMobile link={"/"}>
                 <LayoutNavCircleMobileCustom item={layout}>
                     {

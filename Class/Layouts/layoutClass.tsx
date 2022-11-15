@@ -26,7 +26,6 @@ export class LayoutTitleLinkProps {
     AlignTitle?: TypeAlignTitle
 }
 
-
 export class LayoutCarrouselMobileProp {
     Top: number
     Bottom: number
@@ -40,4 +39,5 @@ export class LayoutWithNavCircleProp{
     Bottom?: number
     Left?: number
     Right?: number
+    IsWithBorder?: boolean
 }

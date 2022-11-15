@@ -1,4 +1,4 @@
-import style from "../../../styles/Mobile/Layouts/layoutWithNavcircle.module.css";
+import style from "../../../styles/Mobile/Layouts/layoutNavcircleCustom.module.css";
 import {useRef, useState} from "react";
 import {LayoutWithNavCircleProp, TypeAlignTitle} from "../../../Class/Layouts/layoutClass";
 
@@ -23,7 +23,7 @@ export default function LayoutNavCircleMobileCustom({children, item}:
 
     }
     return (
-        <div>
+        <div className={item.IsWithBorder && style.borderCarrousel }>
             <div style={{
                 paddingBottom: cssStyle.Bottom,
                 paddingTop: cssStyle.Top,

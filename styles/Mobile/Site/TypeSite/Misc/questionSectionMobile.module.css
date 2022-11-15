@@ -1,13 +1,8 @@
 .mainDiv {
-    display: grid;
-    gap: 24px;
+    overflow-x: scroll;
+    padding: 4px 16px;
 }
 
-.grid {
-    display: grid;
-    gap: 16px;
-    overflow: scroll;
-}
 
 .writeQuestion {
     width: max-content;
@@ -17,8 +12,12 @@
     display: grid;
     border-radius: 4px;
     overflow: hidden;
+    margin-top: 24px;
 }
 
-.overflow{
-    overflow: scroll;
+.title {
+    font-size: 21px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+    padding-bottom: 24px;
 }

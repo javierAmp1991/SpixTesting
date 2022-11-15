@@ -90,6 +90,12 @@
     display: grid;
     align-content: center;
     justify-content: center;
+    scroll-snap-align: start;
+}
+
+.mainDivInSearch {
+    overflow: scroll;
+    padding: 0 16px;
 }
 
 
