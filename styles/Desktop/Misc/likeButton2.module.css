@@ -8,7 +8,7 @@
 
 .active {
     color: white;
-    background: linear-gradient(145deg, #DB3445 0%, #F71735 100%);
+    /*background: linear-gradient(145deg, #DB3445 0%, #F71735 100%);*/
     animation: scaleLike .3s;
 }
 
@@ -43,23 +43,23 @@
 }
 
 .sizeIcon {
-    width: 100%;
-    height: 100%;
+    width: 15px;
+    height: 15px;
     position: relative;
 }
 
 .sizeLikes {
     font-size: 12px;
-    color: var(--colorSecundaryTextDesktop);
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
 }
 
 .gridimagetext{
     display: grid;
+    gap: 12px;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    padding-right: 12px;
+    padding:2px 12px;
 }
 
 .circle {

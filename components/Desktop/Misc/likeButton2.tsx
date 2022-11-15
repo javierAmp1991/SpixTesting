@@ -35,7 +35,7 @@ export default function LikeButton2({item}: { item: LikeButtonProps }) {
         if (isLike) {
             setLikeAnimation({
                 ...likeAnimation,
-                heartIcon: GlobalConst.sourceImages.activateHeartWhite,
+                heartIcon: GlobalConst.sourceImages.activateHeart,
                 mainContainerCircle: style.mainContainerCircleBefore,
                 animationClassLike: style.animationLike,
                 animatedCircle: style.animatedCircle,
@@ -81,13 +81,11 @@ export default function LikeButton2({item}: { item: LikeButtonProps }) {
     return (
         <div className={style.main}>
             <button onClick={() => handleClick(!isLikeHeart)}
-                    className={`${style.gridimagetext} ${isLikeHeart ? style.active : style.noActive}`}>
-                <div style={{width: cssStyle.Size}} className={style.mainDiv}>
-                    <div className={`${style.prinCont} ${likeAnimation.animationClassLike}`}>
-                        <div className={style.mainCont}>
-                            <div className={style.sizeIcon}>
-                                <Image layout={"fill"} src={likeAnimation.heartIcon}/>
-                            </div>
+                    className={`${style.gridimagetext}`}>
+                <div className={style.mainDiv}>
+                    <div className={`${likeAnimation.animationClassLike}`}>
+                        <div className={style.sizeIcon}>
+                            <Image layout={"fill"} src={likeAnimation.heartIcon}/>
                         </div>
                     </div>
                     <div className={likeAnimation.mainContainerCircle}>
@@ -122,13 +120,17 @@ export default function LikeButton2({item}: { item: LikeButtonProps }) {
 
                     <div className={likeAnimation.animatedCircle}/>
                 </div>
-                <div className={isLikeHeart? style.iLikeColor : style.iLike}>
-                    Me gusta
+                <div>
+
+                    <div className={isLikeHeart ? style.iLikeColor : style.iLike}>
+                        Me gusta
+                    </div>
+                    <div className={style.sizeLikes}>
+                        {initialLike}
+                    </div>
                 </div>
             </button>
-            {/*<div className={style.sizeLikes}>
-                {initialLike}
-            </div>*/}
+
         </div>
 
     )

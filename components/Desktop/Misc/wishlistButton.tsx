@@ -18,7 +18,7 @@ export default function WishlistButton({item}: { item: wishlistButtonProps }) {
         if (isLike) {
             setBellIcon({
                 ...bellIcon,
-                bellIcon: GlobalConst.sourceImages.activateWishList,
+                bellIcon: GlobalConst.sourceImages.activeWishList,
             })
             setInitialBell(initialBell += 1)
         } else {
@@ -31,13 +31,18 @@ export default function WishlistButton({item}: { item: wishlistButtonProps }) {
         setIsLikeBell(isLikeBell = !isLikeBell)
     }
     return (
-        <button onClick={() => handleBell(!isLikeBell)}
-                className={`${style.mainDiv} ${isLikeBell ? style.active : style.noActive} `}>
-            <div className={`${style.sizeIcon}  `}>
+        <button onClick={() => handleBell(!isLikeBell)} className={`${style.mainDiv} `}>
+            <div className={`${style.sizeIcon} ${isLikeBell ? style.active : style.noActive} `}>
                 <Image layout={"fill"} src={bellIcon.bellIcon}/>
             </div>
-            <div className={style.like}>
-                {isLikeBell ? iHaveText : iWishText}
+            <div>
+
+                <div className={style.like}>
+                    {isLikeBell ? iHaveText : iWishText}
+                </div>
+                <div className={style.sizeLikes}>
+                    {initialBell}
+                </div>
             </div>
         </button>
     )
