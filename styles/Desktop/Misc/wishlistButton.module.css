@@ -2,7 +2,8 @@
     display: grid;
     width: max-content;
     font-size: 14px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+    /*box-shadow: 0 0 2px rgba(0, 0, 0, .4);*/
+    border: 1px solid rgba(0,0,0,.4);
     gap: 12px;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
