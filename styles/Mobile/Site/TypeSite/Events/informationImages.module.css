@@ -1,12 +1,12 @@
 .mainDiv {
     display: grid;
-    gap: 16px;
+    gap: 24px;
     padding: 0 16px;
 }
 
 .mainCont {
     display: grid;
-    gap: 4px;
+    gap: 8px;
     padding-top: 24px;
     position: relative;
 }
@@ -15,7 +15,6 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     gap: 12px;
-    padding-bottom: 4px;
 }
 
 .contLike{
@@ -150,12 +149,17 @@
     width: 100%;
 }
 
+.gridDescription{
+    display: grid;
+    gap: 4px;
+}
+
 .gridContact {
     display: grid;
     grid-template-columns: repeat(7, max-content);
     align-items: center;
     gap: 8px;
-    padding-top: 2px;
+    color: var(--colorPrimaryTextDesktop);
 }
 
 .grid2 {

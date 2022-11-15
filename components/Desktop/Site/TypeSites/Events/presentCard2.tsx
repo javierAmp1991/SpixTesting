@@ -90,6 +90,11 @@ export default function PresentCard2() {
                         {info.Name}
                     </div>
 
+                    <div className={style.gridSocialRedes}>
+                        <WishlistButton item={wishlistButton}/>
+                        <LikeButton2 item={likeButton}/>
+                    </div>
+
                     <div>
                         <div className={style.description}>
                             {info.Description}
@@ -98,11 +103,6 @@ export default function PresentCard2() {
                         <div className={style.gridProduceLogo}>
                             <span className={style.produce}>Produce:</span> El Huevo
                         </div>
-                    </div>
-
-                    <div className={style.gridSocialRedes}>
-                        <WishlistButton item={wishlistButton}/>
-                        <LikeButton2 item={likeButton}/>
                     </div>
 
                     <div className={style.gridContact}>

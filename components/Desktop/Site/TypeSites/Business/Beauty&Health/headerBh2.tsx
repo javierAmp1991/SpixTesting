@@ -55,18 +55,6 @@ export default function HeaderBh2() {
                     <WishlistButton item={wishlistButton}/>
                     <LikeButton2 item={like}/>
                 </div>
-
-                <div className={style.gridContact}>
-                    {
-                        info.Contact.map((item) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                </div>
-                            </Link>
-                        )
-                    }
-                </div>
             </div>
 
             <div className={style.contBanner}>

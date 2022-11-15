@@ -1,9 +1,8 @@
 .mainDiv {
     padding: 16px;
     display: grid;
-    background: linear-gradient(145deg, #f2e0ff 0%, #ffd9ce 50%, #f4d1ff 100%);
-    border-radius: 24px;
-    margin: 0 16px;
+    background: linear-gradient(145deg, #ffe9ea 0%, #ffd9ce 50%, #ffe3e5 100%);
+    border-radius: 0 0 24px 24px;
 }
 
 .noFocus {
@@ -16,12 +15,12 @@
     transition: .4s;
 }
 
+.contDirec{
+    font-size: 12px;
+}
+
 .contDirection {
     color: purple;
-    display: grid;
-    width: max-content;
-    margin-right: auto;
-    font-size: 12px;
     text-decoration: underline;
 }
 
@@ -31,11 +30,20 @@
     font-weight: 600;
     margin: auto;
     width: 100%;
-    text-align: center;
+}
+
+.contInfo{
+    display: grid;
+    gap: 6px;
 }
 
 .contSlider {
-    width: calc(100vw - 64px);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: center;
+    gap: 16px;
+    padding-top: 12px;
 }
 
 .gridCarrousel {
@@ -110,14 +118,13 @@
 }
 
 .sizeIcon {
-    height: 16px;
-    width: 16px;
+    height: 14px;
+    width: 14px;
     position: relative;
 }
 
 
 .up {
-    padding-bottom: 16px;
     display: grid;
     gap: 12px;
 }
@@ -130,7 +137,7 @@
 
 .seeGalery{
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 12px;
     text-decoration: underline;
 }

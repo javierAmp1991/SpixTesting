@@ -7,28 +7,20 @@ import {GlobalId} from "../../../../../../public/globalConst";
 import PopUpContainer from "../../../../Misc/popUpContainer";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import {createPortal} from "react-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import Link from "next/link";
 
 const title: string = "Sobre nosotros"
-const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
+/*const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]*/
+const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg"]
 const idPortal: string = GlobalId.globalIds.idPortal
+const directionText: string = "Direccion: "
+const contactText: string = "Redes y contacto: "
 
 export default function OurJobs2() {
 
     const info: PresentationCard = useContext(HeaderDataBHContext)
     let [displayMap, setDisplayMap] = useState(false)
-    let [idx, setIdx] = useState(1)
     const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
-    var settings = {
-        infinite: true,
-        speed: 600,
-        slidesToShow: 3,
-        centerPadding: 20,
-        beforeChange: (current, next) => setIdx(idx = next == 5 ? 5 : next + 1),
-        arrows: true,
-    };
     return (
         <div className={style.mainDiv}>
             <div className={style.up}>
@@ -38,40 +30,41 @@ export default function OurJobs2() {
                 <div>
                     {info.Description}
                 </div>
-                <button onClick={handlePopUp} className={style.contDirection}>
-                    {info.Venue.Venue}
-                </button>
-                <button className={style.seeGalery}>
-                    Ver galeria
-                </button>
-            </div>
-
-            <div className={style.contSlider}>
-                <Slider {...settings}>
+                <div>
+                    <span>{directionText}</span>
+                    <button onClick={handlePopUp} className={style.contDirection}>
+                        {info.Venue.Venue}
+                    </button>
+                </div>
+                <div className={style.gridContact}>
+                    {contactText}
                     {
-                        listCortes.map((item, index) =>
-                            <div key={index} className={`${style.sizeImage} 
-                            ${index === idx ? style.focus : style.noFocus}`}>
-                                <Image layout={"fill"} src={item} alt={""}/>
-                            </div>
-                        )
-                    }
-                </Slider>
-            </div>
-
-            {/* <div className={style.gridCarrousel}>
-                <div/>
-                <div className={style.gridImages}>
-                    {
-                        listCortes.map((item, index) =>
-                            <div key={index} className={`${style.sizeImage} ${getStyle(index)}`}>
-                                <Image layout={"fill"} src={item} alt={""}/>
-                            </div>
+                        info.Contact.map((item) =>
+                            <Link key={item.Id} href={item.Link}>
+                                <div className={style.sizeIcon}>
+                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                </div>
+                            </Link>
                         )
                     }
                 </div>
-                <div/>
-            </div>*/}
+            </div>
+            <div>
+
+
+                <div className={style.contSlider}>
+                    {
+                        listCortes.map((item, index) =>
+                            <div key={index} className={style.sizeImage}>
+                                <Image layout={"fill"} src={item} alt={""}/>
+                            </div>
+                        )
+                    }
+                    <button className={style.seeGalery}>
+                        Ver galeria
+                    </button>
+                </div>
+            </div>
             {
                 displayMap &&
                 createPortal(

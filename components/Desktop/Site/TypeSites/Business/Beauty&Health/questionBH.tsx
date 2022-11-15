@@ -14,7 +14,7 @@ export default function QuestionBH({id}: { id: string }) {
         Padding: 0,
         Gap: 16,
         Grid: 3,
-        IsButtonVisible: false,
+        IsButtonVisible: true,
         LeftArrow: () => null,
         RightArrow: () => null
     }

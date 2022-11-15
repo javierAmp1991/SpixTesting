@@ -24,36 +24,34 @@ export default function MainPageBHMobile() {
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     return (
         <div className={style.mainDiv}>
-            <HeaderBhMobile/>
-
-            <OurJobsMobile/>
+            <div>
+                <HeaderBhMobile/>
+                <OurJobsMobile/>
+            </div>
             <div className={style.separationLine}/>
 
             <div className={style.paddingGeneral}>
                 <ReviewSectionBHMobile/>
             </div>
-            <div className={style.separationLine}/>
 
             <div className={style.paddingGeneral}>
                 <InSearchBhMobile/>
             </div>
-            <div className={style.separationLine}/>
 
             <div className={style.paddingGeneral}>
                 <OurServicesMobile id={idQuestionSection}/>
             </div>
-            <div className={style.separationLine}/>
 
             <div className={style.paddingGeneral}>
                 <ReservationMobile item={schedule}/>
             </div>
-            <div className={style.separationLine}/>
 
             <OfferBHMobile/>
             <div className={style.separationLine}/>
 
             <OtherEventsBH/>
-            <div className={style.separationLine}/>
+
+            <QuestionBHMobile id={idQuestionSection}/>
 
             <div className={style.gridSectionProducts}>
                 {
@@ -62,9 +60,7 @@ export default function MainPageBHMobile() {
                     )
                 }
             </div>
-            <div className={style.separationLine}/>
 
-            <QuestionBHMobile id={idQuestionSection}/>
         </div>
     )
 }

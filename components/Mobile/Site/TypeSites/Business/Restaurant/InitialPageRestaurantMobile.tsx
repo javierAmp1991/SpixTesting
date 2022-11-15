@@ -23,6 +23,8 @@ import ReservasMobile from "./reservas";
 import QuestionRestaurantMobile from "./questionRestaurantMobile";
 import RecommendedRestaurantMobile from "./recommendedRestaurantMobile";
 import OfferRestaurantMobile from "./offerRestaurantMobile";
+import ReviewViewVerticalMob from "../../../../Misc/ReviewViewVerticalMob";
+import ReviewSectionRestaurantMobile from "./reviewSectionRestaurant";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -30,7 +32,6 @@ export default function InitialPageRestaurantMobile() {
     const form: FormLink[] = useContext(FormContext)
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
-    const listReview: ProviderReview = useContext(ReviewsSectionContext)
     let [hasBeenReached, setHasBeenReached] = useState(false)
     let [startSectionProduct, setStartSectionProduct] = useState(0)
 
@@ -60,15 +61,7 @@ export default function InitialPageRestaurantMobile() {
                 <DescriptionCardFullData/>
                 <div className={style.separationLine}/>
 
-                <LayoutReviewSectionMobile>
-                    <LayoutWithNavCircleMobile isDarkMode={false}>
-                        {
-                            listReview.InitialReview.map((item) =>
-                                <ReviewViewShortMobile key={item.ByWho} item={item}/>
-                            )
-                        }
-                    </LayoutWithNavCircleMobile>
-                </LayoutReviewSectionMobile>
+                <ReviewSectionRestaurantMobile/>
 
                 <div className={style.paddingGeneral}>
                     <LayoutTitleMobile title={"Se Busca"} isOverflow={true}>

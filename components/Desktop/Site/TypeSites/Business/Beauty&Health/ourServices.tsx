@@ -14,7 +14,7 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const title: string = "Nuestros servicios"
-const goToQuestion: string = "Tienes reguntas respecto a estos servicios?"
+const goToQuestion: string = "¿Tienes reguntas respecto a estos servicios?"
 
 export default function OurServices({id}: { id: string }) {
     const services: ProviderServicesProducts = useContext(ServicesBHContext)
@@ -34,7 +34,7 @@ export default function OurServices({id}: { id: string }) {
     }
     const handleGoTo = () => {
         let data = document.getElementById(id).getBoundingClientRect()
-        window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
+        window.scrollTo({top: (data.top + window.scrollY - 40), behavior: "smooth"})
     }
     return (
         <LayoutTitleCustom item={propLayoutTitle}>
@@ -47,7 +47,7 @@ export default function OurServices({id}: { id: string }) {
                         )
                     }
                 </LayoutCarrouselDesktop>
-                <button onClick={handleGoTo} className={style.goToQuestion}>
+               <button onClick={handleGoTo} className={style.goToQuestion}>
                     {goToQuestion}
                 </button>
             </>

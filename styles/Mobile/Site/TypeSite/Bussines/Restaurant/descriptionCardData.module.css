@@ -3,10 +3,6 @@
     display: grid;
     bottom: 0;
     margin: auto;
-    /*    left: 16px;
-        position: absolute;
-        box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-        width: calc(100% - 32px);*/
     background: white;
     padding: 0 16px;
 }
@@ -43,13 +39,18 @@
 .mainDivInfo {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     overflow: scroll;
+}
+
+.gridDescip{
+    display: grid;
+    gap: 4px;
 }
 
 .gridInfoGap{
     display: grid;
-    gap: 4px;
+    gap: 8px;
     position: relative;
     padding-top: 24px;
 }

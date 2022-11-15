@@ -23,11 +23,11 @@
 }
 
 .iLike{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .iLikeColor{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .mainCont{
@@ -54,7 +54,7 @@
     align-items: center;
     gap: 12px;
     padding: 2px 12px;
-    box-shadow: 0 0 2px rgba(0,0,0,.4);
+    border: 1px solid rgba(0,0,0,.1);
 }
 
 .circle {

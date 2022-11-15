@@ -269,7 +269,6 @@
     align-items: center;
     gap: 8px;
     color: var(--colorSecundaryTextDesktop);
-    padding-top: 2px;
 }
 
 .produce {
@@ -307,7 +306,6 @@
     align-items: center;
     width: 85%;
     gap: 16px;
-    padding-bottom: 8px;
 }
 
 .gridSelectionZone {

@@ -56,7 +56,6 @@ export default function MainPageBH() {
                     )
                 }
             </div>
-            <div className={style.separationLine}/>
         </div>
     )
 }

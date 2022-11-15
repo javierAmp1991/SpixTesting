@@ -41,14 +41,32 @@ export default function DescriptionCardFullData() {
                                 </div>)
                         }
                     </div>
-                    <div className={style.gridImageName}>
-                        <div className={style.Name}>
-                            {info.Name}
-                        </div>
+                    <div className={style.Name}>
+                        {info.Name}
                     </div>
                     <div className={style.gridWishLike}>
                         <WishlistButtonMobile item={wishlistButton}/>
                         <LikeButton2Mobile item={likeButton}/>
+                    </div>
+                </div>
+                <div className={style.contCarrousel}>
+                    <div className={style.sizeLogo}>
+                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
+                    </div>
+                    <LayoutWithNavCircleMobile isDarkMode={false}>
+                        {
+                            info.SideImages.map((e) =>
+                                <div key={e} className={style.sizeSideImage}>
+                                    <Image layout={"fill"} src={e} alt={""}/>
+                                </div>
+                            )
+                        }
+                    </LayoutWithNavCircleMobile>
+                </div>
+
+                <div className={style.gridDescip}>
+                    <div className={utilities.clamp5}>
+                        {info.Description}
                     </div>
                     <div className={style.gridInfoNew}>
                         <span>{directionText}</span>
@@ -68,29 +86,6 @@ export default function DescriptionCardFullData() {
                             }
                         </div>
                     </div>
-                  {/*  <div className={style.contLike}>
-                        <LikeButton item={likeButton}/>
-                    </div>*/}
-                </div>
-                <div className={style.contCarrousel}>
-                    <div className={style.sizeLogo}>
-                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
-                    </div>
-                    <LayoutWithNavCircleMobile isDarkMode={false}>
-                        {
-                            info.SideImages.map((e) =>
-                                <div key={e} className={style.sizeSideImage}>
-                                    <Image layout={"fill"} src={e} alt={""}/>
-                                </div>
-                            )
-                        }
-                    </LayoutWithNavCircleMobile>
-                </div>
-
-                <div className={style.separationLine}/>
-
-                <div className={utilities.clamp5}>
-                    {info.Description}
                 </div>
                 <div className={style.button}>
                     {seeCard}

@@ -28,9 +28,9 @@ export default function HeaderBhMobile() {
     return (
         <div className={style.mainDiv}>
             <div className={style.info}>
-                <div className={style.sizeLogo}>
+               {/* <div className={style.sizeLogo}>
                     <Image priority={true} layout={"fill"} src={info.LogoPath}/>
-                </div>
+                </div>*/}
                 <div className={style.gridTags}>
                     {
                         info.Tags.map(item =>
@@ -43,28 +43,12 @@ export default function HeaderBhMobile() {
                 <div className={style.title}>
                     {info.Name}
                 </div>
-               {/* <button onClick={handlePopUp} className={style.contDirection}>
-                    {info.Venue.Venue}
-                </button>*/}
                 <WishlistButtonMobile item={wishlistButton}/>
-                <div className={style.gridContact}>
-                    {
-                        info.Contact.map((item) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <div className={style.sizeIcon}>
-                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                </div>
-                            </Link>
-                        )
-                    }
-                </div>
+
             </div>
             <div className={style.contBanner}>
                 <div className={style.sizeNewBanner}>
                     <Image priority={true} layout={"fill"} src={info.Banner}/>
-                </div>
-                <div className={style.contLike}>
-                    <LikeButton item={likeButton}/>
                 </div>
             </div>
             {

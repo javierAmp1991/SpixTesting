@@ -46,16 +46,26 @@ export default function InformationImages() {
                         </div>
                     )}
                 </div>
-                <div className={style.gridInfo}>
-                    <div className={style.name}>
-                        {info.Name}
-                    </div>
+                <div className={style.name}>
+                    {info.Name}
                 </div>
                 <div className={style.gridWishLike}>
                     <WishlistButtonMobile item={wishlistButton}/>
                     <LikeButton2Mobile item={likeButton}/>
                 </div>
+            </div>
+
+            <ImageVideoMobile/>
+
+            <div className={style.gridDescription}>
+                <div className={style.description}>
+                    {info.Description}
+                </div>
+                <div className={style.gridProduceLogo}>
+                    <span className={style.produce}>Produce:</span> El Huevo
+                </div>
                 <div className={style.gridContact}>
+                    {contactText}
                     {
                         info.Contact.map((item) =>
                             <Link key={item.Id} href={item.Link}>
@@ -67,17 +77,6 @@ export default function InformationImages() {
                             </Link>
                         )
                     }
-                </div>
-            </div>
-
-            <ImageVideoMobile/>
-
-            <div>
-                <div className={style.description}>
-                    {info.Description}
-                </div>
-                <div className={style.gridProduceLogo}>
-                    <span className={style.produce}>Produce:</span> El Huevo
                 </div>
             </div>
 

@@ -61,16 +61,17 @@ export default function DescriptionCardFull() {
                             {info.Name}
                         </div>
 
+                        <div className={style.gridWishContact}>
+                            <WishlistButton item={wishlistButton}/>
+                            <LikeButton2 item={likeButton}/>
+                        </div>
+
                         <div className={`${utilities.clamp5} ${utilities.fontPrimaryText}`}>
                             {info.Description}
                         </div>
                         <div className={style.gridInfoNew}>
                             <span>{directionText}</span>
                             <button onClick={handlePopUp} className={utilities.styleLink}>{info.Venue.Venue}</button>
-                        </div>
-                        <div className={style.gridWishContact}>
-                            <WishlistButton item={wishlistButton}/>
-                            <LikeButton2 item={likeButton}/>
                         </div>
                         <div className={style.gridInfoNew}>
                             <div className={style.gridContact}>

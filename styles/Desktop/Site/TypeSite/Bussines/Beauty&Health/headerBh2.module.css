@@ -42,6 +42,7 @@
     height: 100%;
     display: grid;
     align-content: center;
+    gap: 8px;
 }
 
 .contBanner {
@@ -69,7 +70,6 @@
     grid-template-columns: repeat(3, max-content);
     gap: 10px;
     padding-top: 16px;
-    padding-bottom: 4px;
 }
 
 .tag {
@@ -138,7 +138,6 @@
     display: grid;
     gap: 12px;
     grid-template-columns: repeat(2, max-content);
-    padding-top: 16px;
 }
 
 .contLike {
