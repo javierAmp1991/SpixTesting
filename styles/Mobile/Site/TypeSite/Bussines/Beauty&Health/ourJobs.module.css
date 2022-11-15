@@ -1,33 +1,8 @@
 .mainDiv {
-    padding: 16px;
     display: grid;
-    background: #ffebec;
-    background: linear-gradient(145deg, #ffe9ea 0%, #ffd9ce 50%, #ffe3e5 100%);
-    background: linear-gradient(145deg, #f2e0ff 0%, #ffd9ce 50%, #f4d1ff 100%);
-    background: #f2e0ff;
     margin: 0 16px;
-    border-radius: 24px;
+    overflow-x: scroll;
 }
-
-.noFocus {
-    transform: scale(.7);
-    transition: .4s;
-}
-
-.focus {
-    transform: scale(.98);
-    transition: .4s;
-}
-
-.contDirec{
-    font-size: 12px;
-}
-
-.contDirection {
-    color: purple;
-    text-decoration: underline;
-}
-
 
 .title {
     font-size: 16px;
@@ -36,25 +11,22 @@
     width: 100%;
 }
 
-.contInfo{
-    display: grid;
-    gap: 6px;
-}
-
 .contSlider {
+    --sizeImage: calc((100vw - 64px) / 3);
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    align-items: center;
+    grid-template-columns: repeat(3, var(--sizeImage) );
+    grid-auto-columns: var(--sizeImage);
+    overflow-x: scroll;
+    grid-auto-flow: column;
     gap: 16px;
-    padding-top: 12px;
+    scroll-snap-type: x mandatory;
+    padding: 16px 0;
 }
 
-.gridCarrousel {
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
-    gap: 20px;
-    align-items: center;
+.contImage{
+    padding: 4px;
+    scroll-snap-align: start;
 }
 
 .sizeImage {
@@ -63,83 +35,30 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
 }
 
-.gridImages {
-    display: grid;
-    grid-template-columns: 0.7fr 1fr 1.5fr 1fr 0.7fr;
-    align-items: center;
-    gap: 12px;
+.sizeImageEmpty {
+    width: 100%;
+    aspect-ratio: 1/1;
+    scroll-snap-align: start;
 }
 
 .focus {
     z-index: 100;
     position: relative;
+    transform: scale(1.2);
     transition: .4s;
-}
-
-.focus:hover {
-    transform: scale(1.15);
 }
 
 .noFocus {
     z-index: 90;
     position: relative;
+    transform: scale(.9);
     transition: .4s;
 }
 
-.noFocus:hover {
-    transform: scale(1.1);
-}
-
-.noFocus2 {
-    z-index: 80;
-    transition: .4s;
-}
-
-.noFocus2:hover {
-    transform: scale(1.05);
-}
-
-.gridSocialContact {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: center;
-    gap: 32px;
-    margin: auto;
-    padding-bottom: 20px;
-    animation: animationDescription 1s linear;
-}
-
-.gridContact {
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.sizeIcon {
-    height: 14px;
-    width: 14px;
-    position: relative;
-}
-
-
-.up {
-    display: grid;
-    gap: 12px;
-}
-
-.description {
-    color: #0f1316;
-    width: 100%;
-    font-size: 12px;
-}
-
-.seeGalery{
+.seeGalery {
     width: 100%;
     text-align: center;
     font-size: 12px;
