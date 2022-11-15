@@ -12,7 +12,7 @@ import {createPortal} from "react-dom";
 import SocialBar from "../../../../Desktop/Misc/socialBar";
 import Link from "next/link";
 import LikeButton from "../../../../Desktop/Misc/likeButton";
-import {LikeButtonProps, wishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
+import {LikeButtonProps, WishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
 import WishlistButton from "../../../../Desktop/Misc/wishlistButton";
 import WishlistButtonMobile from "../../../Misc/wishlistButtonMobile";
 import LikeButton2Mobile from "../../../Misc/likeButton2";
@@ -28,7 +28,7 @@ const idPortal: string = GlobalId.globalIds.idPortal
 const likeButton: LikeButtonProps = {
     Like: 75
 }
-const wishlistButton: wishlistButtonProps = {
+const wishlistButton: WishlistButtonProps = {
     Like: 45
 }
 
@@ -40,7 +40,7 @@ export default function InformationImages() {
         <div className={style.mainDiv}>
             <div className={style.mainCont}>
                 <div className={style.gridAtr}>
-                    {info.Attributes.map((item) =>
+                    {info.Tags.map((item) =>
                         <div key={item} className={style.tagCategory}>
                             {item}
                         </div>

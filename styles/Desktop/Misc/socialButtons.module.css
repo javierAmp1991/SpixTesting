@@ -1,134 +1,98 @@
+.mainGrid {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 20px;
+    --sizeIcon: 24px;
+}
+
 .mainDiv {
-    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.mainDivLike {
     position: relative;
-    transition: .3s;
-    --sizeCircle: 30px;
-    --position: calc(50% - (var(--sizeCircle) / 2));
 }
 
-.active {
-    color: white;
-    /*background: linear-gradient(145deg, #DB3445 0%, #F71735 100%);*/
-    animation: scaleLike .3s;
-}
-
-.noActive {
-    color: var(--colorPrimaryTextDesktop);
-}
-
-.main{
-    /*box-shadow: 0 0 2px rgba(0, 0, 0, .4);*/
-    /*border: 1px solid rgba(0,0,0,.4);*/
-}
-
-.prinCont{
-    z-index: 100;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    padding: 25%;
-}
-
-.iLike{
-    font-size: 14px;
+.like {
     font-weight: 600;
 }
 
-.iLikeColor{
-    font-size: 14px;
-}
-
-.mainCont{
-    width: 100%;
-    height: 100%;
+.number {
+    color: var(--colorSecundaryTextDesktop);
 }
 
 .sizeIcon {
-    width: 24px;
-    height: 24px;
+    height: var(--sizeIcon);
+    width: var(--sizeIcon);
     position: relative;
 }
 
-.sizeLikes {
-    font-size: 12px;
-    font-weight: 500;
-    text-align: center;
-    color: var(--colorPrimaryTextDesktop);
+.activeWishList {
+    animation: moveWishList .3s 4 linear .1s;
 }
 
-.gridimagetext{
-    display: grid;
-    gap: 8px;
-    grid-template-columns: repeat(2, max-content);
-    align-items: center;
-    padding:2px 12px;
+.noActiveWishList {
+    animation: scaleDislike .1s linear;
 }
 
-.circle {
-    width: var(--sizeCircle);
-    height: var(--sizeCircle);
-    top: var(--position);
-    left: var(--position);
-    border-radius: 50%;
-    position: absolute;
-    animation: first 1.5s 3 linear;
-    z-index: 50;
-}
-
-.circle2 {
-    width: var(--sizeCircle);
-    height: var(--sizeCircle);
-    top: var(--position);
-    left: var(--position);
-    border-radius: 50%;
-    position: absolute;
-    animation: second 1.5s 3 linear;
-    z-index: 50;
-
-}
-
-.circle3 {
-    width: var(--sizeCircle);
-    height: var(--sizeCircle);
-    top: var(--position);
-    left: var(--position);
-    border-radius: 50%;
-    position: absolute;
-    animation: third 1.5s 3 linear;
-    z-index: 50;
-}
-
-@keyframes first {
+@keyframes moveWishList {
     0% {
-        transform: scale(1.2);
-        opacity: 1;
+        transform: rotate(0deg);
     }
+
+    10% {
+        transform: rotate(10deg);
+    }
+
+    20% {
+        transform: rotate(20deg);
+    }
+
+    30% {
+        transform: rotate(10deg);
+    }
+
+    40% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    70% {
+        transform: rotate(-10deg);
+    }
+
+    80% {
+        transform: rotate(-20deg);
+    }
+
+    90% {
+        transform: rotate(-10deg);
+    }
+
     100% {
-        transform: scale(1.8);
-        opacity: 1;
+        transform: rotate(0deg);
     }
 }
 
-@keyframes second {
+@keyframes scaleDislike {
     0% {
-        transform: scale(1.2);
-        opacity: 1;
+        transform: scale(.8);
     }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
 
-@keyframes third {
-    0% {
-        transform: scale(1.2);
-        opacity: 0;
-    }
     100% {
-        transform: scale(2.2);
-        opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -390,3 +354,4 @@
         opacity: 0;
     }
 }
+

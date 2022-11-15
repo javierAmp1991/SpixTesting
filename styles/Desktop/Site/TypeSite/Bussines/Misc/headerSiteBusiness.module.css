@@ -1,0 +1,72 @@
+.mainDivInfo {
+    display: grid;
+    gap: 4px;
+    height: 100%;
+    align-content: center;
+}
+
+.gridNameThreePoints {
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: 12px;
+    align-items: center;
+    padding-right: 16px;
+}
+
+.name {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.sizeThreePoints {
+    height: 16px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.description {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.gridTags {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: start;
+    gap: 8px;
+    padding-bottom: 2px;
+}
+
+.separationLine {
+    height: 1px;
+    background: rgba(0, 0, 0, .1);
+}
+
+.tagBase {
+    padding: 2px 12px;
+    border-radius: 16px;
+    overflow: hidden;
+    width: max-content;
+    color: white;
+    font-weight: 500;
+}
+
+.tagRestaurant {
+    background: linear-gradient(145deg, #e62e8c 0%, #da45d6 100%);
+}
+
+.tagBeautyAndHealth {
+    background: linear-gradient(145deg, rgba(128, 0, 128, .5) 0%, rgba(96, 0, 96, 0.5) 100%);
+}
+
+.tagDefault{
+    background: linear-gradient(145deg, rgb(17, 106, 245) 0%, rgb(69, 124, 213) 100%);
+}
+
+.contSocialButton {
+    padding: 16px 0 24px 0;
+}
+
+.produce{
+    color: var(--colorSecundaryTextDesktop);
+}
+

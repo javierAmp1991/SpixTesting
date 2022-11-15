@@ -1,13 +1,13 @@
 import style from "/styles/Mobile/Misc/wishlistButton.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {wishlistButtonProps} from "../../../Class/Misc/GlobalClass";
+import {WishlistButtonProps} from "../../../Class/Misc/GlobalClass";
 import {useState} from "react";
 
 const iWishText: string = "Lista de deseos"
 const iHaveText: string = "Agregado a tu lista"
 
-export default function WishlistButtonMobile({item}: { item: wishlistButtonProps }) {
+export default function WishlistButtonMobile({item}: { item: WishlistButtonProps }) {
     let [isLikeBell, setIsLikeBell] = useState(false)
     let [initialBell, setInitialBell] = useState(item.Like)
     let [bellIcon, setBellIcon] = useState({

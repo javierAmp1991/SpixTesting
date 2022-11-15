@@ -1,8 +1,12 @@
 .mainDiv {
     padding: 16px;
     display: grid;
+    background: #ffebec;
     background: linear-gradient(145deg, #ffe9ea 0%, #ffd9ce 50%, #ffe3e5 100%);
-    border-radius: 0 0 24px 24px;
+    background: linear-gradient(145deg, #f2e0ff 0%, #ffd9ce 50%, #f4d1ff 100%);
+    background: #f2e0ff;
+    margin: 0 16px;
+    border-radius: 24px;
 }
 
 .noFocus {

@@ -8,8 +8,9 @@ const defaultProp = {
     Size: 30
 }
 
+const iLikeText: string = "Me gusta"
+
 export default function LikeButton2({item}: { item: LikeButtonProps }) {
-    const cssStyle = getCssStyle()
     let [isLikeHeart, setIsLikeHeart] = useState(false)
     let [initialLike, setInitialLike] = useState(item.Like)
     let [likeAnimation, setLikeAnimation] = useState(
@@ -79,9 +80,9 @@ export default function LikeButton2({item}: { item: LikeButtonProps }) {
     }
 
     return (
-        <div className={style.main}>
-            <button onClick={() => handleClick(!isLikeHeart)}
-                    className={`${style.gridimagetext}`}>
+        <div></div>
+        /*<div className={style.main}>
+            <button onClick={() => handleClick(!isLikeHeart)} className={style.gridimagetext}>
                 <div className={style.mainDiv}>
                     <div className={`${likeAnimation.animationClassLike}`}>
                         <div className={style.sizeIcon}>
@@ -121,24 +122,15 @@ export default function LikeButton2({item}: { item: LikeButtonProps }) {
                     <div className={likeAnimation.animatedCircle}/>
                 </div>
                 <div>
-
-                    <div className={isLikeHeart ? style.iLikeColor : style.iLike}>
-                        ¡Me gusta!
+                    <div className={style.iLikeColor}>
+                        {initialLike}
                     </div>
                     <div className={style.sizeLikes}>
-                        {initialLike}
+                        {iLikeText}
                     </div>
                 </div>
             </button>
-
-        </div>
+        </div>*/
 
     )
-
-    function getCssStyle() {
-        return {
-            Size: item.Size == null ? defaultProp.Size : item.Size
-        }
-    }
-
 }

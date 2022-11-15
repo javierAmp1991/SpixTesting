@@ -136,7 +136,7 @@ const principalInfo: PrincipalInfoEvent = {
             LinkGoogleMap: "https://goo.gl/maps/mPvXV5ZbCja19kQo7"
         },
     ],
-    Attributes: ["Rock", "Conciertos", "Festivales"],
+    Tags: ["Rock", "Conciertos", "Festivales"],
     Category: "Bar Restaurant",
     Likes: 400,
     WishList: 50,
@@ -175,11 +175,7 @@ const principalInfo: PrincipalInfoEvent = {
             Link: "/test3"
         }
     ],
-    Whatssapp: 987347654,
-    Instagram: "/",
-    TikTok: "/",
-    Facebook: "/",
-    WebPage: "/",
+    Produce: "El Huevo"
 }
 const listOfferProducts: Product[] = [
     {

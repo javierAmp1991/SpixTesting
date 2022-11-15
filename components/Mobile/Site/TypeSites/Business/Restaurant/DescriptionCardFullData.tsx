@@ -10,7 +10,7 @@ import MapPopUp from "../../../../Misc/mapPopUp";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import WishlistButton from "../../../../../Desktop/Misc/wishlistButton";
-import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import {LikeButtonProps, WishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
 import LikeButton from "../../../../../Desktop/Misc/likeButton";
 import WishlistButtonMobile from "../../../../Misc/wishlistButtonMobile";
 import LikeButton2Mobile from "../../../../Misc/likeButton2";
@@ -21,7 +21,7 @@ const contactText: string = "Redes y Contacto: "
 const likeButton: LikeButtonProps = {
     Like: 75
 }
-const wishlistButton: wishlistButtonProps = {
+const wishlistButton: WishlistButtonProps = {
     Like: 45
 }
 

@@ -1,5 +1,8 @@
 import {News} from "../../../../dataDemo/data";
 import {ReviewItem} from "../../../Misc/GlobalClass";
+import {HeaderSiteBase} from "../Misc/globalClassSite";
+import {MapPopUpProp} from "../../../../components/Desktop/Misc/mapPopUp";
+import {TypeSiteBusiness} from "../Business/restaurantClass";
 
 export class DateVenueEvent {
     Id: string
@@ -23,7 +26,7 @@ export class PrincipalInfoEvent {
     Name: string
     Description: string
     Category: string
-    Attributes: string[]
+    Tags: string[]
     PathLogo: string
     PathBanner: string
     PathPoster: string
@@ -35,11 +38,7 @@ export class PrincipalInfoEvent {
     Images: string[]
     Video: string
     Contact: ContactItems[]
-    Whatssapp: number
-    Instagram: string
-    TikTok: string
-    Facebook: string
-    WebPage: string
+    Produce: string
 }
 
 export class ProviderNewsEvents {
@@ -99,4 +98,13 @@ export class ProviderSectionTicket {
     DateSelected: DateAreaSelected
     SelectDate: Function
     SelectArea: Function
+}
+
+export enum TypeSiteEvents {
+    Default
+}
+
+export class HeaderSiteEventsProp extends HeaderSiteBase {
+    TypeSite: TypeSiteEvents
+    Produce: string
 }

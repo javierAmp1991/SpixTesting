@@ -3,11 +3,11 @@
     width: max-content;
     font-size: 14px;
     /*box-shadow: 0 0 2px rgba(0, 0, 0, .4);*/
-    border: 1px solid rgba(0,0,0,.4);
+    /*border: 1px solid rgba(0,0,0,.4);*/
     gap: 12px;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    padding: 2px 12px;
+    padding: 2px 12px 2px 0;
 }
 
 
@@ -29,12 +29,13 @@
 }
 
 .sizeIcon {
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
     position: relative;
 }
 
 .like {
+    font-weight: 600;
 }
 
 @keyframes moveBell {

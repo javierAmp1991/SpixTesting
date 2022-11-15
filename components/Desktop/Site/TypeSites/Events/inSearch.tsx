@@ -1,5 +1,3 @@
-import FormViewDesktop from "../../../Misc/formView";
-import LayoutPurpleContainer from "../../../Layouts/layoutPurpleContainer";
 import LayoutTitle from "../Business/Restaurant/layoutTitle";
 import {FormLink} from "../../../../../dataDemo/data";
 import {useContext} from "react";
@@ -22,15 +20,6 @@ export default function InSearch() {
                     )
                 }
             </div>
-           {/* <LayoutPurpleContainer isDarkMode={false}>
-                {
-                    inSearch.map((item, index) =>
-                        <div key={index}>
-                            <FormViewDesktop item={item}/>
-                        </div>
-                    )
-                }
-            </LayoutPurpleContainer>*/}
         </LayoutTitle>
     )
 }

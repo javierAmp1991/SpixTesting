@@ -3,13 +3,14 @@
     gap: 24px;
     border-radius: 12px;
     align-items: center;
+    padding: 32px;
+    box-shadow: 0 0 12px rgba(0,0,0,.3);
 }
 
 .mainDiv2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    padding-bottom: 12px;
     /*border-bottom: 2px solid var(--separationLineColor);*/
 }
 
@@ -35,13 +36,14 @@
 }
 
 .gridInfo {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     gap: 16px;
     position: relative;
-    align-content: center;
     font-size: 16px;
-    padding: 0 32px 0 16px;
+    padding: 0 32px 0 0;
+    justify-content: center;
 }
 
 .separationLine {
@@ -92,7 +94,7 @@
 .description {
     color: var(--colorPrimaryTextDesktop);
     width: 90%;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .atr {
@@ -269,6 +271,8 @@
     align-items: center;
     gap: 8px;
     color: var(--colorSecundaryTextDesktop);
+    font-size: 14px;
+    padding-top: 4px;
 }
 
 .produce {
@@ -288,8 +292,9 @@
 
 .gridContact {
     display: grid;
-    grid-template-columns: repeat(6, max-content);
+    grid-template-columns: repeat(7, max-content);
     gap: 6px;
+    font-size: 14px;
 }
 
 .styleRedes {
@@ -302,10 +307,11 @@
 
 .gridSocialRedes {
     display: grid;
-    grid-template-columns: repeat(2, max-content);
+    grid-template-columns: repeat(3, max-content);
     align-items: center;
     width: 85%;
     gap: 16px;
+    padding: 13px 0;
 }
 
 .gridSelectionZone {

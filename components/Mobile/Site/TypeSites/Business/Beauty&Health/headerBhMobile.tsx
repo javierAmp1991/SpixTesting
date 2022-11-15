@@ -8,7 +8,7 @@ import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import Link from "next/link";
-import {LikeButtonProps, wishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
+import {LikeButtonProps, WishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
 import LikeButton from "../../../../../Desktop/Misc/likeButton";
 import WishlistButton from "../../../../../Desktop/Misc/wishlistButton";
 import WishlistButtonMobile from "../../../../Misc/wishlistButtonMobile";
@@ -17,7 +17,7 @@ const idPortal: string = GlobalId.globalIds.idPortal
 const likeButton: LikeButtonProps = {
     Like: 75
 }
-const wishlistButton: wishlistButtonProps = {
+const wishlistButton: WishlistButtonProps = {
     Like: 45
 }
 

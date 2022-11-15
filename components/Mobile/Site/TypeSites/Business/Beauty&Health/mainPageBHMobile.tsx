@@ -24,10 +24,8 @@ export default function MainPageBHMobile() {
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     return (
         <div className={style.mainDiv}>
-            <div>
-                <HeaderBhMobile/>
-                <OurJobsMobile/>
-            </div>
+            <HeaderBhMobile/>
+            <OurJobsMobile/>
             <div className={style.separationLine}/>
 
             <div className={style.paddingGeneral}>

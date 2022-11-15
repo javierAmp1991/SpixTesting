@@ -57,7 +57,7 @@ export default function OurJobsMobile() {
                 </div>
 
 
-                <div className={style.contSlider}>
+              {/*  <div className={style.contSlider}>
                     {
                         listCortes.map((item, index) =>
                             <div key={index} className={style.sizeImage}>
@@ -68,7 +68,7 @@ export default function OurJobsMobile() {
                 </div>
                 <div className={style.seeGalery}>
                     Ver Galeria
-                </div>
+                </div>*/}
             </div>
             {
                 displayMap &&

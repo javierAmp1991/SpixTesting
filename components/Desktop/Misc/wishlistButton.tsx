@@ -1,13 +1,13 @@
 import style from "/styles/Desktop/Misc/wishlistButton.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {wishlistButtonProps} from "../../../Class/Misc/GlobalClass";
+import {WishlistButtonProps} from "../../../Class/Misc/GlobalClass";
 import {useState} from "react";
 
 const iWishText: string = "Lista de deseos"
 const iHaveText: string = "Agregado a tu lista"
 
-export default function WishlistButton({item}: { item: wishlistButtonProps }) {
+export default function WishlistButton({item}: { item: WishlistButtonProps }) {
     let [isLikeBell, setIsLikeBell] = useState(false)
     let [initialBell, setInitialBell] = useState(item.Like)
     let [bellIcon, setBellIcon] = useState({
@@ -36,12 +36,11 @@ export default function WishlistButton({item}: { item: wishlistButtonProps }) {
                 <Image layout={"fill"} src={bellIcon.bellIcon}/>
             </div>
             <div>
-
                 <div className={style.like}>
-                    {isLikeBell ? iHaveText : iWishText}
+                    25 mil
                 </div>
                 <div className={style.sizeLikes}>
-                    {initialBell}
+                    Lo quieren
                 </div>
             </div>
         </button>

@@ -56,11 +56,17 @@ export class NavBarEventsSections {
     Name: string
 }
 
-export class LikeButtonProps {
-    Like: number
-    Size?: number
+export class SocialButtonsProps {
+    Like: LikeButtonProps
+    WishList: WishlistButtonProps
 }
 
-export class wishlistButtonProps {
+export class LikeButtonProps {
+    IsLike: boolean
+    Like: number
+}
+
+export class WishlistButtonProps {
+    IsLike: boolean
     Like: number
 }

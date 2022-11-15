@@ -18,7 +18,7 @@ export default function InformationImages() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     return (
         <div className={style.mainDiv}>
-            <div className={style.gridInfo}>
+           {/* <div className={style.gridInfo}>
                 <div className={style.gridLogoSocial}>
                     <div className={style.gridImageName}>
                         <div className={style.gradient}>
@@ -56,13 +56,13 @@ export default function InformationImages() {
                                         <Image layout={"fill"} src={GlobalConst.sourceImages.facebookIcon}/>
                                     </div>
                                 </Link>
-                                {/*{
+                                {
                                     info.Restrictions.map((item, index) =>
                                         <a className={style.sizeRestrictionIcon} key={index}>
                                             <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
                                         </a>
                                     )
-                                }*/}
+                                }
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@ export default function InformationImages() {
                     {info.Description}
                 </div>
                 <SocialBar/>
-            </div>
+            </div>*/}
 
             <ImageVideo/>
             {/*<div className={style.gridInfo}>
