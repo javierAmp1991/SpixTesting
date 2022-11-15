@@ -5,8 +5,6 @@ import {ReviewSection} from "../../../../../Class/Site/TypeSite/Events/events";
 import style from "/styles/Desktop/Site/TypeSite/Events/reviewSection.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../../../public/globalConst";
-import {PrincipalFeaturedSearch} from "../../../../../dataDemo/EventView/featureView";
-import item = PrincipalFeaturedSearch.item;
 import Link from "next/link";
 
 const limitReview: string = "/5"

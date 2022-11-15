@@ -11,7 +11,6 @@ import PopUpContainer from "../../../Misc/popUpContainer";
 import LayoutTitle from "../Business/Restaurant/layoutTitle";
 
 const idPortal: string = GlobalId.globalIds.idPortal
-const title: string = "Tickets"
 const buyTickets: string = "Comprar Entradas"
 
 export default function TicketsSection() {

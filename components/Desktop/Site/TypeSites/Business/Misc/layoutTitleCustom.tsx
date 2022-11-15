@@ -9,6 +9,7 @@ const defaultValues = {
     PaddingLeft: 0,
     PaddingRight: 0,
     PaddingUnderHeader: 30,
+
 }
 
 export default function LayoutTitleCustom({children, item}: { children: JSX.Element, item: LayoutTitleLinkProps }) {

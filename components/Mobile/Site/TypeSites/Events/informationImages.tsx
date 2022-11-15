@@ -1,5 +1,8 @@
-import Image from "next/image";
-import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
+import {
+    HeaderSiteEventsProp,
+    PrincipalInfoEvent,
+    TypeSiteEvents
+} from "../../../../../Class/Site/TypeSite/Events/events";
 import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import style from "/styles/Mobile/Site/TypeSite/Events/informationImages.module.css"
@@ -9,13 +12,7 @@ import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
 import {createPortal} from "react-dom";
-import SocialBar from "../../../../Desktop/Misc/socialBar";
-import Link from "next/link";
-import LikeButton from "../../../../Desktop/Misc/likeButton";
-import {LikeButtonProps, WishlistButtonProps} from "../../../../../Class/Misc/GlobalClass";
-import WishlistButton from "../../../../Desktop/Misc/wishlistButton";
-import WishlistButtonMobile from "../../../Misc/wishlistButtonMobile";
-import LikeButton2Mobile from "../../../Misc/likeButton2";
+import HeaderSiteEventsMobile from "./Misc/headerSiteEventsMobile";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -23,41 +20,37 @@ const user: LevelUser = {
     Level: 0
 }
 const userRequirement: number = 2
-const contactText: string = "Redes y Contacto: "
 const idPortal: string = GlobalId.globalIds.idPortal
-const likeButton: LikeButtonProps = {
-    Like: 75
-}
-const wishlistButton: WishlistButtonProps = {
-    Like: 45
-}
 
 export default function InformationImages() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     let [displayLevelUser, setDisplayLevelUser] = useState(false)
     const handleLevelUser = () => setDisplayLevelUser(displayLevelUser = !displayLevelUser)
+    const headerEvents: HeaderSiteEventsProp = {
+        Name: info.Name,
+        Description: info.Description,
+        Tags: info.Tags,
+        Produce: info.Produce,
+        TypeSite: TypeSiteEvents.Default,
+        SocialButtons: {
+            Like: {
+                IsLike: true,
+                Like: 500,
+            },
+            WishList: {
+                IsLike: false,
+                Like: 156
+            }
+        },
+    }
     return (
         <div className={style.mainDiv}>
-            <div className={style.mainCont}>
-                <div className={style.gridAtr}>
-                    {info.Tags.map((item) =>
-                        <div key={item} className={style.tagCategory}>
-                            {item}
-                        </div>
-                    )}
-                </div>
-                <div className={style.name}>
-                    {info.Name}
-                </div>
-                <div className={style.gridWishLike}>
-                    <WishlistButtonMobile item={wishlistButton}/>
-                    <LikeButton2Mobile item={likeButton}/>
-                </div>
+            <div className={style.contInfo}>
+                <HeaderSiteEventsMobile item={headerEvents}/>
             </div>
-
             <ImageVideoMobile/>
 
-            <div className={style.gridDescription}>
+            {/* <div className={style.gridDescription}>
                 <div className={style.description}>
                     {info.Description}
                 </div>
@@ -78,7 +71,7 @@ export default function InformationImages() {
                         )
                     }
                 </div>
-            </div>
+            </div>*/}
 
             {
                 displayLevelUser &&

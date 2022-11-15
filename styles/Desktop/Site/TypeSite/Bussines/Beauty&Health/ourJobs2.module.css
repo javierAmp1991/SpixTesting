@@ -1,23 +1,14 @@
 .mainDiv {
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    background: linear-gradient(145deg, #f2e0ff 0%, #ffd9ce 50%, #f4d1ff 100%);
-    border-radius: 32px;
-    padding: 12px 4%;
 }
 
 .title {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 600;
     width: 100%;
     border-radius: 16px;
-}
-
-.gridCarrousel {
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
-    gap: 20px;
-    align-items: center;
+    text-align: center;
+    color: var(--colorTitlesDesktop);
 }
 
 .sizeImage {
@@ -26,109 +17,29 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
-    transition: .4s;
-}
-
-.gridImages {
-    display: grid;
-    grid-template-columns: 0.7fr 1fr 1.5fr 1fr 0.7fr;
-    align-items: center;
-    gap: 48px;
-}
-
-.noFocus {
-    transform: scale(.7);
-    transition: .4s;
-}
-
-.focus {
-    transform: scale(.9);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .8);
     transition: .4s;
 }
 
 .contSlider {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 0.8fr 1.3fr 2fr 1.3fr 0.8fr;
+    gap: 48px;
     align-items: center;
     padding: 16px 60px;
     position: relative;
 }
 
-.noFocus2 {
-    z-index: 80;
-    transition: .4s;
-}
-
-.noFocus2:hover {
-    transform: scale(1.05);
-}
-
-.gridSocialContact {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    justify-content: center;
-    width: 50%;
-    gap: 32px;
-    justify-content: space-between;
-    margin: auto;
-    padding-bottom: 20px;
-    animation: animationDescription 1s linear;
-}
-
-.gridContact {
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.sizeIcon {
-    height: 16px;
-    width: 16px;
-    position: relative;
-}
-
-.contDirection {
-    color: purple;
-    text-decoration: underline;
-}
-
 .up {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 80%;
-    border-radius: 16px;
     justify-content: center;
 }
 
-.description {
-    color: #0f1316;
-    width: 50%;
-    margin: auto;
-    font-size: 14px;
-    animation: animationDescription 1s linear;
-    padding: 12px 0;
-}
-
-.sizeArrow {
-    width: 30px;
-    height: 30px;
-    position: relative;
-    border: 1px solid red;
-}
-
 .seeGalery {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
     text-decoration: underline;
-    text-align: right;
-    padding-right: 48px;
+    text-align: center;
     width: 100%;
     font-size: 16px;
+    color: var(--linkColor);
 }

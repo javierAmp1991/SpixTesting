@@ -1,4 +1,3 @@
-import BannerVar from "../../../../Misc/bannerVar";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/headerBh2.module.css"
 import Image from "next/image";
 import {
@@ -41,10 +40,8 @@ export default function HeaderBh2() {
     return (
         <div className={style.mainDiv}>
             <HeaderSiteBussiness item={headerBusiness}/>
-            <div className={style.contBanner}>
-                <div className={style.sizeNewBanner}>
-                    <Image priority={true} layout={"fill"} src={info.LogoPath}/>
-                </div>
+            <div className={style.sizeNewBanner}>
+                <Image priority={true} layout={"fill"} src={info.LogoPath} alt={""}/>
             </div>
             {
                 displayMap &&

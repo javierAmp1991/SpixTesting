@@ -1,70 +1,62 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/descriptionCardData.module.css"
 import Image from "next/image";
-import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import {
+    HeaderSiteBusinessProp,
+    PresentationCard,
+    TypeSiteBusiness
+} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useState} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import Link from "next/link";
-import utilities from "/styles/utilities.module.css";
-import SocialBar from "../../../../Misc/socialBar";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
-import WishlistButton from "../../../../../Desktop/Misc/wishlistButton";
-import {LikeButtonProps, WishlistButtonProps} from "../../../../../../Class/Misc/GlobalClass";
-import LikeButton from "../../../../../Desktop/Misc/likeButton";
-import WishlistButtonMobile from "../../../../Misc/wishlistButtonMobile";
-import LikeButton2Mobile from "../../../../Misc/likeButton2";
+import HeaderSiteBussinessMobile from "../Misc/headerSiteBussinessMobile";
 
-const directionText: string = "Direccion:"
 const seeCard: string = "Ver carta"
-const contactText: string = "Redes y Contacto: "
-const likeButton: LikeButtonProps = {
-    Like: 75
-}
-const wishlistButton: WishlistButtonProps = {
-    Like: 45
-}
+
 
 export default function DescriptionCardFullData() {
     const info: PresentationCard = useContext(HeaderContext)
     let [displayMap, setDisplayMap] = useState(false)
     const handlePopUpMap = () => setDisplayMap(displayMap = !displayMap)
+    const headerBusiness: HeaderSiteBusinessProp = {
+        Name: info.Name,
+        Description: info.Description,
+        Tags: info.Tags,
+        Venue: info.Venue,
+        TypeSite: TypeSiteBusiness.Restaurant,
+        SocialButtons: {
+            Like: {
+                IsLike: true,
+                Like: 500,
+            },
+            WishList: {
+                IsLike: false,
+                Like: 156
+            }
+        }
+    }
     return (
         <div className={style.mainDiv}>
-            <div className={style.mainDivInfo}>
-                <div className={style.gridInfoGap}>
-                    <div className={style.gridTags}>
-                        {
-                            info.Tags.map(item =>
-                                <div key={item} className={style.tag}>
-                                    {item}
-                                </div>)
-                        }
-                    </div>
-                    <div className={style.Name}>
-                        {info.Name}
-                    </div>
-                    <div className={style.gridWishLike}>
-                        <WishlistButtonMobile item={wishlistButton}/>
-                        <LikeButton2Mobile item={likeButton}/>
-                    </div>
-                </div>
-                <div className={style.contCarrousel}>
-                    <div className={style.sizeLogo}>
-                        <Image layout={"fill"} src={info.LogoPath} alt={""}/>
-                    </div>
-                    <LayoutWithNavCircleMobile isDarkMode={false}>
-                        {
-                            info.SideImages.map((e) =>
-                                <div key={e} className={style.sizeSideImage}>
-                                    <Image layout={"fill"} src={e} alt={""}/>
-                                </div>
-                            )
-                        }
-                    </LayoutWithNavCircleMobile>
-                </div>
+            <div className={style.contInfo}>
+            <HeaderSiteBussinessMobile item={headerBusiness}/>
+            </div>
 
-                <div className={style.gridDescip}>
+            <div className={style.contCarrousel}>
+                <div className={style.sizeLogo}>
+                    <Image layout={"fill"} src={info.LogoPath} alt={""}/>
+                </div>
+                <LayoutWithNavCircleMobile isDarkMode={false}>
+                    {
+                        info.SideImages.map((e) =>
+                            <div key={e} className={style.sizeSideImage}>
+                                <Image layout={"fill"} src={e} alt={""}/>
+                            </div>
+                        )
+                    }
+                </LayoutWithNavCircleMobile>
+
+                {/* <div className={style.gridDescip}>
                     <div className={utilities.clamp5}>
                         {info.Description}
                     </div>
@@ -86,7 +78,7 @@ export default function DescriptionCardFullData() {
                             }
                         </div>
                     </div>
-                </div>
+                </div>*/}
                 <div className={style.button}>
                     {seeCard}
                 </div>

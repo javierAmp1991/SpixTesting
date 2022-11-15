@@ -1,5 +1,4 @@
 .mainDiv {
-    position: relative;
     width: 100%;
     max-width: var(--maxWidthBodyContent);
     background: linear-gradient(145deg, #ceffc3 0%, #ffc4b3 50%, #b3f1ac 100%);
@@ -11,167 +10,18 @@
     background: linear-gradient(145deg, #ffc3c3 0%, #ffc4b3 50%, #f1acac 100%);
     background: linear-gradient(145deg, #ffc3e1 0%, #ffc4b3 50%, #f1acc1 100%);
     background: #ffebec;
-    margin: auto;
     display: grid;
     grid-template-columns: 1.8fr 1fr;
     border-radius: 42px;
     overflow: hidden;
-    padding: 2% 8% 2% 4%;
+    padding: 32px 8% 32px 4%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
 }
 
-.blackScreen {
-    position: absolute;
-    background: rgba(255, 255, 255, .8);
-    width: 100%;
-    height: 100%;
-}
-
-.blackScreen2 {
-    /*    background: linear-gradient(180deg, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .1) 50%);
-        background: linear-gradient(180deg, rgba(255, 255, 255, .3) 0%, rgba(255, 255, 255, .1) 50%);*/
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.info {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    align-content: center;
-    gap: 8px;
-}
-
-.contBanner {
-    width: 100%;
-    aspect-ratio: 1/1;
-    display: grid;
-    justify-items: right;
-    position: relative;
-}
-
-.title {
-    font-size: 36px;
-    font-weight: 600;
-    color: #360101;
-}
-
 .sizeNewBanner {
-    height: 100%;
     aspect-ratio: 1/1;
     position: relative;
-}
-
-.gridTags {
+    width: 90%;
     display: grid;
-    grid-template-columns: repeat(3, max-content);
-    gap: 10px;
-    padding-top: 16px;
-}
-
-.tag {
-    padding: 2px 12px;
-    background: linear-gradient(145deg, rgb(138, 215, 92), rgb(109, 190, 60));
-    background: linear-gradient(145deg, rgba(128, 0, 128, .5) 0%, rgba(96, 0, 96, 0.5) 100%);
-    border-radius: 16px;
-    color: white;
-    font-weight: 500;
-}
-
-.sizeLogo {
-    width: 140px;
-    aspect-ratio: 1/1;
-    position: relative;
-}
-
-.gridSocialContact {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 32px;
-    padding-bottom: 20px;
-}
-
-.gridContact {
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 8px;
-    padding-top: 16px;
-}
-
-.sizeIcon {
-    height: 16px;
-    width: 16px;
-    position: relative;
-}
-
-.contDirection {
-    color: #0f1316;
-    color: purple;
-    text-decoration: underline;
-    text-decoration: none;
-    border: 1px solid purple;
-    width: max-content;
-    padding: 4px 16px;
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 12px;
-    align-items: center;
-    /* background: rgba(128, 0, 128, .5);
-     color: white;
-     padding: 4px 16px;
-     width: max-content;
-     border-radius: 0 16px 16px 0;*/
-}
-
-
-.description {
-    width: 70%;
-}
-
-.gridNew {
-    display: grid;
-    gap: 12px;
-    grid-template-columns: repeat(2, max-content);
-}
-
-.contLike {
-    width: 40px;
-    height: 38px;
-    border-radius: 50%;
-    padding: 9px;
-    background: rgba(255, 255, 255, .9);
-    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
-    transition: .2s;
-}
-
-.contLike:hover {
-    transform: scale(1.2);
-}
-
-.sizeICon {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.gridLikeWishlist {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    align-items: center;
-    gap: 16px;
-    position: absolute;
-    bottom: 32px;
-    left: 16px;
-    z-index: 500;
-}
-
-.direction {
-    text-decoration: underline;
-    text-decoration: none;
+    margin-left: auto;
 }

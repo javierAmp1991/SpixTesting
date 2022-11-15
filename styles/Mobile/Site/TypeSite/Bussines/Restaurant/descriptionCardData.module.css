@@ -1,105 +1,15 @@
 .mainDiv {
-    --widthCard: 800px;
     display: grid;
-    bottom: 0;
-    margin: auto;
-    background: white;
     padding: 0 16px;
 }
 
-.gridWishLike{
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 12px;
-    padding-bottom: 4px;
+.contInfo{
+    padding-top: 24px;
 }
 
 .contCarrousel{
     position: relative;
-}
-
-.gridLeft {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    align-items: center;
-    padding: 8px 0;
-}
-
-.gridRight {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.sizeImage {
-    width: 100%;
-    aspect-ratio: 1/1;
-    position: relative;
-}
-
-.mainDivInfo {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
     overflow: scroll;
-}
-
-.gridDescip{
-    display: grid;
-    gap: 4px;
-}
-
-.gridInfoGap{
-    display: grid;
-    gap: 8px;
-    position: relative;
-    padding-top: 24px;
-}
-
-.contLike{
-    position: absolute;
-    top: 20px;
-    right: 12px;
-}
-
-.title {
-    font-size: 28px;
-    font-weight: 500;
-}
-
-.gridImageName {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    align-items: center;
-    gap: 8px;
-}
-
-.Name {
-    font-size: 21px;
-    font-weight: 500;
-}
-
-.gridInfoNew {
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.sizeIcon {
-    height: 16px;
-    width: 16px;
-    position: relative;
-}
-
-.firstGradient {
-    padding: 3px;
-    border-radius: 50%;
-    background: linear-gradient(90deg, rgb(114, 153, 210) 0%, rgb(166, 240, 245) 50%, rgb(142, 188, 241) 100%);
-    position: absolute;
-    width: 80px;
-    height: 80px;
 }
 
 .sizeLogo {
@@ -115,28 +25,15 @@
 }
 
 .button {
-    padding: 8px 32px;
+    padding: 6px 32px;
     text-align: center;
     background: var(--gradientBlueButton);
     color: white;
     font-weight: 500;
+    width: max-content;
     border-radius: 4px;
     overflow: hidden;
-    margin: 12px auto auto auto;
-}
-
-.gridButtons {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 8px;
-    justify-content: center;
-}
-
-.gridSideImage {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    align-content: center;
+    margin: 28px auto auto auto;
 }
 
 .sizeSideImage {
@@ -146,48 +43,5 @@
     scroll-snap-align: start;
 }
 
-.seeGalery {
-    display: grid;
-    text-align: left;
-    color: var(--linkColor);
-}
 
-.mainDivInfoDes {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 0 0 0 8px;
-}
-
-.gridContact {
-    display: grid;
-    grid-template-columns: max-content;
-    grid-auto-columns: max-content;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.separationLine{
-    height: 1px;
-    width: 100%;
-    background: var(--separationLineColor);
-}
-
-.tag {
-    padding: 1px 12px;
-    background: linear-gradient(145deg, #a220ec 0%, #930bc0 100%);
-    background: linear-gradient(145deg, #e62e8c 0%, #da45d6 100%);
-    border-radius: 16px;
-    overflow: hidden;
-    width: max-content;
-    color: white;
-    font-size: 12px;
-}
-
-.gridTags {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    gap: 8px;
-}
 
