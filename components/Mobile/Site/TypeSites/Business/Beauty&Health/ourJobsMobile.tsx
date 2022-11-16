@@ -8,7 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const title: string = "Sobre nosotros"
-const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
+const listCortes: string[] =
+    ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
 const idPortal: string = GlobalId.globalIds.idPortal
 const seeGalery: string = "Ver Galeria"
 
@@ -26,7 +27,7 @@ export default function OurJobsMobile() {
                 {seeGalery}
             </div>
 
-            <div className={`${style.contSlider} ${getPadding()}`}>
+            <div className={`${style.contSlider}`}>
                 {
                     listCortes.map((item, index) =>
                         <div key={index} className={`${style.contImage} 
@@ -41,12 +42,6 @@ export default function OurJobsMobile() {
             </div>
         </div>
     )
-
-    function getPadding(): string {
-        if (listCortes.length == 3) return style.padding3
-        else if (listCortes.length == 4) return style.padding4
-        else return ""
-    }
 
     function getStyle(num: number): string {
         if (num == 2) return style.focus

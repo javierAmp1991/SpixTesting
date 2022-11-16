@@ -23,7 +23,7 @@
     rotate: 45deg;
     aspect-ratio: 1/1;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 6px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .8);
     transition: .4s;
 }
@@ -66,21 +66,11 @@
 }
 
 .top {
-    margin-bottom: 50px;
+    margin-bottom: 60%;
 }
 
 .bottom {
-    margin-top: 50px;
-}
-
-.padding3 {
-    padding-left: 76px;
-    padding-right: 76px;
-}
-
-.padding4 {
-    padding-left: 32px;
-    padding-right: 32px;
+    margin-top: 60%;
 }
 
 .separationLine{

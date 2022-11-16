@@ -6,7 +6,8 @@ import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Busine
 import {GlobalId} from "../../../../../../public/globalConst";
 
 const title: string = "Nuestros Trabajos"
-const listCortes: string[] = ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
+const listCortes: string[] =
+    ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg", "/images/corte5.jpg"]
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function OurJobs2() {
@@ -23,7 +24,7 @@ export default function OurJobs2() {
                 </button>
             </div>
 
-            <div className={`${style.contSlider} ${getPadding()}`}>
+            <div className={`${style.contSlider}`}>
                 {
                     listCortes.map((item, index) =>
                         <div key={index} className={`${style.contImage} 
@@ -38,12 +39,6 @@ export default function OurJobs2() {
             </div>
         </div>
     )
-
-    function getPadding(): string {
-        if (listCortes.length == 3) return style.padding3
-        else if (listCortes.length == 4) return style.padding4
-        else return ""
-    }
 
     function getStyle(num: number): string {
         if (num == 2) return style.focus
