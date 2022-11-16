@@ -2,13 +2,14 @@
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     padding: 8px 16px;
     background: var(--gradientSpix);
     background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
     color: white;
     font-weight: 500;
     margin: auto;
+    font-size: 12px;
 }
 
 .sizeIcon{
