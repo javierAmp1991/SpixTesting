@@ -1,13 +1,21 @@
 .gridAnnouncement {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: max-content 1fr max-content;
     align-items: center;
     gap: 16px;
     padding: 12px 24px;
     background: var(--gradientSpix);
+    background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
+    background: linear-gradient(145deg, #5F0A87 0%, #A4508B 100%);
     color: white;
-    border-radius: 4px;
     font-weight: 500;
+    border-radius: 32px;
+}
+
+.sizeIcon{
+    width: 24px;
+    height: 24px;
+    position: relative;
 }
 
 .announcement {
@@ -16,4 +24,6 @@
 
 .link {
     text-decoration: underline;
+    border-left: 1px solid white;
+    padding-left: 24px;
 }

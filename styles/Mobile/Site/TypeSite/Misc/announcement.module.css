@@ -1,13 +1,20 @@
 .gridAnnouncement {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: max-content 1fr max-content;
     align-items: center;
-    gap: 16px;
-    padding: 12px 24px;
+    gap: 8px;
+    padding: 8px 16px;
     background: var(--gradientSpix);
+    background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
     color: white;
     font-weight: 500;
     margin: auto;
+}
+
+.sizeIcon{
+    width: 24px;
+    height: 24px;
+    position: relative;
 }
 
 .announcement {

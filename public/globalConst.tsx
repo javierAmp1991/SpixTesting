@@ -131,7 +131,8 @@ export namespace GlobalConst{
         webPageIcon: "/images/webPageIcon.png",
         activateWishList: "/images/activateWishList.png",
         activateHeartWhite: "/images/hearticonColorWhite.png",
-        threePoints: "/images/threePoints.png"
+        threePoints: "/images/threePoints.png",
+        announcementIcon: "/images/announcementIcon.png"
     }
 }
 
