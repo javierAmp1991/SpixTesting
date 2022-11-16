@@ -1,5 +1,6 @@
 .mainDiv {
     width: 100%;
+    position: relative;
 }
 
 .title {
@@ -13,12 +14,11 @@
 
 .contImage {
     width: 100%;
-    rotate: 45deg;
     aspect-ratio: 1/1;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .8);
     transition: .4s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .8);
 }
 
 .contImage:hover {
@@ -28,34 +28,81 @@
 .sizeImage {
     width: 100%;
     height: 100%;
-    rotate: -45deg;
     position: relative;
     transition: .4s;
-    transform: scale(1.4);
 }
 
 .contSlider {
-    --sizeDiv: calc(100%/5);
+    --sizeDiv: calc(100% / 4);
     display: grid;
-    grid-template-columns: var(--sizeDiv);
-    grid-auto-columns: var(--sizeDiv);
-    grid-auto-flow: column;
-    justify-content: center;
+    /* grid-template-columns: var(--sizeDiv);
+     grid-auto-flow: column;
+     grid-auto-columns: var(--sizeDiv);*/
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     position: relative;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    width: 52%;
+}
+
+.contSlider:before {
+    content: "";
+    border: 2px solid white;
+    position: absolute;
+    left: -20%;
+    width: 140%;
+    height: 80%;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .4) 0%, rgba(255, 255, 255, .6) 100%);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 1);
+}
+
+.contSlider:after{
+    content: "";
+    display: grid;
+    text-align: center;
+    font-weight: 500;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border: 3px solid white;
+    left: calc(50% - 30px);
+    top: calc(50% - 30px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, .4) 0%, rgba(255, 255, 255, .6) 100%);
 }
 
 .seeGalery {
     text-decoration: underline;
     text-align: center;
     width: 100%;
-    padding-bottom: 48px;
+    position: absolute;
+    top: -72px;
 }
 
-.top {
-    margin-bottom: 60%;
+.first {
+    transform: scale(1.2);
+    transform-origin: bottom right;
+}
+
+.second {
+
+}
+
+.third {
+}
+
+.four {
+    transform: scale(1.2);
+    transform-origin: top left;
+}
+
+/*.top {
+    margin-bottom: 30%;
+    rotate: 10deg;
 }
 
 .bottom {
-    margin-top: 60%;
-}
+    margin-top: 30%;
+    rotate: -10deg;
+}*/

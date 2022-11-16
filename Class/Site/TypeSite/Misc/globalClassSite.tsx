@@ -14,10 +14,17 @@ export class HeaderSiteBase {
     SocialButtons: SocialButtonsProps
     Width?: string
     Contact: ContactItems[]
+    PaddingBottom?: number
 }
 
 export enum AnnouncementStyle {
     SiteRestaurant,
     SiteBeautyAndHealth,
     SiteEvents
+}
+
+export class AnnouncementItem {
+    Announcement: string
+    Link: string
+    Id: string
 }

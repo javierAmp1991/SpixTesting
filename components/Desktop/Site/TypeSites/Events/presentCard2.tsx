@@ -37,8 +37,10 @@ export default function PresentCard2() {
         },
         Width: "85%"
     }
+    const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={style.mainDiv}>
+        <div className={`${style.mainDiv} 
+        ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <div className={style.mainDiv2}>
                 <HeaderSiteEvents item={headerEvents}/>
                 <ImageVideo/>

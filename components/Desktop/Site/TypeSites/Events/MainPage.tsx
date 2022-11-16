@@ -30,7 +30,10 @@ export default function MainPage() {
             <div className={style.mainDiv}>
                 <div className={style.mainCard}>
                     <div>
-                        <Announcement styleAnnouncement={announcementStyle} announcement={""}/>
+                        {
+                            info.Announcement != null &&
+                            <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
+                        }
                         <PresentCard2/>
                     </div>
                     <InSearch/>

@@ -25,22 +25,22 @@ export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsP
     return (
         <div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
+                <div className={style.gridTags}>
+                    {
+                        item.Tags.map(item =>
+                            <div key={item} className={`${style.tagBase} ${tagStyle}`}>
+                                {item}
+                            </div>)
+                    }
+                </div>
+
                 <div className={style.gridNameThreePoints}>
-                    <div className={style.gridTags}>
-                        {
-                            item.Tags.map(item =>
-                                <div key={item} className={`${style.tagBase} ${tagStyle}`}>
-                                    {item}
-                                </div>)
-                        }
+                    <div className={style.name}>
+                        {item.Name}
                     </div>
                     <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
                     </button>
-                </div>
-
-                <div className={style.name}>
-                    {item.Name}
                 </div>
 
                 <div className={`${utilities.clamp3} ${style.description}`}>
@@ -58,9 +58,9 @@ export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsP
             {
                 socialAndReport &&
                 createPortal(
-                <PopUpContainerMob closePopUp={handleSocialAndReport} isBackground={true} isButtonVisible={true}>
-                    <ContactPopUpMobile item={item.Contact}/>
-                </PopUpContainerMob>, document.getElementById(idPortal)
+                    <PopUpContainerMob closePopUp={handleSocialAndReport} isBackground={true} isButtonVisible={true}>
+                        <ContactPopUpMobile item={item.Contact}/>
+                    </PopUpContainerMob>, document.getElementById(idPortal)
                 )
             }
         </div>

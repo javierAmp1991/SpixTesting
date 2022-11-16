@@ -53,30 +53,8 @@ export default function InformationImages() {
             <div className={style.contInfo}>
                 <HeaderSiteEventsMobile item={headerEvents}/>
             </div>
+            <div className={style.separationLine}/>
             <ImageVideoMobile/>
-
-            {/* <div className={style.gridDescription}>
-                <div className={style.description}>
-                    {info.Description}
-                </div>
-                <div className={style.gridProduceLogo}>
-                    <span className={style.produce}>Produce:</span> El Huevo
-                </div>
-                <div className={style.gridContact}>
-                    {contactText}
-                    {
-                        info.Contact.map((item) =>
-                            <Link key={item.Id} href={item.Link}>
-                                <a>
-                                    <div className={style.sizeIcon}>
-                                        <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                    </div>
-                                </a>
-                            </Link>
-                        )
-                    }
-                </div>
-            </div>*/}
 
             {
                 displayLevelUser &&

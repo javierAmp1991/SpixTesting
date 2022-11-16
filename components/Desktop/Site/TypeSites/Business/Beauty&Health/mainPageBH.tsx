@@ -3,6 +3,7 @@ import ReviewSectionBH from "./reviewSectionBH";
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
+    HeaderDataBHContext,
     SectionProductsBHContext,
     ShceduleBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
@@ -16,17 +17,23 @@ import HeaderBh2 from "./headerBh2";
 import Reservation from "../Misc/reservation";
 import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import Announcement from "../../Misc/announcement";
+import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelath"
-const annoucnementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
+const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
 
 export default function MainPageBH() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const schedule: Schedule[] = useContext(ShceduleBHContext)
+    const info: PresentationCard = useContext(HeaderDataBHContext)
+
     return (
         <div className={style.mainDiv}>
             <div>
-                <Announcement styleAnnouncement={annoucnementStyle} announcement={""}/>
+                {
+                    info.Announcement != null &&
+                    <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
+                }
                 <HeaderBh2/>
             </div>
             {/* <OurJobs2/>

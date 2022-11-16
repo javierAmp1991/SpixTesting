@@ -1,9 +1,15 @@
 .mainDiv {
     display: grid;
     padding: 0 16px;
+    gap: 24px;
 }
 
 .contInfo{
     padding-top: 24px;
-    padding-bottom: 4px;
+}
+
+.separationLine{
+    height: 2px;
+    background: var(--separationLineColor);
+    width: 100%;
 }

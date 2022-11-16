@@ -2,6 +2,7 @@ import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/mainPage.
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
+    HeaderDataBHContext,
     SectionProductsBHContext, ShceduleBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import HeaderBhMobile from "./headerBhMobile";
@@ -15,16 +16,22 @@ import ReservationMobile from "../Misc/reservationMobile";
 import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import QuestionBHMobile from "./questionBHMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
+import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
-const annoucnementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
+const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
 
 export default function MainPageBHMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const schedule: Schedule[] = useContext(ShceduleBHContext)
+    const info: PresentationCard = useContext(HeaderDataBHContext)
+
     return (
         <>
-            <AnnouncementMobile announcement={""} styleAnnouncement={annoucnementStyle}/>
+            {
+                info.Announcement != null &&
+                <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
+            }
             <div className={style.mainDiv}>
 
                 <HeaderBhMobile/>

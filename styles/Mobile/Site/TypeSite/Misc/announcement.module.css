@@ -4,7 +4,6 @@
     align-items: center;
     gap: 4px;
     padding: 8px 16px;
-    color: white;
     font-weight: 500;
     margin: auto;
     font-size: 12px;
@@ -12,14 +11,18 @@
 
 .backgroundBH{
     background: linear-gradient(145deg, #ffc3e1 0%, #f1acc1 100%);
+    color: black;
 }
 
 .backgroundEvents{
     background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
+    background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+    color: white;
 }
 
 .backgroundRestaurant {
     background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+    color: white;
 }
 
 

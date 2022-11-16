@@ -47,6 +47,8 @@ export default function DescriptionCardFullData() {
             <HeaderSiteBussinessMobile item={headerBusiness}/>
             </div>
 
+            <div className={style.separationLine}/>
+
             <div className={style.contCarrousel}>
                 <div className={style.sizeLogo}>
                     <Image layout={"fill"} src={info.LogoPath} alt={""}/>

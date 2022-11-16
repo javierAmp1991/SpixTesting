@@ -1,6 +1,6 @@
 import {News} from "../../../../dataDemo/data";
 import {ReviewItem} from "../../../Misc/GlobalClass";
-import {HeaderSiteBase} from "../Misc/globalClassSite";
+import {AnnouncementItem, HeaderSiteBase} from "../Misc/globalClassSite";
 
 export class DateVenueEvent {
     Id: string
@@ -35,13 +35,13 @@ export class PrincipalInfoEvent {
     PathPoster: string
     Likes: number
     WishList: number
-    Rating: number
     DateVenue: DateVenueEvent[]
     Restrictions: string[]
     Images: string[]
     Video: string
     Contact: ContactItems[]
     Produce: string
+    Announcement: AnnouncementItem
 }
 
 export class ProviderNewsEvents {

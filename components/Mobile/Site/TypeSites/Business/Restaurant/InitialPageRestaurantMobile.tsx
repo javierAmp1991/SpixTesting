@@ -55,7 +55,10 @@ export default function InitialPageRestaurantMobile() {
                 </div>
             </div>
 
-            <AnnouncementMobile styleAnnouncement={styleAnnouncement} announcement={""}/>
+            {
+                infoHeader.Announcement != null &&
+                <AnnouncementMobile styleAnnouncement={styleAnnouncement} announcement={infoHeader.Announcement}/>
+            }
 
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <DescriptionCardFullData/>

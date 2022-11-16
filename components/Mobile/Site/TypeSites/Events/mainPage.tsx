@@ -27,7 +27,9 @@ export default function MainPageMobile() {
     return (
         <>
             <FullBannerMobile item={info.PathBanner}/>
-            <AnnouncementMobile announcement={""} styleAnnouncement={announcementStyle}/>
+            {info.Announcement != null &&
+                <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
+            }
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <InformationImages/>
                 <div className={style.separationLine}/>

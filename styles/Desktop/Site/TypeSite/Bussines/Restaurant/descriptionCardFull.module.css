@@ -6,8 +6,15 @@
     padding: 24px;
     background: white;
     box-shadow: 0 0 21px rgba(0, 0, 0, .3);
-    border-radius: 8px;
     position: relative;
+}
+
+.fullRadious {
+    border-radius: 8px;
+}
+
+.noRadious {
+    border-radius: 0 0 8px 8px;
 }
 
 .paddingInfo {

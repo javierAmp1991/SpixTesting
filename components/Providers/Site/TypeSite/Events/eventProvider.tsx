@@ -78,7 +78,6 @@ const principalInfo: PrincipalInfoEvent = {
     Id: "12345abcde",
     Name: "Tributo a Pet Shop Boys y A Ha",
     Description: "Back to 80's en vivo: Noruega (Tributo A Ha ) y Suburbia (Tributo a Pet Shop Boys). Evento con aforo , según fase , para mayores de 18 años con pase de movilidad .Tenemos convenio con estacionamiento en Petrobras , Reserva tu estacionamiento al whatsapp : +56944864934",
-    Rating: 5,
     PathBanner: "/images/banner.png",
     PathPoster: "/images/coverImage.jpg",
     PathLogo: "/images/logo el Huevo.jpg",
@@ -181,7 +180,14 @@ const principalInfo: PrincipalInfoEvent = {
             Type: TypeActionContact.Link
         }
     ],
-    Produce: "El Huevo"
+    Produce: "El Huevo",
+    Announcement: {
+        Id: "idAnnouncement001",
+        Link: "/",
+        Announcement: "Lorem ipsum dolor sit amet, consectetur adipisicing elit asperiores beatae\n" +
+            "                    commodi distinctio eos esse et harum impedit inventore iste iure iusto, laudantium\n" +
+            "                    maxime, nesciunt porro praesentium, rerum saepe tempore unde?"
+    }
 }
 const listOfferProducts: Product[] = [
     {

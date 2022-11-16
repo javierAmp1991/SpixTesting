@@ -11,14 +11,21 @@
     background: linear-gradient(145deg, #ffc3e1 0%, #ffc4b3 50%, #f1acc1 100%);
     background: #ffebec;
     display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    border-radius: 42px;
+    grid-template-columns: 1.2fr 1fr;
     overflow: hidden;
-    padding: 86px 4%;
+    padding: 72px 4%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, .25);
     align-items: center;
     margin-bottom: 32px;
     position: relative;
+}
+
+.fullRadious {
+    border-radius: 42px;
+}
+
+.noRadious {
+    border-radius: 0 0 42px 42px;
 }
 
 .sizeNewBanner {
@@ -26,6 +33,6 @@
     position: absolute;
     width: 80px;
     display: grid;
-    top: 24px;
-    right: 24px;
+    top: 16px;
+    right: 16px;
 }

@@ -5,21 +5,24 @@
     gap: 16px;
     padding: 12px 24px;
     font-weight: 500;
-    border-radius: 32px;
-    border-radius: 4px;
-    color: white;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 0 8px rgba(0,0,0,.4);
 }
 
 .backgroundBH{
     background: linear-gradient(145deg, #ffc3e1 0%, #f1acc1 100%);
+    color: black;
 }
 
 .backgroundEvents{
     background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
+    background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+    color: white;
 }
 
 .backgroundRestaurant {
     background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+    color: white;
 }
 
 .sizeIcon {
@@ -34,6 +37,5 @@
 
 .link {
     text-decoration: underline;
-    border-left: 1px solid white;
     padding-left: 24px;
 }

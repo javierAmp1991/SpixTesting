@@ -13,7 +13,8 @@ import ContactPopUp from "./contactPopUp";
 const idPortal: string = GlobalId.globalIds.idPortal
 const directionText: string = "Direccion: "
 const defaultValue = {
-    width: `100%`
+    width: `100%`,
+    PaddingBottom: 0
 }
 
 export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessProp }) {
@@ -26,7 +27,7 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
 
     return (
         <div className={style.mainDiv}>
-            <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
+            <div style={{width: cssStyles.width, paddingBottom: cssStyles.paddingBottom}} className={style.mainDivInfo}>
                 <div className={style.gridTags}>
                     {
                         item.Tags.map(item =>
@@ -35,6 +36,7 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                             </div>)
                     }
                 </div>
+
                 <div className={style.gridNameThreePoints}>
                     <div className={style.name}>
                         {item.Name}
@@ -52,12 +54,12 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                     <span>{directionText}</span>
                     <button onClick={handleDisplayVenue} className={utilities.styleLink}>{item.Venue.Venue}</button>
                 </div>
+
                 <div className={style.contSocialButton}>
                     <SocialButtons item={item.SocialButtons}/>
                 </div>
 
                 <div className={style.separationLine}/>
-
             </div>
             {
                 socialAndReport &&
@@ -86,7 +88,8 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
 
     function getCssStyles() {
         return {
-            width: item.Width == null ? defaultValue.width : item.Width
+            width: item.Width == null ? defaultValue.width : item.Width,
+            paddingBottom: item.PaddingBottom == null ? defaultValue.PaddingBottom : item.PaddingBottom
         }
     }
 }

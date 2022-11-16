@@ -592,7 +592,14 @@ const headerData: PresentationCard = {
         }
     ],
     Tags: ["Belleza", "Salud", "Peluqueria"],
-    SideImages: ["/images/hellkitchen1.jpg", "/images/hellkitchen2.jpg", "/images/hellkitchen3.jpg"]
+    SideImages: ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg"],
+    Announcement: {
+        Id: "idAnnouncement001",
+        Link: "/",
+        Announcement: "Lorem ipsum dolor sit amet, consectetur adipisicing elit asperiores beatae\n" +
+            "                    commodi distinctio eos esse et harum impedit inventore iste iure iusto, laudantium\n" +
+            "                    maxime, nesciunt porro praesentium, rerum saepe tempore unde?"
+    }
 
 }
 const listQuestions: QuestionItem[] = [

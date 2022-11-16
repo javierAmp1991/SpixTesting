@@ -3,8 +3,8 @@
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    justify-content: space-between;
-    --sizeIcon: 20px;
+    --sizeIcon: 24px;
+    gap: 24px;
 }
 
 .mainDiv {

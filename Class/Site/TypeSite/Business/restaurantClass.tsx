@@ -6,7 +6,7 @@ import {
     ReviewItem,
 } from "../../../Misc/GlobalClass";
 import {ContactItems} from "../Events/events";
-import {HeaderSiteBase} from "../Misc/globalClassSite";
+import {AnnouncementItem, HeaderSiteBase} from "../Misc/globalClassSite";
 
 export class PresentationCard {
     Banner: string
@@ -19,6 +19,8 @@ export class PresentationCard {
     Contact: ContactItems[]
     Tags: string[]
     SideImages: string[]
+    Announcement?: AnnouncementItem
+
 }
 
 export class ProviderRecommended {
@@ -51,7 +53,7 @@ export enum TypeSiteBusiness {
     Default
 }
 
-export class HeaderSiteBusinessProp extends HeaderSiteBase{
+export class HeaderSiteBusinessProp extends HeaderSiteBase {
     Venue: MapPopUpProp
     TypeSite: TypeSiteBusiness
 }

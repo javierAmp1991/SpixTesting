@@ -65,7 +65,10 @@ export default function InitialPageRestaurant() {
             <div className={style.mainGradient}>
                 <FullBannerRestaurant item={infoHeader.Banner}/>
                 <div className={style.mainDivHeader}>
-                    <Announcement styleAnnouncement={styleAnnouncement} announcement={"hola"}/>
+                    {
+                        infoHeader.Announcement != null &&
+                        <Announcement styleAnnouncement={styleAnnouncement} announcement={infoHeader.Announcement}/>
+                    }
                     <DescriptionCardFull/>
                 </div>
             </div>

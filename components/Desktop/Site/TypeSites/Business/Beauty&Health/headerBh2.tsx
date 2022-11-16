@@ -34,10 +34,13 @@ export default function HeaderBh2() {
                 AmountSubscribers: 200
             }
         },
-        Width: "80%"
+        Width: "80%",
+        PaddingBottom: 24
     }
+    const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={style.mainDiv}>
+        <div className={`${style.mainDiv} 
+        ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <HeaderSiteBussiness item={headerBusiness}/>
             <OurJobs2/>
             <div className={style.sizeNewBanner}>

@@ -5,9 +5,9 @@ import {SocialButtonsProps} from "../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 import {Button} from "@material-ui/core";
 
-const iLikeText: string = "Les gusta"
+const iLikeText: string = "Me gusta"
 const theyWish: string = "Lo quieren"
-const subscribersText: string = "Suscritas"
+const subscribersText: string = "Suscritos"
 const personText: string = "Personas"
 
 export default function SocialButtons({item}: { item: SocialButtonsProps }) {
@@ -171,7 +171,7 @@ export default function SocialButtons({item}: { item: SocialButtonsProps }) {
                     </div>
                     <div>
                         <div className={style.like}>
-                            {initialLike} {personText}
+                            {initialLike}
                         </div>
                         <div className={style.number}>
                             {iLikeText}
@@ -185,7 +185,7 @@ export default function SocialButtons({item}: { item: SocialButtonsProps }) {
                 </div>
                 <div>
                     <div className={style.like}>
-                        {initialSubscribers} {personText}
+                        {initialSubscribers}
                     </div>
                     <div className={style.number}>
                         {subscribersText}
@@ -198,7 +198,7 @@ export default function SocialButtons({item}: { item: SocialButtonsProps }) {
                 </div>
                 <div>
                     <div className={style.like}>
-                        {initialWishlist} {personText}
+                        {initialWishlist}
                     </div>
                     <div className={style.number}>
                         {theyWish}

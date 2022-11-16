@@ -41,14 +41,16 @@ export default function DescriptionCardFull() {
                 IsLike: false,
                 Like: 156
             },
-            Subscription:{
+            Subscription: {
                 IsSubscriber: false,
                 AmountSubscribers: 200
             }
         }
     }
+    const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={style.mainDiv}>
+        <div className={`${style.mainDiv} 
+                ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <div className={style.gridLeft}>
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
