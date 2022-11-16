@@ -2,7 +2,6 @@ import {useState} from "react";
 import style from "/styles/Mobile/Site/TypeSite/Misc/questionSectionMobile.module.css";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import WriteQuestion from "../../../../Desktop/Misc/writeQuestion";
-import LayoutTitleCustomMobile from "../Business/Misc/layoutTitleCustomMobile";
 import {GlobalId} from "../../../../../public/globalConst";
 import {createPortal} from "react-dom";
 import {LayoutTitleLinkProps} from "../../../../../Class/Layouts/layoutClass";

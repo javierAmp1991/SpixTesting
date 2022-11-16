@@ -9,13 +9,18 @@ const title: string = "Opciones"
 export default function ContactPopUp({item}: { item: ContactItems[] }) {
     return (
         <div className={style.mainDivPopUp}>
+            <div className={style.background}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.backgroundContact}/>
+            </div>
+
+            <div className={style.mainDivButtons}>
             <div className={style.title}>
                 {title}
             </div>
             <Link href={"/"}>
                 <a className={style.buttonPopUp}>
                     <div className={style.sizeIconPopUp}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.users} alt={""}/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.reportIcon} alt={""}/>
                     </div>
                     <div className={style.textPopUp}>
                         Reportar
@@ -44,6 +49,7 @@ export default function ContactPopUp({item}: { item: ContactItems[] }) {
                         </button>
                 )
             }
+            </div>
         </div>
     )
 }

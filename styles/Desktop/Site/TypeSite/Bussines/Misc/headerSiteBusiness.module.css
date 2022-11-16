@@ -1,8 +1,9 @@
 .mainDivInfo {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 4px;
     height: 100%;
-    align-content: center;
 }
 
 .gridNameThreePoints {
@@ -42,7 +43,7 @@
     background: rgba(0, 0, 0, .1);
 }
 
-.separationLineUp{
+.separationLineUp {
     height: 1px;
     background: rgba(0, 0, 0, .1);
     margin-bottom: 36px;
@@ -84,45 +85,63 @@
 .mainDivPopUp {
     width: 100%;
     height: max-content;
-   /* background: linear-gradient(180deg, #FE5858 0%, #EE9617 100%);*/
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
     padding: 32px 48px;
 }
 
 .sizeIconPopUp {
     width: 24px;
     height: 24px;
-    position: relative;
+    position: absolute;
+    left: 16px;
 }
 
 .buttonPopUp {
-    width: 90%;
+    width: 80%;
     color: var(--colorPrimaryTextDesktop);
-    background: rgba(255,255,255, .1);
+    background: rgba(255, 255, 255, .1);
     display: grid;
-    box-shadow: 0 0 4px rgba(0,0,0,.3);
-    grid-template-columns: max-content 1fr;
-    border-radius: 2px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    border-radius: 4px;
     overflow: hidden;
     align-items: center;
-    gap: 16px;
     padding: 10px 12px;
     margin: auto;
     font-weight: 500;
     background: white;
+    position: relative;
+    transition: .4s;
 }
 
-.textPopUp{
+.buttonPopUp:hover{
+    transform: scale(1.05);
+}
+
+.textPopUp {
     width: 100%;
     text-align: center;
 }
 
-.title{
-    font-size: 21px;
+.title {
+    font-size: 24px;
     text-align: center;
-    color: var(--colorTitlesDesktop);
     font-weight: 500;
+    color: white;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+
+.mainDivButtons {
+    display: grid;
+    position: relative;
+    gap: 16px;
+    z-index: 100;
 }
 

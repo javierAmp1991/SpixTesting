@@ -9,41 +9,46 @@ const title: string = "Opciones"
 export default function ContactPopUpMobile({item}: { item: ContactItems[] }) {
     return (
         <div className={style.mainDivPopUp}>
-            <div className={style.title}>
-                {title}
+            <div className={style.background}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.backgroundContact}/>
             </div>
-            <Link href={"/"}>
-                <a className={style.buttonPopUp}>
-                    <div className={style.sizeIconPopUp}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.users} alt={""}/>
-                    </div>
-                    <div className={style.textPopUp}>
-                        Reportar
-                    </div>
-                </a>
-            </Link>
-            {
-                item.map(item =>
-                    item.Type == TypeActionContact.Link ?
-                        <a href={item.Link} className={style.buttonPopUp}>
-                            <div className={style.sizeIconPopUp}>
-                                <Image layout={"fill"} src={item.Icon} alt={""}/>
-                            </div>
-                            <div className={style.textPopUp}>
-                                {item.Link}
-                            </div>
-                        </a>
-                        :
-                        <button className={style.buttonPopUp}>
-                            <div className={style.sizeIconPopUp}>
-                                <Image layout={"fill"} src={item.Icon} alt={""}/>
-                            </div>
-                            <div className={style.textPopUp}>
-                                {item.Link}
-                            </div>
-                        </button>
-                )
-            }
+            <div className={style.mainDivButtons}>
+                <div className={style.title}>
+                    {title}
+                </div>
+                <Link href={"/"}>
+                    <a className={style.buttonPopUp}>
+                        <div className={style.sizeIconPopUp}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.reportIcon} alt={""}/>
+                        </div>
+                        <div className={style.textPopUp}>
+                            Reportar
+                        </div>
+                    </a>
+                </Link>
+                {
+                    item.map(item =>
+                        item.Type == TypeActionContact.Link ?
+                            <a href={item.Link} className={style.buttonPopUp}>
+                                <div className={style.sizeIconPopUp}>
+                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                </div>
+                                <div className={style.textPopUp}>
+                                    {item.Link}
+                                </div>
+                            </a>
+                            :
+                            <button className={style.buttonPopUp}>
+                                <div className={style.sizeIconPopUp}>
+                                    <Image layout={"fill"} src={item.Icon} alt={""}/>
+                                </div>
+                                <div className={style.textPopUp}>
+                                    {item.Link}
+                                </div>
+                            </button>
+                    )
+                }
+            </div>
         </div>
     )
 }

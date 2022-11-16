@@ -1,3 +1,5 @@
+import {bool, number} from "prop-types";
+
 export class UploadImageProvisory {
     FileImage: File
     Id: string
@@ -59,14 +61,20 @@ export class NavBarEventsSections {
 export class SocialButtonsProps {
     Like: LikeButtonProps
     WishList: WishlistButtonProps
+    Subscription: SubscriptionButtonProps
 }
 
 export class LikeButtonProps {
     IsLike: boolean
-    Like: number
+    AmountLikes: number
 }
 
 export class WishlistButtonProps {
     IsLike: boolean
     Like: number
+}
+
+export class SubscriptionButtonProps {
+    IsSubscriber: boolean
+    AmountSubscribers: number
 }

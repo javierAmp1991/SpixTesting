@@ -14,29 +14,36 @@ export default function OurJobs2() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
     return (
         <div className={style.mainDiv}>
-            {/*
             <div className={style.up}>
-                <div className={style.title}>
+               {/* <div className={style.title}>
                     {title}
-                </div>
+                </div>*/}
+                <button className={style.seeGalery}>
+                    Ver galeria
+                </button>
             </div>
-            */}
-            <div className={style.contSlider}>
+
+            <div className={`${style.contSlider} ${getPadding()}`}>
                 {
                     listCortes.map((item, index) =>
-                        index <= 3 &&
-                        <div key={index} className={style.sizeImage}>
-                            <Image layout={"fill"} src={item} alt={""}/>
+                        <div key={index} className={`${style.contImage} 
+                                ${index % 2 == 0 ? style.top : style.bottom}
+                                 ${index % 2 != 0 ? style.up : style.down} `}>
+                            <div className={style.sizeImage}>
+                                <Image layout={"fill"} src={item} alt={""}/>
+                            </div>
                         </div>
                     )
                 }
-
             </div>
-            <button className={style.seeGalery}>
-                Ver galeria
-            </button>
         </div>
     )
+
+    function getPadding(): string {
+        if (listCortes.length == 3) return style.padding3
+        else if (listCortes.length == 4) return style.padding4
+        else return ""
+    }
 
     function getStyle(num: number): string {
         if (num == 2) return style.focus

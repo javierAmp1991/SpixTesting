@@ -20,11 +20,12 @@
 
 .like {
     line-height: 19px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .number {
     color: var(--colorPrimaryTextDesktop);
+    text-align: left;
 }
 
 .sizeIcon {

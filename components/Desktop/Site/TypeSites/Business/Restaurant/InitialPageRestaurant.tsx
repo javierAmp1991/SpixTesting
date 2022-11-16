@@ -5,7 +5,8 @@ import ProductSection from "./ProductSection";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
-    HeaderContext, ScheduleContext,
+    HeaderContext,
+    ScheduleContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import DescriptionCardFull from "./DescriptionCardFull";
@@ -16,11 +17,12 @@ import InOfferRestaurant from "./inOfferRestaurant";
 import RecomendedRestarant from "./recomendedRestarant";
 import QuestionRestaurant from "./questionRestaurant";
 import NavSectionProducts from "../Default/NavSectionProducts";
-import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import Reservation from "../Misc/reservation";
 import Announcement from "../../Misc/announcement";
 
 const idTest: string = "isTestDesktopScrollControl"
+const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
 
 export default function InitialPageRestaurant() {
     /*useEffect(() => {
@@ -63,7 +65,7 @@ export default function InitialPageRestaurant() {
             <div className={style.mainGradient}>
                 <FullBannerRestaurant item={infoHeader.Banner}/>
                 <div className={style.mainDivHeader}>
-                    <Announcement/>
+                    <Announcement styleAnnouncement={styleAnnouncement} announcement={"hola"}/>
                     <DescriptionCardFull/>
                 </div>
             </div>

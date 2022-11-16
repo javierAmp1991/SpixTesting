@@ -4,13 +4,15 @@ import style from "/styles/Mobile/Misc/socialButtons.module.css";
 import {SocialButtonsProps} from "../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 
-const iLikeText: string = "Me gusta"
+const iLikeText: string = "Les gusta"
 const theyWish: string = "Lo quieren"
+const subscribersText: string = "Suscritas"
+const personText: string = "Personas"
 
 export default function SocialButtonsMobile({item}: { item: SocialButtonsProps }) {
     //region hooks
     let [isLikeHeart, setIsLikeHeart] = useState(item.Like.IsLike)
-    let [initialLike, setInitialLike] = useState(item.Like.Like)
+    let [initialLike, setInitialLike] = useState(item.Like.AmountLikes)
     let [likeAnimation, setLikeAnimation] = useState(
         {
             heartIcon: item.Like.IsLike ? GlobalConst.sourceImages.activateHeart : GlobalConst.sourceImages.noActivateHeart,
@@ -77,34 +79,57 @@ export default function SocialButtonsMobile({item}: { item: SocialButtonsProps }
         setIsLikeHeart(isLikeHeart = !isLikeHeart)
     }
 
-    let [isLikeBell, setIsLikeBell] = useState(item.WishList.IsLike)
-    let [initialBell, setInitialBell] = useState(item.WishList.Like)
-    let [bellIcon, setBellIcon] = useState({
-        bellIcon: item.WishList.IsLike ? GlobalConst.sourceImages.activeWishList : GlobalConst.sourceImages.noActiveWishList,
+    let [isLikeWishlist, setIsLikeWishlist] = useState(item.WishList.IsLike)
+    let [initialWishlist, setInitialWishlist] = useState(item.WishList.Like)
+    let [wishIcon, setWishIcon] = useState({
+        wishIcon: item.WishList.IsLike ? GlobalConst.sourceImages.activeWishList : GlobalConst.sourceImages.noActiveWishList,
         animationBell: ""
     })
-    const handleBell = (isLike: boolean) => {
+    const handleWishlistIcon = (isLike: boolean) => {
         if (isLike) {
-            setBellIcon({
-                ...bellIcon,
-                bellIcon: GlobalConst.sourceImages.activeWishList,
+            setWishIcon({
+                ...wishIcon,
+                wishIcon: GlobalConst.sourceImages.activeWishList,
             })
-            setInitialBell(initialBell += 1)
+            setInitialWishlist(initialWishlist += 1)
         } else {
-            setBellIcon({
-                ...bellIcon,
-                bellIcon: GlobalConst.sourceImages.noActiveWishList,
+            setWishIcon({
+                ...wishIcon,
+                wishIcon: GlobalConst.sourceImages.noActiveWishList,
             })
-            setInitialBell(initialBell -= 1)
+            setInitialWishlist(initialWishlist -= 1)
         }
-        setIsLikeBell(isLikeBell = !isLikeBell)
+        setIsLikeWishlist(isLikeWishlist = !isLikeWishlist)
+    }
+
+    let [isSubscriber, setIsSubscriber] = useState(item.Subscription.IsSubscriber)
+    let [initialSubscribers, setInitialSubscribers] = useState(item.Subscription.AmountSubscribers)
+    let [subscriberIcon, setSubscriberIcon] = useState({
+        bellIcon: item.Subscription.IsSubscriber ? GlobalConst.sourceImages.activateBell : GlobalConst.sourceImages.noActivateBell,
+        animationBell: ""
+    })
+    const handleSubscribers = (isLike: boolean) => {
+        if (isLike) {
+            setSubscriberIcon({
+                ...subscriberIcon,
+                bellIcon: GlobalConst.sourceImages.activateBell,
+            })
+            setInitialSubscribers(initialSubscribers += 1)
+        } else {
+            setSubscriberIcon({
+                ...subscriberIcon,
+                bellIcon: GlobalConst.sourceImages.noActivateBell,
+            })
+            setInitialSubscribers(initialSubscribers -= 1)
+        }
+        setIsSubscriber(isSubscriber = !isSubscriber)
     }
     //endregion
 
     return (
         <div className={style.mainGrid}>
-            <button className={style.main}>
-                <div onClick={() => handleClick(!isLikeHeart)} className={style.mainDiv}>
+            <button onClick={() => handleClick(!isLikeHeart)} className={style.main}>
+                <div className={style.mainDiv}>
                     <div className={style.mainDivLike}>
                         <div className={`${likeAnimation.animationClassLike}`}>
                             <div className={style.sizeIcon}>
@@ -145,7 +170,7 @@ export default function SocialButtonsMobile({item}: { item: SocialButtonsProps }
                     </div>
                     <div>
                         <div className={style.like}>
-                            {initialLike}
+                            {initialLike} {personText}
                         </div>
                         <div className={style.number}>
                             {iLikeText}
@@ -153,13 +178,26 @@ export default function SocialButtonsMobile({item}: { item: SocialButtonsProps }
                     </div>
                 </div>
             </button>
-            <button onClick={() => handleBell(!isLikeBell)} className={style.mainDiv}>
-                <div className={`${style.sizeIcon} ${isLikeBell ? style.activeWishList : style.noActiveWishList}`}>
-                    <Image layout={"fill"} src={bellIcon.bellIcon} alt={""}/>
+            <button onClick={() => handleSubscribers(!isSubscriber)} className={style.mainDiv}>
+                <div className={`${style.sizeIcon} ${isSubscriber ? style.activeWishList : style.noActiveWishList}`}>
+                    <Image layout={"fill"} src={subscriberIcon.bellIcon} alt={""}/>
                 </div>
                 <div>
                     <div className={style.like}>
-                        {initialBell}
+                        {initialSubscribers} {personText}
+                    </div>
+                    <div className={style.number}>
+                        {subscribersText}
+                    </div>
+                </div>
+            </button>
+            <button onClick={() => handleWishlistIcon(!isLikeWishlist)} className={style.mainDiv}>
+                <div className={`${style.sizeIcon} ${isLikeWishlist ? style.activeWishList : style.noActiveWishList}`}>
+                    <Image layout={"fill"} src={wishIcon.wishIcon} alt={""}/>
+                </div>
+                <div>
+                    <div className={style.like}>
+                        {initialWishlist} {personText}
                     </div>
                     <div className={style.number}>
                         {theyWish}

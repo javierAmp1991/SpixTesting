@@ -11,12 +11,11 @@ export default function LayoutReviewSectionMobile({children}) {
             <div className={style.rating}>
                 Calificacion: 5/5
             </div>
-
-            {children}
-
             <div className={style.seeMore}>
                 Ver mas reseñas
             </div>
+
+            {children}
         </div>
     )
 }

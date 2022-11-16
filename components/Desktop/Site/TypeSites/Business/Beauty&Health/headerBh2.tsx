@@ -23,21 +23,23 @@ export default function HeaderBh2() {
         SocialButtons: {
             Like: {
                 IsLike: true,
-                Like: 500,
+                AmountLikes: 500,
             },
             WishList: {
                 IsLike: false,
                 Like: 156
+            },
+            Subscription: {
+                IsSubscriber: false,
+                AmountSubscribers: 200
             }
         },
-        Width: "70%"
+        Width: "80%"
     }
     return (
         <div className={style.mainDiv}>
-            <div>
-                <HeaderSiteBussiness item={headerBusiness}/>
-                <OurJobs2/>
-            </div>
+            <HeaderSiteBussiness item={headerBusiness}/>
+            <OurJobs2/>
             <div className={style.sizeNewBanner}>
                 <Image priority={true} layout={"fill"} src={info.LogoPath} alt={""}/>
             </div>

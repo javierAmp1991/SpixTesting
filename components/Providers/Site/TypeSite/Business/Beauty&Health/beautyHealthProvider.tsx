@@ -627,7 +627,24 @@ const listQuestions: QuestionItem[] = [
         Question: "Se puede pagar con cuenta rut?",
         Answer: "Si se puede",
         ByWho: "Alberto Fernandez"
-    }
+    },
+    {
+        Id: "idQuestion005",
+        Rating: 3,
+        Date: new Date(2022, 9, 23),
+        Question: "Donde puedo ver devoluciones?",
+        Answer: "Inbox",
+        ByWho: "Juan Castillo"
+    },
+    {
+        Id: "idQuestion006",
+        Rating: 5,
+        Date: new Date(2022, 9, 23),
+        Question: "Se puede pagar con cuenta rut?",
+        Answer: "Si se puede",
+        ByWho: "Alberto Fernandez"
+    },
+
 ]
 const scheduleLis: Schedule[] = [
     {

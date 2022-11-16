@@ -34,12 +34,16 @@ export default function DescriptionCardFull() {
         TypeSite: TypeSiteBusiness.Restaurant,
         SocialButtons: {
             Like: {
-                IsLike: true,
-                Like: 500,
+                IsLike: false,
+                AmountLikes: 500,
             },
             WishList: {
                 IsLike: false,
                 Like: 156
+            },
+            Subscription:{
+                IsSubscriber: false,
+                AmountSubscribers: 200
             }
         }
     }

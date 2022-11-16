@@ -2,12 +2,12 @@ import style from "/styles/Mobile/Site/TypeSite/Bussines/Misc/headerSiteBusiness
 import utilities from "/styles/utilities.module.css";
 import {useState} from "react";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
-import SocialButtons from "../../../../../Desktop/Misc/SocialButtons";
 import Image from "next/image";
 import {HeaderSiteEventsProp} from "../../../../../../Class/Site/TypeSite/Events/events";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import ContactPopUpMobile from "../../Business/Misc/contactPopUpMobile";
 import {createPortal} from "react-dom";
+import SocialButtonsMobile from "../../../../Misc/SocialButtonsMobile";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const produceText: string = "Produce: "
@@ -52,7 +52,7 @@ export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsP
                     <button>{item.Produce}</button>
                 </div>
                 <div className={style.contSocialButton}>
-                    <SocialButtons item={item.SocialButtons}/>
+                    <SocialButtonsMobile item={item.SocialButtons}/>
                 </div>
             </div>
             {

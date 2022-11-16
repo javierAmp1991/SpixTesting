@@ -17,8 +17,8 @@
 }
 
 .sizeNewBanner {
-    width: 20%;
-    bottom: 32px;
+    width: 60px;
+    top: 16px;
     right: 8px;
     position: absolute;
     aspect-ratio: 1/1;

@@ -11,12 +11,6 @@
     position: relative;
 }
 
-.mainDivHeader {
-    width: var(--maxWidthBodyContent);
-    display: grid;
-    gap: 32px;
-    margin: auto;
-}
 
 .main {
     width: 100%;
@@ -41,6 +35,9 @@
     position: absolute;
     bottom: 0;
     left: calc(50% - (var(--maxWidthBodyContent) / 2));
+    width: var(--maxWidthBodyContent);
+    display: grid;
+    margin: auto;
 }
 
 .gridReviews {

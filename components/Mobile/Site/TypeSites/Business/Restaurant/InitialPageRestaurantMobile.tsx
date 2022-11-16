@@ -1,36 +1,30 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {
-    PresentationCard, ProviderReview
+    PresentationCard,
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useEffect, useState} from "react";
 import {
-    FormContext, HeaderContext, ReviewsSectionContext, SectionProductsContext
+    HeaderContext, SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import LayoutTitleMobile from "./layoutTitleMobile";
-import LayoutReviewSectionMobile from "./layoutReviewSectionMobile";
 import ProductSectionMobile from "./ProductSectionMobile";
 import FullBannerMobile from "../../../../Misc/fullBannerMobile";
-import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import DescriptionCardFullData from "./DescriptionCardFullData";
 import NavProductsSectionMobile from "./navProductsSectionMobile";
-import ReviewViewShortMobile from "../../../../Misc/ReviewViewShortMobile";
-import {FormLink} from "../../../../../../dataDemo/data";
-import FormViewMobile from "../../../../Misc/formViewMobile";
 import utilities from "/styles/utilities.module.css";
 import NavSectionProductsRestaurantMobile from "./NavSectionProducts";
 import ReservasMobile from "./reservas";
 import QuestionRestaurantMobile from "./questionRestaurantMobile";
 import RecommendedRestaurantMobile from "./recommendedRestaurantMobile";
 import OfferRestaurantMobile from "./offerRestaurantMobile";
-import ReviewViewVerticalMob from "../../../../Misc/ReviewViewVerticalMob";
 import ReviewSectionRestaurantMobile from "./reviewSectionRestaurant";
-import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
-import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
 import InSearchRestaurantMobile from "./inSearchRestaurantMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
+import {AnnouncementStyle} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
 const idTest: string = "isTestMobileScrolControl"
+const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
+
 
 export default function InitialPageRestaurantMobile() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
@@ -61,7 +55,7 @@ export default function InitialPageRestaurantMobile() {
                 </div>
             </div>
 
-            <AnnouncementMobile/>
+            <AnnouncementMobile styleAnnouncement={styleAnnouncement} announcement={""}/>
 
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <DescriptionCardFullData/>

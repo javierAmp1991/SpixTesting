@@ -12,7 +12,7 @@ const iLikeText: string = "Me gusta"
 
 export default function LikeButton2({item}: { item: LikeButtonProps }) {
     let [isLikeHeart, setIsLikeHeart] = useState(false)
-    let [initialLike, setInitialLike] = useState(item.Like)
+    let [initialLike, setInitialLike] = useState(item.AmountLikes)
     let [likeAnimation, setLikeAnimation] = useState(
         {
             heartIcon: GlobalConst.sourceImages.noActivateHeart,

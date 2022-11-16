@@ -16,8 +16,10 @@ import OtherEvents from "./otherEvents";
 import QuestionSection from "./questionSection";
 import ProductSection from "../Business/Restaurant/ProductSection";
 import Announcement from "../Misc/announcement";
+import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
 const sizeBanner: string = `40vh`
+const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
 
 export default function MainPage() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -27,8 +29,10 @@ export default function MainPage() {
             <BannerVar item={info.PathBanner} size={sizeBanner}/>
             <div className={style.mainDiv}>
                 <div className={style.mainCard}>
-                    <Announcement/>
-                    <PresentCard2/>
+                    <div>
+                        <Announcement styleAnnouncement={announcementStyle} announcement={""}/>
+                        <PresentCard2/>
+                    </div>
                     <InSearch/>
                     <div className={style.separationLine}/>
                     <TicketsSection/>

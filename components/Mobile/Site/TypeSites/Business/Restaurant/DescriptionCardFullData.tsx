@@ -28,14 +28,18 @@ export default function DescriptionCardFullData() {
         SocialButtons: {
             Like: {
                 IsLike: true,
-                Like: 500,
+                AmountLikes: 500,
             },
             WishList: {
                 IsLike: false,
                 Like: 156
+            },
+            Subscription:{
+                IsSubscriber: false,
+                AmountSubscribers: 300
             }
         },
-        Contact: info.Contact
+        Contact: info.Contact,
     }
     return (
         <div className={style.mainDiv}>

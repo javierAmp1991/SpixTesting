@@ -1,12 +1,11 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Misc/headerSiteBusiness.module.css"
+import style from "/styles/Desktop/Site/TypeSite/Events/Misc/headerSiteEvents.module.css"
 import utilities from "/styles/utilities.module.css";
 import {useState} from "react";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import SocialButtons from "../../../../Misc/SocialButtons";
 import Image from "next/image";
-import {HeaderSiteEventsProp, TypeActionContact} from "../../../../../../Class/Site/TypeSite/Events/events";
+import {HeaderSiteEventsProp} from "../../../../../../Class/Site/TypeSite/Events/events";
 import PopUpContainer from "../../../../Misc/popUpContainer";
-import Link from "next/link";
 import {createPortal} from "react-dom";
 import ContactPopUp from "../../Business/Misc/contactPopUp";
 
@@ -25,8 +24,6 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
     return (
         <div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
-                <div className={style.separationLineUp}/>
-
                 <div className={style.gridTags}>
                     {
                         item.Tags.map(item =>

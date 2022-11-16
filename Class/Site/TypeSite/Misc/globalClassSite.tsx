@@ -1,5 +1,5 @@
 import {SocialButtonsProps} from "../../../Misc/GlobalClass";
-import {ContactItems, TypeActionContact} from "../Events/events";
+import {ContactItems} from "../Events/events";
 
 export class Schedule {
     Id: string
@@ -7,11 +7,17 @@ export class Schedule {
     IsDisponible?: boolean
 }
 
-export class HeaderSiteBase{
+export class HeaderSiteBase {
     Name: string
     Tags: string[]
     Description: string
     SocialButtons: SocialButtonsProps
     Width?: string
     Contact: ContactItems[]
+}
+
+export enum AnnouncementStyle {
+    SiteRestaurant,
+    SiteBeautyAndHealth,
+    SiteEvents
 }

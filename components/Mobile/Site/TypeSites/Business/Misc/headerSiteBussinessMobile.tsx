@@ -6,9 +6,9 @@ import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import {createPortal} from "react-dom";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
-import SocialButtons from "../../../../../Desktop/Misc/SocialButtons";
 import Image from "next/image";
 import ContactPopUpMobile from "./contactPopUpMobile";
+import SocialButtonsMobile from "../../../../Misc/SocialButtonsMobile";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const directionText: string = "Direccion: "
@@ -27,22 +27,22 @@ export default function HeaderSiteBussinessMobile({item}: { item: HeaderSiteBusi
     return (
         <div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
+                <div className={style.gridTags}>
+                    {
+                        item.Tags.map(item =>
+                            <div key={item} className={`${style.tagBase} ${tagStyle}`}>
+                                {item}
+                            </div>)
+                    }
+                </div>
+
                 <div className={style.gridNameThreePoints}>
-                    <div className={style.gridTags}>
-                        {
-                            item.Tags.map(item =>
-                                <div key={item} className={`${style.tagBase} ${tagStyle}`}>
-                                    {item}
-                                </div>)
-                        }
+                    <div className={style.name}>
+                        {item.Name}
                     </div>
                     <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
                     </button>
-                </div>
-
-                <div className={style.name}>
-                    {item.Name}
                 </div>
 
                 <div className={`${utilities.clamp3} ${style.description}`}>
@@ -54,7 +54,7 @@ export default function HeaderSiteBussinessMobile({item}: { item: HeaderSiteBusi
                     <button onClick={handlePopUp} className={utilities.styleLink}>{item.Venue.Venue}</button>
                 </div>
                 <div className={style.contSocialButton}>
-                    <SocialButtons item={item.SocialButtons}/>
+                    <SocialButtonsMobile item={item.SocialButtons}/>
                 </div>
             </div>
             {

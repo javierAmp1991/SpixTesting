@@ -4,16 +4,25 @@
     align-items: center;
     gap: 16px;
     padding: 12px 24px;
-    background: var(--gradientSpix);
-    background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
-    background: linear-gradient(1451deg, rgb(43, 170, 96) 2.3%, rgb(48, 204, 14) 98.3%);
-    background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
-    color: white;
     font-weight: 500;
     border-radius: 32px;
+    border-radius: 4px;
+    color: white;
 }
 
-.sizeIcon{
+.backgroundBH{
+    background: linear-gradient(145deg, #ffc3e1 0%, #f1acc1 100%);
+}
+
+.backgroundEvents{
+    background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
+}
+
+.backgroundRestaurant {
+    background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+}
+
+.sizeIcon {
     width: 24px;
     height: 24px;
     position: relative;

@@ -1,7 +1,5 @@
 .mainDiv {
     display: grid;
-   /* margin: 0 16px;*/
-    overflow-x: scroll;
 }
 
 .title {
@@ -11,41 +9,32 @@
     width: 100%;
 }
 
-/*.contSlider {
-    --sizeImage: calc((100vw - 64px) / 3);
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, var(--sizeImage) );
-    grid-auto-columns: var(--sizeImage);
-    overflow-x: scroll;
-    grid-auto-flow: column;
-    gap: 16px;
-    scroll-snap-type: x mandatory;
-    padding: 16px 0;
-}*/
 
-.contSlider{
-    width: 70%;
+.contSlider {
     display: grid;
-    gap: 12px;
-    grid-template-columns: 16%;
-    grid-auto-columns: 16%;
-    justify-content: space-between;
+    grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
     grid-auto-flow: column;
-    padding-top: 12px;
+    padding: 24px 12px;
 }
 
-.contImage{
-    scroll-snap-align: start;
+.contImage {
+    width: 100%;
+    rotate: 45deg;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+    transition: .4s;
 }
 
 .sizeImage {
     width: 100%;
-    aspect-ratio: 1/1;
+    height: 100%;
+    rotate: -45deg;
     position: relative;
-    /*border-radius: 12px;*/
-    overflow: hidden;
-    box-shadow: 0 0 4px rgba(0, 0, 0, .5);
+    transition: .4s;
+    transform: scale(1.4);
 }
 
 .sizeImageEmpty {
@@ -70,8 +59,34 @@
 
 .seeGalery {
     width: 100%;
-    text-align: left;
+    text-align: center;
     font-size: 12px;
     text-decoration: underline;
-    padding-top: 16px;
+    padding: 16px 0;
 }
+
+.top {
+    margin-bottom: 50px;
+}
+
+.bottom {
+    margin-top: 50px;
+}
+
+.padding3 {
+    padding-left: 76px;
+    padding-right: 76px;
+}
+
+.padding4 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.separationLine{
+    height: 1px;
+    background: rgba(0,0,0,.1);
+    width: 100%;
+    margin-top: 12px ;
+}
+

@@ -1,53 +1,22 @@
 .mainDiv {
     overflow-x: scroll;
-    padding: 0 16px;
-}
-
-.mainPadding {
-    padding: 6px;
-}
-
-.gridStars {
-    display: grid;
-    grid-template-columns: repeat(5, max-content);
-    gap: 4px;
-    justify-content: center;
-    padding-top: 4px;
+    padding: 0 16px 4px 16px;
 }
 
 .title {
     font-size: 21px;
     font-weight: 500;
     color: var(--colorTitlesDesktop);
-    text-align: center;
-}
-
-.gridRating {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 8px;
 }
 
 .rating {
     font-size: 18px;
     font-weight: 500;
-    text-align: center;
-    padding-bottom: 24px;
-}
-
-.sizeStar {
-    height: 16px;
-    width: 16px;
-    position: relative;
 }
 
 .seeMore {
     color: var(--linkColor);
     cursor: pointer;
-    padding: 32px 0 12px 0;
-    text-align: center;
-}
-
-.overflow {
-    overflow-x: scroll;
+    padding-bottom: 30px;
+    padding-top: 2px;
 }

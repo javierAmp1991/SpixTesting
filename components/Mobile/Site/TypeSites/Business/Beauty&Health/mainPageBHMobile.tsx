@@ -12,18 +12,19 @@ import OtherEventsBH from "./otherEventsBH";
 import OfferBHMobile from "./offerEventsBH";
 import ProductSectionBHMobile from "../Restaurant/ProductSectionMobile";
 import ReservationMobile from "../Misc/reservationMobile";
-import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import QuestionBHMobile from "./questionBHMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
+const annoucnementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
 
 export default function MainPageBHMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     return (
         <>
-            <AnnouncementMobile/>
+            <AnnouncementMobile announcement={""} styleAnnouncement={annoucnementStyle}/>
             <div className={style.mainDiv}>
 
                 <HeaderBhMobile/>
