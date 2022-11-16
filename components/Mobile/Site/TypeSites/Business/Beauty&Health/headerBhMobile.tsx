@@ -12,6 +12,7 @@ import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import HeaderSiteBussinessMobile from "../Misc/headerSiteBussinessMobile";
+import OurJobsMobile from "./ourJobsMobile";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 export default function HeaderBhMobile() {
@@ -34,13 +35,16 @@ export default function HeaderBhMobile() {
                 IsLike: false,
                 Like: 156
             }
-        }
+        },
+        Contact: info.Contact
     }
 
     return (
         <div className={style.mainDiv}>
 
             <HeaderSiteBussinessMobile item={headerBusiness}/>
+
+            <OurJobsMobile/>
 
                 <div className={style.sizeNewBanner}>
                     <Image priority={true} layout={"fill"} src={info.LogoPath}/>

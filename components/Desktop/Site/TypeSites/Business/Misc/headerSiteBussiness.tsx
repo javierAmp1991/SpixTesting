@@ -8,6 +8,7 @@ import {createPortal} from "react-dom";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import SocialButtons from "../../../../Misc/SocialButtons";
 import Image from "next/image";
+import ContactPopUp from "./contactPopUp";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const directionText: string = "Direccion: "
@@ -16,8 +17,10 @@ const defaultValue = {
 }
 
 export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessProp }) {
-    let [popUp, setPopUp] = useState(false)
-    const handlePopUp = () => setPopUp(popUp = !popUp)
+    let [displayVenue, setDisplayVenue] = useState(false)
+    let [socialAndReport, setSocialAndReport] = useState(false)
+    const handleDisplayVenue = () => setDisplayVenue(displayVenue = !displayVenue)
+    const handleSocialAndReport = () => setSocialAndReport(socialAndReport = !socialAndReport)
     const tagStyle = getTagStyle()
     const cssStyles = getCssStyles()
 
@@ -36,8 +39,8 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                     <div className={style.name}>
                         {item.Name}
                     </div>
-                    <button className={style.sizeThreePoints}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints}/>
+                    <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
                     </button>
                 </div>
 
@@ -47,7 +50,7 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
 
                 <div>
                     <span>{directionText}</span>
-                    <button onClick={handlePopUp} className={utilities.styleLink}>{item.Venue.Venue}</button>
+                    <button onClick={handleDisplayVenue} className={utilities.styleLink}>{item.Venue.Venue}</button>
                 </div>
                 <div className={style.contSocialButton}>
                     <SocialButtons item={item.SocialButtons}/>
@@ -57,9 +60,17 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
 
             </div>
             {
-                popUp &&
+                socialAndReport &&
                 createPortal(
-                    <PopUpContainer closePopUp={handlePopUp} isButtonVisible={true} isBackground={true}>
+                    <PopUpContainer closePopUp={handleSocialAndReport} isButtonVisible={true} isBackground={true}>
+                        <ContactPopUp item={item.Contact}/>
+                    </PopUpContainer>, document.getElementById(idPortal)
+                )
+            }
+            {
+                displayVenue &&
+                createPortal(
+                    <PopUpContainer closePopUp={handleDisplayVenue} isButtonVisible={true} isBackground={true}>
                         <MapPopUp item={item.Venue}/>
                     </PopUpContainer>, document.getElementById(idPortal)
                 )
@@ -72,8 +83,9 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
         else if (item.TypeSite == TypeSiteBusiness.BeautyAndHealth) return style.tagBeautyAndHealth
         else return style.tagDefault
     }
-    function getCssStyles(){
-        return{
+
+    function getCssStyles() {
+        return {
             width: item.Width == null ? defaultValue.width : item.Width
         }
     }

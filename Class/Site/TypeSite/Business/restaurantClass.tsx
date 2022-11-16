@@ -2,11 +2,8 @@ import {EventCardWithPrice} from "../../../../dataDemo/EventView/eventVerticalVi
 import {Product} from "../../../../dataDemo/data";
 import {MapPopUpProp} from "../../../../components/Desktop/Misc/mapPopUp";
 import {
-    LikeButtonProps,
     ProductItem,
     ReviewItem,
-    SocialButtonsProps,
-    WishlistButtonProps
 } from "../../../Misc/GlobalClass";
 import {ContactItems} from "../Events/events";
 import {HeaderSiteBase} from "../Misc/globalClassSite";

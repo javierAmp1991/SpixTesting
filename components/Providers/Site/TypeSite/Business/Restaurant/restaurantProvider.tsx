@@ -7,7 +7,7 @@ import {
 import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {FormLink, News, Product} from "../../../../../../dataDemo/data";
-import {ProviderNewsEvents} from "../../../../../../Class/Site/TypeSite/Events/events";
+import {ProviderNewsEvents, TypeActionContact} from "../../../../../../Class/Site/TypeSite/Events/events";
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
@@ -263,32 +263,38 @@ const headerData: PresentationCard = {
         {
             Id: "contact005",
             Icon: GlobalConst.sourceImages.emailIcon,
-            Link: "elhuevo@hotmail.com"
-        },
-        {
-            Id: "contact000",
-            Icon: GlobalConst.sourceImages.webPageIcon,
-            Link: "www.elhuevo.cl"
+            Link: "elhuevo@hotmail.com",
+            Type: TypeActionContact.Copied
         },
         {
             Id: "contact002",
             Icon: GlobalConst.sourceImages.whatsaapIcon,
-            Link: "+56934579283"
+            Link: "+56934579283",
+            Type: TypeActionContact.Copied
+        },
+        {
+            Id: "contact000",
+            Icon: GlobalConst.sourceImages.webPageIcon,
+            Link: "www.elhuevo.cl",
+            Type: TypeActionContact.Link
         },
         {
             Id: "contact001",
             Icon: GlobalConst.sourceImages.tiktokIcon,
-            Link: "/test"
+            Link: "/test",
+            Type: TypeActionContact.Link
         },
         {
             Id: "contact003",
             Icon: GlobalConst.sourceImages.instagramICon,
-            Link: "/test2"
+            Link: "/test2",
+            Type: TypeActionContact.Link
         },
         {
             Id: "contact004",
             Icon: GlobalConst.sourceImages.facebookIcon,
-            Link: "/test3"
+            Link: "/test3",
+            Type: TypeActionContact.Link
         }
     ],
     Tags: ["Restaurant", "Sushi", "Bebidas"],

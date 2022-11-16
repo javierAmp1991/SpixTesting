@@ -18,7 +18,7 @@ export default function ReviewSectionRestaurantMobile() {
             <LayoutNavCircleMobileCustom item={propsCarrousel}>
                 {
                     listReview.InitialReview.map((item) =>
-                        <div key={item.ByWho} className={style.contLayoutCircle}>
+                        <div key={item.Id} className={style.contLayoutCircle}>
                             <ReviewViewVerticalMob  item={item}/>
                         </div>
                     )

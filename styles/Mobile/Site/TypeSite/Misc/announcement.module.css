@@ -1,0 +1,19 @@
+.gridAnnouncement {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 24px;
+    background: var(--gradientSpix);
+    color: white;
+    font-weight: 500;
+    margin: auto;
+}
+
+.announcement {
+
+}
+
+.link {
+    text-decoration: underline;
+}

@@ -34,7 +34,8 @@ export default function DescriptionCardFullData() {
                 IsLike: false,
                 Like: 156
             }
-        }
+        },
+        Contact: info.Contact
     }
     return (
         <div className={style.mainDiv}>

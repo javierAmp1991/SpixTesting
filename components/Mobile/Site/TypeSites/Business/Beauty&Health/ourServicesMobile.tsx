@@ -29,7 +29,8 @@ export default function OurServicesMobile({id} : {id: string}) {
         Top: 24,
         Bottom: 4,
         Left: 4,
-        Right: 4
+        Right: 4,
+        IsWithBorder: true
     }
 
     return (

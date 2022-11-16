@@ -1,6 +1,6 @@
 .mainDiv {
     display: grid;
-    margin: 0 16px;
+   /* margin: 0 16px;*/
     overflow-x: scroll;
 }
 
@@ -11,7 +11,7 @@
     width: 100%;
 }
 
-.contSlider {
+/*.contSlider {
     --sizeImage: calc((100vw - 64px) / 3);
     width: 100%;
     display: grid;
@@ -22,10 +22,20 @@
     gap: 16px;
     scroll-snap-type: x mandatory;
     padding: 16px 0;
+}*/
+
+.contSlider{
+    width: 70%;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 16%;
+    grid-auto-columns: 16%;
+    justify-content: space-between;
+    grid-auto-flow: column;
+    padding-top: 12px;
 }
 
 .contImage{
-    padding: 4px;
     scroll-snap-align: start;
 }
 
@@ -33,7 +43,7 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
-    border-radius: 12px;
+    /*border-radius: 12px;*/
     overflow: hidden;
     box-shadow: 0 0 4px rgba(0, 0, 0, .5);
 }
@@ -60,7 +70,8 @@
 
 .seeGalery {
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-size: 12px;
     text-decoration: underline;
+    padding-top: 16px;
 }

@@ -7,7 +7,6 @@
     font-weight: 600;
     width: 100%;
     border-radius: 16px;
-    text-align: center;
     color: var(--colorTitlesDesktop);
 }
 
@@ -17,17 +16,26 @@
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .8);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .4);
     transition: .4s;
 }
 
 .contSlider {
     display: grid;
-    grid-template-columns: 0.8fr 1.3fr 2fr 1.3fr 0.8fr;
-    gap: 48px;
-    align-items: center;
+    width: 70%;
+    /*
     padding: 16px 60px;
+    gap: 48px;
+    grid-template-columns: 0.8fr 1.3fr 2fr 1.3fr 0.8fr;
+    */
+    grid-template-columns: 100px;
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
+    padding-top: 32px;
 }
 
 .up {
@@ -38,8 +46,7 @@
 
 .seeGalery {
     text-decoration: underline;
-    text-align: center;
+    text-align: left;
     width: 100%;
-    font-size: 16px;
-    color: var(--linkColor);
+    padding-top: 24px;
 }

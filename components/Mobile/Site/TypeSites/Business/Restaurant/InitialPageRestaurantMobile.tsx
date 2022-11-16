@@ -28,6 +28,7 @@ import ReviewSectionRestaurantMobile from "./reviewSectionRestaurant";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
 import InSearchRestaurantMobile from "./inSearchRestaurantMobile";
+import AnnouncementMobile from "../../Misc/announcementMobile";
 
 const idTest: string = "isTestMobileScrolControl"
 
@@ -59,6 +60,8 @@ export default function InitialPageRestaurantMobile() {
                     <FullBannerMobile item={infoHeader.Banner}/>
                 </div>
             </div>
+
+            <AnnouncementMobile/>
 
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <DescriptionCardFullData/>

@@ -8,6 +8,7 @@ import {createPortal} from "react-dom";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import SocialButtons from "../../../../../Desktop/Misc/SocialButtons";
 import Image from "next/image";
+import ContactPopUpMobile from "./contactPopUpMobile";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const directionText: string = "Direccion: "
@@ -17,7 +18,9 @@ const defaultValue = {
 
 export default function HeaderSiteBussinessMobile({item}: { item: HeaderSiteBusinessProp }) {
     let [popUp, setPopUp] = useState(false)
+    let [socialAndReport, setSocialAndReport] = useState(false)
     const handlePopUp = () => setPopUp(popUp = !popUp)
+    const handleSocialAndReport = () => setSocialAndReport(socialAndReport = !socialAndReport)
     const tagStyle = getTagStyle()
     const cssStyles = getCssStyles()
 
@@ -33,7 +36,7 @@ export default function HeaderSiteBussinessMobile({item}: { item: HeaderSiteBusi
                                 </div>)
                         }
                     </div>
-                    <button className={style.sizeThreePoints}>
+                    <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
                     </button>
                 </div>
@@ -54,6 +57,14 @@ export default function HeaderSiteBussinessMobile({item}: { item: HeaderSiteBusi
                     <SocialButtons item={item.SocialButtons}/>
                 </div>
             </div>
+            {
+                socialAndReport &&
+                createPortal(
+                    <PopUpContainerMob closePopUp={handleSocialAndReport} isBackground={true} isButtonVisible={true}>
+                        <ContactPopUpMobile item={item.Contact}/>
+                    </PopUpContainerMob>, document.getElementById(idPortal)
+                )
+            }
             {
                 popUp &&
                 createPortal(

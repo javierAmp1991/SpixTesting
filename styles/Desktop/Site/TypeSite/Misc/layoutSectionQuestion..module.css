@@ -5,8 +5,8 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 66%;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
     gap: 20px;
 }
 
@@ -18,5 +18,4 @@
     display: grid;
     border-radius: 4px;
     overflow: hidden;
-    margin-left: 48px;
 }

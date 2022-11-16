@@ -6,16 +6,19 @@
     gap: 40px;
 }
 
-.mainGradient{
-  /*  background: linear-gradient(180deg, rgb(4, 90, 169) 0%, rgb(16, 107, 192) 70%, white 100%);
-    background: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, rgb(26, 125, 218) 70%, white 100%);
-    background: linear-gradient(180deg, black 0%, #131313 70%, transparent 85%);
-    background: linear-gradient(180deg, black 0%, #131313 50%, transparent 70%);*/
+.mainGradient {
     padding-bottom: 240px;
     position: relative;
 }
 
-.main{
+.mainDivHeader {
+    width: var(--maxWidthBodyContent);
+    display: grid;
+    gap: 32px;
+    margin: auto;
+}
+
+.main {
     width: 100%;
     background: transparent;
     position: absolute;
@@ -26,7 +29,7 @@
     align-content: center;
 }
 
-.gridPpalProducts{
+.gridPpalProducts {
     padding: 0 20%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -34,53 +37,55 @@
     gap: 16px;
 }
 
-.mainDivHeader{
-    position: relative;
+.mainDivHeader {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - (var(--maxWidthBodyContent) / 2));
 }
 
-.gridReviews{
+.gridReviews {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
-.gridQuestions{
+.gridQuestions {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     width: 66%;
 }
 
-.separationLine{
+.separationLine {
     height: 2px;
     background: var(--separationLineColor);
     width: 100%;
 }
 
-.gridOffer{
+.gridOffer {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 16px;
 }
 
-.gridRecomendados{
+.gridRecomendados {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 16px;
 }
 
-.gridSectionProducts{
+.gridSectionProducts {
     display: grid;
     gap: 40px;
 }
 
-.gridForm{
+.gridForm {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding-bottom: 12px;
 }
 
-.spaceNavSectionProducts{
+.spaceNavSectionProducts {
     padding: 12px 0;
 }

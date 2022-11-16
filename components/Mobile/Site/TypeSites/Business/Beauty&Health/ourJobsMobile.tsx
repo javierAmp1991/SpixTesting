@@ -17,14 +17,14 @@ export default function OurJobsMobile() {
     let [idx, setIdx] = useState(1)
     return (
         <div className={style.mainDiv}>
-            <div className={style.title}>
+            {/* <div className={style.title}>
                 {title}
-            </div>
+            </div>*/}
             <div className={style.contSlider}>
                 {/*<div className={style.sizeImageEmpty}/>*/}
                 {
                     listCortes.map((item, index) =>
-                        <div key={index} className={`${style.contImage} ${index == idx? style.focus : style.noFocus }`}>
+                        <div key={index} className={`${style.contImage}`}>
                             <div className={style.sizeImage}>
                                 <Image layout={"fill"} src={item} alt={""}/>
                             </div>

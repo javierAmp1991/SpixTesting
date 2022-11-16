@@ -16,6 +16,7 @@ import utilities from "/styles/utilities.module.css";
 import TicketsSectionMobile from "./ticketsSection";
 import ProductSectionMobile from "../Business/Restaurant/ProductSectionMobile";
 import {SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
+import AnnouncementMobile from "../Misc/announcementMobile";
 
 export default function MainPageMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -23,6 +24,7 @@ export default function MainPageMobile() {
     return (
         <>
             <FullBannerMobile item={info.PathBanner}/>
+            <AnnouncementMobile/>
             <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
                 <InformationImages/>
                 <div className={style.separationLine}/>

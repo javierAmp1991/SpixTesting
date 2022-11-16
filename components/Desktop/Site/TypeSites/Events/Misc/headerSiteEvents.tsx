@@ -4,7 +4,11 @@ import {useState} from "react";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import SocialButtons from "../../../../Misc/SocialButtons";
 import Image from "next/image";
-import {HeaderSiteEventsProp} from "../../../../../../Class/Site/TypeSite/Events/events";
+import {HeaderSiteEventsProp, TypeActionContact} from "../../../../../../Class/Site/TypeSite/Events/events";
+import PopUpContainer from "../../../../Misc/popUpContainer";
+import Link from "next/link";
+import {createPortal} from "react-dom";
+import ContactPopUp from "../../Business/Misc/contactPopUp";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const produceText: string = "Produce: "
@@ -13,14 +17,16 @@ const defaultValue = {
 }
 
 export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) {
-    let [popUp, setPopUp] = useState(false)
-    const handlePopUp = () => setPopUp(popUp = !popUp)
+    let [socialAndReport, setSocialAndReport] = useState(false)
+    const handleSocialAndReport = () => setSocialAndReport(socialAndReport = !socialAndReport)
     const tagStyle = getTagStyle()
     const cssStyles = getCssStyles()
 
     return (
         <div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
+                <div className={style.separationLineUp}/>
+
                 <div className={style.gridTags}>
                     {
                         item.Tags.map(item =>
@@ -33,7 +39,7 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
                     <div className={style.name}>
                         {item.Name}
                     </div>
-                    <button className={style.sizeThreePoints}>
+                    <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
                     </button>
                 </div>
@@ -44,7 +50,7 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
 
                 <div className={style.produce}>
                     <span>{produceText}</span>
-                    <button onClick={handlePopUp}>{item.Produce}</button>
+                    <span>{item.Produce}</span>
                 </div>
                 <div className={style.contSocialButton}>
                     <SocialButtons item={item.SocialButtons}/>
@@ -52,6 +58,14 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
 
                 <div className={style.separationLine}/>
             </div>
+            {
+                socialAndReport &&
+                createPortal(
+                    <PopUpContainer closePopUp={handleSocialAndReport} isButtonVisible={true} isBackground={true}>
+                        <ContactPopUp item={item.Contact}/>
+                    </PopUpContainer>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

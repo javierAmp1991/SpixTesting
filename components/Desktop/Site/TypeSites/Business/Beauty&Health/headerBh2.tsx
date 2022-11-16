@@ -5,25 +5,20 @@ import {
     PresentationCard,
     TypeSiteBusiness
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
-import PopUpContainer from "../../../../Misc/popUpContainer";
-import MapPopUp from "../../../../Misc/mapPopUp";
-import {createPortal} from "react-dom";
-import {GlobalId} from "../../../../../../public/globalConst";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
+import OurJobs2 from "./ourJobs2";
 
-const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function HeaderBh2() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
-    let [displayMap, setDisplayMap] = useState(false)
-    const handlePopUp = () => setDisplayMap(displayMap = !displayMap)
     const headerBusiness: HeaderSiteBusinessProp = {
         Name: info.Name,
         Description: info.Description,
         Tags: info.Tags,
         Venue: info.Venue,
+        Contact: info.Contact,
         TypeSite: TypeSiteBusiness.BeautyAndHealth,
         SocialButtons: {
             Like: {
@@ -39,18 +34,13 @@ export default function HeaderBh2() {
     }
     return (
         <div className={style.mainDiv}>
-            <HeaderSiteBussiness item={headerBusiness}/>
+            <div>
+                <HeaderSiteBussiness item={headerBusiness}/>
+                <OurJobs2/>
+            </div>
             <div className={style.sizeNewBanner}>
                 <Image priority={true} layout={"fill"} src={info.LogoPath} alt={""}/>
             </div>
-            {
-                displayMap &&
-                createPortal(
-                    <PopUpContainer closePopUp={handlePopUp} isButtonVisible={true} isBackground={true}>
-                        <MapPopUp item={info.Venue}/>
-                    </PopUpContainer>, document.getElementById(idPortal)
-                )
-            }
         </div>
     )
 }

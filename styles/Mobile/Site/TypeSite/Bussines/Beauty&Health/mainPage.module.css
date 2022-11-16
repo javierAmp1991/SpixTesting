@@ -64,3 +64,11 @@
     height: 1px;
     margin: auto;
 }
+
+.contLayoutCircle{
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}

@@ -5,6 +5,9 @@ import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import SocialButtons from "../../../../../Desktop/Misc/SocialButtons";
 import Image from "next/image";
 import {HeaderSiteEventsProp} from "../../../../../../Class/Site/TypeSite/Events/events";
+import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
+import ContactPopUpMobile from "../../Business/Misc/contactPopUpMobile";
+import {createPortal} from "react-dom";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const produceText: string = "Produce: "
@@ -13,10 +16,11 @@ const defaultValue = {
 }
 
 export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsProp }) {
-    let [popUp, setPopUp] = useState(false)
-    const handlePopUp = () => setPopUp(popUp = !popUp)
     const tagStyle = getTagStyle()
     const cssStyles = getCssStyles()
+    let [socialAndReport, setSocialAndReport] = useState(false)
+    const handleSocialAndReport = () => setSocialAndReport(socialAndReport = !socialAndReport)
+
 
     return (
         <div className={style.mainDiv}>
@@ -30,7 +34,7 @@ export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsP
                                 </div>)
                         }
                     </div>
-                    <button className={style.sizeThreePoints}>
+                    <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
                     </button>
                 </div>
@@ -45,12 +49,20 @@ export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsP
 
                 <div className={style.produce}>
                     <span>{produceText}</span>
-                    <button onClick={handlePopUp}>{item.Produce}</button>
+                    <button>{item.Produce}</button>
                 </div>
                 <div className={style.contSocialButton}>
                     <SocialButtons item={item.SocialButtons}/>
                 </div>
             </div>
+            {
+                socialAndReport &&
+                createPortal(
+                <PopUpContainerMob closePopUp={handleSocialAndReport} isBackground={true} isButtonVisible={true}>
+                    <ContactPopUpMobile item={item.Contact}/>
+                </PopUpContainerMob>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

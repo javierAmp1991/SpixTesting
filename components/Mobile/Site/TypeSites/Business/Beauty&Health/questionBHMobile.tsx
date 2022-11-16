@@ -13,16 +13,14 @@ export default function QuestionBHMobile({id}: { id: string }) {
         IsWithBorder: true
     }
     return (
-        <div id={id} className={style.mainDivInSearch}>
-            <LayoutQuestionSectionMobile link={"/"}>
-                <LayoutNavCircleMobileCustom item={layout}>
-                    {
-                        question.map(item =>
-                            <QuestionShortMob key={item.Id} item={item}/>
-                        )
-                    }
-                </LayoutNavCircleMobileCustom>
-            </LayoutQuestionSectionMobile>
-        </div>
+        <LayoutQuestionSectionMobile link={"/"}>
+            <LayoutNavCircleMobileCustom item={layout}>
+                {
+                    question.map(item =>
+                        <QuestionShortMob key={item.Id} item={item}/>
+                    )
+                }
+            </LayoutNavCircleMobileCustom>
+        </LayoutQuestionSectionMobile>
     )
 }

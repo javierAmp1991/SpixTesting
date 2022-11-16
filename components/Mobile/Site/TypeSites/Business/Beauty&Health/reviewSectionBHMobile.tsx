@@ -1,43 +1,29 @@
-import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/reviewSection.module.css"
-import {ReviewItem} from "../../../../../../Class/Misc/GlobalClass";
+import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 import {useContext} from "react";
 import {ReviewBhContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import ReviewViewVerticalMob from "../../../../Misc/ReviewViewVerticalMob";
 import {LayoutWithNavCircleProp} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-
-const title: string = "Testimonios de nuestros clientes"
-const qualificationText: string = "Calificacion:"
-const seeMoreReview: string = "Ver mas reseñas"
+import LayoutReviewSectionMobile from "../Restaurant/layoutReviewSectionMobile";
 
 export default function ReviewSectionBHMobile() {
     const review: ProviderReview = useContext(ReviewBhContext)
     const propsCarrousel: LayoutWithNavCircleProp = {
         Top: 36,
+        IsWithBorder: true
     }
     return (
-        <div className={style.mainDiv}>
-            <div className={style.title}>
-                {title}
-            </div>
-            <div className={style.gridRating}>
-                <div className={style.rating}>
-                    {qualificationText} 5/5
-                </div>
-            </div>
+        <LayoutReviewSectionMobile>
             <LayoutNavCircleMobileCustom item={propsCarrousel}>
                     {
                         review.InitialReview.map(item =>
-                            <div key={item.Id} className={style.contCarrousel}>
+                            <div key={item.Id} className={style.contLayoutCircle}>
                                 <ReviewViewVerticalMob  item={item}/>
                             </div>
                         )
                     }
             </LayoutNavCircleMobileCustom>
-            <div className={style.seeMore}>
-                {seeMoreReview}
-            </div>
-        </div>
+        </LayoutReviewSectionMobile>
     )
 }

@@ -1,8 +1,6 @@
 import {News} from "../../../../dataDemo/data";
 import {ReviewItem} from "../../../Misc/GlobalClass";
 import {HeaderSiteBase} from "../Misc/globalClassSite";
-import {MapPopUpProp} from "../../../../components/Desktop/Misc/mapPopUp";
-import {TypeSiteBusiness} from "../Business/restaurantClass";
 
 export class DateVenueEvent {
     Id: string
@@ -15,10 +13,15 @@ export class DateVenueEvent {
     LinkGoogleMap: string
 }
 
+export enum TypeActionContact {
+    Copied, Link
+}
+
 export class ContactItems {
     Id: string
     Icon: string
     Link: string
+    Type?: TypeActionContact
 }
 
 export class PrincipalInfoEvent {

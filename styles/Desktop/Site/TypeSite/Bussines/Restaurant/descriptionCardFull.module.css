@@ -4,12 +4,10 @@
     grid-template-columns: 870px 1fr;
     width: var(--widthCard);
     padding: 24px;
-    left: calc(50% - (var(--widthCard) / 2));
     background: white;
     box-shadow: 0 0 21px rgba(0, 0, 0, .3);
     border-radius: 8px;
-    position: absolute;
-    bottom: 0;
+    position: relative;
 }
 
 .paddingInfo {

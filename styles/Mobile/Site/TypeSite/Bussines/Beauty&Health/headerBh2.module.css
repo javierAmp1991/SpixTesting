@@ -12,12 +12,13 @@
     display: grid;
     overflow: hidden;
     padding: 16px;
-    box-shadow: 0 4px 8px #f6d1d3;
+    box-shadow: 0 2px 8px #ecbcbf;
+    margin-bottom: 16px;
 }
 
 .sizeNewBanner {
     width: 20%;
-    bottom: 6px;
+    bottom: 32px;
     right: 8px;
     position: absolute;
     aspect-ratio: 1/1;

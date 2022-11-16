@@ -3,7 +3,7 @@
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
-    gap: 20px;
+    gap: 24px;
     --sizeIcon: 24px;
 }
 
@@ -19,6 +19,7 @@
 }
 
 .like {
+    line-height: 19px;
     font-weight: 600;
 }
 

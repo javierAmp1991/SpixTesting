@@ -20,6 +20,7 @@ export default function PresentCard2() {
         Tags: info.Tags,
         Produce: info.Produce,
         TypeSite: TypeSiteEvents.Default,
+        Contact: info.Contact,
         SocialButtons: {
             Like: {
                 IsLike: true,

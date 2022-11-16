@@ -13,15 +13,11 @@ const title: string = "Preguntas"
 
 export default function QuestionSectionMobile() {
     const questions: QuestionItem[] = useContext(QuestionContext)
-    const propLayoutTitle: LayoutTitleLinkProps = {
-        Title: title,
-        Link: "/",
+    const layout: LayoutWithNavCircleProp = {
+        IsWithBorder: true
     }
-    const layout: LayoutWithNavCircleProp = {}
     return (
-        <div className={style.paddingGeneral}>
             <LayoutQuestionSectionMobile link={"/"}>
-
                 <LayoutNavCircleMobileCustom item={layout}>
                     {
                         questions.map((item) =>
@@ -29,16 +25,5 @@ export default function QuestionSectionMobile() {
                     }
                 </LayoutNavCircleMobileCustom>
             </LayoutQuestionSectionMobile>
-            {/* <LayoutQuestionSectionMobile link={""}>
-                <>
-                    {
-                        questions.map(item =>
-                            <QuestionShortMob key={item.Id} item={item}/>
-                        )
-                    }
-                </>
-            </LayoutQuestionSectionMobile>*/}
-        </div>
-
     )
 }

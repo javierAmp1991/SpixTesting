@@ -11,6 +11,7 @@ import PopUpContainer from "../../../../Misc/popUpContainer";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
+import Announcement from "../../Misc/announcement";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const seeGallery: string = "Ver galeria"
@@ -29,6 +30,7 @@ export default function DescriptionCardFull() {
         Description: info.Description,
         Tags: info.Tags,
         Venue: info.Venue,
+        Contact: info.Contact,
         TypeSite: TypeSiteBusiness.Restaurant,
         SocialButtons: {
             Like: {

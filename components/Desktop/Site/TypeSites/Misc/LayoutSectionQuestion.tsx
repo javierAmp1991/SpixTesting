@@ -21,7 +21,9 @@ export default function LayoutSectionQuestion({link, children}: { link: string, 
     return (
         <LayoutTitleCustom item={propLayoutTitle}>
             <div className={style.mainDiv}>
+                <div className={style.grid}>
                     {children}
+                </div>
                 <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
                     {writeQuestion}
                 </button>

@@ -14,7 +14,7 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const title: string = "Nuestros servicios"
-const goToQuestion: string = "¿Tienes reguntas respecto a estos servicios?"
+const goToQuestion: string = "¿Tienes preguntas respecto a estos servicios?"
 
 export default function OurServices({id}: { id: string }) {
     const services: ProviderServicesProducts = useContext(ServicesBHContext)

@@ -15,6 +15,7 @@ import OfferProducts from "./offerProducts";
 import OtherEvents from "./otherEvents";
 import QuestionSection from "./questionSection";
 import ProductSection from "../Business/Restaurant/ProductSection";
+import Announcement from "../Misc/announcement";
 
 const sizeBanner: string = `40vh`
 
@@ -26,6 +27,7 @@ export default function MainPage() {
             <BannerVar item={info.PathBanner} size={sizeBanner}/>
             <div className={style.mainDiv}>
                 <div className={style.mainCard}>
+                    <Announcement/>
                     <PresentCard2/>
                     <InSearch/>
                     <div className={style.separationLine}/>

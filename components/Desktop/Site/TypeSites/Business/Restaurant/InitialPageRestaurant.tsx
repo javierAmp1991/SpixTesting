@@ -18,6 +18,7 @@ import QuestionRestaurant from "./questionRestaurant";
 import NavSectionProducts from "../Default/NavSectionProducts";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import Reservation from "../Misc/reservation";
+import Announcement from "../../Misc/announcement";
 
 const idTest: string = "isTestDesktopScrollControl"
 
@@ -61,7 +62,10 @@ export default function InitialPageRestaurant() {
         <>
             <div className={style.mainGradient}>
                 <FullBannerRestaurant item={infoHeader.Banner}/>
-                <DescriptionCardFull/>
+                <div className={style.mainDivHeader}>
+                    <Announcement/>
+                    <DescriptionCardFull/>
+                </div>
             </div>
             <div className={style.mainDiv}>
                 <ReviewRestaurant/>

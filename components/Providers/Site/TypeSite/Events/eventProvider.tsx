@@ -4,7 +4,7 @@ import {
     PrincipalInfoEvent,
     ProviderNewsEvents, ProviderSectionTicket,
     ReviewSection,
-    TicketSectionSiteEvents
+    TicketSectionSiteEvents, TypeActionContact
 } from "../../../../../Class/Site/TypeSite/Events/events";
 import {FormLink, News, Product} from "../../../../../dataDemo/data";
 import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
@@ -147,32 +147,38 @@ const principalInfo: PrincipalInfoEvent = {
         {
             Id: "contact005",
             Icon: GlobalConst.sourceImages.emailIcon,
-            Link: "elhuevo@hotmail.com"
-        },
-        {
-            Id: "contact000",
-            Icon: GlobalConst.sourceImages.webPageIcon,
-            Link: "www.elhuevo.cl"
+            Link: "elhuevo@hotmail.com",
+            Type: TypeActionContact.Copied
         },
         {
             Id: "contact002",
             Icon: GlobalConst.sourceImages.whatsaapIcon,
-            Link: "+56934579283"
+            Link: "+56934579283",
+            Type: TypeActionContact.Copied
+        },
+        {
+            Id: "contact000",
+            Icon: GlobalConst.sourceImages.webPageIcon,
+            Link: "www.elhuevo.cl",
+            Type: TypeActionContact.Link
         },
         {
             Id: "contact001",
             Icon: GlobalConst.sourceImages.tiktokIcon,
-            Link: "/test"
+            Link: "/test",
+            Type: TypeActionContact.Link
         },
         {
             Id: "contact003",
             Icon: GlobalConst.sourceImages.instagramICon,
-            Link: "/test2"
+            Link: "/test2",
+            Type: TypeActionContact.Link
         },
         {
             Id: "contact004",
             Icon: GlobalConst.sourceImages.facebookIcon,
-            Link: "/test3"
+            Link: "/test3",
+            Type: TypeActionContact.Link
         }
     ],
     Produce: "El Huevo"

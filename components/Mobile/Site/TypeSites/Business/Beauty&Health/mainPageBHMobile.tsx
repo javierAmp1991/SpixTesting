@@ -5,7 +5,6 @@ import {
     SectionProductsBHContext, ShceduleBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import HeaderBhMobile from "./headerBhMobile";
-import OurJobsMobile from "./ourJobsMobile";
 import ReviewSectionBHMobile from "./reviewSectionBHMobile";
 import InSearchBhMobile from "./inSearchBhMobile";
 import OurServicesMobile from "./ourServicesMobile";
@@ -15,50 +14,50 @@ import ProductSectionBHMobile from "../Restaurant/ProductSectionMobile";
 import ReservationMobile from "../Misc/reservationMobile";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import QuestionBHMobile from "./questionBHMobile";
+import AnnouncementMobile from "../../Misc/announcementMobile";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
-
 
 export default function MainPageBHMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     return (
-        <div className={style.mainDiv}>
-            <HeaderBhMobile/>
-            <OurJobsMobile/>
-            <div className={style.separationLine}/>
+        <>
+            <AnnouncementMobile/>
+            <div className={style.mainDiv}>
 
-            <div className={style.paddingGeneral}>
+                <HeaderBhMobile/>
+
                 <ReviewSectionBHMobile/>
+
+                <div className={style.paddingGeneral}>
+                    <InSearchBhMobile/>
+                </div>
+
+                <div className={style.paddingGeneral}>
+                    <OurServicesMobile id={idQuestionSection}/>
+                </div>
+
+                <div className={style.paddingGeneral}>
+                    <ReservationMobile item={schedule}/>
+                </div>
+
+                <OfferBHMobile/>
+                <div className={style.separationLine}/>
+
+                <OtherEventsBH/>
+
+                <QuestionBHMobile id={idQuestionSection}/>
+
+                <div className={style.gridSectionProducts}>
+                    {
+                        sectionProducst.map(item =>
+                            <ProductSectionBHMobile key={item.Id} sectionProducts={item}/>
+                        )
+                    }
+                </div>
+
             </div>
-
-            <div className={style.paddingGeneral}>
-                <InSearchBhMobile/>
-            </div>
-
-            <div className={style.paddingGeneral}>
-                <OurServicesMobile id={idQuestionSection}/>
-            </div>
-
-            <div className={style.paddingGeneral}>
-                <ReservationMobile item={schedule}/>
-            </div>
-
-            <OfferBHMobile/>
-            <div className={style.separationLine}/>
-
-            <OtherEventsBH/>
-
-            <QuestionBHMobile id={idQuestionSection}/>
-
-            <div className={style.gridSectionProducts}>
-                {
-                    sectionProducst.map(item =>
-                        <ProductSectionBHMobile key={item.Id} sectionProducts={item}/>
-                    )
-                }
-            </div>
-
-        </div>
+        </>
     )
 }

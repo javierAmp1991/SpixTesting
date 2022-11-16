@@ -15,6 +15,7 @@ import HeaderBh2 from "./headerBh2";
 import OurJobs2 from "./ourJobs2";
 import Reservation from "../Misc/reservation";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import Announcement from "../../Misc/announcement";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelath"
 
@@ -23,10 +24,10 @@ export default function MainPageBH() {
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     return (
         <div className={style.mainDiv}>
+            <Announcement/>
             <HeaderBh2/>
-            {/* <OurJobs/>*/}
-            <OurJobs2/>
-            <div className={style.separationLine}/>
+           {/* <OurJobs2/>
+            <div className={style.separationLine}/>*/}
 
             <ReviewSectionBH/>
             <div className={style.separationLine}/>

@@ -74,3 +74,48 @@
     color: var(--colorSecundaryTextDesktop);
 }
 
+
+.mainDivPopUp {
+    width: 100%;
+    height: max-content;
+    /* background: linear-gradient(180deg, #FE5858 0%, #EE9617 100%);*/
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 48px;
+}
+
+.sizeIconPopUp {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.buttonPopUp {
+    color: var(--colorPrimaryTextDesktop);
+    width: 100%;
+    background: rgba(255,255,255, .1);
+    display: grid;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    grid-template-columns: max-content 1fr;
+    border-radius: 2px;
+    overflow: hidden;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 12px;
+    margin: auto;
+    font-weight: 500;
+    background: white;
+}
+
+.textPopUp{
+    width: 100%;
+    text-align: center;
+}
+
+.title{
+    font-size: 21px;
+    text-align: center;
+    color: var(--colorTitlesDesktop);
+    font-weight: 500;
+}
