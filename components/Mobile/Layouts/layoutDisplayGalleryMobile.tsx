@@ -21,7 +21,7 @@ export default function LayoutDisplayGalleryMobile({item}: {item: LayoutGalleryM
                     {
                         item.InitialImages.map((item, index) =>
                             <div key={index} className={style.sizeImage}>
-                                <Image layout={"fill"} src={item}/>
+                                <Image layout={"fill"} src={item} alt={""}/>
                             </div>
                         )
                     }
@@ -31,7 +31,7 @@ export default function LayoutDisplayGalleryMobile({item}: {item: LayoutGalleryM
                         item.InitialImages.map((item, index) =>
                             <div key={index} className={`${style.sizeImageMin}
                              ${index == circleSelected && style.focus}`}>
-                                <Image layout={"fill"} src={item}/>
+                                <Image layout={"fill"} src={item} alt={""}/>
                             </div>
                         )
                     }
