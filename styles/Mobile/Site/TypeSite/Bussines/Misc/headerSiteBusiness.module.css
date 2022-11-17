@@ -1,3 +1,6 @@
+.mainDiv{
+    border-bottom: 1px solid rgba(0,0,0,.1);
+}
 .mainDivInfo {
     display: grid;
     gap: 4px;
@@ -36,11 +39,6 @@
     padding-bottom: 2px;
 }
 
-.separationLine {
-    height: 1px;
-    background: rgba(0, 0, 0, .1);
-}
-
 .tagBase {
     padding: 2px 12px;
     border-radius: 16px;
@@ -68,7 +66,7 @@
 }
 
 .contSocialButton {
-    padding-top: 10px;
+    padding: 10px 0 20px 0;
 }
 
 .produce {

@@ -35,9 +35,9 @@ export default function MainPageMobile() {
             <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
                 <InformationImages/>
                 <div className={utilities.separationLine}/>
-                <TicketsSectionMobile/>
-                <InSearch/>
                 <OfferEventsMobile/>
+                <InSearch/>
+                <TicketsSectionMobile/>
                 <OtherEvents/>
                 <QuestionSectionMobile/>
                 <div className={style.gridSectionProducts}>

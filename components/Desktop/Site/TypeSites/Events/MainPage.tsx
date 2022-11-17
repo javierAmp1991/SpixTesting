@@ -17,13 +17,14 @@ export default function MainPage() {
             <BannerSiteEvents/>
             <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
                 <HeaderSiteEvents/>
+
+                <OfferProducts/>
+                <div className={utilities.separationLine}/>
+
                 <InSearch/>
                 <div className={utilities.separationLine}/>
 
                 <TicketsSection/>
-                <div className={utilities.separationLine}/>
-
-                <OfferProducts/>
                 <div className={utilities.separationLine}/>
 
                 <OtherEvents/>

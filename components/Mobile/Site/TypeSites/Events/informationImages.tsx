@@ -53,7 +53,6 @@ export default function InformationImages() {
             <div className={style.contInfo}>
                 <HeaderSiteEventsMobile item={headerEvents}/>
             </div>
-            <div className={style.separationLine}/>
             <ImageVideoMobile/>
 
             {
