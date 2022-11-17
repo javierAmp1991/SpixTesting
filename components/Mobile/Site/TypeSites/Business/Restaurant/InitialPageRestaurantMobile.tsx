@@ -64,17 +64,17 @@ export default function InitialPageRestaurantMobile() {
                 <DescriptionCardFullData/>
                 <div className={style.separationLine}/>
 
-                <ReviewSectionRestaurantMobile/>
-
-                <ReservasMobile/>
-
                 <InSearchRestaurantMobile/>
 
-                <NavSectionProductsRestaurantMobile/>
+                <ReviewSectionRestaurantMobile/>
 
                 <OfferRestaurantMobile/>
 
                 <RecommendedRestaurantMobile/>
+
+                <ReservasMobile/>
+
+                <NavSectionProductsRestaurantMobile/>
 
                 <QuestionRestaurantMobile/>
 

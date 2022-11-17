@@ -20,7 +20,8 @@ export class HeaderSiteBase {
 export enum AnnouncementStyle {
     SiteRestaurant,
     SiteBeautyAndHealth,
-    SiteEvents
+    SiteEvents,
+    SiteByDefault
 }
 
 export class AnnouncementItem {

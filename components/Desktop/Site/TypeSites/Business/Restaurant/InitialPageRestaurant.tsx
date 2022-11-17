@@ -73,10 +73,16 @@ export default function InitialPageRestaurant() {
                 </div>
             </div>
             <div className={style.mainDiv}>
+                <InSearchRestaurant/>
+                <div className={style.separationLine}/>
+
                 <ReviewRestaurant/>
                 <div className={style.separationLine}/>
 
-                <InSearchRestaurant/>
+                <InOfferRestaurant/>
+                <div className={style.separationLine}/>
+
+                <RecomendedRestarant/>
                 <div className={style.separationLine}/>
 
                 <Reservation item={schedule}/>
@@ -88,12 +94,6 @@ export default function InitialPageRestaurant() {
                 <div className={style.spaceNavSectionProducts}>
                     <NavSectionProducts item={infoSectionProducts}/>
                 </div>
-                <div className={style.separationLine}/>
-
-                <InOfferRestaurant/>
-                <div className={style.separationLine}/>
-
-                <RecomendedRestarant/>
                 <div className={style.separationLine}/>
 
                 <NavProductsSection hasBeenReached={hasBeenReached}/>

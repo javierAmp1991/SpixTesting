@@ -3,6 +3,7 @@ import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst} from "../../../../../public/globalConst";
 import {AnnouncementItem, AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+
 const seeMore: string = "Ver mas"
 
 export default function Announcement({styleAnnouncement, announcement}:
@@ -24,6 +25,7 @@ export default function Announcement({styleAnnouncement, announcement}:
     function getAnnouncementStyle(): string {
         if (styleAnnouncement == AnnouncementStyle.SiteRestaurant) return style.backgroundRestaurant
         else if (styleAnnouncement == AnnouncementStyle.SiteBeautyAndHealth) return style.backgroundBH
+        else if (styleAnnouncement == AnnouncementStyle.SiteByDefault) return style.backgroundByDefault
         else return style.backgroundEvents
     }
 }

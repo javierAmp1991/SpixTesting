@@ -1,4 +1,3 @@
-import {bool, number} from "prop-types";
 
 export class UploadImageProvisory {
     FileImage: File

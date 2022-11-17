@@ -17,6 +17,7 @@ import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite
 import QuestionBHMobile from "./questionBHMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import OurJobsMobile from "./ourJobsMobile";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
@@ -33,14 +34,20 @@ export default function MainPageBHMobile() {
                 <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
             }
             <div className={style.mainDiv}>
-
                 <HeaderBhMobile/>
 
-                <ReviewSectionBHMobile/>
+                <OurJobsMobile/>
 
                 <div className={style.paddingGeneral}>
                     <InSearchBhMobile/>
                 </div>
+
+                <ReviewSectionBHMobile/>
+
+                <OfferBHMobile/>
+                <div className={style.separationLine}/>
+
+                <OtherEventsBH/>
 
                 <div className={style.paddingGeneral}>
                     <OurServicesMobile id={idQuestionSection}/>
@@ -49,11 +56,6 @@ export default function MainPageBHMobile() {
                 <div className={style.paddingGeneral}>
                     <ReservationMobile item={schedule}/>
                 </div>
-
-                <OfferBHMobile/>
-                <div className={style.separationLine}/>
-
-                <OtherEventsBH/>
 
                 <QuestionBHMobile id={idQuestionSection}/>
 
@@ -64,7 +66,6 @@ export default function MainPageBHMobile() {
                         )
                     }
                 </div>
-
             </div>
         </>
     )

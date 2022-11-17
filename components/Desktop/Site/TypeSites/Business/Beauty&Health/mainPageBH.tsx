@@ -36,11 +36,6 @@ export default function MainPageBH() {
                 }
                 <HeaderBh2/>
             </div>
-            {/* <OurJobs2/>
-            <div className={style.separationLine}/>*/}
-
-            <ReviewSectionBH/>
-            <div className={style.separationLine}/>
 
             <InSearchBH/>
             <div className={style.separationLine}/>
@@ -48,13 +43,16 @@ export default function MainPageBH() {
             <OurServices id={idQuestionSection}/>
             <div className={style.separationLine}/>
 
-            <Reservation item={schedule}/>
+            <ReviewSectionBH/>
             <div className={style.separationLine}/>
 
             <InOfferBH/>
             <div className={style.separationLine}/>
 
             <RecomendedBH/>
+            <div className={style.separationLine}/>
+
+            <Reservation item={schedule}/>
             <div className={style.separationLine}/>
 
             <QuestionBH id={idQuestionSection}/>

@@ -1,25 +1,25 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/headerBh2.module.css"
-import Image from "next/image";
 import {
     HeaderSiteBusinessProp,
     PresentationCard,
     TypeSiteBusiness
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
-import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
+import {
+    PrincipalInfoByDefaultContext
+} from "../../../../../Providers/Site/TypeSite/Business/ByDefault/SiteBusinessByDefaultProvider";
+
+import style from "/styles/Desktop/Site/TypeSite/Bussines/ByDefault/presentationCard.module.css"
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
-import OurJobs2 from "./ourJobs2";
 
-
-export default function HeaderBh2() {
-    const info: PresentationCard = useContext(HeaderDataBHContext)
+export default function PresentationCardByDefault() {
+    const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
     const headerBusiness: HeaderSiteBusinessProp = {
         Name: info.Name,
         Description: info.Description,
         Tags: info.Tags,
         Venue: info.Venue,
         Contact: info.Contact,
-        TypeSite: TypeSiteBusiness.BeautyAndHealth,
+        TypeSite: TypeSiteBusiness.Default,
         SocialButtons: {
             Like: {
                 IsLike: true,
@@ -35,17 +35,14 @@ export default function HeaderBh2() {
             }
         },
         Width: "80%",
-        PaddingBottom: 30
+        PaddingBottom: 24
     }
     const isAnnouncement: boolean = info.Announcement == null
+
     return (
         <div className={`${style.mainDiv} 
-        ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
+            ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <HeaderSiteBussiness item={headerBusiness}/>
-            <OurJobs2/>
-            <div className={style.sizeNewBanner}>
-                <Image priority={true} layout={"fill"} src={info.LogoPath} alt={""}/>
-            </div>
         </div>
     )
 }

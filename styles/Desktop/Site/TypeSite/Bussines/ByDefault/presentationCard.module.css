@@ -1,0 +1,20 @@
+.mainDiv {
+    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+    padding: 48px 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: hidden;
+    position: relative;
+}
+
+.fullRadious {
+    border-radius: 16px;
+}
+
+.noRadious {
+    border-radius: 0 0 16px 16px;
+}
+
+.circle {
+
+}

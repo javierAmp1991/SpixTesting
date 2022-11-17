@@ -25,6 +25,11 @@
     color: white;
 }
 
+.backgroundByDefault{
+    background: linear-gradient(145deg, #0482e9 0%, #045DE9 100%);
+    color: white;
+}
+
 .sizeIcon {
     width: 24px;
     height: 24px;

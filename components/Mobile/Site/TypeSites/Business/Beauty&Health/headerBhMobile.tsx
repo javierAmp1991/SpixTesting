@@ -35,8 +35,8 @@ export default function HeaderBhMobile() {
                 IsLike: false,
                 Like: 156
             },
-            Subscription:{
-                IsSubscriber:false,
+            Subscription: {
+                IsSubscriber: false,
                 AmountSubscribers: 200
             }
         },
@@ -48,11 +48,9 @@ export default function HeaderBhMobile() {
 
             <HeaderSiteBussinessMobile item={headerBusiness}/>
 
-            <OurJobsMobile/>
-
-                <div className={style.sizeNewBanner}>
-                    <Image priority={true} layout={"fill"} src={info.LogoPath}/>
-                </div>
+            <div className={style.sizeNewBanner}>
+                <Image priority={true} layout={"fill"} src={info.LogoPath}/>
+            </div>
             {
                 displayMap &&
                 createPortal(

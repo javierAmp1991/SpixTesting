@@ -1,19 +1,10 @@
 .mainDiv {
     position: relative;
-    background: linear-gradient(145deg, #ceffc3 0%, #ffc4b3 50%, #b3f1ac 100%);
-    background: linear-gradient(145deg, #c3fdff 0%, #ffc4b3 50%, #ace9f1 100%);
-    background: linear-gradient(145deg, #c3c8ff 0%, #ffc4b3 50%, #acbcf1 100%);
-    background: linear-gradient(145deg, #e7c3ff 0%, #ffc4b3 50%, #e0acf1 100%);
-    background: linear-gradient(145deg, #fff3c3 0%, #ffc4b3 50%, #f1e6ac 100%);
-    background: linear-gradient(145deg, #ffc3c3 0%, #ffc4b3 50%, #f1acac 100%);
-    background: linear-gradient(145deg, #c3fff1 0%, #ffc4b3 50%, #acf1d7 100%);
-    background: linear-gradient(145deg, #ffc3e1 0%, #ffc4b3 50%, #f1acc1 100%);
     background: #ffebec;
     display: grid;
     overflow: hidden;
     padding: 16px;
     box-shadow: 0 2px 8px #ecbcbf;
-    margin-bottom: 16px;
 }
 
 .sizeNewBanner {

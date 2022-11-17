@@ -1,0 +1,24 @@
+.mainDiv {
+    width: var(--maxWidthBodyContent);
+    display: grid;
+    gap: 40px;
+    margin: 40px auto;
+}
+
+.gridForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-bottom: 12px;
+}
+
+.gridSectionProducts {
+    display: grid;
+    gap: 40px;
+}
+
+.separationLine {
+    height: 2px;
+    background: var(--separationLineColor);
+    width: 100%;
+}
