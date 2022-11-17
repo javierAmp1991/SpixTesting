@@ -1,0 +1,13 @@
+.mainDiv {
+    width: 100vw;
+    margin: 0 auto 40px auto;
+    display: grid;
+    gap: 40px;
+}
+
+.mainDivNoMarginBottom {
+    width: 100vw;
+    margin: 0 auto;
+    display: grid;
+    gap: 40px;
+}

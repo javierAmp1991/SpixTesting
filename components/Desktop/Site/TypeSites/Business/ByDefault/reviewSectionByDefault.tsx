@@ -9,7 +9,7 @@ import {
     ReviewByDefaultContext
 } from "../../../../../Providers/Site/TypeSite/Business/ByDefault/SiteBusinessByDefaultProvider";
 import ReviewViewShort from "../../../../Misc/ReviewViewShort";
-import LayoutReviewSection from "../Restaurant/layoutReviewSection";
+import LayoutReviewSection from "../Misc/layoutReviewSection";
 
 export default function ReviewSectionByDefault() {
     const review: ProviderReview = useContext(ReviewByDefaultContext)
@@ -25,7 +25,8 @@ export default function ReviewSectionByDefault() {
     }
     const layoutReviewProp: LayoutReviewSectionBusiness = {
         Title: "Reseñas",
-        IsAvailableWriteReview: true
+        IsAvailableWriteReview: true,
+        PaddingBottomHeader: 0
     }
 
     return (

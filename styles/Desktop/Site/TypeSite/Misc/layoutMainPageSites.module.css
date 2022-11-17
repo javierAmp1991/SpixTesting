@@ -1,0 +1,13 @@
+.mainDiv {
+    width: var(--maxWidthBodyContent);
+    margin: 40px auto;
+    display: grid;
+    gap: 40px;
+}
+
+.mainDivNoMarginBottom {
+    width: var(--maxWidthBodyContent);
+    margin: 40px auto 0 auto;
+    display: grid;
+    gap: 40px;
+}

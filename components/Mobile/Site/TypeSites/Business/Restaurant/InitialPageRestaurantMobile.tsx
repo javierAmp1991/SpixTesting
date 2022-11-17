@@ -21,10 +21,12 @@ import InSearchRestaurantMobile from "./inSearchRestaurantMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
 import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import ReservationMobile from "../Misc/reservationMobile";
+import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 
 const idTest: string = "isTestMobileScrolControl"
 const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
 const reservationButtonText: string = "Reservar mesa"
+const isMarginBottom: boolean = true
 
 export default function InitialPageRestaurantMobile() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
@@ -32,48 +34,43 @@ export default function InitialPageRestaurantMobile() {
     const newSchedule: Schedule[] = useContext(ScheduleContext)
 
     return (
-
-        <div className={style.mainDivMobile}>
-            <div className={style.mainGradient}>
-                <div className={style.mainDivHeader}>
-                    <FullBannerMobile item={infoHeader.Banner}/>
-                </div>
-            </div>
-
-            {
-                infoHeader.Announcement != null &&
-                <AnnouncementMobile styleAnnouncement={styleAnnouncement} announcement={infoHeader.Announcement}/>
-            }
-
-            <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
+        <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
+            <div>
+                <FullBannerMobile item={infoHeader.Banner}/>
+                {
+                    infoHeader.Announcement != null &&
+                    <AnnouncementMobile styleAnnouncement={styleAnnouncement} announcement={infoHeader.Announcement}/>
+                }
                 <DescriptionCardFullData/>
-                <div className={style.separationLine}/>
-
-                <OfferRestaurantMobile/>
-
-                <InSearchRestaurantMobile/>
-
-                <ReservationMobile buttonText={reservationButtonText} item={newSchedule}/>
-
-                <RecommendedRestaurantMobile/>
-
-                <ReviewSectionRestaurantMobile/>
-
-                <NavSectionProductsRestaurantMobile/>
-
-                <QuestionRestaurantMobile/>
-
-                <NavProductsSectionMobile/>
-
-                <div className={style.gridSectionProducts} id={idTest}>
-                    {
-                        infoSectionProducts.map(item =>
-                            <ProductSectionMobile key={item.Id} sectionProducts={item}/>
-                        )
-                    }
-                </div>
-
             </div>
-        </div>
+            <div className={utilities.separationLine}/>
+
+            <OfferRestaurantMobile/>
+
+            <InSearchRestaurantMobile/>
+
+            <div className={style.paddingGeneral}>
+                <ReservationMobile buttonText={reservationButtonText} item={newSchedule}/>
+            </div>
+
+            <RecommendedRestaurantMobile/>
+
+            <ReviewSectionRestaurantMobile/>
+
+            <NavSectionProductsRestaurantMobile/>
+
+            <QuestionRestaurantMobile/>
+
+            <NavProductsSectionMobile/>
+
+            <div className={style.gridSectionProducts} id={idTest}>
+                {
+                    infoSectionProducts.map(item =>
+                        <ProductSectionMobile key={item.Id} sectionProducts={item}/>
+                    )
+                }
+            </div>
+        </LayoutMainPageSitesMobile>
+
     )
 }

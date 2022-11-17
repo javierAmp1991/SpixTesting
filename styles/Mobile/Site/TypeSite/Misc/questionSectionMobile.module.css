@@ -1,23 +1,32 @@
 .mainDiv {
     overflow-x: scroll;
-    padding: 4px 16px;
+    padding: 0 16px 16px 16px;
 }
 
+.gridHeader {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: space-between;
+    padding-bottom: 24px;
+    align-items: center;
+}
+
+.seeMore {
+    color: var(--linkColor);
+}
 
 .writeQuestion {
     width: max-content;
-    padding: 6px 32px;
+    padding: 6px 16px;
     box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     margin-right: auto;
     display: grid;
     border-radius: 4px;
     overflow: hidden;
-    margin-top: 36px;
 }
 
 .title {
     font-size: 21px;
     font-weight: 500;
     color: var(--colorTitlesDesktop);
-    padding-bottom: 24px;
 }

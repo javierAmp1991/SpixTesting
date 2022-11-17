@@ -5,17 +5,20 @@ import {ReactNode} from "react";
 const qualificationText: string = "Calificacion:"
 const seeMoreReview: string = "Ver mas reseñas"
 const writeReview: string = "Escribir Reseña"
+const maxQualification: string = "5/"
+const defaultPaddingBottom: number = 32
 
 export default function LayoutReviewSection({children, item}:
                                                 { children: ReactNode, item: LayoutReviewSectionBusiness }) {
+    const padding: number = item.PaddingBottomHeader == null ? defaultPaddingBottom : item.PaddingBottomHeader
     return (
         <div className={style.mainDiv}>
-            <div className={style.header}>
+            <div style={{paddingBottom: padding}}>
                 <div className={style.title}>
                     {item.Title}
                 </div>
                 <div className={style.rating}>
-                    {qualificationText} 5/5
+                    {qualificationText} {maxQualification}5
                 </div>
                 <div className={style.seeMore}>
                     {seeMoreReview}

@@ -1,41 +1,31 @@
-.borderNormal {
-    border: 1px solid #2d7dff;
-}
-
-.borderDarkMode {
-    border: 1px solid #15dae6;
-}
-
-.styleNavCircle {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--linkColor);
-}
-
-.styleNavCircleDarkMode {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--linkColorDarkMode);
-}
-
 .styleNavCircleNoSelected {
     width: 6px;
     height: 6px;
     border-radius: 50%;
     background: #cbcbcb;
-    /*border: 1px solid var(--linkColor);*/
 }
 
 .gridNavItems {
     display: grid;
-    grid-template-columns: max-content;
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-    gap: 8px;
-    justify-content: center;
-    padding-top: 16px;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.sizeImageMin {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.focus {
+    box-shadow: 0 0 4px orange;
 }
 
 .gridImageSection {
@@ -49,9 +39,9 @@
 }
 
 .borderCarrousel {
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     border-radius: 8px;
-    padding: 16px 0 ;
+    padding: 24px 0;
 }
 
 .gridImageSectionWithPadding {

@@ -33,7 +33,6 @@ export default function Reservation({item, buttonText}: { item: Schedule[], butt
     const propLayoutTitle: LayoutTitleLinkProps = {
         Title: title,
         PaddingUnderHeader: 0,
-        PaddingBottom: 32
     }
     return (
         <LayoutTitleCustom item={propLayoutTitle}>

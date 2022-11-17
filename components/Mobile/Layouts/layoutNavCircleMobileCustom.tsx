@@ -10,7 +10,7 @@ const defaultValues = {
 }
 
 export default function LayoutNavCircleMobileCustom({children, item}:
-                                                      { children: JSX.Element[], item: LayoutWithNavCircleProp }) {
+                                                        { children: JSX.Element[], item: LayoutWithNavCircleProp }) {
     const cssStyle = getCssStyle()
     const divRef = useRef(null)
     let [circleSelected, setCircleSelected] = useState(0)
@@ -20,10 +20,9 @@ export default function LayoutNavCircleMobileCustom({children, item}:
         const scrollEvent: number = e.target.scrollLeft
         const newPointControl = Math.round(scrollEvent / sizeContainer);
         setCircleSelected(circleSelected = newPointControl)
-
     }
     return (
-        <div className={item.IsWithBorder && style.borderCarrousel }>
+        <div className={item.IsWithBorder && style.borderCarrousel}>
             <div style={{
                 paddingBottom: cssStyle.Bottom,
                 paddingTop: cssStyle.Top,

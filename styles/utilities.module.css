@@ -98,6 +98,12 @@
 
 /*#region Desktop Class*/
 
+.separationLine {
+    height: 2px;
+    background: var(--separationLineColor);
+    width: 100%;
+}
+
 .bgBodyNormalDesktop {
     background: var(--colorBackGroundDesktopNormal);
 }

@@ -61,4 +61,5 @@ export class HeaderSiteBusinessProp extends HeaderSiteBase {
 export class LayoutReviewSectionBusiness {
     Title: string
     IsAvailableWriteReview: boolean
+    PaddingBottomHeader?: number
 }

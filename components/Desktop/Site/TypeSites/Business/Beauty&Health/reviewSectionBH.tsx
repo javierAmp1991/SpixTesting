@@ -7,7 +7,7 @@ import {
     LayoutReviewSectionBusiness,
     ProviderReview
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import LayoutReviewSection from "../Restaurant/layoutReviewSection";
+import LayoutReviewSection from "../Misc/layoutReviewSection";
 
 export default function ReviewSectionBH() {
     const review: ProviderReview = useContext(ReviewBhContext)

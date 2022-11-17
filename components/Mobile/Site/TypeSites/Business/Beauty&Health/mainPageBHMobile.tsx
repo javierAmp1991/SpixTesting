@@ -18,10 +18,12 @@ import QuestionBHMobile from "./questionBHMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import OurJobsMobile from "./ourJobsMobile";
+import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
 const reservationButtonText: string = "Reservar hora"
+const isMarginButton: boolean = true
 
 export default function MainPageBHMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
@@ -29,45 +31,45 @@ export default function MainPageBHMobile() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
 
     return (
-        <>
-            {
-                info.Announcement != null &&
-                <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
-            }
-            <div className={style.mainDiv}>
+        <LayoutMainPageSitesMobile IsMarginButton={isMarginButton}>
+            <div>
+                {
+                    info.Announcement != null &&
+                    <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
+                }
                 <HeaderBhMobile/>
-
-                <OfferBHMobile/>
-                <div className={style.separationLine}/>
-
-                <div className={style.paddingGeneral}>
-                    <InSearchBhMobile/>
-                </div>
-
-                <div className={style.paddingGeneral}>
-                    <ReservationMobile buttonText={reservationButtonText} item={schedule}/>
-                </div>
-
-                <OtherEventsBH/>
-
-                <ReviewSectionBHMobile/>
-
-                <div className={style.paddingGeneral}>
-                    <OurServicesMobile id={idQuestionSection}/>
-                </div>
-
-                <OurJobsMobile/>
-
-                <QuestionBHMobile id={idQuestionSection}/>
-
-                <div className={style.gridSectionProducts}>
-                    {
-                        sectionProducst.map(item =>
-                            <ProductSectionBHMobile key={item.Id} sectionProducts={item}/>
-                        )
-                    }
-                </div>
             </div>
-        </>
+
+            <OfferBHMobile/>
+            <div className={style.separationLine}/>
+
+            <div className={style.paddingGeneral}>
+                <InSearchBhMobile/>
+            </div>
+
+            <div className={style.paddingGeneral}>
+                <ReservationMobile buttonText={reservationButtonText} item={schedule}/>
+            </div>
+
+            <OtherEventsBH/>
+
+            <ReviewSectionBHMobile/>
+
+            <div className={style.paddingGeneral}>
+                <OurServicesMobile id={idQuestionSection}/>
+            </div>
+
+            <OurJobsMobile/>
+
+            <QuestionBHMobile id={idQuestionSection}/>
+
+            <div className={style.gridSectionProducts}>
+                {
+                    sectionProducst.map(item =>
+                        <ProductSectionBHMobile key={item.Id} sectionProducts={item}/>
+                    )
+                }
+            </div>
+        </LayoutMainPageSitesMobile>
     )
 }

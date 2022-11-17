@@ -1,12 +1,10 @@
-import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
+import utilities from "/styles/utilities.module.css";
 import {
-    PrincipalInfoByDefaultContext, SectionProductsByDefaultContext, ShceduleByDefaultContext
+    SectionProductsByDefaultContext, ShceduleByDefaultContext
 } from "../../../../../Providers/Site/TypeSite/Business/ByDefault/SiteBusinessByDefaultProvider";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/ByDefault/mainPage.module.css"
-import Announcement from "../../Misc/announcement";
-import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
-import PresentationCardByDefault from "./PresentationCardByDefault";
+import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import OurServicesByDefault from "./ourServicesByDefault";
 import InOfferByDefault from "./inOfferByDefault";
 import RecomendedByDefault from "./recomendedByDefault";
@@ -16,47 +14,42 @@ import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import QuestionByDefault from "./questionByDefault";
 import Reservation from "../Misc/reservation";
 import ReviewSectionByDefault from "./reviewSectionByDefault";
+import LayoutMainPageSites from "../../Misc/layoutMainPageSites";
+import HeaderByDefault from "./headerByDefault";
 
-const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteEvents
 const idGotoQuestionByDefault: string = "idGoToQuestionByDefault00540098"
 const buttonReservationText: string = "Reservar hora"
+const isMarginBottom: boolean = true
 
 export default function MainPageByDefault() {
-    const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
     const schedule: Schedule[] = useContext(ShceduleByDefaultContext)
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsByDefaultContext)
     return (
-        <div className={style.mainDiv}>
-            <div>
-                {
-                    info.Announcement != null &&
-                    <Announcement styleAnnouncement={styleAnnouncement} announcement={info.Announcement}/>
-                }
+        <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
 
-                <PresentationCardByDefault/>
-            </div>
-            <div className={style.separationLine}/>
+            <HeaderByDefault/>
+            <div className={utilities.separationLine}/>
 
             <InSearchByDefault/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <OurServicesByDefault id={idGotoQuestionByDefault}/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <InOfferByDefault/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <RecomendedByDefault/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <Reservation buttonText={buttonReservationText} item={schedule}/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <ReviewSectionByDefault/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <QuestionByDefault id={idGotoQuestionByDefault}/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLine}/>
 
             <div className={style.gridSectionProducts}>
                 {
@@ -65,6 +58,6 @@ export default function MainPageByDefault() {
                     )
                 }
             </div>
-        </div>
+        </LayoutMainPageSites>
     )
 }

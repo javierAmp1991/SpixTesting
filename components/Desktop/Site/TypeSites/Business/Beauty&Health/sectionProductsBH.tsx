@@ -1,20 +1,20 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css";
-import ProductSectionBh from "../Beauty&Health/productSectionBh";
+import ProductSectionBh from "./productSectionBh";
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
     SectionProductsBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
+import LayoutSectionProducst from "../../Misc/layoutSectionProducst";
 
-export default function SectionProductsBH(){
+export default function SectionProductsBH() {
     const sectionProducts: SectionProductItem[] = useContext(SectionProductsBHContext)
-    return(
-        <div className={style.gridSectionProducts}>
+    return (
+        <LayoutSectionProducst>
             {
                 sectionProducts.map(item =>
                     <ProductSectionBh key={item.Id} sectionProducts={item}/>
                 )
             }
-        </div>
+        </LayoutSectionProducst>
     )
 }

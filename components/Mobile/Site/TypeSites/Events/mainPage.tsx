@@ -18,8 +18,10 @@ import ProductSectionMobile from "../Business/Restaurant/ProductSectionMobile";
 import {SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 import AnnouncementMobile from "../Misc/announcementMobile";
 import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import LayoutMainPageSitesMobile from "../Misc/layoutMainPageSitesMobile";
 
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
+const isMarginBottom: boolean = false
 
 export default function MainPageMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -30,13 +32,11 @@ export default function MainPageMobile() {
             {info.Announcement != null &&
                 <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
             }
-            <div className={`${style.mainDiv} ${utilities.maxWidthMobile}`}>
+            <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
                 <InformationImages/>
-                <div className={style.separationLine}/>
+                <div className={utilities.separationLine}/>
                 <TicketsSectionMobile/>
-                <div className={style.separationLine}/>
                 <InSearch/>
-                <div className={style.separationLine}/>
                 <OfferEventsMobile/>
                 <OtherEvents/>
                 <QuestionSectionMobile/>
@@ -47,8 +47,8 @@ export default function MainPageMobile() {
                         )
                     }
                 </div>
-            </div>
-            <FooterMobile/>
+                <FooterMobile/>
+            </LayoutMainPageSitesMobile>
         </>
     )
 }

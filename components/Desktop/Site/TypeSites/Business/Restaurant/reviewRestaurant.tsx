@@ -1,4 +1,4 @@
-import LayoutReviewSection from "./layoutReviewSection";
+import LayoutReviewSection from "../Misc/layoutReviewSection";
 import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
 import {
     LayoutReviewSectionBusiness,
