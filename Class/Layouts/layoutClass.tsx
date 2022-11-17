@@ -46,3 +46,8 @@ export class LayoutGalleryDesktop {
     InitialImages: string[]
     CloseGallery: Function
 }
+
+export class LayoutGalleryMobile {
+    InitialImages: string[]
+    CloseGallery: Function
+}

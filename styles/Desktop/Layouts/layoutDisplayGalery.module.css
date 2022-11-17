@@ -10,6 +10,7 @@
     --sizeArrow: 32px;
     --gapMainCarrousel: 24px;
     cursor: pointer;
+    z-index: 90000000000000000;
 }
 
 .blackScreen {
