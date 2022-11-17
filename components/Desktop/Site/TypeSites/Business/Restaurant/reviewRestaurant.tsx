@@ -1,7 +1,9 @@
 import LayoutReviewSection from "./layoutReviewSection";
 import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
-import ReviewViewShort from "../../../../Misc/ReviewViewShort";
-import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import {
+    LayoutReviewSectionBusiness,
+    ProviderReview
+} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {ReviewsSectionContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
@@ -19,8 +21,12 @@ export default function ReviewRestaurant(){
         LeftArrow: () => listReview.LeftClick(),
         RightArrow: () => listReview.RightClick()
     }
+    const layoutReviewProp: LayoutReviewSectionBusiness = {
+        Title: "Que opinan nuestros clientes",
+        IsAvailableWriteReview: true
+    }
     return(
-        <LayoutReviewSection>
+        <LayoutReviewSection item={layoutReviewProp}>
             <LayoutCarrouselDesktop layoutProp={layoutPropReview}>
                 {
                     listReview.InitialReview.map((item) =>

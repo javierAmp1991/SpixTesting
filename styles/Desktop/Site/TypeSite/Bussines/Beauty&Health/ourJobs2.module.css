@@ -35,15 +35,12 @@
 .contSlider {
     --sizeDiv: calc(100% / 4);
     display: grid;
-    /* grid-template-columns: var(--sizeDiv);
-     grid-auto-flow: column;
-     grid-auto-columns: var(--sizeDiv);*/
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     position: relative;
     justify-content: center;
-    margin: auto;
     gap: 10px;
+    margin-left: 15%;
     width: 53%;
 }
 
@@ -72,13 +69,3 @@
     transform: scale(1.2);
     transform-origin: top left;
 }
-
-/*.top {
-    margin-bottom: 30%;
-    rotate: 10deg;
-}
-
-.bottom {
-    margin-top: 30%;
-    rotate: -10deg;
-}*/

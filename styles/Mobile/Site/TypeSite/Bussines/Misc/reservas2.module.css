@@ -22,11 +22,11 @@
 
 .styleButton {
     padding: 8px 24px;
+    width: 70%;
     border-radius: 4px;
     background: var(--gradientBlueButton);
     color: white;
-    width: max-content;
-    margin: 28px auto auto auto;
+    margin: 20px auto auto auto;
     display: grid;
 }
 

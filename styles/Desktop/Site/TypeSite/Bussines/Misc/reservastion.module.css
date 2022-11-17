@@ -22,10 +22,10 @@
 
 .styleButton {
     padding: 8px 24px;
+    width: 15%;
     border-radius: 4px;
     background: var(--gradientBlueButton);
     color: white;
-    width: max-content;
     margin: 20px auto auto auto;
     display: grid;
 }
@@ -140,16 +140,6 @@
     color: var(--colorPrimaryTextDesktop);
     width: max-content;
     transition: .4s;
-}
-
-.leftSide {
-    margin-right: var(--firstMargin);
-    margin-left: var(--secondMargin);
-}
-
-.rightSide {
-    margin-left: var(--firstMargin);
-    margin-right: var(--secondMargin);
 }
 
 .baseCircle {

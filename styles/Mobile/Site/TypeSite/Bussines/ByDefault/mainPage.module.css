@@ -1,0 +1,74 @@
+.mainDiv {
+    width: 100%;
+    margin: 0 auto 40px auto;
+    display: grid;
+    gap: 28px;
+}
+
+.separationLine {
+    height: 2px;
+    background: var(--separationLineColor);
+    width: 100%;
+}
+
+.gridSectionProducts {
+    display: grid;
+    gap: 40px;
+}
+
+.gridForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-bottom: 12px;
+}
+
+.title {
+    font-size: 21px;
+    padding-bottom: 50px;
+    font-weight: 500;
+}
+
+.mainDivOurServices {
+    padding-bottom: 12px;
+}
+
+.gridQuestions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 66%;
+}
+
+.paddingGeneral {
+    padding: 0 16px;
+    overflow: scroll;
+}
+
+.contCarrousel {
+    width: 100%;
+    scroll-snap-align: start;
+    display: grid;
+    justify-content: center;
+}
+
+.goToQuestion {
+    padding-top: 40px;
+    text-align: center;
+    width: 100%;
+    text-decoration: underline;
+}
+
+.sep {
+    width: 98%;
+    height: 1px;
+    margin: auto;
+}
+
+.contLayoutCircle{
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    scroll-snap-align: start;
+}

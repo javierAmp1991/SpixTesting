@@ -19,6 +19,7 @@ import ReviewSectionByDefault from "./reviewSectionByDefault";
 
 const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteEvents
 const idGotoQuestionByDefault: string = "idGoToQuestionByDefault00540098"
+const buttonReservationText: string = "Reservar hora"
 
 export default function MainPageByDefault() {
     const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
@@ -48,7 +49,7 @@ export default function MainPageByDefault() {
             <RecomendedByDefault/>
             <div className={style.separationLine}/>
 
-            <Reservation item={schedule}/>
+            <Reservation buttonText={buttonReservationText} item={schedule}/>
             <div className={style.separationLine}/>
 
             <ReviewSectionByDefault/>

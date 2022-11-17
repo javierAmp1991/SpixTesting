@@ -3,14 +3,20 @@ import Image from "next/image";
 import React, {useContext, useState} from "react";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import {GlobalConst} from "../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
+import {createPortal} from "react-dom";
+import LayoutDisplayGallery from "../../../Layouts/layoutDisplayGallery";
+import {LayoutGalleryDesktop} from "../../../../../Class/Layouts/layoutClass";
+
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ImageVideo() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     let [isVideo, setIsVideo] = useState(true)
     let [opacity, setOpacity] = useState(0)
     let [phothoSelected, setPhotoSelected] = useState(info.Images[0])
+    let [displayGallery, setDisplayGallery] = useState(false)
     const handleSelectVideo = (image: string, idx: number) => {
         setIsVideo(isVideo = true)
         setPhotoSelected(phothoSelected = image)
@@ -20,6 +26,11 @@ export default function ImageVideo() {
         setPhotoSelected(phothoSelected = image)
         setIsVideo(isVideo = false)
         setOpacity(opacity = idx)
+    }
+    const handleDisplayGallery = () => setDisplayGallery(displayGallery = !displayGallery)
+    const galleryProps: LayoutGalleryDesktop = {
+        InitialImages: [],
+        CloseGallery: handleDisplayGallery
     }
     return (
         <div className={style.gridImageSelection}>
@@ -45,18 +56,22 @@ export default function ImageVideo() {
                 }
             </div>
             <div className={style.contShowImage}>
-                <button className={style.contShowImage}>
+                <button onClick={handleDisplayGallery} className={style.contShowImage}>
                     {
                         <Image layout={"fill"} objectFit={"cover"} src={phothoSelected} alt=""/>
                     }
                 </button>
                 {
                     isVideo &&
-                    <button className={style.playIconBig}>
+                    <button onClick={handleDisplayGallery} className={style.playIconBig}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon} alt={""}/>
                     </button>
                 }
             </div>
+            {
+                displayGallery &&
+                createPortal(<LayoutDisplayGallery item={galleryProps}/>, document.getElementById(idPortal))
+            }
         </div>
     )
 }

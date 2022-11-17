@@ -1,9 +1,8 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/initialPageRestaurant.module.css"
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import FullBannerRestaurant from "../../../../Misc/fullBannerRestaurant";
-import ProductSection from "./ProductSection";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useEffect, useState} from "react";
+import {useContext} from "react";
 import {
     HeaderContext,
     ScheduleContext,
@@ -20,9 +19,10 @@ import NavSectionProducts from "../Default/NavSectionProducts";
 import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import Reservation from "../Misc/reservation";
 import Announcement from "../../Misc/announcement";
+import SectionProductsRestaurant from "./sectionProductsRestaurant";
 
-const idTest: string = "isTestDesktopScrollControl"
 const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
+const buttonReservationText: string = "Reservar Mesa"
 
 export default function InitialPageRestaurant() {
     /*useEffect(() => {
@@ -46,20 +46,6 @@ export default function InitialPageRestaurant() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const schedule: Schedule[] = useContext(ScheduleContext)
-    let [hasBeenReached, setHasBeenReached] = useState(false)
-    let [startSectionProduct, setStartSectionProduct] = useState(0)
-
-    useEffect(() => {
-        let scrollControl = document.getElementById(idTest).getBoundingClientRect()
-        setStartSectionProduct(startSectionProduct = scrollControl.y)
-    }, [])
-    useEffect(() => {
-        const functionScroll = () => {
-            setHasBeenReached(hasBeenReached = window.scrollY >= startSectionProduct)
-        }
-        window.addEventListener(`scroll`, functionScroll)
-        return () => window.removeEventListener(`scroll`, functionScroll);
-    })
     return (
         <>
             <div className={style.mainGradient}>
@@ -72,23 +58,21 @@ export default function InitialPageRestaurant() {
                     <DescriptionCardFull/>
                 </div>
             </div>
+
             <div className={style.mainDiv}>
+                <InOfferRestaurant/>
+                <div className={style.separationLine}/>
+
                 <InSearchRestaurant/>
                 <div className={style.separationLine}/>
 
-                <ReviewRestaurant/>
-                <div className={style.separationLine}/>
-
-                <InOfferRestaurant/>
+                <Reservation buttonText={buttonReservationText} item={schedule}/>
                 <div className={style.separationLine}/>
 
                 <RecomendedRestarant/>
                 <div className={style.separationLine}/>
 
-                <Reservation item={schedule}/>
-                <div className={style.separationLine}/>
-
-                <QuestionRestaurant/>
+                <ReviewRestaurant/>
                 <div className={style.separationLine}/>
 
                 <div className={style.spaceNavSectionProducts}>
@@ -96,15 +80,12 @@ export default function InitialPageRestaurant() {
                 </div>
                 <div className={style.separationLine}/>
 
-                <NavProductsSection hasBeenReached={hasBeenReached}/>
+                <QuestionRestaurant/>
+                <div className={style.separationLine}/>
 
-                <div className={style.gridSectionProducts} id={idTest}>
-                    {
-                        infoSectionProducts.map(item =>
-                            <ProductSection key={item.Id} sectionProducts={item}/>
-                        )
-                    }
-                </div>
+                <NavProductsSection/>
+
+                <SectionProductsRestaurant/>
             </div>
         </>
     )

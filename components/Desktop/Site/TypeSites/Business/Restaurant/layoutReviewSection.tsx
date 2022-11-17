@@ -1,37 +1,33 @@
-import Image from "next/image";
-import {GlobalConst} from "../../../../../../public/globalConst";
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/layoutReviewSection.module.css"
+import {LayoutReviewSectionBusiness} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import {ReactNode} from "react";
 
-const title: string = "Que opinan nuestros clientes"
 const qualificationText: string = "Calificacion:"
 const seeMoreReview: string = "Ver mas reseñas"
-const newArray = [1,2,3,4,5]
+const writeReview: string = "Escribir Reseña"
 
-export default function LayoutReviewSection({children}) {
+export default function LayoutReviewSection({children, item}:
+                                                { children: ReactNode, item: LayoutReviewSectionBusiness }) {
     return (
         <div className={style.mainDiv}>
-            <div className={style.title}>
-                {title}
-            </div>
-            <div className={style.gridRating}>
+            <div className={style.header}>
+                <div className={style.title}>
+                    {item.Title}
+                </div>
                 <div className={style.rating}>
                     {qualificationText} 5/5
                 </div>
-               {/* <div className={style.gridStars}>
-                    {
-                        newArray.map((e, index) =>
-                            <div key={index} className={style.sizeStar}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.ratingIndFull}
-                                       alt={""}/>
-                            </div>
-                        )
-                    }
-                </div>*/}
+                <div className={style.seeMore}>
+                    {seeMoreReview}
+                </div>
             </div>
             {children}
-            <div className={style.seeMore}>
-                {seeMoreReview}
-            </div>
+            {
+                item.IsAvailableWriteReview &&
+                <div className={style.writeReview}>
+                    {writeReview}
+                </div>
+            }
         </div>
     )
 }

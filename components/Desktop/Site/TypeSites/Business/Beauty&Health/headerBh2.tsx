@@ -8,7 +8,7 @@ import {
 import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
-import OurJobs2 from "./ourJobs2";
+import BannerImages from "./bannerImages";
 
 
 export default function HeaderBh2() {
@@ -42,7 +42,7 @@ export default function HeaderBh2() {
         <div className={`${style.mainDiv} 
         ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <HeaderSiteBussiness item={headerBusiness}/>
-            <OurJobs2/>
+            <BannerImages/>
             <div className={style.sizeNewBanner}>
                 <Image priority={true} layout={"fill"} src={info.LogoPath} alt={""}/>
             </div>

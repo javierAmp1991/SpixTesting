@@ -6,7 +6,7 @@ import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Busine
 import {GlobalId} from "../../../../../../public/globalConst";
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function OurJobs2() {
+export default function BannerImages() {
 
     const info: PresentationCard = useContext(HeaderDataBHContext)
     return (

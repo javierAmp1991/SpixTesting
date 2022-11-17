@@ -34,10 +34,15 @@ export class LayoutCarrouselMobileProp {
     Gap: number
 }
 
-export class LayoutWithNavCircleProp{
+export class LayoutWithNavCircleProp {
     Top?: number
     Bottom?: number
     Left?: number
     Right?: number
     IsWithBorder?: boolean
+}
+
+export class LayoutGalleryDesktop {
+    InitialImages: string[]
+    CloseGallery: Function
 }

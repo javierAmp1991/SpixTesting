@@ -1,44 +1,37 @@
-.mainDiv{
-}
-.gridStars {
+.mainDiv {
     display: grid;
-    grid-template-columns: repeat(5, max-content);
-    gap: 6px;
-    justify-content: center;
-    padding-top: 2px;
+    gap: 32px;
+}
+
+.header {
+    padding-bottom: 32px;
 }
 
 .title {
     font-size: 28px;
     font-weight: 500;
     color: var(--colorTitlesDesktop);
-    text-align: center;
 }
 
-.gridRating{
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    padding-bottom: 64px;
-    padding-top: 4px;
-    gap: 12px;
-    justify-content: center;
-}
-
-.rating{
+.rating {
     font-size: 21px;
     line-height: 27px;
     font-weight: 500;
 }
 
-.sizeStar{
-    height: 20px;
-    width: 20px;
-    position: relative;
-}
-
-.seeMore{
-    padding-top: 32px;
+.seeMore {
     font-size: 16px;
     color: var(--linkColor);
     cursor: pointer;
+    padding-top: 6px;
+}
+
+.writeReview {
+    width: max-content;
+    padding: 6px 32px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    margin-right: auto;
+    display: grid;
+    border-radius: 4px;
+    overflow: hidden;
 }

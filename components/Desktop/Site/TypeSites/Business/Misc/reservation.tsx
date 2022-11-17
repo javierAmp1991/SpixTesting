@@ -17,7 +17,7 @@ const noDisponibleTagText = "Reservadas"
 const closeLocalText: string = "Cerrado"
 const scheduleText: string = "Reservar para: "
 
-export default function Reservation({item}: { item: Schedule[] }) {
+export default function Reservation({item, buttonText}: { item: Schedule[], buttonText: string }) {
     const schedule: Schedule[] = item
     let [dateSelected, setDateSelected] = useState(new Date)
     let [oficialDate, setOficialDate] = useState(new Date)
@@ -153,9 +153,9 @@ export default function Reservation({item}: { item: Schedule[] }) {
                                 }
                             </div>
                         </div>
-                        {/*  <button className={style.styleButton}>
-                        {reserveTable}
-                    </button>*/}
+                        <button className={style.styleButton}>
+                            {buttonText}
+                        </button>
                     </div>
                 </div>
                 {

@@ -21,6 +21,7 @@ import OurJobsMobile from "./ourJobsMobile";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
+const reservationButtonText: string = "Reservar hora"
 
 export default function MainPageBHMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
@@ -36,26 +37,26 @@ export default function MainPageBHMobile() {
             <div className={style.mainDiv}>
                 <HeaderBhMobile/>
 
-                <OurJobsMobile/>
+                <OfferBHMobile/>
+                <div className={style.separationLine}/>
 
                 <div className={style.paddingGeneral}>
                     <InSearchBhMobile/>
                 </div>
 
-                <ReviewSectionBHMobile/>
-
-                <OfferBHMobile/>
-                <div className={style.separationLine}/>
+                <div className={style.paddingGeneral}>
+                    <ReservationMobile buttonText={reservationButtonText} item={schedule}/>
+                </div>
 
                 <OtherEventsBH/>
+
+                <ReviewSectionBHMobile/>
 
                 <div className={style.paddingGeneral}>
                     <OurServicesMobile id={idQuestionSection}/>
                 </div>
 
-                <div className={style.paddingGeneral}>
-                    <ReservationMobile item={schedule}/>
-                </div>
+                <OurJobsMobile/>
 
                 <QuestionBHMobile id={idQuestionSection}/>
 

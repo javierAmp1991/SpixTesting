@@ -57,3 +57,8 @@ export class HeaderSiteBusinessProp extends HeaderSiteBase {
     Venue: MapPopUpProp
     TypeSite: TypeSiteBusiness
 }
+
+export class LayoutReviewSectionBusiness {
+    Title: string
+    IsAvailableWriteReview: boolean
+}

@@ -4,5 +4,118 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, .5);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    --sizeArrow: 32px;
+    --gapMainCarrousel: 24px;
+    cursor: pointer;
+}
+
+.blackScreen {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 300;
+}
+
+.renderDiv {
+    width: 35vw;
+    margin: auto;
+    display: grid;
+    gap: 24px;
+    z-index: 5000;
+    position: relative;
+}
+
+.principalGrid {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    gap: var(--gapMainCarrousel);
+    align-items: center;
+}
+
+.sizeArrow {
+    width: var(--sizeArrow);
+    height: var(--sizeArrow);
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    background: white;
+}
+
+.gridMin {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 calc(var(--sizeArrow) + var(--gapMainCarrousel));
+}
+
+.contCarrousel {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 1);
+    border-radius: 8px;
+    position: relative;
+}
+
+.gridCarrousel {
+    width: 100%;
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    transition: .6s;
+}
+
+.sizeImageCarrousel {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+}
+
+.sizeImageMin {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.selectedItem {
+    box-shadow: 0 0 4px orange;
+}
+
+.noSelectedItem {
+    opacity: .7;
+}
+
+.contCloseImage {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 100;
+    background: white;
+    border-radius: 50%;
+    transition: .4s;
+    border: 1px solid gray;
+}
+
+.contCloseImage:hover {
+    transform: scale(1.05);
+}
+
+.closeImage {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }

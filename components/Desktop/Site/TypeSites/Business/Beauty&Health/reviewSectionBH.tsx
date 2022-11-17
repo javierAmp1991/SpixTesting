@@ -1,18 +1,13 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/reviewSection.module.css"
-import {ReviewItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {ReviewBhContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import ReviewViewVertical from "../../../../Misc/ReviewViewVertical";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
-import Image from "next/image";
-import {GlobalConst} from "../../../../../../public/globalConst";
-import {ProviderReview} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-
-const title: string = "Testimonios de nuestros clientes"
-const qualificationText: string = "Calificacion:"
-const seeMoreReview: string = "Ver mas reseñas"
-const newArray = [1,2,3,4,5]
+import {
+    LayoutReviewSectionBusiness,
+    ProviderReview
+} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import LayoutReviewSection from "../Restaurant/layoutReviewSection";
 
 export default function ReviewSectionBH() {
     const review: ProviderReview = useContext(ReviewBhContext)
@@ -25,29 +20,13 @@ export default function ReviewSectionBH() {
         IsButtonVisible: false,
         LeftArrow: review.RightClick,
         RightArrow: review.LeftClick
-        /*        LeftArrow: () => listReview.LeftClick(),
-                RightArrow: () => listReview.RightClick()*/
+    }
+    const layoutReviewProp: LayoutReviewSectionBusiness = {
+        Title: "Testimonio de nuestros clientes",
+        IsAvailableWriteReview: true
     }
     return (
-        <div>
-            <div className={style.title}>
-                {title}
-            </div>
-            <div className={style.gridRating}>
-                <div className={style.rating}>
-                    {qualificationText} 5/5
-                </div>
-               {/* <div className={style.gridStars}>
-                    {
-                        newArray.map((e, index) =>
-                            <div key={index} className={style.sizeStar}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.ratingIndFull}
-                                       alt={""}/>
-                            </div>
-                        )
-                    }
-                </div>*/}
-            </div>
+        <LayoutReviewSection item={layoutReviewProp}>
             <LayoutCarrouselDesktop layoutProp={layoutPropReview}>
                 {
                     review.InitialReview.map(item =>
@@ -55,9 +34,6 @@ export default function ReviewSectionBH() {
                     )
                 }
             </LayoutCarrouselDesktop>
-            <div className={style.seeMore}>
-                {seeMoreReview}
-            </div>
-        </div>
+        </LayoutReviewSection>
     )
 }

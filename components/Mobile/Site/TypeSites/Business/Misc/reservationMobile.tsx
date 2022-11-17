@@ -17,7 +17,7 @@ const noDisponibleTagText = "Agotadas"
 const closeLocalText: string = "Cerrado"
 const scheduleText: string = "Reservar para: "
 
-export default function ReservationMobile({item}: { item: Schedule[] }) {
+export default function ReservationMobile({item, buttonText}: { item: Schedule[], buttonText: string }) {
     let [dateSelected, setDateSelected] = useState(new Date)
     let [oficialDate, setOficialDate] = useState(new Date)
     let [displayDate, setDisplayDate] = useState(false)
@@ -80,6 +80,9 @@ export default function ReservationMobile({item}: { item: Schedule[] }) {
                     }
                 </div>
                 <div className={style.lineCircle}/>
+                <button className={style.styleButton}>
+                    {buttonText}
+                </button>
                 {
                     displayDate &&
                     <PopUpContainerMob closePopUp={handleDisplayDate} isBackground={true} isButtonVisible={true}>
