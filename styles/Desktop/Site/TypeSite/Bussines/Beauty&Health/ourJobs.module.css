@@ -14,6 +14,7 @@
     grid-template-columns: max-content 1fr max-content;
     gap: 48px;
     align-items: center;
+    padding: 32px 0;
 }
 
 .sizeImage {

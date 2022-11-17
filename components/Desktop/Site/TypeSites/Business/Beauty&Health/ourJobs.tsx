@@ -51,9 +51,6 @@ export default function OurJobs() {
             <div className={style.title}>
                 {ourJobsText}
             </div>
-            <div className={style.seeGallery}>
-                {seeGallery}
-            </div>
             <div className={style.mainGridCarrousel}>
                 <button onClick={handleLeft} className={style.sizeArrow}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
@@ -72,6 +69,9 @@ export default function OurJobs() {
                 <button onClick={handleRight} className={style.sizeArrow}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                 </button>
+            </div>
+            <div className={style.seeGallery}>
+                {seeGallery}
             </div>
         </div>
     )
