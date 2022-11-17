@@ -10,23 +10,26 @@
 }
 
 .backgroundBH{
-    background: linear-gradient(145deg, #ffc3e1 0%, #f1acc1 100%);
+    background: linear-gradient(180deg, #ffc3e1 0%, #f1acc1 100%);
     color: black;
 }
 
 .backgroundEvents{
-    background: linear-gradient(145deg, #FE5858 0%, #f86307 100%);
     background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+    background: linear-gradient(145deg, #1100ae 0%, #4062BB 100%);
+    background: linear-gradient(145deg, #e53c3c 0%, #e36518 100%);
+    background: linear-gradient(145deg, #647DEE 0%, #7F53AC 100%);
+    background: linear-gradient(180deg, #C81F70 0%, #ee4042 100%);
     color: white;
 }
 
 .backgroundRestaurant {
-    background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
+    background: linear-gradient(180deg, #5F0A87 0%, #9d337d 100%);
     color: white;
 }
 
 .backgroundByDefault{
-    background: linear-gradient(145deg, #0482e9 0%, #045DE9 100%);
+    background: linear-gradient(180deg, #0482e9 0%, #045DE9 100%);
     color: white;
 }
 
