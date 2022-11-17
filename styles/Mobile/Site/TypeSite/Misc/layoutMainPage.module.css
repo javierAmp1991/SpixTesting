@@ -1,6 +1,7 @@
 .mainDiv {
     width: 100vw;
     margin: 0 auto 40px auto;
+    padding-bottom: 40px;
     display: grid;
     gap: 40px;
 }
