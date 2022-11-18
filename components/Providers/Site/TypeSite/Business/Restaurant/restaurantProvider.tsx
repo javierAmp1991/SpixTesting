@@ -10,6 +10,7 @@ import {FormLink, News, Product} from "../../../../../../dataDemo/data";
 import {ProviderNewsEvents, TypeActionContact} from "../../../../../../Class/Site/TypeSite/Events/events";
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import {MultimediaItemType} from "../../../../../../Class/Layouts/layoutClass";
 
 export const HeaderContext = createContext(null)
 export const SectionProductsContext = createContext(null)
@@ -299,6 +300,23 @@ const headerData: PresentationCard = {
     ],
     Tags: ["Restaurant", "Sushi", "Bebidas"],
     SideImages: ["/images/hellkitchen1.jpg", "/images/hellkitchen2.jpg", "/images/hellkitchen3.jpg"],
+    GalleryImages: [
+        {
+            Id: "idRestaurantGalleryImage001",
+            Type: MultimediaItemType.Image,
+            Link: "/images/hellkitchen1.jpg"
+        },
+        {
+            Id: "idRestaurantGalleryImage002",
+            Type: MultimediaItemType.Image,
+            Link: "/images/hellkitchen2.jpg"
+        },
+        {
+            Id: "idRestaurantGalleryImage003",
+            Type: MultimediaItemType.Image,
+            Link: "/images/hellkitchen3.jpg"
+        },
+    ],
     Announcement: {
         Id: "idAnnouncement001",
         Link: "/",

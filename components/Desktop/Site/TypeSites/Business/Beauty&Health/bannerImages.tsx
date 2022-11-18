@@ -11,10 +11,10 @@ export default function BannerImages() {
         <div className={style.mainDiv}>
             <div className={`${style.contSlider}`}>
                 {
-                    info.SideImages.map((item, index) =>
+                    info.GalleryImages.map((item, index) =>
                         <button key={index} className={`${style.contImage} ${getStyle(index)}`}>
                             <div className={style.sizeImage}>
-                                <Image layout={"fill"} src={item} alt={""}/>
+                                <Image layout={"fill"} src={item.Link} alt={""}/>
                             </div>
                         </button>
                     )

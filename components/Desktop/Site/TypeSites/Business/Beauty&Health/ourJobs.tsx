@@ -7,25 +7,21 @@ import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {
-    LayoutGalleryDesktop,
-    MultimediaItem,
-    MultimediaItemType,
+    LayoutGalleryProps,
 } from "../../../../../../Class/Layouts/layoutClass";
 import Slider from "react-slick";
 
 const ourJobsText: string = "Nuestros Trabajos"
 const seeGallery: string = "Ver Galeria"
 const idPortal: string = GlobalId.globalIds.idPortal
-const gap: number = 48
-const lessSpace: number = gap * 2
 
 export default function OurJobs() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
     let [displayGallery, setDisplayGallery] = useState(false)
     let [control, setControl] = useState(1)
+    /*    let initialSelection: number = 0
     const mainDivRef = useRef(null)
     const sizeDivRef = useRef(null)
-    /*    let initialSelection: number = 0
         const handleRight = () => {
             initialSelection += 1
             const firstElement = mainDivRef.current.children[0];
@@ -79,29 +75,11 @@ export default function OurJobs() {
             CloseGallery: handleGallery
         }*/
 
-    const listMultimediaItem: MultimediaItem[] = [
-        {
-            Id: "image001",
-            Type: MultimediaItemType.Video,
-            Link: "https://www.youtube.com/embed/hyV1AJiFNyo?controls=0"
-        },
-        {
-            Id: "image002",
-            Type: MultimediaItemType.Video,
-            Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
-            Thumbnail: "/images/corte4.jpeg"
-        },
-        {
-            Id: "image003",
-            Type: MultimediaItemType.Image,
-            Link: "/images/corte4.jpeg"
-        }
-    ]
     const handleGallery = () => setDisplayGallery(displayGallery = !displayGallery)
 
-    const galleryProp: LayoutGalleryDesktop = {
+    const galleryProp: LayoutGalleryProps = {
         CloseGallery: handleGallery,
-        InitialMedia: listMultimediaItem
+        InitialMedia: info.GalleryImages
     }
 
     function SampleNextArrow(props) {
@@ -155,10 +133,10 @@ export default function OurJobs() {
                 <div className={style.contSlider}>
                     <Slider {...settings}>
                         {
-                            info.SideImages.map((item, index) =>
+                            info.GalleryImages.map((item, index) =>
                                 <div key={index}
                                      className={`${style.sizeImage} ${index === control ? style.focus : style.noFocus}`}>
-                                    <Image priority={true} layout={"fill"} src={item} alt={""}/>
+                                    <Image priority={true} layout={"fill"} src={item.Link} alt={""}/>
                                 </div>
                             )
                         }

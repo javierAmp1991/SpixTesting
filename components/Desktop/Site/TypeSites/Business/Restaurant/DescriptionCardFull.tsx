@@ -12,6 +12,8 @@ import PopUpContainer from "../../../../Misc/popUpContainer";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
+import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
+import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const seeGallery: string = "Ver galeria"
@@ -20,6 +22,8 @@ export default function DescriptionCardFull() {
     const info: PresentationCard = useContext(HeaderContext)
     let [imageDisplay, setImageDisplay] = useState("")
     let [displayImage, setDisplayImage] = useState(false)
+    let [displayGallery, setDisplayGallery] = useState(false)
+    const handleDisplayGallery = () => setDisplayGallery(displayGallery = !displayGallery)
     const handlePopUpImage = () => setDisplayImage(displayImage = !displayImage)
     const handleClickImage = (path: string) => {
         setImageDisplay(imageDisplay = path)
@@ -48,6 +52,10 @@ export default function DescriptionCardFull() {
         }
     }
     const isAnnouncement: boolean = info.Announcement == null
+    const galleryProp: LayoutGalleryProps = {
+        InitialMedia: info.GalleryImages,
+        CloseGallery: handleDisplayGallery
+    }
     return (
         <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
                 ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
@@ -67,21 +75,27 @@ export default function DescriptionCardFull() {
                 <div className={style.gridImageButton}>
                     <div className={style.gridSideImage}>
                         {
-                            info.SideImages.map((e, index) =>
+                            info.GalleryImages.map((e, index) =>
                                 <div key={index} className={
                                     index == 0 ? style.top : index == 1 ? style.center : style.bottom}>
-                                    <button onClick={() => handleClickImage(e)} className={style.sizeSideImage}>
-                                        <Image layout={"fill"} src={e} alt={""}/>
+                                    <button onClick={() => handleClickImage(e.Link)} className={style.sizeSideImage}>
+                                        <Image layout={"fill"} src={e.Link} alt={""}/>
                                     </button>
                                 </div>
                             )
                         }
                     </div>
-                    <button className={style.seeGalery}>
+                    <button onClick={handleDisplayGallery} className={style.seeGalery}>
                         {seeGallery}
                     </button>
                 </div>
             </div>
+            {
+                displayGallery &&
+                createPortal(
+                    <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
+                )
+            }
             {
                 displayImage &&
                 createPortal(

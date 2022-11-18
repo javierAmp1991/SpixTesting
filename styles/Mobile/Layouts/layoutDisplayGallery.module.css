@@ -38,6 +38,15 @@
     aspect-ratio: 1/1;
     position: relative;
     scroll-snap-align: start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    background: black;
+}
+
+.video {
+    aspect-ratio: 1/1;
+    width: 100%;
 }
 
 .sizeImageMin {
@@ -73,4 +82,25 @@
 .snapScroll {
     scroll-snap-align: start;
     scroll-snap-stop: always;
+}
+
+.contPlayIcon{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    justify-items:  center;
+    align-items: center;
+    z-index: 100000;
+    background: rgba(0,0,0,.6);
+}
+
+.iframe{
+    width: 100%;
+    aspect-ratio: 1/1;
+    opacity: 0;
+    position: relative;
+    z-index: 200;
 }

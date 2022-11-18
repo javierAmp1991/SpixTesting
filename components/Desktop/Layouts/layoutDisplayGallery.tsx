@@ -2,11 +2,11 @@ import style from "/styles/Desktop/Layouts/layoutDisplayGalery.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
-import {LayoutGalleryDesktop, MultimediaItemType} from "../../../Class/Layouts/layoutClass";
+import {LayoutGalleryProps, MultimediaItemType} from "../../../Class/Layouts/layoutClass";
 
 const initialTranslate: string = `translate(0)`
 
-export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDesktop }) {
+export default function LayoutDisplayGallery({item}: { item: LayoutGalleryProps }) {
     const refContCarrousel = useRef(null)
     let [displacement, setDisplacement] = useState(initialTranslate)
     let [controlDisplacement, setControlDisplacement] = useState(0)
@@ -39,20 +39,20 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                         <div style={{transform: displacement}} className={style.gridCarrousel}>
                             {
                                 listImages.map((e) =>
-                                    e.Type == MultimediaItemType.Image ?
-                                        <div key={e.Id} className={style.sizeImageCarrousel}>
-                                            <Image objectFit={"cover"} layout={"fill"} src={e.Link} alt={""}/>
-                                        </div>
-                                        :
-                                        e.Thumbnail == null ?
-                                            <div key={e.Id} className={style.contVideo}>
-                                                <iframe className={style.video} src={e.Link}/>
-                                            </div>
-                                            :
-                                            <div key={e.Id} className={style.contVideo}>
-                                                <video poster={e.Thumbnail} className={style.video} controls={true}
-                                                       src={e.Link}/>
-                                            </div>
+
+                                    <div key={e.Id} className={style.sizeImageCarrousel}>
+                                        {
+
+                                            e.Type == MultimediaItemType.Image ?
+                                                <Image objectFit={"cover"} layout={"fill"} src={e.Link} alt={""}/>
+                                                :
+                                                e.Thumbnail == null ?
+                                                    <iframe className={style.video} src={e.Link}/>
+                                                    :
+                                                    <video className={style.video} controls={true}
+                                                           src={e.Link}/>
+                                        }
+                                    </div>
                                 )
                             }
                         </div>
@@ -87,7 +87,8 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                                     <div className={style.contPlayIcon}>
                                         {
                                             e.Thumbnail == null ?
-                                                <Image width={20} height={24} src={GlobalConst.sourceImages.youtubeIcon}/>
+                                                <Image width={20} height={24}
+                                                       src={GlobalConst.sourceImages.youtubeIcon}/>
                                                 :
                                                 <Image width={20} height={20} src={GlobalConst.sourceImages.playIcon}/>
                                         }

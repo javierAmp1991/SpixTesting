@@ -8,7 +8,7 @@ import Image from "next/image";
 import {createPortal} from "react-dom";
 import LayoutDisplayGalleryMobile from "../../../Layouts/layoutDisplayGalleryMobile";
 import {GlobalId} from "../../../../../public/globalConst";
-import {LayoutGalleryMobile} from "../../../../../Class/Layouts/layoutClass";
+import {LayoutGalleryMobile, LayoutGalleryProps} from "../../../../../Class/Layouts/layoutClass";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -16,8 +16,8 @@ export default function ImageVideoMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
     let [displayGAllery, setDisplayGallery] = useState(false)
     const handleGallery = () => setDisplayGallery(displayGAllery = !displayGAllery)
-    const galleryProps: LayoutGalleryMobile = {
-        InitialImages: info.Images,
+    const galleryProps: LayoutGalleryProps = {
+        InitialMedia: info.GalleryImages,
         CloseGallery: handleGallery
     }
     return (

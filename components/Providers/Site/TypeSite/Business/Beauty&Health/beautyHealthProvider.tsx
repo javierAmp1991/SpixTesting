@@ -12,6 +12,7 @@ import {
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import {TypeActionContact} from "../../../../../../Class/Site/TypeSite/Events/events";
+import {MultimediaItemType} from "../../../../../../Class/Layouts/layoutClass";
 
 export const ReviewBhContext = createContext(null)
 export const SectionProductsBHContext = createContext(null)
@@ -593,6 +594,28 @@ const headerData: PresentationCard = {
     ],
     Tags: ["Belleza", "Salud", "Peluqueria"],
     SideImages: ["/images/corte4.jpeg", "/images/corte1.jpg", "/images/corte2.jpg", "/images/corte3.jpg"],
+    GalleryImages: [
+        {
+            Id: "idBhGalleryImage001",
+            Type: MultimediaItemType.Image,
+            Link: "/images/corte4.jpeg"
+        },
+        {
+            Id: "idBhGalleryImage001",
+            Type: MultimediaItemType.Image,
+            Link: "/images/corte1.jpg"
+        },
+        {
+            Id: "idBhGalleryImage001",
+            Type: MultimediaItemType.Image,
+            Link: "/images/corte2.jpg"
+        },
+        {
+            Id: "idBhGalleryImage001",
+            Type: MultimediaItemType.Image,
+            Link: "/images/corte3.jpg"
+        }
+    ],
     Announcement: {
         Id: "idAnnouncement001",
         Link: "/",

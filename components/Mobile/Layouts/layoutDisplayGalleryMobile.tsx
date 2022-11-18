@@ -1,9 +1,10 @@
 import style from "../../../styles/Mobile/Layouts/layoutDisplayGallery.module.css";
 import {useRef, useState} from "react";
 import Image from "next/image";
-import {LayoutGalleryMobile} from "../../../Class/Layouts/layoutClass";
+import {LayoutGalleryProps, MultimediaItemType} from "../../../Class/Layouts/layoutClass";
+import {GlobalConst} from "../../../public/globalConst";
 
-export default function LayoutDisplayGalleryMobile({item}: {item: LayoutGalleryMobile}) {
+export default function LayoutDisplayGalleryMobile({item}: { item: LayoutGalleryProps }) {
     const divRef = useRef(null)
     let [circleSelected, setCircleSelected] = useState(0)
     const handleScroll = (e) => {
@@ -19,19 +20,48 @@ export default function LayoutDisplayGalleryMobile({item}: {item: LayoutGalleryM
             <div className={style.renderDiv}>
                 <div onScroll={handleScroll} ref={divRef} className={style.gridImageSection}>
                     {
-                        item.InitialImages.map((item, index) =>
+                        item.InitialMedia.map((e, index) =>
                             <div key={index} className={style.sizeImage}>
-                                <Image layout={"fill"} src={item} alt={""}/>
+                                {
+                                    e.Type == MultimediaItemType.Image ?
+                                        <Image layout={"fill"} src={e.Link} alt={""}/>
+                                        :
+                                        e.Thumbnail != null ?
+                                            <video className={style.video} controls={true} src={e.Link}/>
+                                            :
+                                            <iframe className={style.video} src={e.Link}/>
+                                }
                             </div>
                         )
                     }
                 </div>
                 <div className={style.gridNavItems}>
                     {
-                        item.InitialImages.map((item, index) =>
-                            <div key={index} className={`${style.sizeImageMin}
-                             ${index == circleSelected && style.focus}`}>
-                                <Image layout={"fill"} src={item} alt={""}/>
+                        item.InitialMedia.map((e, index) =>
+                            <div key={index}
+                                 className={`${style.sizeImageMin} ${index == circleSelected && style.focus}`}>
+                                {
+                                    e.Type == MultimediaItemType.Image ?
+                                        <Image layout={"fill"} src={e.Link} alt={""}/>
+                                        :
+                                        e.Thumbnail != null ?
+                                            <Image layout={"fill"} src={e.Thumbnail} alt={""}/>
+                                            :
+                                            <iframe className={style.iframe} src={e.Link}/>
+                                }
+                                {
+                                    e.Type == MultimediaItemType.Video &&
+                                    <div className={style.contPlayIcon}>
+                                        {
+                                            e.Thumbnail == null ?
+                                                <Image width={20} height={24}
+                                                       src={GlobalConst.sourceImages.youtubeIcon}/>
+                                                :
+                                                <Image width={20} height={20}
+                                                       src={GlobalConst.sourceImages.playIcon}/>
+                                        }
+                                    </div>
+                                }
                             </div>
                         )
                     }

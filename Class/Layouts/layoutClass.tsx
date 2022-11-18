@@ -65,7 +65,7 @@ export class MediaGallery {
     Id: string
 }
 
-export class LayoutGalleryDesktop {
+export class LayoutGalleryProps {
     CloseGallery: Function
     InitialMedia: MultimediaItem[]
 }

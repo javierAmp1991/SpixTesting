@@ -7,6 +7,7 @@ import {
 } from "../../../Misc/GlobalClass";
 import {ContactItems} from "../Events/events";
 import {AnnouncementItem, HeaderSiteBase} from "../Misc/globalClassSite";
+import {MultimediaItem} from "../../../Layouts/layoutClass";
 
 export class PresentationCard {
     Banner: string
@@ -19,6 +20,7 @@ export class PresentationCard {
     Contact: ContactItems[]
     Tags: string[]
     SideImages: string[]
+    GalleryImages?: MultimediaItem[]
     Announcement?: AnnouncementItem
 
 }

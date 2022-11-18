@@ -2,15 +2,18 @@ import {createContext, useState} from "react";
 import {
     DateAreaSelected,
     PrincipalInfoEvent,
-    ProviderNewsEvents, ProviderSectionTicket,
+    ProviderNewsEvents,
+    ProviderSectionTicket,
     ReviewSection,
-    TicketSectionSiteEvents, TypeActionContact
+    TicketSectionSiteEvents,
+    TypeActionContact
 } from "../../../../../Class/Site/TypeSite/Events/events";
 import {FormLink, News, Product} from "../../../../../dataDemo/data";
 import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../dataDemo/EventView/eventVerticalView";
 import {ProductItem, QuestionItem, SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../../../public/globalConst";
+import {MultimediaItemType} from "../../../../../Class/Layouts/layoutClass";
 
 const listProductsOffer: ProductItem[] = [
     {
@@ -140,8 +143,35 @@ const principalInfo: PrincipalInfoEvent = {
     Likes: 400,
     WishList: 50,
     Images: ["/images/thedoor1.jpg", "/images/thedoor2.jpg", "/images/thedoor3.jpg", "/images/thedoor4.jpg"/*, "/images/thedoor5.jpg"*/],
+    GalleryImages: [
+        {
+            Id: "idEventsGalleryImage001",
+            Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
+            Type: MultimediaItemType.Video,
+            Thumbnail: "/images/thedoor1.jpg"
+        },
+        {
+            Id: "idEventsGalleryImage002",
+            Link: "/images/thedoor2.jpg",
+            Type: MultimediaItemType.Image,
+        },
+        {
+            Id: "idEventsGalleryImage003",
+            Link: "/images/thedoor3.jpg",
+            Type: MultimediaItemType.Image,
+        },
+        {
+            Id: "idEventsGalleryImage004",
+            Link: "/images/thedoor4.jpg",
+            Type: MultimediaItemType.Image,
+        },
+        {
+            Id: "idEventsGalleryImage005",
+            Link: "/images/thedoor5.jpg",
+            Type: MultimediaItemType.Image,
+        }
+    ],
     Video: null,
-    /*Video: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",*/
     Contact: [
         {
             Id: "contact005",

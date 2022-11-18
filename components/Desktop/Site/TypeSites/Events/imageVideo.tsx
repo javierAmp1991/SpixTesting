@@ -7,7 +7,7 @@ import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../Layouts/layoutDisplayGallery";
-import {LayoutGalleryDesktop} from "../../../../../Class/Layouts/layoutClass";
+import {LayoutGalleryProps, MultimediaItemType} from "../../../../../Class/Layouts/layoutClass";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -28,29 +28,27 @@ export default function ImageVideo() {
         setOpacity(opacity = idx)
     }
     const handleDisplayGallery = () => setDisplayGallery(displayGallery = !displayGallery)
-    const galleryProps: LayoutGalleryDesktop = {
-        InitialImages: [],
+    const galleryProps: LayoutGalleryProps = {
+        InitialMedia: info.GalleryImages,
         CloseGallery: handleDisplayGallery
     }
     return (
         <div className={style.gridImageSelection}>
             <div className={style.gridSelectionZone}>
                 {
-                    info.Images.map((item, index) =>
-                        index == 0 ?
-                            <button onClick={() => handleSelectVideo(item, index)} key={index}
+                    info.GalleryImages.map((item, index) =>
+                        item.Type == MultimediaItemType.Video ?
+                            <button onClick={() => handleSelectVideo(item.Thumbnail, index)} key={index}
                                     className={`${style.contImage} ${opacity != index && utilities.opacity5}`}>
-                                <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                <Image layout={"fill"} objectFit={"cover"} src={item.Thumbnail} alt=""/>
                                 <div className={style.playIconProperties}>
-                                    <Image layout={"fill"} objectFit={"cover"}
-                                           src={GlobalConst.sourceImages.playIcon}
-                                           alt=""/>
+                                    <Image layout={"fill"} objectFit={"cover"} src={GlobalConst.sourceImages.playIcon} alt=""/>
                                 </div>
                             </button>
                             :
-                            <button onClick={() => handleSelectImage(item, index)} key={index}
+                            <button onClick={() => handleSelectImage(item.Link, index)} key={index}
                                     className={`${style.contImage} ${opacity != index && utilities.opacity5}`}>
-                                <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                                <Image layout={"fill"} objectFit={"cover"} src={item.Link} alt=""/>
                             </button>
                     )
                 }

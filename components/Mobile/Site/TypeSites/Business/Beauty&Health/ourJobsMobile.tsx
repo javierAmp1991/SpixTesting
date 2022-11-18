@@ -62,9 +62,6 @@ export default function OurJobsMobile() {
                     </div>
                 </>
             </LayoutTitleCustomMobile>
-            {
-
-            }
         </div>
     )
 }

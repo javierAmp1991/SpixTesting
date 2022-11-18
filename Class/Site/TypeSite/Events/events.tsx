@@ -1,6 +1,7 @@
 import {News} from "../../../../dataDemo/data";
 import {ReviewItem} from "../../../Misc/GlobalClass";
 import {AnnouncementItem, HeaderSiteBase} from "../Misc/globalClassSite";
+import {MultimediaItem} from "../../../Layouts/layoutClass";
 
 export class DateVenueEvent {
     Id: string
@@ -42,6 +43,7 @@ export class PrincipalInfoEvent {
     Contact: ContactItems[]
     Produce: string
     Announcement: AnnouncementItem
+    GalleryImages?: MultimediaItem[]
 }
 
 export class ProviderNewsEvents {
