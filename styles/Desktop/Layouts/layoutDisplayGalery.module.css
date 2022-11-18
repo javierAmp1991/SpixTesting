@@ -134,3 +134,12 @@
     height: 100%;
     position: relative;
 }
+
+.contPlayIcon{
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}

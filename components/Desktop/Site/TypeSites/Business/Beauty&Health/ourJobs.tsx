@@ -6,23 +6,26 @@ import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
-import {LayoutGalleryDesktop, TypeGallery} from "../../../../../../Class/Layouts/layoutClass";
+import {
+    LayoutGalleryDesktop,
+    MultimediaItem,
+    MultimediaItemType,
+} from "../../../../../../Class/Layouts/layoutClass";
 import Slider from "react-slick";
 
 const ourJobsText: string = "Nuestros Trabajos"
 const seeGallery: string = "Ver Galeria"
 const idPortal: string = GlobalId.globalIds.idPortal
-const idImages: string = "idBaseImageBH"
 const gap: number = 48
 const lessSpace: number = gap * 2
 
 export default function OurJobs() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
     let [displayGallery, setDisplayGallery] = useState(false)
-    let initialSelection: number = 0
+    let [control, setControl] = useState(1)
     const mainDivRef = useRef(null)
     const sizeDivRef = useRef(null)
-    const handleGallery = () => setDisplayGallery(displayGallery = !displayGallery)
+/*    let initialSelection: number = 0
     const handleRight = () => {
         initialSelection += 1
         const firstElement = mainDivRef.current.children[0];
@@ -74,6 +77,31 @@ export default function OurJobs() {
         ],
         InitialImages: [],
         CloseGallery: handleGallery
+    }*/
+
+    const listMultimediaItem: MultimediaItem[] =[
+        {
+            Id: "image001",
+            Type: MultimediaItemType.Video,
+            Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s?controls=1"
+        },
+        {
+            Id: "image002",
+            Type: MultimediaItemType.Video,
+            Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
+            Thumbnail: "/images/cortes1.jpg"
+        },
+        {
+            Id: "image003",
+            Type: MultimediaItemType.Image,
+            Link: "/images/corte4.jpeg"
+        }
+    ]
+    const handleGallery = () => setDisplayGallery(displayGallery = !displayGallery)
+
+    const galleryProp: LayoutGalleryDesktop = {
+        CloseGallery: handleGallery,
+        InitialMedia: listMultimediaItem
     }
 
     function SampleNextArrow(props) {
@@ -98,16 +126,14 @@ export default function OurJobs() {
         );
     }
 
-
-    let [control, setControl] = useState(1)
-
     const settings = {
         infinite: true,
         slidesToShow: 3,
-        speed: 500,
+        speed: 700,
         beforeChange: (current, next) => setControl(next == (info.SideImages.length - 1) ? 0 : next + 1),
         nextArrow: <SampleNextArrow/>,
-        prevArrow: <SamplePrevArrow/>
+        prevArrow: <SamplePrevArrow/>,
+        draggable: false
     };
 
     return (
@@ -160,7 +186,7 @@ export default function OurJobs() {
             {
                 displayGallery &&
                 createPortal(
-                    <LayoutDisplayGallery item={newList}/>, document.getElementById(idPortal)
+                    <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
         </div>

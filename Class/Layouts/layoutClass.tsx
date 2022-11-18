@@ -42,6 +42,17 @@ export class LayoutWithNavCircleProp {
     IsWithBorder?: boolean
 }
 
+export enum MultimediaItemType {
+    Image, Video
+}
+
+export class MultimediaItem {
+    Id: string
+    Link: string
+    Type: MultimediaItemType
+    Thumbnail?: string
+}
+
 export enum TypeGallery {
     Video,
     Embed,
@@ -55,9 +66,8 @@ export class MediaGallery {
 }
 
 export class LayoutGalleryDesktop {
-    InitialImages: string[]
     CloseGallery: Function
-    InitialMedia?: MediaGallery[]
+    InitialMedia: MultimediaItem[]
 }
 
 export class LayoutGalleryMobile {

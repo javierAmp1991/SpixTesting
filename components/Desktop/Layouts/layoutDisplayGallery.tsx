@@ -2,7 +2,7 @@ import style from "/styles/Desktop/Layouts/layoutDisplayGalery.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
-import {LayoutGalleryDesktop, TypeGallery} from "../../../Class/Layouts/layoutClass";
+import {LayoutGalleryDesktop, MultimediaItemType} from "../../../Class/Layouts/layoutClass";
 
 const initialTranslate: string = `translate(0)`
 
@@ -10,7 +10,7 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
     const refContCarrousel = useRef(null)
     let [displacement, setDisplacement] = useState(initialTranslate)
     let [controlDisplacement, setControlDisplacement] = useState(0)
-    let [listImages, setListImages] = useState(item.InitialImages)
+    let [listImages, setListImages] = useState(item.InitialMedia)
 
     const handleSetControl = (newControl: number) => {
         setDisplacement(displacement = `translate(${newControl * refContCarrousel.current.offsetWidth}px)`)
@@ -38,19 +38,20 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                     <div ref={refContCarrousel} className={style.contCarrousel}>
                         <div style={{transform: displacement}} className={style.gridCarrousel}>
                             {
-                                item.InitialMedia.map((e) =>
-                                    e.Type == TypeGallery.Video ?
-                                        <div className={style.contVideo}>
-                                            <video className={style.video} controls={true} src={e.Link}/>
+                                listImages.map((e) =>
+                                    e.Type == MultimediaItemType.Image ?
+                                        <div key={e.Id} className={style.sizeImageCarrousel}>
+                                            <Image objectFit={"cover"} layout={"fill"} src={e.Link} alt={""}/>
                                         </div>
                                         :
-                                        e.Type == TypeGallery.Image ?
-                                            <div className={style.sizeImageCarrousel}>
-                                                <Image objectFit={"cover"} layout={"fill"} src={e.Link} alt={""}/>
+                                        e.Thumbnail == null ?
+                                            <div key={e.Id} className={style.contVideo}>
+                                                <iframe className={style.video} src={e.Link}/>
                                             </div>
                                             :
-                                            <div className={style.contVideo}>
-                                                <iframe className={style.video} src={e.Link}/>
+                                            <div key={e.Id} className={style.contVideo}>
+                                                <video poster={e.Thumbnail} className={style.video} controls={true}
+                                                       src={e.Link}/>
                                             </div>
                                 )
                             }
@@ -73,16 +74,33 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                         <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                     </button>
                 </div>
-                {/* <div className={style.gridMin}>
+                <div className={style.gridMin}>
                     {
-                        item.InitialImages.map((e, index) =>
-                            <button key={e} onClick={() => handleClickMinImage(index)} className={`${style.sizeImageMin}
+                        listImages.map((e, index) =>
+                            <button key={e.Id} onClick={() => handleClickMinImage(index)}
+                                    className={`${style.sizeImageMin}
                              ${index == Math.abs(controlDisplacement) ? style.selectedItem : style.noSelectedItem}`}>
-                                <Image layout={"fill"} objectFit={"cover"} src={e} alt={""}/>
+
+                                {
+                                    e.Type == MultimediaItemType.Image ?
+                                        <Image layout={"fill"} objectFit={"cover"} src={e.Link} alt={""}/>
+                                        :
+                                        e.Thumbnail != null ?
+                                            <Image layout={"fill"} objectFit={"cover"} src={e.Thumbnail} alt={""}/>
+                                            :
+                                            <iframe className={style.video} src={e.Link}/>
+                                }
+
+                                {
+                                    e.Type == MultimediaItemType.Video &&
+                                    <div className={style.contPlayIcon}>
+                                        <Image width={20} height={20} src={GlobalConst.sourceImages.playIcon}/>
+                                    </div>
+                                }
                             </button>
                         )
                     }
-                </div>*/}
+                </div>
             </div>
         </div>
     )

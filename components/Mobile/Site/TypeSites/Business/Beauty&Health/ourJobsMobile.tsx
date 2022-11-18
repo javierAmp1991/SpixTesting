@@ -24,7 +24,7 @@ export default function OurJobsMobile() {
         centerMode: true,
         infinite: true,
         slidesToShow: 1,
-        speed: 700,
+        speed: 300,
         beforeChange: (current, next) => setControl(next),
     };
 
@@ -50,7 +50,7 @@ export default function OurJobsMobile() {
                                 info.SideImages.map((item, index) =>
                                     <div key={index}
                                          className={`${style.sizeImage} ${index === control ? style.focus : style.noFocus}`}>
-                                        <Image layout={"fill"} src={item} alt={""}/>
+                                        <Image priority={true} layout={"fill"} src={item} alt={""}/>
                                     </div>
                                 )
                             }
@@ -62,6 +62,9 @@ export default function OurJobsMobile() {
                     </div>
                 </>
             </LayoutTitleCustomMobile>
+            {
+
+            }
         </div>
     )
 }
