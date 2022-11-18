@@ -34,12 +34,17 @@ export default function MainPageMobile() {
             }
             <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
                 <InformationImages/>
-                <div className={utilities.separationLine}/>
+                <div className={utilities.separationLineMobile}/>
                 <OfferEventsMobile/>
+                <div className={utilities.separationLineMobile}/>
                 <InSearch/>
+                <div className={utilities.separationLineMobile}/>
                 <TicketsSectionMobile/>
+                <div className={utilities.separationLineMobile}/>
                 <OtherEvents/>
+                <div className={utilities.separationLineMobile}/>
                 <QuestionSectionMobile/>
+                <div className={utilities.separationLineMobile}/>
                 <div className={style.gridSectionProducts}>
                     {
                         infoSectionProducts.map(item =>

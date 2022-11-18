@@ -17,6 +17,7 @@ import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 import OurServicesByDefaultMobile from "./ourServicesByDefaultMobile";
 import PresentCardByDefaultMobile from "./presentCardByDefaultMobile";
+import utilities from "*.module.css";
 
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteByDefault
 const idQuestionSection: string = "idQuestionSectionByDefaultMobile"
@@ -38,26 +39,34 @@ export default function MainPageByDefaultMobile() {
 
                 <PresentCardByDefaultMobile/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <OfferByDefaultMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <InSearchByDefaultMobile/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <ReservationMobile buttonText={buttonReservationText} item={schedule}/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <OtherEventsByDefaultMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <ReviewSectionByDefaultMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <OurServicesByDefaultMobile id={idQuestionSection}/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <QuestionByDefaultMobile id={idQuestionSection}/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.gridSectionProducts}>
                 {

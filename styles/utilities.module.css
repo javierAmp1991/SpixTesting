@@ -104,6 +104,12 @@
     width: 100%;
 }
 
+.separationLineMobile {
+    height: 1px;
+    background: var(--separationLineColor);
+    width: 100%;
+}
+
 .bgBodyNormalDesktop {
     background: var(--colorBackGroundDesktopNormal);
 }

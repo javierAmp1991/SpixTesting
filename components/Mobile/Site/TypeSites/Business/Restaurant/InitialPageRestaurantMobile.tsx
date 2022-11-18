@@ -46,18 +46,24 @@ export default function InitialPageRestaurantMobile() {
             <div className={utilities.separationLine}/>
 
             <OfferRestaurantMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <InSearchRestaurantMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <ReservationMobile buttonText={reservationButtonText} item={newSchedule}/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <RecommendedRestaurantMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <ReviewSectionRestaurantMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <NavSectionProductsRestaurantMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <QuestionRestaurantMobile/>
 

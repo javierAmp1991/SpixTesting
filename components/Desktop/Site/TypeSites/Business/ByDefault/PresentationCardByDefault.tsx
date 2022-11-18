@@ -46,7 +46,8 @@ export default function PresentationCardByDefault() {
     return (
         <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
             ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
-            <div className={style.contImage}>
+            <HeaderSiteBussiness item={headerBusiness}/>
+            <button className={style.contImage}>
                 <div className={style.firstGradient}>
                     <div className={style.background}/>
                 </div>
@@ -56,11 +57,10 @@ export default function PresentationCardByDefault() {
                 <div className={style.seeGallery}>
                     {seeGallery}
                 </div>
-            </div>
+            </button>
             <div className={style.logo}>
                 <Image layout={"fill"} src={info.LogoPath}/>
             </div>
-            <HeaderSiteBussiness item={headerBusiness}/>
 
         </div>
     )

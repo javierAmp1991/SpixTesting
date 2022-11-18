@@ -1,9 +1,9 @@
 .mainDiv {
-    padding: 48px 20% 48px 20%;
+    padding: 48px 13%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
-    gap: 17%;
+    gap: 20%;
     position: relative;
 }
 
@@ -20,14 +20,18 @@
     display: grid;
     justify-items: center;
     position: relative;
+    transition: .5s;
 }
 
+.contImage:hover{
+    transform: scale(1.05);
+}
 
 .sizeImage {
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .6);
+    box-shadow: -4px 4px 8px rgba(0, 0, 0, .6);
 }
 
 .firstGradient {
@@ -38,9 +42,10 @@
     background: linear-gradient(145deg, #FFDEA8 0%, #FEC84E 100%);
     background: linear-gradient(145deg, #FABC3C 0%, #FACC6B 100%);
     padding: 8px;
-    top: 16px;
-    right: 16px;
+    top: 24px;
+    right: 24px;
     box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    transform-origin: right top;
 }
 
 .background {

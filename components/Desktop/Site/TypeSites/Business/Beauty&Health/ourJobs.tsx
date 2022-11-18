@@ -25,71 +25,71 @@ export default function OurJobs() {
     let [control, setControl] = useState(1)
     const mainDivRef = useRef(null)
     const sizeDivRef = useRef(null)
-/*    let initialSelection: number = 0
-    const handleRight = () => {
-        initialSelection += 1
-        const firstElement = mainDivRef.current.children[0];
-        mainDivRef.current.style.transition = `700ms linear`;
-        mainDivRef.current.style.transform = `translateX(-${((sizeDivRef.current.offsetWidth - lessSpace) / 3) + gap}px)`;
-        const transition = () => {
-            mainDivRef.current.style.transition = `none`;
-            mainDivRef.current.style.transform = `translateX(0)`;
-            mainDivRef.current.appendChild(firstElement);
-            mainDivRef.current.removeEventListener('transitionend', transition)
-        }
-        mainDivRef.current.addEventListener('transitionend', transition);
-    }
-    const handleLeft = () => {
-        initialSelection -= 1
-        const lastIndex: number = mainDivRef.current.children.length - 1;
-        const lastElement = mainDivRef.current.children[lastIndex];
-        mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);
-        mainDivRef.current.style.transition = `none`;
-        mainDivRef.current.style.transform = `translateX(-${((sizeDivRef.current.offsetWidth - lessSpace) / 3) + gap}px)`;
-
-        setTimeout(() => {
+    /*    let initialSelection: number = 0
+        const handleRight = () => {
+            initialSelection += 1
+            const firstElement = mainDivRef.current.children[0];
             mainDivRef.current.style.transition = `700ms linear`;
-            mainDivRef.current.style.transform = `translateX(0px)`;
-        }, 30)
-    }
-    const gallery: LayoutGalleryDesktop = {
-        InitialImages: info.SideImages,
-        CloseGallery: handleGallery
-    }
-    const newList: LayoutGalleryDesktop = {
-        InitialMedia: [
-            {
-                Id: "image001",
-                Type: TypeGallery.Embed,
-                Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s?controls=1"
-            },
-            {
-                Id: "image002",
-                Type: TypeGallery.Video,
-                Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4"
-            },
-            {
-                Id: "image003",
-                Type: TypeGallery.Image,
-                Link: "/images/corte4.jpeg"
+            mainDivRef.current.style.transform = `translateX(-${((sizeDivRef.current.offsetWidth - lessSpace) / 3) + gap}px)`;
+            const transition = () => {
+                mainDivRef.current.style.transition = `none`;
+                mainDivRef.current.style.transform = `translateX(0)`;
+                mainDivRef.current.appendChild(firstElement);
+                mainDivRef.current.removeEventListener('transitionend', transition)
             }
+            mainDivRef.current.addEventListener('transitionend', transition);
+        }
+        const handleLeft = () => {
+            initialSelection -= 1
+            const lastIndex: number = mainDivRef.current.children.length - 1;
+            const lastElement = mainDivRef.current.children[lastIndex];
+            mainDivRef.current.insertBefore(lastElement, mainDivRef.current.firstChild);
+            mainDivRef.current.style.transition = `none`;
+            mainDivRef.current.style.transform = `translateX(-${((sizeDivRef.current.offsetWidth - lessSpace) / 3) + gap}px)`;
 
-        ],
-        InitialImages: [],
-        CloseGallery: handleGallery
-    }*/
+            setTimeout(() => {
+                mainDivRef.current.style.transition = `700ms linear`;
+                mainDivRef.current.style.transform = `translateX(0px)`;
+            }, 30)
+        }
+        const gallery: LayoutGalleryDesktop = {
+            InitialImages: info.SideImages,
+            CloseGallery: handleGallery
+        }
+        const newList: LayoutGalleryDesktop = {
+            InitialMedia: [
+                {
+                    Id: "image001",
+                    Type: TypeGallery.Embed,
+                    Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s?controls=1"
+                },
+                {
+                    Id: "image002",
+                    Type: TypeGallery.Video,
+                    Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4"
+                },
+                {
+                    Id: "image003",
+                    Type: TypeGallery.Image,
+                    Link: "/images/corte4.jpeg"
+                }
 
-    const listMultimediaItem: MultimediaItem[] =[
+            ],
+            InitialImages: [],
+            CloseGallery: handleGallery
+        }*/
+
+    const listMultimediaItem: MultimediaItem[] = [
         {
             Id: "image001",
             Type: MultimediaItemType.Video,
-            Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s?controls=1"
+            Link: "https://www.youtube.com/embed/hyV1AJiFNyo?controls=0"
         },
         {
             Id: "image002",
             Type: MultimediaItemType.Video,
             Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4",
-            Thumbnail: "/images/cortes1.jpg"
+            Thumbnail: "/images/corte4.jpeg"
         },
         {
             Id: "image003",
@@ -108,7 +108,10 @@ export default function OurJobs() {
         const {className, style, onClick} = props;
         return (
             <div className={className}
-                 style={{...style, display: "block", width: 40, height:40, boxShadow: `0 0 4px rgba(0,0,0,.2)`}}
+                 style={{
+                     ...style, display: "block", width: 40, height: 40, background: "white",
+                     boxShadow: `0 0 4px rgba(0,0,0,.2)`, zIndex: 100
+                 }}
                  onClick={onClick}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
             </div>
@@ -119,7 +122,10 @@ export default function OurJobs() {
         const {className, style, onClick} = props;
         return (
             <div className={className}
-                 style={{...style, display: "block", width: 40, height:40, boxShadow: `0 0 4px rgba(0,0,0,.2)`}}
+                 style={{
+                     ...style, display: "block", width: 40, height: 40, background: "white",
+                     boxShadow: `0 0 4px rgba(0,0,0,.2)`, zIndex: 100
+                 }}
                  onClick={onClick}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
             </div>
@@ -141,6 +147,9 @@ export default function OurJobs() {
             <div className={style.title}>
                 {ourJobsText}
             </div>
+            <button onClick={handleGallery} className={style.seeGallery}>
+                {seeGallery}
+            </button>
             <div className={style.mainGridCarrousel}>
                 <div/>
                 <div className={style.contSlider}>
@@ -180,9 +189,6 @@ export default function OurJobs() {
                     <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                 </button>
             </div>*/}
-            <button onClick={handleGallery} className={style.seeGallery}>
-                {seeGallery}
-            </button>
             {
                 displayGallery &&
                 createPortal(

@@ -55,14 +55,6 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                                             </div>
                                 )
                             }
-                            {/*{
-                                item.InitialImages.map(e =>
-                                    <div key={e} className={style.sizeImageCarrousel}>
-                                        <Image objectFit={"cover"} layout={"fill"} src={e}
-                                               alt={""}/>
-                                    </div>
-                                )
-                            }*/}
                         </div>
                         <button onClick={handleClose} className={style.contCloseImage}>
                             <div className={style.closeImage}>
@@ -80,7 +72,6 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                             <button key={e.Id} onClick={() => handleClickMinImage(index)}
                                     className={`${style.sizeImageMin}
                              ${index == Math.abs(controlDisplacement) ? style.selectedItem : style.noSelectedItem}`}>
-
                                 {
                                     e.Type == MultimediaItemType.Image ?
                                         <Image layout={"fill"} objectFit={"cover"} src={e.Link} alt={""}/>
@@ -88,13 +79,18 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                                         e.Thumbnail != null ?
                                             <Image layout={"fill"} objectFit={"cover"} src={e.Thumbnail} alt={""}/>
                                             :
-                                            <iframe className={style.video} src={e.Link}/>
+                                            <iframe className={style.iframe} src={e.Link}/>
                                 }
 
                                 {
                                     e.Type == MultimediaItemType.Video &&
                                     <div className={style.contPlayIcon}>
-                                        <Image width={20} height={20} src={GlobalConst.sourceImages.playIcon}/>
+                                        {
+                                            e.Thumbnail == null ?
+                                                <Image width={20} height={24} src={GlobalConst.sourceImages.youtubeIcon}/>
+                                                :
+                                                <Image width={20} height={20} src={GlobalConst.sourceImages.playIcon}/>
+                                        }
                                     </div>
                                 }
                             </button>

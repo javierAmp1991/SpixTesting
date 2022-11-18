@@ -3,12 +3,12 @@
     margin: 0 auto 40px auto;
     padding-bottom: 40px;
     display: grid;
-    gap: 60px;
+    gap: 40px;
 }
 
 .mainDivNoMarginBottom {
     width: 100vw;
     margin: 0 auto;
     display: grid;
-    gap: 60px;
+    gap: 40px;
 }

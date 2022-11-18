@@ -19,6 +19,7 @@ import AnnouncementMobile from "../../Misc/announcementMobile";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import OurJobsMobile from "./ourJobsMobile";
 import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
+import utilities from "/styles/utilities.module.css";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
@@ -41,27 +42,34 @@ export default function MainPageBHMobile() {
             </div>
 
             <OfferBHMobile/>
-            <div className={style.separationLine}/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <InSearchBhMobile/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <ReservationMobile buttonText={reservationButtonText} item={schedule}/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <OtherEventsBH/>
+            <div className={utilities.separationLineMobile}/>
 
             <ReviewSectionBHMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
                 <OurServicesMobile id={idQuestionSection}/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <OurJobsMobile/>
+            <div className={utilities.separationLineMobile}/>
 
             <QuestionBHMobile id={idQuestionSection}/>
+            <div className={utilities.separationLineMobile}/>
 
             <div className={style.gridSectionProducts}>
                 {
