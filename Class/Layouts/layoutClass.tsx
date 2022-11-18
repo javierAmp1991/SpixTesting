@@ -42,9 +42,22 @@ export class LayoutWithNavCircleProp {
     IsWithBorder?: boolean
 }
 
+export enum TypeGallery {
+    Video,
+    Embed,
+    Image
+}
+
+export class MediaGallery {
+    Type: TypeGallery
+    Link: string
+    Id: string
+}
+
 export class LayoutGalleryDesktop {
     InitialImages: string[]
     CloseGallery: Function
+    InitialMedia?: MediaGallery[]
 }
 
 export class LayoutGalleryMobile {

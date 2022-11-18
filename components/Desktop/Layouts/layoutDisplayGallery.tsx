@@ -2,23 +2,22 @@ import style from "/styles/Desktop/Layouts/layoutDisplayGalery.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useRef, useState} from "react";
-import {LayoutGalleryDesktop} from "../../../Class/Layouts/layoutClass";
+import {LayoutGalleryDesktop, TypeGallery} from "../../../Class/Layouts/layoutClass";
 
 const initialTranslate: string = `translate(0)`
-const listImagesA: string[] = ["/images/thedoor1.jpg", "/images/thedoor2.jpg", "/images/thedoor3.jpg", "/images/thedoor4.jpg", "/images/thedoor5.jpg", "/images/thedoor2.jpg"]
 
 export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDesktop }) {
     const refContCarrousel = useRef(null)
     let [displacement, setDisplacement] = useState(initialTranslate)
     let [controlDisplacement, setControlDisplacement] = useState(0)
-    let [listImages, setListImages] = useState(listImagesA)
+    let [listImages, setListImages] = useState(item.InitialImages)
 
     const handleSetControl = (newControl: number) => {
         setDisplacement(displacement = `translate(${newControl * refContCarrousel.current.offsetWidth}px)`)
         setControlDisplacement(controlDisplacement = newControl)
     }
     const handleRightClick = () => {
-        let newControl = controlDisplacement - 1 < ((listImages.length - 1) * -1) ? ((listImages.length - 1) * -1) : controlDisplacement - 1
+        let newControl = controlDisplacement - 1 < ((item.InitialMedia.length - 1) * -1) ? ((item.InitialMedia.length - 1) * -1) : controlDisplacement - 1
         handleSetControl(newControl)
     }
     const handleLeftClick = () => {
@@ -39,13 +38,30 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                     <div ref={refContCarrousel} className={style.contCarrousel}>
                         <div style={{transform: displacement}} className={style.gridCarrousel}>
                             {
-                                listImages.map(e =>
+                                item.InitialMedia.map((e) =>
+                                    e.Type == TypeGallery.Video ?
+                                        <div className={style.contVideo}>
+                                            <video className={style.video} controls={true} src={e.Link}/>
+                                        </div>
+                                        :
+                                        e.Type == TypeGallery.Image ?
+                                            <div className={style.sizeImageCarrousel}>
+                                                <Image objectFit={"cover"} layout={"fill"} src={e.Link} alt={""}/>
+                                            </div>
+                                            :
+                                            <div className={style.contVideo}>
+                                                <iframe className={style.video} src={e.Link}/>
+                                            </div>
+                                )
+                            }
+                            {/*{
+                                item.InitialImages.map(e =>
                                     <div key={e} className={style.sizeImageCarrousel}>
                                         <Image objectFit={"cover"} layout={"fill"} src={e}
                                                alt={""}/>
                                     </div>
                                 )
-                            }
+                            }*/}
                         </div>
                         <button onClick={handleClose} className={style.contCloseImage}>
                             <div className={style.closeImage}>
@@ -57,16 +73,16 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryDeskto
                         <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                     </button>
                 </div>
-                <div className={style.gridMin}>
+                {/* <div className={style.gridMin}>
                     {
-                        listImages.map((e, index) =>
+                        item.InitialImages.map((e, index) =>
                             <button key={e} onClick={() => handleClickMinImage(index)} className={`${style.sizeImageMin}
                              ${index == Math.abs(controlDisplacement) ? style.selectedItem : style.noSelectedItem}`}>
                                 <Image layout={"fill"} objectFit={"cover"} src={e} alt={""}/>
                             </button>
                         )
                     }
-                </div>
+                </div>*/}
             </div>
         </div>
     )

@@ -3,8 +3,6 @@ import Image from "next/image"
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
-import {GlobalId} from "../../../../../../public/globalConst";
-const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function BannerImages() {
 
@@ -22,9 +20,6 @@ export default function BannerImages() {
                     )
                 }
             </div>
-           {/* <button className={style.seeGalery}>
-                Ver galeria
-            </button>*/}
         </div>
     )
 

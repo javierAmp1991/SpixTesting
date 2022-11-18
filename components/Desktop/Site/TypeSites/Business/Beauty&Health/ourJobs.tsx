@@ -1,27 +1,31 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/ourJobs.module.css"
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useRef} from "react";
+import {useContext, useRef, useState} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import Image from "next/image";
-import {GlobalConst} from "../../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
+import {createPortal} from "react-dom";
+import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
+import {LayoutGalleryDesktop, TypeGallery} from "../../../../../../Class/Layouts/layoutClass";
 
 const ourJobsText: string = "Nuestros Trabajos"
 const seeGallery: string = "Ver Galeria"
-const initialTranslate: string = `translate(-0)`
+const idPortal: string = GlobalId.globalIds.idPortal
 const idImages: string = "idBaseImageBH"
 const gap: number = 48
 const lessSpace: number = gap * 2
 
 export default function OurJobs() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
+    let [displayGallery, setDisplayGallery] = useState(false)
     let initialSelection: number = 0
     const mainDivRef = useRef(null)
     const sizeDivRef = useRef(null)
-
+    const handleGallery = () => setDisplayGallery(displayGallery = !displayGallery)
     const handleRight = () => {
         initialSelection += 1
         const firstElement = mainDivRef.current.children[0];
-        mainDivRef.current.style.transition = `1000ms linear`;
+        mainDivRef.current.style.transition = `700ms linear`;
         mainDivRef.current.style.transform = `translateX(-${((sizeDivRef.current.offsetWidth - lessSpace) / 3) + gap}px)`;
         const transition = () => {
             mainDivRef.current.style.transition = `none`;
@@ -31,7 +35,6 @@ export default function OurJobs() {
         }
         mainDivRef.current.addEventListener('transitionend', transition);
     }
-
     const handleLeft = () => {
         initialSelection -= 1
         const lastIndex: number = mainDivRef.current.children.length - 1;
@@ -41,9 +44,36 @@ export default function OurJobs() {
         mainDivRef.current.style.transform = `translateX(-${((sizeDivRef.current.offsetWidth - lessSpace) / 3) + gap}px)`;
 
         setTimeout(() => {
-            mainDivRef.current.style.transition = `1000ms linear`;
+            mainDivRef.current.style.transition = `700ms linear`;
             mainDivRef.current.style.transform = `translateX(0px)`;
         }, 30)
+    }
+    const gallery: LayoutGalleryDesktop = {
+        InitialImages: info.SideImages,
+        CloseGallery: handleGallery
+    }
+
+    const newList: LayoutGalleryDesktop = {
+        InitialMedia: [
+            {
+                Id: "image001",
+                Type: TypeGallery.Embed,
+                Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s?controls=1"
+            },
+            {
+                Id: "image002",
+                Type: TypeGallery.Video,
+                Link: "/images/y2mate.com - Metallica Enter Sandman Live in Mexico City Orgullo Pasión y Gloria_v240P.mp4"
+            },
+            {
+                Id: "image003",
+                Type: TypeGallery.Image,
+                Link: "/images/corte4.jpeg"
+            }
+
+        ],
+        InitialImages: [],
+        CloseGallery: handleGallery
     }
 
     return (
@@ -57,6 +87,10 @@ export default function OurJobs() {
                 </button>
                 <div ref={sizeDivRef} className={style.contCarrousel}>
                     <div ref={mainDivRef} className={style.gridCarrousel}>
+                        <div className={style.contVideoYoutube}>
+                            <iframe className={style.videoYoutube}
+                                    src={"https://www.youtube.com/embed/6dR-Kx9ZA3s?controls=1"}/>
+                        </div>
                         {
                             info.SideImages.map((item, index) =>
                                 <div id={idImages + index} key={index} className={`${style.sizeImage}`}>
@@ -70,9 +104,15 @@ export default function OurJobs() {
                     <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                 </button>
             </div>
-            <div className={style.seeGallery}>
+            <button onClick={handleGallery} className={style.seeGallery}>
                 {seeGallery}
-            </div>
+            </button>
+            {
+                displayGallery &&
+                createPortal(
+                    <LayoutDisplayGallery item={newList}/>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 }

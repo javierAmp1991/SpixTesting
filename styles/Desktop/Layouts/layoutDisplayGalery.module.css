@@ -81,6 +81,20 @@
     aspect-ratio: 1/1;
 }
 
+.contVideo {
+    width: 100%;
+    position: relative;
+    aspect-ratio: 1/1;
+    display: grid;
+    align-content: center;
+    background: black;
+}
+
+.video {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
 .sizeImageMin {
     width: 100%;
     position: relative;
