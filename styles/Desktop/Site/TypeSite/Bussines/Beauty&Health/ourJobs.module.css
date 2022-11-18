@@ -26,7 +26,7 @@
 
 .mainGridCarrousel {
     display: grid;
-    grid-template-columns: max-content 1fr max-content;
+    grid-template-columns: 48px 1fr 48px;
     gap: 48px;
     align-items: center;
     padding: 32px 0;
@@ -60,19 +60,20 @@
 }
 
 .focus {
-    transform: scale(.9);
+    transform: scale(.92);
 }
 
 .noFocus {
-    transform: scale(.7);
+    transform: scale(.72);
     transition: .4s;
 }
 
 .sizeArrow {
     width: var(--sizeArrowC);
-    aspect-ratio: 1/1;
+    height: var(--sizeArrowC);
     position: relative;
     box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    display: block;
 }
 
 .seeGallery {

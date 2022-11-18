@@ -76,28 +76,38 @@ export default function OurJobs() {
         CloseGallery: handleGallery
     }
 
-    const NextArrow = ({onclick}) => {
+    function SampleNextArrow(props) {
+        const {className, style, onClick} = props;
         return (
-            <button onClick={onclick} className={style.sizeArrow}>
+            <div className={className}
+                 style={{...style, display: "block", width: 40, height:40, boxShadow: `0 0 4px rgba(0,0,0,.2)`}}
+                 onClick={onClick}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
-            </button>
-        )
-    }
-    const PrevArrow = ({onclick}) => {
-        return (
-            <button onClick={onclick} className={style.sizeArrow}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
-            </button>
-        )
+            </div>
+        );
     }
 
-    let [control, setControl] = useState(0)
+    function SamplePrevArrow(props) {
+        const {className, style, onClick} = props;
+        return (
+            <div className={className}
+                 style={{...style, display: "block", width: 40, height:40, boxShadow: `0 0 4px rgba(0,0,0,.2)`}}
+                 onClick={onClick}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+            </div>
+        );
+    }
+
+
+    let [control, setControl] = useState(1)
 
     const settings = {
         infinite: true,
         slidesToShow: 3,
         speed: 500,
-        beforeChange: (current, next) => setControl(next == (info.SideImages.length - 1) ? 0 : next + 1)
+        beforeChange: (current, next) => setControl(next == (info.SideImages.length - 1) ? 0 : next + 1),
+        nextArrow: <SampleNextArrow/>,
+        prevArrow: <SamplePrevArrow/>
     };
 
     return (
@@ -106,24 +116,20 @@ export default function OurJobs() {
                 {ourJobsText}
             </div>
             <div className={style.mainGridCarrousel}>
-                <button onClick={handleLeft} className={style.sizeArrow}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
-                </button>
+                <div/>
                 <div className={style.contSlider}>
                     <Slider {...settings}>
                         {
                             info.SideImages.map((item, index) =>
                                 <div key={index}
                                      className={`${style.sizeImage} ${index === control ? style.focus : style.noFocus}`}>
-                                    <Image layout={"fill"} src={item} alt={""}/>
+                                    <Image priority={true} layout={"fill"} src={item} alt={""}/>
                                 </div>
                             )
                         }
                     </Slider>
                 </div>
-                <button onClick={handleRight} className={style.sizeArrow}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
-                </button>
+                <div/>
             </div>
             {/* <div className={style.mainGridCarrousel}>
                 <button onClick={handleLeft} className={style.sizeArrow}>

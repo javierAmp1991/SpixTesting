@@ -25,7 +25,7 @@ export default function OurJobsMobile() {
         infinite: true,
         slidesToShow: 1,
         speed: 700,
-        beforeChange: (current, next) => setControl(next)
+        beforeChange: (current, next) => setControl(next),
     };
 
     return (
