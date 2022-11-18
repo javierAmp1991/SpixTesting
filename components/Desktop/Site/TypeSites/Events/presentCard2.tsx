@@ -1,4 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Events/presentCard2.module.css";
+import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css";
 import {
     HeaderSiteEventsProp,
     PrincipalInfoEvent,
@@ -39,7 +40,7 @@ export default function PresentCard2() {
     }
     const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={`${style.mainDiv} 
+        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
         ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <div className={style.mainDiv2}>
                 <HeaderSiteEvents item={headerEvents}/>

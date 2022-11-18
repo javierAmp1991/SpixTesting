@@ -16,10 +16,11 @@ import ProductSectionBHMobile from "../Restaurant/ProductSectionMobile";
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 import OurServicesByDefaultMobile from "./ourServicesByDefaultMobile";
+import PresentCardByDefaultMobile from "./presentCardByDefaultMobile";
 
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteByDefault
 const idQuestionSection: string = "idQuestionSectionByDefaultMobile"
-const buttonReservationText: string = "Reservar hora"
+const buttonReservationText: string = "Reserva tu hora"
 const isMarginBottom: boolean = true
 
 export default function MainPageByDefaultMobile() {
@@ -28,10 +29,15 @@ export default function MainPageByDefaultMobile() {
     const sectionProducst: SectionProductItem[] = useContext(SectionProductsByDefaultContext)
     return (
         <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
-            {
-                info.Announcement != null &&
-                <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
-            }
+            <div>
+
+                {
+                    info.Announcement != null &&
+                    <AnnouncementMobile announcement={info.Announcement} styleAnnouncement={announcementStyle}/>
+                }
+
+                <PresentCardByDefaultMobile/>
+            </div>
 
             <OfferByDefaultMobile/>
 

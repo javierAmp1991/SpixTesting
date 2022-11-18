@@ -34,7 +34,7 @@ export default function DescriptionCardFullData() {
                 IsLike: false,
                 Like: 156
             },
-            Subscription:{
+            Subscription: {
                 IsSubscriber: false,
                 AmountSubscribers: 300
             }
@@ -44,7 +44,7 @@ export default function DescriptionCardFullData() {
     return (
         <div className={style.mainDiv}>
             <div className={style.contInfo}>
-            <HeaderSiteBussinessMobile item={headerBusiness}/>
+                <HeaderSiteBussinessMobile item={headerBusiness}/>
             </div>
 
             <div className={style.contCarrousel}>

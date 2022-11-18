@@ -1,4 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Restaurant/descriptionCardFull.module.css"
+import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css"
 import Image from "next/image";
 import {
     HeaderSiteBusinessProp,
@@ -11,7 +12,6 @@ import PopUpContainer from "../../../../Misc/popUpContainer";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
-import Announcement from "../../Misc/announcement";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const seeGallery: string = "Ver galeria"
@@ -49,7 +49,7 @@ export default function DescriptionCardFull() {
     }
     const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={`${style.mainDiv} 
+        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
                 ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <div className={style.gridLeft}>
                 <div className={style.sizeImage}>

@@ -98,4 +98,8 @@
     padding: 0 16px;
 }
 
+.divSectionProducts{
+    display: grid;gap: 24px;
+}
+
 

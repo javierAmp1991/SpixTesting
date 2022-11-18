@@ -16,6 +16,7 @@ import Reservation from "../Misc/reservation";
 import ReviewSectionByDefault from "./reviewSectionByDefault";
 import LayoutMainPageSites from "../../Misc/layoutMainPageSites";
 import HeaderByDefault from "./headerByDefault";
+import SectionProductsByDefault from "./sectionProductsByDefault";
 
 const idGotoQuestionByDefault: string = "idGoToQuestionByDefault00540098"
 const buttonReservationText: string = "Reservar hora"
@@ -23,41 +24,34 @@ const isMarginBottom: boolean = true
 
 export default function MainPageByDefault() {
     const schedule: Schedule[] = useContext(ShceduleByDefaultContext)
-    const sectionProducst: SectionProductItem[] = useContext(SectionProductsByDefaultContext)
     return (
         <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
 
             <HeaderByDefault/>
             <div className={utilities.separationLine}/>
 
-            <InSearchByDefault/>
-            <div className={utilities.separationLine}/>
-
-            <OurServicesByDefault id={idGotoQuestionByDefault}/>
-            <div className={utilities.separationLine}/>
-
             <InOfferByDefault/>
             <div className={utilities.separationLine}/>
 
-            <RecomendedByDefault/>
+            <InSearchByDefault/>
             <div className={utilities.separationLine}/>
 
             <Reservation buttonText={buttonReservationText} item={schedule}/>
             <div className={utilities.separationLine}/>
 
+            <RecomendedByDefault/>
+            <div className={utilities.separationLine}/>
+
             <ReviewSectionByDefault/>
+            <div className={utilities.separationLine}/>
+
+            <OurServicesByDefault id={idGotoQuestionByDefault}/>
             <div className={utilities.separationLine}/>
 
             <QuestionByDefault id={idGotoQuestionByDefault}/>
             <div className={utilities.separationLine}/>
 
-            <div className={style.gridSectionProducts}>
-                {
-                    sectionProducst.map(item =>
-                        <ProductSectionBh key={item.Id} sectionProducts={item}/>
-                    )
-                }
-            </div>
+            <SectionProductsByDefault/>
         </LayoutMainPageSites>
     )
 }

@@ -5,7 +5,6 @@
     width: var(--widthCard);
     padding: 24px;
     background: white;
-    box-shadow: 0 0 21px rgba(0, 0, 0, .3);
     position: relative;
 }
 

@@ -1,0 +1,42 @@
+.mainDiv {
+    display: grid;
+    padding: 0 16px;
+    gap: 24px;
+}
+
+.contInfo{
+    padding-top: 24px;
+}
+
+.sizeLogo {
+    width: 50px;
+    top: 16px;
+    right: 12px;
+    position: absolute;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.button {
+    padding: 6px 32px;
+    text-align: center;
+    background: var(--gradientBlueButton);
+    color: white;
+    font-weight: 500;
+    width: max-content;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 28px auto auto auto;
+}
+
+.sizeSideImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+
+

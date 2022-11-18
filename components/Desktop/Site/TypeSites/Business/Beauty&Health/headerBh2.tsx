@@ -1,4 +1,5 @@
 import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/headerBh2.module.css"
+import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css";
 import Image from "next/image";
 import {
     HeaderSiteBusinessProp,
@@ -39,7 +40,7 @@ export default function HeaderBh2() {
     }
     const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={`${style.mainDiv} 
+        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
         ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <HeaderSiteBussiness item={headerBusiness}/>
             <BannerImages/>

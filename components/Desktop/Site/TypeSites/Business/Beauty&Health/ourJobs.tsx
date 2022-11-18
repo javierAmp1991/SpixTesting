@@ -7,6 +7,7 @@ import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {LayoutGalleryDesktop, TypeGallery} from "../../../../../../Class/Layouts/layoutClass";
+import Slider from "react-slick";
 
 const ourJobsText: string = "Nuestros Trabajos"
 const seeGallery: string = "Ver Galeria"
@@ -52,7 +53,6 @@ export default function OurJobs() {
         InitialImages: info.SideImages,
         CloseGallery: handleGallery
     }
-
     const newList: LayoutGalleryDesktop = {
         InitialMedia: [
             {
@@ -76,12 +76,56 @@ export default function OurJobs() {
         CloseGallery: handleGallery
     }
 
+    const NextArrow = ({onclick}) => {
+        return (
+            <button onClick={onclick} className={style.sizeArrow}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
+            </button>
+        )
+    }
+    const PrevArrow = ({onclick}) => {
+        return (
+            <button onClick={onclick} className={style.sizeArrow}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+            </button>
+        )
+    }
+
+    let [control, setControl] = useState(0)
+
+    const settings = {
+        infinite: true,
+        slidesToShow: 3,
+        speed: 500,
+        beforeChange: (current, next) => setControl(next == (info.SideImages.length - 1) ? 0 : next + 1)
+    };
+
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
                 {ourJobsText}
             </div>
             <div className={style.mainGridCarrousel}>
+                <button onClick={handleLeft} className={style.sizeArrow}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+                </button>
+                <div className={style.contSlider}>
+                    <Slider {...settings}>
+                        {
+                            info.SideImages.map((item, index) =>
+                                <div key={index}
+                                     className={`${style.sizeImage} ${index === control ? style.focus : style.noFocus}`}>
+                                    <Image layout={"fill"} src={item} alt={""}/>
+                                </div>
+                            )
+                        }
+                    </Slider>
+                </div>
+                <button onClick={handleRight} className={style.sizeArrow}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
+                </button>
+            </div>
+            {/* <div className={style.mainGridCarrousel}>
                 <button onClick={handleLeft} className={style.sizeArrow}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                 </button>
@@ -103,7 +147,7 @@ export default function OurJobs() {
                 <button onClick={handleRight} className={style.sizeArrow}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
                 </button>
-            </div>
+            </div>*/}
             <button onClick={handleGallery} className={style.seeGallery}>
                 {seeGallery}
             </button>

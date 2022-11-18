@@ -8,8 +8,12 @@ import {
     PrincipalInfoByDefaultContext
 } from "../../../../../Providers/Site/TypeSite/Business/ByDefault/SiteBusinessByDefaultProvider";
 
+const seeGallery: string = "Ver galeria"
+
 import style from "/styles/Desktop/Site/TypeSite/Bussines/ByDefault/presentationCard.module.css"
+import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
+import Image from "next/image";
 
 export default function PresentationCardByDefault() {
     const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
@@ -34,15 +38,30 @@ export default function PresentationCardByDefault() {
                 AmountSubscribers: 200
             }
         },
-        Width: "80%",
+        Width: "100%",
         PaddingBottom: 24
     }
     const isAnnouncement: boolean = info.Announcement == null
 
     return (
-        <div className={`${style.mainDiv} 
+        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
             ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
+            <div className={style.contImage}>
+                <div className={style.firstGradient}>
+                    <div className={style.background}/>
+                </div>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={info.ImagePath}/>
+                </div>
+                <div className={style.seeGallery}>
+                    {seeGallery}
+                </div>
+            </div>
+            <div className={style.logo}>
+                <Image layout={"fill"} src={info.LogoPath}/>
+            </div>
             <HeaderSiteBussiness item={headerBusiness}/>
+
         </div>
     )
 }

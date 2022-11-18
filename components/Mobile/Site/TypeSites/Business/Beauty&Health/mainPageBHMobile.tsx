@@ -22,7 +22,7 @@ import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelathMobile"
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
-const reservationButtonText: string = "Reservar hora"
+const reservationButtonText: string = "Reserva tu hora"
 const isMarginButton: boolean = true
 
 export default function MainPageBHMobile() {

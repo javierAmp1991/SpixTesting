@@ -9,7 +9,7 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
     return (
         <div className={`${style.gridAnnouncement} ${getAnnouncementStyle()}`}>
             <div className={style.sizeIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.announcementIcon} alt={""}/>
+                <Image layout={"fill"} src={getICon()} alt={""}/>
             </div>
             <div className={`${utilities.clamp1} ${style.announcement}`}>
                 {announcement.Announcement}
@@ -24,5 +24,10 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
         if (styleAnnouncement == AnnouncementStyle.SiteRestaurant) return style.backgroundRestaurant
         else if (styleAnnouncement == AnnouncementStyle.SiteBeautyAndHealth) return style.backgroundBH
         else return style.backgroundEvents
+    }
+
+    function getICon() {
+        if (styleAnnouncement == AnnouncementStyle.SiteBeautyAndHealth) return GlobalConst.sourceImages.announcementIconBlack
+        else return GlobalConst.sourceImages.announcementIcon
     }
 }

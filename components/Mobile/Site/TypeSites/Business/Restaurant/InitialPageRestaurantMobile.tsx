@@ -25,7 +25,7 @@ import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 
 const idTest: string = "isTestMobileScrolControl"
 const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
-const reservationButtonText: string = "Reservar mesa"
+const reservationButtonText: string = "Reserva tu mesa"
 const isMarginBottom: boolean = true
 
 export default function InitialPageRestaurantMobile() {
@@ -36,7 +36,7 @@ export default function InitialPageRestaurantMobile() {
     return (
         <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
             <div>
-                <FullBannerMobile item={infoHeader.Banner}/>
+                {/* <FullBannerMobile item={infoHeader.Banner}/>*/}
                 {
                     infoHeader.Announcement != null &&
                     <AnnouncementMobile styleAnnouncement={styleAnnouncement} announcement={infoHeader.Announcement}/>
@@ -61,14 +61,16 @@ export default function InitialPageRestaurantMobile() {
 
             <QuestionRestaurantMobile/>
 
-            <NavProductsSectionMobile/>
+            <div className={style.divSectionProducts}>
+                <NavProductsSectionMobile/>
 
-            <div className={style.gridSectionProducts} id={idTest}>
-                {
-                    infoSectionProducts.map(item =>
-                        <ProductSectionMobile key={item.Id} sectionProducts={item}/>
-                    )
-                }
+                <div className={style.gridSectionProducts} id={idTest}>
+                    {
+                        infoSectionProducts.map(item =>
+                            <ProductSectionMobile key={item.Id} sectionProducts={item}/>
+                        )
+                    }
+                </div>
             </div>
         </LayoutMainPageSitesMobile>
 

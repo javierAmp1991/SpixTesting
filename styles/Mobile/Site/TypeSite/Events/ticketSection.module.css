@@ -113,11 +113,11 @@
 }
 
 .buttonStyle {
-    width: max-content;
     padding: 2px 12px;
     border-radius: 2px;
     overflow: hidden;
     color: var(--linkColor);
+    width: 70%;
 }
 
 .gridOptions {
@@ -309,7 +309,7 @@
     padding: 6px 12px;
     border-radius: 4px;
     font-weight: 500;
-    width: max-content;
+    width: 70%;
     font-size: 14px;
     margin: auto;
     justify-content: center;

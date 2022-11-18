@@ -17,6 +17,7 @@ export default function MainPage() {
             <BannerSiteEvents/>
             <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
                 <HeaderSiteEvents/>
+                <div className={utilities.separationLine}/>
 
                 <OfferProducts/>
                 <div className={utilities.separationLine}/>

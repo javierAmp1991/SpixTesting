@@ -133,7 +133,7 @@ export namespace GlobalConst{
         activateHeartWhite: "/images/hearticonColorWhite.png",
         threePoints: "/images/threePoints.png",
         announcementIcon: "/images/announcementIcon.png",
-        /*backgroundContact: "/images/backgroundContact.webp"*/
+        announcementIconBlack: "/images/announcementIconBlack.png",
         backgroundContact: "/images/backgroundContact.jpg",
         reportIcon: "/images/reportar.png"
     }
