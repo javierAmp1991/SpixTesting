@@ -1,5 +1,6 @@
 .mainDiv {
     display: grid;
+    padding: 0 16px;
 }
 
 .title {
@@ -12,12 +13,15 @@
 
 .contSlider {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    padding: 24px 12px;
-    width: 70%;
-    gap: 8px;
+    grid-template-columns: 100%;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    width: 100%;
+    gap: 16px;
     margin: auto;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    border-radius: 12px;
 }
 
 .contImage {
@@ -26,6 +30,7 @@
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, .8);
     transition: .4s;
+    scroll-snap-align: start;
 }
 
 .sizeImage {
@@ -58,32 +63,8 @@
 .seeGalery {
     width: 100%;
     text-align: center;
-    font-size: 12px;
     text-decoration: underline;
-    padding: 16px 0;
+    padding-top: 16px;
 }
 
-.separationLine {
-    height: 1px;
-    background: rgba(0, 0, 0, .1);
-    width: 100%;
-    margin-top: 12px;
-}
-
-.first {
-    transform: scale(1.2);
-    transform-origin: bottom right;
-}
-
-.second {
-
-}
-
-.third {
-}
-
-.four {
-    transform: scale(1.2);
-    transform-origin: top left;
-}
 
