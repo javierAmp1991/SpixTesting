@@ -11,18 +11,33 @@
     width: 100%;
 }
 
-
 .contSlider {
-    width: calc(100vw - 48px);
+    width: calc(100vw - 32px);
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 16px;
+    padding: 4px 0;
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
 }
 
 .contImage {
-    width: 100%;
+    width: calc((100vw - 32px) / 2);
     aspect-ratio: 1/1;
     overflow: hidden;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .8);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .8);
     transition: .4s;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    border-radius: 12px;
+}
+
+.stop {
+    width: calc((100vw - 32px) / 4);
+    aspect-ratio: 2/1;
+    overflow: hidden;
 }
 
 .sizeImage {

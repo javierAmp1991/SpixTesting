@@ -2,7 +2,6 @@ import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/serviceV
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst} from "../../../../../../public/globalConst";
-import RatingStarDesk from "../../../../Misc/ratingStarDesk";
 import {ProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import RatingStarVar from "../../../../Misc/ratingStarVar";
 
@@ -67,9 +66,9 @@ export default function ServiceView({item}: { item: ProductItem }) {
                         </div>
                     }
                 </div>
-                <button className={style.button}>
+               {/* <button className={style.button}>
                     Comprar
-                </button>
+                </button>*/}
             </div>
 
         </div>

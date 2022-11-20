@@ -44,9 +44,6 @@ export default function HeaderBh2() {
         ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <HeaderSiteBussiness item={headerBusiness}/>
             <BannerImages/>
-            <div className={style.sizeNewBanner}>
-                <Image priority={true} layout={"fill"} src={info.LogoPath} alt={""}/>
-            </div>
         </div>
     )
 }

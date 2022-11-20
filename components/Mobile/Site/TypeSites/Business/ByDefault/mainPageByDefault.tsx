@@ -17,7 +17,7 @@ import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 import OurServicesByDefaultMobile from "./ourServicesByDefaultMobile";
 import PresentCardByDefaultMobile from "./presentCardByDefaultMobile";
-import utilities from "*.module.css";
+import utilities from "/styles/utilities.module.css";
 
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteByDefault
 const idQuestionSection: string = "idQuestionSectionByDefaultMobile"

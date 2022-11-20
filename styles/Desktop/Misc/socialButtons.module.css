@@ -3,6 +3,7 @@
     grid-template-columns: max-content;
     grid-auto-flow: column;
     grid-auto-columns: max-content;
+    font-size: 14px;
     gap: 24px;
     --sizeIcon: 24px;
 }
@@ -121,9 +122,11 @@
 }
 
 .circleClass {
-    width: var(--widthCircleAnimationHeart);
-    height: var(--widthCircleAnimationHeart);
-    border-radius: 1px;
+    --widthCircle: 4px;
+    width: var(--widthCircle);
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
 .circleClass1 {
@@ -132,6 +135,7 @@
     left: calc(50% - 6px);
     z-index: 500;
     transition: var(--transitionCircleLow);
+    overflow: hidden;
 }
 
 .circleClass1Before {

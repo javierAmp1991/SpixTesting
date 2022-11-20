@@ -44,7 +44,7 @@
     background: rgba(0, 0, 0, .1);
 }
 
-.separationLineUp{
+.separationLineUp {
     height: 1px;
     background: rgba(0, 0, 0, .1);
     margin-bottom: 36px;
@@ -86,7 +86,7 @@
 .mainDivPopUp {
     width: 100%;
     height: max-content;
-   /* background: linear-gradient(180deg, #FE5858 0%, #EE9617 100%);*/
+    /* background: linear-gradient(180deg, #FE5858 0%, #EE9617 100%);*/
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -102,9 +102,9 @@
 .buttonPopUp {
     width: 90%;
     color: var(--colorPrimaryTextDesktop);
-    background: rgba(255,255,255, .1);
+    background: rgba(255, 255, 255, .1);
     display: grid;
-    box-shadow: 0 0 4px rgba(0,0,0,.3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .3);
     grid-template-columns: max-content 1fr;
     border-radius: 2px;
     overflow: hidden;
@@ -116,15 +116,33 @@
     background: white;
 }
 
-.textPopUp{
+.textPopUp {
     width: 100%;
     text-align: center;
 }
 
-.title{
+.title {
     font-size: 21px;
     text-align: center;
     color: var(--colorTitlesDesktop);
     font-weight: 500;
+}
+
+/*--------------------------------------------->*/
+
+.gridLogoName {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.sizeLogo {
+    width: 70px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .7);
 }
 

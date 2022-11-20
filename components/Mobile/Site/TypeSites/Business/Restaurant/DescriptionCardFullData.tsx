@@ -7,18 +7,21 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext, useState} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import MapPopUp from "../../../../Misc/mapPopUp";
-import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import HeaderSiteBussinessMobile from "../Misc/headerSiteBussinessMobile";
+import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
+import {createPortal} from "react-dom";
+import LayoutDisplayGalleryMobile from "../../../../Layouts/layoutDisplayGalleryMobile";
+import {GlobalId} from "../../../../../../public/globalConst";
 
 const seeCard: string = "Ver carta"
+const idPortal: string = GlobalId.globalIds.idPortal
 
 
 export default function DescriptionCardFullData() {
     const info: PresentationCard = useContext(HeaderContext)
-    let [displayMap, setDisplayMap] = useState(false)
-    const handlePopUpMap = () => setDisplayMap(displayMap = !displayMap)
+    let [displayGallery, setDisplayGallery] = useState(false)
+    const handleGallery = () => setDisplayGallery(displayGallery = !displayGallery)
     const headerBusiness: HeaderSiteBusinessProp = {
         Name: info.Name,
         Description: info.Description,
@@ -41,6 +44,10 @@ export default function DescriptionCardFullData() {
         },
         Contact: info.Contact,
     }
+    const galleryProps: LayoutGalleryProps = {
+        InitialMedia: info.GalleryImages,
+        CloseGallery: handleGallery
+    }
     return (
         <div className={style.mainDiv}>
             <div className={style.contInfo}>
@@ -54,46 +61,22 @@ export default function DescriptionCardFullData() {
                 <LayoutWithNavCircleMobile isDarkMode={false}>
                     {
                         info.SideImages.map((e) =>
-                            <div key={e} className={style.sizeSideImage}>
+                            <div onClick={handleGallery} key={e} className={style.sizeSideImage}>
                                 <Image layout={"fill"} src={e} alt={""}/>
                             </div>
                         )
                     }
                 </LayoutWithNavCircleMobile>
-
-                {/* <div className={style.gridDescip}>
-                    <div className={utilities.clamp5}>
-                        {info.Description}
-                    </div>
-                    <div className={style.gridInfoNew}>
-                        <span>{directionText}</span>
-                        <button onClick={handlePopUpMap} className={utilities.styleLink}>{info.Venue.Venue}</button>
-                    </div>
-                    <div className={style.gridInfoNew}>
-                        <span>{contactText}</span>
-                        <div className={style.gridContact}>
-                            {
-                                info.Contact.map((item) =>
-                                    <Link key={item.Id} href={item.Link}>
-                                        <div className={style.sizeIcon}>
-                                            <Image layout={"fill"} src={item.Icon} alt={""}/>
-                                        </div>
-                                    </Link>
-                                )
-                            }
-                        </div>
-                    </div>
-                </div>*/}
                 <div className={style.button}>
                     {seeCard}
                 </div>
             </div>
 
             {
-                displayMap &&
-                <PopUpContainerMob closePopUp={handlePopUpMap} isButtonVisible={true} isBackground={true}>
-                    <MapPopUp item={info.Venue}/>
-                </PopUpContainerMob>
+                displayGallery &&
+                createPortal(
+                    <LayoutDisplayGalleryMobile item={galleryProps}/>, document.getElementById(idPortal)
+                )
             }
         </div>
     )

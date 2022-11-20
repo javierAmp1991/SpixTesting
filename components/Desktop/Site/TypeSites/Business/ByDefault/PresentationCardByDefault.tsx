@@ -7,13 +7,11 @@ import {useContext} from "react";
 import {
     PrincipalInfoByDefaultContext
 } from "../../../../../Providers/Site/TypeSite/Business/ByDefault/SiteBusinessByDefaultProvider";
+import style from "/styles/Desktop/Site/TypeSite/Bussines/ByDefault/presentationCard.module.css"
+import Image from "next/image";
+import HeaderSiteBussinessByDefault from "./headerSiteBussinessByDefault";
 
 const seeGallery: string = "Ver galeria"
-
-import style from "/styles/Desktop/Site/TypeSite/Bussines/ByDefault/presentationCard.module.css"
-import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css";
-import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
-import Image from "next/image";
 
 export default function PresentationCardByDefault() {
     const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
@@ -38,15 +36,12 @@ export default function PresentationCardByDefault() {
                 AmountSubscribers: 200
             }
         },
-        Width: "100%",
-        PaddingBottom: 24
     }
     const isAnnouncement: boolean = info.Announcement == null
 
     return (
-        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
-            ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
-            <HeaderSiteBussiness item={headerBusiness}/>
+        <div className={`${style.mainDiv} ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
+            <HeaderSiteBussinessByDefault item={headerBusiness}/>
             <button className={style.contImage}>
                 <div className={style.firstGradient}>
                     <div className={style.background}/>
@@ -57,10 +52,10 @@ export default function PresentationCardByDefault() {
                 <div className={style.seeGallery}>
                     {seeGallery}
                 </div>
+               {/* <div className={style.logo}>
+                    <Image layout={"fill"} src={info.LogoPath}/>
+                </div>*/}
             </button>
-            <div className={style.logo}>
-                <Image layout={"fill"} src={info.LogoPath}/>
-            </div>
 
         </div>
     )

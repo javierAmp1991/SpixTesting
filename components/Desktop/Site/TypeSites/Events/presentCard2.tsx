@@ -8,10 +8,8 @@ import {
 import React, {useContext} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import ImageVideo from "./imageVideo";
-import {GlobalId} from "../../../../../public/globalConst";
 import HeaderSiteEvents from "./Misc/headerSiteEvents";
 
-const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function PresentCard2() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -39,6 +37,8 @@ export default function PresentCard2() {
         Width: "85%"
     }
     const isAnnouncement: boolean = info.Announcement == null
+
+
     return (
         <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
         ${isAnnouncement ? style.fullRadious : style.noRadious}`}>

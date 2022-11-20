@@ -3,16 +3,35 @@ import Image from "next/image"
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
+import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
+import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
+import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../../CustomHooks/Utilities";
+import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
+import {createPortal} from "react-dom";
+import {GlobalId} from "../../../../../../public/globalConst";
+
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function BannerImages() {
-
+    const displayGalleryPop: DisplayPopUpHook = useDisplayPopUpHook(false)
     const info: PresentationCard = useContext(HeaderDataBHContext)
+    const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
+    const handleOpenGallery = (id: string) => {
+        initialGallery.SetGallery(id)
+        displayGalleryPop.HandleToggle()
+    }
+    const galleryProp: LayoutGalleryProps = {
+        CloseGallery: displayGalleryPop.HandleToggle,
+        InitialMedia: initialGallery.InitialList
+    }
+
     return (
         <div className={style.mainDiv}>
             <div className={`${style.contSlider}`}>
                 {
                     info.GalleryImages.map((item, index) =>
-                        <button key={index} className={`${style.contImage} ${getStyle(index)}`}>
+                        <button onClick={() => handleOpenGallery(item.Id)} key={index}
+                                className={`${style.contImage} ${getStyle(index)}`}>
                             <div className={style.sizeImage}>
                                 <Image layout={"fill"} src={item.Link} alt={""}/>
                             </div>
@@ -20,6 +39,12 @@ export default function BannerImages() {
                     )
                 }
             </div>
+            {
+                displayGalleryPop.State &&
+                createPortal(
+                    <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

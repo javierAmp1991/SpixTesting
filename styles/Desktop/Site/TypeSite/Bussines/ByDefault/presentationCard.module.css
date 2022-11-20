@@ -1,8 +1,7 @@
 .mainDiv {
-    padding: 48px 13%;
+    padding: 4% 8% 12px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    overflow: hidden;
     gap: 20%;
     position: relative;
 }
@@ -23,7 +22,7 @@
     transition: .5s;
 }
 
-.contImage:hover{
+.contImage:hover {
     transform: scale(1.05);
 }
 
@@ -38,8 +37,6 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: absolute;
-    background: linear-gradient(145deg, #1111ea 0%, #de1212 100%);
-    background: linear-gradient(145deg, #FFDEA8 0%, #FEC84E 100%);
     background: linear-gradient(145deg, #FABC3C 0%, #FACC6B 100%);
     padding: 8px;
     top: 24px;
@@ -56,17 +53,18 @@
 }
 
 .logo {
-    width: 70px;
-    height: 70px;
+    --widthLogo: 70px;
+    width: var(--widthLogo);
+    height: var(--widthLogo);
     position: absolute;
-    bottom: 24px;
-    right: 24px;
+    top: 24px;
+    right: calc((var(--widthLogo) * -1) / 2);
     border-radius: 50%;
-    box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
     overflow: hidden;
 }
 
-.seeGallery{
+.seeGallery {
     color: var(--linkColor);
     text-decoration: underline;
     padding-top: 32px;

@@ -24,6 +24,56 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
     return (
         <div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
+                <div className={style.gridLogoName}>
+                    <div className={style.sizeLogo}>
+                        <Image layout={"fill"} src={"/images/hellsKitchen.jpeg"}/>
+                    </div>
+                    <div>
+                        <div className={style.gridTags}>
+                            {
+                                item.Tags.map(item =>
+                                    <div key={item} className={`${style.tagBase} ${tagStyle}`}>
+                                        {item}
+                                    </div>)
+                            }
+                        </div>
+                        <div className={style.gridNameThreePoints}>
+                            <div className={style.name}>
+                                {item.Name}
+                            </div>
+                            <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className={`${utilities.clamp5} ${style.description}`}>
+                    {item.Description}
+                </div>
+
+                <div className={style.produce}>
+                    <span>{produceText}</span>
+                    <span>{item.Produce}</span>
+                </div>
+                <div className={style.contSocialButton}>
+                    <SocialButtons item={item.SocialButtons}/>
+                </div>
+
+                <div className={style.separationLine}/>
+            </div>
+            {
+                socialAndReport &&
+                createPortal(
+                    <PopUpContainer closePopUp={handleSocialAndReport} isButtonVisible={true} isBackground={true}>
+                        <ContactPopUp item={item.Contact}/>
+                    </PopUpContainer>, document.getElementById(idPortal)
+                )
+            }
+        </div>
+        /*<div className={style.mainDiv}>
+            <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
                 <div className={style.gridTags}>
                     {
                         item.Tags.map(item =>
@@ -63,7 +113,7 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
                     </PopUpContainer>, document.getElementById(idPortal)
                 )
             }
-        </div>
+        </div>*/
     )
 
     function getTagStyle() {

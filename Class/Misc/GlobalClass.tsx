@@ -22,6 +22,7 @@ export class ProductItem {
     DiscountPercent?: number
     Include?: string
     ImagePath?: string
+    ExtraImages?: string[]
     Rating?: number
 }
 

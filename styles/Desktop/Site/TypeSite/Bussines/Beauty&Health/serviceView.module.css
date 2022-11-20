@@ -7,13 +7,9 @@
     transition: .4s;
 }
 
-/*.mainGrid:hover {
-    transform: scale(1.05);
-}*/
 
 .contImage {
     padding: 2px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, .1) 50%, white 50%);
     background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .1) 50%);
     position: absolute;
     border-radius: 50%;
@@ -68,7 +64,7 @@
 .gridInfoProductHorizontal {
     display: grid;
     gap: 16px;
-    padding: 130px 24px 32px 24px;
+    padding: 140px 24px 32px 24px;
     align-items: start;
 }
 

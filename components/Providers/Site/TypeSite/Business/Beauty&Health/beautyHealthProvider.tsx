@@ -601,20 +601,20 @@ const headerData: PresentationCard = {
             Link: "/images/corte4.jpeg"
         },
         {
-            Id: "idBhGalleryImage001",
+            Id: "idBhGalleryImage002",
             Type: MultimediaItemType.Image,
             Link: "/images/corte1.jpg"
         },
         {
-            Id: "idBhGalleryImage001",
+            Id: "idBhGalleryImage003",
             Type: MultimediaItemType.Image,
             Link: "/images/corte2.jpg"
         },
         {
-            Id: "idBhGalleryImage001",
+            Id: "idBhGalleryImage004",
             Type: MultimediaItemType.Image,
             Link: "/images/corte3.jpg"
-        }
+        },
     ],
     Announcement: {
         Id: "idAnnouncement001",

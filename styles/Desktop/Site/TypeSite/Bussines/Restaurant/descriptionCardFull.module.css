@@ -72,8 +72,8 @@
 
 .seeGalery {
     position: absolute;
-    bottom: 20px;
-    right: 36px;
+    bottom: 20%;
+    left: 25%;
     color: var(--linkColor);
     text-decoration: underline;
 }
@@ -95,12 +95,14 @@
     display: grid;
     align-content: center;
     padding-bottom: 48px;
+    position: relative;
 }
 
 .center {
     height: 100%;
     display: grid;
     align-content: center;
+    position: relative;
 }
 
 .bottom {
@@ -108,5 +110,6 @@
     display: grid;
     align-content: center;
     padding-top: 48px;
+    position: relative;
 }
 
