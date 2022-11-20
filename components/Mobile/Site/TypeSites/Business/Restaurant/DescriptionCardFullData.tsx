@@ -85,10 +85,6 @@ export default function DescriptionCardFullData() {
                                         </div>
                                     }
                                 </button>
-
-                            /*<div onClick={() => handleOpenGallery(e.Id)} key={e.Link} className={style.sizeSideImage}>
-                                <Image layout={"fill"} src={e} alt={""}/>
-                            </div>*/
                         )
                     }
                 </LayoutWithNavCircleMobile>

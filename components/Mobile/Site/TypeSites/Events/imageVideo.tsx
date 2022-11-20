@@ -6,7 +6,7 @@ import style from "/styles/Mobile/Site/TypeSite/Events/imageVideo.module.css";
 import Image from "next/image";
 import {createPortal} from "react-dom";
 import LayoutDisplayGalleryMobile from "../../../Layouts/layoutDisplayGalleryMobile";
-import {GlobalId} from "../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import {
     LayoutGalleryProps,
     LayoutWithNavCircleProp,
@@ -52,12 +52,12 @@ export default function ImageVideoMobile() {
                                                alt=""/>
                                     }
                                 </div>
-                                {/* {
+                                {
                                     e.Type == MultimediaItemType.Video &&
                                     <div className={style.playIconBig}>
                                         <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon} alt={""}/>
                                     </div>
-                                }*/}
+                                }
                             </button>
                     )
                 }
