@@ -2,14 +2,22 @@ import style from "/styles/Mobile/Misc/productViewHor.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
-import {GlobalConst} from "../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import RatingStarMob from "./ratingStarMob";
+import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
+import ProductPopUpMobile from "./ProductPopUpMobile";
+import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../CustomHooks/Utilities";
+import {createPortal} from "react-dom";
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ProductViewHorMobile({item, isDisplayOffer}:
                                            { item: ProductItem, isDisplayOffer: boolean }) {
+    const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
+    const handleOpen = ()=> displayPopUpProduct.HandleToggle()
+
     return (
         <div className={style.mainGrid}>
-            <div className={style.mainDivImage}>
+            <div onClick={handleOpen} className={style.mainDivImage}>
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
@@ -21,7 +29,7 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
                 }
             </div>
 
-            <div className={style.gridInfoProductHorizontal}>
+            <div onClick={handleOpen} className={style.gridInfoProductHorizontal}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}
                 </div>
@@ -69,6 +77,16 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
 
 
             </div>
+            {
+                displayPopUpProduct.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
+                                        isBackground={true}>
+                        <ProductPopUpMobile item={item}/>
+
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

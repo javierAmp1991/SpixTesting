@@ -22,7 +22,7 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
     const cssStyles = getCssStyles()
 
     return (
-        <div className={style.mainDiv}>
+        /*<div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
                 <div className={style.gridLogoName}>
                     <div className={style.sizeLogo}>
@@ -71,8 +71,8 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
                     </PopUpContainer>, document.getElementById(idPortal)
                 )
             }
-        </div>
-        /*<div className={style.mainDiv}>
+        </div>*/
+        <div className={style.mainDiv}>
             <div style={{width: cssStyles.width}} className={style.mainDivInfo}>
                 <div className={style.gridTags}>
                     {
@@ -113,7 +113,7 @@ export default function HeaderSiteEvents({item}: { item: HeaderSiteEventsProp}) 
                     </PopUpContainer>, document.getElementById(idPortal)
                 )
             }
-        </div>*/
+        </div>
     )
 
     function getTagStyle() {

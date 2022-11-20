@@ -8,7 +8,8 @@ export default function PopUpContainerFull({children, closePopUp, isBackground, 
     const cssStyle = getCssStyle()
     return (
         <div className={style.mainDiv}>
-            <div onClick={closePopUp} className={style.blackScreen}/>
+            <button onClick={closePopUp} className={style.blackScreen}/>
+
             <div className={cssStyle.modalBackground}>
                 {
                     isButtonVisible &&

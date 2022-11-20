@@ -2,14 +2,21 @@ import style from "/styles/Desktop/Misc/productViewHor.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
-import {GlobalConst} from "../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import RatingStarDesk from "./ratingStarDesk";
+import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../CustomHooks/Utilities";
+import ProductPopUp from "./ProductPopUp";
+import {createPortal} from "react-dom";
+import PopUpContainerFull from "./popUpContainerFull";
+
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ProductViewHor({item, isDisplayOffer}:
                                            { item: ProductItem, isDisplayOffer: boolean }) {
+    const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
     return (
         <div className={style.mainGrid}>
-            <div className={style.mainDivImage}>
+            <button onClick={() => displayPopUpProduct.HandleToggle()} className={style.mainDivImage}>
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
@@ -19,9 +26,9 @@ export default function ProductViewHor({item, isDisplayOffer}:
                             <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                         </div> : <></>
                 }
-            </div>
+            </button>
 
-            <div className={style.gridInfoProductHorizontal}>
+            <button onClick={() => displayPopUpProduct.HandleToggle()} className={style.gridInfoProductHorizontal}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}
                 </div>
@@ -68,7 +75,16 @@ export default function ProductViewHor({item, isDisplayOffer}:
                 </div>
 
 
-            </div>
+            </button>
+            {
+                displayPopUpProduct.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
+                                        isBackground={true}>
+                        <ProductPopUp item={item}/>
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

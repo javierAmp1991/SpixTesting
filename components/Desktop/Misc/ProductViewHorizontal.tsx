@@ -15,11 +15,6 @@ export default function ProductViewHorizontal({item, size, isDisplayOffer}:
                 </div>
             </div>
 
-            {/*<div className={utilities.positionLastTicket}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner}
-                       alt=""/>
-            </div>*/}
-
             <div className={style.gridInfoProductHorizontal}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}

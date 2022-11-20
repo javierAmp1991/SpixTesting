@@ -1,4 +1,3 @@
-
 export class UploadImageProvisory {
     FileImage: File
     Id: string
@@ -14,6 +13,11 @@ export class SearchBarProps {
     CleanSuggestions: Function
 }
 
+export enum TypeProducts {
+    Service = 1,
+    Products
+}
+
 export class ProductItem {
     Id: string
     Name: string
@@ -24,6 +28,8 @@ export class ProductItem {
     ImagePath?: string
     ExtraImages?: string[]
     Rating?: number
+    Type?: TypeProducts
+    Time?: string
 }
 
 export class SectionProductItem {

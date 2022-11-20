@@ -1,7 +1,7 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/ourJobs.module.css"
 import Image from "next/image"
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useEffect, useRef} from "react";
+import {useContext, useRef} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
 import {LayoutGalleryProps, LayoutTitleLinkProps} from "../../../../../../Class/Layouts/layoutClass";
@@ -31,16 +31,15 @@ export default function OurJobsMobile() {
         InitialMedia: initialGallery.InitialList
     }
 
-    useEffect(() => {
-        divRef.current.scrollTo({left: 200, behavior: "smooth"})
-    }, [])
+    /*    useEffect(() => {
+            divRef.current.scrollTo({left: 200, behavior: "smooth"})
+        }, [])*/
 
     return (
         <div className={style.mainDiv}>
             <LayoutTitleCustomMobile item={layoutTitleProp}>
                 <>
                     <div ref={divRef} className={`${style.contSlider}`}>
-                        <div className={style.stop}/>
                         {
                             info.GalleryImages.map((item, index) =>
                                 <button onClick={() => handleOpenGallery(item.Id)} key={index}
@@ -51,12 +50,9 @@ export default function OurJobsMobile() {
                                 </button>
                             )
                         }
-                        <div className={style.stop}>
-
-                        </div>
                     </div>
 
-                    <button onClick={()=>initialGallery.HandleDisplayGallery()} className={style.seeGalery}>
+                    <button onClick={() => initialGallery.HandleDisplayGallery()} className={style.seeGalery}>
                         {seeGalery}
                     </button>
                 </>

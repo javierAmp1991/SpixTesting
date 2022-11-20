@@ -136,7 +136,8 @@ export namespace GlobalConst{
         announcementIconBlack: "/images/announcementIconBlack.png",
         backgroundContact: "/images/backgroundContact.jpg",
         reportIcon: "/images/reportar.png",
-        youtubeIcon: "/images/youtubeIcon.png"
+        youtubeIcon: "/images/youtubeIcon.png",
+        hamburguerIcon: "/images/hamburguerICon.png"
     }
 }
 

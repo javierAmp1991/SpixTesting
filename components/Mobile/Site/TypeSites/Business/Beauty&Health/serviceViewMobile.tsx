@@ -1,14 +1,21 @@
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/serviceView.module.css";
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
-import {GlobalConst} from "../../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import {ProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import RatingStarVar from "../../../../../Desktop/Misc/ratingStarVar";
+import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../../CustomHooks/Utilities";
+import PopUpContainerFull from "../../../../../Desktop/Misc/popUpContainerFull";
+import {createPortal} from "react-dom";
+import ProductPopUpMobile from "../../../../Misc/ProductPopUpMobile";
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ServiceViewMobile({item}: { item: ProductItem }) {
+    const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
+    const handleOpen = ()=> displayPopUpProduct.HandleToggle()
     return (
         <div className={style.mainGrid}>
-            <div className={style.contImage}>
+            <div onClick={handleOpen} className={style.contImage}>
                 <div className={style.sizeImage}>
                     <Image objectFit={"cover"} layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
@@ -16,12 +23,12 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
 
             {
                 (item.DiscountPercent != null || item.Include != null) &&
-                < div className={style.positionLastTicket}>
+                <div className={style.positionLastTicket}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
             }
 
-            <div className={style.gridInfoProductHorizontal}>
+            <div onClick={handleOpen}  className={style.gridInfoProductHorizontal}>
                 <div>
 
                     <div className={`${style.name} ${utilities.clamp3}`}>
@@ -67,11 +74,20 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
                         </div>
                     }
                 </div>
-                <button className={style.button}>
+               {/* <button className={style.button}>
                     Comprar
-                </button>
+                </button>*/}
             </div>
+            {
+                displayPopUpProduct.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
+                                        isBackground={true}>
+                        <ProductPopUpMobile item={item}/>
 
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

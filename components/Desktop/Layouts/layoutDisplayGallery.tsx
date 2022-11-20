@@ -39,7 +39,6 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryProps 
                         <div style={{transform: displacement}} className={style.gridCarrousel}>
                             {
                                 listImages.map((e) =>
-
                                     <div key={e.Id} className={style.sizeImageCarrousel}>
                                         {
 
@@ -47,7 +46,10 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryProps 
                                                 <Image objectFit={"cover"} layout={"fill"} src={e.Link} alt={""}/>
                                                 :
                                                 e.Thumbnail == null ?
-                                                    <iframe className={style.video} src={e.Link}/>
+                                                    <iframe
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowFullScreen
+                                                        className={style.video} src={e.Link}/>
                                                     :
                                                     <video className={style.video} controls={true}
                                                            src={e.Link}/>

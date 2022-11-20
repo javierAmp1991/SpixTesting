@@ -1,5 +1,11 @@
 import {createContext, useState} from "react";
-import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {
+    ProductItem,
+    QuestionItem,
+    ReviewItem,
+    SectionProductItem,
+    TypeProducts
+} from "../../../../../../Class/Misc/GlobalClass";
 import {FormLink, Product} from "../../../../../../dataDemo/data";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {
@@ -165,7 +171,9 @@ const listServices: ProductItem[] = [
         DiscountPercent: null,
         Include: null,
         ImagePath: "/images/bh2.jpg",
-        Rating: 4
+        Rating: 4,
+        Type: TypeProducts.Service,
+        Time: `40`
     },
     {
         Id: "idProduct02",
@@ -175,7 +183,9 @@ const listServices: ProductItem[] = [
         DiscountPercent: 30,
         Include: null,
         ImagePath: "/images/bh4.png",
-        Rating: 5
+        Rating: 5,
+        Type: TypeProducts.Service,
+        Time: `40`
     },
     {
         Id: "idProduct03",
@@ -185,7 +195,9 @@ const listServices: ProductItem[] = [
         DiscountPercent: 40,
         Include: null,
         ImagePath: "/images/bh1.jpg",
-        Rating: 4
+        Rating: 4,
+        Type: TypeProducts.Service,
+        Time: `34`
     },
     {
         Id: "idProduct04",
@@ -195,7 +207,9 @@ const listServices: ProductItem[] = [
         DiscountPercent: null,
         Include: "2 x 1",
         ImagePath: "/images/bh3.jpg",
-        Rating: 3
+        Rating: 3,
+        Type: TypeProducts.Service,
+        Time: `40`
     },
 ]
 const listServicesAdd: ProductItem[] = [

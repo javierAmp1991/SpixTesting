@@ -27,7 +27,7 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
     const cssStyles = getCssStyles()
 
     return (
-        <div className={style.mainDiv}>
+       /* <div className={style.mainDiv}>
             <div style={{width: cssStyles.width, paddingBottom: cssStyles.paddingBottom}} className={style.mainDivInfo}>
                 <div className={style.gridLogoName}>
                     <div className={style.sizeLogo}>
@@ -87,8 +87,8 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                     </PopUpContainer>, document.getElementById(idPortal)
                 )
             }
-        </div>
-        /* <div className={style.mainDiv}>
+        </div>*/
+        <div className={style.mainDiv}>
              <div style={{width: cssStyles.width, paddingBottom: cssStyles.paddingBottom}} className={style.mainDivInfo}>
                  <div className={style.gridTags}>
                      {
@@ -124,7 +124,7 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                  <div className={style.separationLine}/>
              </div>
              {
-                 socialAndReport &&
+                 displaySocialReport.State &&
                  createPortal(
                      <PopUpContainer closePopUp={handleSocialAndReport} isButtonVisible={true} isBackground={true}>
                          <ContactPopUp item={item.Contact}/>
@@ -132,14 +132,14 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                  )
              }
              {
-                 displayVenue &&
+                 displayVenuePopUp.State &&
                  createPortal(
                      <PopUpContainer closePopUp={handleDisplayVenue} isButtonVisible={true} isBackground={true}>
                          <MapPopUp item={item.Venue}/>
                      </PopUpContainer>, document.getElementById(idPortal)
                  )
              }
-         </div>*/
+         </div>
     )
 
     function getTagStyle() {

@@ -39,7 +39,7 @@
 
 .contShowImage {
     width: 100%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 4/3;
     position: relative;
     display: grid;
     align-items: center;
@@ -63,7 +63,7 @@
 .iframe{
     width: 100%;
     object-fit: cover;
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/3;
     position: relative;
 }
 
