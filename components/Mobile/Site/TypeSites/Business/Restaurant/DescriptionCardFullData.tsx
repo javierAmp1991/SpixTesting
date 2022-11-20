@@ -5,14 +5,15 @@ import {
     PresentationCard,
     TypeSiteBusiness
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useState} from "react";
+import React, {useContext} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import LayoutWithNavCircleMobile from "../../../../Layouts/layoutWithNavCircleMobile";
 import HeaderSiteBussinessMobile from "../Misc/headerSiteBussinessMobile";
-import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
+import {LayoutGalleryProps, MultimediaItemType} from "../../../../../../Class/Layouts/layoutClass";
 import {createPortal} from "react-dom";
 import LayoutDisplayGalleryMobile from "../../../../Layouts/layoutDisplayGalleryMobile";
-import {GlobalId} from "../../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
+import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
 
 const seeCard: string = "Ver carta"
 const idPortal: string = GlobalId.globalIds.idPortal
@@ -20,8 +21,6 @@ const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function DescriptionCardFullData() {
     const info: PresentationCard = useContext(HeaderContext)
-    let [displayGallery, setDisplayGallery] = useState(false)
-    const handleGallery = () => setDisplayGallery(displayGallery = !displayGallery)
     const headerBusiness: HeaderSiteBusinessProp = {
         Name: info.Name,
         Description: info.Description,
@@ -44,10 +43,17 @@ export default function DescriptionCardFullData() {
         },
         Contact: info.Contact,
     }
-    const galleryProps: LayoutGalleryProps = {
-        InitialMedia: info.GalleryImages,
-        CloseGallery: handleGallery
+
+    const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
+    const handleOpenGallery = (id: string) => {
+        initialGallery.SetGallery(id)
+        initialGallery.HandleDisplayGallery()
     }
+    const galleryProp: LayoutGalleryProps = {
+        CloseGallery: initialGallery.HandleDisplayGallery,
+        InitialMedia: initialGallery.InitialList
+    }
+
     return (
         <div className={style.mainDiv}>
             <div className={style.contInfo}>
@@ -60,10 +66,29 @@ export default function DescriptionCardFullData() {
                 </div>
                 <LayoutWithNavCircleMobile isDarkMode={false}>
                     {
-                        info.SideImages.map((e) =>
-                            <div onClick={handleGallery} key={e} className={style.sizeSideImage}>
+                        info.GalleryImages.map((e) =>
+                            e.Type == MultimediaItemType.Video && e.Thumbnail == null ?
+                                <div className={style.contShowImage}>
+                                    <iframe className={style.iframe} src={e.Link}/>
+                                </div>
+                                :
+                                <button onClick={() => handleOpenGallery(e.Id)} className={style.contShowImage}>
+                                    <div className={style.contShowImage}>
+                                        {<Image layout={"fill"} objectFit={"cover"}
+                                                src={e.Type == MultimediaItemType.Video ? e.Thumbnail : e.Link}
+                                                alt=""/>}
+                                    </div>
+                                    {
+                                        e.Type == MultimediaItemType.Video &&
+                                        <div className={style.playIconBig}>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon} alt={""}/>
+                                        </div>
+                                    }
+                                </button>
+
+                            /*<div onClick={() => handleOpenGallery(e.Id)} key={e.Link} className={style.sizeSideImage}>
                                 <Image layout={"fill"} src={e} alt={""}/>
-                            </div>
+                            </div>*/
                         )
                     }
                 </LayoutWithNavCircleMobile>
@@ -73,9 +98,9 @@ export default function DescriptionCardFullData() {
             </div>
 
             {
-                displayGallery &&
+                initialGallery.DisplayGallery &&
                 createPortal(
-                    <LayoutDisplayGalleryMobile item={galleryProps}/>, document.getElementById(idPortal)
+                    <LayoutDisplayGalleryMobile item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
         </div>

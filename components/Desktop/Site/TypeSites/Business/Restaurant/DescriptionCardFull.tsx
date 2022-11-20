@@ -6,16 +6,14 @@ import {
     PresentationCard,
     TypeSiteBusiness
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {HeaderContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
-import PopUpContainer from "../../../../Misc/popUpContainer";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
-import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../../CustomHooks/Utilities";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const seeGallery: string = "Ver galeria"
@@ -46,14 +44,13 @@ export default function DescriptionCardFull() {
     }
     const isAnnouncement: boolean = info.Announcement == null
 
-    const displayGalleryPop: DisplayPopUpHook = useDisplayPopUpHook(false)
     const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
     const handleOpenGallery = (id: string) => {
         initialGallery.SetGallery(id)
-        displayGalleryPop.HandleToggle()
+        initialGallery.HandleDisplayGallery()
     }
     const galleryProp: LayoutGalleryProps = {
-        CloseGallery: displayGalleryPop.HandleToggle,
+        CloseGallery: initialGallery.HandleDisplayGallery,
         InitialMedia: initialGallery.InitialList
     }
 
@@ -85,7 +82,7 @@ export default function DescriptionCardFull() {
                                     </button>
                                     {
                                         index == 1 &&
-                                        <button onClick={() => displayGalleryPop.HandleToggle()} className={style.seeGalery}>
+                                        <button onClick={() => initialGallery.HandleDisplayGallery()} className={style.seeGalery}>
                                             {seeGallery}
                                         </button>
                                     }
@@ -99,7 +96,7 @@ export default function DescriptionCardFull() {
                 </div>
             </div>
             {
-                displayGalleryPop.State &&
+                initialGallery.DisplayGallery &&
                 createPortal(
                     <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )

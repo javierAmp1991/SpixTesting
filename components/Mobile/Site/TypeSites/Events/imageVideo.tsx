@@ -3,45 +3,69 @@ import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/even
 import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import style from "/styles/Mobile/Site/TypeSite/Events/imageVideo.module.css";
-import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {createPortal} from "react-dom";
 import LayoutDisplayGalleryMobile from "../../../Layouts/layoutDisplayGalleryMobile";
 import {GlobalId} from "../../../../../public/globalConst";
-import {LayoutGalleryMobile, LayoutGalleryProps} from "../../../../../Class/Layouts/layoutClass";
+import {
+    LayoutGalleryProps,
+    LayoutWithNavCircleProp,
+    MultimediaItemType
+} from "../../../../../Class/Layouts/layoutClass";
+import useGalleryImagesHook, {GalleryHook} from "../../../../../CustomHooks/galleryHook";
+import LayoutNavCircleMobileCustom from "../../../Layouts/layoutNavCircleMobileCustom";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ImageVideoMobile() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
-    let [displayGAllery, setDisplayGallery] = useState(false)
-    const handleGallery = () => setDisplayGallery(displayGAllery = !displayGAllery)
-    const galleryProps: LayoutGalleryProps = {
-        InitialMedia: info.GalleryImages,
-        CloseGallery: handleGallery
+
+
+    const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
+    const handleOpenGallery = (id: string) => {
+        initialGallery.SetGallery(id)
+        initialGallery.HandleDisplayGallery()
     }
+    const galleryProp: LayoutGalleryProps = {
+        CloseGallery: initialGallery.HandleDisplayGallery,
+        InitialMedia: initialGallery.InitialList
+    }
+    const propsCarrousel: LayoutWithNavCircleProp = {
+        IsWithBorder: false,
+    }
+
     return (
         <div className={style.overflowDiv}>
-            <LayoutWithNavCircleMobile isDarkMode={false}>
+            <LayoutNavCircleMobileCustom item={propsCarrousel}>
                 {
-                    info.Images.map((item, index) =>
-                        index == 0 ?
-                            <div onClick={handleGallery} className={`${style.sizeContainer} ${utilities.snapScroll}`}>
-                                <video poster={info.Images[0]} className={style.sizeVideo} controls src={info.Video}/>
+                    info.GalleryImages.map(e =>
+                        e.Type == MultimediaItemType.Video && e.Thumbnail == null ?
+                            <div className={style.contShowImage}>
+                                <iframe className={style.iframe} src={e.Link}/>
                             </div>
                             :
-                            <div onClick={handleGallery} className={utilities.snapScroll} key={index}>
-                                <div className={style.sizeContainer}>
-                                    <Image layout={"fill"} objectFit={"cover"} src={item} alt=""/>
+                            <button onClick={() => handleOpenGallery(e.Id)} className={style.contShowImage}>
+                                <div className={style.contShowImage}>
+                                    {
+                                        <Image layout={"fill"} objectFit={"cover"}
+                                               src={e.Type == MultimediaItemType.Video ? e.Thumbnail : e.Link}
+                                               alt=""/>
+                                    }
                                 </div>
-                            </div>
+                                {/* {
+                                    e.Type == MultimediaItemType.Video &&
+                                    <div className={style.playIconBig}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.playIcon} alt={""}/>
+                                    </div>
+                                }*/}
+                            </button>
                     )
                 }
-            </LayoutWithNavCircleMobile>
+            </LayoutNavCircleMobileCustom>
             {
-                displayGAllery &&
+                initialGallery.DisplayGallery &&
                 createPortal(
-                    <LayoutDisplayGalleryMobile item={galleryProps}/>, document.getElementById(idPortal)
+                    <LayoutDisplayGalleryMobile item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
         </div>

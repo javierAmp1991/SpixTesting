@@ -5,7 +5,6 @@ import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
 import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
-import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../../CustomHooks/Utilities";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {createPortal} from "react-dom";
 import {GlobalId} from "../../../../../../public/globalConst";
@@ -13,15 +12,14 @@ import {GlobalId} from "../../../../../../public/globalConst";
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function BannerImages() {
-    const displayGalleryPop: DisplayPopUpHook = useDisplayPopUpHook(false)
     const info: PresentationCard = useContext(HeaderDataBHContext)
     const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
     const handleOpenGallery = (id: string) => {
         initialGallery.SetGallery(id)
-        displayGalleryPop.HandleToggle()
+        initialGallery.HandleDisplayGallery()
     }
     const galleryProp: LayoutGalleryProps = {
-        CloseGallery: displayGalleryPop.HandleToggle,
+        CloseGallery: initialGallery.HandleDisplayGallery,
         InitialMedia: initialGallery.InitialList
     }
 
@@ -40,7 +38,7 @@ export default function BannerImages() {
                 }
             </div>
             {
-                displayGalleryPop.State &&
+                initialGallery.DisplayGallery &&
                 createPortal(
                     <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )

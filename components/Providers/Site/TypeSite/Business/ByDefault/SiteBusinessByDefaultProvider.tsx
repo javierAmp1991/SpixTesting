@@ -10,6 +10,7 @@ import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../.
 import {FormLink, Product} from "../../../../../../dataDemo/data";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import {MultimediaItemType} from "../../../../../../Class/Layouts/layoutClass";
 
 export const PrincipalInfoByDefaultContext = createContext(null)
 export const ReviewByDefaultContext = createContext(null)
@@ -76,6 +77,23 @@ const headerData: PresentationCard = {
             Link: "/test3",
             Type: TypeActionContact.Link
         }
+    ],
+    GalleryImages: [
+        {
+            Id: "idRestaurantGalleryImage001",
+            Type: MultimediaItemType.Image,
+            Link: "/images/hellkitchen1.jpg"
+        },
+        {
+            Id: "idRestaurantGalleryImage002",
+            Type: MultimediaItemType.Image,
+            Link: "/images/hellkitchen2.jpg"
+        },
+        {
+            Id: "idRestaurantGalleryImage003",
+            Type: MultimediaItemType.Image,
+            Link: "/images/hellkitchen3.jpg"
+        },
     ],
     Tags: ["Restaurant", "Sushi", "Bebidas"],
     SideImages: ["/images/hellkitchen1.jpg", "/images/hellkitchen2.jpg", "/images/hellkitchen3.jpg"],

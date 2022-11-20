@@ -125,7 +125,7 @@
     background: white;
     border-radius: 50%;
     transition: .4s;
-    border: 1px solid gray;
+    box-shadow: 0 0 4px rgba(255,255,255);
 }
 
 .contCloseImage:hover {

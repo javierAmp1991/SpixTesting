@@ -10,8 +10,14 @@ import {
 import style from "/styles/Desktop/Site/TypeSite/Bussines/ByDefault/presentationCard.module.css"
 import Image from "next/image";
 import HeaderSiteBussinessByDefault from "./headerSiteBussinessByDefault";
+import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
+import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
+import {createPortal} from "react-dom";
+import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
+import {GlobalId} from "../../../../../../public/globalConst";
 
 const seeGallery: string = "Ver galeria"
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function PresentationCardByDefault() {
     const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
@@ -39,23 +45,37 @@ export default function PresentationCardByDefault() {
     }
     const isAnnouncement: boolean = info.Announcement == null
 
+    const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
+    /* const handleOpenGallery = (id: string) => {
+         initialGallery.SetGallery(id)
+         initialGallery.HandleDisplayGallery()
+     }*/
+    const handleOpenGallery = () => initialGallery.HandleDisplayGallery()
+    const galleryProp: LayoutGalleryProps = {
+        CloseGallery: initialGallery.HandleDisplayGallery,
+        InitialMedia: initialGallery.InitialList
+    }
+
     return (
         <div className={`${style.mainDiv} ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
             <HeaderSiteBussinessByDefault item={headerBusiness}/>
-            <button className={style.contImage}>
+            <button onClick={handleOpenGallery} className={style.contImage}>
                 <div className={style.firstGradient}>
                     <div className={style.background}/>
                 </div>
                 <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={info.ImagePath}/>
+                    <Image layout={"fill"} src={info.ImagePath} alt={""}/>
                 </div>
                 <div className={style.seeGallery}>
                     {seeGallery}
                 </div>
-               {/* <div className={style.logo}>
-                    <Image layout={"fill"} src={info.LogoPath}/>
-                </div>*/}
             </button>
+            {
+                initialGallery.DisplayGallery &&
+                createPortal(
+                    <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
+                )
+            }
 
         </div>
     )

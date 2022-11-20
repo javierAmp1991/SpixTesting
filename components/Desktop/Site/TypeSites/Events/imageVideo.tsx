@@ -8,7 +8,6 @@ import utilities from "/styles/utilities.module.css";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../Layouts/layoutDisplayGallery";
 import {LayoutGalleryProps, MultimediaItemType} from "../../../../../Class/Layouts/layoutClass";
-import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../CustomHooks/Utilities";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../CustomHooks/galleryHook";
 
 const idPortal: string = GlobalId.globalIds.idPortal
@@ -25,14 +24,13 @@ export default function ImageVideo() {
     }
 
 
-    const displayGalleryPop: DisplayPopUpHook = useDisplayPopUpHook(false)
     const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
     const handleOpenGallery = (id: string) => {
         initialGallery.SetGallery(id)
-        displayGalleryPop.HandleToggle()
+        initialGallery.HandleDisplayGallery()
     }
     const galleryProp: LayoutGalleryProps = {
-        CloseGallery: displayGalleryPop.HandleToggle,
+        CloseGallery: initialGallery.HandleDisplayGallery,
         InitialMedia: initialGallery.InitialList
     }
     return (
@@ -57,7 +55,7 @@ export default function ImageVideo() {
                                         }
                                     </>
                                     :
-                                    <Image src={GlobalConst.sourceImages.youtubeIcon} width={20} height={20}/>
+                                    <Image src={GlobalConst.sourceImages.youtubeIcon} width={20} height={20} alt={""}/>
                                    /* <iframe className={style.iframe} src={item.Link}/>*/
                             }
                         </button>
@@ -86,7 +84,7 @@ export default function ImageVideo() {
             }
 
             {
-                displayGalleryPop.State &&
+                initialGallery.DisplayGallery &&
                 createPortal(<LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal))
             }
         </div>

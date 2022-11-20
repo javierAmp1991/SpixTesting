@@ -7,7 +7,6 @@ import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
-import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../../CustomHooks/Utilities";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
 
 const ourJobsText: string = "Nuestros Trabajos"
@@ -19,7 +18,6 @@ const lessSpace: number = 48 * (numberDivs - 1)
 const initialTranslate: string = `translateX(0)`
 
 export default function OurJobs() {
-    const displayGalleryPop: DisplayPopUpHook = useDisplayPopUpHook(false)
     const info: PresentationCard = useContext(HeaderDataBHContext)
     const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
     let [translate, setTranslate] = useState(initialTranslate)
@@ -40,10 +38,10 @@ export default function OurJobs() {
     }
     const handleOpenGallery = (id: string) => {
         initialGallery.SetGallery(id)
-        displayGalleryPop.HandleToggle()
+        initialGallery.HandleDisplayGallery()
     }
     const galleryProp: LayoutGalleryProps = {
-        CloseGallery: displayGalleryPop.HandleToggle,
+        CloseGallery: initialGallery.HandleDisplayGallery,
         InitialMedia: initialGallery.InitialList
     }
 
@@ -53,7 +51,7 @@ export default function OurJobs() {
             <div className={style.title}>
                 {ourJobsText}
             </div>
-            <button onClick={() => displayGalleryPop.HandleToggle()} className={style.seeGallery}>
+            <button onClick={() => initialGallery.HandleDisplayGallery()} className={style.seeGallery}>
                 {seeGallery}
             </button>
             <div className={style.mainGridCarrousel}>
@@ -77,7 +75,7 @@ export default function OurJobs() {
                 </button>
             </div>
             {
-                displayGalleryPop.State &&
+                initialGallery.DisplayGallery &&
                 createPortal(
                     <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )
