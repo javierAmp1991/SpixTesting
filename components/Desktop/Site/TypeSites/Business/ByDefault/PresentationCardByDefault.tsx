@@ -15,6 +15,14 @@ import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
 import {createPortal} from "react-dom";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {GlobalId} from "../../../../../../public/globalConst";
+import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
+import SideImages from "../../Misc/sideImages";
+import LayoutPresentationCard from "../../Misc/layoutPresentationCard";
+import LayoutAnnouncementInfo from "../../Misc/layoutAnnouncementInfo";
+import Announcement from "../../Misc/announcement";
+import {AnnouncementStyle} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteEvents
+
 
 const seeGallery: string = "Ver galeria"
 const idPortal: string = GlobalId.globalIds.idPortal
@@ -57,9 +65,16 @@ export default function PresentationCardByDefault() {
     }
 
     return (
-        <div className={`${style.mainDiv} ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
-            <HeaderSiteBussinessByDefault item={headerBusiness}/>
-            <button onClick={handleOpenGallery} className={style.contImage}>
+        <LayoutPresentationCard>
+            <LayoutAnnouncementInfo>
+                {
+                    info.Announcement != null &&
+                    <Announcement styleAnnouncement={styleAnnouncement} announcement={info.Announcement}/>
+                }
+                <HeaderSiteBussiness item={headerBusiness}/>
+            </LayoutAnnouncementInfo>
+            <SideImages galleryImages={info.GalleryImages} logo={info.LogoPath}/>
+            {/* <button onClick={handleOpenGallery} className={style.contImage}>
                 <div className={style.firstGradient}>
                     <div className={style.background}/>
                 </div>
@@ -69,14 +84,13 @@ export default function PresentationCardByDefault() {
                 <div className={style.seeGallery}>
                     {seeGallery}
                 </div>
-            </button>
-            {
+            </button>*/}
+            {/* {
                 initialGallery.DisplayGallery &&
                 createPortal(
                     <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )
-            }
-
-        </div>
+            }*/}
+        </LayoutPresentationCard>
     )
 }

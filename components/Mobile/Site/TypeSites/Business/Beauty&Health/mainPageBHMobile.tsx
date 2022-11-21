@@ -40,6 +40,7 @@ export default function MainPageBHMobile() {
                 }
                 <HeaderBhMobile/>
             </div>
+            <div className={utilities.separationLineMobile}/>
 
             <OfferBHMobile/>
             <div className={utilities.separationLineMobile}/>

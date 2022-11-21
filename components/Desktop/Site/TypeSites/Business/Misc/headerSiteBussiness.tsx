@@ -27,73 +27,12 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
     const cssStyles = getCssStyles()
 
     return (
-       /* <div className={style.mainDiv}>
-            <div style={{width: cssStyles.width, paddingBottom: cssStyles.paddingBottom}} className={style.mainDivInfo}>
-                <div className={style.gridLogoName}>
-                    <div className={style.sizeLogo}>
-                        <Image layout={"fill"} src={"/images/hellsKitchen.jpeg"}/>
-                    </div>
-                    <div>
-                        <div className={style.gridTags}>
-                            {
-                                item.Tags.map(item =>
-                                    <div key={item} className={`${style.tagBase} ${tagStyle}`}>
-                                        {item}
-                                    </div>)
-                            }
-                        </div>
-                        <div className={style.gridNameThreePoints}>
-                            <div className={style.name}>
-                                {item.Name}
-                            </div>
-                            <button onClick={handleSocialAndReport} className={style.sizeThreePoints}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.threePoints} alt={""}/>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div className={`${utilities.clamp5} ${style.description}`}>
-                    {item.Description}
-                </div>
-
-                <div>
-                    <span>{directionText}</span>
-                    <button onClick={handleDisplayVenue} className={utilities.styleLink}>{item.Venue.Venue}</button>
-                </div>
-
-                <div className={style.contSocialButton}>
-                    <SocialButtons item={item.SocialButtons}/>
-                </div>
-
-                <div className={style.separationLine}/>
-            </div>
-            {
-                displaySocialReport.State &&
-                createPortal(
-                    <PopUpContainer closePopUp={handleSocialAndReport} isButtonVisible={true} isBackground={true}>
-                        <ContactPopUp item={item.Contact}/>
-                    </PopUpContainer>, document.getElementById(idPortal)
-                )
-            }
-            {
-                displayVenuePopUp.State &&
-                createPortal(
-                    <PopUpContainer closePopUp={handleDisplayVenue} isButtonVisible={true}
-                                    isBackground={true}>
-                        <MapPopUp item={item.Venue}/>
-                    </PopUpContainer>, document.getElementById(idPortal)
-                )
-            }
-        </div>*/
         <div className={style.mainDiv}>
              <div style={{width: cssStyles.width, paddingBottom: cssStyles.paddingBottom}} className={style.mainDivInfo}>
                  <div className={style.gridTags}>
                      {
                          item.Tags.map(item =>
-                             <div key={item} className={`${style.tagBase} ${tagStyle}`}>
+                             <div key={item} className={`${style.tagBase} ${style.tagRestaurant}`}>
                                  {item}
                              </div>)
                      }

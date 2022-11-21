@@ -1,5 +1,4 @@
 import style from "/styles/Desktop/Site/TypeSite/Events/presentCard2.module.css";
-import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css";
 import {
     HeaderSiteEventsProp,
     PrincipalInfoEvent,
@@ -7,8 +6,12 @@ import {
 } from "../../../../../Class/Site/TypeSite/Events/events";
 import React, {useContext} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import ImageVideo from "./imageVideo";
 import HeaderSiteEvents from "./Misc/headerSiteEvents";
+import SideImages from "../Misc/sideImages";
+import LayoutPresentationCard from "../Misc/layoutPresentationCard";
+import Announcement from "../Misc/announcement";
+import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import LayoutAnnouncementInfo from "../Misc/layoutAnnouncementInfo";
 
 
 export default function PresentCard2() {
@@ -29,23 +32,24 @@ export default function PresentCard2() {
                 IsLike: false,
                 Like: 156
             },
-            Subscription:{
-                IsSubscriber:false,
+            Subscription: {
+                IsSubscriber: false,
                 AmountSubscribers: 200
             }
         },
-        Width: "85%"
     }
     const isAnnouncement: boolean = info.Announcement == null
-
-
+    const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
     return (
-        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
-        ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
-            <div className={style.mainDiv2}>
+        <LayoutPresentationCard>
+            <LayoutAnnouncementInfo>
+                {
+                    info.Announcement != null &&
+                    <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
+                }
                 <HeaderSiteEvents item={headerEvents}/>
-                <ImageVideo/>
-            </div>
-        </div>
+            </LayoutAnnouncementInfo>
+            <SideImages galleryImages={info.GalleryImages} logo={info.PathLogo}/>
+        </LayoutPresentationCard>
     )
 }

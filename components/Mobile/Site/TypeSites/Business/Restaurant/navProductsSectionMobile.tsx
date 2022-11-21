@@ -8,8 +8,8 @@ export default function NavProductsSectionMobile() {
     let [tagSelected, setTagSelected] = useState("")
 
     const handleTagSelected = (id: string) => {
-        let data = document.getElementById(id)
-        data.scrollIntoView({behavior: "smooth"})
+        let data = document.getElementById(id).getBoundingClientRect()
+        window.scrollTo({top: (data.top + window.scrollY - 60), behavior: "smooth"})
         setTagSelected(tagSelected = id)
     }
 

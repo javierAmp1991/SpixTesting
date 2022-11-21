@@ -10,6 +10,13 @@ import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
 import BannerImages from "./bannerImages";
+import LayoutPresentationCard from "../../Misc/layoutPresentationCard";
+import SideImages from "../../Misc/sideImages";
+import LayoutAnnouncementInfo from "../../Misc/layoutAnnouncementInfo";
+import Announcement from "../../Misc/announcement";
+import {AnnouncementStyle} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+
+const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
 
 
 export default function HeaderBh2() {
@@ -35,15 +42,19 @@ export default function HeaderBh2() {
                 AmountSubscribers: 200
             }
         },
-        Width: "80%",
         PaddingBottom: 30
     }
     const isAnnouncement: boolean = info.Announcement == null
     return (
-        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
-        ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
-            <HeaderSiteBussiness item={headerBusiness}/>
-            <BannerImages/>
-        </div>
+        <LayoutPresentationCard>
+            <LayoutAnnouncementInfo>
+                    {
+                        info.Announcement != null &&
+                            <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
+                    }
+                <HeaderSiteBussiness item={headerBusiness}/>
+            </LayoutAnnouncementInfo>
+            <SideImages galleryImages={info.GalleryImages} logo={info.LogoPath}/>
+        </LayoutPresentationCard>
     )
 }

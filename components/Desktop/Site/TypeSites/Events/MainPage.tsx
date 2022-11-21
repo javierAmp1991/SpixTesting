@@ -9,14 +9,25 @@ import HeaderSiteEvents from "./headerSiteEvents";
 import BannerSiteEvents from "./bannerSiteEvents";
 import LayoutMainPageSites from "../Misc/layoutMainPageSites";
 import utilities from "/styles/utilities.module.css";
+import Announcement from "../Misc/announcement";
+import PresentCard2 from "./presentCard2";
+import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
+import {useContext} from "react";
+import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
+import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+
 const isMarginBottom: boolean = false
+const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
+
 
 export default function MainPage() {
+    const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
+
     return (
         <>
             <BannerSiteEvents/>
             <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-                <HeaderSiteEvents/>
+                <PresentCard2/>
                 <div className={utilities.separationLine}/>
 
                 <OfferProducts/>

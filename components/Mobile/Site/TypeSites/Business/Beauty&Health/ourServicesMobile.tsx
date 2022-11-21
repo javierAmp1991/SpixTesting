@@ -13,7 +13,7 @@ import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
 
 const title: string = "Nuestros servicios"
-const goToQuestion: string = "Tienes reguntas respecto a estos servicios?"
+const goToQuestion: string = "¿Tienes reguntas respecto a estos servicios?"
 
 
 export default function OurServicesMobile({id} : {id: string}) {

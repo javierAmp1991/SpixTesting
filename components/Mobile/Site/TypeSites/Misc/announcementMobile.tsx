@@ -7,9 +7,9 @@ import {AnnouncementItem, AnnouncementStyle} from "../../../../../Class/Site/Typ
 export default function AnnouncementMobile({styleAnnouncement, announcement}:
                                                { styleAnnouncement: AnnouncementStyle, announcement: AnnouncementItem }) {
     return (
-        <div className={`${style.gridAnnouncement} ${getAnnouncementStyle()}`}>
+        <div className={`${style.gridAnnouncement} ${style.backgroundRestaurant}`}>
             <div className={style.sizeIcon}>
-                <Image layout={"fill"} src={getICon()} alt={""}/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.announcementIcon} alt={""}/>
             </div>
             <div className={`${utilities.clamp1} ${style.announcement}`}>
                 {announcement.Announcement}

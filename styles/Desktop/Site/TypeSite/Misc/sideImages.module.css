@@ -1,0 +1,96 @@
+.gridImageSelection {
+    display: grid;
+    gap: 5px;
+    grid-template-columns: max-content 1fr;
+    width: 100%;
+}
+
+.gridSelectionZone {
+    display: grid;
+    gap: 5px;
+    align-content: start;
+    padding-top: 5px;
+}
+
+.contImage {
+    position: relative;
+    width: 60px;
+    aspect-ratio: 1/1;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid black;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .8);
+}
+
+.playIconProperties {
+    --sizePlay: 10px;
+    width: var(--sizePlay);
+    height: var(--sizePlay);
+    position: absolute;
+    top: calc(50% - (var(--sizePlay) / 2));
+    left: calc(50% - (var(--sizePlay) / 2));
+}
+
+.paddingContImage {
+    padding: 0 50px;
+}
+
+.contShowImage {
+    width: 100%;
+    aspect-ratio: 9/8;
+    position: relative;
+    display: grid;
+    align-items: center;
+    /*background: linear-gradient(180deg, rgba(0, 0, 0, .7) 0%, rgba(0, 0, 0, .3) 50%, rgba(0, 0, 0, .7) 100%);*/
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .4), 1px 1px 1px rgba(0,0,0,.1);
+    border: 1px solid #a2a2a2;
+}
+
+.playIconBig {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(255, 255, 255);
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+}
+
+.iframe {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.contShowImageLogo {
+    position: relative;
+}
+
+.gradientLogo {
+    width: 60px;
+    padding: 4px;
+    background: var(--gradientLogos);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    top: 16px;
+    right: 16px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.logo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}
+

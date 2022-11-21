@@ -45,6 +45,7 @@
     grid-auto-flow: column;
     gap: 20px;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     overflow: scroll;
 }
 
@@ -61,6 +62,7 @@
     grid-auto-flow: column;
     gap: 20px;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     overflow-x: scroll;
 }
 

@@ -1,13 +1,13 @@
 .mainDiv {
     display: grid;
-    padding: 32px 32px 32px 60px;
-    box-shadow: 0 0 12px rgba(0,0,0,.3);
 }
 
 .mainDiv2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    padding: 4% 4% 12px 0;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+    position: relative;
 }
 
 .fullRadious {

@@ -1,14 +1,14 @@
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import React, {useContext} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import style from "/styles/Mobile/Site/TypeSite/Events/imageVideo.module.css";
+import style from "/styles/Mobile/Site/TypeSite/Misc/galleryCarrouselMobile.module.css";
 import Image from "next/image";
 import {createPortal} from "react-dom";
 import LayoutDisplayGalleryMobile from "../../../Layouts/layoutDisplayGalleryMobile";
 import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import {
     LayoutGalleryProps,
-    LayoutWithNavCircleProp,
+    LayoutWithNavCircleProp, MultimediaItem,
     MultimediaItemType
 } from "../../../../../Class/Layouts/layoutClass";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../CustomHooks/galleryHook";
@@ -16,11 +16,11 @@ import LayoutNavCircleMobileCustom from "../../../Layouts/layoutNavCircleMobileC
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function ImageVideoMobile() {
-    const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
+export default function GalleryCarrouselMobile({gallery, logo}:
+                                                   { gallery: MultimediaItem[], logo: string }) {
 
 
-    const initialGallery: GalleryHook = useGalleryImagesHook(info.GalleryImages)
+    const initialGallery: GalleryHook = useGalleryImagesHook(gallery)
     const handleOpenGallery = (id: string) => {
         initialGallery.SetGallery(id)
         initialGallery.HandleDisplayGallery()
@@ -37,7 +37,7 @@ export default function ImageVideoMobile() {
         <div className={style.overflowDiv}>
             <LayoutNavCircleMobileCustom item={propsCarrousel}>
                 {
-                    info.GalleryImages.map(e =>
+                    gallery.map(e =>
                         e.Type == MultimediaItemType.Video && e.Thumbnail == null ?
                             <div className={style.contShowImage}>
                                 <iframe className={style.iframe} src={e.Link}/>

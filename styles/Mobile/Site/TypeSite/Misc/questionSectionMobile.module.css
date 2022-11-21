@@ -23,6 +23,7 @@
     display: grid;
     border-radius: 4px;
     overflow: hidden;
+    margin-top: 32px;
 }
 
 .title {

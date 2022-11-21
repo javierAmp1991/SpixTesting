@@ -27,14 +27,13 @@ export default function LayoutQuestionSectionMobile({link, children}: { link: st
                         </a>
                     </Link>
                 </div>
-
-                <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
-                    {writeQuestion}
-                </button>
             </div>
 
             {children}
 
+            <button onClick={handleDisplayQuestion} className={style.writeQuestion}>
+                {writeQuestion}
+            </button>
             {
                 displayQuestion &&
                 createPortal(

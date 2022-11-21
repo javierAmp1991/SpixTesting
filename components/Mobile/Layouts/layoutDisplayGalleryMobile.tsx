@@ -14,6 +14,15 @@ export default function LayoutDisplayGalleryMobile({item}: { item: LayoutGallery
         setCircleSelected(circleSelected = newPointControl)
     }
     const handleClose = () => item.CloseGallery()
+
+    const scrollRef = useRef()
+
+    const handleClickMin = (num: number) => {
+        let large = divRef.current.offsetWidth
+        divRef.current.scrollLeft = num == 0 ? 0 : num * large
+    }
+
+
     return (
         <div className={style.mainDiv}>
             <div onClick={handleClose} className={style.blackScreen}/>
@@ -35,10 +44,10 @@ export default function LayoutDisplayGalleryMobile({item}: { item: LayoutGallery
                         )
                     }
                 </div>
-                <div className={style.gridNavItems}>
+                <div ref={scrollRef} className={style.gridNavItems}>
                     {
                         item.InitialMedia.map((e, index) =>
-                            <div key={index}
+                            <div onClick={() => handleClickMin(index)} id={e.Id} key={index}
                                  className={`${style.sizeImageMin} ${index == circleSelected && style.focus}`}>
                                 {
                                     e.Type == MultimediaItemType.Image ?

@@ -1,6 +1,5 @@
 .mainDiv {
     position: relative;
-    background: #ffebec;
     display: grid;
     overflow: hidden;
     padding: 24px 16px;

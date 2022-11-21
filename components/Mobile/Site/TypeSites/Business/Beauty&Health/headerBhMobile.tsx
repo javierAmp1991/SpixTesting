@@ -5,7 +5,7 @@ import {
     PresentationCard,
     TypeSiteBusiness
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import {useContext, useState} from "react";
+import React, {useContext, useState} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import MapPopUp from "../../../../Misc/mapPopUp";
 import {createPortal} from "react-dom";
@@ -13,6 +13,9 @@ import {GlobalId} from "../../../../../../public/globalConst";
 import PopUpContainerMob from "../../../../Misc/popUpContainerMob";
 import HeaderSiteBussinessMobile from "../Misc/headerSiteBussinessMobile";
 import OurJobsMobile from "./ourJobsMobile";
+import GalleryCarrouselMobile from "../../Misc/galleryCarrouselMobile";
+import LayoutPresentCardMobile from "../../Misc/layoutPresentCardMobile";
+import LayoutPresentationCardMobile from "../../Misc/layoutPresentationCardMobile";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 export default function HeaderBhMobile() {
@@ -44,11 +47,11 @@ export default function HeaderBhMobile() {
     }
 
     return (
-        <div className={style.mainDiv}>
+        <LayoutPresentationCardMobile>
+                <HeaderSiteBussinessMobile item={headerBusiness}/>
+                <GalleryCarrouselMobile gallery={info.GalleryImages} logo={info.LogoPath}/>
 
-            <HeaderSiteBussinessMobile item={headerBusiness}/>
-
-            <div className={style.sizeNewBanner}>
+                {/*<div className={style.sizeNewBanner}>
                 <Image priority={true} layout={"fill"} src={info.LogoPath}/>
             </div>
             {
@@ -58,7 +61,7 @@ export default function HeaderBhMobile() {
                         <MapPopUp item={info.Venue}/>
                     </PopUpContainerMob>, document.getElementById(idPortal)
                 )
-            }
-        </div>
+            }*/}
+        </LayoutPresentationCardMobile>
     )
 }

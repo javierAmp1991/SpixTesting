@@ -14,12 +14,18 @@ import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
 import LayoutDisplayGallery from "../../../../Layouts/layoutDisplayGallery";
 import {LayoutGalleryProps} from "../../../../../../Class/Layouts/layoutClass";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
+import LayoutPresentationCard from "../../Misc/layoutPresentationCard";
+import SideImages from "../../Misc/sideImages";
+import LayoutAnnouncementInfo from "../../Misc/layoutAnnouncementInfo";
+import Announcement from "../../Misc/announcement";
+import {AnnouncementStyle} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const seeGallery: string = "Ver galeria"
 
 export default function DescriptionCardFull() {
     const info: PresentationCard = useContext(HeaderContext)
+    const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
     const headerBusiness: HeaderSiteBusinessProp = {
         Name: info.Name,
         Description: info.Description,
@@ -56,51 +62,62 @@ export default function DescriptionCardFull() {
 
 
     return (
-        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
-                ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
-            <div className={style.gridLeft}>
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
-                </div>
-                <div className={style.paddingInfo}>
-                    <HeaderSiteBussiness item={headerBusiness}/>
-                </div>
-            </div>
-
-            <div className={style.mainContSide}>
-              {/*  <div className={style.sizeLogo}>
-                    <Image layout={"fill"} src={info.LogoPath} alt={""}/>
-                </div>*/}
-                <div className={style.gridImageButton}>
-                    <div className={style.gridSideImage}>
-                        {
-                            info.GalleryImages.map((e, index) =>
-                                <div key={index} className={
-                                    index == 0 ? style.top : index == 1 ? style.center : style.bottom}>
-                                    <button onClick={() => handleOpenGallery(e.Id)} className={style.sizeSideImage}>
-                                        <Image layout={"fill"} src={e.Link} alt={""}/>
-                                    </button>
-                                    {
-                                        index == 1 &&
-                                        <button onClick={() => initialGallery.HandleDisplayGallery()} className={style.seeGalery}>
-                                            {seeGallery}
-                                        </button>
-                                    }
-                                </div>
-                            )
-                        }
+        <LayoutPresentationCard>
+            <LayoutAnnouncementInfo>
+                {
+                    info.Announcement != null &&
+                    <Announcement styleAnnouncement={styleAnnouncement} announcement={info.Announcement}/>
+                }
+                <HeaderSiteBussiness item={headerBusiness}/>
+            </LayoutAnnouncementInfo>
+            <SideImages galleryImages={info.GalleryImages} logo={info.LogoPath}/>
+        </LayoutPresentationCard>
+        /*        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}
+                        ${isAnnouncement ? style.fullRadious : style.noRadious}`}>
+                    <div className={style.gridLeft}>
+                        <div className={style.sizeImage}>
+                            <Image layout={"fill"} objectFit={"cover"} src={info.ImagePath} alt={""}/>
+                        </div>
+                        <div className={style.paddingInfo}>
+                            <HeaderSiteBussiness item={headerBusiness}/>
+                        </div>
                     </div>
-                   {/* <button onClick={handleDisplayGallery} className={style.seeGalery}>
-                        {seeGallery}
-                    </button>*/}
+
+                    <div className={style.mainContSide}>
+                      {/!*  <div className={style.sizeLogo}>
+                            <Image layout={"fill"} src={info.LogoPath} alt={""}/>
+                        </div>*!/}
+                        <div className={style.gridImageButton}>
+                            <div className={style.gridSideImage}>
+                                {
+                                    info.GalleryImages.map((e, index) =>
+                                        <div key={index} className={
+                                            index == 0 ? style.top : index == 1 ? style.center : style.bottom}>
+                                            <button onClick={() => handleOpenGallery(e.Id)} className={style.sizeSideImage}>
+                                                <Image layout={"fill"} src={e.Link} alt={""}/>
+                                            </button>
+                                            {
+                                                index == 1 &&
+                                                <button onClick={() => initialGallery.HandleDisplayGallery()} className={style.seeGalery}>
+                                                    {seeGallery}
+                                                </button>
+                                            }
+                                        </div>
+                                    )
+                                }
+                            </div>
+                           {/!* <button onClick={handleDisplayGallery} className={style.seeGalery}>
+                                {seeGallery}
+                            </button>*!/}
+                        </div>
+                    </div>
+                    {
+                        initialGallery.DisplayGallery &&
+                        createPortal(
+                            <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
+                        )
+                    }
                 </div>
-            </div>
-            {
-                initialGallery.DisplayGallery &&
-                createPortal(
-                    <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
-                )
-            }
-        </div>
+            */
     )
 }

@@ -13,6 +13,8 @@ import LevelUserPopUpMobile from "../../../Misc/levelUserPopUp";
 import {LevelUser} from "../../../../Desktop/Site/TypeSites/Events/sideCard";
 import {createPortal} from "react-dom";
 import HeaderSiteEventsMobile from "./Misc/headerSiteEventsMobile";
+import GalleryCarrouselMobile from "../Misc/galleryCarrouselMobile";
+import LayoutPresentationCardMobile from "../Misc/layoutPresentationCardMobile";
 
 const user: LevelUser = {
     Id: "iwewqndsaj2383",
@@ -41,20 +43,19 @@ export default function InformationImages() {
                 IsLike: false,
                 Like: 156
             },
-            Subscription:{
-                IsSubscriber:false,
+            Subscription: {
+                IsSubscriber: false,
                 AmountSubscribers: 200
             }
         },
         Contact: info.Contact
     }
     return (
-        <div className={style.mainDiv}>
-            <div className={style.contInfo}>
-                <HeaderSiteEventsMobile item={headerEvents}/>
-            </div>
-            <ImageVideoMobile/>
+        <LayoutPresentationCardMobile>
 
+            <HeaderSiteEventsMobile item={headerEvents}/>
+            <GalleryCarrouselMobile gallery={info.GalleryImages} logo={info.PathLogo}/>
+            {/* <ImageVideoMobile/>*/}
             {
                 displayLevelUser &&
                 createPortal(
@@ -63,6 +64,6 @@ export default function InformationImages() {
                     </PopUpContainerMob>, document.getElementById(idPortal)
                 )
             }
-        </div>
+        </LayoutPresentationCardMobile>
     )
 }

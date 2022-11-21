@@ -14,6 +14,8 @@ import {createPortal} from "react-dom";
 import LayoutDisplayGalleryMobile from "../../../../Layouts/layoutDisplayGalleryMobile";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
 import useGalleryImagesHook, {GalleryHook} from "../../../../../../CustomHooks/galleryHook";
+import GalleryCarrouselMobile from "../../Misc/galleryCarrouselMobile";
+import LayoutPresentationCardMobile from "../../Misc/layoutPresentationCardMobile";
 
 const seeCard: string = "Ver carta"
 const idPortal: string = GlobalId.globalIds.idPortal
@@ -55,12 +57,13 @@ export default function DescriptionCardFullData() {
     }
 
     return (
-        <div className={style.mainDiv}>
-            <div className={style.contInfo}>
-                <HeaderSiteBussinessMobile item={headerBusiness}/>
-            </div>
+        <LayoutPresentationCardMobile>
 
-            <div className={style.contCarrousel}>
+            <HeaderSiteBussinessMobile item={headerBusiness}/>
+
+            <GalleryCarrouselMobile gallery={info.GalleryImages} logo={info.LogoPath}/>
+
+            {/*<div className={style.contCarrousel}>
                 <div className={style.sizeLogo}>
                     <Image layout={"fill"} src={info.LogoPath} alt={""}/>
                 </div>
@@ -91,14 +94,15 @@ export default function DescriptionCardFullData() {
                 <div className={style.button}>
                     {seeCard}
                 </div>
-            </div>
+            </div>*/}
 
-            {
+            {/*  {
                 initialGallery.DisplayGallery &&
                 createPortal(
                     <LayoutDisplayGalleryMobile item={galleryProp}/>, document.getElementById(idPortal)
                 )
-            }
-        </div>
+            }*/}
+        </LayoutPresentationCardMobile>
+
     )
 }

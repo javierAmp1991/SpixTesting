@@ -28,10 +28,10 @@ export default function MainPageByDefault() {
     const info: PresentationCard = useContext(PrincipalInfoByDefaultContext)
     return (
         <>
-            {
+           {/* {
                 info.Announcement != null &&
                 <Announcement styleAnnouncement={styleAnnouncement} announcement={info.Announcement}/>
-            }
+            }*/}
             <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
                 <PresentationCardByDefault/>
                 <div className={utilities.separationLine}/>
