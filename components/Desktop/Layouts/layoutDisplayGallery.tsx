@@ -1,16 +1,17 @@
 import style from "/styles/Desktop/Layouts/layoutDisplayGalery.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {LayoutGalleryProps, MultimediaItemType} from "../../../Class/Layouts/layoutClass";
 
 const initialTranslate: string = `translate(0)`
 
-export default function LayoutDisplayGallery({item}: { item: LayoutGalleryProps }) {
+export default function LayoutDisplayGallery({item, startIn}: { item: LayoutGalleryProps, startIn: number }) {
     const refContCarrousel = useRef(null)
     let [displacement, setDisplacement] = useState(initialTranslate)
     let [controlDisplacement, setControlDisplacement] = useState(0)
     let [listImages, setListImages] = useState(item.InitialMedia)
+    let [transition, setTransition] = useState("")
 
     const handleSetControl = (newControl: number) => {
         setDisplacement(displacement = `translate(${newControl * refContCarrousel.current.offsetWidth}px)`)
@@ -27,6 +28,14 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryProps 
     const handleClickMinImage = (num: number) => num == 0 ? handleSetControl(num) : handleSetControl(num * -1)
     const handleClose = () => item.CloseGallery()
 
+    useEffect(() => {
+        handleSetControl(startIn * -1)
+        function myTimeout() {
+            setTimeout(() => setTransition(style.transitionClass), 500);
+        }
+        myTimeout()
+    }, [])
+
     return (
         <div className={style.mainDiv}>
             <button onClick={handleClose} className={style.blackScreen}/>
@@ -36,7 +45,7 @@ export default function LayoutDisplayGallery({item}: { item: LayoutGalleryProps 
                         <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
                     </button>
                     <div ref={refContCarrousel} className={style.contCarrousel}>
-                        <div style={{transform: displacement}} className={style.gridCarrousel}>
+                        <div style={{transform: displacement}} className={`${style.gridCarrousel} ${transition}`}>
                             {
                                 listImages.map((e) =>
                                     <div key={e.Id} className={style.sizeImageCarrousel}>

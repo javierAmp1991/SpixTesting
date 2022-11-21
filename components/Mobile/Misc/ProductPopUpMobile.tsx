@@ -57,7 +57,21 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainGrid}>
-                <div>
+                <div className={style.gridSelection}>
+                    <div className={style.gridSelectionZone}>
+                        <div className={style.sizeMin}>
+                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
+                        </div>
+                        <div className={style.sizeMin}>
+                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
+                        </div>
+                        <div className={style.sizeMin}>
+                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
+                        </div>
+                        <div className={style.sizeMin}>
+                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
+                        </div>
+                    </div>
                     <div className={style.sizeImage}>
                         <Image layout={"fill"} src={item.ImagePath} alt={""}/>
                     </div>
@@ -73,6 +87,7 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                         </div>
                     }
                 </div>
+
                 <div className={style.mainContInfo}>
                     <div className={style.name}>
                         {item.Name}

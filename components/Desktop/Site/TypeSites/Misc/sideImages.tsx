@@ -21,7 +21,6 @@ export default function SideImages({galleryImages, logo}: { galleryImages: Multi
     }
     const initialGallery: GalleryHook = useGalleryImagesHook(galleryImages)
     const handleOpenGallery = (id: string) => {
-        initialGallery.SetGallery(id)
         initialGallery.HandleDisplayGallery()
     }
     const galleryProp: LayoutGalleryProps = {
@@ -87,7 +86,9 @@ export default function SideImages({galleryImages, logo}: { galleryImages: Multi
 
             {
                 initialGallery.DisplayGallery &&
-                createPortal(<LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal))
+                createPortal(
+                    <LayoutDisplayGallery startIn={opacity} item={galleryProp}/>, document.getElementById(idPortal)
+                )
             }
         </div>
     )

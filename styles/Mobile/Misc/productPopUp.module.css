@@ -1,8 +1,8 @@
 .mainDiv {
-    width: 85vw;
+    width: 90vw;
     height: auto;
     background: white;
-    padding: 32px 40px;
+    padding: 32px;
     --animattionTransition: .4s;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .name {
-    font-size: 21px;
+    font-size: 16px;
 }
 
 .price {
@@ -152,8 +152,8 @@
     height: 50px;
     background: var(--gradientBlueButton);
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 8px;
+    right: 8px;
     z-index: 10000;
     display: grid;
     align-content: center;
@@ -170,7 +170,7 @@
     display: block;
 }
 
-.gridRating{
+.gridRating {
     display: grid;
     grid-template-columns: repeat(5, max-content);
     gap: 6px;
@@ -178,8 +178,8 @@
 }
 
 .sizeStar {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     position: relative;
     cursor: pointer;
 }
@@ -206,6 +206,25 @@
 
 .animationStarDis {
     animation: deScaleLikeICon .1s linear;
+}
+
+.gridSelection {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 5px;
+    position: relative;
+}
+
+.gridSelectionZone {
+    display: grid;
+    gap: 5px;
+    align-content: start;
+}
+
+.sizeMin {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
 }
 
 @keyframes scaleLikeIcon0 {

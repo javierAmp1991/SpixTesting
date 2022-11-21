@@ -11,7 +11,8 @@ export class GalleryHook {
 function useGalleryImagesHook(gal: MultimediaItem[]) {
     let [galleryList, setGalleryList] = useState(gal)
     let [displayGallery, setDisplayGallery] = useState(false)
-    const handleGallery = (newId) => setGalleryList(gal.filter(item => item.Id == newId).concat(gal.filter(item => item.Id != newId)))
+    const handleGallery = (num: number) => {}
+    /*const handleGallery = (newId) => setGalleryList(gal.filter(item => item.Id == newId).concat(gal.filter(item => item.Id != newId)))*/
     const handleDisplayGallery = () => setDisplayGallery(!displayGallery)
 
     const galleryHook: GalleryHook = {

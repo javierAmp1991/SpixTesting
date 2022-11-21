@@ -1,10 +1,10 @@
 import style from "../../../styles/Mobile/Layouts/layoutDisplayGallery.module.css";
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import Image from "next/image";
 import {LayoutGalleryProps, MultimediaItemType} from "../../../Class/Layouts/layoutClass";
 import {GlobalConst} from "../../../public/globalConst";
 
-export default function LayoutDisplayGalleryMobile({item}: { item: LayoutGalleryProps }) {
+export default function LayoutDisplayGalleryMobile({item, startIn}: { item: LayoutGalleryProps, startIn: number }) {
     const divRef = useRef(null)
     let [circleSelected, setCircleSelected] = useState(0)
     const handleScroll = (e) => {
@@ -21,6 +21,11 @@ export default function LayoutDisplayGalleryMobile({item}: { item: LayoutGallery
         let large = divRef.current.offsetWidth
         divRef.current.scrollTo({left: (num == 0 ? 0 : num * large), behavior: "smooth"})
     }
+
+    useEffect(() => {
+        divRef.current.scrollLeft = divRef.current.offsetWidth * startIn
+    }, [])
+
 
 
     return (

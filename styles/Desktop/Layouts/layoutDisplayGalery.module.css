@@ -72,6 +72,9 @@
     grid-template-columns: 100%;
     grid-auto-flow: column;
     grid-auto-columns: 100%;
+}
+
+.transitionClass {
     transition: .6s;
 }
 

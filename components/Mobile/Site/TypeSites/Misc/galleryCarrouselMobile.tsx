@@ -1,5 +1,5 @@
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import style from "/styles/Mobile/Site/TypeSite/Misc/galleryCarrouselMobile.module.css";
 import Image from "next/image";
@@ -18,11 +18,11 @@ const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function GalleryCarrouselMobile({gallery, logo}:
                                                    { gallery: MultimediaItem[], logo: string }) {
-
+    let [startIn, setStartIn] = useState(0)
 
     const initialGallery: GalleryHook = useGalleryImagesHook(gallery)
-    const handleOpenGallery = (id: string) => {
-        initialGallery.SetGallery(id)
+    const handleOpenGallery = (id: string, idx: number) => {
+        setStartIn(idx)
         initialGallery.HandleDisplayGallery()
     }
     const galleryProp: LayoutGalleryProps = {
@@ -37,13 +37,13 @@ export default function GalleryCarrouselMobile({gallery, logo}:
         <div className={style.overflowDiv}>
             <LayoutNavCircleMobileCustom item={propsCarrousel}>
                 {
-                    gallery.map(e =>
+                    gallery.map((e, index) =>
                         e.Type == MultimediaItemType.Video && e.Thumbnail == null ?
                             <div className={style.contShowImage}>
                                 <iframe className={style.iframe} src={e.Link}/>
                             </div>
                             :
-                            <button onClick={() => handleOpenGallery(e.Id)} className={style.contShowImage}>
+                            <button onClick={() => handleOpenGallery(e.Id, index)} className={style.contShowImage}>
                                 <div className={style.contShowImage}>
                                     {
                                         <Image layout={"fill"} objectFit={"cover"}
@@ -64,7 +64,8 @@ export default function GalleryCarrouselMobile({gallery, logo}:
             {
                 initialGallery.DisplayGallery &&
                 createPortal(
-                    <LayoutDisplayGalleryMobile item={galleryProp}/>, document.getElementById(idPortal)
+                    <LayoutDisplayGalleryMobile startIn={startIn}
+                                                item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
         </div>
