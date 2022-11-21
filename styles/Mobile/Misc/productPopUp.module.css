@@ -224,6 +224,10 @@
     border: 1px solid black;
 }
 
+.qualify {
+    color: var(--colorSecundaryTextDesktop);
+}
+
 .noSide{
     width: 80%;
     margin: auto;
