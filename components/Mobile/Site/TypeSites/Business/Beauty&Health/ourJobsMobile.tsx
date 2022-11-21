@@ -36,7 +36,9 @@ export default function OurJobsMobile() {
         }, [])*/
 
     return (
-        <div className={style.mainDiv}>
+        <div>
+        </div>
+        /*<div className={style.mainDiv}>
             <LayoutTitleCustomMobile item={layoutTitleProp}>
                 <>
                     <div ref={divRef} className={`${style.contSlider}`}>
@@ -63,6 +65,6 @@ export default function OurJobsMobile() {
                     <LayoutDisplayGalleryMobile item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
-        </div>
+        </div>*/
     )
 }

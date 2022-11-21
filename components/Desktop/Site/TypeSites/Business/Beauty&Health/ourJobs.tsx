@@ -47,7 +47,8 @@ export default function OurJobs() {
 
 
     return (
-        <div className={style.mainDiv}>
+        <div></div>
+        /*<div className={style.mainDiv}>
             <div className={style.title}>
                 {ourJobsText}
             </div>
@@ -80,6 +81,6 @@ export default function OurJobs() {
                     <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
-        </div>
+        </div>*/
     )
 }
