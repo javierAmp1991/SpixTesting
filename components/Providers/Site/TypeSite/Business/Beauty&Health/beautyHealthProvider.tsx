@@ -173,7 +173,9 @@ const listServices: ProductItem[] = [
         ImagePath: "/images/bh2.jpg",
         Rating: 4,
         Type: TypeProducts.Service,
-        Time: `40`
+        Time: `40`,
+        ExtraImages: ["/images/bh1.jpg","/images/bh2.jpg","/images/bh3.jpg"]
+
     },
     {
         Id: "idProduct02",

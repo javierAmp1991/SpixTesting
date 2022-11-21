@@ -46,13 +46,7 @@ export default function HeaderBh2() {
     const isAnnouncement: boolean = info.Announcement == null
     return (
         <LayoutPresentationCard>
-            <LayoutAnnouncementInfo>
-                    {
-                        info.Announcement != null &&
-                            <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
-                    }
-                <HeaderSiteBussiness item={headerBusiness}/>
-            </LayoutAnnouncementInfo>
+            <HeaderSiteBussiness item={headerBusiness}/>
             <SideImages galleryImages={info.GalleryImages} logo={info.LogoPath}/>
         </LayoutPresentationCard>
     )

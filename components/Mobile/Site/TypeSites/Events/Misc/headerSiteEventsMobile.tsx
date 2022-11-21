@@ -1,4 +1,4 @@
-import style from "/styles/Mobile/Site/TypeSite/Bussines/Misc/headerSiteBusiness.module.css"
+import style from "/styles/Mobile/Site/TypeSite/Events/Misc/headerSiteEvents.module.css"
 import utilities from "/styles/utilities.module.css";
 import {useState} from "react";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
@@ -28,7 +28,7 @@ export default function HeaderSiteEventsMobile({item}: { item: HeaderSiteEventsP
                 <div className={style.gridTags}>
                     {
                         item.Tags.map(item =>
-                            <div key={item} className={`${style.tagBase} ${tagStyle}`}>
+                            <div key={item} className={`${style.tagBase} ${style.tagDefaultEvent}`}>
                                 {item}
                             </div>)
                     }

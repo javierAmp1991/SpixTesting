@@ -68,6 +68,11 @@ export default function GalleryCarrouselMobile({gallery, logo}:
                                                 item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
+            <div className={style.gradientLogo}>
+                <div className={style.logo}>
+                    <Image layout={"fill"} src={logo}/>
+                </div>
+            </div>
         </div>
 
     )

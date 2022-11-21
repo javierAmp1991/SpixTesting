@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: max-content 1fr max-content;
     align-items: center;
-    gap: 4px;
+    gap: 12px;
     padding: 8px 16px;
     font-weight: 500;
     margin: auto;
@@ -31,8 +31,12 @@
     position: relative;
 }
 
-.announcement {
+.contAnnouncement {
+    overflow: hidden;
+}
 
+.announcement {
+    width: max-content;
 }
 
 .link {

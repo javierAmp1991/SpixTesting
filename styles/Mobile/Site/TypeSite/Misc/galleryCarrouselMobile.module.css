@@ -57,3 +57,24 @@
     top: calc(50% - 40px);
     left: calc(50% - 40px);
 }
+
+.gradientLogo {
+    width: 60px;
+    padding: 4px;
+    background: var(--gradientLogos);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    top: 16px;
+    right: 16px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.logo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background: white;
+}

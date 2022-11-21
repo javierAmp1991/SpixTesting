@@ -31,7 +31,8 @@ const listProductsOffer: ProductItem[] = [
         DiscountPercent: null,
         Include: null,
         ImagePath: "/images/product1.jpg",
-        Rating: 4
+        Rating: 4,
+        ExtraImages: ["/images/product1.jpg","/images/product2.jpg","/images/product3.jpg"]
     },
     {
         Id: "idProduct02",

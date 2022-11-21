@@ -12,6 +12,14 @@ const newArray: number[] = [1, 2, 3, 4, 5]
 const addText: string = "Agregar"
 
 export default function ProductPopUp({item}: { item: ProductItem }) {
+    const isExtra: boolean = item.ExtraImages != null
+    let [imageSelected, setImageSelected] = useState(isExtra ? item.ExtraImages[0] : "")
+    let [indexSelected, setIndexSelected] = useState(0)
+    const handleImageSelected = (num: number) => {
+        setImageSelected(item.ExtraImages[num])
+        setIndexSelected(num)
+    }
+
     let [indexNum, setIndexNum] = useState(-99)
     let [controlAnimation, setControlAnimation] = useState(false)
     let [stateFStar, setStateFStar] = useState(false)
@@ -60,9 +68,29 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainGrid}>
-                <div className={style.sizeImage}>
-                    <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                <div className={style.contImages}>
+                    <div className={style.sizeImage}>
+                        <Image layout={"fill"} src={isExtra ? imageSelected : item.ImagePath}
+                               alt={""}/>
+                    </div>
                     {
+                        item.ExtraImages != null &&
+                        <div className={style.gridSelectionZone}>
+                            {
+                                item.ExtraImages.map((item, index) =>
+                                    <button key={item} onClick={() => handleImageSelected(index)}
+                                            className={`${style.sizeMin} 
+                                            ${index == indexSelected ? style.imageSelected : style.imageNoSelected}`}>
+                                        <Image layout={"fill"} src={item}/>
+                                    </button>
+                                )
+                            }
+
+                        </div>
+                    }
+
+                </div>
+                {/* {
                         (item.Type == TypeProducts.Service && item.Time != null) &&
                         <div className={style.sizeTimeIcon}>
                     <span className={style.colorTime}>
@@ -72,8 +100,7 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
                         min
                     </span>
                         </div>
-                    }
-                </div>
+                    }*/}
                 <div className={style.mainContInfo}>
                     <div className={style.name}>
                         {item.Name}

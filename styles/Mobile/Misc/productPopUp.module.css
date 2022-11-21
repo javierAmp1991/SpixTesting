@@ -211,8 +211,22 @@
 .gridSelection {
     display: grid;
     grid-template-columns: 50px 1fr;
-    gap: 5px;
+    gap: 16px;
     position: relative;
+}
+
+.imageSelected{
+    border: 1px solid orange;
+}
+
+.imageNoSelected{
+    opacity: .2;
+    border: 1px solid black;
+}
+
+.noSide{
+    width: 80%;
+    margin: auto;
 }
 
 .gridSelectionZone {

@@ -1,6 +1,6 @@
 .mainDiv {
     width: var(--maxWidthBodyContent);
-    margin: 40px auto;
+    margin: 100px auto;
     display: grid;
     gap: 40px;
 }

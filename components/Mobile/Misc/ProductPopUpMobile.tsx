@@ -11,6 +11,14 @@ const qualifyThisText: string = "¿Como califica este"
 const addText: string = "Agregar"
 
 export default function ProductPopUpMobile({item}: { item: ProductItem }) {
+    const isExtra: boolean = item.ExtraImages != null
+    let [imageSelected, setImageSelected] = useState(isExtra ? item.ExtraImages[0] : "")
+    let [indexSelected, setIndexSelected] = useState(0)
+    const handleImageSelected = (num: number) => {
+        setImageSelected(item.ExtraImages[num])
+        setIndexSelected(num)
+    }
+
     let [indexNum, setIndexNum] = useState(-99)
     let [controlAnimation, setControlAnimation] = useState(false)
     let [stateFStar, setStateFStar] = useState(false)
@@ -58,23 +66,24 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainGrid}>
-                <div className={style.gridSelection}>
-                    <div className={style.gridSelectionZone}>
-                        <div className={style.sizeMin}>
-                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
+                <div className={isExtra ? style.gridSelection : style.noSide}>
+                    {
+                        item.ExtraImages != null &&
+                        <div className={style.gridSelectionZone}>
+                            {
+                                item.ExtraImages.map((item, index) =>
+                                    <button key={item} onClick={() => handleImageSelected(index)}
+                                            className={`${style.sizeMin} 
+                                            ${index == indexSelected ? style.imageSelected : style.imageNoSelected}`}>
+                                        <Image layout={"fill"} src={item}/>
+                                    </button>
+                                )
+                            }
+
                         </div>
-                        <div className={style.sizeMin}>
-                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
-                        </div>
-                        <div className={style.sizeMin}>
-                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
-                        </div>
-                        <div className={style.sizeMin}>
-                            <Image layout={"fill"} src={"/images/product1.jpg"}/>
-                        </div>
-                    </div>
+                    }
                     <div className={style.sizeImage}>
-                        <Image layout={"fill"} src={item.ImagePath} alt={""}/>
+                        <Image layout={"fill"} src={isExtra ? imageSelected : item.ImagePath} alt={""}/>
                     </div>
                     {
                         (item.Type == TypeProducts.Service && item.Time != null) &&

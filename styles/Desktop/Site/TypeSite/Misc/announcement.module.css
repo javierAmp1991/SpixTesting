@@ -5,16 +5,16 @@
     gap: 12px;
     padding: 6px 16px;
     font-weight: 500;
-    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .4);
     border-radius: 4px;
 }
 
-.backgroundBH{
+.backgroundBH {
     background: linear-gradient(180deg, #ffc3e1 0%, #f1acc1 100%);
     color: black;
 }
 
-.backgroundEvents{
+.backgroundEvents {
     background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
     background: linear-gradient(145deg, #1100ae 0%, #4062BB 100%);
     background: linear-gradient(145deg, #e53c3c 0%, #e36518 100%);
@@ -28,9 +28,21 @@
     color: white;
 }
 
-.backgroundByDefault{
+.backgroundByDefault {
     background: linear-gradient(180deg, #0482e9 0%, #045DE9 100%);
     color: white;
+}
+
+.contAnnouncement {
+    overflow: hidden;
+}
+
+.announcement {
+    width: max-content;
+}
+
+.transitionAnnouncement {
+    transition: 30s linear;
 }
 
 .sizeIcon {
@@ -41,5 +53,4 @@
 
 .link {
     text-decoration: underline;
-    padding-left: 24px;
 }

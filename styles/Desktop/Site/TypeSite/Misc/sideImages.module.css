@@ -40,7 +40,7 @@
 
 .contShowImage {
     width: 100%;
-    aspect-ratio: 9/8;
+    aspect-ratio: 8/7;
     position: relative;
     display: grid;
     align-items: center;

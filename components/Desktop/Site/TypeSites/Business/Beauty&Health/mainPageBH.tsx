@@ -31,7 +31,8 @@ export default function MainPageBH() {
 
     return (
         <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-            <HeaderBh2/>
+            {/*<HeaderBh2/>*/}
+            <HeaderBeautyAndHelath/>
             <div className={utilities.separationLine}/>
 
             <InOfferBH/>
