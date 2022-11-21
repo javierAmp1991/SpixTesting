@@ -9,6 +9,7 @@ const textService: string = "servicio?"
 const textProduct: string = "producto?"
 const qualifyThisText: string = "¿Como califica este"
 const newArray: number[] = [1, 2, 3, 4, 5]
+const addText: string = "Agregar"
 
 export default function ProductPopUp({item}: { item: ProductItem }) {
     let [indexNum, setIndexNum] = useState(-99)
@@ -208,7 +209,7 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
                         }
                     </div>
                     <button className={style.button}>
-                        Comprar
+                        {addText}
                     </button>
                 </div>
             </div>

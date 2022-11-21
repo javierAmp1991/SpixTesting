@@ -8,6 +8,7 @@ import {useEffect, useState} from "react";
 const textService: string = "servicio?"
 const textProduct: string = "producto?"
 const qualifyThisText: string = "¿Como califica este"
+const addText: string = "Agregar"
 
 export default function ProductPopUpMobile({item}: { item: ProductItem }) {
     let [indexNum, setIndexNum] = useState(-99)
@@ -222,10 +223,8 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                             </div>
                         }
                     </div>
-                    <div>
-                        <div className={style.button}>
-                            Comprar
-                        </div>
+                    <div className={style.button}>
+                        {addText}
                     </div>
                 </div>
             </div>
