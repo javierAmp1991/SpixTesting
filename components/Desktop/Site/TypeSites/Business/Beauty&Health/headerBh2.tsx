@@ -9,7 +9,6 @@ import {
 import {useContext} from "react";
 import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
-import BannerImages from "./bannerImages";
 import LayoutPresentationCard from "../../Misc/layoutPresentationCard";
 import SideImages from "../../Misc/sideImages";
 import LayoutAnnouncementInfo from "../../Misc/layoutAnnouncementInfo";

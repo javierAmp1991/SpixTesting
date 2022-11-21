@@ -24,7 +24,8 @@ export default function BannerImages() {
     }
 
     return (
-        <div className={style.mainDiv}>
+        <div></div>
+        /*<div className={style.mainDiv}>
             <div className={`${style.contSlider}`}>
                 {
                     info.GalleryImages.map((item, index) =>
@@ -43,7 +44,7 @@ export default function BannerImages() {
                     <LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
-        </div>
+        </div>*/
     )
 
     function getStyle(num: number): string {
