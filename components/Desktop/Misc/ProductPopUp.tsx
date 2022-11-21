@@ -88,19 +88,19 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
 
                         </div>
                     }
-
-                </div>
-                {/* {
+                    {
                         (item.Type == TypeProducts.Service && item.Time != null) &&
                         <div className={style.sizeTimeIcon}>
-                    <span className={style.colorTime}>
-                        {item.Time}
-                    </span>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
                             <span className={style.colorTime}>
-                        min
-                    </span>
+                                {item.Time}
+                            </span>
+                            <span className={style.colorTime}>
+                                min
+                            </span>
                         </div>
-                    }*/}
+                    }
+                </div>
                 <div className={style.mainContInfo}>
                     <div className={style.name}>
                         {item.Name}

@@ -22,6 +22,7 @@ export default function ServiceView({item}: { item: ProductItem }) {
             {
                 (item.Type == TypeProducts.Service && item.Time != null) &&
                 <button onClick={() => displayPopUpProduct.HandleToggle()}  className={style.sizeTimeIcon}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
                     <span className={style.colorTime}>
                         {item.Time}
                     </span>

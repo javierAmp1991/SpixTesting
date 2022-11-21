@@ -59,6 +59,10 @@
     position: relative;
 }
 
+.contImages{
+    position: relative;
+}
+
 .contImage {
     padding: 2px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .1) 50%);
@@ -193,10 +197,10 @@
 }
 
 .sizeTimeIcon {
-    width: 50px;
-    height: 50px;
-    background: var(--gradientBlueButton);
+    width: 60px;
+    height: 60px;
     position: absolute;
+    background: white;
     top: 12px;
     right: 12px;
     z-index: 10000;
@@ -208,8 +212,8 @@
 }
 
 .colorTime {
-    color: white;
-    font-weight: 500;
+    color: var(--linkColor);
+    font-weight: 700;
     line-height: 12px;
     font-size: 12px;
     display: block;

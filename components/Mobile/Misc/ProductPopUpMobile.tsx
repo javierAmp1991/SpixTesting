@@ -88,6 +88,7 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                     {
                         (item.Type == TypeProducts.Service && item.Time != null) &&
                         <div className={style.sizeTimeIcon}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
                             <span className={style.colorTime}>
                                 {item.Time}
                             </span>

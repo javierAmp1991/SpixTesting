@@ -2,7 +2,7 @@ import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/serviceVi
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
 import {GlobalConst, GlobalId} from "../../../../../../public/globalConst";
-import {ProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {ProductItem, TypeProducts} from "../../../../../../Class/Misc/GlobalClass";
 import RatingStarVar from "../../../../../Desktop/Misc/ratingStarVar";
 import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../../../../CustomHooks/Utilities";
 import PopUpContainerFull from "../../../../../Desktop/Misc/popUpContainerFull";
@@ -21,6 +21,19 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
                 <div className={style.positionLastTicket}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
+            }
+
+            {
+                (item.Type == TypeProducts.Service && item.Time != null) &&
+                <button onClick={() => displayPopUpProduct.HandleToggle()}  className={style.sizeTimeIcon}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
+                    <span className={style.colorTime}>
+                        {item.Time}
+                    </span>
+                    <span className={style.colorTime}>
+                        min
+                    </span>
+                </button>
             }
 
             <div onClick={handleOpen}  className={style.gridInfoProductHorizontal}>
