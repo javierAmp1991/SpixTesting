@@ -58,8 +58,6 @@ export default function WriteReviewLeft() {
         } else {
             setIndexNum(indexNum = index)
         }
-
-
     }
     useEffect(() => {
         if (controlAnimation) {
@@ -84,6 +82,7 @@ export default function WriteReviewLeft() {
             }
         }
     }, [indexNum])
+
     let [counterId, setCounterId] = useState(0)
     const handleUploadImages = (e) => {
         if (uploadImages.length < 3) {

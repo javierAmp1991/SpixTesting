@@ -1,7 +1,7 @@
-import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
+import {ProductItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
-    SectionProductsBHContext
+    SectionProductsBHContext, ServicesBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import style from "/styles/Mobile/Site/TypeSite/Bussines/Beauty&Health/mainPage.module.css"
 import ServiceViewMobile from "./serviceViewMobile";
@@ -11,13 +11,14 @@ import {
 } from "../../../../../../Class/Layouts/layoutClass";
 import LayoutTitleCustomMobile from "../Misc/layoutTitleCustomMobile";
 import LayoutNavCircleMobileCustom from "../../../../Layouts/layoutNavCircleMobileCustom";
+import {ProviderServicesProducts} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 
 const title: string = "Nuestros servicios"
 const goToQuestion: string = "¿Tienes reguntas respecto a estos servicios?"
 
 
 export default function OurServicesMobile({id} : {id: string}) {
-    const sectionProducst: SectionProductItem[] = useContext(SectionProductsBHContext)
+    const services: ProviderServicesProducts = useContext(ServicesBHContext)
     const propLayoutTitle: LayoutTitleLinkProps = {
         Title: title,
     }
@@ -38,7 +39,7 @@ export default function OurServicesMobile({id} : {id: string}) {
             <>
                 <LayoutNavCircleMobileCustom item={propCarrousel}>
                     {
-                        sectionProducst[0].ListProducts.map((item, index) =>
+                        services.InitialItems.map((item, index) =>
                             <div key={item.Id} className={style.contCarrousel}>
                                 <ServiceViewMobile item={item}/>
                             </div>

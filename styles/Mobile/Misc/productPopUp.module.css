@@ -1,8 +1,9 @@
 .mainDiv {
-    width: 95vw;
+    width: 85vw;
     height: auto;
     background: white;
-    padding: 32px;
+    padding: 32px 40px;
+    --animattionTransition: .4s;
 }
 
 .mainGrid {
@@ -12,8 +13,8 @@
 }
 
 .sizeImage {
-    width: 100%;
-    aspect-ratio: 1/1;
+    width: 80%;
+    aspect-ratio: 4/1;
     position: relative;
 }
 
@@ -95,7 +96,6 @@
     grid-template-columns: repeat(3, max-content);
     align-items: center;
     gap: 8px;
-    padding: 12px 0;
 }
 
 .discountStyle {
@@ -112,7 +112,6 @@
 
 .description {
     color: var(--colorPrimaryTextDesktop);
-    padding-bottom: 20px;
 }
 
 .name {
@@ -178,8 +177,113 @@
     padding-bottom: 4px;
 }
 
-.sizeRating {
-    width: 20px;
-    height: 20px;
+.sizeStar {
+    width: 40px;
+    height: 40px;
     position: relative;
+    cursor: pointer;
+}
+
+.animationStar0 {
+    animation: scaleLikeIcon0 var(--animattionTransition) linear;
+}
+
+.animationStar1 {
+    animation: scaleLikeIcon1 var(--animattionTransition) calc(var(--animattionTransition) * 0.2) linear;
+}
+
+.animationStar2 {
+    animation: scaleLikeIcon2 var(--animattionTransition) calc(var(--animattionTransition) * 0.4) linear;
+}
+
+.animationStar3 {
+    animation: scaleLikeIcon3 var(--animattionTransition) calc(var(--animattionTransition) * 0.6) linear;
+}
+
+.animationStar4 {
+    animation: scaleLikeIcon4 var(--animattionTransition) calc(var(--animattionTransition) * 0.8) linear;
+}
+
+.animationStarDis {
+    animation: deScaleLikeICon .1s linear;
+}
+
+@keyframes scaleLikeIcon0 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.4);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleLikeIcon1 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleLikeIcon2 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.6);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleLikeIcon3 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.7);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleLikeIcon4 {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes deScaleLikeICon {
+    0% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
