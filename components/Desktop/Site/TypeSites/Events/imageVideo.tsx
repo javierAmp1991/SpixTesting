@@ -34,7 +34,8 @@ export default function ImageVideo() {
         InitialMedia: initialGallery.InitialList
     }
     return (
-        <div className={style.gridImageSelection}>
+        <div></div>
+        /*<div className={style.gridImageSelection}>
             <div className={style.gridSelectionZone}>
                 {
                     info.GalleryImages.map((item, index) =>
@@ -56,7 +57,7 @@ export default function ImageVideo() {
                                     </>
                                     :
                                     <Image src={GlobalConst.sourceImages.youtubeIcon} width={20} height={20} alt={""}/>
-                                   /* <iframe className={style.iframe} src={item.Link}/>*/
+                                   /!* <iframe className={style.iframe} src={item.Link}/>*!/
                             }
                         </button>
                     )
@@ -87,6 +88,6 @@ export default function ImageVideo() {
                 initialGallery.DisplayGallery &&
                 createPortal(<LayoutDisplayGallery item={galleryProp}/>, document.getElementById(idPortal))
             }
-        </div>
+        </div>*/
     )
 }

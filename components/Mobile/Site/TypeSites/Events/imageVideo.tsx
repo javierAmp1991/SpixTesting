@@ -34,7 +34,8 @@ export default function ImageVideoMobile() {
     }
 
     return (
-        <div className={style.overflowDiv}>
+        <div></div>
+        /*<div className={style.overflowDiv}>
             <LayoutNavCircleMobileCustom item={propsCarrousel}>
                 {
                     info.GalleryImages.map(e =>
@@ -67,7 +68,7 @@ export default function ImageVideoMobile() {
                     <LayoutDisplayGalleryMobile item={galleryProp}/>, document.getElementById(idPortal)
                 )
             }
-        </div>
+        </div>*/
 
     )
 }
