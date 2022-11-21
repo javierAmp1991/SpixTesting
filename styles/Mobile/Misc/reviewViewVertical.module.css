@@ -1,13 +1,11 @@
-
 .mainDiv {
     display: grid;
     gap: 8px;
     /*box-shadow: 0 0 6px rgba(0, 0, 0, .25);*/
     border-radius: 6px;
-    padding: 12px 32px 0 32px;
+    padding: 16px 32px 0 32px;
     transition: .4s;
     position: relative;
-    width: 300px;
 }
 
 .contInfo {
@@ -26,10 +24,8 @@
     --sizeReviewImage: 64px;
     height: var(--sizeReviewImage);
     width: var(--sizeReviewImage);
-    top: calc(var(--sizeReviewImage) / 2 * -1);
-    left: calc(50% - (var(--sizeReviewImage) / 2));
-    position: absolute;
     border-radius: 50%;
+    margin: auto;
     box-shadow: 0 0 4px rgba(0,0,0,.2);
 
 }
@@ -80,7 +76,6 @@
     display: grid;
     justify-content: center;
     gap: 12px;
-    padding-top: 32px;
     justify-items: center;
 }
 

@@ -9,7 +9,8 @@ import LayoutQuestionSectionMobile from "../../Misc/layoutQuestionSectionMobile"
 export default function QuestionRestaurantMobile() {
     const listQuestion: QuestionItem[] = useContext(QuestionSectionContext)
     const layout: LayoutWithNavCircleProp = {
-        IsWithBorder: true
+        IsWithBorder: true,
+        Top: 16
     }
     return (
         <LayoutQuestionSectionMobile link={"/"}>

@@ -15,11 +15,6 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
     const handleOpen = ()=> displayPopUpProduct.HandleToggle()
     return (
         <div className={style.mainGrid}>
-            <div onClick={handleOpen} className={style.contImage}>
-                <div className={style.sizeImage}>
-                    <Image objectFit={"cover"} layout={"fill"} src={item.ImagePath} alt=""/>
-                </div>
-            </div>
 
             {
                 (item.DiscountPercent != null || item.Include != null) &&
@@ -29,8 +24,13 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
             }
 
             <div onClick={handleOpen}  className={style.gridInfoProductHorizontal}>
-                <div>
+                <div onClick={handleOpen} className={style.contImage}>
+                    <div className={style.sizeImage}>
+                        <Image objectFit={"cover"} layout={"fill"} src={item.ImagePath} alt=""/>
+                    </div>
+                </div>
 
+                <div>
                     <div className={`${style.name} ${utilities.clamp3}`}>
                         {item.Name}
                     </div>

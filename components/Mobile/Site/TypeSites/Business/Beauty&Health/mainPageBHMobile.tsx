@@ -51,22 +51,19 @@ export default function MainPageBHMobile() {
             <div className={utilities.separationLineMobile}/>
 
             <div className={style.paddingGeneral}>
-                <ReservationMobile buttonText={reservationButtonText} item={schedule}/>
+                <OurServicesMobile id={idQuestionSection}/>
             </div>
             <div className={utilities.separationLineMobile}/>
 
             <OtherEventsBH/>
             <div className={utilities.separationLineMobile}/>
 
-            <ReviewSectionBHMobile/>
-            <div className={utilities.separationLineMobile}/>
-
             <div className={style.paddingGeneral}>
-                <OurServicesMobile id={idQuestionSection}/>
+                <ReservationMobile buttonText={reservationButtonText} item={schedule}/>
             </div>
             <div className={utilities.separationLineMobile}/>
 
-            <OurJobsMobile/>
+            <ReviewSectionBHMobile/>
             <div className={utilities.separationLineMobile}/>
 
             <QuestionBHMobile id={idQuestionSection}/>

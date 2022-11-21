@@ -31,42 +31,36 @@ export default function InitialPageRestaurant() {
     const schedule: Schedule[] = useContext(ScheduleContext)
     const infoHeader: PresentationCard = useContext(HeaderContext)
     return (
-        <>
-           {/* {
-                infoHeader.Announcement != null &&
-                <Announcement styleAnnouncement={styleAnnouncement} announcement={infoHeader.Announcement}/>
-            }*/}
-            <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-                <DescriptionCardFull/>
+        <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
+            <DescriptionCardFull/>
 
-                <div className={utilities.separationLine}/>
+            <div className={utilities.separationLine}/>
 
-                <InOfferRestaurant/>
-                <div className={utilities.separationLine}/>
+            <InOfferRestaurant/>
+            <div className={utilities.separationLine}/>
 
-                <InSearchRestaurant/>
-                <div className={utilities.separationLine}/>
+            <InSearchRestaurant/>
+            <div className={utilities.separationLine}/>
 
-                <Reservation buttonText={buttonReservationText} item={schedule}/>
-                <div className={utilities.separationLine}/>
+            <Reservation buttonText={buttonReservationText} item={schedule}/>
+            <div className={utilities.separationLine}/>
 
-                <RecomendedRestarant/>
-                <div className={utilities.separationLine}/>
+            <RecomendedRestarant/>
+            <div className={utilities.separationLine}/>
 
-                <ReviewRestaurant/>
-                <div className={utilities.separationLine}/>
+            <ReviewRestaurant/>
+            <div className={utilities.separationLine}/>
 
-                <NavSectionProducts item={infoSectionProducts}/>
-                <div className={utilities.separationLine}/>
+            <NavSectionProducts item={infoSectionProducts}/>
+            <div className={utilities.separationLine}/>
 
-                <QuestionRestaurant/>
-                <div className={utilities.separationLine}/>
+            <QuestionRestaurant/>
+            <div className={utilities.separationLine}/>
 
-                <NavProductsSection/>
-                <div className={utilities.separationLine}/>
+            <NavProductsSection/>
+            <div className={utilities.separationLine}/>
 
-                <SectionProductsRestaurant/>
-            </LayoutMainPageSites>
-        </>
+            <SectionProductsRestaurant/>
+        </LayoutMainPageSites>
     )
 }

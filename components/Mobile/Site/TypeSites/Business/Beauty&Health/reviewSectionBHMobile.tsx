@@ -10,7 +10,6 @@ import LayoutReviewSectionMobile from "../Restaurant/layoutReviewSectionMobile";
 export default function ReviewSectionBHMobile() {
     const review: ProviderReview = useContext(ReviewBhContext)
     const propsCarrousel: LayoutWithNavCircleProp = {
-        Top: 36,
         IsWithBorder: true
     }
     return (

@@ -11,7 +11,6 @@ export default function ReviewSectionRestaurantMobile() {
     const listReview: ProviderReview = useContext(ReviewsSectionContext)
     const propsCarrousel: LayoutWithNavCircleProp = {
         IsWithBorder: true,
-        Top: 36
     }
     return (
         <LayoutReviewSectionMobile>

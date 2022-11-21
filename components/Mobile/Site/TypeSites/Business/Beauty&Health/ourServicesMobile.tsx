@@ -26,10 +26,10 @@ export default function OurServicesMobile({id} : {id: string}) {
         window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
     }
     const propCarrousel: LayoutWithNavCircleProp = {
-        Top: 24,
-        Bottom: 4,
-        Left: 4,
-        Right: 4,
+        Top: 0,
+        Bottom: 0,
+        Left: 0,
+        Right: 0,
         IsWithBorder: true
     }
 

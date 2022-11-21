@@ -30,41 +30,32 @@ export default function MainPageBH() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
 
     return (
-        <>
-           {/* {
-                info.Announcement != null &&
-                <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
-            }*/}
-            <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-                <HeaderBh2/>
-                <div className={utilities.separationLine}/>
+        <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
+            <HeaderBh2/>
+            <div className={utilities.separationLine}/>
 
-                <InOfferBH/>
-                <div className={utilities.separationLine}/>
+            <InOfferBH/>
+            <div className={utilities.separationLine}/>
 
-                <InSearchBH/>
-                <div className={utilities.separationLine}/>
+            <InSearchBH/>
+            <div className={utilities.separationLine}/>
 
-                <Reservation buttonText={buttonReservationText} item={schedule}/>
-                <div className={utilities.separationLine}/>
+            <OurServices id={idQuestionSection}/>
+            <div className={utilities.separationLine}/>
 
-                <RecomendedBH/>
-                <div className={utilities.separationLine}/>
+            <RecomendedBH/>
+            <div className={utilities.separationLine}/>
 
-                <ReviewSectionBH/>
-                <div className={utilities.separationLine}/>
+            <Reservation buttonText={buttonReservationText} item={schedule}/>
+            <div className={utilities.separationLine}/>
 
-                <OurJobs/>
-                <div className={utilities.separationLine}/>
+            <ReviewSectionBH/>
+            <div className={utilities.separationLine}/>
 
-                <OurServices id={idQuestionSection}/>
-                <div className={utilities.separationLine}/>
+            <QuestionBH id={idQuestionSection}/>
+            <div className={utilities.separationLine}/>
 
-                <QuestionBH id={idQuestionSection}/>
-                <div className={utilities.separationLine}/>
-
-                <SectionProductsBH/>
-            </LayoutMainPageSites>
-        </>
+            <SectionProductsBH/>
+        </LayoutMainPageSites>
     )
 }

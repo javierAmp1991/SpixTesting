@@ -14,7 +14,8 @@ const title: string = "Preguntas"
 export default function QuestionSectionMobile() {
     const questions: QuestionItem[] = useContext(QuestionContext)
     const layout: LayoutWithNavCircleProp = {
-        IsWithBorder: true
+        IsWithBorder: true,
+        Top: 16
     }
     return (
             <LayoutQuestionSectionMobile link={"/"}>
