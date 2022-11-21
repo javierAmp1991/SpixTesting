@@ -19,7 +19,7 @@ export default function LayoutDisplayGalleryMobile({item}: { item: LayoutGallery
 
     const handleClickMin = (num: number) => {
         let large = divRef.current.offsetWidth
-        divRef.current.scrollLeft = num == 0 ? 0 : num * large
+        divRef.current.scrollTo({left: (num == 0 ? 0 : num * large), behavior: "smooth"})
     }
 
 
