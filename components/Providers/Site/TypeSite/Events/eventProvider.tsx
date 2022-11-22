@@ -218,7 +218,7 @@ const principalInfo: PrincipalInfoEvent = {
     Produce: "El Huevo",
     Announcement: {
         Id: "idAnnouncement001",
-        Link: "/",
+        Tittle: "Generic title announcement",
         Announcement: "Lorem ipsum dolor sit amet, consectetur adipisicing elit asperiores beatae\n" +
             "                    commodi distinctio eos esse et harum impedit inventore iste iure iusto, laudantium\n" +
             "                    maxime, nesciunt porro praesentium, rerum saepe tempore unde?"

@@ -140,7 +140,10 @@ export namespace GlobalConst{
         hamburguerIcon: "/images/hamburguerICon.png",
         hamburguerIconVoid: "/images/hamburguerIConEmpty.png",
         chronoIcon: "/images/chronoIcon.png",
-        bannerAnnouncement: "/images/anuncioBanner.webp"
+        bannerAnnouncement: "/images/announcementBanner.png",
+        leftArrowWhite: "/images/leftArrowWhite.png",
+        rightArrowWhite: "/images/rightArrowWhite.png",
+        closeXWhite: "/images/closeXWhite.png",
     }
 }
 

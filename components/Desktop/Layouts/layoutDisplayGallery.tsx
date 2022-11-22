@@ -42,7 +42,7 @@ export default function LayoutDisplayGallery({item, startIn}: { item: LayoutGall
             <div className={style.renderDiv}>
                 <div className={style.principalGrid}>
                     <button onClick={handleLeftClick} className={style.sizeArrow}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt={""}/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowWhite} alt={""}/>
                     </button>
                     <div ref={refContCarrousel} className={style.contCarrousel}>
                         <div style={{transform: displacement}} className={`${style.gridCarrousel} ${transition}`}>
@@ -69,12 +69,12 @@ export default function LayoutDisplayGallery({item, startIn}: { item: LayoutGall
                         </div>
                         <button onClick={handleClose} className={style.contCloseImage}>
                             <div className={style.closeImage}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.closeEmoji} alt={""}/>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.closeXWhite} alt={""}/>
                             </div>
                         </button>
                     </div>
                     <button onClick={handleRightClick} className={style.sizeArrow}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt={""}/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrowWhite} alt={""}/>
                     </button>
                 </div>
                 <div className={style.gridMin}>

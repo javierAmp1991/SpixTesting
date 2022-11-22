@@ -1,16 +1,19 @@
 import style from "/styles/Mobile/Site/TypeSite/Misc/announcement.module.css";
-import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
-import {GlobalConst} from "../../../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import {AnnouncementItem, AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import {useEffect, useRef, useState} from "react";
+import useDisplayPopUpHook from "../../../../../CustomHooks/Utilities";
+import {createPortal} from "react-dom";
+import PopUpContainerMob from "../../../Misc/popUpContainerMob";
+const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function AnnouncementMobile({styleAnnouncement, announcement}:
                                                { styleAnnouncement: AnnouncementStyle, announcement: AnnouncementItem }) {
     const refCont = useRef(null)
     const refAnnou = useRef(null)
+    const openPopUp = useDisplayPopUpHook(false)
     let [controlTrans, setControlTrans] = useState(true)
-
     const handleRight = () => {
         refAnnou.current.style.transition = `70000ms linear`;
         refAnnou.current.style.transform = `translateX(-${refAnnou.current.offsetWidth - refCont.current.offsetWidth}px)`;
@@ -22,6 +25,7 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
         }
         refAnnou.current.addEventListener('transitionend', transition);
     }
+    const handlePopUp = () => openPopUp.HandleToggle()
 
     useEffect(() => {
         refAnnou.current.offsetWidth > refCont.current.offsetWidth && handleRight()
@@ -37,9 +41,30 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
                     {announcement.Announcement}
                 </div>
             </div>
-            <div className={style.link}>
+            <div onClick={handlePopUp} className={style.link}>
                 Ver mas
             </div>
+            {
+                openPopUp.State &&
+                createPortal(
+                    <PopUpContainerMob closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
+                        <div className={style.mainDivPopUp}>
+                            <div className={style.sizeBanner}>
+                                <Image layout={"fill"} objectFit={"cover"}
+                                       src={GlobalConst.sourceImages.bannerAnnouncement} alt={""}/>
+                            </div>
+                            <div className={style.contInfo}>
+                                <div className={style.titlePop}>
+                                    {announcement.Tittle}
+                                </div>
+                                <div className={style.announcementPop}>
+                                    {announcement.Announcement}
+                                </div>
+                            </div>
+                        </div>
+                    </PopUpContainerMob>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

@@ -25,7 +25,7 @@ export enum AnnouncementStyle {
 }
 
 export class AnnouncementItem {
+    Tittle: string
     Announcement: string
-    Link: string
     Id: string
 }

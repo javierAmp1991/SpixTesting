@@ -1,5 +1,4 @@
 import style from "/styles/Desktop/Site/TypeSite/Misc/announcement.module.css"
-import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import {AnnouncementItem, AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
@@ -54,18 +53,14 @@ export default function Announcement({styleAnnouncement, announcement}:
                         <div className={style.mainDivPopUp}>
                             <div className={style.sizeBanner}>
                                 <Image layout={"fill"} objectFit={"cover"}
-                                       src={GlobalConst.sourceImages.bannerAnnouncement}/>
+                                       src={GlobalConst.sourceImages.bannerAnnouncement} alt={""}/>
                             </div>
                             <div className={style.contInfo}>
                                 <div className={style.titlePop}>
-                                    Titulo anuncio generico
+                                    {announcement.Tittle}
                                 </div>
                                 <div className={style.announcementPop}>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing
-                                    elit. Aliquid error excepturi fugiat fugit itaque molestiae
-                                    non, placeat repellendus similique. Debitis eaque, est eveniet
-                                    impedit iste molestiae qui quidem ut veniam. Blanditiis distinctio
-                                    dolor hic minima quam quos reprehenderit temporibus voluptates!
+                                    {announcement.Announcement}
                                 </div>
                             </div>
                         </div>
@@ -75,7 +70,7 @@ export default function Announcement({styleAnnouncement, announcement}:
         </div>
     )
 
-    function getAnnouncementStyle(): string {
+    /*function getAnnouncementStyle(): string {
         if (styleAnnouncement == AnnouncementStyle.SiteRestaurant) return style.backgroundRestaurant
         else if (styleAnnouncement == AnnouncementStyle.SiteBeautyAndHealth) return style.backgroundBH
         else if (styleAnnouncement == AnnouncementStyle.SiteByDefault) return style.backgroundByDefault
@@ -85,5 +80,5 @@ export default function Announcement({styleAnnouncement, announcement}:
     function getICon() {
         if (styleAnnouncement == AnnouncementStyle.SiteBeautyAndHealth) return GlobalConst.sourceImages.announcementIconBlack
         else return GlobalConst.sourceImages.announcementIcon
-    }
+    }*/
 }

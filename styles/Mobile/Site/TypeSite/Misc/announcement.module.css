@@ -43,3 +43,31 @@
 .link {
     text-decoration: underline;
 }
+
+
+.sizeBanner {
+    width: 100%;
+    aspect-ratio: 3/1;
+    position: relative;
+}
+
+.contInfo {
+    padding: 24px 32px;
+    display: grid;
+    gap: 12px;
+}
+
+.mainDivPopUp {
+    width: 100%;
+    height: 400px;
+}
+
+.titlePop {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+}
+
+.announcementPop {
+    color: var(--colorPrimaryTextDesktop);
+}
+
