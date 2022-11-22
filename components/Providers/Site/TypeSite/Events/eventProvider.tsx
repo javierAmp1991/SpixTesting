@@ -224,100 +224,6 @@ const principalInfo: PrincipalInfoEvent = {
             "                    maxime, nesciunt porro praesentium, rerum saepe tempore unde?"
     }
 }
-const listOfferProducts: Product[] = [
-    {
-        Name: "Producto 1.1",
-        Price: 18990,
-        DiscountPercent: 10,
-        Include: null,
-        ImagePath: "/images/product1.jpg",
-        Tag: "Cerveza",
-        Rating: 2
-    },
-    {
-        Name: "Producto 2.2",
-        Price: 2990,
-        DiscountPercent: 25,
-        Include: null,
-        ImagePath: "/images/product4.jpg",
-        Tag: "Energetica",
-        Rating: 3
-    },
-    {
-        Name: "Producto 3.3",
-        Price: 990,
-        DiscountPercent: 30,
-        Include: null,
-        ImagePath: "/images/product5.jpg",
-        Tag: "Snack",
-        Rating: 4
-    },
-    {
-        Name: "Producto 4.4",
-        Price: 9990,
-        DiscountPercent: 20,
-        Include: null,
-        ImagePath: "/images/product6.jpg",
-        Tag: "Energetica",
-        Rating: 5
-    },
-    {
-        Name: "Producto 5.5",
-        Price: 9990,
-        DiscountPercent: 15,
-        Include: null,
-        ImagePath: "/images/product7.jpg",
-        Tag: "Energetica",
-        Rating: 5
-    },
-    {
-        Name: "Producto 6.6",
-        Price: 10990,
-        DiscountPercent: 30,
-        Include: null,
-        ImagePath: "/images/product8.jpg",
-        Tag: "Energeticas",
-        Rating: 0
-    },
-]
-const listOfferProductsAdd: Product[] = [
-    {
-        Name: "Producto 6.6",
-        Price: 10990,
-        DiscountPercent: 30,
-        Include: null,
-        ImagePath: "/images/product8.jpg",
-        Tag: "Energeticas",
-        Rating: 0
-    },
-    {
-        Name: "Producto 5.5",
-        Price: 10990,
-        DiscountPercent: 20,
-        Include: null,
-        ImagePath: "/images/product7.jpg",
-        Tag: "Bebida",
-        Rating: 4
-    },
-    {
-        Name: "Producto 4.4",
-        Price: 9990,
-        DiscountPercent: 20,
-        Include: null,
-        ImagePath: "/images/product6.jpg",
-        Tag: "Energetica",
-        Rating: 5
-    },
-    {
-        Name: "Producto 3.3",
-        Price: 990,
-        DiscountPercent: 30,
-        Include: null,
-        ImagePath: "/images/product5.jpg",
-        Tag: "Snack",
-        Rating: 4
-    },
-]
 const listInitialRecommended: EventCardWithPrice[] = [
     {
         Id: "123456",
@@ -1420,6 +1326,142 @@ const listSectionProducst: SectionProductItem[] = [
         ListProducts: listProductsOffer
     }*/
 ]
+const listOfferProducts: ProductItem[] = [
+    {
+        Id: "offerProduct007",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 1.1",
+        Price: 18990,
+        DiscountPercent: 10,
+        Include: null,
+        ImagePath: "/images/product1.jpg",
+        Rating: 2
+    },
+    {
+        Id: "offerProduct008",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 2.2",
+        Price: 2990,
+        DiscountPercent: 25,
+        Include: null,
+        ImagePath: "/images/product4.jpg",
+        Rating: 3
+    },
+    {
+        Id: "offerProduct009",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 3.3",
+        Price: 990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product5.jpg",
+        Rating: 4
+    },
+    {
+        Id: "offerProduct0010",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 4.4",
+        Price: 9990,
+        DiscountPercent: 20,
+        Include: null,
+        ImagePath: "/images/product6.jpg",
+        Rating: 5
+    },
+    {
+        Id: "offerProduct0011",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 5.5",
+        Price: 10990,
+        DiscountPercent: 20,
+        Include: null,
+        ImagePath: "/images/product7.jpg",
+        Rating: 4
+    },
+    {
+        Id: "offerProduct0012",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 6.6",
+        Price: 10990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product8.jpg",
+        Rating: 0
+    },
+]
+const listOfferProductsAdd: ProductItem[] = [
+    {
+        Id: "offerProduct001",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 6.6",
+        Price: 10990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product8.jpg",
+        Rating: 0
+    },
+    {
+        Id: "offerProduct002",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 5.5",
+        Price: 10990,
+        DiscountPercent: 20,
+        Include: null,
+        ImagePath: "/images/product7.jpg",
+        Rating: 4
+    },
+    {
+        Id: "offerProduct003",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 4.4",
+        Price: 9990,
+        DiscountPercent: 20,
+        Include: null,
+        ImagePath: "/images/product6.jpg",
+        Rating: 5
+    },
+    {
+        Id: "offerProduct004",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 3.3",
+        Price: 990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product5.jpg",
+        Rating: 4
+    },
+    {
+        Id: "offerProduct005",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 2.2",
+        Price: 2990,
+        DiscountPercent: 25,
+        Include: null,
+        ImagePath: "/images/product4.jpg",
+        Rating: 3
+    },
+    {
+        Id: "offerProduct006",
+        Time: null,
+        Description: "lorem",
+        Name: "Producto 1.1",
+        Price: 18990,
+        DiscountPercent: 10,
+        Include: null,
+        ImagePath: "/images/product1.jpg",
+        Rating: 2
+    },
+]
 
 export const OfferProductsContext = createContext(null)
 export const ProductsContext = createContext(null)
@@ -1474,7 +1516,7 @@ export default function EventProvider({children}) {
         LeftClick: handleLeftClickProductsOffer
     }
     let providerProducts: ProviderOfferProducts = {
-        InitialItems: products,
+        InitialItems: offerProducts,
         RightClick: handleRightClickProducts,
         LeftClick: handleLeftClickProducts
     }

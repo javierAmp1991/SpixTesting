@@ -1,18 +1,26 @@
 import style from "/styles/Desktop/Misc/productViewHor.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
-import {ProductItem} from "../../../Class/Misc/GlobalClass";
+import {PriceViewProp, ProductItem} from "../../../Class/Misc/GlobalClass";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import RatingStarDesk from "./ratingStarDesk";
 import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../CustomHooks/Utilities";
 import ProductPopUp from "./ProductPopUp";
 import {createPortal} from "react-dom";
 import PopUpContainerFull from "./popUpContainerFull";
+import PriceView from "./priceView";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ProductViewHor({item, isDisplayOffer}:
                                            { item: ProductItem, isDisplayOffer: boolean }) {
+    const priceViewProp: PriceViewProp = {
+        Price: item.Price,
+        DiscountPercent: item.DiscountPercent,
+        IsBeforeText: false,
+        TypeGrid: true
+    }
+
     const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
     return (
         <div className={style.mainGrid}>
@@ -39,42 +47,7 @@ export default function ProductViewHor({item, isDisplayOffer}:
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
                     {item.Description}
                 </div>
-                <div className={style.gridPriceICon}>
-                    <div className={utilities.fontPriceInclude}>
-                        ${getMoneyValue(item.Price)}
-                    </div>
-                    {
-                        item.DiscountPercent != null &&
-                        <div className={style.discountBox}>
-                            <Image width={12} height={8} src={"/images/dollarUp.png"} alt={""}/>
-                            <span className={style.discountStyle}>
-                            {item.DiscountPercent}%
-                        </span>
-                        </div>
-                    }
-
-                    {
-                        isDisplayOffer &&
-                        item.DiscountPercent != null || item.Include != null ?
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {
-                                    item.Include != null ?
-                                        <>
-                                            {item.Include}
-                                        </>
-                                        :
-                                        <>
-                                            {/*<span>Antes: </span>*/}
-                                            <span className="line-through">
-                                    ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}
-                                            </span>
-                                        </>
-                                }
-                            </div> : <></>
-                    }
-                </div>
-
-
+                <PriceView item={priceViewProp}/>
             </button>
             {
                 displayPopUpProduct.State &&
@@ -87,8 +60,4 @@ export default function ProductViewHor({item, isDisplayOffer}:
             }
         </div>
     )
-
-    function getMoneyValue(num: number): string {
-        return Intl.NumberFormat("ES-CL").format(Math.round(num))
-    }
 }

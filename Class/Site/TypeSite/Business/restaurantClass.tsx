@@ -32,7 +32,7 @@ export class ProviderRecommended {
 }
 
 export class ProviderOfferProducts {
-    InitialItems: Product[]
+    InitialItems: ProductItem[]
     RightClick: Function
     LeftClick: Function
 }

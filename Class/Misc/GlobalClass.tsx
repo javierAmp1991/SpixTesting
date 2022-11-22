@@ -84,3 +84,14 @@ export class SubscriptionButtonProps {
     IsSubscriber: boolean
     AmountSubscribers: number
 }
+
+export class PriceViewProp {
+    SizePrice?: number
+    Price: number
+    DiscountPercent?: number
+    IsBeforeText?: boolean
+    TypeGrid?: boolean
+    PaddingTop? : number
+    PaddingBottom?: number
+    JustifyContent? : string
+}

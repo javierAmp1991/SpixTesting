@@ -1,9 +1,10 @@
 import style from "/styles/Mobile/Misc/productPopUp.module.css"
-import {ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
+import {PriceViewProp, ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import utilities from "/styles/utilities.module.css";
 import {useEffect, useState} from "react";
+import PriceView from "../../Desktop/Misc/priceView";
 
 const textService: string = "servicio?"
 const textProduct: string = "producto?"
@@ -12,6 +13,15 @@ const addText: string = "Agregar"
 const durationTime: string = "Tiempo de duracion: "
 
 export default function ProductPopUpMobile({item}: { item: ProductItem }) {
+    const priceViewProp: PriceViewProp = {
+        SizePrice: 32,
+        Price: item.Price,
+        DiscountPercent: item.DiscountPercent,
+        IsBeforeText: false,
+        TypeGrid: true,
+        PaddingTop: 12,
+        PaddingBottom: 12
+    }
     const isExtra: boolean = item.ExtraImages != null
     let [imageSelected, setImageSelected] = useState(isExtra ? item.ExtraImages[0] : "")
     let [indexSelected, setIndexSelected] = useState(0)
@@ -216,37 +226,9 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                     }
 
                     <div className={style.separationLine}/>
-                    <div className={style.gridPriceICon}>
-                        <div className={style.price}>
-                            ${getMoneyValue(item.Price)}
-                        </div>
 
-                        {
-                            item.DiscountPercent != null &&
-                            <div className={style.discountBox}>
-                                <div className={style.sizeDollarUp}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
-                                </div>
-                                <span className={style.discountStyle}>{item.DiscountPercent}%</span>
-                            </div>
-                        }
+                    <PriceView item={priceViewProp}/>
 
-                        {
-                            (item.DiscountPercent != null || item.Include != null) &&
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {
-                                    item.Include != null ?
-                                        <div className={`${style.discountBox} ${style.discountStyle}`}>
-                                            {item.Include}
-                                        </div>
-                                        :
-                                        <div className="line-through">
-                                            ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}
-                                        </div>
-                                }
-                            </div>
-                        }
-                    </div>
                     <div className={style.button}>
                         {addText}
                     </div>

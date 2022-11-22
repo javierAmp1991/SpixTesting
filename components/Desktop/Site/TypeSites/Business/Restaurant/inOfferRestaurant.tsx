@@ -5,6 +5,7 @@ import {ProviderOfferProducts} from "../../../../../../Class/Site/TypeSite/Busin
 import {useContext} from "react";
 import {OfferProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
+import NewProductViewSquare from "../../../../Misc/newProductViewSquare";
 
 export default function InOfferRestaurant(){
     const listOfferProducts: ProviderOfferProducts = useContext(OfferProductsContext)
@@ -23,7 +24,7 @@ export default function InOfferRestaurant(){
             <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                 {
                     listOfferProducts.InitialItems.map(item =>
-                        <ProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                        <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
                     )
                 }
             </LayoutCarrouselDesktop>

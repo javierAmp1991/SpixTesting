@@ -1,20 +1,27 @@
 import style from "/styles/Mobile/Misc/productViewHor.module.css"
 import utilities from "/styles/utilities.module.css"
 import Image from "next/image";
-import {ProductItem} from "../../../Class/Misc/GlobalClass";
+import {PriceViewProp, ProductItem} from "../../../Class/Misc/GlobalClass";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import RatingStarMob from "./ratingStarMob";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import ProductPopUpMobile from "./ProductPopUpMobile";
 import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
+import PriceView from "../../Desktop/Misc/priceView";
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ProductViewHorMobile({item, isDisplayOffer}:
                                            { item: ProductItem, isDisplayOffer: boolean }) {
     const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
     const handleOpen = ()=> displayPopUpProduct.HandleToggle()
-
+    const priceViewProp: PriceViewProp = {
+        SizePrice: 21,
+        Price: item.Price,
+        DiscountPercent: item.DiscountPercent,
+        IsBeforeText: false,
+        TypeGrid: true,
+    }
     return (
         <div className={style.mainGrid}>
             <div onClick={handleOpen} className={style.mainDivImage}>
@@ -40,40 +47,7 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
                     {item.Description}
                 </div>
-                <div className={style.gridPriceICon}>
-                    <div className={utilities.fontPriceInclude}>
-                        ${getMoneyValue(item.Price)}
-                    </div>
-                    {
-                        item.DiscountPercent != null &&
-                        <div className={style.discountBox}>
-                            <Image width={12} height={8} src={"/images/dollarUp.png"} alt={""}/>
-                            <span className={style.discountStyle}>
-                            {item.DiscountPercent}%
-                        </span>
-                        </div>
-                    }
-
-                    {
-                        isDisplayOffer &&
-                        item.DiscountPercent != null || item.Include != null ?
-                            <div className={`${utilities.fontSecundaryText}`}>
-                                {
-                                    item.Include != null ?
-                                        <>
-                                            {item.Include}
-                                        </>
-                                        :
-                                        <>
-                                            {/*<span>Antes: </span>*/}
-                                            <span className="line-through">
-                                    ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}
-                                            </span>
-                                        </>
-                                }
-                            </div> : <></>
-                    }
-                </div>
+                <PriceView item={priceViewProp}/>
 
 
             </div>
@@ -83,7 +57,6 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
                     <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
                                         isBackground={true}>
                         <ProductPopUpMobile item={item}/>
-
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

@@ -3,8 +3,8 @@ import {PropCarrousel} from "../../../../../Class/Layouts/layoutClass";
 import {ProviderOfferProducts} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {OfferProductsContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
-import ProductViewSquare from "../../../Misc/productViewSquare";
 import LayoutTitle from "../Business/Restaurant/layoutTitle";
+import NewProductViewSquare from "../../../Misc/newProductViewSquare";
 
 const title: string = "Ofertas"
 
@@ -26,7 +26,7 @@ export default function OfferProducts() {
             <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                 {
                     products.InitialItems.map(item =>
-                        <ProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                        <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
                     )
                 }
             </LayoutCarrouselDesktop>

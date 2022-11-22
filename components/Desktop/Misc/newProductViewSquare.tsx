@@ -1,34 +1,41 @@
 import style from "/styles/Desktop/Misc/productViewSquare.module.css"
-import {Product} from "../../../dataDemo/data";
 import Image from "next/image";
-import {GlobalConst} from "../../../public/globalConst";
+import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import RatingStarDesk from "./ratingStarDesk";
 import PriceView from "./priceView";
-import {PriceViewProp} from "../../../Class/Misc/GlobalClass";
+import {PriceViewProp, ProductItem} from "../../../Class/Misc/GlobalClass";
+import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
+import ProductPopUp from "./ProductPopUp";
+import {createPortal} from "react-dom";
+import PopUpContainer from "./popUpContainer";
+import PopUpContainerFull from "./popUpContainerFull";
 
-export default function ProductViewSquare({item, size}:
-                                              { item: Product, size: number, isDisplayOffer: boolean }) {
+const idPortal: string = GlobalId.globalIds.idPortal
+
+export default function NewProductViewSquare({item, size}:
+                                                 { item: ProductItem, size: number, isDisplayOffer: boolean }) {
+    const displayPopUp = useDisplayPopUpHook(false)
+    const handleOpen = () => displayPopUp.HandleToggle()
     const priceViewProp: PriceViewProp = {
         Price: item.Price,
         DiscountPercent: item.DiscountPercent,
         IsBeforeText: true
     }
-
     let getSizeProduct = getProductSize()
     return (
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
             {
                 (item.DiscountPercent != null || item.Include != null) &&
-                <div className={style.zindexListon}>
+                <div onClick={handleOpen} className={style.zindexListon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
             }
-            <div className={style.contImage}>
+            <div onClick={handleOpen} className={style.contImage}>
                 <div className={style.aspectRatio}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
             </div>
-            <div className={style.gridInfoProduct}>
+            <div onClick={handleOpen} className={style.gridInfoProduct}>
                 {item.Name}
                 {
                     item.Rating != null &&
@@ -38,6 +45,14 @@ export default function ProductViewSquare({item, size}:
                 }
                 <PriceView item={priceViewProp}/>
             </div>
+            {
+                displayPopUp.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={handleOpen} isBackground={true} isButtonVisible={true}>
+                        <ProductPopUp item={item}/>
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
         </div>
     )
 

@@ -1,0 +1,55 @@
+.mainDiv {
+    --gapPrices: 8px;
+}
+
+.gridMainPrice {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: var(--gapPrices);
+}
+
+.gridPriceIcon {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: var(--gapPrices);
+}
+
+.beforePriceGrid {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: var(--gapPrices);
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.price {
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+}
+
+.beforePrice {
+    text-decoration: line-through;
+}
+
+.discountBox {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 4px;
+    background: rgba(0, 128, 0, .1);
+    padding: 3px 5px;
+    height: max-content;
+}
+
+.discountStyle {
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #06b906;
+}

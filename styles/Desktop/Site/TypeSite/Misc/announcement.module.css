@@ -9,6 +9,12 @@
     border-radius: 4px;
 }
 
+.gridAnnouncementText {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    animation: animation 5s linear;
+}
+
 .backgroundBH {
     background: linear-gradient(180deg, #ffc3e1 0%, #f1acc1 100%);
     color: black;

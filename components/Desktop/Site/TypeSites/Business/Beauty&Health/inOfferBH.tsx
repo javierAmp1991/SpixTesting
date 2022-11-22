@@ -1,10 +1,10 @@
 import LayoutCarrouselDesktop from "../../../../Layouts/layoutCarrouselDesktop";
-import ProductViewSquare from "../../../../Misc/productViewSquare";
 import {ProviderOfferProducts} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {useContext} from "react";
 import {PropCarrousel} from "../../../../../../Class/Layouts/layoutClass";
 import LayoutTitle from "../Restaurant/layoutTitle";
 import {OfferBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
+import NewProductViewSquare from "../../../../Misc/newProductViewSquare";
 
 export default function InOfferBH(){
     const listOfferProducts: ProviderOfferProducts = useContext(OfferBHContext)
@@ -23,7 +23,7 @@ export default function InOfferBH(){
             <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                 {
                     listOfferProducts.InitialItems.map(item =>
-                        <ProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                        <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
                     )
                 }
             </LayoutCarrouselDesktop>
