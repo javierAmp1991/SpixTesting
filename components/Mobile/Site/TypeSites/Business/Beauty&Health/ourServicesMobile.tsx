@@ -24,7 +24,7 @@ export default function OurServicesMobile({id} : {id: string}) {
     }
     const handleGoTo = () => {
         let data = document.getElementById(id).getBoundingClientRect()
-        window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
+        window.scrollTo({top: (data.top + window.scrollY - 40), behavior: "smooth"})
     }
     const propCarrousel: LayoutWithNavCircleProp = {
         Top: 0,

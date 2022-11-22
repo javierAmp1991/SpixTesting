@@ -51,6 +51,7 @@
 
 .tagRestaurant {
     background: linear-gradient(145deg, #e62e8c 0%, #da45d6 100%);
+    background: linear-gradient(145deg, rgb(17, 106, 245) 0%, rgb(69, 124, 213) 100%);
 }
 
 .tagBeautyAndHealth {

@@ -93,9 +93,12 @@
 
 .gridPriceICon {
     display: grid;
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
     align-items: center;
     gap: 8px;
+    padding: 4px 0;
 }
 
 .discountStyle {
@@ -152,8 +155,8 @@
     height: 50px;
     background: white;
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 16px;
+    right: 52px;
     z-index: 10000;
     display: grid;
     align-content: center;
@@ -174,7 +177,7 @@
     display: grid;
     grid-template-columns: repeat(5, max-content);
     gap: 6px;
-    padding-bottom: 4px;
+    padding-bottom: 8px;
 }
 
 .sizeStar {
@@ -182,6 +185,15 @@
     height: 30px;
     position: relative;
     cursor: pointer;
+}
+
+.positionLastTicket {
+    width: 50%;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: 90000;
 }
 
 .animationStar0 {
@@ -215,11 +227,11 @@
     position: relative;
 }
 
-.imageSelected{
+.imageSelected {
     border: 1px solid orange;
 }
 
-.imageNoSelected{
+.imageNoSelected {
     opacity: .2;
     border: 1px solid black;
 }
@@ -228,7 +240,7 @@
     color: var(--colorSecundaryTextDesktop);
 }
 
-.noSide{
+.noSide {
     width: 80%;
     margin: auto;
 }
@@ -243,6 +255,12 @@
     width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.duration {
+    color: var(--colorPrimaryTextDesktop);
 }
 
 @keyframes scaleLikeIcon0 {

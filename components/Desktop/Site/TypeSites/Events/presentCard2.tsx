@@ -42,13 +42,7 @@ export default function PresentCard2() {
     const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
     return (
         <LayoutPresentationCard>
-            <LayoutAnnouncementInfo>
-                {
-                    info.Announcement != null &&
-                    <Announcement styleAnnouncement={announcementStyle} announcement={info.Announcement}/>
-                }
-                <HeaderSiteEvents item={headerEvents}/>
-            </LayoutAnnouncementInfo>
+            <HeaderSiteEvents item={headerEvents}/>
             <SideImages galleryImages={info.GalleryImages} logo={info.PathLogo}/>
         </LayoutPresentationCard>
     )

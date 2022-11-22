@@ -1,4 +1,5 @@
 import {useState} from "react";
+import utilities from "/styles/utilities.module.css";
 
 export class DisplayPopUpHook {
     State: boolean
@@ -9,9 +10,18 @@ export class DisplayPopUpHook {
 
 function useDisplayPopUpHook(initialState): DisplayPopUpHook {
     let [display, setDisplay] = useState(initialState)
-    const handleToggle = () => setDisplay(!display)
-    const handleTrue = () => setDisplay(true)
-    const handleFalse = () => setDisplay(false)
+    const handleToggle = () => {
+        setDisplay(!display)
+        document.body.classList.toggle(utilities.noScrollBody)
+    }
+    const handleTrue = () => {
+        setDisplay(true)
+        document.body.classList.add(utilities.noScrollBody)
+    }
+    const handleFalse = () => {
+        setDisplay(false)
+        document.body.classList.remove(utilities.noScrollBody)
+    }
 
     const displayHookProps: DisplayPopUpHook = {
         State: display,

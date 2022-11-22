@@ -110,11 +110,11 @@
 }
 
 .selectedItem {
-    box-shadow: 0 0 4px orange;
+    border: 2px solid orange;
 }
 
 .noSelectedItem {
-    opacity: .7;
+    opacity: 1;
 }
 
 .contCloseImage {

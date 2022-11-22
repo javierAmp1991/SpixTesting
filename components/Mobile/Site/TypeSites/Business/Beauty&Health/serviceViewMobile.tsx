@@ -30,7 +30,7 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
                     <span className={style.colorTime}>
                         {item.Time}
                     </span>
-                    <span className={style.colorTime}>
+                    <span className={style.colorMin}>
                         min
                     </span>
                 </button>

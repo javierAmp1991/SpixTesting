@@ -32,8 +32,7 @@ export default function InitialPageRestaurant() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     return (
         <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-            <DescriptionCardFull/>
-
+            <HeaderSiteRestaurant/>
             <div className={utilities.separationLine}/>
 
             <InOfferRestaurant/>

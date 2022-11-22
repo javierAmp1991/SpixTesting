@@ -1,5 +1,5 @@
 .grid {
-    padding: 0 0 12px 0;
+    padding: 16px 0 12px 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: max-content;

@@ -1,5 +1,6 @@
 import {MultimediaItem} from "../Class/Layouts/layoutClass";
 import {useState} from "react";
+import utilities from "/styles/utilities.module.css";
 
 export class GalleryHook {
     InitialList: MultimediaItem[]
@@ -9,19 +10,19 @@ export class GalleryHook {
 }
 
 function useGalleryImagesHook(gal: MultimediaItem[]) {
-    let [galleryList, setGalleryList] = useState(gal)
     let [displayGallery, setDisplayGallery] = useState(false)
     const handleGallery = (num: number) => {}
-    /*const handleGallery = (newId) => setGalleryList(gal.filter(item => item.Id == newId).concat(gal.filter(item => item.Id != newId)))*/
-    const handleDisplayGallery = () => setDisplayGallery(!displayGallery)
+    const handleDisplayGallery = () => {
+        setDisplayGallery(!displayGallery)
+        document.body.classList.toggle(utilities.noScrollBody)
+    }
 
     const galleryHook: GalleryHook = {
-        InitialList: galleryList,
+        InitialList: gal,
         DisplayGallery: displayGallery,
         SetGallery: handleGallery,
         HandleDisplayGallery: handleDisplayGallery
     }
-
     return galleryHook
 }
 

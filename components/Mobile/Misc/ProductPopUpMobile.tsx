@@ -9,6 +9,7 @@ const textService: string = "servicio?"
 const textProduct: string = "producto?"
 const qualifyThisText: string = "¿Como califica este"
 const addText: string = "Agregar"
+const durationTime: string = "Tiempo de duracion: "
 
 export default function ProductPopUpMobile({item}: { item: ProductItem }) {
     const isExtra: boolean = item.ExtraImages != null
@@ -66,6 +67,24 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainGrid}>
+                {
+                    (item.DiscountPercent != null || item.Include != null) &&
+                    <div className={style.positionLastTicket}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                    </div>
+                }
+               {/* {
+                    (item.Type == TypeProducts.Service && item.Time != null) &&
+                    <div className={style.sizeTimeIcon}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
+                        <span className={style.colorTime}>
+                                {item.Time}
+                            </span>
+                        <span className={style.colorTime}>
+                                min
+                            </span>
+                    </div>
+                }*/}
                 <div className={isExtra ? style.gridSelection : style.noSide}>
                     {
                         item.ExtraImages != null &&
@@ -85,20 +104,7 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                     <div className={style.sizeImage}>
                         <Image layout={"fill"} src={isExtra ? imageSelected : item.ImagePath} alt={""}/>
                     </div>
-                    {
-                        (item.Type == TypeProducts.Service && item.Time != null) &&
-                        <div className={style.sizeTimeIcon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
-                            <span className={style.colorTime}>
-                                {item.Time}
-                            </span>
-                            <span className={style.colorTime}>
-                                min
-                            </span>
-                        </div>
-                    }
                 </div>
-
                 <div className={style.mainContInfo}>
                     <div className={style.name}>
                         {item.Name}
@@ -201,6 +207,14 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                     <div className={style.description}>
                         {item.Description}
                     </div>
+
+                    {
+                        item.Time != null &&
+                        <div className={style.duration}>
+                            {durationTime} {item.Time} min
+                        </div>
+                    }
+
                     <div className={style.separationLine}/>
                     <div className={style.gridPriceICon}>
                         <div className={style.price}>

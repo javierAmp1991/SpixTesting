@@ -14,14 +14,16 @@ export default function QuestionBHMobile({id}: { id: string }) {
         Top: 16
     }
     return (
-        <LayoutQuestionSectionMobile link={"/"}>
-            <LayoutNavCircleMobileCustom item={layout}>
-                {
-                    question.map(item =>
-                        <QuestionShortMob key={item.Id} item={item}/>
-                    )
-                }
-            </LayoutNavCircleMobileCustom>
-        </LayoutQuestionSectionMobile>
+        <div className={"overflow-scroll"} id={id}>
+            <LayoutQuestionSectionMobile link={"/"}>
+                <LayoutNavCircleMobileCustom item={layout}>
+                    {
+                        question.map(item =>
+                            <QuestionShortMob key={item.Id} item={item}/>
+                        )
+                    }
+                </LayoutNavCircleMobileCustom>
+            </LayoutQuestionSectionMobile>
+        </div>
     )
 }

@@ -9,7 +9,7 @@ export default function NavProductsSection() {
     let [tagSelected, setTagSelected] = useState("")
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id).getBoundingClientRect()
-        window.scrollTo({top: (data.top + window.scrollY - 100), behavior: "smooth"})
+        window.scrollTo({top: (data.top + window.scrollY - 70), behavior: "smooth"})
         setTagSelected(tagSelected = id)
     }
 

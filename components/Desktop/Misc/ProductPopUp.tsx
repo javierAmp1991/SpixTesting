@@ -10,6 +10,7 @@ const textProduct: string = "producto?"
 const qualifyThisText: string = "¿Como califica este"
 const newArray: number[] = [1, 2, 3, 4, 5]
 const addText: string = "Agregar"
+const durationTime: string = "Tiempo de duracion: "
 
 export default function ProductPopUp({item}: { item: ProductItem }) {
     const isExtra: boolean = item.ExtraImages != null
@@ -68,6 +69,12 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.mainGrid}>
+                {
+                    (item.DiscountPercent != null || item.Include != null) &&
+                    <div className={style.positionLastTicket}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                    </div>
+                }
                 <div className={style.contImages}>
                     <div className={style.sizeImage}>
                         <Image layout={"fill"} src={isExtra ? imageSelected : item.ImagePath}
@@ -88,7 +95,7 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
 
                         </div>
                     }
-                    {
+                   {/* {
                         (item.Type == TypeProducts.Service && item.Time != null) &&
                         <div className={style.sizeTimeIcon}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
@@ -99,7 +106,7 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
                                 min
                             </span>
                         </div>
-                    }
+                    }*/}
                 </div>
                 <div className={style.mainContInfo}>
                     <div className={style.name}>
@@ -203,7 +210,15 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
                     <div className={style.description}>
                         {item.Description}
                     </div>
+                    {
+                        item.Time != null &&
+                        <div className={style.duration}>
+                            {durationTime} {item.Time} min
+                        </div>
+                    }
+
                     <div className={style.separationLine}/>
+
                     <div className={style.gridPriceICon}>
                         <div className={style.price}>
                             ${getMoneyValue(item.Price)}

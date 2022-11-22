@@ -5,7 +5,7 @@ import {SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 export default function NavSectionProductsMobile({item}: { item: SectionProductItem[] }) {
     const handleTagSelected = (id: string) => {
         let data = document.getElementById(id).getBoundingClientRect()
-        window.scrollTo({top: (data.top + window.scrollY - 40), behavior: "smooth"})
+        window.scrollTo({top: (data.top + window.scrollY - 60), behavior: "smooth"})
     }
     return (
         <div className={style.grid}>

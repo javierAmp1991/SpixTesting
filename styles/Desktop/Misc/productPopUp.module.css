@@ -60,7 +60,10 @@
 }
 
 .contImages{
+    height: 100%;
     position: relative;
+    display: grid;
+    align-items: center;
 }
 
 .contImage {
@@ -201,8 +204,8 @@
     height: 60px;
     position: absolute;
     background: white;
-    top: 12px;
-    right: 12px;
+    top: 0;
+    right: 0;
     z-index: 10000;
     display: grid;
     align-content: center;
@@ -231,6 +234,19 @@
     height: 40px;
     position: relative;
     cursor: pointer;
+}
+
+.positionLastTicket{
+    width: 40%;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: 90000;
+}
+
+.duration{
+    color: var(--colorPrimaryTextDesktop);
 }
 
 .animationStar0 {

@@ -16,15 +16,16 @@
 
 .backgroundEvents {
     background: linear-gradient(145deg, #5F0A87 0%, #9d337d 100%);
-    background: linear-gradient(145deg, #1100ae 0%, #4062BB 100%);
-    background: linear-gradient(145deg, #e53c3c 0%, #e36518 100%);
-    background: linear-gradient(145deg, #647DEE 0%, #7F53AC 100%);
-    background: linear-gradient(180deg, #C81F70 0%, #ee4042 100%);
     color: white;
 }
 
 .backgroundRestaurant {
     background: linear-gradient(180deg, #5F0A87 0%, #9d337d 100%);
+    background: linear-gradient(145deg, #e53c3c 0%, #e36518 100%);
+    background: linear-gradient(145deg, #647DEE 0%, #7F53AC 100%);
+    background: linear-gradient(145deg, #1100ae 0%, #4062BB 100%);
+    background: linear-gradient(45deg, #C81F70 0%, #ee4042 100%);
+    background: #ee4042;
     color: white;
 }
 
@@ -54,3 +55,30 @@
 .link {
     text-decoration: underline;
 }
+
+.sizeBanner {
+    width: 100%;
+    aspect-ratio: 3/1;
+    position: relative;
+}
+
+.contInfo {
+    padding: 24px 32px;
+    display: grid;
+    gap: 12px;
+}
+
+.mainDivPopUp {
+    width: 500px;
+    height: 420px;
+}
+
+.titlePop {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+}
+
+.announcementPop {
+    color: var(--colorPrimaryTextDesktop);
+}
+

@@ -79,7 +79,7 @@
     background: var(--gradientLogos);
     aspect-ratio: 1/1;
     border-radius: 50%;
-    top: 16px;
+    bottom: 16px;
     right: 16px;
     overflow: hidden;
     position: absolute;

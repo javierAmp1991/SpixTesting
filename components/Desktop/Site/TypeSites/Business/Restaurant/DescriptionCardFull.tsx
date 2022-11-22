@@ -63,13 +63,7 @@ export default function DescriptionCardFull() {
 
     return (
         <LayoutPresentationCard>
-            <LayoutAnnouncementInfo>
-                {
-                    info.Announcement != null &&
-                    <Announcement styleAnnouncement={styleAnnouncement} announcement={info.Announcement}/>
-                }
-                <HeaderSiteBussiness item={headerBusiness}/>
-            </LayoutAnnouncementInfo>
+            <HeaderSiteBussiness item={headerBusiness}/>
             <SideImages galleryImages={info.GalleryImages} logo={info.LogoPath}/>
         </LayoutPresentationCard>
         /*        <div className={`${style.mainDiv} ${utilitiesSites.boxShadowCards}  ${utilitiesSites.marginUnderCard}

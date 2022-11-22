@@ -139,7 +139,8 @@ export namespace GlobalConst{
         youtubeIcon: "/images/youtubeIcon.png",
         hamburguerIcon: "/images/hamburguerICon.png",
         hamburguerIconVoid: "/images/hamburguerIConEmpty.png",
-        chronoIcon: "/images/chrono1.png"
+        chronoIcon: "/images/chronoIcon.png",
+        bannerAnnouncement: "/images/anuncioBanner.webp"
     }
 }
 
