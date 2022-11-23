@@ -22,6 +22,7 @@ export default function ProductViewHor({item, isDisplayOffer}:
     }
 
     const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
+    const handlePopUp = () => displayPopUpProduct.HandleToggle()
     return (
         <div className={style.mainGrid}>
             <button onClick={() => displayPopUpProduct.HandleToggle()} className={style.mainDivImage}>
@@ -29,10 +30,10 @@ export default function ProductViewHor({item, isDisplayOffer}:
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
                 {
-                    item.DiscountPercent != null || item.Include != null ?
-                        < div className={utilities.positionLastTicket}>
+                    (item.DiscountPercent != null || item.Include != null) &&
+                        <div className={utilities.positionLastTicket}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
-                        </div> : <></>
+                        </div>
                 }
             </button>
 
@@ -52,9 +53,9 @@ export default function ProductViewHor({item, isDisplayOffer}:
             {
                 displayPopUpProduct.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
+                    <PopUpContainerFull closePopUp={handlePopUp} isButtonVisible={true}
                                         isBackground={true}>
-                        <ProductPopUp item={item}/>
+                        <ProductPopUp closePopUp={handlePopUp} item={item}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

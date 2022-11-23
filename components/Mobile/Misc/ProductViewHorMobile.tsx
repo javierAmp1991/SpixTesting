@@ -14,7 +14,7 @@ const idPortal: string = GlobalId.globalIds.idPortal
 export default function ProductViewHorMobile({item, isDisplayOffer}:
                                            { item: ProductItem, isDisplayOffer: boolean }) {
     const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
-    const handleOpen = ()=> displayPopUpProduct.HandleToggle()
+    const handlePopUp = ()=> displayPopUpProduct.HandleToggle()
     const priceViewProp: PriceViewProp = {
         SizePrice: 21,
         Price: item.Price,
@@ -24,7 +24,7 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
     }
     return (
         <div className={style.mainGrid}>
-            <div onClick={handleOpen} className={style.mainDivImage}>
+            <div onClick={handlePopUp} className={style.mainDivImage}>
                 <div className={style.sizeImage}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
@@ -36,7 +36,7 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
                 }
             </div>
 
-            <div onClick={handleOpen} className={style.gridInfoProductHorizontal}>
+            <div onClick={handlePopUp} className={style.gridInfoProductHorizontal}>
                 <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
                     {item.Name}
                 </div>
@@ -54,9 +54,9 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
             {
                 displayPopUpProduct.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
+                    <PopUpContainerFull closePopUp={handlePopUp} isButtonVisible={true}
                                         isBackground={true}>
-                        <ProductPopUpMobile item={item}/>
+                        <ProductPopUpMobile closePopUp={handlePopUp} item={item}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

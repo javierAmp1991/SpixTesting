@@ -14,7 +14,7 @@ const qualifyThisText: string = "¿Como califica este"
 const addText: string = "Agregar al carro"
 const durationTime: string = "Tiempo de duracion: "
 
-export default function ProductPopUp({item}: { item: ProductItem}) {
+export default function ProductPopUp({item, closePopUp}: { item: ProductItem, closePopUp: Function }) {
     const addToCart: CartProviderProps = useContext(AddToCartContext)
     let [amountSelected, setAmountSelected] = useState(1)
     const priceViewProp: PriceViewProp = {
@@ -36,8 +36,9 @@ export default function ProductPopUp({item}: { item: ProductItem}) {
     const handleAmountSelected = (isUp: boolean) => {
         setAmountSelected(isUp ? amountSelected + 1 : amountSelected - 1 < 1 ? 1 : amountSelected - 1)
     }
-    const handleAdd = ()=>{
+    const handleAdd = () => {
         addToCart.AddItems()
+        closePopUp()
     }
 
     return (

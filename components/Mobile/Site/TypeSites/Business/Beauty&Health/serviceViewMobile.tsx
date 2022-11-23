@@ -75,7 +75,7 @@ export default function ServiceViewMobile({item}: { item: ProductItem }) {
                 createPortal(
                     <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
                                         isBackground={true}>
-                        <ProductPopUpMobile item={item}/>
+                        <ProductPopUpMobile closePopUp={handleOpen} item={item}/>
 
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )

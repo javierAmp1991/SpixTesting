@@ -14,7 +14,7 @@ const idPortal: string = GlobalId.globalIds.idPortal
 export default function NewProductViewSquareMobile({item, size}:
                                                  { item: ProductItem, size: number, isDisplayOffer: boolean }) {
     const displayPopUp = useDisplayPopUpHook(false)
-    const handleOpen = () => displayPopUp.HandleToggle()
+    const handlePopUp = () => displayPopUp.HandleToggle()
     const priceViewProp: PriceViewProp = {
         Price: item.Price,
         DiscountPercent: item.DiscountPercent,
@@ -25,16 +25,16 @@ export default function NewProductViewSquareMobile({item, size}:
         <div className={style.boxShadowPro} style={getSizeProduct.widthContainer}>
             {
                 (item.DiscountPercent != null || item.Include != null) &&
-                <div onClick={handleOpen} className={style.zindexListon}>
+                <div onClick={handlePopUp} className={style.zindexListon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                 </div>
             }
-            <div onClick={handleOpen} className={style.contImage}>
+            <div onClick={handlePopUp} className={style.contImage}>
                 <div className={style.aspectRatio}>
                     <Image layout={"fill"} src={item.ImagePath} alt=""/>
                 </div>
             </div>
-            <div onClick={handleOpen} className={style.gridInfoProduct}>
+            <div onClick={handlePopUp} className={style.gridInfoProduct}>
                 {item.Name}
                 {
                     item.Rating != null &&
@@ -47,8 +47,8 @@ export default function NewProductViewSquareMobile({item, size}:
             {
                 displayPopUp.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={handleOpen} isBackground={true} isButtonVisible={true}>
-                        <ProductPopUpMobile item={item}/>
+                    <PopUpContainerFull closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
+                        <ProductPopUpMobile closePopUp={handlePopUp} item={item}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

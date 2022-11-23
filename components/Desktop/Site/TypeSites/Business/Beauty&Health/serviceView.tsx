@@ -14,6 +14,8 @@ const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function ServiceView({item}: { item: ProductItem }) {
     const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
+    const handlePopUp = () => displayPopUpProduct.HandleToggle()
+
     const priceViewProp: PriceViewProp = {
         SizePrice: 32,
         Price: item.Price,
@@ -73,9 +75,9 @@ export default function ServiceView({item}: { item: ProductItem }) {
             {
                 displayPopUpProduct.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={displayPopUpProduct.HandleToggle} isButtonVisible={true}
+                    <PopUpContainerFull closePopUp={handlePopUp} isButtonVisible={true}
                                         isBackground={true}>
-                        <ProductPopUp item={item}/>
+                        <ProductPopUp closePopUp={handlePopUp} item={item}/>
 
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )

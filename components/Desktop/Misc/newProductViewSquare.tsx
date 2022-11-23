@@ -15,6 +15,8 @@ const idPortal: string = GlobalId.globalIds.idPortal
 export default function NewProductViewSquare({item, size}:
                                                  { item: ProductItem, size: number, isDisplayOffer: boolean }) {
     const displayPopUp = useDisplayPopUpHook(false)
+    const handlePopUp = () => displayPopUp.HandleToggle()
+
     const handleOpen = () => displayPopUp.HandleToggle()
     const priceViewProp: PriceViewProp = {
         Price: item.Price,
@@ -49,7 +51,7 @@ export default function NewProductViewSquare({item, size}:
                 displayPopUp.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handleOpen} isBackground={true} isButtonVisible={true}>
-                        <ProductPopUp item={item}/>
+                        <ProductPopUp closePopUp={handlePopUp} item={item}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
