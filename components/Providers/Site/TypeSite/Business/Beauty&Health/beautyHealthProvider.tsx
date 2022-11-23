@@ -306,7 +306,7 @@ const listInitialRecommended: EventCardWithPrice[] = [
         Rating: 30,
         TotalTickets: 10000,
         SoldTickets: 5000,
-        PathImage: "/images/serv5.jpg",
+        PathImage: "/images/serv4.jpg",
         MinPrice: 2990,
         MaxPrice: 9990,
     },
