@@ -36,6 +36,7 @@
     display: grid;
     grid-template-columns: repeat(3, max-content);
     justify-content: start;
+    align-items: center;
     gap: 8px;
     padding-bottom: 2px;
 }
@@ -56,6 +57,8 @@
     border-radius: 16px;
     overflow: hidden;
     width: max-content;
+    display: grid;
+    align-items: center;
     color: white;
     font-weight: 500;
 }
