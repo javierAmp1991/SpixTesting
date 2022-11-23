@@ -17,14 +17,18 @@ export default function Announcement({styleAnnouncement, announcement}:
     const refAnnou = useRef(null)
     const refDiv = useRef(null)
     let [controlTrans, setControlTrans] = useState(true)
-    let [animationControl, setAnimationControl] = useState(false)
-    const handleAnimationControl = () => setAnimationControl(!animationControl)
-    const handlePopUp = () => openPopUp.HandleToggle()
+    const handlePopUp = () => {
+        openPopUp.State ? handleRight() : handleStop()
+        openPopUp.HandleToggle()
+    }
+    const handleStop = () => {
+        refAnnou.current.style.transition = `none`;
+        refAnnou.current.style.transform = `translateX(0)`;
+    }
     const openPopUp = useDisplayPopUpHook(false)
     const handleRight = () => {
         const firstElement = refCont.current.children[0];
-
-        /*refAnnou.current.style.transition = `20000ms linear`;
+        refAnnou.current.style.transition = `20000ms linear`;
         refAnnou.current.style.transform = `translateX(-${refDiv.current.offsetWidth + gap}px)`;
         const transition = () => {
             refAnnou.current.style.transition = `none`;
@@ -33,18 +37,9 @@ export default function Announcement({styleAnnouncement, announcement}:
             refAnnou.current.removeEventListener('transitionend', transition)
             setControlTrans(!controlTrans)
         }
-        refAnnou.current.addEventListener('transitionend', transition);*/
+        refAnnou.current.addEventListener('transitionend', transition);
 
-        refAnnou.current.animate([
-            { // from
-                transform: `translateX(0)`,
-            },
-            { // to
-                transform: `translateX(-${refDiv.current.offsetWidth + gap}px)`,
-            }
-        ], 20000);
     }
-
 
     useEffect(() => {
         refDiv.current.offsetWidth > refCont.current.offsetWidth && handleRight()
@@ -56,9 +51,8 @@ export default function Announcement({styleAnnouncement, announcement}:
                 <Image layout={"fill"} src={GlobalConst.sourceImages.announcementIcon} alt={""}/>
             </div>
             <div ref={refCont} className={`${style.contAnnouncement}`}>
-                <div ref={refAnnou} style={{gap: gap, animation:`animationAnnouncement 30s linear`}}
-                     className={`${style.gridAnnouncementText}
-                      ${animationControl && style.animationStop}`}>
+                <div ref={refAnnou} style={{gap: gap}}
+                     className={style.gridAnnouncementText}>
                     <div ref={refDiv} className={style.announcement}>
                         {announcement.Announcement}
                     </div>

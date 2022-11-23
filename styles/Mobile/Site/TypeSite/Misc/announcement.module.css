@@ -12,7 +12,6 @@
 .gridAnnouncementText {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    /* animation: animationAnnouncement 30s linear*/
 }
 
 .backgroundBH{

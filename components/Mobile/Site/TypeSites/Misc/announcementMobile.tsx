@@ -31,11 +31,21 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
         }
         refAnnou.current.addEventListener('transitionend', transition);
     }
-    const handlePopUp = () => openPopUp.HandleToggle()
+    const handlePopUp = () => {
+        openPopUp.State ? handleRight() : handleStop()
+        openPopUp.HandleToggle()
+        bounding()
+    }
+    const handleStop = () => {
+        refAnnou.current.style.transition = `none`;
+        refAnnou.current.style.transform = `translateX(0)`;
+    }
 
-    useEffect(() => {
-        refAnnou.current.offsetWidth > refCont.current.offsetWidth && handleRight()
-    }, [controlTrans])
+    const bounding = () => {
+        console.log(refAnnou.current.getBoundingClientRect())
+    }
+
+    useEffect(() => handleRight(), [controlTrans])
 
     return (
         <div className={`${style.gridAnnouncement} ${style.backgroundRestaurant}`}>
