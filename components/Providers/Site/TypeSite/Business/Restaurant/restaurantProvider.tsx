@@ -6,7 +6,7 @@ import {
 } from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {ProductItem, QuestionItem, ReviewItem, SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
-import {FormLink, News, Product} from "../../../../../../dataDemo/data";
+import {FormLink, News} from "../../../../../../dataDemo/data";
 import {ProviderNewsEvents, TypeActionContact} from "../../../../../../Class/Site/TypeSite/Events/events";
 import {GlobalConst} from "../../../../../../public/globalConst";
 import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
@@ -32,7 +32,7 @@ const listProductsOffer: ProductItem[] = [
         Include: null,
         ImagePath: "/images/product1.jpg",
         Rating: 4,
-        ExtraImages: ["/images/product1.jpg","/images/product2.jpg","/images/product3.jpg"]
+        ExtraImages: ["/images/product1.jpg", "/images/product2.jpg", "/images/product3.jpg"]
     },
     {
         Id: "idProduct02",
@@ -815,6 +815,7 @@ export default function RestaurantProvider({children}) {
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
     let [reviewItems, setReviewItems] = useState(listReview)
     let [news, setNews] = useState(listInitialNews)
+
 
     const handleRightClickRecomended = () => setRecommendedItems(recommendedItems = listRecomendedAdd)
     const handleLeftClickRecomended = () => setRecommendedItems(recommendedItems = listInitialRecommended)

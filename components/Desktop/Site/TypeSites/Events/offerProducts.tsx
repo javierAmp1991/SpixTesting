@@ -5,7 +5,7 @@ import {useContext} from "react";
 import {OfferProductsContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import LayoutTitle from "../Business/Restaurant/layoutTitle";
 import NewProductViewSquare from "../../../Misc/newProductViewSquare";
-
+const idNavProductSection: string = "idProductEventToGo"
 const title: string = "Ofertas"
 
 export default function OfferProducts() {
@@ -21,15 +21,16 @@ export default function OfferProducts() {
         RightArrow: () => products.RightClick()
     }
     return (
-        <LayoutTitle title={title}>
-
-            <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
-                {
-                    products.InitialItems.map(item =>
-                        <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
-                    )
-                }
-            </LayoutCarrouselDesktop>
-        </LayoutTitle>
+        <div id={idNavProductSection}>
+            <LayoutTitle title={title}>
+                <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
+                    {
+                        products.InitialItems.map(item =>
+                            <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                        )
+                    }
+                </LayoutCarrouselDesktop>
+            </LayoutTitle>
+        </div>
     )
 }

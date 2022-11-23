@@ -4,7 +4,7 @@ import {useContext, useState} from "react";
 import {SectionProductsContext} from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 
 
-export default function NavProductsSection() {
+export default function NavProductsSection({id}: { id?: string }) {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     let [tagSelected, setTagSelected] = useState("")
     const handleTagSelected = (id: string) => {
@@ -14,7 +14,7 @@ export default function NavProductsSection() {
     }
 
     return (
-        <div className={style.mainDiv}>
+        <div id={id == null ? "" : id} className={style.mainDiv}>
             {
                 infoSectionProducts.map(item =>
                     <button key={item.Id} onClick={() => handleTagSelected(item.Id)}

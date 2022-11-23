@@ -8,7 +8,6 @@ import {
     HeaderContext, ScheduleContext, SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
 import ProductSectionMobile from "./ProductSectionMobile";
-import FullBannerMobile from "../../../../Misc/fullBannerMobile";
 import DescriptionCardFullData from "./DescriptionCardFullData";
 import NavProductsSectionMobile from "./navProductsSectionMobile";
 import utilities from "/styles/utilities.module.css";
@@ -22,16 +21,23 @@ import AnnouncementMobile from "../../Misc/announcementMobile";
 import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import ReservationMobile from "../Misc/reservationMobile";
 import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
+import {CartProps} from "../../../../../Desktop/Site/TypeSites/Misc/cart";
+import CartMobile from "../../Misc/cartMobile";
 
 const idTest: string = "isTestMobileScrolControl"
 const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
 const reservationButtonText: string = "Reserva tu mesa"
 const isMarginBottom: boolean = true
+const idNavProductSection: string = "idNavProductSectionRestaurant"
 
 export default function InitialPageRestaurantMobile() {
     const infoHeader: PresentationCard = useContext(HeaderContext)
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const newSchedule: Schedule[] = useContext(ScheduleContext)
+    const cartProp: CartProps = {
+        NumberItems: 0,
+        IdToGo: idNavProductSection
+    }
 
     return (
         <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
@@ -67,7 +73,7 @@ export default function InitialPageRestaurantMobile() {
 
             <QuestionRestaurantMobile/>
 
-            <div className={style.divSectionProducts}>
+            <div id={idNavProductSection} className={style.divSectionProducts}>
                 <NavProductsSectionMobile/>
 
                 <div className={style.gridSectionProducts} id={idTest}>
@@ -78,6 +84,8 @@ export default function InitialPageRestaurantMobile() {
                     }
                 </div>
             </div>
+
+            <CartMobile item={cartProp}/>
         </LayoutMainPageSitesMobile>
 
     )

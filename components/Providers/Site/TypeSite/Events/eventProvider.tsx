@@ -174,7 +174,13 @@ const principalInfo: PrincipalInfoEvent = {
             Id: "idEventsGalleryImage006",
             Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s",
             Type: MultimediaItemType.Video
-        }
+        },
+        {
+            Id: "idEventsGalleryImage007",
+            Link: "/images/thedoor3.jpg",
+            Type: MultimediaItemType.Image,
+        },
+
     ],
     Video: null,
     Contact: [

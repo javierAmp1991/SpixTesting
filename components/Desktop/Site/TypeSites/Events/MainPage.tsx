@@ -9,16 +9,19 @@ import HeaderSiteEvents from "./headerSiteEvents";
 import BannerSiteEvents from "./bannerSiteEvents";
 import LayoutMainPageSites from "../Misc/layoutMainPageSites";
 import utilities from "/styles/utilities.module.css";
-import Announcement from "../Misc/announcement";
-import PresentCard2 from "./presentCard2";
 import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
 import {useContext} from "react";
 import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
 import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import Cart, {CartProps} from "../Misc/cart";
 
 const isMarginBottom: boolean = false
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
-
+const idNavProductSection: string = "idProductEventToGo"
+const cartProp: CartProps = {
+    NumberItems: 0,
+    IdToGo: idNavProductSection
+}
 
 export default function MainPage() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -27,7 +30,7 @@ export default function MainPage() {
         <>
             <BannerSiteEvents/>
             <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-               <HeaderSiteEvents/>
+                <HeaderSiteEvents/>
                 <div className={utilities.separationLine}/>
 
                 <OfferProducts/>
@@ -48,6 +51,8 @@ export default function MainPage() {
                 <SectionProductsSiteEvents/>
                 <FooterDesk/>
             </LayoutMainPageSites>
+
+            <Cart item={cartProp}/>
         </>
     )
 }

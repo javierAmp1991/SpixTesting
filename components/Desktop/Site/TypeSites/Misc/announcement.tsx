@@ -17,21 +17,15 @@ export default function Announcement({styleAnnouncement, announcement}:
     const refAnnou = useRef(null)
     const refDiv = useRef(null)
     let [controlTrans, setControlTrans] = useState(true)
+    let [animationControl, setAnimationControl] = useState(false)
+    const handleAnimationControl = () => setAnimationControl(!animationControl)
+    const handlePopUp = () => openPopUp.HandleToggle()
+    const openPopUp = useDisplayPopUpHook(false)
     const handleRight = () => {
         const firstElement = refCont.current.children[0];
-        refAnnou.current.style.transition = `30000ms linear`;
+
+        /*refAnnou.current.style.transition = `20000ms linear`;
         refAnnou.current.style.transform = `translateX(-${refDiv.current.offsetWidth + gap}px)`;
-
-        /* const translateDiv = [
-             { transform: 'translateX(0)' },
-             { transform: `translateX(-${refDiv.current.offsetWidth + gap}px)` }
-         ];
-         const timeTranslate = {
-             duration: 30000,
-             iterations: 1,
-         }
-         refAnnou.current.animate(translateDiv, timeTranslate)*/
-
         const transition = () => {
             refAnnou.current.style.transition = `none`;
             refAnnou.current.style.transform = `translateX(0)`;
@@ -39,11 +33,18 @@ export default function Announcement({styleAnnouncement, announcement}:
             refAnnou.current.removeEventListener('transitionend', transition)
             setControlTrans(!controlTrans)
         }
+        refAnnou.current.addEventListener('transitionend', transition);*/
 
-        refAnnou.current.addEventListener('transitionend', transition);
+        refAnnou.current.animate([
+            { // from
+                transform: `translateX(0)`,
+            },
+            { // to
+                transform: `translateX(-${refDiv.current.offsetWidth + gap}px)`,
+            }
+        ], 20000);
     }
-    const openPopUp = useDisplayPopUpHook(false)
-    const handlePopUp = () => openPopUp.HandleToggle()
+
 
     useEffect(() => {
         refDiv.current.offsetWidth > refCont.current.offsetWidth && handleRight()
@@ -51,11 +52,13 @@ export default function Announcement({styleAnnouncement, announcement}:
 
     return (
         <div className={`${style.gridAnnouncement} ${style.backgroundRestaurant}`}>
-            <div className={style.sizeIcon}>
+            <div onClick={handleRight} className={style.sizeIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.announcementIcon} alt={""}/>
             </div>
             <div ref={refCont} className={`${style.contAnnouncement}`}>
-                <div ref={refAnnou} style={{gap: gap}} className={style.gridAnnouncementText}>
+                <div ref={refAnnou} style={{gap: gap, animation:`animationAnnouncement 30s linear`}}
+                     className={`${style.gridAnnouncementText}
+                      ${animationControl && style.animationStop}`}>
                     <div ref={refDiv} className={style.announcement}>
                         {announcement.Announcement}
                     </div>
@@ -78,7 +81,7 @@ export default function Announcement({styleAnnouncement, announcement}:
                             </div>
                             <div className={style.contInfo}>
                                 <div className={style.titlePop}>
-                                    {announcement.Tittle}
+                                    {/*{announcement.Tittle}*/} Anuncios
                                 </div>
                                 <div className={style.announcementPop}>
                                     {announcement.Announcement}

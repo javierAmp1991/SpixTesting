@@ -1,6 +1,4 @@
-import {PrincipalInfoEvent} from "../../../../../Class/Site/TypeSite/Events/events";
-import React, {useContext, useState} from "react";
-import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Events/eventProvider";
+import React, {useState} from "react";
 import style from "/styles/Mobile/Site/TypeSite/Misc/galleryCarrouselMobile.module.css";
 import Image from "next/image";
 import {createPortal} from "react-dom";

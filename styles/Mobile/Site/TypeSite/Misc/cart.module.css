@@ -1,0 +1,54 @@
+.mainDiv {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 900000000000000;
+    width: 60px;
+    aspect-ratio: 1/1;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    animation: animationCart 1s linear;
+}
+
+.sizeCart {
+    width: 60%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.positionItem {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, rgba(238, 13, 13, 1) 0%, rgba(253, 45, 45, 1) 100%);
+    box-shadow: 0 0 4px red;
+    color: white;
+    display: grid;
+    font-weight: 500;
+    align-items: center;
+    justify-items: center;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    z-index: 400;
+}
+
+@keyframes animationCart {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.3);
+    }
+    80% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

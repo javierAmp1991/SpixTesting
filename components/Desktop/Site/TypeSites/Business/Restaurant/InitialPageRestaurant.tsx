@@ -1,7 +1,6 @@
 import {SectionProductItem} from "../../../../../../Class/Misc/GlobalClass";
 import {useContext} from "react";
 import {
-    HeaderContext,
     ScheduleContext,
     SectionProductsContext
 } from "../../../../../Providers/Site/TypeSite/Business/Restaurant/restaurantProvider";
@@ -12,24 +11,25 @@ import InOfferRestaurant from "./inOfferRestaurant";
 import RecomendedRestarant from "./recomendedRestarant";
 import QuestionRestaurant from "./questionRestaurant";
 import NavSectionProducts from "../Default/NavSectionProducts";
-import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
+import {Schedule} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import Reservation from "../Misc/reservation";
 import SectionProductsRestaurant from "./sectionProductsRestaurant";
 import LayoutMainPageSites from "../../Misc/layoutMainPageSites";
 import utilities from "/styles/utilities.module.css";
 import HeaderSiteRestaurant from "./headerSiteRestaurant";
-import Announcement from "../../Misc/announcement";
-import DescriptionCardFull from "./DescriptionCardFull";
-import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import Cart, {CartProps} from "../../Misc/cart";
 
 const buttonReservationText: string = "Reservar Mesa"
 const isMarginBottom: boolean = true
-const styleAnnouncement: AnnouncementStyle = AnnouncementStyle.SiteRestaurant
+const idNavProductSection: string = "idNavProductSectionRestaurant"
 
 export default function InitialPageRestaurant() {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const schedule: Schedule[] = useContext(ScheduleContext)
-    const infoHeader: PresentationCard = useContext(HeaderContext)
+    const cartProp: CartProps = {
+        NumberItems: 0,
+        IdToGo: idNavProductSection
+    }
     return (
         <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
             <HeaderSiteRestaurant/>
@@ -56,10 +56,13 @@ export default function InitialPageRestaurant() {
             <QuestionRestaurant/>
             <div className={utilities.separationLine}/>
 
-            <NavProductsSection/>
+            <NavProductsSection id={idNavProductSection}/>
             <div className={utilities.separationLine}/>
 
             <SectionProductsRestaurant/>
+
+            <Cart item={cartProp}/>
+
         </LayoutMainPageSites>
     )
 }

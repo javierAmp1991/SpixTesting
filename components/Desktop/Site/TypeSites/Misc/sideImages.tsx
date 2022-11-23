@@ -9,6 +9,7 @@ import {LayoutGalleryProps, MultimediaItem, MultimediaItemType} from "../../../.
 import useGalleryImagesHook, {GalleryHook} from "../../../../../CustomHooks/galleryHook";
 
 const idPortal: string = GlobalId.globalIds.idPortal
+const numberControl: number = 5
 
 export default function SideImages({galleryImages, logo}: { galleryImages: MultimediaItem[], logo: string }) {
     let [opacity, setOpacity] = useState(0)
@@ -32,6 +33,7 @@ export default function SideImages({galleryImages, logo}: { galleryImages: Multi
             <div className={style.gridSelectionZone}>
                 {
                     galleryImages.map((item, index) =>
+                        index <= numberControl &&
                         <button key={item.Id} onClick={() => handleMultimediaSelected(item.Id, index)}
                                 className={`${style.contImage} ${opacity != index && utilities.opacity5}`}>
                             {

@@ -144,6 +144,7 @@ export namespace GlobalConst{
         leftArrowWhite: "/images/leftArrowWhite.png",
         rightArrowWhite: "/images/rightArrowWhite.png",
         closeXWhite: "/images/closeXWhite.png",
+        cartIcon: "/images/cart.jpg"
     }
 }
 

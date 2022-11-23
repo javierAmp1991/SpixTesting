@@ -2,7 +2,6 @@ import utilities from "/styles/utilities.module.css";
 import ReviewSectionBH from "./reviewSectionBH";
 import {useContext} from "react";
 import {
-    HeaderDataBHContext,
     ShceduleBHContext
 } from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import RecomendedBH from "./recomendedBH";
@@ -13,25 +12,25 @@ import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite
 import SectionProductsBH from "./sectionProductsBH";
 import InSearchBH from "./inSearchBH";
 import InOfferBH from "./inOfferBH";
-import OurJobs from "./ourJobs";
 import LayoutMainPageSites from "../../Misc/layoutMainPageSites";
 import HeaderBeautyAndHelath from "./headerBeautyAndHelath";
-import HeaderBh2 from "./headerBh2";
-import Announcement from "../../Misc/announcement";
-import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
+import Cart, {CartProps} from "../../Misc/cart";
 
 const idQuestionSection: string = "idQuestionSectionBeautyAndHelath"
 const buttonReservationText: string = "Reservar Hora"
 const isMarginBottom: boolean = true
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
+const idNavProductSection: string = "idProductServiceToGo"
 
 export default function MainPageBH() {
     const schedule: Schedule[] = useContext(ShceduleBHContext)
-    const info: PresentationCard = useContext(HeaderDataBHContext)
+    const cartProp: CartProps = {
+        NumberItems: 0,
+        IdToGo: idNavProductSection
+    }
 
     return (
         <LayoutMainPageSites IsMarginBottom={isMarginBottom}>
-            {/*<HeaderBh2/>*/}
             <HeaderBeautyAndHelath/>
             <div className={utilities.separationLine}/>
 
@@ -57,6 +56,8 @@ export default function MainPageBH() {
             <div className={utilities.separationLine}/>
 
             <SectionProductsBH/>
+
+            <Cart item={cartProp}/>
         </LayoutMainPageSites>
     )
 }

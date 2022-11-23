@@ -53,8 +53,7 @@
 .gridMin {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    justify-content: space-between;
-    gap: 16px;
+    gap: 8px;
     padding: 0 calc(var(--sizeArrow) + var(--gapMainCarrousel));
 }
 

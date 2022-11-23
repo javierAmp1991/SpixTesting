@@ -1,5 +1,6 @@
 import {createContext} from "react";
-export class MyForm{
+
+export class MyForm {
     Id: string
     Reason: string
     Views: number
@@ -30,6 +31,7 @@ const listMyForms: MyForm[] = [
 export const MyFormsContext = createContext(null)
 
 export default function ProviderCreateForm({children}) {
+
     return (
         <MyFormsContext.Provider value={listMyForms}>
             {children}

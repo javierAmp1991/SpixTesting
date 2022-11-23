@@ -6,7 +6,7 @@ import LayoutTitle from "../Restaurant/layoutTitle";
 import {OfferBHContext} from "../../../../../Providers/Site/TypeSite/Business/Beauty&Health/beautyHealthProvider";
 import NewProductViewSquare from "../../../../Misc/newProductViewSquare";
 
-export default function InOfferBH(){
+export default function InOfferBH() {
     const listOfferProducts: ProviderOfferProducts = useContext(OfferBHContext)
     const layoutPropOffer: PropCarrousel = {
         PositionArrowY: "calc(50% - 16px)",
@@ -18,15 +18,15 @@ export default function InOfferBH(){
         LeftArrow: () => listOfferProducts.LeftClick(),
         RightArrow: () => listOfferProducts.RightClick()
     }
-    return(
-        <LayoutTitle title={"Happy Hour"}>
-            <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
-                {
-                    listOfferProducts.InitialItems.map(item =>
-                        <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
-                    )
-                }
-            </LayoutCarrouselDesktop>
-        </LayoutTitle>
+    return (
+            <LayoutTitle title={"Happy Hour"}>
+                <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
+                    {
+                        listOfferProducts.InitialItems.map(item =>
+                            <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                        )
+                    }
+                </LayoutCarrouselDesktop>
+            </LayoutTitle>
     )
 }

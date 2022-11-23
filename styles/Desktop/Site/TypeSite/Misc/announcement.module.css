@@ -12,7 +12,7 @@
 .gridAnnouncementText {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    animation: animation 5s linear;
+  /* animation: animationAnnouncement 30s linear*/
 }
 
 .backgroundBH {
@@ -62,9 +62,26 @@
     text-decoration: underline;
 }
 
+.animationStop {
+    animation-play-state: paused;
+}
+
+.animationContinue {
+    animation-play-state: running;
+}
+
+@keyframes animationAnnouncement {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 .sizeBanner {
     width: 100%;
-    aspect-ratio: 3/1;
+    aspect-ratio: 4.5/1;
     position: relative;
 }
 
@@ -76,7 +93,8 @@
 
 .mainDivPopUp {
     width: 500px;
-    height: 420px;
+    min-height: 400px;
+    max-height: 600px;
 }
 
 .titlePop {

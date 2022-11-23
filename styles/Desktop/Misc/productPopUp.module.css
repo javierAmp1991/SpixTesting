@@ -59,7 +59,7 @@
     position: relative;
 }
 
-.contImages{
+.contImages {
     height: 100%;
     position: relative;
     display: grid;
@@ -222,11 +222,66 @@
     display: block;
 }
 
-.positionLastTicket{
-    width: 40%;
+.positionLastTicket {
+    width: 30%;
     top: 0;
     left: 0;
     aspect-ratio: 1/1;
     position: absolute;
     z-index: 90000;
+}
+
+.duration {
+    margin-top: 2px;
+}
+
+.gridChronoText {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+}
+
+.chronoIcon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.gridSelectorAmount {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-items: center;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    width: max-content;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.gridAmount{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.styleMoreLess {
+    padding: 3px 10px;
+    background: rgb(214, 214, 213);
+    background: linear-gradient(360deg, rgba(214, 214, 213, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 18px;
+    display: grid;
+    align-content: center;
+    align-items: center;
+}
+
+.amount {
+    color: var(--linkColor);
+    font-weight: 500;
+    padding: 0 12px;
+    margin-top: 3px;
 }

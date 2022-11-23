@@ -2,20 +2,24 @@ import style from "/styles/Mobile/Misc/productPopUp.module.css"
 import {PriceViewProp, ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import utilities from "/styles/utilities.module.css";
-import {useEffect, useState} from "react";
+import {useContext, useState} from "react";
 import PriceView from "../../Desktop/Misc/priceView";
+import RatingSelector from "../../Desktop/Misc/ratingSelector";
+import {CartProviderProps} from "../../../Class/Global/global";
+import {AddToCartContext} from "../../Providers/cartProvider";
 
 const textService: string = "servicio?"
 const textProduct: string = "producto?"
 const qualifyThisText: string = "¿Como califica este"
-const addText: string = "Agregar"
+const addText: string = "Agregar al carro"
 const durationTime: string = "Tiempo de duracion: "
 
 export default function ProductPopUpMobile({item}: { item: ProductItem }) {
+    const addToCart: CartProviderProps = useContext(AddToCartContext)
+    let [amountSelected, setAmountSelected] = useState(1)
     const priceViewProp: PriceViewProp = {
         SizePrice: 32,
-        Price: item.Price,
+        Price: item.Price * amountSelected,
         DiscountPercent: item.DiscountPercent,
         IsBeforeText: false,
         TypeGrid: true,
@@ -29,51 +33,11 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
         setImageSelected(item.ExtraImages[num])
         setIndexSelected(num)
     }
-
-    let [indexNum, setIndexNum] = useState(-99)
-    let [controlAnimation, setControlAnimation] = useState(false)
-    let [stateFStar, setStateFStar] = useState(false)
-    let [stateSStar, setStateSStar] = useState(false)
-    let [stateTStar, setStateTStar] = useState(false)
-    let [stateCStar, setStateCStar] = useState(false)
-    let [stateQStar, setStateQStar] = useState(false)
-    const handleCalification = (index: number) => {
-        setControlAnimation(controlAnimation = true)
-        setStateFStar(stateFStar = false)
-        setStateSStar(stateSStar = false)
-        setStateTStar(stateTStar = false)
-        setStateCStar(stateCStar = false)
-        setStateQStar(stateQStar = false)
-        if (indexNum == index) {
-            setIndexNum(indexNum = -999)
-            setControlAnimation(controlAnimation = false)
-        } else {
-            setIndexNum(indexNum = index)
-        }
+    const handleAmountSelected = (isUp: boolean) => {
+        setAmountSelected(isUp ? amountSelected + 1 : amountSelected - 1 < 1 ? 1 : amountSelected - 1)
     }
-    useEffect(() => {
-        if (controlAnimation) {
-            if (indexNum >= 0) {
-                setStateFStar(stateFStar = true)
-            }
-            if (indexNum >= 1) {
-                const timeOut = () => setStateSStar(stateSStar = true)
-                setTimeout(timeOut, 30)
-            }
-            if (indexNum >= 2) {
-                const timeOut = () => setStateTStar(stateTStar = true)
-                setTimeout(timeOut, 60)
-            }
-            if (indexNum >= 3) {
-                const timeOut = () => setStateCStar(stateCStar = true)
-                setTimeout(timeOut, 90)
-            }
-            if (indexNum >= 4) {
-                const timeOut = () => setStateQStar(stateQStar = true)
-                setTimeout(timeOut, 120)
-            }
-        }
-    }, [indexNum])
+    const handleAddToCart = () => addToCart.AddItems()
+
     return (
         <div className={style.mainDiv}>
             <div className={style.mainGrid}>
@@ -83,7 +47,7 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                         <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
                     </div>
                 }
-               {/* {
+                {/* {
                     (item.Type == TypeProducts.Service && item.Time != null) &&
                     <div className={style.sizeTimeIcon}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
@@ -120,96 +84,7 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
                         {item.Name}
                     </div>
                     <div>
-                        <div className={style.gridRating}>
-                            {
-                                item.Type == TypeProducts.Service ?
-                                    <>
-                                        <div onClick={() => handleCalification(0)}
-                                             className={`${style.sizeStar}
-                                             ${stateFStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateFStar ?
-                                                       GlobalConst.sourceImages.ratingIndFull :
-                                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(1)}
-                                             className={`${style.sizeStar}
-                                             ${stateSStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateSStar ?
-                                                       GlobalConst.sourceImages.ratingIndFull :
-                                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(2)}
-                                             className={`${style.sizeStar}
-                                             ${stateTStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateTStar ?
-                                                       GlobalConst.sourceImages.ratingIndFull :
-                                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(3)}
-                                             className={`${style.sizeStar}
-                                             ${stateCStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateCStar ?
-                                                       GlobalConst.sourceImages.ratingIndFull :
-                                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(4)}
-                                             className={`${style.sizeStar}
-                                             ${stateQStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateQStar ?
-                                                       GlobalConst.sourceImages.ratingIndFull :
-                                                       GlobalConst.sourceImages.ratingIndVoid} alt={""}/>
-                                        </div>
-                                    </>
-                                    :
-                                    <>
-                                        <div onClick={() => handleCalification(0)}
-                                             className={`${style.sizeStar}
-                                             ${stateFStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateFStar ?
-                                                       GlobalConst.sourceImages.hamburguerIcon :
-                                                       GlobalConst.sourceImages.hamburguerIconVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(1)}
-                                             className={`${style.sizeStar}
-                                             ${stateSStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateSStar ?
-                                                       GlobalConst.sourceImages.hamburguerIcon :
-                                                       GlobalConst.sourceImages.hamburguerIconVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(2)}
-                                             className={`${style.sizeStar}
-                                             ${stateTStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateTStar ?
-                                                       GlobalConst.sourceImages.hamburguerIcon :
-                                                       GlobalConst.sourceImages.hamburguerIconVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(3)}
-                                             className={`${style.sizeStar}
-                                             ${stateCStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateCStar ?
-                                                       GlobalConst.sourceImages.hamburguerIcon :
-                                                       GlobalConst.sourceImages.hamburguerIconVoid} alt={""}/>
-                                        </div>
-                                        <div onClick={() => handleCalification(4)}
-                                             className={`${style.sizeStar}
-                                             ${stateQStar ? style.animationStar0 : style.animationStarDis}`}>
-                                            <Image priority={true} layout={"fill"}
-                                                   src={stateQStar ?
-                                                       GlobalConst.sourceImages.hamburguerIcon :
-                                                       GlobalConst.sourceImages.hamburguerIconVoid} alt={""}/>
-                                        </div>
-                                    </>
-                            }
-                        </div>
+                        <RatingSelector item={item.Type}/>
                         <div className={style.qualify}>
                             {qualifyThisText} {item.Type == TypeProducts.Service ? textService : textProduct}
                         </div>
@@ -220,24 +95,40 @@ export default function ProductPopUpMobile({item}: { item: ProductItem }) {
 
                     {
                         item.Time != null &&
-                        <div className={style.duration}>
-                            {durationTime} {item.Time} min
+                        <div className={style.gridChronoText}>
+                            <div className={style.chronoIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
+                            </div>
+                            <div className={style.duration}>
+                                {durationTime} {item.Time} min
+                            </div>
                         </div>
                     }
 
                     <div className={style.separationLine}/>
 
+                    <div className={style.gridAmount}>
+                        Seleccione una cantidad
+                        <div className={style.gridSelectorAmount}>
+                            <button className={style.styleMoreLess} onClick={() => handleAmountSelected(false)}>
+                                -
+                            </button>
+                            <div className={style.amount}>
+                                {amountSelected}
+                            </div>
+                            <button className={style.styleMoreLess} onClick={() => handleAmountSelected(true)}>
+                                +
+                            </button>
+                        </div>
+                    </div>
+
                     <PriceView item={priceViewProp}/>
 
-                    <div className={style.button}>
+                    <button onClick={handleAddToCart} className={style.button}>
                         {addText}
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
     )
-
-    function getMoneyValue(num: number): string {
-        return Intl.NumberFormat("ES-CL").format(Math.round(num))
-    }
 }

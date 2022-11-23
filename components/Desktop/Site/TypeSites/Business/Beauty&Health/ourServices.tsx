@@ -15,6 +15,7 @@ import {
 
 const title: string = "Nuestros servicios"
 const goToQuestion: string = "¿Tienes preguntas respecto a estos servicios?"
+const idNavProductSection: string = "idProductServiceToGo"
 
 export default function OurServices({id}: { id: string }) {
     const services: ProviderServicesProducts = useContext(ServicesBHContext)
@@ -37,20 +38,22 @@ export default function OurServices({id}: { id: string }) {
         window.scrollTo({top: (data.top + window.scrollY - 40), behavior: "smooth"})
     }
     return (
+        <div id={idNavProductSection}>
         <LayoutTitleCustom item={propLayoutTitle}>
-            <>
-                <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
-                    {
-                        services.InitialItems.map((item, index) =>
-                            index <= 3 &&
-                            <ServiceView item={item}/>
-                        )
-                    }
-                </LayoutCarrouselDesktop>
-               <button onClick={handleGoTo} className={style.goToQuestion}>
-                    {goToQuestion}
-                </button>
-            </>
-        </LayoutTitleCustom>
+                <>
+                    <LayoutCarrouselDesktop layoutProp={layoutPropRecomended}>
+                        {
+                            services.InitialItems.map((item, index) =>
+                                index <= 3 &&
+                                <ServiceView item={item}/>
+                            )
+                        }
+                    </LayoutCarrouselDesktop>
+                    <button onClick={handleGoTo} className={style.goToQuestion}>
+                        {goToQuestion}
+                    </button>
+                </>
+            </LayoutTitleCustom>
+        </div>
     )
 }

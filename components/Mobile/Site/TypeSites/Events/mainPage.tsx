@@ -19,6 +19,14 @@ import {SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
 import AnnouncementMobile from "../Misc/announcementMobile";
 import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 import LayoutMainPageSitesMobile from "../Misc/layoutMainPageSitesMobile";
+import CartMobile from "../Misc/cartMobile";
+import {CartProps} from "../../../../Desktop/Site/TypeSites/Misc/cart";
+
+const idNavProductSection: string = "idProductEventToGo"
+const cartProp: CartProps = {
+    NumberItems: 0,
+    IdToGo: idNavProductSection
+}
 
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
 const isMarginBottom: boolean = false
@@ -35,7 +43,9 @@ export default function MainPageMobile() {
             <LayoutMainPageSitesMobile IsMarginButton={isMarginBottom}>
                 <InformationImages/>
                 <div className={utilities.separationLineMobile}/>
-                <OfferEventsMobile/>
+                <div className={"overflow-scroll"} id={idNavProductSection}>
+                    <OfferEventsMobile/>
+                </div>
                 <div className={utilities.separationLineMobile}/>
                 <InSearch/>
                 <div className={utilities.separationLineMobile}/>
@@ -54,6 +64,7 @@ export default function MainPageMobile() {
                 </div>
                 <FooterMobile/>
             </LayoutMainPageSitesMobile>
+            <CartMobile item={cartProp}/>
         </>
     )
 }

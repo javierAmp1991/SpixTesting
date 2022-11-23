@@ -2,19 +2,24 @@ import style from "/styles/Desktop/Misc/productPopUp.module.css"
 import {PriceViewProp, ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import PriceView from "./priceView";
 import RatingSelector from "./ratingSelector";
+import {CartProviderProps} from "../../../Class/Global/global";
+import {AddToCartContext} from "../../Providers/cartProvider";
+
 const textService: string = "servicio?"
 const textProduct: string = "producto?"
 const qualifyThisText: string = "¿Como califica este"
-const addText: string = "Agregar"
+const addText: string = "Agregar al carro"
 const durationTime: string = "Tiempo de duracion: "
 
-export default function ProductPopUp({item}: { item: ProductItem}) {
+export default function ProductPopUp({item}: { item: ProductItem }) {
+    const addToCart: CartProviderProps = useContext(AddToCartContext)
+    let [amountSelected, setAmountSelected] = useState(1)
     const priceViewProp: PriceViewProp = {
         SizePrice: 32,
-        Price: item.Price,
+        Price: item.Price * amountSelected,
         DiscountPercent: item.DiscountPercent,
         IsBeforeText: false,
         TypeGrid: true,
@@ -27,6 +32,9 @@ export default function ProductPopUp({item}: { item: ProductItem}) {
     const handleImageSelected = (num: number) => {
         setImageSelected(item.ExtraImages[num])
         setIndexSelected(num)
+    }
+    const handleAmountSelected = (isUp: boolean) => {
+        setAmountSelected(isUp ? amountSelected + 1 : amountSelected - 1 < 1 ? 1 : amountSelected - 1)
     }
 
     return (
@@ -74,16 +82,36 @@ export default function ProductPopUp({item}: { item: ProductItem}) {
                     </div>
                     {
                         item.Time != null &&
-                        <div className={style.duration}>
-                            {durationTime} {item.Time} min
+                        <div className={style.gridChronoText}>
+                            <div className={style.chronoIcon}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
+                            </div>
+                            <div className={style.duration}>
+                                {durationTime} {item.Time} min
+                            </div>
                         </div>
                     }
 
                     <div className={style.separationLine}/>
 
+                    <div className={style.gridAmount}>
+                        Seleccione una cantidad
+                        <div className={style.gridSelectorAmount}>
+                            <button className={style.styleMoreLess} onClick={() => handleAmountSelected(false)}>
+                                -
+                            </button>
+                            <div className={style.amount}>
+                                {amountSelected}
+                            </div>
+                            <button className={style.styleMoreLess} onClick={() => handleAmountSelected(true)}>
+                                +
+                            </button>
+                        </div>
+                    </div>
+
                     <PriceView item={priceViewProp}/>
 
-                    <button className={style.button}>
+                    <button onClick={() => addToCart.AddItems()} className={style.button}>
                         {addText}
                     </button>
                 </div>
