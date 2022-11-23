@@ -4,9 +4,9 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useState} from "react";
 import PriceView from "../../Desktop/Misc/priceView";
-import RatingSelector from "../../Desktop/Misc/ratingSelector";
 import {CartProviderProps} from "../../../Class/Global/global";
 import {AddToCartContext} from "../../Providers/cartProvider";
+import RatingSelectorMobile from "./ratingSelectorMobile";
 
 const textService: string = "servicio?"
 const textProduct: string = "producto?"
@@ -23,8 +23,8 @@ export default function ProductPopUpMobile({item}: { item: ProductItem}) {
         DiscountPercent: item.DiscountPercent,
         IsBeforeText: false,
         TypeGrid: true,
-        PaddingTop: 12,
-        PaddingBottom: 12
+        PaddingTop: 0,
+        PaddingBottom: 6
     }
     const isExtra: boolean = item.ExtraImages != null
     let [imageSelected, setImageSelected] = useState(isExtra ? item.ExtraImages[0] : "")
@@ -86,7 +86,7 @@ export default function ProductPopUpMobile({item}: { item: ProductItem}) {
                         {item.Name}
                     </div>
                     <div>
-                        <RatingSelector item={item.Type}/>
+                        <RatingSelectorMobile item={item.Type}/>
                         <div className={style.qualify}>
                             {qualifyThisText} {item.Type == TypeProducts.Service ? textService : textProduct}
                         </div>

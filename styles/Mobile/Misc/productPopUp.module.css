@@ -2,20 +2,14 @@
     width: 90vw;
     height: auto;
     background: white;
-    padding: 32px;
+    padding: 24px 32px;
     --animattionTransition: .4s;
 }
 
 .mainGrid {
     display: grid;
     align-items: center;
-    gap: 16px;
-}
-
-.sizeImage {
-    width: 80%;
-    aspect-ratio: 4/1;
-    position: relative;
+    gap: 12px;
 }
 
 .contImage {
@@ -215,7 +209,7 @@
 
 .gridSelection {
     display: grid;
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 55px 1fr;
     gap: 16px;
     position: relative;
 }
@@ -234,7 +228,7 @@
 }
 
 .noSide {
-    width: 80%;
+    width: 70%;
     margin: auto;
 }
 
@@ -251,7 +245,6 @@
     border-radius: 6px;
     overflow: hidden;
 }
-
 
 .gridSelectorAmount {
     display: grid;

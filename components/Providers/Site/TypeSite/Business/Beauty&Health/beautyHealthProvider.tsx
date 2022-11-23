@@ -115,7 +115,7 @@ const listProductsOffer: ProductItem[] = [
         Id: "idProduct02",
         Name: "lorem ipsum dolor sit amet , sonsectetur adipisicing elit 2.2",
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
-        Price: 99999999,
+        Price: 9990,
         DiscountPercent: 30,
         Include: null,
         ImagePath: "/images/bh4.png",
