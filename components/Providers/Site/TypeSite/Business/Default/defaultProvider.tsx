@@ -684,11 +684,6 @@ export default function DefaultProvider({children}) {
         RightClick: handleRightClickRecomended,
         LeftClick: handleLeftClickRecomended
     }
-    /*let providerOfferProducts: ProviderOfferProducts = {
-        InitialItems: offerProducts,
-        RightClick: handleRightClickProducts,
-        LeftClick: handleLeftClickProducts
-    }*/
     let providerReview: ProviderReview = {
         InitialReview: reviewItems,
         RightClick: handleRightClickReview,
@@ -705,13 +700,11 @@ export default function DefaultProvider({children}) {
                 <RecommendedContext.Provider value={providerRecommended}>
                     <ReviewsSectionContext.Provider value={providerReview}>
                         <QuestionSectionContext.Provider value={listQuestions}>
-                            <OfferProductsContext.Provider value={null}>
                                 <FormContext.Provider value={listForm}>
                                     <NewsContext.Provider value={providerNews}>
                                         {children}
                                     </NewsContext.Provider>
                                 </FormContext.Provider>
-                            </OfferProductsContext.Provider>
                         </QuestionSectionContext.Provider>
                     </ReviewsSectionContext.Provider>
                 </RecommendedContext.Provider>

@@ -3,8 +3,6 @@ import DefaultProvider from "../components/Providers/Site/TypeSite/Business/Defa
 
 export default function SiteBusiness() {
     return (
-        <DefaultProvider>
-            <SiteBusinessDefault/>
-        </DefaultProvider>
+        <div></div>
     )
 }
