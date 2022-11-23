@@ -1,7 +1,7 @@
 .mainDiv {
     --boxShadowModal: 0px 6px 12px rgba(0, 0, 0, .4);
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
