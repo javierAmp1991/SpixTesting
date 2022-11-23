@@ -66,7 +66,7 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
                             </div>
                             <div className={style.contInfo}>
                                 <div className={style.titlePop}>
-                                    {announcement.Tittle}
+                                    {/*{announcement.Tittle}*/} Anuncios
                                 </div>
                                 <div className={style.announcementPop}>
                                     {announcement.Announcement}

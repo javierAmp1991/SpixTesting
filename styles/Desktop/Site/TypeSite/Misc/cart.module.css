@@ -7,7 +7,7 @@
     aspect-ratio: 1/1;
     background: white;
     border-radius: 50%;
-    box-shadow: 0 0 6px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .8);
     display: grid;
     align-items: center;
     justify-items: center;
@@ -15,15 +15,17 @@
 }
 
 .sizeCart {
-    width: 60%;
+    width: 100%;
     aspect-ratio: 1/1;
     position: relative;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .positionItem {
     width: 30px;
     height: 30px;
-    background: radial-gradient(circle, rgba(238, 13, 13, 1) 0%, rgba(253, 45, 45, 1) 100%);
+    background: radial-gradient(circle, rgba(238, 13, 13, 1) 0%, rgb(239, 38, 38) 100%);
     box-shadow: 0 0 4px red;
     color: white;
     display: grid;
@@ -33,8 +35,8 @@
     border-radius: 50%;
     overflow: hidden;
     position: absolute;
-    top: 24px;
-    right: 17px;
+    top: 0;
+    right: 0;
     z-index: 400;
 }
 

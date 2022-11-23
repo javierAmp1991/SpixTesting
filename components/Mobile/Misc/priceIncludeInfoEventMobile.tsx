@@ -26,7 +26,7 @@ export default function PriceIncludeInfoEventMobile({item}: { item: PriceInclude
                         </>
                         :
                         <>
-                            ${getMoneyValue(item.MinPrice)} - {getMoneyValue(item.MaxPrice)}
+                            ${getMoneyValue(item.MinPrice)} - ${getMoneyValue(item.MaxPrice)}
                         </>
                 }
             </div>

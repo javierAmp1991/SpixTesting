@@ -172,7 +172,7 @@ const principalInfo: PrincipalInfoEvent = {
         },
         {
             Id: "idEventsGalleryImage006",
-            Link: "https://www.youtube.com/embed/6dR-Kx9ZA3s",
+            Link: "https://www.youtube.com/embed/HYNaPviqBCw",
             Type: MultimediaItemType.Video
         },
         {

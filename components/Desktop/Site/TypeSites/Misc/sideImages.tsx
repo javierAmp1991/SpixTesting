@@ -51,7 +51,7 @@ export default function SideImages({galleryImages, logo}: { galleryImages: Multi
                                         }
                                     </>
                                     :
-                                    <Image src={GlobalConst.sourceImages.youtubeIcon} width={20} height={20} alt={""}/>
+                                    <Image src={GlobalConst.sourceImages.youtubeIcon} layout={"fill"} alt={""}/>
                             }
                         </button>
                     )

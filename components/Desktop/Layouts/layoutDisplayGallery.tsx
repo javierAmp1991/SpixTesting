@@ -130,7 +130,7 @@ export default function LayoutDisplayGallery({item, startIn}: { item: LayoutGall
                                         <div className={style.contPlayIcon}>
                                             {
                                                 e.Thumbnail == null ?
-                                                    <Image width={20} height={24}
+                                                    <Image layout={"fill"}
                                                            src={GlobalConst.sourceImages.youtubeIcon}/>
                                                     :
                                                     <Image width={20} height={20}

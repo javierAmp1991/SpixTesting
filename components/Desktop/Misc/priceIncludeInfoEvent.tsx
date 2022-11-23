@@ -25,7 +25,7 @@ export default function PriceIncludeInfoEvent({item}: { item: PriceIncludeInfoPr
                         </>
                         :
                         <>
-                            ${getMoneyValue(item.MinPrice)} - {getMoneyValue(item.MaxPrice)}
+                            ${getMoneyValue(item.MinPrice)} - ${getMoneyValue(item.MaxPrice)}
                         </>
                 }
             </div>

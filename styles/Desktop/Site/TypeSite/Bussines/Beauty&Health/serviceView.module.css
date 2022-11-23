@@ -141,8 +141,8 @@
 }
 
 .sizeTimeIcon{
-    width: 74px;
-    height: 74px;
+    width: 66px;
+    height: 66px;
     position: absolute;
     top: 6px;
     right: 2px;
@@ -166,8 +166,8 @@
 .colorTime{
     color: white;
     font-weight: 500;
-    line-height: 15px;
-    font-size: 15px;
+    line-height: 14px;
+    font-size: 14px;
     display: block;
     z-index: 100000;
     padding-top: 10px;
