@@ -20,7 +20,7 @@ export default function AnnouncementMobile({styleAnnouncement, announcement}:
     let [controlTrans, setControlTrans] = useState(true)
     const handleRight = () => {
         const firstElement = refCont.current.children[0];
-        refAnnou.current.style.transition = `30000ms linear`;
+        refAnnou.current.style.transition = `60000ms linear`;
         refAnnou.current.style.transform = `translateX(-${refDiv.current.offsetWidth + gap}px)`;
         const transition = () => {
             refAnnou.current.style.transition = `none`;

@@ -28,7 +28,7 @@ export default function Announcement({styleAnnouncement, announcement}:
     const openPopUp = useDisplayPopUpHook(false)
     const handleRight = () => {
         const firstElement = refCont.current.children[0];
-        refAnnou.current.style.transition = `20000ms linear`;
+        refAnnou.current.style.transition = `30000ms linear`;
         refAnnou.current.style.transform = `translateX(-${refDiv.current.offsetWidth + gap}px)`;
         const transition = () => {
             refAnnou.current.style.transition = `none`;
