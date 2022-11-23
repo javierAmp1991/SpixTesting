@@ -36,7 +36,7 @@ export default function InformationImages() {
         TypeSite: TypeSiteEvents.Default,
         SocialButtons: {
             Like: {
-                IsLike: true,
+                IsLike: false,
                 AmountLikes: 500,
             },
             WishList: {

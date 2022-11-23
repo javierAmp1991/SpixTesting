@@ -31,7 +31,7 @@ export default function HeaderBhMobile() {
         TypeSite: TypeSiteBusiness.Restaurant,
         SocialButtons: {
             Like: {
-                IsLike: true,
+                IsLike: false,
                 AmountLikes: 500,
             },
             WishList: {

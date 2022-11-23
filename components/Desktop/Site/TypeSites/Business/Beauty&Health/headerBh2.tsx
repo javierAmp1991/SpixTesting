@@ -11,12 +11,9 @@ import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Busine
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
 import LayoutPresentationCard from "../../Misc/layoutPresentationCard";
 import SideImages from "../../Misc/sideImages";
-import LayoutAnnouncementInfo from "../../Misc/layoutAnnouncementInfo";
-import Announcement from "../../Misc/announcement";
 import {AnnouncementStyle} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
-
 
 export default function HeaderBh2() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
@@ -29,7 +26,7 @@ export default function HeaderBh2() {
         TypeSite: TypeSiteBusiness.BeautyAndHealth,
         SocialButtons: {
             Like: {
-                IsLike: true,
+                IsLike: false,
                 AmountLikes: 500,
             },
             WishList: {

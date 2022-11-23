@@ -19,7 +19,7 @@ export default function InOfferBH() {
         RightArrow: () => listOfferProducts.RightClick()
     }
     return (
-            <LayoutTitle title={"Happy Hour"}>
+            <LayoutTitle title={"Ofertas"}>
                 <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                     {
                         listOfferProducts.InitialItems.map(item =>

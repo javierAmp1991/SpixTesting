@@ -25,7 +25,7 @@ export default function PresentCard2() {
         Contact: info.Contact,
         SocialButtons: {
             Like: {
-                IsLike: true,
+                IsLike: false,
                 AmountLikes: 500,
             },
             WishList: {
