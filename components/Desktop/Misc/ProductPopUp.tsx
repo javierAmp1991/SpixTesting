@@ -14,7 +14,7 @@ const qualifyThisText: string = "¿Como califica este"
 const addText: string = "Agregar al carro"
 const durationTime: string = "Tiempo de duracion: "
 
-export default function ProductPopUp({item}: { item: ProductItem }) {
+export default function ProductPopUp({item}: { item: ProductItem}) {
     const addToCart: CartProviderProps = useContext(AddToCartContext)
     let [amountSelected, setAmountSelected] = useState(1)
     const priceViewProp: PriceViewProp = {
@@ -35,6 +35,9 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
     }
     const handleAmountSelected = (isUp: boolean) => {
         setAmountSelected(isUp ? amountSelected + 1 : amountSelected - 1 < 1 ? 1 : amountSelected - 1)
+    }
+    const handleAdd = ()=>{
+        addToCart.AddItems()
     }
 
     return (
@@ -111,12 +114,11 @@ export default function ProductPopUp({item}: { item: ProductItem }) {
 
                     <PriceView item={priceViewProp}/>
 
-                    <button onClick={() => addToCart.AddItems()} className={style.button}>
+                    <button onClick={handleAdd} className={style.button}>
                         {addText}
                     </button>
                 </div>
             </div>
         </div>
-
     )
 }
