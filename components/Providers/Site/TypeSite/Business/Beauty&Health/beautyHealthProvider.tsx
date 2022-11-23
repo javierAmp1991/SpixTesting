@@ -638,7 +638,7 @@ const headerData: PresentationCard = {
         {
             Id: "idBhGalleryImage001",
             Type: MultimediaItemType.Image,
-            Link: "/images/corte4.jpeg"
+            Link: "/images/corte4.jpg"
         },
         {
             Id: "idBhGalleryImage002",

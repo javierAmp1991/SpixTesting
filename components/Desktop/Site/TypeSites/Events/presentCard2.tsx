@@ -1,4 +1,3 @@
-import style from "/styles/Desktop/Site/TypeSite/Events/presentCard2.module.css";
 import {
     HeaderSiteEventsProp,
     PrincipalInfoEvent,
@@ -9,10 +8,6 @@ import {PrincipalInfoEventContext} from "../../../../Providers/Site/TypeSite/Eve
 import HeaderSiteEvents from "./Misc/headerSiteEvents";
 import SideImages from "../Misc/sideImages";
 import LayoutPresentationCard from "../Misc/layoutPresentationCard";
-import Announcement from "../Misc/announcement";
-import {AnnouncementStyle} from "../../../../../Class/Site/TypeSite/Misc/globalClassSite";
-import LayoutAnnouncementInfo from "../Misc/layoutAnnouncementInfo";
-
 
 export default function PresentCard2() {
     const info: PrincipalInfoEvent = useContext(PrincipalInfoEventContext)
@@ -38,8 +33,6 @@ export default function PresentCard2() {
             }
         },
     }
-    const isAnnouncement: boolean = info.Announcement == null
-    const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
     return (
         <LayoutPresentationCard>
             <HeaderSiteEvents item={headerEvents}/>

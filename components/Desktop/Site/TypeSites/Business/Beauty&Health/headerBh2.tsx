@@ -1,6 +1,3 @@
-import style from "/styles/Desktop/Site/TypeSite/Bussines/Beauty&Health/headerBh2.module.css"
-import utilitiesSites from "/styles/Desktop/Site/TypeSite/Misc/utilitiesSites.module.css";
-import Image from "next/image";
 import {
     HeaderSiteBusinessProp,
     PresentationCard,
@@ -11,9 +8,7 @@ import {HeaderDataBHContext} from "../../../../../Providers/Site/TypeSite/Busine
 import HeaderSiteBussiness from "../Misc/headerSiteBussiness";
 import LayoutPresentationCard from "../../Misc/layoutPresentationCard";
 import SideImages from "../../Misc/sideImages";
-import {AnnouncementStyle} from "../../../../../../Class/Site/TypeSite/Misc/globalClassSite";
 
-const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteBeautyAndHealth
 
 export default function HeaderBh2() {
     const info: PresentationCard = useContext(HeaderDataBHContext)
@@ -38,9 +33,7 @@ export default function HeaderBh2() {
                 AmountSubscribers: 200
             }
         },
-        PaddingBottom: 30
     }
-    const isAnnouncement: boolean = info.Announcement == null
     return (
         <LayoutPresentationCard>
             <HeaderSiteBussiness item={headerBusiness}/>
