@@ -15,7 +15,6 @@
 }
 
 .seeMore {
-    font-size: 16px;
     color: var(--linkColor);
     cursor: pointer;
 }
