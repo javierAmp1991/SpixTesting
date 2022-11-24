@@ -50,7 +50,7 @@ export default function HeaderSiteBussinessMobile({item}: { item: HeaderSiteBusi
                 </div>
 
                 <div>
-                    <span>{directionText}</span>
+                    <span className={utilities.fontSecundaryText}>{directionText}</span>
                     <button onClick={handlePopUp} className={utilities.styleLink}>{item.Venue.Venue}</button>
                 </div>
                 <div className={style.contSocialButton}>

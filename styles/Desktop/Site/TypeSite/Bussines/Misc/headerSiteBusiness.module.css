@@ -51,13 +51,13 @@
 .tagBase {
     padding: 0 12px;
     border-radius: 20px;
+    font-weight: 500;
     overflow: hidden;
     display: grid;
     align-items: center;
     width: max-content;
     height: max-content;
     color: white;
-    font-weight: normal;
 }
 
 .tagRestaurant {

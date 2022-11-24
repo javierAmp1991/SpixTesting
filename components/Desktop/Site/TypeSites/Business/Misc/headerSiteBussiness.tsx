@@ -52,7 +52,7 @@ export default function HeaderSiteBussiness({item}: { item: HeaderSiteBusinessPr
                  </div>
 
                  <div>
-                     <span>{directionText}</span>
+                     <span className={utilities.fontSecundaryText}>{directionText}</span>
                      <button onClick={handleDisplayVenue} className={utilities.styleLink}>{item.Venue.Venue}</button>
                  </div>
 
