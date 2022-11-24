@@ -6,7 +6,7 @@ import {
     SectionProductItem,
     TypeProducts
 } from "../../../../../../Class/Misc/GlobalClass";
-import {FormLink, Product} from "../../../../../../dataDemo/data";
+import {FormLink} from "../../../../../../dataDemo/data";
 import {EventCardType, EventCardWithPrice} from "../../../../../../dataDemo/EventView/eventVerticalView";
 import {
     PresentationCard,
@@ -108,6 +108,7 @@ const listProductsOffer: ProductItem[] = [
         Price: 18990,
         DiscountPercent: null,
         Include: null,
+        Type: TypeProducts.Service,
         ImagePath: "/images/bh2.jpg",
         Rating: 4
     },
@@ -117,6 +118,7 @@ const listProductsOffer: ProductItem[] = [
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 9990,
         DiscountPercent: 30,
+        Type: TypeProducts.Service,
         Include: null,
         ImagePath: "/images/bh4.png",
         Rating: 5
@@ -127,6 +129,7 @@ const listProductsOffer: ProductItem[] = [
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 990,
         DiscountPercent: 40,
+        Type: TypeProducts.Service,
         Include: null,
         ImagePath: "/images/bh1.jpg",
         Rating: 4
@@ -137,6 +140,7 @@ const listProductsOffer: ProductItem[] = [
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 9990,
         DiscountPercent: null,
+        Type: TypeProducts.Service,
         Include: "2 x 1",
         ImagePath: "/images/bh3.jpg",
         Rating: 3
@@ -147,6 +151,7 @@ const listProductsOffer: ProductItem[] = [
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 10990,
         DiscountPercent: 30,
+        Type: TypeProducts.Service,
         Include: null,
         ImagePath: "/images/bh5.png",
         Rating: 0
@@ -157,6 +162,7 @@ const listProductsOffer: ProductItem[] = [
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 10990,
         DiscountPercent: null,
+        Type: TypeProducts.Service,
         Include: null,
         ImagePath: "/images/bh6.png",
         Rating: 5
@@ -174,7 +180,7 @@ const listServices: ProductItem[] = [
         Rating: 4,
         Type: TypeProducts.Service,
         Time: `40`,
-        ExtraImages: ["/images/bh1.jpg","/images/bh2.jpg","/images/bh3.jpg"]
+        ExtraImages: ["/images/bh1.jpg", "/images/bh2.jpg", "/images/bh3.jpg"]
 
     },
     {
@@ -450,6 +456,7 @@ const listOfferProducts: ProductItem[] = [
         Name: "Producto 1.1",
         Price: 18990,
         DiscountPercent: 10,
+        Type: TypeProducts.Service,
         Include: null,
         ImagePath: "/images/product1.jpg",
         Rating: 2
@@ -459,6 +466,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 2.2",
+        Type: TypeProducts.Service,
         Price: 2990,
         DiscountPercent: 25,
         Include: null,
@@ -470,6 +478,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 3.3",
+        Type: TypeProducts.Service,
         Price: 990,
         DiscountPercent: 30,
         Include: null,
@@ -481,6 +490,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 4.4",
+        Type: TypeProducts.Service,
         Price: 9990,
         DiscountPercent: 20,
         Include: null,
@@ -492,6 +502,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 5.5",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 20,
         Include: null,
@@ -503,6 +514,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 6.6",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 30,
         Include: null,
@@ -516,6 +528,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 6.6",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 30,
         Include: null,
@@ -527,6 +540,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 5.5",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 20,
         Include: null,
@@ -538,6 +552,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 4.4",
+        Type: TypeProducts.Service,
         Price: 9990,
         DiscountPercent: 20,
         Include: null,
@@ -549,6 +564,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 3.3",
+        Type: TypeProducts.Service,
         Price: 990,
         DiscountPercent: 30,
         Include: null,
@@ -560,6 +576,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 2.2",
+        Type: TypeProducts.Service,
         Price: 2990,
         DiscountPercent: 25,
         Include: null,
@@ -571,6 +588,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 1.1",
+        Type: TypeProducts.Service,
         Price: 18990,
         DiscountPercent: 10,
         Include: null,
@@ -843,7 +861,7 @@ export default function BeautyHealthProvider({children}) {
     let [recommendedItems, setRecommendedItems] = useState(listInitialRecommended)
     let [offerProducts, setOfferProducts] = useState(listOfferProducts)
     let [services, setServices] = useState(listServices)
-    let[reviews, setReviews] = useState(listReview)
+    let [reviews, setReviews] = useState(listReview)
     const handleRightClickRecomended = () => setRecommendedItems(recommendedItems = listRecomendedAdd)
     const handleLeftClickRecomended = () => setRecommendedItems(recommendedItems = listInitialRecommended)
     const handleRightClickProducts = () => setOfferProducts(offerProducts = listOfferProductsAdd)

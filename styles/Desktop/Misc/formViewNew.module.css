@@ -45,6 +45,5 @@
 
 .text {
     color: var(--colorPrimaryTextDesktop);
-    font-size: 15px;
-    font-weight: 500;
+    font-weight: normal;
 }
