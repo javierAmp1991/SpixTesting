@@ -13,6 +13,7 @@
 
 .seeMore {
     color: var(--linkColor);
+    font-weight: normal;
 }
 
 .writeQuestion {

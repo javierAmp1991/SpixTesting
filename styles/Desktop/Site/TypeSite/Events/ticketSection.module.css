@@ -279,6 +279,8 @@
 
 .seeMap {
     color: var(--linkColor);
+    font-size: 14px;
+    margin-top: 1px;
 }
 
 .sizeGoogleMap {

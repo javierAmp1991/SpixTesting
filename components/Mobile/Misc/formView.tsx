@@ -13,7 +13,7 @@ export default function FormView({item}: { item: FormLink }) {
                 </div>
             </div>
             <div className={style.gridInfoForm}>
-                <div className={`${utilities.fontPrimaryText} ${utilities.clamp2}`}>
+                <div className={`${style.text} ${utilities.clamp2}`}>
                     {item.text}
                 </div>
                 <a className={utilities.styleLink}>Rellenar el formulario</a>

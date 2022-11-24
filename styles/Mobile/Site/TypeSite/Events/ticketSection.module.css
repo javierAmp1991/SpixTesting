@@ -193,11 +193,14 @@
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
     width: max-content;
+    align-items: center;
     margin: auto;
 }
 
 .seeMap {
     color: var(--linkColor);
+    font-size: 14px;
+    margin-top: 1px;
 }
 
 .sizeGoogleMap {
