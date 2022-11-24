@@ -4,7 +4,7 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     --sizeIcon: 24px;
-    gap: 24px;
+    gap: 32px;
 }
 
 .mainDiv {
