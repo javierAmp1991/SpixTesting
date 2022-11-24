@@ -37,7 +37,7 @@ export default function ProductViewHorMobile({item, isDisplayOffer}:
             </div>
 
             <div onClick={handlePopUp} className={style.gridInfoProductHorizontal}>
-                <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                <div className={utilities.clamp1}>
                     {item.Name}
                 </div>
                 {
