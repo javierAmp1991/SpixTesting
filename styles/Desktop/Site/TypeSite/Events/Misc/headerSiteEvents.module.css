@@ -2,7 +2,7 @@
     display: grid;
     gap: 4px;
     padding-bottom: 32px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .gridNameThreePoints {
@@ -50,7 +50,7 @@
 }
 
 .tagBase {
-    padding: 0 12px;
+    padding: 1px 12px;
     border-radius: 20px;
     overflow: hidden;
     width: max-content;

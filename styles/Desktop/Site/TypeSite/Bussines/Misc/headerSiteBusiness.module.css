@@ -1,7 +1,7 @@
 .mainDivInfo {
     display: grid;
     gap: 4px;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .gridNameThreePoints {
@@ -49,7 +49,7 @@
 }
 
 .tagBase {
-    padding: 0 12px;
+    padding: 1px 12px;
     border-radius: 20px;
     font-weight: 500;
     overflow: hidden;

@@ -4,11 +4,6 @@
     gap: 16px;
     padding: 12px 24px;
     height: 100%;
-    /*    background: rgba(211, 97, 255, 0.8);
-        background: rgb(244, 182, 97);
-        background: linear-gradient(45deg, rgb(241, 95, 96) 0%, rgb(244, 182, 97) 100%);
-        background: var(--purpleGradientBackground);
-        background: rgb(241, 95, 96);*/
     color: var(--linkColor);
     background: white;
     border: 1px solid rgba(0, 0, 0, .1);
@@ -44,7 +39,7 @@
 }
 
 .text {
-    color: var(--colorPrimaryTextDesktop);
+    color: black;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
 }

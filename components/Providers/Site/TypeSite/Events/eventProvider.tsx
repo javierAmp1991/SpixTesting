@@ -11,7 +11,7 @@ import {
 import {FormLink, News, Product} from "../../../../../dataDemo/data";
 import {ProviderOfferProducts, ProviderRecommended} from "../../../../../Class/Site/TypeSite/Business/restaurantClass";
 import {EventCardType, EventCardWithPrice} from "../../../../../dataDemo/EventView/eventVerticalView";
-import {ProductItem, QuestionItem, SectionProductItem} from "../../../../../Class/Misc/GlobalClass";
+import {ProductItem, QuestionItem, SectionProductItem, TypeProducts} from "../../../../../Class/Misc/GlobalClass";
 import {GlobalConst} from "../../../../../public/globalConst";
 import {MultimediaItemType} from "../../../../../Class/Layouts/layoutClass";
 
@@ -20,6 +20,7 @@ const listProductsOffer: ProductItem[] = [
         Id: "idProduct01",
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Name: "Producto 1.1",
+        Type: TypeProducts.Service,
         Price: 18990,
         DiscountPercent: null,
         Include: null,
@@ -29,6 +30,7 @@ const listProductsOffer: ProductItem[] = [
     {
         Id: "idProduct02",
         Name: "Producto 2.2",
+        Type: TypeProducts.Service,
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 2990,
         DiscountPercent: 30,
@@ -39,6 +41,7 @@ const listProductsOffer: ProductItem[] = [
     {
         Id: "idProduct03",
         Name: "Producto 3.3",
+        Type: TypeProducts.Service,
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 990,
         DiscountPercent: 40,
@@ -49,6 +52,7 @@ const listProductsOffer: ProductItem[] = [
     {
         Id: "idProduct04",
         Name: "Producto 4.4",
+        Type: TypeProducts.Service,
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 9990,
         DiscountPercent: null,
@@ -59,6 +63,7 @@ const listProductsOffer: ProductItem[] = [
     {
         Id: "idProduct05",
         Name: "Producto 5.5",
+        Type: TypeProducts.Service,
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 10990,
         DiscountPercent: 30,
@@ -69,6 +74,7 @@ const listProductsOffer: ProductItem[] = [
     {
         Id: "idProduct06",
         Name: "Producto 6.6",
+        Type: TypeProducts.Service,
         Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 10990,
         DiscountPercent: null,
@@ -1338,6 +1344,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 1.1",
+        Type: TypeProducts.Service,
         Price: 18990,
         DiscountPercent: 10,
         Include: null,
@@ -1349,6 +1356,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 2.2",
+        Type: TypeProducts.Service,
         Price: 2990,
         DiscountPercent: 25,
         Include: null,
@@ -1360,6 +1368,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 3.3",
+        Type: TypeProducts.Service,
         Price: 990,
         DiscountPercent: 30,
         Include: null,
@@ -1371,6 +1380,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 4.4",
+        Type: TypeProducts.Service,
         Price: 9990,
         DiscountPercent: 20,
         Include: null,
@@ -1382,6 +1392,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 5.5",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 20,
         Include: null,
@@ -1393,6 +1404,7 @@ const listOfferProducts: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 6.6",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 30,
         Include: null,
@@ -1406,6 +1418,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 6.6",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 30,
         Include: null,
@@ -1417,6 +1430,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 5.5",
+        Type: TypeProducts.Service,
         Price: 10990,
         DiscountPercent: 20,
         Include: null,
@@ -1428,6 +1442,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 4.4",
+        Type: TypeProducts.Service,
         Price: 9990,
         DiscountPercent: 20,
         Include: null,
@@ -1439,6 +1454,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 3.3",
+        Type: TypeProducts.Service,
         Price: 990,
         DiscountPercent: 30,
         Include: null,
@@ -1450,6 +1466,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 2.2",
+        Type: TypeProducts.Service,
         Price: 2990,
         DiscountPercent: 25,
         Include: null,
@@ -1461,6 +1478,7 @@ const listOfferProductsAdd: ProductItem[] = [
         Time: null,
         Description: "lorem",
         Name: "Producto 1.1",
+        Type: TypeProducts.Service,
         Price: 18990,
         DiscountPercent: 10,
         Include: null,
