@@ -38,7 +38,7 @@ export default function ProductViewHor({item, isDisplayOffer}:
             </button>
 
             <button onClick={() => displayPopUpProduct.HandleToggle()} className={style.gridInfoProductHorizontal}>
-                <div className={`${utilities.fontPrimaryText} ${utilities.clamp1}`}>
+                <div className={utilities.clamp1}>
                     {item.Name}
                 </div>
                 {

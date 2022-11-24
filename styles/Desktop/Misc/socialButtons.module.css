@@ -4,7 +4,7 @@
     grid-auto-flow: column;
     grid-auto-columns: max-content;
     font-size: 14px;
-    gap: 24px;
+    gap: 32px;
     --sizeIcon: 24px;
 }
 
