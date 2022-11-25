@@ -91,7 +91,14 @@ export class PriceViewProp {
     DiscountPercent?: number
     IsBeforeText?: boolean
     TypeGrid?: boolean
-    PaddingTop? : number
+    PaddingTop?: number
     PaddingBottom?: number
-    JustifyContent? : string
+    JustifyContent?: string
+}
+
+export class AmountCounterProp {
+    IdTarget: string
+    InitialAmount: number
+    MaxAmount: number
+    GetActualAmount: Function
 }

@@ -1,0 +1,21 @@
+.mainDiv {
+    border-radius: 8px;
+    overflow: scroll;
+    padding: 4px;
+}
+
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+}
+
+.seeMore{
+    color: var(--linkColor);
+}
+
+.gridRecommended{
+    display: grid;
+    margin-top: 16px;
+    gap: 16px;
+    height: max-content;
+}

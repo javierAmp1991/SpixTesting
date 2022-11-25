@@ -1,0 +1,48 @@
+.mainDiv {
+    display: grid;
+    align-content: start;
+    gap: 4px;
+    padding: 20px 16px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+}
+
+.title {
+    font-size: 18px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding-bottom: 10px;
+}
+
+.subtotal {
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+.return {
+    color: var(--linkColor);
+    text-align: left;
+    cursor: pointer;
+}
+
+.guestNumber {
+    color: var(--colorSecundaryTextDesktop);
+}
+
+.buttonBase {
+    width: 100%;
+    text-align: center;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 4px 0;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.button {
+    background: var(--gradientBlueButton);
+}
+
+.buttonEmpty {
+    background: rgba(0, 0, 0, .1);
+}

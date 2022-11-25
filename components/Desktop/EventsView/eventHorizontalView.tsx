@@ -1,5 +1,5 @@
 import utilities from "/styles/utilities.module.css"
-import style from "/styles/Mobile/Events/eventHorizontalView.module.css"
+import style from "/styles/Desktop/Events/eventHorizontalView.module.css"
 import {GlobalConst} from "../../../public/globalConst";
 import Image from "next/image";
 import React from "react";
@@ -15,16 +15,14 @@ import {
     EventCardWithOffer,
     EventCardWithPrice
 } from "../../../dataDemo/EventView/eventVerticalView";
-import PrincipalInfoEventMobile, {PrincipalInfoEventPropMob} from "../Misc/principalInfoEventMobile";
-import PriceIncludeInfoEventMobile, {PriceIncludeInfoPropMobile} from "../Misc/priceIncludeInfoEventMobile";
-import DateInfoEventMobile, {DateInfoPropMobile} from "../Misc/dateInfoEventMobile";
-import DateInfoEvent from "../../Desktop/Misc/dateInfoEvent";
+import DateInfoEvent, {DateInfoProp} from "../../Desktop/Misc/dateInfoEvent";
+import PriceIncludeInfoEvent, {PriceIncludeInfoProp} from "../Misc/priceIncludeInfoEvent";
+import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoEvent";
 
 const totalResaleText = "Total reventas: "
 
-export default function EventHorizontalView({item, darkModeState}:
-                                                { item: BaseEventCard, darkModeState: boolean }) {
-    let cssStyles = getCssStyles()
+export default function EventHorizontalViewDesktop({item}: { item: BaseEventCard }) {
+    //region getData
     let itemFull: EventCardFull;
     let itemWithPrice: EventCardWithPrice;
     let itemWithDate: EventCardWithDate;
@@ -33,38 +31,38 @@ export default function EventHorizontalView({item, darkModeState}:
     let itemMyCollection: EventCArdMyCollection
     let itemWishList: EventCardWishList
 
-    let priceIncludeInfoFull: PriceIncludeInfoPropMobile
-    let dateInfoFull: DateInfoPropMobile
-    let priceIncludeInfo: PriceIncludeInfoPropMobile;
-    let dateInfo: DateInfoPropMobile;
-    let priceIncludeWishList: PriceIncludeInfoPropMobile
-    let priceIncludeMyCollection: PriceIncludeInfoPropMobile
+    let priceIncludeInfoFull: PriceIncludeInfoProp
+    let dateInfoFull: DateInfoProp
+    let priceIncludeInfo: PriceIncludeInfoProp
+    let dateInfo: DateInfoProp
+    let priceIncludeWishList: PriceIncludeInfoProp
+    let priceIncludeMyCollection: PriceIncludeInfoProp
 
     if (item.Type == EventCardType.EventCardFull) {
         itemFull = item as EventCardFull
         priceIncludeInfoFull = {
             MinPrice: itemFull.MinPrice,
             MaxPrice: itemFull.MaxPrice,
-            IsDarkMode: darkModeState
+            IsDarkMode: false
         }
         dateInfoFull = {
             MinDate: itemFull.MinDate,
             MaxDate: itemFull.MaxDate,
-            IsDarkMode: darkModeState
+            IsDarkMode: false
         }
     } else if (item.Type == EventCardType.EventCardWithPrice) {
         itemWithPrice = item as EventCardWithPrice
         priceIncludeInfo = {
             MaxPrice: itemWithPrice.MaxPrice,
             MinPrice: itemWithPrice.MinPrice,
-            IsDarkMode: darkModeState
+            IsDarkMode: false
         }
     } else if (item.Type == EventCardType.EventCardWithDate) {
         itemWithDate = item as EventCardWithDate
         dateInfo = {
             MinDate: itemWithDate.MinDate,
             MaxDate: itemWithDate.MaxDate,
-            IsDarkMode: darkModeState
+            IsDarkMode: false
         }
     } else if (item.Type == EventCardType.EventCardWithOffer) {
         itemWithOffer = item as EventCardWithOffer
@@ -86,17 +84,17 @@ export default function EventHorizontalView({item, darkModeState}:
         itemWithResale = item as EventCardResale
     }
 
-    const principalInfoEventProp: PrincipalInfoEventPropMob = {
+    const principalInfoEventProp: PrincipalInfoEventProp = {
         Title: item.Title,
         Subtitle: item.Subtitle,
         Rating: item.Rating,
         isDarkMode: false
     }
+    //endregion
 
     return (
         <div className={`${style.principalGridHorizontal}`}>
-            <Link
-                href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
+            <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
                         item.Type == EventCardType.EventCardWishList &&
@@ -123,14 +121,14 @@ export default function EventHorizontalView({item, darkModeState}:
                 </a>
             </Link>
 
-            <div className={`${cssStyles.bgInfo} ${style.gridInfo}`}>
+            <div className={style.gridInfo}>
                 <div className={style.TopDivInfo}>
-                    <PrincipalInfoEventMobile item={principalInfoEventProp}/>
+                    <PrincipalInfoEvent item={principalInfoEventProp}/>
                     {
                         item.Type == EventCardType.EventCardFull &&
                         <>
-                            <DateInfoEventMobile item={dateInfoFull}/>
-                            <PriceIncludeInfoEventMobile item={priceIncludeInfoFull}/>
+                            <DateInfoEvent item={dateInfoFull}/>
+                            <PriceIncludeInfoEvent item={priceIncludeInfoFull}/>
                         </>
                     }
 
@@ -141,17 +139,17 @@ export default function EventHorizontalView({item, darkModeState}:
 
                     {
                         item.Type == EventCardType.EventCardWishList &&
-                        <PriceIncludeInfoEventMobile item={priceIncludeWishList}/>
+                        <PriceIncludeInfoEvent item={priceIncludeWishList}/>
                     }
 
                     {
                         item.Type == EventCardType.EventCardMyCollection &&
-                        <PriceIncludeInfoEventMobile item={priceIncludeMyCollection}/>
+                        <PriceIncludeInfoEvent item={priceIncludeMyCollection}/>
                     }
 
                     {
                         item.Type == EventCardType.EventCardWithPrice &&
-                        <PriceIncludeInfoEventMobile item={priceIncludeInfo}/>
+                        <PriceIncludeInfoEvent item={priceIncludeInfo}/>
                     }
 
                     {
@@ -181,15 +179,4 @@ export default function EventHorizontalView({item, darkModeState}:
             </div>
         </div>
     )
-
-    function getCssStyles() {
-        return {
-
-            borderCard: darkModeState ? utilities.borderCardsDarkMode : utilities.borderCards,
-            bgInfo: darkModeState ? utilities.bgDarkModeInfo : utilities.bgNormalInfo,
-            fontTitle: darkModeState ? utilities.fontSubTitleDarkMode : utilities.fontSubTitle,
-            fontSecundaryText: darkModeState ? utilities.fontPrimaryTextDarkMode : utilities.fontPrimaryText,
-            fontPriceInclude: darkModeState ? utilities.fontPriceIncludeDarkMode : utilities.fontPriceInclude
-        }
-    }
 }

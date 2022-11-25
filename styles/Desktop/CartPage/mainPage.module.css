@@ -1,7 +1,7 @@
 .mainGrid {
     display: grid;
     grid-template-columns: 1fr max-content;
-    gap: 32px;
+    gap: 40px;
     width: var(--maxWidthBodyContent);
     margin: 40px auto;
 }

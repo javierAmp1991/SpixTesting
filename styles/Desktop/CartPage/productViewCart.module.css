@@ -1,0 +1,33 @@
+.mainGrid {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.gridInfo{
+    display: grid;
+    gap: 4px;
+}
+
+.sizeImage {
+    width: 100px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.description {
+    color: var(--colorPrimaryTextDesktop);
+    width: 90%;
+}
+
+.delete{
+    font-weight: 500;
+    text-align: left;
+    width: max-content;
+    color: var(--colorPrimaryTextDesktop);
+}

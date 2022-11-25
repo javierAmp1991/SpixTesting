@@ -1,14 +1,14 @@
 import style from "/styles/Desktop/CartPage/sideCardLayout.module.css"
+import ResumeCart from "./resumeCart";
+import RecommendedCartPage from "./recommendedCartPage";
+import GuestList from "./guestList";
 
 export default function SideCardLayout() {
     return (
         <div className={style.mainDiv}>
-            <div className={style.up}>
-                Total
-            </div>
-            <div className={style.down}>
-                spix te recomienda
-            </div>
+            <ResumeCart/>
+            <GuestList/>
+            <RecommendedCartPage/>
         </div>
     )
 }

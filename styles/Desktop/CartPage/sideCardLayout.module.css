@@ -1,19 +1,15 @@
 .mainDiv {
     display: grid;
-    grid-template-rows: max-content 1fr;
+    grid-template-rows: max-content max-content 1fr;
     gap: 16px;
-    height: 80vh;
+    height: 90vh;
     position: sticky;
     top: 40px;
     width: 300px;
 }
 
-.up {
-    width: 100%;
-    border: 1px solid red;
-}
-
-.down {
-    width: 100%;
-    border: 1px solid blue;
+.title {
+    font-size: 18px;
+    border-bottom: 1px solid var(--separationLineColor);
+    padding-bottom: 10px;
 }

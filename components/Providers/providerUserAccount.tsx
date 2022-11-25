@@ -1988,7 +1988,6 @@ export default function ProviderUserAccount({children}) {
         DeselectItems: handleDeselectDate
 
     }
-
     const handleSortByPrice = (orderBy: boolean) => {
         if (orderBy) {
             let newListMyShopping = listMyShoppingItem.sort((a, b) => {

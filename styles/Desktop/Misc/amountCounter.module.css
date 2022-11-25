@@ -1,0 +1,25 @@
+.mainDiv {
+    grid-template-columns: repeat(3, max-content);
+    display: grid;
+    box-shadow: 0 0 2px rgba(0,0,0,.4);
+    overflow: hidden;
+    width: max-content;
+}
+
+.moreLess {
+    padding: 4px 12px;
+    background: rgb(214, 214, 213);
+    background: linear-gradient(360deg, rgba(214, 214, 213, 1) 0%, rgba(245, 245, 245, 1) 100%);
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 18px;
+    display: grid;
+    align-items: center;
+}
+
+.amount {
+    color: var(--linkColor);
+    font-weight: normal;
+    padding: 0 12px;
+    margin-top: 3px;
+}
