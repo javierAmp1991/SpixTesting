@@ -44,6 +44,7 @@
 }
 
 .amountProduct {
+    color: var(--colorSecundaryTextDesktop);
     font-weight: 500;
 }
 
