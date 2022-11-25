@@ -3,6 +3,11 @@
     align-content: start;
     gap: 4px;
     padding: 16px;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100000000;
+    border-bottom: 2px solid var(--separationLineColor);
 }
 
 .title {

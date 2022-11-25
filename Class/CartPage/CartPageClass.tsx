@@ -32,4 +32,6 @@ export class ProviderCartPage {
     SortByAMount: Function
     SortByBelongTo: Function
     TypeSite: TypeSite
+    TextButton: string
+    LinkSite: string
 }

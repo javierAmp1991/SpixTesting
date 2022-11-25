@@ -2,11 +2,13 @@ import style from "/styles/Mobile/CartPage/resumeCart.module.css"
 import {ProviderCartPage} from "../../../Class/CartPage/CartPageClass";
 import {useContext} from "react";
 import {ProductsCartContext} from "../../Providers/CartPage/CartPageProvider";
+import Link from "next/link";
 
 const title: string = "Resumen de la compra"
 const subTotalText: string = "Subtotal: "
 const youAndText: string = "Tú y "
 const guestMore: string = "Invitados mas"
+const goToSite: string = "Volver al sitio"
 
 export default function ResumeCartMobile() {
     const cartProvider: ProviderCartPage = useContext(ProductsCartContext)
@@ -29,11 +31,13 @@ export default function ResumeCartMobile() {
                 </div>
             }
             <button className={`${isEmpty ? style.buttonEmpty : style.button} ${style.buttonBase}`}>
-                Reservar Mesa
+                {cartProvider.TextButton}
             </button>
-            <button className={style.return}>
-                Volver al Sitio
-            </button>
+            <Link href={cartProvider.LinkSite}>
+                <a className={style.return}>
+                    {goToSite}
+                </a>
+            </Link>
         </div>
     )
 

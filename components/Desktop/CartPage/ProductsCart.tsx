@@ -5,11 +5,12 @@ import {useContext, useEffect, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import ProductRow from "./productRow";
 import {ProductsCartContext, RecommendedCartContext} from "../../Providers/CartPage/CartPageProvider";
-import {ProviderCartPage} from "../../../Class/CartPage/CartPageClass";
+import {ProviderCartPage, TypeSite} from "../../../Class/CartPage/CartPageClass";
 import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 import {BaseEventCard} from "../../../dataDemo/EventView/eventVerticalView";
 import EventVerticalView from "../EventsView/eventVerticalView";
 import utilities from "/styles/utilities.module.css";
+import Link from "next/link";
 
 const title: string = "Mi carrito"
 const addInv: string = "Agregar invitados"
@@ -25,6 +26,7 @@ const addGuestPopUp: string = "Agregar Invitado"
 const titlePopUp: string = "Datos del invitado"
 const noProductsCart: string = "No hay productos en tu carrito"
 const stringEmpty: string = ""
+const goToSite: string = "Volver al sitio"
 
 export default function ProductsCart() {
     const cartProvider: ProviderCartPage = useContext(ProductsCartContext)
@@ -116,9 +118,16 @@ export default function ProductsCart() {
 
             {
                 isEmpty ?
-                    <div className={style.noProducts}>
-                        {noProductsCart}
-                    </div>
+                    <>
+                        <div className={style.noProducts}>
+                            {noProductsCart}
+                        </div>
+                        <Link href={cartProvider.LinkSite}>
+                            <a className={style.return}>
+                                {goToSite}
+                            </a>
+                        </Link>
+                    </>
                     :
                     <div className={style.gridProducts}>
                         {cartProvider.Products.map(item => <ProductRow key={item.Id} item={item}/>)}
@@ -143,7 +152,6 @@ export default function ProductsCart() {
                             ver mas
                         </div>
                     </div>
-
                     <div className={style.gridRecommended}>
                         {
                             recommended.map(item =>

@@ -9,7 +9,7 @@ export default function MainPageCartPageMob() {
     return (
         <div className={style.mainDiv}>
             <ResumeCartMobile/>
-            <div className={utilities.separationLine}/>
+            {/*<div className={utilities.separationLine}/>*/}
             <ProductsCartMobile/>
             <div className={utilities.separationLine}/>
             <RecommendedCartPageMobile/>

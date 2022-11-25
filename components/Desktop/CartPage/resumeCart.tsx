@@ -8,12 +8,6 @@ const title: string = "Resumen de la compra"
 const subTotalText: string = "Subtotal: "
 const youAndText: string = "Tú y "
 const guestMore: string = "Invitados mas"
-const reserveTable: string = "Reserva tu mesa"
-const reserveHour: string = "Reserva tu hora"
-const buyTicket: string = "Comprar entrada"
-const restaurantSite: string = "/RestaurantSite"
-const servicetSite: string = "/ServiceSite"
-const eventSite: string = "/EventSite"
 const goToSite: string = "Volver al sitio"
 
 export default function ResumeCart() {
@@ -37,9 +31,9 @@ export default function ResumeCart() {
                 </div>
             }
             <button className={`${isEmpty ? style.buttonEmpty : style.button} ${style.buttonBase}`}>
-                {getButtonText()}
+                {cartProvider.TextButton}
             </button>
-            <Link href={getLinkSite()}>
+            <Link href={cartProvider.LinkSite}>
                 <a className={style.return}>
                     {goToSite}
                 </a>
@@ -49,17 +43,5 @@ export default function ResumeCart() {
 
     function getMoneyValue(num: number): string {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))
-    }
-
-    function getButtonText() {
-        if (cartProvider.TypeSite == TypeSite.Service) return reserveTable
-        else if (cartProvider.TypeSite == TypeSite.Restaurant) return reserveHour
-        if (cartProvider.TypeSite == TypeSite.Event) return buyTicket
-    }
-
-    function getLinkSite() {
-        if (cartProvider.TypeSite == TypeSite.Service) return servicetSite
-        else if (cartProvider.TypeSite == TypeSite.Restaurant) return restaurantSite
-        if (cartProvider.TypeSite == TypeSite.Event) return eventSite
     }
 }

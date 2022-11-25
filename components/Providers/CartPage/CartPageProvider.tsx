@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useState} from "react";
 import {BelongToGuest, ProductCartPage, ProviderCartPage, TypeSite} from "../../../Class/CartPage/CartPageClass";
 import {ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 import {EventCardType, EventCardWithPrice} from "../../../dataDemo/EventView/eventVerticalView";
@@ -6,6 +6,12 @@ import {EventCardType, EventCardWithPrice} from "../../../dataDemo/EventView/eve
 export const ProductsCartContext = createContext(null)
 export const RecommendedCartContext = createContext(null)
 const defaultBelongTo: BelongToGuest = {Id: `idBelongToGuestDefault`, Name: "Para mi"}
+const restaurantSite: string = "/RestaurantSite"
+const servicetSite: string = "/ServiceSite"
+const eventSite: string = "/EventSite"
+const reserveTable: string = "Reserva tu mesa"
+const reserveHour: string = "Reserva tu hora"
+const buyTicket: string = "Comprar entrada"
 const listRecommended: EventCardWithPrice[] = [
     {
         Id: "123456",
@@ -218,7 +224,6 @@ const listProductsOffer: ProductItem[] = [
         Rating: 5
     }
 ]
-
 function getProducts(): ProductCartPage[] {
     let maxAmount: number = 2
     let belongTo: number = 1
@@ -239,6 +244,7 @@ function getProducts(): ProductCartPage[] {
     })
     return newList
 }
+const typeSite: TypeSite = TypeSite.Service
 
 export default function CartPageProvider({children}) {
     let [listProducts, setListProducts] = useState(getProducts())
@@ -353,7 +359,9 @@ export default function CartPageProvider({children}) {
         SortByName: handleSortByName,
         SortByPrice: handleSortByPrice,
         SortByBelongTo: handleSortByBelongTo,
-        TypeSite: TypeSite.Service
+        TypeSite: typeSite,
+        TextButton: getButtonText(),
+        LinkSite: getLinkSite()
     }
 
     return (
@@ -363,12 +371,21 @@ export default function CartPageProvider({children}) {
             </RecommendedCartContext.Provider>
         </ProductsCartContext.Provider>
     )
-
     function getTotal(): number {
         let total: number = 0
         listProducts.forEach(item => {
             total += item.Amount * item.Product.Price
         })
         return total
+    }
+    function getLinkSite() {
+        if (typeSite == TypeSite.Service) return servicetSite
+        else if (typeSite == TypeSite.Restaurant) return restaurantSite
+        if (typeSite == TypeSite.Event) return eventSite
+    }
+    function getButtonText() {
+        if (typeSite == TypeSite.Service) return reserveHour
+        else if (typeSite == TypeSite.Restaurant) return reserveTable
+        if (typeSite == TypeSite.Event) return buyTicket
     }
 }
