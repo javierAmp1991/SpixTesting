@@ -4,13 +4,11 @@ import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useEffect, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import ProductRow from "./productRow";
-import {ProductsCartContext, RecommendedCartContext} from "../../Providers/CartPage/CartPageProvider";
-import {ProviderCartPage, TypeSite} from "../../../Class/CartPage/CartPageClass";
+import {ProductsCartContext} from "../../Providers/CartPage/CartPageProvider";
+import {ProviderCartPage} from "../../../Class/CartPage/CartPageClass";
 import PopUpContainerLogo from "../Misc/popUpContainerLogo";
-import {BaseEventCard} from "../../../dataDemo/EventView/eventVerticalView";
-import EventVerticalView from "../EventsView/eventVerticalView";
-import utilities from "/styles/utilities.module.css";
 import Link from "next/link";
+import CarrouselRecommended from "./carrouselRecommended";
 
 const title: string = "Mi carrito"
 const addInv: string = "Agregar invitados"
@@ -30,7 +28,6 @@ const goToSite: string = "Volver al sitio"
 
 export default function ProductsCart() {
     const cartProvider: ProviderCartPage = useContext(ProductsCartContext)
-    const recommended: BaseEventCard[] = useContext(RecommendedCartContext)
     const isGuest: boolean = cartProvider.ListGuest.length > 1
     const isEmpty: boolean = cartProvider.Products.length == 0
     const popUpGuestHook = useDisplayPopUpHook(false)
@@ -143,23 +140,7 @@ export default function ProductsCart() {
 
             {
                 isEmpty &&
-                <>
-                    <div className={style.divRecommended}>
-                        <div className={style.title}>
-                            Spix te recomienda
-                        </div>
-                        <div className={utilities.styleLink}>
-                            ver mas
-                        </div>
-                    </div>
-                    <div className={style.gridRecommended}>
-                        {
-                            recommended.map(item =>
-                                <EventVerticalView key={item.Id} item={item} darkModeState={false}/>
-                            )
-                        }
-                    </div>
-                </>
+               <CarrouselRecommended/>
             }
 
             {

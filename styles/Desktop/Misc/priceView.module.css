@@ -20,6 +20,10 @@
     gap: var(--gapPrices);
 }
 
+.justifyPrice{
+    justify-content: center;
+}
+
 .beforePriceGrid {
     display: grid;
     grid-template-columns: max-content;

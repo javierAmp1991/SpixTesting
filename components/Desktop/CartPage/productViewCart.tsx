@@ -17,7 +17,7 @@ export default function ProductViewCart({item, deleteItem}: { item: ProductItem,
                 <div className={style.name}>
                     {item.Name}
                 </div>
-                <div className={`${style.description} ${utilities.clamp2}`}>
+                <div className={`${style.description} ${utilities.clamp3}`}>
                     {item.Description}
                 </div>
                 <button type={"button"} onClick={handleDeleteProduct} className={style.delete}>

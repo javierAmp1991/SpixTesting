@@ -18,6 +18,7 @@ const emailTextPopUp: string = "Ingrese el email del invitado/a"
 const placeholderEmailTextPopUp: string = "Correo"
 const addGuestPopUp: string = "Agregar Invitado"
 const titlePopUp: string = "Datos del invitado"
+const noProducts: string = "No hay productos es su carrito"
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function HeaderCartPageMobile() {
@@ -54,12 +55,15 @@ export default function HeaderCartPageMobile() {
         <div className={style.gridTitleAdd}>
             <div className={style.gridTitle}>
                 <div className={style.title}>{title}</div>
-                {
-                    !isEmpty &&
-                    <div className={style.amountProduct}>({cartProvider.Products.length}{productsText})</div>
 
-                }
-
+                <div className={style.amountProduct}>
+                    {
+                        isEmpty ?
+                            noProducts
+                            :
+                            <span>({cartProvider.Products.length}{productsText})</span>
+                    }
+                </div>
             </div>
             {
                 !isEmpty &&

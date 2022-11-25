@@ -21,6 +21,8 @@ export default function ProductRow({item}: { item?: ProductCartPage }) {
         Price: (item.Product.Price * item.Amount),
         DiscountPercent: item.Product.DiscountPercent,
         SizePrice: 24,
+        IsDiscountUp: false,
+        JustifyPrice: true
     }
     const handleChangeGuest = (e) => {
         cartProvider.ListGuest.forEach(item2 => {

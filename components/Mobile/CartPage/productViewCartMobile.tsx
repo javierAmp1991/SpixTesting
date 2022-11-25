@@ -26,13 +26,10 @@ export default function ProductViewCartMobile({item, deleteItem, price}:
                 <div className={style.name}>
                     {item.Name}
                 </div>
-                <div className={`${style.description} ${utilities.clamp2}`}>
+                <div className={`${style.description} ${utilities.clamp3}`}>
                     {item.Description}
                 </div>
                 <PriceView item={price}/>
-              {/* <button type={"button"} onClick={handleDeleteProduct} className={style.delete}>
-                    {deleteItemText}
-                </button>*/}
             </div>
         </div>
     )

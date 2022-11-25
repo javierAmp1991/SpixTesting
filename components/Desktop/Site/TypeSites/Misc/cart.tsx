@@ -4,11 +4,13 @@ import style from "/styles/Desktop/Site/TypeSite/Misc/cart.module.css"
 import {CartProviderProps} from "../../../../../Class/Global/global";
 import {useContext} from "react";
 import {AddToCartContext} from "../../../../Providers/cartProvider";
+import Link from "next/link";
 
 export class CartProps {
     NumberItems: number
     IdToGo: string
 }
+
 export default function Cart({item}: { item: CartProps }) {
     const addToCart: CartProviderProps = useContext(AddToCartContext)
     const handleTagSelected = () => {
@@ -19,13 +21,15 @@ export default function Cart({item}: { item: CartProps }) {
     }
 
     return (
-        <button onClick={handleTagSelected} className={style.mainDiv}>
-            <div className={style.positionItem}>
-                {addToCart.NumberItems}
-            </div>
-            <div className={style.sizeCart}>
-                <Image priority={true} layout={"fill"} src={GlobalConst.sourceImages.cartIcon} alt={""}/>
-            </div>
-        </button>
+        <Link href={"/CartPage"}>
+            <a onClick={handleTagSelected} className={style.mainDiv}>
+                <div className={style.positionItem}>
+                    {addToCart.NumberItems}
+                </div>
+                <div className={style.sizeCart}>
+                    <Image priority={true} layout={"fill"} src={GlobalConst.sourceImages.cartIcon} alt={""}/>
+                </div>
+            </a>
+        </Link>
     )
 }

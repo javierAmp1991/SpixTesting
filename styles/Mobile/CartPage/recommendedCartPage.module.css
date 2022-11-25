@@ -1,6 +1,7 @@
 .mainDiv {
     overflow: scroll;
-    padding: 0 16px 16px 16px;
+    padding: 16px 16px 120px 16px;
+    border-top: 2px solid var(--separationLineColor);
 }
 
 .title {

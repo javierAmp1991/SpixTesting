@@ -174,3 +174,7 @@
     color: var(--linkColor);
     padding-top: 4px;
 }
+
+.mainDivCarrouselReco{
+ padding: 0 4px;
+}

@@ -16,12 +16,12 @@ export default function PriceView({item}: { item: PriceViewProp }) {
     return (
         <div style={{paddingTop: cssStyle.PaddingTop, paddingBottom: cssStyle.PaddingBottom, justifyContent: cssStyle.JustifyContent }}
             className={`${cssStyle.grid} ${style.mainDiv}`}>
-            <div className={style.gridPriceIcon}>
+            <div className={`${style.gridPriceIcon} ${cssStyle.JustifyPrice}`}>
                 <div className={style.price} style={{fontSize: cssStyle.fontSize}}>
                     ${getMoneyValue(item.Price)}
                 </div>
                 {
-                    (item.DiscountPercent != null && item.IsDiscontUp != null) &&
+                    (item.DiscountPercent != null && item.IsDiscountUp == null) &&
                     <div className={style.discountBox}>
                         <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
                         <div className={style.discountStyle}>
@@ -39,7 +39,7 @@ export default function PriceView({item}: { item: PriceViewProp }) {
                         <div>{beforeText}</div>
                     }
                     {
-                        (item.DiscountPercent != null && item.IsDiscontUp == null) &&
+                        (item.IsDiscountUp != null) &&
                         <div className={style.discountBox}>
                             <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
                             <div className={style.discountStyle}>
@@ -61,7 +61,8 @@ export default function PriceView({item}: { item: PriceViewProp }) {
             grid: item.TypeGrid != null && style.gridMainPrice,
             PaddingTop: item.PaddingTop == null? defaultStyle.PaddingTop : item.PaddingTop,
             PaddingBottom: item.PaddingBottom == null? defaultStyle.PaddingBottom : item.PaddingBottom,
-            JustifyContent: item.JustifyContent != null && item.JustifyContent
+            JustifyContent: item.JustifyContent != null && item.JustifyContent,
+            JustifyPrice: item.JustifyPrice != null && style.justifyPrice
         }
     }
     function getMoneyValue(num: number): string {
