@@ -21,7 +21,7 @@ export default function PriceView({item}: { item: PriceViewProp }) {
                     ${getMoneyValue(item.Price)}
                 </div>
                 {
-                    item.DiscountPercent != null &&
+                    (item.DiscountPercent != null && item.IsDiscontUp != null) &&
                     <div className={style.discountBox}>
                         <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
                         <div className={style.discountStyle}>
@@ -37,6 +37,15 @@ export default function PriceView({item}: { item: PriceViewProp }) {
                     {
                         item.IsBeforeText &&
                         <div>{beforeText}</div>
+                    }
+                    {
+                        (item.DiscountPercent != null && item.IsDiscontUp == null) &&
+                        <div className={style.discountBox}>
+                            <Image width={12} height={8} src={GlobalConst.sourceImages.dollarUp} alt={""}/>
+                            <div className={style.discountStyle}>
+                                {item.DiscountPercent}%
+                            </div>
+                        </div>
                     }
                     <div className={style.beforePrice}>
                         ${getMoneyValue((item.Price * item.DiscountPercent / 100) + item.Price)}

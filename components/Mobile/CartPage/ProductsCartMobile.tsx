@@ -69,21 +69,27 @@ export default function ProductsCartMobile() {
                     {
                         !isEmpty &&
                         <div className={style.amountProduct}>({cartProvider.Products.length}{productsText})</div>
+
                     }
+
                 </div>
                 {
                     !isEmpty &&
-                    <button onClick={handlePopUpGuest} type={"button"} className={style.gridAddIcon}>
-                        {addInv}
-                        <div className={style.sizeAddImage}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                        </div>
-                    </button>
+                        <button onClick={handlePopUpGuest} type={"button"} className={style.gridAddIcon}>
+                            {addInv}
+                            <div className={style.sizeAddImage}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
+                            </div>
+                        </button>
+                       /* <button type={"button"} className={style.engineICon}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
+                        </button>*/
+
                 }
             </div>
 
             {
-                isGuest &&
+                (isGuest && !isEmpty) &&
                 <GuestListMobile/>
             }
 
@@ -131,10 +137,10 @@ export default function ProductsCartMobile() {
             }
 
             {
-                /*!isEmpty &&
+                !isEmpty &&
                 <div className={style.totalText}>
                     {subTotalText}${getMoneyValue(cartProvider.Subtotal)}
-                </div>*/
+                </div>
             }
 
             {

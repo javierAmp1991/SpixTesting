@@ -1,13 +1,22 @@
 import style from "/styles/Mobile/CartPage/productViewCart.module.css"
 import utilities from "/styles/utilities.module.css";
 import Image from "next/image";
-import {ProductItem} from "../../../Class/Misc/GlobalClass";
+import {PriceViewProp, ProductItem} from "../../../Class/Misc/GlobalClass";
+import PriceView from "../../Desktop/Misc/priceView";
 
 const deleteItemText: string = "Eliminar"
 
-export default function ProductViewCartMobile({item, deleteItem}: { item: ProductItem, deleteItem: Function }) {
+export default function ProductViewCartMobile({item, deleteItem, price}:
+{ item: ProductItem, deleteItem: Function, price: PriceViewProp }) {
 
     const handleDeleteProduct = () => deleteItem()
+    const priceView: PriceViewProp = {
+        Price: 9999,
+        DiscountPercent: 30,
+        SizePrice: 21,
+        TypeGrid: true
+    }
+
     return (
         <div className={style.mainGrid}>
             <div className={style.sizeImage}>
@@ -20,9 +29,10 @@ export default function ProductViewCartMobile({item, deleteItem}: { item: Produc
                 <div className={`${style.description} ${utilities.clamp2}`}>
                     {item.Description}
                 </div>
-                <button type={"button"} onClick={handleDeleteProduct} className={style.delete}>
+                <PriceView item={price}/>
+              {/* <button type={"button"} onClick={handleDeleteProduct} className={style.delete}>
                     {deleteItemText}
-                </button>
+                </button>*/}
             </div>
         </div>
     )

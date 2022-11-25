@@ -31,8 +31,7 @@ export default function ProductRowMobile({item}: { item?: ProductCartPage }) {
     const handleDeleteProduct = () => cartProvider.HandleDeleteProduct(item.Id)
     return (
         <div className={style.mainDiv}>
-            <ProductViewCartMobile deleteItem={handleDeleteProduct} item={item.Product}/>
-            <PriceView item={priceView}/>
+            <ProductViewCartMobile price={priceView} deleteItem={handleDeleteProduct} item={item.Product}/>
             <div className={style.gridAmountGuest}>
                 <AmountCounter item={amountCounter}/>
                 {
@@ -50,7 +49,9 @@ export default function ProductRowMobile({item}: { item?: ProductCartPage }) {
                         }
                     </select>
                 }
+                <button onClick={handleDeleteProduct} className={style.button}>Eliminar</button>
             </div>
+                {/*<PriceView item={priceView}/>*/}
         </div>
     )
 }

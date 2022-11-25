@@ -94,6 +94,7 @@ export class PriceViewProp {
     PaddingTop?: number
     PaddingBottom?: number
     JustifyContent?: string
+    IsDiscontUp?: boolean
 }
 
 export class AmountCounterProp {

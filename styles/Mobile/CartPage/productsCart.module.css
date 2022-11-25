@@ -86,11 +86,10 @@
 
 .totalText {
     border-top: 2px solid var(--separationLineColor);
-    border-bottom: 2px solid var(--separationLineColor);
     width: 100%;
     font-size: 24px;
     text-align: right;
-    padding: 24px 0;
+    padding: 24px 16px 12px 0;
     font-weight: 500;
 }
 
@@ -160,4 +159,17 @@
 .filterBy{
     font-weight: 500;
     padding-bottom: 12px;
+}
+
+.gridAddEngine{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+    align-items: center;
+}
+
+.engineICon{
+    height: 14px;
+    width: 14px;
+    position: relative;
 }
