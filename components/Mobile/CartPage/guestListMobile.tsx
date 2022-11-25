@@ -14,31 +14,27 @@ export default function GuestListMobile() {
     const handleDelete = (item: BelongToGuest) => cartProvider.HandleGuest(item, false)
 
     return (
-        isGuest ?
-            <>
-            </>
-            :
-            <div className={style.mainDiv}>
-                <div className={style.title}>
-                    {myGuests}
-                </div>
-                <div className={style.gridGuests}>
-                    {
-                        cartProvider.ListGuest.map((item, index) =>
-                            <div key={item.Id} className={style.gridGuestIcon}>
-                                <span>{item.Name}: {getNumberProducts(item.Name)} {productsText}</span>
-                                {
-                                    index != 0 &&
-                                    <button type={"button"} onClick={() => handleDelete(item)}
-                                            className={style.deleteIcon}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.closeX} alt={""}/>
-                                    </button>
-                                }
-                            </div>
-                        )
-                    }
-                </div>
+        <div className={style.mainDiv}>
+            <div className={style.title}>
+                {myGuests}
             </div>
+            <div className={style.gridGuests}>
+                {
+                    cartProvider.ListGuest.map((item, index) =>
+                        <div key={item.Id} className={style.gridGuestIcon}>
+                            <span>{item.Name}: {getNumberProducts(item.Name)} {productsText}</span>
+                            {
+                                index != 0 &&
+                                <button type={"button"} onClick={() => handleDelete(item)}
+                                        className={style.deleteIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.closeX} alt={""}/>
+                                </button>
+                            }
+                        </div>
+                    )
+                }
+            </div>
+        </div>
     )
 
     function getNumberProducts(name: string): number {
