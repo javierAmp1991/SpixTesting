@@ -7,6 +7,10 @@
     width: 330px;
 }
 
+.NoProducts{
+    width: 0;
+}
+
 .mainDiv {
     grid-template-rows: max-content max-content 1fr;
 }

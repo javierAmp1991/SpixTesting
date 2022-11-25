@@ -11,15 +11,21 @@ export default function SideCardLayout() {
     const isGuest: boolean = cartProvider.ListGuest.length > 1
     const isEmpty: boolean = cartProvider.Products.length == 0
     return (
-        <div className={`${isGuest ? style.mainDiv : style.mainDivNoGuest} ${style.mainDivBase}`}>
-            <ResumeCart/>
-            {
-                isGuest &&
-                <GuestList/>
-            }
+        <div className={`${isGuest ? style.mainDiv : style.mainDivNoGuest} 
+        ${isEmpty ? style.NoProducts : style.mainDivBase}`}>
             {
                 !isEmpty &&
-                <RecommendedCartPage/>
+                <>
+                    <ResumeCart/>
+                    {
+                        isGuest &&
+                        <GuestList/>
+                    }
+                    {
+                        !isEmpty &&
+                        <RecommendedCartPage/>
+                    }
+                </>
             }
         </div>
     )

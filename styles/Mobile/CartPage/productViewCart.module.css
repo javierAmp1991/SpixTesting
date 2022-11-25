@@ -1,7 +1,7 @@
 .mainGrid {
     display: grid;
     grid-template-columns: max-content 1fr;
-    gap: 16px;
+    gap: 12px;
     align-items: center;
 }
 

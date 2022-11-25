@@ -1,6 +1,6 @@
 .mainDiv {
     overflow: scroll;
-    padding: 16px;
+    padding: 0 16px 16px 16px;
 }
 
 .title {

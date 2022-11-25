@@ -75,18 +75,15 @@ export default function ProductsCartMobile() {
                 </div>
                 {
                     !isEmpty &&
-                        <button onClick={handlePopUpGuest} type={"button"} className={style.gridAddIcon}>
-                            {addInv}
-                            <div className={style.sizeAddImage}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                            </div>
-                        </button>
-                       /* <button type={"button"} className={style.engineICon}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.engineIcon}/>
-                        </button>*/
-
+                    <button onClick={handlePopUpGuest} type={"button"} className={style.gridAddIcon}>
+                        {addInv}
+                        <div className={style.sizeAddImage}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
+                        </div>
+                    </button>
                 }
             </div>
+
 
             {
                 (isGuest && !isEmpty) &&
@@ -126,7 +123,7 @@ export default function ProductsCartMobile() {
             }
 
             {
-                isEmpty ?
+                isEmpty?
                     <div className={style.noProducts}>
                         {noProductsCart}
                     </div>
