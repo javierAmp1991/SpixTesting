@@ -1,7 +1,6 @@
 .mainDiv {
-    border-radius: 8px;
     overflow: scroll;
-    padding: 4px;
+    padding: 16px;
 }
 
 .title {

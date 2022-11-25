@@ -8,6 +8,7 @@
 .noProducts {
     font-size: 21px;
     color: var(--colorPrimaryTextDesktop);
+    padding: 0 16px;
 }
 
 .gridTitle {
@@ -24,23 +25,18 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    gap: 12px;
+    justify-content: space-between;
     color: var(--colorPrimaryTextDesktop);
-    font-weight: 500;
-}
-
-.textCenter {
-    justify-content: center;
-}
-
-.textLeft {
-    padding-left: 12px;
+    padding: 4px 8px;
+    box-shadow: 0 0 2px rgba(0,0,0,.4);
+    border-radius: 4px;
 }
 
 .gridProducts {
     display: grid;
     gap: 1px;
     background: var(--separationLineColor);
+    margin: 0 16px;
 }
 
 .amountProduct {
@@ -52,7 +48,7 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     justify-content: space-between;
-    padding-right: 3px;
+    padding: 0 16px 16px 16px;
 }
 
 .gridAddIcon {
@@ -63,7 +59,7 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, .4);
     width: max-content;
     border-radius: 16px;
-    padding: 3px 10px 3px 16px;
+    padding: 5px 10px 5px 16px;
 }
 
 .sizeAddImage {
@@ -74,26 +70,18 @@
 
 .gridSection {
     display: grid;
-    grid-template-columns: 3.5fr 1fr 1fr;
-    gap: 16px;
-    align-items: center;
-}
-
-.gridSectionGuest {
-    display: grid;
-    grid-template-columns: 2.5fr 1fr 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
     align-items: center;
 }
 
 .lineUnder {
     border-bottom: 1px solid var(--separationLineColor);
     border-top: 1px solid var(--separationLineColor);
-    padding: 16px 0;
-    background: rgba(0, 0, 0, .01);
-    box-shadow: 0 0 4px rgba(0, 0, 0, .05);
+    /*background: rgba(0, 0, 0, .01);*/
+    box-shadow: 0 0 3px rgba(0, 0, 0, .05);
     z-index: 100;
-    margin-top: 24px;
+    padding: 16px 16px 24px 16px;
 }
 
 .totalText {
@@ -107,11 +95,11 @@
 }
 
 .mainDivPopUp {
-    width: 400px;
+    width: 100%;
     height: max-content;
     display: grid;
-    gap: 24px;
-    padding: 4px;
+    gap: 20px;
+    padding: 2px;
 }
 
 .upInput {
@@ -167,4 +155,9 @@
 .divRecommended {
     padding-top: 40px;
     padding-bottom: 24px;
+}
+
+.filterBy{
+    font-weight: 500;
+    padding-bottom: 12px;
 }

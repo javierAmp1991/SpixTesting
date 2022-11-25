@@ -1,22 +1,20 @@
-import style from "/styles/Desktop/CartPage/productsCart.module.css"
+import style from "/styles/Mobile/CartPage/productsCart.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {useContext, useEffect, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
-import ProductRow from "./productRow";
-import {ProductsCartContext, RecommendedCartContext} from "../../Providers/CartPage/CartPageProvider";
+import {ProductsCartContext} from "../../Providers/CartPage/CartPageProvider";
 import {ProviderCartPage} from "../../../Class/CartPage/CartPageClass";
-import PopUpContainerLogo from "../Misc/popUpContainerLogo";
-import {BaseEventCard} from "../../../dataDemo/EventView/eventVerticalView";
-import EventVerticalView from "../EventsView/eventVerticalView";
-import utilities from "/styles/utilities.module.css";
+import ProductRowMobile from "./productRowMobile";
+import PopUpContainerLogoMobile from "../Misc/popUpContainerLogoMobile";
+import GuestListMobile from "./guestListMobile";
 
 const title: string = "Mi carrito"
 const addInv: string = "Agregar invitados"
 const productsText: string = " Productos"
-const listSections: string[] = ["Producto", "Cantidad", "Invitados", "Precio total"]
+const listSections: string[] = ["Cantidad", "Invitados", "Precio total"]
 const subTotalText: string = "Subtotal: "
-const controlGuest: number = 2
+const controlGuest: number = 1
 const nameTextPopUp: string = "Ingrese el nombre del invitado/a"
 const placeholderNameTextPopUp: string = "Nombre"
 const emailTextPopUp: string = "Ingrese el email del invitado/a"
@@ -24,11 +22,11 @@ const placeholderEmailTextPopUp: string = "Correo"
 const addGuestPopUp: string = "Agregar Invitado"
 const titlePopUp: string = "Datos del invitado"
 const noProductsCart: string = "No hay productos en tu carrito"
+const filterBy: string = "Filtrar por: "
 const stringEmpty: string = ""
 
-export default function ProductsCart() {
+export default function ProductsCartMobile() {
     const cartProvider: ProviderCartPage = useContext(ProductsCartContext)
-    const recommended: BaseEventCard[] = useContext(RecommendedCartContext)
     const isGuest: boolean = cartProvider.ListGuest.length > 1
     const isEmpty: boolean = cartProvider.Products.length == 0
     const popUpGuestHook = useDisplayPopUpHook(false)
@@ -85,33 +83,40 @@ export default function ProductsCart() {
             </div>
 
             {
+                isGuest &&
+                <GuestListMobile/>
+            }
+
+            {
                 !isEmpty &&
-                <div className={`${isGuest ? style.gridSectionGuest : style.gridSection} ${style.lineUnder}`}>
-                    {
-                        listSections.map((item, index) =>
-                            index == controlGuest ?
-                                isGuest &&
-                                <button onClick={() => handleSort(index)}
-                                        className={`${style.columnText} ${style.textCenter}`} key={item}>
-                                    {item}
-                                    <div className={style.sizeBottomArrow}>
-                                        <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
-                                    </div>
-                                </button>
-                                :
-                                <button onClick={() => handleSort(index)} className={`${style.columnText}
-                                 ${index == 0 ? style.textLeft : style.textCenter}`} key={item}>
-                                    {item}
-                                    {
-                                        index != 0 &&
+                <div className={`${style.contFilter} ${style.lineUnder}`}>
+                    <div className={style.filterBy}>
+                        {filterBy}
+                    </div>
+                    <div className={style.gridSection}>
+                        {
+                            listSections.map((item, index) =>
+                                index == controlGuest ?
+                                    isGuest &&
+                                    <button onClick={() => handleSort(index)}
+                                            className={style.columnText} key={item}>{item}
                                         <div className={style.sizeBottomArrow}>
                                             <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
                                         </div>
-                                    }
-                                </button>
-                        )
-                    }
+                                    </button>
+                                    :
+                                    <button onClick={() => handleSort(index)} className={style.columnText}
+                                            key={item}>
+                                        {item}
+                                        <div className={style.sizeBottomArrow}>
+                                            <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
+                                        </div>
+                                    </button>
+                            )
+                        }
+                    </div>
                 </div>
+
             }
 
             {
@@ -121,42 +126,20 @@ export default function ProductsCart() {
                     </div>
                     :
                     <div className={style.gridProducts}>
-                        {cartProvider.Products.map(item => <ProductRow key={item.Id} item={item}/>)}
+                        {cartProvider.Products.map(item => <ProductRowMobile key={item.Id} item={item}/>)}
                     </div>
             }
 
             {
-                !isEmpty &&
+                /*!isEmpty &&
                 <div className={style.totalText}>
                     {subTotalText}${getMoneyValue(cartProvider.Subtotal)}
-                </div>
-            }
-
-            {
-                isEmpty &&
-                <>
-                    <div className={style.divRecommended}>
-                        <div className={style.title}>
-                            Spix te recomienda
-                        </div>
-                        <div className={utilities.styleLink}>
-                            ver mas
-                        </div>
-                    </div>
-
-                    <div className={style.gridRecommended}>
-                        {
-                            recommended.map(item =>
-                                <EventVerticalView key={item.Id} item={item} darkModeState={false}/>
-                            )
-                        }
-                    </div>
-                </>
+                </div>*/
             }
 
             {
                 popUpGuestHook.State &&
-                <PopUpContainerLogo closePopUp={handlePopUpGuest} isBackground={true} isButtonVisible={true}>
+                <PopUpContainerLogoMobile closePopUp={handlePopUpGuest} isBackground={true} isButtonVisible={true}>
                     <div className={style.mainDivPopUp}>
                         <div className={style.titlePopUp}>
                             {titlePopUp}
@@ -185,7 +168,7 @@ export default function ProductsCart() {
                             {addGuestPopUp}
                         </button>
                     </div>
-                </PopUpContainerLogo>
+                </PopUpContainerLogoMobile>
             }
         </div>
     )

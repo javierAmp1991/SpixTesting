@@ -2,6 +2,7 @@
     display: grid;
     align-content: start;
     gap: 4px;
+    padding: 16px;
 }
 
 .title {

@@ -1,0 +1,40 @@
+.mainDiv {
+    background: white;
+    padding: 24px 0;
+    position: relative;
+    display: grid;
+    gap: 8px;
+}
+
+.select {
+    outline: none;
+    display: grid;
+    width: 100%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+    padding: 4px 16px;
+    position: relative;
+}
+
+.option {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.deleteIcon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 8px;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, .25);
+}
+
+.gridAmountGuest{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-content: center;
+    gap: 16px;
+}
+
+

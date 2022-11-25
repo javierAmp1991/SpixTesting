@@ -21,7 +21,16 @@ import PrincipalInfoEvent, {PrincipalInfoEventProp} from "../Misc/principalInfoE
 
 const totalResaleText = "Total reventas: "
 
-export default function EventHorizontalViewDesktop({item}: { item: BaseEventCard }) {
+export class EventHorizontalViewProp {
+    SizeImage: number
+}
+
+const defaultValue = {
+    Size: 100,
+}
+
+export default function EventHorizontalViewDesktop({item, propsEvent}:
+                                                       { item: BaseEventCard, propsEvent?: EventHorizontalViewProp }) {
     //region getData
     let itemFull: EventCardFull;
     let itemWithPrice: EventCardWithPrice;
@@ -91,10 +100,12 @@ export default function EventHorizontalViewDesktop({item}: { item: BaseEventCard
         isDarkMode: false
     }
     //endregion
+    const cssStyle = getCssStyle()
 
     return (
         <div className={`${style.principalGridHorizontal}`}>
-            <Link href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
+            <Link
+                href={item.Type == EventCardType.EventCardWithResale || item.Type == EventCardType.EventCardWithOffer ? item.Link : ""}>
                 <a className={style.containerImage}>
                     {
                         item.Type == EventCardType.EventCardWishList &&
@@ -115,7 +126,7 @@ export default function EventHorizontalViewDesktop({item}: { item: BaseEventCard
                             <Image layout={"fill"} src={GlobalConst.sourceImages.lastTicket} alt=""/>
                         </div>
                     }
-                    <div className={`${style.sizeImage}`}>
+                    <div style={{width: cssStyle.Size }} className={style.sizeImage}>
                         <Image layout={"fill"} objectFit={"cover"} src={item.PathImage} alt=""/>
                     </div>
                 </a>
@@ -179,4 +190,10 @@ export default function EventHorizontalViewDesktop({item}: { item: BaseEventCard
             </div>
         </div>
     )
+
+    function getCssStyle(){
+        return{
+            Size: propsEvent == null? defaultValue.Size : propsEvent.SizeImage,
+        }
+    }
 }

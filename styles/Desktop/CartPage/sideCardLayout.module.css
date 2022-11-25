@@ -1,11 +1,18 @@
-.mainDiv {
+.mainDivBase {
     display: grid;
-    grid-template-rows: max-content max-content 1fr;
     gap: 16px;
     height: 90vh;
     position: sticky;
     top: 40px;
-    width: 300px;
+    width: 330px;
+}
+
+.mainDiv {
+    grid-template-rows: max-content max-content 1fr;
+}
+
+.mainDivNoGuest {
+    grid-template-rows: max-content 1fr;
 }
 
 .title {

@@ -1,5 +1,4 @@
 .mainDiv {
     display: grid;
-    gap: 32px;
-    padding: 16px;
+    gap: 16px;
 }

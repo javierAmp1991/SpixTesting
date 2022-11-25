@@ -1,6 +1,6 @@
 .principalGridHorizontal {
     display: grid;
-    grid-template-columns: 90px 1fr;
+    grid-template-columns: max-content 1fr;
     box-shadow: 0 0 3px rgba(0, 0, 0, .20);
     border-radius: 6px;
     overflow: hidden;
