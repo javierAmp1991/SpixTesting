@@ -3,12 +3,17 @@ import ResumeCartMobile from "./resumeCartMobile";
 import RecommendedCartPageMobile from "./recommendedCartPageMobile";
 import ProductsCartMobile from "./ProductsCartMobile";
 import utilities from "/styles/utilities.module.css";
+import GuestListMobile from "./guestListMobile";
+import HeaderCartPageMobile from "./headerCartPageMobile";
 
 export default function MainPageCartPageMob() {
     return (
         <div className={style.mainDiv}>
+            <HeaderCartPageMobile/>
             <ResumeCartMobile/>
-            {/*<div className={utilities.separationLine}/>*/}
+            {
+                <GuestListMobile/>
+            }
             <ProductsCartMobile/>
             <div className={utilities.separationLine}/>
             <RecommendedCartPageMobile/>

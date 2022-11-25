@@ -2,20 +2,35 @@
     display: grid;
     align-content: start;
     gap: 4px;
-    padding: 16px;
+    padding: 16px 16px 0 16px;
     background: white;
 }
 
-.title {
-    font-size: 18px;
-    border-bottom: 1px solid var(--separationLineColor);
+.stickyDiv{
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 100000000;
+    padding: 12px 16px 16px 16px;
+    border-bottom: 2px solid var(--separationLineColor);
+}
+
+.gridSubtotalReturn {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 10px;
 }
 
-.subtotal {
-    font-size: 18px;
+.title {
+    font-size: 16px;
     font-weight: 500;
-    padding-top: 10px;
+}
+
+.subtotal {
+    font-size: 21px;
+    font-weight: 500;
 }
 
 .return {
@@ -34,7 +49,6 @@
     color: white;
     padding: 4px 0;
     font-weight: 500;
-    margin: 10px 0;
 }
 
 .button {

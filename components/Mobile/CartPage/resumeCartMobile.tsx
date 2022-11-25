@@ -16,29 +16,36 @@ export default function ResumeCartMobile() {
     const isEmpty: boolean = cartProvider.Products.length == 0
 
     return (
-        <div className={style.mainDiv}>
-            <div className={style.title}>
-                {title}
+        <>
+            <div className={style.mainDiv}>
+                <div className={style.title}>
+                    {title}
+                </div>
             </div>
-            <div className={style.subtotal}>
-                <span>{subTotalText} </span>
-                <span>${getMoneyValue(cartProvider.Subtotal)}</span>
-            </div>
-            {
+            <div className={style.stickyDiv}>
+                <div className={style.gridSubtotalReturn}>
+                    <div className={style.subtotal}>
+                        <span>{subTotalText} </span>
+                        <span>${getMoneyValue(cartProvider.Subtotal)}</span>
+                    </div>
+                    <Link href={cartProvider.LinkSite}>
+                        <a className={style.return}>
+                            {goToSite}
+                        </a>
+                    </Link>
+                </div>
+                {/*{
                 isGuest &&
                 <div className={style.guestNumber}>
                     {youAndText} {cartProvider.ListGuest.length - 1} {guestMore}
                 </div>
-            }
-            <button className={`${isEmpty ? style.buttonEmpty : style.button} ${style.buttonBase}`}>
-                {cartProvider.TextButton}
-            </button>
-            <Link href={cartProvider.LinkSite}>
-                <a className={style.return}>
-                    {goToSite}
-                </a>
-            </Link>
-        </div>
+            }*/}
+                <button className={`${isEmpty ? style.buttonEmpty : style.button} ${style.buttonBase}`}>
+                    {cartProvider.TextButton}
+                </button>
+            </div>
+        </>
+
     )
 
     function getMoneyValue(num: number): string {
