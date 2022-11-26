@@ -1,4 +1,5 @@
 import {createContext, useState} from "react";
+
 import {GlobalConst} from "../../public/globalConst";
 
 export enum MenuUserAccount {
@@ -141,14 +142,14 @@ const listConfigMyBussines: SubSectionMyBussiness[] = [
         Name: "Formularios",
         PathImage: GlobalConst.sourceImages.formIcon,
     },*/
-    {
+    /*{
         Id: "idMyBussines002",
         SubType: MyBussinesMenu.Inventory,
         Type: MenuUserAccount.MyBussines,
         State: false,
         Name: "Inventario",
         PathImage: GlobalConst.sourceImages.formIcon,
-    },
+    },*/
     {
         Id: "idMyBussines003",
         SubType: MyBussinesMenu.CreateSite,
@@ -167,7 +168,7 @@ export default function ProviderGlobal({children}) {
     let [sectionSelected, setSectoinSelected] = useState(listConfigSection)
     let [myBussinesSection, setMyBussinesSection] = useState(listConfigMyBussines)
     let [sectionSelectedNavMenu, setSectionSelectedNavMenu] = useState(MenuUserAccount.Dashboard)
-    let [sectionMyBussinesSelected, setSectionMyBussinesSelected] = useState(MyBussinesMenu.CreateForm)
+    let [sectionMyBussinesSelected, setSectionMyBussinesSelected] = useState(MyBussinesMenu.DashBoard)
     let [userDataState, setUserDateState] = useState(userInfo)
     const handleSectionSelected = (id:string) => {
         let newSectionSelected = sectionSelected.map(item => {

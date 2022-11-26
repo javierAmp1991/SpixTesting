@@ -1,7 +1,5 @@
-import CreateFormPage from "../Form/createFormPage";
 import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
-import MyProducts from "./myProducts";
 import CreateSite from "./CreateSite/createSite";
 
 export default function MyBussines() {
@@ -13,17 +11,18 @@ export default function MyBussines() {
                 <div>Pagina de inicio</div>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateForm &&
-                <CreateFormPage/>
-            }
-            {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Inventory &&
-                <MyProducts/>
-            }
-            {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateSite &&
                 <CreateSite/>
             }
+            {/*{
+                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateForm &&
+                <CreateFormPage/>
+            }*/}
+           {/* {
+                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Inventory &&
+                <MyProducts/>
+            }*/}
+
             {/*{
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
                 <CreateProductPage/>
