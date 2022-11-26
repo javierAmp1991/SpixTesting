@@ -167,12 +167,12 @@ export default function ProductsCart() {
                     </div>
             }
 
-            {
+            {/*{
                 !isEmpty &&
                 <div className={style.totalText}>
                     {subTotalText}${getMoneyValue(cartProvider.Subtotal)}
                 </div>
-            }
+            }*/}
 
             {
                 isEmpty &&
