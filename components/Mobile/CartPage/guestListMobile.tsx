@@ -5,19 +5,18 @@ import {ProductsCartContext} from "../../Providers/CartPage/CartPageProvider";
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 
-const myGuests: string = "Mis invitados"
+/*const myGuests: string = "Mis invitados"*/
 const productsText: string = "productos"
 
 export default function GuestListMobile() {
     const cartProvider: ProviderCartPage = useContext(ProductsCartContext)
-    const isGuest: boolean = cartProvider.ListGuest.length == 0
     const handleDelete = (item: BelongToGuest) => cartProvider.HandleGuest(item, false)
 
     return (
         <div className={style.mainDiv}>
-            <div className={style.title}>
+           {/* <div className={style.title}>
                 {myGuests}
-            </div>
+            </div>*/}
             <div className={style.gridGuests}>
                 {
                     cartProvider.ListGuest.map((item, index) =>
