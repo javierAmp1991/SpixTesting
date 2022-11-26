@@ -26,7 +26,7 @@ const columnAlignment: ColumnAlignment[] = [
         Index: 3
     }
 ]
-const controlGuest: number = 1
+const controlGuest: number = 2
 const translateUp: string = `rotate(-180deg)`
 const translateDown: string = `rotate(0)`
 
