@@ -25,6 +25,7 @@ const idNavProductSection: string = "idProductServiceToGo"
 export default function MainPageBH() {
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     const cartProp: CartProps = {
+        LinkToGo: "/CartPage",
         NumberItems: 0,
         IdToGo: idNavProductSection
     }

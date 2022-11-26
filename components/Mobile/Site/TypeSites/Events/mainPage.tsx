@@ -24,6 +24,7 @@ import {CartProps} from "../../../../Desktop/Site/TypeSites/Misc/cart";
 
 const idNavProductSection: string = "idProductEventToGo"
 const cartProp: CartProps = {
+    LinkToGo: "/CartPage",
     NumberItems: 0,
     IdToGo: idNavProductSection
 }

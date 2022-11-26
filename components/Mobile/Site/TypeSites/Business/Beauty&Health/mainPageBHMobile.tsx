@@ -17,7 +17,6 @@ import {AnnouncementStyle, Schedule} from "../../../../../../Class/Site/TypeSite
 import QuestionBHMobile from "./questionBHMobile";
 import AnnouncementMobile from "../../Misc/announcementMobile";
 import {PresentationCard} from "../../../../../../Class/Site/TypeSite/Business/restaurantClass";
-import OurJobsMobile from "./ourJobsMobile";
 import LayoutMainPageSitesMobile from "../../Misc/layoutMainPageSitesMobile";
 import utilities from "/styles/utilities.module.css";
 import CartMobile from "../../Misc/cartMobile";
@@ -34,6 +33,7 @@ export default function MainPageBHMobile() {
     const schedule: Schedule[] = useContext(ShceduleBHContext)
     const info: PresentationCard = useContext(HeaderDataBHContext)
     const cartProp: CartProps = {
+        LinkToGo: "/CartPage",
         NumberItems: 0,
         IdToGo: idNavProductSection
     }

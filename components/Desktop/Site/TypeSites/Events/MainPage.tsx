@@ -19,6 +19,7 @@ const isMarginBottom: boolean = false
 const announcementStyle: AnnouncementStyle = AnnouncementStyle.SiteEvents
 const idNavProductSection: string = "idProductEventToGo"
 const cartProp: CartProps = {
+    LinkToGo: "/CartPage",
     NumberItems: 0,
     IdToGo: idNavProductSection
 }

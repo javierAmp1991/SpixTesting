@@ -35,6 +35,7 @@ export default function InitialPageRestaurantMobile() {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const newSchedule: Schedule[] = useContext(ScheduleContext)
     const cartProp: CartProps = {
+        LinkToGo: "/CartPage",
         NumberItems: 0,
         IdToGo: idNavProductSection
     }

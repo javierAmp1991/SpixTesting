@@ -27,6 +27,7 @@ export default function InitialPageRestaurant() {
     const infoSectionProducts: SectionProductItem[] = useContext(SectionProductsContext)
     const schedule: Schedule[] = useContext(ScheduleContext)
     const cartProp: CartProps = {
+        LinkToGo: "/CartPage",
         NumberItems: 0,
         IdToGo: idNavProductSection
     }
