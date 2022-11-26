@@ -156,6 +156,7 @@
     height: 14px;
     position: relative;
     margin-bottom: 1px;
+    transition: .6s;
 }
 
 .gridRecommended {
@@ -166,15 +167,17 @@
 }
 
 .divRecommended {
-    padding-top: 40px;
+    padding-top: 32px;
     padding-bottom: 24px;
+    border-top: 2px solid var(--separationLineColor);
+    margin-top: 40px;
 }
 
-.return{
+.return {
     color: var(--linkColor);
     padding-top: 4px;
 }
 
-.mainDivCarrouselReco{
- padding: 0 4px;
+.mainDivCarrouselReco {
+    padding: 0 4px;
 }

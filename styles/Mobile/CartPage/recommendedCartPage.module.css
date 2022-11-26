@@ -1,6 +1,6 @@
 .mainDiv {
     overflow: scroll;
-    padding: 16px 16px 120px 16px;
+    padding: 16px 16px 136px 16px;
     border-top: 2px solid var(--separationLineColor);
 }
 
@@ -11,6 +11,7 @@
 
 .seeMore{
     color: var(--linkColor);
+    padding-bottom: 16px;
 }
 
 .gridRecommended{

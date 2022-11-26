@@ -35,3 +35,10 @@ export class ProviderCartPage {
     TextButton: string
     LinkSite: string
 }
+
+export class ColumnAlignment{
+    Id: string
+    Name: string
+    Index: number
+    State: boolean
+}

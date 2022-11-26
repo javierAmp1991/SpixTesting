@@ -76,8 +76,7 @@
 }
 
 .grid2{
-    grid-template-columns: repeat(2, 120px);
-    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
 }
 .grid3{
     grid-template-columns: repeat(3, 1fr);
@@ -89,7 +88,7 @@
     border-bottom: 2px solid var(--separationLineColor);
     /*background: rgba(0, 0, 0, .01);*/
     z-index: 100;
-    padding: 16px 16px 24px 16px;
+    padding: 16px;
 }
 
 .totalText {
@@ -150,6 +149,7 @@
     height: 14px;
     position: relative;
     margin-bottom: 1px;
+    transition: .6s;
 }
 
 .gridRecommended {

@@ -278,15 +278,16 @@ export default function CartPageProvider({children}) {
         setListProducts(listProducts.filter(item => item.Id != id))
     }
     const handleSortByPrice = (orderBy: boolean) => {
+        let newListSort = [...listProducts]
         if (orderBy) {
-            let newListMyShopping = listProducts.sort((a, b) => {
+            let newListMyShopping = newListSort.sort((a, b) => {
                 if (a.Product.Price * a.Amount < b.Product.Price * b.Amount) return 1
                 else if (a.Product.Price * a.Amount > b.Product.Price * b.Amount) return -1
                 else return 0
             })
             setListProducts(newListMyShopping)
         } else {
-            let newListMyShopping = listProducts.sort((a, b) => {
+            let newListMyShopping = newListSort.sort((a, b) => {
                 if (a.Product.Price * a.Amount > b.Product.Price * b.Amount) return 1
                 else if (a.Product.Price * a.Amount < b.Product.Price * b.Amount) return -1
                 else return 0
@@ -295,15 +296,16 @@ export default function CartPageProvider({children}) {
         }
     }
     const handleSortByAmount = (orderBy: boolean) => {
+        let newListSort = [...listProducts]
         if (orderBy) {
-            let newListMyShopping = listProducts.sort((a, b) => {
+            let newListMyShopping = newListSort.sort((a, b) => {
                 if (a.Amount < b.Amount) return 1
                 else if (a.Amount > b.Amount) return -1
                 else return 0
             })
             setListProducts(newListMyShopping)
         } else {
-            let newListMyShopping = listProducts.sort((a, b) => {
+            let newListMyShopping = newListSort.sort((a, b) => {
                 if (a.Amount > b.Amount) return 1
                 else if (a.Amount < b.Amount) return -1
                 else return 0
@@ -312,15 +314,16 @@ export default function CartPageProvider({children}) {
         }
     }
     const handleSortByBelongTo = (orderBy: boolean) => {
+        let newListSort = [...listProducts]
         if (orderBy) {
-            let newListMyShopping = listProducts.sort((a, b) => {
+            let newListMyShopping = newListSort.sort((a, b) => {
                 if (a.BelongTo.Name < b.BelongTo.Name) return 1
                 else if (a.BelongTo.Name > b.BelongTo.Name) return -1
                 else return 0
             })
             setListProducts(listProducts = newListMyShopping)
         } else {
-            let newListMyShopping = listProducts.sort((a, b) => {
+            let newListMyShopping = newListSort.sort((a, b) => {
                 if (a.BelongTo.Name > b.BelongTo.Name) return 1
                 else if (a.BelongTo.Name < b.BelongTo.Name) return -1
                 else return 0

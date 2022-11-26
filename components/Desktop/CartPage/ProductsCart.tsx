@@ -5,15 +5,40 @@ import {useContext, useEffect, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import ProductRow from "./productRow";
 import {ProductsCartContext} from "../../Providers/CartPage/CartPageProvider";
-import {ProviderCartPage} from "../../../Class/CartPage/CartPageClass";
+import {ColumnAlignment, ProviderCartPage} from "../../../Class/CartPage/CartPageClass";
 import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 import Link from "next/link";
 import CarrouselRecommended from "./carrouselRecommended";
 
+const columnAlignment: ColumnAlignment[] = [
+    {
+        Id: "idALignment000",
+        Name: "Productos",
+        State: false,
+        Index: 0
+    },
+    {
+        Id: "idALignment001",
+        Name: "Cantidad",
+        State: false,
+        Index: 1
+    },
+    {
+        Id: "idALignment002",
+        Name: "Invitados",
+        State: false,
+        Index: 2
+    },
+    {
+        Id: "idALignment003",
+        Name: "Precio total",
+        State: false,
+        Index: 3
+    }
+]
 const title: string = "Mi carrito"
 const addInv: string = "Agregar invitados"
 const productsText: string = " Productos"
-const listSections: string[] = ["Producto", "Cantidad", "Invitados", "Precio total"]
 const subTotalText: string = "Subtotal: "
 const controlGuest: number = 2
 const nameTextPopUp: string = "Ingrese el nombre del invitado/a"
@@ -25,6 +50,9 @@ const titlePopUp: string = "Datos del invitado"
 const noProductsCart: string = "No hay productos en tu carrito"
 const stringEmpty: string = ""
 const goToSite: string = "Volver al sitio"
+const translateUp: string = `rotate(-180deg)`
+const translateDown: string = `rotate(0)`
+
 
 export default function ProductsCart() {
     const cartProvider: ProviderCartPage = useContext(ProductsCartContext)
@@ -35,6 +63,7 @@ export default function ProductsCart() {
     let [nameGuest, setNameGuest] = useState(stringEmpty)
     let [emailGuest, setEmailGuest] = useState(stringEmpty)
     let [stateAddGuest, setStateAddGuest] = useState(false)
+    let [alignment, setAlignment] = useState(columnAlignment)
     const handleAddGuest = () => {
         let crypto = require("crypto");
         let id = crypto.randomBytes(20).toString('hex');
@@ -46,17 +75,21 @@ export default function ProductsCart() {
         setEmailGuest(stringEmpty)
         handlePopUpGuest()
     }
-    const handleSort = (num: number) => {
-        if (num == 1) cartProvider.SortByAMount(true)
-        else if (num == 2) cartProvider.SortByBelongTo(true)
-        else cartProvider.SortByPrice(true)
+    const handleSort = (num: number, orderBy: boolean) => {
+        if (num != 0) {
+            if (num == 1) cartProvider.SortByAMount(orderBy)
+            if (num == 2) cartProvider.SortByBelongTo(orderBy)
+            if (num == 3) cartProvider.SortByPrice(orderBy)
+            let newALignment = alignment.map(item => {
+                if (item.Index == num) return {...item, State: !orderBy}
+                else return {...item}
+            })
+            setAlignment(newALignment)
+        }
     }
-    const handleName = (e) => {
-        setNameGuest(e.target.value)
-    }
-    const handleEmail = (e) => {
-        setEmailGuest(e.target.value)
-    }
+    const handleName = (e) => setNameGuest(e.target.value)
+    const handleEmail = (e) => setEmailGuest(e.target.value)
+
 
     useEffect(() => {
         setStateAddGuest((nameGuest != stringEmpty && emailGuest != stringEmpty))
@@ -87,23 +120,26 @@ export default function ProductsCart() {
                 !isEmpty &&
                 <div className={`${isGuest ? style.gridSectionGuest : style.gridSection} ${style.lineUnder}`}>
                     {
-                        listSections.map((item, index) =>
-                            index == controlGuest ?
+                        alignment.map((item) =>
+                            item.Index == controlGuest ?
                                 isGuest &&
-                                <button onClick={() => handleSort(index)}
-                                        className={`${style.columnText} ${style.textCenter}`} key={item}>
-                                    {item}
-                                    <div className={style.sizeBottomArrow}>
+                                <button onClick={() => handleSort(item.Index, item.State)}
+                                        className={`${style.columnText} ${style.textCenter}`} key={item.Id}>
+                                    {item.Name}
+                                    <div style={{transform: getRotateArrow(item.State)}}
+                                         className={style.sizeBottomArrow}>
                                         <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
                                     </div>
                                 </button>
                                 :
-                                <button onClick={() => handleSort(index)} className={`${style.columnText}
-                                 ${index == 0 ? style.textLeft : style.textCenter}`} key={item}>
-                                    {item}
+                                <button onClick={() => handleSort(item.Index, item.State)}
+                                        className={`${style.columnText}
+                                 ${item.Index == 0 ? style.textLeft : style.textCenter}`} key={item.Id}>
+                                    {item.Name}
                                     {
-                                        index != 0 &&
-                                        <div className={style.sizeBottomArrow}>
+                                        item.Index != 0 &&
+                                        <div style={{transform: getRotateArrow(item.State)}}
+                                             className={style.sizeBottomArrow}>
                                             <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
                                         </div>
                                     }
@@ -140,7 +176,7 @@ export default function ProductsCart() {
 
             {
                 isEmpty &&
-               <CarrouselRecommended/>
+                <CarrouselRecommended/>
             }
 
             {
@@ -181,5 +217,9 @@ export default function ProductsCart() {
 
     function getMoneyValue(num: number): string {
         return Intl.NumberFormat("ES-CL").format(Math.round(num))
+    }
+
+    function getRotateArrow(isUp) {
+        return isUp ? translateUp : translateDown
     }
 }

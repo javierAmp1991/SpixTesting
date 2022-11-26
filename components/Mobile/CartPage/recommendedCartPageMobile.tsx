@@ -3,6 +3,8 @@ import {useContext} from "react";
 import {RecommendedCartContext} from "../../Providers/CartPage/CartPageProvider";
 import {BaseEventCard} from "../../../dataDemo/EventView/eventVerticalView";
 import EventHorizontalViewDesktop, {EventHorizontalViewProp} from "../../Desktop/EventsView/eventHorizontalView";
+import LayoutCarrouselMobile from "../Layouts/layoutCarrousel.Mobile";
+import EventVerticalViewNewMob from "../Events/eventVerticalViewNewMob";
 
 
 const title: string = "Spix te recomienda"
@@ -20,13 +22,13 @@ export default function RecommendedCartPageMobile() {
             <button className={style.seeMore}>
                 {seeMore}
             </button>
-            <div className={style.gridRecommended}>
+            <LayoutCarrouselMobile gapLayout={20}>
                 {
                     recommended.map(item=>
-                    <EventHorizontalViewDesktop propsEvent={propEvent} key={item.Id} item={item}/>
+                    <EventVerticalViewNewMob darkModeState={false} key={item.Id} item={item}/>
                     )
                 }
-            </div>
+            </LayoutCarrouselMobile>
         </div>
     )
 }
