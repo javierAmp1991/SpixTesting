@@ -1,0 +1,253 @@
+.mainDiv {
+    width: 100%;
+    height: 100%;
+    padding: 16px 16px 24px 16px;
+}
+
+.mainDiv2 {
+    display: grid;
+    gap: 32px;
+    width: 100%;
+    align-content: start;
+}
+
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop);
+}
+
+.contBanner {
+    width: 100%;
+    aspect-ratio: 2.5/1;
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+.contPlaceholderBanner {
+    width: max-content;
+    gap: 12px;
+    padding: 12px 24px;
+    height: max-content;
+    position: relative;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+}
+
+
+.textAddBanner {
+    font-size: 16px;
+    color: var(--colorSecundaryTextDesktop);
+    text-align: center;
+}
+
+.placeholderBanner {
+    width: 20px;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    aspect-ratio: 4/1;
+    position: relative;
+}
+
+.label {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.button {
+    width: 140px;
+    color: white;
+    padding: 6px 12px;
+    background: var(--gradientBlueButton);
+    margin: auto;
+    font-weight: 500;
+}
+
+.deleteIcon {
+    width: 24px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 500;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.gridAddSelect {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+}
+
+.gridTitleButton {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 16px;
+}
+
+.input {
+    outline: none;
+    padding: 4px 40px 4px 32px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    width: 100%;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: var(--colorPrimaryTextDesktop);
+    z-index: 100;
+    background: transparent;
+}
+
+.contInput {
+    position: relative;
+    background: white;
+    width: max-content;
+}
+
+.gridAddMedia {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+}
+
+.mainDivPopUp {
+    width: 100%;
+    height: max-content;
+    padding: 32px 16px;
+}
+
+.contMedia {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, .3);*/
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: #0f1111;
+    border-radius: 16px;
+}
+
+.iframe {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.gridPopUp {
+    display: grid;
+    gap: 24px;
+    position: relative;
+}
+
+.placeholderYoutube {
+    width: 40%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.contLayoutGallery {
+    width: 100%;
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, .1);*/
+/*    overflow: scroll;
+    padding: 32px 32px 32px 32px;*/
+}
+
+/*
+.heightCont {
+    height: 554px;
+}
+
+.heightCont2 {
+    height: 299px;
+}
+*/
+
+.mainContLayoutGallery {
+    height: 100%;
+    overflow: scroll;
+    padding-right: 12px;
+}
+.mainContLayoutGallery::-webkit-scrollbar {
+    display: grid;
+    -webkit-appearance: inherit;
+    width: 4px;
+}
+
+.mainContLayoutGallery::-webkit-scrollbar-thumb {
+    background: #e5e5e5;
+    border-radius: 4px;
+}
+
+.border {
+    border-top: 1px solid var(--separationLineColor);
+    width: 100%;
+}
+
+.buttonPopUp {
+    width: max-content;
+    padding: 6px 48px;
+    background: var(--gradientBlueButton);
+    color: white;
+    margin: auto;
+}
+
+.bottomArrow {
+    position: absolute;
+    width: 18px;
+    top: 7px;
+    right: 8px;
+    height: 16px;
+    transition: .4s;
+}
+
+.cont2Steps {
+    overflow: hidden;
+    width: 100%;
+    padding: 4px;
+}
+
+.gridTwoSteps {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-auto-columns: 100%;
+    grid-auto-flow: column;
+    gap: 16px;
+    transition: .5s;
+}
+
+
+.gridButtons {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-columns: max-content;
+    grid-auto-flow: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.buttonGray {
+    background: rgba(0, 0, 0, .1);
+}
+
+.titlePopUp {
+    font-size: 16px;
+    color: var(--colorTitlesDesktop);
+}

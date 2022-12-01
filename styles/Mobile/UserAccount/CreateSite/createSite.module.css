@@ -1,7 +1,6 @@
 .mainDiv {
-    width: 70%;
-    overflow: scroll;
-    padding: 0 2px;
+    width: 100%;
+    padding: 0 16px;
     display: grid;
     gap: 32px;
 }
@@ -30,13 +29,14 @@
     padding: 6px 12px;
     outline: none;
     height: max-content;
+    width: 100%;
 }
 
 .textArea {
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     padding: 6px 12px;
     resize: none;
-    height: 100px;
+    height: 150px;
 }
 
 .title {
@@ -72,14 +72,13 @@
 
 .gridInputSelection{
     display: grid;
-    grid-template-columns: 1fr 150px 100px;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
 }
 
 .gridRedes{
     display: grid;
-    grid-template-columns: repeat(4, max-content);
-    gap: 12px;
+    gap: 6px;
 }
 
 .gridSocial{
@@ -95,7 +94,6 @@
 
 .gridContactInput{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
 }
 

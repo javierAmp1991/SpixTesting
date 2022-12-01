@@ -106,7 +106,9 @@ export enum MenuUserAccount {
 
 export enum MyBussinesMenu {
     CreateForm,
-    AsnwerToForm
+    AsnwerToForm,
+    Default,
+    Site
 }
 
 export class ResumeForm {
@@ -1799,7 +1801,7 @@ const listConfigMyBussines: SubSectionAccount[] = [
         HasSubMenu: false,
         Type: MenuUserAccount.MyBussines,
         SubType: MyBussinesMenu.CreateForm,
-        State: false,
+        State: true,
         Name: "Crear Formulario",
         PathImage: GlobalConst.sourceImages.formIcon,
     },
@@ -1807,9 +1809,9 @@ const listConfigMyBussines: SubSectionAccount[] = [
         Id: "idMyBussines002",
         HasSubMenu: false,
         Type: MenuUserAccount.MyBussines,
-        SubType: MyBussinesMenu.AsnwerToForm,
+        SubType: MyBussinesMenu.Site,
         State: false,
-        Name: "Respuestas Formulario",
+        Name: "Nombre Sitio",
         PathImage: GlobalConst.sourceImages.formIcon,
     }
 ]

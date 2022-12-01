@@ -1,3 +1,5 @@
+import {MediaBase} from "../UserAccount/userAccount";
+
 export class PropCarrousel {
     Grid: number
     Gap: number
@@ -70,7 +72,7 @@ export class LayoutGalleryProps {
     InitialMedia: MultimediaItem[]
 }
 
-export class LayoutGalleryMobile {
-    InitialImages: string[]
+export class GalleryMediaProps{
     CloseGallery: Function
+    Media: MediaBase[]
 }

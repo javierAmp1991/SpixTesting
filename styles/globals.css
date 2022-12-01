@@ -85,7 +85,11 @@
     --gradientBlueBackground: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, white 50%);
     --gradientProfileBlue: linear-gradient(90deg, rgba(131, 164, 212, 1) 0%, rgba(182, 251, 255, 1) 50%, rgba(148, 187, 233, 1) 100%);
     --gradientLogos: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-
+    --blueTab:  linear-gradient(90deg, #0878d7 0%, #118bf3 100%);
+    --blueTirnagle: #118bf3;
+    --GrayTab: #d7d6d6;
+    --greenTab: linear-gradient(90deg, #3b9a3b 0%, #5cb85c 100%);
+    --greenTrinagle: #5cb85c;
 }
 
 /*Desktop Section*/

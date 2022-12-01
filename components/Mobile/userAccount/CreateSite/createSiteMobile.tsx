@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/UserAccount/CreateSite/createSite.module.css"
+import style from "/styles/Mobile/UserAccount/CreateSite/createSite.module.css"
 import {
     MyBusinessProviderProp,
     SocialMediaOptionProvider,
@@ -18,7 +18,7 @@ const redesTitle: string = "Redes sociales"
 const placeholderRedes: string = "selecciona y agrega una red social"
 const addButtonText: string = "Agregar"
 
-export default function CreateSite() {
+export default function CreateSiteMobile() {
     const refInputRedes = useRef(null)
     const handleSelect = (e) => setValueSelect(e.target.value)
     const myBusinessProvider: MyBusinessProviderProp = useContext(CreateSiteContext)
@@ -37,6 +37,7 @@ export default function CreateSite() {
         })
     }
     const handleDeleteRed = (id: string) => socialmedia.HandleDelete(id)
+
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
@@ -102,8 +103,8 @@ export default function CreateSite() {
                 <div>
                     {redesTitle}
                 </div>
+                <input ref={refInputRedes} placeholder={placeholderRedes} className={style.input} type={"text"}/>
                 <div className={style.gridInputSelection}>
-                    <input ref={refInputRedes} placeholder={placeholderRedes} className={style.input} type={"text"}/>
                     <select onChange={handleSelect} className={style.input}>
                         {
                             socialmedia.Options.map(item =>
@@ -116,11 +117,11 @@ export default function CreateSite() {
                         {addButtonText}
                     </button>
                 </div>
-                <div>
+                <div className={style.gridRedes}>
                     {
                         socialmedia.Items.map(item =>
                             <div className={style.gridImageSocial} key={item.Id}>
-                                <Image width={14} height={14} src={getIcon(item.Type)} alt={""}/>
+                                <Image width={14} height={14} src={getIcon(item.Type)}/>
                                 <span>{item.Link}</span>
                                 <button onClick={() => handleDeleteRed(item.Id)} className={style.deleteRed}>
                                     eliminar

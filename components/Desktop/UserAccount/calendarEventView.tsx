@@ -28,7 +28,6 @@ export default function CalendarEventView({item}: { item: CalendarEventViewProp 
                     <div className={style.hours}>
                         {getNumberDateWith0(item.ThisDate.getHours())}:{getNumberDateWith0(item.ThisDate.getMinutes())} hrs.
                     </div>
-
                 </div>
             </a>
         </Link>

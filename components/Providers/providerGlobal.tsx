@@ -19,7 +19,8 @@ export enum MyBussinesMenu {
     DashBoard,
     MyProducts,
     Inventory,
-    CreateSite
+    CreateSite,
+    Site
 }
 
 export class AccountSections {
@@ -150,6 +151,14 @@ const listConfigMyBussines: SubSectionMyBussiness[] = [
         Name: "Inventario",
         PathImage: GlobalConst.sourceImages.formIcon,
     },*/
+    {
+        Id: "idMyBussines002",
+        SubType: MyBussinesMenu.Site,
+        Type: MenuUserAccount.MyBussines,
+        State: false,
+        Name: "Nombre Sitio",
+        PathImage: GlobalConst.sourceImages.formIcon,
+    },
     {
         Id: "idMyBussines003",
         SubType: MyBussinesMenu.CreateSite,

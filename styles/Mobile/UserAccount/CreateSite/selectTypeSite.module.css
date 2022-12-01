@@ -1,0 +1,99 @@
+.mainDiv {
+    display: grid;
+    gap: 24px;
+    padding:  12px;
+}
+
+.typeSiteTitle {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contCarrousel{
+    padding: 4px;
+    overflow: scroll;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.siteSelected {
+}
+
+.title {
+    font-size: 21px;
+    color: var(--colorTitlesDesktop)
+}
+
+.subtitle {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.contImage {
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgb(36, 129, 215);
+    background: var(--gradientLogos);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .6);
+}
+
+.description {
+    padding: 0 24px;
+    text-align: left;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+}
+
+.contTypeSite {
+    display: grid;
+    justify-items: center;
+    gap: 32px;
+    transition: .6s;
+    padding: 32px 16px;
+    border-radius: 12px;
+    position: relative;
+    scroll-snap-align: start;
+}
+
+.sizeCheckIcon {
+    position: absolute;
+    width: 28px;
+    aspect-ratio: 1/1;
+    top: 12px;
+    right: 12px;
+}
+
+.button {
+    padding: 6px 32px;
+    color: white;
+    width: max-content;
+    font-weight: 500;
+}
+
+.buttonBlue {
+    background: var(--gradientBlueButton);
+}
+
+.buttonGray {
+    background: var(--GrayTab);
+}
+
+.gridButtons {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 12px;
+}
+
+.return {
+    background: var(--gradientBlueButton);
+}

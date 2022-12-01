@@ -144,7 +144,13 @@ export namespace GlobalConst{
         leftArrowWhite: "/images/leftArrowWhite.png",
         rightArrowWhite: "/images/rightArrowWhite.png",
         closeXWhite: "/images/closeXWhite.png",
-        cartIcon: "/images/cartIcon.png"
+        cartIcon: "/images/cartIcon.png",
+        checkAlone: "/images/checkAlone.png",
+        placeholderVideo: "/images/placeholderVideo.png",
+        placeholderYoutube: "/images/placeholderYoutube.png",
+        placeholderPlus: "/images/placeholderPlus2.png",
+        placeholderImage: "/images/placeholderImage.png",
+        playIconYoutube: "/images/playIconYoutube.png"
     }
 }
 

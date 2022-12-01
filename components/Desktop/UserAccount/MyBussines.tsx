@@ -1,6 +1,7 @@
 import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
-import CreateSite from "./CreateSite/createSite";
+import MainPageCreateSite from "./CreateSite/mainPageCreateSite";
+import Gallery from "./CreateSite/Events/Gallery";
 
 export default function MyBussines() {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
@@ -12,26 +13,30 @@ export default function MyBussines() {
             }
             {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateSite &&
-                <CreateSite/>
+                <MainPageCreateSite/>
             }
-            {/*{
+            {
+                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Site &&
+                <Gallery/>
+            }
+           {/* {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateForm &&
                 <CreateFormPage/>
-            }*/}
-           {/* {
+            }
+             {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Inventory &&
                 <MyProducts/>
-            }*/}
+            }
 
-            {/*{
+            {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
                 <CreateProductPage/>
-            }*/}
-            {/*{
+            }
+            {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
                 <EditProductPage/>
-            }*/}
-            {/*{
+            }
+            {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
                 <CreateGroupProduct/>
             }*/}
