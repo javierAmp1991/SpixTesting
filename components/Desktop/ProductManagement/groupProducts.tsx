@@ -1,29 +1,23 @@
 import {useDrag} from "react-dnd";
 import style from "/styles/Desktop/ProductManagement/groupProducts.module.css"
 import {GroupProducts} from "../../../Class/UserAccount/userAccount";
-import LayoutCarrouselDesktop from "../Layouts/layoutCarrouselDesktop";
-import {PropCarrousel} from "../../../Class/Layouts/layoutClass";
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {
     GroupsPGContext,
-    ProductsPGContext,
     ProviderPGGroups,
-    ProviderPGProducts
 } from "../../Providers/UserAccount/ProductAndGroupProvider";
 import PopUpContainerFull from "../Misc/popUpContainerFull";
-import PopUpCreateEditProduct from "./popUpCreateEditProduct";
-import ProductPopUp from "../Misc/ProductPopUp";
 import {createPortal} from "react-dom";
-import NewProductViewSquare from "../Misc/newProductViewSquare";
-import ProductSquare, {ProductSquareProps} from "../Misc/ProductSquare";
+import PopUpCreateEditGroup, {CreateEditGroupProps} from "./popUpCreateEditGroup";
+import AlertModal from "../Misc/alertModal";
+import ProductsGrid from "./productsGrid";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
-    const myProducts: ProviderPGProducts = useContext(ProductsPGContext)
     const myGroups: ProviderPGGroups = useContext(GroupsPGContext)
     const [{isDragging}, drag] = useDrag(() => ({
         type: "groupProducts",
@@ -32,39 +26,20 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
             isDragging: monitor.isDragging()
         })
     }))
-    const layoutPropOffer: PropCarrousel = {
-        PositionArrowY: "calc(50% - 16px)",
-        PositionArrowX: "-40px",
-        Padding: 0,
-        Gap: 16,
-        Grid: 6,
-        IsButtonVisible: true,
-        LeftArrow: () => null,
-        RightArrow: () => null
-    }
-    const popUpHookEdit = useDisplayPopUpHook(false)
-    const popUpHookSee = useDisplayPopUpHook(false)
-    const handlePopUpEdit = () => popUpHookEdit.HandleToggle()
-    const handlePopUpSee = () => popUpHookSee.HandleToggle()
-    let [productEdit, setProductEdit] = useState(null)
-    let [productSee, setProductSee] = useState(null)
 
-    const handleDeleteGroup = () => myGroups.HandleDeleteGroup(item.Name)
-    const handleProductSee = (product) => {
-        setProductSee(product)
-        handlePopUpSee()
-    }
-    const handleEdit = (product) => {
-        setProductEdit(product)
-        handlePopUpEdit()
-    }
+    const hookEditGroup = useDisplayPopUpHook(false)
+    const hookConfirmDeleteGroup = useDisplayPopUpHook(false)
+    const handlePopUpEditGroup = () => hookEditGroup.HandleToggle()
+    const handlePopUpConfirm = () => hookConfirmDeleteGroup.HandleToggle()
 
-    const propsProducts: ProductSquareProps = {
-        Size: null,
-        DisplayStars: false,
-        HasBorder: false,
-        DisplayFullProduct: false
-
+    const handleDeleteGroup = () => {
+        myGroups.HandleDeleteGroup(item.Name)
+        handlePopUpConfirm()
+    }
+    const editGroupProp: CreateEditGroupProps = {
+        ClosePopUp: handlePopUpEditGroup,
+        NameGroup: item.Name,
+        ProductsGroup: item.Products
     }
 
     return (
@@ -73,50 +48,35 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
                 <div className={style.titleGroup}>
                     <span className={style.circleNumber}>{item.Id}</span> {item.Name}
                 </div>
-                <button className={style.contIcon}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray}/>
+                <button onClick={handlePopUpEditGroup} className={style.contIcon}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>
                 </button>
-                <button onClick={handleDeleteGroup} className={style.contIcon}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon}/>
+                <button onClick={handlePopUpConfirm} className={style.contIcon}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                 </button>
             </div>
 
             <div className={style.mainDivCont}>
-                <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
-                    {
-                        item.Products.map((item2, index) =>
-                            index <= 5 &&
-                            <div key={item.Name} className={style.mainDivContPro}>
-                                <button onClick={() => myProducts.HandleDeleteProduct(item2.Id)}
-                                        className={style.sizeIconTrash}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
-                                </button>
-
-                                <button onClick={() => handleProductSee(item2)} className={style.sizeIconVisibility}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
-                                </button>
-                                <div onClick={() => handleEdit(item2)}>
-                                    <ProductSquare props={propsProducts} key={item2.Id} item={item2}/>
-                                </div>
-                            </div>
-                        )
-                    }
-                </LayoutCarrouselDesktop>
+                <ProductsGrid item={item.Products} nameGroup={item.Name}/>
             </div>
             {
-                popUpHookEdit.State &&
+                hookConfirmDeleteGroup.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
-                        <PopUpCreateEditProduct item={productEdit} closePopUp={handlePopUpEdit}
-                                                handleChange={myProducts.HandleCreateProduct}/>
+                    <PopUpContainerFull closePopUp={handlePopUpConfirm} isBackground={true} isButtonVisible={true}>
+                        <AlertModal confirmAction={handleDeleteGroup}>
+                            <div className={style.confirm}>
+                                ¿Esta seguro que desea eliminar el grupo <b>{item.Name}</b> de su lista?
+                            </div>
+                        </AlertModal>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
+
             {
-                popUpHookSee.State &&
+                hookEditGroup.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpSee} isBackground={true} isButtonVisible={true}>
-                        <ProductPopUp closePopUp={handlePopUpSee} item={productSee}/>
+                    <PopUpContainerFull closePopUp={handlePopUpEditGroup} isBackground={true} isButtonVisible={true}>
+                        <PopUpCreateEditGroup item={editGroupProp}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

@@ -8,8 +8,8 @@
 .gridStars {
     display: grid;
     grid-template-columns: repeat(5, max-content);
-    gap: 2px;
-    align-items: center;
+    gap: 4px;
+    align-items: start;
 }
 
 .fontTextReviews {
@@ -17,6 +17,7 @@
     line-height: 12px;
     font-weight: 500;
     color: #007185;
+    padding-left: 4px;
 }
 
 .sizeStar{

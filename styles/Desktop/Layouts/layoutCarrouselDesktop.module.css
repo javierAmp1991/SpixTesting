@@ -21,7 +21,7 @@
 }
 
 .isButtonVisible {
-    grid-template-columns: max-content 1fr max-content;
+    grid-template-columns: 32px 1fr 32px;
 }
 
 .posAbsolute{

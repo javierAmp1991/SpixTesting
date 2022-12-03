@@ -10,6 +10,7 @@ import PopUpCreateEditProduct from "./popUpCreateEditProduct";
 import CustomInput, {CustomInputProps, TypeInput} from "../Misc/customInput";
 import {createPortal} from "react-dom";
 import ProductPopUp from "../Misc/ProductPopUp";
+import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
 
 const productsTitle: string = "Productos"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
@@ -45,6 +46,12 @@ export default function AllProducts() {
         handlePopUpEdit()
     }
 
+    const productProps: ProductModalProps = {
+        CloseModal: handleProductSee,
+        IsQualifying: false,
+        IsButtonVisible: false,
+        IsScalable: false
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -108,7 +115,7 @@ export default function AllProducts() {
                 popUpHookSee.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpSee} isBackground={true} isButtonVisible={true}>
-                        <ProductPopUp closePopUp={handlePopUpSee} item={productSee}/>
+                        <ProductModal item={productSee} productProps={productProps}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

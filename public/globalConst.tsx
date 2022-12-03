@@ -151,7 +151,8 @@ export namespace GlobalConst {
         placeholderPlus: "/images/placeholderPlus2.png",
         placeholderImage: "/images/placeholderImage.png",
         playIconYoutube: "/images/playIconYoutube.png",
-        editProfileGray: "/images/editProfileGray.png"
+        editProfileGray: "/images/editProfileGray.png",
+        alertBanner: "/images/alert.jpg"
     }
 }
 

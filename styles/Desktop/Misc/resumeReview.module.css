@@ -1,0 +1,29 @@
+.mainGrid {
+    display: grid;
+    gap: 8px;
+}
+
+.gridItems {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 60px 1fr max-content;
+    gap: 16px;
+}
+
+.bar {
+    background: rgba(0, 0, 0, .05);
+    border-radius: 12px;
+    overflow: hidden;
+    height: 12px;
+}
+
+.progressBar {
+    background: var(--linkColor);
+    height: 100%;
+}
+
+.gridNumberStar{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 4px;
+}

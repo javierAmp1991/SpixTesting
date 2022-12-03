@@ -6,7 +6,7 @@ import Image from "next/image";
 import {PropCarrousel} from "../../../Class/Layouts/layoutClass";
 
 export default function LayoutCarrouselDesktop({children, layoutProp}:
-                                                   { children: ReactNode, layoutProp: PropCarrousel }) {
+                                                   { children: JSX.Element[], layoutProp: PropCarrousel }) {
     let [visibility, setVisibility] = useState(true);
     const handleRight = () => {
         layoutProp.RightArrow()
@@ -15,17 +15,19 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
         layoutProp.LeftArrow()
     }
     let cssStyle = getCssStyle()
+    const numberChildren: boolean = children.length > layoutProp.Grid
 
 
     return (
         <div className={`${styles.mainDivCarrouselProperties} ${cssStyle.mainGraid}`}>
             {
                 layoutProp.IsButtonVisible ?
-                    <button onClick={handleLeft}
-                            style={{top: layoutProp.PositionArrowY}}
-                            className={`${styles.containerArrow} ${cssStyle.positionArrow}`}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
-                    </button>
+                    numberChildren ?
+                        <button onClick={handleLeft}
+                                style={{top: layoutProp.PositionArrowY}}
+                                className={`${styles.containerArrow} ${cssStyle.positionArrow}`}>
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
+                        </button> : <div/>
                     :
                     <button onClick={handleLeft}
                             style={{top: layoutProp.PositionArrowY, left: layoutProp.PositionArrowX}}
@@ -34,7 +36,6 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
                             ${visibility && utilities.opacity0}`}>
                         <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrow} alt=""/>
                     </button>
-
             }
 
 
@@ -52,11 +53,13 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
 
             {
                 layoutProp.IsButtonVisible ?
-                    <button onClick={handleRight}
-                            style={{top: layoutProp.PositionArrowY}}
-                            className={`${styles.containerArrow} ${cssStyle.positionArrow}`}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
-                    </button>
+                    numberChildren ?
+                        <button onClick={handleRight}
+                                style={{top: layoutProp.PositionArrowY}}
+                                className={`${styles.containerArrow} ${cssStyle.positionArrow}`}>
+
+                            <Image layout={"fill"} src={GlobalConst.sourceImages.rightArrow} alt=""/>
+                        </button> : <div/>
                     :
                     <button onClick={handleRight}
                             style={{top: layoutProp.PositionArrowY, right: layoutProp.PositionArrowX}}
@@ -73,7 +76,7 @@ export default function LayoutCarrouselDesktop({children, layoutProp}:
 
     function getCssStyle() {
         return {
-            positionArrow: layoutProp.IsButtonVisible? styles.posRelative : styles.posAbsolute,
+            positionArrow: layoutProp.IsButtonVisible ? styles.posRelative : styles.posAbsolute,
             mainGraid: layoutProp.IsButtonVisible && styles.isButtonVisible,
             paddingCarr: layoutProp.Padding != null ?
                 {paddingBottom: layoutProp.Padding, paddingTop: layoutProp.Padding} : {}

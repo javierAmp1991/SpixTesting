@@ -1,7 +1,6 @@
 import {NavArrowTabsProvider, ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 import {createContext, useEffect, useState} from "react";
 import {GroupProducts, GroupProductsItem, StepsCreateSite} from "../../../Class/UserAccount/userAccount";
-import {Product} from "../../../dataDemo/data";
 
 //region
 const idBase: string = "idSteps00";
@@ -129,10 +128,11 @@ export class ProviderPGGroups {
     HandleDeleteGroup: Function
     HandleCreateGroup: Function
     HandleDropItem: Function
+    HandleDeleteProduct: Function
+    HandleEditGroup: Function
 }
 
 //endregion
-
 
 export default function ProductAndGroupProvider({children}) {
     let [products, setProducts] = useState(listProducts)
@@ -142,8 +142,24 @@ export default function ProductAndGroupProvider({children}) {
 
     const handleDeleteGroup = (name: string) => setGroupList(groupsList.filter(item => item.Name != name))
     const handleCreateGroup = (item: GroupProductsItem) => {
-        let newList: GroupProductsItem[] = [item]
-        setGroupList(newList.concat(groupsList))
+        setGroupList([...groupsList, item])
+    }
+    const handleDeleteProductGroup = (group: string, id: string) => {
+        let newListGroup = groupsList.map(item => {
+            if (item.Name == group) {
+                let newListProducts = item.Products.filter(item => item != id)
+                return {...item, Products: newListProducts}
+            }
+            return {...item}
+        })
+        setGroupList(newListGroup)
+    }
+    const handleEditGroup = (group: GroupProductsItem) => {
+        let newList = groupsList.map(item => {
+            if (item.Name == group.Name) return group
+            else return {...item}
+        })
+        setGroupList(newList)
     }
 
     const handleDeleteProduct = (id: string) => setProducts(products.filter(item => item.Id != id))
@@ -173,10 +189,9 @@ export default function ProductAndGroupProvider({children}) {
             newListGroup = newList.concat(newItem)
         } else {
             let newList1 = groupsList.slice(0, numNewPosition).filter(item => item.Name != name).concat(newItem)
-            let newList2 = groupsList.slice(numNewPosition).filter(item => item.Name != name)
+            let newList2 = groupsList.slice(numNewPosition, 999).filter(item => item.Name != name)
             newListGroup = newList1.concat(newList2)
         }
-
         setGroupList(newListGroup)
     }
 
@@ -188,7 +203,9 @@ export default function ProductAndGroupProvider({children}) {
         Groups: groupListPro,
         HandleDeleteGroup: handleDeleteGroup,
         HandleCreateGroup: handleCreateGroup,
-        HandleDropItem: handleDropItem
+        HandleDropItem: handleDropItem,
+        HandleDeleteProduct: handleDeleteProductGroup,
+        HandleEditGroup: handleEditGroup
     }
     let providerProducts: ProviderPGProducts = {
         Products: products,
@@ -199,8 +216,6 @@ export default function ProductAndGroupProvider({children}) {
     useEffect(() => {
         setGroupListPro(getGroupList())
     }, [groupsList])
-
-
     useEffect(() => {
         let control = true
         if (products.length == 0) control = false
@@ -227,26 +242,27 @@ export default function ProductAndGroupProvider({children}) {
     }
 
     function getGroupList(): GroupProducts[] {
-        function getProducts(item: string[]): ProductItem[] {
-            let newListProducts: ProductItem[] = []
-            item.forEach(arg => {
-                listProducts.forEach(arg2 => {
-                    if (arg == arg2.Id) newListProducts = [...newListProducts, arg2]
-                })
-            })
-            return newListProducts
-        }
         let newList: GroupProducts[] = []
         groupsList.forEach((item, index) => {
             let newGroup: GroupProducts = {
                 Id: `${index + 1}`,
                 Number: index + 1,
                 Name: item.Name,
-                Products: getProducts(item.Products),
+                Products: getProducts(item.Products)
             }
             newList = [...newList, newGroup]
         })
         return newList
+    }
+
+    function getProducts(item: string[]): ProductItem[] {
+        let newListProducts: ProductItem[] = []
+        item.forEach((arg) => {
+            listProducts.forEach((arg2) => {
+                if (arg == arg2.Id) newListProducts = [...newListProducts, arg2]
+            })
+        })
+        return newListProducts
     }
 
     function updateStatesSteps(numStep: number, state: boolean) {

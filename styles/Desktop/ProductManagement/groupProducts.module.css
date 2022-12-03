@@ -32,9 +32,9 @@
     display: grid;
     color: white;
     place-items: center;
-    background: rgba(0,0,0,.2);
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, .45) 100%);
     border-radius: 50%;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .mainDivCont {
@@ -75,4 +75,25 @@
 .borderOrange {
     border: 2px solid orange;
     border-radius: 12px;
+}
+
+.mainDivPopUp {
+    width: 400px;
+    height: max-content;
+    padding: 32px 48px;
+    display: grid;
+    gap: 16px;
+}
+
+.confirm {
+    font-size: 16px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.button {
+    width: max-content;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 6px 48px;
+    margin: auto;
 }
