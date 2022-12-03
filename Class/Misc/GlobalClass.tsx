@@ -1,3 +1,5 @@
+import {StepsCreateSite} from "../UserAccount/userAccount";
+
 export class UploadImageProvisory {
     FileImage: File
     Id: string
@@ -23,6 +25,7 @@ export class ProductItem {
     Name: string
     Description: string
     Price: number
+    SKU?: number
     DiscountPercent?: number
     Include?: string
     ImagePath?: string
@@ -103,4 +106,9 @@ export class AmountCounterProp {
     InitialAmount: number
     MaxAmount: number
     GetActualAmount: Function
+}
+
+export class NavArrowTabsProvider{
+    Steps: StepsCreateSite[]
+    HandleSteps: Function
 }

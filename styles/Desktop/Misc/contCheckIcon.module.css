@@ -1,0 +1,11 @@
+.checkIcon {
+    position: absolute;
+    aspect-ratio: 1/1;
+    top: 16px;
+    right: 16px;
+    width: 16px;
+}
+
+.mainDiv {
+    position: relative;
+}

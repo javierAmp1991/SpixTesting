@@ -1,4 +1,4 @@
-import {Product} from "../../dataDemo/data";
+import {ProductItem} from "../Misc/GlobalClass";
 
 export class LayoutUserAccountProp {
     Title: string
@@ -19,20 +19,27 @@ export class ProductManagementeProvider {
 }
 
 export class MyProductProviderProp {
-    ListProduct: Product[]
+    ListProduct: ProductItem[]
     DeleteProduct: Function
 }
 
 export class GroupProducts {
     Id: string
+    Number: number
     Name: string
-    Products: Product[]
+    Products: ProductItem[]
 }
 
 export class MyGroupProductsProviderProp {
     ListGroup: GroupProducts[]
     DeleteGroup: Function
 }
+
+export class GroupProductsItem {
+    Name: string
+    Products: string[]
+}
+
 
 export class StepsCreateSite {
     Id: string

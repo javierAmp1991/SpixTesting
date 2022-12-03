@@ -8,11 +8,20 @@ import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import ProductPopUp from "./ProductPopUp";
 import {createPortal} from "react-dom";
 import PopUpContainerFull from "./popUpContainerFull";
+import utilities from "/styles/utilities.module.css";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function NewProductViewSquare({item, size, displayFull}:
-                                                 { item: ProductItem, size: number, displayFull: boolean }) {
+export class ProductSquareProps {
+    DisplayFullProduct: boolean
+    HasBorder?: boolean
+    Size?: number
+    DisplayStars?: boolean
+}
+
+const skuText: string = "SKU: "
+
+export default function ProductSquare({item, props}: { item: ProductItem, props: ProductSquareProps }) {
     const displayPopUp = useDisplayPopUpHook(false)
     const handlePopUp = () => displayPopUp.HandleToggle()
     const handleOpen = () => displayPopUp.HandleToggle()
@@ -23,9 +32,9 @@ export default function NewProductViewSquare({item, size, displayFull}:
     }
     let getSizeProduct = getProductSize()
     return (
-        <div className={`${displayFull && style.boxShadow} ${style.mainDiv}`} style={getSizeProduct.widthContainer}>
+        <div className={`${getSizeProduct.boxShadow} ${style.mainDiv}`} style={getSizeProduct.widthContainer}>
             {
-                displayFull ?
+                props.DisplayFullProduct ?
                     <>
                         {
                             (item.DiscountPercent != null || item.Include != null) &&
@@ -39,13 +48,14 @@ export default function NewProductViewSquare({item, size, displayFull}:
                             </div>
                         </div>
                         <div onClick={handleOpen} className={style.gridInfoProduct}>
-                            {item.Name}
+                            <div className={utilities.clamp1}>{item.Name}</div>
                             {
-                                item.Rating != null &&
+                                (item.Rating != null && props.DisplayStars) &&
                                 <div className={style.paddingStar}>
                                     <RatingStarDesk item={item.Rating}/>
                                 </div>
                             }
+                            <span className={utilities.fontSecundaryText}>{skuText}{item.SKU}</span>
                             <PriceView item={priceViewProp}/>
                         </div>
                     </>
@@ -63,13 +73,14 @@ export default function NewProductViewSquare({item, size, displayFull}:
                             </div>
                         </div>
                         <div className={style.gridInfoProduct}>
-                            {item.Name}
+                            <div className={utilities.clamp1}>{item.Name}</div>
                             {
-                                item.Rating != null &&
+                                (item.Rating != null && props.DisplayStars) &&
                                 <div className={style.paddingStar}>
                                     <RatingStarDesk item={item.Rating}/>
                                 </div>
                             }
+                            <span className={utilities.fontSecundaryText}>{skuText}{item.SKU}</span>
                             <PriceView item={priceViewProp}/>
                         </div>
                     </>
@@ -87,7 +98,8 @@ export default function NewProductViewSquare({item, size, displayFull}:
 
     function getProductSize() {
         return {
-            widthContainer: size != null ? {width: size} : {},
+            widthContainer: props.Size != null ? {width: props.Size} : {},
+            boxShadow: props.HasBorder && style.boxShadow
         }
     }
 }

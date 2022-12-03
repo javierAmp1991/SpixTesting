@@ -24,7 +24,7 @@ export default function InOfferRestaurant(){
             <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                 {
                     listOfferProducts.InitialItems.map(item =>
-                        <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                        <NewProductViewSquare key={item.Name} item={item} size={null} displayFull={true}/>
                     )
                 }
             </LayoutCarrouselDesktop>

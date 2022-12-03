@@ -22,7 +22,6 @@
     align-items: end;
     height: 70px;
     grid-template-columns: repeat(2, max-content);
-    background: linear-gradient(90deg, #3962f3  0%,  #2d55e3 100%);
 }
 
 .tab {

@@ -1,0 +1,46 @@
+.mainDiv {
+    display: grid;
+    gap: 12px;
+}
+
+.nameInput {
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.inputCont {
+    padding: 6px 16px;
+    width: 100%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    resize: none;
+    position: relative;
+}
+
+.input {
+    width: 100%;
+}
+
+.magGlass {
+    position: absolute;
+    height: 16px;
+    aspect-ratio: 1/1;
+    left: 16px;
+    top: calc(50% - 8px);
+}
+
+.indent {
+    padding-left: 42px;
+}
+
+.borderRadious {
+    border-radius: 24px;
+}
+
+.isObligatory {
+    color: red;
+}
+
+.gridPriceSpix{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}

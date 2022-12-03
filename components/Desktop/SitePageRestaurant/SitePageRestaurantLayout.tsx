@@ -132,7 +132,7 @@ export default function SitePageRestaurantLayout() {
                         <div className={style.gridPpalProducts}>
                             {
                                 listProducts.map(item =>
-                                    <ProductViewHor key={item.Id} item={item} isDisplayOffer={true}/>
+                                    <ProductViewHor key={item.Id} item={item} displayFullProduct={true}/>
                                 )
                             }
                         </div>

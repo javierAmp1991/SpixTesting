@@ -7,8 +7,6 @@ import {CreateSiteContext} from "../../../Providers/UserAccount/MyBusinessProvid
 import CreateSite from "./createSite";
 import SelectTypeSite from "./selectTypeSite";
 
-const stepNumber: string = "Paso "
-
 export default function MainPageCreateSite() {
     const myBusinessProvider: MyBusinessProviderProp = useContext(CreateSiteContext)
     const handleNav = (num: number) => myBusinessProvider.NavTabs(num)
@@ -23,12 +21,9 @@ export default function MainPageCreateSite() {
                         <button onClick={() => handleNav(item.NumberStep)}
                                 style={{zIndex: getZIndex(item.IsStep, item.NumberStep)}} key={item.Id}
                                 className={style.gridStepTriangle}>
+
                             <div className={`${style.tabBase} ${item.NumberStep == 1 && style.borderRadious}
-                             ${item.NumberStep != 1 && style.spaceArrow}
                              ${getColorTab(item.State, item.IsStep)}`}>
-                               {/* <div>
-                                    {stepNumber}{item.NumberStep}
-                                </div>*/}
                                 <div className={style.nameStep}>
                                     {item.Name}
                                 </div>

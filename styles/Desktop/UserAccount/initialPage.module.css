@@ -6,9 +6,8 @@
     background: white;
     margin: auto;
     width: 100%;
-    max-width: var(--maxWidthBodyContent);
     height: calc(100vh - 97px);
-    box-shadow: var(--boxShadowCard);
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
     /*
     border-radius: 16px;
     margin: var(--marginMainDiv) auto;
@@ -20,7 +19,7 @@
 .mainDivLeftArea {
     height: calc(100vh - 97px);
     background: linear-gradient(145deg, #3151e3 0%, #2f49d0 100.2%);
-    box-shadow: 2px 0 6px rgba(0,0,0,.3);
+    /*box-shadow: 2px 0 6px rgba(0,0,0,.3);*/
 }
 
 .mainDivRightArea {

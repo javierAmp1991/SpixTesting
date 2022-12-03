@@ -14,7 +14,7 @@ export default function ProductSection({sectionProducts}: { sectionProducts: Sec
             <div className={style.gridProducts}>
                 {
                     sectionProducts.ListProducts.map((item: ProductItem) =>
-                        <ProductViewHor key={item.Id} item={item} isDisplayOffer={true}/>)
+                        <ProductViewHor key={item.Id} item={item} displayFullProduct={true}/>)
                 }
             </div>
         </LayoutTitleCustom>

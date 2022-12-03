@@ -1,14 +1,21 @@
 .mainDiv {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 32px;
     height: 100%;
     width: 100%;
     overflow: scroll;
 }
 
+.gridTitleButton {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 16px;
+}
+
 .title {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .titleGroup {
@@ -16,18 +23,15 @@
 }
 
 .buttonCreateProduct {
-    border-radius: 4px;
     display: grid;
     padding: 4px 16px;
-    font-size: 16px;
-    font-weight: 500;
+    border-radius: 4px;
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
-    align-items: center;
     width: max-content;
-    color: white;
-    background: var(--gradientBlueButton);
-    margin-bottom: 24px;
+    color: var(--colorPrimaryTextDesktop);
+    align-items: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
 }
 
 .sizeAddIcon {
@@ -75,4 +79,62 @@
     align-items: center;
     gap: 8px;
     padding-bottom: 16px;
+}
+
+.mainDivPopUp {
+    width: 35vw;
+    height: 790px;
+    margin: 32px 48px;
+    padding: 4px;
+}
+
+.contScroll{
+    overflow: scroll;
+    height: 100%;
+    padding: 4px;
+}
+
+.titlePopUp {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.gridProductSelection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.checkIcon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.contProduct {
+    position: relative;
+    height: 100%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+}
+
+.button {
+    width: max-content;
+    margin: auto;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 6px 48px;
+}
+
+
+.gridPopUp{
+    display: grid;
+    grid-template-rows: max-content max-content max-content 1fr max-content max-content;
+    gap: 16px;
+    height: 100%;
+    overflow: hidden;
+    padding: 4px;
 }

@@ -1,9 +1,8 @@
 import style from "/styles/Desktop/UserAccount/navMenu.module.css";
 import AccountSectionOption from "./AccountSectionOption";
-import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerGlobal";
+import {AccountSectionContext, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import Image from "next/image";
-import {GlobalConst} from "../../../public/globalConst";
 import {UserData, UserDataContext} from "../../Providers/providerGlobal";
 
 export default function NavMenuUserAccount() {
@@ -30,11 +29,11 @@ export default function NavMenuUserAccount() {
                     )
                 }
             </div>
-            <div className={style.underDiv}>
-                <div className={style.sizeLogoSpix}>
+            <div className={style.underDiv}/>
+               {/* <div className={style.sizeLogoSpix}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk}/>
-                </div>
-            </div>
+                </div>*/}
+
         </div>
     )
 }

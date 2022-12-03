@@ -235,7 +235,6 @@ export default function MyBusinessProvider({children}) {
             })
         }
     }
-
     function updateStep(num: number) {
         let newList = stepsCreateSite.map(item => {
             if (item.NumberStep == num) return {...item, IsStep: true}
@@ -243,7 +242,6 @@ export default function MyBusinessProvider({children}) {
         })
         setStepsCreateSite(newList)
     }
-
     function updateStatesSteps(numStep: number, state: boolean) {
         let newList = stepsCreateSite.map(item => {
             if (item.NumberStep == numStep) return {...item, State: state}

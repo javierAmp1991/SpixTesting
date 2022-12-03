@@ -1,0 +1,47 @@
+.contLabel {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    background: black;
+}
+
+.input {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+}
+
+.deleteIcon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 24px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.contTextPlaceHolder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 2px rgba(0,0,0,.2);
+    font-size: 24px;
+    color: var(--colorSecundaryTextDesktop);
+    background: #f1f1f1;
+}
+
+.gridTextPlaceHolder {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 16px;
+}
+
+.sizePlusIcon {
+    width: 24px;
+    aspect-ratio: 1/1;
+    position: relative;
+}

@@ -1,80 +1,74 @@
 import {createContext, useState} from "react";
-import {Product} from "../../../dataDemo/data";
 import {GroupProducts, MyGroupProductsProviderProp} from "../../../Class/UserAccount/userAccount";
+import {ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 
-const listProducts: Product[] = [
+const listProducts: ProductItem[] = [
     {
+        Id: "idProduct01",
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Name: "Producto 1.1",
+        Type: TypeProducts.Service,
+        Price: 18990,
+        DiscountPercent: null,
+        Include: null,
+        ImagePath: "/images/product1.jpg",
+        Rating: 4
+    },
+    {
+        Id: "idProduct02",
+        Name: "Producto 2.2",
+        Type: TypeProducts.Service,
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
+        Price: 2990,
+        DiscountPercent: 30,
+        Include: null,
+        ImagePath: "/images/product4.jpg",
+        Rating: 5
+    },
+    {
+        Id: "idProduct03",
         Name: "Producto 3.3",
+        Type: TypeProducts.Service,
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 990,
-        DiscountPercent: 20,
+        DiscountPercent: 40,
         Include: null,
         ImagePath: "/images/product5.jpg",
-        Rating: 5,
-        Tag: "Snack"
+        Rating: 4
     },
     {
+        Id: "idProduct04",
         Name: "Producto 4.4",
+        Type: TypeProducts.Service,
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 9990,
         DiscountPercent: null,
-        Include: null,
-        Rating: 4,
+        Include: "Dcto 2da Uni.",
         ImagePath: "/images/product6.jpg",
-        Tag: "Energetica"
+        Rating: 3
     },
     {
+        Id: "idProduct05",
         Name: "Producto 5.5",
-        Price: 10990,
-        DiscountPercent: null,
-        Include: null,
-        Rating: 3,
-        ImagePath: "/images/product7.jpg",
-        Tag: "Bebida"
-    },
-    {
-        Name: "Producto 6.6",
+        Type: TypeProducts.Service,
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 10990,
         DiscountPercent: 30,
         Include: null,
-        Rating: 5,
-        ImagePath: "/images/product8.jpg",
-        Tag: "Energeticas"
+        ImagePath: "/images/product7.jpg",
+        Rating: 0
     },
     {
-        Name: "Producto 1.1",
-        Price: 18990,
-        DiscountPercent: null,
-        Include: null,
-        Rating: 3,
-        ImagePath: "/images/product1.jpg",
-        Tag: "Cerveza"
-    },
-    {
-        Name: "Producto 2.2",
-        Price: 2990,
-        DiscountPercent: null,
-        Include: null,
-        Rating: 4,
-        ImagePath: "/images/product4.jpg",
-        Tag: "Energetica"
-    },
-    {
-        Name: "Producto 1.1",
-        Price: 18990,
-        DiscountPercent: null,
-        Include: "Dcto. 2da Uni.",
-        Rating: 5,
-        ImagePath: "/images/product1.jpg",
-        Tag: "Cerveza"
-    },
-    {
+        Id: "idProduct06",
         Name: "Producto 6.6",
+        Type: TypeProducts.Service,
+        Description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ipsam iusto minus perspiciatis quis voluptate.",
         Price: 10990,
         DiscountPercent: null,
         Include: null,
-        Rating: 0,
         ImagePath: "/images/product8.jpg",
-        Tag: "Energeticas"
-    },
+        Rating: 5
+    }
 ]
 
 export const GroupContext = createContext(null)

@@ -1,4 +1,4 @@
-export namespace GlobalConst{
+export namespace GlobalConst {
     export const sourceImages = {
         leftArrow: "/images/leftArrowN1.png",
         rightArrow: "/images/rightArrowN1.png",
@@ -150,13 +150,21 @@ export namespace GlobalConst{
         placeholderYoutube: "/images/placeholderYoutube.png",
         placeholderPlus: "/images/placeholderPlus2.png",
         placeholderImage: "/images/placeholderImage.png",
-        playIconYoutube: "/images/playIconYoutube.png"
+        playIconYoutube: "/images/playIconYoutube.png",
+        editProfileGray: "/images/editProfileGray.png"
     }
 }
 
-export namespace GlobalId{
+export namespace GlobalId {
     export const globalIds = {
         idPortal: "idPortalPopUp007"
+    }
+}
+
+export namespace GlobalStings {
+    export const globalStrings = {
+        stringEmpty: "",
+        priceZero: 0
     }
 }
 

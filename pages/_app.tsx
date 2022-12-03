@@ -5,6 +5,7 @@ import DateFnsUtils from "@date-io/date-fns";
 import CartProvider from "../components/Providers/cartProvider";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
+import ProductAndGroupProvider from "../components/Providers/UserAccount/ProductAndGroupProvider";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -13,7 +14,9 @@ function MyApp({Component, pageProps}) {
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <CartProvider>
                 <DndProvider backend={HTML5Backend}>
-                    <Component {...pageProps} />
+                    <ProductAndGroupProvider>
+                        <Component {...pageProps}/>
+                    </ProductAndGroupProvider>
                 </DndProvider>
                 <div id={idPortal}/>
             </CartProvider>

@@ -26,7 +26,7 @@ export default function OfferProducts() {
                 <LayoutCarrouselDesktop layoutProp={layoutPropOffer}>
                     {
                         products.InitialItems.map(item =>
-                            <NewProductViewSquare key={item.Name} item={item} size={null} isDisplayOffer={true}/>
+                            <NewProductViewSquare key={item.Name} item={item} size={null} displayFull={true}/>
                         )
                     }
                 </LayoutCarrouselDesktop>
