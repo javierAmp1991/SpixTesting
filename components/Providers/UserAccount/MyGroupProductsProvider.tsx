@@ -77,12 +77,14 @@ const listGroupProducts: GroupProducts[] = [
     {
         Id: "idGroupProduct001",
         Name: "Bebidas Energeticas",
-        Products: listProducts
+        Products: listProducts,
+        Number: 1
     },
     {
         Id: "idGroupProduct002",
         Name: "Snacks Salados",
-        Products: listProducts
+        Products: listProducts,
+        Number: 2
     }
 ]
 
