@@ -142,7 +142,8 @@ export default function ProductAndGroupProvider({children}) {
 
     const handleDeleteGroup = (name: string) => setGroupList(groupsList.filter(item => item.Name != name))
     const handleCreateGroup = (item: GroupProductsItem) => {
-        setGroupList([...groupsList, item])
+        let newList: GroupProductsItem[] = [item]
+        setGroupList(newList.concat(groupsList))
     }
     const handleDeleteProductGroup = (group: string, id: string) => {
         let newListGroup = groupsList.map(item => {
@@ -163,9 +164,7 @@ export default function ProductAndGroupProvider({children}) {
     }
 
     const handleDeleteProduct = (id: string) => setProducts(products.filter(item => item.Id != id))
-    const handleCreateProduct = (item: ProductItem) => {
-        setProducts([...products, item])
-    }
+    const handleCreateProduct = (item: ProductItem) =>         setProducts([...products, item])
 
     const handleSteps = (num: number) => {
         if (num == 1) updateStep(num)
@@ -179,6 +178,7 @@ export default function ProductAndGroupProvider({children}) {
     }
 
     const handleDropItem = (numItemMoved: number, numNewPosition: number, name: string) => {
+        prompt(`se movio el${numItemMoved} al ${numNewPosition} de nombre ${name}`)
         let newListGroup: GroupProductsItem[];
         let newItem = groupsList.filter(item => item.Name == name)
         if (numNewPosition == 0) {
