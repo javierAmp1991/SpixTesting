@@ -43,7 +43,7 @@ export default function ResumeReview({item}: { item: ResumeReviews }) {
         <div className={style.mainGrid}>
             {
                 prueba.Qualifications.map(item =>
-                    <div className={style.gridItems}>
+                    <div key={item.NumberStar} className={style.gridItems}>
                         <div className={style.gridNumberStar}>
                             <span>{item.NumberStar}</span><span>{item.NumberStar == 1 ? starSingleText : starMoreText}</span>
                         </div>
