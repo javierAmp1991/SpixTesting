@@ -11,6 +11,7 @@ import ProductModal, {ProductModalProps} from "../../Desktop/Misc/ProductModal";
 import LayoutCarrouselMobile from "../Layouts/layoutCarrousel.Mobile";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import PopUpCreateEditProduct from "../../Desktop/ProductManagement/popUpCreateEditProduct";
+import ProductModalMobile from "../Misc/ProductModal";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -83,7 +84,7 @@ export default function ProductsGridMobile({item, nameGroup}: { item: ProductIte
                 hookSeeProduct.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpSeeProduct} isBackground={true} isButtonVisible={true}>
-                        <ProductModal productProps={productProps} item={productSee}/>
+                        <ProductModalMobile productProps={productProps} item={productSee}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
