@@ -283,3 +283,9 @@
     padding: 0 12px;
     margin-top: 3px;
 }
+
+.gridSeeResumeLink{
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 8px;
+}

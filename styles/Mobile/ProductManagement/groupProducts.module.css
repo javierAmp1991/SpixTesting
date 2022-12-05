@@ -1,0 +1,98 @@
+.titleGroup {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 8px;
+}
+
+.contDrag {
+    padding: 16px;
+}
+
+.gridTitle {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+}
+
+.contIcon {
+    width: 18px;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.circleNumber {
+    width: 24px;
+    height: 24px;
+    display: grid;
+    font-size: 14px;
+    color: white;
+    place-items: center;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .35) 0%, rgba(0, 0, 0, .45) 100%);
+    border-radius: 50%;
+    font-weight: 600;
+}
+
+.mainDivCont {
+    display: grid;
+    position: relative;
+}
+
+.mainDivContPro {
+    display: grid;
+    position: relative;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    border-radius: 12px;
+}
+
+.sizeIconTrash {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 100;
+}
+
+.sizeIconVisibility {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+}
+
+.borderGray {
+    border: 2px solid var(--separationLineColor);
+    border-radius: 12px;
+}
+
+.borderOrange {
+    border: 2px solid orange;
+    border-radius: 12px;
+}
+
+.mainDivPopUp {
+    width: 400px;
+    height: max-content;
+    padding: 32px 48px;
+    display: grid;
+    gap: 16px;
+}
+
+.confirm {
+    font-size: 16px;
+    color: var(--colorPrimaryTextDesktop);
+}
+
+.button {
+    width: max-content;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 6px 48px;
+    margin: auto;
+}

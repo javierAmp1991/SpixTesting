@@ -1,42 +1,50 @@
 .mainDiv {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 32px;
     height: 100%;
     width: 100%;
     overflow: scroll;
+    padding: 0 16px;
 }
 
 .title {
-    font-size: 28px;
+    font-size: 24px;
+}
+
+.gridSearchProducts {
+    display: grid;
+    gap: 16px;
 }
 
 .buttonCreateProduct {
     display: grid;
     padding: 4px 16px;
-    font-size: 16px;
     border-radius: 4px;
     grid-template-columns: repeat(2, max-content);
     gap: 8px;
-    font-weight: 500;
     width: max-content;
-    color: white;
-    background: var(--gradientBlueButton);
+    color: var(--colorPrimaryTextDesktop);
     align-items: center;
-    margin-bottom: 24px ;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
 
+.gridTitleButton {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 16px;
 }
 
 .sizeAddIcon {
-    height: 16px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
     position: relative;
 }
 
 
 .gridProducts {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     padding: 4px;
 }
@@ -53,18 +61,103 @@
 }
 
 .sizeIcon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+
+.sizeIconTrash {
     width: 20px;
     height: 20px;
-    position: relative;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    z-index: 100;
+}
+
+.sizeIconVisibility {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
 }
 
 .gridIcons {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    gap: 6px;
     align-items: center;
     position: absolute;
-    bottom: 8px;
-    right: 0;
+    bottom: 12px;
+    right: 12px;
     z-index: 100;
+}
+
+.mainDivPopUp {
+    width: calc(95vw - 48px);
+    margin: 32px 24px;
+    display: grid;
+    gap: 16px;
+    height: 80vh;
+    overflow: scroll;
+    padding: 0 2px;
+}
+
+.gridInputs {
+    display: grid;
+    gap: 16px;
+    align-content: start;
+}
+
+.gridLabels {
+    grid-template-columns: 1fr 50px;
+    display: grid;
+    gap: 6px;
+}
+
+.gridImageInputs {
+    display: grid;
+    gap: 16px;
+}
+
+.input {
+    width: 100%;
+    padding: 4px 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    outline: none;
+    resize: none;
+}
+
+.contImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.textArea {
+    height: 150px;
+}
+
+.titleCreate {
+    font-size: 21px;
+}
+
+.button {
+    width: max-content;
+    margin: auto;
+    background: var(--gradientBlueButton);
+    color: white;
+    padding: 4px 32px;
+}
+
+.gridSideImages {
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    gap: 6px;
+}
+
+.contInput {
+    width: 33%;
 }

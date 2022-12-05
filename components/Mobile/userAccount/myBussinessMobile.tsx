@@ -1,7 +1,7 @@
 import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import MainPageCreateSiteMobile from "./CreateSite/mainPageCreateSiteMobile";
-import GalleryMobile from "./CreateSite/Events/GalleryMobile";
+import MainPageProductManagementMobile from "../ProductManagement/mainPageProductManagement";
 
 export default function MyBussinessMobile() {
     const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
@@ -17,7 +17,9 @@ export default function MyBussinessMobile() {
             }
             {
                 accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Site &&
-                <GalleryMobile/>
+                /*<GalleryMobile/>*/
+                <MainPageProductManagementMobile/>
+
             }
 
             {/*{

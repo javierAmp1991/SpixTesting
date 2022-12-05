@@ -1,0 +1,18 @@
+.mainDiv {
+    display: grid;
+    overflow: hidden;
+    gap: 32px;
+    height: 100%;
+    grid-template-rows: max-content 1fr;
+    padding-bottom: 16px;
+}
+
+.gridTabs {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+}
+
+.contGroups {
+    height: 100%;
+    overflow: scroll;
+}

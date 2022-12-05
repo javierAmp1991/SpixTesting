@@ -8,7 +8,7 @@ import {ProductsContext} from "../../Providers/UserAccount/MyProductsProvider";
 import {Product} from "../../../dataDemo/data";
 import ProductViewSquare from "../../Desktop/Misc/productViewSquare";
 
-export default function AllProductsMobile() {
+export default function NewAllProductsMobile() {
     const myProductContext: MyProductProviderProp = useContext(ProductsContext)
     const handleDelete = (e: Product) => myProductContext.DeleteProduct(e)
     return (
