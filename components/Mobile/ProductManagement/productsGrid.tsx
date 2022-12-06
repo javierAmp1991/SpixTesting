@@ -12,6 +12,7 @@ import LayoutCarrouselMobile from "../Layouts/layoutCarrousel.Mobile";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import PopUpCreateEditProduct from "../../Desktop/ProductManagement/popUpCreateEditProduct";
 import ProductModalMobile from "../Misc/ProductModal";
+import PopUpCreateEditProductMobile from "./popUpCreateEditProduct";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -75,7 +76,7 @@ export default function ProductsGridMobile({item, nameGroup}: { item: ProductIte
                 hookEditProduct.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpEditProduct} isBackground={true} isButtonVisible={true}>
-                        <PopUpCreateEditProduct closePopUp={handlePopUpEditProduct} item={productEdit}
+                        <PopUpCreateEditProductMobile closePopUp={handlePopUpEditProduct} item={productEdit}
                                                 handleChange={handleEdit}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )

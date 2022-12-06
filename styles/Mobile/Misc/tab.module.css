@@ -1,19 +1,22 @@
 .tabBase {
-    width: 170px;
+    width: 160px;
     height: 46px;
     color: var(--colorPrimaryTextDesktop);
-    border-radius: 12px 12px 0 0;
+    border-radius: 0 0 12px 12px;
     font-weight: 500;
     display: grid;
     place-items: center;
     position: relative;
     --colorTabLine: var(--separationLineColor);
+    --backgroundTabColor: #09a909
 }
 
 .selected {
-    height: 54px;
+    height: 50px;
     background: white;
-    font-size: 18px;
+    background: var(--backgroundTabColor);
+    color: white;
+    font-size: 16px;
 }
 
 .selected:after{
@@ -28,7 +31,6 @@
 
 .noSelected {
     background: rgb(241, 241, 241);
-    transition: .4s;
 }
 
 .selectedItem {
@@ -45,7 +47,7 @@
     height: 32px;
     background: rgb(241, 241, 241);
     position: absolute;
-    bottom: 0;
+    top: 0;
     right: -32px;
     z-index: 100;
     border-radius: 50%;
@@ -53,6 +55,7 @@
 
 .borderBlue {
     background: rgba(13, 111, 202, 1);
+    background: white;
 }
 
 .borderGray {
@@ -76,7 +79,7 @@
     background: white;
     position: absolute;
     left: -16px;
-    bottom: 0;
+    top: 0;
     z-index: 50;
 }
 
@@ -84,8 +87,9 @@
     width: 16px;
     height: 16px;
     background: white;
+    background: #09a909;
     position: absolute;
     z-index: 50;
-    right: -16px;
-    bottom: 0;
+    right: -15px;
+    top: 0;
 }

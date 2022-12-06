@@ -18,9 +18,6 @@ export default function TabNormalMobile({item, onClick, zIndex, isLast}:
                     <>
                         <div className={`${style.borderLeft} ${cssStyle.colorBorder}`}/>
                         <div className={style.borderTwo}/>
-                        <div className={style.selectedItem}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.checkIcon} alt={""}/>
-                        </div>
                     </>
                 }
             </div>

@@ -10,7 +10,8 @@
 .gridTabs {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    align-items: end;
+    align-items: start;
+    border-top: 1px solid var(--separationLineColor);
 }
 
 .contGroups {
