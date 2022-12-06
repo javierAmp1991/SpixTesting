@@ -7,10 +7,9 @@ import {useContext, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
 import ProductSquare, {ProductSquareProps} from "../../Desktop/Misc/ProductSquare";
-import ProductModal, {ProductModalProps} from "../../Desktop/Misc/ProductModal";
+import {ProductModalProps} from "../../Desktop/Misc/ProductModal";
 import LayoutCarrouselMobile from "../Layouts/layoutCarrousel.Mobile";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
-import PopUpCreateEditProduct from "../../Desktop/ProductManagement/popUpCreateEditProduct";
 import ProductModalMobile from "../Misc/ProductModal";
 import PopUpCreateEditProductMobile from "./popUpCreateEditProduct";
 
@@ -55,7 +54,7 @@ export default function ProductsGridMobile({item, nameGroup}: { item: ProductIte
         <>
             <LayoutCarrouselMobile gapLayout={16}>
                 {
-                    item.map((item2, index) =>
+                    item.map((item2) =>
                         <div key={item2.Id} className={style.mainDivContPro}>
                             <button onClick={() => handleDeleteProduct(item2.Id)}
                                     className={style.sizeIconTrash}>
@@ -77,7 +76,7 @@ export default function ProductsGridMobile({item, nameGroup}: { item: ProductIte
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpEditProduct} isBackground={true} isButtonVisible={true}>
                         <PopUpCreateEditProductMobile closePopUp={handlePopUpEditProduct} item={productEdit}
-                                                handleChange={handleEdit}/>
+                                                      handleChange={handleEdit}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

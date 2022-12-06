@@ -19,7 +19,7 @@ function MyApp({Component, pageProps}) {
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <CartProvider>
-                <DndProvider backend={TouchBackend} options={opt}>
+                <DndProvider backend={HTML5Backend} options={opt}>
                     <ProductAndGroupProvider>
                         <Component {...pageProps}/>
                     </ProductAndGroupProvider>
