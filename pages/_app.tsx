@@ -6,7 +6,7 @@ import CartProvider from "../components/Providers/cartProvider";
 import {DndProvider} from "react-dnd";
 import {HTML5Backend} from "react-dnd-html5-backend";
 import ProductAndGroupProvider from "../components/Providers/UserAccount/ProductAndGroupProvider";
-import { TouchBackend } from 'react-dnd-touch-backend'
+import {TouchBackend} from "react-dnd-touch-backend";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -14,12 +14,10 @@ function MyApp({Component, pageProps}) {
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <CartProvider>
-                <DndProvider backend={HTML5Backend}>
-                    <DndProvider backend={TouchBackend}>
-                        <ProductAndGroupProvider>
-                            <Component {...pageProps}/>
-                        </ProductAndGroupProvider>
-                    </DndProvider>
+                <DndProvider backend={TouchBackend}>
+                    <ProductAndGroupProvider>
+                        <Component {...pageProps}/>
+                    </ProductAndGroupProvider>
                 </DndProvider>
                 <div id={idPortal}/>
             </CartProvider>

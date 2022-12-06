@@ -11,7 +11,6 @@ import {Menu} from "../../dataDemo/data";
 export default function DefaultLayoutMobile({children, isDarkMode}:
                                                 { isDarkMode: boolean, children: JSX.Element }) {
     const listMenuMobile = Menu.listMenu
-    //region hooks
     let [isOpenSideSetting, setIsOppenSideSettings] = useState(false)
     const handleSideSetting = () => setIsOppenSideSettings(isOpenSideSetting = !isOpenSideSetting)
     let [isDisplaySug, setIsDisplaySug] = useState(false)
@@ -21,7 +20,7 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
         else document.body.classList.remove(utilities.noScrollBody)
     }, [isOpenSideSetting])
     const cssStyle = getCssStyle()
-    //endregion
+
     return (
         <ProviderGlobal>
             <div className={utilities.bgBodyNormalMobile}>
