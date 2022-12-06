@@ -9,6 +9,7 @@ import ProductAndGroupProvider from "../components/Providers/UserAccount/Product
 import {TouchBackend} from "react-dnd-touch-backend";
 
 const opt = {
+    enableTouchEvents: true,
     enableMouseEvents: true,
     scrollAngleRanges: [
         { start: 30, end: 150 },
