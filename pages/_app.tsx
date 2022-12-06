@@ -10,7 +10,6 @@ import {TouchBackend} from "react-dnd-touch-backend";
 
 const opt = {
     enableMouseEvents: true,
-    enableHoverOutsideTarget: true
 }
 
 const idPortal: string = GlobalId.globalIds.idPortal
