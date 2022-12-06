@@ -10,6 +10,13 @@ import {TouchBackend} from "react-dnd-touch-backend";
 
 const opt = {
     enableMouseEvents: true,
+    scrollAngleRanges: [
+        { start: 30, end: 150 },
+        { start: 210, end: 330 },
+        { start: 300 },
+        { end: 60 },
+        { start: 120, end: 240 }
+    ]
 }
 
 const idPortal: string = GlobalId.globalIds.idPortal
