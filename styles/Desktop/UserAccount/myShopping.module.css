@@ -1,7 +1,7 @@
 .mainDiv {
     display: grid;
     height: 100%;
-    padding: 12px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    padding: var(--paddingUserAccount);
     --colorLines: #efefef;
     --borderLine: 1px solid var(--colorLines);
     --paddingXItems: 12px;
@@ -16,18 +16,12 @@
     display: grid;
     overflow: scroll;
     height: 100%;
-/*    border-bottom: var(--borderLine);
-    border-left: var(--borderLine);
-    border-right: var(--borderLine);*/
     border-radius: 0 0 8px 8px;
     box-shadow: 0 3px 8px rgba(0,0,0,.2);
 }
 
 .mainDivHeader {
     border-radius: 8px 8px 0 0;
-/*    border-top: var(--borderLine);
-    border-left: var(--borderLine);
-    border-right: var(--borderLine);*/
     box-shadow: 0 -2px 8px rgba(0,0,0,.2);
     overflow: hidden;
 }
@@ -122,7 +116,8 @@
     background: #fdfdfd;
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
+    gap: 16px;
+    justify-content: center;
     align-items: center;
     color: var(--colorTitlesDesktop);
     font-weight: 500;

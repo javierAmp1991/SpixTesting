@@ -1,7 +1,7 @@
 .mainDiv {
     display: grid;
     height: 100%;
-    padding: 12px var(--paddingXMainContent) 53px var(--paddingXMainContent);
+    padding: var(--paddingUserAccount);
     --colorLines: #efefef;
     --borderLine: 1px solid var(--colorLines);
     --paddingXItems: 12px;
@@ -96,7 +96,8 @@
     background: #fdfdfd;
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    justify-content: space-between;
+    gap: 16px;
+    justify-content: center;
     align-items: center;
     color: var(--colorTitlesDesktop);
     font-weight: 500;

@@ -5,7 +5,6 @@ import {DashBoardContext, ProviderDashBoard} from "../../Providers/providerUserA
 import {AccountSectionContext, MenuUserAccount, ProviderAccountSections} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import EventVerticalView from "../EventsView/eventVerticalView";
-import {PrincipalFeaturedSearch} from "../../../dataDemo/EventView/featureView";
 import EditProfileSection from "./editProfileSection";
 
 const titleSection: string = "Dashboard"

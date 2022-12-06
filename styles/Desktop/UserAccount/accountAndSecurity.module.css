@@ -1,6 +1,6 @@
 .mainDiv {
     height: 100%;
-    padding: 24px var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    padding: var(--paddingUserAccount);
     overflow: scroll;
     display: grid;
 }

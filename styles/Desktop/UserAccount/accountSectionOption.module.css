@@ -54,7 +54,7 @@
     height: 100%;
     display: grid;
     transition: .6s;
-    padding-left: 12px;
+    padding-left: 16px;
 }
 
 .gridSubItemsClose {
@@ -137,7 +137,7 @@
 .gridSubSite {
     display: grid;
     gap: 16px;
-    padding: 12px 12px 12px 24px;
+    padding: 12px 12px 12px 16px;
     color: white;
     text-align: left;
 }

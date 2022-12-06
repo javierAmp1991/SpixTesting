@@ -1,35 +1,24 @@
-import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
+import {MyBusinessSectionsEnum, MySitesContext, ProviderMySites} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import MainPageCreateSiteMobile from "./CreateSite/mainPageCreateSiteMobile";
-import MainPageProductManagementMobile from "../ProductManagement/mainPageProductManagement";
+import MainPageSitesMobile from "./MainPageSites";
 
 export default function MyBussinessMobile() {
-    const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
+    const mySites: ProviderMySites = useContext(MySitesContext)
     return (
         <>
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.DashBoard &&
+                mySites.SectionSelected == MyBusinessSectionsEnum.DashBoard &&
                 <div>Pagina de inicio</div>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateSite &&
+                mySites.SectionSelected == MyBusinessSectionsEnum.CreateSite &&
                 <MainPageCreateSiteMobile/>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Site &&
-                /*<GalleryMobile/>*/
-                <MainPageProductManagementMobile/>
-
+                mySites.SectionSelected == MyBusinessSectionsEnum.Site &&
+                <MainPageSitesMobile/>
             }
-
-            {/*{
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateForm &&
-                <CreateFormPageMobile/>
-            }
-            {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.MyProducts &&
-                <MyProductsMobile/>
-            }*/}
         </>
     )
 }

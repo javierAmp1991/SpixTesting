@@ -20,7 +20,7 @@ export default function SideSetting({closeDesplegable}: { closeDesplegable: Func
                 <div className={style.paddingGradient}>
                     <div className={style.paddingGradient2}>
                         <div onClick={handleClose} className={style.sizeProfileUser}>
-                            <Image layout={"fill"} src={userData.ProfilePath}/>
+                            <Image layout={"fill"} src={userData.ProfilePath} alt={""}/>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ export default function SideSetting({closeDesplegable}: { closeDesplegable: Func
             </div>
             <div className={style.underDiv}>
                 <div className={style.sizeLogoSpix}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk}/>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk} alt={""}/>
                 </div>
             </div>
         </div>

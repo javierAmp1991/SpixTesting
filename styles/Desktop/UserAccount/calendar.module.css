@@ -1,6 +1,6 @@
 .principalGrid {
     display: grid;
-    grid-template-columns: 1fr 350px;
+    grid-template-columns: 1fr 400px;
     height: 100%;
     --colorLines: #efefef;
     --borderLine: 1px solid var(--colorLines);
@@ -14,7 +14,7 @@
 }
 
 .mainDivSpace {
-    padding: var(--paddingYTitle) var(--paddingXMainContent) var(--paddingBottomAllContent) var(--paddingXMainContent);
+    padding: var(--paddingUserAccount);
     overflow: scroll;
 }
 
