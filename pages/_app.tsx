@@ -8,18 +8,13 @@ import {HTML5Backend} from "react-dnd-html5-backend";
 import ProductAndGroupProvider from "../components/Providers/UserAccount/ProductAndGroupProvider";
 import {TouchBackend} from "react-dnd-touch-backend";
 
-const opt = {
-    enableTouchEvents: true,
-    enableMouseEvents: true,
-}
-
 const idPortal: string = GlobalId.globalIds.idPortal
 
 function MyApp({Component, pageProps}) {
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <CartProvider>
-                <DndProvider backend={HTML5Backend} options={opt}>
+                <DndProvider backend={TouchBackend} options={{enableTouchEvents: true, enableMouseEvents: true}}>
                     <ProductAndGroupProvider>
                         <Component {...pageProps}/>
                     </ProductAndGroupProvider>
