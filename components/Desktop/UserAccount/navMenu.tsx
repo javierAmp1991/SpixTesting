@@ -30,10 +30,6 @@ export default function NavMenuUserAccount() {
                 }
             </div>
             <div className={style.underDiv}/>
-               {/* <div className={style.sizeLogoSpix}>
-                    <Image layout={"fill"} src={GlobalConst.sourceImages.logoSpixHeaderDesk}/>
-                </div>*/}
-
         </div>
     )
 }

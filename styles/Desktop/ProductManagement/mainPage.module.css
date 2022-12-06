@@ -1,6 +1,6 @@
 .mainDiv {
     display: grid;
-    padding: 24px 48px 53px 48px;
+    padding: var(--paddingUserAccount);
     overflow: hidden;
     gap: 32px;
     height: 100%;
@@ -10,6 +10,7 @@
 .gridTabs {
     display: grid;
     grid-template-columns: repeat(2, max-content);
+    align-items: end;
 }
 
 .contGroups {

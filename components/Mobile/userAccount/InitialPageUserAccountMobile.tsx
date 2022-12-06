@@ -15,7 +15,7 @@ export default function InitialPageUserAccountMobile() {
     const providerSection: ProviderAccountSections = useContext(AccountSectionContext)
     return (
         <div className={`${style.mainDiv}
-            ${providerSection.SectionSelected != MenuUserAccount.MyBussines && style.padding}`}>
+            ${providerSection.SectionSelected != MenuUserAccount.MyBusiness && style.padding}`}>
             <div className={style.mainDivRightArea}>
                 {
                     providerSection.SectionSelected == MenuUserAccount.Calendar &&
@@ -38,7 +38,7 @@ export default function InitialPageUserAccountMobile() {
                     <MyCollectionMobile/>
                 }
                 {
-                    providerSection.SectionSelected == MenuUserAccount.MyShoppings &&
+                    providerSection.SectionSelected == MenuUserAccount.MyShopping &&
                     <MyShoppingMobile/>
                 }
                 {
@@ -46,7 +46,7 @@ export default function InitialPageUserAccountMobile() {
                     <MyRefundsMobile/>
                 }
                 {
-                    providerSection.SectionSelected == MenuUserAccount.MyBussines &&
+                    providerSection.SectionSelected == MenuUserAccount.MyBusiness &&
                     <MyBussinessMobile/>
                 }
                 {

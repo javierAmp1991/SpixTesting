@@ -29,7 +29,7 @@
     position: relative;
 }
 
-.sizeImageCreateSite{
+.sizeImageCreateSite {
     height: 16px;
     width: 16px;
     position: relative;
@@ -62,7 +62,27 @@
     height: 0;
     display: grid;
     transition: .6s;
-    padding-left: 12px ;
+    padding-left: 12px;
+}
+
+.open {
+    overflow: hidden;
+    height: 100%;
+    display: grid;
+    transition: .6s;
+    padding-left: 24px;
+}
+
+.close {
+    overflow: hidden;
+    height: 0;
+    display: grid;
+    transition: .6s;
+    padding-left: 24px;
+}
+
+.White {
+    background: rgba(255, 255, 255, .4);
 }
 
 @keyframes animationInit {
@@ -73,8 +93,6 @@
         height: 10%;
     }
 }
-
-
 
 .subItemGrid {
     display: grid;
@@ -88,4 +106,59 @@
 
 .subItemName {
     text-align: left;
+}
+
+.gridNameIcon {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-radius: 4px;
+}
+
+.gridNameIcon2 {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.gridNameIcon2:hover{
+    background: rgba(255, 255, 255, .4);
+}
+
+.gridNameIcon:hover{
+    background: rgba(255, 255, 255, .4);
+}
+
+.gridSubSite {
+    display: grid;
+    gap: 16px;
+    padding: 12px 12px 12px 24px;
+    color: white;
+    text-align: left;
+}
+
+.sizeArrow {
+    height: 30px;
+    width: 24px;
+    position: relative;
+    transition: .4s;
+}
+
+.arrowTransform {
+    transform: rotate(90deg);
+}
+
+.optionSite{
+    text-align: left;
+}
+
+.sizeIconSubSection{
+    width: 16px;
+    height: 16px;
+    position: relative;
 }

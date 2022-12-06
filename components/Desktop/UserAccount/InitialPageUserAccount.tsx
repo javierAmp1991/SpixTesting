@@ -27,7 +27,7 @@ export default function InitialPageUserAccount() {
                         <Calendar/>
                     }
                     {
-                        providerSection.SectionSelected == MenuUserAccount.MyShoppings &&
+                        providerSection.SectionSelected == MenuUserAccount.MyShopping &&
                         <MyShopping/>
                     }
                     {
@@ -51,7 +51,7 @@ export default function InitialPageUserAccount() {
                         <MyCollection/>
                     }
                     {
-                        providerSection.SectionSelected == MenuUserAccount.MyBussines &&
+                        providerSection.SectionSelected == MenuUserAccount.MyBusiness &&
                         <MyBussines/>
                     }
                     {

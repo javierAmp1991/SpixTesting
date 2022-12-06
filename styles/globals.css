@@ -90,6 +90,7 @@
     --GrayTab: #d7d6d6;
     --greenTab: linear-gradient(90deg, #3b9a3b 0%, #5cb85c 100%);
     --greenTrinagle: #5cb85c;
+    --paddingUserAccount: 32px 72px 53px 72px;
 }
 
 /*Desktop Section*/

@@ -3,8 +3,8 @@ import AllProducts from "./allProducts";
 import AllGroupsProducts from "./allGroups";
 import {useContext} from "react";
 import {StepsPGContext} from "../../Providers/UserAccount/ProductAndGroupProvider";
-import TabArrow from "../Misc/tabArrow";
 import {NavArrowTabsProvider} from "../../../Class/Misc/GlobalClass";
+import TabNormal from "../Misc/tab";
 
 export default function MainPageProductManagement() {
     const steps: NavArrowTabsProvider = useContext(StepsPGContext)
@@ -12,8 +12,8 @@ export default function MainPageProductManagement() {
         <div className={style.mainDiv}>
             <div className={style.gridTabs}>
                 {
-                    steps.Steps.map(item =>
-                        <TabArrow zIndex={steps.Steps.length - item.NumberStep}
+                    steps.Steps.map((item, index) =>
+                        <TabNormal isLast={index == (steps.Steps.length - 1)} zIndex={steps.Steps.length - item.NumberStep}
                                   key={item.Id} item={item} onClick={steps.HandleSteps}/>
                     )
                 }

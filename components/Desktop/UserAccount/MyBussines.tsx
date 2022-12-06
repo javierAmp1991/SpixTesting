@@ -1,47 +1,24 @@
-import {AccountSectionContext, MyBussinesMenu, ProviderAccountSections} from "../../Providers/providerGlobal";
+import {MyBusinessSectionsEnum, MySitesContext, ProviderMySites} from "../../Providers/providerGlobal";
 import {useContext} from "react";
 import MainPageCreateSite from "./CreateSite/mainPageCreateSite";
-import Gallery from "./CreateSite/Events/Gallery";
-import MyProducts from "./myProducts";
-import MainPageProductManagement from "../ProductManagement/mainPageProductManagement";
+import MainPageSites from "./MainPageSites";
 
 export default function MyBussines() {
-    const accountSectionContext: ProviderAccountSections = useContext(AccountSectionContext)
+    const mySites: ProviderMySites = useContext(MySitesContext)
     return (
         <>
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.DashBoard &&
+                mySites.SectionSelected == MyBusinessSectionsEnum.DashBoard &&
                 <div>Pagina de inicio</div>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateSite &&
+                mySites.SectionSelected == MyBusinessSectionsEnum.CreateSite &&
                 <MainPageCreateSite/>
             }
             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Site &&
-                <MainPageProductManagement/>
+                mySites.SectionSelected == MyBusinessSectionsEnum.Site &&
+                <MainPageSites/>
             }
-           {/* {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateForm &&
-                <CreateFormPage/>
-            }
-             {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.Inventory &&
-                <MyProducts/>
-            }
-
-            {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
-                <CreateProductPage/>
-            }
-            {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
-                <EditProductPage/>
-            }
-            {
-                accountSectionContext.SectionMyBussinesSelected == MyBussinesMenu.CreateProduct &&
-                <CreateGroupProduct/>
-            }*/}
         </>
     )
 }

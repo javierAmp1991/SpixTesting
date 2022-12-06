@@ -1,0 +1,91 @@
+.tabBase {
+    width: 170px;
+    height: 46px;
+    color: var(--colorPrimaryTextDesktop);
+    border-radius: 12px 12px 0 0;
+    font-weight: 500;
+    display: grid;
+    place-items: center;
+    position: relative;
+    --colorTabLine: var(--separationLineColor);
+}
+
+.selected {
+    height: 54px;
+    background: white;
+    font-size: 18px;
+}
+
+.selected:after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background: white;
+    bottom: -1px;
+}
+
+
+.noSelected {
+    background: rgb(241, 241, 241);
+    transition: .4s;
+}
+
+.selectedItem {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 8px;
+    right: 8px;
+    z-index: 100;
+}
+
+.borderLeft {
+    width: 32px;
+    height: 32px;
+    background: rgb(241, 241, 241);
+    position: absolute;
+    bottom: 0;
+    right: -32px;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.borderBlue {
+    background: rgba(13, 111, 202, 1);
+}
+
+.borderGray {
+    background: rgb(241, 241, 241);
+}
+
+.borderRight {
+    width: 32px;
+    height: 32px;
+    background: rgba(13, 111, 202, 1);
+    position: absolute;
+    bottom: 0;
+    left: -32px;
+    z-index: 100;
+    border-radius: 50%;
+}
+
+.borderOne {
+    width: 16px;
+    height: 16px;
+    background: white;
+    position: absolute;
+    left: -16px;
+    bottom: 0;
+    z-index: 50;
+}
+
+.borderTwo {
+    width: 16px;
+    height: 16px;
+    background: white;
+    position: absolute;
+    z-index: 50;
+    right: -16px;
+    bottom: 0;
+}

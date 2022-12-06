@@ -34,7 +34,7 @@ export default function AccountSectionOptionMobile({item}: { item: AccountSectio
                 </button>
             </Link>
             {
-                item.Type == MenuUserAccount.MyBussines &&
+                item.Type == MenuUserAccount.MyBusiness &&
                 <div className={item.State ? style.gridSubItemsOpen : style.gridSubItemsClose}>
                     {
                         accountSectionContext.ListMyBussiness.map((item2) =>

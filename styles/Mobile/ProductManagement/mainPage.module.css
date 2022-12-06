@@ -10,6 +10,8 @@
 .gridTabs {
     display: grid;
     grid-template-columns: repeat(2, max-content);
+    background: rgba(13,111,202,1);
+    align-items: end;
 }
 
 .contGroups {

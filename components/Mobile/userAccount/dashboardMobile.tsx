@@ -150,7 +150,7 @@ export default function DashboardMobile() {
                     <div>
                         Ultimas compras
                     </div>
-                    <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.seeMore}>
+                    <button onClick={() => handleOption(MenuUserAccount.MyShopping)} className={style.seeMore}>
                         Ver compras
                     </button>
                 </div>

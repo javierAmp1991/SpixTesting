@@ -159,7 +159,7 @@ export default function Dashboard() {
                     <div className={style.myShoppingSection}>
                         <div className={style.headerSection}>
                             <div> Ultimas compras</div>
-                            <button onClick={() => handleOption(MenuUserAccount.MyShoppings)} className={style.seeMore}>
+                            <button onClick={() => handleOption(MenuUserAccount.MyShopping)} className={style.seeMore}>
                                 Ver compras
                             </button>
                         </div>

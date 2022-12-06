@@ -17,6 +17,7 @@
     padding: var(--paddingY) var(--paddingX);
     background: linear-gradient(145deg, #2d55e3 0%, #3962f3 100%);
     background: #3962f3;
+    background: rgba(13,111,202,1);
     border-radius: 0 0 var(--borderRadious) var(--borderRadious);
 }
 
@@ -44,9 +45,8 @@
     justify-content: center;
     width: 100%;
     padding: 16px;
-    background: linear-gradient(145deg, #2d55e3 0%, #3962f3 100%);
-    background: #3962f3;
     border-radius: var(--borderRadious) var(--borderRadious) 0 0;
+    background: rgba(13,111,202,1);
 }
 
 .sizeLogoSpix {
@@ -63,4 +63,5 @@
     padding: var(--paddingY) var(--paddingX);
     overflow: scroll;
     z-index: 500000;
+    background: linear-gradient(270deg, rgba(7, 99, 185, 1) 0%, rgba(6, 91, 172, 1) 100%);
 }
