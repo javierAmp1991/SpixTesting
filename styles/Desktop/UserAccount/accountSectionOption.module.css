@@ -122,7 +122,7 @@
     grid-template-columns: repeat(2, max-content);
     align-items: center;
     justify-content: space-between;
-    padding: 8px 12px;
+    padding: 12px;
     border-radius: 4px;
 }
 
@@ -137,14 +137,14 @@
 .gridSubSite {
     display: grid;
     gap: 16px;
-    padding: 12px 12px 12px 16px;
+    padding: 12px 0 12px 16px;
     color: white;
     text-align: left;
 }
 
 .sizeArrow {
-    height: 30px;
-    width: 24px;
+    height: 16px;
+    width: 16px;
     position: relative;
     transition: .4s;
 }

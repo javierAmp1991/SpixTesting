@@ -12,6 +12,14 @@ export default function TabNormal({item, onClick, zIndex, isLast}:
                     {item.Name}
                 </div>
                 {
+                    (!item.IsStep && isLast) &&
+                    <>
+                        <div className={`${style.borderLeft} ${cssStyle.colorBorder}`}/>
+                        <div className={style.borderOne}/>
+                    </>
+
+                }
+                {
                     item.IsStep &&
                     <>
                         <div className={`${style.borderLeft} ${cssStyle.colorBorder}`}/>
