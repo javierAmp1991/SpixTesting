@@ -8,7 +8,7 @@ const defaultValue: string = "Confirmar"
 
 
 export default function AlertModal({children, confirmAction, textButton}:
-                                       { children: ReactNode, confirmAction: Function, textButton: string }) {
+                                       { children: ReactNode, confirmAction: Function, textButton?: string }) {
     const handleConfirm = () => confirmAction()
     const buttonProps: ButtonProps = {
         OnClick: handleConfirm,
@@ -17,7 +17,7 @@ export default function AlertModal({children, confirmAction, textButton}:
     return (
         <div className={style.mainDiv}>
             <div className={style.banner}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.alertBanner}/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.alertBanner} alt={""}/>
             </div>
             <div className={style.divInfo}>
                 {children}
