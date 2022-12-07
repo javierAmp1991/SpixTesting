@@ -4,12 +4,14 @@ import {GlobalConst} from "../../../public/globalConst";
 import {ReactNode} from "react";
 import ButtonCustom, {ButtonProps} from "../../Desktop/Misc/button";
 
+const defaultValue: string = "Confirmar"
 
-export default function AlertModalMobile({children, confirmAction}: { children: ReactNode, confirmAction: Function }) {
+export default function AlertModalMobile({children, confirmAction, textButton}:
+                                             { children: ReactNode, confirmAction: Function, textButton: string }) {
     const handleConfirm = () => confirmAction()
     const buttonProps: ButtonProps = {
         OnClick: handleConfirm,
-        Text: "Confirmar"
+        Text: textButton == null ? defaultValue : textButton
     }
     return (
         <div className={style.mainDiv}>

@@ -1,18 +1,17 @@
-import style from "/styles/Desktop/FormManagement/formViewShort.module.css"
+import style from "/styles/Mobile/FormManagement/formViewShort.module.css"
 import {FormItem, MyFormsContext, ProviderMyForm} from "../../Providers/UserAccount/MyFormProvider";
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
-import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 import PopUpForm from "./popUpForm";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
 import {useContext} from "react";
 import AlertModal from "../Misc/alertModal";
-import PopUpContainerFull from "../Misc/popUpContainerFull";
+import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function FormViewShort({item}: { item: FormItem }) {
+export default function FormViewShortMobile({item}: { item: FormItem }) {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     const popUpHook = useDisplayPopUpHook(false)
     const popUpHookDelete = useDisplayPopUpHook(false)

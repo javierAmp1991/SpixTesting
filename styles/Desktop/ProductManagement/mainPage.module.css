@@ -1,16 +1,16 @@
 .mainDiv {
     display: grid;
-    padding: var(--paddingUserAccountTabs);
     overflow: hidden;
-    gap: 32px;
+    padding: var(--paddingUserAccountTabs);
     height: 100%;
-    grid-template-rows: max-content 1fr;
+    position: relative;
 }
 
 .gridTabs {
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: start;
+    position: absolute;
 }
 
 .contGroups {

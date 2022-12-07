@@ -1,8 +1,6 @@
 .mainDiv {
     display: grid;
-    gap: 32px;
-    padding: 4px;
-    width: 50%;
+    gap: 24px;
 }
 
 .title {

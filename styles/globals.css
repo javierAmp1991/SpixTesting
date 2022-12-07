@@ -85,13 +85,15 @@
     --gradientBlueBackground: linear-gradient(180deg, rgba(10, 102, 188, 1) 0%, white 50%);
     --gradientProfileBlue: linear-gradient(90deg, rgba(131, 164, 212, 1) 0%, rgba(182, 251, 255, 1) 50%, rgba(148, 187, 233, 1) 100%);
     --gradientLogos: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-    --blueTab:  linear-gradient(90deg, #0878d7 0%, #118bf3 100%);
+    --blueTab: linear-gradient(90deg, #0878d7 0%, #118bf3 100%);
     --blueTirnagle: #118bf3;
     --GrayTab: #d7d6d6;
     --greenTab: linear-gradient(90deg, #3b9a3b 0%, #5cb85c 100%);
     --greenTrinagle: #5cb85c;
     --paddingUserAccount: 32px 72px 53px 72px;
-    --paddingUserAccountTabs: 0 72px 53px 72px;
+    --paddingUserAccountMobile: 32px 72px 53px 72px;
+    --paddingUserAccountTabs: 82px 72px 53px 72px;
+    --paddingUserAccountTabsMobile: 62px 16px 24px 16px;
 }
 
 /*Desktop Section*/
@@ -151,6 +153,7 @@
     --linkColorDesktop: #2d7dff;
     --colorDarkModeMobile: white;
 }
+
 @font-face {
     font-family: "Roboto";
     src: url('../Font/Roboto-Thin.ttf');

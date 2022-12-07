@@ -1,20 +1,20 @@
-import style from "/styles/Desktop/FormManagement/myForms.module.css"
+import style from "/styles/Mobile/FormManagement/myForms.module.css"
 import {MyFormsContext, ProviderMyForm} from "../../Providers/UserAccount/MyFormProvider";
 import {useContext} from "react";
-import FormViewShort from "./formViewShort";
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
-import PopUpForm from "./popUpForm";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
-import PopUpContainerFull from "../Misc/popUpContainerFull";
-import AlertModal from "../Misc/alertModal";
+import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
+import AlertModalMobile from "../Misc/alertModal";
+import PopUpFormMobile from "./popUpForm";
+import FormViewShortMobile from "./formViewShort";
 
 const title: string = "Formularios"
 const createForm: string = "Crear Formulario"
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function MyForms() {
+export default function MyFormsMobile() {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     const popUpHook = useDisplayPopUpHook(false)
     const popUpHookAlert = useDisplayPopUpHook(false)
@@ -39,7 +39,7 @@ export default function MyForms() {
             <div className={style.contForms}>
                 {
                     steps.ListForms.map(item =>
-                        <FormViewShort key={item.Id} item={item}/>
+                        <FormViewShortMobile key={item.Id} item={item}/>
                     )
                 }
             </div>
@@ -47,7 +47,7 @@ export default function MyForms() {
                 popUpHook.State &&
                 createPortal(
                     <PopUpContainerFull isBackground={true} isButtonVisible={true} closePopUp={handleAddForm}>
-                        <PopUpForm closePopUp={handleAddForm} item={null}/>
+                        <PopUpFormMobile closePopUp={handleAddForm} item={null}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
@@ -55,11 +55,11 @@ export default function MyForms() {
                 popUpHookAlert.State &&
                 createPortal(
                     <PopUpContainerFull isBackground={true} isButtonVisible={true} closePopUp={handlePopUpAlert}>
-                        <AlertModal confirmAction={handlePopUpAlert} textButton={"Aceptar"}>
+                        <AlertModalMobile textButton={"Aceptar"} confirmAction={handlePopUpAlert}>
                             <div>
                                 No se pueden tener mas de <b>3 formularios</b> a la vez, elimine uno para crear uno nuevo
                             </div>
-                        </AlertModal>
+                        </AlertModalMobile>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

@@ -1,15 +1,15 @@
-import style from "/styles/Desktop/FormManagement/popUpForm.module.css"
+import style from "/styles/Mobile/FormManagement/popUpForm.module.css"
 import {FormItem, MyFormsContext, ProviderMyForm} from "../../Providers/UserAccount/MyFormProvider";
-import CustomInput, {CustomInputProps, TypeInput} from "../Misc/customInput";
 import {useContext, useState} from "react";
-import ButtonCustom, {ButtonProps} from "../Misc/button";
 import {GlobalStings} from "../../../public/globalConst";
+import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/customInput";
+import ButtonCustom, {ButtonProps} from "../../Desktop/Misc/button";
 
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
 const createTitle: string = "Crear Formulario"
 const editTitle: string = "Editar Formulario"
 
-export default function PopUpForm({item, closePopUp}: { item: FormItem, closePopUp: Function }) {
+export default function PopUpFormMobile({item, closePopUp}: { item: FormItem, closePopUp: Function }) {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     let [nameForm, setNameForm] = useState(item == null ? stringEmpty : item.Name)
     let [descriptionForm, setDescriptionForm] = useState(item == null ? stringEmpty : item.Description)
@@ -50,7 +50,7 @@ export default function PopUpForm({item, closePopUp}: { item: FormItem, closePop
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>
-                {item == null? createTitle : editTitle}
+                {item == null ? createTitle : editTitle}
             </div>
             <CustomInput item={inputNameForm}/>
             <CustomInput item={inputDescriptionGroup}/>

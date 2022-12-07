@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/FormManagement/popUpApplication.module.css"
+import style from "/styles/Mobile/FormManagement/popUpApplication.module.css"
 import {ApplicationItem} from "../../Providers/UserAccount/MyFormProvider";
 import Image from "next/image";
 
@@ -8,7 +8,7 @@ const email: string = "Email: "
 const number: string = "Numero: "
 const aboutMe: string = "Sobre mi: "
 
-export default function PopUpApplication({item}: { item: ApplicationItem }) {
+export default function PopUpApplicationMobile({item}: { item: ApplicationItem }) {
     return (
         <div className={style.mainDiv}>
             <div className={style.title}>

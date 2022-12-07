@@ -1,17 +1,16 @@
-import style from "/styles/Desktop/FormManagement/applicationViewShort.module.css"
+import style from "/styles/Mobile/FormManagement/applicationViewShort.module.css"
 import {ApplicationItem, MyFormsContext, ProviderMyForm} from "../../Providers/UserAccount/MyFormProvider";
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
-import PopUpApplication from "./popUpApplication";
-import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 import {useContext, useEffect, useState} from "react";
-import PopUpContainerFull from "../Misc/popUpContainerFull";
+import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
+import PopUpApplicationMobile from "./popUpApplication";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function ApplicationViewShort({item}: { item: ApplicationItem }) {
+export default function ApplicationViewShortMobile({item}: { item: ApplicationItem }) {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     let [isPinned, setIsPinned] = useState(item.IsPinned)
     const handlePinned = () => setIsPinned(!isPinned)
@@ -47,7 +46,7 @@ export default function ApplicationViewShort({item}: { item: ApplicationItem }) 
                 popUpHook.State &&
                 createPortal(
                     <PopUpContainerFull isButtonVisible={true} isBackground={true} closePopUp={handlePopUp}>
-                        <PopUpApplication item={item}/>
+                        <PopUpApplicationMobile item={item}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
 

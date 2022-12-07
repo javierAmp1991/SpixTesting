@@ -1,0 +1,31 @@
+.mainDiv {
+    display: grid;
+    gap: 24px;
+}
+
+.gridTitleDrop {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 16px;
+}
+
+.title {
+    color: var(--colorTitlesDesktop);
+    font-size: 21px;
+}
+
+.contForms {
+    display: grid;
+    gap: 16px;
+}
+
+.select {
+    outline: none;
+    width: max-content;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    padding: 8px 24px;
+    cursor: pointer;
+    /*    -webkit-appearance: none;
+        -moz-appearance: none;*/
+}

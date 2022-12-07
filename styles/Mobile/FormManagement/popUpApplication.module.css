@@ -1,10 +1,10 @@
 .mainDiv {
-    width: 500px;
+    width: 95vw;
     height: max-content;
     position: relative;
     display: grid;
     gap: 16px;
-    padding: 32px 48px;
+    padding: 32px 24px;
 }
 
 .title {
