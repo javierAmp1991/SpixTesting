@@ -130,6 +130,7 @@ export class ProviderPGGroups {
     HandleDropItem: Function
     HandleDeleteProduct: Function
     HandleEditGroup: Function
+    HandleDropItemMobile: Function
 }
 
 //endregion
@@ -164,7 +165,7 @@ export default function ProductAndGroupProvider({children}) {
     }
 
     const handleDeleteProduct = (id: string) => setProducts(products.filter(item => item.Id != id))
-    const handleCreateProduct = (item: ProductItem) =>         setProducts([...products, item])
+    const handleCreateProduct = (item: ProductItem) => setProducts([...products, item])
 
     const handleSteps = (num: number) => {
         if (num == 1) updateStep(num)
@@ -193,6 +194,22 @@ export default function ProductAndGroupProvider({children}) {
         }
         setGroupList(newListGroup)
     }
+    const handleDropItemMobile = (name: string, numNewPosition: number) => {
+        let newListGroup: GroupProductsItem[];
+        let newItem = groupsList.filter(item => item.Name == name)
+        if (numNewPosition == 0) {
+            let newList = groupsList.filter(item => item.Name != name)
+            newListGroup = newItem.concat(newList)
+        } else if (numNewPosition == (groupsList.length - 1)) {
+            let newList = groupsList.filter(item => item.Name != name)
+            newListGroup = newList.concat(newItem)
+        } else {
+            let newList1 = groupsList.slice(0, numNewPosition).filter(item => item.Name != name).concat(newItem)
+            let newList2 = groupsList.slice(numNewPosition, 999).filter(item => item.Name != name)
+            newListGroup = newList1.concat(newList2)
+        }
+        setGroupList(newListGroup)
+    }
 
     let providerSteps: NavArrowTabsProvider = {
         Steps: stepsCreateSite,
@@ -204,7 +221,8 @@ export default function ProductAndGroupProvider({children}) {
         HandleCreateGroup: handleCreateGroup,
         HandleDropItem: handleDropItem,
         HandleDeleteProduct: handleDeleteProductGroup,
-        HandleEditGroup: handleEditGroup
+        HandleEditGroup: handleEditGroup,
+        HandleDropItemMobile: handleDropItemMobile
     }
     let providerProducts: ProviderPGProducts = {
         Products: products,

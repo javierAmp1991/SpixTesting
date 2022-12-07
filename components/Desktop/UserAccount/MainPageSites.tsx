@@ -10,6 +10,7 @@ import CreateForm from "../../../pages/fillForm";
 import AnswerToForm from "../Form/answerToForm";
 import FillFormDefault from "../../Globals/fillFormDefault";
 import MainPageForm from "../FormManagement/mainPageForm";
+import MainPageServiceManagement from "../ServiceManagement/mainPageServiceManagement";
 
 export default function MainPageSites() {
     const subSection: ProviderSubSectionMyBusiness = useContext(SubSectionsMyBusinessContext)
@@ -32,6 +33,10 @@ export default function MainPageSites() {
             {
                 subSection.SubSectionSelected == SubSectionSites.Form &&
                 <MainPageForm/>
+            }
+            {
+                subSection.SubSectionSelected == SubSectionSites.Services &&
+                <MainPageServiceManagement/>
             }
         </>
     )

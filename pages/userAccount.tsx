@@ -3,6 +3,7 @@ import ProviderUserAccount from "../components/Providers/providerUserAccount";
 import ProviderGlobal from "../components/Providers/providerGlobal";
 import MyBusinessProvider from "../components/Providers/UserAccount/MyBusinessProvider";
 import MyFormProvider from "../components/Providers/UserAccount/MyFormProvider";
+import MyServicesProvider from "../components/Providers/UserAccount/MyServicesProvider";
 
 export default function UserAccount() {
     return (
@@ -10,7 +11,9 @@ export default function UserAccount() {
             <ProviderGlobal>
                 <MyBusinessProvider>
                     <MyFormProvider>
-                        <UserAccountDefault/>
+                        <MyServicesProvider>
+                            <UserAccountDefault/>
+                        </MyServicesProvider>
                     </MyFormProvider>
                 </MyBusinessProvider>
             </ProviderGlobal>

@@ -6,9 +6,9 @@ import {GroupsPGContext, ProviderPGGroups,} from "../../Providers/UserAccount/Pr
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
-import ContGroupProductsMobile from "./contGroupProducts";
 import {CreateEditGroupProps} from "../../Desktop/ProductManagement/popUpCreateEditGroup";
 import PopUpCreateEditGroupMobile from "./popUpCreateEditGroup";
+import GroupProductsMobile from "./groupProducts";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const title: string = "Grupos"
@@ -41,7 +41,7 @@ export default function AllGroupsProductsMobile() {
             <div className={style.gridProducts}>
                 {
                     groupContext.Groups.map((item) =>
-                        <ContGroupProductsMobile key={item.Id} item={item}/>
+                        <GroupProductsMobile key={item.Id} item={item}/>
                     )
                 }
             </div>

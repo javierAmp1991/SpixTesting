@@ -24,7 +24,8 @@ export enum SubSectionSites {
     Dashboard,
     Gallery,
     Products,
-    Form
+    Form,
+    Services
 }
 
 export enum MyBusinessSectionsEnum {
@@ -266,7 +267,15 @@ const listSubsection: SubSectionOptions[] = [
         Type: SubSectionSites.Form,
         Name: "Formularios",
         State: false
+    },
+    {
+        Id: "idSubsection005",
+        PathImage: GlobalConst.sourceImages.formIconNew,
+        Type: SubSectionSites.Services,
+        Name: "Servicios",
+        State: false
     }
+
 ]
 
 export const AccountSectionContext = createContext(null)

@@ -5,9 +5,11 @@ import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import PopUpForm from "./popUpForm";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import AlertModal from "../Misc/alertModal";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
+import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/customInput";
+import ButtonCustom, {ButtonProps} from "../../Desktop/Misc/button";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -15,26 +17,64 @@ export default function FormViewShortMobile({item}: { item: FormItem }) {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     const popUpHook = useDisplayPopUpHook(false)
     const popUpHookDelete = useDisplayPopUpHook(false)
+    const popUpHookNewPosition = useDisplayPopUpHook(false)
     const handlePopUp = () => popUpHook.HandleToggle()
     const handlePopUpDelete = () => popUpHookDelete.HandleToggle()
     const handleDeleteForm = () => steps.HandleForms(item.Id)
+    const handlePopUpNewPosition = () => popUpHookNewPosition.HandleToggle()
+
+    let [newPosition, setNewPosition] = useState(item.Index)
+    const handleNewPosition = (e) => setNewPosition(e.target.value)
+
+    const handleChangePosition = () => {
+        if (newPosition >= 1 && newPosition <= steps.ListForms.length) {
+            steps.HandleDropForm(item.Id, (newPosition - 1))
+            handlePopUpNewPosition()
+        }
+    }
+
+    const inputNewId: CustomInputProps = {
+        Value: newPosition.toString(),
+        NameInput: `Nueva posicion (min. 1 / maxi. ${steps.ListForms.length})`,
+        PlaceholderInput: `Ingrese la nueva posicion`,
+        TypeInput: TypeInput.Input,
+        TypeTextInput: `number`,
+        Onchange: handleNewPosition,
+    }
+    const buttonProps: ButtonProps = {
+        Text: "Aplicar",
+        OnClick: handleChangePosition
+    }
 
     return (
         <div className={style.mainDiv}>
-            <div onClick={handlePopUp} className={style.info}>
-                <div className={style.name}>
-                    {item.Name}
+            <div className={style.info}>
+                <div className={style.gridPositionName}>
+                    <button onClick={handlePopUpNewPosition} className={style.position}>
+                        {item.Index + 1}
+                    </button>
+                    <div className={style.name}>
+                        {item.Name}
+                    </div>
                 </div>
-                <div className={style.description}>
+                <div onClick={handlePopUp} className={style.description}>
                     {item.Description}
                 </div>
             </div>
-            {/*<div className={style.formIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.formIconGray}/>
-            </div>*/}
             <button onClick={handlePopUpDelete} className={style.deleteIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
             </button>
+            {
+                popUpHookNewPosition.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={handlePopUpNewPosition} isButtonVisible={true} isBackground={true}>
+                        <div className={style.mainDivNewPosition}>
+                            <CustomInput item={inputNewId}/>
+                            <ButtonCustom item={buttonProps}/>
+                        </div>
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
             {
                 popUpHook.State &&
                 createPortal(

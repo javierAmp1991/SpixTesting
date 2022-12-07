@@ -22,7 +22,7 @@ export default function RatingStarVar({item, size}: { item: number, size: number
                 }
             </div>
 
-            <div style={{fontSize: size/2}} className={style.fontTextReviews}>
+            <div style={{fontSize: 12}} className={style.fontTextReviews}>
                 ({item})
             </div>
         </div>

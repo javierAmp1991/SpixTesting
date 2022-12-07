@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from "react";
+import {createContext, useState} from "react";
 import {GlobalStings} from "../../../public/globalConst";
 import {StepsCreateSite} from "../../../Class/UserAccount/userAccount";
 
@@ -15,12 +15,14 @@ export class ProviderMyForm {
     HandleDeleteApplication: Function
     HandlePinnedApplication: Function
     HandleCreateEditForm: Function
+    HandleDropForm: Function
 }
 
 export class FormItem {
     Id: string
     Name: string
     Description: string
+    Index: number
 }
 
 export class ApplicationItem {
@@ -97,6 +99,28 @@ export default function MyFormProvider({children}) {
             setListForms(newList)
         } else setListForms([...listForms, form])
     }
+    const handleDrop = (id: string, newPosition: number) => {
+        let newListGroup: FormItem[];
+        let newItem = listForms.filter(item => item.Id == id)
+        let indexItemMoved = listForms.indexOf(newItem[0])
+
+        if (newPosition != indexItemMoved) {
+            if (newPosition == 0) {
+                let newList = listForms.filter(item => item.Id != id)
+                newListGroup = newItem.concat(newList)
+            } else if (newPosition == (listForms.length - 1)) {
+                let newList = listForms.filter(item => item.Id != id)
+                newListGroup = newList.concat(newItem)
+            } else {
+                let newList = listForms
+                newList.splice(newPosition, 0, newItem[0])
+            }
+            let finalList = newListGroup.map((item, index) => {
+                return {...item, Index: index}
+            })
+            setListForms(finalList)
+        } else prompt(`estas moviendo al mismo lugar`)
+    }
 
     const providerForm: ProviderMyForm = {
         ListForms: listForms,
@@ -108,7 +132,8 @@ export default function MyFormProvider({children}) {
         HandleDropBox: handleOptions,
         HandleDeleteApplication: handleDeleteApplication,
         HandlePinnedApplication: handlePinnedApplication,
-        HandleCreateEditForm: handleCreateEditForm
+        HandleCreateEditForm: handleCreateEditForm,
+        HandleDropForm: handleDrop
     }
 
     return (
@@ -143,7 +168,8 @@ function getForms() {
         let newItem: FormItem = {
             Id: `form${i}`,
             Name: `Name Form 00${i}`,
-            Description: loremIpsum
+            Description: loremIpsum,
+            Index: i - 1
         }
         newList = [...newList, newItem]
     }
