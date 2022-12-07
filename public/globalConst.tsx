@@ -155,7 +155,9 @@ export namespace GlobalConst {
         alertBanner: "/images/alert.png",
         formIconNew: "/images/formIcon.png",
         galleryIcon: "/images/galleryIcon.png",
-        productIcon: "/images/productIcon.png"
+        productIcon: "/images/productIcon.png",
+        pinnedBlue: "/images/pinnedBlue.png",
+        pinnedGray: "/images/pinnedGray.png",
     }
 }
 
@@ -168,6 +170,7 @@ export namespace GlobalId {
 export namespace GlobalStings {
     export const globalStrings = {
         stringEmpty: "",
+        LoremIpsum: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid autem doloremque in minus modi nisi recusandae, repellendus sint sit sunt! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deserunt enim est incidunt laboriosam optio quisquam saepe sequi ullam voluptatem!",
         priceZero: 0
     }
 }

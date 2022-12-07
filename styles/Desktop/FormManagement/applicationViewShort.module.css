@@ -1,0 +1,83 @@
+.mainDiv {
+    position: relative;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+    padding: 28px 16px;
+    border-radius: 8px;
+}
+
+.sizeProfile {
+    width: 36px;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.name {
+    font-weight: 500;
+}
+
+.aboutMe {
+    color: var(--colorPrimaryTextDesktop)
+}
+
+.gridProfileName {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 12px;
+    align-items: center;
+}
+
+.gridIcon {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 16px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+}
+
+.deleteIcon {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 20px;
+}
+
+.pinned {
+    position: relative;
+    aspect-ratio: 1/1;
+    width: 20px;
+}
+
+.pinnedA {
+    animation: pinned .3s linear;
+}
+
+.noPinned {
+    animation: noPinned .2s linear;
+}
+
+@keyframes pinned {
+    0% {
+        transform: translate(0, 0);
+    }
+    70% {
+        transform: translate(8px, -8px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes noPinned {
+    0% {
+        transform: scale(1);
+    }
+    80% {
+        transform: scale(.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

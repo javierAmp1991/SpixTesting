@@ -46,7 +46,7 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
         <div className={style.contDrag} ref={drag}>
             <div className={style.gridTitle}>
                 <div className={style.titleGroup}>
-                    <span className={style.circleNumber}>{item.Id}</span> {item.Name}
+                    {/*<span className={style.circleNumber}>{item.Id}</span>*/} {item.Name}
                 </div>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>

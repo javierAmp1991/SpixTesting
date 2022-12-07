@@ -38,9 +38,9 @@ export default function SiteMyBusinessNav({item}: { item: MyBusinessOptions }) {
                                 <div key={item3.Name} className={style.optionSite}>
                                     {item3.Name}
                                 </div>
-                                <div className={style.sizeIconSubSection}>
+                                {/*<div className={style.sizeIconSubSection}>
                                     <Image layout={"fill"} src={item3.PathImage} alt={""}/>
-                                </div>
+                                </div>*/}
                             </button>
                         )
                     }

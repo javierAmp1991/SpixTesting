@@ -2,21 +2,25 @@
     width: 170px;
     height: 46px;
     color: var(--colorPrimaryTextDesktop);
-    border-radius: 0 0 8px 8px;
+    border-radius: 0 0 4px 4px;
     font-weight: 500;
     display: grid;
     place-items: center;
     position: relative;
     --colorTabLine: var(--separationLineColor);
-    --backgroundTabColor: linear-gradient(145deg, #048a04 0%, #09a909 100%);
-    --backgroundBorderTad: #09a909;
+    /*
+      --backgroundTabColor: linear-gradient(145deg, #048a04 0%, #09a909 100%);
+      --backgroundBorderTad: #09a909;
+    */
+    --backgroundTabColor: var(--gradientBlueButton);
+    --backgroundBorderTad: var(--gradientBlueButton);
+    --sizeBorder: 20px;
 }
 
 .selected {
     height: 50px;
     background: white;
     background: var(--backgroundTabColor);
-    font-size: 18px;
     color: white;
 }
 
@@ -34,12 +38,12 @@
 }
 
 .borderLeft {
-    width: 32px;
-    height: 32px;
+    width: var(--sizeBorder);
+    height: var(--sizeBorder);
+    right: calc(var(--sizeBorder) * -1);
     background: rgb(241, 241, 241);
     position: absolute;
     top: 0;
-    right: -32px;
     z-index: 100;
     border-radius: 50%;
 }
@@ -54,33 +58,33 @@
 }
 
 .borderRight {
-    width: 32px;
-    height: 32px;
+    width: var(--sizeBorder);
+    height: var(--sizeBorder);
+    left: calc(var(--sizeBorder) * -1);
     background: rgba(13, 111, 202, 1);
     position: absolute;
     bottom: 0;
-    left: -32px;
     z-index: 100;
     border-radius: 50%;
 }
 
 .borderOne {
-    width: 16px;
-    height: 16px;
+    width: calc(var(--sizeBorder) / 2);
+    height: calc(var(--sizeBorder) / 2);
     background: rgb(241, 241, 241);
     position: absolute;
-    right: -16px;
+    right: calc(var(--sizeBorder) / 2 * -1);
     top: 0;
     z-index: 50;
 }
 
 .borderTwo {
-    width: 16px;
-    height: 16px;
+    width: calc(var(--sizeBorder) / 2);
+    height: calc(var(--sizeBorder) / 2);
     background: white;
     background: var(--backgroundBorderTad);
     position: absolute;
     z-index: 50;
-    right: -16px;
+    right: calc(var(--sizeBorder) / 2 * -1);
     top: 0;
 }

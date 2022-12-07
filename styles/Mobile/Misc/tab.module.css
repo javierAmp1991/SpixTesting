@@ -1,18 +1,18 @@
 .tabBase {
     width: 160px;
-    height: 46px;
+    height: 36px;
     color: var(--colorPrimaryTextDesktop);
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 4px 4px;
     font-weight: 500;
     display: grid;
     place-items: center;
     position: relative;
     --colorTabLine: var(--separationLineColor);
-    --backgroundTabColor: #09a909
+    --backgroundTabColor: var(--gradientBlueButton)
 }
 
 .selected {
-    height: 50px;
+    height: 40px;
     background: white;
     background: var(--backgroundTabColor);
     color: white;
@@ -43,12 +43,12 @@
 }
 
 .borderLeft {
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
     background: rgb(241, 241, 241);
     position: absolute;
     top: 0;
-    right: -32px;
+    right: -20px;
     z-index: 100;
     border-radius: 50%;
 }
@@ -63,33 +63,32 @@
 }
 
 .borderRight {
-    width: 32px;
-    height: 32px;
+    width: 20px;
+    height: 20px;
     background: rgba(13, 111, 202, 1);
     position: absolute;
     bottom: 0;
-    left: -32px;
+    left: -20px;
     z-index: 100;
     border-radius: 50%;
 }
 
 .borderOne {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
+    right: -10px;
     background: rgb(241, 241, 241);
     position: absolute;
-    right: -16px;
     top: 0;
     z-index: 50;
 }
 
 .borderTwo {
-    width: 16px;
-    height: 16px;
-    background: white;
-    background: #09a909;
+    width: 10px;
+    height: 10px;
+    right: -10px;
+    background: var(--backgroundTabColor);
     position: absolute;
     z-index: 50;
-    right: -15px;
     top: 0;
 }
