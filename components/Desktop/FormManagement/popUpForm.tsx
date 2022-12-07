@@ -20,7 +20,8 @@ export default function PopUpForm({item, closePopUp}: { item: FormItem, closePop
         let newForm: FormItem = {
             Name: nameForm,
             Description: descriptionForm,
-            Id: id
+            Id: id,
+            Index: 999
         }
         steps.HandleCreateEditForm(id, newForm)
         closePopUp()

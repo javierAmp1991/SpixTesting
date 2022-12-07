@@ -23,8 +23,7 @@ const listInitialServices: ProductItem[] = [
         Type: TypeProducts.Service,
         Time: `40`,
         ExtraImages: ["/images/bh1.jpg", "/images/bh2.jpg", "/images/bh3.jpg"],
-        SKU: 123456
-
+        SKU: 123456,
     },
     {
         Id: "idProduct02",
@@ -37,7 +36,7 @@ const listInitialServices: ProductItem[] = [
         Rating: 5,
         Type: TypeProducts.Service,
         Time: `40`,
-        SKU: 123456
+        SKU: 123456,
     },
     {
         Id: "idProduct03",
@@ -50,7 +49,7 @@ const listInitialServices: ProductItem[] = [
         Rating: 4,
         Type: TypeProducts.Service,
         Time: `34`,
-        SKU: 123456
+        SKU: 123456,
     },
     {
         Id: "idProduct04",
@@ -63,7 +62,7 @@ const listInitialServices: ProductItem[] = [
         Rating: 3,
         Type: TypeProducts.Service,
         Time: `40`,
-        SKU: 123456
+        SKU: 123456,
     },
     {
         Id: "idProduct05",
@@ -74,7 +73,8 @@ const listInitialServices: ProductItem[] = [
         Include: null,
         ImagePath: "/images/bh5.png",
         Rating: 0,
-        SKU: 123456
+        SKU: 123456,
+        Type: TypeProducts.Service
     },
     {
         Id: "idProduct06",
@@ -85,7 +85,8 @@ const listInitialServices: ProductItem[] = [
         Include: null,
         ImagePath: "/images/bh6.png",
         Rating: 5,
-        SKU: 123456
+        SKU: 123456,
+        Type: TypeProducts.Service
     }
 ]
 

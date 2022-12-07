@@ -4,7 +4,7 @@ import CustomInputLabel, {InputLabelProps} from "../Misc/customInputLabel";
 import {useState} from "react";
 import {GlobalStings} from "../../../public/globalConst";
 import {MediaType} from "../../../Class/UserAccount/userAccount";
-import {ProductItem} from "../../../Class/Misc/GlobalClass";
+import {ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
 const titleCreateProduct: string = "Crear Producto"
@@ -15,14 +15,15 @@ const applyText: string = "Aplicar"
 export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
                                                    { handleChange: Function, closePopUp: Function, item?: ProductItem }) {
     const isEdit = item != null
-    let [nameProduct, setNameProduct] = useState(isEdit? item.Name : stringEmpty)
-    let [skuProduct, setSkuProduct] = useState(isEdit? `${item.SKU}` : stringEmpty)
-    let [descriptionProduct, setDescriptionProduct] = useState(isEdit? item.Description : stringEmpty)
-    let [principalImage, setPrincipalImage] = useState(isEdit? item.ImagePath : stringEmpty)
+    let [nameProduct, setNameProduct] = useState(isEdit ? item.Name : stringEmpty)
+    let [skuProduct, setSkuProduct] = useState(isEdit ? `${item.SKU}` : stringEmpty)
+    let [descriptionProduct, setDescriptionProduct] = useState(isEdit ? item.Description : stringEmpty)
+    let [principalImage, setPrincipalImage] = useState(isEdit ? item.ImagePath : stringEmpty)
     let [imageSecond, setImageSecond] = useState(stringEmpty)
     let [imageThird, setImageThird] = useState(stringEmpty)
     let [imageFour, setImageFour] = useState(stringEmpty)
-    let [priceProduct, setPriceProduct] = useState(isEdit? `${item.Price}` : stringEmpty)
+    let [priceProduct, setPriceProduct] = useState(isEdit ? `${item.Price}` : stringEmpty)
+    let [timeService, setTimeService] = useState(stringEmpty)
 
     const resetInputs = () => {
         setNameProduct(stringEmpty)
@@ -53,6 +54,7 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
     const handleInputSKU = (e) => setSkuProduct(e.target.value)
     const handleInputDescription = (e) => setDescriptionProduct(e.target.value)
     const handleInputPrice = (e) => setPriceProduct(e.target.value)
+    const handleInputTime = (e)=> setTimeService(e.target.value)
     const handlePrincipalImage = (e) => setPrincipalImage(URL.createObjectURL(e.target.files[0]))
     const handleImageSecond = (e) => setImageSecond(URL.createObjectURL(e.target.files[0]))
     const handleImageThird = (e) => setImageThird(URL.createObjectURL(e.target.files[0]))
@@ -92,6 +94,14 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
         Onchange: handleInputPrice,
         IsObligatory: `true`,
         PercentageCharge: 10
+    }
+    const inputTime: CustomInputProps = {
+        Value: timeService,
+        NameInput: "Tiempo",
+        PlaceholderInput: "Ingrese el tiempo que se demora el servicio",
+        TypeInput: TypeInput.Input,
+        Onchange: handleInputTime,
+        IsObligatory: `true`,
     }
     const inputImagePrincipal: InputLabelProps = {
         Type: MediaType.Image,
@@ -147,6 +157,10 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
                             <CustomInput key={index} item={item}/>
                         )
                     }
+                    {/*{
+                        item.Type == TypeProducts.Service &&
+                        <CustomInput item={inputTime}/>
+                    }*/}
                 </div>
             </div>
 
