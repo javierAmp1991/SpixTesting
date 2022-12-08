@@ -11,6 +11,7 @@ import PopUpCreateEditProduct from "../ProductManagement/popUpCreateEditProduct"
 import ServiceView from "../Site/TypeSites/Business/Beauty&Health/serviceView";
 import {MyServicesContext, ProviderMyServices} from "../../Providers/UserAccount/MyServicesProvider";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
+import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"
@@ -56,6 +57,10 @@ export default function AllServices() {
         IsButtonVisible: false,
         IsScalable: false
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Servicio",
+        OnCLick: handlePopUp
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -63,12 +68,7 @@ export default function AllServices() {
                 <div className={style.title}>
                     {productsTitle}
                 </div>
-                <button onClick={handlePopUp} className={style.buttonCreateProduct}>
-                    <div>{createService}</div>
-                    <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
 
             <div className={style.gridSearchProducts}>

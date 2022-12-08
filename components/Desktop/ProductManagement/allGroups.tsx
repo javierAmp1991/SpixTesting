@@ -8,6 +8,7 @@ import PopUpContainerFull from "../Misc/popUpContainerFull";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
 import PopUpCreateEditGroup, {CreateEditGroupProps} from "./popUpCreateEditGroup";
+import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const title: string = "Grupos"
@@ -22,6 +23,10 @@ export default function AllGroupsProducts() {
     const popUpCreate: CreateEditGroupProps = {
         ClosePopUp: handlePopUp,
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Grupo",
+        OnCLick: handlePopUp
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -29,12 +34,7 @@ export default function AllGroupsProducts() {
                 <div className={style.title}>
                     {title}
                 </div>
-                <button onClick={handlePopUp} className={style.buttonCreateProduct}>
-                    {createGroup}
-                    <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
 
             <div className={style.gridProducts}>

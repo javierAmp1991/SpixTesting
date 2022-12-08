@@ -9,6 +9,7 @@ import {createPortal} from "react-dom";
 import PopUpContainerFull from "../Misc/popUpContainerFull";
 import AlertModal from "../Misc/alertModal";
 import ContFormView from "./contFormView";
+import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 
 const title: string = "Formularios"
 const createForm: string = "Crear Formulario"
@@ -22,6 +23,10 @@ export default function MyForms() {
     const handleAddForm = () => {
         steps.ListForms.length <= 2 ? popUpHook.HandleToggle() : handlePopUpAlert()
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Formulario",
+        OnCLick: handleAddForm
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -29,12 +34,7 @@ export default function MyForms() {
                 <div className={style.title}>
                     {title}
                 </div>
-                <button onClick={handleAddForm} className={style.gridAddForm}>
-                    <div>{createForm}</div>
-                    <div className={style.addIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
             <div className={style.contForms}>
                 {

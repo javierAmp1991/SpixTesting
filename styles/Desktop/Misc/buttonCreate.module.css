@@ -1,0 +1,27 @@
+.mainDiv {
+    padding: 6px 16px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 12px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--linkColor);
+    box-shadow: 0 0 2px var(--linkColor);
+    transition: .4s;
+}
+
+.mainDiv:hover{
+    background: rgba(89, 151, 255, .2);
+}
+
+.text {
+    color: var(--linkColor);
+    font-weight: 500;
+}
+
+.sizeIcon {
+    width: 18px;
+    aspect-ratio: 1/1;
+    position: relative;
+}

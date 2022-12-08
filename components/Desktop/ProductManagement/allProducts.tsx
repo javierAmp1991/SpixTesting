@@ -9,8 +9,8 @@ import {ProductsPGContext, ProviderPGProducts} from "../../Providers/UserAccount
 import PopUpCreateEditProduct from "./popUpCreateEditProduct";
 import CustomInput, {CustomInputProps, TypeInput} from "../Misc/customInput";
 import {createPortal} from "react-dom";
-import ProductPopUp from "../Misc/ProductPopUp";
 import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
+import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 
 const productsTitle: string = "Productos"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
@@ -35,12 +35,10 @@ export default function AllProducts() {
     const handlePopUpSee = () => popUpHookSee.HandleToggle()
     let [productEdit, setProductEdit] = useState(null)
     let [productSee, setProductSee] = useState(null)
-
     const handleProductSee = (product) => {
         setProductSee(product)
         handlePopUpSee()
     }
-
     const handleEdit = (product) => {
         setProductEdit(product)
         handlePopUpEdit()
@@ -52,6 +50,10 @@ export default function AllProducts() {
         IsButtonVisible: false,
         IsScalable: false
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Producto",
+        OnCLick: handlePopUp
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -59,12 +61,7 @@ export default function AllProducts() {
                 <div className={style.title}>
                     {productsTitle}
                 </div>
-                <button onClick={handlePopUp} className={style.buttonCreateProduct}>
-                    <div>Crear Producto</div>
-                    <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
 
             <div className={style.gridSearchProducts}>
