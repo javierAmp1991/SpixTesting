@@ -37,6 +37,11 @@ export default function AllGroupsProducts() {
                 <ButtonCreate item={buttonProps}/>
             </div>
 
+            <div>
+                <span style={{color: `red`}}>* </span>
+                <span>Puedes cambiar el orden de los grupos, tomando y arrastrandolo a la posicion que deseas</span>
+            </div>
+
             <div className={style.gridProducts}>
                 {
                     groupContext.Groups.map((item) =>

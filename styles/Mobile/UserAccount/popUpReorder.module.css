@@ -1,0 +1,11 @@
+.mainDiv {
+    width: 95vw;
+    padding: 36px 24px;
+    display: grid;
+    gap: 16px;
+}
+
+.colorError {
+    color: red;
+    font-size: 12px;
+}

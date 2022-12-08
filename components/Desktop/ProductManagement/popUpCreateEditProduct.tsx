@@ -128,7 +128,7 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
         TextInput: false
     }
     let listInputs: CustomInputProps[] = [
-        inputName, inputSKU, inputDescription, inputPrice
+        inputName, inputSKU, inputDescription, inputTime, inputPrice
     ]
     let listInputLabel: InputLabelProps[] = [
         inputImageSecond, inputImageThird, inputImageFourth
@@ -157,10 +157,6 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
                             <CustomInput key={index} item={item}/>
                         )
                     }
-                    {/*{
-                        item.Type == TypeProducts.Service &&
-                        <CustomInput item={inputTime}/>
-                    }*/}
                 </div>
             </div>
 

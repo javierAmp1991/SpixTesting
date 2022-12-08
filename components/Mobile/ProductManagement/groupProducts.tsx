@@ -3,7 +3,7 @@ import {GroupProducts} from "../../../Class/UserAccount/userAccount";
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {GroupsPGContext, ProviderPGGroups,} from "../../Providers/UserAccount/ProductAndGroupProvider";
 import {createPortal} from "react-dom";
 import {CreateEditGroupProps} from "../../Desktop/ProductManagement/popUpCreateEditGroup";
@@ -11,8 +11,7 @@ import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import ProductsGridMobile from "./productsGrid";
 import PopUpCreateEditGroupMobile from "./popUpCreateEditGroup";
 import AlertModalMobile from "../Misc/alertModal";
-import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/customInput";
-import ButtonCustom, {ButtonProps} from "../../Desktop/Misc/button";
+import PopUpReorder, {PopUpReorderProps} from "../userAccount/popUpReorder";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -22,14 +21,10 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
     const hookConfirmDeleteGroup = useDisplayPopUpHook(false)
     const handlePopUpEditGroup = () => hookEditGroup.HandleToggle()
     const handlePopUpConfirm = () => hookConfirmDeleteGroup.HandleToggle()
-    let [newId, setNewId] = useState(item.Id)
-    const handleNewId = (e) => setNewId(e.target.value)
 
-    const handleChangePosition = () => {
-        if (parseInt(newId) > 0 && parseInt(newId) <= 4) {
-            myGroups.HandleDropItemMobile(item.Name, parseInt(newId))
+    const handleChangePosition = (newPosition: number) => {
+            myGroups.HandleDropItemMobile(item.Name, newPosition)
             handlePopUpNewPosition()
-        }
     }
 
     const popUpNewPosition = useDisplayPopUpHook(false)
@@ -45,17 +40,14 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
         ProductsGroup: item.Products
     }
 
-    const inputNewId: CustomInputProps = {
-        Value: newId,
-        NameInput: `Nueva posicion (minimo 0 / maximo ${myGroups.Groups.length})`,
-        PlaceholderInput: `Ingrese la nueva posicion`,
-        TypeInput: TypeInput.Input,
-        TypeTextInput: `number`,
-        Onchange: handleNewId,
-    }
-    const buttonProps: ButtonProps = {
-        Text: "Aplicar",
-        OnClick: handleChangePosition
+    const popUpReorder: PopUpReorderProps = {
+        NameInput: `Nueva posicion (minimo 1 / maximo ${myGroups.Groups.length})`,
+        Placeholder: `Posicion Actual ${item.Number}`,
+        MinValue: 1,
+        MaxValue: myGroups.Groups.length,
+        ActualPosition: item.Number,
+        HandleAccept: handleChangePosition,
+        HandleClose: handlePopUpNewPosition
     }
 
     return (
@@ -79,12 +71,7 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
             {
                 popUpNewPosition.State &&
                 createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpNewPosition} isButtonVisible={true} isBackground={true}>
-                        <div className={style.mainDivNewPosition}>
-                            <CustomInput item={inputNewId}/>
-                            <ButtonCustom item={buttonProps}/>
-                        </div>
-                    </PopUpContainerFull>, document.getElementById(idPortal)
+                    <PopUpReorder item={popUpReorder}/>, document.getElementById(idPortal)
                 )
             }
             {
