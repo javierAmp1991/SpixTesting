@@ -112,5 +112,6 @@
     place-items: center;
     z-index: 1000;
     font-weight: 500;
+    font-size: 14px;
     color: var(--colorPrimaryTextDesktop);
 }
