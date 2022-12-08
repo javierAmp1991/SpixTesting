@@ -13,6 +13,7 @@
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
     resize: none;
     position: relative;
+    border-radius: 4px;
 }
 
 .input {
@@ -29,10 +30,6 @@
 
 .indent {
     padding-left: 42px;
-}
-
-.borderRadious {
-    border-radius: 24px;
 }
 
 .isObligatory {

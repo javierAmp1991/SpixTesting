@@ -52,7 +52,7 @@ export default function ProductsGridMobile({item, nameGroup}: { item: ProductIte
 
     return (
         <>
-            <LayoutCarrouselMobile gapLayout={16}>
+            <LayoutCarrouselMobile gapLayout={20}>
                 {
                     item.map((item2) =>
                         <div key={item2.Id} className={style.mainDivContPro}>
