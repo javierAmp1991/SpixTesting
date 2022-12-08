@@ -2,7 +2,7 @@
     width: 100%;
     padding: 0 16px;
     display: grid;
-    gap: 32px;
+    gap: 16px;
 }
 
 .gridPrincipalInfo {
@@ -30,6 +30,7 @@
     outline: none;
     height: max-content;
     width: 100%;
+    background: white;
 }
 
 .textArea {

@@ -5,8 +5,10 @@ import MenuSpixMobile from "./Misc/menuSpixMobile";
 import SuggHeaderMobile from "./Misc/suggHeaderMobile";
 import SideSetting from "./Misc/sideSetting";
 import ProviderGlobal from "../Providers/providerGlobal";
-import React, {useEffect, useState} from "react";
+import React, {createContext, useEffect, useState} from "react";
 import {Menu} from "../../dataDemo/data";
+
+export const SettingContextForNavMenu = createContext(null)
 
 export default function DefaultLayoutMobile({children, isDarkMode}:
                                                 { isDarkMode: boolean, children: JSX.Element }) {
@@ -23,29 +25,26 @@ export default function DefaultLayoutMobile({children, isDarkMode}:
 
     return (
         <ProviderGlobal>
-            <div className={utilities.bgBodyNormalMobile}>
-                {
-                    isDisplaySug ?
-                        <SuggHeaderMobile returnMet={handleDisplaySug}/>
-                        :
-                        <div className={styleMobile.mainCont}>
-                            <HeaderSpixMobile isDarkMode={isDarkMode}
-                                              isDesplegable={handleSideSetting}
-                                              displaySug={handleDisplaySug}/>
-                            <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
-                            {children}
-                            <div onClick={handleSideSetting} style={{transform: `translate(${cssStyle.desp})`}}
-                                 className={styleMobile.menuDesplegable}>
-                                <SideSetting closeDesplegable={handleSideSetting}/>
-                            </div>
-                            {
-                                isOpenSideSetting &&
-                                <div className={styleMobile.blackScreen}
-                                     onClick={handleSideSetting}/>
-                            }
+            <SettingContextForNavMenu.Provider value={handleSideSetting}>
+                <div className={utilities.bgBodyNormalMobile}>
+                    <div className={styleMobile.mainCont}>
+                        <HeaderSpixMobile isDarkMode={isDarkMode}
+                                          isDesplegable={handleSideSetting}
+                                          displaySug={handleDisplaySug}/>
+                        <MenuSpixMobile listItemMenu={listMenuMobile} isDarkMode={isDarkMode}/>
+                        {children}
+                        <div style={{transform: `translate(${cssStyle.desp})`}}
+                             className={styleMobile.menuDesplegable}>
+                            <SideSetting closeDesplegable={handleSideSetting}/>
                         </div>
-                }
-            </div>
+                        {
+                            isOpenSideSetting &&
+                            <div className={styleMobile.blackScreen}
+                                 onClick={handleSideSetting}/>
+                        }
+                    </div>
+                </div>
+            </SettingContextForNavMenu.Provider>
         </ProviderGlobal>
     )
 

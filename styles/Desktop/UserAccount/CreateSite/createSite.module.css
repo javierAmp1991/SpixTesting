@@ -1,9 +1,9 @@
 .mainDiv {
-    width: 70%;
+    width: 700px;
     overflow: scroll;
     padding: 0 2px;
     display: grid;
-    gap: 32px;
+    gap: 16px;
 }
 
 .gridPrincipalInfo {

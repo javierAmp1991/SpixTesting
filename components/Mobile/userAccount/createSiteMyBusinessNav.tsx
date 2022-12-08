@@ -3,12 +3,15 @@ import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
 import {MyBusinessOptions, MySitesContext, ProviderMySites} from "../../Providers/providerGlobal";
 import {useContext} from "react";
+import {SettingContextForNavMenu} from "../defaultLayoutMobile";
 
 export default function CreateSiteMyBusinessNavMobile({item}: { item: MyBusinessOptions }) {
+    const handleClose = useContext(SettingContextForNavMenu)
     const mySite: ProviderMySites = useContext(MySitesContext)
     const handleClick = () => {
         mySite.HandleSites(item.Id, !item.State)
         mySite.HandleMyBusiness(item.Id)
+        handleClose()
     }
     return (
         <button onClick={handleClick} className={`${style.gridNameIcon} ${item.State && style.White}`}>

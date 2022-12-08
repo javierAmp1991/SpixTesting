@@ -6,15 +6,20 @@ import {
     ProviderMySites, ProviderSubSectionMyBusiness, SubSectionsMyBusinessContext
 } from "../../Providers/providerGlobal";
 import {useContext} from "react";
+import {SettingContextForNavMenu} from "../defaultLayoutMobile";
 
 export default function SiteMyBusinessNavMobile({item}: { item: MyBusinessOptions }) {
+    const handleClose = useContext(SettingContextForNavMenu)
     const mySite: ProviderMySites = useContext(MySitesContext)
     const subSection: ProviderSubSectionMyBusiness = useContext(SubSectionsMyBusinessContext)
     const handleClick = () => {
         mySite.HandleMyBusiness(item.Id)
         mySite.HandleSites(item.Id, !item.State)
     }
-    const handleSubSection = (id: string) => subSection.HandleSubSection(id)
+    const handleSubSection = (id: string) => {
+        subSection.HandleSubSection(id)
+        handleClose()
+    }
 
     return (
         <>
