@@ -50,9 +50,9 @@
     animation: pinned .3s linear;
 }
 
-/*.noPinned {
+.noPinned {
     animation: noPinned .2s linear;
-}*/
+}
 
 @keyframes pinned {
     0% {

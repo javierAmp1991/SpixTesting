@@ -36,6 +36,10 @@ export default function MyForms() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
+            <div>
+                <span className={style.ast}>* </span>
+                <span>Puedes cambiar el orden de tus forularios, tomando y arrastrandolo a la posicion que deseas</span>
+            </div>
             <div className={style.contForms}>
                 {
                     steps.ListForms.map((item, index) =>
@@ -43,6 +47,7 @@ export default function MyForms() {
                     )
                 }
             </div>
+
             {
                 popUpHook.State &&
                 createPortal(

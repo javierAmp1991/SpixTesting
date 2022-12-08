@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/ServiceManagement/allServices.module.css"
+import style from "/styles/Mobile/ServiceManagement/allServices.module.css"
 import Image from "next/image";
 import {GlobalConst, GlobalId, GlobalStings} from "../../../public/globalConst";
 import {useContext, useState} from "react";
@@ -9,8 +9,9 @@ import PopUpCreateEditProduct from "../ProductManagement/popUpCreateEditProduct"
 import {MyServicesContext, ProviderMyServices} from "../../Providers/UserAccount/MyServicesProvider";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
 import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/customInput";
-import ServiceViewMobile from "../Site/TypeSites/Business/Beauty&Health/serviceViewMobile";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
+import ServiceViewMobile from "../Misc/serviceViewMobile";
+import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"
@@ -56,6 +57,10 @@ export default function AllServicesMobile() {
         IsButtonVisible: false,
         IsScalable: false
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Servicio",
+        OnCLick: handlePopUp
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -63,18 +68,12 @@ export default function AllServicesMobile() {
                 <div className={style.title}>
                     {productsTitle}
                 </div>
-                <button onClick={handlePopUp} className={style.buttonCreateProduct}>
-                    <div>{createService}</div>
-                    <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
+
             </div>
 
             <div className={style.gridSearchProducts}>
-                <div className={style.contInput}>
-                    <CustomInput item={inputSearch}/>
-                </div>
+                <CustomInput item={inputSearch}/>
 
                 <div className={style.gridProducts}>
                     {
@@ -89,7 +88,7 @@ export default function AllServicesMobile() {
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
                                 </button>
                                 <div onClick={() => handleEdit(item)}>
-                                    <ServiceViewMobile item={item}/>
+                                    <ServiceViewMobile displayFull={false} isBorder={false} item={item}/>
                                 </div>
                             </div>
                         )

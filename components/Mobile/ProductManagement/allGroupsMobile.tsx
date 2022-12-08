@@ -18,7 +18,7 @@ export default function AllGroupsProductsMobile() {
                 <a className={style.buttonCreateProduct}>
                     <div>Crear Grupo</div>
                     <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIconEmpty}/>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIconEmpty} alt={""}/>
                     </div>
                 </a>
             </Link>

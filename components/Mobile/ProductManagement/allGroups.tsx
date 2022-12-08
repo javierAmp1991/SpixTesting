@@ -1,6 +1,5 @@
 import style from "/styles/Mobile/ProductManagement/allGroupProducts.module.css"
-import Image from "next/image";
-import {GlobalConst, GlobalId} from "../../../public/globalConst";
+import { GlobalId} from "../../../public/globalConst";
 import {useContext} from "react";
 import {GroupsPGContext, ProviderPGGroups,} from "../../Providers/UserAccount/ProductAndGroupProvider";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
@@ -9,10 +8,11 @@ import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import {CreateEditGroupProps} from "../../Desktop/ProductManagement/popUpCreateEditGroup";
 import PopUpCreateEditGroupMobile from "./popUpCreateEditGroup";
 import GroupProductsMobile from "./groupProducts";
+import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
+import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const title: string = "Grupos"
-const createGroup: string = "Crear Grupo"
 
 
 export default function AllGroupsProductsMobile() {
@@ -23,6 +23,14 @@ export default function AllGroupsProductsMobile() {
     const popUpCreate: CreateEditGroupProps = {
         ClosePopUp: handlePopUp,
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Grupo",
+        OnCLick: handlePopUp
+    }
+    const reorder: MessageReorderProps = {
+        TextBefore: "Cambiar el orden de los grupos de productos, presionando el numero",
+        TextAfter: "al lado del nombre"
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -30,13 +38,10 @@ export default function AllGroupsProductsMobile() {
                 <div className={style.title}>
                     {title}
                 </div>
-                <button onClick={handlePopUp} className={style.buttonCreateProduct}>
-                    {createGroup}
-                    <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
+
+            <MessageReorder item={reorder}/>
 
             <div className={style.gridProducts}>
                 {

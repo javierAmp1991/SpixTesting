@@ -8,10 +8,10 @@ import CustomInput, {CustomInputProps, TypeInput} from "../Misc/customInput";
 import {createPortal} from "react-dom";
 import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
 import PopUpCreateEditProduct from "../ProductManagement/popUpCreateEditProduct";
-import ServiceView from "../Site/TypeSites/Business/Beauty&Health/serviceView";
 import {MyServicesContext, ProviderMyServices} from "../../Providers/UserAccount/MyServicesProvider";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
 import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
+import ServiceView from "../Misc/serviceView";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"

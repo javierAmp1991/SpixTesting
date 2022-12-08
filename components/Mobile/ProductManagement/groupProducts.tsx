@@ -62,7 +62,7 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
         <div className={style.contDrag}>
             <div className={style.gridTitle}>
                 <div className={style.titleGroup}>
-                    <span onClick={handlePopUpNewPosition} className={style.circleNumber}>{item.Id}</span>
+                    <div onClick={handlePopUpNewPosition} className={style.position}>{item.Id}</div>
                     <span>{item.Name}</span>
                 </div>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>

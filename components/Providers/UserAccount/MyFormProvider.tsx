@@ -83,12 +83,12 @@ export default function MyFormProvider({children}) {
         let newList = listApplication.map(item => {
             return item.Id == id ? {...item, IsPinned: newState} : {...item}
         })
-        let newList2 = newList.sort((a, b) => {
+        /*let newList2 = newList.sort((a, b) => {
             if (a.IsPinned < b.IsPinned) return 1
             else if (a.IsPinned > b.IsPinned) return -1
             else return 0
-        })
-        setListApplications(newList2)
+        })*/
+        setListApplications(newList)
     }
     const handleCreateEditForm = (id: string, form: FormItem) => {
         if (listForms.includes(form)) {
@@ -113,13 +113,19 @@ export default function MyFormProvider({children}) {
                 newListGroup = newList.concat(newItem)
             } else {
                 let newList = listForms
-                newList.splice(newPosition, 0, newItem[0])
+                if (newPosition > indexItemMoved) {
+                    newList.splice(newPosition + 1, 0, newItem[0])
+                    newListGroup = newList.filter((item, index) => index != indexItemMoved)
+                } else {
+                    newList.splice(newPosition - 1, 0, newItem[0])
+                    newListGroup = newList.filter((item, index) => index != indexItemMoved + 1)
+                }
             }
             let finalList = newListGroup.map((item, index) => {
                 return {...item, Index: index}
             })
             setListForms(finalList)
-        } else prompt(`estas moviendo al mismo lugar`)
+        }
     }
 
     const providerForm: ProviderMyForm = {

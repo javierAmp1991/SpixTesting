@@ -1,5 +1,5 @@
 .mainDiv {
-    padding: 6px 16px;
+    padding: 5px 16px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
@@ -21,7 +21,7 @@
 }
 
 .sizeIcon {
-    width: 18px;
+    width: 16px;
     aspect-ratio: 1/1;
     position: relative;
 }

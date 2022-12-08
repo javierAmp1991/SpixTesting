@@ -18,23 +18,23 @@ export default function MainPageForm() {
                     )
                 }
             </div>
-            <div className={style.contGroups}>
-                {
-                    steps.Steps.map(item =>
-                        <>
-                            {
-                                (item.NumberStep == 1 && item.IsStep) &&
-                                <MyForms/>
-                            }
-                            {
+                <div className={style.contGroups}>
+                    {
+                        steps.Steps.map(item =>
+                            <>
+                                {
+                                    (item.NumberStep == 1 && item.IsStep) &&
+                                    <MyForms/>
+                                }
+                                {
 
-                                (item.NumberStep == 2 && item.IsStep) &&
-                                <MyApplications/>
-                            }
-                        </>
-                    )
-                }
-            </div>
+                                    (item.NumberStep == 2 && item.IsStep) &&
+                                    <MyApplications/>
+                                }
+                            </>
+                        )
+                    }
+                </div>
         </div>
     )
 }

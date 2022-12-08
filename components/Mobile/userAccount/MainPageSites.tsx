@@ -7,6 +7,7 @@ import {useContext} from "react";
 import GalleryMobile from "./CreateSite/Events/GalleryMobile";
 import MainPageProductManagementMobile from "../ProductManagement/mainPageProductManagement";
 import MainPageFormMobile from "../FormManagement/mainPageForm";
+import MainPageServiceManagementMobile from "../ServiceManagement/mainPageServiceManagement";
 
 export default function MainPageSitesMobile() {
     const subSection: ProviderSubSectionMyBusiness = useContext(SubSectionsMyBusinessContext)
@@ -29,6 +30,10 @@ export default function MainPageSitesMobile() {
             {
                 subSection.SubSectionSelected == SubSectionSites.Form &&
                 <MainPageFormMobile/>
+            }
+            {
+                subSection.SubSectionSelected == SubSectionSites.Services &&
+                <MainPageServiceManagementMobile/>
             }
         </>
     )

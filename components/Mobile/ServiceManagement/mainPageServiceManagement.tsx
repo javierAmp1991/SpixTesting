@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/ServiceManagement/mainPage.module.css";
+import style from "/styles/Mobile/ServiceManagement/mainPage.module.css";
 import AllServicesMobile from "./allServices";
 
 export default function MainPageServiceManagementMobile() {

@@ -35,3 +35,16 @@
     width: 16px;
 }
 
+.ast {
+    color: red;
+}
+
+.exa {
+    padding: 4px 6px;
+    border-radius: 50%;
+    font-size: 8px;
+    border: 1px solid #c9c9c9;
+    color: var(--colorPrimaryTextDesktop);
+    margin: 0 2px;
+}
+

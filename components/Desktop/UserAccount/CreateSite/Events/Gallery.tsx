@@ -114,10 +114,8 @@ export default function Gallery() {
         setRotateArrow(stateClick)
         setStateClick(!stateClick)
     }
-
     const handleFocus = () => setRotateArrow(false)
     const handleBlur = () => setRotateArrow(true)
-
 
     const handleInputImage = (e) => setLinkImage(URL.createObjectURL(e.target.files[0]))
     const handelDeleteInputImage = () => setLinkImage(stringEmpty)
@@ -221,8 +219,8 @@ export default function Gallery() {
                         {titleMedia}
                     </div>
                     <div className={style.contInput}>
-                        <select onClick={handleClick} onFocus={handleFocus} onBlur={handleBlur} onChange={handleSelect}
-                                ref={refSelect}
+                        <select onClick={handleClick} onFocus={handleFocus}
+                                onBlur={handleBlur} onChange={handleSelect} ref={refSelect}
                                 className={style.input}>
                             <option value={defaultSelect}>{addMedia}</option>
                             <option value={MediaType.Video}>Video</option>
@@ -242,9 +240,9 @@ export default function Gallery() {
                 </div>
 
                 <div className={style.gridButtons}>
-                    <button className={style.button}>
+                   {/* <button className={style.button}>
                         {applyText}
-                    </button>
+                    </button>*/}
                     <button onClick={handlePopUpGallery} className={style.button}>
                         {seeGalery}
                     </button>

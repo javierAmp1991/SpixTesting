@@ -9,6 +9,8 @@ import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import AlertModalMobile from "../Misc/alertModal";
 import PopUpFormMobile from "./popUpForm";
 import FormViewShortMobile from "./formViewShort";
+import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
+import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
 
 const title: string = "Formularios"
 const createForm: string = "Crear Formulario"
@@ -22,6 +24,14 @@ export default function MyFormsMobile() {
     const handleAddForm = () => {
         steps.ListForms.length <= 2 ? popUpHook.HandleToggle() : handlePopUpAlert()
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Formulario",
+        OnCLick: handleAddForm
+    }
+    const reorder: MessageReorderProps = {
+        TextBefore: "Cambiar el orden de tus forularios, presionando el numero",
+        TextAfter: "al lado del nombre"
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -29,13 +39,9 @@ export default function MyFormsMobile() {
                 <div className={style.title}>
                     {title}
                 </div>
-                <button onClick={handleAddForm} className={style.gridAddForm}>
-                    <div>{createForm}</div>
-                    <div className={style.addIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
+            <MessageReorder item={reorder}/>
             <div className={style.contForms}>
                 {
                     steps.ListForms.map(item =>

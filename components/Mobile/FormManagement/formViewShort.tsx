@@ -1,17 +1,18 @@
 import style from "/styles/Mobile/FormManagement/formViewShort.module.css"
 import {FormItem, MyFormsContext, ProviderMyForm} from "../../Providers/UserAccount/MyFormProvider";
 import Image from "next/image";
-import {GlobalConst, GlobalId} from "../../../public/globalConst";
+import {GlobalConst, GlobalId, GlobalStings} from "../../../public/globalConst";
 import PopUpForm from "./popUpForm";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import AlertModal from "../Misc/alertModal";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/customInput";
 import ButtonCustom, {ButtonProps} from "../../Desktop/Misc/button";
 
 const idPortal: string = GlobalId.globalIds.idPortal
+const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
 
 export default function FormViewShortMobile({item}: { item: FormItem }) {
     const steps: ProviderMyForm = useContext(MyFormsContext)
@@ -23,20 +24,33 @@ export default function FormViewShortMobile({item}: { item: FormItem }) {
     const handleDeleteForm = () => steps.HandleForms(item.Id)
     const handlePopUpNewPosition = () => popUpHookNewPosition.HandleToggle()
 
-    let [newPosition, setNewPosition] = useState(item.Index)
-    const handleNewPosition = (e) => setNewPosition(e.target.value)
-
+    let [newPosition, setNewPosition] = useState(stringEmpty)
+    let [samePosition, setSamePosition] = useState(false)
+    let [invalidNumber, setInvalidNumber] = useState(false)
+    const handleNewPosition = (e) => {
+        setNewPosition(e.target.value)
+    }
     const handleChangePosition = () => {
-        if (newPosition >= 1 && newPosition <= steps.ListForms.length) {
-            steps.HandleDropForm(item.Id, (newPosition - 1))
+        let pos: number = parseInt(newPosition)
+        if (!samePosition && !invalidNumber) {
+            steps.HandleDropForm(item.Id, (pos - 1))
+            setSamePosition(false)
+            setInvalidNumber(false)
+            setNewPosition(stringEmpty)
             handlePopUpNewPosition()
         }
     }
 
+    useEffect(() => {
+        let pos: number = parseInt(newPosition)
+        setSamePosition(pos == item.Index + 1)
+        setInvalidNumber(pos < 1 || pos > steps.ListForms.length)
+    },[newPosition])
+
     const inputNewId: CustomInputProps = {
-        Value: newPosition.toString(),
-        NameInput: `Nueva posicion (min. 1 / maxi. ${steps.ListForms.length})`,
-        PlaceholderInput: `Ingrese la nueva posicion`,
+        Value: newPosition,
+        NameInput: `Ingrese nueva posicion (min. 1 / maxi. ${steps.ListForms.length})`,
+        PlaceholderInput: `Posicion actual ${item.Index + 1}`,
         TypeInput: TypeInput.Input,
         TypeTextInput: `number`,
         Onchange: handleNewPosition,
@@ -70,6 +84,18 @@ export default function FormViewShortMobile({item}: { item: FormItem }) {
                     <PopUpContainerFull closePopUp={handlePopUpNewPosition} isButtonVisible={true} isBackground={true}>
                         <div className={style.mainDivNewPosition}>
                             <CustomInput item={inputNewId}/>
+                            {
+                                samePosition &&
+                                <div className={style.samePosition}>
+                                    * Esta moviendo el formulario a la misma posicion
+                                </div>
+                            }
+                            {
+                                invalidNumber &&
+                                <div className={style.samePosition}>
+                                    * Numero invalido
+                                </div>
+                            }
                             <ButtonCustom item={buttonProps}/>
                         </div>
                     </PopUpContainerFull>, document.getElementById(idPortal)

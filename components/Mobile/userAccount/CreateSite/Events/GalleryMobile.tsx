@@ -8,6 +8,7 @@ import {createPortal} from "react-dom";
 import {GalleryMediaProps} from "../../../../../Class/Layouts/layoutClass";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import GalleryLayoutMobile from "../Misc/GalleryLayoutMobile";
+import MessageReorder, {MessageReorderProps} from "../../../../Desktop/Misc/messageReorder";
 
 const newList = [
     {
@@ -184,6 +185,11 @@ export default function GalleryMobile() {
         CloseGallery: handlePopUpGallery
     }
 
+    const reorder: MessageReorderProps = {
+        TextBefore: "Cambia el orden de tu galeria, presionando el numero",
+        TextAfter: "encima de la imagen"
+    }
+
 
     return (
         <div className={style.mainDiv}>
@@ -235,14 +241,17 @@ export default function GalleryMobile() {
                     </div>
                 </div>
 
+                <MessageReorder item={reorder}/>
+
                 <div className={style.contLayoutGallery}>
                     <GalleryLayoutMobile item={newList}/>
                 </div>
 
+
                 <div className={style.gridButtons}>
-                    <button className={style.button}>
+                   {/* <button className={style.button}>
                         {applyText}
-                    </button>
+                    </button>*/}
                     <button onClick={handlePopUpGallery} className={style.button}>
                         {seeGalery}
                     </button>

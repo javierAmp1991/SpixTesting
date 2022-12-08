@@ -11,6 +11,7 @@ import ProductViewHor from "../../Desktop/Misc/ProductViewHor";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import ProductModalMobile from "../Misc/ProductModal";
 import PopUpCreateEditProductMobile from "./popUpCreateEditProduct";
+import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
 
 const productsTitle: string = "Productos"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
@@ -52,6 +53,10 @@ export default function AllProductsMobile() {
         IsButtonVisible: false,
         IsScalable: false
     }
+    const buttonProps: ButtonCreateProps = {
+        Text: "Crear Producto",
+        OnCLick: handlePopUp
+    }
 
     return (
         <div className={style.mainDiv}>
@@ -59,12 +64,7 @@ export default function AllProductsMobile() {
                 <div className={style.title}>
                     {productsTitle}
                 </div>
-                <button onClick={handlePopUp} className={style.buttonCreateProduct}>
-                    <div>Crear Producto</div>
-                    <div className={style.sizeAddIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.addIcon} alt={""}/>
-                    </div>
-                </button>
+                <ButtonCreate item={buttonProps}/>
             </div>
 
             <div className={style.gridSearchProducts}>

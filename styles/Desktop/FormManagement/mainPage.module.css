@@ -4,7 +4,6 @@
     overflow: hidden;
     gap: 32px;
     height: 100%;
-    grid-template-rows: max-content 1fr;
     position: relative;
 }
 

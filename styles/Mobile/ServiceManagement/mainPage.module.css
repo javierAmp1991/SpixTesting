@@ -1,0 +1,10 @@
+.mainDiv {
+    display: grid;
+    position: relative;
+    padding: var(--paddingUserAccountMobile);
+}
+
+.contGroups {
+    height: 100%;
+    overflow: scroll;
+}

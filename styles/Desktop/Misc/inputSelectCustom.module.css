@@ -1,0 +1,36 @@
+.mainDiv {
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2);
+    color: var(--colorPrimaryTextDesktop);
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.select {
+    padding: 6px 32px 6px 16px;
+    cursor: pointer;
+    outline: none;
+    z-index: 100;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+}
+
+.select::-ms-expand {
+    display: none;
+}
+
+.arrow {
+    width: 16px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: calc(50% - 9px);
+    right: 8px;
+    transition: .3s;
+    background: transparent;
+    cursor: pointer;
+    z-index: 50;
+}
