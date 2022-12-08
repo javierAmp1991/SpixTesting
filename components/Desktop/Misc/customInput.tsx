@@ -39,11 +39,9 @@ export default function CustomInput({item}: { item: CustomInputProps }) {
                                    placeholder={item.PlaceholderInput} className={style.input}
                                    type={cssStyle.TypeTextInput}/>
                         </div>
-                        <div className={style.inputCont}>
-                            <span>{item.PercentageCharge}% </span>
-                            <span>
-                                {getMoneyForSpix()}
-                            </span>
+                        <div className={style.chargeSpix}>
+                            <span>Comision {item.PercentageCharge}%: </span>
+                            <span>${getMoneyForSpix()}</span>
                         </div>
                     </div>
                     :
@@ -74,8 +72,7 @@ export default function CustomInput({item}: { item: CustomInputProps }) {
             Indent: item.BorderRadious != null && style.indent
         }
     }
-
     function getMoneyForSpix() {
-        return item.Value != "" && Math.round((item.PercentageCharge / 100) * parseInt(item.Value))
+        return item.Value != "" && Intl.NumberFormat("ES-CL").format(Math.round((item.PercentageCharge / 100) * parseInt(item.Value)))
     }
 }
