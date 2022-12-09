@@ -12,6 +12,7 @@ import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import ProductModalMobile from "../Misc/ProductModal";
 import PopUpCreateEditProductMobile from "./popUpCreateEditProduct";
 import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
+import InformationBanner from "../../Desktop/Misc/informationBanner";
 
 const productsTitle: string = "Productos"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
@@ -66,6 +67,12 @@ export default function AllProductsMobile() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
+
+            <InformationBanner>
+                <div>
+                    Haz click en las tarjetas para editar los producto
+                </div>
+            </InformationBanner>
 
             <div className={style.gridSearchProducts}>
                 <CustomInput item={inputSearch}/>

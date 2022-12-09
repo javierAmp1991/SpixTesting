@@ -11,6 +11,7 @@ import CustomInput, {CustomInputProps, TypeInput} from "../Misc/customInput";
 import {createPortal} from "react-dom";
 import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
 import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
+import InformationBanner from "../Misc/informationBanner";
 
 const productsTitle: string = "Productos"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
@@ -63,6 +64,12 @@ export default function AllProducts() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
+
+            <InformationBanner width={`33%`}>
+                <div>
+                    Haz click en las tarjetas para editar los producto
+                </div>
+            </InformationBanner>
 
             <div className={style.gridSearchProducts}>
                 <div className={style.contInput}>

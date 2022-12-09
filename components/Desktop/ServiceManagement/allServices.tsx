@@ -12,6 +12,7 @@ import {MyServicesContext, ProviderMyServices} from "../../Providers/UserAccount
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
 import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 import ServiceView from "../Misc/serviceView";
+import InformationBanner from "../Misc/informationBanner";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"
@@ -70,6 +71,12 @@ export default function AllServices() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
+
+            <InformationBanner width={`33%`}>
+                <div>
+                    Haz click en las tarjetas para editar los producto
+                </div>
+            </InformationBanner>
 
             <div className={style.gridSearchProducts}>
                 <div className={style.contInput}>
