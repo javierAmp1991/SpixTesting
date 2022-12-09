@@ -14,6 +14,8 @@ import ServiceViewMobile from "../Misc/serviceViewMobile";
 import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
 import PopUpCreateEditProductMobile from "../ProductManagement/popUpCreateEditProduct";
 import ProductModalMobile from "../Misc/ProductModal";
+import InformationBanner from "../../Desktop/Misc/informationBanner";
+import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"
@@ -64,6 +66,11 @@ export default function AllServicesMobile() {
         OnCLick: handlePopUp
     }
 
+    const reorder: MessageReorderProps = {
+        TextBefore: "Puedes cambiar el orden de los servicios, presionando el numero",
+        TextAfter: "en la esquina superior drecha"
+    }
+
     return (
         <div className={style.mainDiv}>
             <div className={style.gridTitleButton}>
@@ -71,8 +78,11 @@ export default function AllServicesMobile() {
                     {productsTitle}
                 </div>
                 <ButtonCreate item={buttonProps}/>
-
             </div>
+
+            <InformationBanner>
+                <MessageReorder item={reorder}/>
+            </InformationBanner>
 
             <div className={style.gridSearchProducts}>
                 <CustomInput item={inputSearch}/>
@@ -86,9 +96,13 @@ export default function AllServicesMobile() {
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                                 </button>
 
-                                <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
+                                <button onClick={() => handleProductSee(item)} className={style.seeReview}>
+                                    ver Reseñas
                                 </button>
+
+                               {/* <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
+                                </button>*/}
                                 <div onClick={() => handleEdit(item)}>
                                     <ServiceViewMobile displayFull={false} isBorder={false} item={item}/>
                                 </div>

@@ -160,3 +160,12 @@
 .contInput {
     width: 33%;
 }
+
+.seeReview{
+    color: var(--linkColor);
+    position: absolute;
+    width: max-content;
+    bottom: 12px;
+    left: 32px;
+    z-index: 500;
+}

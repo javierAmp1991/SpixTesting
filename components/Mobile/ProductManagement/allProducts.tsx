@@ -80,9 +80,14 @@ export default function AllProductsMobile() {
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                                 </button>
 
-                                <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
+                                <button className={style.seeReview} onClick={() => handleProductSee(item)}>
+                                    Ver reseñas
                                 </button>
+
+                               {/* <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
+                                </button>*/}
+
                                 <div onClick={() => handleEdit(item)}>
                                     <ProductViewHor item={item} displayFullProduct={false}/>
                                 </div>
