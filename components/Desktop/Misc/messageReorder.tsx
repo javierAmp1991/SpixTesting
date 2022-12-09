@@ -8,8 +8,7 @@ export class MessageReorderProps {
 export default function MessageReorder({item}: { item: MessageReorderProps }) {
     return (
         <div>
-            <span className={style.ast}>* </span>
-            <span>{item.TextBefore} <span className={style.exa}>X</span> {item.TextAfter}</span>
+            <span className={style.message}>{item.TextBefore} <span className={style.exa}>X</span> {item.TextAfter}</span>
         </div>
     )
 }

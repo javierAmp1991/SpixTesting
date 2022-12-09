@@ -23,8 +23,8 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
     const handlePopUpConfirm = () => hookConfirmDeleteGroup.HandleToggle()
 
     const handleChangePosition = (newPosition: number) => {
-            myGroups.HandleDropItemMobile(item.Name, newPosition)
-            handlePopUpNewPosition()
+        myGroups.HandleDropItemMobile(item.Name, newPosition)
+        handlePopUpNewPosition()
     }
 
     const popUpNewPosition = useDisplayPopUpHook(false)
@@ -53,16 +53,14 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
     return (
         <div className={style.contDrag}>
             <div className={style.gridTitle}>
-                <div className={style.titleGroup}>
-                    <div onClick={handlePopUpNewPosition} className={style.position}>{item.Id}</div>
-                    <span>{item.Name}</span>
-                </div>
+                <span>{item.Name}</span>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>
                 </button>
                 <button onClick={handlePopUpConfirm} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                 </button>
+                <div onClick={handlePopUpNewPosition} className={style.position}>{item.Id}</div>
             </div>
 
             <div className={style.mainDivCont}>

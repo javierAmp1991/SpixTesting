@@ -11,6 +11,7 @@ import PopUpFormMobile from "./popUpForm";
 import FormViewShortMobile from "./formViewShort";
 import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
 import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
+import InformationBanner from "../../Desktop/Misc/informationBanner";
 
 const title: string = "Formularios"
 const createForm: string = "Crear Formulario"
@@ -29,8 +30,8 @@ export default function MyFormsMobile() {
         OnCLick: handleAddForm
     }
     const reorder: MessageReorderProps = {
-        TextBefore: "Cambiar el orden de tus forularios, presionando el numero",
-        TextAfter: "al lado del nombre"
+        TextBefore: "Puedes cambiar el orden de tus forularios, presionando el numero",
+        TextAfter: "en la esquina superior derecha"
     }
 
     return (
@@ -41,7 +42,9 @@ export default function MyFormsMobile() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
-            <MessageReorder item={reorder}/>
+            <InformationBanner>
+                <MessageReorder item={reorder}/>
+            </InformationBanner>
             <div className={style.contForms}>
                 {
                     steps.ListForms.map(item =>

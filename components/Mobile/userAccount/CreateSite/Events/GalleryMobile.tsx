@@ -9,6 +9,7 @@ import {GalleryMediaProps} from "../../../../../Class/Layouts/layoutClass";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import GalleryLayoutMobile from "../Misc/GalleryLayoutMobile";
 import MessageReorder, {MessageReorderProps} from "../../../../Desktop/Misc/messageReorder";
+import InformationBanner from "../../../../Desktop/Misc/informationBanner";
 
 const newList = [
     {
@@ -76,7 +77,7 @@ const newList = [
     },
 ]
 const titleGallery: string = "Galeria"
-const titleMedia: string = "Galeria"
+const titleMedia: string = "Medios"
 const applyText: string = "Aplicar"
 const seeGalery: string = "Ver Galeria"
 const idLabel: string = "idLabelBanner"
@@ -187,7 +188,7 @@ export default function GalleryMobile() {
 
     const reorder: MessageReorderProps = {
         TextBefore: "Cambia el orden de tu galeria, presionando el numero",
-        TextAfter: "encima de la imagen"
+        TextAfter: "en la esquina superior derecha"
     }
 
 
@@ -240,22 +241,23 @@ export default function GalleryMobile() {
                         </div>
                     </div>
                 </div>
-
-                <MessageReorder item={reorder}/>
+                <InformationBanner>
+                    <MessageReorder item={reorder}/>
+                </InformationBanner>
 
                 <div className={style.contLayoutGallery}>
                     <GalleryLayoutMobile item={newList}/>
                 </div>
 
 
-                <div className={style.gridButtons}>
-                   {/* <button className={style.button}>
+               {/* <div className={style.gridButtons}>
+                     <button className={style.button}>
                         {applyText}
-                    </button>*/}
+                    </button>
                     <button onClick={handlePopUpGallery} className={style.button}>
                         {seeGalery}
                     </button>
-                </div>
+                </div>*/}
             </div>
             {
                 popUpHook.State &&

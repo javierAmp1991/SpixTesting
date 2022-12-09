@@ -14,9 +14,9 @@ export default function ButtonCreate({item}: { item: ButtonCreateProps }) {
             <div className={style.text}>
                 {item.Text}
             </div>
-            <div className={style.sizeIcon}>
+            {/*<div className={style.sizeIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.addIconBlue}/>
-            </div>
+            </div>*/}
         </button>
     )
 }

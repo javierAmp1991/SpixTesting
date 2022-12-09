@@ -12,14 +12,11 @@ export default function ContMediaRenderMobile({item, deleteImage}:
              className={`${style.contMediaRender} ${style.cursorOpen}`}>
             <MediaRenderMobile displayMedia={false} item={item}/>
             <button onClick={handleDeleteImage} className={style.deleteIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.trashIconWhite} alt={""}/>
             </button>
             <button className={style.position}>
                 {item.Number}
             </button>
-            {
-
-            }
         </div>
     )
 }

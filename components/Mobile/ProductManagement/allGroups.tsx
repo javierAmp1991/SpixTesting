@@ -1,5 +1,5 @@
 import style from "/styles/Mobile/ProductManagement/allGroupProducts.module.css"
-import { GlobalId} from "../../../public/globalConst";
+import {GlobalId} from "../../../public/globalConst";
 import {useContext} from "react";
 import {GroupsPGContext, ProviderPGGroups,} from "../../Providers/UserAccount/ProductAndGroupProvider";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
@@ -10,6 +10,7 @@ import PopUpCreateEditGroupMobile from "./popUpCreateEditGroup";
 import GroupProductsMobile from "./groupProducts";
 import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
 import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
+import InformationBanner from "../../Desktop/Misc/informationBanner";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const title: string = "Grupos"
@@ -28,8 +29,8 @@ export default function AllGroupsProductsMobile() {
         OnCLick: handlePopUp
     }
     const reorder: MessageReorderProps = {
-        TextBefore: "Cambiar el orden de los grupos de productos, presionando el numero",
-        TextAfter: "al lado del nombre"
+        TextBefore: "Puedes cambiar el orden de los grupos de productos, presionando el numero",
+        TextAfter: "en la esquina superior drecha"
     }
 
     return (
@@ -41,7 +42,9 @@ export default function AllGroupsProductsMobile() {
                 <ButtonCreate item={buttonProps}/>
             </div>
 
-            <MessageReorder item={reorder}/>
+            <InformationBanner>
+                <MessageReorder item={reorder}/>
+            </InformationBanner>
 
             <div className={style.gridProducts}>
                 {

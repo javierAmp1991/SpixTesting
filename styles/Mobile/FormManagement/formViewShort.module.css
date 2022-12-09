@@ -1,6 +1,6 @@
 .mainDiv {
     box-shadow: 0 0 8px rgba(0, 0, 0, .2);
-    padding: 32px 24px;
+    padding: 24px;
     border-radius: 8px;
     position: relative;
     cursor: pointer;
@@ -60,6 +60,19 @@
     z-index: 1000;
     font-weight: 500;
     color: var(--colorPrimaryTextDesktop);
+}
+
+.positionNew{
+    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    border-radius: 50%;
+    width: 28px;
+    aspect-ratio: 1/1;
+    z-index: 1000;
+    font-weight: 500;
+    color: var(--colorPrimaryTextDesktop);
+    position: absolute;
+    top: 12px;
+    right: 12px;
 }
 
 .samePosition {

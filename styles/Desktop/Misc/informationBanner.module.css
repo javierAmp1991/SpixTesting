@@ -1,0 +1,47 @@
+.mainCont {
+    padding-left: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+.mainDiv {
+    display: grid;
+    position: relative;
+    background: linear-gradient(145deg, #ff5900 0%, #ff4400 100%);
+    box-shadow: 2px 2px 4px #a10303;
+    padding: 20px 16px 20px 28px;
+    border-radius: 4px;
+}
+
+.contImage {
+    height: 30px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    background: #ff4400;
+    display: grid;
+    place-items: center;
+    top: calc(50% - 22px);
+    left: -15px;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px 4px 4px 0;
+    box-shadow: 2px 2px 2px #c53500;
+}
+
+.contImage:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    border-right: 15px solid #c53500;
+    position: absolute;
+    top: 30px;
+    left: -15px;
+}
+
+.image {
+    width: 70%;
+    aspect-ratio: 1/1;
+    position: relative;
+}

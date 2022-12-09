@@ -10,6 +10,7 @@ import PopUpContainerFull from "../Misc/popUpContainerFull";
 import AlertModal from "../Misc/alertModal";
 import ContFormView from "./contFormView";
 import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
+import InformationBanner from "../Misc/informationBanner";
 
 const title: string = "Formularios"
 const createForm: string = "Crear Formulario"
@@ -36,10 +37,12 @@ export default function MyForms() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
-            <div>
-                <span className={style.ast}>* </span>
-                <span>Puedes cambiar el orden de tus forularios, tomando y arrastrandolo a la posicion que deseas</span>
-            </div>
+            <InformationBanner>
+                <div>
+                    <span className={style.ast}>* </span>
+                    <span>Puedes cambiar el orden de tus formularios, tomando y arrastrandolo a la posicion que deseas</span>
+                </div>
+            </InformationBanner>
             <div className={style.contForms}>
                 {
                     steps.ListForms.map((item, index) =>

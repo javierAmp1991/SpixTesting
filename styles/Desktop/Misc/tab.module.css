@@ -12,8 +12,11 @@
       --backgroundTabColor: linear-gradient(145deg, #048a04 0%, #09a909 100%);
       --backgroundBorderTad: #09a909;
     */
-    --backgroundTabColor: var(--gradientBlueButton);
+    /*--backgroundTabColor: var(--gradientBlueButton);
     --backgroundBorderTad: var(--gradientBlueButton);
+    */
+    --backgroundTabColor: linear-gradient(145deg, #5F0A87 0%, #A4508B 100%);
+    --backgroundBorderTad: #A4508B;
     --sizeBorder: 20px;
 }
 

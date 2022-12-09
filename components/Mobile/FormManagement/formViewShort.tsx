@@ -41,9 +41,9 @@ export default function FormViewShortMobile({item}: { item: FormItem }) {
         <div className={style.mainDiv}>
             <div className={style.info}>
                 <div className={style.gridPositionName}>
-                    <button onClick={handlePopUpNewPosition} className={style.position}>
+                   {/* <button onClick={handlePopUpNewPosition} className={style.position}>
                         {item.Index + 1}
-                    </button>
+                    </button>*/}
                     <div className={style.name}>
                         {item.Name}
                     </div>
@@ -54,6 +54,9 @@ export default function FormViewShortMobile({item}: { item: FormItem }) {
             </div>
             <button onClick={handlePopUpDelete} className={style.deleteIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
+            </button>
+            <button onClick={handlePopUpNewPosition} className={style.positionNew}>
+                {item.Index + 1}
             </button>
             {
                 popUpHookNewPosition.State &&

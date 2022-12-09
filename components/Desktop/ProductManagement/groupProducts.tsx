@@ -19,13 +19,6 @@ const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
     const myGroups: ProviderPGGroups = useContext(GroupsPGContext)
-    const [{isDragging}, drag] = useDrag(() => ({
-        type: "groupProducts",
-        item: {Number: item.Number, Name: item.Name},
-        collect: (monitor) => ({
-            isDragging: monitor.isDragging()
-        })
-    }))
 
     const hookEditGroup = useDisplayPopUpHook(false)
     const hookConfirmDeleteGroup = useDisplayPopUpHook(false)
@@ -43,10 +36,10 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
     }
 
     return (
-        <div className={style.contDrag} ref={drag}>
+        <div className={style.contDrag}>
             <div className={style.gridTitle}>
                 <div className={style.titleGroup}>
-                    {/*<span className={style.circleNumber}>{item.Id}</span>*/} {item.Name}
+                    {item.Name}
                 </div>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>

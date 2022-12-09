@@ -7,15 +7,14 @@
     display: grid;
     place-items: center;
     position: relative;
-    --colorTabLine: var(--separationLineColor);
-    --backgroundTabColor: var(--gradientBlueButton)
+    --colorTabLine: rgba(231,231,231);
+    --backgroundTabColor:rgba(231,231,231)
 }
 
 .selected {
     height: 40px;
     background: white;
     background: var(--backgroundTabColor);
-    color: white;
 }
 
 .selected:after {

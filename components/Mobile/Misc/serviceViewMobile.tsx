@@ -23,7 +23,7 @@ export default function ServiceViewMobile({item, displayFull, isBorder}:
         IsBeforeText: false,
         TypeGrid: true,
         PaddingTop: 12,
-        JustifyContent: `center`
+        JustifyContent: `left`
     }
 
     return (
@@ -98,26 +98,12 @@ export default function ServiceViewMobile({item, displayFull, isBorder}:
                     </div>
                 }
 
-                {
-                    (item.Type == TypeProducts.Service && item.Time != null) &&
-                    <div className={style.sizeTimeIcon}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon} alt={""}/>
-                        <span className={style.colorTime}>
-                        {item.Time}
-                    </span>
-                        <span className={style.colorMin}>
-                        min
-                    </span>
-                    </div>
-                }
-
                 <div className={style.gridInfoProductHorizontal}>
                     <div onClick={handleOpen} className={style.contImage}>
                         <div className={style.sizeImage}>
                             <Image objectFit={"cover"} layout={"fill"} src={item.ImagePath} alt=""/>
                         </div>
                     </div>
-
                     <div>
                         <div className={`${style.name} ${utilities.clamp3}`}>
                             {item.Name}
@@ -130,6 +116,12 @@ export default function ServiceViewMobile({item, displayFull, isBorder}:
                     <div className={`${style.description} ${utilities.clamp6}`}>
                         {item.Description}
                     </div>
+                    {
+                        (item.Type == TypeProducts.Service && item.Time != null) &&
+                        <div>
+                            <span className={utilities.fontPrimaryText}>Duracion: {item.Time} min</span>
+                        </div>
+                    }
                     {
                         item.SKU != null &&
                         <div className={utilities.fontSecundaryText}>

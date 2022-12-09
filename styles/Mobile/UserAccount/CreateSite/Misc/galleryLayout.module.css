@@ -8,7 +8,7 @@
     width: 24px;
     aspect-ratio: 1/1;
     position: absolute;
-    top: 8px;
+    bottom: 8px;
     right: 8px;
     z-index: 500;
     border-radius: 50%;
@@ -75,5 +75,5 @@
     background: white;
     position: absolute;
     top: 8px;
-    left: 8px;
+    right: 8px;
 }

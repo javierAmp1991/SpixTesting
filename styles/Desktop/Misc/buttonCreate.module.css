@@ -1,22 +1,19 @@
 .mainDiv {
     padding: 5px 16px;
     display: grid;
-    grid-template-columns: repeat(2, max-content);
     align-items: center;
     gap: 12px;
     border-radius: 6px;
     overflow: hidden;
-    border: 1px solid var(--linkColor);
-    box-shadow: 0 0 2px var(--linkColor);
-    transition: .4s;
+    background: var(--gradientBlueButton);
 }
 
 .mainDiv:hover{
-    background: rgba(89, 151, 255, .2);
+    background: #0061d0;
 }
 
 .text {
-    color: var(--linkColor);
+    color: white;
     font-weight: 500;
 }
 
