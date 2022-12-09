@@ -12,6 +12,8 @@ import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/custo
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import ServiceViewMobile from "../Misc/serviceViewMobile";
 import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
+import PopUpCreateEditProductMobile from "../ProductManagement/popUpCreateEditProduct";
+import ProductModalMobile from "../Misc/ProductModal";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"
@@ -100,7 +102,7 @@ export default function AllServicesMobile() {
                 popUpHook.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
-                        <PopUpCreateEditProduct closePopUp={handlePopUp} handleChange={handleCreateProduct}/>
+                        <PopUpCreateEditProductMobile closePopUp={handlePopUp} handleChange={handleCreateProduct}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
@@ -108,7 +110,7 @@ export default function AllServicesMobile() {
                 popUpHookEdit.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
-                        <PopUpCreateEditProduct item={productEdit} closePopUp={handlePopUpEdit}
+                        <PopUpCreateEditProductMobile item={productEdit} closePopUp={handlePopUpEdit}
                                                 handleChange={handleEditProduct}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
@@ -117,7 +119,7 @@ export default function AllServicesMobile() {
                 popUpHookSee.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpSee} isBackground={true} isButtonVisible={true}>
-                        <ProductModal item={productSee} productProps={productProps}/>
+                        <ProductModalMobile item={productSee} productProps={productProps}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

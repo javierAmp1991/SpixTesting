@@ -22,6 +22,7 @@ export class ProductModalProps {
     IsQualifying: boolean
     IsScalable: boolean
     IsButtonVisible: boolean
+    Full?: boolean
 
 }
 
@@ -31,7 +32,7 @@ export default function ProductModalMobile({
                                            }: { item: ProductItem, productProps: ProductModalProps }) {
     const addToCart: CartProviderProps = useContext(AddToCartContext)
     let [amountSelected, setAmountSelected] = useState(1)
-    let [seeResume, setSeeResume] = useState(false)
+    let [seeResume, setSeeResume] = useState(productProps.Full == null)
     const handleToggle = () => setSeeResume(!seeResume)
     const priceViewProp: PriceViewProp = {
         SizePrice: 32,
@@ -67,10 +68,9 @@ export default function ProductModalMobile({
                     </div>
                 }
 
-                <div className={style.contImages}>
+                <div className={style.gridSelection}>
                     <div className={style.sizeImage}>
-                        <Image layout={"fill"} src={isExtra ? imageSelected : item.ImagePath}
-                               alt={""}/>
+                        <Image layout={"fill"} src={isExtra ? imageSelected : item.ImagePath} alt={""}/>
                     </div>
                     {
                         item.ExtraImages != null &&
@@ -95,19 +95,23 @@ export default function ProductModalMobile({
                     </div>
 
                     <RatingStarVar item={4} size={24}/>
-                    <div className={style.gridSeeResumeLink}>
-                        <button onClick={handleToggle} className={style.qualify}>
-                            Ver resumen
-                        </button>
-                        {
-                            !productProps.IsQualifying &&
-                            <Link href={"/"}>
-                                <a className={utilities.styleLink}>
-                                    Calificar este producto
-                                </a>
-                            </Link>
-                        }
-                    </div>
+                    {
+                        productProps.Full != null &&
+                        <div className={style.gridSeeResumeLink}>
+                            <button onClick={handleToggle} className={style.qualify}>
+                                Ver resumen
+                            </button>
+                            {
+                                !productProps.IsQualifying &&
+                                <Link href={"/"}>
+                                    <a className={utilities.styleLink}>
+                                        Calificar este producto
+                                    </a>
+                                </Link>
+                            }
+                        </div>
+                    }
+
                     {
                         seeResume &&
                         <ResumeReview item={null}/>
@@ -129,33 +133,32 @@ export default function ProductModalMobile({
                         </div>
                     }
 
-                    <div className={style.separationLine}/>
-
                     {
-                        productProps.IsScalable &&
-                        <div className={style.gridAmount}>
-                            Seleccione una cantidad
-                            <div className={style.gridSelectorAmount}>
-                                <button className={style.styleMoreLess} onClick={() => handleAmountSelected(false)}>
-                                    -
-                                </button>
-                                <div className={style.amount}>
-                                    {amountSelected}
+                        productProps.Full != null &&
+                        <>
+                            <div className={style.separationLine}/>
+
+                            <div className={style.gridAmount}>
+                                Seleccione una cantidad
+                                <div className={style.gridSelectorAmount}>
+                                    <button className={style.styleMoreLess} onClick={() => handleAmountSelected(false)}>
+                                        -
+                                    </button>
+                                    <div className={style.amount}>
+                                        {amountSelected}
+                                    </div>
+                                    <button className={style.styleMoreLess} onClick={() => handleAmountSelected(true)}>
+                                        +
+                                    </button>
                                 </div>
-                                <button className={style.styleMoreLess} onClick={() => handleAmountSelected(true)}>
-                                    +
-                                </button>
                             </div>
-                        </div>
-                    }
 
-                    <PriceView item={priceViewProp}/>
+                            <PriceView item={priceViewProp}/>
 
-                    {
-                        productProps.IsButtonVisible &&
-                        <button onClick={handleAdd} className={style.button}>
-                            {addText}
-                        </button>
+                            <button onClick={handleAdd} className={style.button}>
+                                {addText}
+                            </button>
+                        </>
                     }
                 </div>
             </div>

@@ -1,8 +1,10 @@
 .mainDiv {
     width: 90vw;
     height: auto;
+    max-height: 90vh;
     background: white;
     padding: 24px 32px;
+    overflow: scroll;
     --animattionTransition: .4s;
 }
 
@@ -209,7 +211,7 @@
 
 .gridSelection {
     display: grid;
-    grid-template-columns: 55px 1fr;
+    grid-template-columns: 1fr max-content;
     gap: 16px;
     position: relative;
 }
