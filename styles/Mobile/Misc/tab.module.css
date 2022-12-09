@@ -7,14 +7,12 @@
     display: grid;
     place-items: center;
     position: relative;
-    --colorTabLine: rgba(231,231,231);
-    --backgroundTabColor:rgba(231,231,231)
 }
 
 .selected {
     height: 40px;
     background: white;
-    background: var(--backgroundTabColor);
+    background: var(--colorTabSelected);
 }
 
 .selected:after {
@@ -28,7 +26,7 @@
 
 
 .noSelected {
-    background: rgb(241, 241, 241);
+    background: var(--colorTabNoSelected);
 }
 
 .selectedItem {
@@ -57,7 +55,7 @@
 }
 
 .borderGray {
-    background: rgb(241, 241, 241);
+    background: var(--colorTabNoSelected);
 }
 
 .borderRight {
@@ -75,7 +73,7 @@
     width: 10px;
     height: 10px;
     right: -10px;
-    background: rgb(241, 241, 241);
+    background: var(--colorTabNoSelected);
     position: absolute;
     top: 0;
     z-index: 50;
@@ -85,7 +83,7 @@
     width: 10px;
     height: 10px;
     right: -10px;
-    background: var(--backgroundTabColor);
+    background: var(--colorTabSelected);
     position: absolute;
     z-index: 50;
     top: 0;

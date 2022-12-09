@@ -9,7 +9,6 @@ const title: string = "Aplicaciones"
 export default function MyApplications() {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     const handleOnChange = (value) => steps.HandleDropBox(value)
-    const newOptions: OptionSelectCustom[] = getOptions()
     function getOptions(): OptionSelectCustom[] {
         let newListOptions: OptionSelectCustom[] = []
         steps.ListForms.forEach(item => {
@@ -34,7 +33,6 @@ export default function MyApplications() {
                 </div>
                 <InputSelectCustom item={customSelectProps}/>
             </div>
-
             <div className={style.contForms}>
                 {
                     steps.ListApplications.map(item =>

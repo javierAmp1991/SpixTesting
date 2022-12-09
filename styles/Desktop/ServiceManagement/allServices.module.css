@@ -9,12 +9,13 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: var(--userAccountTitle);
+    color: var(--colorTitlesDesktop);
 }
 
 .gridSearchProducts {
     display: grid;
-    gap: 16px;
+    gap: 24px;
 }
 
 .buttonCreateProduct {
@@ -33,7 +34,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .sizeAddIcon {
@@ -46,14 +47,13 @@
 .gridProducts {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 32px;
-    padding-top: 32px;
+    gap: 16px;
 }
 
 .mainDivCont {
     display: grid;
     position: relative;
-    box-shadow: 0 0 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
     border-radius: 8px;
 }
 

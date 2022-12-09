@@ -16,6 +16,7 @@ import PopUpCreateEditProductMobile from "../ProductManagement/popUpCreateEditPr
 import ProductModalMobile from "../Misc/ProductModal";
 import InformationBanner from "../../Desktop/Misc/informationBanner";
 import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
+import utilities from "/styles/utilities.module.css";
 
 const productsTitle: string = "Servicios"
 const createService: string = "Crear servicio"
@@ -81,7 +82,10 @@ export default function AllServicesMobile() {
             </div>
 
             <InformationBanner>
-                <MessageReorder item={reorder}/>
+                <div>
+                    Puedes cambiar el order de tus servicios presionando el numero que se encuentra en la esquina
+                    superior derecha
+                </div>
             </InformationBanner>
 
             <div className={style.gridSearchProducts}>
@@ -89,20 +93,22 @@ export default function AllServicesMobile() {
 
                 <div className={style.gridProducts}>
                     {
-                        myServices.ListServices.map((item) =>
+                        myServices.ListServices.map((item, index) =>
                             (item.Name.includes(input) || item.SKU.toString().includes(input)) &&
                             <div key={item.Name} className={style.mainDivCont}>
                                 <button onClick={() => handleDeleteProduct(item.Id)} className={style.sizeIconTrash}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                                 </button>
 
-                                <button onClick={() => handleProductSee(item)} className={style.seeReview}>
+                               {/* <button onClick={() => handleProductSee(item)} className={style.seeReview}>
                                     ver Reseñas
+                                </button>*/}
+
+                                <button onClick={() => handleProductSee(item)}
+                                        className={`${utilities.contDropNumber} ${style.positionNumber}`}>
+                                    {index + 1}
                                 </button>
 
-                               {/* <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
-                                </button>*/}
                                 <div onClick={() => handleEdit(item)}>
                                     <ServiceViewMobile displayFull={false} isBorder={false} item={item}/>
                                 </div>
@@ -125,7 +131,7 @@ export default function AllServicesMobile() {
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
                         <PopUpCreateEditProductMobile item={productEdit} closePopUp={handlePopUpEdit}
-                                                handleChange={handleEditProduct}/>
+                                                      handleChange={handleEditProduct}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

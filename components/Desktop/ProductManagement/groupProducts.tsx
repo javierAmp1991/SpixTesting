@@ -14,6 +14,7 @@ import {createPortal} from "react-dom";
 import PopUpCreateEditGroup, {CreateEditGroupProps} from "./popUpCreateEditGroup";
 import AlertModal from "../Misc/alertModal";
 import ProductsGrid from "./productsGrid";
+import utilities from "/styles/utilities.module.css";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -40,6 +41,9 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
             <div className={style.gridTitle}>
                 <div className={style.titleGroup}>
                     {item.Name}
+                </div>
+                <div className={utilities.contDropNumber}>
+                    {item.Number}
                 </div>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>

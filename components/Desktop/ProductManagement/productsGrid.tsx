@@ -1,6 +1,5 @@
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
-import LayoutCarrouselDesktop from "../Layouts/layoutCarrouselDesktop";
-import ProductSquare, {ProductSquareProps} from "../Misc/ProductSquare";
+import {ProductSquareProps} from "../Misc/ProductSquare";
 import {PropCarrousel} from "../../../Class/Layouts/layoutClass";
 import style from "/styles/Desktop/ProductManagement/groupProducts.module.css"
 import {GlobalConst, GlobalId} from "../../../public/globalConst";
@@ -12,6 +11,7 @@ import PopUpContainerFull from "../Misc/popUpContainerFull";
 import PopUpCreateEditProduct from "./popUpCreateEditProduct";
 import {createPortal} from "react-dom";
 import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
+import ProductViewHor from "../Misc/ProductViewHor";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -62,7 +62,7 @@ export default function ProductsGrid({item, nameGroup}: { item: ProductItem[], n
 
     return (
         <>
-            <LayoutCarrouselDesktop layoutProp={carrouselProp}>
+            {/*<LayoutCarrouselDesktop layoutProp={carrouselProp}>
                 {
                     item.map((item2, index) =>
                         <div key={item2.Id} className={style.mainDivContPro}>
@@ -80,7 +80,25 @@ export default function ProductsGrid({item, nameGroup}: { item: ProductItem[], n
                         </div>
                     )
                 }
-            </LayoutCarrouselDesktop>
+            </LayoutCarrouselDesktop>*/}
+            <div className={style.gridProducts}>
+                {
+                    item.map((item2, index) =>
+                        <div key={item2.Id} className={style.mainDivContPro}>
+                            <button onClick={() => handleDeleteProduct(item2.Id)}
+                                    className={style.sizeIconTrash}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
+                            </button>
+                           {/* <button onClick={() => handleProductSee(item2)} className={style.sizeIconVisibility}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
+                            </button>*/}
+                            <div onClick={() => handleEdit(item2)}>
+                                <ProductViewHor displayFullProduct={false} key={item2.Id} item={item2}/>
+                            </div>
+                        </div>
+                    )
+                }
+            </div>
             {
                 hookEditProduct.State &&
                 createPortal(

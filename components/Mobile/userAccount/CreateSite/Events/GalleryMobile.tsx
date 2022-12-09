@@ -242,7 +242,9 @@ export default function GalleryMobile() {
                     </div>
                 </div>
                 <InformationBanner>
-                    <MessageReorder item={reorder}/>
+                    <div>
+                        puedes cambiar el order de tu galeria presionando el numero que se encuentra en la esquina superior derecha
+                    </div>
                 </InformationBanner>
 
                 <div className={style.contLayoutGallery}>

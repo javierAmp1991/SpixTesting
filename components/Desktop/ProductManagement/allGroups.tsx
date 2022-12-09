@@ -10,6 +10,7 @@ import {createPortal} from "react-dom";
 import PopUpCreateEditGroup, {CreateEditGroupProps} from "./popUpCreateEditGroup";
 import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 import InformationBanner from "../Misc/informationBanner";
+import GroupProductsDesktop from "./groupProducts";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 const title: string = "Grupos"
@@ -37,19 +38,17 @@ export default function AllGroupsProducts() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
-            <div className={style.contInformation}>
-                <InformationBanner>
-                    <div>
-                        <span style={{color: `red`}}>* </span>
-                        <span>Puedes cambiar el orden de los grupos de productos, tomando y arrastrandolo a la posicion que deseas</span>
-                    </div>
-                </InformationBanner>
-            </div>
+            <InformationBanner width={`max-content`}>
+                <div>
+                    Puedes cambiar el orden de los grupos, haciendo click en el numero que se encuentra al lado del
+                    nombre del grupo
+                </div>
+            </InformationBanner>
 
             <div className={style.gridProducts}>
                 {
                     groupContext.Groups.map((item) =>
-                        <ContGroupProducts key={item.Id} item={item}/>
+                        <GroupProductsDesktop key={item.Id} item={item}/>
                     )
                 }
             </div>

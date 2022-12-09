@@ -74,6 +74,7 @@ const listInitialServices: ProductItem[] = [
         ImagePath: "/images/bh5.png",
         Rating: 0,
         SKU: 123456,
+        Time: `30`,
         Type: TypeProducts.Service
     },
     {
@@ -85,6 +86,7 @@ const listInitialServices: ProductItem[] = [
         Include: null,
         ImagePath: "/images/bh6.png",
         Rating: 5,
+        Time: `20`,
         SKU: 123456,
         Type: TypeProducts.Service
     }

@@ -94,6 +94,11 @@
     --paddingUserAccountMobile: 16px;
     --paddingUserAccountTabs: 82px 72px 53px 72px;
     --paddingUserAccountTabsMobile: 62px 16px 24px 16px;
+    --colorTabSelected: rgba(241,241,241);
+    --colorTabNoSelected: rgba(231,231,231);
+    --userAccountTitle: 26px;
+    --userAccountTitleMobile: 24px
+
 }
 
 /*Desktop Section*/

@@ -61,9 +61,9 @@ export default function ProductsGridMobile({item, nameGroup}: { item: ProductIte
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                             </button>
 
-                            <button onClick={() => handleProductSee(item2)} className={style.sizeIconVisibility}>
+                            {/*<button onClick={() => handleProductSee(item2)} className={style.sizeIconVisibility}>
                                 <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
-                            </button>
+                            </button>*/}
                             <div onClick={() => handleEdit(item2)}>
                                 <ProductSquare props={propsProducts} key={item2.Id} item={item2}/>
                             </div>

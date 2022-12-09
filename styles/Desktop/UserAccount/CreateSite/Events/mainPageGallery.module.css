@@ -17,7 +17,7 @@
 }
 
 .title {
-    font-size: 21px;
+    font-size: var(--userAccountTitle);
     color: var(--colorTitlesDesktop);
 }
 

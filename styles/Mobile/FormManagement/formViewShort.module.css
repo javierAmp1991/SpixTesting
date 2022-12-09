@@ -16,9 +16,9 @@
 }
 
 .name {
-    font-size: 15px;
+    font-size: 21px;
     font-weight: 500;
-    margin-top: 1px;
+    color: var(--colorTitlesDesktop);
 }
 
 .deleteIcon {

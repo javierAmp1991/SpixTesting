@@ -1,47 +1,32 @@
-.mainCont {
-    padding-left: 15px;
-    color: white;
-    font-weight: 500;
-}
 
 .mainDiv {
     display: grid;
     position: relative;
     background: linear-gradient(145deg, #ff5900 0%, #ff4400 100%);
-    box-shadow: 2px 2px 4px #a10303;
-    padding: 20px 16px 20px 28px;
+    background: #d7eaf8;
+    box-shadow: 2px 2px 4px #accde7;
+    padding: 16px 20px;
     border-radius: 4px;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 500;
+    font-size: 13px;
 }
 
-.contImage {
-    height: 30px;
-    aspect-ratio: 1/1;
-    position: absolute;
-    background: #ff4400;
+.gridIconTitle{
     display: grid;
-    place-items: center;
-    top: calc(50% - 22px);
-    left: -15px;
-    color: white;
-    font-weight: 600;
-    border-radius: 4px 4px 4px 0;
-    box-shadow: 2px 2px 2px #c53500;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 4px;
 }
 
-.contImage:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-bottom: 15px solid transparent;
-    border-left: 15px solid transparent;
-    border-right: 15px solid #c53500;
-    position: absolute;
-    top: 30px;
-    left: -15px;
+.title{
+    font-size: 16px;
+    color: #265a80;
 }
 
-.image {
-    width: 70%;
+.sizeImage{
+    width: 16px;
     aspect-ratio: 1/1;
     position: relative;
+    margin-bottom: 2px;
 }

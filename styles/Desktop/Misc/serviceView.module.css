@@ -5,6 +5,7 @@
     background: white;
     transition: .4s;
     text-align: left;
+    padding: 24px 16px;
 }
 
 .mainDivNoBorder{
@@ -15,13 +16,10 @@
 .contImage {
     padding: 2px;
     background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .1) 50%);
-    position: absolute;
     border-radius: 50%;
     overflow: hidden;
     width: 130px;
-    left: calc(50% - 65px);
-    top: -20px;
-    z-index: 500;
+    margin: auto;
 
 }
 
@@ -56,7 +54,6 @@
 .gridInfoProduct {
     display: grid;
     gap: 4px;
-    padding: 8px;
 }
 
 .separationLine {
@@ -68,9 +65,9 @@
 .gridInfoProductHorizontal {
     display: grid;
     gap: 16px;
-    padding: 140px 24px 32px 24px;
     align-items: start;
     text-align: left;
+    padding-top: 24px;
 }
 
 .discountBox {
@@ -103,8 +100,13 @@
     position: relative;
 }
 
-.description {
+.contDesSku{
     color: var(--colorPrimaryTextDesktop);
+}
+
+
+.description {
+    padding-bottom: 4px;
 }
 
 .name {

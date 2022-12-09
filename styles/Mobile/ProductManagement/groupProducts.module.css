@@ -9,17 +9,21 @@
 .contDrag {
 }
 
+.title{
+    font-size: 21px;
+}
+
 .gridTitle {
     display: grid;
-    grid-template-columns: repeat(3, max-content) 1fr;
+    grid-template-columns: repeat(4, max-content);
     width: 100%;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
     padding-bottom: 16px;
 }
 
 .contIcon {
-    width: 18px;
+    width: 20px;
     aspect-ratio: 1/1;
     position: relative;
 }

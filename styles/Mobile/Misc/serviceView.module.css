@@ -22,6 +22,7 @@
 }
 
 
+
 .sizeImage {
     width: 100%;
     aspect-ratio: 1/1;
@@ -102,8 +103,13 @@
     position: relative;
 }
 
-.description {
+.contDesSku{
     color: var(--colorPrimaryTextDesktop);
+}
+
+
+.description {
+    padding-bottom: 4px;
 }
 
 .name {

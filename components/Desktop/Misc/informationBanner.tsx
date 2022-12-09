@@ -1,19 +1,22 @@
 import style from "/styles/Desktop/Misc/informationBanner.module.css"
 import Image from "next/image";
 import {GlobalConst} from "../../../public/globalConst";
+import {ReactNode} from "react";
 
-export default function InformationBanner({children}) {
+const defaultWidth: string = `100%`
+
+export default function InformationBanner({children, width}:
+                                              { children: ReactNode, width?: string }) {
     return (
-        <div className={style.mainCont}>
-            <div className={style.mainDiv}>
-                <div className={style.contImage}>
-                    !
-                   {/* <div className={style.image}>
-                        <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon}/>
-                    </div>*/}
+        <div className={style.mainDiv}
+             style={{width: width == null ? defaultWidth : width}}>
+            <div className={style.gridIconTitle}>
+                <div className={style.sizeImage}>
+                    <Image layout={"fill"} src={GlobalConst.sourceImages.chronoIcon}/>
                 </div>
-                {children}
+                <div className={style.title}>Informacion</div>
             </div>
+            {children}
         </div>
     )
 }

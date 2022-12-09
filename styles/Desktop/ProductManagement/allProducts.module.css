@@ -9,7 +9,8 @@
 }
 
 .title {
-    font-size: 24px;
+    font-size: var(--userAccountTitle);
+    color: var(--colorTitlesDesktop);
 }
 
 .gridSearchProducts {
@@ -33,7 +34,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .sizeAddIcon {
@@ -53,12 +54,13 @@
 .mainDivCont {
     display: grid;
     position: relative;
+    cursor: pointer;
 }
 
 .contIcon {
     padding: 6px;
     border-radius: 50%;
-    cursor: pointer;
+    cursor: all-scroll;
 }
 
 .sizeIcon {

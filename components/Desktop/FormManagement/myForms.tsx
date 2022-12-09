@@ -1,8 +1,7 @@
 import style from "/styles/Desktop/FormManagement/myForms.module.css"
 import {MyFormsContext, ProviderMyForm} from "../../Providers/UserAccount/MyFormProvider";
 import {useContext} from "react";
-import Image from "next/image";
-import {GlobalConst, GlobalId} from "../../../public/globalConst";
+import {GlobalId} from "../../../public/globalConst";
 import PopUpForm from "./popUpForm";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
@@ -13,7 +12,6 @@ import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
 import InformationBanner from "../Misc/informationBanner";
 
 const title: string = "Formularios"
-const createForm: string = "Crear Formulario"
 const idPortal: string = GlobalId.globalIds.idPortal
 
 export default function MyForms() {
@@ -37,15 +35,12 @@ export default function MyForms() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
-            <InformationBanner>
-                <div>
-                    <span className={style.ast}>* </span>
-                    <span>Puedes cambiar el orden de tus formularios, tomando y arrastrandolo a la posicion que deseas</span>
-                </div>
+            <InformationBanner width={`calc(33% - 12px)`}>
+                <span>Puedes cambiar el orden de tus formularios, tomando y arrastrandolo a la posicion que deseas</span>
             </InformationBanner>
             <div className={style.contForms}>
                 {
-                    steps.ListForms.map((item, index) =>
+                    steps.ListForms.map((item) =>
                         <ContFormView key={item.Id} item={item}/>
                     )
                 }

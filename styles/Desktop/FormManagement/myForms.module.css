@@ -2,16 +2,16 @@
     display: grid;
     gap: 32px;
     padding: 8px;
-    width: 30%;
 }
 
 .title {
     color: var(--colorTitlesDesktop);
-    font-size: 21px;
+    font-size: var(--userAccountTitle);
 }
 
 .contForms {
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 }
 
@@ -19,7 +19,7 @@
     display: grid;
     grid-template-columns: repeat(2, max-content);
     align-items: center;
-    gap: 16px;
+    gap: 12px;
 }
 
 .gridAddForm {

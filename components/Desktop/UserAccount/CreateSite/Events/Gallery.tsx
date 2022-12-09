@@ -218,7 +218,7 @@ export default function Gallery() {
                     <div className={style.title}>
                         {titleMedia}
                     </div>
-                    <div className={style.contInput}>
+                    {/*<div className={style.contInput}>
                         <select onClick={handleClick} onFocus={handleFocus}
                                 onBlur={handleBlur} onChange={handleSelect} ref={refSelect}
                                 className={style.input}>
@@ -230,23 +230,21 @@ export default function Gallery() {
                         <div style={{transform: rotate}} className={style.bottomArrow}>
                             <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
                         </div>
-                    </div>
+                    </div>*/}
                 </div>
 
-                <div className={`${style.contLayoutGallery} ${style.heightCont}`}>
-                    <div className={style.mainContLayoutGallery}>
-                        <GalleryLayout item={newList}/>
-                    </div>
+                <div className={style.contLayoutGallery}>
+                    <GalleryLayout item={newList}/>
                 </div>
 
-                <div className={style.gridButtons}>
-                   {/* <button className={style.button}>
+                {/*<div className={style.gridButtons}>
+                   <button className={style.button}>
                         {applyText}
-                    </button>*/}
+                    </button>
                     <button onClick={handlePopUpGallery} className={style.button}>
                         {seeGalery}
                     </button>
-                </div>
+                </div>*/}
             </div>
             {
                 popUpHook.State &&

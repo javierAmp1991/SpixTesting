@@ -12,8 +12,8 @@
 }
 
 .title {
-    font-size: 21px;
     color: var(--colorTitlesDesktop);
+    font-size: var(--userAccountTitleMobile);
 }
 
 .contBanner {

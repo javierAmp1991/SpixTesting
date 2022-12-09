@@ -43,7 +43,10 @@ export default function AllGroupsProductsMobile() {
             </div>
 
             <InformationBanner>
-                <MessageReorder item={reorder}/>
+                <div>
+                    Puedes cambiar el orden de los grupos,
+                    haciendo click en el numero que se encuentra al lado del nombre del grupo
+                </div>
             </InformationBanner>
 
             <div className={style.gridProducts}>

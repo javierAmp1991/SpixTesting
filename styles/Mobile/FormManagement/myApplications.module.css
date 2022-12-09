@@ -12,7 +12,7 @@
 
 .title {
     color: var(--colorTitlesDesktop);
-    font-size: 21px;
+    font-size: var(--userAccountTitleMobile);
 }
 
 .contForms {

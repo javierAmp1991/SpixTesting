@@ -44,9 +44,9 @@
 }
 
 .chargeSpix{
-    color: var(--colorSecundaryTextDesktop);
     position: absolute;
     right: 12px;
     padding-left: 12px;
-    border-left: 1px solid rgba(0,0,0,.1);
+    border-left: 1px solid #003c8b;
+    color: #003c8b;
 }

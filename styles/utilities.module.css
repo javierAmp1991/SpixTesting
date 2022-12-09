@@ -18,6 +18,17 @@
     cursor: grab;
 }
 
+.contDropNumber {
+    width: 26px;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    color: var(--colorPrimaryTextDesktop);
+    font-weight: 500;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,.2);
+}
+
 .fontTitleMobile {
     --sizeTitleMobile: 16px;
     font-size: var(--sizeTitleMobile);

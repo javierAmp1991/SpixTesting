@@ -43,7 +43,9 @@ export default function MyFormsMobile() {
                 <ButtonCreate item={buttonProps}/>
             </div>
             <InformationBanner>
-                <MessageReorder item={reorder}/>
+                <div>
+                    Puedes cambiar el order de tus formularios presionando el numero que se encuentra en la esquina superior derecha
+                </div>
             </InformationBanner>
             <div className={style.contForms}>
                 {

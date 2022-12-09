@@ -79,9 +79,9 @@ export default function AllProducts() {
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                                 </button>
 
-                                <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
+                               {/* <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
                                     <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
-                                </button>
+                                </button>*/}
                                 <div onClick={() => handleEdit(item)}>
                                     <ProductViewHor item={item} displayFullProduct={false}/>
                                 </div>

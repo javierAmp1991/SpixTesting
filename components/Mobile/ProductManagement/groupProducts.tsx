@@ -12,6 +12,7 @@ import ProductsGridMobile from "./productsGrid";
 import PopUpCreateEditGroupMobile from "./popUpCreateEditGroup";
 import AlertModalMobile from "../Misc/alertModal";
 import PopUpReorder, {PopUpReorderProps} from "../userAccount/popUpReorder";
+import utilities from "/styles/utilities.module.css";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -53,14 +54,14 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
     return (
         <div className={style.contDrag}>
             <div className={style.gridTitle}>
-                <span>{item.Name}</span>
+                <div className={style.title}>{item.Name}</div>
+                <div onClick={handlePopUpNewPosition} className={utilities.contDropNumber}>{item.Id}</div>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>
                 </button>
                 <button onClick={handlePopUpConfirm} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
                 </button>
-                <div onClick={handlePopUpNewPosition} className={style.position}>{item.Id}</div>
             </div>
 
             <div className={style.mainDivCont}>

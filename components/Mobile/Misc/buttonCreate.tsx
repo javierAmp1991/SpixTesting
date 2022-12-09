@@ -11,12 +11,12 @@ export default function ButtonCreate({item}: { item: ButtonCreateProps }) {
     const handleOnCLick = () => item.OnCLick()
     return (
         <button className={style.mainDiv} onClick={handleOnCLick}>
-            <div className={style.text}>
+            {/*<div className={style.text}>
                 {item.Text}
-            </div>
-            {/*<div className={style.sizeIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.addIconBlue}/>
             </div>*/}
+            <div className={style.sizeIcon}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.addIconBlue}/>
+            </div>
         </button>
     )
 }

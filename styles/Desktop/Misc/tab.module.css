@@ -15,20 +15,17 @@
     /*--backgroundTabColor: var(--gradientBlueButton);
     --backgroundBorderTad: var(--gradientBlueButton);
     */
-    --backgroundTabColor: linear-gradient(145deg, #5F0A87 0%, #A4508B 100%);
-    --backgroundBorderTad: #A4508B;
     --sizeBorder: 20px;
 }
 
 .selected {
     height: 50px;
     background: white;
-    background: var(--backgroundTabColor);
-    color: white;
+    background: var(--colorTabSelected);
 }
 
 .noSelected {
-    background: rgb(241, 241, 241);
+    background: var(--colorTabNoSelected);
 }
 
 .selectedItem {
@@ -57,7 +54,7 @@
 }
 
 .borderGray {
-    background: rgb(241, 241, 241);
+    background: var(--colorTabNoSelected);
 }
 
 .borderRight {
@@ -85,7 +82,7 @@
     width: calc(var(--sizeBorder) / 2);
     height: calc(var(--sizeBorder) / 2);
     background: white;
-    background: var(--backgroundBorderTad);
+    background: var(--colorTabSelected);
     position: absolute;
     z-index: 50;
     right: calc(var(--sizeBorder) / 2 * -1);

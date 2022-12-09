@@ -1,22 +1,17 @@
 .titleGroup {
     font-size: 21px;
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    align-items: center;
-    gap: 8px;
+    color: var(--colorTitlesDesktop);
 }
 
 .contDrag {
-    padding: 32px 24px 40px 24px;
 }
 
 .gridTitle {
     display: grid;
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(4, max-content);
     align-items: center;
     gap: 12px;
     padding-bottom: 24px;
-    padding-left: 48px;
 }
 
 .contIcon {
@@ -45,8 +40,9 @@
 .mainDivContPro {
     display: grid;
     position: relative;
-    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
-    border-radius: 12px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .sizeIconTrash {
@@ -96,4 +92,10 @@
     color: white;
     padding: 6px 48px;
     margin: auto;
+}
+
+.gridProducts{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }

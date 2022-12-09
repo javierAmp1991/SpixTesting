@@ -1,0 +1,13 @@
+.gridChronoText {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    align-items: center;
+    gap: 4px;
+}
+
+.chronoIcon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    margin-bottom: 2px;
+}
