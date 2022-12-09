@@ -2,14 +2,18 @@ import {MediaImage, MediaType} from "../../../../../Class/UserAccount/userAccoun
 import Image from "next/image";
 import {GlobalConst, GlobalId} from "../../../../../public/globalConst";
 import style from "/styles/Mobile/UserAccount/CreateSite/Events/mainPageGallery.module.css"
-import {useEffect, useRef, useState} from "react";
+import {createContext, useEffect, useRef, useState} from "react";
 import useDisplayPopUpHook from "../../../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
 import {GalleryMediaProps} from "../../../../../Class/Layouts/layoutClass";
 import PopUpContainerMob from "../../../Misc/popUpContainerMob";
 import GalleryLayoutMobile from "../Misc/GalleryLayoutMobile";
-import MessageReorder, {MessageReorderProps} from "../../../../Desktop/Misc/messageReorder";
+import {MessageReorderProps} from "../../../../Desktop/Misc/messageReorder";
 import InformationBanner from "../../../../Desktop/Misc/informationBanner";
+import GalleryMedia from "../../../../Desktop/Layouts/GalleryMedia";
+import GalleryMediaMobile from "../../../Layouts/GalleryMediaMobile";
+
+export const GalleryPopUpMobile = createContext(null)
 
 const newList = [
     {
@@ -110,7 +114,13 @@ export default function GalleryMobile() {
     let [rotateArrow, setRotateArrow] = useState(true)
     let [rotate, setRotate] = useState(initialRotate)
     let [stateClick, setStateClick] = useState(false)
+    let [startIn, setStartIn] = useState(0)
+    const handleStartIn = (num: number) => {
+        setStartIn(num)
+        handlePopUpGallery()
+    }
 
+    //region
     const handleClick = () => {
         setRotateArrow(stateClick)
         setStateClick(!stateClick)
@@ -180,6 +190,8 @@ export default function GalleryMobile() {
     useEffect(() => {
         setRotate(rotateArrow ? initialRotate : bottomRotate)
     }, [rotateArrow])
+    //endregion
+
 
     const galleryMediaPopUp: GalleryMediaProps = {
         Media: newList,
@@ -193,201 +205,202 @@ export default function GalleryMobile() {
 
 
     return (
-        <div className={style.mainDiv}>
-            <div className={style.mainDiv2}>
-                <div className={style.title}>
-                    {titleGallery}
-                </div>
-
-                {
-                    banner != null ?
-                        <div className={style.contBanner}>
-                            <Image layout={"fill"} objectFit={"cover"} src={banner.Url} alt={""}/>
-                            <button onClick={handleDeleteBanner} className={style.deleteIcon}>
-                                <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
-                            </button>
-                        </div>
-                        :
-                        <label className={style.contBanner}>
-                            <div className={style.contPlaceholderBanner}>
-                                <div className={style.textAddBanner}>
-                                    Agregar un banner
-                                </div>
-                                <div className={style.placeholderBanner}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.placeholderPlus} alt={""}/>
-                                </div>
-                            </div>
-                            <input onClick={handleCleanInputFile} onChange={handleAddBanner} id={idLabel}
-                                   className={style.label}
-                                   type={"file"}/>
-                        </label>
-                }
-
-                <div className={style.gridTitleButton}>
+        <GalleryPopUpMobile.Provider value={handleStartIn}>
+            <div className={style.mainDiv}>
+                <div className={style.mainDiv2}>
                     <div className={style.title}>
-                        {titleMedia}
+                        {titleGallery}
                     </div>
-                    <div className={style.contInput}>
-                        <select onClick={handleClick} onFocus={handleFocus} onBlur={handleBlur} onChange={handleSelect}
-                                ref={refSelect}
-                                className={style.input}>
-                            <option value={defaultSelect}>{addMedia}</option>
-                            <option value={MediaType.Video}>Video</option>
-                            <option value={MediaType.Image}>Imagen</option>
-                            <option value={MediaType.Youtube}>Youtube</option>
-                        </select>
-                        <div style={{transform: rotate}} className={style.bottomArrow}>
-                            <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
+
+                    {
+                        banner != null ?
+                            <div className={style.contBanner}>
+                                <Image layout={"fill"} objectFit={"cover"} src={banner.Url} alt={""}/>
+                                <button onClick={handleDeleteBanner} className={style.deleteIcon}>
+                                    <Image layout={"fill"} src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
+                                </button>
+                            </div>
+                            :
+                            <label className={style.contBanner}>
+                                <div className={style.contPlaceholderBanner}>
+                                    <div className={style.textAddBanner}>
+                                        Agregar un banner
+                                    </div>
+                                    <div className={style.placeholderBanner}>
+                                        <Image layout={"fill"} src={GlobalConst.sourceImages.placeholderPlus} alt={""}/>
+                                    </div>
+                                </div>
+                                <input onClick={handleCleanInputFile} onChange={handleAddBanner} id={idLabel}
+                                       className={style.label}
+                                       type={"file"}/>
+                            </label>
+                    }
+
+                    <div className={style.gridTitleButton}>
+                        <div className={style.title}>
+                            {titleMedia}
+                        </div>
+                        <div className={style.contInput}>
+                            <select onClick={handleClick} onFocus={handleFocus} onBlur={handleBlur}
+                                    onChange={handleSelect}
+                                    ref={refSelect}
+                                    className={style.input}>
+                                <option value={defaultSelect}>{addMedia}</option>
+                                <option value={MediaType.Video}>Video</option>
+                                <option value={MediaType.Image}>Imagen</option>
+                                <option value={MediaType.Youtube}>Youtube</option>
+                            </select>
+                            <div style={{transform: rotate}} className={style.bottomArrow}>
+                                <Image layout={"fill"} src={GlobalConst.sourceImages.bottomArrow} alt={""}/>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <InformationBanner>
-                    <div>
-                        puedes cambiar el order de tu galeria presionando el numero que se encuentra en la esquina superior derecha
+                    <InformationBanner>
+                        <div>
+                            puedes cambiar el order de tu galeria presionando el numero que se encuentra en la esquina
+                            superior derecha
+                        </div>
+                    </InformationBanner>
+
+                    <div className={style.contLayoutGallery}>
+                        <GalleryLayoutMobile item={newList}/>
                     </div>
-                </InformationBanner>
-
-                <div className={style.contLayoutGallery}>
-                    <GalleryLayoutMobile item={newList}/>
                 </div>
-
-
-               {/* <div className={style.gridButtons}>
-                     <button className={style.button}>
-                        {applyText}
-                    </button>
-                    <button onClick={handlePopUpGallery} className={style.button}>
-                        {seeGalery}
-                    </button>
-                </div>*/}
-            </div>
-            {
-                popUpHook.State &&
-                createPortal(
-                    <PopUpContainerMob closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
-                        <div className={style.mainDivPopUp}>
-                            {
-                                refSelect.current.value == MediaType.Youtube &&
-                                <div className={style.gridPopUp}>
-                                    <div className={style.titlePopUp}>{youtubeTitle}</div>
-                                    <input placeholder={placeholderYoutube} onChange={handleInputYoutube}
-                                           className={style.input}/>
-                                    <div className={style.contMedia}>
-                                        {
-                                            urlYoutube == stringEmpty ?
-                                                <Image layout={"fill"} objectFit={"cover"} alt={""}
-                                                       src={GlobalConst.sourceImages.placeholderYoutube}/>
-                                                :
-                                                <iframe className={style.iframe} src={urlYoutube}/>
-                                        }
+                {
+                    popUpHook.State &&
+                    createPortal(
+                        <PopUpContainerMob closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
+                            <div className={style.mainDivPopUp}>
+                                {
+                                    refSelect.current.value == MediaType.Youtube &&
+                                    <div className={style.gridPopUp}>
+                                        <div className={style.titlePopUp}>{youtubeTitle}</div>
+                                        <input placeholder={placeholderYoutube} onChange={handleInputYoutube}
+                                               className={style.input}/>
+                                        <div className={style.contMedia}>
+                                            {
+                                                urlYoutube == stringEmpty ?
+                                                    <Image layout={"fill"} objectFit={"cover"} alt={""}
+                                                           src={GlobalConst.sourceImages.placeholderYoutube}/>
+                                                    :
+                                                    <iframe className={style.iframe} src={urlYoutube}/>
+                                            }
+                                        </div>
+                                        <button onClick={handlePopUp}
+                                                className={style.buttonPopUp}>{buttonText}</button>
                                     </div>
-                                    <button onClick={handlePopUp} className={style.buttonPopUp}>{buttonText}</button>
-                                </div>
-                            }
-                            {
-                                refSelect.current.value == MediaType.Image &&
-                                <div className={style.gridPopUp}>
-                                    <div className={style.titlePopUp}>{imageTitle}</div>
-                                    {
-                                        linkImage != stringEmpty ?
-                                            <div className={style.contMedia}>
-                                                <Image objectFit={"cover"} layout={"fill"} src={linkImage} alt={""}/>
-                                                <button className={style.deleteIcon}>
-                                                    <Image onClick={handelDeleteInputImage} layout={"fill"}
-                                                           src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
-                                                </button>
-                                            </div>
-                                            :
-                                            <label className={style.contMedia}>
-                                                <Image layout={"fill"}
-                                                       src={GlobalConst.sourceImages.placeholderImage}
-                                                       alt={""}/>
-                                                <input onClick={handleCleanInputFile} onChange={handleInputImage}
-                                                       className={style.label}
-                                                       type={"file"}/>
-                                            </label>
-                                    }
-                                    <button onClick={handlePopUp} className={style.buttonPopUp}>{buttonText}</button>
-                                </div>
+                                }
+                                {
+                                    refSelect.current.value == MediaType.Image &&
+                                    <div className={style.gridPopUp}>
+                                        <div className={style.titlePopUp}>{imageTitle}</div>
+                                        {
+                                            linkImage != stringEmpty ?
+                                                <div className={style.contMedia}>
+                                                    <Image objectFit={"cover"} layout={"fill"} src={linkImage}
+                                                           alt={""}/>
+                                                    <button className={style.deleteIcon}>
+                                                        <Image onClick={handelDeleteInputImage} layout={"fill"}
+                                                               src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
+                                                    </button>
+                                                </div>
+                                                :
+                                                <label className={style.contMedia}>
+                                                    <Image layout={"fill"}
+                                                           src={GlobalConst.sourceImages.placeholderImage}
+                                                           alt={""}/>
+                                                    <input onClick={handleCleanInputFile} onChange={handleInputImage}
+                                                           className={style.label}
+                                                           type={"file"}/>
+                                                </label>
+                                        }
+                                        <button onClick={handlePopUp}
+                                                className={style.buttonPopUp}>{buttonText}</button>
+                                    </div>
 
-                            }
-                            {
-                                refSelect.current.value == MediaType.Video &&
-                                <div className={style.gridPopUp}>
-                                    <div className={style.titlePopUp}>{getTitleVideo()}</div>
+                                }
+                                {
+                                    refSelect.current.value == MediaType.Video &&
+                                    <div className={style.gridPopUp}>
+                                        <div className={style.titlePopUp}>{getTitleVideo()}</div>
 
-                                    <div ref={ref2Step} className={style.cont2Steps}>
-                                        <div style={{transform: translate}} className={style.gridTwoSteps}>
-                                            {
-                                                linkVideo != stringEmpty ?
-                                                    <div className={style.contMedia}>
-                                                        <video controls={true} className={style.iframe}
-                                                               src={linkVideo}/>
-                                                        <button className={style.deleteIcon}>
-                                                            <Image onClick={handelDeleteInputVideo} layout={"fill"}
-                                                                   src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
-                                                        </button>
-                                                    </div>
-                                                    :
-                                                    <label className={style.contMedia}>
-                                                        <Image layout={"fill"} alt={""}
-                                                               src={GlobalConst.sourceImages.placeholderVideo}/>
-                                                        <input onClick={handleCleanInputFile}
-                                                               onChange={handleInputVideo}
-                                                               className={style.label}
-                                                               type={"file"}/>
-                                                    </label>
-                                            }
-                                            {
-                                                thumbnailVideo != stringEmpty ?
-                                                    <div className={style.contMedia}>
-                                                        <Image objectFit={"cover"} layout={"fill"} src={thumbnailVideo}
-                                                               alt={""}/>
-                                                        <button className={style.deleteIcon}>
-                                                            <Image onClick={handleDeleteThumbnail} layout={"fill"}
-                                                                   src={GlobalConst.sourceImages.deleteIcon} alt={""}/>
-                                                        </button>
-                                                    </div>
-                                                    :
-                                                    <label className={style.contMedia}>
-                                                        <div className={style.placeholderYoutube}>
-                                                            <Image layout={"fill"}
-                                                                   src={GlobalConst.sourceImages.placeHolderImageUpload}
-                                                                   alt={""}/>
+                                        <div ref={ref2Step} className={style.cont2Steps}>
+                                            <div style={{transform: translate}} className={style.gridTwoSteps}>
+                                                {
+                                                    linkVideo != stringEmpty ?
+                                                        <div className={style.contMedia}>
+                                                            <video controls={true} className={style.iframe}
+                                                                   src={linkVideo}/>
+                                                            <button className={style.deleteIcon}>
+                                                                <Image onClick={handelDeleteInputVideo} layout={"fill"}
+                                                                       src={GlobalConst.sourceImages.deleteIcon}
+                                                                       alt={""}/>
+                                                            </button>
                                                         </div>
-                                                        <input onClick={handleCleanInputFile}
-                                                               onChange={handleThumbnail}
-                                                               className={style.label}
-                                                               type={"file"}/>
-                                                    </label>
-                                            }
+                                                        :
+                                                        <label className={style.contMedia}>
+                                                            <Image layout={"fill"} alt={""}
+                                                                   src={GlobalConst.sourceImages.placeholderVideo}/>
+                                                            <input onClick={handleCleanInputFile}
+                                                                   onChange={handleInputVideo}
+                                                                   className={style.label}
+                                                                   type={"file"}/>
+                                                        </label>
+                                                }
+                                                {
+                                                    thumbnailVideo != stringEmpty ?
+                                                        <div className={style.contMedia}>
+                                                            <Image objectFit={"cover"} layout={"fill"}
+                                                                   src={thumbnailVideo}
+                                                                   alt={""}/>
+                                                            <button className={style.deleteIcon}>
+                                                                <Image onClick={handleDeleteThumbnail} layout={"fill"}
+                                                                       src={GlobalConst.sourceImages.deleteIcon}
+                                                                       alt={""}/>
+                                                            </button>
+                                                        </div>
+                                                        :
+                                                        <label className={style.contMedia}>
+                                                            <div className={style.placeholderYoutube}>
+                                                                <Image layout={"fill"}
+                                                                       src={GlobalConst.sourceImages.placeHolderImageUpload}
+                                                                       alt={""}/>
+                                                            </div>
+                                                            <input onClick={handleCleanInputFile}
+                                                                   onChange={handleThumbnail}
+                                                                   className={style.label}
+                                                                   type={"file"}/>
+                                                        </label>
+                                                }
 
+                                            </div>
+                                        </div>
+
+                                        <div className={style.gridButtons}>
+                                            {
+                                                linkVideo != stringEmpty && stepVideo == 2 &&
+                                                < button onClick={() => handleStepsVideo(1)}
+                                                         className={style.buttonPopUp}>{buttonReturn}</button>
+                                            }
+                                            <button onClick={() => handleStepsVideo(2)}
+                                                    className={`${style.buttonPopUp} ${getColorButton()}`}>{getTextButton()}</button>
                                         </div>
                                     </div>
+                                }
+                            </div>
+                        </PopUpContainerMob>, document.getElementById(idPortal)
+                    )
+                }
+                {
+                    popUpHookGallery.State &&
+                    createPortal(
+                        <GalleryMediaMobile item={galleryMediaPopUp} startIn={startIn}/>, document.getElementById(idPortal)
+                    )
 
-                                    <div className={style.gridButtons}>
-                                        {
-                                            linkVideo != stringEmpty && stepVideo == 2 &&
-                                            < button onClick={() => handleStepsVideo(1)}
-                                                     className={style.buttonPopUp}>{buttonReturn}</button>
-                                        }
-                                        <button onClick={() => handleStepsVideo(2)}
-                                                className={`${style.buttonPopUp} ${getColorButton()}`}>{getTextButton()}</button>
-                                    </div>
-                                </div>
-                            }
-                        </div>
-                    </PopUpContainerMob>, document.getElementById(idPortal)
-                )
-            }
-            {/* {
-                popUpHookGallery.State &&
-                createPortal(
-                    <GalleryMedia item={galleryMediaPopUp} startIn={0}/>, document.getElementById(idPortal)
-                )
+                }
+            </div>
+        </GalleryPopUpMobile.Provider>
 
-            }*/}
-        </div>
     )
 
     function getColorButton(): string {

@@ -1,4 +1,3 @@
-import {useDrag} from "react-dnd";
 import style from "/styles/Desktop/ProductManagement/groupProducts.module.css"
 import {GroupProducts} from "../../../Class/UserAccount/userAccount";
 import Image from "next/image";
@@ -15,6 +14,7 @@ import PopUpCreateEditGroup, {CreateEditGroupProps} from "./popUpCreateEditGroup
 import AlertModal from "../Misc/alertModal";
 import ProductsGrid from "./productsGrid";
 import utilities from "/styles/utilities.module.css";
+import PopUpReorderDesktop, {PopUpReorderProps} from "../UserAccount/popUpReorder";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -25,7 +25,12 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
     const hookConfirmDeleteGroup = useDisplayPopUpHook(false)
     const handlePopUpEditGroup = () => hookEditGroup.HandleToggle()
     const handlePopUpConfirm = () => hookConfirmDeleteGroup.HandleToggle()
-
+    const popUpNewPosition = useDisplayPopUpHook(false)
+    const handlePopUpNewPosition = () => popUpNewPosition.HandleToggle()
+    const handleChangePosition = (newPosition: number) => {
+        myGroups.HandleDropItemMobile(item.Name, newPosition)
+        handlePopUpNewPosition()
+    }
     const handleDeleteGroup = () => {
         myGroups.HandleDeleteGroup(item.Name)
         handlePopUpConfirm()
@@ -35,6 +40,15 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
         NameGroup: item.Name,
         ProductsGroup: item.Products
     }
+    const popUpReorder: PopUpReorderProps = {
+        NameInput: `Nueva posicion (minimo 1 / maximo ${myGroups.Groups.length})`,
+        Placeholder: `Posicion Actual ${item.Number}`,
+        MinValue: 1,
+        MaxValue: myGroups.Groups.length,
+        ActualPosition: item.Number,
+        HandleAccept: handleChangePosition,
+        HandleClose: handlePopUpNewPosition
+    }
 
     return (
         <div className={style.contDrag}>
@@ -42,9 +56,9 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
                 <div className={style.titleGroup}>
                     {item.Name}
                 </div>
-                <div className={utilities.contDropNumber}>
+                <button onClick={handlePopUpNewPosition} className={utilities.contDropNumber}>
                     {item.Number}
-                </div>
+                </button>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>
                 </button>
@@ -56,6 +70,12 @@ export default function GroupProductsDesktop({item}: { item: GroupProducts }) {
             <div className={style.mainDivCont}>
                 <ProductsGrid item={item.Products} nameGroup={item.Name}/>
             </div>
+            {
+                popUpNewPosition.State &&
+                createPortal(
+                    <PopUpReorderDesktop item={popUpReorder}/>, document.getElementById(idPortal)
+                )
+            }
             {
                 hookConfirmDeleteGroup.State &&
                 createPortal(

@@ -20,17 +20,14 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
     const myGroups: ProviderPGGroups = useContext(GroupsPGContext)
     const hookEditGroup = useDisplayPopUpHook(false)
     const hookConfirmDeleteGroup = useDisplayPopUpHook(false)
+    const popUpNewPosition = useDisplayPopUpHook(false)
     const handlePopUpEditGroup = () => hookEditGroup.HandleToggle()
     const handlePopUpConfirm = () => hookConfirmDeleteGroup.HandleToggle()
-
     const handleChangePosition = (newPosition: number) => {
         myGroups.HandleDropItemMobile(item.Name, newPosition)
         handlePopUpNewPosition()
     }
-
-    const popUpNewPosition = useDisplayPopUpHook(false)
     const handlePopUpNewPosition = () => popUpNewPosition.HandleToggle()
-
     const handleDeleteGroup = () => {
         myGroups.HandleDeleteGroup(item.Name)
         handlePopUpConfirm()
@@ -40,7 +37,6 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
         NameGroup: item.Name,
         ProductsGroup: item.Products
     }
-
     const popUpReorder: PopUpReorderProps = {
         NameInput: `Nueva posicion (minimo 1 / maximo ${myGroups.Groups.length})`,
         Placeholder: `Posicion Actual ${item.Number}`,
@@ -55,7 +51,7 @@ export default function GroupProductsMobile({item}: { item: GroupProducts }) {
         <div className={style.contDrag}>
             <div className={style.gridTitle}>
                 <div className={style.title}>{item.Name}</div>
-                <div onClick={handlePopUpNewPosition} className={utilities.contDropNumber}>{item.Id}</div>
+                <div onClick={handlePopUpNewPosition} className={utilities.contDropNumber}>{item.Number}</div>
                 <button onClick={handlePopUpEditGroup} className={style.contIcon}>
                     <Image layout={"fill"} src={GlobalConst.sourceImages.editProfileGray} alt={""}/>
                 </button>

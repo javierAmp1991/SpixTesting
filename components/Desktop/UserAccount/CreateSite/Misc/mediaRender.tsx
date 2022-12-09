@@ -2,8 +2,13 @@ import style from "/styles/Desktop/UserAccount/CreateSite/Misc/mediaRender.modul
 import {MediaBase, MediaImage, MediaType, MediaVideo, MediaYoutube} from "../../../../../Class/UserAccount/userAccount";
 import Image from "next/image";
 import {GlobalConst} from "../../../../../public/globalConst";
+import {useContext} from "react";
+import {OpenGalleryContext} from "../Events/Gallery";
 
 export default function MediaRender({item, displayMedia}: { item: MediaBase, displayMedia: boolean }) {
+    const handleGallery: Function = useContext(OpenGalleryContext)
+    const handleGalleryPopUp = () => handleGallery(item.Number)
+
     let mediaVideo: MediaVideo;
     let mediaImage: MediaImage;
     let mediaYoutube: MediaYoutube;
@@ -13,7 +18,7 @@ export default function MediaRender({item, displayMedia}: { item: MediaBase, dis
     else mediaYoutube = item as MediaYoutube
 
     return (
-        <div className={style.contMedia}>
+        <div onClick={handleGalleryPopUp} className={style.contMedia}>
             {
                 item.Type == MediaType.Video ?
                     displayMedia ?

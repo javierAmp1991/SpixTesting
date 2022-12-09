@@ -2,8 +2,12 @@ import style from "/styles/Mobile/UserAccount/CreateSite/Misc/mediaRender.module
 import {MediaBase, MediaImage, MediaType, MediaVideo, MediaYoutube} from "../../../../../Class/UserAccount/userAccount";
 import Image from "next/image";
 import {GlobalConst} from "../../../../../public/globalConst";
+import {useContext} from "react";
+import {GalleryPopUpMobile} from "../Events/GalleryMobile";
 
 export default function MediaRenderMobile({item, displayMedia}: { item: MediaBase, displayMedia: boolean }) {
+    const handleGallery: Function = useContext(GalleryPopUpMobile)
+    const handleOpenGallery = () => handleGallery(item.Number)
     let mediaVideo: MediaVideo;
     let mediaImage: MediaImage;
     let mediaYoutube: MediaYoutube;
@@ -13,7 +17,7 @@ export default function MediaRenderMobile({item, displayMedia}: { item: MediaBas
     else mediaYoutube = item as MediaYoutube
 
     return (
-        <div className={style.contMedia}>
+        <div onClick={handleOpenGallery} className={style.contMedia}>
             {
                 item.Type == MediaType.Video ?
                     displayMedia ?

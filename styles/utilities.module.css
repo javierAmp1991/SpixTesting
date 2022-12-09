@@ -32,7 +32,6 @@
 .fontTitleMobile {
     --sizeTitleMobile: 16px;
     font-size: var(--sizeTitleMobile);
-    /*    line-height: var(--sizeTitleMobile);*/
     font-weight: 400;
     color: var(--colorTitleMobile);
     font-family: Helvetica, sans-serif, Arial;
@@ -41,7 +40,6 @@
 .fontTitleMobileDarkMode {
     --sizeTitleMobile: 17px;
     font-size: var(--sizeTitleMobile);
-    /*    line-height: var(--sizeTitleMobile);*/
     font-weight: 500;
     color: var(--colorDarkModeMobile);
     font-family: Helvetica, sans-serif, Arial;
