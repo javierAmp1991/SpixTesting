@@ -267,7 +267,7 @@ export default function Gallery() {
                                 <div ref={contOptionRef} className={style.contOptions}>
                                     <div style={{transform: translatePopUp}} className={style.gridOptions}>
                                         <div className={style.gridMediaOptions}>
-                                            <div className={style.titlePopUp}>
+                                            <div className={style.titleSelect}>
                                                 Selecciona el tipo de medio
                                             </div>
                                             {

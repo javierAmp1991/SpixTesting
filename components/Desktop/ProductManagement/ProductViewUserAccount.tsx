@@ -1,0 +1,88 @@
+import style from "/styles/Desktop/ProductManagement/productView.module.css"
+import utilities from "/styles/utilities.module.css"
+import Image from "next/image";
+import {PriceViewProp, ProductItem} from "../../../Class/Misc/GlobalClass";
+import {GlobalConst, GlobalId} from "../../../public/globalConst";
+import useDisplayPopUpHook, {DisplayPopUpHook} from "../../../CustomHooks/Utilities";
+import {createPortal} from "react-dom";
+import RatingStarDesk from "../Misc/ratingStarDesk";
+import PriceView from "../Misc/priceView";
+import PopUpContainerFull from "../Misc/popUpContainerFull";
+import ProductModalUserAccount from "../UserAccount/ProductModalUserAccount";
+import PopUpCreateEditProduct from "./popUpCreateEditProduct";
+import {ProductsPGContext, ProviderPGProducts} from "../../Providers/UserAccount/ProductAndGroupProvider";
+import {useContext} from "react";
+
+const idPortal: string = GlobalId.globalIds.idPortal
+
+export default function ProductViewUserAccount({item, deleteProduct}:
+                                                   { item: ProductItem, deleteProduct: Function }) {
+    const myProducts: ProviderPGProducts = useContext(ProductsPGContext)
+    const priceViewProp: PriceViewProp = {
+        Price: item.Price,
+        DiscountPercent: item.DiscountPercent,
+        IsBeforeText: true,
+    }
+    const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
+    const popUpHookEdit = useDisplayPopUpHook(false)
+    const handlePopUpEdit = () => popUpHookEdit.HandleToggle()
+    const handlePopUp = () => displayPopUpProduct.HandleToggle()
+    const handleDeleteProduct = () => deleteProduct(item.Id)
+
+    return (
+        <div className={style.mainGrid}>
+            <div className={style.mainDivImage}>
+                <button onClick={handlePopUpEdit} className={style.sizeImage}>
+                    <Image layout={"fill"} src={item.ImagePath} alt=""/>
+                </button>
+                <button onClick={handlePopUp} className={style.seeQualification}>
+                    Ver Calificacion
+                </button>
+                {
+                    (item.DiscountPercent != null || item.Include != null) &&
+                    <div className={utilities.positionLastTicket}>
+                        <Image layout={"fill"} src={GlobalConst.sourceImages.inOfferBanner} alt=""/>
+                    </div>
+                }
+            </div>
+            <button onClick={handlePopUpEdit} className={style.gridInfoProductHorizontal}>
+                <div className={utilities.clamp1}>{item.Name}</div>
+                {
+                    item.Rating != null &&
+                    <RatingStarDesk item={item.Rating}/>
+                }
+                <div className={`${utilities.fontPrimaryText} ${utilities.clamp3}`}>
+                    {item.Description}
+                </div>
+                {
+                    item.SKU != null &&
+                    <div className={utilities.fontSecundaryText}>
+                        SKU: {item.SKU}
+                    </div>
+                }
+                <PriceView item={priceViewProp}/>
+            </button>
+            <button onClick={handleDeleteProduct} className={style.sizeIconTrash}>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
+            </button>
+
+            {
+                popUpHookEdit.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
+                        <PopUpCreateEditProduct item={item} closePopUp={handlePopUpEdit}
+                                                handleChange={myProducts.HandleCreateProduct}/>
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
+            {
+                displayPopUpProduct.State &&
+                createPortal(
+                    <PopUpContainerFull closePopUp={handlePopUp} isButtonVisible={true} isBackground={true}>
+                        <ProductModalUserAccount item={item}/>
+                    </PopUpContainerFull>, document.getElementById(idPortal)
+                )
+            }
+        </div>
+    )
+}

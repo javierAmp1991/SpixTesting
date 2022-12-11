@@ -35,7 +35,7 @@ export default function MyForms() {
                 </div>
                 <ButtonCreate item={buttonProps}/>
             </div>
-            <InformationBanner width={`calc(33% - 12px)`}>
+            <InformationBanner width={`calc(33% - 8px)`}>
                 <span>Puedes cambiar el orden de tus formularios, tomando y arrastrandolo a la posicion que deseas</span>
             </InformationBanner>
             <div className={style.contForms}>
@@ -45,6 +45,8 @@ export default function MyForms() {
                     )
                 }
             </div>
+
+
 
             {
                 popUpHook.State &&

@@ -10,3 +10,7 @@
     height: 100%;
     overflow: scroll;
 }
+
+.borderOver{
+    border: 1px solid orange;
+}

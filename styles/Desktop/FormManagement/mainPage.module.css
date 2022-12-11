@@ -1,6 +1,6 @@
 .mainDiv {
     display: grid;
-    padding: var(--paddingUserAccountTabs);
+    padding: var(--paddingUserAccount);
     overflow: hidden;
     gap: 32px;
     height: 100%;
@@ -17,4 +17,6 @@
 .contGroups {
     height: 100%;
     overflow: scroll;
+    display: grid;
+    gap: 32px;
 }

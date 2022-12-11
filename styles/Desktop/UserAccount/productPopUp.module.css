@@ -1,0 +1,100 @@
+.mainDiv {
+    width: 700px;
+    height: auto;
+    background: white;
+    padding: 48px;
+    --animattionTransition: .4s;
+}
+
+.gridImageSelect {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 6px;
+}
+
+.sizeMin {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gridSelectionZone {
+    display: grid;
+    grid-template-columns: max-content;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 6px;
+    padding-top: 16px;
+}
+
+.imageSelected {
+    border: 1px solid orange;
+}
+
+.imageNoSelected {
+    opacity: .2;
+    border: 1px solid black;
+}
+
+.noSide {
+    width: 100%;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 48px;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.contImages {
+    height: 100%;
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+
+.contImage {
+    padding: 2px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, .1) 50%);
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 130px;
+    left: calc(50% - 65px);
+    top: -20px;
+    z-index: 500;
+}
+
+.mainContInfo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding-bottom: 10px;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.name {
+    font-size: 21px;
+}
+
+.contResumeReview{
+    padding-top: 8px;
+}

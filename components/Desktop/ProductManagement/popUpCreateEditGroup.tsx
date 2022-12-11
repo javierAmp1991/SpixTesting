@@ -35,6 +35,8 @@ export default function PopUpCreateEditGroup({item}: { item: CreateEditGroupProp
     const groupContext: ProviderPGGroups = useContext(GroupsPGContext)
     const myProducts: ProviderPGProducts = useContext(ProductsPGContext)
 
+    const isEdit: boolean = item.NameGroup != null
+
     let [products, setProducts] = useState(createProductState())
     let [inputGroup, setInputGroup] = useState(item.NameGroup == null ? stringEmpty : item.NameGroup)
     let [input, setInput] = useState(stringEmpty)
@@ -91,7 +93,7 @@ export default function PopUpCreateEditGroup({item}: { item: CreateEditGroupProp
         <div className={style.mainDivPopUp}>
             <div className={style.gridPopUp}>
                 <div className={style.titlePopUp}>
-                    {item.NameGroup == null ? titleCreate : titleEdit}
+                    {isEdit ? titleEdit : titleCreate}
                 </div>
 
                 <CustomInput item={inputNameGroup}/>
@@ -123,13 +125,13 @@ export default function PopUpCreateEditGroup({item}: { item: CreateEditGroupProp
                 </div>
 
                 {
-                    item.NameGroup == null ?
-                        <button onClick={() => handleCreateGroup(true)} className={style.button}>
-                            {buttonCreate}
-                        </button>
-                        :
+                    isEdit ?
                         <button onClick={() => handleCreateGroup(false)} className={style.button}>
                             {buttonEdit}
+                        </button>
+                        :
+                        <button onClick={() => handleCreateGroup(true)} className={style.button}>
+                            {buttonCreate}
                         </button>
                 }
             </div>

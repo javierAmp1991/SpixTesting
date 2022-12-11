@@ -158,6 +158,9 @@ export namespace GlobalConst {
         productIcon: "/images/productIcon.png",
         pinnedBlue: "/images/pinnedBlue.png",
         pinnedGray: "/images/pinnedGray.png",
+        exclamationInfoBanner: "/images/exclamationIcon.png",
+        trashIconRounded: "/images/trashIconRounded.png",
+        grabIcon: "/images/grabIcon.png"
     }
 }
 

@@ -25,10 +25,10 @@ export default function ContMediaRender({item, deleteImage}:
              className={`${style.contMediaRender} ${isDragging && style.opacity}`}>
             <MediaRender displayMedia={false} item={item}/>
             <button onMouseDown={onMouseDown} onMouseLeave={onMouseUp} onMouseUp={onMouseUp} className={style.dragIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.trashIconWhite}/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.grabIcon}/>
             </button>
             <button onClick={handleDeleteImage} className={style.deleteIcon}>
-                <Image layout={"fill"} src={GlobalConst.sourceImages.trashIconWhite} alt={""}/>
+                <Image layout={"fill"} src={GlobalConst.sourceImages.trashIconRounded} alt={""}/>
             </button>
         </div>
     )

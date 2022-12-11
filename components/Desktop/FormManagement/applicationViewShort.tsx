@@ -8,6 +8,7 @@ import PopUpApplication from "./popUpApplication";
 import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 import {useContext, useEffect, useState} from "react";
 import PopUpContainerFull from "../Misc/popUpContainerFull";
+import utilities from "/styles/utilities.module.css";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -24,16 +25,25 @@ export default function ApplicationViewShort({item}: { item: ApplicationItem }) 
     }, [isPinned])
     return (
         <div className={style.mainDiv}>
-            <div onClick={handlePopUp} className={style.gridProfileName}>
-                <div className={style.sizeProfile}>
-                    <Image layout={"fill"} src={"/images/fotoPerfil7.jpg"} alt={""}/>
+            <div className={style.gridData} onClick={handlePopUp}>
+                <div className={style.gridProfileName}>
+                    <div className={style.sizeProfile}>
+                        <Image layout={"fill"} src={"/images/fotoPerfil7.jpg"} alt={""}/>
+                    </div>
+                    <div className={style.name}>
+                        {item.Name}
+                    </div>
                 </div>
-                <div className={style.name}>
-                    {item.Name}
+                <div className={`${utilities.clamp5}`} onClick={handlePopUp}>
+                    <b>Sobre mi: </b>{item.AboutMe}
                 </div>
-            </div>
-            <div className={style.aboutMe} onClick={handlePopUp}>
-                {item.AboutMe}
+                <div className={utilities.separationLine}/>
+                <div>
+                    <b>Email: </b>{item.Email}
+                </div>
+                <div>
+                    <b>Telefono: </b>{item.Number}
+                </div>
             </div>
             <button onClick={handleDelete} className={style.deleteIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>

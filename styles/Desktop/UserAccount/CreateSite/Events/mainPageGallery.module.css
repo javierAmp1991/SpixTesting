@@ -280,6 +280,14 @@
     align-content: center;
 }
 
+.titleSelect{
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--colorTitlesDesktop);
+    text-align: center;
+    padding: 16px 0;
+}
+
 
 .titlePopUp {
     font-size: 21px;
@@ -292,7 +300,7 @@
 .gridMediaOptions {
     display: grid;
     gap: 24px;
-    align-content: center;
+    align-content: start;
 }
 
 .contMediaOptions {

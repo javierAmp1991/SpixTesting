@@ -8,8 +8,9 @@ import {ProductItem, TypeProducts} from "../../../Class/Misc/GlobalClass";
 
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
 const titleCreateProduct: string = "Crear Producto"
-const createText: string = "Crear"
-const applyText: string = "Aplicar"
+const titleEditProduct: string = "Editar Producto"
+const createText: string = "Crear producto"
+const applyText: string = "Aplicar cambios"
 
 
 export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
@@ -137,7 +138,7 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
     return (
         <div className={style.mainDivPopUp}>
             <div className={style.titleCreate}>
-                {titleCreateProduct}
+                {isEdit? titleEditProduct : titleCreateProduct}
             </div>
 
             <div className={style.gridImageInputs}>
@@ -161,7 +162,7 @@ export default function PopUpCreateEditProduct({handleChange, closePopUp, item}:
             </div>
 
             <button onClick={handleCreateProduct} className={style.button}>
-                {createText}
+                {isEdit? applyText : createText}
             </button>
         </div>
     )

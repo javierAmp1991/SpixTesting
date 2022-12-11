@@ -1,21 +1,19 @@
 import style from "/styles/Desktop/ServiceManagement/allServices.module.css"
-import Image from "next/image";
-import {GlobalConst, GlobalId, GlobalStings} from "../../../public/globalConst";
+import {GlobalId, GlobalStings} from "../../../public/globalConst";
 import {useContext, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import PopUpContainerFull from "../Misc/popUpContainerFull";
 import CustomInput, {CustomInputProps, TypeInput} from "../Misc/customInput";
 import {createPortal} from "react-dom";
-import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
 import PopUpCreateEditProduct from "../ProductManagement/popUpCreateEditProduct";
 import {MyServicesContext, ProviderMyServices} from "../../Providers/UserAccount/MyServicesProvider";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
 import ButtonCreate, {ButtonCreateProps} from "../../Mobile/Misc/buttonCreate";
-import ServiceView from "../Misc/serviceView";
 import InformationBanner from "../Misc/informationBanner";
+import ServiceViewUserAccount from "./serviceView";
+import ContDropService from "./ContDropService";
 
 const productsTitle: string = "Servicios"
-const createService: string = "Crear servicio"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -31,33 +29,9 @@ export default function AllServices() {
         BorderRadious: `true`
     }
     const popUpHook = useDisplayPopUpHook(false)
-    const popUpHookEdit = useDisplayPopUpHook(false)
-    const popUpHookSee = useDisplayPopUpHook(false)
     const handlePopUp = () => popUpHook.HandleToggle()
-    const handlePopUpEdit = () => popUpHookEdit.HandleToggle()
-    const handlePopUpSee = () => popUpHookSee.HandleToggle()
-    let [productEdit, setProductEdit] = useState(null)
-    let [productSee, setProductSee] = useState(null)
-
-    const handleProductSee = (product) => {
-        setProductSee(product)
-        handlePopUpSee()
-    }
-    const handleDeleteProduct = (id) => myServices.HandleDeleteService(id)
     const handleCreateProduct = (product: ProductItem) => myServices.HandleAddService(product)
-    const handleEditProduct = (product: ProductItem) => myServices.HandleEditService(product)
 
-    const handleEdit = (product) => {
-        setProductEdit(product)
-        handlePopUpEdit()
-    }
-
-    const productProps: ProductModalProps = {
-        CloseModal: handleProductSee,
-        IsQualifying: false,
-        IsButtonVisible: false,
-        IsScalable: false
-    }
     const buttonProps: ButtonCreateProps = {
         Text: "Crear Servicio",
         OnCLick: handlePopUp
@@ -72,9 +46,9 @@ export default function AllServices() {
                 <ButtonCreate item={buttonProps}/>
             </div>
 
-            <InformationBanner width={`33%`}>
+            <InformationBanner width={`50%`}>
                 <div>
-                    Haz click en las tarjetas para editar los producto
+                    Puedes cambiar el orden de tus servicios tomandolos y moviendolos a la posisicon que desees
                 </div>
             </InformationBanner>
 
@@ -85,20 +59,9 @@ export default function AllServices() {
 
                 <div className={style.gridProducts}>
                     {
-                        myServices.ListServices.map((item) =>
+                        myServices.ListServices.map((item, index) =>
                             (item.Name.includes(input) || item.SKU.toString().includes(input)) &&
-                            <div key={item.Name} className={style.mainDivCont}>
-                                <button onClick={() => handleDeleteProduct(item.Id)} className={style.sizeIconTrash}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
-                                </button>
-
-                               {/* <button onClick={() => handleProductSee(item)} className={style.sizeIconVisibility}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.visibilityICon} alt={""}/>
-                                </button>*/}
-                                <div onClick={() => handleEdit(item)}>
-                                    <ServiceView item={item}/>
-                                </div>
-                            </div>
+                            <ContDropService item={item} index={index}/>
                         )
                     }
                 </div>
@@ -109,23 +72,6 @@ export default function AllServices() {
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
                         <PopUpCreateEditProduct closePopUp={handlePopUp} handleChange={handleCreateProduct}/>
-                    </PopUpContainerFull>, document.getElementById(idPortal)
-                )
-            }
-            {
-                popUpHookEdit.State &&
-                createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
-                        <PopUpCreateEditProduct item={productEdit} closePopUp={handlePopUpEdit}
-                                                handleChange={handleEditProduct}/>
-                    </PopUpContainerFull>, document.getElementById(idPortal)
-                )
-            }
-            {
-                popUpHookSee.State &&
-                createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpSee} isBackground={true} isButtonVisible={true}>
-                        <ProductModal item={productSee} productProps={productProps}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }
