@@ -1,4 +1,4 @@
-import style from "/styles/Desktop/ServiceManagement/serviceView.module.css";
+import style from "/styles/Mobile/ServiceManagement/serviceView.module.css";
 import Image from "next/image";
 import utilities from "/styles/utilities.module.css";
 import {createPortal} from "react-dom";
@@ -12,10 +12,11 @@ import PriceView from "../../Desktop/Misc/priceView";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import PopUpCreateEditProductMobile from "../ProductManagement/popUpCreateEditProduct";
 import ProductModalUserAccountMobile from "../userAccount/ProductModalUserAccount";
+import PopUpReorder, {PopUpReorderProps} from "../userAccount/popUpReorder";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
-export default function ServiceViewUserAccountMobile({item}: { item: ProductItem }) {
+export default function ServiceViewUserAccountMobile({item, index}: { item: ProductItem, index: number }) {
     const myServices: ProviderMyServices = useContext(MyServicesContext)
     const displayPopUpProduct: DisplayPopUpHook = useDisplayPopUpHook(false)
     const popUpHookEdit = useDisplayPopUpHook(false)
@@ -23,6 +24,13 @@ export default function ServiceViewUserAccountMobile({item}: { item: ProductItem
     const handlePopUp = () => displayPopUpProduct.HandleToggle()
     const handleEditProduct = (product: ProductItem) => myServices.HandleEditService(product)
     const handleDeleteProduct = () => myServices.HandleDeleteService(item.Id)
+    const popUpHookNewPosition = useDisplayPopUpHook(false)
+    const handlePopUpNewPosition = () => popUpHookNewPosition.HandleToggle()
+    const handleChangePosition = (newPosition: number) => {
+        /*myServices.HandleDropForm(item.Id, newPosition)*/
+        handlePopUpNewPosition()
+    }
+
     const priceViewProp: PriceViewProp = {
         SizePrice: 32,
         Price: item.Price,
@@ -31,6 +39,16 @@ export default function ServiceViewUserAccountMobile({item}: { item: ProductItem
         PaddingTop: 0,
         PaddingBottom: 0
     }
+    const popUpReorder: PopUpReorderProps = {
+        NameInput: `Nueva posicion (minimo 1 / maximo ${myServices.ListServices.length})`,
+        Placeholder: `Posicion Actual ${index + 1}`,
+        MinValue: 1,
+        MaxValue: myServices.ListServices.length,
+        ActualPosition: index + 1,
+        HandleAccept: handleChangePosition,
+        HandleClose: handlePopUpNewPosition
+    }
+
 
     return (
         <div className={style.mainDiv}>
@@ -87,12 +105,23 @@ export default function ServiceViewUserAccountMobile({item}: { item: ProductItem
                 </div>
             </div>
 
+            <button onClick={handlePopUpNewPosition} className={`${utilities.contDropNumber} ${style.position}`}>
+                {index + 1}
+            </button>
+
+            {
+                popUpHookNewPosition.State &&
+                createPortal(
+                    <PopUpReorder item={popUpReorder}/>, document.getElementById(idPortal)
+                )
+            }
+
             {
                 popUpHookEdit.State &&
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
                         <PopUpCreateEditProductMobile item={item} closePopUp={handlePopUpEdit}
-                                                handleChange={handleEditProduct}/>
+                                                      handleChange={handleEditProduct}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

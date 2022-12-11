@@ -59,7 +59,7 @@ export default function AllServicesMobile() {
                     {
                         myServices.ListServices.map((item, index) =>
                             (item.Name.includes(input) || item.SKU.toString().includes(input)) &&
-                            <ServiceViewUserAccountMobile item={item}/>
+                            <ServiceViewUserAccountMobile index={index} item={item}/>
                         )
                     }
                 </div>
