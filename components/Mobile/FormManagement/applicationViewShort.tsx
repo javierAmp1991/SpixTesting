@@ -7,6 +7,7 @@ import {createPortal} from "react-dom";
 import {useContext, useEffect, useState} from "react";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
 import PopUpApplicationMobile from "./popUpApplication";
+import utilities from "/styles/utilities.module.css";
 
 const idPortal: string = GlobalId.globalIds.idPortal
 
@@ -31,8 +32,15 @@ export default function ApplicationViewShortMobile({item}: { item: ApplicationIt
                     {item.Name}
                 </div>
             </div>
-            <div className={style.aboutMe} onClick={handlePopUp}>
+            <div className={`${style.aboutMe} ${utilities.clamp5}`} onClick={handlePopUp}>
                 {item.AboutMe}
+            </div>
+            <div className={utilities.separationLine}/>
+            <div>
+                <b>Email: </b>{item.Email}
+            </div>
+            <div>
+                <b>Telefono: </b>{item.Number}
             </div>
             <button onClick={handleDelete} className={style.deleteIcon}>
                 <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>

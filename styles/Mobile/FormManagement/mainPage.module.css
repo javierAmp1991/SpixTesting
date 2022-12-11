@@ -1,6 +1,6 @@
 .mainDiv {
     display: grid;
-    padding: var(--paddingUserAccountTabsMobile);
+    padding: var(--paddingUserAccountMobile);
     height: 100%;
     grid-template-rows: max-content 1fr;
     position: relative;
@@ -15,4 +15,6 @@
 
 .contGroups {
     height: 100%;
+    display: grid;
+    gap: 32px;
 }

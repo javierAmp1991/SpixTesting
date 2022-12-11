@@ -1,0 +1,94 @@
+.mainDiv {
+    width: 95vw;
+    height: auto;
+    max-height: 90vh;
+    background: white;
+    padding: 32px;
+    overflow: scroll;
+    --animattionTransition: .4s;
+}
+
+.mainGrid {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+}
+
+.mainContInfo {
+    height: 100%;
+    display: grid;
+    gap: 8px;
+}
+
+.sizeImage {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+    background: white;
+}
+
+.mainDivImage {
+    display: grid;
+    align-items: center;
+    position: relative;
+    padding: 12px 12px 0 12px;
+}
+
+.sizeImageProduct {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.name {
+    font-size: 16px;
+}
+
+.positionLastTicket {
+    width: 60%;
+    top: 0;
+    left: 0;
+    aspect-ratio: 1/1;
+    position: absolute;
+    z-index: 90000;
+}
+
+.gridSelection {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    gap: 16px;
+    position: relative;
+}
+
+.imageSelected {
+    border: 1px solid orange;
+}
+
+.imageNoSelected {
+    opacity: .2;
+    border: 1px solid black;
+}
+
+.noSide {
+    width: 70%;
+    margin: auto;
+}
+
+.gridSelectionZone {
+    display: grid;
+    gap: 5px;
+    align-content: start;
+}
+
+.sizeMin {
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.contStars {
+    padding-bottom: 8px;
+}

@@ -4,6 +4,7 @@
     padding: 32px 24px;
     border-radius: 8px;
     cursor: pointer;
+    color: var(--colorPrimaryTextDesktop);
 }
 
 .gridData{

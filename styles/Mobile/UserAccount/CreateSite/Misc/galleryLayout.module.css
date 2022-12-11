@@ -5,7 +5,7 @@
 }
 
 .deleteIcon {
-    width: 24px;
+    width: 26px;
     aspect-ratio: 1/1;
     position: absolute;
     bottom: 8px;
@@ -13,6 +13,7 @@
     z-index: 500;
     border-radius: 50%;
     overflow: hidden;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 1);
 }
 
 .contMediaRender {
@@ -63,9 +64,9 @@
 }
 
 .position {
-    box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 4px rgba(255, 255, 255, 1);
     border-radius: 50%;
-    width: 26px;
+    width: 24px;
     aspect-ratio: 1/1;
     display: grid;
     place-items: center;

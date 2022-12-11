@@ -1,27 +1,21 @@
 import style from "/styles/Mobile/ServiceManagement/allServices.module.css"
-import Image from "next/image";
-import {GlobalConst, GlobalId, GlobalStings} from "../../../public/globalConst";
+import {GlobalId, GlobalStings} from "../../../public/globalConst";
 import {useContext, useState} from "react";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
-import ProductModal, {ProductModalProps} from "../Misc/ProductModal";
-import PopUpCreateEditProduct from "../ProductManagement/popUpCreateEditProduct";
 import {MyServicesContext, ProviderMyServices} from "../../Providers/UserAccount/MyServicesProvider";
 import {ProductItem} from "../../../Class/Misc/GlobalClass";
 import CustomInput, {CustomInputProps, TypeInput} from "../../Desktop/Misc/customInput";
 import PopUpContainerFull from "../../Desktop/Misc/popUpContainerFull";
-import ServiceViewMobile from "../Misc/serviceViewMobile";
 import ButtonCreate, {ButtonCreateProps} from "../Misc/buttonCreate";
 import PopUpCreateEditProductMobile from "../ProductManagement/popUpCreateEditProduct";
-import ProductModalMobile from "../Misc/ProductModal";
 import InformationBanner from "../../Desktop/Misc/informationBanner";
-import MessageReorder, {MessageReorderProps} from "../../Desktop/Misc/messageReorder";
-import utilities from "/styles/utilities.module.css";
+import ServiceViewUserAccountMobile from "./serviceView";
 
 const productsTitle: string = "Servicios"
-const createService: string = "Crear servicio"
 const stringEmpty: string = GlobalStings.globalStrings.stringEmpty
 const idPortal: string = GlobalId.globalIds.idPortal
+const textInfo: string = "Puedes cambiar el order de tus servicios presionando el numero que se encuentra en la esquina superior derecha"
 
 export default function AllServicesMobile() {
     const myServices: ProviderMyServices = useContext(MyServicesContext)
@@ -35,41 +29,13 @@ export default function AllServicesMobile() {
         BorderRadious: `true`
     }
     const popUpHook = useDisplayPopUpHook(false)
-    const popUpHookEdit = useDisplayPopUpHook(false)
-    const popUpHookSee = useDisplayPopUpHook(false)
     const handlePopUp = () => popUpHook.HandleToggle()
-    const handlePopUpEdit = () => popUpHookEdit.HandleToggle()
-    const handlePopUpSee = () => popUpHookSee.HandleToggle()
-    let [productEdit, setProductEdit] = useState(null)
-    let [productSee, setProductSee] = useState(null)
 
-    const handleProductSee = (product) => {
-        setProductSee(product)
-        handlePopUpSee()
-    }
-    const handleDeleteProduct = (id) => myServices.HandleDeleteService(id)
     const handleCreateProduct = (product: ProductItem) => myServices.HandleAddService(product)
-    const handleEditProduct = (product: ProductItem) => myServices.HandleEditService(product)
 
-    const handleEdit = (product) => {
-        setProductEdit(product)
-        handlePopUpEdit()
-    }
-
-    const productProps: ProductModalProps = {
-        CloseModal: handleProductSee,
-        IsQualifying: false,
-        IsButtonVisible: false,
-        IsScalable: false
-    }
     const buttonProps: ButtonCreateProps = {
         Text: "Crear Servicio",
         OnCLick: handlePopUp
-    }
-
-    const reorder: MessageReorderProps = {
-        TextBefore: "Puedes cambiar el orden de los servicios, presionando el numero",
-        TextAfter: "en la esquina superior drecha"
     }
 
     return (
@@ -83,36 +49,17 @@ export default function AllServicesMobile() {
 
             <InformationBanner>
                 <div>
-                    Puedes cambiar el order de tus servicios presionando el numero que se encuentra en la esquina
-                    superior derecha
+                    {textInfo}
                 </div>
             </InformationBanner>
 
             <div className={style.gridSearchProducts}>
                 <CustomInput item={inputSearch}/>
-
                 <div className={style.gridProducts}>
                     {
                         myServices.ListServices.map((item, index) =>
                             (item.Name.includes(input) || item.SKU.toString().includes(input)) &&
-                            <div key={item.Name} className={style.mainDivCont}>
-                                <button onClick={() => handleDeleteProduct(item.Id)} className={style.sizeIconTrash}>
-                                    <Image layout={"fill"} src={GlobalConst.sourceImages.trashIcon} alt={""}/>
-                                </button>
-
-                               {/* <button onClick={() => handleProductSee(item)} className={style.seeReview}>
-                                    ver Reseñas
-                                </button>*/}
-
-                                <button onClick={() => handleProductSee(item)}
-                                        className={`${utilities.contDropNumber} ${style.positionNumber}`}>
-                                    {index + 1}
-                                </button>
-
-                                <div onClick={() => handleEdit(item)}>
-                                    <ServiceViewMobile displayFull={false} isBorder={false} item={item}/>
-                                </div>
-                            </div>
+                            <ServiceViewUserAccountMobile item={item}/>
                         )
                     }
                 </div>
@@ -123,23 +70,6 @@ export default function AllServicesMobile() {
                 createPortal(
                     <PopUpContainerFull closePopUp={handlePopUp} isBackground={true} isButtonVisible={true}>
                         <PopUpCreateEditProductMobile closePopUp={handlePopUp} handleChange={handleCreateProduct}/>
-                    </PopUpContainerFull>, document.getElementById(idPortal)
-                )
-            }
-            {
-                popUpHookEdit.State &&
-                createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpEdit} isBackground={true} isButtonVisible={true}>
-                        <PopUpCreateEditProductMobile item={productEdit} closePopUp={handlePopUpEdit}
-                                                      handleChange={handleEditProduct}/>
-                    </PopUpContainerFull>, document.getElementById(idPortal)
-                )
-            }
-            {
-                popUpHookSee.State &&
-                createPortal(
-                    <PopUpContainerFull closePopUp={handlePopUpSee} isBackground={true} isButtonVisible={true}>
-                        <ProductModalMobile item={productSee} productProps={productProps}/>
                     </PopUpContainerFull>, document.getElementById(idPortal)
                 )
             }

@@ -1,8 +1,8 @@
 .mainDiv {
     display: grid;
+    gap: 32px;
     padding: var(--paddingUserAccount);
     overflow: hidden;
-    gap: 32px;
     height: 100%;
     position: relative;
 }

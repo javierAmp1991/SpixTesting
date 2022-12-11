@@ -5,7 +5,6 @@ import {GlobalConst, GlobalId} from "../../../public/globalConst";
 import useDisplayPopUpHook from "../../../CustomHooks/Utilities";
 import {createPortal} from "react-dom";
 import PopUpApplication from "./popUpApplication";
-import PopUpContainerLogo from "../Misc/popUpContainerLogo";
 import {useContext, useEffect, useState} from "react";
 import PopUpContainerFull from "../Misc/popUpContainerFull";
 import utilities from "/styles/utilities.module.css";

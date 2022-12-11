@@ -78,8 +78,6 @@ const newList = [
 ]
 const titleGallery: string = "Galeria"
 const titleMedia: string = "Medios"
-const applyText: string = "Aplicar"
-const seeGalery: string = "Ver Galeria"
 const idLabel: string = "idLabelBanner"
 const idPortal: string = GlobalId.globalIds.idPortal
 const defaultSelect: string = "Seleccione tipo de medio"
@@ -122,6 +120,7 @@ export default function Gallery() {
     const handleSelectMediaType = (type: MediaType) => {
         setMediaOptions(type)
     }
+    const handleReturnSelectMedia = () => setMediaOptions(null)
     const contOptionRef = useRef(null)
 
     //region
@@ -288,7 +287,12 @@ export default function Gallery() {
                                             {
                                                 mediaOptions == MediaType.Youtube &&
                                                 <div className={style.gridPopUp}>
-                                                    <div className={style.titlePopUp2}>{youtubeTitle}</div>
+                                                    <div className={style.gridArrowTitle}>
+                                                        <button onClick={handleReturnSelectMedia} className={style.sizeArrowReturn}>
+                                                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExit}/>
+                                                        </button>
+                                                        <div className={style.titlePopUp2}>{youtubeTitle}</div>
+                                                    </div>
                                                     <input placeholder={placeholderYoutube}
                                                            onChange={handleInputYoutube}
                                                            className={style.input}/>
@@ -308,7 +312,12 @@ export default function Gallery() {
                                             {
                                                 mediaOptions == MediaType.Image &&
                                                 <div className={style.gridPopUp}>
-                                                    <div className={style.titlePopUp2}>{imageTitle}</div>
+                                                    <div className={style.gridArrowTitle}>
+                                                        <button onClick={handleReturnSelectMedia} className={style.sizeArrowReturn}>
+                                                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExit}/>
+                                                        </button>
+                                                        <div className={style.titlePopUp2}>{imageTitle}</div>
+                                                    </div>
                                                     {
                                                         linkImage != stringEmpty ?
                                                             <div className={style.contMedia}>
@@ -340,7 +349,12 @@ export default function Gallery() {
                                             {
                                                 mediaOptions == MediaType.Video &&
                                                 <div className={style.gridPopUp}>
-                                                    <div className={style.titlePopUp2}>{getTitleVideo()}</div>
+                                                    <div className={style.gridArrowTitle}>
+                                                        <button onClick={handleReturnSelectMedia} className={style.sizeArrowReturn}>
+                                                            <Image layout={"fill"} src={GlobalConst.sourceImages.leftArrowExit}/>
+                                                        </button>
+                                                        <div className={style.titlePopUp2}>{getTitleVideo()}</div>
+                                                    </div>
 
                                                     <div ref={ref2Step} className={style.cont2Steps}>
                                                         <div style={{transform: translate}}

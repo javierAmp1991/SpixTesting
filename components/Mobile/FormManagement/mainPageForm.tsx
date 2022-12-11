@@ -9,7 +9,7 @@ export default function MainPageFormMobile() {
     const steps: ProviderMyForm = useContext(MyFormsContext)
     return (
         <div className={style.mainDiv}>
-            <div className={style.gridTabs}>
+           {/* <div className={style.gridTabs}>
                 {
                     steps.Steps.map((item, index) =>
                         <TabNormal isLast={index == (steps.Steps.length - 1)}
@@ -17,9 +17,11 @@ export default function MainPageFormMobile() {
                                    key={item.Id} item={item} onClick={steps.HandleSteps}/>
                     )
                 }
-            </div>
+            </div>*/}
             <div className={style.contGroups}>
-                {
+                <MyFormsMobile/>
+                <MyApplicationsMobile/>
+               {/* {
                     steps.Steps.map(item =>
                         <>
                             {
@@ -33,7 +35,7 @@ export default function MainPageFormMobile() {
                             }
                         </>
                     )
-                }
+                }*/}
             </div>
         </div>
     )
